@@ -37,6 +37,17 @@
 
 NSFWTag 可以参考[Github Here](https://github.com/scooderic/exhentai-tags-chinese-translation)
 
+**Image 逆向令牌**
+
+[LenKiMo_Bot](https://t.me/LenKiMo_Bot)
+
+[DeepDanbooru](https://github.com/KichangKim/DeepDanbooru)
+
+**Prompts 令牌括号转换**
+
+在 NV 和 Webui 之间转换加强参数
+
+[M2NM2NBot](https://t.me/M2NM2NBot)
 
 ### 关于显卡
 
