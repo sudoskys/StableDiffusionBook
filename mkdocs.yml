@@ -1,5 +1,5 @@
 site_name: AiDraw
-site_url: https://aidraw.dianas.cyou/
+site_url: https://stable-diffusion-book.vercel.app/
 nav:
     - 首页: index.md
     - 安装运行: set.md
