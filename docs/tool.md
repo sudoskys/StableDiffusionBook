@@ -37,7 +37,7 @@
 
 NSFWTag 可以参考[Github Here](https://github.com/scooderic/exhentai-tags-chinese-translation)
 
-**Image 逆向令牌**
+**Image 逆向为令牌**
 
 [LenKiMo_Bot](https://t.me/LenKiMo_Bot)
 
