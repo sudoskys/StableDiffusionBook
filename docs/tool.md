@@ -30,7 +30,7 @@
 ### 关于令牌
 
 
-[Tag在线协作](https://docs.google.com/spreadsheets/d/1zij5OzCZIaQuhAbiSayhFznjgJ3rwbaNwnUnaUMxyTQ/edit?usp=drivesdk)
+**[Tag在线协作](https://docs.google.com/spreadsheets/d/1zij5OzCZIaQuhAbiSayhFznjgJ3rwbaNwnUnaUMxyTQ/edit?usp=drivesdk)**
 
 所有 Tag 可以上[danbooru](https://gelbooru.com/index.php?page=tags&s=list)
 
