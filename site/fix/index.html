@@ -433,7 +433,12 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
     优化
   </a>
@@ -460,12 +465,18 @@
     模型超参数
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="模型超参数">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#nvconfigyaml" class="md-nav__link">
     NV模型的Config.yaml
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -494,8 +505,8 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_11" class="md-nav__link">
     进阶
   </a>
@@ -508,12 +519,18 @@
     Textual Inversion
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Textual Inversion">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#loopback" class="md-nav__link">
     Loopback回环生成
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -550,12 +567,18 @@
     Variations种子变化
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Variations种子变化">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#styles" class="md-nav__link">
     Styles风格模板
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -571,12 +594,18 @@
     渐变提示编辑
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="渐变提示编辑">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#face-restoration" class="md-nav__link">
     Face restoration三次元人脸修复
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -598,8 +627,8 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_14" class="md-nav__link">
     运行
   </a>
@@ -625,11 +654,6 @@
   <a href="#png-info" class="md-nav__link">
     图片信息 Png info
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -781,45 +805,45 @@ import torch
 print(torch.cuda.is_available())</p>
 <p>然后不行就切换 <code>--lowvram</code> 低配。</p>
 <p>再不行：确保在浏览器中禁用硬件加速，并在出现内存不足错误时关闭任何可能占用 VRAM 的内容。</p>
-<h3 id="_7">优化</h3>
+<h2 id="_7">优化</h2>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017">对NV模型靠近NV效果相关讨论，应该读一读！</a></p>
-<h4 id="_8">进一步优化</h4>
+<h3 id="_8">进一步优化</h3>
 <p>出图后，可以将喜欢的结果从右侧的输出选项卡拖回 img2img 以进行进一步迭代。</p>
-<h4 id="nv-layers"><strong>对NV模型更改 layers 忽略层数</strong></h4>
+<h3 id="nv-layers"><strong>对NV模型更改 layers 忽略层数</strong></h3>
 <p>在 WebUi 的设置页面把 ignore last layers of clip mode 的横条改成 <code>2</code></p>
 <div class="highlight"><pre><span></span><code>CLIP is a very advanced neural network that transforms your prompt text into a numerical representation. Neural networks work very well with this numerical representation and that&#39;s why devs of SD chose CLIP as one of 3 models involved in stable diffusion&#39;s method of producing images. As CLIP is a neural network, it means that it has a lot of layers. Your prompt is digitized in a simple way, and then fed through layers. You get numerical representation of the prompt after the 1st layer, you feed that into the second layer, you feed the result of that into third, etc, until you get to the last layer, and that&#39;s the output of CLIP that is used in stable diffusion. This is the slider value of 1. But you can stop early, and use the output of the next to last layer - that&#39;s slider value of 2. The earlier you stop, the less layers of neural network have worked on the prompt.
 
 https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-last-layers-of-clip-model
 </code></pre></div>
-<h4 id="_9"><strong>模型超参数</strong></h4>
+<h3 id="_9"><strong>模型超参数</strong></h3>
 <p>如果你想达到 NovelAi 的效果，需要加 negative prompt（消极令牌）, 加载 hypernetwork （网络）和 vae.</p>
 <p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/1868#discussioncomment-3824077</p>
 <h4 id="nvconfigyaml"><strong>NV模型的Config.yaml</strong></h4>
 <p>NVleak里边有个 config.yaml ， 将其改名为 <code>模型前缀.yaml</code> 和模型丢在一起就能加载啦, 效果还是有提升的. </p>
-<h4 id="nv_1"><strong>NV模型消极令牌</strong></h4>
+<h3 id="nv_1"><strong>NV模型消极令牌</strong></h3>
 <p>使用以下令牌削除水印和文字内容</p>
 <div class="highlight"><pre><span></span><code>lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry
 </code></pre></div>
 <p>from <a href="https://t.me/StableDiffusion_CN/6043">Here</a></p>
-<h4 id="_10"><strong>采样器参数</strong></h4>
+<h3 id="_10"><strong>采样器参数</strong></h3>
 <p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/1162</p>
-<h4 id="xformers"><strong>xformers加速</strong></h4>
+<h3 id="xformers"><strong>xformers加速</strong></h3>
 <p>加速推理,分辨率越高加速效果越好。</p>
 <p><a href="https://github.com/C43H66N12O12S2/stable-diffusion-webui/releases">Windows</a> (30 系之外要自己编译)</p>
 <p>自己编译指路 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Xformers">wiki/Xformers</a></p>
 <blockquote>
 <p>30 系显卡正常启动 --xformers, 其他显卡 --force-enable-xformers</p>
 </blockquote>
-<h3 id="_11">进阶</h3>
+<h2 id="_11">进阶</h2>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#attentionemphasis">英文原版</a></p>
-<h4 id="textual-inversion"><strong>Textual Inversion</strong></h4>
+<h3 id="textual-inversion"><strong>Textual Inversion</strong></h3>
 <p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion</p>
 <p>丢到 embeddings 文件夹, prompt 提到你要用的 embedding 的文件名即可。</p>
 <h4 id="loopback"><strong>Loopback回环生成</strong></h4>
 <p>在 img2img 中设置loopback脚本，它允许自动将输出图像作为下一批的Batch提供，相当于保存输出图像，并用它替换输入图像。</p>
 <p>Batch 数设置控制获得多少次迭代</p>
 <p>通常，在执行此操作时，您会自己为下一次迭代选择许多图像中的一个，因此此功能的有用性可能值得怀疑，但反正我已经设法获得了一些我无法获得的非常好的输出。</p>
-<h4 id="prompt-matrix"><strong>Prompt matrix参数矩阵</strong></h4>
+<h3 id="prompt-matrix"><strong>Prompt matrix参数矩阵</strong></h3>
 <p>使用 | 分隔多个Tag，程序将为它们的每个组合生成一个图像。 例如，如果使用 <code>a busy city street in a modern city|illustration|cinematic lighting</code> ，则可能有四种组合（始终保留提示的第一部分）：</p>
 <ul>
 <li>a busy city street in a modern city</li>
@@ -827,12 +851,12 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
 <li>a busy city street in a modern city, cinematic lighting</li>
 <li>a busy city street in a modern city, illustration, cinematic lighting</li>
 </ul>
-<h4 id="outpainting"><strong>Outpainting外部修补</strong></h4>
+<h3 id="outpainting"><strong>Outpainting外部修补</strong></h3>
 <p>Outpainting 扩展原始图像并修复创建的空白空间。
 您可以在底部的 img2img 选项卡中找到该功能，在 Script -&gt; Poor man's outpainting 下。</p>
 <div class="highlight"><pre><span></span><code>Outpainting, unlike normal image generation, seems to profit very much from large step count. A recipe for a good outpainting is a good prompt that matches the picture, sliders for denoising and CFG scale set to max, and step count of 50 to 100 with Euler ancestral or DPM2 ancestral samplers.
 </code></pre></div>
-<h4 id="inpainting"><strong>Inpainting修补</strong></h4>
+<h3 id="inpainting"><strong>Inpainting修补</strong></h3>
 <p>在 img2img 选项卡中，在图像的一部分上绘制蒙版，该部分将被修复。</p>
 <p><img alt="result" src="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting.png" /></p>
 <p>选项：
@@ -841,16 +865,16 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
 <ul>
 <li>将模式（图片右下角）更改为"Upload mask"并为蒙版选择单独的黑白图像(white=inpaint)。</li>
 </ul>
-<h4 id="_12"><strong>全分辨率修复！</strong></h4>
+<h3 id="_12"><strong>全分辨率修复！</strong></h3>
 <p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#inpaint-at-full-resolution</p>
-<h4 id="variations"><strong>Variations种子变化</strong></h4>
+<h3 id="variations"><strong>Variations种子变化</strong></h3>
 <p>Variation strength slider 和 Variation seed field允许您指定现有图片应更改多少以使其看起来不同。
 在最大强度下，您将获得带有变异种子的图片，至少 - 带有原始种子的图片（使用先前采样器时除外）。</p>
 <h4 id="styles"><strong>Styles风格模板</strong></h4>
 <p>“Save prompt as style” 按钮将当前的提示写入 styles.csv，该文件包含样式集合</p>
 <p>提示右侧的下拉框将允许您从以前保存的样式中选择任何样式，并自动将其<strong>附加</strong>到输入中</p>
 <p>要删除样式，请从 styles.csv 中手动将其删除并重新启动程序。</p>
-<h4 id="clip"><strong>Clip</strong></h4>
+<h3 id="clip"><strong>Clip</strong></h3>
 <p>CLIP 可以从图像中提取令牌。</p>
 <p>令牌提示 不会让你重现这个图像（有时甚至不会很接近），但它可能有用。</p>
 <p>默认情况下，只有一个列表 - 艺术家列表（来自artists.csv）。</p>
@@ -859,30 +883,30 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
 - 将文本文件放入其中，每行都有相关描述</p>
 <div class="highlight"><pre><span></span><code>For example of what text files to use, see https://github.com/pharmapsychotic/clip-interrogator/tree/main/data. In fact, you can just take files from there and use them - just skip artists.txt because you already have a list of artists in artists.csv (or use that too, who&#39;s going to stop you). Each file adds one line of text to the final description. If you add &quot;.top3.&quot; to filename, for example, flavors.top3.txt, the three most relevant lines from this file will be added to the prompt (other numbers also work).
 </code></pre></div>
-<h4 id="_13"><strong>渐变提示编辑</strong></h4>
+<h3 id="_13"><strong>渐变提示编辑</strong></h3>
 <p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-editing</p>
 <h4 id="face-restoration"><strong>Face restoration三次元人脸修复</strong></h4>
 <p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#face-restoration</p>
-<h4 id="css">自定义.css</h4>
+<h3 id="css">自定义.css</h3>
 <p>创建一个名为user.cssnear的文件webui.py并将自定义 CSS 代码放入其中。</p>
 <p>For example, this makes the gallery taller:
 <div class="highlight"><pre><span></span><code>#txt2img_gallery, #img2img_gallery{
     min-height: 768px;
 }
 </code></pre></div></p>
-<h4 id="notificationmp3">notification.mp3 提示声音</h4>
+<h3 id="notificationmp3">notification.mp3 提示声音</h3>
 <p>If an audio file named <code>notification.mp3</code> is present in <code>webui's root folder</code>, it will be played when the generation process completes.</p>
-<h3 id="_14">运行</h3>
-<h4 id="4gb">4GB 显卡支持</h4>
+<h2 id="_14">运行</h2>
+<h3 id="4gb">4GB 显卡支持</h3>
 <p>针对具有低 VRAM 的 GPU 的优化。这应该可以在具有 4GB 内存的视频卡上生成 512x512 图像。</p>
 <p><code>--lowvram</code> 是 basujindal 对优化思想的重新实现。模型被分成模块，GPU内存中只保存一个模块；当另一个模块需要运行时，前一个模块将从 GPU 内存中删除。这种优化的性质使处理速度变慢——与我的 RTX 3090 上的正常操作相比，速度慢了大约 10 倍。</p>
 <p><code>--medvram</code> 是另一个优化，通过不在同一批次中处理条件和无条件去噪，可以显着减少 VRAM 的使用。</p>
 <p>这种优化的实现不需要对原始的稳定扩散代码进行任何修改。</p>
 <p>经过 10/10 的优化，RTX2050的4GB 显卡也可以使用 <code>--medvram</code> 。</p>
 <p>显存下限是 2GB。</p>
-<h4 id="_15">不间断生产</h4>
+<h3 id="_15">不间断生产</h3>
 <p>在WebUi的生成键右击即可出现 不间断生成 的选项。</p>
-<h4 id="png-info">图片信息 Png info</h4>
+<h3 id="png-info">图片信息 Png info</h3>
 <p>生成的图片自带 令牌信息，拖放到 查看页面即可查看 。</p>
 <div class="footnote">
 <hr />
@@ -898,11 +922,11 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 10, 2022 22:52:38</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 10, 2022 23:19:37</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 10, 2022 22:52:38</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 10, 2022 23:19:37</span>
       
     
   </small>
