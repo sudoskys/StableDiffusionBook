@@ -372,15 +372,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tag" class="md-nav__link">
-    关于 Tag
+  <a href="#_3" class="md-nav__link">
+    关于令牌
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     关于显卡
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sfw" class="md-nav__link">
+    常用令牌:SFW
   </a>
   
 </li>
@@ -492,11 +499,11 @@
 <p>要匹配好姿势，镜头和人物才不畸形，有时候需要限定量词，多人物时要处理空间关系和 prompt 遮挡优先级。人数-&gt;人物样貌-&gt;环境样式-&gt;人物状态</p>
 </div>
 <p>模糊的说是：限定好的数据范围内相似样本越多，越稳定。</p>
-<h3 id="tag">关于 Tag</h3>
+<h3 id="_3">关于令牌</h3>
 <p><a href="https://docs.google.com/spreadsheets/d/1zij5OzCZIaQuhAbiSayhFznjgJ3rwbaNwnUnaUMxyTQ/edit?usp=drivesdk">Tag在线协作</a></p>
 <p>所有 Tag 可以上<a href="https://gelbooru.com/index.php?page=tags&amp;s=list">danbooru</a></p>
 <p>NSFWTag 可以参考<a href="https://github.com/scooderic/exhentai-tags-chinese-translation">Github Here</a></p>
-<h3 id="_3">关于显卡</h3>
+<h3 id="_4">关于显卡</h3>
 <p>cuda 是否可用、以及 torch 对应的 cuda 的版本
 打开命令窗，输入 python 进入，分行输入
 <div class="highlight"><pre><span></span><code>import torch
@@ -507,17 +514,390 @@ print(torch.cuda.is_available())
 <div class="highlight"><pre><span></span><code>torch.version.cuda
 </code></pre></div>
 输入 ctrl + z 退出</p>
+<h3 id="sfw">常用令牌:SFW</h3>
+<table>
+<thead>
+<tr>
+<th>人物数量</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数量</td>
+<td>, one boy , one girl , two boy ,two girl,one_boy_one_girl(这是错误的)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>人物画风</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>质量提升参数</td>
+<td>, masterpiece, best quality</td>
+</tr>
+<tr>
+<td>原神</td>
+<td>, Genshin Impact</td>
+</tr>
+<tr>
+<td>萝莉</td>
+<td>, female child , loli画风差</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>人物样貌</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>头发</td>
+<td>hair</td>
+</tr>
+<tr>
+<td>长发</td>
+<td>longhair</td>
+</tr>
+<tr>
+<td>短发</td>
+<td>shorthair</td>
+</tr>
+<tr>
+<td>眼睛</td>
+<td>eyes</td>
+</tr>
+<tr>
+<td>渐变颜色长发</td>
+<td>gradient pink longhair</td>
+</tr>
+<tr>
+<td>渐变颜色眼睛</td>
+<td>gradient pink eyes</td>
+</tr>
+<tr>
+<td>粗眉毛</td>
+<td>thick eyebrows</td>
+</tr>
+<tr>
+<td>猫尾巴</td>
+<td>cat tail</td>
+</tr>
+<tr>
+<td>猫耳朵</td>
+<td>cat ears</td>
+</tr>
+<tr>
+<td>动物耳朵</td>
+<td>animal ears</td>
+</tr>
+<tr>
+<td>毛茸茸的动物耳朵</td>
+<td>animal ear fluff</td>
+</tr>
+<tr>
+<td>刘海</td>
+<td>bangs</td>
+</tr>
+<tr>
+<td>两眼之间的头发</td>
+<td>hair between eyes</td>
+</tr>
+<tr>
+<td>眉毛后面的头发</td>
+<td>eyebrows behind hair</td>
+</tr>
+<tr>
+<td>锁骨</td>
+<td>collarbone</td>
+</tr>
+<tr>
+<td>斗篷(要在很前面才有效)</td>
+<td>cape</td>
+</tr>
+<tr>
+<td>乳房尺寸</td>
+<td>small breasts</td>
+</tr>
+<tr>
+<td>出汗</td>
+<td>sweating</td>
+</tr>
+<tr>
+<td>颜色丝袜(和长丝袜冲突)</td>
+<td>white stockings , black stockings</td>
+</tr>
+<tr>
+<td>长丝袜</td>
+<td>thighhighs</td>
+</tr>
+<tr>
+<td>女仆</td>
+<td>maid</td>
+</tr>
+<tr>
+<td>发带</td>
+<td>ribbon</td>
+</tr>
+<tr>
+<td>爱心眼</td>
+<td>heart-shaped pupils</td>
+</tr>
+<tr>
+<td>御姐/JK/辣妹?</td>
+<td>gyaru</td>
+</tr>
+<tr>
+<td>肌肉发达</td>
+<td>muscular</td>
+</tr>
+<tr>
+<td>天使翅膀(要是形容人的第一个才正常)</td>
+<td>angel wings</td>
+</tr>
+<tr>
+<td>颜色内裤(赠内衣)</td>
+<td>pink underpants</td>
+</tr>
+<tr>
+<td>肚脐</td>
+<td>navel</td>
+</tr>
+<tr>
+<td>颈部颜色项圈</td>
+<td>white collar</td>
+</tr>
+<tr>
+<td>黑色皮肤</td>
+<td>dark skin</td>
+</tr>
+<tr>
+<td>撕裂的衣服</td>
+<td>torn clothes</td>
+</tr>
+<tr>
+<td>撕裂的裤子</td>
+<td>torn legwear</td>
+</tr>
+<tr>
+<td>开襟夹克(配合叉开腿特色)</td>
+<td>open jacket</td>
+</tr>
+<tr>
+<td>异色瞳</td>
+<td>heterochromia_blue_red</td>
+</tr>
+<tr>
+<td>吊袜带(会和内衣冲突)</td>
+<td>garter straps</td>
+</tr>
+<tr>
+<td>靴子</td>
+<td>boots</td>
+</tr>
+<tr>
+<td>眼罩</td>
+<td>blindfold</td>
+</tr>
+<tr>
+<td>流泪</td>
+<td>tears</td>
+</tr>
+<tr>
+<td>项链</td>
+<td>necklace</td>
+</tr>
+<tr>
+<td>眼镜</td>
+<td>glasses</td>
+</tr>
+<tr>
+<td>比基尼</td>
+<td>bikini</td>
+</tr>
+<tr>
+<td>湿衣服</td>
+<td>wet clothes</td>
+</tr>
+<tr>
+<td>透明衣物</td>
+<td>transparent raincoat , transparent jacket , transparent tshirt</td>
+</tr>
+<tr>
+<td>唾液(自动伸舌头)</td>
+<td>saliva</td>
+</tr>
+<tr>
+<td>流口水(和唾液冲突)</td>
+<td>drooling</td>
+</tr>
+<tr>
+<td>水手服</td>
+<td>sailor dress</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>环境样式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>在床上</td>
+<td>on bed</td>
+</tr>
+<tr>
+<td>光线反射</td>
+<td>reflection light</td>
+</tr>
+<tr>
+<td>赛博朋克</td>
+<td>cyberpunk, city, kowloon, rain</td>
+</tr>
+<tr>
+<td>在地毯上</td>
+<td>on carpet</td>
+</tr>
+<tr>
+<td>在瑜伽垫上(它分不清什么是瑜伽垫，只知道色块比较大，所以要配合one girl用)</td>
+<td>on_yoga_mats</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>人物视角</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>正面视角</td>
+<td>from viewer</td>
+</tr>
+<tr>
+<td>从上到下视角</td>
+<td>from below</td>
+</tr>
+<tr>
+<td>全身</td>
+<td>full body</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>人物状态</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>叉开腿</td>
+<td>spread leg</td>
+</tr>
+<tr>
+<td>露出腋下</td>
+<td>armpits</td>
+</tr>
+<tr>
+<td>举起手</td>
+<td>hands up , arms up</td>
+</tr>
+<tr>
+<td>爪子手</td>
+<td>paw pose</td>
+</tr>
+<tr>
+<td>站立</td>
+<td>standing</td>
+</tr>
+<tr>
+<td>行走</td>
+<td>walking</td>
+</tr>
+<tr>
+<td>吐舌头</td>
+<td>tongue out</td>
+</tr>
+<tr>
+<td>抬起腿</td>
+<td>legs up</td>
+</tr>
+<tr>
+<td>手放背后</td>
+<td>arms behind back , hidden hands</td>
+</tr>
+<tr>
+<td>衬衫</td>
+<td>shirt</td>
+</tr>
+<tr>
+<td>长袖</td>
+<td>long sleeves</td>
+</tr>
+<tr>
+<td>连帽衫</td>
+<td>hoodie</td>
+</tr>
+<tr>
+<td>褶边</td>
+<td>frills</td>
+</tr>
+<tr>
+<td>喇叭裤</td>
+<td>bloomers</td>
+</tr>
+<tr>
+<td>白色连衣裙</td>
+<td>white dress</td>
+</tr>
+<tr>
+<td>捆绑</td>
+<td>bondage , bondage body , bondage foot , bondage hand</td>
+</tr>
+<tr>
+<td>蹲下</td>
+<td>crouch , squatting</td>
+</tr>
+<tr>
+<td>真画风</td>
+<td>photorealistic</td>
+</tr>
+<tr>
+<td>跪下</td>
+<td>kneel down</td>
+</tr>
+<tr>
+<td>湿身</td>
+<td>wet body</td>
+</tr>
+</tbody>
+</table>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 10, 2022 13:14:19</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 10, 2022 13:36:06</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 10, 2022 13:14:19</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 10, 2022 13:36:06</span>
       
     
   </small>
