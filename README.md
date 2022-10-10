@@ -1,4 +1,4 @@
-![gif](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/cover.png)
+![gif](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/cover_main.png)
 ------------------------------------
 
 <p align="center">
