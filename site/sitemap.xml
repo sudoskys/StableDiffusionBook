@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://aidraw.dianas.cyou/</loc>
+         <loc>https://stable-diffusion-book.vercel.app/</loc>
          <lastmod>2022-10-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://aidraw.dianas.cyou/about/</loc>
+         <loc>https://stable-diffusion-book.vercel.app/about/</loc>
          <lastmod>2022-10-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://aidraw.dianas.cyou/fix/</loc>
+         <loc>https://stable-diffusion-book.vercel.app/fix/</loc>
          <lastmod>2022-10-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://aidraw.dianas.cyou/set/</loc>
+         <loc>https://stable-diffusion-book.vercel.app/set/</loc>
          <lastmod>2022-10-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://aidraw.dianas.cyou/tool/</loc>
+         <loc>https://stable-diffusion-book.vercel.app/tool/</loc>
          <lastmod>2022-10-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
