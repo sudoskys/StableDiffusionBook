@@ -40,7 +40,7 @@ https://pan.t-satoru.top/ode5/Share/
 
 [DeepDanbooru](https://github.com/KichangKim/DeepDanbooru)
 
-**Prompts 括号转换**
+**Prompts 令牌括号转换**
 
 在 NV 和 Webui 之间转换加强参数
 
