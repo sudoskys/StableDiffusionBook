@@ -540,11 +540,48 @@
 <p><img alt="效果.png" src="https://s1.ax1x.com/2022/10/10/xtdNNR.png" />
 <img alt="效果" src="https://i.ibb.co/yd7SZ32/chartthin.png" /></p>
 <h4 id="_3">安装</h4>
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Dependencies">Dependencies</a></p>
-<p><strong>然后看这个</strong>
-https://github.com/AUTOMATIC1111/stable-diffusion-webui#installation-and-running</p>
-<p><strong>安装的问题看</strong>
+<p>先阅读官方Wiki的内容。</p>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Dependencies">官方给定的依赖目录</a></p>
+<p>安装教程在仓库的<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui#installation-and-running">这个位置</a></p>
+<p><strong>安装的问题除了本文档还可以看</strong>
 https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki</p>
+<p><strong>Windows</strong></p>
+<p>在Windows上自动安装</p>
+<ul>
+<li>安装<a href="https://www.python.org/downloads/windows/">Python 3.10.6</a>，选中“Add Pythone to PATH”</li>
+<li>安装<a href="https://git-scm.com/download/win">git</a></li>
+<li>
+<p>下载webui存储库，运行<code>git clonehttps://github.com/AUTOMATIC1111/stable-diffusion-webui.git</code></p>
+</li>
+<li>
+<p>将<code>model.ckpt</code>放在<code>models</code>目录中,请参见<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Dependencies">依赖项</a>或者向后看</p>
+</li>
+<li>（可选）将<code>GFPGANv1.4.pth</code>放在基本目录中，旁边是webui.py</li>
+<li>以普通非管理员用户身份从Windows资源管理器运行<code>webui-user.bat</code></li>
+</ul>
+<p><strong>Linux 安装</strong>
+先安装依赖
+<div class="highlight"><pre><span></span><code><span class="c1"># Debian-based:</span>
+sudo apt install wget git python3 python3-venv
+<span class="c1"># Red Hat-based:</span>
+sudo dnf install wget git python3
+<span class="c1"># Arch-based:</span>
+sudo pacman -S wget git python3
+</code></pre></div>
+一键脚本
+<div class="highlight"><pre><span></span><code>bash &lt;<span class="o">(</span>wget -qO- https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusion-webui/master/webui.sh<span class="o">)</span>
+</code></pre></div>
+完毕。</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>其实如果可以用 <code>anaconda</code> 尽量用，创建一个Python 3.10.6的虚拟环境</p>
+<div class="highlight"><pre><span></span><code>conda create -n aidraw <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10.6
+
+conda activate aidraw
+
+<span class="nv">COMMANDLINE_ARGS</span><span class="o">=</span><span class="s2">&quot;--medvram&quot;</span> <span class="nv">REQS_FILE</span><span class="o">=</span><span class="s2">&quot;requirements.txt&quot;</span> python launch.py
+</code></pre></div>
+</div>
 <h4 id="_4">安装/运行自助</h4>
 <p>翻译整理自<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></p>
 <p>仓库的一键安装会创建 虚拟环境，然后启动 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/launch.py">launch.py</a></p>
@@ -805,11 +842,11 @@ sudo systemctl restart docker
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 10, 2022 13:43:13</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 10, 2022 13:53:01</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 10, 2022 13:43:13</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 10, 2022 13:53:01</span>
       
     
   </small>
