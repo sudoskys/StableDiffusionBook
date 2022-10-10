@@ -10,7 +10,7 @@
 
 <h2 align="center">StableDiffusionBook</h2>
 
-关于 Ai 绘画的 Wiki ，翻译，教程，相关资源，请阅读 http://stable-diffusion-book.vercel.app/
+关于 Ai 绘画的 Wiki ，翻译，教程，相关资源，请阅读 https://stable-diffusion-book.vercel.app/
 
 ## 需求
 
