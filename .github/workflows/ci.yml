@@ -28,7 +28,7 @@ jobs:
           sudo timedatectl set-timezone Asia/Shanghai
           git config --global user.email emails
           git config --global user.name GithubActionBot
-          datime=$(date "+%Y年%m月%d日 %H:%M")
+          datime=$(date "+%Y/%m/%d-%H:%M")
           echo "git commit: push something, $datime"
           if [ -n "$(git status -s)" ];then
               git add .
