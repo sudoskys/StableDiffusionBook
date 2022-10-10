@@ -7,7 +7,6 @@ nav:
     - 关于: about.md
 theme:
   name: material
-  custom_dir: overrides
   language: zh
   palette:
     primary: indigo
@@ -31,7 +30,10 @@ markdown_extensions:
 extra:
   social:
     - icon: fontawesome/brands/telegram
-      link: https://t.me/
+      link: https://t.me/StableDiffusion_CN_WIKI
+    - icon: fontawesome/brands/telegram
+      link: https://t.me/StableDiffusion_Show
+    
   analytics:
     provider: custom
     property: foobar 
