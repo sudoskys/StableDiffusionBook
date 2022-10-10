@@ -44,3 +44,17 @@ https://pan.t-satoru.top/ode5/Share/
 在 NV 和 Webui 之间转换加强参数
 
 [M2NM2NBot](https://t.me/M2NM2NBot)
+
+
+#### 鸣谢
+
+引用的开源教程
+
+
+- 编辑器
+https://mdformatter.dswwsd.net/
+https://markdown.lovejade.cn/
+
+**由以下服务商托管运行**
+
+![Vercel](https://img.shields.io/badge/Vercel-black?style=flat&logo=Vercel&logoColor=white)
