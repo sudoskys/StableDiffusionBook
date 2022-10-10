@@ -1,7 +1,7 @@
 site_name: AiDraw
 site_url: https://aidraw.dianas.cyou/
 nav:
-    - 安装NovelAi: set.md
+    - 安装: set.md
     - 调试: fix.md
     - 工具: tool.md
     - 关于: about.md
@@ -33,10 +33,7 @@ extra:
       link: https://t.me/StableDiffusion_CN_WIKI
     - icon: fontawesome/brands/telegram
       link: https://t.me/StableDiffusion_Show
-    
-  analytics:
-    provider: custom
-    property: foobar 
+      
 plugins:
   # - git-authors
   - git-revision-date-localized:
