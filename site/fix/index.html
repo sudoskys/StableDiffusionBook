@@ -1,0 +1,975 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://aidraw.dianas.cyou/fix/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
+    
+    
+      
+        <title>调试 - AiDraw</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.20d9efc8.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="AiDraw" class="md-header__button md-logo" aria-label="AiDraw" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AiDraw
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              调试
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/sudoskys/AiDraw" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../set/" class="md-tabs__link">
+      安装
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  <li class="md-tabs__item">
+    <a href="./" class="md-tabs__link md-tabs__link--active">
+      调试
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../tool/" class="md-tabs__link">
+      工具
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../about/" class="md-tabs__link">
+      关于
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AiDraw" class="md-nav__button md-logo" aria-label="AiDraw" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    AiDraw
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/sudoskys/AiDraw" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../set/" class="md-nav__link">
+        安装
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          调试
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        调试
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#nv" class="md-nav__link">
+    如果使用NV模型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    说明
+  </a>
+  
+    <nav class="md-nav" aria-label="说明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#leaknv" class="md-nav__link">
+    对于 LeakNV 模型的说明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    关键词权重
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    横条参数说明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug" class="md-nav__link">
+    生成图片发生BUG的自救
+  </a>
+  
+    <nav class="md-nav" aria-label="生成图片发生BUG的自救">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#16" class="md-nav__link">
+    16系显卡生成黑/绿图
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtimeerror-sizes-of-tensors-must-match" class="md-nav__link">
+    RuntimeError Sizes of tensors must match
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    彩虹图
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    但是高分辨率下出怪图
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    优化
+  </a>
+  
+    <nav class="md-nav" aria-label="优化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    进一步优化
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nv-layers" class="md-nav__link">
+    对NV模型更改 layers 忽略层数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    模型超参数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nvconfigyaml" class="md-nav__link">
+    NV模型的Config.yaml
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nv_1" class="md-nav__link">
+    NV模型消极令牌
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    采样器参数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xformers" class="md-nav__link">
+    xformers加速
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    进阶
+  </a>
+  
+    <nav class="md-nav" aria-label="进阶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#textual-inversion" class="md-nav__link">
+    Textual Inversion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loopback" class="md-nav__link">
+    Loopback回环生成
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-matrix" class="md-nav__link">
+    Prompt matrix参数矩阵
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outpainting" class="md-nav__link">
+    Outpainting外部修补
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inpainting" class="md-nav__link">
+    Inpainting修补
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    全分辨率修复！
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variations" class="md-nav__link">
+    Variations种子变化
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#styles" class="md-nav__link">
+    Styles风格模板
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clip" class="md-nav__link">
+    Clip
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    渐变提示编辑
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#face-restoration" class="md-nav__link">
+    Face restoration三次元人脸修复
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#css" class="md-nav__link">
+    自定义.css
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notificationmp3" class="md-nav__link">
+    notification.mp3 提示声音
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    运行
+  </a>
+  
+    <nav class="md-nav" aria-label="运行">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4gb" class="md-nav__link">
+    4GB 显卡支持
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    不间断生产
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#png-info" class="md-nav__link">
+    图片信息 Png info
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tool/" class="md-nav__link">
+        工具
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        关于
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <a href="https://github.com/sudoskys/AiDraw/edit/main/docs/fix.md" title="编辑此页" class="md-content__button md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+<p>本节只针对 WebUi 展开教程。请多多关注About页面的社区获取最新进展和新闻。源教程来自：<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">1</a></sup></p>
+<h1 id="_1">准备模型</h1>
+<p>本仓库不提供具体链接（版权警告），可以自行寻找或关注中文社区 t.me@StableDiffusion_CN_WIKI。</p>
+<p><a href="https://rentry.org/sdmodels">除了NV模型外的其他模型：Stable Diffusion Models</a></p>
+<h2 id="nv">如果使用NV模型</h2>
+<p>你的 models 文件夹应该是这样的</p>
+<div class="highlight"><pre><span></span><code>./models
+├── Codeformer
+├── ESRGAN
+├── GFPGAN
+├── hypernetworks
+│   ├── aini.pt
+│   ├── anime_2.pt
+│   ├── anime_3.pt
+│   ├── anime.pt
+│   ├── furry_2.pt
+│   ├── furry_3.pt
+│   ├── furry_kemono.pt
+│   ├── furry_protogen.pt
+│   ├── furry.pt
+│   ├── furry_scalie.pt
+│   ├── furry_transformation.pt
+│   └── pony.pt
+├── LDSR
+├── Stable-diffusion
+│   ├── final-pruned.ckpt -&gt; novelai 的 model.ckpt (pruned)
+│   ├── final-pruned.vae.pt -&gt; novelai 的 animevae.pt
+│   ├── final-pruned.yaml -&gt; model.ckpt 同文件夹的 config.yaml
+│   └── 其他模型文件.ckpt
+└── SwinIR
+</code></pre></div>
+<p>启动 cli 有提示加载就 OK, 去设置选模型那里选喜欢的 <code>hypernetwork</code></p>
+<h2 id="_2">说明</h2>
+<h3 id="leaknv">对于 LeakNV 模型的说明</h3>
+<p><code>animesfw-latest</code>即NV基线模型</p>
+<p><code>fullhqdone</code> = <code>full-latest</code> = NV全量模型</p>
+<p><strong>4GB版本 or 7GB ？</strong></p>
+<p><em>diffusion model</em> 训练会产生两个模型：当前权重和加权平均后优化的EMA（效果好）。</p>
+<p>7GB 的 ckpt 里包含了当前权重和EMA权重，pruned.py 删除了当前权重，留下了 EMA权重并重命名。</p>
+<p>所以差别不大</p>
+<h3 id="_3">关键词权重</h3>
+<p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#attentionemphasis</p>
+<p>a (word) - 将权重提高 1.1 倍
+a ((word)) - 将权重提高 1.21 倍（= 1.1 * 1.1）
+a [word] - 将权重减少 1.1 倍
+a (word:1.5) - 将权重提高 1.5 倍
+a (word:0.25) - 将权重减少 4 倍 (= 1 / 0.25)
+a (word) - 在提示中使用文字 () 字符</p>
+<p>使用 ()，可以像这样指定权重：(text:1.4)
+如果未指定权重，则假定为 1.1
+指定权重仅适用于 () 而不是 []</p>
+<p><strong>NV官方</strong></p>
+<p>在NV官方前端我们使用 <code>{}</code> 来指定权重。</p>
+<h3 id="_4">横条参数说明</h3>
+<p><code>step</code> 迭代多少次, 取值和 sampling method 有关, DDIM 收敛较快, 见 Sampler vs. Steps Comparison (low to mid step counts) 我用 DDIM 取 20 够了.</p>
+<p><code>batch count/batch size</code> 决定生成的图片数量, 显存够就加 batch size, 不够就 batch count, 得到的图片数量是两者之积 (小显存还是只动 count 就好)</p>
+<p><code>sample method</code>  我无脑 DDIM, Eula 也挺好用? (带 a 的是 ancestral 的意思, step 增长出图不稳定)</p>
+<p><code>cfg scale</code> 符合 prompt 的程度, 值越高越会字面看待 prompt, 低则给模型较大的发挥空间, 但是实际模型表现上来看 cfg scale 低 (6-8) 饱和度低, 偏线稿, 偏杂乱, 高 (18-22) 则饱和度偏高, 偏 CG 风格.</p>
+<blockquote>
+<p>过高的 CFG 会引起颜色失真，CFG 应该在 5-15 之间</p>
+</blockquote>
+<p><code>denoise strength</code> img2img 专属参数, 从 0 到 1 取值, 值越高 AI 对原图的参考程度就越低 (同时增加迭代次数), 我个人喜欢低 cfg 高 denoise 重绘图, 高 cfg 低 denoise 改细节.</p>
+<p><a href="https://www.reddit.com/r/StableDiffusion/comments/xbeyw3/can_anyone_offer_a_little_guidance_on_the/">RedditAbout</a></p>
+<h3 id="bug">生成图片发生BUG的自救</h3>
+<h4 id="16">16系显卡生成黑/绿图</h4>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Install-and-Run-on-NVidia-GPUs">Green or Black screen</a></p>
+<p>启动参数加 <code>--precision full --no-half</code>, 要省显存还能加 <code>--medvram</code></p>
+<h4 id="runtimeerror-sizes-of-tensors-must-match">RuntimeError Sizes of tensors must match</h4>
+<p>(img2img) 如果你得到RuntimeError: Sizes of tensors must match，你需要改变输入图像的分辨率</p>
+<h4 id="_5">彩虹图</h4>
+<p>如果您的输出是混乱的彩虹混乱，则您的图像分辨率设置得太低</p>
+<h4 id="_6">但是高分辨率下出怪图</h4>
+<p><a href="https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99#%E9%AB%98%E5%88%86%E8%BE%A8%E7%8E%87%E4%B8%8B%E5%87%BA%E6%80%AA%E5%9B%BE">读这里</a></p>
+<h3 id="_7">优化</h3>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017">对NV模型靠近NV效果相关讨论，应该读一读！</a></p>
+<h4 id="_8">进一步优化</h4>
+<p>出图后，可以将喜欢的结果从右侧的输出选项卡拖回 img2img 以进行进一步迭代。</p>
+<h4 id="nv-layers"><strong>对NV模型更改 layers 忽略层数</strong></h4>
+<p>在 WebUi 的设置页面把 ignore last layers of clip mode 的横条改成 <code>2</code></p>
+<div class="highlight"><pre><span></span><code>CLIP is a very advanced neural network that transforms your prompt text into a numerical representation. Neural networks work very well with this numerical representation and that&#39;s why devs of SD chose CLIP as one of 3 models involved in stable diffusion&#39;s method of producing images. As CLIP is a neural network, it means that it has a lot of layers. Your prompt is digitized in a simple way, and then fed through layers. You get numerical representation of the prompt after the 1st layer, you feed that into the second layer, you feed the result of that into third, etc, until you get to the last layer, and that&#39;s the output of CLIP that is used in stable diffusion. This is the slider value of 1. But you can stop early, and use the output of the next to last layer - that&#39;s slider value of 2. The earlier you stop, the less layers of neural network have worked on the prompt.
+
+https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-last-layers-of-clip-model
+</code></pre></div>
+<h4 id="_9"><strong>模型超参数</strong></h4>
+<p>如果你想达到 NovelAi 的效果，需要加 negative prompt（消极令牌）, 加载 hypernetwork （网络）和 vae.</p>
+<p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/1868#discussioncomment-3824077</p>
+<h4 id="nvconfigyaml"><strong>NV模型的Config.yaml</strong></h4>
+<p>NVleak里边有个 config.yaml ， 将其改名为 <code>模型前缀.yaml</code> 和模型丢在一起就能加载啦, 效果还是有提升的. </p>
+<h4 id="nv_1"><strong>NV模型消极令牌</strong></h4>
+<p>使用以下令牌削除水印和文字内容</p>
+<div class="highlight"><pre><span></span><code>lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry
+</code></pre></div>
+<p>from <a href="https://t.me/StableDiffusion_CN/6043">Here</a></p>
+<h4 id="_10"><strong>采样器参数</strong></h4>
+<p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/1162</p>
+<h4 id="xformers"><strong>xformers加速</strong></h4>
+<p>加速推理,分辨率越高加速效果越好。</p>
+<p><a href="https://github.com/C43H66N12O12S2/stable-diffusion-webui/releases">Windows</a> (30 系之外要自己编译)</p>
+<p>自己编译指路 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Xformers">wiki/Xformers</a></p>
+<blockquote>
+<p>30 系显卡正常启动 --xformers, 其他显卡 --force-enable-xformers</p>
+</blockquote>
+<h3 id="_11">进阶</h3>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#attentionemphasis">英文原版</a></p>
+<h4 id="textual-inversion"><strong>Textual Inversion</strong></h4>
+<p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion</p>
+<p>丢到 embeddings 文件夹, prompt 提到你要用的 embedding 的文件名即可。</p>
+<h4 id="loopback"><strong>Loopback回环生成</strong></h4>
+<p>在 img2img 中设置loopback脚本，它允许自动将输出图像作为下一批的Batch提供，相当于保存输出图像，并用它替换输入图像。</p>
+<p>Batch 数设置控制获得多少次迭代</p>
+<p>通常，在执行此操作时，您会自己为下一次迭代选择许多图像中的一个，因此此功能的有用性可能值得怀疑，但反正我已经设法获得了一些我无法获得的非常好的输出。</p>
+<h4 id="prompt-matrix"><strong>Prompt matrix参数矩阵</strong></h4>
+<p>使用 | 分隔多个Tag，程序将为它们的每个组合生成一个图像。 例如，如果使用 <code>a busy city street in a modern city|illustration|cinematic lighting</code> ，则可能有四种组合（始终保留提示的第一部分）：</p>
+<ul>
+<li>a busy city street in a modern city</li>
+<li>a busy city street in a modern city, illustration</li>
+<li>a busy city street in a modern city, cinematic lighting</li>
+<li>a busy city street in a modern city, illustration, cinematic lighting</li>
+</ul>
+<h4 id="outpainting"><strong>Outpainting外部修补</strong></h4>
+<p>Outpainting 扩展原始图像并修复创建的空白空间。
+您可以在底部的 img2img 选项卡中找到该功能，在 Script -&gt; Poor man's outpainting 下。</p>
+<div class="highlight"><pre><span></span><code>Outpainting, unlike normal image generation, seems to profit very much from large step count. A recipe for a good outpainting is a good prompt that matches the picture, sliders for denoising and CFG scale set to max, and step count of 50 to 100 with Euler ancestral or DPM2 ancestral samplers.
+</code></pre></div>
+<h4 id="inpainting"><strong>Inpainting修补</strong></h4>
+<p>在 img2img 选项卡中，在图像的一部分上绘制蒙版，该部分将被修复。</p>
+<p><img alt="result" src="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting.png" /></p>
+<p>选项：
+- 在网络编辑器中自己绘制蒙版。
+- 在外部编辑器中擦除部分图片并上传透明图片。 任何稍微透明的区域都将成为蒙版的一部分。 请注意，某些编辑器默认将完全透明的区域保存为黑色。</p>
+<ul>
+<li>将模式（图片右下角）更改为"Upload mask"并为蒙版选择单独的黑白图像(white=inpaint)。</li>
+</ul>
+<h4 id="_12"><strong>全分辨率修复！</strong></h4>
+<p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#inpaint-at-full-resolution</p>
+<h4 id="variations"><strong>Variations种子变化</strong></h4>
+<p>Variation strength slider 和 Variation seed field允许您指定现有图片应更改多少以使其看起来不同。
+在最大强度下，您将获得带有变异种子的图片，至少 - 带有原始种子的图片（使用先前采样器时除外）。</p>
+<h4 id="styles"><strong>Styles风格模板</strong></h4>
+<p>“Save prompt as style” 按钮将当前的提示写入 styles.csv，该文件包含样式集合</p>
+<p>提示右侧的下拉框将允许您从以前保存的样式中选择任何样式，并自动将其<strong>附加</strong>到输入中</p>
+<p>要删除样式，请从 styles.csv 中手动将其删除并重新启动程序。</p>
+<h4 id="clip"><strong>Clip</strong></h4>
+<p>CLIP 可以从图像中提取令牌。</p>
+<p>令牌提示 不会让你重现这个图像（有时甚至不会很接近），但它可能有用。</p>
+<p>默认情况下，只有一个列表 - 艺术家列表（来自artists.csv）。</p>
+<p>不过你可以通过执行以下操作添加更多列表：
+- interrogate在与 webui 相同的位置创建目录
+- 将文本文件放入其中，每行都有相关描述</p>
+<div class="highlight"><pre><span></span><code>For example of what text files to use, see https://github.com/pharmapsychotic/clip-interrogator/tree/main/data. In fact, you can just take files from there and use them - just skip artists.txt because you already have a list of artists in artists.csv (or use that too, who&#39;s going to stop you). Each file adds one line of text to the final description. If you add &quot;.top3.&quot; to filename, for example, flavors.top3.txt, the three most relevant lines from this file will be added to the prompt (other numbers also work).
+</code></pre></div>
+<h4 id="_13"><strong>渐变提示编辑</strong></h4>
+<p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-editing</p>
+<h4 id="face-restoration"><strong>Face restoration三次元人脸修复</strong></h4>
+<p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#face-restoration</p>
+<h4 id="css">自定义.css</h4>
+<p>创建一个名为user.cssnear的文件webui.py并将自定义 CSS 代码放入其中。</p>
+<p>For example, this makes the gallery taller:
+<div class="highlight"><pre><span></span><code>#txt2img_gallery, #img2img_gallery{
+    min-height: 768px;
+}
+</code></pre></div></p>
+<h4 id="notificationmp3">notification.mp3 提示声音</h4>
+<p>If an audio file named <code>notification.mp3</code> is present in <code>webui's root folder</code>, it will be played when the generation process completes.</p>
+<h3 id="_14">运行</h3>
+<h4 id="4gb">4GB 显卡支持</h4>
+<p>针对具有低 VRAM 的 GPU 的优化。这应该可以在具有 4GB 内存的视频卡上生成 512x512 图像。</p>
+<p><code>--lowvram</code> 是 basujindal 对优化思想的重新实现。模型被分成模块，GPU内存中只保存一个模块；当另一个模块需要运行时，前一个模块将从 GPU 内存中删除。这种优化的性质使处理速度变慢——与我的 RTX 3090 上的正常操作相比，速度慢了大约 10 倍。</p>
+<p><code>--medvram</code> 是另一个优化，通过不在同一批次中处理条件和无条件去噪，可以显着减少 VRAM 的使用。</p>
+<p>这种优化的实现不需要对原始的稳定扩散代码进行任何修改。</p>
+<p>经过 10/10 的优化，RTX2050的4GB 显卡也可以使用 <code>--medvram</code> 。</p>
+<p>显存下限是 2GB。</p>
+<h4 id="_15">不间断生产</h4>
+<p>在WebUi的生成键右击即可出现 不间断生成 的选项。</p>
+<h4 id="png-info">图片信息 Png info</h4>
+<p>生成的图片自带 令牌信息，拖放到 查看页面即可查看 。</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:2">
+<p><a href="https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99">关于 AUTOMATIC1111 /stable-diffusion-webui 的 FAQ:</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      最后更新:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 10, 2022 12:48:52</span>
+      
+        <br>
+        创建日期:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 10, 2022 12:48:52</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            回到页面顶部
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="页脚" >
+      
+        
+        <a href="../set/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 安装" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              安装
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../tool/" class="md-footer__link md-footer__link--next" aria-label="下一页: 工具" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              工具
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 非盈利开源文档
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://t.me/StableDiffusion_CN_WIKI" target="_blank" rel="noopener" title="t.me" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M248 8C111.033 8 0 119.033 0 256s111.033 248 248 248 248-111.033 248-248S384.967 8 248 8Zm114.952 168.66c-3.732 39.215-19.881 134.378-28.1 178.3-3.476 18.584-10.322 24.816-16.948 25.425-14.4 1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25 5.342-39.5 3.652-3.793 67.107-61.51 68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608 69.142-14.845 10.194-26.894 9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7 18.45-13.7 108.446-47.248 144.628-62.3c68.872-28.647 83.183-33.623 92.511-33.789 2.052-.034 6.639.474 9.61 2.885a10.452 10.452 0 0 1 3.53 6.716 43.765 43.765 0 0 1 .417 9.769Z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://t.me/StableDiffusion_Show" target="_blank" rel="noopener" title="t.me" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M248 8C111.033 8 0 119.033 0 256s111.033 248 248 248 248-111.033 248-248S384.967 8 248 8Zm114.952 168.66c-3.732 39.215-19.881 134.378-28.1 178.3-3.476 18.584-10.322 24.816-16.948 25.425-14.4 1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25 5.342-39.5 3.652-3.793 67.107-61.51 68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608 69.142-14.845 10.194-26.894 9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7 18.45-13.7 108.446-47.248 144.628-62.3c68.872-28.647 83.183-33.623 92.511-33.789 2.052-.034 6.639.474 9.61 2.885a10.452 10.452 0 0 1 3.53 6.716 43.765 43.765 0 0 1 .417 9.769Z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "toc.integrate", "navigation.top", "navigation.instant"], "search": "../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.078830c0.min.js"></script>
+      
+    
+  </body>
+</html>
