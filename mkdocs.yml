@@ -1,0 +1,50 @@
+site_name: AiDraw
+site_url: https://aidraw.dianas.cyou/
+nav:
+    - 安装NovelAi: set.md
+    - 调试: fix.md
+    - 工具: tool.md
+    - 关于: about.md
+theme:
+  name: material
+  custom_dir: overrides
+  language: zh
+  palette:
+    primary: indigo
+  features:
+    - navigation.tabs
+    - toc.integrate
+    #- navigation.indexes
+    - navigation.top
+    - navigation.instant
+
+
+    
+markdown_extensions:
+  - tables
+  - attr_list
+  - footnotes
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
+extra:
+  social:
+    - icon: fontawesome/brands/telegram
+      link: https://t.me/
+  analytics:
+    provider: custom
+    property: foobar 
+plugins:
+  # - git-authors
+  - git-revision-date-localized:
+      type: datetime
+      enable_creation_date: true
+  - search
+
+
+repo_url: https://github.com/sudoskys/AiDraw
+edit_uri: edit/main/docs/
+
+copyright: >
+        Copyright &copy; 非盈利开源文档

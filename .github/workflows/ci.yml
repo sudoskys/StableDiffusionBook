@@ -1,0 +1,40 @@
+name: ci
+on:
+  push:
+    branches:
+      - master
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+      - run: pip install mkdocs-material
+      - run: pip install mkdocs-git-authors-plugin
+      - run: pip install mkdocs-git-revision-date-localized-plugin
+      # - run: pip install mkdocs-git-committers-plugin-2
+      
+      # build docs
+      - run: mkdocs build --clean
+      # - run: mkdocs gh-deploy --force
+      - name: commit
+        env:
+          TZ: 'CST-8'
+          emails: ${{ secrets.GITHUB_EMAIL }}
+        run: |
+          sudo timedatectl set-timezone Asia/Shanghai
+          git config --global user.email emails
+          git config --global user.name GithubActionBot
+          datime=$(date "+%Y年%m月%d日 %H:%M")
+          echo "git commit: push something, $datime"
+          if [ -n "$(git status -s)" ];then
+              git add .
+              git commit -m "make:action push $datime" -a
+          fi
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
