@@ -10,6 +10,9 @@
 
 N卡显存 > 2GB
 
+9月份效果(10月份因为黑科技有大量增强！)
+
+![效果.png](https://s1.ax1x.com/2022/10/10/xtdNNR.png)
 ![效果](https://i.ibb.co/yd7SZ32/chartthin.png)
 
 
