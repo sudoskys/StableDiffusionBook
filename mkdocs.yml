@@ -44,7 +44,7 @@ plugins:
   - search
 
 
-repo_url: https://github.com/sudoskys/AiDraw
+repo_url: https://github.com/sudoskys/StableDiffusionBook
 edit_uri: edit/main/docs/
 
 copyright: >
