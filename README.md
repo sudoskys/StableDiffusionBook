@@ -1,3 +1,4 @@
+![gif](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/cover.png)
 ------------------------------------
 
 <p align="center">
