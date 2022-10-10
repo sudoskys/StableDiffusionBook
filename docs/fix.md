@@ -53,7 +53,7 @@
 
 `fullhqdone` = `full-latest` = NV全量模型
 
-!!!info **4GB版本 or 7GB ？**
+!!!info "**4GB版本 or 7GB ？**"
    *diffusion model* 训练会产生两个模型：当前权重和加权平均后优化的EMA（效果好）。
    7GB 的 ckpt 里包含了当前权重和EMA权重，pruned.py 删除了当前权重，留下了 EMA权重并重命名。
    所以差别不大
