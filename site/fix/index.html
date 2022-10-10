@@ -15,7 +15,7 @@
     
     
       
-        <title>调试 - AiDraw</title>
+        <title>调试修复 - AiDraw</title>
       
     
     
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              调试
+              调试修复
             
           </span>
         </div>
@@ -176,8 +176,20 @@
 
 
   <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      首页
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
     <a href="../set/" class="md-tabs__link">
-      安装
+      安装运行
     </a>
   </li>
 
@@ -191,7 +203,7 @@
 
   <li class="md-tabs__item">
     <a href="./" class="md-tabs__link md-tabs__link--active">
-      调试
+      调试修复
     </a>
   </li>
 
@@ -203,7 +215,7 @@
 
   <li class="md-tabs__item">
     <a href="../tool/" class="md-tabs__link">
-      工具
+      工具令牌
     </a>
   </li>
 
@@ -215,7 +227,7 @@
 
   <li class="md-tabs__item">
     <a href="../about/" class="md-tabs__link">
-      关于
+      关于文档
     </a>
   </li>
 
@@ -274,8 +286,23 @@
   
   
     <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        首页
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../set/" class="md-nav__link">
-        安装
+        安装运行
       </a>
     </li>
   
@@ -298,315 +325,9 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          调试
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
-        调试
+        调试修复
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#nv" class="md-nav__link">
-    如果使用NV模型
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    说明
-  </a>
-  
-    <nav class="md-nav" aria-label="说明">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#leaknv" class="md-nav__link">
-    对于 LeakNV 模型的说明
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    关键词权重
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    横条参数说明
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#bug" class="md-nav__link">
-    生成图片发生BUG的自救
-  </a>
-  
-    <nav class="md-nav" aria-label="生成图片发生BUG的自救">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#16" class="md-nav__link">
-    16系显卡生成黑/绿图
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#runtimeerror-sizes-of-tensors-must-match" class="md-nav__link">
-    RuntimeError Sizes of tensors must match
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    彩虹图
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    但是高分辨率下出怪图
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    优化
-  </a>
-  
-    <nav class="md-nav" aria-label="优化">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    进一步优化
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nv-layers" class="md-nav__link">
-    对NV模型更改 layers 忽略层数
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    模型超参数
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nvconfigyaml" class="md-nav__link">
-    NV模型的Config.yaml
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nv_1" class="md-nav__link">
-    NV模型消极令牌
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    采样器参数
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#xformers" class="md-nav__link">
-    xformers加速
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    进阶
-  </a>
-  
-    <nav class="md-nav" aria-label="进阶">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#textual-inversion" class="md-nav__link">
-    Textual Inversion
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#loopback" class="md-nav__link">
-    Loopback回环生成
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#prompt-matrix" class="md-nav__link">
-    Prompt matrix参数矩阵
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#outpainting" class="md-nav__link">
-    Outpainting外部修补
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#inpainting" class="md-nav__link">
-    Inpainting修补
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    全分辨率修复！
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#variations" class="md-nav__link">
-    Variations种子变化
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#styles" class="md-nav__link">
-    Styles风格模板
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#clip" class="md-nav__link">
-    Clip
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
-    渐变提示编辑
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#face-restoration" class="md-nav__link">
-    Face restoration三次元人脸修复
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#css" class="md-nav__link">
-    自定义.css
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#notificationmp3" class="md-nav__link">
-    notification.mp3 提示声音
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
-    运行
-  </a>
-  
-    <nav class="md-nav" aria-label="运行">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#4gb" class="md-nav__link">
-    4GB 显卡支持
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
-    不间断生产
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#png-info" class="md-nav__link">
-    图片信息 Png info
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -621,7 +342,7 @@
   
     <li class="md-nav__item">
       <a href="../tool/" class="md-nav__link">
-        工具
+        工具令牌
       </a>
     </li>
   
@@ -636,7 +357,7 @@
   
     <li class="md-nav__item">
       <a href="../about/" class="md-nav__link">
-        关于
+        关于文档
       </a>
     </li>
   
@@ -662,8 +383,9 @@
   </a>
 
 
+<h1 id="_1">调参</h1>
 <p>本节只针对 WebUi 展开教程。请多多关注About页面的社区获取最新进展和新闻。源教程来自：<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">1</a></sup></p>
-<h1 id="_1">准备模型</h1>
+<h1 id="_2">准备模型</h1>
 <p>本仓库不提供具体链接（版权警告），可以自行寻找或关注中文社区 t.me@StableDiffusion_CN_WIKI。</p>
 <p><a href="https://rentry.org/sdmodels">除了NV模型外的其他模型：Stable Diffusion Models</a></p>
 <h2 id="nv">如果使用NV模型</h2>
@@ -694,7 +416,7 @@
 └── SwinIR
 </code></pre></div>
 <p>启动 cli 有提示加载就 OK, 去设置选模型那里选喜欢的 <code>hypernetwork</code></p>
-<h2 id="_2">说明</h2>
+<h2 id="_3">说明</h2>
 <h3 id="leaknv">对于 LeakNV 模型的说明</h3>
 <p><code>animesfw-latest</code>即NV基线模型</p>
 <p><code>fullhqdone</code> = <code>full-latest</code> = NV全量模型</p>
@@ -702,7 +424,7 @@
 <p><em>diffusion model</em> 训练会产生两个模型：当前权重和加权平均后优化的EMA（效果好）。</p>
 <p>7GB 的 ckpt 里包含了当前权重和EMA权重，pruned.py 删除了当前权重，留下了 EMA权重并重命名。</p>
 <p>所以差别不大</p>
-<h3 id="_3">关键词权重</h3>
+<h3 id="_4">关键词权重</h3>
 <p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#attentionemphasis</p>
 <p>a (word) - 将权重提高 1.1 倍
 a ((word)) - 将权重提高 1.21 倍（= 1.1 * 1.1）
@@ -715,7 +437,7 @@ a (word) - 在提示中使用文字 () 字符</p>
 指定权重仅适用于 () 而不是 []</p>
 <p><strong>NV官方</strong></p>
 <p>在NV官方前端我们使用 <code>{}</code> 来指定权重。</p>
-<h3 id="_4">横条参数说明</h3>
+<h3 id="_5">横条参数说明</h3>
 <p><code>step</code> 迭代多少次, 取值和 sampling method 有关, DDIM 收敛较快, 见 Sampler vs. Steps Comparison (low to mid step counts) 我用 DDIM 取 20 够了.</p>
 <p><code>batch count/batch size</code> 决定生成的图片数量, 显存够就加 batch size, 不够就 batch count, 得到的图片数量是两者之积 (小显存还是只动 count 就好)</p>
 <p><code>sample method</code>  我无脑 DDIM, Eula 也挺好用? (带 a 的是 ancestral 的意思, step 增长出图不稳定)</p>
@@ -728,16 +450,24 @@ a (word) - 在提示中使用文字 () 字符</p>
 <h3 id="bug">生成图片发生BUG的自救</h3>
 <h4 id="16">16系显卡生成黑/绿图</h4>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Install-and-Run-on-NVidia-GPUs">Green or Black screen</a></p>
-<p>启动参数加 <code>--precision full --no-half</code>, 要省显存还能加 <code>--medvram</code></p>
+<p>启动参数加 <code>--precision full --no-half</code>, 要省显存还要加 <code>--medvram</code></p>
 <h4 id="runtimeerror-sizes-of-tensors-must-match">RuntimeError Sizes of tensors must match</h4>
 <p>(img2img) 如果你得到RuntimeError: Sizes of tensors must match，你需要改变输入图像的分辨率</p>
-<h4 id="_5">彩虹图</h4>
+<h4 id="_6">彩虹图</h4>
 <p>如果您的输出是混乱的彩虹混乱，则您的图像分辨率设置得太低</p>
-<h4 id="_6">但是高分辨率下出怪图</h4>
+<h4 id="_7">但是高分辨率下出怪图</h4>
 <p><a href="https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99#%E9%AB%98%E5%88%86%E8%BE%A8%E7%8E%87%E4%B8%8B%E5%87%BA%E6%80%AA%E5%9B%BE">读这里</a></p>
-<h3 id="_7">优化</h3>
+<h4 id="runtimeerror-unable-to-find-a-valid-cudnn-algorithm-to-run-convolution">RuntimeError: Unable to find a valid cuDNN algorithm to run convolution</h4>
+<p>生成报错解释：显存不足</p>
+<p>先检查 cuda 是否可用
+打开命令窗，输入 python 并分行输入
+import torch
+print(torch.cuda.is_available())</p>
+<p>然后不行就切换 <code>--lowvram</code> 低配。</p>
+<p>再不行：确保在浏览器中禁用硬件加速，并在出现内存不足错误时关闭任何可能占用 VRAM 的内容。</p>
+<h3 id="_8">优化</h3>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017">对NV模型靠近NV效果相关讨论，应该读一读！</a></p>
-<h4 id="_8">进一步优化</h4>
+<h4 id="_9">进一步优化</h4>
 <p>出图后，可以将喜欢的结果从右侧的输出选项卡拖回 img2img 以进行进一步迭代。</p>
 <h4 id="nv-layers"><strong>对NV模型更改 layers 忽略层数</strong></h4>
 <p>在 WebUi 的设置页面把 ignore last layers of clip mode 的横条改成 <code>2</code></p>
@@ -745,7 +475,7 @@ a (word) - 在提示中使用文字 () 字符</p>
 
 https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-last-layers-of-clip-model
 </code></pre></div>
-<h4 id="_9"><strong>模型超参数</strong></h4>
+<h4 id="_10"><strong>模型超参数</strong></h4>
 <p>如果你想达到 NovelAi 的效果，需要加 negative prompt（消极令牌）, 加载 hypernetwork （网络）和 vae.</p>
 <p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/1868#discussioncomment-3824077</p>
 <h4 id="nvconfigyaml"><strong>NV模型的Config.yaml</strong></h4>
@@ -755,7 +485,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
 <div class="highlight"><pre><span></span><code>lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry
 </code></pre></div>
 <p>from <a href="https://t.me/StableDiffusion_CN/6043">Here</a></p>
-<h4 id="_10"><strong>采样器参数</strong></h4>
+<h4 id="_11"><strong>采样器参数</strong></h4>
 <p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/1162</p>
 <h4 id="xformers"><strong>xformers加速</strong></h4>
 <p>加速推理,分辨率越高加速效果越好。</p>
@@ -764,7 +494,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
 <blockquote>
 <p>30 系显卡正常启动 --xformers, 其他显卡 --force-enable-xformers</p>
 </blockquote>
-<h3 id="_11">进阶</h3>
+<h3 id="_12">进阶</h3>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#attentionemphasis">英文原版</a></p>
 <h4 id="textual-inversion"><strong>Textual Inversion</strong></h4>
 <p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion</p>
@@ -795,7 +525,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
 <ul>
 <li>将模式（图片右下角）更改为"Upload mask"并为蒙版选择单独的黑白图像(white=inpaint)。</li>
 </ul>
-<h4 id="_12"><strong>全分辨率修复！</strong></h4>
+<h4 id="_13"><strong>全分辨率修复！</strong></h4>
 <p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#inpaint-at-full-resolution</p>
 <h4 id="variations"><strong>Variations种子变化</strong></h4>
 <p>Variation strength slider 和 Variation seed field允许您指定现有图片应更改多少以使其看起来不同。
@@ -813,7 +543,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
 - 将文本文件放入其中，每行都有相关描述</p>
 <div class="highlight"><pre><span></span><code>For example of what text files to use, see https://github.com/pharmapsychotic/clip-interrogator/tree/main/data. In fact, you can just take files from there and use them - just skip artists.txt because you already have a list of artists in artists.csv (or use that too, who&#39;s going to stop you). Each file adds one line of text to the final description. If you add &quot;.top3.&quot; to filename, for example, flavors.top3.txt, the three most relevant lines from this file will be added to the prompt (other numbers also work).
 </code></pre></div>
-<h4 id="_13"><strong>渐变提示编辑</strong></h4>
+<h4 id="_14"><strong>渐变提示编辑</strong></h4>
 <p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-editing</p>
 <h4 id="face-restoration"><strong>Face restoration三次元人脸修复</strong></h4>
 <p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#face-restoration</p>
@@ -826,7 +556,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
 </code></pre></div></p>
 <h4 id="notificationmp3">notification.mp3 提示声音</h4>
 <p>If an audio file named <code>notification.mp3</code> is present in <code>webui's root folder</code>, it will be played when the generation process completes.</p>
-<h3 id="_14">运行</h3>
+<h3 id="_15">运行</h3>
 <h4 id="4gb">4GB 显卡支持</h4>
 <p>针对具有低 VRAM 的 GPU 的优化。这应该可以在具有 4GB 内存的视频卡上生成 512x512 图像。</p>
 <p><code>--lowvram</code> 是 basujindal 对优化思想的重新实现。模型被分成模块，GPU内存中只保存一个模块；当另一个模块需要运行时，前一个模块将从 GPU 内存中删除。这种优化的性质使处理速度变慢——与我的 RTX 3090 上的正常操作相比，速度慢了大约 10 倍。</p>
@@ -834,7 +564,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
 <p>这种优化的实现不需要对原始的稳定扩散代码进行任何修改。</p>
 <p>经过 10/10 的优化，RTX2050的4GB 显卡也可以使用 <code>--medvram</code> 。</p>
 <p>显存下限是 2GB。</p>
-<h4 id="_15">不间断生产</h4>
+<h4 id="_16">不间断生产</h4>
 <p>在WebUi的生成键右击即可出现 不间断生成 的选项。</p>
 <h4 id="png-info">图片信息 Png info</h4>
 <p>生成的图片自带 令牌信息，拖放到 查看页面即可查看 。</p>
@@ -852,11 +582,11 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 10, 2022 12:48:52</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 10, 2022 13:01:46</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 10, 2022 12:48:52</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 10, 2022 13:01:46</span>
       
     
   </small>
@@ -886,7 +616,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
     <nav class="md-footer__inner md-grid" aria-label="页脚" >
       
         
-        <a href="../set/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 安装" rel="prev">
+        <a href="../set/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 安装运行" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -895,20 +625,20 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
               <span class="md-footer__direction">
                 上一页
               </span>
-              安装
+              安装运行
             </div>
           </div>
         </a>
       
       
         
-        <a href="../tool/" class="md-footer__link md-footer__link--next" aria-label="下一页: 工具" rel="next">
+        <a href="../tool/" class="md-footer__link md-footer__link--next" aria-label="下一页: 工具令牌" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              工具
+              工具令牌
             </div>
           </div>
           <div class="md-footer__button md-icon">
