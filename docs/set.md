@@ -1,12 +1,4 @@
-
-# AiDraw
-
-
-不是N卡的可以关了(因为用到了 Cuda)，除非想用 Cpu 跑。
-
-AMD卡 请读 [这里](https://rentry.org/ayymd-stable-diffustion-v1_4-guide)
-
-N卡显存 > 2GB 可以继续看。
+# 安装
 
 ## 安装 Stable-diffusion-webui 开源框架
 

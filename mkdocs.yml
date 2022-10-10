@@ -1,10 +1,11 @@
 site_name: AiDraw
 site_url: https://aidraw.dianas.cyou/
 nav:
-    - 安装: set.md
-    - 调试: fix.md
-    - 工具: tool.md
-    - 关于: about.md
+    - 首页: index.md
+    - 安装运行: set.md
+    - 调试修复: fix.md
+    - 工具令牌: tool.md
+    - 关于文档: about.md
 theme:
   name: material
   language: zh

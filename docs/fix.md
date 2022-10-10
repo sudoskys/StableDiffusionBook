@@ -1,5 +1,5 @@
 
-
+# 调参
 
 本节只针对 WebUi 展开教程。请多多关注About页面的社区获取最新进展和新闻。源教程来自：[^2]
 
@@ -108,7 +108,7 @@ a \(word\) - 在提示中使用文字 () 字符
 
 [Green or Black screen](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Install-and-Run-on-NVidia-GPUs)
 
-启动参数加 `--precision full --no-half`, 要省显存还能加 `--medvram`
+启动参数加 `--precision full --no-half`, 要省显存还要加 `--medvram`
 
 #### RuntimeError Sizes of tensors must match
 (img2img) 如果你得到RuntimeError: Sizes of tensors must match，你需要改变输入图像的分辨率
@@ -121,7 +121,18 @@ a \(word\) - 在提示中使用文字 () 字符
 
 [读这里](https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99#%E9%AB%98%E5%88%86%E8%BE%A8%E7%8E%87%E4%B8%8B%E5%87%BA%E6%80%AA%E5%9B%BE)
 
+#### RuntimeError: Unable to find a valid cuDNN algorithm to run convolution
 
+生成报错解释：显存不足
+
+先检查 cuda 是否可用
+打开命令窗，输入 python 并分行输入
+import torch
+print(torch.cuda.is_available())
+
+然后不行就切换 `--lowvram` 低配。
+
+再不行：确保在浏览器中禁用硬件加速，并在出现内存不足错误时关闭任何可能占用 VRAM 的内容。
 
 ### 优化
 
