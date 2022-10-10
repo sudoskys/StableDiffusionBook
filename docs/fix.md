@@ -139,15 +139,15 @@ print(torch.cuda.is_available())
 
 再不行：确保在浏览器中禁用硬件加速，并在出现内存不足错误时关闭任何可能占用 VRAM 的内容。
 
-### 优化
+## 优化
 
 [对NV模型靠近NV效果相关讨论，应该读一读！](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017)
 
-#### 进一步优化
+### 进一步优化
 
 出图后，可以将喜欢的结果从右侧的输出选项卡拖回 img2img 以进行进一步迭代。
 
-#### **对NV模型更改 layers 忽略层数**
+### **对NV模型更改 layers 忽略层数**
 
 
 
@@ -159,7 +159,7 @@ CLIP is a very advanced neural network that transforms your prompt text into a n
 https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-last-layers-of-clip-model
 ```
 
-#### **模型超参数**
+### **模型超参数**
 
 如果你想达到 NovelAi 的效果，需要加 negative prompt（消极令牌）, 加载 hypernetwork （网络）和 vae.
 
@@ -169,7 +169,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/1868#discuss
 
 NVleak里边有个 config.yaml ， 将其改名为 `模型前缀.yaml` 和模型丢在一起就能加载啦, 效果还是有提升的. 
 
-#### **NV模型消极令牌**
+### **NV模型消极令牌**
 
 使用以下令牌削除水印和文字内容
 
@@ -179,11 +179,11 @@ lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer
 
 from [Here](https://t.me/StableDiffusion_CN/6043)
 
-#### **采样器参数**
+### **采样器参数**
 
 https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/1162
 
-#### **xformers加速**
+### **xformers加速**
 
 加速推理,分辨率越高加速效果越好。
 
@@ -193,11 +193,11 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/1162
 
 >30 系显卡正常启动 --xformers, 其他显卡 --force-enable-xformers
 
-### 进阶
+## 进阶
 
 [英文原版](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#attentionemphasis)
 
-#### **Textual Inversion**
+### **Textual Inversion**
 
 https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion
 
@@ -211,7 +211,7 @@ Batch 数设置控制获得多少次迭代
 
 通常，在执行此操作时，您会自己为下一次迭代选择许多图像中的一个，因此此功能的有用性可能值得怀疑，但反正我已经设法获得了一些我无法获得的非常好的输出。
 
-#### **Prompt matrix参数矩阵**
+### **Prompt matrix参数矩阵**
 
 使用 | 分隔多个Tag，程序将为它们的每个组合生成一个图像。 例如，如果使用 `a busy city street in a modern city|illustration|cinematic lighting` ，则可能有四种组合（始终保留提示的第一部分）：
 
@@ -220,7 +220,7 @@ Batch 数设置控制获得多少次迭代
 - a busy city street in a modern city, cinematic lighting
 - a busy city street in a modern city, illustration, cinematic lighting
 
-#### **Outpainting外部修补**
+### **Outpainting外部修补**
 
 Outpainting 扩展原始图像并修复创建的空白空间。
 您可以在底部的 img2img 选项卡中找到该功能，在 Script -> Poor man's outpainting 下。
@@ -229,7 +229,7 @@ Outpainting 扩展原始图像并修复创建的空白空间。
 Outpainting, unlike normal image generation, seems to profit very much from large step count. A recipe for a good outpainting is a good prompt that matches the picture, sliders for denoising and CFG scale set to max, and step count of 50 to 100 with Euler ancestral or DPM2 ancestral samplers.
 ```
 
-#### **Inpainting修补**
+### **Inpainting修补**
 
 在 img2img 选项卡中，在图像的一部分上绘制蒙版，该部分将被修复。
 
@@ -241,11 +241,11 @@ Outpainting, unlike normal image generation, seems to profit very much from larg
 
 - 将模式（图片右下角）更改为"Upload mask"并为蒙版选择单独的黑白图像(white=inpaint)。
 
-#### **全分辨率修复！**
+### **全分辨率修复！**
 https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#inpaint-at-full-resolution
 
 
-#### **Variations种子变化**
+### **Variations种子变化**
 
 Variation strength slider 和 Variation seed field允许您指定现有图片应更改多少以使其看起来不同。
 在最大强度下，您将获得带有变异种子的图片，至少 - 带有原始种子的图片（使用先前采样器时除外）。
@@ -258,7 +258,7 @@ Variation strength slider 和 Variation seed field允许您指定现有图片应
 
 要删除样式，请从 styles.csv 中手动将其删除并重新启动程序。
 
-#### **Clip**
+### **Clip**
 
 CLIP 可以从图像中提取令牌。
 
@@ -274,7 +274,7 @@ CLIP 可以从图像中提取令牌。
 For example of what text files to use, see https://github.com/pharmapsychotic/clip-interrogator/tree/main/data. In fact, you can just take files from there and use them - just skip artists.txt because you already have a list of artists in artists.csv (or use that too, who's going to stop you). Each file adds one line of text to the final description. If you add ".top3." to filename, for example, flavors.top3.txt, the three most relevant lines from this file will be added to the prompt (other numbers also work).
 ```
 
-#### **渐变提示编辑**
+### **渐变提示编辑**
 
 https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-editing
 
@@ -282,7 +282,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-edi
 
 https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#face-restoration
 
-#### 自定义.css
+### 自定义.css
 
 创建一个名为user.cssnear的文件webui.py并将自定义 CSS 代码放入其中。
 
@@ -292,14 +292,14 @@ For example, this makes the gallery taller:
     min-height: 768px;
 }
 ```
-#### notification.mp3 提示声音
+### notification.mp3 提示声音
 
 
 If an audio file named `notification.mp3` is present in `webui's root folder`, it will be played when the generation process completes.
 
-### 运行
+## 运行
 
-#### 4GB 显卡支持
+### 4GB 显卡支持
 
 针对具有低 VRAM 的 GPU 的优化。这应该可以在具有 4GB 内存的视频卡上生成 512x512 图像。
 
@@ -313,11 +313,11 @@ If an audio file named `notification.mp3` is present in `webui's root folder`, i
 
 显存下限是 2GB。
 
-#### 不间断生产
+### 不间断生产
 
 在WebUi的生成键右击即可出现 不间断生成 的选项。
 
-#### 图片信息 Png info
+### 图片信息 Png info
 
 生成的图片自带 令牌信息，拖放到 查看页面即可查看 。
 
