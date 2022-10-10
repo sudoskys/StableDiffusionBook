@@ -18,14 +18,52 @@ N卡显存 > 2GB
 
 #### 安装
 
-[Dependencies](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Dependencies)
+先阅读官方Wiki的内容。
 
-**然后看这个**
-https://github.com/AUTOMATIC1111/stable-diffusion-webui#installation-and-running
+[官方给定的依赖目录](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Dependencies)
 
-**安装的问题看**
+安装教程在仓库的[这个位置](https://github.com/AUTOMATIC1111/stable-diffusion-webui#installation-and-running)
+
+**安装的问题除了本文档还可以看**
 https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki
 
+**Windows**
+
+在Windows上自动安装
+
+- 安装[Python 3.10.6](https://www.python.org/downloads/windows/)，选中“Add Pythone to PATH”
+- 安装[git](https://git-scm.com/download/win)
+- 下载webui存储库，运行`git clonehttps://github.com/AUTOMATIC1111/stable-diffusion-webui.git`
+
+- 将`model.ckpt`放在`models`目录中,请参见[依赖项](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Dependencies)或者向后看
+- （可选）将`GFPGANv1.4.pth`放在基本目录中，旁边是webui.py
+- 以普通非管理员用户身份从Windows资源管理器运行`webui-user.bat`
+
+**Linux 安装**
+先安装依赖
+```bash
+# Debian-based:
+sudo apt install wget git python3 python3-venv
+# Red Hat-based:
+sudo dnf install wget git python3
+# Arch-based:
+sudo pacman -S wget git python3
+```
+一键脚本
+```bash
+bash <(wget -qO- https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusion-webui/master/webui.sh)
+```
+完毕。
+!!! info
+    其实如果可以用 `anaconda` 尽量用，创建一个Python 3.10.6的虚拟环境
+
+    ```bash
+    conda create -n aidraw python=3.10.6
+
+    conda activate aidraw
+
+    COMMANDLINE_ARGS="--medvram" REQS_FILE="requirements.txt" python launch.py
+    ```
 
 #### 安装/运行自助
 
