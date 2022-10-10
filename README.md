@@ -10,10 +10,20 @@
 
 <h2 align="center">StableDiffusionBook</h2>
 
-关于 Ai 绘画的 Wiki ，翻译，教程，相关资源。
+关于 Ai 绘画的 Wiki ，翻译，教程，相关资源，请阅读 http://stable-diffusion-book.vercel.app/
 
-内容很少。
+## 需求
+
+N卡显存 > 2GB，内存大于 4GB。
+
+
+
 
 ## 改进
 
 如果你发现了本文的的错误或不足，欢迎向[项目仓库](https://github.com/sudoskys/StableDiffusionBook/)提 issue 和 PR
+
+
+
+
+![效果.png](https://s1.ax1x.com/2022/10/10/xtdNNR.png)
