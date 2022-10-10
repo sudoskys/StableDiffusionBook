@@ -224,7 +224,11 @@ Torch active/reserved: 1975/2144 MiB, Sys VRAM: 7890/8134 MiB (93.61%)
 
 此教程来自 sanae[^1]
 
+**阅读前请读最新的教程[NovelAI 原版网页UI+后端部署教程](https://telegra.ph/NovelAI-%E5%8E%9F%E7%89%88%E7%BD%91%E9%A1%B5UI%E5%90%8E%E7%AB%AF%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B-10-10)**
+
 ### 硬件需求
+
+建议显存低于24G的就不要尝试使用官方版本前后端.
 
 一台拥有一张至少有11G 显存的NVIDIA GPU的linux系统的x86设备。
 
