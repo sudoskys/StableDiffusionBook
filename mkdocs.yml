@@ -10,7 +10,8 @@ theme:
   name: material
   language: zh
   palette:
-    primary: indigo
+    primary: teal
+    accent: teal
   features:
     - navigation.tabs
     - toc.integrate
