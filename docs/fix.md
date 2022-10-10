@@ -5,7 +5,8 @@
 
 # 准备模型
 
-自行寻找
+本仓库不提供具体链接（版权警告），可以自行寻找或关注中文社区 t.me@StableDiffusion_CN_WIKI。
+
 
 [除了NV模型外的其他模型：Stable Diffusion Models](https://rentry.org/sdmodels)
 
@@ -46,6 +47,21 @@
 
 ## 说明
 
+### 对于 LeakNV 模型的说明
+
+
+`animesfw-latest`即NV基线模型
+
+`fullhqdone` = `full-latest` = NV全量模型
+
+**4GB版本 or 7GB ？**
+
+*diffusion model* 训练会产生两个模型：当前权重和加权平均后优化的EMA（效果好）。
+
+7GB 的 ckpt 里包含了当前权重和EMA权重，pruned.py 删除了当前权重，留下了 EMA权重并重命名。
+
+所以差别不大
+
 ### 关键词权重
 
 https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#attentionemphasis
@@ -77,13 +93,43 @@ a \(word\) - 在提示中使用文字 () 字符
 
 `cfg scale` 符合 prompt 的程度, 值越高越会字面看待 prompt, 低则给模型较大的发挥空间, 但是实际模型表现上来看 cfg scale 低 (6-8) 饱和度低, 偏线稿, 偏杂乱, 高 (18-22) 则饱和度偏高, 偏 CG 风格.
 
+>过高的 CFG 会引起颜色失真，CFG 应该在 5-15 之间
+
 `denoise strength` img2img 专属参数, 从 0 到 1 取值, 值越高 AI 对原图的参考程度就越低 (同时增加迭代次数), 我个人喜欢低 cfg 高 denoise 重绘图, 高 cfg 低 denoise 改细节.
 
 [RedditAbout](https://www.reddit.com/r/StableDiffusion/comments/xbeyw3/can_anyone_offer_a_little_guidance_on_the/)
 
+
+
+
+### 生成图片发生BUG的自救
+
+#### 16系显卡生成黑/绿图
+
+[Green or Black screen](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Install-and-Run-on-NVidia-GPUs)
+
+启动参数加 `--precision full --no-half`, 要省显存还能加 `--medvram`
+
+#### RuntimeError Sizes of tensors must match
+(img2img) 如果你得到RuntimeError: Sizes of tensors must match，你需要改变输入图像的分辨率
+
+#### 彩虹图
+
+如果您的输出是混乱的彩虹混乱，则您的图像分辨率设置得太低
+
+#### 但是高分辨率下出怪图
+
+[读这里](https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99#%E9%AB%98%E5%88%86%E8%BE%A8%E7%8E%87%E4%B8%8B%E5%87%BA%E6%80%AA%E5%9B%BE)
+
+
+
 ### 优化
 
 [对NV模型靠近NV效果相关讨论，应该读一读！](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017)
+
+#### 进一步优化
+
+出图后，可以将喜欢的结果从右侧的输出选项卡拖回 img2img 以进行进一步迭代。
 
 #### **对NV模型更改 layers 忽略层数**
 
@@ -121,6 +167,15 @@ from [Here](https://t.me/StableDiffusion_CN/6043)
 
 https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/1162
 
+#### **xformers加速**
+
+加速推理,分辨率越高加速效果越好。
+
+[Windows](https://github.com/C43H66N12O12S2/stable-diffusion-webui/releases) (30 系之外要自己编译)
+
+自己编译指路 [wiki/Xformers](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Xformers)
+
+>30 系显卡正常启动 --xformers, 其他显卡 --force-enable-xformers
 
 ### 进阶
 

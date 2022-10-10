@@ -1,9 +1,25 @@
 
+# AiDraw
+
+
+不是N卡的可以关了(因为用到了 Cuda)，除非想用 Cpu 跑。
+
+AMD卡 请读 [这里](https://rentry.org/ayymd-stable-diffustion-v1_4-guide)
+
+N卡显存 > 2GB 可以继续看。
+
 ## 安装 Stable-diffusion-webui 开源框架
 
 此教程参考了 crosstyan[^2]
 
 仓库地址 https://github.com/AUTOMATIC1111/stable-diffusion-webui
+
+#### 硬件要求
+
+N卡显存 > 2GB
+
+![效果](https://i.ibb.co/yd7SZ32/chartthin.png)
+
 
 #### 安装
 
@@ -16,7 +32,9 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui#installation-and-running
 https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki
 
 
-#### 安装自助
+#### 安装/运行自助
+
+翻译整理自[^3]
 
 仓库的一键安装会创建 虚拟环境，然后启动 [launch.py](https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/launch.py)
 
@@ -28,15 +46,144 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki
 git 报错
 HTTP_PROXY 和 HTTPS_PROXY 环境变量，或者使用clash 的tun模式. 或者把 git clone 的仓库源换成 huggingface..
 
-**时间**
+其他依赖报错也需要设置代理或者使用镜像，不然特别慢的。
 
-设镜像或者挂代理，依赖项 >2GB,请做好准备，而且对于Windows,**依赖默认安装在C盘**！
+**时间花销**
+
+设镜像或者挂代理，**依赖项 >2GB**,请做好准备，而且对于Windows,**依赖默认安装在C盘**！
+
+**空格**
+
+确保您的文件夹路径没有空格。
+
+**驱动**
+确保您拥有可以运行的最新CUDA 工具包和 GPU 驱动程序
+
+**Python呢？**
+如果您的 Python 版本不在 PATH 中，则在文件夹中创建或修改 webui.settings.bat 添加行 `set PYTHON=python `来说明 Python 可执行文件的完整路径（请看下面的参数说明！
+
+**环境**
+安装程序会创建一个 python 虚拟环境，因此如果你在安装之前安装了一个模块，那么任何已安装的模块都不会影响你
+
+如果需要防止创建虚拟环境使用系统 python，编辑 `webui.bat` 替换 `setVENV_DIR=venv`为`set VENV_DIR=`（见下面参数
+
+**生成图片问题见下一节**
+
 
 #### 更新框架
 
 Git拉取请使用 `git pull` 更新。
 
 如果是整合或者其他，请向上游（谁分发的）索取。
+
+#### 启动(但是必须首先下载一个4GB模型)
+
+模型本教程还没有提供，你可以去关于页面找到 `中文社区` 的频道，里面应该有你想要的。
+
+**按照后面的教程装载入模型后**，Win 运行 `webui.bat`
+
+Linux 用户采用
+
+```
+COMMANDLINE_ARGS="--medvram --always-batch-cond-uncond" REQS_FILE="requirements.txt" python launch.py
+```
+
+**命令参数 from Wiki**
+
+首先，你可以运行 `python webui.py --help` 查看所有命令参数。
+
+Tip:
+自定义程序运行方式的推荐方法是编辑webui-user.bat(Windows) 和webui-user.sh(Linux)
+
+*在线运行*
+
+- 使用`--share`选项在线运行
+
+你会得到一个 `xxx.app.gradio` 链接，这是在协作中使用该程序的预期方式，而且你可以使用参数为所述 `gradio` 共享实例设置身份验证：`--gradio-auth username:password`
+可选择提供多组用户名和密码，以逗号分隔。
+
+- 端口转发
+
+参数`--listen`使服务器监听网络连接。
+
+这将允许本地网络上的计算机访问 UI，如果配置端口转发，公网上的计算机也可以访问（当然你得有公网
+
+- 监听端口
+参数 `--port xxxx` 使服务器监听特定端口。
+
+低于 1024 的所有端口都需要 `root`权限，因此建议使用高于 1024 的端口。
+
+如果可用，则默认为端口 7860
+
+*环境定制*
+
+`set PYTHON=b:/soft/Python310/Python.exe`
+`set PYTHON` 允许设置自定义 Python 路径
+
+
+`set VENV_DIR=C:\run\var\run`
+set VENV_DIR允许您选择虚拟环境的目录。默认为`venv`。特殊值`-`在不创建虚拟环境的情况下运行脚本。
+
+`set COMMANDLINE_ARGS=--ckpt a.ckpt`
+set COMMANDLINE_ARGS设置命令行参数webui.py运行
+示例使用模型a.ckpt而不是model.ckpt
+
+
+**优化命令参数**
+
+来自 [官方Wiki](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Optimizations)
+
+
+| 命令行参数    | 解释 |
+| ----------- | ----------------------------------------- |
+| `--xformers`                    | 使用[xformers](https://github.com/facebookresearch/xformers)库。极大地改善了内存消耗和速度。Windows 版本安装由[C43H66N12O12S2 维护](https://github.com/C43H66N12O12S2/stable-diffusion-webui/releases)的二进制文件|
+| `--force-enable-xformers`       | 无论程序是否认为您可以运行它，都启用 xformers。不要报告你运行它的错误。     |
+| `--opt-split-attention`         | Cross attention layer optimization 优化显着减少了内存使用，几乎没有成本（一些报告改进了性能）。黑魔法。默认情况下`torch.cuda`，包括 NVidia 和 AMD 卡。|
+| `--disable-opt-split-attention` | 禁用上面的优化|
+| `--opt-split-attention-v1`      | 使用上述优化的旧版本，它不会占用大量内存（它将使用更少的 VRAM，但会限制您可以制作的最大图片大小）。|
+| `--medvram`                     | 通过将稳定扩散模型分为三部分，使其消耗更少的VRAM，即cond（用于将文本转换为数字表示）、first_stage（用于将图片转换为潜在空间并返回）和unet（用于潜在空间的实际去噪），并使其始终只有一个在VRAM中，将其他部分发送到CPU RAM。降低性能，但只会降低一点-除非启用实时预览。|
+| `--lowvram`                     | 对上面更彻底的优化，将 unet 拆分成多个模块，VRAM 中只保留一个模块,破坏性能|
+| `*do-not-batch-cond-uncond`     | 防止在采样过程中对正面和负面提示进行批处理，这基本上可以让您以 0.5 批量大小运行，从而节省大量内存。降低性能。不是命令行选项，而是使用`--medvram`or 隐式启用的优化`--lowvram`。   |
+| `--always-batch-cond-uncond`    | 禁用上述优化。只有与`--medvram`或`--lowvram`一起使用才有意义 |
+| `--opt-channelslast`            | 更改 torch 内存类型，以稳定扩散到最后一个通道,效果没有仔细研究。|
+
+
+#### 令牌
+
+令牌请读后面的内容，这里给出一个实例来供你完成测试
+
+顶上那个是选择模型，暂时用不到。
+
+**第一个框是正向令牌**
+
+可以使用 颜文字 和 emoji，使用 () 来增强权重，具体规则见后
+
+```
+((masterpiece)), best quality, illustration, 1 girl, beautiful,beautiful detailed sky, catgirl,beautiful detailed water, cinematic lighting, dramatic angle, Grey T-Shirt, (few clothes),(yuri),(medium breasts),white hair,cat ears,masturbation,bare shoulders ,(gold eyes),wet clothes
+```
+
+**第二个框是反向令牌**
+
+过滤这些Tag
+
+```
+lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, bad feet
+```
+
+**第一次调整参数**
+
+选定分辨率参数，越大越慢越卡。
+
+生成后的结果结尾类似为
+```
+Steps: 28, Sampler: Euler a, CFG scale: 7, Seed: 2706937631, Size: 1024x512, Model hash: 925997e9
+```
+通过一样的参数和 Seed(-1就是随机)，可以生产一样的图像，这用于微调！
+还有占用信息
+```
+Time taken: 33.97s
+Torch active/reserved: 1975/2144 MiB, Sys VRAM: 7890/8134 MiB (93.61%)
+```
 
 ------
 
@@ -183,8 +330,14 @@ for x in output:
     f.write(img)
 ```
 
+## 使用 Colab 搭建
+
+
+请关注中文社区 t.me@StableDiffusion_CN_WIKI
+
 [^1]:[NovelAI原版部署教程](https://telegra.ph/NovelAI%E5%8E%9F%E7%89%88%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B-10-07)
 
 [^2]:[关于 AUTOMATIC1111 /stable-diffusion-webui 的 FAQ:](https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99)
 
 
+[^3]:[Wiki2](https://rentry.co/voldy)
