@@ -53,13 +53,10 @@
 
 `fullhqdone` = `full-latest` = NV全量模型
 
-**4GB版本 or 7GB ？**
-
-*diffusion model* 训练会产生两个模型：当前权重和加权平均后优化的EMA（效果好）。
-
-7GB 的 ckpt 里包含了当前权重和EMA权重，pruned.py 删除了当前权重，留下了 EMA权重并重命名。
-
-所以差别不大
+!!!info **4GB版本 or 7GB ？**
+    *diffusion model* 训练会产生两个模型：当前权重和加权平均后优化的EMA（效果好）。
+    7GB 的 ckpt 里包含了当前权重和EMA权重，pruned.py 删除了当前权重，留下了 EMA权重并重命名。
+    所以差别不大
 
 ### 关键词权重
 
@@ -67,14 +64,22 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#attentione
 
 
 a (word) - 将权重提高 1.1 倍
+
 a ((word)) - 将权重提高 1.21 倍（= 1.1 * 1.1）
+
 a [word] - 将权重减少 1.1 倍
+
 a (word:1.5) - 将权重提高 1.5 倍
+
 a (word:0.25) - 将权重减少 4 倍 (= 1 / 0.25)
+
 a \(word\) - 在提示中使用文字 () 字符
 
+
 使用 ()，可以像这样指定权重：(text:1.4)
+
 如果未指定权重，则假定为 1.1
+
 指定权重仅适用于 () 而不是 []
 
 
