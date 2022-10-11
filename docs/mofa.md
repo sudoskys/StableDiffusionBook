@@ -1,9 +1,98 @@
-# 工具速查
+# 调参魔法
+
+这节会介绍 令牌参数 和 相关的法杖资源。
+
+## 魔法入门
+
+请先在前面了解一下魔杖的参数。
+
+### 令牌权重
+
+调参魔法的一个基本技能是设置权重。
+
+[Wiki:魔导师介绍](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#attentionemphasis)
+
+具体规则如下
+
+```
+a (word) - 将权重提高 1.1 倍
+
+a ((word)) - 将权重提高 1.21 倍（= 1.1 * 1.1），乘法的关系。
+
+a [word] - 将权重减少 1.1 倍
+
+a (word:1.5) - 将权重提高 1.5 倍
+
+a (word:0.25) - 将权重减少 4 倍 (= 1 / 0.25)
+
+a \(word\) - 在提示中使用文字 () 字符
+```
+
+使用 `()`，可以像这样指定权重：(text:1.4)
+
+如果未指定权重，则假定为 `1.1`
+
+指定权重仅适用于 `()` 而不是 `[]`，注意 `[]` 是降低权重
 
 
-[法术书](https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml#)
+!!! info
+    **NV官方**
 
-### 调参简单大纲
+    在NV官方前端我们使用 `{}` 来指定权重。
+
+### 消极令牌
+
+魔杖会在生成时**拒绝消极令牌有关的内容**。
+
+比如使用以下令牌削除水印和文字内容
+
+```
+lowres, bad anatomy, bad hands, text, error, missing fingers, 
+extra digit, fewer digits, cropped, worst quality, low quality, 
+normal quality, jpeg artifacts, signature, watermark, username, blurry
+```
+
+还如这个例子
+
+```
+ugly, fat, obese, chubby, (((deformed))), [blurry], bad anatomy, 
+disfigured, poorly drawn face, mutation, mutated, (extra_limb), 
+(ugly), (poorly drawn hands fingers), messy drawing, morbid, 
+mutilated, tranny, trans, trannsexual, [out of frame], (bad proportions), 
+(poorly drawn body), (poorly drawn legs), worst quality, low quality, 
+normal quality, text, censored, gown, latex, pencil
+```
+
+### 重现令牌
+
+对于没有压缩的原图，我们可以将文件拖入 `PNG Info` 选项卡，进行参数查看。
+
+### 逆向令牌
+
+这里有一些 **Image 逆向令牌服务**，可以从图片中提取相关令牌参数，不一定准确。
+
+[LenKiMo_Bot](https://t.me/LenKiMo_Bot)
+
+[DeepDanbooru](https://github.com/KichangKim/DeepDanbooru)
+
+### 已知令牌组合
+
+你可以访问以下传送门获取一些优秀的令牌实例！（当然，中文社区的测试群有**大量素材**，一分钟20次）
+
+[LenKiMo_Bot](https://t.me/LenKiMo_Bot)
+
+[DeepDanbooru](https://github.com/KichangKim/DeepDanbooru)
+
+### **种子调试**
+
+在相同 Step ，cfg ，Seed,参数令牌（） 的情况下，
+
+## 工具速查
+
+
+[令牌法术全典](https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml#)
+
+## 方位调参
 
 竖着看
 
@@ -16,6 +105,9 @@
 |状态|人物事件地|||
 |姿势位||||
 |镜头位||||
+
+
+## 魔杖参数
 
 还有一个 `参数`
 

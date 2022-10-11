@@ -14,7 +14,7 @@ SD的官方仓库地址为 https://github.com/AUTOMATIC1111/stable-diffusion-web
 WebUi 最低能用N卡显存 > 2GB
 WebUi 最低可用N卡显存 > 4GB
 
-在 开始前，打开CMD,输入 `nvidia-smi` 看看你是不是正常驱动显卡。
+在 开始前，打开CMD， 输入 `nvidia-smi` 看看你是不是正常驱动显卡。
 
 
 ![效果.png](https://s1.ax1x.com/2022/10/10/xtdNNR.png)

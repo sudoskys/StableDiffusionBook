@@ -3,9 +3,9 @@ site_url: https://stable-diffusion-book.vercel.app/
 nav:
     - 首页: index.md
     - 安装运行: set.md
-    - 调试修复: fix.md
-    - 工具令牌: tool.md
-    - 次元展开: about.md
+    - 模型技法: fix.md
+    - 调参魔法: mofa.md
+    - 社区支持: about.md
 theme:
   name: material
   language: zh

@@ -34,11 +34,6 @@ https://pan.t-satoru.top/ode5/Share/
 #### 相关服务
 
 
-**Image 逆向令牌**
-
-[LenKiMo_Bot](https://t.me/LenKiMo_Bot)
-
-[DeepDanbooru](https://github.com/KichangKim/DeepDanbooru)
 
 **Prompts 令牌括号转换**
 

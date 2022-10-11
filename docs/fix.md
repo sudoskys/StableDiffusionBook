@@ -1,13 +1,21 @@
 
-# 调参与模型
+# 模型技法
 
-本节只针对 NV 模型展开教程。请多多关注 About 页面的社区获取最新进展和新闻。源教程来自：[^2]
 
-!!! info
-    本仓库不提供具体链接（版权警告），可以自行寻找或关注中文社区 t.me@StableDiffusion_CN_WIKI。
+关于魔杖的优化方案，让它更好用。
+
+注意要经常从远端代码库拉取代码洗礼魔杖。
+
+>本节只针对 NV 模型展开教程。请多多关注 About 页面的社区获取最新进展和新闻。源教程来自：[^2]
+
+>如何创造令牌和参数相关，请看下一节：魔法创造！
+
+!!! info "版权"
+    本仓库不提供具体链接（版权警告），可以看页面下标或关注中文社区 t.me@StableDiffusion_CN_WIKI。
 
 
 [除了NV模型外的其他模型：Stable Diffusion Models](https://rentry.org/sdmodels)
+
 
 ## NV 模型
 
@@ -40,6 +48,30 @@
 └── SwinIR
 ```
 
+其中，hypernetworks 和 Stable-diffusion 是需要新建的文件夹。其他文件根据规则重命名。
+
+final-pruned.ckpt即 stableckpt/animefull-final-pruned/model.ckpt (pruned)，模型主文件。
+
+final-pruned.vae.pt 即 stableckpt/animevae.pt，用于稳定风格。
+
+final-pruned.yaml 即 model.ckpt 同文件夹的 stableckpt/animefull-final-pruned/config.yaml，记载额外的参数。
+
+hypernetworks 包含了 stableckpt/modules/modules 里的文件，是风格相关的数据集。
+
+![图片](https://github.dev/sudoskys/StableDiffusionBook/blob/main/resource/models.jpg)
+
+??? info "附内容"
+    - stableckpt/ - Stable Diffusion checkpoints
+    - animefull-latest - The model NovelAI uses in production
+    - workspace/ - Code used to train/run/finetune models
+    - sd-private.tar.zst - Stuff to train Stable Diffusion
+    - github/ - Code taken from GitHub. CREDENTIALS SCRUBBED
+    - novelai/ - From NovelAI org
+    - *.tar.zst Archived git repos, public AND PRIVATE
+    - aboutus.gpg - Our public GPG key
+    - sha256sum - SHA256 sums of every file
+    - sha256sum.sig Detached signature for the sums, signed by our GPG key
+
 启动 cli 有提示加载就 OK, 去设置选模型那里选喜欢的 `hypernetwork`
 
 
@@ -49,28 +81,24 @@
 ### 对于 LeakNV 模型的说明
 
 
-`animesfw-latest`即NV基线模型
+`animesfw-latest` 即NV 基线模型
 
-`fullhqdone` = `full-latest` = NV全量模型
+`animefull-final-pruned` = `full-latest` = NV 全量模型(成人内容)
 
 
 !!!info "**4GB版本 or 7GB ？**"
         *diffusion model* 训练会产生两个模型：当前权重和加权平均后优化的EMA（效果好）
         7GB 的 ckpt 里包含了当前权重和EMA权重，pruned.py 删除了当前权重，留下了 EMA权重并重命名。所以差别不大。
 
-**详细介绍**
 
+**详细介绍**
 
 <iframe src="//player.bilibili.com/player.html?aid=688965561&bvid=BV1Gm4y1A7VM&cid=857942294&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 BV1Gm4y1A7VM
 
-### Vae权重
+### Vae 权重
 
-如果需要模拟NV,务必使用
-
-```
-│   ├── final-pruned.vae.pt -> novelai 的 animevae.pt
-```
+如果需要更好模拟NV,务必使用 `animevae.pt`
 
 ### 半精度/全精度
 
@@ -78,34 +106,7 @@ float32 用于较旧的 gpus，或者你想要 100% 的精度
 
 两者的输出应该几乎相同，主要区别在于大小和支持它的 GPU。
 
-### 关键词权重
 
-https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#attentionemphasis
-
-
-a (word) - 将权重提高 1.1 倍
-
-a ((word)) - 将权重提高 1.21 倍（= 1.1 * 1.1）
-
-a [word] - 将权重减少 1.1 倍
-
-a (word:1.5) - 将权重提高 1.5 倍
-
-a (word:0.25) - 将权重减少 4 倍 (= 1 / 0.25)
-
-a \(word\) - 在提示中使用文字 () 字符
-
-
-使用 ()，可以像这样指定权重：(text:1.4)
-
-如果未指定权重，则假定为 1.1
-
-指定权重仅适用于 () 而不是 []
-
-
-**NV官方**
-
-在NV官方前端我们使用 `{}` 来指定权重。
 
 ### 横条参数说明
 
@@ -121,7 +122,8 @@ a \(word\) - 在提示中使用文字 () 字符
 
 `denoise strength` img2img 专属参数, 从 0 到 1 取值, 值越高 AI 对原图的参考程度就越低 (同时增加迭代次数), 我个人喜欢低 cfg 高 denoise 重绘图, 高 cfg 低 denoise 改细节.
 
-[RedditAbout](https://www.reddit.com/r/StableDiffusion/comments/xbeyw3/can_anyone_offer_a_little_guidance_on_the/)
+
+[一个指南：RedditAbout](https://www.reddit.com/r/StableDiffusion/comments/xbeyw3/can_anyone_offer_a_little_guidance_on_the/)
 
 
 
@@ -158,7 +160,7 @@ print(torch.cuda.is_available())
 
 再不行：确保在浏览器中禁用硬件加速，并在出现内存不足错误时关闭任何可能占用 VRAM 的内容。
 
-## 优化
+## 优化靠近 NV
 
 [对NV模型靠近NV效果相关讨论，应该读一读！](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017)
 
@@ -207,7 +209,7 @@ from [Here](https://t.me/StableDiffusion_CN/6043)
 
 ### **采样器参数**
 
-https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/1162
+请阅读 https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/1162
 
 ### **xformers加速**
 
@@ -331,22 +333,28 @@ If an audio file named `notification.mp3` is present in `webui's root folder`, i
 
 `--lowvram` 是 basujindal 对优化思想的重新实现。模型被分成模块，GPU内存中只保存一个模块；当另一个模块需要运行时，前一个模块将从 GPU 内存中删除。这种优化的性质使处理速度变慢——与我的 RTX 3090 上的正常操作相比，速度慢了大约 10 倍。
 
-`--medvram` 是另一个优化，通过不在同一批次中处理条件和无条件去噪，可以显着减少 VRAM 的使用。
+`--medvram` 是另一个优化，通过不在同一批次中处理条件和无条件去噪，可以显着减少 VRAM 的使用。这种优化的实现不需要对原始的稳定扩散代码进行任何修改。
 
-这种优化的实现不需要对原始的稳定扩散代码进行任何修改。
+!!! info
+    经过 10/10 的优化，RTX2050的4GB 显卡也可以使用 `--medvram` 。
 
-经过 10/10 的优化，RTX2050的4GB 显卡也可以使用 `--medvram` 。
+当然也可以减半精度，或者生成一张 64x64 清理 vram
 
-显存下限是 2GB。
 
 ### 不间断生产
 
-在WebUi的生成键右击即可出现 不间断生成 的选项。
+在 WebUi 的生成键右击即可出现 不间断生成 的选项。
 
 ### 图片信息 Png info
 
 生成的图片自带 令牌信息，拖放到 查看页面即可查看 。
 
+### Colab
 
+Tip：每天重置资源
+
+### NV 4chan简化版本
+
+4chan版本魔改官后程序，会动态分配，显存不够内存来凑。
 
 [^2]:[关于 AUTOMATIC1111 /stable-diffusion-webui 的 FAQ:](https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99)

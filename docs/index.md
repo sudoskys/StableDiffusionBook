@@ -12,7 +12,7 @@ NovelAI 是一项每月订阅服务，用于 AI 辅助创作、讲故事、虚�
 
 首先，很不幸地，因为需要用到 CUDA ，所以只有英伟达显卡才可用。（当然也可以用 CPU 花超长时间算）
 
-AMD卡 请读 [这里](https://rentry.org/ayymd-stable-diffustion-v1_4-guide)
+AMD卡 请读 [这里](https://rentry.org/ayymd-stable-diffustion-v1_4-guide) 和 [WebUiWiki对AMD安装的教程](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Install-and-Run-on-AMD-GPUs)
 
 **WebUi对机器的要求**
 
