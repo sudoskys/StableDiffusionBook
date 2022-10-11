@@ -21,8 +21,6 @@
 如果你发现了本文的的错误或不足，欢迎向[项目仓库](https://github.com/sudoskys/StableDiffusionBook/)提 issue 和 PR
 
 
-
-
 ## 需求
 
 2GB 可用，4 GB 能用
