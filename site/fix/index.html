@@ -350,16 +350,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    关于显卡
+  <a href="#nv" class="md-nav__link">
+    NV 模型
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#nv" class="md-nav__link">
-    NV 模型
+  <a href="#_2" class="md-nav__link">
+    关于显卡
   </a>
+  
+    <nav class="md-nav" aria-label="关于显卡">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gpu" class="md-nav__link">
+    多GPU支持
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16xx2" class="md-nav__link">
+    16xx系显卡使用半精度生成图片2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -770,17 +790,6 @@
 <p>本仓库不提供具体链接（版权警告），可以看页面下标或关注中文社区 t.me@StableDiffusion_CN_WIKI。</p>
 </div>
 <p><a href="https://rentry.org/sdmodels">除了NV模型外的其他模型：Stable Diffusion Models</a></p>
-<h2 id="_2">关于显卡</h2>
-<p>cuda 是否可用、以及 torch 对应的 cuda 的版本
-打开命令窗，输入 python 进入，分行输入
-<div class="highlight"><pre><span></span><code>import torch
-print(torch.__version__)
-print(torch.cuda.is_available())
-</code></pre></div></p>
-<p><strong>查看torch对应的cuda版本</strong>
-<div class="highlight"><pre><span></span><code>torch.version.cuda
-</code></pre></div>
-输入 ctrl + z 退出</p>
 <h2 id="nv">NV 模型</h2>
 <p>你的 models 文件夹应该是这样的。</p>
 <div class="highlight"><pre><span></span><code>./models
@@ -813,7 +822,7 @@ print(torch.cuda.is_available())
 <p>final-pruned.vae.pt 即 stableckpt/animevae.pt，用于稳定风格。</p>
 <p>final-pruned.yaml 即 model.ckpt 同文件夹的 stableckpt/animefull-final-pruned/config.yaml，记载额外的参数。</p>
 <p>hypernetworks 包含了 stableckpt/modules/modules 里的文件，是风格相关的数据集。</p>
-<p><img alt="图片" src="https://github.dev/sudoskys/StableDiffusionBook/blob/main/resource/models.jpg" /></p>
+<p><img alt="图片" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/models.jpg" /></p>
 <details class="info">
 <summary>附内容</summary>
 <ul>
@@ -830,6 +839,51 @@ print(torch.cuda.is_available())
 </ul>
 </details>
 <p>启动 cli 有提示加载就 OK, 去设置选模型那里选喜欢的 <code>hypernetwork</code></p>
+<h2 id="_2">关于显卡</h2>
+<p>cuda 是否可用、以及 torch 对应的 cuda 的版本
+打开命令窗，输入 python 进入，分行输入
+<div class="highlight"><pre><span></span><code>import torch
+print(torch.__version__)
+print(torch.cuda.is_available())
+</code></pre></div></p>
+<p><strong>查看torch对应的cuda版本</strong>
+<div class="highlight"><pre><span></span><code>torch.version.cuda
+</code></pre></div>
+输入 ctrl + z 退出</p>
+<h3 id="gpu">多GPU支持</h3>
+<p>请查看 https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/156</p>
+<h3 id="16xx2">16xx系显卡使用半精度生成图片<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">2</a></sup></h3>
+<p>方案来自 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/28#issuecomment-1241448049">这个讨论</a></p>
+<ol>
+<li>
+<p>激活webui使用的venv,要在正确的虚拟环境里运行</p>
+</li>
+<li>
+<p>卸载掉现在所用的 torch 和 torchvision:
+<div class="highlight"><pre><span></span><code>pip uninstall torch torchvision
+</code></pre></div></p>
+</li>
+<li>
+<p>重新安装 <code>cuda 11.6</code>编译的 <code>torch</code> 和 <code>torchvision</code>。
+<div class="highlight"><pre><span></span><code>pip install torch torchvision --extra-index-url https://download.pytorch.org/whl/cu116
+</code></pre></div></p>
+</li>
+<li>
+<p>下载 <code>Cudnn_8.5</code> 备用。</p>
+</li>
+</ol>
+<p>使用下载工具下载，直接下载会跳转到 Nvidia 的开发者注册界面</p>
+<p>Windows: https://developer.nvidia.com/compute/cudnn/secure/8.5.0/local_installers/11.7/cudnn-windows-x86_64-8.5.0.96_cuda11-archive.zip</p>
+<p>其他版本：https://developer.nvidia.com/rdp/cudnn-archive</p>
+<ol>
+<li>
+<p>将Cudnn 8.5压缩包里的bin和lib文件夹里的所有文件复制到 <code>venv\Lib\site-packages\torch\lib</code> 里，覆盖所有文件。</p>
+</li>
+<li>
+<p>然后16xx系显卡也可以愉快地使用半精度生成图片了！大幅降低显存占用，6G加载Full模型可以生成1024x640的图片。</p>
+</li>
+</ol>
+<p>但是，依然不能使用 <code>DDIM Sampling</code> ，但可以使用 <code>Euler a</code></p>
 <h2 id="_3">说明</h2>
 <h3 id="leaknv">对于 LeakNV 模型的说明</h3>
 <p><code>animesfw-latest</code> 即NV 基线模型</p>
@@ -875,6 +929,7 @@ import torch
 print(torch.cuda.is_available())</p>
 <p>然后不行就切换 <code>--lowvram</code> 低配。</p>
 <p>再不行：确保在浏览器中禁用硬件加速，并在出现内存不足错误时关闭任何可能占用 VRAM 的内容。</p>
+<hr />
 <h2 id="nv_1">优化靠近 NV</h2>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017">对NV模型靠近NV效果相关讨论，应该读一读！</a></p>
 <h3 id="_8">进一步优化</h3>
@@ -907,6 +962,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
 <blockquote>
 <p>30 系显卡正常启动 --xformers, 其他显卡 --force-enable-xformers</p>
 </blockquote>
+<hr />
 <h2 id="_11">进阶</h2>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#attentionemphasis">英文原版</a></p>
 <h3 id="textual-inversion"><strong>Textual Inversion</strong></h3>
@@ -993,6 +1049,9 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
 <li id="fn:2">
 <p><a href="https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99">关于 AUTOMATIC1111 /stable-diffusion-webui 的 FAQ:</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
+<li id="fn:3">
+<p><a href="https://t.me/StableDiffusion_CN/50749">16xx系显卡可以使用半精度生成图片的方式</a>&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
 </ol>
 </div>
 
@@ -1001,11 +1060,11 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 13:52:51</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 14:04:25</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 13:52:51</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 14:04:25</span>
       
     
   </small>
