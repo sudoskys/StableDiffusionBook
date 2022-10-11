@@ -87,6 +87,7 @@ normal quality, text, censored, gown, latex, pencil
 
 在相同 Step ，cfg ，Seed,参数（prompts） 的情况下，生产的图片基本相同！
 
+
 ## 魔法进阶
 
 调参基本原理模糊的说是：限定好的数据范围内相似样本越多，越稳定。
@@ -101,11 +102,23 @@ normal quality, text, censored, gown, latex, pencil
     
 
 
+### 令牌速查
 
-## 工具速查
-
+所有 Tag 可以上[danbooru](https://gelbooru.com/index.php?page=tags&s=list)
 
 [参数法术全典](https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml#)
+
+NSFWTag 可以参考[Github Here](https://github.com/scooderic/exhentai-tags-chinese-translation)
+
+**[Tag在线协作](https://docs.google.com/spreadsheets/d/1zij5OzCZIaQuhAbiSayhFznjgJ3rwbaNwnUnaUMxyTQ/edit?usp=drivesdk)**
+
+
+## 参数转换——NV和SD的增强语法不同
+
+**Prompts 参数括号转换**
+
+在 NV 和 Webui 之间转换加强参数   [M2NM2NBot](https://t.me/M2NM2NBot)
+
 
 ## 方位调参
 
@@ -121,47 +134,6 @@ normal quality, text, censored, gown, latex, pencil
 |姿势位||||
 |镜头位||||
 
-
-
-
-
-### 关于参数
-
-
-**[Tag在线协作](https://docs.google.com/spreadsheets/d/1zij5OzCZIaQuhAbiSayhFznjgJ3rwbaNwnUnaUMxyTQ/edit?usp=drivesdk)**
-
-所有 Tag 可以上[danbooru](https://gelbooru.com/index.php?page=tags&s=list)
-
-
-NSFWTag 可以参考[Github Here](https://github.com/scooderic/exhentai-tags-chinese-translation)
-
-**Image 逆向为参数**
-
-[LenKiMo_Bot](https://t.me/LenKiMo_Bot)
-
-[DeepDanbooru](https://github.com/KichangKim/DeepDanbooru)
-
-**Prompts 参数括号转换**
-
-在 NV 和 Webui 之间转换加强参数
-
-[M2NM2NBot](https://t.me/M2NM2NBot)
-
-### 关于显卡
-
-cuda 是否可用、以及 torch 对应的 cuda 的版本
-打开命令窗，输入 python 进入，分行输入
-```
-import torch
-print(torch.__version__)
-print(torch.cuda.is_available())
-```
-
-**查看torch对应的cuda版本**
-```
-torch.version.cuda
-```
-输入 ctrl + z 退出
 
 
 ### 常用参数:SFW

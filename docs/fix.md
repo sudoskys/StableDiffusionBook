@@ -1,20 +1,36 @@
 
 # 模型技法
 
+这节介绍Debug和一些关于SD网页应用的优化方案，让它更好用。
 
-关于SD网页应用的优化方案，让它更好用。
+至于如何创造令牌和参数相关，请看下一节：魔法创造！
 
-注意要经常从远端代码库拉取代码洗礼SD网页应用。
+!!! tip
+    注意要经常从远端代码库拉取代码洗礼SD网页应用。
 
 >本节只针对 NV 模型展开教程。请多多关注 About 页面的社区获取最新进展和新闻。源教程来自：[^2]
-
->如何创造令牌和参数相关，请看下一节：魔法创造！
 
 !!! info "版权"
     本仓库不提供具体链接（版权警告），可以看页面下标或关注中文社区 t.me@StableDiffusion_CN_WIKI。
 
 
 [除了NV模型外的其他模型：Stable Diffusion Models](https://rentry.org/sdmodels)
+
+## 关于显卡
+
+cuda 是否可用、以及 torch 对应的 cuda 的版本
+打开命令窗，输入 python 进入，分行输入
+```
+import torch
+print(torch.__version__)
+print(torch.cuda.is_available())
+```
+
+**查看torch对应的cuda版本**
+```
+torch.version.cuda
+```
+输入 ctrl + z 退出
 
 
 ## NV 模型

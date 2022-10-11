@@ -1,6 +1,7 @@
 # 安装
 
 
+
 ## 安装 Stable-diffusion-webui 开源框架
 
 此教程参考了 crosstyan[^2]
