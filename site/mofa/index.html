@@ -374,35 +374,35 @@
         
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    令牌权重
+    参数权重
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    消极令牌
+    消极参数
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
-    重现令牌
+    重现参数
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
-    逆向令牌
+    逆向参数
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
-    已知令牌组合
+    已知参数组合
   </a>
   
 </li>
@@ -421,35 +421,48 @@
       
         <li class="md-nav__item">
   <a href="#_9" class="md-nav__link">
+    魔法进阶
+  </a>
+  
+    <nav class="md-nav" aria-label="魔法进阶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    注意 尺寸
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
     工具速查
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     方位调参
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    魔杖参数
-  </a>
-  
-    <nav class="md-nav" aria-label="魔杖参数">
+    <nav class="md-nav" aria-label="方位调参">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    关于令牌
+  <a href="#_13" class="md-nav__link">
+    关于参数
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#_14" class="md-nav__link">
     关于显卡
   </a>
   
@@ -457,7 +470,7 @@
         
           <li class="md-nav__item">
   <a href="#sfw" class="md-nav__link">
-    常用令牌:SFW
+    常用参数:SFW
   </a>
   
 </li>
@@ -511,10 +524,10 @@
 
 
 <h1 id="_1">调参魔法</h1>
-<p>这节会介绍 令牌参数 和 相关的法杖资源。</p>
+<p>这节会介绍 参数 和 相关的法杖资源。</p>
 <h2 id="_2">魔法入门</h2>
 <p>请先在前面了解一下魔杖的参数。</p>
-<h3 id="_3">令牌权重</h3>
+<h3 id="_3">参数权重</h3>
 <p>调参魔法的一个基本技能是设置权重。</p>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#attentionemphasis">Wiki:魔导师介绍</a></p>
 <p>具体规则如下</p>
@@ -538,9 +551,9 @@ a \(word\) - 在提示中使用文字 () 字符
 <p><strong>NV官方</strong></p>
 <p>在NV官方前端我们使用 <code>{}</code> 来指定权重。</p>
 </div>
-<h3 id="_4">消极令牌</h3>
-<p>魔杖会在生成时<strong>拒绝消极令牌有关的内容</strong>。</p>
-<p>比如使用以下令牌削除水印和文字内容</p>
+<h3 id="_4">消极参数</h3>
+<p>魔杖会在生成时<strong>拒绝消极参数有关的内容</strong>。</p>
+<p>比如使用以下参数削除水印和文字内容</p>
 <div class="highlight"><pre><span></span><code>lowres, bad anatomy, bad hands, text, error, missing fingers, 
 extra digit, fewer digits, cropped, worst quality, low quality, 
 normal quality, jpeg artifacts, signature, watermark, username, blurry
@@ -553,21 +566,29 @@ mutilated, tranny, trans, trannsexual, [out of frame], (bad proportions),
 (poorly drawn body), (poorly drawn legs), worst quality, low quality, 
 normal quality, text, censored, gown, latex, pencil
 </code></pre></div>
-<h3 id="_5">重现令牌</h3>
+<h3 id="_5">重现参数</h3>
 <p>对于没有压缩的原图，我们可以将文件拖入 <code>PNG Info</code> 选项卡，进行参数查看。</p>
-<h3 id="_6">逆向令牌</h3>
-<p>这里有一些 <strong>Image 逆向令牌服务</strong>，可以从图片中提取相关令牌参数，不一定准确。</p>
+<h3 id="_6">逆向参数</h3>
+<p>这里有一些 <strong>Image 逆向参数服务</strong>，可以从图片中提取相关参数，不一定准确。</p>
 <p><a href="https://t.me/LenKiMo_Bot">LenKiMo_Bot</a></p>
 <p><a href="https://github.com/KichangKim/DeepDanbooru">DeepDanbooru</a></p>
-<h3 id="_7">已知令牌组合</h3>
-<p>你可以访问以下传送门获取一些优秀的令牌实例！（当然，中文社区的测试群有<strong>大量素材</strong>，一分钟20次）</p>
+<h3 id="_7">已知参数组合</h3>
+<p>你可以访问以下传送门获取一些优秀的参数实例！（当然，中文社区的测试群有<strong>大量素材</strong>，一分钟20次）</p>
 <p><a href="https://t.me/LenKiMo_Bot">LenKiMo_Bot</a></p>
 <p><a href="https://github.com/KichangKim/DeepDanbooru">DeepDanbooru</a></p>
 <h3 id="_8"><strong>种子调试</strong></h3>
-<p>在相同 Step ，cfg ，Seed,参数令牌（） 的情况下，</p>
-<h2 id="_9">工具速查</h2>
-<p><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml#">令牌法术全典</a></p>
-<h2 id="_10">方位调参</h2>
+<p>在相同 Step ，cfg ，Seed,参数（prompts） 的情况下，生产的图片基本相同！</p>
+<h2 id="_9">魔法进阶</h2>
+<p>调参基本原理模糊的说是：限定好的数据范围内相似样本越多，越稳定。</p>
+<h3 id="_10">注意 <code>尺寸</code></h3>
+<p>比如出图尺寸宽了人可能会多</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>要匹配好姿势，镜头和人物才不畸形，有时候需要限定量词，多人物时要处理空间关系和 prompt 遮挡优先级。人数-&gt;人物样貌-&gt;环境样式-&gt;人物状态</p>
+</div>
+<h2 id="_11">工具速查</h2>
+<p><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml#">参数法术全典</a></p>
+<h2 id="_12">方位调参</h2>
 <p>竖着看</p>
 <table>
 <thead>
@@ -623,25 +644,17 @@ normal quality, text, censored, gown, latex, pencil
 </tr>
 </tbody>
 </table>
-<h2 id="_11">魔杖参数</h2>
-<p>还有一个 <code>参数</code></p>
-<p>比如出图尺寸宽了人可能会多</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>要匹配好姿势，镜头和人物才不畸形，有时候需要限定量词，多人物时要处理空间关系和 prompt 遮挡优先级。人数-&gt;人物样貌-&gt;环境样式-&gt;人物状态</p>
-</div>
-<p>模糊的说是：限定好的数据范围内相似样本越多，越稳定。</p>
-<h3 id="_12">关于令牌</h3>
+<h3 id="_13">关于参数</h3>
 <p><strong><a href="https://docs.google.com/spreadsheets/d/1zij5OzCZIaQuhAbiSayhFznjgJ3rwbaNwnUnaUMxyTQ/edit?usp=drivesdk">Tag在线协作</a></strong></p>
 <p>所有 Tag 可以上<a href="https://gelbooru.com/index.php?page=tags&amp;s=list">danbooru</a></p>
 <p>NSFWTag 可以参考<a href="https://github.com/scooderic/exhentai-tags-chinese-translation">Github Here</a></p>
-<p><strong>Image 逆向为令牌</strong></p>
+<p><strong>Image 逆向为参数</strong></p>
 <p><a href="https://t.me/LenKiMo_Bot">LenKiMo_Bot</a></p>
 <p><a href="https://github.com/KichangKim/DeepDanbooru">DeepDanbooru</a></p>
-<p><strong>Prompts 令牌括号转换</strong></p>
+<p><strong>Prompts 参数括号转换</strong></p>
 <p>在 NV 和 Webui 之间转换加强参数</p>
 <p><a href="https://t.me/M2NM2NBot">M2NM2NBot</a></p>
-<h3 id="_13">关于显卡</h3>
+<h3 id="_14">关于显卡</h3>
 <p>cuda 是否可用、以及 torch 对应的 cuda 的版本
 打开命令窗，输入 python 进入，分行输入
 <div class="highlight"><pre><span></span><code>import torch
@@ -652,7 +665,7 @@ print(torch.cuda.is_available())
 <div class="highlight"><pre><span></span><code>torch.version.cuda
 </code></pre></div>
 输入 ctrl + z 退出</p>
-<h3 id="sfw">常用令牌:SFW</h3>
+<h3 id="sfw">常用参数:SFW</h3>
 <table>
 <thead>
 <tr>
@@ -1031,11 +1044,11 @@ print(torch.cuda.is_available())
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 13:23:43</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 13:27:40</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 13:23:43</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 13:27:40</span>
       
     
   </small>
