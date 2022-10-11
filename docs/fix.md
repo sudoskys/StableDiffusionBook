@@ -147,6 +147,11 @@ print(torch.cuda.is_available())
 
 出图后，可以将喜欢的结果从右侧的输出选项卡拖回 img2img 以进行进一步迭代。
 
+### **调整 Eta noise seed delta**
+
+设置为 `31337` 可以更靠近
+
+
 ### **对NV模型更改 layers 忽略层数**
 
 
