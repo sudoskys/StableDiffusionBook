@@ -24,9 +24,7 @@
 - [基于 NovelAI 的画图机器人](https://github.com/koishijs/novelai-bot#token)
 
 
-
-#### 数据集
-
+### 数据集
 
 - 飞浆
 https://aistudio.baidu.com/aistudio/datasetdetail/171442/0
@@ -35,8 +33,21 @@ https://aistudio.baidu.com/aistudio/datasetdetail/171442/0
 https://pan.t-satoru.top/ode5/Share/
 
 
+## 关于文档
 
-#### 鸣谢
+### 贡献支持
+
+此项目由以下人员参与编写整理:
+
+@sudoskys
+
+@ReOracle
+
+### 注释
+
+欢迎参与文档编写。
+
+## 鸣谢
 
 引用的开源教程.
 
