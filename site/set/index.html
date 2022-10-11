@@ -858,8 +858,17 @@ sudo systemctl restart docker
 <span class="kn">import</span> <span class="nn">random</span>
 
 <span class="n">endpoint</span> <span class="o">=</span> <span class="s2">&quot;http://10.10.12.67/generate&quot;</span>
-<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;prompt&quot;</span><span class="p">:</span> <span class="s2">&quot;masterpiece, best quality, brown red hair,blue eyes,twin tails,holding cat&quot;</span><span class="p">,</span> <span class="s2">&quot;seed&quot;</span><span class="p">:</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">**</span><span class="mi">32</span><span class="p">)</span>
-<span class="p">,</span><span class="s2">&quot;n_samples&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;sampler&quot;</span><span class="p">:</span><span class="s2">&quot;ddim&quot;</span><span class="p">,</span><span class="s2">&quot;width&quot;</span><span class="p">:</span><span class="mi">512</span><span class="p">,</span><span class="s2">&quot;height&quot;</span><span class="p">:</span><span class="mi">768</span><span class="p">,</span><span class="s2">&quot;scale&quot;</span><span class="p">:</span><span class="mi">11</span><span class="p">,</span><span class="s2">&quot;steps&quot;</span><span class="p">:</span><span class="mi">28</span><span class="p">,</span><span class="s2">&quot;uc&quot;</span><span class="p">:</span><span class="s2">&quot;lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry&quot;</span><span class="p">}</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">&quot;prompt&quot;</span><span class="p">:</span> <span class="s2">&quot;masterpiece, best quality, brown red hair,blue eyes,twin tails,holding cat&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;seed&quot;</span><span class="p">:</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">**</span><span class="mi">32</span><span class="p">),</span>
+  <span class="s2">&quot;n_samples&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s2">&quot;sampler&quot;</span><span class="p">:</span> <span class="s2">&quot;ddim&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;width&quot;</span><span class="p">:</span> <span class="mi">512</span><span class="p">,</span>
+  <span class="s2">&quot;height&quot;</span><span class="p">:</span> <span class="mi">768</span><span class="p">,</span>
+  <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span>
+  <span class="s2">&quot;steps&quot;</span><span class="p">:</span> <span class="mi">28</span><span class="p">,</span>
+  <span class="s2">&quot;uc&quot;</span><span class="p">:</span> <span class="s2">&quot;lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry&quot;</span>
+<span class="p">}</span>
 
 
 <span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">endpoint</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
@@ -894,11 +903,11 @@ sudo systemctl restart docker
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 12:25:18</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 12:26:41</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 12:25:18</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 12:26:41</span>
       
     
   </small>
