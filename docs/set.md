@@ -1,45 +1,99 @@
 # 安装
 
+
 ## 安装 Stable-diffusion-webui 开源框架
 
 此教程参考了 crosstyan[^2]
 
-仓库地址 https://github.com/AUTOMATIC1111/stable-diffusion-webui
 
-#### 硬件要求
+SD的官方仓库地址为 https://github.com/AUTOMATIC1111/stable-diffusion-webui
 
-N卡显存 > 2GB
 
-9月份效果(10月份因为黑科技有大量增强！)
+### 硬件要求
+
+最低能用N卡显存 > 2GB
+最低可用N卡显存 > 4GB
+
+在 开始前，打开CMD,输入 `nvidia-smi` 看看你是不是正常驱动显卡。
+
 
 ![效果.png](https://s1.ax1x.com/2022/10/10/xtdNNR.png)
-![效果](https://i.ibb.co/yd7SZ32/chartthin.png)
+
+*9月份效果(PS:10月份因为黑科技有大量增强！)*
 
 
-#### 安装
+### 安装
 
-先阅读官方Wiki的内容。
+[官方英文安装教程](https://github.com/AUTOMATIC1111/stable-diffusion-webui#installation-and-running)
 
-[官方给定的依赖目录](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Dependencies)
+官方给定的依赖目录 [官方给定的依赖目录](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Dependencies)
 
-安装教程在仓库的[这个位置](https://github.com/AUTOMATIC1111/stable-diffusion-webui#installation-and-running)
+!!! tip
+    推荐有能力阅读[官方Wiki](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki)的内容。
 
-**安装的问题除了本文档还可以看**
-https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki
+    Ai 需要的依赖大小很大！需要心理准备！大约几G,而且国内环境可能很慢！对于Windows,**依赖默认安装在C盘**
 
-**Windows**
+
+#### Windows
 
 在Windows上自动安装
 
-- 安装[Python 3.10.6](https://www.python.org/downloads/windows/)，选中“Add Pythone to PATH”
-- 安装[git](https://git-scm.com/download/win)
-- 下载webui存储库，运行`git clonehttps://github.com/AUTOMATIC1111/stable-diffusion-webui.git`
+**安装 Python**
+安装[Python 3.10.6](https://www.python.org/downloads/windows/)，安装时选中“Add Pythone to PATH”
 
-- 将`model.ckpt`放在`models`目录中,请参见[依赖项](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Dependencies)或者向后看
-- （可选）将`GFPGANv1.4.pth`放在基本目录中，旁边是webui.py
-- 以普通非管理员用户身份从Windows资源管理器运行`webui-user.bat`
 
-**Linux 安装**
+**切换国内镜像**
+
+打开 CMD 命令行（Win+R 运行 cmd），输入`Python` 如果能进入就 ctrl+z 退出
+
+然后输入以下命令设置镜像。
+
+```bash
+pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+```
+**Git**
+
+安装[Git](https://git-scm.com/download/win)，然后在 菜单中找到 `git bash`
+
+运行`git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git` 拉取仓库，如果失败请设置代理。
+
+!!! tip 
+    实在不行使用（但不确定能否更新）
+    
+    `git clone https://hub.fastgit.org/AUTOMATIC1111/stable-diffusion-webui.git `
+
+**模型和运行**
+
+将 4G 或 7G 或 其他模型 `model.ckpt` 放在 `models` 目录中。
+
+>请参见[依赖项](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Dependencies)
+
+
+（可选）将`GFPGANv1.4.pth`放在基本目录中，旁边是 `webui.py`
+
+然后以普通非管理员用户身份从Windows资源管理器运行 `webui-user.bat` 下载依赖（**一般需要 22 分钟，安装在C盘，2GB以上**）和启动网页应用。
+
+如果正常，输入 一个类似 `http://127.0.0.1:7860/` 的地址，点开即可。
+
+
+>需要模型，如果没有模型请去下载一个，如果有整合包，也可以使用 其中的`models`文件夹
+
+
+!!! info 
+    更新仓库使用 `git pull` 更新仓库，推荐经常更新，并关注讨论。
+    
+    你可以修改运行脚本添加参数！这个可以读后面的文档。
+    
+    运行报错？请读后面的自救节。
+    
+    生成报错？请读下一章。
+    
+    等了两小时？可以试试挂代理。
+    
+    为什么整合包不需要？他们的脚本中指定了同目录下的环境，阅读之后的文档就可以知道
+
+
+#### Linux 安装
 
 先安装依赖
 ```bash
@@ -54,7 +108,9 @@ sudo pacman -S wget git python3
 ```bash
 bash <(wget -qO- https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusion-webui/master/webui.sh)
 ```
+
 完毕。
+
 !!! info
     其实如果可以用 `anaconda` 尽量用，创建一个Python 3.10.6的虚拟环境
 
@@ -77,10 +133,11 @@ bash <(wget -qO- https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusio
 
 **网络问题**
 
-git 报错
-HTTP_PROXY 和 HTTPS_PROXY 环境变量，或者使用clash 的tun模式. 或者把 git clone 的仓库源换成 huggingface..
+- Git 报错
 
-其他依赖报错也需要设置代理或者使用镜像，不然特别慢的。
+HTTP_PROXY 和 HTTPS_PROXY 环境变量，或者使用 clash 的tun模式. 或者把 git clone 的仓库源换成 huggingface
+
+其他依赖报错也需要设置代理或者使用镜像，不然特慢。
 
 **时间花销**
 
@@ -94,7 +151,7 @@ HTTP_PROXY 和 HTTPS_PROXY 环境变量，或者使用clash 的tun模式. 或者
 
 确保您拥有可以运行的最新CUDA 工具包和 GPU 驱动程序
 
-**Python呢？**
+**我 Python 呢？**
 
 如果您的 Python 版本不在 PATH 中，则在文件夹中创建或修改 webui.settings.bat 添加行 `set PYTHON=python `来说明 Python 可执行文件的完整路径（请看下面的参数说明！
 
@@ -104,7 +161,7 @@ HTTP_PROXY 和 HTTPS_PROXY 环境变量，或者使用clash 的tun模式. 或者
 
 如果需要防止创建虚拟环境使用系统 python，编辑 `webui.bat` 替换 `setVENV_DIR=venv`为`set VENV_DIR=`（见下面参数
 
-**生成图片问题见下一节**
+**生成图片问题见下一章**
 
 
 #### 更新框架
@@ -113,14 +170,17 @@ Git拉取请使用 `git pull` 更新。
 
 如果是整合或者其他，请向上游（谁分发的）索取。
 
+
 #### 启动(但是必须首先下载一个4GB模型)
 
-模型本教程还没有提供，你可以去关于页面找到 `中文社区` 的频道，里面应该有你想要的。
+不提供NV模型，你可以去 关于/底部图标 页面找到 `中文社区` 的频道，里面应该有你想要的哈。
 
-**按照后面的教程装载入模型后**，Win 运行 `webui.bat`
+
+**按照后面的教程装载入模型后**
+
+Win 运行 `webui.bat`
 
 Linux 用户采用
-
 ```
 COMMANDLINE_ARGS="--medvram --always-batch-cond-uncond" REQS_FILE="requirements.txt" python launch.py
 ```
@@ -373,8 +433,11 @@ for x in output:
 
 ## 使用 Colab 搭建
 
+Colab 资源每日重置。
 
-请关注中文社区 t.me@StableDiffusion_CN_WIKI
+具体笔记本地址请关注中文社区 t.me@StableDiffusion_CN_WIKI
+
+
 
 [^1]:[NovelAI原版部署教程](https://telegra.ph/NovelAI%E5%8E%9F%E7%89%88%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B-10-07)
 
