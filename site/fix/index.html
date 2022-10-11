@@ -454,8 +454,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#eta-noise-seed-delta" class="md-nav__link">
-    调整 Eta noise seed delta
+  <a href="#nv-eta-noise-seed-delta" class="md-nav__link">
+    靠近NV,调整 Eta noise seed delta
   </a>
   
 </li>
@@ -816,8 +816,9 @@ print(torch.cuda.is_available())</p>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017">对NV模型靠近NV效果相关讨论，应该读一读！</a></p>
 <h3 id="_8">进一步优化</h3>
 <p>出图后，可以将喜欢的结果从右侧的输出选项卡拖回 img2img 以进行进一步迭代。</p>
-<h3 id="eta-noise-seed-delta"><strong>调整 Eta noise seed delta</strong></h3>
+<h3 id="nv-eta-noise-seed-delta"><strong>靠近NV,调整 Eta noise seed delta</strong></h3>
 <p>设置为 <code>31337</code> 可以更靠近</p>
+<p>相关讨论 https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017</p>
 <h3 id="nv-layers"><strong>对NV模型更改 layers 忽略层数</strong></h3>
 <p>在 WebUi 的设置页面把 ignore last layers of clip mode 的横条改成 <code>2</code></p>
 <div class="highlight"><pre><span></span><code>CLIP is a very advanced neural network that transforms your prompt text into a numerical representation. Neural networks work very well with this numerical representation and that&#39;s why devs of SD chose CLIP as one of 3 models involved in stable diffusion&#39;s method of producing images. As CLIP is a neural network, it means that it has a lot of layers. Your prompt is digitized in a simple way, and then fed through layers. You get numerical representation of the prompt after the 1st layer, you feed that into the second layer, you feed the result of that into third, etc, until you get to the last layer, and that&#39;s the output of CLIP that is used in stable diffusion. This is the slider value of 1. But you can stop early, and use the output of the next to last layer - that&#39;s slider value of 2. The earlier you stop, the less layers of neural network have worked on the prompt.
@@ -931,11 +932,11 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 05:29:57</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 05:30:53</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 05:29:57</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 05:30:53</span>
       
     
   </small>
