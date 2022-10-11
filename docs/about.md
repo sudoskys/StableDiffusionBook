@@ -20,6 +20,8 @@
 
 - [WebUi自定义脚本](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts)
 
+- [SD相关的Faq](https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99)
+
 
 #### 数据集
 

@@ -6,7 +6,12 @@ NovelAI 是一项每月订阅服务，用于 AI 辅助创作、讲故事、虚�
 
 本文档围绕以上项目展开叙述....
 
-
+!!! tip "术语"
+    NV 指 NovelAI
+    SD 指 Stable Diffusion web 
+    魔杖 指 Stable Diffusion web 
+    魔法 指 调参方法
+    令牌 指 参数
 
 ## 我可以参加 Party 吗？
 

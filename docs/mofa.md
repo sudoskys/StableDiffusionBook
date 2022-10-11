@@ -117,13 +117,14 @@ normal quality, text, censored, gown, latex, pencil
 
 ### 令牌速查
 
+
 所有 Tag 可以上[danbooru](https://gelbooru.com/index.php?page=tags&s=list)
 
-[参数法术全典](https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml#)
-
-NSFWTag 可以参考[Github Here](https://github.com/scooderic/exhentai-tags-chinese-translation)
+**[参数法术全典](https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml#)**
 
 **[Tag在线协作](https://docs.google.com/spreadsheets/d/1zij5OzCZIaQuhAbiSayhFznjgJ3rwbaNwnUnaUMxyTQ/edit?usp=drivesdk)**
+
+NSFWTag 可以参考[Github Here](https://github.com/scooderic/exhentai-tags-chinese-translation)
 
 
 ## 参数
