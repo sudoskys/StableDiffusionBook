@@ -374,48 +374,55 @@
         
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    参数(令牌)权重
+    书写令牌(提示)
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    消极参数(令牌)
+    参数(令牌)权重
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
-    重现参数(令牌)
+    消极参数(令牌)
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
-    逆向参数(令牌)
+    重现参数(令牌)
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
-    已知参数(令牌)组合
+    逆向参数(令牌)
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_8" class="md-nav__link">
-    种子调试
+    已知参数(令牌)组合
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_9" class="md-nav__link">
+    种子调试
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
     方位调参
   </a>
   
@@ -427,7 +434,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     魔法进阶
   </a>
   
@@ -435,15 +442,36 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
+    图转图修复
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
     注意 尺寸
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_14" class="md-nav__link">
+    超分图像
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
     令牌速查
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    调参工程师
   </a>
   
 </li>
@@ -454,7 +482,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#_17" class="md-nav__link">
     参数
   </a>
   
@@ -477,21 +505,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
+  <a href="#_18" class="md-nav__link">
     草图风格
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
+  <a href="#_19" class="md-nav__link">
     艺术风格
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_16" class="md-nav__link">
+  <a href="#_20" class="md-nav__link">
     杂志/设定集 风格
   </a>
   
@@ -561,7 +589,18 @@
 <p>这节会介绍 参数 和 相关的SD网页应用资源。</p>
 <h2 id="_2">魔法入门</h2>
 <p>请先在前面了解一下SD网页应用的参数。</p>
-<h3 id="_3">参数(令牌)权重</h3>
+<h3 id="_3">书写令牌(提示)</h3>
+<p>结合页面下面下面的 Tag 表。</p>
+<p><a href="https://docs.google.com/document/d/1XUT2G9LmkZataHFzmuOtRXnuWBfhvXDAo8DkS--8tec/edit#">为文字转图像Ai提示编写指南：A Guide to Writing Prompts for Text-to-image AI</a></p>
+<ul>
+<li>
+<p>提示不要太长，超过 100 就有失败风险。</p>
+</li>
+<li>
+<p>可以直接使用自然语言，SD 有自然语言处理能力(英文句子)</p>
+</li>
+</ul>
+<h3 id="_4">参数(令牌)权重</h3>
 <p>调参魔法的一个基本技能是设置权重。</p>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#attentionemphasis">Wiki:魔导师介绍</a></p>
 <p>具体规则如下</p>
@@ -585,7 +624,7 @@ a \(word\) - 在提示中使用文字 () 字符
 <p><strong>NV官方</strong></p>
 <p>在NV官方前端我们使用 <code>{}</code> 来指定权重。</p>
 </div>
-<h3 id="_4">消极参数(令牌)</h3>
+<h3 id="_5">消极参数(令牌)</h3>
 <p>SD网页应用会在生成时<strong>拒绝消极参数(令牌)有关的内容</strong>。</p>
 <p>比如使用以下参数(令牌)削除水印和文字内容</p>
 <div class="highlight"><pre><span></span><code>lowres, bad anatomy, bad hands, text, error, missing fingers, 
@@ -600,19 +639,19 @@ mutilated, tranny, trans, trannsexual, [out of frame], (bad proportions),
 (poorly drawn body), (poorly drawn legs), worst quality, low quality, 
 normal quality, text, censored, gown, latex, pencil
 </code></pre></div>
-<h3 id="_5">重现参数(令牌)</h3>
+<h3 id="_6">重现参数(令牌)</h3>
 <p>对于没有压缩的原图，我们可以将文件拖入 <code>PNG Info</code> 选项卡，进行参数(令牌)查看。</p>
-<h3 id="_6">逆向参数(令牌)</h3>
+<h3 id="_7">逆向参数(令牌)</h3>
 <p>这里有一些 <strong>Image 逆向参数服务</strong>，可以从图片中提取相关参数，不一定准确。</p>
 <p><a href="https://t.me/LenKiMo_Bot">LenKiMo_Bot</a></p>
 <p><a href="https://github.com/KichangKim/DeepDanbooru">DeepDanbooru</a></p>
-<h3 id="_7">已知参数(令牌)组合</h3>
+<h3 id="_8">已知参数(令牌)组合</h3>
 <p>你可以访问以下传送门获取一些优秀的参数实例！（当然，中文社区的测试群有<strong>大量素材</strong>，一分钟20次）</p>
-<p><a href="https://t.me/LenKiMo_Bot">LenKiMo_Bot</a></p>
+<p><a href="https://t.me/StableDiffusion_Show">StableDiffusion_Show</a></p>
 <p><a href="https://github.com/KichangKim/DeepDanbooru">DeepDanbooru</a></p>
-<h3 id="_8"><strong>种子调试</strong></h3>
+<h3 id="_9"><strong>种子调试</strong></h3>
 <p>在相同 Step ，cfg ，Seed,参数（prompts） 的情况下，生产的图片基本相同！</p>
-<h3 id="_9">方位调参</h3>
+<h3 id="_10">方位调参</h3>
 <p>竖着看</p>
 <table>
 <thead>
@@ -668,21 +707,29 @@ normal quality, text, censored, gown, latex, pencil
 </tr>
 </tbody>
 </table>
-<h2 id="_10">魔法进阶</h2>
+<h2 id="_11">魔法进阶</h2>
 <p>调参基本原理模糊的说是：限定好的数据范围内相似样本越多，越稳定。</p>
-<h3 id="_11">注意 <code>尺寸</code></h3>
+<h3 id="_12">图转图修复</h3>
+<p>如果手脚残，可以试试 img2img,复制参数和 seed 可以进行调整。</p>
+<h3 id="_13">注意 <code>尺寸</code></h3>
 <p>比如出图尺寸宽了人可能会多</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>要匹配好姿势，镜头和人物才不畸形，有时候需要限定量词，多人物时要处理空间关系和 prompt 遮挡优先级。人数-&gt;人物样貌-&gt;环境样式-&gt;人物状态</p>
 </div>
-<h3 id="_12">令牌速查</h3>
+<h3 id="_14">超分图像</h3>
+<p><code>realesrgan</code> 或者 <code>realcugan</code> 就可以，推荐 <a href="https://github.com/bilibili/ailab/tree/main/Real-CUGAN">realcugan</a></p>
+<p>另外，<code>webui</code> extras 页有一个自带的超分功能，可以去<code>settings-upscaling</code> 使用 <code>R-ESRGAN 4x+ Anime6B</code>模型，重新启动程序</p>
+<h3 id="_15">令牌速查</h3>
 <p>所有 Tag 可以上<a href="https://gelbooru.com/index.php?page=tags&amp;s=list">danbooru</a></p>
 <p><strong><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml#">参数法术全典</a></strong></p>
 <p><strong><a href="https://docs.google.com/spreadsheets/d/1zij5OzCZIaQuhAbiSayhFznjgJ3rwbaNwnUnaUMxyTQ/edit?usp=drivesdk">Tag在线协作</a></strong></p>
 <p>NSFWTag 可以参考<a href="https://github.com/scooderic/exhentai-tags-chinese-translation">Github Here</a></p>
 <p><a href="https://docs.google.com/spreadsheets/d/1SRqJ7F_6yHVSOeCi3U82aA448TqEGrUlRrLLZ51abLg/htmlview#">Ai艺术家文档——深入了解</a></p>
-<h2 id="_13">参数</h2>
+<h3 id="_16">调参工程师</h3>
+<p>https://github.com/Maks-s/sd-akashic</p>
+<p>https://github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference</p>
+<h2 id="_17">参数</h2>
 <h3 id="nvsd">转换——NV和SD的增强语法不同</h3>
 <p><strong>Prompts 参数括号转换</strong></p>
 <p>在 NV 和 Webui 之间转换加强参数   <a href="https://t.me/M2NM2NBot">M2NM2NBot</a></p>
@@ -690,7 +737,7 @@ normal quality, text, censored, gown, latex, pencil
 <h3 id="1">良好参数(风格趋向插画)<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">1</a></sup></h3>
 <div class="highlight"><pre><span></span><code>{an extremely delicate and beautiful}
 </code></pre></div>
-<h4 id="_14">草图风格</h4>
+<h4 id="_18">草图风格</h4>
 <table>
 <thead>
 <tr>
@@ -726,7 +773,7 @@ normal quality, text, censored, gown, latex, pencil
 </tbody>
 </table>
 <p>利用sketch，pastel color，lineart的tag模拟一张图的绘画过程</p>
-<h4 id="_15">艺术风格</h4>
+<h4 id="_19">艺术风格</h4>
 <table>
 <thead>
 <tr>
@@ -765,7 +812,7 @@ normal quality, text, censored, gown, latex, pencil
 </tr>
 </tbody>
 </table>
-<h4 id="_16">杂志/设定集 风格</h4>
+<h4 id="_20">杂志/设定集 风格</h4>
 <table>
 <thead>
 <tr>
@@ -1195,11 +1242,11 @@ normal quality, text, censored, gown, latex, pencil
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 14:30:57</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 15:18:18</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 14:30:57</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 15:18:18</span>
       
     
   </small>
