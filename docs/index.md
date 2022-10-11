@@ -1,8 +1,8 @@
 # AiDraw
 
-Stable Diffusion web UI是一个基于 Gradio 库的 Stable Diffusion 浏览器界面。
+[Stable Diffusion](https://github.com/AUTOMATIC1111/stable-diffusion-webui) web UI是一个基于 Gradio 库的 Stable Diffusion 浏览器界面。
 
-NovelAI 是一项每月订阅服务，用于 AI 辅助创作、讲故事、虚拟陪伴，或者只是供您想象的 GPT 驱动的沙盒。
+[NovelAI](https://novelai.net/) 是一项每月订阅服务，用于 AI 辅助创作、讲故事、虚拟陪伴，或者只是供您想象的 GPT 驱动的沙盒。
 
 本文档围绕以上项目展开叙述....
 
@@ -63,7 +63,6 @@ NV 精简版 **naifu** 至少需要8GB内存，8GB显存才能出图。
 
 ## 新闻
 
-仓库：https://github.com/AUTOMATIC1111/stable-diffusion-webui
 
 !!! tip
     目前stable-diffusion-webui迭代非常快，每天都会有大量更新，因此建议每天都拉取最新代码。
