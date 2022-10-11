@@ -3,7 +3,7 @@
 
 这节介绍Debug和一些关于SD网页应用的优化方案，让它更好用。
 
-至于如何创造令牌和参数相关，请看下一节：魔法创造！
+至于如何创造令牌和参数相关，请看下一节：令牌，也就是参数如何写
 
 !!! tip
     注意要经常从远端代码库拉取代码洗礼SD网页应用。
@@ -345,7 +345,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion
 
 丢到 embeddings 文件夹, prompt 提到你要用的 embedding 的文件名即可。
 
-#### **Loopback回环生成**
+### **Loopback回环生成**
 
 在 img2img 中设置loopback脚本，它允许自动将输出图像作为下一批的Batch提供，相当于保存输出图像，并用它替换输入图像。
 
