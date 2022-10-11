@@ -87,6 +87,19 @@ normal quality, text, censored, gown, latex, pencil
 
 在相同 Step ，cfg ，Seed,参数（prompts） 的情况下，生产的图片基本相同！
 
+###  方位调参
+
+竖着看
+
+|人物|场景|数据限定|事件|
+|----|------|-----|-----|
+|表情| | | |
+|头发|广狭选择|绘画类型|缩写词|
+|眼睛|光影选择|评价限定|sfw/nsfw|
+|衣着|背景主体|联想元素||
+|状态|人物事件地|||
+|姿势位||||
+|镜头位||||
 
 ## 魔法进阶
 
@@ -113,26 +126,15 @@ NSFWTag 可以参考[Github Here](https://github.com/scooderic/exhentai-tags-chi
 **[Tag在线协作](https://docs.google.com/spreadsheets/d/1zij5OzCZIaQuhAbiSayhFznjgJ3rwbaNwnUnaUMxyTQ/edit?usp=drivesdk)**
 
 
-## 参数转换——NV和SD的增强语法不同
+## 参数
+
+### 转换——NV和SD的增强语法不同
 
 **Prompts 参数括号转换**
 
 在 NV 和 Webui 之间转换加强参数   [M2NM2NBot](https://t.me/M2NM2NBot)
 
 
-## 方位调参
-
-竖着看
-
-|人物|场景|数据限定|事件|
-|----|------|-----|-----|
-|表情| | | |
-|头发|广狭选择|绘画类型|缩写词|
-|眼睛|光影选择|评价限定|sfw/nsfw|
-|衣着|背景主体|联想元素||
-|状态|人物事件地|||
-|姿势位||||
-|镜头位||||
 
 
 
