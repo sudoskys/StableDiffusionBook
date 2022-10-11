@@ -206,7 +206,7 @@ float32 用于较旧的 gpus，或者你想要 100% 的精度
 #### RuntimeError Sizes of tensors must match
 (img2img) 如果你得到RuntimeError: Sizes of tensors must match，你需要改变输入图像的分辨率
 
-#### 彩虹图
+#### 彩虹混乱图
 
 如果您的输出是混乱的彩虹混乱，则您的图像分辨率设置得太低
 
@@ -253,6 +253,8 @@ print(torch.cuda.is_available())
 
 
 在 WebUi 的设置页面把 ignore last layers of clip mode 的横条改成 `2`
+
+具体为什么见 [这里](https://blog.novelai.net/novelai-improvements-on-stable-diffusion-e10d38db82ac)
 
 ```
 CLIP is a very advanced neural network that transforms your prompt text into a numerical representation. Neural networks work very well with this numerical representation and that's why devs of SD chose CLIP as one of 3 models involved in stable diffusion's method of producing images. As CLIP is a neural network, it means that it has a lot of layers. Your prompt is digitized in a simple way, and then fed through layers. You get numerical representation of the prompt after the 1st layer, you feed that into the second layer, you feed the result of that into third, etc, until you get to the last layer, and that's the output of CLIP that is used in stable diffusion. This is the slider value of 1. But you can stop early, and use the output of the next to last layer - that's slider value of 2. The earlier you stop, the less layers of neural network have worked on the prompt.
