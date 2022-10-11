@@ -26,7 +26,7 @@ SD的官方仓库地址为 https://github.com/AUTOMATIC1111/stable-diffusion-web
 
 [官方英文安装教程](https://github.com/AUTOMATIC1111/stable-diffusion-webui#installation-and-running)
 
-官方给定的依赖目录 [官方给定的依赖目录](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Dependencies)
+[官方给定的依赖列表](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Dependencies)
 
 !!! tip
     推荐有能力阅读[官方Wiki](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki)的内容。

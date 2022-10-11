@@ -1,7 +1,7 @@
 
 # 调参与模型
 
-本节只针对 WebUi 展开教程。请多多关注About页面的社区获取最新进展和新闻。源教程来自：[^2]
+本节只针对 NV 模型展开教程。请多多关注 About 页面的社区获取最新进展和新闻。源教程来自：[^2]
 
 !!! info
     本仓库不提供具体链接（版权警告），可以自行寻找或关注中文社区 t.me@StableDiffusion_CN_WIKI。
@@ -9,9 +9,9 @@
 
 [除了NV模型外的其他模型：Stable Diffusion Models](https://rentry.org/sdmodels)
 
-## 如果使用NV模型
+## NV 模型
 
-你的 models 文件夹应该是这样的
+你的 models 文件夹应该是这样的。
 
 ```
 ./models
