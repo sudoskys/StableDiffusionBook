@@ -549,8 +549,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    采样器参数
+  <a href="#eulersamplers" class="md-nav__link">
+    Euler等Samplers采样器参数
   </a>
   
 </li>
@@ -568,7 +568,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     进阶
   </a>
   
@@ -617,7 +617,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     全分辨率修复！
   </a>
   
@@ -651,7 +651,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     渐变提示编辑
   </a>
   
@@ -690,7 +690,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     运行
   </a>
   
@@ -705,7 +705,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
+  <a href="#_14" class="md-nav__link">
     不间断生产
   </a>
   
@@ -979,8 +979,30 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
 <div class="highlight"><pre><span></span><code>lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry
 </code></pre></div>
 <p>from <a href="https://t.me/StableDiffusion_CN/6043">Here</a></p>
-<h3 id="_10"><strong>采样器参数</strong></h3>
+<h3 id="eulersamplers"><strong>Euler等Samplers采样器参数</strong></h3>
 <p>请阅读 https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/1162</p>
+<p>下面的引用是来自 <a href="https://www.reddit.com/r/StableDiffusion/comments/xbeyw3/can_anyone_offer_a_little_guidance_on_the/">Reddit</a> 的内容</p>
+<details class="info">
+<summary>Info</summary>
+<p>Has to do with how diffusion-based models work. Basically, they start with a random noise image and 'mine' the noisy image for a less noisy output.</p>
+<p>This process is defined by a differential equation that describes how much noise is removed in a step.</p>
+<p>Solving these equations is a bit tricky; there's different approaches with tradeoffs between speed and accuracy and occasionally some special sauce to make this more than a zero-sum tradeoff (i.e. can make something a little bit faster and a lot more accurate, or vice versa, for example).</p>
+</details>
+<details class="info">
+<summary>采样器不同</summary>
+<p>Euler is the simplest, and thus one of the fastest. It and Heun are classics in terms of solving ODEs.</p>
+<p>Euler &amp; Heun are closely related. Heun is an 'improvement' on Euler in terms of accuracy, but it runs at about half the speed (which makes sense - it has to calculate the normal Euler term, then do it again to get the final output).</p>
+<p>LMS and PLMS are their cousins - they use a related, but slightly different approach (averaging out a couple of steps in the past to improve accuracy). As I understand it, PLMS is effectively LMS (a classical method) adapted to better deal with the weirdness in neural network structure.</p>
+<p>DDIM is a neural network method. It's quite fast per step, but relatively inefficient in that it takes a bunch of steps to get a good result.</p>
+<p>DPM2 is a fancy method designed for diffusion models explicitly aiming to improve on DDIM in terms of taking less steps to get a good output. It needs to run the denoising twice per step, so once again - it's about twice as slow.</p>
+<p>The Ancestral samplers are deceptively much further away from the corresponding non-Ancestral samplers and closer to each other. The corresponding algorithms are used - hence the names - but in a different context.</p>
+<p>They can add a bunch of noise per step, so they are more chaotic and diverge heavily from non-Ancestral samplers in terms of the output images. As per the normal-flavored samplers, DPM2-A is about half as fast as Euler-A.</p>
+<p>Weirdly, in some comparisons DPM2-A generates very similar images as Euler-A... on the previous seed. Might be due to it being a second-order method vs first-order, might be an experiment muck-up.</p>
+</details>
+<p>Euler 是最简单的，因此也是最快的。</p>
+<p>Euler &amp; Heun 密切相关。
+Heun 在准确性方面是对 Euler 的“改进”，但它以大约一半的速度运行（它必须计算正常的 Euler，然后再次执行以获得最终输出）。</p>
+<p>DDIM 是一种神经网络方法。 每一步都相当快，但效率相对较低，因为它需要很多步骤才能获得好的结果。</p>
 <h3 id="xformers"><strong>xformers加速</strong></h3>
 <p>加速推理,分辨率越高加速效果越好。</p>
 <p><a href="https://github.com/C43H66N12O12S2/stable-diffusion-webui/releases">Windows</a> (30 系之外要自己编译)</p>
@@ -989,7 +1011,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
 <p>30 系显卡正常启动 --xformers, 其他显卡 --force-enable-xformers</p>
 </blockquote>
 <hr />
-<h2 id="_11">进阶</h2>
+<h2 id="_10">进阶</h2>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#attentionemphasis">英文原版</a></p>
 <h3 id="textual-inversion"><strong>Textual Inversion</strong></h3>
 <p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion</p>
@@ -1020,7 +1042,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
 <ul>
 <li>将模式（图片右下角）更改为"Upload mask"并为蒙版选择单独的黑白图像(white=inpaint)。</li>
 </ul>
-<h3 id="_12"><strong>全分辨率修复！</strong></h3>
+<h3 id="_11"><strong>全分辨率修复！</strong></h3>
 <p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#inpaint-at-full-resolution</p>
 <h3 id="variations"><strong>Variations种子变化</strong></h3>
 <p>Variation strength slider 和 Variation seed field允许您指定现有图片应更改多少以使其看起来不同。
@@ -1038,7 +1060,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
 - 将文本文件放入其中，每行都有相关描述</p>
 <div class="highlight"><pre><span></span><code>For example of what text files to use, see https://github.com/pharmapsychotic/clip-interrogator/tree/main/data. In fact, you can just take files from there and use them - just skip artists.txt because you already have a list of artists in artists.csv (or use that too, who&#39;s going to stop you). Each file adds one line of text to the final description. If you add &quot;.top3.&quot; to filename, for example, flavors.top3.txt, the three most relevant lines from this file will be added to the prompt (other numbers also work).
 </code></pre></div>
-<h3 id="_13"><strong>渐变提示编辑</strong></h3>
+<h3 id="_12"><strong>渐变提示编辑</strong></h3>
 <p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-editing</p>
 <h4 id="face-restoration"><strong>Face restoration三次元人脸修复</strong></h4>
 <p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#face-restoration</p>
@@ -1051,7 +1073,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
 </code></pre></div></p>
 <h3 id="notificationmp3">notification.mp3 提示声音</h3>
 <p>If an audio file named <code>notification.mp3</code> is present in <code>webui's root folder</code>, it will be played when the generation process completes.</p>
-<h2 id="_14">运行</h2>
+<h2 id="_13">运行</h2>
 <h3 id="4gb">4GB 显卡支持</h3>
 <p>针对具有低 VRAM 的 GPU 的优化。这应该可以在具有 4GB 内存的视频卡上生成 512x512 图像。</p>
 <p><code>--lowvram</code> 是 basujindal 对优化思想的重新实现。模型被分成模块，GPU内存中只保存一个模块；当另一个模块需要运行时，前一个模块将从 GPU 内存中删除。这种优化的性质使处理速度变慢——与我的 RTX 3090 上的正常操作相比，速度慢了大约 10 倍。</p>
@@ -1061,7 +1083,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
 <p>经过 10/10 的优化，RTX2050的4GB 显卡也可以使用 <code>--medvram</code> 。</p>
 </div>
 <p>当然也可以减半精度，或者生成一张 64x64 清理 vram</p>
-<h3 id="_15">不间断生产</h3>
+<h3 id="_14">不间断生产</h3>
 <p>在 WebUi 的生成键右击即可出现 不间断生成 的选项。</p>
 <h3 id="png-info">图片信息 Png info</h3>
 <p>生成的图片自带 令牌信息，拖放到 查看页面即可查看 。</p>
@@ -1086,11 +1108,11 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 15:18:18</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 15:24:42</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 15:18:18</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 15:24:42</span>
       
     
   </small>
