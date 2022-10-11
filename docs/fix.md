@@ -280,9 +280,45 @@ lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer
 
 from [Here](https://t.me/StableDiffusion_CN/6043)
 
-### **采样器参数**
+### **Euler等Samplers采样器参数**
 
 请阅读 https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/1162
+
+
+下面的引用是来自 [Reddit](https://www.reddit.com/r/StableDiffusion/comments/xbeyw3/can_anyone_offer_a_little_guidance_on_the/) 的内容
+
+??? info 
+    Has to do with how diffusion-based models work. Basically, they start with a random noise image and 'mine' the noisy image for a less noisy output.
+
+    This process is defined by a differential equation that describes how much noise is removed in a step.
+
+    Solving these equations is a bit tricky; there's different approaches with tradeoffs between speed and accuracy and occasionally some special sauce to make this more than a zero-sum tradeoff (i.e. can make something a little bit faster and a lot more accurate, or vice versa, for example).
+
+??? info "采样器不同"
+    Euler is the simplest, and thus one of the fastest. It and Heun are classics in terms of solving ODEs.
+
+    Euler & Heun are closely related. Heun is an 'improvement' on Euler in terms of accuracy, but it runs at about half the speed (which makes sense - it has to calculate the normal Euler term, then do it again to get the final output).
+
+    LMS and PLMS are their cousins - they use a related, but slightly different approach (averaging out a couple of steps in the past to improve accuracy). As I understand it, PLMS is effectively LMS (a classical method) adapted to better deal with the weirdness in neural network structure.
+
+    DDIM is a neural network method. It's quite fast per step, but relatively inefficient in that it takes a bunch of steps to get a good result.
+
+    DPM2 is a fancy method designed for diffusion models explicitly aiming to improve on DDIM in terms of taking less steps to get a good output. It needs to run the denoising twice per step, so once again - it's about twice as slow.
+
+    The Ancestral samplers are deceptively much further away from the corresponding non-Ancestral samplers and closer to each other. The corresponding algorithms are used - hence the names - but in a different context.
+
+    They can add a bunch of noise per step, so they are more chaotic and diverge heavily from non-Ancestral samplers in terms of the output images. As per the normal-flavored samplers, DPM2-A is about half as fast as Euler-A.
+
+    Weirdly, in some comparisons DPM2-A generates very similar images as Euler-A... on the previous seed. Might be due to it being a second-order method vs first-order, might be an experiment muck-up.
+
+Euler 是最简单的，因此也是最快的。
+
+Euler & Heun 密切相关。
+Heun 在准确性方面是对 Euler 的“改进”，但它以大约一半的速度运行（它必须计算正常的 Euler，然后再次执行以获得最终输出）。
+
+DDIM 是一种神经网络方法。 每一步都相当快，但效率相对较低，因为它需要很多步骤才能获得好的结果。
+
+
 
 ### **xformers加速**
 
