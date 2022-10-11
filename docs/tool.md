@@ -1,6 +1,8 @@
 # 工具速查
 
 
+[法术书](https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml#)
+
 ### 调参简单大纲
 
 竖着看
