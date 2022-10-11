@@ -9,7 +9,6 @@
 
 - [中文社区 StableDiffusion_CN](https://t.me/StableDiffusion_CN/)
 
-
 - [StableDiffusion_Github_discussions](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions)
 
 - [WebUi使用手册](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features)
