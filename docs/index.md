@@ -22,7 +22,7 @@ N卡显存 > 2GB ，4GB 或 6GB 是最低正常体验，均要求内存大于 4G
 
 NV 原版网页UI+后端部署需要准备一台拥有12GB以上显存的 *Linux系统* 的GPU服务器。
 
-NV 精简版 **naifu** 至少需要8GB内存，6GB显存才能出图。
+NV 精简版 **naifu** 至少需要8GB内存，8GB显存才能出图。
 
 
 ## Stable Diffusion 和 NV 关系？我该怎么办？
