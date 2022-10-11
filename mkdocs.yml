@@ -18,6 +18,7 @@ theme:
     #- navigation.indexes
     - navigation.top
     - navigation.instant
+    - navigation.expand
 
 
     
