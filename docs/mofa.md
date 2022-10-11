@@ -126,6 +126,8 @@ normal quality, text, censored, gown, latex, pencil
 
 NSFWTag 可以参考[Github Here](https://github.com/scooderic/exhentai-tags-chinese-translation)
 
+[Ai艺术家文档——深入了解](https://docs.google.com/spreadsheets/d/1SRqJ7F_6yHVSOeCi3U82aA448TqEGrUlRrLLZ51abLg/htmlview#)
+
 
 ## 参数
 
@@ -135,11 +137,57 @@ NSFWTag 可以参考[Github Here](https://github.com/scooderic/exhentai-tags-chi
 
 在 NV 和 Webui 之间转换加强参数   [M2NM2NBot](https://t.me/M2NM2NBot)
 
+权重增强标识：NV 是 `{}` ，SD 是 `()`
+
+### 良好参数(风格趋向插画)[^4]
+
+```
+{an extremely delicate and beautiful}
+```
+
+#### 草图风格
+
+| 词                                                            | 描述                                               |
+|---------------------------------------------------------------|----------------------------------------------------|
+| sketch                                                        | 可以让图片看起来像随手画的草稿                     |
+| {{lineart}}                                                   | 可以让线条变得很粗                                 |
+| {{{posing sketch}}}, {{monochrome}}                           | 黑白草图                                           |
+| {rough sketch}                                                | 上了颜色的草图                                     |
+| monochrome+lineart                                            | 情况下一般只会让眼睛上色，强调发色后头发也可以上色 |
+| {{{monochrome}}}, {{{gray scale}}}, {{{pencil sketch lines}}} | 做出的铅笔速写的感觉                               |
 
 
+利用sketch，pastel color，lineart的tag模拟一张图的绘画过程
+
+#### 艺术风格
+
+| 词                                                                  | 描述                                   |
+|---------------------------------------------------------------------|----------------------------------------|
+| chibi                                                               | 可以画出低头身比的效果(二头身, 三头身) |
+| {{watercolor pencil}}                                               | 可以生成彩铅画                         |
+| {{faux traditional media}}                                          | 可以做出签绘的风格                     |
+| anime screeshot，                                                   | 可以让画面变成动画风格                 |
+| {{{retro artstyle}}}                                                | 赛璐璐风                               |
+| {photorealistic}, {painting}, {realistic}, {sketch}, {oil painting} | 厚涂                                   |
+| pastel color和sketch                                                | 搭配会有速涂的质感                     |
+
+#### 杂志/设定集 风格
+
+| 词                                                             | 描述                                                           |
+|----------------------------------------------------------------|----------------------------------------------------------------|
+| official art                                                   | 变得更加官方一点                                               |
+| three views from front, back and side和costume setup materials | 可以用来生成设定图                                             |
+| multiple views                                                 | 会出现类似设定图                                               |
+| {character sheet}                                              | 会出现设定图                                                   |
+| magazine cover                                                 | 会把背景换成杂志封面, 配合office art更像真实杂志(虽然字没法看) |
+| magazine scan                                                  | 类似杂志内页的风格                                             |
+| posing                                                         | 会强调有一个动作, 不至于出现混乱的动作(露出有六个手指头的手)   |
+| caustics                                                       | 画面向主题聚焦, 类似海报                                       |
 
 
 ### 常用参数:SFW
+
+
 
 | 人物数量 | 描述                                                                  |
 | ----------- | ----------------------------------------------------------------------- |
@@ -239,4 +287,4 @@ NSFWTag 可以参考[Github Here](https://github.com/scooderic/exhentai-tags-chi
 | 湿身               | wet body                                             |
 
 
-
+[^4]:[Paper朱整理优化方法](https://pan.baidu.com/s/1VWr7OLvAbu1KIoTPEs2wwQ?pwd=y8lk)

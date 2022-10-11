@@ -25,6 +25,7 @@
 
 - [基于 NovelAI 的画图机器人](https://github.com/koishijs/novelai-bot#token)
 
+- [Ai艺术家文档——深入了解](https://docs.google.com/spreadsheets/d/1SRqJ7F_6yHVSOeCi3U82aA448TqEGrUlRrLLZ51abLg/htmlview#)
 
 ### 数据集
 
