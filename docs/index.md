@@ -74,26 +74,23 @@ NV 精简版 **naifu** 至少需要8GB内存，8GB显存才能出图。
 
 -------
 
-10/11 更新：
+- 10/11 更新
 新版本 Webui 增加了 Eta noise seed delta ，设为 31337 后会贴近NV官方
 
 -------
 
-10/10 更新：
+- 10/10 更新
 测试发现,新版本 Webui 优化显存占用(20xx—>10xx)，关闭浏览器和TG的硬件加速后，即使是4GB的  RTX2050 也可以启动 --medvram 模式！而且很快.
 
 
 --------
 
 
-背景故事：
+- 背景故事
 
-NovelAI 是一个使用 AI 生成故事文本和**通过描述文字生成图片**的服务。
-
-Stable Diffusion 是由 Stability AI 发布的透过文字等生成图片的模型。
+NovelAI 是一个使用 AI 生成故事文本和**通过描述文字生成图片**的服务，而 Stable Diffusion 是由 Stability AI 发布的透过文字等生成图片的模型。
 
 开发者 AUTOMATIC 是 Stable-Diffusion-Webui 的主要开发者：此项目可以用于在使用 Stable Diffusion 等模型时调整参数，极大地方便了尤其是没有计算机背景或 AI/ML 背景的模型用户。
-
 
 前几日 NovelAI [称其部分软件和源码泄露](https://old.reddit.com/r/NovelAi/comments/xydjc6/)。在模型泄露后， AUTOMATIC 在 Webui 项目中添加了对 **Hypernetwork** 模型的支持，使得此项目可以和泄露模型共用。
 
