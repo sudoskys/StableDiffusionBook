@@ -91,7 +91,7 @@ normal quality, text, censored, gown, latex, pencil
 
 [StableDiffusion_Show](https://t.me/StableDiffusion_Show)
 
-[DeepDanbooru](https://github.com/KichangKim/DeepDanbooru)
+[cyan_ai_sese](https://t.me/cyan_ai_sese)
 
 ### **种子调试**
 
