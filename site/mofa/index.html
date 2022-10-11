@@ -469,6 +469,40 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    良好参数(风格趋向插画)1
+  </a>
+  
+    <nav class="md-nav" aria-label="良好参数(风格趋向插画)1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    草图风格
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    艺术风格
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    杂志/设定集 风格
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#sfw" class="md-nav__link">
     常用参数:SFW
   </a>
@@ -647,10 +681,133 @@ normal quality, text, censored, gown, latex, pencil
 <p><strong><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml#">参数法术全典</a></strong></p>
 <p><strong><a href="https://docs.google.com/spreadsheets/d/1zij5OzCZIaQuhAbiSayhFznjgJ3rwbaNwnUnaUMxyTQ/edit?usp=drivesdk">Tag在线协作</a></strong></p>
 <p>NSFWTag 可以参考<a href="https://github.com/scooderic/exhentai-tags-chinese-translation">Github Here</a></p>
+<p><a href="https://docs.google.com/spreadsheets/d/1SRqJ7F_6yHVSOeCi3U82aA448TqEGrUlRrLLZ51abLg/htmlview#">Ai艺术家文档——深入了解</a></p>
 <h2 id="_13">参数</h2>
 <h3 id="nvsd">转换——NV和SD的增强语法不同</h3>
 <p><strong>Prompts 参数括号转换</strong></p>
 <p>在 NV 和 Webui 之间转换加强参数   <a href="https://t.me/M2NM2NBot">M2NM2NBot</a></p>
+<p>权重增强标识：NV 是 <code>{}</code> ，SD 是 <code>()</code></p>
+<h3 id="1">良好参数(风格趋向插画)<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">1</a></sup></h3>
+<div class="highlight"><pre><span></span><code>{an extremely delicate and beautiful}
+</code></pre></div>
+<h4 id="_14">草图风格</h4>
+<table>
+<thead>
+<tr>
+<th>词</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sketch</td>
+<td>可以让图片看起来像随手画的草稿</td>
+</tr>
+<tr>
+<td>{{lineart}}</td>
+<td>可以让线条变得很粗</td>
+</tr>
+<tr>
+<td>{{{posing sketch}}}, {{monochrome}}</td>
+<td>黑白草图</td>
+</tr>
+<tr>
+<td>{rough sketch}</td>
+<td>上了颜色的草图</td>
+</tr>
+<tr>
+<td>monochrome+lineart</td>
+<td>情况下一般只会让眼睛上色，强调发色后头发也可以上色</td>
+</tr>
+<tr>
+<td>{{{monochrome}}}, {{{gray scale}}}, {{{pencil sketch lines}}}</td>
+<td>做出的铅笔速写的感觉</td>
+</tr>
+</tbody>
+</table>
+<p>利用sketch，pastel color，lineart的tag模拟一张图的绘画过程</p>
+<h4 id="_15">艺术风格</h4>
+<table>
+<thead>
+<tr>
+<th>词</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>chibi</td>
+<td>可以画出低头身比的效果(二头身, 三头身)</td>
+</tr>
+<tr>
+<td>{{watercolor pencil}}</td>
+<td>可以生成彩铅画</td>
+</tr>
+<tr>
+<td>{{faux traditional media}}</td>
+<td>可以做出签绘的风格</td>
+</tr>
+<tr>
+<td>anime screeshot，</td>
+<td>可以让画面变成动画风格</td>
+</tr>
+<tr>
+<td>{{{retro artstyle}}}</td>
+<td>赛璐璐风</td>
+</tr>
+<tr>
+<td oil="oil" painting="painting">{photorealistic}, {painting}, {realistic}, {sketch},</td>
+<td>厚涂</td>
+</tr>
+<tr>
+<td>pastel color和sketch</td>
+<td>搭配会有速涂的质感</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_16">杂志/设定集 风格</h4>
+<table>
+<thead>
+<tr>
+<th>词</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>official art</td>
+<td>变得更加官方一点</td>
+</tr>
+<tr>
+<td>three views from front, back and side和costume setup materials</td>
+<td>可以用来生成设定图</td>
+</tr>
+<tr>
+<td>multiple views</td>
+<td>会出现类似设定图</td>
+</tr>
+<tr>
+<td>{character sheet}</td>
+<td>会出现设定图</td>
+</tr>
+<tr>
+<td>magazine cover</td>
+<td>会把背景换成杂志封面, 配合office art更像真实杂志(虽然字没法看)</td>
+</tr>
+<tr>
+<td>magazine scan</td>
+<td>类似杂志内页的风格</td>
+</tr>
+<tr>
+<td>posing</td>
+<td>会强调有一个动作, 不至于出现混乱的动作(露出有六个手指头的手)</td>
+</tr>
+<tr>
+<td>caustics</td>
+<td>画面向主题聚焦, 类似海报</td>
+</tr>
+</tbody>
+</table>
 <h3 id="sfw">常用参数:SFW</h3>
 <table>
 <thead>
@@ -1024,17 +1181,25 @@ normal quality, text, censored, gown, latex, pencil
 </tr>
 </tbody>
 </table>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:4">
+<p><a href="https://pan.baidu.com/s/1VWr7OLvAbu1KIoTPEs2wwQ?pwd=y8lk">Paper朱整理优化方法</a>&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 14:11:43</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 14:30:57</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 14:11:43</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 14:30:57</span>
       
     
   </small>
