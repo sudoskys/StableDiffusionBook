@@ -15,11 +15,12 @@ theme:
   features:
     - navigation.tabs
     - toc.integrate
+    - toc.follow
     #- navigation.indexes
     - navigation.top
     - navigation.instant
     - navigation.expand
-
+    
 
     
 markdown_extensions:
