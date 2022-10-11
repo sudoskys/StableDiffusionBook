@@ -40,6 +40,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki
 - 以普通非管理员用户身份从Windows资源管理器运行`webui-user.bat`
 
 **Linux 安装**
+
 先安装依赖
 ```bash
 # Debian-based:
@@ -90,12 +91,15 @@ HTTP_PROXY 和 HTTPS_PROXY 环境变量，或者使用clash 的tun模式. 或者
 确保您的文件夹路径没有空格。
 
 **驱动**
+
 确保您拥有可以运行的最新CUDA 工具包和 GPU 驱动程序
 
 **Python呢？**
+
 如果您的 Python 版本不在 PATH 中，则在文件夹中创建或修改 webui.settings.bat 添加行 `set PYTHON=python `来说明 Python 可执行文件的完整路径（请看下面的参数说明！
 
 **环境**
+
 安装程序会创建一个 python 虚拟环境，因此如果你在安装之前安装了一个模块，那么任何已安装的模块都不会影响你
 
 如果需要防止创建虚拟环境使用系统 python，编辑 `webui.bat` 替换 `setVENV_DIR=venv`为`set VENV_DIR=`（见下面参数
