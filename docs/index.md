@@ -6,12 +6,25 @@ NovelAI 是一项每月订阅服务，用于 AI 辅助创作、讲故事、虚�
 
 本文档围绕以上项目展开叙述....
 
+
+
 !!! tip "术语"
     NV 指 NovelAI
     SD 指 Stable Diffusion web 
     魔杖 指 Stable Diffusion web 
     魔法 指 调参方法
     令牌 指 参数
+
+## 提问的艺术
+
+问问题先自己查（至少遇到英文要翻译一下吧！），任何人或社区成员没有义务为你解答，你又不给钱。
+
+[如何提问才是正确的？](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)
+
+如果你确认有错误的内容或者需要补充的重要内容，可以发 Issue 或 Pr 这个仓库，帮助完成文档，帮到更多人。
+
+欢迎交流，不欢迎伸手党。
+
 
 ## 我可以参加 Party 吗？
 
