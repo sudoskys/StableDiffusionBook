@@ -580,18 +580,12 @@
     Textual Inversion
   </a>
   
-    <nav class="md-nav" aria-label="Textual Inversion">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#loopback" class="md-nav__link">
     Loopback回环生成
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -797,7 +791,7 @@
 
 <h1 id="_1">模型技法</h1>
 <p>这节介绍Debug和一些关于SD网页应用的优化方案，让它更好用。</p>
-<p>至于如何创造令牌和参数相关，请看下一节：魔法创造！</p>
+<p>至于如何创造令牌和参数相关，请看下一节：令牌，也就是参数如何写</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>注意要经常从远端代码库拉取代码洗礼SD网页应用。</p>
@@ -1017,7 +1011,7 @@ Heun 在准确性方面是对 Euler 的“改进”，但它以大约一半的�
 <h3 id="textual-inversion"><strong>Textual Inversion</strong></h3>
 <p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion</p>
 <p>丢到 embeddings 文件夹, prompt 提到你要用的 embedding 的文件名即可。</p>
-<h4 id="loopback"><strong>Loopback回环生成</strong></h4>
+<h3 id="loopback"><strong>Loopback回环生成</strong></h3>
 <p>在 img2img 中设置loopback脚本，它允许自动将输出图像作为下一批的Batch提供，相当于保存输出图像，并用它替换输入图像。</p>
 <p>Batch 数设置控制获得多少次迭代</p>
 <p>通常，在执行此操作时，您会自己为下一次迭代选择许多图像中的一个，因此此功能的有用性可能值得怀疑，但反正我已经设法获得了一些我无法获得的非常好的输出。</p>
@@ -1109,11 +1103,11 @@ Heun 在准确性方面是对 Euler 的“改进”，但它以大约一半的�
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 15:46:28</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 15:48:46</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 15:46:28</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 15:48:46</span>
       
     
   </small>
