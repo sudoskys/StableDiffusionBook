@@ -350,6 +350,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    关于显卡
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#nv" class="md-nav__link">
     NV 模型
   </a>
@@ -357,7 +364,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     说明
   </a>
   
@@ -379,14 +386,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     半精度/全精度
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     横条参数说明
   </a>
   
@@ -415,14 +422,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     彩虹图
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     但是高分辨率下出怪图
   </a>
   
@@ -454,7 +461,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     进一步优化
   </a>
   
@@ -475,7 +482,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     模型超参数
   </a>
   
@@ -502,7 +509,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     采样器参数
   </a>
   
@@ -521,7 +528,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     进阶
   </a>
   
@@ -570,7 +577,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     全分辨率修复！
   </a>
   
@@ -604,7 +611,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     渐变提示编辑
   </a>
   
@@ -643,7 +650,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#_14" class="md-nav__link">
     运行
   </a>
   
@@ -658,7 +665,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
+  <a href="#_15" class="md-nav__link">
     不间断生产
   </a>
   
@@ -749,17 +756,31 @@
 
 
 <h1 id="_1">模型技法</h1>
-<p>关于SD网页应用的优化方案，让它更好用。</p>
+<p>这节介绍Debug和一些关于SD网页应用的优化方案，让它更好用。</p>
+<p>至于如何创造令牌和参数相关，请看下一节：魔法创造！</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
 <p>注意要经常从远端代码库拉取代码洗礼SD网页应用。</p>
+</div>
 <blockquote>
 <p>本节只针对 NV 模型展开教程。请多多关注 About 页面的社区获取最新进展和新闻。源教程来自：<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">1</a></sup></p>
-<p>如何创造令牌和参数相关，请看下一节：魔法创造！</p>
 </blockquote>
 <div class="admonition info">
 <p class="admonition-title">版权</p>
 <p>本仓库不提供具体链接（版权警告），可以看页面下标或关注中文社区 t.me@StableDiffusion_CN_WIKI。</p>
 </div>
 <p><a href="https://rentry.org/sdmodels">除了NV模型外的其他模型：Stable Diffusion Models</a></p>
+<h2 id="_2">关于显卡</h2>
+<p>cuda 是否可用、以及 torch 对应的 cuda 的版本
+打开命令窗，输入 python 进入，分行输入
+<div class="highlight"><pre><span></span><code>import torch
+print(torch.__version__)
+print(torch.cuda.is_available())
+</code></pre></div></p>
+<p><strong>查看torch对应的cuda版本</strong>
+<div class="highlight"><pre><span></span><code>torch.version.cuda
+</code></pre></div>
+输入 ctrl + z 退出</p>
 <h2 id="nv">NV 模型</h2>
 <p>你的 models 文件夹应该是这样的。</p>
 <div class="highlight"><pre><span></span><code>./models
@@ -809,7 +830,7 @@
 </ul>
 </details>
 <p>启动 cli 有提示加载就 OK, 去设置选模型那里选喜欢的 <code>hypernetwork</code></p>
-<h2 id="_2">说明</h2>
+<h2 id="_3">说明</h2>
 <h3 id="leaknv">对于 LeakNV 模型的说明</h3>
 <p><code>animesfw-latest</code> 即NV 基线模型</p>
 <p><code>animefull-final-pruned</code> = <code>full-latest</code> = NV 全量模型(成人内容)</p>
@@ -823,10 +844,10 @@
 <p>BV1Gm4y1A7VM</p>
 <h3 id="vae">Vae 权重</h3>
 <p>如果需要更好模拟NV,务必使用 <code>animevae.pt</code></p>
-<h3 id="_3">半精度/全精度</h3>
+<h3 id="_4">半精度/全精度</h3>
 <p>float32 用于较旧的 gpus，或者你想要 100% 的精度</p>
 <p>两者的输出应该几乎相同，主要区别在于大小和支持它的 GPU。</p>
-<h3 id="_4">横条参数说明</h3>
+<h3 id="_5">横条参数说明</h3>
 <p><code>step</code> 迭代多少次, 取值和 sampling method 有关, DDIM 收敛较快, 见 Sampler vs. Steps Comparison (low to mid step counts) 我用 DDIM 取 20 够了.</p>
 <p><code>batch count/batch size</code> 决定生成的图片数量, 显存够就加 batch size, 不够就 batch count, 得到的图片数量是两者之积 (小显存还是只动 count 就好)</p>
 <p><code>sample method</code>  我无脑 DDIM, Eula 也挺好用? (带 a 的是 ancestral 的意思, step 增长出图不稳定)</p>
@@ -842,9 +863,9 @@
 <p>启动参数加 <code>--precision full --no-half</code>, 要省显存还要加 <code>--medvram</code></p>
 <h4 id="runtimeerror-sizes-of-tensors-must-match">RuntimeError Sizes of tensors must match</h4>
 <p>(img2img) 如果你得到RuntimeError: Sizes of tensors must match，你需要改变输入图像的分辨率</p>
-<h4 id="_5">彩虹图</h4>
+<h4 id="_6">彩虹图</h4>
 <p>如果您的输出是混乱的彩虹混乱，则您的图像分辨率设置得太低</p>
-<h4 id="_6">但是高分辨率下出怪图</h4>
+<h4 id="_7">但是高分辨率下出怪图</h4>
 <p><a href="https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99#%E9%AB%98%E5%88%86%E8%BE%A8%E7%8E%87%E4%B8%8B%E5%87%BA%E6%80%AA%E5%9B%BE">读这里</a></p>
 <h4 id="runtimeerror-unable-to-find-a-valid-cudnn-algorithm-to-run-convolution">RuntimeError: Unable to find a valid cuDNN algorithm to run convolution</h4>
 <p>生成报错解释：显存不足</p>
@@ -856,7 +877,7 @@ print(torch.cuda.is_available())</p>
 <p>再不行：确保在浏览器中禁用硬件加速，并在出现内存不足错误时关闭任何可能占用 VRAM 的内容。</p>
 <h2 id="nv_1">优化靠近 NV</h2>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017">对NV模型靠近NV效果相关讨论，应该读一读！</a></p>
-<h3 id="_7">进一步优化</h3>
+<h3 id="_8">进一步优化</h3>
 <p>出图后，可以将喜欢的结果从右侧的输出选项卡拖回 img2img 以进行进一步迭代。</p>
 <h3 id="nv-eta-noise-seed-delta"><strong>靠近NV,调整 Eta noise seed delta</strong></h3>
 <p>设置为 <code>31337</code> 可以更靠近</p>
@@ -867,7 +888,7 @@ print(torch.cuda.is_available())</p>
 
 https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-last-layers-of-clip-model
 </code></pre></div>
-<h3 id="_8"><strong>模型超参数</strong></h3>
+<h3 id="_9"><strong>模型超参数</strong></h3>
 <p>如果你想达到 NovelAi 的效果，需要加 negative prompt（消极令牌）, 加载 hypernetwork （网络）和 vae.</p>
 <p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/1868#discussioncomment-3824077</p>
 <h4 id="nvconfigyaml"><strong>NV模型的Config.yaml</strong></h4>
@@ -877,7 +898,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
 <div class="highlight"><pre><span></span><code>lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry
 </code></pre></div>
 <p>from <a href="https://t.me/StableDiffusion_CN/6043">Here</a></p>
-<h3 id="_9"><strong>采样器参数</strong></h3>
+<h3 id="_10"><strong>采样器参数</strong></h3>
 <p>请阅读 https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/1162</p>
 <h3 id="xformers"><strong>xformers加速</strong></h3>
 <p>加速推理,分辨率越高加速效果越好。</p>
@@ -886,7 +907,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
 <blockquote>
 <p>30 系显卡正常启动 --xformers, 其他显卡 --force-enable-xformers</p>
 </blockquote>
-<h2 id="_10">进阶</h2>
+<h2 id="_11">进阶</h2>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#attentionemphasis">英文原版</a></p>
 <h3 id="textual-inversion"><strong>Textual Inversion</strong></h3>
 <p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion</p>
@@ -917,7 +938,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
 <ul>
 <li>将模式（图片右下角）更改为"Upload mask"并为蒙版选择单独的黑白图像(white=inpaint)。</li>
 </ul>
-<h3 id="_11"><strong>全分辨率修复！</strong></h3>
+<h3 id="_12"><strong>全分辨率修复！</strong></h3>
 <p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#inpaint-at-full-resolution</p>
 <h3 id="variations"><strong>Variations种子变化</strong></h3>
 <p>Variation strength slider 和 Variation seed field允许您指定现有图片应更改多少以使其看起来不同。
@@ -935,7 +956,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
 - 将文本文件放入其中，每行都有相关描述</p>
 <div class="highlight"><pre><span></span><code>For example of what text files to use, see https://github.com/pharmapsychotic/clip-interrogator/tree/main/data. In fact, you can just take files from there and use them - just skip artists.txt because you already have a list of artists in artists.csv (or use that too, who&#39;s going to stop you). Each file adds one line of text to the final description. If you add &quot;.top3.&quot; to filename, for example, flavors.top3.txt, the three most relevant lines from this file will be added to the prompt (other numbers also work).
 </code></pre></div>
-<h3 id="_12"><strong>渐变提示编辑</strong></h3>
+<h3 id="_13"><strong>渐变提示编辑</strong></h3>
 <p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-editing</p>
 <h4 id="face-restoration"><strong>Face restoration三次元人脸修复</strong></h4>
 <p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#face-restoration</p>
@@ -948,7 +969,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
 </code></pre></div></p>
 <h3 id="notificationmp3">notification.mp3 提示声音</h3>
 <p>If an audio file named <code>notification.mp3</code> is present in <code>webui's root folder</code>, it will be played when the generation process completes.</p>
-<h2 id="_13">运行</h2>
+<h2 id="_14">运行</h2>
 <h3 id="4gb">4GB 显卡支持</h3>
 <p>针对具有低 VRAM 的 GPU 的优化。这应该可以在具有 4GB 内存的视频卡上生成 512x512 图像。</p>
 <p><code>--lowvram</code> 是 basujindal 对优化思想的重新实现。模型被分成模块，GPU内存中只保存一个模块；当另一个模块需要运行时，前一个模块将从 GPU 内存中删除。这种优化的性质使处理速度变慢——与我的 RTX 3090 上的正常操作相比，速度慢了大约 10 倍。</p>
@@ -958,7 +979,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
 <p>经过 10/10 的优化，RTX2050的4GB 显卡也可以使用 <code>--medvram</code> 。</p>
 </div>
 <p>当然也可以减半精度，或者生成一张 64x64 清理 vram</p>
-<h3 id="_14">不间断生产</h3>
+<h3 id="_15">不间断生产</h3>
 <p>在 WebUi 的生成键右击即可出现 不间断生成 的选项。</p>
 <h3 id="png-info">图片信息 Png info</h3>
 <p>生成的图片自带 令牌信息，拖放到 查看页面即可查看 。</p>
@@ -980,11 +1001,11 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 13:30:41</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 13:36:18</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 13:30:41</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 13:36:18</span>
       
     
   </small>
