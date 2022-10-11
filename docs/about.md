@@ -35,7 +35,7 @@
 
 - [日本社区？那边出的教程](https://rentry.co/zk4u5)
 
-
+- [novelai对Sd的优化日志](https://blog.novelai.net/novelai-improvements-on-stable-diffusion-e10d38db82ac)
 
 
 ### 数据集
