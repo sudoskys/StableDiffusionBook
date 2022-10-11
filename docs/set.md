@@ -99,6 +99,7 @@ pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 
 然后在新代码目录下，尝试运行原来的 Bat，如果报错，就根据提示排查是不是 NotFound 什么依赖，或者根据下面的命令说明修改 Bat 文件。
 
+你也可以参考 [带图片的教程](https://gist.github.com/huige233/1a9817eab5a808ca4cf526cdd2dea9a4#%E6%87%92%E4%BA%BA%E5%8C%85%E7%9B%B8%E5%85%B3)
 
 #### Linux 安装
 
