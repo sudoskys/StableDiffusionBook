@@ -21,6 +21,9 @@
 
 - [SD相关的Faq](https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99)
 
+- [基于 NovelAI 的画图机器人](https://github.com/koishijs/novelai-bot#token)
+
+
 
 #### 数据集
 

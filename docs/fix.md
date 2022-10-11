@@ -16,21 +16,6 @@
 
 [除了NV模型外的其他模型：Stable Diffusion Models](https://rentry.org/sdmodels)
 
-## 关于显卡
-
-cuda 是否可用、以及 torch 对应的 cuda 的版本
-打开命令窗，输入 python 进入，分行输入
-```
-import torch
-print(torch.__version__)
-print(torch.cuda.is_available())
-```
-
-**查看torch对应的cuda版本**
-```
-torch.version.cuda
-```
-输入 ctrl + z 退出
 
 
 ## NV 模型
@@ -74,7 +59,7 @@ final-pruned.yaml 即 model.ckpt 同文件夹的 stableckpt/animefull-final-prun
 
 hypernetworks 包含了 stableckpt/modules/modules 里的文件，是风格相关的数据集。
 
-![图片](https://github.dev/sudoskys/StableDiffusionBook/blob/main/resource/models.jpg)
+![图片](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/models.jpg)
 
 ??? info "附内容"
     - stableckpt/ - Stable Diffusion checkpoints
@@ -91,6 +76,57 @@ hypernetworks 包含了 stableckpt/modules/modules 里的文件，是风格相�
 启动 cli 有提示加载就 OK, 去设置选模型那里选喜欢的 `hypernetwork`
 
 
+## 关于显卡
+
+cuda 是否可用、以及 torch 对应的 cuda 的版本
+打开命令窗，输入 python 进入，分行输入
+```
+import torch
+print(torch.__version__)
+print(torch.cuda.is_available())
+```
+
+**查看torch对应的cuda版本**
+```
+torch.version.cuda
+```
+输入 ctrl + z 退出
+
+### 多GPU支持
+
+请查看 https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/156
+
+
+### 16xx系显卡使用半精度生成图片[^3]
+
+
+方案来自 [这个讨论](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/28#issuecomment-1241448049)
+
+1. 激活webui使用的venv,要在正确的虚拟环境里运行
+
+2. 卸载掉现在所用的 torch 和 torchvision:
+```
+pip uninstall torch torchvision
+```
+
+3. 重新安装 `cuda 11.6`编译的 `torch` 和 `torchvision`。
+```
+pip install torch torchvision --extra-index-url https://download.pytorch.org/whl/cu116
+```
+
+4. 下载 `Cudnn_8.5` 备用。
+
+使用下载工具下载，直接下载会跳转到 Nvidia 的开发者注册界面
+
+Windows: https://developer.nvidia.com/compute/cudnn/secure/8.5.0/local_installers/11.7/cudnn-windows-x86_64-8.5.0.96_cuda11-archive.zip
+
+其他版本：https://developer.nvidia.com/rdp/cudnn-archive
+
+5. 将Cudnn 8.5压缩包里的bin和lib文件夹里的所有文件复制到 `venv\Lib\site-packages\torch\lib` 里，覆盖所有文件。
+
+6. 然后16xx系显卡也可以愉快地使用半精度生成图片了！大幅降低显存占用，6G加载Full模型可以生成1024x640的图片。
+
+但是，依然不能使用 `DDIM Sampling` ，但可以使用 `Euler a`
 
 ## 说明
 
@@ -176,6 +212,12 @@ print(torch.cuda.is_available())
 
 再不行：确保在浏览器中禁用硬件加速，并在出现内存不足错误时关闭任何可能占用 VRAM 的内容。
 
+
+
+
+
+-------
+
 ## 优化靠近 NV
 
 [对NV模型靠近NV效果相关讨论，应该读一读！](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017)
@@ -236,6 +278,9 @@ from [Here](https://t.me/StableDiffusion_CN/6043)
 自己编译指路 [wiki/Xformers](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Xformers)
 
 >30 系显卡正常启动 --xformers, 其他显卡 --force-enable-xformers
+
+
+-----
 
 ## 进阶
 
@@ -374,3 +419,5 @@ Tip：每天重置资源
 4chan版本魔改官后程序，会动态分配，显存不够内存来凑。
 
 [^2]:[关于 AUTOMATIC1111 /stable-diffusion-webui 的 FAQ:](https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99)
+
+[^3]:[16xx系显卡可以使用半精度生成图片的方式](https://t.me/StableDiffusion_CN/50749)
