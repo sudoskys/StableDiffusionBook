@@ -1,12 +1,12 @@
 # 调参魔法
 
-这节会介绍 令牌参数 和 相关的法杖资源。
+这节会介绍 参数 和 相关的法杖资源。
 
 ## 魔法入门
 
 请先在前面了解一下魔杖的参数。
 
-### 令牌权重
+### 参数权重
 
 调参魔法的一个基本技能是设置权重。
 
@@ -40,11 +40,11 @@ a \(word\) - 在提示中使用文字 () 字符
 
     在NV官方前端我们使用 `{}` 来指定权重。
 
-### 消极令牌
+### 消极参数
 
-魔杖会在生成时**拒绝消极令牌有关的内容**。
+魔杖会在生成时**拒绝消极参数有关的内容**。
 
-比如使用以下令牌削除水印和文字内容
+比如使用以下参数削除水印和文字内容
 
 ```
 lowres, bad anatomy, bad hands, text, error, missing fingers, 
@@ -63,21 +63,21 @@ mutilated, tranny, trans, trannsexual, [out of frame], (bad proportions),
 normal quality, text, censored, gown, latex, pencil
 ```
 
-### 重现令牌
+### 重现参数
 
 对于没有压缩的原图，我们可以将文件拖入 `PNG Info` 选项卡，进行参数查看。
 
-### 逆向令牌
+### 逆向参数
 
-这里有一些 **Image 逆向令牌服务**，可以从图片中提取相关令牌参数，不一定准确。
+这里有一些 **Image 逆向参数服务**，可以从图片中提取相关参数，不一定准确。
 
 [LenKiMo_Bot](https://t.me/LenKiMo_Bot)
 
 [DeepDanbooru](https://github.com/KichangKim/DeepDanbooru)
 
-### 已知令牌组合
+### 已知参数组合
 
-你可以访问以下传送门获取一些优秀的令牌实例！（当然，中文社区的测试群有**大量素材**，一分钟20次）
+你可以访问以下传送门获取一些优秀的参数实例！（当然，中文社区的测试群有**大量素材**，一分钟20次）
 
 [LenKiMo_Bot](https://t.me/LenKiMo_Bot)
 
@@ -85,12 +85,27 @@ normal quality, text, censored, gown, latex, pencil
 
 ### **种子调试**
 
-在相同 Step ，cfg ，Seed,参数令牌（） 的情况下，
+在相同 Step ，cfg ，Seed,参数（prompts） 的情况下，生产的图片基本相同！
+
+## 魔法进阶
+
+调参基本原理模糊的说是：限定好的数据范围内相似样本越多，越稳定。
+
+
+### 注意 `尺寸`
+
+比如出图尺寸宽了人可能会多
+
+!!! tip
+    要匹配好姿势，镜头和人物才不畸形，有时候需要限定量词，多人物时要处理空间关系和 prompt 遮挡优先级。人数->人物样貌->环境样式->人物状态
+    
+
+
 
 ## 工具速查
 
 
-[令牌法术全典](https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml#)
+[参数法术全典](https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml#)
 
 ## 方位调参
 
@@ -107,21 +122,10 @@ normal quality, text, censored, gown, latex, pencil
 |镜头位||||
 
 
-## 魔杖参数
-
-还有一个 `参数`
-
-比如出图尺寸宽了人可能会多
-
-!!! tip
-    要匹配好姿势，镜头和人物才不畸形，有时候需要限定量词，多人物时要处理空间关系和 prompt 遮挡优先级。人数->人物样貌->环境样式->人物状态
-    
-模糊的说是：限定好的数据范围内相似样本越多，越稳定。
 
 
 
-
-### 关于令牌
+### 关于参数
 
 
 **[Tag在线协作](https://docs.google.com/spreadsheets/d/1zij5OzCZIaQuhAbiSayhFznjgJ3rwbaNwnUnaUMxyTQ/edit?usp=drivesdk)**
@@ -131,13 +135,13 @@ normal quality, text, censored, gown, latex, pencil
 
 NSFWTag 可以参考[Github Here](https://github.com/scooderic/exhentai-tags-chinese-translation)
 
-**Image 逆向为令牌**
+**Image 逆向为参数**
 
 [LenKiMo_Bot](https://t.me/LenKiMo_Bot)
 
 [DeepDanbooru](https://github.com/KichangKim/DeepDanbooru)
 
-**Prompts 令牌括号转换**
+**Prompts 参数括号转换**
 
 在 NV 和 Webui 之间转换加强参数
 
@@ -160,7 +164,7 @@ torch.version.cuda
 输入 ctrl + z 退出
 
 
-### 常用令牌:SFW
+### 常用参数:SFW
 
 | 人物数量 | 描述                                                                  |
 | ----------- | ----------------------------------------------------------------------- |
