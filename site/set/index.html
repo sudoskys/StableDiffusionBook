@@ -354,6 +354,21 @@
     安装
   </a>
   
+    <nav class="md-nav" aria-label="安装">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    Windows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    Linux 安装
+  </a>
+  
 </li>
         
           <li class="md-nav__item">
@@ -381,6 +396,11 @@
   <a href="#_6" class="md-nav__link">
     令牌
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -533,33 +553,59 @@
 <h1 id="_1">安装</h1>
 <h2 id="stable-diffusion-webui">安装 Stable-diffusion-webui 开源框架</h2>
 <p>此教程参考了 crosstyan<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></p>
-<p>仓库地址 https://github.com/AUTOMATIC1111/stable-diffusion-webui</p>
-<h4 id="_2">硬件要求</h4>
-<p>N卡显存 &gt; 2GB</p>
-<p>9月份效果(10月份因为黑科技有大量增强！)</p>
-<p><img alt="效果.png" src="https://s1.ax1x.com/2022/10/10/xtdNNR.png" />
-<img alt="效果" src="https://i.ibb.co/yd7SZ32/chartthin.png" /></p>
-<h4 id="_3">安装</h4>
-<p>先阅读官方Wiki的内容。</p>
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Dependencies">官方给定的依赖目录</a></p>
-<p>安装教程在仓库的<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui#installation-and-running">这个位置</a></p>
-<p><strong>安装的问题除了本文档还可以看</strong>
-https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki</p>
-<p><strong>Windows</strong></p>
+<p>SD的官方仓库地址为 https://github.com/AUTOMATIC1111/stable-diffusion-webui</p>
+<h3 id="_2">硬件要求</h3>
+<p>最低能用N卡显存 &gt; 2GB
+最低可用N卡显存 &gt; 4GB</p>
+<p>在 开始前，打开CMD,输入 <code>nvidia-smi</code> 看看你是不是正常驱动显卡。</p>
+<p><img alt="效果.png" src="https://s1.ax1x.com/2022/10/10/xtdNNR.png" /></p>
+<p><em>9月份效果(PS:10月份因为黑科技有大量增强！)</em></p>
+<h3 id="_3">安装</h3>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui#installation-and-running">官方英文安装教程</a></p>
+<p>官方给定的依赖目录 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Dependencies">官方给定的依赖目录</a></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>推荐有能力阅读<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki">官方Wiki</a>的内容。</p>
+<p>Ai 需要的依赖大小很大！需要心理准备！大约几G,而且国内环境可能很慢！对于Windows,<strong>依赖默认安装在C盘</strong></p>
+</div>
+<h4 id="windows">Windows</h4>
 <p>在Windows上自动安装</p>
-<ul>
-<li>安装<a href="https://www.python.org/downloads/windows/">Python 3.10.6</a>，选中“Add Pythone to PATH”</li>
-<li>安装<a href="https://git-scm.com/download/win">git</a></li>
-<li>
-<p>下载webui存储库，运行<code>git clonehttps://github.com/AUTOMATIC1111/stable-diffusion-webui.git</code></p>
-</li>
-<li>
-<p>将<code>model.ckpt</code>放在<code>models</code>目录中,请参见<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Dependencies">依赖项</a>或者向后看</p>
-</li>
-<li>（可选）将<code>GFPGANv1.4.pth</code>放在基本目录中，旁边是webui.py</li>
-<li>以普通非管理员用户身份从Windows资源管理器运行<code>webui-user.bat</code></li>
-</ul>
-<p><strong>Linux 安装</strong></p>
+<p><strong>安装 Python</strong>
+安装<a href="https://www.python.org/downloads/windows/">Python 3.10.6</a>，安装时选中“Add Pythone to PATH”</p>
+<p><strong>切换国内镜像</strong></p>
+<p>打开 CMD 命令行（Win+R 运行 cmd），输入<code>Python</code> 如果能进入就 ctrl+z 退出</p>
+<p>然后输入以下命令设置镜像。</p>
+<p><div class="highlight"><pre><span></span><code>pip config <span class="nb">set</span> global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+</code></pre></div>
+<strong>Git</strong></p>
+<p>安装<a href="https://git-scm.com/download/win">Git</a>，然后在 菜单中找到 <code>git bash</code></p>
+<p>运行<code>git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git</code> 拉取仓库，如果失败请设置代理。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>实在不行使用（但不确定能否更新）</p>
+<p><code>git clone https://hub.fastgit.org/AUTOMATIC1111/stable-diffusion-webui.git</code></p>
+</div>
+<p><strong>模型和运行</strong></p>
+<p>将 4G 或 7G 或 其他模型 <code>model.ckpt</code> 放在 <code>models</code> 目录中。</p>
+<blockquote>
+<p>请参见<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Dependencies">依赖项</a></p>
+</blockquote>
+<p>（可选）将<code>GFPGANv1.4.pth</code>放在基本目录中，旁边是 <code>webui.py</code></p>
+<p>然后以普通非管理员用户身份从Windows资源管理器运行 <code>webui-user.bat</code> 下载依赖（<strong>一般需要 22 分钟，安装在C盘，2GB以上</strong>）和启动网页应用。</p>
+<p>如果正常，输入 一个类似 <code>http://127.0.0.1:7860/</code> 的地址，点开即可。</p>
+<blockquote>
+<p>需要模型，如果没有模型请去下载一个，如果有整合包，也可以使用 其中的<code>models</code>文件夹</p>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>更新仓库使用 <code>git pull</code> 更新仓库，推荐经常更新，并关注讨论。</p>
+<p>你可以修改运行脚本添加参数！这个可以读后面的文档。</p>
+<p>运行报错？请读后面的自救节。</p>
+<p>生成报错？请读下一章。</p>
+<p>等了两小时？可以试试挂代理。</p>
+<p>为什么整合包不需要？他们的脚本中指定了同目录下的环境，阅读之后的文档就可以知道</p>
+</div>
+<h4 id="linux">Linux 安装</h4>
 <p>先安装依赖
 <div class="highlight"><pre><span></span><code><span class="c1"># Debian-based:</span>
 sudo apt install wget git python3 python3-venv
@@ -570,8 +616,8 @@ sudo pacman -S wget git python3
 </code></pre></div>
 一键脚本
 <div class="highlight"><pre><span></span><code>bash &lt;<span class="o">(</span>wget -qO- https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusion-webui/master/webui.sh<span class="o">)</span>
-</code></pre></div>
-完毕。</p>
+</code></pre></div></p>
+<p>完毕。</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>其实如果可以用 <code>anaconda</code> 尽量用，创建一个Python 3.10.6的虚拟环境</p>
@@ -587,30 +633,33 @@ conda activate aidraw
 <p>仓库的一键安装会创建 虚拟环境，然后启动 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/launch.py">launch.py</a></p>
 <p>安装依赖，如果你想使用conda,可以自己运行 launch 安装依赖！！</p>
 <p><strong>网络问题</strong></p>
-<p>git 报错
-HTTP_PROXY 和 HTTPS_PROXY 环境变量，或者使用clash 的tun模式. 或者把 git clone 的仓库源换成 huggingface..</p>
-<p>其他依赖报错也需要设置代理或者使用镜像，不然特别慢的。</p>
+<ul>
+<li>Git 报错</li>
+</ul>
+<p>HTTP_PROXY 和 HTTPS_PROXY 环境变量，或者使用 clash 的tun模式. 或者把 git clone 的仓库源换成 huggingface</p>
+<p>其他依赖报错也需要设置代理或者使用镜像，不然特慢。</p>
 <p><strong>时间花销</strong></p>
 <p>设镜像或者挂代理，<strong>依赖项 &gt;2GB</strong>,请做好准备，而且对于Windows,<strong>依赖默认安装在C盘</strong>！</p>
 <p><strong>空格</strong></p>
 <p>确保您的文件夹路径没有空格。</p>
 <p><strong>驱动</strong></p>
 <p>确保您拥有可以运行的最新CUDA 工具包和 GPU 驱动程序</p>
-<p><strong>Python呢？</strong></p>
+<p><strong>我 Python 呢？</strong></p>
 <p>如果您的 Python 版本不在 PATH 中，则在文件夹中创建或修改 webui.settings.bat 添加行 <code>set PYTHON=python</code>来说明 Python 可执行文件的完整路径（请看下面的参数说明！</p>
 <p><strong>环境</strong></p>
 <p>安装程序会创建一个 python 虚拟环境，因此如果你在安装之前安装了一个模块，那么任何已安装的模块都不会影响你</p>
 <p>如果需要防止创建虚拟环境使用系统 python，编辑 <code>webui.bat</code> 替换 <code>setVENV_DIR=venv</code>为<code>set VENV_DIR=</code>（见下面参数</p>
-<p><strong>生成图片问题见下一节</strong></p>
+<p><strong>生成图片问题见下一章</strong></p>
 <h4 id="_5">更新框架</h4>
 <p>Git拉取请使用 <code>git pull</code> 更新。</p>
 <p>如果是整合或者其他，请向上游（谁分发的）索取。</p>
 <h4 id="4gb">启动(但是必须首先下载一个4GB模型)</h4>
-<p>模型本教程还没有提供，你可以去关于页面找到 <code>中文社区</code> 的频道，里面应该有你想要的。</p>
-<p><strong>按照后面的教程装载入模型后</strong>，Win 运行 <code>webui.bat</code></p>
-<p>Linux 用户采用</p>
+<p>不提供NV模型，你可以去 关于/底部图标 页面找到 <code>中文社区</code> 的频道，里面应该有你想要的哈。</p>
+<p><strong>按照后面的教程装载入模型后</strong></p>
+<p>Win 运行 <code>webui.bat</code></p>
+<p>Linux 用户采用
 <div class="highlight"><pre><span></span><code>COMMANDLINE_ARGS=&quot;--medvram --always-batch-cond-uncond&quot; REQS_FILE=&quot;requirements.txt&quot; python launch.py
-</code></pre></div>
+</code></pre></div></p>
 <p><strong>命令参数 from Wiki</strong></p>
 <p>首先，你可以运行 <code>python webui.py --help</code> 查看所有命令参数。</p>
 <p>Tip:
@@ -823,7 +872,8 @@ sudo systemctl restart docker
     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="colab">使用 Colab 搭建</h2>
-<p>请关注中文社区 t.me@StableDiffusion_CN_WIKI</p>
+<p>Colab 资源每日重置。</p>
+<p>具体笔记本地址请关注中文社区 t.me@StableDiffusion_CN_WIKI</p>
 <div class="footnote">
 <hr />
 <ol>
@@ -844,11 +894,11 @@ sudo systemctl restart docker
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 07:20:31</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 12:25:18</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 07:20:31</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 12:25:18</span>
       
     
   </small>
