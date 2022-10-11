@@ -417,8 +417,17 @@ import base64
 import random
 
 endpoint = "http://10.10.12.67/generate"
-data = {"prompt": "masterpiece, best quality, brown red hair,blue eyes,twin tails,holding cat", "seed": random.randint(0, 2**32)
-,"n_samples":1,"sampler":"ddim","width":512,"height":768,"scale":11,"steps":28,"uc":"lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry"}
+data = {
+  "prompt": "masterpiece, best quality, brown red hair,blue eyes,twin tails,holding cat",
+  "seed": random.randint(0,2**32),
+  "n_samples": 1,
+  "sampler": "ddim",
+  "width": 512,
+  "height": 768,
+  "scale": 11,
+  "steps": 28,
+  "uc": "lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry"
+}
 
 
 req = requests.post(endpoint, json=data).json()
@@ -442,6 +451,5 @@ Colab 资源每日重置。
 [^1]:[NovelAI原版部署教程](https://telegra.ph/NovelAI%E5%8E%9F%E7%89%88%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B-10-07)
 
 [^2]:[关于 AUTOMATIC1111 /stable-diffusion-webui 的 FAQ:](https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99)
-
 
 [^3]:[Wiki2](https://rentry.co/voldy)
