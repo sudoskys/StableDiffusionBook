@@ -463,7 +463,7 @@
         
           <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
-    彩虹图
+    彩虹混乱图
   </a>
   
 </li>
@@ -943,7 +943,7 @@ print(torch.cuda.is_available())
 <p>启动参数加 <code>--precision full --no-half</code>, 要省显存还要加 <code>--medvram</code></p>
 <h4 id="runtimeerror-sizes-of-tensors-must-match">RuntimeError Sizes of tensors must match</h4>
 <p>(img2img) 如果你得到RuntimeError: Sizes of tensors must match，你需要改变输入图像的分辨率</p>
-<h4 id="_6">彩虹图</h4>
+<h4 id="_6">彩虹混乱图</h4>
 <p>如果您的输出是混乱的彩虹混乱，则您的图像分辨率设置得太低</p>
 <h4 id="_7">但是高分辨率下出怪图</h4>
 <p><a href="https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99#%E9%AB%98%E5%88%86%E8%BE%A8%E7%8E%87%E4%B8%8B%E5%87%BA%E6%80%AA%E5%9B%BE">读这里</a></p>
@@ -965,6 +965,7 @@ print(torch.cuda.is_available())</p>
 <p>相关讨论 https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017</p>
 <h3 id="nv-layers"><strong>对NV模型更改 layers 忽略层数</strong></h3>
 <p>在 WebUi 的设置页面把 ignore last layers of clip mode 的横条改成 <code>2</code></p>
+<p>具体为什么见 <a href="https://blog.novelai.net/novelai-improvements-on-stable-diffusion-e10d38db82ac">这里</a></p>
 <div class="highlight"><pre><span></span><code>CLIP is a very advanced neural network that transforms your prompt text into a numerical representation. Neural networks work very well with this numerical representation and that&#39;s why devs of SD chose CLIP as one of 3 models involved in stable diffusion&#39;s method of producing images. As CLIP is a neural network, it means that it has a lot of layers. Your prompt is digitized in a simple way, and then fed through layers. You get numerical representation of the prompt after the 1st layer, you feed that into the second layer, you feed the result of that into third, etc, until you get to the last layer, and that&#39;s the output of CLIP that is used in stable diffusion. This is the slider value of 1. But you can stop early, and use the output of the next to last layer - that&#39;s slider value of 2. The earlier you stop, the less layers of neural network have worked on the prompt.
 
 https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-last-layers-of-clip-model
@@ -1108,11 +1109,11 @@ Heun 在准确性方面是对 Euler 的“改进”，但它以大约一半的�
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 15:45:32</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 15:46:28</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 15:45:32</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 15:46:28</span>
       
     
   </small>
