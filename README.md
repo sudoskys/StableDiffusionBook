@@ -12,10 +12,7 @@
 
 关于 Ai 绘画的 Wiki ，翻译，教程，相关资源，请阅读 https://stable-diffusion-book.vercel.app/
 
-## 需求
-
-N卡显存 > 2GB，内存大于 4GB。
-
+欢迎互动～
 
 
 
