@@ -6,7 +6,7 @@
 
 请先在前面了解一下SD网页应用的参数。
 
-### 参数权重
+### 参数(令牌)权重
 
 调参魔法的一个基本技能是设置权重。
 
@@ -40,11 +40,11 @@ a \(word\) - 在提示中使用文字 () 字符
 
     在NV官方前端我们使用 `{}` 来指定权重。
 
-### 消极参数
+### 消极参数(令牌)
 
-SD网页应用会在生成时**拒绝消极参数有关的内容**。
+SD网页应用会在生成时**拒绝消极参数(令牌)有关的内容**。
 
-比如使用以下参数削除水印和文字内容
+比如使用以下参数(令牌)削除水印和文字内容
 
 ```
 lowres, bad anatomy, bad hands, text, error, missing fingers, 
@@ -63,11 +63,11 @@ mutilated, tranny, trans, trannsexual, [out of frame], (bad proportions),
 normal quality, text, censored, gown, latex, pencil
 ```
 
-### 重现参数
+### 重现参数(令牌)
 
-对于没有压缩的原图，我们可以将文件拖入 `PNG Info` 选项卡，进行参数查看。
+对于没有压缩的原图，我们可以将文件拖入 `PNG Info` 选项卡，进行参数(令牌)查看。
 
-### 逆向参数
+### 逆向参数(令牌)
 
 这里有一些 **Image 逆向参数服务**，可以从图片中提取相关参数，不一定准确。
 
@@ -75,7 +75,7 @@ normal quality, text, censored, gown, latex, pencil
 
 [DeepDanbooru](https://github.com/KichangKim/DeepDanbooru)
 
-### 已知参数组合
+### 已知参数(令牌)组合
 
 你可以访问以下传送门获取一些优秀的参数实例！（当然，中文社区的测试群有**大量素材**，一分钟20次）
 
