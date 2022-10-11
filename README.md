@@ -10,17 +10,25 @@
 
 <h2 align="center">StableDiffusionBook</h2>
 
-关于 Ai 绘画的 Wiki ，翻译，教程，相关资源，请阅读 https://stable-diffusion-book.vercel.app/
+关于 Ai 绘画的 Wiki ，翻译，教程，相关资源。
+
+请阅读 https://stable-diffusion-book.vercel.app/
 
 欢迎互动～
 
-
-
-## 改进
+## 帮助改进
 
 如果你发现了本文的的错误或不足，欢迎向[项目仓库](https://github.com/sudoskys/StableDiffusionBook/)提 issue 和 PR
 
 
 
 
+## 需求
+
+2GB 可用，4 GB 能用
 ![效果.png](https://s1.ax1x.com/2022/10/10/xtdNNR.png)
+
+
+
+
+
