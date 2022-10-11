@@ -18,7 +18,7 @@
 
 - [StableDiffusion Show](https://t.me/StableDiffusion_Show)
 
-
+- [WebUi自定义脚本](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts)
 
 
 #### 数据集
