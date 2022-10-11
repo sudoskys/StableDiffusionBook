@@ -34,7 +34,7 @@ SD的官方仓库地址为 https://github.com/AUTOMATIC1111/stable-diffusion-web
     Ai 需要的依赖大小很大！需要心理准备！大约几G,而且国内环境可能很慢！对于Windows,**依赖默认安装在C盘**
 
 
-#### Windows
+#### Windows安装
 
 在Windows上自动安装
 
@@ -91,6 +91,12 @@ pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
     等了两小时？可以试试挂代理。
     
     为什么整合包不需要？他们的脚本中指定了同目录下的环境，阅读之后的文档就可以知道
+
+#### Windows 从整合包迁移
+
+使用上面的命令拉取代码但先不运行，然后将 Bat 文件和里面指定的文件夹复制到全新环境，把 `models` 和 `outputs` 以及 `embeddings` 复制到新文件夹，自行处理冲突。
+
+然后在新代码目录下，尝试运行原来的 Bat，如果报错，就根据提示排查是不是 NotFound 什么依赖，或者根据下面的命令说明修改 Bat 文件。
 
 
 #### Linux 安装
