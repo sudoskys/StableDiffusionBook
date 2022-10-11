@@ -374,35 +374,35 @@
         
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    参数权重
+    参数(令牌)权重
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    消极参数
+    消极参数(令牌)
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
-    重现参数
+    重现参数(令牌)
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
-    逆向参数
+    逆向参数(令牌)
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
-    已知参数组合
+    已知参数(令牌)组合
   </a>
   
 </li>
@@ -527,7 +527,7 @@
 <p>这节会介绍 参数 和 相关的SD网页应用资源。</p>
 <h2 id="_2">魔法入门</h2>
 <p>请先在前面了解一下SD网页应用的参数。</p>
-<h3 id="_3">参数权重</h3>
+<h3 id="_3">参数(令牌)权重</h3>
 <p>调参魔法的一个基本技能是设置权重。</p>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#attentionemphasis">Wiki:魔导师介绍</a></p>
 <p>具体规则如下</p>
@@ -551,9 +551,9 @@ a \(word\) - 在提示中使用文字 () 字符
 <p><strong>NV官方</strong></p>
 <p>在NV官方前端我们使用 <code>{}</code> 来指定权重。</p>
 </div>
-<h3 id="_4">消极参数</h3>
-<p>SD网页应用会在生成时<strong>拒绝消极参数有关的内容</strong>。</p>
-<p>比如使用以下参数削除水印和文字内容</p>
+<h3 id="_4">消极参数(令牌)</h3>
+<p>SD网页应用会在生成时<strong>拒绝消极参数(令牌)有关的内容</strong>。</p>
+<p>比如使用以下参数(令牌)削除水印和文字内容</p>
 <div class="highlight"><pre><span></span><code>lowres, bad anatomy, bad hands, text, error, missing fingers, 
 extra digit, fewer digits, cropped, worst quality, low quality, 
 normal quality, jpeg artifacts, signature, watermark, username, blurry
@@ -566,13 +566,13 @@ mutilated, tranny, trans, trannsexual, [out of frame], (bad proportions),
 (poorly drawn body), (poorly drawn legs), worst quality, low quality, 
 normal quality, text, censored, gown, latex, pencil
 </code></pre></div>
-<h3 id="_5">重现参数</h3>
-<p>对于没有压缩的原图，我们可以将文件拖入 <code>PNG Info</code> 选项卡，进行参数查看。</p>
-<h3 id="_6">逆向参数</h3>
+<h3 id="_5">重现参数(令牌)</h3>
+<p>对于没有压缩的原图，我们可以将文件拖入 <code>PNG Info</code> 选项卡，进行参数(令牌)查看。</p>
+<h3 id="_6">逆向参数(令牌)</h3>
 <p>这里有一些 <strong>Image 逆向参数服务</strong>，可以从图片中提取相关参数，不一定准确。</p>
 <p><a href="https://t.me/LenKiMo_Bot">LenKiMo_Bot</a></p>
 <p><a href="https://github.com/KichangKim/DeepDanbooru">DeepDanbooru</a></p>
-<h3 id="_7">已知参数组合</h3>
+<h3 id="_7">已知参数(令牌)组合</h3>
 <p>你可以访问以下传送门获取一些优秀的参数实例！（当然，中文社区的测试群有<strong>大量素材</strong>，一分钟20次）</p>
 <p><a href="https://t.me/LenKiMo_Bot">LenKiMo_Bot</a></p>
 <p><a href="https://github.com/KichangKim/DeepDanbooru">DeepDanbooru</a></p>
@@ -1044,11 +1044,11 @@ print(torch.cuda.is_available())
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 13:28:47</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 13:30:41</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 13:28:47</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 13:30:41</span>
       
     
   </small>
