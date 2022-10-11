@@ -259,7 +259,7 @@ set COMMANDLINE_ARGS设置命令行参数webui.py运行
 
 顶上那个是选择模型，暂时用不到。
 
-**第一个框是正向令牌**
+- 第一个框是正向令牌
 
 可以使用 颜文字 和 emoji，使用 () 来增强权重，具体规则见后
 
@@ -267,7 +267,7 @@ set COMMANDLINE_ARGS设置命令行参数webui.py运行
 ((masterpiece)), best quality, illustration, 1 girl, beautiful,beautiful detailed sky, catgirl,beautiful detailed water, cinematic lighting, dramatic angle, Grey T-Shirt, (few clothes),(yuri),(medium breasts),white hair,cat ears,masturbation,bare shoulders ,(gold eyes),wet clothes
 ```
 
-**第二个框是反向令牌**
+- 第二个框是反向令牌
 
 过滤这些Tag
 
