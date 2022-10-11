@@ -6,6 +6,16 @@
 
 请先在前面了解一下SD网页应用的参数。
 
+### 书写令牌(提示)
+
+结合页面下面下面的 Tag 表。
+
+[为文字转图像Ai提示编写指南：A Guide to Writing Prompts for Text-to-image AI](https://docs.google.com/document/d/1XUT2G9LmkZataHFzmuOtRXnuWBfhvXDAo8DkS--8tec/edit#)
+
+- 提示不要太长，超过 100 就有失败风险。
+
+- 可以直接使用自然语言，SD 有自然语言处理能力(英文句子)
+
 ### 参数(令牌)权重
 
 调参魔法的一个基本技能是设置权重。
@@ -79,7 +89,7 @@ normal quality, text, censored, gown, latex, pencil
 
 你可以访问以下传送门获取一些优秀的参数实例！（当然，中文社区的测试群有**大量素材**，一分钟20次）
 
-[LenKiMo_Bot](https://t.me/LenKiMo_Bot)
+[StableDiffusion_Show](https://t.me/StableDiffusion_Show)
 
 [DeepDanbooru](https://github.com/KichangKim/DeepDanbooru)
 
@@ -105,6 +115,9 @@ normal quality, text, censored, gown, latex, pencil
 
 调参基本原理模糊的说是：限定好的数据范围内相似样本越多，越稳定。
 
+### 图转图修复
+
+如果手脚残，可以试试 img2img,复制参数和 seed 可以进行调整。
 
 ### 注意 `尺寸`
 
@@ -113,7 +126,11 @@ normal quality, text, censored, gown, latex, pencil
 !!! tip
     要匹配好姿势，镜头和人物才不畸形，有时候需要限定量词，多人物时要处理空间关系和 prompt 遮挡优先级。人数->人物样貌->环境样式->人物状态
     
+### 超分图像
 
+`realesrgan` 或者 `realcugan` 就可以，推荐 [realcugan](https://github.com/bilibili/ailab/tree/main/Real-CUGAN)
+
+另外，`webui` extras 页有一个自带的超分功能，可以去`settings-upscaling` 使用 `R-ESRGAN 4x+ Anime6B`模型，重新启动程序
 
 ### 令牌速查
 
@@ -127,6 +144,12 @@ normal quality, text, censored, gown, latex, pencil
 NSFWTag 可以参考[Github Here](https://github.com/scooderic/exhentai-tags-chinese-translation)
 
 [Ai艺术家文档——深入了解](https://docs.google.com/spreadsheets/d/1SRqJ7F_6yHVSOeCi3U82aA448TqEGrUlRrLLZ51abLg/htmlview#)
+
+### 调参工程师
+
+https://github.com/Maks-s/sd-akashic
+
+https://github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference
 
 
 ## 参数

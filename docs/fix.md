@@ -51,15 +51,30 @@
 
 其中，hypernetworks 和 Stable-diffusion 是需要新建的文件夹。其他文件根据规则重命名。
 
-final-pruned.ckpt即 stableckpt/animefull-final-pruned/model.ckpt (pruned)，模型主文件。
+### Part 1
 
-final-pruned.vae.pt 即 stableckpt/animevae.pt，用于稳定风格。
+`final-pruned.ckpt即 stableckpt/animefull-final-pruned/model.ckpt` (pruned)，模型主文件。
 
-final-pruned.yaml 即 model.ckpt 同文件夹的 stableckpt/animefull-final-pruned/config.yaml，记载额外的参数。
+`final-pruned.vae.pt` 即 `stableckpt/animevae.pt`，用于稳定风格。
 
-hypernetworks 包含了 stableckpt/modules/modules 里的文件，是风格相关的数据集。
+`final-pruned.yaml` 即 `model.ckpt` 同文件夹的 `stableckpt/animefull-final-pruned/config.yaml`，记载额外的参数。
 
-![图片](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/models.jpg)
+`hypernetworks` 包含了 `stableckpt/modules/modules` 里的文件，是风格相关的数据集，可以作为特定人物的 `embedding model` 调用，和 model 使用可以生成特定风格.文件 `*.pt`。在SD的设置标签页调用。
+
+
+`stableckpt/vector_adjust/v2.pt` 没有什么用，可以自行训练，感觉不如 `hypernet`
+
+`workspace` 就是前后端啦，40Gb显存及格，NV采用的是 GPU 云。
+
+### Part 2
+
+`prodmodels` 是GPT模型(语言处理)，但是实际好像用了CLIP.
+
+`random_stableckpt` 是一些模型，有的与Part1重复
+
+
+
+![Part1](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/models.jpg)
 
 ??? info "附内容"
     - stableckpt/ - Stable Diffusion checkpoints
@@ -148,7 +163,7 @@ Windows: https://developer.nvidia.com/compute/cudnn/secure/8.5.0/local_installer
 <iframe src="//player.bilibili.com/player.html?aid=688965561&bvid=BV1Gm4y1A7VM&cid=857942294&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 BV1Gm4y1A7VM
 
-### Vae 权重
+### Vae 额外的权重
 
 如果需要更好模拟NV,务必使用 `animevae.pt`
 

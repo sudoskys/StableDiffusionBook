@@ -27,6 +27,17 @@
 
 - [Ai艺术家文档——深入了解](https://docs.google.com/spreadsheets/d/1SRqJ7F_6yHVSOeCi3U82aA448TqEGrUlRrLLZ51abLg/htmlview#)
 
+- [图像合成风格研究数据库](https://docs.google.com/spreadsheets/d/14xTqtuV3BuKDNhLotB_d1aFlBGnDJOY0BRXJ8-86GpA/edit#gid=0)
+
+- [为文字转图像Ai提示编写指南：A Guide to Writing Prompts for Text-to-image AI](https://docs.google.com/document/d/1XUT2G9LmkZataHFzmuOtRXnuWBfhvXDAo8DkS--8tec/edit#)
+
+- [AI Art Learning Hub](https://mashonoid.notion.site/AI-Art-Learning-Hub-b6bb69fc249847438602ee11d3a89fa0)
+
+- [日本社区？那边出的教程](https://rentry.co/zk4u5)
+
+
+
+
 ### 数据集
 
 - 飞浆
