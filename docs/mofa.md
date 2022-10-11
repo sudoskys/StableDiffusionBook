@@ -135,7 +135,7 @@ normal quality, text, censored, gown, latex, pencil
 ### 令牌速查
 
 
-所有 Tag 可以上[danbooru](https://gelbooru.com/index.php?page=tags&s=list)
+所有 Tag 可以上 [danbooru](https://gelbooru.com/index.php?page=tags&s=list)
 
 **[参数法术全典](https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml#)**
 
@@ -145,11 +145,13 @@ NSFWTag 可以参考[Github Here](https://github.com/scooderic/exhentai-tags-chi
 
 [Ai艺术家文档——深入了解](https://docs.google.com/spreadsheets/d/1SRqJ7F_6yHVSOeCi3U82aA448TqEGrUlRrLLZ51abLg/htmlview#)
 
+[【便宜工具】novelai 关键词组合器 英语苦手救星！](https://www.bilibili.com/read/cv19023021)
+
 ### 调参工程师
 
-https://github.com/Maks-s/sd-akashic
+[https://github.com/Maks-s/sd-akashic](https://github.com/Maks-s/sd-akashic)
 
-https://github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference
+[https://github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference](https://github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference)
 
 
 ## 参数
