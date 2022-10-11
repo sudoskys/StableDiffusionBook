@@ -33,21 +33,10 @@ https://aistudio.baidu.com/aistudio/datasetdetail/171442/0
 https://pan.t-satoru.top/ode5/Share/
 
 
-#### 相关服务
-
-
-
-**Prompts 令牌括号转换**
-
-在 NV 和 Webui 之间转换加强参数
-
-[M2NM2NBot](https://t.me/M2NM2NBot)
-
 
 #### 鸣谢
 
-引用的开源教程
-
+引用的开源教程.
 
 - 编辑器
 
