@@ -8,87 +8,13 @@
 !!! tip
     注意要经常从远端代码库拉取代码洗礼SD网页应用。
 
->本节只针对 NV 模型展开教程。请多多关注 About 页面的社区获取最新进展和新闻。源教程来自：[^2]
+>本节只针对 NAI 模型展开教程。请多多关注 About 页面的社区获取最新进展和新闻。源教程来自：[^2]
 
 !!! info "版权"
     本仓库不提供具体链接（版权警告），可以看页面下标或关注中文社区 t.me@StableDiffusion_CN_WIKI。
 
 
-[除了NV模型外的其他模型：Stable Diffusion Models](https://rentry.org/sdmodels)
-
-
-
-## NV 模型
-
-你的 models 文件夹应该是这样的。
-
-```
-./models
-├── Codeformer
-├── ESRGAN
-├── GFPGAN
-├── hypernetworks
-│   ├── aini.pt
-│   ├── anime_2.pt
-│   ├── anime_3.pt
-│   ├── anime.pt
-│   ├── furry_2.pt
-│   ├── furry_3.pt
-│   ├── furry_kemono.pt
-│   ├── furry_protogen.pt
-│   ├── furry.pt
-│   ├── furry_scalie.pt
-│   ├── furry_transformation.pt
-│   └── pony.pt
-├── LDSR
-├── Stable-diffusion
-│   ├── final-pruned.ckpt -> novelai 的 model.ckpt (pruned)
-│   ├── final-pruned.vae.pt -> novelai 的 animevae.pt
-│   ├── final-pruned.yaml -> model.ckpt 同文件夹的 config.yaml
-│   └── 其他模型文件.ckpt
-└── SwinIR
-```
-
-其中，hypernetworks 和 Stable-diffusion 是需要新建的文件夹。其他文件根据规则重命名。
-
-### Part 1
-
-`final-pruned.ckpt即 stableckpt/animefull-final-pruned/model.ckpt` (pruned)，模型主文件。
-
-`final-pruned.vae.pt` 即 `stableckpt/animevae.pt`，用于稳定风格。
-
-`final-pruned.yaml` 即 `model.ckpt` 同文件夹的 `stableckpt/animefull-final-pruned/config.yaml`，记载额外的参数。
-
-`hypernetworks` 包含了 `stableckpt/modules/modules` 里的文件，是风格相关的数据集，可以作为特定人物的 `embedding model` 调用，和 model 使用可以生成特定风格.文件 `*.pt`。在SD的设置标签页调用。
-
-
-`stableckpt/vector_adjust/v2.pt` 没有什么用，可以自行训练，感觉不如 `hypernet`
-
-`workspace` 就是前后端啦，40Gb显存及格，NV采用的是 GPU 云。
-
-### Part 2
-
-`prodmodels` 是GPT模型(语言处理)，但是实际好像用了CLIP.
-
-`random_stableckpt` 是一些模型，有的与Part1重复
-
-
-
-![Part1](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/models.jpg)
-
-??? info "附内容"
-    - stableckpt/ - Stable Diffusion checkpoints
-    - animefull-latest - The model NovelAI uses in production
-    - workspace/ - Code used to train/run/finetune models
-    - sd-private.tar.zst - Stuff to train Stable Diffusion
-    - github/ - Code taken from GitHub. CREDENTIALS SCRUBBED
-    - novelai/ - From NovelAI org
-    - *.tar.zst Archived git repos, public AND PRIVATE
-    - aboutus.gpg - Our public GPG key
-    - sha256sum - SHA256 sums of every file
-    - sha256sum.sig Detached signature for the sums, signed by our GPG key
-
-启动 cli 有提示加载就 OK, 去设置选模型那里选喜欢的 `hypernetwork`
+[除了NAI模型外的其他模型：Stable Diffusion Models](https://rentry.org/sdmodels)
 
 
 ## 关于显卡
@@ -143,14 +69,90 @@ Windows: https://developer.nvidia.com/compute/cudnn/secure/8.5.0/local_installer
 
 但是，依然不能使用 `DDIM Sampling` ，但可以使用 `Euler a`
 
-## 说明
-
-### 对于 LeakNV 模型的说明
 
 
-`animesfw-latest` 即NV 基线模型
 
-`animefull-final-pruned` = `full-latest` = NV 全量模型(成人内容)
+
+## NAI 模型
+
+你的 models 文件夹应该是这样的。
+
+```
+./models
+├── Codeformer
+├── ESRGAN
+├── GFPGAN
+├── hypernetworks
+│   ├── aini.pt
+│   ├── anime_2.pt
+│   ├── anime_3.pt
+│   ├── anime.pt
+│   ├── furry_2.pt
+│   ├── furry_3.pt
+│   ├── furry_kemono.pt
+│   ├── furry_protogen.pt
+│   ├── furry.pt
+│   ├── furry_scalie.pt
+│   ├── furry_transformation.pt
+│   └── pony.pt
+├── LDSR
+├── Stable-diffusion
+│   ├── final-pruned.ckpt -> novelai 的 model.ckpt (pruned)
+│   ├── final-pruned.vae.pt -> novelai 的 animevae.pt
+│   ├── final-pruned.yaml -> model.ckpt 同文件夹的 config.yaml
+│   └── 其他模型文件.ckpt
+└── SwinIR
+```
+
+其中，hypernetworks 和 Stable-diffusion 是需要新建的文件夹。其他文件根据规则重命名。
+
+### Part 1
+
+`final-pruned.ckpt即 stableckpt/animefull-final-pruned/model.ckpt` (pruned)，模型主文件。
+
+`final-pruned.vae.pt` 即 `stableckpt/animevae.pt`，用于稳定风格。
+
+`final-pruned.yaml` 即 `model.ckpt` 同文件夹的 `stableckpt/animefull-final-pruned/config.yaml`，记载额外的参数。
+
+`hypernetworks` 包含了 `stableckpt/modules/modules` 里的文件，是风格相关的数据集，可以作为特定人物的 `embedding model` 调用，和 model 使用可以生成特定风格.文件 `*.pt`。在SD的设置标签页调用。
+
+
+`stableckpt/vector_adjust/v2.pt` 没有什么用，可以自行训练，感觉不如 `hypernet`
+
+`workspace` 就是前后端啦，40Gb显存及格，NAI采用的是 GPU 云。
+
+### Part 2
+
+`prodmodels` 是GPT模型(语言处理)，但是实际好像用了CLIP.
+
+`random_stableckpt` 是一些模型，有的与Part1重复
+
+
+
+![Part1](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/models.jpg)
+
+??? info "附内容"
+    - stableckpt/ - Stable Diffusion checkpoints
+    - animefull-latest - The model NovelAI uses in production
+    - workspace/ - Code used to train/run/finetune models
+    - sd-private.tar.zst - Stuff to train Stable Diffusion
+    - github/ - Code taken from GitHub. CREDENTIALS SCRUBBED
+    - novelai/ - From NovelAI org
+    - *.tar.zst Archived git repos, public AND PRIVATE
+    - aboutus.gpg - Our public GPG key
+    - sha256sum - SHA256 sums of every file
+    - sha256sum.sig Detached signature for the sums, signed by our GPG key
+
+启动 cli 有提示加载就 OK, 去设置选模型那里选喜欢的 `hypernetwork`
+
+
+
+### 对于 NAI 模型的说明
+
+
+`animesfw-latest` NAI 基线模型
+
+`animefull-final-pruned` = `full-latest` = NAI 全量模型(成人内容)
 
 
 !!!info "**4GB版本 or 7GB ？**"
@@ -163,9 +165,13 @@ Windows: https://developer.nvidia.com/compute/cudnn/secure/8.5.0/local_installer
 <iframe src="//player.bilibili.com/player.html?aid=688965561&bvid=BV1Gm4y1A7VM&cid=857942294&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 BV1Gm4y1A7VM
 
+
+## 说明
+
+
 ### Vae 额外的权重
 
-如果需要更好模拟NV,务必使用 `animevae.pt`
+如果需要更好模拟NAI,务必使用 `animevae.pt`
 
 ### 半精度/全精度
 
@@ -173,6 +179,7 @@ float32 用于较旧的 gpus，或者你想要 100% 的精度
 
 两者的输出应该几乎相同，主要区别在于大小和支持它的 GPU。
 
+>官网是fp32
 
 
 ### 横条参数说明
@@ -233,22 +240,22 @@ print(torch.cuda.is_available())
 
 -------
 
-## 优化靠近 NV
+## 优化靠近 NAI
 
-[对NV模型靠近NV效果相关讨论，应该读一读！](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017)
+[对NAI模型靠近NAI效果相关讨论，应该读一读！](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017)
 
 ### 进一步优化
 
 出图后，可以将喜欢的结果从右侧的输出选项卡拖回 img2img 以进行进一步迭代。
 
-### **靠近NV,调整 Eta noise seed delta**
+### **靠近NAI,调整 Eta noise seed delta**
 
 设置为 `31337` 可以更靠近
 
 相关讨论 https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017
 
 
-### **对NV模型更改 layers 忽略层数**
+### **对NAI模型更改 layers 忽略层数**
 
 
 
@@ -268,11 +275,11 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
 
 https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/1868#discussioncomment-3824077
 
-#### **NV模型的Config.yaml**
+#### **NAI模型的Config.yaml**
 
-NVleak里边有个 config.yaml ， 将其改名为 `模型前缀.yaml` 和模型丢在一起就能加载啦, 效果还是有提升的. 
+NAIleak里边有个 config.yaml ， 将其改名为 `模型前缀.yaml` 和模型丢在一起就能加载啦, 效果还是有提升的. 
 
-### **NV模型消极令牌**
+### **NAI模型消极令牌**
 
 使用以下令牌削除水印和文字内容
 
@@ -341,11 +348,23 @@ DDIM 是一种神经网络方法。 每一步都相当快，但效率相对较�
 
 ### **Textual Inversion**
 
-https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion
+Textual Inversion 允许您在自己的图片上训练一小部分神经网络，并在生成新图片时使用结果。
 
-丢到 embeddings 文件夹, prompt 提到你要用的 embedding 的文件名即可。
+训练的结果是一个 .pt 或一个 .bin 文件（前者是原作者使用的格式，后者作为 diffusers library）
 
-### **Loopback回环生成**
+将 embedding 放入`embeddings`目录并在 prompt 令牌中提到你要用的 embedding 的文件名(*.pt)即可。
+
+不必重新启动程序即可使其正常工作。
+
+
+[英文说明和效果图](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion)
+
+
+[自己训练 embedding](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion#training-embeddings)
+
+
+
+### **Loopback 回环生成**
 
 在 img2img 中设置loopback脚本，它允许自动将输出图像作为下一批的Batch提供，相当于保存输出图像，并用它替换输入图像。
 
@@ -353,7 +372,7 @@ Batch 数设置控制获得多少次迭代
 
 通常，在执行此操作时，您会自己为下一次迭代选择许多图像中的一个，因此此功能的有用性可能值得怀疑，但反正我已经设法获得了一些我无法获得的非常好的输出。
 
-### **Prompt matrix参数矩阵**
+### **Prompt matrix 参数矩阵**
 
 使用 | 分隔多个Tag，程序将为它们的每个组合生成一个图像。 例如，如果使用 `a busy city street in a modern city|illustration|cinematic lighting` ，则可能有四种组合（始终保留提示的第一部分）：
 
@@ -371,7 +390,7 @@ Outpainting 扩展原始图像并修复创建的空白空间。
 Outpainting, unlike normal image generation, seems to profit very much from large step count. A recipe for a good outpainting is a good prompt that matches the picture, sliders for denoising and CFG scale set to max, and step count of 50 to 100 with Euler ancestral or DPM2 ancestral samplers.
 ```
 
-### **Inpainting修补**
+### **Inpainting 修补**
 
 在 img2img 选项卡中，在图像的一部分上绘制蒙版，该部分将被修复。
 
@@ -384,6 +403,7 @@ Outpainting, unlike normal image generation, seems to profit very much from larg
 - 将模式（图片右下角）更改为"Upload mask"并为蒙版选择单独的黑白图像(white=inpaint)。
 
 ### **全分辨率修复！**
+
 https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#inpaint-at-full-resolution
 
 
@@ -422,6 +442,8 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-edi
 
 #### **Face restoration三次元人脸修复**
 
+适用于三次元。
+
 https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#face-restoration
 
 ### 自定义.css
@@ -438,6 +460,17 @@ For example, this makes the gallery taller:
 
 
 If an audio file named `notification.mp3` is present in `webui's root folder`, it will be played when the generation process completes.
+
+### 开发自定义脚本
+
+你可以在`modules/scripts.py`中找到Script类。
+
+如果要创建你自己的自定义脚本，请创建一个实现类的python脚本，并将其放到scripts文件夹中，使用以下示例或文件夹中已有的其他脚本作为指导。
+
+Script 类有四个主要方法，这里通过一个简单的[示例脚本](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Developing-custom-scripts)进行更详细的描述，这个脚本可以旋转和/或翻转生成的图像。
+
+
+
 
 ## 运行
 
@@ -467,7 +500,7 @@ If an audio file named `notification.mp3` is present in `webui's root folder`, i
 
 Tip：每天重置资源
 
-### NV 4chan简化版本
+### NAI 4chan简化版本
 
 4chan版本魔改官后程序，会动态分配，显存不够内存来凑。
 

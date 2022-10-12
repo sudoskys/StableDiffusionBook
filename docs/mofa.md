@@ -17,8 +17,8 @@
 - 可以直接使用自然语言，SD 有自然语言处理能力(英文句子),也可以使用 颜文字 和 emoji
 
 ### 参数(令牌)权重
-
-调参魔法的一个基本技能是设置权重。
+ 
+"调参魔法" 的一个基本技能是设置权重。
 
 [Wiki:魔导师介绍](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#attentionemphasis)
 
@@ -46,9 +46,9 @@ a \(word\) - 在提示中使用文字 () 字符
 
 
 !!! info
-    **NV官方**
+    **NAI官方**
 
-    在NV官方前端我们使用 `{}` 来指定权重。
+    在NAI官方前端我们使用 `{}` 来指定权重。
 
 ### 消极参数(令牌)
 
@@ -115,9 +115,31 @@ normal quality, text, censored, gown, latex, pencil
 
 调参基本原理模糊的说是：限定好的数据范围内相似样本越多，越稳定。
 
-### 图转图修复
+!!! tip
+    请阅读前面章节的模型进阶1,了解具体的 Img2Img 和 inpaint 介绍操作。
+
+
+### Img2Img图转图修复
 
 如果手脚残，可以试试 img2img,复制参数和 seed 可以进行调整。
+
+
+
+**Denoising strength**
+
+`Denoising strength` 决定算法对图像内容的保留程度,可以减少对画风的变得，但也会弱化img2img能力
+
+
+![info](https://github.com/sudoskys/StableDiffusionBook/blob/main/resource/00119_136826557_masterpiece%2C_best_quality%2C_1girl%2C_black_hair%2C_hat1.jpg)
+>一张完整展现WebUI下img2img中不同参数下效果的详细对比图（prompt、steps、scale、各种seed等参数均保持一致）
+>纵轴是Denoising strength（线上版的strength）
+
+### inpaint 修复
+
+把有缺陷的地方mask出来inpaint，图片上涂鸦地区会重画。一般选 `original`,`fill` 要更多 step 才能消除不自然感.
+
+
+
 
 ### 注意 `尺寸`
 
@@ -126,7 +148,7 @@ normal quality, text, censored, gown, latex, pencil
 !!! tip
     要匹配好姿势，镜头和人物才不畸形，有时候需要限定量词，多人物时要处理空间关系和 prompt 遮挡优先级。人数->人物样貌->环境样式->人物状态
     
-### 超分图像
+### 超分图像 extras
 
 `realesrgan` 或者 `realcugan` 就可以，推荐 [realcugan](https://github.com/bilibili/ailab/tree/main/Real-CUGAN)
 
@@ -156,13 +178,13 @@ NSFWTag 可以参考[Github Here](https://github.com/scooderic/exhentai-tags-chi
 
 ## 参数
 
-### 转换——NV和SD的增强语法不同
+### 转换——NAI和SD的增强语法不同
 
 **Prompts 参数括号转换**
 
-在 NV 和 Webui 之间转换加强参数   [M2NM2NBot](https://t.me/M2NM2NBot)
+在 NAI 和 Webui 之间转换加强参数   [M2NM2NBot](https://t.me/M2NM2NBot)
 
-权重增强标识：NV 是 `{}` ，SD 是 `()`
+权重增强标识：NAI 是 `{}` ，SD 是 `()`
 
 ### 良好参数(风格趋向插画)[^4]
 

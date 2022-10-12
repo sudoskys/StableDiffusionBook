@@ -454,6 +454,13 @@ Colab 资源每日重置。
 
 具体笔记本地址请关注中文社区 t.me@StableDiffusion_CN_WIKI
 
+## 在 AMD 上安装
+
+[读Wiki此页](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Install-and-Run-on-AMD-GPUs)
+
+## 在 Apple Silicon 上安装
+
+[读Wiki此页](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Installation-on-Apple-Silicon)
 
 
 [^1]:[NovelAI原版部署教程](https://telegra.ph/NovelAI%E5%8E%9F%E7%89%88%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B-10-07)
