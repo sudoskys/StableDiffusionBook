@@ -691,24 +691,25 @@ conda activate aidraw
 自定义程序运行方式的推荐方法是编辑webui-user.bat(Windows) 和webui-user.sh(Linux)</p>
 <p><em>在线运行</em></p>
 <ul>
-<li>使用<code>--share</code>选项在线运行</li>
+<li>使用 <code>--share</code> 选项在线运行</li>
 </ul>
 <p>你会得到一个 <code>xxx.app.gradio</code> 链接，这是在协作中使用该程序的预期方式，而且你可以使用参数为所述 <code>gradio</code> 共享实例设置身份验证：<code>--gradio-auth username:password</code>
 可选择提供多组用户名和密码，以逗号分隔。</p>
 <ul>
 <li>端口转发</li>
 </ul>
-<p>参数<code>--listen</code>使服务器监听网络连接。</p>
-<p>这将允许本地网络上的计算机访问 UI，如果配置端口转发，公网上的计算机也可以访问（当然你得有公网</p>
+<p>参数 <code>--listen</code> 使服务器监听网络连接。</p>
+<p>这将允许本地网络上的计算机访问 UI，如果配置端口转发，公网上的计算机也可以访问（当然你得有公网。</p>
+<p>注意，监听 <code>0.0.0.0</code> 就意味着对本地网卡所有ipv4监听，访问请使用 <code>localhost</code> 替换 <code>0.0.0.0</code></p>
 <ul>
-<li>监听端口
-参数 <code>--port xxxx</code> 使服务器监听特定端口。</li>
+<li>监听端口</li>
 </ul>
+<p>参数 <code>--port xxxx</code> 使服务器监听特定端口。</p>
 <p>低于 1024 的所有端口都需要 <code>root</code>权限，因此建议使用高于 1024 的端口。</p>
 <p>如果可用，则默认为端口 7860</p>
 <p><em>环境定制</em></p>
-<p><code>set PYTHON=b:/soft/Python310/Python.exe</code>
-<code>set PYTHON</code> 允许设置自定义 Python 路径</p>
+<p><code>set PYTHON=b:/soft/Python310/Python.exe</code></p>
+<p><code>set PYTHON</code> 允许设置自定义 Python 路径</p>
 <p><code>set VENV_DIR=C:\run\var\run</code>
 set VENV_DIR允许您选择虚拟环境的目录。默认为<code>venv</code>。特殊值<code>-</code>在不创建虚拟环境的情况下运行脚本。</p>
 <p><code>set COMMANDLINE_ARGS=--ckpt a.ckpt</code>
@@ -936,11 +937,11 @@ sudo systemctl restart docker
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 05:28:04</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 05:35:46</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 05:28:04</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 05:35:46</span>
       
     
   </small>
