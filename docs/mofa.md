@@ -28,6 +28,8 @@
 
 用 英文半角 `,` 做分隔符，用 `{}` 在 NAI 做增强，用 `()` 在 WebUi 做增强。
 
+>在英文逗号前后存在一个或数个空格并不影响实际使用。
+
 [fantasy:cyberpunk:16] 代表从第 16 step 后，使用 cyberpunk 标签
 
 [to:when] 在固定数量的step后添加to到提示 ( when)
