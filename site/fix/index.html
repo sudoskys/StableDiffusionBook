@@ -533,19 +533,6 @@
     模型超参数
   </a>
   
-    <nav class="md-nav" aria-label="模型超参数">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#naiconfigyaml" class="md-nav__link">
-    NAI模型的Config.yaml
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
           <li class="md-nav__item">
@@ -944,7 +931,7 @@ print(torch.cuda.is_available())
 <p>BV1Gm4y1A7VM</p>
 <h2 id="_3">说明</h2>
 <h3 id="configyaml">Config.yaml？</h3>
-<p>不建议加载 yaml，因为它会使 ram 加倍而不会改变输出，但如果你真的想要，将其重命名为 [model name].yaml 并将其放在你的模型旁边</p>
+<p>NAIleak里边有个 config.yaml ， 将其改名为 <code>模型前缀.yaml</code> 和模型丢在一起就能加载,，但不建议加载 yaml，因为它会使内存占用加倍而不会对输出改变不大，但如果你真的想要，将其重命名为 [model name].yaml 并将其放在你的模型旁边。</p>
 <h3 id="vae">Vae 额外的权重</h3>
 <p>如果需要更好模拟NAI,务必使用 <code>animevae.pt</code></p>
 <h3 id="_4">半精度/全精度</h3>
@@ -999,8 +986,6 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
 <h3 id="_9"><strong>模型超参数</strong></h3>
 <p>如果你想达到 NovelAi 的效果，需要加 negative prompt（消极令牌）, 加载 hypernetwork （网络）和 vae.</p>
 <p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/1868#discussioncomment-3824077</p>
-<h4 id="naiconfigyaml"><strong>NAI模型的Config.yaml</strong></h4>
-<p>NAIleak里边有个 config.yaml ， 将其改名为 <code>模型前缀.yaml</code> 和模型丢在一起就能加载啦, 效果还是有提升的. </p>
 <h3 id="nai_3"><strong>NAI模型消极令牌</strong></h3>
 <p>使用以下令牌削除水印和文字内容</p>
 <div class="highlight"><pre><span></span><code>lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry
@@ -1175,11 +1160,11 @@ Heun 在准确性方面是对 Euler 的“改进”，但它以大约一半的�
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 23:23:19</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 23:26:58</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 23:23:19</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 23:26:58</span>
       
     
   </small>
