@@ -27,7 +27,7 @@
 
 ## 我可以参加 Party 吗？
 
-首先，很不幸地，因为需要用到 CUDA ，所以只有**英伟达显卡**才可用。（当然也可以用 CPU 花超长时间算）
+首先，很不幸地，因为需要用到 CUDA ，所以只有**英伟达显卡**支持良好。（AMD 可以用但速度不行，当然没显卡也可以用 CPU 花超长时间算）
 
 **Linux + AMD卡** 请读 [这里](https://rentry.org/ayymd-stable-diffustion-v1_4-guide) 和 [WebUiWiki对AMD安装的教程](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Install-and-Run-on-AMD-GPUs)
 
