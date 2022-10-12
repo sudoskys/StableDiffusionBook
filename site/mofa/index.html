@@ -394,6 +394,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#batch-countbatch-size" class="md-nav__link">
+    batch count&amp;batch size
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
     采样器
   </a>
@@ -665,6 +672,13 @@
 <p><code>cat :2 | dog</code> 也就是更像猫的狗</p>
 <h3 id="_5">迭代步数</h3>
 <p>更多的迭代步数可能会有更好的生成效果，但是一定会导致生成时间变长。太多的steps也可能适得其反，几乎不会有提高。</p>
+<h3 id="batch-countbatch-size">batch count&amp;batch size</h3>
+<p><code>batch count</code> </p>
+<p>指定训练几轮</p>
+<p><code>batchsize</code></p>
+<p>中文翻译为批大小（批尺寸）。</p>
+<p>简单点说，批量大小将决定我们一次训练的样本数目。 batch_size将影响到模型的优化程度和速度。</p>
+<p>还要注意 <code>batch size</code> 是为了在<code>内存效率</code>和<code>内存容量</code>之间寻找最佳平衡，因为单个 512x512 图像生成中，GPU 资源没有被充分利用。更大的图像从中获得的收益更少。</p>
 <h3 id="_6">采样器</h3>
 <p>观看前面章节对于采样器的介绍。</p>
 <p>目前好用的有 <code>eular</code>，<code>eular a</code>，更细腻，和<code>Ddim</code></p>
@@ -695,7 +709,16 @@
 <ul>
 <li>提示不要太长，超过 100 就有失败风险。</li>
 </ul>
-<p>根据 手抄本的Tip，由于GPT-3模型限制，promot并不是无限的，positive token 在75-80之间，negative大概65，加太多会提示你xxx of xxx are truncated，所以别人那边的圣经不要照抄，太长的咒语后半都没有意义了，所以用简易反咒就足够，除非你有特定想屏蔽的东西</p>
+<p>根据 手抄本的Tip，由于GPT-3模型限制，promot并不是无限的，positive token 在75-80之间，negative大概65，加太多会提示你xxx of xxx are truncated，所以别人那边的圣经不要照抄，太长的咒语后半都没有意义了，所以用简易反咒就足够，除非你有特定想屏蔽的东西。</p>
+<p>当提示超过75个<code>token</code>（比如150个<code>token</code>）时，WebUi 将分组提示词，提交多组75个 <code>token</code>。标记只具有同一集合中其他内容的上下文。这意味着您可能在第一组和第二组之间的边界处有<code>bule hair</code>，标记<code>blue</code>将在第一组中，<code>hair</code>将在第二组中。这导致了结果的不准确，因为这两个词是分开的。</p>
+<p>新版本增加了一个选项 <code>Increase coherency by padding from the last comma within n tokens when using more than 75 tokens</code>， 试图通过查找最后N个标记中是否有最后一个逗号来缓解这种情况，如果有，则将所有经过该逗号的内容一起移动到下一个集合中。</p>
+<div class="admonition tip">
+<p class="admonition-title">比如</p>
+<p>集合1:{[74]=COMMA，[75]=blue}，集合2:{[76]=hair}
+转换为
+集合1:{[074]=CommMA，[75]=PADDING}，集合2:{[76]=blue，[77]=hair}</p>
+<p>如果您的提示小于等于75个标记，不会发生分组。</p>
+</div>
 <p><strong>书写格式</strong></p>
 <p>为了方便书写改动，多行书写的建议格式如下</p>
 <div class="highlight"><pre><span></span><code>masterpiece,
@@ -1398,11 +1421,11 @@ normal quality, text, censored, gown, latex, pencil
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 23:28:11</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 23:52:59</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 23:28:11</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 23:52:59</span>
       
     
   </small>
