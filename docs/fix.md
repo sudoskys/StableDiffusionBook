@@ -453,7 +453,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#inpaint-at
 Variation strength slider 和 Variation seed field允许您指定现有图片应更改多少以使其看起来不同。
 在最大强度下，您将获得带有变异种子的图片，至少 - 带有原始种子的图片（使用先前采样器时除外）。
 
-#### **Styles风格模板**
+### **Styles风格模板**
 
 “Save prompt as style” 按钮将当前的提示写入 styles.csv，该文件包含样式集合
 
@@ -505,7 +505,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-edi
 
 比如 [male:female:0.0], 意味着你开始时就要求画一个女性。
 
-#### **Face restoration三次元人脸修复**
+### **Face restoration三次元人脸修复**
 
 适用于三次元。
 
