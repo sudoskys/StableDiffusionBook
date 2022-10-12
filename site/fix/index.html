@@ -823,7 +823,9 @@ print(torch.cuda.is_available())
 </code></pre></div>
 输入 ctrl + z 退出</p>
 <h3 id="gpu">多GPU支持</h3>
-<p>请查看 https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/156</p>
+<p>Easiest mode would be implementing a ~data parallel approach, in which we have one model per GPU and you distribute the workload among them.</p>
+<p>Given the amount of features this repo provides I think it could take some time to have em all supported in the parallel version.</p>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/156">查看此 issue 页面</a></p>
 <h3 id="16xx2">16xx系显卡使用半精度生成图片<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">2</a></sup></h3>
 <p>方案来自 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/28#issuecomment-1241448049">这个讨论</a></p>
 <ol>
@@ -1122,11 +1124,11 @@ Heun 在准确性方面是对 Euler 的“改进”，但它以大约一半的�
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 05:37:21</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 05:38:01</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 05:37:21</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 05:38:01</span>
       
     
   </small>
