@@ -30,11 +30,11 @@
 
 >在英文逗号前后存在一个或数个空格并不影响实际使用。
 
-[fantasy:cyberpunk:16] 代表从第 16 step 后，使用 cyberpunk 标签
+`[fantasy:cyberpunk:16]` 代表从第 16 step 后，使用 `cyberpunk` 标签
 
-[to:when] 在固定数量的step后添加to到提示 ( when)
+`[to:when]` 在固定数量的step后添加 `to` 到提示 ( when)
 
-[from::when] 在固定数量的step后从提示中删除from( when)
+`[from::when]` 在固定数量的step后从提示中删除 `from`( when)
 
 使用 `|` 分隔多个关键词以混合多个要素，字面意义上的混合，可以多个使用
 
