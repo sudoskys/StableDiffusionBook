@@ -37,7 +37,11 @@ torch.version.cuda
 
 ### 多GPU支持
 
-请查看 https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/156
+Easiest mode would be implementing a ~data parallel approach, in which we have one model per GPU and you distribute the workload among them.
+
+Given the amount of features this repo provides I think it could take some time to have em all supported in the parallel version.
+
+[查看此 issue 页面](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/156)
 
 
 ### 16xx系显卡使用半精度生成图片[^3]
