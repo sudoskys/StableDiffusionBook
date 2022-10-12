@@ -162,11 +162,11 @@ a \(word\) - 在提示中使用文字 () 字符
 
     在NAI官方前端我们使用 `{}` 来指定权重。
 
-### 消极参数(提示词)
+### 消极提示词(Token)
 
-WebUi(SD)网页应用会在生成时**拒绝消极参数(提示词)有关的内容**。
+WebUi(SD)网页应用会在生成时**拒绝消极提示词有关的内容**。
 
-比如使用以下参数(提示词)削除水印和文字内容
+比如使用以下提示词削除水印和文字内容
 
 ```
 lowres, bad anatomy, bad hands, text, error, missing fingers, 
@@ -185,11 +185,11 @@ mutilated, tranny, trans, trannsexual, [out of frame], (bad proportions),
 normal quality, text, censored, gown, latex, pencil
 ```
 
-### 重现参数(提示词)
+### 重现提示词(Token)
 
-对于没有压缩的原图，我们可以将文件拖入 `PNG Info` 选项卡，进行参数(提示词)查看。
+对于没有压缩的原图，我们可以将文件拖入 `PNG Info` 选项卡，进行提示词(Token)查看。
 
-### 逆向参数(提示词)
+### 逆向提示词(Token)
 
 这里有一些 **Image 逆向参数服务**，可以从图片中提取相关参数，不一定准确。
 
@@ -197,7 +197,7 @@ normal quality, text, censored, gown, latex, pencil
 
 [DeepDanbooru](https://github.com/KichangKim/DeepDanbooru)
 
-### 已知参数(提示词)组合 / 搜索引擎
+### 已知提示词(Token)组合 / 搜索引擎
 
 你可以访问以下传送门获取一些优秀的参数实例！（当然，中文社区的测试群有**大量素材**，一分钟20次）
 
