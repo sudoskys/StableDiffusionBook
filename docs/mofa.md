@@ -5,15 +5,7 @@
 先请拿上 [调参魔法书](https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml)和 [手抄魔法本](https://docs.google.com/spreadsheets/d/14Gg1kIGWdZGXyCC8AgYVT0lqI6IivLzZOdIT3QMWwVI/pubhtml)。
 
 
-## 基本参数解释
-
-
-Sampling method 采样方法，不同的采样方法不同
-
-
-Sampling Steps 
-
-**基本流程**
+## 基本流程
 
 画一些非常粗糙的东西，比如涂鸦
 
@@ -144,7 +136,14 @@ a \(word\) - 在提示中使用文字 () 字符
 
 指定权重仅适用于 `()` 而不是 `[]`，注意 `[]` 是降低权重
 
-
+```
+> ( n ) = ( n : 1.1 )  
+> (( n )) = ( n : 1.21 )  
+> ((( n ))) = ( n : 1.331 )  
+> (((( n )))) = ( n : 1.4641 )  
+> ((((( n )))) = ( n : 1.61051 )  
+> (((((( n )))))) = ( n : 1.771561 )  
+```
 
 
 !!! info
@@ -243,7 +242,7 @@ normal quality, text, censored, gown, latex, pencil
 
 **CFG Scale**
 
-`cfg scale` 就是符合 prompt 的程度
+`cfg scale` 就是符合 prompt 的程度,Scale越高，程序对令牌越忠诚，越符合。
 
 
 **Denoising strength 噪声**
@@ -270,12 +269,11 @@ normal quality, text, censored, gown, latex, pencil
 
 `Textual Inversion`允许加载一个增强包神经网络。在许多情况下（例如不同的环境和姿势）对一个主题执行此操作通常可以让 AI 创建更好的嵌入.
 
-
 使用时，将 embedding(一个 .pt 或一个 .bin 文件) 放入`embeddings`目录并在 prompt 令牌中提到你要用的 embedding 的文件名(*.pt)即可。
 
-没错，NAI 的 `hypernetworks` 就是
+没错，NAI 的 `hypernetworks` 就是超网络，用来做 embeddings（风格化）。
 
-给出相关[embeddings](https://gitlab.com/16777216c/stable-diffusion-embeddings)
+给出相关 [embeddings](https://gitlab.com/16777216c/stable-diffusion-embeddings)，里面有相关效果预览。
 
 [list of Textual Inversion embeddings for WebUi(SD)](https://rentry.org/embeddings)
 
