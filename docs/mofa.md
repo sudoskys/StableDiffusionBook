@@ -9,9 +9,9 @@
 
 画一些非常粗糙的东西，比如涂鸦
 
-带令牌参数生产 img2img
+带提示词参数生产 img2img
 
-涂鸦原始 img 或令牌参数或输出输入
+涂鸦原始 img 或提示词参数或输出输入
 
 重复 img2img / inpaint 涂鸦后修复
 
@@ -22,7 +22,7 @@
 
 请先在前面了解一下WebUi(SD)网页应用的参数。
 
-### 令牌语法简介
+### 提示词语法简介
 
 **表示方法**
 
@@ -53,7 +53,7 @@
 一般推荐 `eular a` 和 `Ddim`
 
 
-### 如何书写令牌(提示)
+### 如何书写提示词(提示)
 
 结合法术书编写它。
 
@@ -63,7 +63,7 @@
 
 - 参数[^6]
 
-将你想要的相似的令牌组合在一起，并将这些按从最重要到最不重要的顺序排列
+将你想要的相似的提示词组合在一起，并将这些按从最重要到最不重要的顺序排列
 
 ```
 图片的质量
@@ -100,7 +100,7 @@ caustics, masterpiece, high resolution,
 
 第一行指定作品风格类型，第二行指定人物，第三行指定动作，第四行指定场景和着装，第五放指定其他参数
 
-以上顺序已经比较合理，但是你也可以调整令牌的顺序以产生不同的结果。 你可以手动调整，也可以 [使用 X/Y 图自动生成各种顺序](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/1607)
+以上顺序已经比较合理，但是你也可以调整提示词的顺序以产生不同的结果。 你可以手动调整，也可以 [使用 X/Y 图自动生成各种顺序](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/1607)
 
 **调序编译**
 
@@ -110,7 +110,7 @@ tag 顺序是有影响的，webui突破tag75个限制的方式是把75个分为�
 
 以上排序是每组tag都要遵守的，所以如果后面的tag超过 75 了就应该把前面的分一部分过来。
 
-### (令牌)影响因子[^6]
+### (提示词)影响因子[^6]
  
 "调参魔法" 的一个基本技能是设置权重。
 
@@ -153,11 +153,11 @@ a \(word\) - 在提示中使用文字 () 字符
 
     在NAI官方前端我们使用 `{}` 来指定权重。
 
-### 消极参数(令牌)
+### 消极参数(提示词)
 
-WebUi(SD)网页应用会在生成时**拒绝消极参数(令牌)有关的内容**。
+WebUi(SD)网页应用会在生成时**拒绝消极参数(提示词)有关的内容**。
 
-比如使用以下参数(令牌)削除水印和文字内容
+比如使用以下参数(提示词)削除水印和文字内容
 
 ```
 lowres, bad anatomy, bad hands, text, error, missing fingers, 
@@ -176,11 +176,11 @@ mutilated, tranny, trans, trannsexual, [out of frame], (bad proportions),
 normal quality, text, censored, gown, latex, pencil
 ```
 
-### 重现参数(令牌)
+### 重现参数(提示词)
 
-对于没有压缩的原图，我们可以将文件拖入 `PNG Info` 选项卡，进行参数(令牌)查看。
+对于没有压缩的原图，我们可以将文件拖入 `PNG Info` 选项卡，进行参数(提示词)查看。
 
-### 逆向参数(令牌)
+### 逆向参数(提示词)
 
 这里有一些 **Image 逆向参数服务**，可以从图片中提取相关参数，不一定准确。
 
@@ -188,7 +188,7 @@ normal quality, text, censored, gown, latex, pencil
 
 [DeepDanbooru](https://github.com/KichangKim/DeepDanbooru)
 
-### 已知参数(令牌)组合 / 搜索引擎
+### 已知参数(提示词)组合 / 搜索引擎
 
 你可以访问以下传送门获取一些优秀的参数实例！（当然，中文社区的测试群有**大量素材**，一分钟20次）
 
@@ -204,7 +204,7 @@ normal quality, text, censored, gown, latex, pencil
 
 可以进一步在关键词后添加 :x 来指定单个关键词的权重，x 的取值范围是 0.1~100，默认为 1
 
-### 参数冲突(令牌)
+### 参数冲突(提示词)
 
 比如 `sex` 包含较多姿势体位，在使用者想要特定姿势时，法术内单一的 `sex` tag就应该被删除。
 
@@ -244,7 +244,7 @@ normal quality, text, censored, gown, latex, pencil
 
 **CFG Scale**
 
-`cfg scale` 就是符合 prompt 的程度,Scale越高，程序对令牌越忠诚，越符合。
+`cfg scale` 就是符合 prompt 的程度,Scale越高，程序对提示词越忠诚，越符合。
 
 
 **Denoising strength 噪声**
@@ -271,7 +271,7 @@ normal quality, text, censored, gown, latex, pencil
 
 `Textual Inversion`允许加载一个增强包神经网络。在许多情况下（例如不同的环境和姿势）对一个主题执行此操作通常可以让 AI 创建更好的嵌入.
 
-使用时，将 embedding(一个 .pt 或一个 .bin 文件) 放入`embeddings`目录并在 prompt 令牌中提到你要用的 embedding 的文件名(*.pt)即可。
+使用时，将 embedding(一个 .pt 或一个 .bin 文件) 放入`embeddings`目录并在 prompt 提示词中提到你要用的 embedding 的文件名(*.pt)即可。
 
 没错，NAI 的 `hypernetworks` 就是超网络，用来做 embeddings（风格化）。
 
@@ -295,7 +295,7 @@ normal quality, text, censored, gown, latex, pencil
 
 另外，`webui` extras 页有一个自带的超分功能，可以去`settings-upscaling` 使用 `R-ESRGAN 4x+ Anime6B`模型，重新启动程序
 
-### 令牌速查
+### 提示词速查
 
 **[手抄本法术书](https://docs.google.com/spreadsheets/d/14Gg1kIGWdZGXyCC8AgYVT0lqI6IivLzZOdIT3QMWwVI/edit)**
 
