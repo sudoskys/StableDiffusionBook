@@ -366,7 +366,7 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    基本参数解释
+    基本流程
   </a>
   
 </li>
@@ -644,10 +644,7 @@
 <h1 id="_1">调参魔法</h1>
 <p>这节会介绍 参数 和 相关的WebUi(SD)  网页应用资源。部分内容只做简单介绍，因为前面有相关描述。</p>
 <p>先请拿上 <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml">调参魔法书</a>和 <a href="https://docs.google.com/spreadsheets/d/14Gg1kIGWdZGXyCC8AgYVT0lqI6IivLzZOdIT3QMWwVI/pubhtml">手抄魔法本</a>。</p>
-<h2 id="_2">基本参数解释</h2>
-<p>Sampling method 采样方法，不同的采样方法不同</p>
-<p>Sampling Steps </p>
-<p><strong>基本流程</strong></p>
+<h2 id="_2">基本流程</h2>
 <p>画一些非常粗糙的东西，比如涂鸦</p>
 <p>带令牌参数生产 img2img</p>
 <p>涂鸦原始 img 或令牌参数或输出输入</p>
@@ -732,6 +729,13 @@ a \(word\) - 在提示中使用文字 () 字符
 <p>使用 <code>()</code>，可以像这样指定权重：(text:1.4)</p>
 <p>如果未指定权重，则假定为 <code>1.1</code></p>
 <p>指定权重仅适用于 <code>()</code> 而不是 <code>[]</code>，注意 <code>[]</code> 是降低权重</p>
+<div class="highlight"><pre><span></span><code>&gt; ( n ) = ( n : 1.1 )  
+&gt; (( n )) = ( n : 1.21 )  
+&gt; ((( n ))) = ( n : 1.331 )  
+&gt; (((( n )))) = ( n : 1.4641 )  
+&gt; ((((( n )))) = ( n : 1.61051 )  
+&gt; (((((( n )))))) = ( n : 1.771561 )  
+</code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p><strong>NAI官方</strong></p>
@@ -837,7 +841,7 @@ normal quality, text, censored, gown, latex, pencil
 <h3 id="img2img-32">Img2Img 图转图 3转2绘图/优化/换场景/修复</h3>
 <p>如果手脚残，可以试试 img2img,复制参数和 seed 可以进行调整。</p>
 <p><strong>CFG Scale</strong></p>
-<p><code>cfg scale</code> 就是符合 prompt 的程度</p>
+<p><code>cfg scale</code> 就是符合 prompt 的程度,Scale越高，程序对令牌越忠诚，越符合。</p>
 <p><strong>Denoising strength 噪声</strong></p>
 <p><code>Denoising strength</code> 决定算法对图像内容的保留程度,可以减少对画风的变得，但也会弱化img2img能力。值越高 AI 对原图的参考程度就越低 (同时增加迭代次数)。</p>
 <p><img alt="info" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/00119_136826557_masterpiece%2C_best_quality%2C_1girl%2C_black_hair%2C_hat1.jpg" /></p>
@@ -850,8 +854,8 @@ normal quality, text, censored, gown, latex, pencil
 <h3 id="textual-inversion">Textual Inversion</h3>
 <p><code>Textual Inversion</code>允许加载一个增强包神经网络。在许多情况下（例如不同的环境和姿势）对一个主题执行此操作通常可以让 AI 创建更好的嵌入.</p>
 <p>使用时，将 embedding(一个 .pt 或一个 .bin 文件) 放入<code>embeddings</code>目录并在 prompt 令牌中提到你要用的 embedding 的文件名(*.pt)即可。</p>
-<p>没错，NAI 的 <code>hypernetworks</code> 就是</p>
-<p>给出相关<a href="https://gitlab.com/16777216c/stable-diffusion-embeddings">embeddings</a></p>
+<p>没错，NAI 的 <code>hypernetworks</code> 就是超网络，用来做 embeddings（风格化）。</p>
+<p>给出相关 <a href="https://gitlab.com/16777216c/stable-diffusion-embeddings">embeddings</a>，里面有相关效果预览。</p>
 <p><a href="https://rentry.org/embeddings">list of Textual Inversion embeddings for WebUi(SD)</a></p>
 <h3 id="_18">注意 <code>尺寸</code></h3>
 <p>比如出图尺寸宽了人可能会多</p>
@@ -1389,11 +1393,11 @@ normal quality, text, censored, gown, latex, pencil
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 16:40:54</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 16:50:07</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 16:40:54</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 16:50:07</span>
       
     
   </small>
