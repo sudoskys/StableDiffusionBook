@@ -97,8 +97,13 @@ NovelAI 是一个使用 AI 生成故事文本和**通过描述文字生成图片
 AUTOMATIC 则称自己没有窃取代码，并解释说他编写的代码是基于很久以前已经完成的研究和开发，并且是开源的。有问题的函数于 2021 年 12 月 21 日在 [此处](https://github.com/CompVis/latent-diffusion/commit/e66308c7f2e64cb581c6d27ab6fbeb846828253b) 发布，并称反倒是 NovelAI 使用了自己的代码(https://imgur.com/a/Z2QsOEw)。
 
 
-
 Stable Diffusion 社群管理员后又要求 AUTOMATIC 移除项目中的 Hypernetwork 支持，称 NovelAI 核心开发者认为相关代码必然与泄露源码有联系；但被以代码原创且 Hypernetwork **并非泄露模型独创**的理由回绝。
  
 而后， AUTOMATIC 被从 Stable Diffusion 的（Slack?）社群服务器中封禁。
+
+https://rentry.org/sd-tldr
+
+
+
+
 

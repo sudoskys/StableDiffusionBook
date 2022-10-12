@@ -49,7 +49,7 @@
 观看前面章节对于采样器的介绍。
 
 目前好用的有 `eular`，`eular a`，更细腻，和`Ddim`
-一般推荐 `eular a`
+一般推荐 `eular a` 和 `Ddim`
 
 
 ### 如何书写令牌(提示)
@@ -60,7 +60,8 @@
 
 可以直接使用自然语言，WebUi(SD) 有自然语言处理能力(英文句子),也可以使用 颜文字 和 emoji
 
-- 参数
+- 参数[^6]
+
 将你想要的相似的令牌组合在一起，并将这些按从最重要到最不重要的顺序排列
 
 ```
@@ -108,7 +109,7 @@ tag 顺序是有影响的，webui突破tag75个限制的方式是把75个分为�
 
 以上排序是每组tag都要遵守的，所以如果后面的tag超过 75 了就应该把前面的分一部分过来。
 
-### (令牌)影响因子
+### (令牌)影响因子[^6]
  
 "调参魔法" 的一个基本技能是设置权重。
 
@@ -477,3 +478,5 @@ normal quality, text, censored, gown, latex, pencil
 
 [^4]:[Paper朱整理优化方法](https://pan.baidu.com/s/1VWr7OLvAbu1KIoTPEs2wwQ?pwd=y8lk)
 [^5]:[参数图](https://m.weibo.cn/status/4823585938735546)
+
+[^6]:[SD金矿](https://rentry.org/sdupdates#hall-of-fame)
