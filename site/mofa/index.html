@@ -395,7 +395,7 @@
         
           <li class="md-nav__item">
   <a href="#batch-countbatch-size" class="md-nav__link">
-    batch count&amp;batch size
+    Batch count&amp;batch size
   </a>
   
 </li>
@@ -672,13 +672,17 @@
 <p><code>cat :2 | dog</code> 也就是更像猫的狗</p>
 <h3 id="_5">迭代步数</h3>
 <p>更多的迭代步数可能会有更好的生成效果，但是一定会导致生成时间变长。太多的steps也可能适得其反，几乎不会有提高。</p>
-<h3 id="batch-countbatch-size">batch count&amp;batch size</h3>
-<p><code>batch count</code> </p>
-<p>指定训练几轮</p>
-<p><code>batchsize</code></p>
-<p>中文翻译为批大小（批尺寸）。</p>
+<h3 id="batch-countbatch-size">Batch count&amp;batch size</h3>
+<p><code>batch count</code> 指定训练几批次图像。</p>
+<p><code>batchsize</code> 中文翻译为批大小（批尺寸）</p>
 <p>简单点说，批量大小将决定我们一次训练的样本数目。 batch_size将影响到模型的优化程度和速度。</p>
 <p>还要注意 <code>batch size</code> 是为了在<code>内存效率</code>和<code>内存容量</code>之间寻找最佳平衡，因为单个 512x512 图像生成中，GPU 资源没有被充分利用。更大的图像从中获得的收益更少。</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>迭代是重复反馈的动作，神经网络中我们希望通过迭代进行多次的训练以到达所需的目标或结果。
+每一次迭代得到的结果都会被作为下一次迭代的初始值。
+一个迭代 = 一个正向通过+一个反向通过</p>
+</div>
 <h3 id="_6">采样器</h3>
 <p>观看前面章节对于采样器的介绍。</p>
 <p>目前好用的有 <code>eular</code>，<code>eular a</code>，更细腻，和<code>Ddim</code></p>
@@ -1421,11 +1425,11 @@ normal quality, text, censored, gown, latex, pencil
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 23:52:59</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 23:55:36</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 23:52:59</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 23:55:36</span>
       
     
   </small>
