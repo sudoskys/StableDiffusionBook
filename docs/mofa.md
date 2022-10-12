@@ -98,13 +98,16 @@ normal quality, text, censored, gown, latex, pencil
 
 [DeepDanbooru](https://github.com/KichangKim/DeepDanbooru)
 
-### 已知参数(令牌)组合
+### 已知参数(令牌)组合 / 搜索引擎
 
 你可以访问以下传送门获取一些优秀的参数实例！（当然，中文社区的测试群有**大量素材**，一分钟20次）
 
 [StableDiffusion_Show](https://t.me/StableDiffusion_Show)
 
 [cyan_ai_sese](https://t.me/cyan_ai_sese)
+
+[LEXICA搜索引擎](https://lexica.art/?q=Miku)
+
 
 ### **种子调试**
 
