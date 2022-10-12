@@ -37,6 +37,7 @@
 
 - [novelai对Sd的优化日志](https://blog.novelai.net/novelai-improvements-on-stable-diffusion-e10d38db82ac)
 
+- [NovelAI 5ch Wiki](https://seesaawiki.jp/nai_ch/)
 
 ### 数据集
 

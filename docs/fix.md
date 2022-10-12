@@ -8,7 +8,8 @@
 !!! tip
     注意要经常从远端代码库拉取代码洗礼SD网页应用。
 
->本节只针对 NAI 模型展开教程。请多多关注 About 页面的社区获取最新进展和新闻。源教程来自：[^2]
+>本节只针对 NAI 模型展开教程。请多多关注 About 页面的社区获取最新进展和新闻。**大部分源教程来自：[^2]**
+
 
 !!! info "版权"
     本仓库不提供具体链接（版权警告），可以看页面下标或关注中文社区 t.me@StableDiffusion_CN_WIKI。
@@ -214,7 +215,9 @@ float32 用于较旧的 gpus，或者你想要 100% 的精度
 
 [Green or Black screen](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Install-and-Run-on-NVidia-GPUs)
 
-启动参数加 `--precision full --no-half`, 要省显存还要加 `--medvram`
+启动参数需要加 `--precision full --no-half`, 显存不足还要加 `--medvram`
+
+使用 vae 模型后如果偶尔黑图，尝试加入 `--no-half-vae` 参数[^2]
 
 #### RuntimeError Sizes of tensors must match
 (img2img) 如果你得到RuntimeError: Sizes of tensors must match，你需要改变输入图像的分辨率
@@ -368,7 +371,32 @@ Textual Inversion 允许您在自己的图片上训练一小部分神经网络�
 
 [自己训练 embedding](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion#training-embeddings)
 
+### X/Y 图
 
+创建具有不同参数的图像网格。使用X类型和Y类型字段选择应由行和列共享的参数，并将这些参数以逗号分隔输入X值/Y值字段。支持整数、浮点数和范围。
+
+Simple ranges 简单范围
+```
+1-5 = 1, 2, 3, 4, 5
+```
+
+Ranges with increment in bracket 括号范围
+```
+1-5 (+2) = 1, 3, 5
+10-5 (-3) = 10, 7
+1-3 (+0.5) = 1, 1.5, 2, 2.5, 3
+```
+
+Ranges with the count in square brackets 方括号范围
+```
+1-10 [5] = 1, 3, 5, 7, 10
+0.0-1.0 [6] = 0.0, 0.2, 0.4, 0.6, 0.8, 1.0
+```
+
+设置截图
+
+![引用官方 Wiki 的设置图](https://raw.githubusercontent.com/wiki/AUTOMATIC1111/stable-diffusion-webui/images/xy_grid-medusa-ui.png)
+>引用官方 Wiki 的设置图
 
 ### **Loopback 回环生成**
 

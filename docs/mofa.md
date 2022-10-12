@@ -143,8 +143,12 @@ normal quality, text, censored, gown, latex, pencil
 
 
 ![info](https://github.com/sudoskys/StableDiffusionBook/blob/main/resource/00119_136826557_masterpiece%2C_best_quality%2C_1girl%2C_black_hair%2C_hat1.jpg)
->一张完整展现WebUI下img2img中不同参数下效果的详细对比图（prompt、steps、scale、各种seed等参数均保持一致）
->纵轴是Denoising strength（线上版的strength）
+
+>一张图片[^5]展现WebUI下img2img中不同参数下效果的详细对比图（prompt、steps、scale、各种seed等参数均保持一致）
+
+纵轴是Denoising strength（线上版的strength），横轴是Variation strength
+
+
 
 ### inpaint 修复
 
@@ -169,17 +173,18 @@ normal quality, text, censored, gown, latex, pencil
 ### 令牌速查
 
 
-所有 Tag 可以上 [danbooru](https://gelbooru.com/index.php?page=tags&s=list)
+**[Danbooru全部Tag列表](https://gelbooru.com/index.php?page=tags&s=list)**
 
 **[参数法术全典](https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml#)**
 
 **[Tag在线协作](https://docs.google.com/spreadsheets/d/1zij5OzCZIaQuhAbiSayhFznjgJ3rwbaNwnUnaUMxyTQ/edit?usp=drivesdk)**
 
-NSFWTag 可以参考[Github Here](https://github.com/scooderic/exhentai-tags-chinese-translation)
+**[NSFWTag](https://github.com/scooderic/exhentai-tags-chinese-translation)**
 
-[Ai艺术家文档——深入了解](https://docs.google.com/spreadsheets/d/1SRqJ7F_6yHVSOeCi3U82aA448TqEGrUlRrLLZ51abLg/htmlview#)
+**[**Ai艺术家文档](https://docs.google.com/spreadsheets/d/1SRqJ7F_6yHVSOeCi3U82aA448TqEGrUlRrLLZ51abLg/htmlview#)**
 
-[【便宜工具】novelai 关键词组合器 英语苦手救星！](https://www.bilibili.com/read/cv19023021)
+**[Novelai 关键词组合器](https://www.bilibili.com/read/cv19023021)**
+
 
 ### 调参工程师
 
@@ -347,3 +352,4 @@ NSFWTag 可以参考[Github Here](https://github.com/scooderic/exhentai-tags-chi
 
 
 [^4]:[Paper朱整理优化方法](https://pan.baidu.com/s/1VWr7OLvAbu1KIoTPEs2wwQ?pwd=y8lk)
+[^5]:[参数图](https://m.weibo.cn/status/4823585938735546)
