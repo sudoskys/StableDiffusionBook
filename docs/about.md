@@ -7,7 +7,6 @@
 
 - [NovelAI 5ch Wiki](https://seesaawiki.jp/nai_ch/)
 
-
 - [手抄本法术书](https://docs.google.com/spreadsheets/d/14Gg1kIGWdZGXyCC8AgYVT0lqI6IivLzZOdIT3QMWwVI/edit)
 
 - [参数法术全典](https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml#)
@@ -60,7 +59,14 @@ https://aistudio.baidu.com/aistudio/datasetdetail/171442/0
 - OD国际
 https://pan.t-satoru.top/ode5/Share/
 
+- NSFW embeddings
+https://gitlab.com/16777216c/stable-diffusion-embeddings
 
+- list of Textual Inversion embeddings for SD
+https://rentry.org/embeddings
+
+- Hentai-Diffusion 
+https://huggingface.co/Deltaadams/Hentai-Diffusion
 
 ## 关于文档
 

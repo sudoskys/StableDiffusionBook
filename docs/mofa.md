@@ -159,6 +159,15 @@ normal quality, text, censored, gown, latex, pencil
 把有缺陷的地方mask出来inpaint，图片上涂鸦地区会重画。一般选 `original`,`fill` 要更多 step 才能消除不自然感.
 
 
+### Textual Inversion
+
+详细介绍在前一页。
+
+给出相关[embeddings](https://gitlab.com/16777216c/stable-diffusion-embeddings)
+
+[list of Textual Inversion embeddings for SD](https://rentry.org/embeddings)
+
+
 
 
 ### 注意 `尺寸`
