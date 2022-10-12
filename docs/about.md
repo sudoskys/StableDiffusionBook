@@ -54,18 +54,23 @@
 ### 数据集
 
 - 飞浆
+
 https://aistudio.baidu.com/aistudio/datasetdetail/171442/0
 
 - OD国际
+
 https://pan.t-satoru.top/ode5/Share/
 
 - NSFW embeddings
+
 https://gitlab.com/16777216c/stable-diffusion-embeddings
 
 - list of Textual Inversion embeddings for SD
+
 https://rentry.org/embeddings
 
 - Hentai-Diffusion 
+
 https://huggingface.co/Deltaadams/Hentai-Diffusion
 
 ## 关于文档
