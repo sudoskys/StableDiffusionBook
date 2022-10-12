@@ -804,11 +804,11 @@
 
 
 <h1 id="_1">模型技法</h1>
-<p>这节介绍Debug和一些关于SD网页应用的优化方案，让它更好用。</p>
+<p>这节介绍Debug和一些关于WebUi网页应用的优化方案，让它更好用。</p>
 <p>至于如何创造令牌和参数相关，请看下一节：令牌，也就是参数如何写</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>注意要经常从远端代码库拉取代码洗礼SD网页应用。</p>
+<p>注意要经常从远端代码库拉取代码洗礼WebUi网页应用。</p>
 </div>
 <blockquote>
 <p>本节只针对 NAI 模型展开教程。请多多关注 About 页面的社区获取最新进展和新闻。<strong>大部分源教程来自：<sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">1</a></sup></strong></p>
@@ -897,7 +897,7 @@ print(torch.cuda.is_available())
 <p><code>final-pruned.ckpt即 stableckpt/animefull-final-pruned/model.ckpt</code> (pruned)，模型主文件。</p>
 <p><code>final-pruned.vae.pt</code> 即 <code>stableckpt/animevae.pt</code>，用于稳定风格。</p>
 <p><code>final-pruned.yaml</code> 即 <code>model.ckpt</code> 同文件夹的 <code>stableckpt/animefull-final-pruned/config.yaml</code>，记载额外的参数。</p>
-<p><code>hypernetworks</code> 包含了 <code>stableckpt/modules/modules</code> 里的文件，是风格相关的数据集，可以作为特定人物的 <code>embedding model</code> 调用，和 model 使用可以生成特定风格.文件 <code>*.pt</code>。在SD的设置标签页调用。</p>
+<p><code>hypernetworks</code> 包含了 <code>stableckpt/modules/modules</code> 里的文件，是风格相关的数据集，可以作为特定人物的 <code>embedding model</code> 调用，和 model 使用可以生成特定风格.文件 <code>*.pt</code>。在WebUi的设置标签页调用。</p>
 <p><code>stableckpt/vector_adjust/v2.pt</code> 没有什么用，可以自行训练，感觉不如 <code>hypernet</code></p>
 <p><code>workspace</code> 就是前后端啦，40Gb显存及格，NAI采用的是 GPU 云。</p>
 <h3 id="part-2">Part 2</h3>
@@ -1151,11 +1151,11 @@ Heun 在准确性方面是对 Euler 的“改进”，但它以大约一半的�
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 11:54:26</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 12:04:04</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 11:54:26</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 12:04:04</span>
       
     
   </small>
