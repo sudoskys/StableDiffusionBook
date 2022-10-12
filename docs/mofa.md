@@ -23,6 +23,7 @@
 
 结合页面下面下面的 Tag 表。
 
+
 [为文字转图像Ai提示编写指南：A Guide to Writing Prompts for Text-to-image AI](https://docs.google.com/document/d/1XUT2G9LmkZataHFzmuOtRXnuWBfhvXDAo8DkS--8tec/edit#)
 
 - 提示不要太长，超过 100 就有失败风险。
@@ -175,6 +176,7 @@ normal quality, text, censored, gown, latex, pencil
 
 ### 令牌速查
 
+**[手抄本法术书](https://docs.google.com/spreadsheets/d/14Gg1kIGWdZGXyCC8AgYVT0lqI6IivLzZOdIT3QMWwVI/edit)**
 
 **[Danbooru全部Tag列表](https://gelbooru.com/index.php?page=tags&s=list)**
 

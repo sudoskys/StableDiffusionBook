@@ -23,7 +23,8 @@
 
 ## 需求
 
-2GB 可用，4 GB 能用
+显存 2GB 可用，4 GB 能用
+
 ![效果.png](https://s1.ax1x.com/2022/10/10/xtdNNR.png)
 
 

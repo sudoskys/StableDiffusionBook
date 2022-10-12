@@ -5,6 +5,16 @@
 
 这里是相关的社区资源
 
+- [NovelAI 5ch Wiki](https://seesaawiki.jp/nai_ch/)
+
+
+- [手抄本法术书](https://docs.google.com/spreadsheets/d/14Gg1kIGWdZGXyCC8AgYVT0lqI6IivLzZOdIT3QMWwVI/edit)
+
+- [参数法术全典](https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml#)
+
+- [Tag在线协作](https://docs.google.com/spreadsheets/d/1zij5OzCZIaQuhAbiSayhFznjgJ3rwbaNwnUnaUMxyTQ/edit?usp=drivesdk)
+
+
 - [PasteBinWiki](https://rentry.co/voldy)
 
 - [Reddit](https://www.reddit.com/r/StableDiffusion/)
@@ -39,6 +49,9 @@
 
 - [NovelAI 5ch Wiki](https://seesaawiki.jp/nai_ch/)
 
+
+
+
 ### 数据集
 
 - 飞浆
@@ -58,6 +71,8 @@ https://pan.t-satoru.top/ode5/Share/
 @sudoskys
 
 @ReOracle
+
+@lychees
 
 ### 注释
 
