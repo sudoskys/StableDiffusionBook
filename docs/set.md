@@ -7,7 +7,7 @@
 此教程参考了 crosstyan[^2]
 
 
-SD的官方仓库地址为 https://github.com/AUTOMATIC1111/stable-diffusion-webui
+WebUi的官方仓库地址为 https://github.com/AUTOMATIC1111/stable-diffusion-webui
 
 
 ### 硬件要求

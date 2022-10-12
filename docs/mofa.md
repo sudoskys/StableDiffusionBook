@@ -1,6 +1,6 @@
 # 调参魔法
 
-这节会介绍 参数 和 相关的SD网页应用资源。
+这节会介绍 参数 和 相关的WebUi(SD)网页应用资源。
 
 ## 基本流程
 
@@ -8,7 +8,7 @@
 
 ## 魔法入门
 
-请先在前面了解一下SD网页应用的参数。
+请先在前面了解一下WebUi(SD)网页应用的参数。
 
 
 ### 采样器
@@ -28,7 +28,7 @@
 
 - 提示不要太长，超过 100 就有失败风险。
 
-- 可以直接使用自然语言，SD 有自然语言处理能力(英文句子),也可以使用 颜文字 和 emoji
+- 可以直接使用自然语言，WebUi(SD) 有自然语言处理能力(英文句子),也可以使用 颜文字 和 emoji
 
 ### 参数(令牌)权重
  
@@ -66,7 +66,7 @@ a \(word\) - 在提示中使用文字 () 字符
 
 ### 消极参数(令牌)
 
-SD网页应用会在生成时**拒绝消极参数(令牌)有关的内容**。
+WebUi(SD)网页应用会在生成时**拒绝消极参数(令牌)有关的内容**。
 
 比如使用以下参数(令牌)削除水印和文字内容
 
@@ -165,7 +165,7 @@ normal quality, text, censored, gown, latex, pencil
 
 给出相关[embeddings](https://gitlab.com/16777216c/stable-diffusion-embeddings)
 
-[list of Textual Inversion embeddings for SD](https://rentry.org/embeddings)
+[list of Textual Inversion embeddings for WebUi(SD)](https://rentry.org/embeddings)
 
 
 
@@ -209,13 +209,13 @@ normal quality, text, censored, gown, latex, pencil
 
 ## 参数
 
-### 转换——NAI和SD的增强语法不同
+### 转换——NAI和WebUi(SD)的增强语法不同
 
 **Prompts 参数括号转换**
 
 在 NAI 和 Webui 之间转换加强参数   [M2NM2NBot](https://t.me/M2NM2NBot)
 
-权重增强标识：NAI 是 `{}` ，SD 是 `()`
+权重增强标识：NAI 是 `{}` ，WebUi(SD) 是 `()`
 
 ### 良好参数(风格趋向插画)[^4]
 

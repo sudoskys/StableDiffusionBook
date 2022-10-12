@@ -1,12 +1,12 @@
 
 # 模型技法
 
-这节介绍Debug和一些关于SD网页应用的优化方案，让它更好用。
+这节介绍Debug和一些关于WebUi网页应用的优化方案，让它更好用。
 
 至于如何创造令牌和参数相关，请看下一节：令牌，也就是参数如何写
 
 !!! tip
-    注意要经常从远端代码库拉取代码洗礼SD网页应用。
+    注意要经常从远端代码库拉取代码洗礼WebUi网页应用。
 
 >本节只针对 NAI 模型展开教程。请多多关注 About 页面的社区获取最新进展和新闻。**大部分源教程来自：[^2]**
 
@@ -121,7 +121,7 @@ Windows: https://developer.nvidia.com/compute/cudnn/secure/8.5.0/local_installer
 
 `final-pruned.yaml` 即 `model.ckpt` 同文件夹的 `stableckpt/animefull-final-pruned/config.yaml`，记载额外的参数。
 
-`hypernetworks` 包含了 `stableckpt/modules/modules` 里的文件，是风格相关的数据集，可以作为特定人物的 `embedding model` 调用，和 model 使用可以生成特定风格.文件 `*.pt`。在SD的设置标签页调用。
+`hypernetworks` 包含了 `stableckpt/modules/modules` 里的文件，是风格相关的数据集，可以作为特定人物的 `embedding model` 调用，和 model 使用可以生成特定风格.文件 `*.pt`。在WebUi的设置标签页调用。
 
 
 `stableckpt/vector_adjust/v2.pt` 没有什么用，可以自行训练，感觉不如 `hypernet`
