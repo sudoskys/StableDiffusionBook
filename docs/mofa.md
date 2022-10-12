@@ -10,6 +10,22 @@
 
 请先在前面了解一下WebUi(SD)网页应用的参数。
 
+### 语法简介
+
+用 `,` 做分隔符，用 `{}` 在 NAI 做增强，用 `()` 在 WebUi 做增强。
+
+虽然顺序和打乱都不影响，但是为了方便书写改动，多行书写的建议格式如下
+
+```
+masterpiece,
+1girl,  hatsune miku, 
+look at viewer,turning back,
+blow wind, cyan hair, two side up, cyan eyes,eardrop,dress,
+caustics, masterpiece, high resolution,
+```
+
+第一行指定作品风格类型，第二行指定人物，第三行指定动作，第四行指定场景和着装，第五放指定其他参数
+
 
 ### 采样器
 
