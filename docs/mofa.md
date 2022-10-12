@@ -1,18 +1,98 @@
 # 调参魔法
 
-这节会介绍 参数 和 相关的WebUi(SD)网页应用资源。
+这节会介绍 参数 和 相关的WebUi(SD)  网页应用资源。部分内容只做简单介绍，因为前面有相关描述。
 
-## 基本流程
+先请拿上 [调参魔法书](https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml)和 [手抄魔法本](https://docs.google.com/spreadsheets/d/14Gg1kIGWdZGXyCC8AgYVT0lqI6IivLzZOdIT3QMWwVI/pubhtml)。
 
-先输入令牌调试好一个合适
+
+## 基本参数解释
+
+
+Sampling method 采样方法，不同的采样方法不同
+
+
+Sampling Steps 
+
+**基本流程**
+
+画一些非常粗糙的东西，比如涂鸦
+
+带令牌参数生产 img2img
+
+涂鸦原始 img 或令牌参数或输出输入
+
+重复 img2img / inpaint 涂鸦后修复
+
+重复最后几个步骤，直到完成
+
 
 ## 魔法入门
 
 请先在前面了解一下WebUi(SD)网页应用的参数。
 
-### 语法简介
+### 令牌语法简介
 
-用 `,` 做分隔符，用 `{}` 在 NAI 做增强，用 `()` 在 WebUi 做增强。
+**表示方法**
+
+用 英文半角 `,` 做分隔符，用 `{}` 在 NAI 做增强，用 `()` 在 WebUi 做增强。
+
+[fantasy:cyberpunk:16] 代表从第 16 step 后，使用 cyberpunk 标签
+
+[to:when] 在固定数量的step后添加to到提示 ( when)
+
+[from::when] 在固定数量的step后从提示中删除from( when)
+
+使用 `|` 分隔多个关键词以混合多个要素，字面意义上的混合，可以多个使用
+
+`cat :2 | dog` 也就是更像猫的狗
+
+
+
+### 迭代步数
+
+更多的迭代步数可能会有更好的生成效果，但是一定会导致生成时间变长。太多的steps也可能适得其反，几乎不会有提高。
+
+### 采样器
+
+观看前面章节对于采样器的介绍。
+
+目前好用的有 `eular`，`eular a`，更细腻，和`Ddim`
+一般推荐 `eular a`
+
+
+### 如何书写令牌(提示)
+
+结合法术书编写它。
+
+- 自然语言
+
+可以直接使用自然语言，WebUi(SD) 有自然语言处理能力(英文句子),也可以使用 颜文字 和 emoji
+
+- 参数
+将你想要的相似的令牌组合在一起，并将这些按从最重要到最不重要的顺序排列
+
+```
+图片的质量
+图片的主题
+他们的外表
+他们的情绪
+他们的衣服
+他们的姿势
+图片的背景
+```
+
+
+[为文字转图像Ai提示编写指南：A Guide to Writing Prompts for Text-to-image AI](https://docs.google.com/document/d/1XUT2G9LmkZataHFzmuOtRXnuWBfhvXDAo8DkS--8tec/edit#)
+
+- 对于带括号的参数，`a (word)`  请在参数中使用 `\` 字符转义为 `a \(word\)`
+
+
+- 提示不要太长，超过 100 就有失败风险。
+
+- Ai 难以解析下划线，请少用
+
+
+**书写格式**
 
 为了方便书写改动，多行书写的建议格式如下
 
@@ -28,27 +108,15 @@ caustics, masterpiece, high resolution,
 
 以上顺序已经比较合理，但是你也可以调整令牌的顺序以产生不同的结果。 你可以手动调整，也可以 [使用 X/Y 图自动生成各种顺序](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/1607)
 
+**调序编译**
 
-### 采样器
+tag 顺序是有影响的，webui突破tag75个限制的方式是把75个分为一组。
 
-观看前面章节对于采样器的介绍。
+然后是主体往前放，接着描述装扮的词，画质提升词穿插在这些描述词之间，一般为了提高成品率要把动作、nsfw词等改变构图的词往后放，或者手动调低权重（主要是为了防止ai强行凑动作导致肢体到处跑）。
 
-目前好用的有 `eular`，`eular a`，更细腻，和`Ddim`
-一般推荐 `eular a`
+以上排序是每组tag都要遵守的，所以如果后面的tag超过 75 了就应该把前面的分一部分过来。
 
-
-### 书写令牌(提示)
-
-结合页面下面下面的 Tag 表。
-
-
-[为文字转图像Ai提示编写指南：A Guide to Writing Prompts for Text-to-image AI](https://docs.google.com/document/d/1XUT2G9LmkZataHFzmuOtRXnuWBfhvXDAo8DkS--8tec/edit#)
-
-- 提示不要太长，超过 100 就有失败风险。
-
-- 可以直接使用自然语言，WebUi(SD) 有自然语言处理能力(英文句子),也可以使用 颜文字 和 emoji
-
-### 参数(令牌)权重
+### (令牌)影响因子
  
 "调参魔法" 的一个基本技能是设置权重。
 
@@ -75,6 +143,8 @@ a \(word\) - 在提示中使用文字 () 字符
 如果未指定权重，则假定为 `1.1`
 
 指定权重仅适用于 `()` 而不是 `[]`，注意 `[]` 是降低权重
+
+
 
 
 !!! info
@@ -127,10 +197,23 @@ normal quality, text, censored, gown, latex, pencil
 
 [LEXICA搜索引擎](https://lexica.art/?q=Miku)
 
+### 要素混合 
 
-### **种子调试**
+使用 | 分隔多个关键词以混合多个要素，前面有讲哦
+
+可以进一步在关键词后添加 :x 来指定单个关键词的权重，x 的取值范围是 0.1~100，默认为 1
+
+### 参数冲突(令牌)
+
+比如 `sex` 包含较多姿势体位，在使用者想要特定姿势时，法术内单一的 `sex` tag就应该被删除。
+
+同样地，`loli` Tag 附带了强画风属性，会很大地影响结果！改成 `femeal child` 会好一点。
+
+### 种子调试
 
 在相同 Step ，cfg ，Seed,参数（prompts） 的情况下，生产的图片基本相同！
+
+在同一模型和后端实现中，保持所有参数一致的情况下，相同的种子会产生同样的图片。取决于其他参数
 
 ###  方位调参
 
@@ -158,10 +241,15 @@ normal quality, text, censored, gown, latex, pencil
 
 如果手脚残，可以试试 img2img,复制参数和 seed 可以进行调整。
 
+**CFG Scale**
 
-**Denoising strength**
+`cfg scale` 就是符合 prompt 的程度
 
-`Denoising strength` 决定算法对图像内容的保留程度,可以减少对画风的变得，但也会弱化img2img能力
+
+**Denoising strength 噪声**
+
+
+`Denoising strength` 决定算法对图像内容的保留程度,可以减少对画风的变得，但也会弱化img2img能力。值越高 AI 对原图的参考程度就越低 (同时增加迭代次数)。
 
 
 ![info](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/00119_136826557_masterpiece%2C_best_quality%2C_1girl%2C_black_hair%2C_hat1.jpg)
@@ -179,7 +267,13 @@ normal quality, text, censored, gown, latex, pencil
 
 ### Textual Inversion
 
-详细介绍在前一页。
+
+`Textual Inversion`允许加载一个增强包神经网络。在许多情况下（例如不同的环境和姿势）对一个主题执行此操作通常可以让 AI 创建更好的嵌入.
+
+
+使用时，将 embedding(一个 .pt 或一个 .bin 文件) 放入`embeddings`目录并在 prompt 令牌中提到你要用的 embedding 的文件名(*.pt)即可。
+
+没错，NAI 的 `hypernetworks` 就是
 
 给出相关[embeddings](https://gitlab.com/16777216c/stable-diffusion-embeddings)
 

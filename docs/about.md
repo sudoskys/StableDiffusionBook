@@ -5,6 +5,8 @@
 
 这里是相关的社区资源
 
+- [SD资源金矿](https://rentry.org/sdupdates)
+
 - [NovelAI 5ch Wiki](https://seesaawiki.jp/nai_ch/)
 
 - [手抄本法术书](https://docs.google.com/spreadsheets/d/14Gg1kIGWdZGXyCC8AgYVT0lqI6IivLzZOdIT3QMWwVI/edit)

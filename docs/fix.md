@@ -20,6 +20,9 @@
 
 ## 关于显卡
 
+!!! info 
+    注意你的温度并增加它们的冷却，有报道称 GPU 太热炸了.
+
 先判断 cuda 是否可用。
 
 打开命令窗，输入 python 进入，分行输入
@@ -175,6 +178,9 @@ BV1Gm4y1A7VM
 
 ## 说明
 
+### Config.yaml？
+
+不建议加载 yaml，因为它会使 ram 加倍而不会改变输出，但如果你真的想要，将其重命名为 [model name].yaml 并将其放在你的模型旁边
 
 ### Vae 额外的权重
 
@@ -186,7 +192,9 @@ float32 用于较旧的 gpus，或者你想要 100% 的精度
 
 两者的输出应该几乎相同，主要区别在于大小和支持它的 GPU。
 
->官网是fp32
+大多数新 GPU 使用半精度，因为它会降低 VRAM。
+
+如果您想获得绝对的最佳质量或运行 16xx 卡，请仅使用非半精度和/或全精度。
 
 
 ### 横条参数说明
@@ -415,7 +423,7 @@ Batch 数设置控制获得多少次迭代
 - a busy city street in a modern city, cinematic lighting
 - a busy city street in a modern city, illustration, cinematic lighting
 
-### **Outpainting外部修补**
+### **Outpainting 外部修补**
 
 Outpainting 扩展原始图像并修复创建的空白空间。
 您可以在底部的 img2img 选项卡中找到该功能，在 Script -> Poor man's outpainting 下。
@@ -473,6 +481,30 @@ For example of what text files to use, see https://github.com/pharmapsychotic/cl
 ### **渐变提示编辑**
 
 https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-editing
+
+允许您开始对一张图片进行采样，但在中间切换到其他图片。基本语法是：
+
+```
+[from:to:when]
+```
+
+其中from和to是任意文本，并且when是一个数字，用于定义应在采样周期多长时间内进行切换。越晚，模型绘制to文本代替from文本的能力就越小。如果when是介于 0 和 1 之间的数字，则它是进行切换之后的步数的一小部分。如果它是一个大于零的整数，那么这只是进行切换的步骤。
+
+将一个提示编辑嵌套在另一个提示中不起作用。
+
+**使用方法**
+
+[to:when] 在固定数量的step后添加to到提示 ( when)
+
+[from::when] 在固定数量的step后从提示中删除from( when)
+
+例子： a [fantasy:cyberpunk:16] landscape
+
+开始时，模型将绘制a fantasy landscape。
+
+在第 16 步之后，它将切换到绘图a `cyberpunk landscape`，从幻想停止的地方继续。
+
+比如 [male:female:0.0], 意味着你开始时就要求画一个女性。
 
 #### **Face restoration三次元人脸修复**
 
