@@ -14,7 +14,7 @@
     本仓库不提供具体链接（版权警告），可以看页面下标或关注中文社区 t.me@StableDiffusion_CN_WIKI。
 
 
-[除了NAI模型外的其他模型：Stable Diffusion Models](https://rentry.org/sdmodels)
+[你应该看看，除了NAI模型外的其他模型：Stable Diffusion Models](https://rentry.org/sdmodels)
 
 
 ## 关于显卡

@@ -2,9 +2,22 @@
 
 这节会介绍 参数 和 相关的SD网页应用资源。
 
+## 基本流程
+
+先输入令牌调试好一个合适
+
 ## 魔法入门
 
 请先在前面了解一下SD网页应用的参数。
+
+
+### 采样器
+
+观看前面章节对于采样器的介绍。
+
+目前好用的有 `eular`，`eular a`，更细腻，和`Ddim`
+一般推荐 `eular a`
+
 
 ### 书写令牌(提示)
 
@@ -119,10 +132,9 @@ normal quality, text, censored, gown, latex, pencil
     请阅读前面章节的模型进阶1,了解具体的 Img2Img 和 inpaint 介绍操作。
 
 
-### Img2Img图转图修复
+### Img2Img 图转图 3转2绘图/优化/换场景/修复
 
 如果手脚残，可以试试 img2img,复制参数和 seed 可以进行调整。
-
 
 
 **Denoising strength**
