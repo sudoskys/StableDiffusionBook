@@ -19,8 +19,10 @@
 
 ## 关于显卡
 
-cuda 是否可用、以及 torch 对应的 cuda 的版本
+先判断 cuda 是否可用。
+
 打开命令窗，输入 python 进入，分行输入
+
 ```
 import torch
 print(torch.__version__)
