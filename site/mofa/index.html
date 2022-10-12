@@ -686,16 +686,13 @@
 </code></pre></div>
 <p><a href="https://docs.google.com/document/d/1XUT2G9LmkZataHFzmuOtRXnuWBfhvXDAo8DkS--8tec/edit#">为文字转图像Ai提示编写指南：A Guide to Writing Prompts for Text-to-image AI</a></p>
 <ul>
-<li>
-<p>对于带括号的参数，<code>a (word)</code>  请在参数中使用 <code>\</code> 字符转义为 <code>a \(word\)</code></p>
-</li>
-<li>
-<p>提示不要太长，超过 100 就有失败风险。</p>
-</li>
-<li>
-<p>Ai 难以解析下划线，请少用</p>
-</li>
+<li>对于带括号的参数，<code>a (word)</code>  请在参数中使用 <code>\</code> 字符转义为 <code>a \(word\)</code></li>
 </ul>
+<p><strong>书写长度</strong></p>
+<ul>
+<li>提示不要太长，超过 100 就有失败风险。</li>
+</ul>
+<p>根据 手抄本的Tip，由于GPT-3模型限制，promot并不是无限的，positive token 在75-80之间，negative大概65，加太多会提示你xxx of xxx are truncated，所以别人那边的圣经不要照抄，太长的咒语后半都没有意义了，所以用简易反咒就足够，除非你有特定想屏蔽的东西</p>
 <p><strong>书写格式</strong></p>
 <p>为了方便书写改动，多行书写的建议格式如下</p>
 <div class="highlight"><pre><span></span><code>masterpiece,
@@ -706,6 +703,7 @@ caustics, masterpiece, high resolution,
 </code></pre></div>
 <p>第一行指定作品风格类型，第二行指定人物，第三行指定动作，第四行指定场景和着装，第五放指定其他参数</p>
 <p>以上顺序已经比较合理，但是你也可以调整提示词的顺序以产生不同的结果。 你可以手动调整，也可以 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/1607">使用 X/Y 图自动生成各种顺序</a></p>
+<p>Ai 难以解析下划线，请少用</p>
 <p><strong>调序编译</strong></p>
 <p>tag 顺序是有影响的，webui突破tag75个限制的方式是把75个分为一组。</p>
 <p>然后是主体往前放，接着描述装扮的词，画质提升词穿插在这些描述词之间，一般为了提高成品率要把动作、nsfw词等改变构图的词往后放，或者手动调低权重（主要是为了防止ai强行凑动作导致肢体到处跑）。</p>
@@ -738,6 +736,7 @@ a \(word\) - 在提示中使用文字 () 字符
 </code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
+<p>权重增加通常会占一个提示词位。在token紧张的情况下没有必要加特别多括号。</p>
 <p><strong>NAI官方</strong></p>
 <p>在NAI官方前端我们使用 <code>{}</code> 来指定权重。</p>
 </div>
@@ -1396,11 +1395,11 @@ normal quality, text, censored, gown, latex, pencil
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 23:12:02</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 23:18:42</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 23:12:02</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 23:18:42</span>
       
     
   </small>
