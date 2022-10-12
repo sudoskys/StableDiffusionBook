@@ -419,6 +419,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#configyaml" class="md-nav__link">
+    Config.yaml？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#vae" class="md-nav__link">
     Vae 额外的权重
   </a>
@@ -605,7 +612,7 @@
         
           <li class="md-nav__item">
   <a href="#outpainting" class="md-nav__link">
-    Outpainting外部修补
+    Outpainting 外部修补
   </a>
   
 </li>
@@ -819,6 +826,10 @@
 </div>
 <p><a href="https://rentry.org/sdmodels">你应该看看，除了NAI模型外的其他模型：Stable Diffusion Models</a></p>
 <h2 id="_2">关于显卡</h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>注意你的温度并增加它们的冷却，有报道称 GPU 太热炸了.</p>
+</div>
 <p>先判断 cuda 是否可用。</p>
 <p>打开命令窗，输入 python 进入，分行输入</p>
 <div class="highlight"><pre><span></span><code>import torch
@@ -932,14 +943,15 @@ print(torch.cuda.is_available())
 <iframe src="//player.bilibili.com/player.html?aid=688965561&bvid=BV1Gm4y1A7VM&cid=857942294&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 <p>BV1Gm4y1A7VM</p>
 <h2 id="_3">说明</h2>
+<h3 id="configyaml">Config.yaml？</h3>
+<p>不建议加载 yaml，因为它会使 ram 加倍而不会改变输出，但如果你真的想要，将其重命名为 [model name].yaml 并将其放在你的模型旁边</p>
 <h3 id="vae">Vae 额外的权重</h3>
 <p>如果需要更好模拟NAI,务必使用 <code>animevae.pt</code></p>
 <h3 id="_4">半精度/全精度</h3>
 <p>float32 用于较旧的 gpus，或者你想要 100% 的精度</p>
 <p>两者的输出应该几乎相同，主要区别在于大小和支持它的 GPU。</p>
-<blockquote>
-<p>官网是fp32</p>
-</blockquote>
+<p>大多数新 GPU 使用半精度，因为它会降低 VRAM。</p>
+<p>如果您想获得绝对的最佳质量或运行 16xx 卡，请仅使用非半精度和/或全精度。</p>
 <h3 id="_5">横条参数说明</h3>
 <p><code>step</code> 迭代多少次, 取值和 sampling method 有关, DDIM 收敛较快, 见 Sampler vs. Steps Comparison (low to mid step counts) 我用 DDIM 取 20 够了.</p>
 <p><code>batch count/batch size</code> 决定生成的图片数量, 显存够就加 batch size, 不够就 batch count, 得到的图片数量是两者之积 (小显存还是只动 count 就好)</p>
@@ -1066,7 +1078,7 @@ Heun 在准确性方面是对 Euler 的“改进”，但它以大约一半的�
 <li>a busy city street in a modern city, cinematic lighting</li>
 <li>a busy city street in a modern city, illustration, cinematic lighting</li>
 </ul>
-<h3 id="outpainting"><strong>Outpainting外部修补</strong></h3>
+<h3 id="outpainting"><strong>Outpainting 外部修补</strong></h3>
 <p>Outpainting 扩展原始图像并修复创建的空白空间。
 您可以在底部的 img2img 选项卡中找到该功能，在 Script -&gt; Poor man's outpainting 下。</p>
 <div class="highlight"><pre><span></span><code>Outpainting, unlike normal image generation, seems to profit very much from large step count. A recipe for a good outpainting is a good prompt that matches the picture, sliders for denoising and CFG scale set to max, and step count of 50 to 100 with Euler ancestral or DPM2 ancestral samplers.
@@ -1100,6 +1112,18 @@ Heun 在准确性方面是对 Euler 的“改进”，但它以大约一半的�
 </code></pre></div>
 <h3 id="_12"><strong>渐变提示编辑</strong></h3>
 <p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-editing</p>
+<p>允许您开始对一张图片进行采样，但在中间切换到其他图片。基本语法是：</p>
+<div class="highlight"><pre><span></span><code>[from:to:when]
+</code></pre></div>
+<p>其中from和to是任意文本，并且when是一个数字，用于定义应在采样周期多长时间内进行切换。越晚，模型绘制to文本代替from文本的能力就越小。如果when是介于 0 和 1 之间的数字，则它是进行切换之后的步数的一小部分。如果它是一个大于零的整数，那么这只是进行切换的步骤。</p>
+<p>将一个提示编辑嵌套在另一个提示中不起作用。</p>
+<p><strong>使用方法</strong></p>
+<p>[to:when] 在固定数量的step后添加to到提示 ( when)</p>
+<p>[from::when] 在固定数量的step后从提示中删除from( when)</p>
+<p>例子： a [fantasy:cyberpunk:16] landscape</p>
+<p>开始时，模型将绘制a fantasy landscape。</p>
+<p>在第 16 步之后，它将切换到绘图a <code>cyberpunk landscape</code>，从幻想停止的地方继续。</p>
+<p>比如 [male:female:0.0], 意味着你开始时就要求画一个女性。</p>
 <h4 id="face-restoration"><strong>Face restoration三次元人脸修复</strong></h4>
 <p>适用于三次元。</p>
 <p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#face-restoration</p>
@@ -1151,11 +1175,11 @@ Heun 在准确性方面是对 Euler 的“改进”，但它以大约一半的�
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 15:44:55</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 16:40:54</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 15:44:55</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 16:40:54</span>
       
     
   </small>

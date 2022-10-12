@@ -366,7 +366,7 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    基本流程
+    基本参数解释
   </a>
   
 </li>
@@ -381,69 +381,90 @@
         
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    语法简介
+    令牌语法简介
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
-    采样器
+    迭代步数
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
-    书写令牌(提示)
+    采样器
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
-    参数(令牌)权重
+    如何书写令牌(提示)
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_8" class="md-nav__link">
-    消极参数(令牌)
+    (令牌)影响因子
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_9" class="md-nav__link">
-    重现参数(令牌)
+    消极参数(令牌)
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_10" class="md-nav__link">
-    逆向参数(令牌)
+    重现参数(令牌)
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_11" class="md-nav__link">
-    已知参数(令牌)组合 / 搜索引擎
+    逆向参数(令牌)
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_12" class="md-nav__link">
-    种子调试
+    已知参数(令牌)组合 / 搜索引擎
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_13" class="md-nav__link">
+    要素混合
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    参数冲突(令牌)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    种子调试
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
     方位调参
   </a>
   
@@ -455,7 +476,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
+  <a href="#_17" class="md-nav__link">
     魔法进阶
   </a>
   
@@ -484,7 +505,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
+  <a href="#_18" class="md-nav__link">
     注意 尺寸
   </a>
   
@@ -498,14 +519,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_16" class="md-nav__link">
+  <a href="#_19" class="md-nav__link">
     令牌速查
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_17" class="md-nav__link">
+  <a href="#_20" class="md-nav__link">
     调参工程师
   </a>
   
@@ -517,7 +538,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_18" class="md-nav__link">
+  <a href="#_21" class="md-nav__link">
     参数
   </a>
   
@@ -540,21 +561,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_19" class="md-nav__link">
+  <a href="#_22" class="md-nav__link">
     草图风格
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_20" class="md-nav__link">
+  <a href="#_23" class="md-nav__link">
     艺术风格
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_21" class="md-nav__link">
+  <a href="#_24" class="md-nav__link">
     杂志/设定集 风格
   </a>
   
@@ -621,13 +642,64 @@
 
 
 <h1 id="_1">调参魔法</h1>
-<p>这节会介绍 参数 和 相关的WebUi(SD)网页应用资源。</p>
-<h2 id="_2">基本流程</h2>
-<p>先输入令牌调试好一个合适</p>
+<p>这节会介绍 参数 和 相关的WebUi(SD)  网页应用资源。部分内容只做简单介绍，因为前面有相关描述。</p>
+<p>先请拿上 <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml">调参魔法书</a>和 <a href="https://docs.google.com/spreadsheets/d/14Gg1kIGWdZGXyCC8AgYVT0lqI6IivLzZOdIT3QMWwVI/pubhtml">手抄魔法本</a>。</p>
+<h2 id="_2">基本参数解释</h2>
+<p>Sampling method 采样方法，不同的采样方法不同</p>
+<p>Sampling Steps </p>
+<p><strong>基本流程</strong></p>
+<p>画一些非常粗糙的东西，比如涂鸦</p>
+<p>带令牌参数生产 img2img</p>
+<p>涂鸦原始 img 或令牌参数或输出输入</p>
+<p>重复 img2img / inpaint 涂鸦后修复</p>
+<p>重复最后几个步骤，直到完成</p>
 <h2 id="_3">魔法入门</h2>
 <p>请先在前面了解一下WebUi(SD)网页应用的参数。</p>
-<h3 id="_4">语法简介</h3>
-<p>用 <code>,</code> 做分隔符，用 <code>{}</code> 在 NAI 做增强，用 <code>()</code> 在 WebUi 做增强。</p>
+<h3 id="_4">令牌语法简介</h3>
+<p><strong>表示方法</strong></p>
+<p>用 英文半角 <code>,</code> 做分隔符，用 <code>{}</code> 在 NAI 做增强，用 <code>()</code> 在 WebUi 做增强。</p>
+<p>[fantasy:cyberpunk:16] 代表从第 16 step 后，使用 cyberpunk 标签</p>
+<p>[to:when] 在固定数量的step后添加to到提示 ( when)</p>
+<p>[from::when] 在固定数量的step后从提示中删除from( when)</p>
+<p>使用 <code>|</code> 分隔多个关键词以混合多个要素，字面意义上的混合，可以多个使用</p>
+<p><code>cat :2 | dog</code> 也就是更像猫的狗</p>
+<h3 id="_5">迭代步数</h3>
+<p>更多的迭代步数可能会有更好的生成效果，但是一定会导致生成时间变长。太多的steps也可能适得其反，几乎不会有提高。</p>
+<h3 id="_6">采样器</h3>
+<p>观看前面章节对于采样器的介绍。</p>
+<p>目前好用的有 <code>eular</code>，<code>eular a</code>，更细腻，和<code>Ddim</code>
+一般推荐 <code>eular a</code></p>
+<h3 id="_7">如何书写令牌(提示)</h3>
+<p>结合法术书编写它。</p>
+<ul>
+<li>自然语言</li>
+</ul>
+<p>可以直接使用自然语言，WebUi(SD) 有自然语言处理能力(英文句子),也可以使用 颜文字 和 emoji</p>
+<ul>
+<li>参数
+将你想要的相似的令牌组合在一起，并将这些按从最重要到最不重要的顺序排列</li>
+</ul>
+<div class="highlight"><pre><span></span><code>图片的质量
+图片的主题
+他们的外表
+他们的情绪
+他们的衣服
+他们的姿势
+图片的背景
+</code></pre></div>
+<p><a href="https://docs.google.com/document/d/1XUT2G9LmkZataHFzmuOtRXnuWBfhvXDAo8DkS--8tec/edit#">为文字转图像Ai提示编写指南：A Guide to Writing Prompts for Text-to-image AI</a></p>
+<ul>
+<li>
+<p>对于带括号的参数，<code>a (word)</code>  请在参数中使用 <code>\</code> 字符转义为 <code>a \(word\)</code></p>
+</li>
+<li>
+<p>提示不要太长，超过 100 就有失败风险。</p>
+</li>
+<li>
+<p>Ai 难以解析下划线，请少用</p>
+</li>
+</ul>
+<p><strong>书写格式</strong></p>
 <p>为了方便书写改动，多行书写的建议格式如下</p>
 <div class="highlight"><pre><span></span><code>masterpiece,
 1girl,  hatsune miku, 
@@ -637,22 +709,11 @@ caustics, masterpiece, high resolution,
 </code></pre></div>
 <p>第一行指定作品风格类型，第二行指定人物，第三行指定动作，第四行指定场景和着装，第五放指定其他参数</p>
 <p>以上顺序已经比较合理，但是你也可以调整令牌的顺序以产生不同的结果。 你可以手动调整，也可以 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/1607">使用 X/Y 图自动生成各种顺序</a></p>
-<h3 id="_5">采样器</h3>
-<p>观看前面章节对于采样器的介绍。</p>
-<p>目前好用的有 <code>eular</code>，<code>eular a</code>，更细腻，和<code>Ddim</code>
-一般推荐 <code>eular a</code></p>
-<h3 id="_6">书写令牌(提示)</h3>
-<p>结合页面下面下面的 Tag 表。</p>
-<p><a href="https://docs.google.com/document/d/1XUT2G9LmkZataHFzmuOtRXnuWBfhvXDAo8DkS--8tec/edit#">为文字转图像Ai提示编写指南：A Guide to Writing Prompts for Text-to-image AI</a></p>
-<ul>
-<li>
-<p>提示不要太长，超过 100 就有失败风险。</p>
-</li>
-<li>
-<p>可以直接使用自然语言，WebUi(SD) 有自然语言处理能力(英文句子),也可以使用 颜文字 和 emoji</p>
-</li>
-</ul>
-<h3 id="_7">参数(令牌)权重</h3>
+<p><strong>调序编译</strong></p>
+<p>tag 顺序是有影响的，webui突破tag75个限制的方式是把75个分为一组。</p>
+<p>然后是主体往前放，接着描述装扮的词，画质提升词穿插在这些描述词之间，一般为了提高成品率要把动作、nsfw词等改变构图的词往后放，或者手动调低权重（主要是为了防止ai强行凑动作导致肢体到处跑）。</p>
+<p>以上排序是每组tag都要遵守的，所以如果后面的tag超过 75 了就应该把前面的分一部分过来。</p>
+<h3 id="_8">(令牌)影响因子</h3>
 <p>"调参魔法" 的一个基本技能是设置权重。</p>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#attentionemphasis">Wiki:魔导师介绍</a></p>
 <p>具体规则如下</p>
@@ -676,7 +737,7 @@ a \(word\) - 在提示中使用文字 () 字符
 <p><strong>NAI官方</strong></p>
 <p>在NAI官方前端我们使用 <code>{}</code> 来指定权重。</p>
 </div>
-<h3 id="_8">消极参数(令牌)</h3>
+<h3 id="_9">消极参数(令牌)</h3>
 <p>WebUi(SD)网页应用会在生成时<strong>拒绝消极参数(令牌)有关的内容</strong>。</p>
 <p>比如使用以下参数(令牌)削除水印和文字内容</p>
 <div class="highlight"><pre><span></span><code>lowres, bad anatomy, bad hands, text, error, missing fingers, 
@@ -691,20 +752,27 @@ mutilated, tranny, trans, trannsexual, [out of frame], (bad proportions),
 (poorly drawn body), (poorly drawn legs), worst quality, low quality, 
 normal quality, text, censored, gown, latex, pencil
 </code></pre></div>
-<h3 id="_9">重现参数(令牌)</h3>
+<h3 id="_10">重现参数(令牌)</h3>
 <p>对于没有压缩的原图，我们可以将文件拖入 <code>PNG Info</code> 选项卡，进行参数(令牌)查看。</p>
-<h3 id="_10">逆向参数(令牌)</h3>
+<h3 id="_11">逆向参数(令牌)</h3>
 <p>这里有一些 <strong>Image 逆向参数服务</strong>，可以从图片中提取相关参数，不一定准确。</p>
 <p><a href="https://t.me/LenKiMo_Bot">LenKiMo_Bot</a></p>
 <p><a href="https://github.com/KichangKim/DeepDanbooru">DeepDanbooru</a></p>
-<h3 id="_11">已知参数(令牌)组合 / 搜索引擎</h3>
+<h3 id="_12">已知参数(令牌)组合 / 搜索引擎</h3>
 <p>你可以访问以下传送门获取一些优秀的参数实例！（当然，中文社区的测试群有<strong>大量素材</strong>，一分钟20次）</p>
 <p><a href="https://t.me/StableDiffusion_Show">StableDiffusion_Show</a></p>
 <p><a href="https://t.me/cyan_ai_sese">cyan_ai_sese</a></p>
 <p><a href="https://lexica.art/?q=Miku">LEXICA搜索引擎</a></p>
-<h3 id="_12"><strong>种子调试</strong></h3>
+<h3 id="_13">要素混合</h3>
+<p>使用 | 分隔多个关键词以混合多个要素，前面有讲哦</p>
+<p>可以进一步在关键词后添加 :x 来指定单个关键词的权重，x 的取值范围是 0.1~100，默认为 1</p>
+<h3 id="_14">参数冲突(令牌)</h3>
+<p>比如 <code>sex</code> 包含较多姿势体位，在使用者想要特定姿势时，法术内单一的 <code>sex</code> tag就应该被删除。</p>
+<p>同样地，<code>loli</code> Tag 附带了强画风属性，会很大地影响结果！改成 <code>femeal child</code> 会好一点。</p>
+<h3 id="_15">种子调试</h3>
 <p>在相同 Step ，cfg ，Seed,参数（prompts） 的情况下，生产的图片基本相同！</p>
-<h3 id="_13">方位调参</h3>
+<p>在同一模型和后端实现中，保持所有参数一致的情况下，相同的种子会产生同样的图片。取决于其他参数</p>
+<h3 id="_16">方位调参</h3>
 <p>竖着看</p>
 <table>
 <thead>
@@ -760,7 +828,7 @@ normal quality, text, censored, gown, latex, pencil
 </tr>
 </tbody>
 </table>
-<h2 id="_14">魔法进阶</h2>
+<h2 id="_17">魔法进阶</h2>
 <p>调参基本原理模糊的说是：限定好的数据范围内相似样本越多，越稳定。</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -768,8 +836,10 @@ normal quality, text, censored, gown, latex, pencil
 </div>
 <h3 id="img2img-32">Img2Img 图转图 3转2绘图/优化/换场景/修复</h3>
 <p>如果手脚残，可以试试 img2img,复制参数和 seed 可以进行调整。</p>
-<p><strong>Denoising strength</strong></p>
-<p><code>Denoising strength</code> 决定算法对图像内容的保留程度,可以减少对画风的变得，但也会弱化img2img能力</p>
+<p><strong>CFG Scale</strong></p>
+<p><code>cfg scale</code> 就是符合 prompt 的程度</p>
+<p><strong>Denoising strength 噪声</strong></p>
+<p><code>Denoising strength</code> 决定算法对图像内容的保留程度,可以减少对画风的变得，但也会弱化img2img能力。值越高 AI 对原图的参考程度就越低 (同时增加迭代次数)。</p>
 <p><img alt="info" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/00119_136826557_masterpiece%2C_best_quality%2C_1girl%2C_black_hair%2C_hat1.jpg" /></p>
 <blockquote>
 <p>一张图片<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">2</a></sup>展现WebUI下img2img中不同参数下效果的详细对比图（prompt、steps、scale、各种seed等参数均保持一致）</p>
@@ -778,10 +848,12 @@ normal quality, text, censored, gown, latex, pencil
 <h3 id="inpaint">inpaint 修复</h3>
 <p>把有缺陷的地方mask出来inpaint，图片上涂鸦地区会重画。一般选 <code>original</code>,<code>fill</code> 要更多 step 才能消除不自然感.</p>
 <h3 id="textual-inversion">Textual Inversion</h3>
-<p>详细介绍在前一页。</p>
+<p><code>Textual Inversion</code>允许加载一个增强包神经网络。在许多情况下（例如不同的环境和姿势）对一个主题执行此操作通常可以让 AI 创建更好的嵌入.</p>
+<p>使用时，将 embedding(一个 .pt 或一个 .bin 文件) 放入<code>embeddings</code>目录并在 prompt 令牌中提到你要用的 embedding 的文件名(*.pt)即可。</p>
+<p>没错，NAI 的 <code>hypernetworks</code> 就是</p>
 <p>给出相关<a href="https://gitlab.com/16777216c/stable-diffusion-embeddings">embeddings</a></p>
 <p><a href="https://rentry.org/embeddings">list of Textual Inversion embeddings for WebUi(SD)</a></p>
-<h3 id="_15">注意 <code>尺寸</code></h3>
+<h3 id="_18">注意 <code>尺寸</code></h3>
 <p>比如出图尺寸宽了人可能会多</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -790,7 +862,7 @@ normal quality, text, censored, gown, latex, pencil
 <h3 id="extras">超分图像 extras</h3>
 <p><code>realesrgan</code> 或者 <code>realcugan</code> 就可以，推荐 <a href="https://github.com/bilibili/ailab/tree/main/Real-CUGAN">realcugan</a></p>
 <p>另外，<code>webui</code> extras 页有一个自带的超分功能，可以去<code>settings-upscaling</code> 使用 <code>R-ESRGAN 4x+ Anime6B</code>模型，重新启动程序</p>
-<h3 id="_16">令牌速查</h3>
+<h3 id="_19">令牌速查</h3>
 <p><strong><a href="https://docs.google.com/spreadsheets/d/14Gg1kIGWdZGXyCC8AgYVT0lqI6IivLzZOdIT3QMWwVI/edit">手抄本法术书</a></strong></p>
 <p><strong><a href="https://gelbooru.com/index.php?page=tags&amp;s=list">Danbooru全部Tag列表</a></strong></p>
 <p><strong><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml#">参数法术全典</a></strong></p>
@@ -798,10 +870,10 @@ normal quality, text, censored, gown, latex, pencil
 <p><strong><a href="https://github.com/scooderic/exhentai-tags-chinese-translation">NSFWTag</a></strong></p>
 <p><strong><a href="https://docs.google.com/spreadsheets/d/1SRqJ7F_6yHVSOeCi3U82aA448TqEGrUlRrLLZ51abLg/htmlview#">**Ai艺术家文档</a></strong></p>
 <p><strong><a href="https://www.bilibili.com/read/cv19023021">Novelai 关键词组合器</a></strong></p>
-<h3 id="_17">调参工程师</h3>
+<h3 id="_20">调参工程师</h3>
 <p><a href="https://github.com/Maks-s/sd-akashic">https://github.com/Maks-s/sd-akashic</a></p>
 <p><a href="https://github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference">https://github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference</a></p>
-<h2 id="_18">参数</h2>
+<h2 id="_21">参数</h2>
 <h3 id="naiwebuisd">转换——NAI和WebUi(SD)的增强语法不同</h3>
 <p><strong>Prompts 参数括号转换</strong></p>
 <p>在 NAI 和 Webui 之间转换加强参数   <a href="https://t.me/M2NM2NBot">M2NM2NBot</a></p>
@@ -809,7 +881,7 @@ normal quality, text, censored, gown, latex, pencil
 <h3 id="1">良好参数(风格趋向插画)<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">1</a></sup></h3>
 <div class="highlight"><pre><span></span><code>{an extremely delicate and beautiful}
 </code></pre></div>
-<h4 id="_19">草图风格</h4>
+<h4 id="_22">草图风格</h4>
 <table>
 <thead>
 <tr>
@@ -845,7 +917,7 @@ normal quality, text, censored, gown, latex, pencil
 </tbody>
 </table>
 <p>利用sketch，pastel color，lineart的tag模拟一张图的绘画过程</p>
-<h4 id="_20">艺术风格</h4>
+<h4 id="_23">艺术风格</h4>
 <table>
 <thead>
 <tr>
@@ -884,7 +956,7 @@ normal quality, text, censored, gown, latex, pencil
 </tr>
 </tbody>
 </table>
-<h4 id="_21">杂志/设定集 风格</h4>
+<h4 id="_24">杂志/设定集 风格</h4>
 <table>
 <thead>
 <tr>
@@ -1317,11 +1389,11 @@ normal quality, text, censored, gown, latex, pencil
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 15:44:55</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 16:40:54</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 15:44:55</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 16:40:54</span>
       
     
   </small>
