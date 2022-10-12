@@ -180,7 +180,8 @@ BV1Gm4y1A7VM
 
 ### Config.yaml？
 
-不建议加载 yaml，因为它会使 ram 加倍而不会改变输出，但如果你真的想要，将其重命名为 [model name].yaml 并将其放在你的模型旁边
+
+NAIleak里边有个 config.yaml ， 将其改名为 `模型前缀.yaml` 和模型丢在一起就能加载,，但不建议加载 yaml，因为它会使内存占用加倍而不会对输出改变不大，但如果你真的想要，将其重命名为 [model name].yaml 并将其放在你的模型旁边。
 
 ### Vae 额外的权重
 
@@ -292,9 +293,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
 
 https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/1868#discussioncomment-3824077
 
-#### **NAI模型的Config.yaml**
 
-NAIleak里边有个 config.yaml ， 将其改名为 `模型前缀.yaml` 和模型丢在一起就能加载啦, 效果还是有提升的. 
 
 ### **NAI模型消极令牌**
 
