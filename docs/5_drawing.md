@@ -47,8 +47,6 @@
     NAI括号权重为1.1/个，WebUi的权重为1.05/个
 
 
-
-
 ### Batch count&batch size
 
 `batch count` 指定训练几批次图像。

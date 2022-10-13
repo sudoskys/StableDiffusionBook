@@ -128,7 +128,6 @@ Windows: https://developer.nvidia.com/compute/cudnn/secure/8.5.0/local_installer
 
 `hypernetworks` 包含了 `stableckpt/modules/modules` 里的文件，是风格相关的数据集，可以作为特定人物的 `embedding model` 调用，和 model 使用可以生成特定风格。主要格式为 `*.pt`。需要在WebUi的设置标签页启用这个增强模型。
 
-
 `workspace` 不是个人可以负载的，NAI采用的是 GPU 集群云。
 
 
@@ -180,6 +179,15 @@ BV1Gm4y1A7VM
 
 
 ## 说明
+
+
+### ckpt 文件安全/误报
+
+ckpt文件是一个脚本，基本上可以执行它想要的任何内容，并且有权执行。盲目运行它们有安全风险。
+
+Ckpt文件可能很危险。Windows会拦截此文件，要么创建者向文件中注入了某种恶意的python代码，要么是误报。
+
+可以通过此脚本运行它来查看执行的内容：https://rentry.org/safeunpickle2
 
 ### Config.yaml？
 

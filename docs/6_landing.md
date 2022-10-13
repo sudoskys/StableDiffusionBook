@@ -1,9 +1,13 @@
 
+
 # 附录
+
 
 ### 社区
 
 这里是相关的社区资源
+
+- [人工智能艺术的工具和资源](https://pharmapsychotic.com/tools.html)
 
 - [SD资源金矿](https://rentry.org/sdupdates)
 
@@ -51,19 +55,21 @@
 - [NovelAI 5ch Wiki](https://seesaawiki.jp/nai_ch/)
 
 
-
-
 ### 数据集
 
-- 飞浆
+- 通配符列表
+
+https://rentry.org/sdWildcardLists
+
+- 飞浆数据集
 
 https://aistudio.baidu.com/aistudio/datasetdetail/171442/0
 
-- OD国际
+- OD国际分流
 
 https://pan.t-satoru.top/ode5/Share/
 
-- NSFW embeddings
+- (NSFW)embeddings 风格化
 
 https://gitlab.com/16777216c/stable-diffusion-embeddings
 
@@ -75,7 +81,9 @@ https://rentry.org/embeddings
 
 https://huggingface.co/Deltaadams/Hentai-Diffusion
 
+
 ## 关于文档
+
 
 ### 贡献支持
 
@@ -87,10 +95,10 @@ https://huggingface.co/Deltaadams/Hentai-Diffusion
 
 @lychees
 
+
 ### 注释
 
 欢迎参与文档编写。
-
 
 
 ## 鸣谢
