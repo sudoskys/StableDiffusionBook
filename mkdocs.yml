@@ -7,6 +7,7 @@ nav:
     - 模型调试: 4_model.md
     - 绘画调试: 5_drawing.md
     - 参考资料: 6_landing.md
+
 theme:
   name: material
   language: zh
@@ -17,7 +18,7 @@ theme:
     - navigation.tabs
     - toc.integrate
     - toc.follow
-    #- navigation.indexes
+    # - navigation.indexes
     - navigation.top
     - navigation.instant
     - navigation.expand
@@ -36,6 +37,7 @@ extra:
   social:
     - icon: fontawesome/brands/telegram
       link: https://t.me/s/StableDiffusion_CN_WIKI
+
     - icon: fontawesome/brands/telegram
       link: https://t.me/s/StableDiffusion_Show
       
