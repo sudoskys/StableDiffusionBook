@@ -358,6 +358,7 @@ normal quality, text, censored, gown, latex, pencil
 
 ### Img2Img PS重绘画/修复手
 
+
 <iframe src="//player.bilibili.com/player.html?aid=559044202&cid=859852841&page=1&danmaku=0" allowfullscreen="allowfullscreen" width="80%" height="420px" scrolling="no" frameborder="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts"></iframe>
 
 使用PS软件增删元素，然后重新生产。这可以解决画手的问题。

@@ -174,7 +174,7 @@ Windows: https://developer.nvidia.com/compute/cudnn/secure/8.5.0/local_installer
 
 **详细介绍**
 
-<iframe src="//player.bilibili.com/player.html?aid=688965561&cid=857942294&page=1&danmaku=0" allowfullscreen="allowfullscreen" width="80%" height="420px" height="500" scrolling="no" frameborder="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts"></iframe>
+<iframe src="//player.bilibili.com/player.html?aid=688965561&cid=857942294&page=1&danmaku=0" allowfullscreen="allowfullscreen" width="80%" height="500" scrolling="no" frameborder="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts"></iframe>
 BV1Gm4y1A7VM
 
 
