@@ -10,10 +10,8 @@
 
 >本节只针对 NAI 模型展开教程。请多多关注 About 页面的社区获取最新进展和新闻。**大部分源教程来自：[^2]**
 
-
 !!! info "版权"
     本仓库不提供具体链接（版权警告），可以看页面下标或关注中文社区 t.me@StableDiffusion_CN_WIKI。
-
 
 [SDWebUi是一个框架，所以除了NAI模型外还有许多其他模型：Stable Diffusion Models](https://rentry.org/sdmodels)
 
@@ -38,6 +36,7 @@ print(torch.cuda.is_available())
 torch.version.cuda
 ```
 输入 ctrl + z 退出
+
 
 ### 多GPU支持
 
@@ -80,9 +79,6 @@ Windows: https://developer.nvidia.com/compute/cudnn/secure/8.5.0/local_installer
 但是，依然不能使用 `DDIM Sampling` ，但可以使用 `Euler a`
 
 
-
-
-
 ## NAI Leak 模型
 
 使用 NAI Leak 模型 的 models 文件夹结构应该如下。
@@ -116,6 +112,7 @@ Windows: https://developer.nvidia.com/compute/cudnn/secure/8.5.0/local_installer
 
 其中，hypernetworks 和 Stable-diffusion 是需要新建的文件夹。其他文件根据规则重命名。
 
+
 ### Part 1
 
 |文件|对应 Leak 路径|说明|
@@ -133,6 +130,7 @@ Windows: https://developer.nvidia.com/compute/cudnn/secure/8.5.0/local_installer
 
 
 `workspace` 不是个人可以负载的，NAI采用的是 GPU 集群云。
+
 
 ### Part 2
 
@@ -156,7 +154,6 @@ Windows: https://developer.nvidia.com/compute/cudnn/secure/8.5.0/local_installer
     - sha256sum.sig Detached signature for the sums, signed by our GPG key
 
 启动 cli 有提示加载就 OK, 同时可以去设置选模型那里选喜欢的 `hypernetwork`
-
 
 
 ### 对于 NAI 模型的说明
@@ -188,6 +185,7 @@ BV1Gm4y1A7VM
 
 
 NAIleak里边有个 config.yaml ， 将其改名为 `模型前缀.yaml` 和模型丢在一起就能加载,，但不建议加载 yaml，因为它会使内存占用加倍而不会对输出改变不大，但如果你真的想要，将其重命名为 [model name].yaml 并将其放在你的模型旁边。
+
 
 ### Vae 额外的权重
 
@@ -223,9 +221,8 @@ float32 用于较旧的 gpus，或者你想要 100% 的精度
 [一个指南：RedditAbout](https://www.reddit.com/r/StableDiffusion/comments/xbeyw3/can_anyone_offer_a_little_guidance_on_the/)
 
 
-
-
 ### 生成图片发生BUG的自救
+
 
 #### 16系显卡生成黑/绿图
 
@@ -235,16 +232,20 @@ float32 用于较旧的 gpus，或者你想要 100% 的精度
 
 使用 vae 模型后如果偶尔黑图，尝试加入 `--no-half-vae` 参数[^2]
 
+
 #### RuntimeError Sizes of tensors must match
 (img2img) 如果你得到RuntimeError: Sizes of tensors must match，你需要改变输入图像的分辨率
+
 
 #### 彩虹混乱图
 
 如果您的输出是混乱的彩虹混乱，则您的图像分辨率设置得太低
 
+
 #### 但是高分辨率下出怪图
 
 [读这里](https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99#%E9%AB%98%E5%88%86%E8%BE%A8%E7%8E%87%E4%B8%8B%E5%87%BA%E6%80%AA%E5%9B%BE)
+
 
 #### RuntimeError: Unable to find a valid cuDNN algorithm to run convolution
 
@@ -260,7 +261,6 @@ print(torch.cuda.is_available())
 如果仍未解决，请使用 `--lowvram` 启动参数，且确保在浏览器中禁用硬件加速，并在出现内存不足错误时关闭任何可能占用 VRAM 的内容。
 
 
-
 #### CUDA out of memory
 
 
@@ -268,13 +268,16 @@ print(torch.cuda.is_available())
 
 -------
 
+
 ## 优化靠近 NAI
 
 [对NAI模型靠近NAI效果相关讨论，应该读一读！](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017)
 
+
 ### 进一步优化
 
 出图后，可以将喜欢的结果从右侧的输出选项卡拖回 img2img 以进行进一步迭代。
+
 
 ### **靠近NAI,调整 Eta noise seed delta**
 
@@ -312,7 +315,6 @@ Stable Diffusion 使用 CLIP 基于转换器的文本编码器的最终隐藏状
 https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/1868#discussioncomment-3824077
 
 
-
 ### **NAI模型消极令牌**
 
 比如，使用以下令牌削除水印和文字内容
@@ -322,6 +324,7 @@ lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer
 ```
 
 from [Here](https://t.me/StableDiffusion_CN/6043)
+
 
 ### **Euler等Samplers采样器参数**
 
@@ -362,7 +365,6 @@ Heun 在准确性方面是对 Euler 的“改进”，但它以大约一半的�
 DDIM 是一种神经网络方法。 每一步都相当快，但效率相对较低，因为它需要很多步骤才能获得好的结果。
 
 
-
 ### **xformers加速**
 
 加速推理,分辨率越高加速效果越好。
@@ -379,7 +381,6 @@ DDIM 是一种神经网络方法。 每一步都相当快，但效率相对较�
 ## 进阶
 
 [英文原版](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#attentionemphasis)
-
 
 
 ### X/Y 图
@@ -415,6 +416,7 @@ Ranges with the count in square brackets 方括号范围
 Variation strength slider 和 Variation seed field允许您指定现有图片应更改多少以使其看起来不同。
 在最大强度下，您将获得带有变异种子的图片，至少 - 带有原始种子的图片（使用先前采样器时除外）。
 
+
 ### **提示词模板**
 
 “Save prompt as style” 按钮将当前的提示写入 styles.csv，该文件包含样式集合
@@ -422,6 +424,7 @@ Variation strength slider 和 Variation seed field允许您指定现有图片应
 提示右侧的下拉框将允许您从以前保存的样式中选择任何样式，并自动将其**附加**到输入中
 
 要删除样式，请从 styles.csv 中手动将其删除并重新启动程序。
+
 
 ### **Clip**
 
@@ -446,6 +449,7 @@ For example of what text files to use, see https://github.com/pharmapsychotic/cl
 
 https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#face-restoration
 
+
 ### 自定义.css
 
 创建一个名为user.cssnear的文件webui.py并将自定义 CSS 代码放入其中。
@@ -456,10 +460,12 @@ For example, this makes the gallery taller:
     min-height: 768px;
 }
 ```
+
+
 ### notification.mp3 提示声音
 
-
 If an audio file named `notification.mp3` is present in `webui's root folder`, it will be played when the generation process completes.
+
 
 ### 开发自定义脚本
 
@@ -470,9 +476,8 @@ If an audio file named `notification.mp3` is present in `webui's root folder`, i
 Script 类有四个主要方法，这里通过一个简单的[示例脚本](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Developing-custom-scripts)进行更详细的描述，这个脚本可以旋转和/或翻转生成的图像。
 
 
-
-
 ## 运行
+
 
 ### 4GB 显卡支持
 
@@ -492,13 +497,16 @@ Script 类有四个主要方法，这里通过一个简单的[示例脚本](http
 
 在 WebUi 的生成键右击即可出现 不间断生成 的选项。
 
+
 ### 图片信息 Png info
 
 生成的图片自带 令牌信息，拖放到 查看页面即可查看 。
 
+
 ### Colab
 
 Tip：每天重置资源
+
 
 ### NAI 4chan简化版本
 
