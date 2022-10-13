@@ -354,6 +354,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#ensd" class="md-nav__link">
+    ENSD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#clip" class="md-nav__link">
     CLIP
   </a>
@@ -489,6 +496,10 @@
 <p>泄露 Part 2 —— 包含历史测试代码和模型，程序 —— 124.54 GB，其中需要下载的相关模型与 Part1 相同。</p>
 </div>
 <h2 id="_2">名词</h2>
+<h3 id="ensd">ENSD</h3>
+<p>在设置页中的ENSD是 eta 噪声种子增量。</p>
+<p>它改变了你的种子，执行一些 eta/sigma 的操作。</p>
+<p>NAI使用31337</p>
 <h3 id="clip">CLIP</h3>
 <div class="highlight"><pre><span></span><code>CLIP is a very advanced neural network that transforms your prompt text into a numerical representation. Neural networks work very well with this numerical representation and that&#39;s why devs of SD chose CLIP as one of 3 models involved in stable diffusion&#39;s method of producing images. As CLIP is a neural network, it means that it has a lot of layers. Your prompt is digitized in a simple way, and then fed through layers. You get numerical representation of the prompt after the 1st layer, you feed that into the second layer, you feed the result of that into third, etc, until you get to the last layer, and that&#39;s the output of CLIP that is used in stable diffusion. This is the slider value of 1. But you can stop early, and use the output of the next to last layer - that&#39;s slider value of 2. The earlier you stop, the less layers of neural network have worked on the prompt.
 
@@ -508,11 +519,11 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 13, 2022 11:13:00</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 13, 2022 11:35:19</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 13, 2022 11:13:00</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 13, 2022 11:35:19</span>
       
     
   </small>
