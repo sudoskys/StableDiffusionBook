@@ -11,6 +11,12 @@
 ## 基本流程
 
 ![WorkFlow](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/draw_workflow.svg)
+这幅图演示了循环迭代的流程
+迭代方式，有循环迭代和线性迭代两种，线性迭代适用于多样性测试，而循环迭代是优化的更好选择。
+
+目前研究基本方向是
+- 咒术书 + PS/Inpaint
+- 咒术书 + 3D 参考
 
 ### 迭代草图[^8]
 
@@ -31,7 +37,6 @@
 ## 魔法入门
 
 请先在前面了解一下WebUi(SD)网页应用的参数。
-
 
 ### 提示词语法简介
 
