@@ -28,7 +28,10 @@
 
 混合，WebUi 使用 `|` 分隔多个关键词以混合多个要素，字面意义上的混合，可以多个使用。
 
-增强，用 `(提示词:权重)` 在 WebUi 权重增强，增强的范围是 `0.1 ~:100`，允许小数。
+增强，用 `(提示词:权重)` 在 WebUi 权重增强，增强的范围是 `0.1 ~:100`，允许小数。NAI使用 `{}`
+
+!!! tip
+    `a ((((farm))), daytime` 的语法可能会吃掉逗号
 
 渐变，使用 `[some1:some2:num]`
 
@@ -40,13 +43,13 @@
 
 转义，WebUi 对于带括号的参数，`a (word)`  请在参数中使用 `\` 字符转义为 `a \(word\)`。
 
-降低权重，`[]` 或者 `(word:0.952)`！
+降低权重，`[]` 或者 `(word:0.952)`，后者仅 WebUi
 
 !!! tip "NAI"
 
     NAI中不允许单独指定权重，但支持混合权重 `cat:1|happy:-0.2|cute:-0:3` 这样的语法。
     
-    因为NAI使用的是 9/9 之前的版本，所以权重增强语法是旧的 `{}` ，新的 WebUi 更改为 `()`。
+    因为NAI使用的是 WebUi 2022 年 9 月 29 日之前的实现，所以权重增强语法是旧的 `{}` ，新的 WebUi 更改为 `()`。
     
     **换算关系**
     NAI的 [word] = WebUi(word:0.952)(0.952 = 1/1.05)
@@ -198,7 +201,7 @@ a \(word\) - 在提示中使用文字 () 字符
 
 如果未指定权重，则假定为 `1.1`
 
-指定权重仅适用于 `()` 而不是 `[]`，注意 `[]` 是NAI 的语法，WebUi应该使用 `(word:0.952)`
+指定权重仅适用于 `()` 而不是 `[]`，注意 `[]` 削减语法，指定单个权重仅适用于WebUi 且使用 `()`
 
 ```
 > ( n ) = ( n : 1.1 )  
@@ -213,17 +216,18 @@ a \(word\) - 在提示中使用文字 () 字符
 
 在 WebUi 中需要使用 `()`指定权重！可以像这样指定权重：(text:1.4)。如果未指定权重，则假定为 1.1。
 
-指定权重仅适用于`()`
+
 
 !!! info
     权重增加通常会占一个提示词位。在token紧张的情况下没有必要加特别多括号。
     
+    过多圆括号会导致 字符 被程序吃掉，`a ((((farm))), daytime`会变成 `a farm daytime` 而没有逗号。
     
 !!! tip "NAI"
 
     NAI中不允许单独指定权重，但支持混合权重 `cat:1|happy:-0.2|cute:-0:3` 这样的语法。
     
-    因为NAI使用的是 9/9 之前的版本，所以权重增强语法是旧的 `{}` ，新的 WebUi 更改为 `()`。
+    因为 NAI 使用的是 WebUi 2022 年 9 月 29 日之前的实现，所以权重增强语法是旧的 `{}` ，新的 WebUi 更改为 `()`。
     
     **换算关系**
     NAI的 [word] = WebUi(word:0.952)(0.952 = 1/1.05)
@@ -354,7 +358,7 @@ normal quality, text, censored, gown, latex, pencil
 
 ### Img2Img PS重绘画/修复手
 
-<iframe src="//player.bilibili.com/player.html?aid=559044202&cid=859852841&page=1&danmaku=0" allowfullscreen="allowfullscreen" width="82%" scrolling="no" frameborder="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts"></iframe>
+<iframe src="//player.bilibili.com/player.html?aid=559044202&cid=859852841&page=1&danmaku=0" allowfullscreen="allowfullscreen" width="80%" height="420px" scrolling="no" frameborder="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts"></iframe>
 
 使用PS软件增删元素，然后重新生产。这可以解决画手的问题。
 
@@ -621,7 +625,7 @@ Windows 需要在 `web-user.bat的COMMANDLINE_ARGS=` 一行添加，或者直接
 
 训练的结果是一个 .pt 或一个 .bin 文件（前者是原作者使用的格式，后者作为 diffusers library）
 
-<iframe src="//player.bilibili.com/player.html?aid=559085039&cid=859894044&page=1&danmaku=0" allowfullscreen="allowfullscreen" width="82%" scrolling="no" frameborder="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts"></iframe>
+<iframe src="//player.bilibili.com/player.html?aid=559085039&cid=859894044&page=1&danmaku=0" allowfullscreen="allowfullscreen" width="80%" height="420px"  scrolling="no" frameborder="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts"></iframe>
 
 
 ### 训练 Hypernetworks
