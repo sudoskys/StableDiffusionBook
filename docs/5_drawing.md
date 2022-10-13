@@ -520,7 +520,8 @@ Windows 需要在 `web-user.bat的COMMANDLINE_ARGS=` 一行添加，或者直接
 
 在 `Train` 子选项卡中，选择你要训练的模型。
 
-`Learning rate`(学习率)，决定训练的速度。
+`Learning rate`(学习率)，决定训练的速度。Learning rate越低学习越慢（花费更长的时间收敛）。
+
 
 一般为 0.005。，如果想快一些，可以使用 0.001 加快，但是如果设置得太高，可能会破坏 `embedding`
 
@@ -553,7 +554,10 @@ Windows 需要在 `web-user.bat的COMMANDLINE_ARGS=` 一行添加，或者直接
 
 一个 step 是向模型训练一张图片（或一批图片，但目前不支持批量）并用于改进 embedding。如果你中断训练并在以后恢复训练，步数会被保留。
 
-一般 3000 step 足够，如果太多会过拟合(可以理解为Ai的死板)
+
+有人建议 10000 step ，但是需要测试(automatic 自己说是 after few tens of thousands，大概 2～3 W？有人用 3000 Step 也炼出来了)
+
+如果太多会过拟合(可以理解为Ai的死板)
 
 随时观察，如果过拟合，可以停止。
 
