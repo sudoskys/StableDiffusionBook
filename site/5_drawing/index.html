@@ -807,9 +807,16 @@
 <p><img alt="WorkFlow" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/draw_workflow.svg" />
 这幅图演示了循环迭代的流程
 迭代方式，有循环迭代和线性迭代两种，线性迭代适用于多样性测试，而循环迭代是优化的更好选择。</p>
-<p>目前研究基本方向是
-- 咒术书 + PS/Inpaint
-- 咒术书 + 3D 参考</p>
+<p>来回改提示+固定种子并不是好选择。</p>
+<p>目前研究基本方向是</p>
+<ul>
+<li>
+<p>咒术书 + PS/Inpaint</p>
+</li>
+<li>
+<p>咒术书 + 3D 参考</p>
+</li>
+</ul>
 <h3 id="5">迭代草图<sup id="fnref:8"><a class="footnote-ref" href="#fn:8">5</a></sup></h3>
 <p>这里讨论一下如何将<strong>手绘草图</strong>通过Ai绘画优化，<em>注意不是二次元</em>。</p>
 <p>在第一次迭代中，您不需要太多 Steps，CFG 可以非常低（以获得更好的多样化结果），如果不想完全丢失草图，Denoising 应该在 0.3-0.4 左右。</p>
@@ -1832,11 +1839,11 @@ scale 就是 CFG scale
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 13, 2022 16:44:10</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 13, 2022 16:51:13</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 13, 2022 16:44:10</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 13, 2022 16:51:13</span>
       
     
   </small>
