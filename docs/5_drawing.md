@@ -2,6 +2,9 @@
 
 这节会介绍 参数 和 相关的WebUi(SD)  网页应用资源。部分内容只做简单介绍，因为前面有相关描述。
 
+
+
+
 先请拿上 [调参魔法书](https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml)和 [手抄魔法本](https://docs.google.com/spreadsheets/d/14Gg1kIGWdZGXyCC8AgYVT0lqI6IivLzZOdIT3QMWwVI/)。
 
 
@@ -14,14 +17,21 @@
 请先在前面了解一下WebUi(SD)网页应用的参数。
 
 
-
 ### 提示词语法简介
+
+对于NAI用户，请阅读[官网Docs](https://docs.novelai.net/image/promptmixing.html),两方的提示词语法不通用。
 
 **表示方法**
 
-用 英文半角 `,` 做分隔符，用 `{}` 在 NAI 做增强，用 `()` 在 WebUi 做增强。
+用 英文半角 `,` 做分隔符，在英文逗号前后存在一个或数个空格并不影响实际使用。
 
->在英文逗号前后存在一个或数个空格并不影响实际使用。
+混合，WebUi 使用 `|` 分隔多个关键词以混合多个要素，字面意义上的混合，可以多个使用。
+
+增强，用 `{}` 在 NAI 做增强，用 `(提示词:权重)` 在 WebUi 权重增强，但在NAI中不允许使用圆括号做增强，而是使用 `cat:1|happy:-0.2|cute:-0:3` 这样的语法。
+
+增强的范围是 `0.1 ~:100`，允许小数。
+
+渐变，使用 `[some1:some2:num]`
 
 `[fantasy:cyberpunk:16]` 代表从第 16 step 后，使用 `cyberpunk` 标签
 
@@ -29,10 +39,8 @@
 
 `[from::when]` 在固定数量的step后从提示中删除 `from`( when)
 
-使用 `|` 分隔多个关键词以混合多个要素，字面意义上的混合，可以多个使用
 
-`cat :2 | dog` 也就是更像猫的狗
-
+转义，对于带括号的参数，`a (word)`  请在参数中使用 `\` 字符转义为 `a \(word\)`。
 
 
 ### Batch count&batch size
@@ -95,7 +103,6 @@
 
 [为文字转图像Ai提示编写指南：A Guide to Writing Prompts for Text-to-image AI](https://docs.google.com/document/d/1XUT2G9LmkZataHFzmuOtRXnuWBfhvXDAo8DkS--8tec/edit#)
 
-- 对于带括号的参数，`a (word)`  请在参数中使用 `\` 字符转义为 `a \(word\)`
 
 
 
@@ -108,7 +115,9 @@
 
 当提示超过75个`token`（比如150个`token`）时，WebUi 将分组提示词，提交多组75个 `token`。标记只具有同一集合中其他内容的上下文。这意味着您可能在第一组和第二组之间的边界处有`bule hair`，标记`blue`将在第一组中，`hair`将在第二组中。这导致了结果的不准确，因为这两个词是分开的。
 
-新版本增加了一个选项 `Increase coherency by padding from the last comma within n tokens when using more than 75 tokens`， 试图通过查找最后N个标记中是否有最后一个逗号来缓解这种情况，如果有，则将所有经过该逗号的内容一起移动到下一个集合中。
+新版本增加了一个选项 `Increase coherency by padding from the last comma within n tokens when using more than 75 tokens`
+
+这个设置让程序试图通过查找最后N个标记中是否有最后一个逗号来缓解这种情况，如果有，则将所有经过该逗号的内容一起移动到下一个集合中。
 
 !!! tip "比如"
 
@@ -137,7 +146,7 @@ caustics, masterpiece, high resolution,
 
 以上顺序已经比较合理，但是你也可以调整提示词的顺序以产生不同的结果。 你可以手动调整，也可以 [使用 X/Y 图自动生成各种顺序](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/1607)
 
-Ai 难以解析下划线，请少用
+Ai 难以解析下划线，请少用。
 
 **调序编译**
 
@@ -169,7 +178,7 @@ a (word:0.25) - 将权重减少 4 倍 (= 1 / 0.25)
 a \(word\) - 在提示中使用文字 () 字符
 ```
 
-使用 `()`，可以像这样指定权重：(text:1.4)
+必须使用 `()`指定，可以像这样指定权重：(text:1.4)
 
 如果未指定权重，则假定为 `1.1`
 
@@ -183,6 +192,11 @@ a \(word\) - 在提示中使用文字 () 字符
 > ((((( n )))) = ( n : 1.61051 )  
 > (((((( n )))))) = ( n : 1.771561 )  
 ```
+
+`(cat :2 | dog)` 也就是更像猫的狗
+
+在 WebUi 中需要使用 `()`指定权重！可以像这样指定权重：(text:1.4)。如果未指定权重，则假定为 1.1。指定权重仅适用于()
+
 
 
 !!! info
