@@ -82,6 +82,14 @@ https://rentry.org/embeddings
 https://huggingface.co/Deltaadams/Hentai-Diffusion
 
 
+## FAQ
+
+
+### 模型会进化吗
+
+生成的图像没有喂给模型，NAI会继续优化模型，而 Leak 的模型则是一个固定的版本。
+
+
 ## 关于文档
 
 
