@@ -555,7 +555,7 @@ Windows 需要在 `web-user.bat的COMMANDLINE_ARGS=` 一行添加，或者直接
 一个 step 是向模型训练一张图片（或一批图片，但目前不支持批量）并用于改进 embedding。如果你中断训练并在以后恢复训练，步数会被保留。
 
 
-有人建议 10000 step ，但是需要测试(automatic 自己说是 after few tens of thousands，大概 2～3 W？有人用 3000 Step 也炼出来了)
+有人建议 7000 step ，但是需要测试(automatic 自己说是 after few tens of thousands，大概 2～3 W？有人用 3000 Step 也炼出来了)
 
 如果太多会过拟合(可以理解为Ai的死板)
 
