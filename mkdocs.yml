@@ -1,7 +1,7 @@
 site_name: AiDraw
 site_url: https://stable-diffusion-book.vercel.app/
 nav:
-    - 术语解释: 1_terms.md
+    - 术语解释: index.md
     - 准备安装: 2_prepare.md
     - 安装指南: 3_install.md
     - 模型调试: 4_model.md

@@ -35,10 +35,6 @@
 
 
 
-### 迭代步数
-
-更多的迭代步数可能会有更好的生成效果，但是一定会导致生成时间变长。太多的steps也可能适得其反，几乎不会有提高。
-
 ### Batch count&batch size
 
 `batch count` 指定训练几批次图像。
@@ -55,7 +51,9 @@
     一个迭代 = 一个正向通过+一个反向通过
 
 
+### 迭代步数
 
+更多的迭代步数可能会有更好的生成效果，但是一定会导致生成时间变长。太多的steps也可能适得其反，几乎不会有提高。
 
 ### 采样器
 
@@ -65,6 +63,12 @@
 
 一般推荐 `eular a` 和 `Ddim`
 
+
+举个例子
+
+![效果](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/resource/raw_sample.jpg)
+
+>不同 step 和 采样器 的不同效果
 
 ### 如何书写提示词(提示)
 
