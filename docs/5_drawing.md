@@ -6,6 +6,7 @@
 
 先请拿上 [调参魔法书](https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml)和 [手抄魔法本](https://docs.google.com/spreadsheets/d/14Gg1kIGWdZGXyCC8AgYVT0lqI6IivLzZOdIT3QMWwVI/)。
 
+提前告知：WebUi 的设置页面需要按下 `Apply setting` 才能保存设置。
 
 ## 基本流程
 
@@ -152,9 +153,11 @@ Ai 难以解析下划线，请少用。
 
 **调序编译**
 
-tag 顺序是有影响的，webui突破tag75个限制的方式是把75个分为一组。
+A提示词放入的顺序就是优先级。
 
-然后是主体往前放，接着描述装扮的词，画质提升词穿插在这些描述词之间，一般为了提高成品率要把动作、nsfw词等改变构图的词往后放，或者手动调低权重（主要是为了防止ai强行凑动作导致肢体到处跑）。
+webui 突破 tag 75个限制的方式是把 75 个分为一组。
+
+推荐主体往前放，接着描述装扮的词，画质提升词穿插在这些描述词之间，一般为了提高成品率要把动作、nsfw词等改变构图的词往后放，或者手动调低权重（主要是为了防止ai强行凑动作导致肢体到处跑）。
 
 以上排序是每组tag都要遵守的，所以如果后面的tag超过 75 了就应该把前面的分一部分过来。
 
@@ -308,15 +311,9 @@ normal quality, text, censored, gown, latex, pencil
     请阅读前面章节的模型进阶1,了解具体的 Img2Img 和 inpaint 介绍操作。
 
 
-### Img2Img 图转图 3转2绘图/优化/更换/修复
-
-可以试试 img2img,复制参数和 seed 可以进行调整。
+### Img2Img 介绍
 
 一般我们有两种途径对图像进行修复：**PS 和 InPaint**，使用方法也十分多样。
-
-比如我们可以通过 PS 给角色移植一个手让Ai来润色它。
-
-或者涂鸦特定部位指定形状动作(比如衣料的覆盖率或者形状)
 
 **CFG Scale**
 
@@ -326,19 +323,31 @@ normal quality, text, censored, gown, latex, pencil
 
 `Denoising strength` 决定算法对图像内容的保留程度,可以减少对画风的变得，但也会弱化img2img能力。值越高 AI 对原图的参考程度就越低 (同时增加迭代次数)。
 
+
+###  Img2Img 三渲二
+
+可以结合 **3D建模** 摆Pose,可以使用 [vroid](https://vroid.com/en)
+
+如果是真人图片，需要适当提高 `CFG Scale`
+
+### Img2Img PS重绘画/修复手
+
+<iframe src="//player.bilibili.com/player.html?aid=559044202&bvid=BV1Je4y1S7aL&cid=859852841&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+
+使用PS软件增删元素，然后重新生产。这可以解决画手的问题。
+
+比如我们可以通过 PS 给角色移植一个手让Ai来润色它。
+
+或者涂鸦特定部位指定形状动作(比如衣料的覆盖率或者形状)
+
 ![info](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/00119_136826557_masterpiece%2C_best_quality%2C_1girl%2C_black_hair%2C_hat1.jpg)
 
 >一张图片[^5]展现WebUI下img2img中不同参数下效果的详细对比图（prompt、steps、scale、各种seed等参数均保持一致）
 
 纵轴是Denoising strength（线上版的strength），横轴是Variation strength
 
-
-#### PS重绘画
-
-使用PS软件增删元素，然后重新生产。这可以解决画手的问题。
-
-
-### **Outpainting 外部修补**
+### Img2Img **Outpainting 外部修补**
 
 Outpainting 扩展原始图像并修复创建的空白空间。
 您可以在底部的 img2img 选项卡中找到该功能，在 Script -> Poor man's outpainting 下。
@@ -347,7 +356,7 @@ Outpainting 扩展原始图像并修复创建的空白空间。
 Outpainting, unlike normal image generation, seems to profit very much from large step count. A recipe for a good outpainting is a good prompt that matches the picture, sliders for denoising and CFG scale set to max, and step count of 50 to 100 with Euler ancestral or DPM2 ancestral samplers.
 ```
 
-### **Inpainting 修补**
+### Img2Img **Inpainting 修补**
 
 在 img2img 选项卡中，在图像的一部分上绘制蒙版，该部分将被重画。
 
@@ -366,12 +375,12 @@ Outpainting, unlike normal image generation, seems to profit very much from larg
 ![result](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting.png)
 
 
-#### 全分辨率修复
+### Img2Img 全分辨率修复
 
 通常，修复会将图像大小调整为 UI 中指定的目标分辨率。启用全分辨率修复后，仅调整蒙版区域的大小，并在处理后将其粘贴回原始图片。这使您可以处理大图片，并允许您以更大的分辨率渲染修复的对象。
 
 
-### Loopback 回环生成
+### Img2Img Loopback 回环生成
 
 在 img2img 中设置loopback脚本，它允许自动将输出图像作为下一批的Batch提供，相当于保存输出图像，并用它替换输入图像。
 
@@ -380,33 +389,219 @@ Batch 数设置控制获得多少次迭代
 通常，在执行此操作时，您会自己为下一次迭代选择许多图像中的一个，因此此功能的有用性可能值得怀疑，但反正我已经设法获得了一些我无法获得的非常好的输出。
 
 
-### Textual Inversion
+### Textual Inversion 训练新角色
 
 [官方英文说明和效果图](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion)
 
-`Textual Inversion`允许你在自己的图片上训练一小部分神经网络，并在生成新图片时使用结果。可以数据集没有新出的角色画不出的问题。
+`Textual Inversion`允许你在自己的图片上训练一小部分神经网络，并在生成新图片时使用结果。可以数据集没有新出的角色画不出的问题，模仿特定的艺术风格。
+
+这对制作数据集没有囊括的 2021 年之后的动漫人物非常有效。（PS:相应的，Miku因为图多所以效果最好）
+
 
 在许多情况下（例如不同的环境和姿势）对一个主题执行此操作通常可以让 AI 创建更好的嵌入
 
-使用时，将 embedding(一个 .pt 或一个 .bin 文件) 放入`embeddings`目录并在 prompt 提示词中提到你要用的 embedding 的文件名(*.pt)即可。不必重新启动程序即可使其正常工作。
+使用时，将 embedding(一个 .pt 或一个 .bin 文件) 放入`embeddings` 目录并在 prompt 提示词中提到你要用的 embedding 的文件名(*.pt)即可。不必重新启动程序即可使其正常工作。
 
 没错，NAI 的 `hypernetworks` 就是超网络，用来做 embeddings（风格化）。
+
+多 `embeddings` 可以一起用。
 
 [相关 embeddings](https://gitlab.com/16777216c/stable-diffusion-embeddings)，里面有相关效果预览。
 
 [list of Textual Inversion embeddings for WebUi(SD)](https://rentry.org/embeddings)
 
 
-#### 自己训练 Textual Inversion
+### Textual Inversion 自训练[^7]
 
 [英文:自己训练 embedding](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion#training-embeddings)
 
+!!! danger "重命名 VAE 文件"
+    重命名VAE模型文件非常关键，如果带着VAE训练效果十分差。
+
+
+#### 模型环境要求
+
+WebUi 应该是 Git 的最新版本。
+
+显存至少 6GB，正常使用需要 12GB显存。根据实验数据，8GB显存应该选择 `512x512` 分辨率。
+
+训练可使用半精度浮点，但是否好用还需要进行实验。
+
+如果你有足够的内存，那么在`--no-half --precision full`下运行会更安全。
+
+你可以中断和恢复训练而不会丢失任何数据（AdamW 优化参数除外，但似乎现有的存储库都没有保存这些，所以一般认为它们并不重要）。
+
+不支持 `batch sizes` 和 `gradient accumulation`。
+
+不可能在 `--lowvram` and `--medvram` 参数下运行起来。
+
+#### 设置
+
+准备 30 张以上的目标人设图片，每一张图片应当裁剪为同样的比例。（即使WebUi已经支持了长方形图片的裁剪）
+
+在 `Interrogate Options` 设置中，`Interrogate: deepbooru score threshold` 是 deepbooru(从图像提取标签) 可用标签的阀值。建议使用 0.75,也就是保留预测结果大于 75%的结果。
+
+比如，假定识别结果为
+```
+1.000 1girl
+0.986 blush
+0.981 long_hair
+0.980 solo 
+0.918 japanese_clothes
+0.912 rating:safe 
+0.798 bangs
+0.795 wide_sleeves
+0.731 blunt_bangs 
+0.637 long_sleeves
+0.628 monochrome
+```
+就会丢弃 `wide_sleeves` 以下的内容
+
+`Interrogate: deepbooru sort alphabetically` 是按照字母顺序排序 Tag，因为 Tag 对结果影响很大，所以我们取消勾选此项。
+
+按下 `Apply setting` 保存设置。
+
+
+#### 创建训练
+
+打开 `train` 选项卡，在 `Create embedding`选项卡新建一个 `embedding` 模型。
+
+`Name` 输入框输入你预想的出现此人设的 提示词。
+
+`Initialization text` 可以输入 `one girl` 这种大分类，只能填一个，人物可以是1girl或者1boy，或者画风。
+
+`Number of vectors per token` 是此 `embedding` 要占据的 token 位数量，越多越好，但是相应也会减少其他提示词 token 的位置。
+
+新建，会创建一个在 `embedding` 下的 pt 文件。
+
+
+#### 预处理
+
+打开 `Preprocess images` 选项卡。
+
+`Source directory` 中填入你的训练用图片文件夹目录，里面只允许有训练图片。
+
+`Destination directory` 中填入预处理完毕后图片保存路径。
+
+选择训练的图片大小，一般 8Gb 显卡使用 `512x512` ，尺寸越大不一定越好。
+
+**接下来有四个复选框**
+
+`Create flipped copies` 
+
+- 勾选后会将图片镜像反转来增加数据量。
+
+- `Use deepbooru caption as filename` 
+
+深度学习识 Tag，勾选后可以训练适用于 NAI 的 `embedding`。 如果你没有这个选项，需要在启动项添加`--deepdanbooru`
+
+Windows 需要在 `web-user.bat的COMMANDLINE_ARGS=` 一行添加，或者直接 `python webui.py --deepdanbooru` ，如果设施条件比较好可以加上 `--precision full`
+(如果启动卡住就是网络问题咯)
+
+- `Use BLIP for caption`
+
+使用来自 interrogator 的 BLIP 模型为文件名添加标题。
+
+勾选后适用于 `Stable Diffusion` 的训练。
+
+- `Split oversized images into two` 
+
+意思就是将超大图像一分为二，一般不用。
+
+
+我们勾选 `Use deepbooru caption as filename` 和 `Create flipped copies`
+
+点击按钮，等待处理结束。
+
+#### 训练
+
+在 `Train` 子选项卡中，选择你要训练的模型。
+
+`Learning rate`(学习率)，决定训练的速度。
+
+一般为 0.005。，如果想快一些，可以使用 0.001 加快，但是如果设置得太高，可能会破坏 `embedding`
+
+`Log directory` 是日志目录
+
+`Prompt template file`是带有提示的文本文件，每行一个，用于训练模型。
+
+目录中`textual_inversion_templates`，解释了你可以使用这些文件做什么。
+
+训练时会使用 `style.txt` 和`subject.txt`
+
+**如果是训练画风，使用`style.txt`**
+
+**如果是训练人物，使用`subject.txt`**
+
+```
+[name]:  embedding 名称
+[filewords]: words from the file name of the image from the dataset. See below for more info.
+```
+`Preview prompt` 预览，完成后用此提示词生成一张预览。 
+如果为空，将使用来自 prompt 的提示。
+
+`Save a copy of embedding to log directory every N steps, 0 to disable`
+每 N 步将嵌入的副本保存到日志目录，0 表示禁用
+
+`Save an image to log directory every N steps, 0 to disable`
+每 N 步保存一个图像到日志目录，0 表示禁用
+
+`Max steps`决定完成多少 `step` 后，训练将停止。
+
+一个 step 是向模型训练一张图片（或一批图片，但目前不支持批量）并用于改进 embedding。如果你中断训练并在以后恢复训练，步数会被保留。
+
+一般 3000 step 足够，如果太多会过拟合(可以理解为Ai的死板)
+
+随时观察，如果过拟合，可以停止。
+
+!!! danger "重命名 VAE 文件"
+    重命名VAE模型文件非常关键，如果带着VAE训练效果十分差。
+
+点击 右下角训练，等待。
+
+训练完毕。再次重命名 Vae 文件，重启程序。
+
+
+#### 备注
+
+**[filewords]**
+
+是 提示词模板文件 的 Tag，可以实现把文件名中的词汇插入提示。
+
+第一，默认情况下，文件的扩展名以及-文件名开头的所有数字和破折号 ( ) 都会被删除。
+
+所以这个文件名：`000001-1-a man in suit.png`将成为提示文本：`a man in suit`。文件名中文本的格式保持不变。
+
+第二，可以使用 `Filename word regex` 和 `Filename join string` 选项更改文件名中的文本。
+
+例如，使用单词 `regex =\w+` 和 连接字符串 = `,` ，上面的文件将生成以下文本：`a, man, in, suit`。
+
+正则表达式会从文本提取提示词
+`['a', 'man', 'in', 'suit', ]`
+
+并将连接字符串（'，'）放在这些单词之间以创建一个文本`a, man, in, suit`
+
+也可以创建一个与图像 ( 000001-1-a man in suit.txt) 具有相同文件名的文本文件，然后将提示文本放在那里。将不使用文件名和正则表达式选项。
+
+**Unload VAE and CLIP from VRAM when training**
+
+训练时从 VRAM 中卸载 VAE 和 CLIP
+设置选项卡上的此选项允许您以较慢的预览图片生成为代价节省一些内存。
+
 训练的结果是一个 .pt 或一个 .bin 文件（前者是原作者使用的格式，后者作为 diffusers library）
 
-@待办
+<iframe src="//player.bilibili.com/player.html?aid=559085039&bvid=BV1ae4y1S7v9&cid=859894044&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 
+### 训练 Hypernetworks
 
+Hypernetworks 是一种新颖的概念，用于在不触及任何权重的情况下微调模型。
+
+你可以在 `Textual Inversion` `train` 选项卡训练Hypernetworks
+
+训练的工作方式与文本倒置相同。
+
+唯一的要求是使用非常非常低的学习率，例如 0.000005 或 0.0000005。
 
 
 ### **渐变提示词**
@@ -685,3 +880,5 @@ Clip跳过 0，其他一切都很好（afaik 不要使用超网络、v2、yaml�
 [^5]:[参数图](https://m.weibo.cn/status/4823585938735546)
 
 [^6]:[SD金矿](https://rentry.org/sdupdates#hall-of-fame)
+
+[^7]:[风格模型训练](https://www.bilibili.com/video/BV1ae4y1S7v9/)
