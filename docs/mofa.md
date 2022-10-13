@@ -346,7 +346,7 @@ normal quality, text, censored, gown, latex, pencil
 
 **[NSFWTag](https://github.com/scooderic/exhentai-tags-chinese-translation)**
 
-**[**Ai艺术家文档](https://docs.google.com/spreadsheets/d/1SRqJ7F_6yHVSOeCi3U82aA448TqEGrUlRrLLZ51abLg/htmlview#)**
+**[Ai艺术家文档](https://docs.google.com/spreadsheets/d/1SRqJ7F_6yHVSOeCi3U82aA448TqEGrUlRrLLZ51abLg/htmlview#)**
 
 **[Novelai 关键词组合器](https://www.bilibili.com/read/cv19023021)**
 
