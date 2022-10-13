@@ -12,6 +12,21 @@
 
 ![WorkFlow](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/draw_workflow.svg)
 
+### 迭代草图[^8]
+
+这里讨论一下如何将**手绘草图**通过Ai绘画优化，*注意不是二次元*。
+
+在第一次迭代中，您不需要太多 Steps，CFG 可以非常低（以获得更好的多样化结果），如果不想完全丢失草图，Denoising 应该在 0.3-0.4 左右。
+
+在最后的迭代中，增加 Steps 和 Denoising 强度（但不超过 0.8，否则图像将被破坏，尤其是在大于 512*512 时）请参见[这里](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2213#issuecomment-1274137775)，同时根据需要提高 CFG 和尺寸。
+
+你可以随时修复提示（添加或删除出现的细节）并尝试不同的采样器。
+
+另外，你不应该在初次生成使用一个固定不变的种子？
+
+因为如果你提供一个种子（而不是随机的 -1），你的图像很快就会变得过饱和、过度锐化、过度像素化。
+
+当然如果你想微调，可以使用固定种子。
 
 ## 魔法入门
 
@@ -919,3 +934,5 @@ Clip跳过 0，其他一切都很好（afaik 不要使用超网络、v2、yaml�
 [^6]:[SD金矿](https://rentry.org/sdupdates#hall-of-fame)
 
 [^7]:[风格模型训练](https://www.bilibili.com/video/BV1ae4y1S7v9/)
+
+[^8]:[迭代草图](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2473)

@@ -1,5 +1,6 @@
-# 准备
 
+
+# 准备
 
 本文档目的是为刚入门接触使用Stable Diffusion绘画的小白一个简易的指南。
 
@@ -51,22 +52,30 @@ NAI 是一个在线**服务**。
 
 以下是新闻和测试内容。
 
+-------
+- 10/13 更新
+
+automatic1111 的 repo 从 r/stablediffusion 的固定指南中删除
 
 -------
+- 10/12 更新
 
+StabilityAI 从现在开始只发布 SFW 模型，from [Here](https://www.reddit.com/r/StableDiffusion/comments/y2dink/qa_with_emad_mostaque_formatted_transcript_with/is32y1d/)
+
+-------
 - 10/11 更新
 新版本 Webui 增加了 Eta noise seed delta ，设为 31337 后会贴近NAI官方
 
+现在可以训练 hypernetworks
 
 -------
-
 - 10/10 更新
 测试发现,新版本 Webui 优化显存占用(20xx—>10xx)，关闭浏览器和TG的硬件加速后，即使是4GB的  RTX2050 也可以启动 --medvram 模式！而且很快.
 
+谈话
+https://github.com/brycedrennan/imaginAIry/blob/master/docs/emad-qa-2020-10-10.md
 
 --------
-
-
 - 背景故事
 
 NovelAI 是一个使用 AI 生成故事文本和**通过描述文字生成图片**的服务，而 Stable Diffusion 是由 Stability AI 发布的透过文字等生成图片的模型。
@@ -89,5 +98,10 @@ Stable Diffusion 社群管理员后又要求 AUTOMATIC 移除项目中的 Hypern
 
 
 
+## 声明
 
+本文档不托管任何模型，不分发任何模型。不鼓励使用开源项目盈利的行为。
 
+如果本文档外链的内容中有不合适的内容，与本文档无关。
+
+精力有限，改动请提交相关 PR

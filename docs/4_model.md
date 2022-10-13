@@ -379,7 +379,7 @@ DDIM 是一种神经网络方法。 每一步都相当快，但效率相对较�
 
 [Windows](https://github.com/C43H66N12O12S2/stable-diffusion-webui/releases) (30 系之外要自己编译)
 
-自己编译指路 [wiki/Xformers](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Xformers)
+自己编译指路 [wiki/Xformers](https://rentry.org/sdg_faq#xformers-increase-your-its) 还有 [这个 Post](https://www.reddit.com/r/StableDiffusion/comments/xz26lq/automatic1111_xformers_cross_attention_with_on/)
 
 >30 系显卡正常启动 --xformers, 其他显卡 --force-enable-xformers
 
