@@ -80,7 +80,7 @@
 
 举个例子
 
-![效果](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/resource/raw_sample.jpg)
+![效果](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/raw_sample.jpg)
 
 >不同 step 和 采样器 的不同效果
 
@@ -416,7 +416,10 @@ Batch 数设置控制获得多少次迭代
 [英文:自己训练 embedding](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion#training-embeddings)
 
 !!! danger "重命名 VAE 文件"
+
     重命名VAE模型文件非常关键，如果带着VAE训练效果十分差。
+
+    或者不需要重命名vae文件，直接在设置里打开 `auto unload`
 
 
 #### 模型环境要求
@@ -555,7 +558,10 @@ Windows 需要在 `web-user.bat的COMMANDLINE_ARGS=` 一行添加，或者直接
 随时观察，如果过拟合，可以停止。
 
 !!! danger "重命名 VAE 文件"
-    重命名VAE模型文件非常关键，如果带着VAE训练效果十分差。
+    重命名VAE模型文件非常关键，或者确定你已经设置里打开 `auto unload`。
+    
+    如果带着VAE训练效果十分差。
+    
 
 点击 右下角训练，等待。
 
