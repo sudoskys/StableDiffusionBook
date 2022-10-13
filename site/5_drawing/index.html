@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://stable-diffusion-book.vercel.app/mofa/">
+        <link rel="canonical" href="https://stable-diffusion-book.vercel.app/5_drawing/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
     
     
       
-        <title>调参魔法 - AiDraw</title>
+        <title>绘画调试 - AiDraw</title>
       
     
     
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              调参魔法
+              绘画调试
             
           </span>
         </div>
@@ -176,8 +176,8 @@
 
 
   <li class="md-tabs__item">
-    <a href=".." class="md-tabs__link">
-      首页
+    <a href="../1_terms/" class="md-tabs__link">
+      术语解释
     </a>
   </li>
 
@@ -188,8 +188,8 @@
 
 
   <li class="md-tabs__item">
-    <a href="../set/" class="md-tabs__link">
-      安装运行
+    <a href="../2_prepare/" class="md-tabs__link">
+      准备安装
     </a>
   </li>
 
@@ -200,8 +200,20 @@
 
 
   <li class="md-tabs__item">
-    <a href="../fix/" class="md-tabs__link">
-      模型技法
+    <a href="../3_install/" class="md-tabs__link">
+      安装指南
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../4_model/" class="md-tabs__link">
+      模型调试
     </a>
   </li>
 
@@ -215,7 +227,7 @@
 
   <li class="md-tabs__item">
     <a href="./" class="md-tabs__link md-tabs__link--active">
-      调参魔法
+      绘画调试
     </a>
   </li>
 
@@ -226,8 +238,8 @@
 
 
   <li class="md-tabs__item">
-    <a href="../about/" class="md-tabs__link">
-      社区支持
+    <a href="../6_landing/" class="md-tabs__link">
+      参考资料
     </a>
   </li>
 
@@ -286,8 +298,8 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
-        首页
+      <a href="../1_terms/" class="md-nav__link">
+        术语解释
       </a>
     </li>
   
@@ -301,8 +313,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../set/" class="md-nav__link">
-        安装运行
+      <a href="../2_prepare/" class="md-nav__link">
+        准备安装
       </a>
     </li>
   
@@ -316,8 +328,23 @@
   
   
     <li class="md-nav__item">
-      <a href="../fix/" class="md-nav__link">
-        模型技法
+      <a href="../3_install/" class="md-nav__link">
+        安装指南
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4_model/" class="md-nav__link">
+        模型调试
       </a>
     </li>
   
@@ -341,12 +368,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          调参魔法
+          绘画调试
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        调参魔法
+        绘画调试
       </a>
       
         
@@ -450,28 +477,28 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    要素混合
+  <a href="#prompt-matrix" class="md-nav__link">
+    Prompt matrix 参数矩阵/要素混合
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     参数冲突(提示词)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     种子调试
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     方位调参
   </a>
   
@@ -483,7 +510,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     魔法进阶
   </a>
   
@@ -492,14 +519,54 @@
         
           <li class="md-nav__item">
   <a href="#img2img-32" class="md-nav__link">
-    Img2Img 图转图 3转2绘图/优化/换场景/修复
+    Img2Img 图转图 3转2绘图/优化/更换/修复
+  </a>
+  
+    <nav class="md-nav" aria-label="Img2Img 图转图 3转2绘图/优化/更换/修复">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ps" class="md-nav__link">
+    PS重绘画
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outpainting" class="md-nav__link">
+    Outpainting 外部修补
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#inpaint" class="md-nav__link">
-    inpaint 修复
+  <a href="#inpainting" class="md-nav__link">
+    Inpainting 修补
+  </a>
+  
+    <nav class="md-nav" aria-label="Inpainting 修补">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    全分辨率修复
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loopback" class="md-nav__link">
+    Loopback 回环生成
   </a>
   
 </li>
@@ -509,10 +576,30 @@
     Textual Inversion
   </a>
   
+    <nav class="md-nav" aria-label="Textual Inversion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#textual-inversion_1" class="md-nav__link">
+    自己训练 Textual Inversion
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
   <a href="#_13" class="md-nav__link">
+    渐变提示词
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
     注意 尺寸
   </a>
   
@@ -526,14 +613,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
+  <a href="#_15" class="md-nav__link">
     提示词速查
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
+  <a href="#_16" class="md-nav__link">
     调参工程师
   </a>
   
@@ -545,7 +632,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_16" class="md-nav__link">
+  <a href="#_17" class="md-nav__link">
     参数
   </a>
   
@@ -568,21 +655,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_17" class="md-nav__link">
+  <a href="#_18" class="md-nav__link">
     草图风格
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_18" class="md-nav__link">
+  <a href="#_19" class="md-nav__link">
     艺术风格
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_19" class="md-nav__link">
+  <a href="#_20" class="md-nav__link">
     杂志/设定集 风格
   </a>
   
@@ -621,8 +708,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../about/" class="md-nav__link">
-        社区支持
+      <a href="../6_landing/" class="md-nav__link">
+        参考资料
       </a>
     </li>
   
@@ -642,7 +729,7 @@
                 
                   
 
-  <a href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/mofa.md" title="编辑此页" class="md-content__button md-icon">
+  <a href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/5_drawing.md" title="编辑此页" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
@@ -652,11 +739,7 @@
 <p>这节会介绍 参数 和 相关的WebUi(SD)  网页应用资源。部分内容只做简单介绍，因为前面有相关描述。</p>
 <p>先请拿上 <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml">调参魔法书</a>和 <a href="https://docs.google.com/spreadsheets/d/14Gg1kIGWdZGXyCC8AgYVT0lqI6IivLzZOdIT3QMWwVI/">手抄魔法本</a>。</p>
 <h2 id="_2">基本流程</h2>
-<p>画一些非常粗糙的东西，比如涂鸦</p>
-<p>带提示词参数生产 img2img</p>
-<p>涂鸦原始 img 或提示词参数或输出输入</p>
-<p>重复 img2img / inpaint 涂鸦后修复</p>
-<p>重复最后几个步骤，直到完成</p>
+<p><img alt="WorkFlow" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/draw_workflow.svg" /></p>
 <h2 id="_3">魔法入门</h2>
 <p>请先在前面了解一下WebUi(SD)网页应用的参数。</p>
 <h3 id="_4">提示词语法简介</h3>
@@ -685,7 +768,7 @@
 </div>
 <h3 id="_6">采样器</h3>
 <p>观看前面章节对于采样器的介绍。</p>
-<p>目前好用的有 <code>eular</code>，<code>eular a</code>，更细腻，和<code>Ddim</code></p>
+<p>目前好用的有 <code>eular</code>，<code>eular a</code>，更细腻，和<code>Ddim</code>，DDIM 收敛较快,</p>
 <p>一般推荐 <code>eular a</code> 和 <code>Ddim</code></p>
 <h3 id="_7">如何书写提示词(提示)</h3>
 <p>结合法术书编写它。</p>
@@ -718,9 +801,9 @@
 <p>新版本增加了一个选项 <code>Increase coherency by padding from the last comma within n tokens when using more than 75 tokens</code>， 试图通过查找最后N个标记中是否有最后一个逗号来缓解这种情况，如果有，则将所有经过该逗号的内容一起移动到下一个集合中。</p>
 <div class="admonition tip">
 <p class="admonition-title">比如</p>
-<p>集合1:{[74]=COMMA，[75]=blue}，集合2:{[76]=hair}
-转换为
-集合1:{[074]=CommMA，[75]=PADDING}，集合2:{[76]=blue，[77]=hair}</p>
+<p>集合1:{[74]=COMMA，[75]=blue}，集合2:{[76]=hair}</p>
+<p>转换为</p>
+<p>集合1:{[074]=CommMA，[75]=PADDING}，集合2:{[76]=blue，[77]=hair}</p>
 <p>如果您的提示小于等于75个标记，不会发生分组。</p>
 </div>
 <p><strong>书写格式</strong></p>
@@ -796,16 +879,23 @@ normal quality, text, censored, gown, latex, pencil
 <p><a href="https://t.me/StableDiffusion_Show">StableDiffusion_Show</a></p>
 <p><a href="https://t.me/cyan_ai_sese">cyan_ai_sese</a></p>
 <p><a href="https://lexica.art/?q=Miku">LEXICA搜索引擎</a></p>
-<h3 id="_8">要素混合</h3>
-<p>使用 | 分隔多个关键词以混合多个要素，前面有讲哦</p>
-<p>可以进一步在关键词后添加 :x 来指定单个关键词的权重，x 的取值范围是 0.1~100，默认为 1</p>
-<h3 id="_9">参数冲突(提示词)</h3>
+<h3 id="prompt-matrix"><strong>Prompt matrix 参数矩阵/要素混合</strong></h3>
+<p>使用 | 分隔多个Tag，程序将为它们的每个组合生成一个图像。 例如，如果使用 <code>a busy city street in a modern city|illustration|cinematic lighting</code> ，则可能有四种组合（始终保留提示的第一部分）：</p>
+<ul>
+<li>a busy city street in a modern city</li>
+<li>a busy city street in a modern city, illustration</li>
+<li>a busy city street in a modern city, cinematic lighting</li>
+<li>a busy city street in a modern city, illustration, cinematic lighting</li>
+</ul>
+<p>可以进一步在关键词后添加 :x 来指定单个关键词的权重，x 的取值范围是 0.1~100，默认为 1。</p>
+<p><code>cat :2 | dog</code> 也就是更像猫的狗</p>
+<h3 id="_8">参数冲突(提示词)</h3>
 <p>比如 <code>sex</code> 包含较多姿势体位，在使用者想要特定姿势时，法术内单一的 <code>sex</code> tag就应该被删除。</p>
 <p>同样地，<code>loli</code> Tag 附带了强画风属性，会很大地影响结果！改成 <code>femeal child</code> 会好一点。</p>
-<h3 id="_10">种子调试</h3>
+<h3 id="_9">种子调试</h3>
 <p>在相同 Step ，cfg ，Seed,参数（prompts） 的情况下，生产的图片基本相同！</p>
 <p>在同一模型和后端实现中，保持所有参数一致的情况下，相同的种子会产生同样的图片。取决于其他参数</p>
-<h3 id="_11">方位调参</h3>
+<h3 id="_10">方位调参</h3>
 <p>竖着看</p>
 <table>
 <thead>
@@ -861,14 +951,17 @@ normal quality, text, censored, gown, latex, pencil
 </tr>
 </tbody>
 </table>
-<h2 id="_12">魔法进阶</h2>
+<h2 id="_11">魔法进阶</h2>
 <p>调参基本原理模糊的说是：限定好的数据范围内相似样本越多，越稳定。</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>请阅读前面章节的模型进阶1,了解具体的 Img2Img 和 inpaint 介绍操作。</p>
 </div>
-<h3 id="img2img-32">Img2Img 图转图 3转2绘图/优化/换场景/修复</h3>
-<p>如果手脚残，可以试试 img2img,复制参数和 seed 可以进行调整。</p>
+<h3 id="img2img-32">Img2Img 图转图 3转2绘图/优化/更换/修复</h3>
+<p>可以试试 img2img,复制参数和 seed 可以进行调整。</p>
+<p>一般我们有两种途径对图像进行修复：<strong>PS 和 InPaint</strong>，使用方法也十分多样。</p>
+<p>比如我们可以通过 PS 给角色移植一个手让Ai来润色它。</p>
+<p>或者涂鸦特定部位指定形状动作(比如衣料的覆盖率或者形状)</p>
 <p><strong>CFG Scale</strong></p>
 <p><code>cfg scale</code> 就是符合 prompt 的程度,Scale越高，程序对提示词越忠诚，越符合。</p>
 <p><strong>Denoising strength 噪声</strong></p>
@@ -878,15 +971,64 @@ normal quality, text, censored, gown, latex, pencil
 <p>一张图片<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">2</a></sup>展现WebUI下img2img中不同参数下效果的详细对比图（prompt、steps、scale、各种seed等参数均保持一致）</p>
 </blockquote>
 <p>纵轴是Denoising strength（线上版的strength），横轴是Variation strength</p>
-<h3 id="inpaint">inpaint 修复</h3>
-<p>把有缺陷的地方mask出来inpaint，图片上涂鸦地区会重画。一般选 <code>original</code>,<code>fill</code> 要更多 step 才能消除不自然感.</p>
+<h4 id="ps">PS重绘画</h4>
+<p>使用PS软件增删元素，然后重新生产。这可以解决画手的问题。</p>
+<p>具体看 <a href="">这个视频</a></p>
+<h3 id="outpainting"><strong>Outpainting 外部修补</strong></h3>
+<p>Outpainting 扩展原始图像并修复创建的空白空间。
+您可以在底部的 img2img 选项卡中找到该功能，在 Script -&gt; Poor man's outpainting 下。</p>
+<div class="highlight"><pre><span></span><code>Outpainting, unlike normal image generation, seems to profit very much from large step count. A recipe for a good outpainting is a good prompt that matches the picture, sliders for denoising and CFG scale set to max, and step count of 50 to 100 with Euler ancestral or DPM2 ancestral samplers.
+</code></pre></div>
+<h3 id="inpainting"><strong>Inpainting 修补</strong></h3>
+<p>在 img2img 选项卡中，在图像的一部分上绘制蒙版，该部分将被重画。</p>
+<p>一般选 <code>original</code>,<code>fill</code> 要更多 step 才能消除不自然感.</p>
+<p>这可以更改角色衣物风格。</p>
+<p>有几种方法进行重绘制:</p>
+<ul>
+<li>
+<p>在网络编辑器中自己绘制蒙版（Inpaint masked 指重画涂鸦区域，Inpaint not masked 指重画涂鸦之外的区域）</p>
+</li>
+<li>
+<p>在外部编辑器中擦除部分图片并上传透明图片。 任何稍微透明的区域都将成为蒙版的一部分。 请注意，某些编辑器默认将完全透明的区域保存为黑色。</p>
+</li>
+<li>
+<p>将模式（图片右下角）更改为"Upload mask"并为蒙版选择单独的黑白图像(white=inpaint)。</p>
+</li>
+</ul>
+<p><img alt="result" src="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting.png" /></p>
+<h4 id="_12">全分辨率修复</h4>
+<p>通常，修复会将图像大小调整为 UI 中指定的目标分辨率。启用全分辨率修复后，仅调整蒙版区域的大小，并在处理后将其粘贴回原始图片。这使您可以处理大图片，并允许您以更大的分辨率渲染修复的对象。</p>
+<h3 id="loopback">Loopback 回环生成</h3>
+<p>在 img2img 中设置loopback脚本，它允许自动将输出图像作为下一批的Batch提供，相当于保存输出图像，并用它替换输入图像。</p>
+<p>Batch 数设置控制获得多少次迭代</p>
+<p>通常，在执行此操作时，您会自己为下一次迭代选择许多图像中的一个，因此此功能的有用性可能值得怀疑，但反正我已经设法获得了一些我无法获得的非常好的输出。</p>
 <h3 id="textual-inversion">Textual Inversion</h3>
-<p><code>Textual Inversion</code>允许加载一个增强包神经网络。在许多情况下（例如不同的环境和姿势）对一个主题执行此操作通常可以让 AI 创建更好的嵌入.</p>
-<p>使用时，将 embedding(一个 .pt 或一个 .bin 文件) 放入<code>embeddings</code>目录并在 prompt 提示词中提到你要用的 embedding 的文件名(*.pt)即可。</p>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion">官方英文说明和效果图</a></p>
+<p><code>Textual Inversion</code>允许你在自己的图片上训练一小部分神经网络，并在生成新图片时使用结果。可以数据集没有新出的角色画不出的问题。</p>
+<p>在许多情况下（例如不同的环境和姿势）对一个主题执行此操作通常可以让 AI 创建更好的嵌入</p>
+<p>使用时，将 embedding(一个 .pt 或一个 .bin 文件) 放入<code>embeddings</code>目录并在 prompt 提示词中提到你要用的 embedding 的文件名(*.pt)即可。不必重新启动程序即可使其正常工作。</p>
 <p>没错，NAI 的 <code>hypernetworks</code> 就是超网络，用来做 embeddings（风格化）。</p>
-<p>给出相关 <a href="https://gitlab.com/16777216c/stable-diffusion-embeddings">embeddings</a>，里面有相关效果预览。</p>
+<p><a href="https://gitlab.com/16777216c/stable-diffusion-embeddings">相关 embeddings</a>，里面有相关效果预览。</p>
 <p><a href="https://rentry.org/embeddings">list of Textual Inversion embeddings for WebUi(SD)</a></p>
-<h3 id="_13">注意 <code>尺寸</code></h3>
+<h4 id="textual-inversion_1">自己训练 Textual Inversion</h4>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion#training-embeddings">英文:自己训练 embedding</a></p>
+<p>训练的结果是一个 .pt 或一个 .bin 文件（前者是原作者使用的格式，后者作为 diffusers library）</p>
+<p>@待办</p>
+<h3 id="_13"><strong>渐变提示词</strong></h3>
+<p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-editing</p>
+<p>允许您开始对一张图片进行采样，但在中间切换到其他图片。基本语法是：</p>
+<div class="highlight"><pre><span></span><code>[from:to:when]
+</code></pre></div>
+<p>其中from和to是任意文本，并且when是一个数字，用于定义应在采样周期多长时间内进行切换。越晚，模型绘制to文本代替from文本的能力就越小。如果when是介于 0 和 1 之间的数字，则它是进行切换之后的步数的一小部分。如果它是一个大于零的整数，那么这只是进行切换的步骤。</p>
+<p>将一个提示编辑嵌套在另一个提示中不起作用。</p>
+<p><strong>使用方法</strong></p>
+<p>[to:when] 在固定数量的step后添加to到提示 ( when)</p>
+<p>[from::when] 在固定数量的step后从提示中删除from( when)</p>
+<p>例子： a [fantasy:cyberpunk:16] landscape</p>
+<p>开始时，模型将绘制a fantasy landscape。</p>
+<p>在第 16 步之后，它将切换到绘图a <code>cyberpunk landscape</code>，从幻想停止的地方继续。</p>
+<p>比如 [male:female:0.0], 意味着你开始时就要求画一个女性。</p>
+<h3 id="_14">注意 <code>尺寸</code></h3>
 <p>比如出图尺寸宽了人可能会多</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -895,7 +1037,7 @@ normal quality, text, censored, gown, latex, pencil
 <h3 id="extras">超分图像 extras</h3>
 <p><code>realesrgan</code> 或者 <code>realcugan</code> 就可以，推荐 <a href="https://github.com/bilibili/ailab/tree/main/Real-CUGAN">realcugan</a></p>
 <p>另外，<code>webui</code> extras 页有一个自带的超分功能，可以去<code>settings-upscaling</code> 使用 <code>R-ESRGAN 4x+ Anime6B</code>模型，重新启动程序</p>
-<h3 id="_14">提示词速查</h3>
+<h3 id="_15">提示词速查</h3>
 <p><strong><a href="https://docs.google.com/spreadsheets/d/14Gg1kIGWdZGXyCC8AgYVT0lqI6IivLzZOdIT3QMWwVI/edit">手抄本法术书</a></strong></p>
 <p><strong><a href="https://gelbooru.com/index.php?page=tags&amp;s=list">Danbooru全部Tag列表</a></strong></p>
 <p><strong><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml#">参数法术全典</a></strong></p>
@@ -903,10 +1045,10 @@ normal quality, text, censored, gown, latex, pencil
 <p><strong><a href="https://github.com/scooderic/exhentai-tags-chinese-translation">NSFWTag</a></strong></p>
 <p><strong><a href="https://docs.google.com/spreadsheets/d/1SRqJ7F_6yHVSOeCi3U82aA448TqEGrUlRrLLZ51abLg/htmlview#">Ai艺术家文档</a></strong></p>
 <p><strong><a href="https://www.bilibili.com/read/cv19023021">Novelai 关键词组合器</a></strong></p>
-<h3 id="_15">调参工程师</h3>
+<h3 id="_16">调参工程师</h3>
 <p><a href="https://github.com/Maks-s/sd-akashic">https://github.com/Maks-s/sd-akashic</a></p>
 <p><a href="https://github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference">https://github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference</a></p>
-<h2 id="_16">参数</h2>
+<h2 id="_17">参数</h2>
 <h3 id="naiwebuisd">转换——NAI和WebUi(SD)的增强语法不同</h3>
 <p><strong>Prompts 参数括号转换</strong></p>
 <p>在 NAI 和 Webui 之间转换加强参数   <a href="https://t.me/M2NM2NBot">M2NM2NBot</a></p>
@@ -914,7 +1056,7 @@ normal quality, text, censored, gown, latex, pencil
 <h3 id="1">良好参数(风格趋向插画)<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">1</a></sup></h3>
 <div class="highlight"><pre><span></span><code>{an extremely delicate and beautiful}
 </code></pre></div>
-<h4 id="_17">草图风格</h4>
+<h4 id="_18">草图风格</h4>
 <table>
 <thead>
 <tr>
@@ -950,7 +1092,7 @@ normal quality, text, censored, gown, latex, pencil
 </tbody>
 </table>
 <p>利用sketch，pastel color，lineart的tag模拟一张图的绘画过程</p>
-<h4 id="_18">艺术风格</h4>
+<h4 id="_19">艺术风格</h4>
 <table>
 <thead>
 <tr>
@@ -989,7 +1131,7 @@ normal quality, text, censored, gown, latex, pencil
 </tr>
 </tbody>
 </table>
-<h4 id="_19">杂志/设定集 风格</h4>
+<h4 id="_20">杂志/设定集 风格</h4>
 <table>
 <thead>
 <tr>
@@ -1425,11 +1567,11 @@ normal quality, text, censored, gown, latex, pencil
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 13, 2022 00:04:22</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 13, 2022 10:24:49</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 13, 2022 00:04:22</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 13, 2022 10:24:49</span>
       
     
   </small>
@@ -1459,7 +1601,7 @@ normal quality, text, censored, gown, latex, pencil
     <nav class="md-footer__inner md-grid" aria-label="页脚" >
       
         
-        <a href="../fix/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 模型技法" rel="prev">
+        <a href="../4_model/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 模型调试" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1468,20 +1610,20 @@ normal quality, text, censored, gown, latex, pencil
               <span class="md-footer__direction">
                 上一页
               </span>
-              模型技法
+              模型调试
             </div>
           </div>
         </a>
       
       
         
-        <a href="../about/" class="md-footer__link md-footer__link--next" aria-label="下一页: 社区支持" rel="next">
+        <a href="../6_landing/" class="md-footer__link md-footer__link--next" aria-label="下一页: 参考资料" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              社区支持
+              参考资料
             </div>
           </div>
           <div class="md-footer__button md-icon">
