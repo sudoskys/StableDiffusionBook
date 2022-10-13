@@ -44,7 +44,7 @@
 !!! tip "注意"
     NAI中不允许使用圆括号做增强或指定权重，而是使用 `cat:1|happy:-0.2|cute:-0:3` 这样的语法且用`{}`增强权重。
 
-    NAI括号权重为1.1/个，WebUi的权重为1.05/个
+    NAI括号权重为1.05/个，WebUi的权重为1.1/个
 
 
 ### Batch count&batch size
@@ -405,6 +405,10 @@ Batch 数设置控制获得多少次迭代
 
 @待办
 
+
+
+
+
 ### **渐变提示词**
 
 https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-editing
@@ -448,6 +452,12 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-edi
 
 另外，`webui` extras 页有一个自带的超分功能，可以去`settings-upscaling` 使用 `R-ESRGAN 4x+ Anime6B`模型，重新启动程序
 
+**应该使用什么 Upscaler？**
+
+推荐 SD Upscaler, 它注重细节的同时还提升分辨率。
+
+曾经有段时间，LSDR被认为是最好的。有些人喜欢 swinir，有些喜欢esrgan4x，ymmv
+
 
 ### 提示词速查
 
@@ -475,6 +485,42 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-edi
 
 ## 参数
 
+
+### NAI 官方在使用的参数
+
+个人跑不起来的参数
+
+- 使用全量模型(官方的GPU云特别强悍)
+- 使用 ema 权重加载，将yaml 配置其中的 `use_ema` 设置为 true
+- CLIP layer = 2
+- 将` sigma noise/strength`重置为默认值 1（无需使用 0.69 / 0.67）
+- 设定 `eta noise seed delta` 为 31337
+- 如果使用欧拉 a，eta 噪声种子 delta = 31337
+- 如果prompt有权重，转换权重（WebUi用1.1，NAI用1.05）
+- 使用 --no-half 参数（次要）
+
+
+**NAI 默认的 `SFW` 消极提示词为**
+```
+nsfw, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry
+```
+
+**NAI 默认的模型设置**
+```
+steps": 28, "sampler": "[sampler]", "seed": [seed], "strength": 0.69, "noise": 0.667, "scale": 11.0,
+
+Strength ， noise 是 eta 和 sigma
+
+scale 就是 CFG scale
+```
+
+
+**其他**
+
+将所有提示词前面加入 `masterpiece, best quality`
+
+
+Clip跳过 0，其他一切都很好（afaik 不要使用超网络、v2、yaml、VAE）
 
 ### 转换——NAI和WebUi(SD)的增强语法不同
 

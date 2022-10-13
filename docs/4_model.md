@@ -181,7 +181,7 @@ BV1Gm4y1A7VM
 ## 说明
 
 
-### ckpt 文件安全/误报
+### ckpt 文件安全/误报[^4]
 
 ckpt文件是一个脚本，基本上可以执行它想要的任何内容，并且有权执行。盲目运行它们有安全风险。
 
@@ -523,3 +523,5 @@ Tip：每天重置资源
 [^2]:[关于 AUTOMATIC1111 /stable-diffusion-webui 的 FAQ:](https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99)
 
 [^3]:[16xx系显卡可以使用半精度生成图片的方式](https://t.me/StableDiffusion_CN/50749)
+
+[^4]:[It's not a virus it's a checkpoint file](https://huggingface.co/Deltaadams/Hentai-Diffusion/discussions/12)
