@@ -1,9 +1,8 @@
+
+
 # 调参魔法
 
 这节会介绍 参数 和 相关的WebUi(SD)  网页应用资源。部分内容只做简单介绍，因为前面有相关描述。
-
-
-
 
 先请拿上 [调参魔法书](https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml)和 [手抄魔法本](https://docs.google.com/spreadsheets/d/14Gg1kIGWdZGXyCC8AgYVT0lqI6IivLzZOdIT3QMWwVI/)。
 
@@ -11,6 +10,7 @@
 ## 基本流程
 
 ![WorkFlow](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/draw_workflow.svg)
+
 
 ## 魔法入门
 
@@ -63,6 +63,7 @@
 
 更多的迭代步数可能会有更好的生成效果，但是一定会导致生成时间变长。太多的steps也可能适得其反，几乎不会有提高。
 
+
 ### 采样器
 
 观看前面章节对于采样器的介绍。
@@ -77,6 +78,7 @@
 ![效果](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/resource/raw_sample.jpg)
 
 >不同 step 和 采样器 的不同效果
+
 
 ### 如何书写提示词(提示)
 
@@ -100,10 +102,7 @@
 图片的背景
 ```
 
-
 [为文字转图像Ai提示编写指南：A Guide to Writing Prompts for Text-to-image AI](https://docs.google.com/document/d/1XUT2G9LmkZataHFzmuOtRXnuWBfhvXDAo8DkS--8tec/edit#)
-
-
 
 
 **书写长度**
@@ -128,7 +127,6 @@
     集合1:{[074]=CommMA，[75]=PADDING}，集合2:{[76]=blue，[77]=hair}
 
     如果您的提示小于等于75个标记，不会发生分组。
-
 
 **书写格式**
 
@@ -155,6 +153,7 @@ tag 顺序是有影响的，webui突破tag75个限制的方式是把75个分为�
 然后是主体往前放，接着描述装扮的词，画质提升词穿插在这些描述词之间，一般为了提高成品率要把动作、nsfw词等改变构图的词往后放，或者手动调低权重（主要是为了防止ai强行凑动作导致肢体到处跑）。
 
 以上排序是每组tag都要遵守的，所以如果后面的tag超过 75 了就应该把前面的分一部分过来。
+
 
 ### (提示词)影响因子[^6]
  
@@ -197,14 +196,13 @@ a \(word\) - 在提示中使用文字 () 字符
 
 在 WebUi 中需要使用 `()`指定权重！可以像这样指定权重：(text:1.4)。如果未指定权重，则假定为 1.1。指定权重仅适用于()
 
-
-
 !!! info
     权重增加通常会占一个提示词位。在token紧张的情况下没有必要加特别多括号。
     
     **NAI官方**
 
     在NAI官方前端我们使用 `{}` 来指定权重。
+
 
 ### 消极提示词(Token)
 
@@ -229,9 +227,11 @@ mutilated, tranny, trans, trannsexual, [out of frame], (bad proportions),
 normal quality, text, censored, gown, latex, pencil
 ```
 
+
 ### 重现提示词(Token)
 
 对于没有压缩的原图，我们可以将文件拖入 `PNG Info` 选项卡，进行提示词(Token)查看。
+
 
 ### 逆向提示词(Token)
 
@@ -240,6 +240,7 @@ normal quality, text, censored, gown, latex, pencil
 [LenKiMo_Bot](https://t.me/LenKiMo_Bot)
 
 [DeepDanbooru](https://github.com/KichangKim/DeepDanbooru)
+
 
 ### 已知提示词(Token)组合 / 搜索引擎
 
@@ -265,17 +266,20 @@ normal quality, text, censored, gown, latex, pencil
 
 `cat :2 | dog` 也就是更像猫的狗
 
+
 ### 参数冲突(提示词)
 
 比如 `sex` 包含较多姿势体位，在使用者想要特定姿势时，法术内单一的 `sex` tag就应该被删除。
 
 同样地，`loli` Tag 附带了强画风属性，会很大地影响结果！改成 `femeal child` 会好一点。
 
+
 ### 种子调试
 
 在相同 Step ，cfg ，Seed,参数（prompts） 的情况下，生产的图片基本相同！
 
 在同一模型和后端实现中，保持所有参数一致的情况下，相同的种子会产生同样的图片。取决于其他参数
+
 
 ###  方位调参
 
@@ -290,6 +294,7 @@ normal quality, text, censored, gown, latex, pencil
 |状态|人物事件地|||
 |姿势位||||
 |镜头位||||
+
 
 ## 魔法进阶
 
@@ -309,17 +314,13 @@ normal quality, text, censored, gown, latex, pencil
 
 或者涂鸦特定部位指定形状动作(比如衣料的覆盖率或者形状)
 
-
 **CFG Scale**
 
 `cfg scale` 就是符合 prompt 的程度,Scale越高，程序对提示词越忠诚，越符合。
 
-
 **Denoising strength 噪声**
 
-
 `Denoising strength` 决定算法对图像内容的保留程度,可以减少对画风的变得，但也会弱化img2img能力。值越高 AI 对原图的参考程度就越低 (同时增加迭代次数)。
-
 
 ![info](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/00119_136826557_masterpiece%2C_best_quality%2C_1girl%2C_black_hair%2C_hat1.jpg)
 
@@ -327,11 +328,11 @@ normal quality, text, censored, gown, latex, pencil
 
 纵轴是Denoising strength（线上版的strength），横轴是Variation strength
 
+
 #### PS重绘画
 
 使用PS软件增删元素，然后重新生产。这可以解决画手的问题。
 
-具体看 [这个视频]()
 
 ### **Outpainting 外部修补**
 
@@ -344,17 +345,15 @@ Outpainting, unlike normal image generation, seems to profit very much from larg
 
 ### **Inpainting 修补**
 
-
 在 img2img 选项卡中，在图像的一部分上绘制蒙版，该部分将被重画。
 
 一般选 `original`,`fill` 要更多 step 才能消除不自然感.
 
 这可以更改角色衣物风格。
 
-
 有几种方法进行重绘制:
 
-- 在网络编辑器中自己绘制蒙版（Inpaint masked 指重画涂鸦区域，Inpaint not masked 指重画涂鸦之外的区域）
+- 在网络编辑器中自己绘制蒙版（`Inpaint masked `指重画涂鸦区域，`Inpaint not masked` 指重画涂鸦之外的区域）
 
 - 在外部编辑器中擦除部分图片并上传透明图片。 任何稍微透明的区域都将成为蒙版的一部分。 请注意，某些编辑器默认将完全透明的区域保存为黑色。
 
@@ -362,11 +361,10 @@ Outpainting, unlike normal image generation, seems to profit very much from larg
 
 ![result](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting.png)
 
+
 #### 全分辨率修复
 
 通常，修复会将图像大小调整为 UI 中指定的目标分辨率。启用全分辨率修复后，仅调整蒙版区域的大小，并在处理后将其粘贴回原始图片。这使您可以处理大图片，并允许您以更大的分辨率渲染修复的对象。
-
-
 
 
 ### Loopback 回环生成
@@ -378,27 +376,19 @@ Batch 数设置控制获得多少次迭代
 通常，在执行此操作时，您会自己为下一次迭代选择许多图像中的一个，因此此功能的有用性可能值得怀疑，但反正我已经设法获得了一些我无法获得的非常好的输出。
 
 
-
-
 ### Textual Inversion
 
 [官方英文说明和效果图](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion)
 
-
 `Textual Inversion`允许你在自己的图片上训练一小部分神经网络，并在生成新图片时使用结果。可以数据集没有新出的角色画不出的问题。
-
 
 在许多情况下（例如不同的环境和姿势）对一个主题执行此操作通常可以让 AI 创建更好的嵌入
 
 使用时，将 embedding(一个 .pt 或一个 .bin 文件) 放入`embeddings`目录并在 prompt 提示词中提到你要用的 embedding 的文件名(*.pt)即可。不必重新启动程序即可使其正常工作。
 
-
 没错，NAI 的 `hypernetworks` 就是超网络，用来做 embeddings（风格化）。
 
 [相关 embeddings](https://gitlab.com/16777216c/stable-diffusion-embeddings)，里面有相关效果预览。
-
-
-
 
 [list of Textual Inversion embeddings for WebUi(SD)](https://rentry.org/embeddings)
 
@@ -407,13 +397,9 @@ Batch 数设置控制获得多少次迭代
 
 [英文:自己训练 embedding](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion#training-embeddings)
 
-
 训练的结果是一个 .pt 或一个 .bin 文件（前者是原作者使用的格式，后者作为 diffusers library）
 
 @待办
-
-
-
 
 ### **渐变提示词**
 
@@ -443,6 +429,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-edi
 
 比如 [male:female:0.0], 意味着你开始时就要求画一个女性。
 
+
 ### 注意 `尺寸`
 
 比如出图尺寸宽了人可能会多
@@ -450,11 +437,13 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-edi
 !!! tip
     要匹配好姿势，镜头和人物才不畸形，有时候需要限定量词，多人物时要处理空间关系和 prompt 遮挡优先级。人数->人物样貌->环境样式->人物状态
     
+
 ### 超分图像 extras
 
 `realesrgan` 或者 `realcugan` 就可以，推荐 [realcugan](https://github.com/bilibili/ailab/tree/main/Real-CUGAN)
 
 另外，`webui` extras 页有一个自带的超分功能，可以去`settings-upscaling` 使用 `R-ESRGAN 4x+ Anime6B`模型，重新启动程序
+
 
 ### 提示词速查
 
@@ -482,6 +471,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-edi
 
 ## 参数
 
+
 ### 转换——NAI和WebUi(SD)的增强语法不同
 
 **Prompts 参数括号转换**
@@ -490,11 +480,13 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-edi
 
 权重增强标识：NAI 是 `{}` ，WebUi(SD) 是 `()`
 
+
 ### 良好参数(风格趋向插画)[^4]
 
 ```
 {an extremely delicate and beautiful}
 ```
+
 
 #### 草图风格
 
@@ -510,6 +502,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-edi
 
 利用sketch，pastel color，lineart的tag模拟一张图的绘画过程
 
+
 #### 艺术风格
 
 | 词                                                                  | 描述                                   |
@@ -521,6 +514,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-edi
 | {{{retro artstyle}}}                                                | 赛璐璐风                               |
 | {photorealistic}, {painting}, {realistic}, {sketch}, {oil painting} | 厚涂                                   |
 | pastel color和sketch                                                | 搭配会有速涂的质感                     |
+
 
 #### 杂志/设定集 风格
 
@@ -537,8 +531,6 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-edi
 
 
 ### 常用参数:SFW
-
-
 
 | 人物数量 | 描述                                                                  |
 | ----------- | ----------------------------------------------------------------------- |
@@ -639,6 +631,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-edi
 
 
 [^4]:[Paper朱整理优化方法](https://pan.baidu.com/s/1VWr7OLvAbu1KIoTPEs2wwQ?pwd=y8lk)
+
 [^5]:[参数图](https://m.weibo.cn/status/4823585938735546)
 
 [^6]:[SD金矿](https://rentry.org/sdupdates#hall-of-fame)
