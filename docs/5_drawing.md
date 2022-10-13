@@ -7,20 +7,13 @@
 
 ## 基本流程
 
-画一些非常粗糙的东西，比如涂鸦
-
-带提示词参数生产 img2img
-
-涂鸦原始 img 或提示词参数或输出输入
-
-重复 img2img / inpaint 涂鸦后修复
-
-重复最后几个步骤，直到完成
-
+![WorkFlow](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/draw_workflow.svg)
 
 ## 魔法入门
 
 请先在前面了解一下WebUi(SD)网页应用的参数。
+
+
 
 ### 提示词语法简介
 
@@ -68,7 +61,7 @@
 
 观看前面章节对于采样器的介绍。
 
-目前好用的有 `eular`，`eular a`，更细腻，和`Ddim`
+目前好用的有 `eular`，`eular a`，更细腻，和`Ddim`，DDIM 收敛较快,
 
 一般推荐 `eular a` 和 `Ddim`
 
@@ -114,8 +107,11 @@
 新版本增加了一个选项 `Increase coherency by padding from the last comma within n tokens when using more than 75 tokens`， 试图通过查找最后N个标记中是否有最后一个逗号来缓解这种情况，如果有，则将所有经过该逗号的内容一起移动到下一个集合中。
 
 !!! tip "比如"
+
     集合1:{[74]=COMMA，[75]=blue}，集合2:{[76]=hair}
+
     转换为
+
     集合1:{[074]=CommMA，[75]=PADDING}，集合2:{[76]=blue，[77]=hair}
 
     如果您的提示小于等于75个标记，不会发生分组。
@@ -237,11 +233,19 @@ normal quality, text, censored, gown, latex, pencil
 
 [LEXICA搜索引擎](https://lexica.art/?q=Miku)
 
-### 要素混合 
 
-使用 | 分隔多个关键词以混合多个要素，前面有讲哦
+### **Prompt matrix 参数矩阵/要素混合**
 
-可以进一步在关键词后添加 :x 来指定单个关键词的权重，x 的取值范围是 0.1~100，默认为 1
+使用 | 分隔多个Tag，程序将为它们的每个组合生成一个图像。 例如，如果使用 `a busy city street in a modern city|illustration|cinematic lighting` ，则可能有四种组合（始终保留提示的第一部分）：
+
+- a busy city street in a modern city
+- a busy city street in a modern city, illustration
+- a busy city street in a modern city, cinematic lighting
+- a busy city street in a modern city, illustration, cinematic lighting
+
+可以进一步在关键词后添加 :x 来指定单个关键词的权重，x 的取值范围是 0.1~100，默认为 1。
+
+`cat :2 | dog` 也就是更像猫的狗
 
 ### 参数冲突(提示词)
 
@@ -277,9 +281,16 @@ normal quality, text, censored, gown, latex, pencil
     请阅读前面章节的模型进阶1,了解具体的 Img2Img 和 inpaint 介绍操作。
 
 
-### Img2Img 图转图 3转2绘图/优化/换场景/修复
+### Img2Img 图转图 3转2绘图/优化/更换/修复
 
-如果手脚残，可以试试 img2img,复制参数和 seed 可以进行调整。
+可以试试 img2img,复制参数和 seed 可以进行调整。
+
+一般我们有两种途径对图像进行修复：**PS 和 InPaint**，使用方法也十分多样。
+
+比如我们可以通过 PS 给角色移植一个手让Ai来润色它。
+
+或者涂鸦特定部位指定形状动作(比如衣料的覆盖率或者形状)
+
 
 **CFG Scale**
 
@@ -298,28 +309,121 @@ normal quality, text, censored, gown, latex, pencil
 
 纵轴是Denoising strength（线上版的strength），横轴是Variation strength
 
+#### PS重绘画
+
+使用PS软件增删元素，然后重新生产。这可以解决画手的问题。
+
+具体看 [这个视频]()
+
+### **Outpainting 外部修补**
+
+Outpainting 扩展原始图像并修复创建的空白空间。
+您可以在底部的 img2img 选项卡中找到该功能，在 Script -> Poor man's outpainting 下。
+
+```
+Outpainting, unlike normal image generation, seems to profit very much from large step count. A recipe for a good outpainting is a good prompt that matches the picture, sliders for denoising and CFG scale set to max, and step count of 50 to 100 with Euler ancestral or DPM2 ancestral samplers.
+```
+
+### **Inpainting 修补**
 
 
-### inpaint 修复
+在 img2img 选项卡中，在图像的一部分上绘制蒙版，该部分将被重画。
 
-把有缺陷的地方mask出来inpaint，图片上涂鸦地区会重画。一般选 `original`,`fill` 要更多 step 才能消除不自然感.
+一般选 `original`,`fill` 要更多 step 才能消除不自然感.
+
+这可以更改角色衣物风格。
+
+
+有几种方法进行重绘制:
+
+- 在网络编辑器中自己绘制蒙版（Inpaint masked 指重画涂鸦区域，Inpaint not masked 指重画涂鸦之外的区域）
+
+- 在外部编辑器中擦除部分图片并上传透明图片。 任何稍微透明的区域都将成为蒙版的一部分。 请注意，某些编辑器默认将完全透明的区域保存为黑色。
+
+- 将模式（图片右下角）更改为"Upload mask"并为蒙版选择单独的黑白图像(white=inpaint)。
+
+![result](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting.png)
+
+#### 全分辨率修复
+
+通常，修复会将图像大小调整为 UI 中指定的目标分辨率。启用全分辨率修复后，仅调整蒙版区域的大小，并在处理后将其粘贴回原始图片。这使您可以处理大图片，并允许您以更大的分辨率渲染修复的对象。
+
+
+
+
+### Loopback 回环生成
+
+在 img2img 中设置loopback脚本，它允许自动将输出图像作为下一批的Batch提供，相当于保存输出图像，并用它替换输入图像。
+
+Batch 数设置控制获得多少次迭代
+
+通常，在执行此操作时，您会自己为下一次迭代选择许多图像中的一个，因此此功能的有用性可能值得怀疑，但反正我已经设法获得了一些我无法获得的非常好的输出。
+
+
 
 
 ### Textual Inversion
 
+[官方英文说明和效果图](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion)
 
-`Textual Inversion`允许加载一个增强包神经网络。在许多情况下（例如不同的环境和姿势）对一个主题执行此操作通常可以让 AI 创建更好的嵌入.
 
-使用时，将 embedding(一个 .pt 或一个 .bin 文件) 放入`embeddings`目录并在 prompt 提示词中提到你要用的 embedding 的文件名(*.pt)即可。
+`Textual Inversion`允许你在自己的图片上训练一小部分神经网络，并在生成新图片时使用结果。可以数据集没有新出的角色画不出的问题。
+
+
+在许多情况下（例如不同的环境和姿势）对一个主题执行此操作通常可以让 AI 创建更好的嵌入
+
+使用时，将 embedding(一个 .pt 或一个 .bin 文件) 放入`embeddings`目录并在 prompt 提示词中提到你要用的 embedding 的文件名(*.pt)即可。不必重新启动程序即可使其正常工作。
+
 
 没错，NAI 的 `hypernetworks` 就是超网络，用来做 embeddings（风格化）。
 
-给出相关 [embeddings](https://gitlab.com/16777216c/stable-diffusion-embeddings)，里面有相关效果预览。
+[相关 embeddings](https://gitlab.com/16777216c/stable-diffusion-embeddings)，里面有相关效果预览。
+
+
+
 
 [list of Textual Inversion embeddings for WebUi(SD)](https://rentry.org/embeddings)
 
 
+#### 自己训练 Textual Inversion
 
+[英文:自己训练 embedding](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion#training-embeddings)
+
+
+训练的结果是一个 .pt 或一个 .bin 文件（前者是原作者使用的格式，后者作为 diffusers library）
+
+@待办
+
+
+
+
+### **渐变提示词**
+
+https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-editing
+
+允许您开始对一张图片进行采样，但在中间切换到其他图片。基本语法是：
+
+```
+[from:to:when]
+```
+
+其中from和to是任意文本，并且when是一个数字，用于定义应在采样周期多长时间内进行切换。越晚，模型绘制to文本代替from文本的能力就越小。如果when是介于 0 和 1 之间的数字，则它是进行切换之后的步数的一小部分。如果它是一个大于零的整数，那么这只是进行切换的步骤。
+
+将一个提示编辑嵌套在另一个提示中不起作用。
+
+**使用方法**
+
+[to:when] 在固定数量的step后添加to到提示 ( when)
+
+[from::when] 在固定数量的step后从提示中删除from( when)
+
+例子： a [fantasy:cyberpunk:16] landscape
+
+开始时，模型将绘制a fantasy landscape。
+
+在第 16 步之后，它将切换到绘图a `cyberpunk landscape`，从幻想停止的地方继续。
+
+比如 [male:female:0.0], 意味着你开始时就要求画一个女性。
 
 ### 注意 `尺寸`
 

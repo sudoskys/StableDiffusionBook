@@ -1,13 +1,17 @@
 # 安装
 
 
-
 ## 安装 Stable-diffusion-webui 开源框架
 
 此教程参考了 crosstyan[^2]
 
+WebUi的官方代码仓库地址为 https://github.com/AUTOMATIC1111/stable-diffusion-webui
 
-WebUi的官方仓库地址为 https://github.com/AUTOMATIC1111/stable-diffusion-webui
+[官方英文安装教程](https://github.com/AUTOMATIC1111/stable-diffusion-webui#installation-and-running)
+
+[官方给定的依赖列表](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Dependencies)
+
+
 
 
 ### 硬件要求
@@ -23,75 +27,70 @@ WebUi 最低可用N卡显存 > 4GB
 *9月份效果(PS:10月份因为黑科技有大量增强！)*
 
 
+
+
+
+
 ### 安装
-
-[官方英文安装教程](https://github.com/AUTOMATIC1111/stable-diffusion-webui#installation-and-running)
-
-[官方给定的依赖列表](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Dependencies)
 
 !!! tip
     推荐有能力阅读[官方Wiki](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki)的内容。
 
-    Ai 需要的依赖大小很大！需要心理准备！大约几G,而且国内环境可能很慢！对于Windows,**依赖默认安装在C盘**
+    Ai 需要的依赖大小很大！需要心理准备！大约几G，而且国内环境可能很慢！
+    
+    而且对于Windows,**依赖默认安装在C盘**，请确保空间充足。
 
+    不推荐使用 整合包，会导致升级困难。
 
-#### Windows安装
+#### **Windows安装**
 
-在Windows上自动安装
+在Windows上的安装流程如下。
 
 **安装 Python**
+
 安装[Python 3.10.6](https://www.python.org/downloads/windows/)，安装时选中“Add Pythone to PATH”
 
+>为什么整合包不需要？他们的脚本中指定了同目录下的环境，阅读之后的文档就可以知道
 
-**切换国内镜像**
 
-打开 CMD 命令行（Win+R 运行 cmd），输入`Python` 如果能进入就 ctrl+z 退出
+!!! tip "如果你在中国，需要按照以下步骤切换国内镜像"
 
-然后输入以下命令设置镜像。
+    打开 CMD 命令行（Win+R 运行 cmd），输入`Python` 回车，如果能进入 Python 就 ctrl+z 退出。
+    然后输入以下命令设置镜像。
+    ```bash
+    pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+    ```
 
-```bash
-pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
-```
-**Git**
 
-安装[Git](https://git-scm.com/download/win)，然后在 菜单中找到 `git bash`
+**安装 Git**
 
-运行`git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git` 拉取仓库，如果失败请设置代理。
+在 [GitScm](https://git-scm.com/download/win) 下载 Git安装包并安装，然后在开始菜单中找到 `git bash`
+
+运行 `git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git` 拉取仓库，如果失败请设置代理。
 
 !!! tip 
-    实在不行使用（但不确定能否更新）
+
+    如果你不会设置代理，可以使用（但不确定能否更新）
     
     `git clone https://hub.fastgit.org/AUTOMATIC1111/stable-diffusion-webui.git `
 
-**模型和运行**
+**尝试安装**
 
-将 4G 或 7G 或 其他模型 `model.ckpt` 放在 `models` 目录中。
-
->请参见[依赖项](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Dependencies)
-
+将 4G 或 7G 或 其他模型 `model.ckpt` 放在 `models` 目录中，`WebUi` 目前支持在界面顶部选择模型。
 
 （可选）将`GFPGANv1.4.pth`放在基本目录中，旁边是 `webui.py`
 
-然后以普通非管理员用户身份从Windows资源管理器运行 `webui-user.bat` 下载依赖（**一般需要 22 分钟，安装在C盘，2GB以上**）和启动网页应用。
+先确认你的显卡是可用的(看上文)，然后以普通非管理员用户身份从 Windows资源管理器 运行 `webui-user.bat` 。脚本会自动下载依赖（**一般需要 22 分钟，安装在C盘，2GB以上**）和启动网页应用。
 
-如果正常，输入 一个类似 `http://127.0.0.1:7860/` 的地址，点开即可。
+在此区间你可以打开资源管理器，关注网络速度。在没有完成下载之前，脚本不会继续输出任何提示。(等了两小时？可以试试挂代理)
 
+大约 30 分钟后安装完毕，程序会输出一个类似 `http://127.0.0.1:7860/` 的地址，点开即可。
 
->需要模型，如果没有模型请去下载一个，如果有整合包，也可以使用 其中的`models`文件夹
+!!! tip
+    运行需要模型！
+    
+    如果没有模型请去下载一个。也可以移植整合包其中的`models`文件夹。
 
-
-!!! info 
-    更新仓库使用 `git pull` 更新仓库，推荐经常更新，并关注讨论。
-    
-    你可以修改运行脚本添加参数！这个可以读后面的文档。
-    
-    运行报错？请读后面的自救节。
-    
-    生成报错？请读下一章。
-    
-    等了两小时？可以试试挂代理。
-    
-    为什么整合包不需要？他们的脚本中指定了同目录下的环境，阅读之后的文档就可以知道
 
 #### Windows 从整合包迁移
 
@@ -112,7 +111,9 @@ sudo dnf install wget git python3
 # Arch-based:
 sudo pacman -S wget git python3
 ```
+
 一键脚本
+
 ```bash
 bash <(wget -qO- https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusion-webui/master/webui.sh)
 ```
@@ -120,8 +121,8 @@ bash <(wget -qO- https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusio
 完毕。
 
 !!! info
-    其实如果可以用 `anaconda` 尽量用，创建一个Python 3.10.6的虚拟环境
-
+    如果可以，尽量使用 `anaconda` ，创建一个 Python 3.10.6 的虚拟环境。
+   
     ```bash
     conda create -n aidraw python=3.10.6
 
@@ -130,16 +131,24 @@ bash <(wget -qO- https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusio
     COMMANDLINE_ARGS="--medvram" REQS_FILE="requirements.txt" python launch.py
     ```
 
-#### 安装/运行自助
+#### 更新框架
+
+使用Git下载的源代码，可以直接使用 `git pull` 更新代码。推荐经常更新，并关注社区讨论。
+
+如果是整合或者其他，请向上游（谁分发的）索取。
+
+
+### 错误处理
 
 翻译整理自[^3]
 
-仓库的一键安装会创建 虚拟环境，然后启动 [launch.py](https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/launch.py)
 
 
-安装依赖，如果你想使用conda,可以自己运行 launch 安装依赖！！
+#### 首先...
 
-**网络问题**
+路径不允许含有空格，确保您的文件夹路径没有空格。
+
+#### 网络问题/没响应
 
 - Git 报错
 
@@ -147,39 +156,43 @@ HTTP_PROXY 和 HTTPS_PROXY 环境变量，或者使用 clash 的tun模式. 或�
 
 其他依赖报错也需要设置代理或者使用镜像，不然特慢。
 
-**时间花销**
+#### 时间花销过大
 
 设镜像或者挂代理，**依赖项 >2GB**,请做好准备，而且对于Windows,**依赖默认安装在C盘**！
 
-**空格**
 
-确保您的文件夹路径没有空格。
 
-**驱动**
+#### 驱动
 
 确保您拥有可以运行的最新CUDA 工具包和 GPU 驱动程序
 
-**我 Python 呢？**
+#### 我 Python 呢？
 
 如果您的 Python 版本不在 PATH 中，则在文件夹中创建或修改 webui.settings.bat 添加行 `set PYTHON=python `来说明 Python 可执行文件的完整路径（请看下面的参数说明！
 
-**环境**
 
-安装程序会创建一个 python 虚拟环境，因此如果你在安装之前安装了一个模块，那么任何已安装的模块都不会影响你
+#### 虚拟环境
 
-如果需要防止创建虚拟环境使用系统 python，编辑 `webui.bat` 替换 `setVENV_DIR=venv`为`set VENV_DIR=`（见下面参数
+如果你使用 conda 可以不使用一键脚本，可以自己运行 launch 安装依赖。
+
+因为仓库给出的一键安装脚本会创建虚拟环境，然后启动 [launch.py](https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/launch.py)。
+
+在运行时，一键安装程序会创建一个 python 虚拟环境，因此如果你在安装之前安装了一个模块，那么任何已安装的模块都不会影响你
+
+如果需要防止创建虚拟环境而使用系统 python，编辑 `webui.bat` 替换 `setVENV_DIR=venv`为`set VENV_DIR=`
+
 
 **生成图片问题见下一章**
 
 
-#### 更新框架
-
-Git拉取请使用 `git pull` 更新。
-
-如果是整合或者其他，请向上游（谁分发的）索取。
 
 
-#### 启动(但是必须首先下载一个4GB模型)
+
+
+
+### 启动(但是必须首先下载一个4GB模型)
+
+如果你运行报错，请读前面的自救提示。
 
 不提供NV模型，你可以去 关于/底部图标 页面找到 `中文社区` 的频道，里面应该有你想要的哈。
 
@@ -193,7 +206,13 @@ Linux 用户采用
 COMMANDLINE_ARGS="--medvram --always-batch-cond-uncond" REQS_FILE="requirements.txt" python launch.py
 ```
 
-**命令参数 from Wiki**
+#### 自定义运行
+
+进一步熟悉这个程序，你会发现可以修改 Bat运行脚本 添加参数！具体参数列表请读下文。
+
+
+    
+生成报错？请读 `绘画调试` 章节。
 
 首先，你可以运行 `python webui.py --help` 查看所有命令参数。
 
@@ -293,7 +312,8 @@ Time taken: 33.97s
 Torch active/reserved: 1975/2144 MiB, Sys VRAM: 7890/8134 MiB (93.61%)
 ```
 
-------
+--------
+
 
 ## 安装 Novel Ai 的原版后端
 

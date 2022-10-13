@@ -1,12 +1,12 @@
 
 # 模型技法
 
-这节介绍Debug和一些关于WebUi网页应用的优化方案，让它更好用。
+这节介绍 Debug 和一些 关于WebUi网页应用模型参数 的优化方案，让它更好用。
 
-至于如何创造令牌和参数相关，请看下一节：令牌，也就是参数如何写
+至于如何出图，请看下一节。
 
 !!! tip
-    注意要经常从远端代码库拉取代码洗礼WebUi网页应用。
+    注意要经常从远端代码库拉取代码更新WebUi网页应用～
 
 >本节只针对 NAI 模型展开教程。请多多关注 About 页面的社区获取最新进展和新闻。**大部分源教程来自：[^2]**
 
@@ -15,7 +15,7 @@
     本仓库不提供具体链接（版权警告），可以看页面下标或关注中文社区 t.me@StableDiffusion_CN_WIKI。
 
 
-[你应该看看，除了NAI模型外的其他模型：Stable Diffusion Models](https://rentry.org/sdmodels)
+[SDWebUi是一个框架，所以除了NAI模型外还有许多其他模型：Stable Diffusion Models](https://rentry.org/sdmodels)
 
 
 ## 关于显卡
@@ -83,9 +83,9 @@ Windows: https://developer.nvidia.com/compute/cudnn/secure/8.5.0/local_installer
 
 
 
-## NAI 模型
+## NAI Leak 模型
 
-你的 models 文件夹应该是这样的。
+使用 NAI Leak 模型 的 models 文件夹结构应该如下。
 
 ```
 ./models
@@ -118,25 +118,27 @@ Windows: https://developer.nvidia.com/compute/cudnn/secure/8.5.0/local_installer
 
 ### Part 1
 
-`final-pruned.ckpt即 stableckpt/animefull-final-pruned/model.ckpt` (pruned)，模型主文件。
+|文件|对应 Leak 路径|说明|
+|----|---------|--------|
+|`final-pruned.ckpt`|`stableckpt/animefull-final-pruned/model.ckpt` (pruned)|模型主文件|
+|`final-pruned.vae.pt`|`stableckpt/animevae.pt`|用于稳定风格|
+|`final-pruned.yaml`|`stableckpt/animefull-final-pruned/config.yaml`|与记载额外的参数，内存消耗大，效果不明显|
+|`stableckpt/vector_adjust/v2.pt`|风格化|感觉不如 `hypernet`|
+|个人不需要下载的|`workspace`|前后端全套，40GB仅能启动|
 
-`final-pruned.vae.pt` 即 `stableckpt/animevae.pt`，用于稳定风格。
 
-`final-pruned.yaml` 即 `model.ckpt` 同文件夹的 `stableckpt/animefull-final-pruned/config.yaml`，记载额外的参数。
+注意，`final-pruned .yaml` 的名称应该对应 `final-pruned .ckpt`
 
-`hypernetworks` 包含了 `stableckpt/modules/modules` 里的文件，是风格相关的数据集，可以作为特定人物的 `embedding model` 调用，和 model 使用可以生成特定风格.文件 `*.pt`。在WebUi的设置标签页调用。
+`hypernetworks` 包含了 `stableckpt/modules/modules` 里的文件，是风格相关的数据集，可以作为特定人物的 `embedding model` 调用，和 model 使用可以生成特定风格。主要格式为 `*.pt`。需要在WebUi的设置标签页启用这个增强模型。
 
 
-`stableckpt/vector_adjust/v2.pt` 没有什么用，可以自行训练，感觉不如 `hypernet`
-
-`workspace` 就是前后端啦，40Gb显存及格，NAI采用的是 GPU 云。
+`workspace` 不是个人可以负载的，NAI采用的是 GPU 集群云。
 
 ### Part 2
 
-`prodmodels` 是GPT模型(语言处理)，但是实际好像用了CLIP.
+`prodmodels` 是GPT模型(语言处理)，但是实际用了CLIP，所以不用我们管。
 
 `random_stableckpt` 是一些模型，有的与Part1重复
-
 
 
 ![Part1](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/models.jpg)
@@ -153,21 +155,25 @@ Windows: https://developer.nvidia.com/compute/cudnn/secure/8.5.0/local_installer
     - sha256sum - SHA256 sums of every file
     - sha256sum.sig Detached signature for the sums, signed by our GPG key
 
-启动 cli 有提示加载就 OK, 去设置选模型那里选喜欢的 `hypernetwork`
+启动 cli 有提示加载就 OK, 同时可以去设置选模型那里选喜欢的 `hypernetwork`
 
 
 
 ### 对于 NAI 模型的说明
 
 
-`animesfw-latest` NAI 基线模型
+`animesfw-latest` = NAI 基线模型
 
-`animefull-final-pruned` = `full-latest` = NAI 全量模型(成人内容)
+`animefull-final-pruned` = `full-latest` = NAI 全量模型(包含成人内容)
 
 
 !!!info "**4GB版本 or 7GB ？**"
+        
+        网上的两种模型，4GB是针对个人部署优化后的。
+
         *diffusion model* 训练会产生两个模型：当前权重和加权平均后优化的EMA（效果好）
-        7GB 的 ckpt 里包含了当前权重和EMA权重，pruned.py 删除了当前权重，留下了 EMA权重并重命名。所以差别不大。
+
+        7GB 的 ckpt 里包含了 当前权重 和 EMA权重(加权平均)，pruned.py 删除了当前权重，留下了 EMA权重并重命名。所以差别不大。
 
 
 **详细介绍**
@@ -185,7 +191,8 @@ NAIleak里边有个 config.yaml ， 将其改名为 `模型前缀.yaml` 和模�
 
 ### Vae 额外的权重
 
-如果需要更好模拟NAI,务必使用 `animevae.pt`
+如果需要更好模拟NAI,你需要使用 `animevae.pt`，这可以稳定杂乱的生成风格。
+
 
 ### 半精度/全精度
 
@@ -243,18 +250,21 @@ float32 用于较旧的 gpus，或者你想要 100% 的精度
 
 生成报错解释：显存不足
 
-先检查 cuda 是否可用
-打开命令窗，输入 python 并分行输入
+先检查 cuda 是否可用，打开命令窗，输入 python 并分行输入
+
+```
 import torch
 print(torch.cuda.is_available())
+```
 
-然后不行就切换 `--lowvram` 低配。
-
-再不行：确保在浏览器中禁用硬件加速，并在出现内存不足错误时关闭任何可能占用 VRAM 的内容。
-
+如果仍未解决，请使用 `--lowvram` 启动参数，且确保在浏览器中禁用硬件加速，并在出现内存不足错误时关闭任何可能占用 VRAM 的内容。
 
 
 
+#### CUDA out of memory
+
+
+生成报错解释：显存不足，硬件显存过低，需要买显卡。
 
 -------
 
@@ -268,28 +278,36 @@ print(torch.cuda.is_available())
 
 ### **靠近NAI,调整 Eta noise seed delta**
 
-设置为 `31337` 可以更靠近
+设置为 `31337` 可以更靠近 NAI 的效果。
 
 相关讨论 https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017
 
 
 ### **对NAI模型更改 layers 忽略层数**
 
-
-
 在 WebUi 的设置页面把 ignore last layers of clip mode 的横条改成 `2`
 
-具体为什么见 [这里](https://blog.novelai.net/novelai-improvements-on-stable-diffusion-e10d38db82ac)
+**这是 NAI 官方对模型的优化**
 
-```
-CLIP is a very advanced neural network that transforms your prompt text into a numerical representation. Neural networks work very well with this numerical representation and that's why devs of SD chose CLIP as one of 3 models involved in stable diffusion's method of producing images. As CLIP is a neural network, it means that it has a lot of layers. Your prompt is digitized in a simple way, and then fed through layers. You get numerical representation of the prompt after the 1st layer, you feed that into the second layer, you feed the result of that into third, etc, until you get to the last layer, and that's the output of CLIP that is used in stable diffusion. This is the slider value of 1. But you can stop early, and use the output of the next to last layer - that's slider value of 2. The earlier you stop, the less layers of neural network have worked on the prompt.
+Stable Diffusion 使用 CLIP 基于转换器的文本编码器的最终隐藏状态来使用分类器自由指导来指导生成。
 
-https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-last-layers-of-clip-model
-```
+在Imagen (Saharia et al., 2022) 中，倒数第二层的隐藏状态用于指导，而不是最后一层的隐藏状态。
+
+关于`EleutherAI Discord`的讨论还表明，倒数第二层可能会提供更好的指导结果，因为隐藏状态值在最后一层突然变化。
+
+在实验过程中，NAI 发现稳定扩散能够解释倒数第二层的隐藏状态，只要应用 CLIP 文本转换器的最后一层规范，并生成仍然匹配提示的图像，尽管准确性略有降低。
+
+进一步的测试中 NAI 使用倒数第二层的隐藏状态而不是最后一层的隐藏状态进行训练，因为我们发现它可以让模型更好地利用基于标签的提示中的密集信息，从而使模型能够更快地学习如何解开某些概念。
+
+当使用最后一层时，模型在解开不同的概念以及正确分配颜色方面遇到了更多困难。
+
+全文在 [这里](https://blog.novelai.net/novelai-improvements-on-stable-diffusion-e10d38db82ac)
+
 
 ### **模型超参数**
 
-如果你想达到 NovelAi 的效果，需要加 negative prompt（消极令牌）, 加载 hypernetwork （网络）和 vae.
+如果你想接近 NovelAi 的效果，需要使用 negative prompt（消极提示）过滤结果, 加载 `hypernetwork` 风格化 和 vae 稳定。
+
 
 https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/1868#discussioncomment-3824077
 
@@ -297,7 +315,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/1868#discuss
 
 ### **NAI模型消极令牌**
 
-使用以下令牌削除水印和文字内容
+比如，使用以下令牌削除水印和文字内容
 
 ```
 lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry
@@ -362,21 +380,7 @@ DDIM 是一种神经网络方法。 每一步都相当快，但效率相对较�
 
 [英文原版](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#attentionemphasis)
 
-### **Textual Inversion**
 
-Textual Inversion 允许您在自己的图片上训练一小部分神经网络，并在生成新图片时使用结果。
-
-训练的结果是一个 .pt 或一个 .bin 文件（前者是原作者使用的格式，后者作为 diffusers library）
-
-将 embedding 放入`embeddings`目录并在 prompt 令牌中提到你要用的 embedding 的文件名(*.pt)即可。
-
-不必重新启动程序即可使其正常工作。
-
-
-[英文说明和效果图](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion)
-
-
-[自己训练 embedding](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion#training-embeddings)
 
 ### X/Y 图
 
@@ -405,55 +409,13 @@ Ranges with the count in square brackets 方括号范围
 ![引用官方 Wiki 的设置图](https://raw.githubusercontent.com/wiki/AUTOMATIC1111/stable-diffusion-webui/images/xy_grid-medusa-ui.png)
 >引用官方 Wiki 的设置图
 
-### **Loopback 回环生成**
-
-在 img2img 中设置loopback脚本，它允许自动将输出图像作为下一批的Batch提供，相当于保存输出图像，并用它替换输入图像。
-
-Batch 数设置控制获得多少次迭代
-
-通常，在执行此操作时，您会自己为下一次迭代选择许多图像中的一个，因此此功能的有用性可能值得怀疑，但反正我已经设法获得了一些我无法获得的非常好的输出。
-
-### **Prompt matrix 参数矩阵**
-
-使用 | 分隔多个Tag，程序将为它们的每个组合生成一个图像。 例如，如果使用 `a busy city street in a modern city|illustration|cinematic lighting` ，则可能有四种组合（始终保留提示的第一部分）：
-
-- a busy city street in a modern city
-- a busy city street in a modern city, illustration
-- a busy city street in a modern city, cinematic lighting
-- a busy city street in a modern city, illustration, cinematic lighting
-
-### **Outpainting 外部修补**
-
-Outpainting 扩展原始图像并修复创建的空白空间。
-您可以在底部的 img2img 选项卡中找到该功能，在 Script -> Poor man's outpainting 下。
-
-```
-Outpainting, unlike normal image generation, seems to profit very much from large step count. A recipe for a good outpainting is a good prompt that matches the picture, sliders for denoising and CFG scale set to max, and step count of 50 to 100 with Euler ancestral or DPM2 ancestral samplers.
-```
-
-### **Inpainting 修补**
-
-在 img2img 选项卡中，在图像的一部分上绘制蒙版，该部分将被修复。
-
-![result](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting.png)
-
-选项：
-- 在网络编辑器中自己绘制蒙版。
-- 在外部编辑器中擦除部分图片并上传透明图片。 任何稍微透明的区域都将成为蒙版的一部分。 请注意，某些编辑器默认将完全透明的区域保存为黑色。
-
-- 将模式（图片右下角）更改为"Upload mask"并为蒙版选择单独的黑白图像(white=inpaint)。
-
-### **全分辨率修复！**
-
-https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#inpaint-at-full-resolution
-
 
 ### **Variations种子变化**
 
 Variation strength slider 和 Variation seed field允许您指定现有图片应更改多少以使其看起来不同。
 在最大强度下，您将获得带有变异种子的图片，至少 - 带有原始种子的图片（使用先前采样器时除外）。
 
-### **Styles风格模板**
+### **提示词模板**
 
 “Save prompt as style” 按钮将当前的提示写入 styles.csv，该文件包含样式集合
 
@@ -477,33 +439,6 @@ CLIP 可以从图像中提取令牌。
 For example of what text files to use, see https://github.com/pharmapsychotic/clip-interrogator/tree/main/data. In fact, you can just take files from there and use them - just skip artists.txt because you already have a list of artists in artists.csv (or use that too, who's going to stop you). Each file adds one line of text to the final description. If you add ".top3." to filename, for example, flavors.top3.txt, the three most relevant lines from this file will be added to the prompt (other numbers also work).
 ```
 
-### **渐变提示编辑**
-
-https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-editing
-
-允许您开始对一张图片进行采样，但在中间切换到其他图片。基本语法是：
-
-```
-[from:to:when]
-```
-
-其中from和to是任意文本，并且when是一个数字，用于定义应在采样周期多长时间内进行切换。越晚，模型绘制to文本代替from文本的能力就越小。如果when是介于 0 和 1 之间的数字，则它是进行切换之后的步数的一小部分。如果它是一个大于零的整数，那么这只是进行切换的步骤。
-
-将一个提示编辑嵌套在另一个提示中不起作用。
-
-**使用方法**
-
-[to:when] 在固定数量的step后添加to到提示 ( when)
-
-[from::when] 在固定数量的step后从提示中删除from( when)
-
-例子： a [fantasy:cyberpunk:16] landscape
-
-开始时，模型将绘制a fantasy landscape。
-
-在第 16 步之后，它将切换到绘图a `cyberpunk landscape`，从幻想停止的地方继续。
-
-比如 [male:female:0.0], 意味着你开始时就要求画一个女性。
 
 ### **Face restoration三次元人脸修复**
 

@@ -1,11 +1,12 @@
 site_name: AiDraw
 site_url: https://stable-diffusion-book.vercel.app/
 nav:
-    - 首页: index.md
-    - 安装运行: set.md
-    - 模型技法: fix.md
-    - 调参魔法: mofa.md
-    - 社区支持: about.md
+    - 术语解释: 1_terms.md
+    - 准备安装: 2_prepare.md
+    - 安装指南: 3_install.md
+    - 模型调试: 4_model.md
+    - 绘画调试: 5_drawing.md
+    - 参考资料: 6_landing.md
 theme:
   name: material
   language: zh
