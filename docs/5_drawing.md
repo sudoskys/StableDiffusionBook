@@ -356,10 +356,8 @@ normal quality, text, censored, gown, latex, pencil
 
 如果是真人图片，需要适当提高 `CFG Scale`
 
+
 ### Img2Img PS重绘画/修复手
-
-
-<iframe src="//player.bilibili.com/player.html?aid=559044202&cid=859852841&page=1&danmaku=0" allowfullscreen="allowfullscreen" width="80%" height="500" scrolling="no" frameborder="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts"></iframe>
 
 使用PS软件增删元素，然后重新生产。这可以解决画手的问题。
 
@@ -400,6 +398,7 @@ Outpainting, unlike normal image generation, seems to profit very much from larg
 
 ![result](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting.png)
 
+<iframe src="//player.bilibili.com/player.html?aid=559044202&cid=859852841&page=1&danmaku=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 
 ### Img2Img 全分辨率修复
 
@@ -626,7 +625,7 @@ Windows 需要在 `web-user.bat的COMMANDLINE_ARGS=` 一行添加，或者直接
 
 训练的结果是一个 .pt 或一个 .bin 文件（前者是原作者使用的格式，后者作为 diffusers library）
 
-<iframe src="//player.bilibili.com/player.html?aid=559085039&cid=859894044&page=1&danmaku=0" allowfullscreen="allowfullscreen" width="80%" height="500"  scrolling="no" frameborder="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts"></iframe>
+<iframe src="//player.bilibili.com/player.html?aid=559085039&bvid=BV1ae4y1S7v9&cid=859894044&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 
 
 ### 训练 Hypernetworks
