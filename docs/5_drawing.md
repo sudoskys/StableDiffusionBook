@@ -359,7 +359,7 @@ normal quality, text, censored, gown, latex, pencil
 ### Img2Img PS重绘画/修复手
 
 
-<iframe src="//player.bilibili.com/player.html?aid=559044202&cid=859852841&page=1&danmaku=0" allowfullscreen="allowfullscreen" width="80%" height="420px" scrolling="no" frameborder="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts"></iframe>
+<iframe src="//player.bilibili.com/player.html?aid=559044202&cid=859852841&page=1&danmaku=0" allowfullscreen="allowfullscreen" width="80%" height="500" scrolling="no" frameborder="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts"></iframe>
 
 使用PS软件增删元素，然后重新生产。这可以解决画手的问题。
 
@@ -626,7 +626,7 @@ Windows 需要在 `web-user.bat的COMMANDLINE_ARGS=` 一行添加，或者直接
 
 训练的结果是一个 .pt 或一个 .bin 文件（前者是原作者使用的格式，后者作为 diffusers library）
 
-<iframe src="//player.bilibili.com/player.html?aid=559085039&cid=859894044&page=1&danmaku=0" allowfullscreen="allowfullscreen" width="80%" height="420px"  scrolling="no" frameborder="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts"></iframe>
+<iframe src="//player.bilibili.com/player.html?aid=559085039&cid=859894044&page=1&danmaku=0" allowfullscreen="allowfullscreen" width="80%" height="500"  scrolling="no" frameborder="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts"></iframe>
 
 
 ### 训练 Hypernetworks
