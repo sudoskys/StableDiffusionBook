@@ -396,6 +396,19 @@
     基本流程
   </a>
   
+    <nav class="md-nav" aria-label="基本流程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    迭代草图5
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -792,6 +805,14 @@
 <p>提前告知：WebUi 的设置页面需要按下 <code>Apply setting</code> 才能保存设置。</p>
 <h2 id="_2">基本流程</h2>
 <p><img alt="WorkFlow" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/draw_workflow.svg" /></p>
+<h3 id="5">迭代草图<sup id="fnref:8"><a class="footnote-ref" href="#fn:8">5</a></sup></h3>
+<p>这里讨论一下如何将<strong>手绘草图</strong>通过Ai绘画优化，<em>注意不是二次元</em>。</p>
+<p>在第一次迭代中，您不需要太多 Steps，CFG 可以非常低（以获得更好的多样化结果），如果不想完全丢失草图，Denoising 应该在 0.3-0.4 左右。</p>
+<p>在最后的迭代中，增加 Steps 和 Denoising 强度（但不超过 0.8，否则图像将被破坏，尤其是在大于 512*512 时）请参见<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2213#issuecomment-1274137775">这里</a>，同时根据需要提高 CFG 和尺寸。</p>
+<p>你可以随时修复提示（添加或删除出现的细节）并尝试不同的采样器。</p>
+<p>另外，你不应该在初次生成使用一个固定不变的种子？</p>
+<p>因为如果你提供一个种子（而不是随机的 -1），你的图像很快就会变得过饱和、过度锐化、过度像素化。</p>
+<p>当然如果你想微调，可以使用固定种子。</p>
 <h2 id="_3">魔法入门</h2>
 <p>请先在前面了解一下WebUi(SD)网页应用的参数。</p>
 <h3 id="_4">提示词语法简介</h3>
@@ -1795,6 +1816,9 @@ scale 就是 CFG scale
 <li id="fn:7">
 <p><a href="https://www.bilibili.com/video/BV1ae4y1S7v9/">风格模型训练</a>&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
+<li id="fn:8">
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2473">迭代草图</a>&#160;<a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
 </ol>
 </div>
 
@@ -1803,11 +1827,11 @@ scale 就是 CFG scale
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 13, 2022 15:49:44</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 13, 2022 16:21:08</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 13, 2022 15:49:44</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 13, 2022 16:21:08</span>
       
     
   </small>
