@@ -375,9 +375,11 @@ normal quality, text, censored, gown, latex, pencil
 
 `cfg scale` 就是符合 prompt 的程度,Scale越高，程序对提示词越忠诚，越符合。
 
-**Denoising strength 噪声**
+**Denoising strength 降低噪声**
 
 `Denoising strength` 决定算法对图像内容的保留程度,可以减少对画风的变得，但也会弱化img2img能力。值越高 AI 对原图的参考程度就越低 (同时增加迭代次数)。
+
+对于以图做图来说，低 `denoising` 意味着修正原图，高 `denoising` 就和原图就没有大的相关性了。一般来讲阈值是 0.7 左右，超过 0.7 和原图基本上无关，0.3 以下就是稍微改一些。
 
 
 ###  Img2Img 三渲二
@@ -401,6 +403,18 @@ normal quality, text, censored, gown, latex, pencil
 
 纵轴是Denoising strength（线上版的strength），横轴是Variation strength
 
+
+#### 重绘画技巧
+
+- 首先要对人物描线，然后打上色块（如果有阴影，取亮色皮肤）。
+
+- 变动强度，选择较低的 0.3 左右的去噪。
+
+- 然后使用 Img2Img Inpaint + 相关提示词修复，不满意可以再改，直到满意。
+
+- 然后对图像进行超分，降噪(去除图像纹理)。
+
+
 ### Img2Img **Outpainting 外部修补**
 
 Outpainting 扩展原始图像并修复创建的空白空间。
@@ -416,7 +430,7 @@ Outpainting, unlike normal image generation, seems to profit very much from larg
 
 一般选 `original`,`fill` 要更多 step 才能消除不自然感.
 
-这可以更改角色衣物风格。
+这可以更改角色衣物风格或者其他任何细节。
 
 有几种方法进行重绘制:
 
@@ -442,6 +456,27 @@ Outpainting, unlike normal image generation, seems to profit very much from larg
 Batch 数设置控制获得多少次迭代
 
 通常，在执行此操作时，您会自己为下一次迭代选择许多图像中的一个，因此此功能的有用性可能值得怀疑，但反正我已经设法获得了一些我无法获得的非常好的输出。
+
+
+### 超分图像 extras
+
+`realesrgan` 或者 `realcugan` 就可以，推荐 [realcugan](https://github.com/bilibili/ailab/tree/main/Real-CUGAN)
+
+另外，`webui` extras 页有一个自带的超分功能，可以去`settings-upscaling` 使用 `R-ESRGAN 4x+ Anime6B`模型，重新启动程序
+
+**应该使用什么 Upscaler？**
+
+推荐 `SD Upscaler`, 它注重细节的同时还提升分辨率。
+
+曾经有段时间，`LSDR` 被认为是最好的。有些人喜欢 swinir，有些喜欢`esrgan4x`，`ymmv`
+
+
+### 图像去噪
+
+推荐使用 [Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) 降噪。
+
+![效果](https://raw.githubusercontent.com/xinntao/Real-ESRGAN/master/assets/teaser.jpg)
+>效果图
 
 
 ### Textual Inversion 训练新角色
@@ -705,18 +740,6 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-edi
 !!! tip
     要匹配好姿势，镜头和人物才不畸形，有时候需要限定量词，多人物时要处理空间关系和 prompt 遮挡优先级。人数->人物样貌->环境样式->人物状态
     
-
-### 超分图像 extras
-
-`realesrgan` 或者 `realcugan` 就可以，推荐 [realcugan](https://github.com/bilibili/ailab/tree/main/Real-CUGAN)
-
-另外，`webui` extras 页有一个自带的超分功能，可以去`settings-upscaling` 使用 `R-ESRGAN 4x+ Anime6B`模型，重新启动程序
-
-**应该使用什么 Upscaler？**
-
-推荐 SD Upscaler, 它注重细节的同时还提升分辨率。
-
-曾经有段时间，LSDR被认为是最好的。有些人喜欢 swinir，有些喜欢esrgan4x，ymmv
 
 
 ### 提示词速查
