@@ -6,6 +6,10 @@
 
 先请拿上 [调参魔法书](https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml)和 [手抄魔法本](https://docs.google.com/spreadsheets/d/14Gg1kIGWdZGXyCC8AgYVT0lqI6IivLzZOdIT3QMWwVI/)。
 
+如果你觉得能力有限，可以打开[Tag在线生成](https://aitag.top/)。
+
+下面的语法对效果有很大影响，需要通读。
+
 提前告知：WebUi 的设置页面需要按下 `Apply setting` 才能保存设置。
 
 ## 基本流程
