@@ -1,7 +1,7 @@
 # 安装
 
 
-## 安装 Stable-diffusion-webui 开源框架
+## 安装 Stable-Diffusion-webui 开源框架
 
 此教程参考了 crosstyan[^2]
 
@@ -66,6 +66,10 @@ WebUi 最低可用N卡显存 > 4GB
 
 在 [GitScm](https://git-scm.com/download/win) 下载 Git安装包并安装，然后在开始菜单中找到 `git bash`
 
+或打开想要放置的目录，右键打开快捷菜单中寻找 `Git Base Here`
+
+亦或在路径栏输入 `cmd`
+
 运行 `git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git` 拉取仓库，如果失败请设置代理。
 
 !!! tip 
@@ -80,7 +84,7 @@ WebUi 最低可用N卡显存 > 4GB
 
 （可选）将`GFPGANv1.4.pth`放在基本目录中，旁边是 `webui.py`
 
-先确认你的显卡是可用的(看上文)，然后以普通非管理员用户身份从 Windows资源管理器 运行 `webui-user.bat` 。脚本会自动下载依赖（**一般需要 22 分钟，安装在C盘，2GB以上**）和启动网页应用。
+先确认你的显卡是可用的(看上文)，然后以普通非管理员用户身份从 Windows资源管理器 运行 `webui-user.bat` 。脚本会自动下载依赖（**一般需要 22 分钟，安装在C盘，下载的资源为1.98GB，解压后大小2GB以上**）和启动网页应用。
 
 在此区间你可以打开资源管理器，关注网络速度。在没有完成下载之前，脚本不会继续输出任何提示。(等了两小时？可以试试挂代理)
 
@@ -98,7 +102,7 @@ WebUi 最低可用N卡显存 > 4GB
 
 然后在新代码目录下，尝试运行原来的 Bat，如果报错，就根据提示排查是不是 NotFound 什么依赖，或者根据下面的命令说明修改 Bat 文件。
 
-你也可以参考 [带图片的教程](https://gist.github.com/huige233/1a9817eab5a808ca4cf526cdd2dea9a4#%E6%87%92%E4%BA%BA%E5%8C%85%E7%9B%B8%E5%85%B3)
+如果你不想迁移你的整合包，你也可以参考 [带图片的教程](https://gist.github.com/huige233/1a9817eab5a808ca4cf526cdd2dea9a4#%E6%87%92%E4%BA%BA%E5%8C%85%E7%9B%B8%E5%85%B3)
 
 #### Linux 安装
 
