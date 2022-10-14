@@ -447,8 +447,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    驱动
+  <a href="#cuda-out-of-memory" class="md-nav__link">
+    低显存显卡/CUDA out of memory
   </a>
   
 </li>
@@ -461,7 +461,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     虚拟环境
   </a>
   
@@ -481,14 +481,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     自定义运行
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     令牌参数生成第一幅图片
   </a>
   
@@ -513,7 +513,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     硬件需求
   </a>
   
@@ -521,7 +521,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     软件需求
   </a>
   
@@ -542,14 +542,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
+  <a href="#_14" class="md-nav__link">
     驱动
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_16" class="md-nav__link">
+  <a href="#_15" class="md-nav__link">
     配置并运行
   </a>
   
@@ -754,11 +754,19 @@ conda activate aidraw
 <p>其他依赖报错也需要设置代理或者使用镜像，不然特慢。</p>
 <h4 id="_8">时间花销过大</h4>
 <p>设镜像或者挂代理，<strong>依赖项 &gt;2GB</strong>,请做好准备，而且对于Windows,<strong>依赖默认安装在C盘</strong>！</p>
-<h4 id="_9">驱动</h4>
-<p>确保您拥有可以运行的最新CUDA 工具包和 GPU 驱动程序</p>
+<h4 id="cuda-out-of-memory">低显存显卡/CUDA out of memory</h4>
+<p>确保您拥有可以运行的最新CUDA 工具包和 GPU 驱动程序.</p>
+<p>在具有少量 VRAM (&lt;=4GB) 的视频卡上运行时，可能会出现内存不足错误。可以通过命令行参数启用各种优化，牺牲一些/很多速度来支持使用更少的 VRAM：</p>
+<p>如果您有 4GB VRAM 并且想要制作 512x512（或者可能高达 640x640）的图像，请使用 <code>--medvram</code></p>
+<p>如果您有 4GB VRAM 并且想要制作 512x512 图像，但使用 <code>--medvram</code> 遇到内存不足错误 ，请改用<code>--medvram --opt-split-attention</code></p>
+<p>如果您有 4GB VRAM 并想要制作 512x512 图像，但仍然出现内存不足错误，请改用 <code>--lowvram --always-batch-cond-uncond --opt-split-attention</code></p>
+<p>如果您有 4GB VRAM 并且想要制作比您可以使用的更大的图像<code>--medvram</code>，请使用 <code>--lowvram --opt-split-attention</code></p>
+<p>如果您有更多的 VRAM 并且想要制作比您通常制作的更大的图像（例如 1024x1024 而不是 512x512），请使用<code>--medvram --opt-split-attention</code>.</p>
+<p>您也可以使用 <code>--lowvram</code> 但可能几乎看不到效果</p>
+<p>如果还不行，请勿使用其中任何一种。</p>
 <h4 id="python">我 Python 呢？</h4>
 <p>如果您的 Python 版本不在 PATH 中，则在文件夹中创建或修改 webui.settings.bat 添加行 <code>set PYTHON=python</code>来说明 Python 可执行文件的完整路径（请看下面的参数说明！</p>
-<h4 id="_10">虚拟环境</h4>
+<h4 id="_9">虚拟环境</h4>
 <p>如果你使用 conda 可以不使用一键脚本，可以自己运行 launch 安装依赖。</p>
 <p>因为仓库给出的一键安装脚本会创建虚拟环境，然后启动 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/launch.py">launch.py</a>。</p>
 <p>在运行时，一键安装程序会创建一个 python 虚拟环境，因此如果你在安装之前安装了一个模块，那么任何已安装的模块都不会影响你</p>
@@ -772,7 +780,7 @@ conda activate aidraw
 <p>Linux 用户采用
 <div class="highlight"><pre><span></span><code>COMMANDLINE_ARGS=&quot;--medvram --always-batch-cond-uncond&quot; REQS_FILE=&quot;requirements.txt&quot; python launch.py
 </code></pre></div></p>
-<h4 id="_11">自定义运行</h4>
+<h4 id="_10">自定义运行</h4>
 <p>进一步熟悉这个程序，你会发现可以修改 Bat运行脚本 添加参数！具体参数列表请读下文。</p>
 <p>生成报错？请读 <code>绘画调试</code> 章节。</p>
 <p>首先，你可以运行 <code>python webui.py --help</code> 查看所有命令参数。</p>
@@ -856,7 +864,7 @@ set COMMANDLINE_ARGS设置命令行参数webui.py运行
 </tr>
 </tbody>
 </table>
-<h4 id="_12">令牌参数生成第一幅图片</h4>
+<h4 id="_11">令牌参数生成第一幅图片</h4>
 <p>令牌请读后面的内容，这里给出一个实例来供你完成测试</p>
 <p>顶上那个是选择模型，暂时用不到。</p>
 <ul>
@@ -885,10 +893,10 @@ Torch active/reserved: 1975/2144 MiB, Sys VRAM: 7890/8134 MiB (93.61%)
 <h2 id="novel-ai">安装 Novel Ai 的原版后端</h2>
 <p>此教程来自 sanae<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
 <p><strong>阅读前请读最新的教程<a href="https://telegra.ph/NovelAI-%E5%8E%9F%E7%89%88%E7%BD%91%E9%A1%B5UI%E5%90%8E%E7%AB%AF%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B-10-10">NovelAI 原版网页UI+后端部署教程</a></strong></p>
-<h3 id="_13">硬件需求</h3>
+<h3 id="_12">硬件需求</h3>
 <p>建议显存低于24G的就不要尝试使用官方版本前后端.</p>
 <p>一台拥有一张至少有11G 显存的NVIDIA GPU的linux系统的x86设备。</p>
-<h4 id="_14">软件需求</h4>
+<h4 id="_13">软件需求</h4>
 <ul>
 <li>
 <p>NVIDIA驱动(CUDA 11.6 Toolkit)</p>
@@ -927,11 +935,11 @@ sudo yum install -y nvidia-container-toolkit
 
 sudo systemctl restart docker
 </code></pre></div></p>
-<h4 id="_15">驱动</h4>
+<h4 id="_14">驱动</h4>
 <p><strong>安装显卡驱动</strong></p>
 <p>使用 <code>nvidia-smi</code> 查看显卡状态。</p>
 <p>使用 <code>docker run --help | grep -i gpus</code> 确认nvidia-container-toolkit安装成功。</p>
-<h4 id="_16">配置并运行</h4>
+<h4 id="_15">配置并运行</h4>
 <p><strong>模型</strong></p>
 <ul>
 <li>下载模型文件</li>
@@ -1026,11 +1034,11 @@ sudo systemctl restart docker
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 14, 2022 13:17:21</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 14, 2022 13:41:40</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 14, 2022 13:17:21</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 14, 2022 13:41:40</span>
       
     
   </small>

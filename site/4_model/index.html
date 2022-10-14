@@ -432,6 +432,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    风格化4
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -935,14 +942,26 @@ print(torch.cuda.is_available())
 <p><code>animesfw-latest</code> = NAI 基线模型</p>
 <p><code>animefull-final-pruned</code> = <code>full-latest</code> = NAI 全量模型(包含成人内容)</p>
 <div class="admonition info">
-<p class="admonition-title"><strong>4GB版本 or 7GB ？</strong><p>网上的两种模型，4GB是针对个人部署优化后的。</p>
+<p class="admonition-title"><strong>4GB版本 or 7GB ？</strong><p>网上的两种模型，4GB是针对个人部署修剪后的。</p>
 <p><em>diffusion model</em> 训练会产生两个模型：当前权重和加权平均后优化的EMA（效果好）</p>
 <p>7GB 的 ckpt 里包含了 当前权重 和 EMA权重(加权平均)，pruned.py 删除了当前权重，留下了 EMA权重并重命名。所以差别不大。</p>
+<p>谈谈 EMA，Full Stable-Diffusion 模型包含两组权重，标准权重和 EMA 权重。标准权重是为训练而设计的，而 EMA 权重是为推理而优化的。</p>
+<p>修剪模型时，通常会丢弃标准权重，只保留 EMA 权重。这就是为什么尺寸减少了大约一半。</p>
+<p><strong>在启用 EMA 的情况下运行完整模型等同于运行修剪模型</strong></p>
 </p>
 </div>
 <p><strong>详细介绍</strong></p>
 <iframe src="//player.bilibili.com/player.html?aid=688965561&cid=857942294&page=1&danmaku=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 <p>BV1Gm4y1A7VM</p>
+<h3 id="4">风格化<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">4</a></sup></h3>
+<p><img alt="furry" src="https://user-images.githubusercontent.com/474879/194965036-4c9f70ca-a32f-4f68-a9a1-17a827e8e61e.jpg" /></p>
+<blockquote>
+<p>furry</p>
+</blockquote>
+<p><img alt="" src="https://user-images.githubusercontent.com/115398132/194805364-95e523aa-4bec-4a88-9fe1-b3d39d2f2992.jpg" /></p>
+<p><code>aini</code> 有一种你可能不喜欢的强烈风格，我认为它具有最高的一致性和质量。</p>
+<p><code>anime_3</code>是该系列中质量最高的，但它们都有些不一致. 我一般不会推荐他们。</p>
+<p>可以看到 <code>furry</code>的超网络在添加动物特征方面更加激进，因此这里更保守的变化可能与采样器、步骤和 CFG 有关。<sup id="fnref2:5"><a class="footnote-ref" href="#fn:5">4</a></sup></p>
 <h2 id="_3">说明</h2>
 <h3 id="ckpt-3">ckpt 文件安全/误报<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">3</a></sup></h3>
 <p>ckpt文件是一个脚本，基本上可以执行它想要的任何内容，并且有权执行。盲目运行它们有安全风险。</p>
@@ -950,6 +969,8 @@ print(torch.cuda.is_available())
 <p>可以通过此脚本运行它来查看执行的内容：https://rentry.org/safeunpickle2</p>
 <h3 id="configyaml">Config.yaml？</h3>
 <p>NAIleak里边有个 config.yaml ， 将其改名为 <code>模型前缀.yaml</code> 和模型丢在一起就能加载,，但不建议加载 yaml，因为它会使内存占用加倍而不会对输出改变不大，但如果你真的想要，将其重命名为 [model name].yaml 并将其放在你的模型旁边。</p>
+<p>它包含主要用于配置用于训练或微调模型的数据加载器的参数，它有一个影响推理的<code>use_ema</code>选项。它决定了推理是使用<code>标准权重</code>还是使用 <code>EMA 权重</code>。</p>
+<p>如果<code>use_ema</code>未指定该选项，则默认为false不使用 EMA 权重的结果。</p>
 <h3 id="vae">Vae 额外的权重</h3>
 <p>如果需要更好模拟NAI,你需要使用 <code>animevae.pt</code>，这可以稳定杂乱的生成风格。</p>
 <h3 id="_4">半精度/全精度</h3>
@@ -979,6 +1000,7 @@ print(torch.cuda.is_available())
 <h4 id="_7">但是高分辨率下出怪图</h4>
 <p><a href="https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99#%E9%AB%98%E5%88%86%E8%BE%A8%E7%8E%87%E4%B8%8B%E5%87%BA%E6%80%AA%E5%9B%BE">读这里</a></p>
 <h4 id="runtimeerror-unable-to-find-a-valid-cudnn-algorithm-to-run-convolution">RuntimeError: Unable to find a valid cuDNN algorithm to run convolution</h4>
+<p>前面那节有相关的参数建议。</p>
 <p>生成报错解释：显存不足</p>
 <p>先检查 cuda 是否可用，打开命令窗，输入 python 并分行输入</p>
 <div class="highlight"><pre><span></span><code>import torch
@@ -986,6 +1008,7 @@ print(torch.cuda.is_available())
 </code></pre></div>
 <p>如果仍未解决，请使用 <code>--lowvram</code> 启动参数，且确保在浏览器中禁用硬件加速，并在出现内存不足错误时关闭任何可能占用 VRAM 的内容。</p>
 <h4 id="cuda-out-of-memory">CUDA out of memory</h4>
+<p>前面那节有相关的参数建议。</p>
 <p>生成报错解释：显存不足，硬件显存过低，需要买显卡。</p>
 <hr />
 <h2 id="nai_1">优化靠近 NAI</h2>
@@ -1128,6 +1151,9 @@ Heun 在准确性方面是对 Euler 的“改进”，但它以大约一半的�
 <li id="fn:4">
 <p><a href="https://huggingface.co/Deltaadams/Hentai-Diffusion/discussions/12">It's not a virus it's a checkpoint file</a>&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
+<li id="fn:5">
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017#discussioncomment-3836360">所有超网络的 X/Y</a>&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:5" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
 </ol>
 </div>
 
@@ -1136,11 +1162,11 @@ Heun 在准确性方面是对 Euler 的“改进”，但它以大约一半的�
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 14, 2022 13:17:21</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 14, 2022 13:41:40</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 14, 2022 13:17:21</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 14, 2022 13:41:40</span>
       
     
   </small>

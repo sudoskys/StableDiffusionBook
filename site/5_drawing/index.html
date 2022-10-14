@@ -1045,7 +1045,8 @@ normal quality, text, censored, gown, latex, pencil
 <h3 id="_9">种子调试</h3>
 <p>在相同 Step ，cfg ，Seed,参数（prompts） 的情况下，生产的图片基本相同！</p>
 <p>在同一模型和后端实现中，保持所有参数一致的情况下，相同的种子会产生同样的图片。取决于其他参数。</p>
-<p>但是注意，不同显卡可能会造成预料之外的不同结果（比如精度这样的东西）</p>
+<p>但是注意，<strong>不同显卡可能会造成预料之外的不同结果</strong>（比如精度这样的东西）</p>
+<p>10xx 系列看起来与其他所有卡如此不同,见<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017#discussioncomment-3873467">这里</a></p>
 <h3 id="_10">方位调参</h3>
 <p>竖着看</p>
 <table>
@@ -1187,6 +1188,8 @@ normal quality, text, censored, gown, latex, pencil
 <h3 id="dreambooth">DreamBooth 训练</h3>
 <p>DreamBooth 的模型是一种新的文本到图像“个性化”（可适应用户特定的图像生成需求）扩散模型</p>
 <p><a href="https://colab.research.google.com/drive/17yM4mlPVOFdJE_81oWBz5mXH9cxvhmz8#scrollTo=lJoOgLQHnC8L">Colab 在线训练模型</a>，需要Pro套餐算力(18-24G显存需要)</p>
+<p><a href="https://colab.research.google.com/github/ShivamShrirao/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion.ipynb#scrollTo=K6xoHWSsbcS3">DreamBooth_Stable_Diffusion</a></p>
+<p><a href="https://colab.research.google.com/github/TheLastBen/fast-stable-diffusion/blob/main/fast-DreamBooth.ipynb">fast-DreamBooth</a></p>
 <p>https://github.com/XavierXiao/Dreambooth-Stable-Diffusion</p>
 <h3 id="textual-inversion">Textual Inversion 训练新角色</h3>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion">官方英文说明和效果图</a></p>
@@ -1321,6 +1324,7 @@ normal quality, text, censored, gown, latex, pencil
 <p>你可以在 <code>Textual Inversion</code> <code>train</code> 选项卡训练Hypernetworks</p>
 <p>训练的工作方式与文本倒置相同。</p>
 <p>唯一的要求是使用非常非常低的学习率，例如 0.000005 或 0.0000005。</p>
+<p><a href="https://rentry.org/hypernetwork4dumdums">应该查看的英文指南</a></p>
 <h3 id="_20"><strong>渐变提示词</strong></h3>
 <p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-editing</p>
 <p>允许您开始对一张图片进行采样，但在中间切换到其他图片。基本语法是：</p>
@@ -1905,11 +1909,11 @@ scale 就是 CFG scale
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 14, 2022 13:17:21</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 14, 2022 13:41:40</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 14, 2022 13:17:21</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 14, 2022 13:41:40</span>
       
     
   </small>
