@@ -745,6 +745,12 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-edi
 
 ## 参数
 
+### 自动补全
+
+这里有一个项目，可以使SD做到类似 NAI 的补全效果。
+
+https://github.com/DominikDoom/a1111-sd-webui-tagcomplete
+
 
 ### NAI 官方在使用的参数
 
@@ -786,7 +792,7 @@ Clip跳过 0，其他一切都很好（afaik 不要使用超网络、v2、yaml�
 
 **Prompts 参数括号转换**
 
-在 NAI 和 Webui 之间转换加强参数   [M2NM2NBot](https://t.me/M2NM2NBot)
+在 NAI 和 Webui 之间转换加强参数，相关的机器人服务 [M2NM2NBot](https://t.me/M2NM2NBot)
 
 权重增强标识：NAI 是 `{}` ，WebUi(SD) 是 `()`
 

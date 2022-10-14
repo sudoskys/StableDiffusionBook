@@ -7,6 +7,9 @@
 
 这里是相关的社区资源
 
+
+#### 文档
+
 - [人工智能艺术的工具和资源](https://pharmapsychotic.com/tools.html)
 
 - [SD资源金矿](https://rentry.org/sdupdates)
@@ -18,7 +21,6 @@
 - [参数法术全典](https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml#)
 
 - [Tag在线协作](https://docs.google.com/spreadsheets/d/1zij5OzCZIaQuhAbiSayhFznjgJ3rwbaNwnUnaUMxyTQ/edit?usp=drivesdk)
-
 
 - [PasteBinWiki](https://rentry.co/voldy)
 
@@ -38,8 +40,6 @@
 
 - [SD相关的Faq](https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99)
 
-- [基于 NovelAI 的画图机器人](https://github.com/koishijs/novelai-bot#token)
-
 - [Ai艺术家文档——深入了解](https://docs.google.com/spreadsheets/d/1SRqJ7F_6yHVSOeCi3U82aA448TqEGrUlRrLLZ51abLg/htmlview#)
 
 - [图像合成风格研究数据库](https://docs.google.com/spreadsheets/d/14xTqtuV3BuKDNhLotB_d1aFlBGnDJOY0BRXJ8-86GpA/edit#gid=0)
@@ -52,7 +52,14 @@
 
 - [novelai对Sd的优化日志](https://blog.novelai.net/novelai-improvements-on-stable-diffusion-e10d38db82ac)
 
-- [NovelAI 5ch Wiki](https://seesaawiki.jp/nai_ch/)
+
+#### 项目
+
+- [基于 NovelAI 的画图机器人](https://github.com/koishijs/novelai-bot#token)
+
+- [SDWebUi自动补全]( https://github.com/DominikDoom/a1111-sd-webui-tagcomplete)
+
+- [参数转换-M2NM2NBot](https://t.me/M2NM2NBot)
 
 
 ### 数据集
