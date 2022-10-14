@@ -479,6 +479,15 @@ Batch 数设置控制获得多少次迭代
 >效果图
 
 
+### DreamBooth
+
+DreamBooth 的模型是一种新的文本到图像“个性化”（可适应用户特定的图像生成需求）扩散模型
+
+[Colab 在线训练模型](https://colab.research.google.com/drive/17yM4mlPVOFdJE_81oWBz5mXH9cxvhmz8#scrollTo=lJoOgLQHnC8L)，需要Pro套餐算力(18-24G显存需要)
+
+https://github.com/XavierXiao/Dreambooth-Stable-Diffusion
+
+
 ### Textual Inversion 训练新角色
 
 [官方英文说明和效果图](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion)
