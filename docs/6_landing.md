@@ -62,6 +62,15 @@
 - [参数转换-M2NM2NBot](https://t.me/M2NM2NBot)
 
 
+#### embeddings
+
+[HuggingFace 的e mbeddings 库](https://cyberes.github.io/stable-diffusion-textual-inversion-models/)
+
+[(NSFW)embeddings 风格化](https://gitlab.com/16777216c/stable-diffusion-embeddings)
+
+[list of Textual Inversion embeddings for SD](https://rentry.org/embeddings)
+
+
 ### 数据集
 
 - 通配符列表
@@ -75,14 +84,6 @@ https://aistudio.baidu.com/aistudio/datasetdetail/171442/0
 - OD国际分流
 
 https://pan.t-satoru.top/ode5/Share/
-
-- (NSFW)embeddings 风格化
-
-https://gitlab.com/16777216c/stable-diffusion-embeddings
-
-- list of Textual Inversion embeddings for SD
-
-https://rentry.org/embeddings
 
 - Hentai-Diffusion 
 

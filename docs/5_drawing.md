@@ -500,6 +500,7 @@ Batch 数设置控制获得多少次迭代
 
 [list of Textual Inversion embeddings for WebUi(SD)](https://rentry.org/embeddings)
 
+[HuggingFace 的embeddings库](https://cyberes.github.io/stable-diffusion-textual-inversion-models/)
 
 ### Textual Inversion 自训练[^7]
 
