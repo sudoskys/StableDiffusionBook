@@ -404,7 +404,7 @@ normal quality, text, censored, gown, latex, pencil
 纵轴是Denoising strength（线上版的strength），横轴是Variation strength
 
 
-#### 重绘画技巧
+#### 重绘画技巧/去除/替换
 
 - 首先要对人物描线，然后打上色块（如果有阴影，取亮色皮肤）。
 
