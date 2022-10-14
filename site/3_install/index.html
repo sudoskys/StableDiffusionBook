@@ -363,10 +363,10 @@
       
         <li class="md-nav__item">
   <a href="#stable-diffusion-webui" class="md-nav__link">
-    安装 Stable-diffusion-webui 开源框架
+    安装 Stable-Diffusion-webui 开源框架
   </a>
   
-    <nav class="md-nav" aria-label="安装 Stable-diffusion-webui 开源框架">
+    <nav class="md-nav" aria-label="安装 Stable-Diffusion-webui 开源框架">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -660,7 +660,7 @@
 
 
 <h1 id="_1">安装</h1>
-<h2 id="stable-diffusion-webui">安装 Stable-diffusion-webui 开源框架</h2>
+<h2 id="stable-diffusion-webui">安装 Stable-Diffusion-webui 开源框架</h2>
 <p>此教程参考了 crosstyan<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></p>
 <p>WebUi的官方代码仓库地址为 https://github.com/AUTOMATIC1111/stable-diffusion-webui</p>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui#installation-and-running">官方英文安装教程</a></p>
@@ -695,6 +695,8 @@ WebUi 最低可用N卡显存 &gt; 4GB</p>
 </div>
 <p><strong>安装 Git</strong></p>
 <p>在 <a href="https://git-scm.com/download/win">GitScm</a> 下载 Git安装包并安装，然后在开始菜单中找到 <code>git bash</code></p>
+<p>或打开想要放置的目录，右键打开快捷菜单中寻找 <code>Git Base Here</code></p>
+<p>亦或在路径栏输入 <code>cmd</code></p>
 <p>运行 <code>git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git</code> 拉取仓库，如果失败请设置代理。</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -704,7 +706,7 @@ WebUi 最低可用N卡显存 &gt; 4GB</p>
 <p><strong>尝试安装</strong></p>
 <p>将 4G 或 7G 或 其他模型 <code>model.ckpt</code> 放在 <code>models</code> 目录中，<code>WebUi</code> 目前支持在界面顶部选择模型。</p>
 <p>（可选）将<code>GFPGANv1.4.pth</code>放在基本目录中，旁边是 <code>webui.py</code></p>
-<p>先确认你的显卡是可用的(看上文)，然后以普通非管理员用户身份从 Windows资源管理器 运行 <code>webui-user.bat</code> 。脚本会自动下载依赖（<strong>一般需要 22 分钟，安装在C盘，2GB以上</strong>）和启动网页应用。</p>
+<p>先确认你的显卡是可用的(看上文)，然后以普通非管理员用户身份从 Windows资源管理器 运行 <code>webui-user.bat</code> 。脚本会自动下载依赖（<strong>一般需要 22 分钟，安装在C盘，下载的资源为1.98GB，解压后大小2GB以上</strong>）和启动网页应用。</p>
 <p>在此区间你可以打开资源管理器，关注网络速度。在没有完成下载之前，脚本不会继续输出任何提示。(等了两小时？可以试试挂代理)</p>
 <p>大约 30 分钟后安装完毕，程序会输出一个类似 <code>http://127.0.0.1:7860/</code> 的地址，点开即可。</p>
 <div class="admonition tip">
@@ -715,7 +717,7 @@ WebUi 最低可用N卡显存 &gt; 4GB</p>
 <h4 id="windows_1">Windows 从整合包迁移</h4>
 <p>使用上面的命令拉取代码但先不运行，然后将 Bat 文件和里面指定的文件夹复制到全新环境，把 <code>models</code> 和 <code>outputs</code> 以及 <code>embeddings</code> 复制到新文件夹，自行处理冲突。</p>
 <p>然后在新代码目录下，尝试运行原来的 Bat，如果报错，就根据提示排查是不是 NotFound 什么依赖，或者根据下面的命令说明修改 Bat 文件。</p>
-<p>你也可以参考 <a href="https://gist.github.com/huige233/1a9817eab5a808ca4cf526cdd2dea9a4#%E6%87%92%E4%BA%BA%E5%8C%85%E7%9B%B8%E5%85%B3">带图片的教程</a></p>
+<p>如果你不想迁移你的整合包，你也可以参考 <a href="https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99#%E6%87%92%E4%BA%BA%E5%8C%85%E6%94%B9-git-%E4%BB%93%E5%BA%93%E8%BF%9B%E8%A1%8C%E6%9B%B4%E6%96%B0">带图片的教程</a></p>
 <h4 id="linux">Linux 安装</h4>
 <p>先安装依赖
 <div class="highlight"><pre><span></span><code><span class="c1"># Debian-based:</span>
@@ -1034,11 +1036,11 @@ sudo systemctl restart docker
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 14, 2022 17:46:25</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 14, 2022 17:47:24</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 14, 2022 17:46:25</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 14, 2022 17:47:24</span>
       
     
   </small>
