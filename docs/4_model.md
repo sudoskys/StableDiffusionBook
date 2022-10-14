@@ -165,17 +165,37 @@ Windows: https://developer.nvidia.com/compute/cudnn/secure/8.5.0/local_installer
 
 !!!info "**4GB版本 or 7GB ？**"
         
-        网上的两种模型，4GB是针对个人部署优化后的。
+        网上的两种模型，4GB是针对个人部署修剪后的。
 
         *diffusion model* 训练会产生两个模型：当前权重和加权平均后优化的EMA（效果好）
 
         7GB 的 ckpt 里包含了 当前权重 和 EMA权重(加权平均)，pruned.py 删除了当前权重，留下了 EMA权重并重命名。所以差别不大。
+
+        谈谈 EMA，Full Stable-Diffusion 模型包含两组权重，标准权重和 EMA 权重。标准权重是为训练而设计的，而 EMA 权重是为推理而优化的。
+        
+        修剪模型时，通常会丢弃标准权重，只保留 EMA 权重。这就是为什么尺寸减少了大约一半。
+        
+        **在启用 EMA 的情况下运行完整模型等同于运行修剪模型**
 
 
 **详细介绍**
 
 <iframe src="//player.bilibili.com/player.html?aid=688965561&cid=857942294&page=1&danmaku=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 BV1Gm4y1A7VM
+
+
+### 风格化[^5]
+
+![furry](https://user-images.githubusercontent.com/474879/194965036-4c9f70ca-a32f-4f68-a9a1-17a827e8e61e.jpg)
+>furry
+
+![](https://user-images.githubusercontent.com/115398132/194805364-95e523aa-4bec-4a88-9fe1-b3d39d2f2992.jpg)
+
+`aini` 有一种你可能不喜欢的强烈风格，我认为它具有最高的一致性和质量。
+
+`anime_3`是该系列中质量最高的，但它们都有些不一致. 我一般不会推荐他们。
+
+可以看到 `furry`的超网络在添加动物特征方面更加激进，因此这里更保守的变化可能与采样器、步骤和 CFG 有关。[^5]
 
 
 ## 说明
@@ -189,10 +209,14 @@ Ckpt文件可能很危险。Windows会拦截此文件，要么创建者向文件
 
 可以通过此脚本运行它来查看执行的内容：https://rentry.org/safeunpickle2
 
+
 ### Config.yaml？
 
-
 NAIleak里边有个 config.yaml ， 将其改名为 `模型前缀.yaml` 和模型丢在一起就能加载,，但不建议加载 yaml，因为它会使内存占用加倍而不会对输出改变不大，但如果你真的想要，将其重命名为 [model name].yaml 并将其放在你的模型旁边。
+
+它包含主要用于配置用于训练或微调模型的数据加载器的参数，它有一个影响推理的`use_ema`选项。它决定了推理是使用`标准权重`还是使用 `EMA 权重`。
+
+如果`use_ema`未指定该选项，则默认为false不使用 EMA 权重的结果。
 
 
 ### Vae 额外的权重
@@ -257,6 +281,8 @@ float32 用于较旧的 gpus，或者你想要 100% 的精度
 
 #### RuntimeError: Unable to find a valid cuDNN algorithm to run convolution
 
+前面那节有相关的参数建议。
+
 生成报错解释：显存不足
 
 先检查 cuda 是否可用，打开命令窗，输入 python 并分行输入
@@ -271,6 +297,7 @@ print(torch.cuda.is_available())
 
 #### CUDA out of memory
 
+前面那节有相关的参数建议。
 
 生成报错解释：显存不足，硬件显存过低，需要买显卡。
 
@@ -525,3 +552,5 @@ Tip：每天重置资源
 [^3]:[16xx系显卡可以使用半精度生成图片的方式](https://t.me/StableDiffusion_CN/50749)
 
 [^4]:[It's not a virus it's a checkpoint file](https://huggingface.co/Deltaadams/Hentai-Diffusion/discussions/12)
+
+[^5]:[所有超网络的 X/Y](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017#discussioncomment-3836360)

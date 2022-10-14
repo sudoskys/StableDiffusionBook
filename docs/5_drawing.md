@@ -341,8 +341,9 @@ normal quality, text, censored, gown, latex, pencil
 
 在同一模型和后端实现中，保持所有参数一致的情况下，相同的种子会产生同样的图片。取决于其他参数。
 
-但是注意，不同显卡可能会造成预料之外的不同结果（比如精度这样的东西）
+但是注意，**不同显卡可能会造成预料之外的不同结果**（比如精度这样的东西）
 
+10xx 系列看起来与其他所有卡如此不同,见[这里](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017#discussioncomment-3873467)
 
 ###  方位调参
 
@@ -484,6 +485,10 @@ Batch 数设置控制获得多少次迭代
 DreamBooth 的模型是一种新的文本到图像“个性化”（可适应用户特定的图像生成需求）扩散模型
 
 [Colab 在线训练模型](https://colab.research.google.com/drive/17yM4mlPVOFdJE_81oWBz5mXH9cxvhmz8#scrollTo=lJoOgLQHnC8L)，需要Pro套餐算力(18-24G显存需要)
+
+[DreamBooth_Stable_Diffusion](https://colab.research.google.com/github/ShivamShrirao/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion.ipynb#scrollTo=K6xoHWSsbcS3)
+
+[fast-DreamBooth](https://colab.research.google.com/github/TheLastBen/fast-stable-diffusion/blob/main/fast-DreamBooth.ipynb)
 
 https://github.com/XavierXiao/Dreambooth-Stable-Diffusion
 
@@ -713,6 +718,7 @@ Hypernetworks 是一种新颖的概念，用于在不触及任何权重的情况
 
 唯一的要求是使用非常非常低的学习率，例如 0.000005 或 0.0000005。
 
+[应该查看的英文指南](https://rentry.org/hypernetwork4dumdums)
 
 ### **渐变提示词**
 

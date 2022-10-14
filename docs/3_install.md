@@ -161,10 +161,26 @@ HTTP_PROXY 和 HTTPS_PROXY 环境变量，或者使用 clash 的tun模式. 或�
 设镜像或者挂代理，**依赖项 >2GB**,请做好准备，而且对于Windows,**依赖默认安装在C盘**！
 
 
+#### 低显存显卡/CUDA out of memory
 
-#### 驱动
+确保您拥有可以运行的最新CUDA 工具包和 GPU 驱动程序.
 
-确保您拥有可以运行的最新CUDA 工具包和 GPU 驱动程序
+在具有少量 VRAM (<=4GB) 的视频卡上运行时，可能会出现内存不足错误。可以通过命令行参数启用各种优化，牺牲一些/很多速度来支持使用更少的 VRAM：
+
+如果您有 4GB VRAM 并且想要制作 512x512（或者可能高达 640x640）的图像，请使用 `--medvram`
+
+如果您有 4GB VRAM 并且想要制作 512x512 图像，但使用 `--medvram` 遇到内存不足错误 ，请改用`--medvram --opt-split-attention`
+
+如果您有 4GB VRAM 并想要制作 512x512 图像，但仍然出现内存不足错误，请改用 `--lowvram --always-batch-cond-uncond --opt-split-attention`
+
+如果您有 4GB VRAM 并且想要制作比您可以使用的更大的图像`--medvram`，请使用 `--lowvram --opt-split-attention`
+
+如果您有更多的 VRAM 并且想要制作比您通常制作的更大的图像（例如 1024x1024 而不是 512x512），请使用`--medvram --opt-split-attention`.
+
+您也可以使用 `--lowvram` 但可能几乎看不到效果
+
+如果还不行，请勿使用其中任何一种。
+
 
 #### 我 Python 呢？
 
