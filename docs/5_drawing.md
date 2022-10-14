@@ -2,11 +2,11 @@
 
 # 调参魔法
 
-这节会介绍 参数 和 相关的WebUi(SD)  网页应用资源。部分内容只做简单介绍，因为前面有相关描述。
+这节会介绍 参数 和 相关的 WebUi(SD)  网页应用资源。部分内容只做简单介绍，因为前面有相关描述。
 
 先请拿上 [调参魔法书](https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml)和 [手抄魔法本](https://docs.google.com/spreadsheets/d/14Gg1kIGWdZGXyCC8AgYVT0lqI6IivLzZOdIT3QMWwVI/)。
 
-如果你觉得能力有限，可以打开[Tag在线生成](https://aitag.top/)。
+如果你觉得能力有限，可以打开 [Tag在线生成](https://aitag.top/)。
 
 下面的语法对效果有很大影响，需要通读。
 
@@ -29,7 +29,7 @@
 
 ### 迭代草图[^8]
 
-这里讨论一下如何将**手绘草图**通过Ai绘画优化，*注意不是二次元*。
+这里讨论一下如何将**手绘草图**通过 Ai 绘画优化，*注意不是二次元*。
 
 在第一次迭代中，您不需要太多 Steps，CFG 可以非常低（以获得更好的多样化结果），如果不想完全丢失草图，Denoising 应该在 0.3-0.4 左右。
 
@@ -45,7 +45,7 @@
 
 ## 魔法入门
 
-请先在前面了解一下WebUi(SD)网页应用的参数。
+请先在前面了解一下 WebUi(SD) 网页应用的参数。
 
 ### 提示词语法简介
 
@@ -108,7 +108,7 @@
 
 ### 迭代步数
 
-更多的迭代步数可能会有更好的生成效果，但是一定会导致生成时间变长。太多的steps也可能适得其反，几乎不会有提高。
+更多的迭代步数可能会有更好的生成效果，但是一定会导致生成时间变长。太多的 steps 也可能适得其反，几乎不会有提高。
 
 
 ### 采样器
@@ -156,7 +156,7 @@
 
 - 提示不要太长，超过 100 就有失败风险。
 
-根据 手抄本的Tip，由于GPT-3模型限制，promot并不是无限的，positive token 在75-80之间，negative大概65，加太多会提示你xxx of xxx are truncated，所以别人那边的圣经不要照抄，太长的咒语后半都没有意义了，所以用简易反咒就足够，除非你有特定想屏蔽的东西。
+根据 手抄本的Tip，由于GPT-3模型限制，promot 并不是无限的，positive token 在 75-80 之间，negative 大概65，加太多会提示你 xxx of xxx are truncated，所以别人那边的圣经不要照抄，太长的咒语后半都没有意义了，所以用简易反咒就足够，除非你有特定想屏蔽的东西。
 
 
 当提示超过75个`token`（比如150个`token`）时，WebUi 将分组提示词，提交多组75个 `token`。标记只具有同一集合中其他内容的上下文。这意味着您可能在第一组和第二组之间的边界处有`bule hair`，标记`blue`将在第一组中，`hair`将在第二组中。这导致了结果的不准确，因为这两个词是分开的。
@@ -203,9 +203,9 @@ Ai 难以解析下划线，请少用。
 
 A提示词放入的顺序就是优先级。
 
-webui 突破 tag 75个限制的方式是把 75 个分为一组。
+webui 突破 tag 75 个限制的方式是把 75 个分为一组。
 
-推荐主体往前放，接着描述装扮的词，画质提升词穿插在这些描述词之间，一般为了提高成品率要把动作、nsfw词等改变构图的词往后放，或者手动调低权重（主要是为了防止ai强行凑动作导致肢体到处跑）。
+推荐主体往前放，接着描述装扮的词，画质提升词穿插在这些描述词之间，一般为了提高成品率要把动作、nsfw 词等改变构图的词往后放，或者手动调低权重（主要是为了防止ai强行凑动作导致肢体到处跑）。
 
 以上排序是每组tag都要遵守的，所以如果后面的tag超过 75 了就应该把前面的分一部分过来。
 
@@ -298,7 +298,7 @@ normal quality, text, censored, gown, latex, pencil
 
 ### 渐变
 
-渐变标签，指示WebUi在训练中替换Token，语法使用 `[some1:some2:num]`
+渐变标签，指示 WebUi 在训练中替换 Token，语法使用 `[some1:some2:num]`
 
 `[fantasy:cyberpunk:16]` 代表从第 16 step 后，使用 `cyberpunk` 标签替换 `fantasy`
 
@@ -403,7 +403,7 @@ normal quality, text, censored, gown, latex, pencil
 
 ###  Img2Img 三渲二
 
-可以结合 **3D建模** 摆Pose,可以使用 [vroid](https://vroid.com/en)
+可以结合 **3D建模** 摆 Pose,可以使用 [vroid](https://vroid.com/en)
 
 如果是真人图片，需要适当提高 `CFG Scale`
 
@@ -549,7 +549,7 @@ https://github.com/XavierXiao/Dreambooth-Stable-Diffusion
 
 WebUi 应该是 Git 的最新版本。
 
-显存至少 6GB，正常使用需要 12GB显存。根据实验数据，8GB显存应该选择 `512x512` 分辨率。
+显存至少 6GB，正常使用需要 12GB 显存。根据实验数据，8GB显存应该选择 `512x512` 分辨率。
 
 训练可使用半精度浮点，但是否好用还需要进行实验。
 
@@ -843,7 +843,7 @@ scale 就是 CFG scale
 将所有提示词前面加入 `masterpiece, best quality`
 
 
-Clip跳过 0，其他一切都很好（afaik 不要使用超网络、v2、yaml、VAE）
+Clip 跳过 0，其他一切都很好（afaik 不要使用超网络、v2、yaml、VAE）
 
 ### 转换——NAI和WebUi(SD)的增强语法不同
 

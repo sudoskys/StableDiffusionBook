@@ -1,12 +1,12 @@
 
 # 模型技法
 
-这节介绍 Debug 和一些 关于WebUi网页应用模型参数 的优化方案，让它更好用。
+这节介绍 Debug 和一些 关于 WebUi 网页应用模型参数 的优化方案，让它更好用。
 
 至于如何出图，请看下一节。
 
 !!! tip
-    注意要经常从远端代码库拉取代码更新WebUi网页应用～
+    注意要经常从远端代码库拉取代码更新 WebUi 网页应用～
 
 >本节只针对 NAI 模型展开教程。请多多关注 About 页面的社区获取最新进展和新闻。**大部分源教程来自：[^2]**
 
@@ -31,14 +31,14 @@ print(torch.__version__)
 print(torch.cuda.is_available())
 ```
 
-**查看torch对应的cuda版本**
+**查看 torch 对应的 cuda 版本**
 ```
 torch.version.cuda
 ```
 输入 ctrl + z 退出
 
 
-### 多GPU支持
+### 多 GPU 支持
 
 Easiest mode would be implementing a ~data parallel approach, in which we have one model per GPU and you distribute the workload among them.
 
@@ -454,7 +454,7 @@ Ranges with the count in square brackets 方括号范围
 
 ### **Variations种子变化**
 
-Variation strength slider 和 Variation seed field允许您指定现有图片应更改多少以使其看起来不同。
+Variation strength slider 和 Variation seed field 允许您指定现有图片应更改多少以使其看起来不同。
 在最大强度下，您将获得带有变异种子的图片，至少 - 带有原始种子的图片（使用先前采样器时除外）。
 
 
@@ -476,7 +476,7 @@ CLIP 可以从图像中提取令牌。
 默认情况下，只有一个列表 - 艺术家列表（来自artists.csv）。
 
 不过你可以通过执行以下操作添加更多列表：
-- interrogate在与 webui 相同的位置创建目录
+- interrogate 在与 webui 相同的位置创建目录
 - 将文本文件放入其中，每行都有相关描述
 
 ```
@@ -488,12 +488,12 @@ For example of what text files to use, see https://github.com/pharmapsychotic/cl
 
 适用于三次元。
 
-https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#face-restoration
+[https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#face-restoration](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#face-restoration)
 
 
 ### 自定义.css
 
-创建一个名为user.cssnear的文件webui.py并将自定义 CSS 代码放入其中。
+创建一个名为 user.cssnear 的文件 webui.py 并将自定义 CSS 代码放入其中。
 
 For example, this makes the gallery taller:
 ```
@@ -529,7 +529,7 @@ Script 类有四个主要方法，这里通过一个简单的[示例脚本](http
 `--medvram` 是另一个优化，通过不在同一批次中处理条件和无条件去噪，可以显着减少 VRAM 的使用。这种优化的实现不需要对原始的稳定扩散代码进行任何修改。
 
 !!! info
-    经过 10/10 的优化，RTX2050的4GB 显卡也可以使用 `--medvram` 。
+    经过 10/10 的优化，RTX2050 的 4GB 显卡也可以使用 `--medvram` 。
 
 当然也可以减半精度，或者生成一张 64x64 清理 vram
 
@@ -551,7 +551,7 @@ Tip：每天重置资源
 
 ### NAI 4chan简化版本
 
-4chan版本魔改官后程序，会动态分配，显存不够内存来凑。
+4chan 版本魔改官后程序，会动态分配，显存不够内存来凑。
 
 [^2]:[关于 AUTOMATIC1111 /stable-diffusion-webui 的 FAQ:](https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99)
 
