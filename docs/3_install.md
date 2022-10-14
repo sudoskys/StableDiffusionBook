@@ -102,7 +102,7 @@ WebUi 最低可用N卡显存 > 4GB
 
 然后在新代码目录下，尝试运行原来的 Bat，如果报错，就根据提示排查是不是 NotFound 什么依赖，或者根据下面的命令说明修改 Bat 文件。
 
-如果你不想迁移你的整合包，你也可以参考 [带图片的教程](https://gist.github.com/huige233/1a9817eab5a808ca4cf526cdd2dea9a4#%E6%87%92%E4%BA%BA%E5%8C%85%E7%9B%B8%E5%85%B3)
+如果你不想迁移你的整合包，你也可以参考 [带图片的教程](https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99#%E6%87%92%E4%BA%BA%E5%8C%85%E6%94%B9-git-%E4%BB%93%E5%BA%93%E8%BF%9B%E8%A1%8C%E6%9B%B4%E6%96%B0)
 
 #### Linux 安装
 
