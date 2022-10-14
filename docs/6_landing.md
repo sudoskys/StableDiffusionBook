@@ -111,6 +111,7 @@ https://huggingface.co/Deltaadams/Hentai-Diffusion
 
 @lychees
 
+@huige233
 
 ### 注释
 
