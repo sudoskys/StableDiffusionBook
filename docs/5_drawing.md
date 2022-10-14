@@ -479,7 +479,7 @@ Batch 数设置控制获得多少次迭代
 >效果图
 
 
-### DreamBooth
+### DreamBooth 训练
 
 DreamBooth 的模型是一种新的文本到图像“个性化”（可适应用户特定的图像生成需求）扩散模型
 
