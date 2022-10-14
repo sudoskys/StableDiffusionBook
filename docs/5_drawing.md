@@ -459,7 +459,7 @@ Batch 数设置控制获得多少次迭代
 
 没错，NAI 的 `hypernetworks` 就是超网络，用来做 embeddings（风格化）。
 
-多 `embeddings` 可以一起用。
+多 `embeddings` 可以一起用，启动时候会自动加载。
 
 [相关 embeddings](https://gitlab.com/16777216c/stable-diffusion-embeddings)，里面有相关效果预览。
 
