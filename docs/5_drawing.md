@@ -63,7 +63,7 @@
 
 渐变，使用 `[some1:some2:num]`
 
-`[fantasy:cyberpunk:16]` 代表从第 16 step 后，使用 `cyberpunk` 标签
+`[fantasy:cyberpunk:16]` 代表从第 16 step 后，使用 `cyberpunk` 标签替换 `fantasy`
 
 `[to:when]` 在固定数量的step后添加 `to` 到提示 ( when)
 
@@ -265,7 +265,7 @@ a \(word\) - 在提示中使用文字 () 字符
     NAI花括号权重为1.05/个，WebUi圆权重为1.1/个
 
 
-### 消极提示词(Token)
+### 消极提示词
 
 WebUi(SD)网页应用会在生成时**拒绝消极提示词有关的内容**。
 
@@ -289,12 +289,23 @@ normal quality, text, censored, gown, latex, pencil
 ```
 
 
-### 重现提示词(Token)
+### 渐变
+
+渐变标签，指示WebUi在训练中替换Token，语法使用 `[some1:some2:num]`
+
+`[fantasy:cyberpunk:16]` 代表从第 16 step 后，使用 `cyberpunk` 标签替换 `fantasy`
+
+`[to:when]` 在固定数量的step后添加 `to` 到提示 ( when)
+
+`[from::when]` 在固定数量的step后从提示中删除 `from`( when)
+
+
+### 重现提示词
 
 对于没有压缩的原图，我们可以将文件拖入 `PNG Info` 选项卡，进行提示词(Token)查看。
 
 
-### 逆向提示词(Token)
+### 逆向提示词
 
 这里有一些 **Image 逆向参数服务**，可以从图片中提取相关参数，不一定准确。
 
