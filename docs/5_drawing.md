@@ -308,6 +308,7 @@ normal quality, text, censored, gown, latex, pencil
 
 `[from::when]` 在固定数量的step后从提示中删除 `from`( when)
 
+![sample_Gradient](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/sample_Gradient.jpg)
 
 ### 重现提示词
 
