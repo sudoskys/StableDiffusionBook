@@ -8,6 +8,8 @@
 
 如果你觉得能力有限，可以打开 [Tag在线生成](https://aitag.top/)。
 
+如果你的阅读能力有限，可以打开 [视频教程](https://space.bilibili.com/35723238/channel/collectiondetail?sid=779851)
+
 下面的语法对效果有很大影响，需要通读。
 
 提前告知：WebUi 的设置页面需要按下 `Apply setting` 才能保存设置。
