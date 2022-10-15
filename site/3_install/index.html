@@ -482,13 +482,20 @@
         
           <li class="md-nav__item">
   <a href="#_10" class="md-nav__link">
-    自定义运行
+    共享链接
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_11" class="md-nav__link">
+    自定义运行
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
     令牌参数生成第一幅图片
   </a>
   
@@ -513,7 +520,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     硬件需求
   </a>
   
@@ -521,7 +528,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#_14" class="md-nav__link">
     软件需求
   </a>
   
@@ -542,14 +549,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
+  <a href="#_15" class="md-nav__link">
     驱动
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
+  <a href="#_16" class="md-nav__link">
     配置并运行
   </a>
   
@@ -782,16 +789,19 @@ conda activate aidraw
 <p>Linux 用户采用
 <div class="highlight"><pre><span></span><code>COMMANDLINE_ARGS=&quot;--medvram --always-batch-cond-uncond&quot; REQS_FILE=&quot;requirements.txt&quot; python launch.py
 </code></pre></div></p>
-<h4 id="_10">自定义运行</h4>
-<p>进一步熟悉这个程序，你会发现可以修改 Bat运行脚本 添加参数！具体参数列表请读下文。</p>
-<p>生成报错？请读 <code>绘画调试</code> 章节。</p>
-<p>首先，你可以运行 <code>python webui.py --help</code> 查看所有命令参数。</p>
-<p>Tip:
-自定义程序运行方式的推荐方法是编辑webui-user.bat(Windows) 和webui-user.sh(Linux)</p>
-<p><em>在线运行</em></p>
+<h4 id="_10">共享链接</h4>
 <ul>
-<li>使用 <code>--share</code> 选项在线运行</li>
+<li>使用 <code>--share</code> 选项来在线运行</li>
 </ul>
+<p>你会得到一个 <code>xxx.app.gradio</code> 链接，这是在协作中使用该程序的预期方式。</p>
+<div class="admonition danger">
+<p class="admonition-title">RCE</p>
+<p>使用参数为所述 <code>gradio</code> 共享实例设置身份验证：<code>--gradio-auth username:password</code> ,
+可选择提供多组用户名和密码，以逗号分隔。</p>
+<p>当您使用 <code>--share</code> 参数时，您的 ui 会暴露在互联网上。</p>
+<p>现在，最近报告了一个可能是危险的<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2571">代码漏洞</a>。</p>
+<p>如果攻击者可以访问 ui，他们可能能够远程运行 python 脚本。</p>
+</div>
 <p>你会得到一个 <code>xxx.app.gradio</code> 链接，这是在协作中使用该程序的预期方式，而且你可以使用参数为所述 <code>gradio</code> 共享实例设置身份验证：<code>--gradio-auth username:password</code>
 可选择提供多组用户名和密码，以逗号分隔。</p>
 <ul>
@@ -806,6 +816,12 @@ conda activate aidraw
 <p>参数 <code>--port xxxx</code> 使服务器监听特定端口。</p>
 <p>低于 1024 的所有端口都需要 <code>root</code>权限，因此建议使用高于 1024 的端口。</p>
 <p>如果可用，则默认为端口 7860</p>
+<h4 id="_11">自定义运行</h4>
+<p>进一步熟悉这个程序，你会发现可以修改 Bat运行脚本 添加参数！具体参数列表请读下文。</p>
+<p>生成报错？请读 <code>绘画调试</code> 章节。</p>
+<p>首先，你可以运行 <code>python webui.py --help</code> 查看所有命令参数。</p>
+<p>Tip:
+自定义程序运行方式的推荐方法是编辑webui-user.bat(Windows) 和webui-user.sh(Linux)</p>
 <p><em>环境定制</em></p>
 <p><code>set PYTHON=b:/soft/Python310/Python.exe</code></p>
 <p><code>set PYTHON</code> 允许设置自定义 Python 路径</p>
@@ -866,7 +882,7 @@ set COMMANDLINE_ARGS设置命令行参数webui.py运行
 </tr>
 </tbody>
 </table>
-<h4 id="_11">令牌参数生成第一幅图片</h4>
+<h4 id="_12">令牌参数生成第一幅图片</h4>
 <p>令牌请读后面的内容，这里给出一个实例来供你完成测试</p>
 <p>顶上那个是选择模型，暂时用不到。</p>
 <ul>
@@ -895,10 +911,10 @@ Torch active/reserved: 1975/2144 MiB, Sys VRAM: 7890/8134 MiB (93.61%)
 <h2 id="novel-ai">安装 Novel Ai 的原版后端</h2>
 <p>此教程来自 sanae<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
 <p><strong>阅读前请读最新的教程<a href="https://telegra.ph/NovelAI-%E5%8E%9F%E7%89%88%E7%BD%91%E9%A1%B5UI%E5%90%8E%E7%AB%AF%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B-10-10">NovelAI 原版网页UI+后端部署教程</a></strong></p>
-<h3 id="_12">硬件需求</h3>
+<h3 id="_13">硬件需求</h3>
 <p>建议显存低于24G的就不要尝试使用官方版本前后端.</p>
 <p>一台拥有一张至少有11G 显存的NVIDIA GPU的linux系统的x86设备。</p>
-<h4 id="_13">软件需求</h4>
+<h4 id="_14">软件需求</h4>
 <ul>
 <li>
 <p>NVIDIA驱动(CUDA 11.6 Toolkit)</p>
@@ -937,11 +953,11 @@ sudo yum install -y nvidia-container-toolkit
 
 sudo systemctl restart docker
 </code></pre></div></p>
-<h4 id="_14">驱动</h4>
+<h4 id="_15">驱动</h4>
 <p><strong>安装显卡驱动</strong></p>
 <p>使用 <code>nvidia-smi</code> 查看显卡状态。</p>
 <p>使用 <code>docker run --help | grep -i gpus</code> 确认nvidia-container-toolkit安装成功。</p>
-<h4 id="_15">配置并运行</h4>
+<h4 id="_16">配置并运行</h4>
 <p><strong>模型</strong></p>
 <ul>
 <li>下载模型文件</li>
@@ -1036,11 +1052,11 @@ sudo systemctl restart docker
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 15, 2022 04:45:59</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 15, 2022 04:54:02</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 15, 2022 04:45:59</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 15, 2022 04:54:02</span>
       
     
   </small>
