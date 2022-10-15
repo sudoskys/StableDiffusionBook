@@ -489,7 +489,7 @@
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui">Stable Diffusion WebUi</a>简称 SDWebUi，web UI是一个基于 Gradio 库的 Stable Diffusion 浏览器界面。</p>
 <p><a href="https://novelai.net/">NovelAI</a>简称 NAI， 是一项每月订阅服务，用于 AI 辅助创作、讲故事、虚拟陪伴，或者只是供您想象的 GPT 驱动的沙盒。</p>
 <h2 id="stable-diffusion-nai">Stable Diffusion 和 NAI 关系？我该怎么办？</h2>
-<p>因为泄漏事件，NAI使用数千万Danbooru（图站）图片训练的模型被泄漏了两次，而后来 <strong>Stable Diffusion WebUi(一个通用的生成框架)</strong> 对模型进行了支持，所以可以 使用 WebUi（简称SDWebUi）装载 NAI 的模型。</p>
+<p>因为泄漏事件，NAI 使用数千万 Danbooru（图站）图片训练的模型被泄漏了两次，而后来 <strong>Stable Diffusion WebUi(一个通用的生成框架)</strong> 对模型进行了支持，所以可以 使用 WebUi（简称 SDWebUi）装载 NAI 的模型。</p>
 <div class="admonition info">
 <p class="admonition-title"><strong>事件报告</strong></p>
 <p>泄露 Part 1 —— 包含生产模型，程序 —— 53.66 GB，其中需要下载的相关模型有 7GB 和 4GB 两种。</p>
@@ -497,7 +497,7 @@
 </div>
 <h2 id="_2">名词</h2>
 <h3 id="ensd">ENSD</h3>
-<p>在设置页中的ENSD是 eta 噪声种子增量。</p>
+<p>在设置页中的 ENSD 是 eta 噪声种子增量。</p>
 <p>它改变了你的种子，执行一些 eta/sigma 的操作。</p>
 <p>NAI使用31337</p>
 <h3 id="clip">CLIP</h3>
@@ -508,22 +508,22 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
 <p>要让 AI 作画，先要让程序“听懂”你的指令，比如</p>
 <p>“a big cherry tree above a lake with flying petals in the sky.”</p>
 <p>对一个相对复杂场景的文本描述，AI 需要能“理解”并匹配到对应的画面，大部分项目依赖的都是一个叫 CLIP 的模型。</p>
-<p>CLIP在生成模型的潜在空间进行搜索，从而找到与给定的文字描述相匹配的潜在图像。</p>
+<p>CLIP 在生成模型的潜在空间进行搜索，从而找到与给定的文字描述相匹配的潜在图像。</p>
 <p>它非常现代且高效。</p>
 <h3 id="cuda">CUDA</h3>
-<p>配合CUDA技术，显卡可以模拟成一颗PhysX物理加速芯片。目前，全系列的GeForce 8显示核心都支持CUDA。</p>
-<p>使用CUDA技术，GPU可以用来进行通用处理（不仅仅是图形）；这种方法被称为GPGPU。与CPU不同的是，GPU以较慢速度并发大量线程，而非快速执行单一线程。以GeForce 8800 GTX为例，其核心拥有128个内处理器。利用CUDA技术，就可以将那些内处理器做为线程处理器，以解决数据密集的计算。</p>
+<p>配合 CUDA 技术，显卡可以模拟成一颗 PhysX 物理加速芯片。目前，全系列的 GeForce 8 显示核心都支持 CUDA。</p>
+<p>使用 CUDA 技术，GPU 可以用来进行通用处理（不仅仅是图形）；这种方法被称为 GPGPU。与 CPU 不同的是，GPU 以较慢速度并发大量线程，而非快速执行单一线程。以 GeForce 8800 GTX 为例，其核心拥有 128 个内处理器。利用 CUDA 技术，就可以将那些内处理器做为线程处理器，以解决数据密集的计算。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 14, 2022 17:47:24</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 15, 2022 03:08:46</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 14, 2022 17:47:24</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 15, 2022 03:08:46</span>
       
     
   </small>

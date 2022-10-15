@@ -841,9 +841,9 @@
 
 
 <h1 id="_1">调参魔法</h1>
-<p>这节会介绍 参数 和 相关的WebUi(SD)  网页应用资源。部分内容只做简单介绍，因为前面有相关描述。</p>
+<p>这节会介绍 参数 和 相关的 WebUi(SD)  网页应用资源。部分内容只做简单介绍，因为前面有相关描述。</p>
 <p>先请拿上 <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml">调参魔法书</a>和 <a href="https://docs.google.com/spreadsheets/d/14Gg1kIGWdZGXyCC8AgYVT0lqI6IivLzZOdIT3QMWwVI/">手抄魔法本</a>。</p>
-<p>如果你觉得能力有限，可以打开<a href="https://aitag.top/">Tag在线生成</a>。</p>
+<p>如果你觉得能力有限，可以打开 <a href="https://aitag.top/">Tag在线生成</a>。</p>
 <p>下面的语法对效果有很大影响，需要通读。</p>
 <p>提前告知：WebUi 的设置页面需要按下 <code>Apply setting</code> 才能保存设置。</p>
 <h2 id="_2">基本流程</h2>
@@ -861,7 +861,7 @@
 </li>
 </ul>
 <h3 id="5">迭代草图<sup id="fnref:8"><a class="footnote-ref" href="#fn:8">5</a></sup></h3>
-<p>这里讨论一下如何将<strong>手绘草图</strong>通过Ai绘画优化，<em>注意不是二次元</em>。</p>
+<p>这里讨论一下如何将<strong>手绘草图</strong>通过 Ai 绘画优化，<em>注意不是二次元</em>。</p>
 <p>在第一次迭代中，您不需要太多 Steps，CFG 可以非常低（以获得更好的多样化结果），如果不想完全丢失草图，Denoising 应该在 0.3-0.4 左右。</p>
 <p>在最后的迭代中，增加 Steps 和 Denoising 强度（但不超过 0.8，否则图像将被破坏，尤其是在大于 512*512 时）请参见<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2213#issuecomment-1274137775">这里</a>，同时根据需要提高 CFG 和尺寸。</p>
 <p>你可以随时修复提示（添加或删除出现的细节）并尝试不同的采样器。</p>
@@ -869,7 +869,7 @@
 <p>因为如果你提供一个种子（而不是随机的 -1），你的图像很快就会变得过饱和、过度锐化、过度像素化。</p>
 <p>当然如果你想微调，可以使用固定种子。</p>
 <h2 id="_3">魔法入门</h2>
-<p>请先在前面了解一下WebUi(SD)网页应用的参数。</p>
+<p>请先在前面了解一下 WebUi(SD) 网页应用的参数。</p>
 <h3 id="_4">提示词语法简介</h3>
 <p>对于NAI用户，请阅读<a href="https://docs.novelai.net/image/promptmixing.html">官网Docs</a>,两方的提示词语法不通用。</p>
 <p><strong>表示方法</strong></p>
@@ -908,7 +908,7 @@ NAI的 [word] = WebUi(word:0.952)(0.952 = 1/1.05)</p>
 一个迭代 = 一个正向通过+一个反向通过</p>
 </div>
 <h3 id="_5">迭代步数</h3>
-<p>更多的迭代步数可能会有更好的生成效果，但是一定会导致生成时间变长。太多的steps也可能适得其反，几乎不会有提高。</p>
+<p>更多的迭代步数可能会有更好的生成效果，但是一定会导致生成时间变长。太多的 steps 也可能适得其反，几乎不会有提高。</p>
 <h3 id="_6">采样器</h3>
 <p>观看前面章节对于采样器的介绍。</p>
 <p>目前好用的有 <code>eular</code>，<code>eular a</code>，更细腻，和<code>Ddim</code>，DDIM 收敛较快,</p>
@@ -941,7 +941,7 @@ NAI的 [word] = WebUi(word:0.952)(0.952 = 1/1.05)</p>
 <ul>
 <li>提示不要太长，超过 100 就有失败风险。</li>
 </ul>
-<p>根据 手抄本的Tip，由于GPT-3模型限制，promot并不是无限的，positive token 在75-80之间，negative大概65，加太多会提示你xxx of xxx are truncated，所以别人那边的圣经不要照抄，太长的咒语后半都没有意义了，所以用简易反咒就足够，除非你有特定想屏蔽的东西。</p>
+<p>根据 手抄本的Tip，由于GPT-3模型限制，promot 并不是无限的，positive token 在 75-80 之间，negative 大概65，加太多会提示你 xxx of xxx are truncated，所以别人那边的圣经不要照抄，太长的咒语后半都没有意义了，所以用简易反咒就足够，除非你有特定想屏蔽的东西。</p>
 <p>当提示超过75个<code>token</code>（比如150个<code>token</code>）时，WebUi 将分组提示词，提交多组75个 <code>token</code>。标记只具有同一集合中其他内容的上下文。这意味着您可能在第一组和第二组之间的边界处有<code>bule hair</code>，标记<code>blue</code>将在第一组中，<code>hair</code>将在第二组中。这导致了结果的不准确，因为这两个词是分开的。</p>
 <p>新版本增加了一个选项 <code>Increase coherency by padding from the last comma within n tokens when using more than 75 tokens</code></p>
 <p>这个设置让程序试图通过查找最后N个标记中是否有最后一个逗号来缓解这种情况，如果有，则将所有经过该逗号的内容一起移动到下一个集合中。</p>
@@ -968,8 +968,8 @@ caustics, masterpiece, high resolution,
 <p>Ai 难以解析下划线，请少用。</p>
 <p><strong>调序编译</strong></p>
 <p>A提示词放入的顺序就是优先级。</p>
-<p>webui 突破 tag 75个限制的方式是把 75 个分为一组。</p>
-<p>推荐主体往前放，接着描述装扮的词，画质提升词穿插在这些描述词之间，一般为了提高成品率要把动作、nsfw词等改变构图的词往后放，或者手动调低权重（主要是为了防止ai强行凑动作导致肢体到处跑）。</p>
+<p>webui 突破 tag 75 个限制的方式是把 75 个分为一组。</p>
+<p>推荐主体往前放，接着描述装扮的词，画质提升词穿插在这些描述词之间，一般为了提高成品率要把动作、nsfw 词等改变构图的词往后放，或者手动调低权重（主要是为了防止ai强行凑动作导致肢体到处跑）。</p>
 <p>以上排序是每组tag都要遵守的，所以如果后面的tag超过 75 了就应该把前面的分一部分过来。</p>
 <h3 id="3">(提示词)影响因子<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">3</a></sup></h3>
 <p>"调参魔法" 的一个基本技能是设置权重。</p>
@@ -1029,7 +1029,7 @@ mutilated, tranny, trans, trannsexual, [out of frame], (bad proportions),
 normal quality, text, censored, gown, latex, pencil
 </code></pre></div>
 <h3 id="_9">渐变</h3>
-<p>渐变标签，指示WebUi在训练中替换Token，语法使用 <code>[some1:some2:num]</code></p>
+<p>渐变标签，指示 WebUi 在训练中替换 Token，语法使用 <code>[some1:some2:num]</code></p>
 <p><code>[fantasy:cyberpunk:16]</code> 代表从第 16 step 后，使用 <code>cyberpunk</code> 标签替换 <code>fantasy</code></p>
 <p><code>[to:when]</code> 在固定数量的step后添加 <code>to</code> 到提示 ( when)</p>
 <p><code>[from::when]</code> 在固定数量的step后从提示中删除 <code>from</code>( when)</p>
@@ -1132,7 +1132,7 @@ normal quality, text, censored, gown, latex, pencil
 <p><code>Denoising strength</code> 决定算法对图像内容的保留程度,可以减少对画风的变得，但也会弱化img2img能力。值越高 AI 对原图的参考程度就越低 (同时增加迭代次数)。</p>
 <p>对于以图做图来说，低 <code>denoising</code> 意味着修正原图，高 <code>denoising</code> 就和原图就没有大的相关性了。一般来讲阈值是 0.7 左右，超过 0.7 和原图基本上无关，0.3 以下就是稍微改一些。</p>
 <h3 id="img2img_1">Img2Img 三渲二</h3>
-<p>可以结合 <strong>3D建模</strong> 摆Pose,可以使用 <a href="https://vroid.com/en">vroid</a></p>
+<p>可以结合 <strong>3D建模</strong> 摆 Pose,可以使用 <a href="https://vroid.com/en">vroid</a></p>
 <p>如果是真人图片，需要适当提高 <code>CFG Scale</code></p>
 <h3 id="img2img-ps">Img2Img PS重绘画/修复手</h3>
 <p>使用PS软件增删元素，然后重新生产。这可以解决画手的问题。</p>
@@ -1226,7 +1226,7 @@ normal quality, text, censored, gown, latex, pencil
 </div>
 <h4 id="_18">模型环境要求</h4>
 <p>WebUi 应该是 Git 的最新版本。</p>
-<p>显存至少 6GB，正常使用需要 12GB显存。根据实验数据，8GB显存应该选择 <code>512x512</code> 分辨率。</p>
+<p>显存至少 6GB，正常使用需要 12GB 显存。根据实验数据，8GB显存应该选择 <code>512x512</code> 分辨率。</p>
 <p>训练可使用半精度浮点，但是否好用还需要进行实验。</p>
 <p>如果你有足够的内存，那么在<code>--no-half --precision full</code>下运行会更安全。</p>
 <p>你可以中断和恢复训练而不会丢失任何数据（AdamW 优化参数除外，但似乎现有的存储库都没有保存这些，所以一般认为它们并不重要）。</p>
@@ -1399,7 +1399,7 @@ scale 就是 CFG scale
 </code></pre></div></p>
 <p><strong>其他</strong></p>
 <p>将所有提示词前面加入 <code>masterpiece, best quality</code></p>
-<p>Clip跳过 0，其他一切都很好（afaik 不要使用超网络、v2、yaml、VAE）</p>
+<p>Clip 跳过 0，其他一切都很好（afaik 不要使用超网络、v2、yaml、VAE）</p>
 <h3 id="naiwebuisd">转换——NAI和WebUi(SD)的增强语法不同</h3>
 <p><strong>Prompts 参数括号转换</strong></p>
 <p>在 NAI 和 Webui 之间转换加强参数，相关的机器人服务 <a href="https://t.me/M2NM2NBot">M2NM2NBot</a></p>
@@ -1924,11 +1924,11 @@ scale 就是 CFG scale
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 14, 2022 17:47:24</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 15, 2022 03:08:46</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 14, 2022 17:47:24</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 15, 2022 03:08:46</span>
       
     
   </small>
