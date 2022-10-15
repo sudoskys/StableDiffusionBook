@@ -508,9 +508,9 @@ Batch 数设置控制获得多少次迭代
 
 ### 超分图像 extras
 
-`realesrgan` 或者 `realcugan` 就可以，推荐 [realcugan](https://github.com/bilibili/ailab/tree/main/Real-CUGAN)
+`webui` extras 页有一个自带的超分功能，可以使用 `ESRGAN_4x`模型
 
-另外，`webui` extras 页有一个自带的超分功能，可以去`settings-upscaling` 使用 `R-ESRGAN 4x+ Anime6B`模型，重新启动程序
+当然 `realesrgan` 或者 `realcugan` 也可以，[realcugan](https://github.com/bilibili/ailab/tree/main/Real-CUGAN)
 
 **应该使用什么 Upscaler？**
 
