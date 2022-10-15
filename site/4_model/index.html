@@ -971,7 +971,7 @@ Steps: 28, Sampler: Euler, CFG scale: 12, Seed: [SEE COLUMN], Size: 512x512, Mod
 <p>ckpt文件是一个脚本，基本上可以执行它想要的任何内容，并且有权执行。盲目运行它们有安全风险。</p>
 <p>Ckpt文件可能很危险。Windows会拦截此文件，要么创建者向文件中注入了某种恶意的python代码，要么是误报。</p>
 <p>可以通过此脚本运行它来查看执行的内容：https://rentry.org/safeunpickle2</p>
-<p>在新版本中 WebUi 对这项内容做了防护。</p>
+<p>不要在未检查其来源的情况下安装随机模型。</p>
 <h3 id="configyaml">Config.yaml？</h3>
 <p>NAIleak里边有个 config.yaml ， 将其改名为 <code>模型前缀.yaml</code> 和模型丢在一起就能加载,，但不建议加载 yaml，因为它会使内存占用加倍而不会对输出改变不大，但如果你真的想要，将其重命名为 [model name].yaml 并将其放在你的模型旁边。</p>
 <p>它包含主要用于配置用于训练或微调模型的数据加载器的参数，它有一个影响推理的<code>use_ema</code>选项。它决定了推理是使用<code>标准权重</code>还是使用 <code>EMA 权重</code>。</p>
@@ -1167,11 +1167,11 @@ Heun 在准确性方面是对 Euler 的“改进”，但它以大约一半的�
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 15, 2022 04:34:17</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 15, 2022 04:39:32</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 15, 2022 04:34:17</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 15, 2022 04:39:32</span>
       
     
   </small>
