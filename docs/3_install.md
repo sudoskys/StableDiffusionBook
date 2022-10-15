@@ -226,22 +226,21 @@ Linux 用户采用
 COMMANDLINE_ARGS="--medvram --always-batch-cond-uncond" REQS_FILE="requirements.txt" python launch.py
 ```
 
-#### 自定义运行
+#### 共享链接
 
-进一步熟悉这个程序，你会发现可以修改 Bat运行脚本 添加参数！具体参数列表请读下文。
+- 使用 `--share` 选项来在线运行
 
+你会得到一个 `xxx.app.gradio` 链接，这是在协作中使用该程序的预期方式。
 
+!!! danger "RCE"
+    使用参数为所述 `gradio` 共享实例设置身份验证：`--gradio-auth username:password` ,
+    可选择提供多组用户名和密码，以逗号分隔。
+
+    当您使用 `--share` 参数时，您的 ui 会暴露在互联网上。
+
+    现在，最近报告了一个可能是危险的[代码漏洞](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2571)。
     
-生成报错？请读 `绘画调试` 章节。
-
-首先，你可以运行 `python webui.py --help` 查看所有命令参数。
-
-Tip:
-自定义程序运行方式的推荐方法是编辑webui-user.bat(Windows) 和webui-user.sh(Linux)
-
-*在线运行*
-
-- 使用 `--share` 选项在线运行
+    如果攻击者可以访问 ui，他们可能能够远程运行 python 脚本。
 
 你会得到一个 `xxx.app.gradio` 链接，这是在协作中使用该程序的预期方式，而且你可以使用参数为所述 `gradio` 共享实例设置身份验证：`--gradio-auth username:password`
 可选择提供多组用户名和密码，以逗号分隔。
@@ -261,6 +260,21 @@ Tip:
 低于 1024 的所有端口都需要 `root`权限，因此建议使用高于 1024 的端口。
 
 如果可用，则默认为端口 7860
+
+
+#### 自定义运行
+
+进一步熟悉这个程序，你会发现可以修改 Bat运行脚本 添加参数！具体参数列表请读下文。
+
+
+    
+生成报错？请读 `绘画调试` 章节。
+
+首先，你可以运行 `python webui.py --help` 查看所有命令参数。
+
+Tip:
+自定义程序运行方式的推荐方法是编辑webui-user.bat(Windows) 和webui-user.sh(Linux)
+
 
 *环境定制*
 
