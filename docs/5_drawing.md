@@ -406,6 +406,31 @@ normal quality, text, censored, gown, latex, pencil
 !!! tip "不同之处"
     PS 重新绘画投入 Img2Img 的话，会导致画风的变动，而 Inpaint 就不会。
 
+
+!!! tip "相关模型"
+
+    文件统一下载到 `SDwebUI文件夹\models` 下
+
+    [LDSR](https://heibox.uni-heidelberg.de/f/578df07c8fc04ffbadf3/?dl=1)
+    
+    文件大小为1.9GB
+
+    [BSGRAN 4x](https://github.com/cszn/KAIR/releases/download/v1.0/BSRGAN.pth) 
+
+    文件大小为63.9M
+
+    [ESRGAN_4x](https://github.com/cszn/KAIR/releases/download/v1.0/ESRGAN.pth))
+    
+    文件大小为63.8MB
+
+    [ScuNET GAN/PSNR](https://github.com/cszn/KAIR/releases/download/v1.0/scunet_color_real_gan.pth" to D:\stable-diffusio\models\ScuNET\ScuNET.pth)
+    
+    文件大小为68.6MB
+
+    [SwinIR 4x](https://github.com/JingyunLiang/SwinIR/releases/download/v0.0/003_realSR_BSRGAN_DFOWMFC_s64w8_SwinIR-L_x4_GAN.pth) 
+    
+    文件大小为136MB
+
 **CFG Scale**
 
 `cfg scale` 就是符合 prompt 的程度,Scale越高，程序对提示词越忠诚，越符合。
