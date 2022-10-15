@@ -215,7 +215,7 @@ Ckpt文件可能很危险。Windows会拦截此文件，要么创建者向文件
 
 可以通过此脚本运行它来查看执行的内容：https://rentry.org/safeunpickle2
 
-在新版本中 WebUi 对这项内容做了防护。
+不要在未检查其来源的情况下安装随机模型。
 
 
 ### Config.yaml？
