@@ -237,7 +237,7 @@ COMMANDLINE_ARGS="--medvram --always-batch-cond-uncond" REQS_FILE="requirements.
     当使用 `--share` 参数时，你的实例就可以在公开互联网访问了。
     但是最近有人报告了一个可能是危险的[代码漏洞](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2571)
 
-    所以，使用参数为 `gradio` 共享实例设置身份验证：`--gradio-auth username:password` (可选择提供多组用户名和密码，以逗号分隔)
+    所以，你可以使用参数为 `gradio` 共享实例设置身份验证：`--gradio-auth username:password` (可选择提供多组用户名和密码，以逗号分隔)
 
     
 
