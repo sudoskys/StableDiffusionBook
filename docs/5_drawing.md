@@ -393,6 +393,11 @@ normal quality, text, censored, gown, latex, pencil
 
 生成按钮下有一个 `Interrogate CLIP`，点击后会下载 `CLIP`，用于生成当前图片框内图片的 Tag 并填充到提示词。
 
+!!! tip 
+    本文件为 [model_base_caption_capfilt_large.pth](https://storage.googleapis.com/sfr-vision-language-research/BLIP/models/model_base_caption_capfilt_large.pth)
+    
+    大小为855MB
+
 
 ### Img2Img 介绍
 
