@@ -76,6 +76,8 @@
 
 降低权重，`[]` 或者 `(word:0.952)`，后者仅 WebUi
 
+交替（alternate prompt）[^7]，这使您可以创建动物、人或风格的混合体，每一个 step 切换一个项目，`[alison brie|emma stone|elizabeth olsen|scarlett johansson|anne hathaway|emma roberts], still film` 这是WebUi 语法，在 NAI 中是混合。
+
 !!! tip "NAI"
 
     NAI中不允许单独指定权重，但支持混合权重 `cat:1|happy:-0.2|cute:-0:3` 这样的语法。
@@ -1089,3 +1091,5 @@ Clip 跳过 0，其他一切都很好（afaik 不要使用超网络、v2、yaml�
 [^7]:[风格模型训练](https://www.bilibili.com/video/BV1ae4y1S7v9/)
 
 [^8]:[迭代草图](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2473)
+
+[^9]:[交替单词](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/1733)
