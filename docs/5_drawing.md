@@ -389,6 +389,11 @@ normal quality, text, censored, gown, latex, pencil
     请阅读前面章节的模型进阶1,了解具体的 Img2Img 和 inpaint 介绍操作。
 
 
+### Img2Txt
+
+生成按钮下有一个 `Interrogate CLIP`，点击后会下载 `CLIP`，用于生成当前图片框内图片的 Tag 并填充到提示词。
+
+
 ### Img2Img 介绍
 
 一般我们有两种途径对图像进行修复：**PS 和 InPaint**，使用方法也十分多样。
