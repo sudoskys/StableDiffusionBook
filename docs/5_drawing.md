@@ -390,6 +390,9 @@ normal quality, text, censored, gown, latex, pencil
 
 一般我们有两种途径对图像进行修复：**PS 和 InPaint**，使用方法也十分多样。
 
+!!! tip "不同之处"
+    PS 重新绘画投入 Img2Img 的话，会导致画风的变动，而 Inpaint 就不会。
+
 **CFG Scale**
 
 `cfg scale` 就是符合 prompt 的程度,Scale越高，程序对提示词越忠诚，越符合。
@@ -403,9 +406,13 @@ normal quality, text, censored, gown, latex, pencil
 
 ###  Img2Img 三渲二
 
-可以结合 **3D建模** 摆 Pose,可以使用 [vroid](https://vroid.com/en)
+可以结合 **3D建模** 摆 Pose,可以使用 MMD 相关软件。
 
-如果是真人图片，需要适当提高 `CFG Scale`
+如果是真人图片，需要适当提高 `CFG Scale`。
+
+推荐使用 blender 或者 Unity ，在对 3D 模型的测试中，色彩主要影响 AI 的绘画效果，所以你的模型需要有纹理。
+
+不知道 VRchat 怎么样。
 
 
 ### Img2Img PS重绘画/修复手
@@ -447,9 +454,22 @@ Outpainting, unlike normal image generation, seems to profit very much from larg
 
 在 img2img 选项卡中，在图像的一部分上绘制蒙版，该部分将被重画。
 
-一般选 `original`,`fill` 要更多 step 才能消除不自然感.
+对于 `Masked content` 设置，遮罩内容字段确定内容在修复之前放置到遮罩区域中。
 
-这可以更改角色衣物风格或者其他任何细节。
+一般选 `original`，可以保持潛空间一致性。
+
+它们的效果如下:
+
+| mask  | fill  | original   | latent noise      | latent nothing       |
+|---------------------------|----------------|-----------------------|-------------------------|-----------------------|
+| ![](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting-initial-content-mask.png) | ![](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting-initial-content-fill.png) | ![](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting-initial-content-original.png) | ![](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting-initial-content-latent-noise.png) | ![](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting-initial-content-latent-nothing.png) |
+
+`mask` 横条决定了模糊程度，original 是`原图`，fill 是`填充底色`
+
+Tip: `fill` 要更多 step 才能消除不自然感.
+
+`Inpaint at full resolution` 即全分辨率修复。
+通常，Inpaint 会将图像大小调整为*UI中指定的目标分辨率*。启用完全分辨率的Inpaint后，仅调整遮罩区域的大小，并在处理后将其**粘贴回**原始图片。这允许您处理大图片，并允许您以更大的分辨率渲染修复对象。
 
 有几种方法进行重绘制:
 
@@ -461,12 +481,11 @@ Outpainting, unlike normal image generation, seems to profit very much from larg
 
 ![result](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting.png)
 
-<iframe src="//player.bilibili.com/player.html?aid=559044202&cid=859852841&page=1&danmaku=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
+<iframe src="//player.bilibili.com/player.html?aid=474043788&bvid=BV1HK411Q7uk&cid=860273094&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
-### Img2Img 全分辨率修复
+通过这种方法，我们可以更改角色衣物风格或者其他任何细节。
 
-通常，修复会将图像大小调整为 UI 中指定的目标分辨率。启用全分辨率修复后，仅调整蒙版区域的大小，并在处理后将其粘贴回原始图片。这使您可以处理大图片，并允许您以更大的分辨率渲染修复的对象。
-
+<iframe src="//player.bilibili.com/player.html?aid=559044202&cid=859852841&page=1&danmaku=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 ### Img2Img Loopback 回环生成
 
