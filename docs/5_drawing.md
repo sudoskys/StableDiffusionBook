@@ -6,9 +6,9 @@
 
 先请拿上 [调参魔法书](https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml)和 [手抄魔法本](https://docs.google.com/spreadsheets/d/14Gg1kIGWdZGXyCC8AgYVT0lqI6IivLzZOdIT3QMWwVI/)。
 
-如果你觉得能力有限，可以打开 [Tag在线生成](https://aitag.top/)。
+如果你觉得查表很麻烦，可以打开 [Tag在线生成](https://aitag.top/)。
 
-如果你的阅读能力有限，可以打开 [视频教程](https://space.bilibili.com/35723238/channel/collectiondetail?sid=779851)
+如果你不想读文字，可以打开 [推荐的视频教程](https://space.bilibili.com/35723238/channel/collectiondetail?sid=779851)
 
 下面的语法对效果有很大影响，需要通读。
 
@@ -487,7 +487,7 @@ Tip: `fill` 要更多 step 才能消除不自然感.
 
 通过这种方法，我们可以更改角色衣物风格或者其他任何细节。
 
-<iframe src="//player.bilibili.com/player.html?aid=559044202&cid=859852841&page=1&danmaku=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe src="//player.bilibili.com/player.html?aid=559044202&cid=859852841&page=1&danmaku=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 
 ### Img2Img Loopback 回环生成
 
