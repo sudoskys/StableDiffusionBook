@@ -233,12 +233,15 @@ COMMANDLINE_ARGS="--medvram --always-batch-cond-uncond" REQS_FILE="requirements.
 你会得到一个 `xxx.app.gradio` 链接，这是在协作中使用该程序的预期方式。
 
 !!! danger "RCE"
-    使用参数为所述 `gradio` 共享实例设置身份验证：`--gradio-auth username:password` ,
-    可选择提供多组用户名和密码，以逗号分隔。
 
-    当您使用 `--share` 参数时，您的 ui 会暴露在互联网上。
+    当使用 `--share` 参数时，你的实例就可以在公开互联网访问了。
+    但是最近有人报告了一个可能是危险的[代码漏洞](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2571)
 
-    现在，最近报告了一个可能是危险的[代码漏洞](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2571)。
+    所以，使用参数为 `gradio` 共享实例设置身份验证：`--gradio-auth username:password` (可选择提供多组用户名和密码，以逗号分隔)
+
+    
+
+    
     
     如果攻击者可以访问 ui，他们可能能够远程运行 python 脚本。
 
