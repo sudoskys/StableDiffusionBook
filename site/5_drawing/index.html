@@ -887,6 +887,7 @@
 <p><code>[from::when]</code> 在固定数量的step后从提示中删除 <code>from</code>( when)</p>
 <p>转义，WebUi 对于带括号的参数，<code>a (word)</code>  请在参数中使用 <code>\</code> 字符转义为 <code>a \(word\)</code>。</p>
 <p>降低权重，<code>[]</code> 或者 <code>(word:0.952)</code>，后者仅 WebUi</p>
+<p>交替（alternate prompt）<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">4</a></sup>，这使您可以创建动物、人或风格的混合体，每一个 step 切换一个项，<code>[alison brie|emma stone|elizabeth olsen|scarlett johansson|anne hathaway|emma roberts], still film</code> 这是WebUi 语法，在 NAI 中是混合。</p>
 <div class="admonition tip">
 <p class="admonition-title">NAI</p>
 <p>NAI中不允许单独指定权重，但支持混合权重 <code>cat:1|happy:-0.2|cute:-0:3</code> 这样的语法。</p>
@@ -1273,7 +1274,7 @@ normal quality, text, censored, gown, latex, pencil
 <p><a href="https://gitlab.com/16777216c/stable-diffusion-embeddings">相关 embeddings</a>，里面有相关效果预览。</p>
 <p><a href="https://rentry.org/embeddings">list of Textual Inversion embeddings for WebUi(SD)</a></p>
 <p><a href="https://cyberes.github.io/stable-diffusion-textual-inversion-models/">HuggingFace 的embeddings库</a></p>
-<h3 id="textual-inversion-4">Textual Inversion 自训练<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">4</a></sup></h3>
+<h3 id="textual-inversion-4">Textual Inversion 自训练<sup id="fnref2:7"><a class="footnote-ref" href="#fn:7">4</a></sup></h3>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion#training-embeddings">英文:自己训练 embedding</a></p>
 <div class="admonition danger">
 <p class="admonition-title">重命名 VAE 文件</p>
@@ -1979,10 +1980,13 @@ scale 就是 CFG scale
 <p><a href="https://rentry.org/sdupdates#hall-of-fame">SD金矿</a>&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:6" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 <li id="fn:7">
-<p><a href="https://www.bilibili.com/video/BV1ae4y1S7v9/">风格模型训练</a>&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+<p><a href="https://www.bilibili.com/video/BV1ae4y1S7v9/">风格模型训练</a>&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:7" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 <li id="fn:8">
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2473">迭代草图</a>&#160;<a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:9">
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/1733">交替单词</a>&#160;<a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 6 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -1992,11 +1996,11 @@ scale 就是 CFG scale
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 15, 2022 18:54:14</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 15, 2022 19:01:55</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 15, 2022 18:54:14</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 15, 2022 19:01:55</span>
       
     
   </small>
