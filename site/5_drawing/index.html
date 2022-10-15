@@ -1130,9 +1130,10 @@ normal quality, text, censored, gown, latex, pencil
 <p><code>Denoising strength</code> 决定算法对图像内容的保留程度,可以减少对画风的变得，但也会弱化img2img能力。值越高 AI 对原图的参考程度就越低 (同时增加迭代次数)。</p>
 <p>对于以图做图来说，低 <code>denoising</code> 意味着修正原图，高 <code>denoising</code> 就和原图就没有大的相关性了。一般来讲阈值是 0.7 左右，超过 0.7 和原图基本上无关，0.3 以下就是稍微改一些。</p>
 <h3 id="img2img_1">Img2Img 三渲二</h3>
+<p>调整3D模型骨架比寻找样图更容易。</p>
 <p>可以结合 <strong>3D建模</strong> 摆 Pose,可以使用 MMD 相关软件。</p>
 <p>如果是真人图片，需要适当提高 <code>CFG Scale</code>。</p>
-<p>推荐使用 blender 或者 Unity ，在对 3D 模型的测试中，色彩主要影响 AI 的绘画效果，所以你的模型需要有纹理。</p>
+<p>推荐使用 blender 或者 Unity ，在对 3D 模型的测试中，<strong>色彩主要影响 AI 的绘画效果</strong>，所以你的模型需要有纹理。</p>
 <p>不知道 VRchat 怎么样。</p>
 <h3 id="img2img-ps">Img2Img PS重绘画/修复手</h3>
 <p>使用PS软件增删元素，然后重新生产。这可以解决画手的问题。</p>
@@ -1335,6 +1336,12 @@ normal quality, text, censored, gown, latex, pencil
 <p>一个 step 是向模型训练一张图片（或一批图片，但目前不支持批量）并用于改进 embedding。如果你中断训练并在以后恢复训练，步数会被保留。</p>
 <p>角色形象的风格化模型，建议步数为 15000-40000</p>
 <p>画师画风的风格化模型，建议步数为 40000-80000</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>这里给出的是一个参考，实际上 5000 和 7000 也有人成功。</p>
+<p>关键在于 Loss 率，Loss 10 轮不降低就可以停止了。</p>
+<p>如果Loss大于 0.3 ，效果就不是很好</p>
+</div>
 <p>如果太多会过拟合(可以理解为Ai的死板)</p>
 <p>随时观察，如果过拟合，可以停止。如果效果不是很好，可以去找早些时候的模型继续训练。找到一个好的效果。</p>
 <div class="admonition danger">
@@ -1952,11 +1959,11 @@ scale 就是 CFG scale
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 15, 2022 10:16:12</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 15, 2022 12:48:27</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 15, 2022 10:16:12</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 15, 2022 12:48:27</span>
       
     
   </small>
