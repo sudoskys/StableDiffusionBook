@@ -115,9 +115,18 @@ https://huggingface.co/Deltaadams/Hentai-Diffusion
 
 @huige233
 
-### 注释
 
-欢迎参与文档编写。
+## 碎言
+
+模型中没有存储任何素材，算法实现，目前的版权还很模糊。
+
+节省了画师的底稿时间，但是也牺牲了一部分创作的独立性。
+
+节省了小工作室和个人的成本，但是会导致低端美术市场的需求缩水。
+
+<iframe src="//player.bilibili.com/player.html?aid=986394990&bvid=BV1mt4y1c7VJ&cid=859387066&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
+
+另外，欢迎参与文档编写。
 
 
 ## 鸣谢
