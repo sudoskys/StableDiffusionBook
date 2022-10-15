@@ -487,7 +487,7 @@ Tip: `fill` 要更多 step 才能消除不自然感.
 
 通过这种方法，我们可以更改角色衣物风格或者其他任何细节。
 
-<iframe src="//player.bilibili.com/player.html?aid=559044202&cid=859852841&page=1&danmaku=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
+<iframe src="//player.bilibili.com/player.html?aid=559044202&cid=859852841&page=1&danmaku=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 ### Img2Img Loopback 回环生成
 
