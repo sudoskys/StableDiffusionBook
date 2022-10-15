@@ -810,6 +810,11 @@ Hypernetworks 是一种新颖的概念，用于在不触及任何权重的情况
 
 [相关的英文讨论](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2670)
 
+
+![hypernet对比图](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/exp_hypernet.jpg)
+>hypernet对比图
+
+
 ### **渐变提示词**
 
 https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-editing
