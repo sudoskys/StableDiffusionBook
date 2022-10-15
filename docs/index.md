@@ -16,7 +16,7 @@
 
 ## Stable Diffusion 和 NAI 关系？我该怎么办？
 
-因为泄漏事件，NAI使用数千万Danbooru（图站）图片训练的模型被泄漏了两次，而后来 **Stable Diffusion WebUi(一个通用的生成框架)** 对模型进行了支持，所以可以 使用 WebUi（简称SDWebUi）装载 NAI 的模型。
+因为泄漏事件，NAI 使用数千万 Danbooru（图站）图片训练的模型被泄漏了两次，而后来 **Stable Diffusion WebUi(一个通用的生成框架)** 对模型进行了支持，所以可以 使用 WebUi（简称 SDWebUi）装载 NAI 的模型。
 
 
 !!! info "**事件报告**"
@@ -30,7 +30,7 @@
 ### ENSD
 
 
-在设置页中的ENSD是 eta 噪声种子增量。
+在设置页中的 ENSD 是 eta 噪声种子增量。
 
 它改变了你的种子，执行一些 eta/sigma 的操作。
 
@@ -50,14 +50,14 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
 
 对一个相对复杂场景的文本描述，AI 需要能“理解”并匹配到对应的画面，大部分项目依赖的都是一个叫 CLIP 的模型。
 
-CLIP在生成模型的潜在空间进行搜索，从而找到与给定的文字描述相匹配的潜在图像。
+CLIP 在生成模型的潜在空间进行搜索，从而找到与给定的文字描述相匹配的潜在图像。
 
 它非常现代且高效。
 
 ### CUDA
 
-配合CUDA技术，显卡可以模拟成一颗PhysX物理加速芯片。目前，全系列的GeForce 8显示核心都支持CUDA。
+配合 CUDA 技术，显卡可以模拟成一颗 PhysX 物理加速芯片。目前，全系列的 GeForce 8 显示核心都支持 CUDA。
 
-使用CUDA技术，GPU可以用来进行通用处理（不仅仅是图形）；这种方法被称为GPGPU。与CPU不同的是，GPU以较慢速度并发大量线程，而非快速执行单一线程。以GeForce 8800 GTX为例，其核心拥有128个内处理器。利用CUDA技术，就可以将那些内处理器做为线程处理器，以解决数据密集的计算。
+使用 CUDA 技术，GPU 可以用来进行通用处理（不仅仅是图形）；这种方法被称为 GPGPU。与 CPU 不同的是，GPU 以较慢速度并发大量线程，而非快速执行单一线程。以 GeForce 8800 GTX 为例，其核心拥有 128 个内处理器。利用 CUDA 技术，就可以将那些内处理器做为线程处理器，以解决数据密集的计算。
 
 
