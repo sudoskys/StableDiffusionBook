@@ -971,6 +971,7 @@ Steps: 28, Sampler: Euler, CFG scale: 12, Seed: [SEE COLUMN], Size: 512x512, Mod
 <p>ckpt文件是一个脚本，基本上可以执行它想要的任何内容，并且有权执行。盲目运行它们有安全风险。</p>
 <p>Ckpt文件可能很危险。Windows会拦截此文件，要么创建者向文件中注入了某种恶意的python代码，要么是误报。</p>
 <p>可以通过此脚本运行它来查看执行的内容：https://rentry.org/safeunpickle2</p>
+<p>在新版本中 WebUi 对这项内容做了防护。</p>
 <h3 id="configyaml">Config.yaml？</h3>
 <p>NAIleak里边有个 config.yaml ， 将其改名为 <code>模型前缀.yaml</code> 和模型丢在一起就能加载,，但不建议加载 yaml，因为它会使内存占用加倍而不会对输出改变不大，但如果你真的想要，将其重命名为 [model name].yaml 并将其放在你的模型旁边。</p>
 <p>它包含主要用于配置用于训练或微调模型的数据加载器的参数，它有一个影响推理的<code>use_ema</code>选项。它决定了推理是使用<code>标准权重</code>还是使用 <code>EMA 权重</code>。</p>
@@ -983,15 +984,15 @@ Steps: 28, Sampler: Euler, CFG scale: 12, Seed: [SEE COLUMN], Size: 512x512, Mod
 <p>大多数新 GPU 使用半精度，因为它会降低 VRAM。</p>
 <p>如果您想获得绝对的最佳质量或运行 16xx 卡，请仅使用非半精度和/或全精度。</p>
 <h3 id="_5">横条参数说明</h3>
-<p><code>step</code> 迭代多少次, 取值和 sampling method 有关, DDIM 收敛较快, 见 Sampler vs. Steps Comparison (low to mid step counts) 我用 DDIM 取 20 够了.</p>
+<p><code>step</code> 迭代多少次, 取值和 <code>sampling method</code> 有关, <code>DDIM</code> 采样方法收敛较快, 具体差别见调参魔法 <code>Sampler vs. Steps Comparison (low to mid step counts)</code> 。</p>
 <p><code>batch count/batch size</code> 决定生成的图片数量, 显存够就加 batch size, 不够就 batch count, 得到的图片数量是两者之积 (小显存还是只动 count 就好)</p>
-<p><code>sample method</code>  我无脑 DDIM, Eula 也挺好用? (带 a 的是 ancestral 的意思, step 增长出图不稳定)</p>
+<p><code>sample method</code>  采样方法。DDIM, Eula 也挺好用。 (带 a 的是 ancestral 的意思, step 增长出图不稳定)</p>
 <p><code>cfg scale</code> 符合 prompt 的程度, 值越高越会字面看待 prompt, 低则给模型较大的发挥空间, 但是实际模型表现上来看 cfg scale 低 (6-8) 饱和度低, 偏线稿, 偏杂乱, 高 (18-22) 则饱和度偏高, 偏 CG 风格.</p>
 <blockquote>
 <p>过高的 CFG 会引起颜色失真，CFG 应该在 5-15 之间</p>
 </blockquote>
-<p><code>denoise strength</code> img2img 专属参数, 从 0 到 1 取值, 值越高 AI 对原图的参考程度就越低 (同时增加迭代次数), 我个人喜欢低 cfg 高 denoise 重绘图, 高 cfg 低 denoise 改细节.</p>
-<p><a href="https://www.reddit.com/r/StableDiffusion/comments/xbeyw3/can_anyone_offer_a_little_guidance_on_the/">一个指南：RedditAbout</a></p>
+<p><code>denoise strength</code> img2img 专属参数, 从 0 到 1 取值, 值越高 AI 对原图的参考程度就越低 (同时增加迭代次数), 个人喜欢低 cfg 高 denoise 重绘图, 高 cfg 低 denoise 改细节.</p>
+<p><a href="https://www.reddit.com/r/StableDiffusion/comments/xbeyw3/can_anyone_offer_a_little_guidance_on_the/">一个小指南：RedditAbout</a></p>
 <h3 id="bug">生成图片发生BUG的自救</h3>
 <h4 id="16">16系显卡生成黑/绿图</h4>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Install-and-Run-on-NVidia-GPUs">Green or Black screen</a></p>
@@ -1166,11 +1167,11 @@ Heun 在准确性方面是对 Euler 的“改进”，但它以大约一半的�
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 15, 2022 04:08:09</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 15, 2022 04:34:17</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 15, 2022 04:08:09</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 15, 2022 04:34:17</span>
       
     
   </small>
