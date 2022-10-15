@@ -1333,9 +1333,10 @@ normal quality, text, censored, gown, latex, pencil
 每 N 步保存一个图像到日志目录，0 表示禁用</p>
 <p><code>Max steps</code>决定完成多少 <code>step</code> 后，训练将停止。</p>
 <p>一个 step 是向模型训练一张图片（或一批图片，但目前不支持批量）并用于改进 embedding。如果你中断训练并在以后恢复训练，步数会被保留。</p>
-<p>有人建议 7000 step ，但是需要测试(automatic 自己说是 after few tens of thousands，大概 2～3 W？有人用 3000 Step 也炼出来了)</p>
+<p>角色形象的风格化模型，建议步数为 15000-40000</p>
+<p>画师画风的风格化模型，建议步数为 40000-80000</p>
 <p>如果太多会过拟合(可以理解为Ai的死板)</p>
-<p>随时观察，如果过拟合，可以停止。</p>
+<p>随时观察，如果过拟合，可以停止。如果效果不是很好，可以去找早些时候的模型继续训练。找到一个好的效果。</p>
 <div class="admonition danger">
 <p class="admonition-title">重命名 VAE 文件</p>
 <p>重命名VAE模型文件非常关键，或者确定你已经设置里打开 <code>auto unload</code>。</p>
@@ -1951,11 +1952,11 @@ scale 就是 CFG scale
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 15, 2022 05:19:13</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 15, 2022 05:22:45</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 15, 2022 05:19:13</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 15, 2022 05:22:45</span>
       
     
   </small>
