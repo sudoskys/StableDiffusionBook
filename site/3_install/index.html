@@ -840,6 +840,9 @@ set VENV_DIR允许您选择虚拟环境的目录。默认为<code>venv</code>。
 <p><code>set COMMANDLINE_ARGS=--ckpt a.ckpt</code>
 set COMMANDLINE_ARGS设置命令行参数webui.py运行
 示例使用模型a.ckpt而不是model.ckpt</p>
+<p><em>GPU指定</em></p>
+<p>例如 <code>CUDA_VISIBLE_DEVICES=1 python launch.py​​ --listen --port 7861</code></p>
+<p>在 WebUi 支持多 GPU 之前，你可以使用这种方法运行多个实例</p>
 <p><strong>优化命令参数</strong></p>
 <p>来自 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Optimizations">官方Wiki</a></p>
 <table>
@@ -1062,11 +1065,11 @@ sudo systemctl restart docker
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 16, 2022 09:11:07</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 16, 2022 09:38:30</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 16, 2022 09:11:07</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 16, 2022 09:38:30</span>
       
     
   </small>
