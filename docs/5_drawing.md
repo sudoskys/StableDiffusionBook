@@ -497,36 +497,27 @@ Batch 数设置控制获得多少次迭代
 ![效果](https://raw.githubusercontent.com/xinntao/Real-ESRGAN/master/assets/teaser.jpg)
 >效果图
 
+## 模型优化
 
-### DreamBooth 训练
+novelai模型虽好，但看多了难免千篇一律。通过进行针对性的模型训练，我们可以让模型学会新的人物概念或者绘画风格。
 
-DreamBooth 的模型是一种新的文本到图像“个性化”（可适应用户特定的图像生成需求）扩散模型
+### Textual Inversion
 
-[Colab 在线训练模型](https://colab.research.google.com/drive/17yM4mlPVOFdJE_81oWBz5mXH9cxvhmz8#scrollTo=lJoOgLQHnC8L)，需要Pro套餐算力(18-24G显存需要)
+[Textual Inversion Concepts](https://textual-inversion.github.io)
 
-[DreamBooth_Stable_Diffusion](https://colab.research.google.com/github/ShivamShrirao/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion.ipynb#scrollTo=K6xoHWSsbcS3)
+[WebUI Feature 说明和效果图](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion)
 
-[fast-DreamBooth](https://colab.research.google.com/github/TheLastBen/fast-stable-diffusion/blob/main/fast-DreamBooth.ipynb)
+#### 基础概念
 
-https://github.com/XavierXiao/Dreambooth-Stable-Diffusion
+![原理介绍](https://textual-inversion.github.io/static/images/training/training.JPG)
 
+我们知道，扩散模型的输入端结构是 prompts -> tokenizer -> embedding finder -> text transformer，用户输入的提示文本首先会被转换成数字表示，然后才会开始降噪/生成过程。Textual Inversion（下称TI） 通过在编码器中加入额外的嵌入映射，以此处理用户创造的某种新概念或者新的风格。新嵌入会对将训练好的特定词汇（new pseudo-words）映射为用户提供的特定视觉概念，并与其他向量一起作为模型输入传递。由此可见 TI 更像是对文本嵌入空间进行部分反转（Inversion），因而得名 Textual Inversion。
 
-### Textual Inversion 训练新角色
+换句话说，TI 可以使用自己的图片训练一个小型神经网络，并在生成新图片时使用它，以此来描绘原本难以生成的角色或者风格。这对训练数据集没有囊括的 2021 年之后的动漫人物非常有效。
 
-[官方英文说明和效果图](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion)
+#### 使用方法
 
-`Textual Inversion`允许你在自己的图片上训练一小部分神经网络，并在生成新图片时使用结果。可以数据集没有新出的角色画不出的问题，模仿特定的艺术风格。
-
-这对制作数据集没有囊括的 2021 年之后的动漫人物非常有效。（PS:相应的，Miku因为图多所以效果最好）
-
-
-在许多情况下（例如不同的环境和姿势）对一个主题执行此操作通常可以让 AI 创建更好的嵌入
-
-使用时，将 embedding(一个 .pt 或一个 .bin 文件) 放入`embeddings` 目录并在 prompt 提示词中提到你要用的 embedding 的文件名(*.pt)即可。不必重新启动程序即可使其正常工作。
-
-没错，NAI 的 `hypernetworks` 就是超网络，用来做 embeddings（风格化）。
-
-多 `embeddings` 可以一起用，启动时候会自动加载。
+将训练好的 embedding 文件（通常为10-100K大小的 `.pt` `.bin` 文件) 放入`embeddings` 目录，并在 prompt 提示词中提到你要用的 embedding 的文件名即可。WebUI 会自动重载 embeddings，不必重新启动程序即可使其正常工作。
 
 [相关 embeddings](https://gitlab.com/16777216c/stable-diffusion-embeddings)，里面有相关效果预览。
 
@@ -534,15 +525,19 @@ https://github.com/XavierXiao/Dreambooth-Stable-Diffusion
 
 [HuggingFace 的embeddings库](https://cyberes.github.io/stable-diffusion-textual-inversion-models/)
 
-### Textual Inversion 自训练[^7]
+在提示词中可以使用多个 embeddings，但需要注意token限制。
+
+### Eembedding 训练
+
+相关视频教程[^7]
 
 [英文:自己训练 embedding](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion#training-embeddings)
 
-!!! danger "重命名 VAE 文件"
+!!! danger "卸载 VAE 文件"
 
-    重命名VAE模型文件非常关键，如果带着VAE训练效果十分差。
+    VAE 文件会对训练过程造成干扰，故在训练前需要卸载 VAE。
 
-    或者不需要重命名vae文件，直接在设置里打开 `auto unload`
+    建议直接重命名 VAE 模型文件以保证其彻底不加载，同时在 WebUI 设置里打开 `Unload VAE and CLIP from VRAM when training` 选项
 
 
 #### 模型环境要求
@@ -724,6 +719,19 @@ Windows 需要在 `web-user.bat的COMMANDLINE_ARGS=` 一行添加，或者直接
 训练的结果是一个 .pt 或一个 .bin 文件（前者是原作者使用的格式，后者作为 diffusers library）
 
 <iframe src="//player.bilibili.com/player.html?aid=559085039&bvid=BV1ae4y1S7v9&cid=859894044&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
+
+
+### DreamBooth 训练
+
+DreamBooth 的模型是一种新的文本到图像“个性化”（可适应用户特定的图像生成需求）扩散模型，
+
+[Colab 在线训练模型](https://colab.research.google.com/drive/17yM4mlPVOFdJE_81oWBz5mXH9cxvhmz8#scrollTo=lJoOgLQHnC8L)，需要Pro套餐算力(18-24G显存需要)
+
+[DreamBooth_Stable_Diffusion](https://colab.research.google.com/github/ShivamShrirao/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion.ipynb#scrollTo=K6xoHWSsbcS3)
+
+[fast-DreamBooth](https://colab.research.google.com/github/TheLastBen/fast-stable-diffusion/blob/main/fast-DreamBooth.ipynb)
+
+https://github.com/XavierXiao/Dreambooth-Stable-Diffusion
 
 
 ### 训练 Hypernetworks
