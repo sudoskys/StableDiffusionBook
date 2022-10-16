@@ -419,7 +419,6 @@ DDIM 是一种神经网络方法。 每一步都相当快，但效率相对较�
 #### 在 Windows 上编译 Xformers
 
 !!! info
-    如果你有一张 RTX 3xxx+ 卡，只需要卸载现有的 xformers 并使用`--xformers`启动WebUi
 
     你可以在右边的链接下载预构建的Xformers！https://rentry.org/25i6yn ，记得先查看[GPU 架构](https://developer.nvidia.com/cuda-gpus)
 
