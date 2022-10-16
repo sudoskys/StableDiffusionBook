@@ -2,11 +2,13 @@
 
 # 调参魔法
 
-这节会介绍 参数 和 相关的WebUi(SD)  网页应用资源。部分内容只做简单介绍，因为前面有相关描述。
+这节会介绍 参数 和 相关的 WebUi(SD)  网页应用资源。部分内容只做简单介绍，因为前面有相关描述。
 
 先请拿上 [调参魔法书](https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml)和 [手抄魔法本](https://docs.google.com/spreadsheets/d/14Gg1kIGWdZGXyCC8AgYVT0lqI6IivLzZOdIT3QMWwVI/)。
 
-如果你觉得能力有限，可以打开[Tag在线生成](https://aitag.top/)。
+如果你觉得查表很麻烦，可以打开 [Tag在线生成](https://aitag.top/)。
+
+如果你不想读文字，可以打开 [推荐的视频教程](https://space.bilibili.com/35723238/channel/collectiondetail?sid=779851)
 
 下面的语法对效果有很大影响，需要通读。
 
@@ -29,7 +31,7 @@
 
 ### 迭代草图[^8]
 
-这里讨论一下如何将**手绘草图**通过Ai绘画优化，*注意不是二次元*。
+这里讨论一下如何将**手绘草图**通过 Ai 绘画优化，*注意不是二次元*。
 
 在第一次迭代中，您不需要太多 Steps，CFG 可以非常低（以获得更好的多样化结果），如果不想完全丢失草图，Denoising 应该在 0.3-0.4 左右。
 
@@ -45,7 +47,7 @@
 
 ## 魔法入门
 
-请先在前面了解一下WebUi(SD)网页应用的参数。
+请先在前面了解一下 WebUi(SD) 网页应用的参数。
 
 ### 提示词语法简介
 
@@ -73,6 +75,8 @@
 转义，WebUi 对于带括号的参数，`a (word)`  请在参数中使用 `\` 字符转义为 `a \(word\)`。
 
 降低权重，`[]` 或者 `(word:0.952)`，后者仅 WebUi
+
+交替（alternate prompt）[^7]，这使您可以创建动物、人或风格的混合体，每一个 step 切换一个项，`[alison brie|emma stone|elizabeth olsen|scarlett johansson|anne hathaway|emma roberts], still film` 这是WebUi 语法，在 NAI 中是混合。
 
 !!! tip "NAI"
 
@@ -108,7 +112,7 @@
 
 ### 迭代步数
 
-更多的迭代步数可能会有更好的生成效果，但是一定会导致生成时间变长。太多的steps也可能适得其反，几乎不会有提高。
+更多的迭代步数可能会有更好的生成效果，但是一定会导致生成时间变长。太多的 steps 也可能适得其反，几乎不会有提高。
 
 
 ### 采样器
@@ -156,7 +160,7 @@
 
 - 提示不要太长，超过 100 就有失败风险。
 
-根据 手抄本的Tip，由于GPT-3模型限制，promot并不是无限的，positive token 在75-80之间，negative大概65，加太多会提示你xxx of xxx are truncated，所以别人那边的圣经不要照抄，太长的咒语后半都没有意义了，所以用简易反咒就足够，除非你有特定想屏蔽的东西。
+根据 手抄本的Tip，由于GPT-3模型限制，promot 并不是无限的，positive token 在 75-80 之间，negative 大概65，加太多会提示你 xxx of xxx are truncated，所以别人那边的圣经不要照抄，太长的咒语后半都没有意义了，所以用简易反咒就足够，除非你有特定想屏蔽的东西。
 
 
 当提示超过75个`token`（比如150个`token`）时，WebUi 将分组提示词，提交多组75个 `token`。标记只具有同一集合中其他内容的上下文。这意味着您可能在第一组和第二组之间的边界处有`bule hair`，标记`blue`将在第一组中，`hair`将在第二组中。这导致了结果的不准确，因为这两个词是分开的。
@@ -203,9 +207,9 @@ Ai 难以解析下划线，请少用。
 
 A提示词放入的顺序就是优先级。
 
-webui 突破 tag 75个限制的方式是把 75 个分为一组。
+webui 突破 tag 75 个限制的方式是把 75 个分为一组。
 
-推荐主体往前放，接着描述装扮的词，画质提升词穿插在这些描述词之间，一般为了提高成品率要把动作、nsfw词等改变构图的词往后放，或者手动调低权重（主要是为了防止ai强行凑动作导致肢体到处跑）。
+推荐主体往前放，接着描述装扮的词，画质提升词穿插在这些描述词之间，一般为了提高成品率要把动作、nsfw 词等改变构图的词往后放，或者手动调低权重（主要是为了防止ai强行凑动作导致肢体到处跑）。
 
 以上排序是每组tag都要遵守的，所以如果后面的tag超过 75 了就应该把前面的分一部分过来。
 
@@ -298,7 +302,7 @@ normal quality, text, censored, gown, latex, pencil
 
 ### 渐变
 
-渐变标签，指示WebUi在训练中替换Token，语法使用 `[some1:some2:num]`
+渐变标签，指示 WebUi 在训练中替换 Token，语法使用 `[some1:some2:num]`
 
 `[fantasy:cyberpunk:16]` 代表从第 16 step 后，使用 `cyberpunk` 标签替换 `fantasy`
 
@@ -306,6 +310,7 @@ normal quality, text, censored, gown, latex, pencil
 
 `[from::when]` 在固定数量的step后从提示中删除 `from`( when)
 
+![sample_Gradient](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/sample_Gradient.jpg)
 
 ### 重现提示词
 
@@ -386,9 +391,23 @@ normal quality, text, censored, gown, latex, pencil
     请阅读前面章节的模型进阶1,了解具体的 Img2Img 和 inpaint 介绍操作。
 
 
+### Img2Txt
+
+生成按钮下有一个 `Interrogate CLIP`，点击后会下载 `CLIP`，用于生成当前图片框内图片的 Tag 并填充到提示词。
+
+!!! tip 
+    本文件为 [model_base_caption_capfilt_large.pth](https://storage.googleapis.com/sfr-vision-language-research/BLIP/models/model_base_caption_capfilt_large.pth)
+    
+    大小为855MB
+
+
 ### Img2Img 介绍
 
 一般我们有两种途径对图像进行修复：**PS 和 InPaint**，使用方法也十分多样。
+
+!!! tip "不同之处"
+    PS 重新绘画投入 Img2Img 的话，会导致画风的变动，而 Inpaint 就不会。
+
 
 **CFG Scale**
 
@@ -403,9 +422,15 @@ normal quality, text, censored, gown, latex, pencil
 
 ###  Img2Img 三渲二
 
-可以结合 **3D建模** 摆Pose,可以使用 [vroid](https://vroid.com/en)
+调整3D模型骨架比寻找样图更容易。
 
-如果是真人图片，需要适当提高 `CFG Scale`
+可以结合 **3D建模** 摆 Pose,可以使用 MMD 相关软件。
+
+如果是真人图片，需要适当提高 `CFG Scale`。
+
+推荐使用 blender 或者 Unity ，在对 3D 模型的测试中，**色彩主要影响 AI 的绘画效果**，所以你的模型需要有纹理。
+
+不知道 VRchat 怎么样。
 
 
 ### Img2Img PS重绘画/修复手
@@ -447,9 +472,22 @@ Outpainting, unlike normal image generation, seems to profit very much from larg
 
 在 img2img 选项卡中，在图像的一部分上绘制蒙版，该部分将被重画。
 
-一般选 `original`,`fill` 要更多 step 才能消除不自然感.
+对于 `Masked content` 设置，遮罩内容字段确定内容在修复之前放置到遮罩区域中。
 
-这可以更改角色衣物风格或者其他任何细节。
+一般选 `original`，可以保持潛空间一致性。
+
+它们的效果如下:
+
+| mask  | fill  | original   | latent noise      | latent nothing       |
+|---------------------------|----------------|-----------------------|-------------------------|-----------------------|
+| ![](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting-initial-content-mask.png) | ![](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting-initial-content-fill.png) | ![](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting-initial-content-original.png) | ![](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting-initial-content-latent-noise.png) | ![](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting-initial-content-latent-nothing.png) |
+
+`mask` 横条决定了模糊程度，original 是`原图`，fill 是`填充底色`
+
+Tip: `fill` 要更多 step 才能消除不自然感.
+
+`Inpaint at full resolution` 即全分辨率修复。
+通常，Inpaint 会将图像大小调整为*UI中指定的目标分辨率*。启用完全分辨率的Inpaint后，仅调整遮罩区域的大小，并在处理后将其**粘贴回**原始图片。这允许您处理大图片，并允许您以更大的分辨率渲染修复对象。
 
 有几种方法进行重绘制:
 
@@ -461,12 +499,11 @@ Outpainting, unlike normal image generation, seems to profit very much from larg
 
 ![result](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting.png)
 
+<iframe src="//player.bilibili.com/player.html?aid=474043788&bvid=BV1HK411Q7uk&cid=860273094&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
+
+通过这种方法，我们可以更改角色衣物风格或者其他任何细节。
+
 <iframe src="//player.bilibili.com/player.html?aid=559044202&cid=859852841&page=1&danmaku=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
-
-### Img2Img 全分辨率修复
-
-通常，修复会将图像大小调整为 UI 中指定的目标分辨率。启用全分辨率修复后，仅调整蒙版区域的大小，并在处理后将其粘贴回原始图片。这使您可以处理大图片，并允许您以更大的分辨率渲染修复的对象。
-
 
 ### Img2Img Loopback 回环生成
 
@@ -479,9 +516,33 @@ Batch 数设置控制获得多少次迭代
 
 ### 超分图像 extras
 
-`realesrgan` 或者 `realcugan` 就可以，推荐 [realcugan](https://github.com/bilibili/ailab/tree/main/Real-CUGAN)
+`webui` extras 页有一个自带的超分功能，可以使用 `ESRGAN_4x`模型
 
-另外，`webui` extras 页有一个自带的超分功能，可以去`settings-upscaling` 使用 `R-ESRGAN 4x+ Anime6B`模型，重新启动程序
+当然 `realesrgan` 或者 `realcugan` 也可以，[realcugan](https://github.com/bilibili/ailab/tree/main/Real-CUGAN)
+
+!!! tip "相关模型"
+
+    文件统一下载到 `SDwebUI文件夹\models` 下
+
+    [LDSR](https://heibox.uni-heidelberg.de/f/578df07c8fc04ffbadf3/?dl=1)
+    
+    文件大小为1.9GB
+
+    [BSGRAN 4x](https://github.com/cszn/KAIR/releases/download/v1.0/BSRGAN.pth) 
+
+    文件大小为63.9M
+
+    [ESRGAN_4x](https://github.com/cszn/KAIR/releases/download/v1.0/ESRGAN.pth))
+    
+    文件大小为63.8MB
+
+    [ScuNET GAN/PSNR](https://github.com/cszn/KAIR/releases/download/v1.0/scunet_color_real_gan.pth" to D:\stable-diffusio\models\ScuNET\ScuNET.pth)
+    
+    文件大小为68.6MB
+
+    [SwinIR 4x](https://github.com/JingyunLiang/SwinIR/releases/download/v0.0/003_realSR_BSRGAN_DFOWMFC_s64w8_SwinIR-L_x4_GAN.pth) 
+    
+    文件大小为136MB
 
 **应该使用什么 Upscaler？**
 
@@ -544,7 +605,7 @@ novelai模型虽好，但看多了难免千篇一律。通过进行针对性的�
 
 WebUi 应该是 Git 的最新版本。
 
-显存至少 6GB，正常使用需要 12GB显存。根据实验数据，8GB显存应该选择 `512x512` 分辨率。
+显存至少 6GB，正常使用需要 12GB 显存。根据实验数据，8GB显存应该选择 `512x512` 分辨率。
 
 训练可使用半精度浮点，但是否好用还需要进行实验。
 
@@ -673,11 +734,20 @@ Windows 需要在 `web-user.bat的COMMANDLINE_ARGS=` 一行添加，或者直接
 一个 step 是向模型训练一张图片（或一批图片，但目前不支持批量）并用于改进 embedding。如果你中断训练并在以后恢复训练，步数会被保留。
 
 
-有人建议 7000 step ，但是需要测试(automatic 自己说是 after few tens of thousands，大概 2～3 W？有人用 3000 Step 也炼出来了)
+角色形象的风格化模型，建议步数为 15000-40000
+
+画师画风的风格化模型，建议步数为 40000-80000
+
+!!! tip
+    这里给出的是一个参考，实际上 5000 和 7000 也有人成功。
+    
+    关键在于 Loss 率，Loss 10 轮不降低就可以停止了。
+
+    如果Loss大于 0.3 ，效果就不是很好
 
 如果太多会过拟合(可以理解为Ai的死板)
 
-随时观察，如果过拟合，可以停止。
+随时观察，如果过拟合，可以停止。如果效果不是很好，可以去找早些时候的模型继续训练。找到一个好的效果。
 
 !!! danger "重命名 VAE 文件"
     重命名VAE模型文件非常关键，或者确定你已经设置里打开 `auto unload`。
@@ -688,6 +758,8 @@ Windows 需要在 `web-user.bat的COMMANDLINE_ARGS=` 一行添加，或者直接
 点击 右下角训练，等待。
 
 训练完毕。再次重命名 Vae 文件，重启程序。
+
+
 
 
 #### 备注
@@ -745,6 +817,13 @@ Hypernetworks 是一种新颖的概念，用于在不触及任何权重的情况
 唯一的要求是使用非常非常低的学习率，例如 0.000005 或 0.0000005。
 
 [应该查看的英文指南](https://rentry.org/hypernetwork4dumdums)
+
+[相关的英文讨论](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2670)
+
+
+![hypernet对比图](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/exp_hypernet.jpg)
+>hypernet对比图
+
 
 ### **渐变提示词**
 
@@ -851,7 +930,7 @@ scale 就是 CFG scale
 将所有提示词前面加入 `masterpiece, best quality`
 
 
-Clip跳过 0，其他一切都很好（afaik 不要使用超网络、v2、yaml、VAE）
+Clip 跳过 0，其他一切都很好（afaik 不要使用超网络、v2、yaml、VAE）
 
 ### 转换——NAI和WebUi(SD)的增强语法不同
 
@@ -1020,3 +1099,5 @@ Clip跳过 0，其他一切都很好（afaik 不要使用超网络、v2、yaml�
 [^7]:[风格模型训练](https://www.bilibili.com/video/BV1ae4y1S7v9/)
 
 [^8]:[迭代草图](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2473)
+
+[^9]:[交替单词](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/1733)

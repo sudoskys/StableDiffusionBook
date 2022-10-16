@@ -386,7 +386,7 @@
         
           <li class="md-nav__item">
   <a href="#gpu" class="md-nav__link">
-    多GPU支持
+    多 GPU 支持
   </a>
   
 </li>
@@ -604,6 +604,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#cpu" class="md-nav__link">
+    使用CPU进行绘画
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -785,11 +792,11 @@
 
 
 <h1 id="_1">模型技法</h1>
-<p>这节介绍 Debug 和一些 关于WebUi网页应用模型参数 的优化方案，让它更好用。</p>
+<p>这节介绍 Debug 和一些 关于 WebUi 网页应用模型参数 的优化方案，让它更好用。</p>
 <p>至于如何出图，请看下一节。</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>注意要经常从远端代码库拉取代码更新WebUi网页应用～</p>
+<p>注意要经常从远端代码库拉取代码更新 WebUi 网页应用～</p>
 </div>
 <blockquote>
 <p>本节只针对 NAI 模型展开教程。请多多关注 About 页面的社区获取最新进展和新闻。<strong>大部分源教程来自：<sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">1</a></sup></strong></p>
@@ -810,11 +817,11 @@
 print(torch.__version__)
 print(torch.cuda.is_available())
 </code></pre></div>
-<p><strong>查看torch对应的cuda版本</strong>
+<p><strong>查看 torch 对应的 cuda 版本</strong>
 <div class="highlight"><pre><span></span><code>torch.version.cuda
 </code></pre></div>
 输入 ctrl + z 退出</p>
-<h3 id="gpu">多GPU支持</h3>
+<h3 id="gpu">多 GPU 支持</h3>
 <p>Easiest mode would be implementing a ~data parallel approach, in which we have one model per GPU and you distribute the workload among them.</p>
 <p>Given the amount of features this repo provides I think it could take some time to have em all supported in the parallel version.</p>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/156">查看此 issue 页面</a></p>
@@ -971,6 +978,7 @@ Steps: 28, Sampler: Euler, CFG scale: 12, Seed: [SEE COLUMN], Size: 512x512, Mod
 <p>ckpt文件是一个脚本，基本上可以执行它想要的任何内容，并且有权执行。盲目运行它们有安全风险。</p>
 <p>Ckpt文件可能很危险。Windows会拦截此文件，要么创建者向文件中注入了某种恶意的python代码，要么是误报。</p>
 <p>可以通过此脚本运行它来查看执行的内容：https://rentry.org/safeunpickle2</p>
+<p>不要在未检查其来源的情况下安装随机模型。</p>
 <h3 id="configyaml">Config.yaml？</h3>
 <p>NAIleak里边有个 config.yaml ， 将其改名为 <code>模型前缀.yaml</code> 和模型丢在一起就能加载,，但不建议加载 yaml，因为它会使内存占用加倍而不会对输出改变不大，但如果你真的想要，将其重命名为 [model name].yaml 并将其放在你的模型旁边。</p>
 <p>它包含主要用于配置用于训练或微调模型的数据加载器的参数，它有一个影响推理的<code>use_ema</code>选项。它决定了推理是使用<code>标准权重</code>还是使用 <code>EMA 权重</code>。</p>
@@ -983,15 +991,15 @@ Steps: 28, Sampler: Euler, CFG scale: 12, Seed: [SEE COLUMN], Size: 512x512, Mod
 <p>大多数新 GPU 使用半精度，因为它会降低 VRAM。</p>
 <p>如果您想获得绝对的最佳质量或运行 16xx 卡，请仅使用非半精度和/或全精度。</p>
 <h3 id="_5">横条参数说明</h3>
-<p><code>step</code> 迭代多少次, 取值和 sampling method 有关, DDIM 收敛较快, 见 Sampler vs. Steps Comparison (low to mid step counts) 我用 DDIM 取 20 够了.</p>
+<p><code>step</code> 迭代多少次, 取值和 <code>sampling method</code> 有关, <code>DDIM</code> 采样方法收敛较快, 具体差别见调参魔法 <code>Sampler vs. Steps Comparison (low to mid step counts)</code> 。</p>
 <p><code>batch count/batch size</code> 决定生成的图片数量, 显存够就加 batch size, 不够就 batch count, 得到的图片数量是两者之积 (小显存还是只动 count 就好)</p>
-<p><code>sample method</code>  我无脑 DDIM, Eula 也挺好用? (带 a 的是 ancestral 的意思, step 增长出图不稳定)</p>
+<p><code>sample method</code>  采样方法。DDIM, Eula 也挺好用。 (带 a 的是 ancestral 的意思, step 增长出图不稳定)</p>
 <p><code>cfg scale</code> 符合 prompt 的程度, 值越高越会字面看待 prompt, 低则给模型较大的发挥空间, 但是实际模型表现上来看 cfg scale 低 (6-8) 饱和度低, 偏线稿, 偏杂乱, 高 (18-22) 则饱和度偏高, 偏 CG 风格.</p>
 <blockquote>
 <p>过高的 CFG 会引起颜色失真，CFG 应该在 5-15 之间</p>
 </blockquote>
-<p><code>denoise strength</code> img2img 专属参数, 从 0 到 1 取值, 值越高 AI 对原图的参考程度就越低 (同时增加迭代次数), 我个人喜欢低 cfg 高 denoise 重绘图, 高 cfg 低 denoise 改细节.</p>
-<p><a href="https://www.reddit.com/r/StableDiffusion/comments/xbeyw3/can_anyone_offer_a_little_guidance_on_the/">一个指南：RedditAbout</a></p>
+<p><code>denoise strength</code> img2img 专属参数, 从 0 到 1 取值, 值越高 AI 对原图的参考程度就越低 (同时增加迭代次数), 个人喜欢低 cfg 高 denoise 重绘图, 高 cfg 低 denoise 改细节.</p>
+<p><a href="https://www.reddit.com/r/StableDiffusion/comments/xbeyw3/can_anyone_offer_a_little_guidance_on_the/">一个小指南：RedditAbout</a></p>
 <h3 id="bug">生成图片发生BUG的自救</h3>
 <h4 id="16">16系显卡生成黑/绿图</h4>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Install-and-Run-on-NVidia-GPUs">Green or Black screen</a></p>
@@ -1071,6 +1079,9 @@ Heun 在准确性方面是对 Euler 的“改进”，但它以大约一半的�
 <blockquote>
 <p>30 系显卡正常启动 --xformers, 其他显卡 --force-enable-xformers</p>
 </blockquote>
+<h3 id="cpu">使用CPU进行绘画</h3>
+<p>根据此 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2597">pr</a></p>
+<p>可以通过 <code>--use-cpu all</code> 尽可能的使用CPU进行生成</p>
 <hr />
 <h2 id="_10">进阶</h2>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#attentionemphasis">英文原版</a></p>
@@ -1094,7 +1105,7 @@ Heun 在准确性方面是对 Euler 的“改进”，但它以大约一半的�
 <p>引用官方 Wiki 的设置图</p>
 </blockquote>
 <h3 id="variations"><strong>Variations种子变化</strong></h3>
-<p>Variation strength slider 和 Variation seed field允许您指定现有图片应更改多少以使其看起来不同。
+<p>Variation strength slider 和 Variation seed field 允许您指定现有图片应更改多少以使其看起来不同。
 在最大强度下，您将获得带有变异种子的图片，至少 - 带有原始种子的图片（使用先前采样器时除外）。</p>
 <h3 id="_11"><strong>提示词模板</strong></h3>
 <p>“Save prompt as style” 按钮将当前的提示写入 styles.csv，该文件包含样式集合</p>
@@ -1105,15 +1116,15 @@ Heun 在准确性方面是对 Euler 的“改进”，但它以大约一半的�
 <p>令牌提示 不会让你重现这个图像（有时甚至不会很接近），但它可能有用。</p>
 <p>默认情况下，只有一个列表 - 艺术家列表（来自artists.csv）。</p>
 <p>不过你可以通过执行以下操作添加更多列表：
-- interrogate在与 webui 相同的位置创建目录
+- interrogate 在与 webui 相同的位置创建目录
 - 将文本文件放入其中，每行都有相关描述</p>
 <div class="highlight"><pre><span></span><code>For example of what text files to use, see https://github.com/pharmapsychotic/clip-interrogator/tree/main/data. In fact, you can just take files from there and use them - just skip artists.txt because you already have a list of artists in artists.csv (or use that too, who&#39;s going to stop you). Each file adds one line of text to the final description. If you add &quot;.top3.&quot; to filename, for example, flavors.top3.txt, the three most relevant lines from this file will be added to the prompt (other numbers also work).
 </code></pre></div>
 <h3 id="face-restoration"><strong>Face restoration三次元人脸修复</strong></h3>
 <p>适用于三次元。</p>
-<p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#face-restoration</p>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#face-restoration">https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#face-restoration</a></p>
 <h3 id="css">自定义.css</h3>
-<p>创建一个名为user.cssnear的文件webui.py并将自定义 CSS 代码放入其中。</p>
+<p>创建一个名为 user.cssnear 的文件 webui.py 并将自定义 CSS 代码放入其中。</p>
 <p>For example, this makes the gallery taller:
 <div class="highlight"><pre><span></span><code>#txt2img_gallery, #img2img_gallery{
     min-height: 768px;
@@ -1132,7 +1143,7 @@ Heun 在准确性方面是对 Euler 的“改进”，但它以大约一半的�
 <p><code>--medvram</code> 是另一个优化，通过不在同一批次中处理条件和无条件去噪，可以显着减少 VRAM 的使用。这种优化的实现不需要对原始的稳定扩散代码进行任何修改。</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>经过 10/10 的优化，RTX2050的4GB 显卡也可以使用 <code>--medvram</code> 。</p>
+<p>经过 10/10 的优化，RTX2050 的 4GB 显卡也可以使用 <code>--medvram</code> 。</p>
 </div>
 <p>当然也可以减半精度，或者生成一张 64x64 清理 vram</p>
 <h3 id="_14">不间断生产</h3>
@@ -1142,7 +1153,7 @@ Heun 在准确性方面是对 Euler 的“改进”，但它以大约一半的�
 <h3 id="colab">Colab</h3>
 <p>Tip：每天重置资源</p>
 <h3 id="nai-4chan">NAI 4chan简化版本</h3>
-<p>4chan版本魔改官后程序，会动态分配，显存不够内存来凑。</p>
+<p>4chan 版本魔改官后程序，会动态分配，显存不够内存来凑。</p>
 <div class="footnote">
 <hr />
 <ol>
@@ -1166,11 +1177,11 @@ Heun 在准确性方面是对 Euler 的“改进”，但它以大约一半的�
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 14, 2022 17:47:24</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 15, 2022 19:01:55</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 14, 2022 17:47:24</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 15, 2022 19:01:55</span>
       
     
   </small>

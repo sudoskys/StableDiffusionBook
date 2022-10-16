@@ -538,6 +538,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#img2txt" class="md-nav__link">
+    Img2Txt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#img2img" class="md-nav__link">
     Img2Img 介绍
   </a>
@@ -581,13 +588,6 @@
           <li class="md-nav__item">
   <a href="#img2img-inpainting" class="md-nav__link">
     Img2Img Inpainting 修补
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#img2img_2" class="md-nav__link">
-    Img2Img 全分辨率修复
   </a>
   
 </li>
@@ -841,9 +841,10 @@
 
 
 <h1 id="_1">调参魔法</h1>
-<p>这节会介绍 参数 和 相关的WebUi(SD)  网页应用资源。部分内容只做简单介绍，因为前面有相关描述。</p>
+<p>这节会介绍 参数 和 相关的 WebUi(SD)  网页应用资源。部分内容只做简单介绍，因为前面有相关描述。</p>
 <p>先请拿上 <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml">调参魔法书</a>和 <a href="https://docs.google.com/spreadsheets/d/14Gg1kIGWdZGXyCC8AgYVT0lqI6IivLzZOdIT3QMWwVI/">手抄魔法本</a>。</p>
-<p>如果你觉得能力有限，可以打开<a href="https://aitag.top/">Tag在线生成</a>。</p>
+<p>如果你觉得查表很麻烦，可以打开 <a href="https://aitag.top/">Tag在线生成</a>。</p>
+<p>如果你不想读文字，可以打开 <a href="https://space.bilibili.com/35723238/channel/collectiondetail?sid=779851">推荐的视频教程</a></p>
 <p>下面的语法对效果有很大影响，需要通读。</p>
 <p>提前告知：WebUi 的设置页面需要按下 <code>Apply setting</code> 才能保存设置。</p>
 <h2 id="_2">基本流程</h2>
@@ -861,7 +862,7 @@
 </li>
 </ul>
 <h3 id="5">迭代草图<sup id="fnref:8"><a class="footnote-ref" href="#fn:8">5</a></sup></h3>
-<p>这里讨论一下如何将<strong>手绘草图</strong>通过Ai绘画优化，<em>注意不是二次元</em>。</p>
+<p>这里讨论一下如何将<strong>手绘草图</strong>通过 Ai 绘画优化，<em>注意不是二次元</em>。</p>
 <p>在第一次迭代中，您不需要太多 Steps，CFG 可以非常低（以获得更好的多样化结果），如果不想完全丢失草图，Denoising 应该在 0.3-0.4 左右。</p>
 <p>在最后的迭代中，增加 Steps 和 Denoising 强度（但不超过 0.8，否则图像将被破坏，尤其是在大于 512*512 时）请参见<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2213#issuecomment-1274137775">这里</a>，同时根据需要提高 CFG 和尺寸。</p>
 <p>你可以随时修复提示（添加或删除出现的细节）并尝试不同的采样器。</p>
@@ -869,7 +870,7 @@
 <p>因为如果你提供一个种子（而不是随机的 -1），你的图像很快就会变得过饱和、过度锐化、过度像素化。</p>
 <p>当然如果你想微调，可以使用固定种子。</p>
 <h2 id="_3">魔法入门</h2>
-<p>请先在前面了解一下WebUi(SD)网页应用的参数。</p>
+<p>请先在前面了解一下 WebUi(SD) 网页应用的参数。</p>
 <h3 id="_4">提示词语法简介</h3>
 <p>对于NAI用户，请阅读<a href="https://docs.novelai.net/image/promptmixing.html">官网Docs</a>,两方的提示词语法不通用。</p>
 <p><strong>表示方法</strong></p>
@@ -886,6 +887,7 @@
 <p><code>[from::when]</code> 在固定数量的step后从提示中删除 <code>from</code>( when)</p>
 <p>转义，WebUi 对于带括号的参数，<code>a (word)</code>  请在参数中使用 <code>\</code> 字符转义为 <code>a \(word\)</code>。</p>
 <p>降低权重，<code>[]</code> 或者 <code>(word:0.952)</code>，后者仅 WebUi</p>
+<p>交替（alternate prompt）<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">4</a></sup>，这使您可以创建动物、人或风格的混合体，每一个 step 切换一个项，<code>[alison brie|emma stone|elizabeth olsen|scarlett johansson|anne hathaway|emma roberts], still film</code> 这是WebUi 语法，在 NAI 中是混合。</p>
 <div class="admonition tip">
 <p class="admonition-title">NAI</p>
 <p>NAI中不允许单独指定权重，但支持混合权重 <code>cat:1|happy:-0.2|cute:-0:3</code> 这样的语法。</p>
@@ -908,7 +910,7 @@ NAI的 [word] = WebUi(word:0.952)(0.952 = 1/1.05)</p>
 一个迭代 = 一个正向通过+一个反向通过</p>
 </div>
 <h3 id="_5">迭代步数</h3>
-<p>更多的迭代步数可能会有更好的生成效果，但是一定会导致生成时间变长。太多的steps也可能适得其反，几乎不会有提高。</p>
+<p>更多的迭代步数可能会有更好的生成效果，但是一定会导致生成时间变长。太多的 steps 也可能适得其反，几乎不会有提高。</p>
 <h3 id="_6">采样器</h3>
 <p>观看前面章节对于采样器的介绍。</p>
 <p>目前好用的有 <code>eular</code>，<code>eular a</code>，更细腻，和<code>Ddim</code>，DDIM 收敛较快,</p>
@@ -941,7 +943,7 @@ NAI的 [word] = WebUi(word:0.952)(0.952 = 1/1.05)</p>
 <ul>
 <li>提示不要太长，超过 100 就有失败风险。</li>
 </ul>
-<p>根据 手抄本的Tip，由于GPT-3模型限制，promot并不是无限的，positive token 在75-80之间，negative大概65，加太多会提示你xxx of xxx are truncated，所以别人那边的圣经不要照抄，太长的咒语后半都没有意义了，所以用简易反咒就足够，除非你有特定想屏蔽的东西。</p>
+<p>根据 手抄本的Tip，由于GPT-3模型限制，promot 并不是无限的，positive token 在 75-80 之间，negative 大概65，加太多会提示你 xxx of xxx are truncated，所以别人那边的圣经不要照抄，太长的咒语后半都没有意义了，所以用简易反咒就足够，除非你有特定想屏蔽的东西。</p>
 <p>当提示超过75个<code>token</code>（比如150个<code>token</code>）时，WebUi 将分组提示词，提交多组75个 <code>token</code>。标记只具有同一集合中其他内容的上下文。这意味着您可能在第一组和第二组之间的边界处有<code>bule hair</code>，标记<code>blue</code>将在第一组中，<code>hair</code>将在第二组中。这导致了结果的不准确，因为这两个词是分开的。</p>
 <p>新版本增加了一个选项 <code>Increase coherency by padding from the last comma within n tokens when using more than 75 tokens</code></p>
 <p>这个设置让程序试图通过查找最后N个标记中是否有最后一个逗号来缓解这种情况，如果有，则将所有经过该逗号的内容一起移动到下一个集合中。</p>
@@ -968,8 +970,8 @@ caustics, masterpiece, high resolution,
 <p>Ai 难以解析下划线，请少用。</p>
 <p><strong>调序编译</strong></p>
 <p>A提示词放入的顺序就是优先级。</p>
-<p>webui 突破 tag 75个限制的方式是把 75 个分为一组。</p>
-<p>推荐主体往前放，接着描述装扮的词，画质提升词穿插在这些描述词之间，一般为了提高成品率要把动作、nsfw词等改变构图的词往后放，或者手动调低权重（主要是为了防止ai强行凑动作导致肢体到处跑）。</p>
+<p>webui 突破 tag 75 个限制的方式是把 75 个分为一组。</p>
+<p>推荐主体往前放，接着描述装扮的词，画质提升词穿插在这些描述词之间，一般为了提高成品率要把动作、nsfw 词等改变构图的词往后放，或者手动调低权重（主要是为了防止ai强行凑动作导致肢体到处跑）。</p>
 <p>以上排序是每组tag都要遵守的，所以如果后面的tag超过 75 了就应该把前面的分一部分过来。</p>
 <h3 id="3">(提示词)影响因子<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">3</a></sup></h3>
 <p>"调参魔法" 的一个基本技能是设置权重。</p>
@@ -1029,10 +1031,11 @@ mutilated, tranny, trans, trannsexual, [out of frame], (bad proportions),
 normal quality, text, censored, gown, latex, pencil
 </code></pre></div>
 <h3 id="_9">渐变</h3>
-<p>渐变标签，指示WebUi在训练中替换Token，语法使用 <code>[some1:some2:num]</code></p>
+<p>渐变标签，指示 WebUi 在训练中替换 Token，语法使用 <code>[some1:some2:num]</code></p>
 <p><code>[fantasy:cyberpunk:16]</code> 代表从第 16 step 后，使用 <code>cyberpunk</code> 标签替换 <code>fantasy</code></p>
 <p><code>[to:when]</code> 在固定数量的step后添加 <code>to</code> 到提示 ( when)</p>
 <p><code>[from::when]</code> 在固定数量的step后从提示中删除 <code>from</code>( when)</p>
+<p><img alt="sample_Gradient" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/sample_Gradient.jpg" /></p>
 <h3 id="_10">重现提示词</h3>
 <p>对于没有压缩的原图，我们可以将文件拖入 <code>PNG Info</code> 选项卡，进行提示词(Token)查看。</p>
 <h3 id="_11">逆向提示词</h3>
@@ -1124,16 +1127,30 @@ normal quality, text, censored, gown, latex, pencil
 <p class="admonition-title">Tip</p>
 <p>请阅读前面章节的模型进阶1,了解具体的 Img2Img 和 inpaint 介绍操作。</p>
 </div>
+<h3 id="img2txt">Img2Txt</h3>
+<p>生成按钮下有一个 <code>Interrogate CLIP</code>，点击后会下载 <code>CLIP</code>，用于生成当前图片框内图片的 Tag 并填充到提示词。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>本文件为 <a href="https://storage.googleapis.com/sfr-vision-language-research/BLIP/models/model_base_caption_capfilt_large.pth">model_base_caption_capfilt_large.pth</a></p>
+<p>大小为855MB</p>
+</div>
 <h3 id="img2img">Img2Img 介绍</h3>
 <p>一般我们有两种途径对图像进行修复：<strong>PS 和 InPaint</strong>，使用方法也十分多样。</p>
+<div class="admonition tip">
+<p class="admonition-title">不同之处</p>
+<p>PS 重新绘画投入 Img2Img 的话，会导致画风的变动，而 Inpaint 就不会。</p>
+</div>
 <p><strong>CFG Scale</strong></p>
 <p><code>cfg scale</code> 就是符合 prompt 的程度,Scale越高，程序对提示词越忠诚，越符合。</p>
 <p><strong>Denoising strength 降低噪声</strong></p>
 <p><code>Denoising strength</code> 决定算法对图像内容的保留程度,可以减少对画风的变得，但也会弱化img2img能力。值越高 AI 对原图的参考程度就越低 (同时增加迭代次数)。</p>
 <p>对于以图做图来说，低 <code>denoising</code> 意味着修正原图，高 <code>denoising</code> 就和原图就没有大的相关性了。一般来讲阈值是 0.7 左右，超过 0.7 和原图基本上无关，0.3 以下就是稍微改一些。</p>
 <h3 id="img2img_1">Img2Img 三渲二</h3>
-<p>可以结合 <strong>3D建模</strong> 摆Pose,可以使用 <a href="https://vroid.com/en">vroid</a></p>
-<p>如果是真人图片，需要适当提高 <code>CFG Scale</code></p>
+<p>调整3D模型骨架比寻找样图更容易。</p>
+<p>可以结合 <strong>3D建模</strong> 摆 Pose,可以使用 MMD 相关软件。</p>
+<p>如果是真人图片，需要适当提高 <code>CFG Scale</code>。</p>
+<p>推荐使用 blender 或者 Unity ，在对 3D 模型的测试中，<strong>色彩主要影响 AI 的绘画效果</strong>，所以你的模型需要有纹理。</p>
+<p>不知道 VRchat 怎么样。</p>
 <h3 id="img2img-ps">Img2Img PS重绘画/修复手</h3>
 <p>使用PS软件增删元素，然后重新生产。这可以解决画手的问题。</p>
 <p>比如我们可以通过 PS 给角色移植一个手让Ai来润色它。</p>
@@ -1165,8 +1182,33 @@ normal quality, text, censored, gown, latex, pencil
 </code></pre></div>
 <h3 id="img2img-inpainting">Img2Img <strong>Inpainting 修补</strong></h3>
 <p>在 img2img 选项卡中，在图像的一部分上绘制蒙版，该部分将被重画。</p>
-<p>一般选 <code>original</code>,<code>fill</code> 要更多 step 才能消除不自然感.</p>
-<p>这可以更改角色衣物风格或者其他任何细节。</p>
+<p>对于 <code>Masked content</code> 设置，遮罩内容字段确定内容在修复之前放置到遮罩区域中。</p>
+<p>一般选 <code>original</code>，可以保持潛空间一致性。</p>
+<p>它们的效果如下:</p>
+<table>
+<thead>
+<tr>
+<th>mask</th>
+<th>fill</th>
+<th>original</th>
+<th>latent noise</th>
+<th>latent nothing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="" src="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting-initial-content-mask.png" /></td>
+<td><img alt="" src="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting-initial-content-fill.png" /></td>
+<td><img alt="" src="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting-initial-content-original.png" /></td>
+<td><img alt="" src="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting-initial-content-latent-noise.png" /></td>
+<td><img alt="" src="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting-initial-content-latent-nothing.png" /></td>
+</tr>
+</tbody>
+</table>
+<p><code>mask</code> 横条决定了模糊程度，original 是<code>原图</code>，fill 是<code>填充底色</code></p>
+<p>Tip: <code>fill</code> 要更多 step 才能消除不自然感.</p>
+<p><code>Inpaint at full resolution</code> 即全分辨率修复。
+通常，Inpaint 会将图像大小调整为<em>UI中指定的目标分辨率</em>。启用完全分辨率的Inpaint后，仅调整遮罩区域的大小，并在处理后将其<strong>粘贴回</strong>原始图片。这允许您处理大图片，并允许您以更大的分辨率渲染修复对象。</p>
 <p>有几种方法进行重绘制:</p>
 <ul>
 <li>
@@ -1180,17 +1222,32 @@ normal quality, text, censored, gown, latex, pencil
 </li>
 </ul>
 <p><img alt="result" src="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting.png" /></p>
+<iframe src="//player.bilibili.com/player.html?aid=474043788&bvid=BV1HK411Q7uk&cid=860273094&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
+
+<p>通过这种方法，我们可以更改角色衣物风格或者其他任何细节。</p>
 <iframe src="//player.bilibili.com/player.html?aid=559044202&cid=859852841&page=1&danmaku=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 
-<h3 id="img2img_2">Img2Img 全分辨率修复</h3>
-<p>通常，修复会将图像大小调整为 UI 中指定的目标分辨率。启用全分辨率修复后，仅调整蒙版区域的大小，并在处理后将其粘贴回原始图片。这使您可以处理大图片，并允许您以更大的分辨率渲染修复的对象。</p>
 <h3 id="img2img-loopback">Img2Img Loopback 回环生成</h3>
 <p>在 img2img 中设置loopback脚本，它允许自动将输出图像作为下一批的Batch提供，相当于保存输出图像，并用它替换输入图像。</p>
 <p>Batch 数设置控制获得多少次迭代</p>
 <p>通常，在执行此操作时，您会自己为下一次迭代选择许多图像中的一个，因此此功能的有用性可能值得怀疑，但反正我已经设法获得了一些我无法获得的非常好的输出。</p>
 <h3 id="extras">超分图像 extras</h3>
-<p><code>realesrgan</code> 或者 <code>realcugan</code> 就可以，推荐 <a href="https://github.com/bilibili/ailab/tree/main/Real-CUGAN">realcugan</a></p>
-<p>另外，<code>webui</code> extras 页有一个自带的超分功能，可以去<code>settings-upscaling</code> 使用 <code>R-ESRGAN 4x+ Anime6B</code>模型，重新启动程序</p>
+<p><code>webui</code> extras 页有一个自带的超分功能，可以使用 <code>ESRGAN_4x</code>模型</p>
+<p>当然 <code>realesrgan</code> 或者 <code>realcugan</code> 也可以，<a href="https://github.com/bilibili/ailab/tree/main/Real-CUGAN">realcugan</a></p>
+<div class="admonition tip">
+<p class="admonition-title">相关模型</p>
+<p>文件统一下载到 <code>SDwebUI文件夹\models</code> 下</p>
+<p><a href="https://heibox.uni-heidelberg.de/f/578df07c8fc04ffbadf3/?dl=1">LDSR</a></p>
+<p>文件大小为1.9GB</p>
+<p><a href="https://github.com/cszn/KAIR/releases/download/v1.0/BSRGAN.pth">BSGRAN 4x</a> </p>
+<p>文件大小为63.9M</p>
+<p><a href="https://github.com/cszn/KAIR/releases/download/v1.0/ESRGAN.pth">ESRGAN_4x</a>)</p>
+<p>文件大小为63.8MB</p>
+<p><a href="https://github.com/cszn/KAIR/releases/download/v1.0/scunet_color_real_gan.pth&quot; to D:\stable-diffusio\models\ScuNET\ScuNET.pth">ScuNET GAN/PSNR</a></p>
+<p>文件大小为68.6MB</p>
+<p><a href="https://github.com/JingyunLiang/SwinIR/releases/download/v0.0/003_realSR_BSRGAN_DFOWMFC_s64w8_SwinIR-L_x4_GAN.pth">SwinIR 4x</a> </p>
+<p>文件大小为136MB</p>
+</div>
 <p><strong>应该使用什么 Upscaler？</strong></p>
 <p>推荐 <code>SD Upscaler</code>, 它注重细节的同时还提升分辨率。</p>
 <p>曾经有段时间，<code>LSDR</code> 被认为是最好的。有些人喜欢 swinir，有些喜欢<code>esrgan4x</code>，<code>ymmv</code></p>
@@ -1217,7 +1274,7 @@ normal quality, text, censored, gown, latex, pencil
 <p><a href="https://gitlab.com/16777216c/stable-diffusion-embeddings">相关 embeddings</a>，里面有相关效果预览。</p>
 <p><a href="https://rentry.org/embeddings">list of Textual Inversion embeddings for WebUi(SD)</a></p>
 <p><a href="https://cyberes.github.io/stable-diffusion-textual-inversion-models/">HuggingFace 的embeddings库</a></p>
-<h3 id="textual-inversion-4">Textual Inversion 自训练<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">4</a></sup></h3>
+<h3 id="textual-inversion-4">Textual Inversion 自训练<sup id="fnref2:7"><a class="footnote-ref" href="#fn:7">4</a></sup></h3>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion#training-embeddings">英文:自己训练 embedding</a></p>
 <div class="admonition danger">
 <p class="admonition-title">重命名 VAE 文件</p>
@@ -1226,7 +1283,7 @@ normal quality, text, censored, gown, latex, pencil
 </div>
 <h4 id="_18">模型环境要求</h4>
 <p>WebUi 应该是 Git 的最新版本。</p>
-<p>显存至少 6GB，正常使用需要 12GB显存。根据实验数据，8GB显存应该选择 <code>512x512</code> 分辨率。</p>
+<p>显存至少 6GB，正常使用需要 12GB 显存。根据实验数据，8GB显存应该选择 <code>512x512</code> 分辨率。</p>
 <p>训练可使用半精度浮点，但是否好用还需要进行实验。</p>
 <p>如果你有足够的内存，那么在<code>--no-half --precision full</code>下运行会更安全。</p>
 <p>你可以中断和恢复训练而不会丢失任何数据（AdamW 优化参数除外，但似乎现有的存储库都没有保存这些，所以一般认为它们并不重要）。</p>
@@ -1307,9 +1364,16 @@ normal quality, text, censored, gown, latex, pencil
 每 N 步保存一个图像到日志目录，0 表示禁用</p>
 <p><code>Max steps</code>决定完成多少 <code>step</code> 后，训练将停止。</p>
 <p>一个 step 是向模型训练一张图片（或一批图片，但目前不支持批量）并用于改进 embedding。如果你中断训练并在以后恢复训练，步数会被保留。</p>
-<p>有人建议 7000 step ，但是需要测试(automatic 自己说是 after few tens of thousands，大概 2～3 W？有人用 3000 Step 也炼出来了)</p>
+<p>角色形象的风格化模型，建议步数为 15000-40000</p>
+<p>画师画风的风格化模型，建议步数为 40000-80000</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>这里给出的是一个参考，实际上 5000 和 7000 也有人成功。</p>
+<p>关键在于 Loss 率，Loss 10 轮不降低就可以停止了。</p>
+<p>如果Loss大于 0.3 ，效果就不是很好</p>
+</div>
 <p>如果太多会过拟合(可以理解为Ai的死板)</p>
-<p>随时观察，如果过拟合，可以停止。</p>
+<p>随时观察，如果过拟合，可以停止。如果效果不是很好，可以去找早些时候的模型继续训练。找到一个好的效果。</p>
 <div class="admonition danger">
 <p class="admonition-title">重命名 VAE 文件</p>
 <p>重命名VAE模型文件非常关键，或者确定你已经设置里打开 <code>auto unload</code>。</p>
@@ -1340,6 +1404,11 @@ normal quality, text, censored, gown, latex, pencil
 <p>训练的工作方式与文本倒置相同。</p>
 <p>唯一的要求是使用非常非常低的学习率，例如 0.000005 或 0.0000005。</p>
 <p><a href="https://rentry.org/hypernetwork4dumdums">应该查看的英文指南</a></p>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2670">相关的英文讨论</a></p>
+<p><img alt="hypernet对比图" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/exp_hypernet.jpg" /></p>
+<blockquote>
+<p>hypernet对比图</p>
+</blockquote>
 <h3 id="_24"><strong>渐变提示词</strong></h3>
 <p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-editing</p>
 <p>允许您开始对一张图片进行采样，但在中间切换到其他图片。基本语法是：</p>
@@ -1399,7 +1468,7 @@ scale 就是 CFG scale
 </code></pre></div></p>
 <p><strong>其他</strong></p>
 <p>将所有提示词前面加入 <code>masterpiece, best quality</code></p>
-<p>Clip跳过 0，其他一切都很好（afaik 不要使用超网络、v2、yaml、VAE）</p>
+<p>Clip 跳过 0，其他一切都很好（afaik 不要使用超网络、v2、yaml、VAE）</p>
 <h3 id="naiwebuisd">转换——NAI和WebUi(SD)的增强语法不同</h3>
 <p><strong>Prompts 参数括号转换</strong></p>
 <p>在 NAI 和 Webui 之间转换加强参数，相关的机器人服务 <a href="https://t.me/M2NM2NBot">M2NM2NBot</a></p>
@@ -1911,10 +1980,13 @@ scale 就是 CFG scale
 <p><a href="https://rentry.org/sdupdates#hall-of-fame">SD金矿</a>&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:6" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 <li id="fn:7">
-<p><a href="https://www.bilibili.com/video/BV1ae4y1S7v9/">风格模型训练</a>&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+<p><a href="https://www.bilibili.com/video/BV1ae4y1S7v9/">风格模型训练</a>&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:7" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 <li id="fn:8">
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2473">迭代草图</a>&#160;<a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:9">
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/1733">交替单词</a>&#160;<a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 6 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -1924,11 +1996,11 @@ scale 就是 CFG scale
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 14, 2022 17:47:24</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 15, 2022 19:01:55</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 14, 2022 17:47:24</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 15, 2022 19:01:55</span>
       
     
   </small>
