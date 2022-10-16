@@ -409,13 +409,122 @@ DDIM 是一种神经网络方法。 每一步都相当快，但效率相对较�
 
 ### **xformers加速**
 
-加速推理,分辨率越高加速效果越好。
+加速推理,分辨率越高加速效果越好。使用 xformers 会在一定程度上影响生成的图像.
+
+如果你是 Pascal、Turing 或者 Ampere（1000、2000、3000 系列）卡,只需要添加 `--xformers` 参数到 `webui-user.bat` 中的 `COMMANDLINE_ARGS`
+
+!!! tip
+    有人说在 700 和 900 系列卡上使用 xformers 的性能明显较差，请注意这一点。
+
+#### 在 Windows 上编译 Xformers
+
+**如果你有一张 RTX 3xxx+ 卡，只需要卸载现有的 xformers 并使用`--xformers`启动WebUi**
+
+确保Python 版本为 3.10 或更高版本(使用 `python --version`)，然后安装 
+
+安装 [VS Build Tools 2022](https://visualstudio.microsoft.com/zh-hans/downloads/?q=build+tools)，运行安装时只需要选择 `Desktop development with C++`
+
+安装 [CUDA 11.3](https://developer.nvidia.com/cuda-11.3.0-download-archive)，（后期版本未测试），选择`custom`，VS集成可能不需要
+
+- 确认 nvcc 可用
+
+`nvcc --version`
+
+- 克隆`xFormers` 存储库，在环境中激活它
+
+```bash
+git clone https://github.com/facebookresearch/xformers.git
+cd xformers
+git submodule update --init --recursive
+```
+
+- 创建虚拟环境且激活环境
+
+```bash
+python -m venv venv
+
+#CMD
+venv\Scripts\activate.bat
+#Bash
+source ./venv/bin/activate
+#WindowsBash
+source ./venv/Scripts/activate
+```
+
+- 为避免获取 CPU 版本时出现问题，请单独安装 pyTorch：
+
+```
+pip install torch torchvision --extra-index-url https://download.pytorch.org/whl/cu113
+```
+
+- 然后安装其余的依赖项
+
+```
+pip install -r requirements.txt
+pip install wheel
+pip install ninja
+```
+
+- 由于 CUDA 11.3 很旧，需要 强制启用 它以在 MS Build Tools 2022 上构建。 
+
+在 CMD 设置 `set NVCC_FLAGS=-allow-unsupported-compiler"`
+
+或在 Bash 设置`export NVCC_FLAGS=-allow-unsupported-compiler`
+
+- 查看你自己的 GPU 架构
+
+[GPU 架构](https://developer.nvidia.com/cuda-gpus)
+
+比如说，如果你的 GPU 是 GTX 1070，基于该表，架构是 6.1
+*CMD*  `set TORCH_CUDA_ARCH_LIST=6.1`
+
+*BASH*  `export TORCH_CUDA_ARCH_LIST=6.1`
+
+- 构建 xFormers，请注意构建将需要很长时间（可能需要 10-20 分钟），它最初可能会抱怨一些错误，但它仍然应该可以正确编译。
+
+- 安装在环境中(Conda)
+
+```bash
+python setup.py build
+python setup.py bdist_wheel
+```
+
+找到 dist 文件夹并将文件 `*.whl` 复制到 `stable-diffusion-webui`
+在 `stable-diffusion-webui` 目录中安装`.whl`。
+
+如果构建的 whl 名称不同，请在下面的安装命令中更改文件名
+
+```bash
+#CMD
+./venv/scripts/activate
+#Bash
+source ./venv/bin/activate
+#WindowsBash
+source ./venv/Scripts/activate
+pip install xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl
+```
+
+30 系显卡正常启动加 `--xformers` 参数, 其他显卡加 `--force-enable-xformers` 参数
+
+>COMMANDLINE_ARGS=
+
+#### Windows 编译错误自查
+
+>错误:`Filename too long ` 和 `fatal error C1083: Cannot open compiler generated file: '': Invalid argument`
+
+说明你的路径太长了。
+
+>RuntimeError: CUDA error: no kernel image is available for execution on the device
+
+现在更多 GPU 架构是自动支持的，尝试重新安装并使用 --xformers 参数。
+
+如果你移动了Xformers，那么应该删除里面的 venv 目录
+
 
 [Windows](https://github.com/C43H66N12O12S2/stable-diffusion-webui/releases) (30 系之外要自己编译)
 
-自己编译指路 [wiki/Xformers](https://rentry.org/sdg_faq#xformers-increase-your-its) 还有 [这个 Post](https://www.reddit.com/r/StableDiffusion/comments/xz26lq/automatic1111_xformers_cross_attention_with_on/)
+自己编译指路 [wiki/Xformers](https://rentry.org/sdg_faq#xformers-increase-your-its-more-cards-supported) 还有 [这个 Post](https://www.reddit.com/r/StableDiffusion/comments/xz26lq/automatic1111_xformers_cross_attention_with_on/)
 
->30 系显卡正常启动 --xformers, 其他显卡 --force-enable-xformers
 
 ### 使用CPU进行绘画
 
