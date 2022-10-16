@@ -55,7 +55,7 @@ WebUi 最低可用N卡显存 > 4GB
 
 !!! tip "如果你在中国，需要按照以下步骤切换国内镜像"
 
-    打开 CMD 命令行（Win+R 运行 cmd），输入`Python` 回车，如果能进入 Python 就 ctrl+z 退出。
+    打开 CMD 命令行（Win+R 运行 cmd），输入`Python` 回车，如果能进入 Python 就 ctrl+z (或通过输入 `exit()` )退出。
     然后输入以下命令设置镜像。
     ```bash
     pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
@@ -91,14 +91,27 @@ WebUi 最低可用N卡显存 > 4GB
 大约 30 分钟后安装完毕，程序会输出一个类似 `http://127.0.0.1:7860/` 的地址，点开即可。
 
 !!! tip
+
     运行需要模型！
     
     如果没有模型请去下载一个。也可以移植整合包其中的`models`文件夹。
+
+    这里提供一个模型网站 [Stable Diffusion Models](https://rentry.org/sdmodels#)
+
+    可以通过下载 `2.Stable Diffusion v1.4 [4af45990] [7460a6fa] [06c50424]` 这一个模型来运行 `Stable Diffusion` 的原始模型
 
 
 #### Windows 从整合包迁移
 
 使用上面的命令拉取代码但先不运行，然后将 Bat 文件和里面指定的文件夹复制到全新环境，把 `models` 和 `outputs` 以及 `embeddings` 复制到新文件夹，自行处理冲突。
+
+!!! tip "命令"
+
+    此处的命令指的是安装完Git之后的内容
+
+    即为 `git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git`
+    
+    或在无代理的情况下 `git clone https://hub.fastgit.org/AUTOMATIC1111/stable-diffusion-webui.git`
 
 然后在新代码目录下，尝试运行原来的 Bat，如果报错，就根据提示排查是不是 NotFound 什么依赖，或者根据下面的命令说明修改 Bat 文件。
 
@@ -239,8 +252,10 @@ COMMANDLINE_ARGS="--medvram --always-batch-cond-uncond" REQS_FILE="requirements.
 
     所以，你可以使用参数为 `gradio` 共享实例设置身份验证：`--gradio-auth username:password` (可选择提供多组用户名和密码，以逗号分隔)
 
-    
+    例子
+    --share --gradio-auth admin:admin,user1:user_password
 
+    使用该例子将会创建两个用户，一个是账号密码为admin的用户，另外一个是账号为user1,密码为user_password的用户
     
     
     如果攻击者可以访问 ui，他们可能能够远程运行 python 脚本。
