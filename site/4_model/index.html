@@ -1100,7 +1100,11 @@ Heun 在准确性方面是对 Euler 的“改进”，但它以大约一半的�
 <p>有人说在 700 和 900 系列卡上使用 xformers 的性能明显较差，请注意这一点。</p>
 </div>
 <h4 id="windows-xformers">在 Windows 上编译 Xformers</h4>
-<p><strong>如果你有一张 RTX 3xxx+ 卡，只需要卸载现有的 xformers 并使用<code>--xformers</code>启动WebUi</strong></p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>如果你有一张 RTX 3xxx+ 卡，只需要卸载现有的 xformers 并使用<code>--xformers</code>启动WebUi</p>
+<p>你可以在右边的链接下载预构建的Xformers！https://rentry.org/25i6yn ，记得先查看<a href="https://developer.nvidia.com/cuda-gpus">GPU 架构</a></p>
+</div>
 <p>确保Python 版本为 3.10 或更高版本(使用 <code>python --version</code>)，然后安装 </p>
 <p>安装 <a href="https://visualstudio.microsoft.com/zh-hans/downloads/?q=build+tools">VS Build Tools 2022</a>，运行安装时只需要选择 <code>Desktop development with C++</code></p>
 <p>安装 <a href="https://developer.nvidia.com/cuda-11.3.0-download-archive">CUDA 11.3</a>，（后期版本未测试），选择<code>custom</code>，VS集成可能不需要</p>
@@ -1287,11 +1291,11 @@ pip install xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 16, 2022 08:34:06</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 16, 2022 08:45:54</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 16, 2022 08:34:06</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 16, 2022 08:45:54</span>
       
     
   </small>
