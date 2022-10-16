@@ -305,6 +305,11 @@ set VENV_DIR允许您选择虚拟环境的目录。默认为`venv`。特殊值`-
 set COMMANDLINE_ARGS设置命令行参数webui.py运行
 示例使用模型a.ckpt而不是model.ckpt
 
+*GPU指定*
+
+例如 `CUDA_VISIBLE_DEVICES=1 python launch.py​​ --listen --port 7861`
+
+在 WebUi 支持多 GPU 之前，你可以使用这种方法运行多个实例
 
 **优化命令参数**
 
