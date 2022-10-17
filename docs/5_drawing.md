@@ -556,7 +556,7 @@ SD Upscale 选项在 Img2Img 的 Script 栏目中，主要作用是提升分辨�
 
 `SD Upscaler` 在注重细节的同时还提升分辨率。
 
-曾经有段时间，`LSDR` 被认为是最好的。有些人喜欢 swinir，有些喜欢`esrgan4x`，`ymmv`
+曾经有段时间，`LSDR` 被认为是最好的。有些人喜欢 swinir，有些喜欢`esrgan4x`，`ymmv`，推荐使用 `ESRGAN_4x`
 
 
 
@@ -574,7 +574,7 @@ SD Upscale 选项在 Img2Img 的 Script 栏目中，主要作用是提升分辨�
 
     [BSGRAN 4x](https://github.com/cszn/KAIR/releases/download/v1.0/BSRGAN.pth) ，文件大小为63.9M
 
-    [ESRGAN_4x](https://github.com/cszn/KAIR/releases/download/v1.0/ESRGAN.pth))，文件大小为63.8MB
+    [ESRGAN_4x](https://github.com/cszn/KAIR/releases/download/v1.0/ESRGAN.pth)，文件大小为63.8MB
 
     [ScuNET GAN/PSNR](https://github.com/cszn/KAIR/releases/download/v1.0/scunet_color_real_gan.pth" to D:\stable-diffusio\models\ScuNET\ScuNET.pth)，文件大小为68.6MB
 
