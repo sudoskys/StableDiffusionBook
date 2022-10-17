@@ -1446,10 +1446,18 @@ normal quality, text, censored, gown, latex, pencil
 <p>https://github.com/DominikDoom/a1111-sd-webui-tagcomplete</p>
 <h3 id="nai">NAI 在使用的出图参数</h3>
 <ul>
-<li>将<code>sigma noise/strength</code>重置为默认值 1（无需使用 0.69 / 0.67）</li>
-<li>设定 <code>eta noise seed delta</code> 为 31337</li>
-<li>如果prompt有权重，转换权重（WebUi用1.1，NAI用1.05）</li>
-<li>使用 <code>--no-half</code> 参数（次要）</li>
+<li>
+<p>将 <code>sigma noise/strength</code> 重置为默认值 1</p>
+</li>
+<li>
+<p>设定 <code>eta noise seed delta</code> 为 31337（使 <code>sigma noise/strength</code> 无需使用 0.69 / 0.67）</p>
+</li>
+<li>
+<p>如果 prompt 有权重，转换权重（ WebUi 占比 1.1 ，NAI 占比 1.05）</p>
+</li>
+<li>
+<p>使用 <code>--no-half</code> 参数启动程序（次要）</p>
+</li>
 </ul>
 <p><strong>NAI 默认的模型设置</strong></p>
 <div class="highlight"><pre><span></span><code>steps&quot;: 28, &quot;sampler&quot;: &quot;[sampler]&quot;, &quot;seed&quot;: [seed], &quot;strength&quot;: 0.69, &quot;noise&quot;: 0.667, &quot;scale&quot;: 11.0,
@@ -1991,11 +1999,11 @@ scale 就是 CFG scale
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 17, 2022 12:27:04</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 17, 2022 12:28:58</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 17, 2022 12:27:04</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 17, 2022 12:28:58</span>
       
     
   </small>
