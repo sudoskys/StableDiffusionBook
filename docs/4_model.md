@@ -250,9 +250,9 @@ Steps: 28, Sampler: Euler, CFG scale: 12, Seed: [SEE COLUMN], Size: 512x512, Mod
 
 6. 选择合适的 `Sampling Steps` 和 `Sampling method`
 
-7. 确认你的 `Width` 和 `Height` 与原图一致
+7. 确认你的 `Width` 和 `Height` 与**原图**一致
 
->这里的 Width 和 Height 是超分时 img2img 的图片比大小，如果不合适会导致出现重叠问题
+>这里的 Width 和 Height 是超分时 img2img 的图片大小，如果不等会导致出现重叠问题
 
 8. 将第 2 步复制的 Seed 填入img2img的 Seed 里并生成
 

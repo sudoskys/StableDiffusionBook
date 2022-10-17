@@ -515,6 +515,18 @@ Batch 数设置控制获得多少次迭代
 
 通常，在执行此操作时，您会自己为下一次迭代选择许多图像中的一个，因此此功能的有用性可能值得怀疑，但反正我已经设法获得了一些我无法获得的非常好的输出。
 
+### SD Upscaler 升频器
+
+在前面提到了，如果遇到生成鬼图或者 低显存生产高分辨率图片 可以采用的 Img2Img 画质提升脚本。
+
+这个选项在 Img2Img 的 Script 栏目中，主要作用是提升分辨率。
+
+**应该使用什么 Upscaler？**
+
+`SD Upscaler` 在注重细节的同时还提升分辨率。
+
+曾经有段时间，`LSDR` 被认为是最好的。有些人喜欢 swinir，有些喜欢`esrgan4x`，`ymmv`
+
 
 ### 超分图像 extras
 
@@ -545,12 +557,6 @@ Batch 数设置控制获得多少次迭代
     [SwinIR 4x](https://github.com/JingyunLiang/SwinIR/releases/download/v0.0/003_realSR_BSRGAN_DFOWMFC_s64w8_SwinIR-L_x4_GAN.pth) 
     
     文件大小为136MB
-
-**应该使用什么 Upscaler？**
-
-推荐 `SD Upscaler`, 它注重细节的同时还提升分辨率。
-
-曾经有段时间，`LSDR` 被认为是最好的。有些人喜欢 swinir，有些喜欢`esrgan4x`，`ymmv`
 
 
 ### 图像去噪
