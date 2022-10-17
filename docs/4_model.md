@@ -236,7 +236,7 @@ Steps: 28, Sampler: Euler, CFG scale: 12, Seed: [SEE COLUMN], Size: 512x512, Mod
 
 #### 高分辨率出鬼图 / 低显存生成大分辨率图片
 
-简单说就是使用低分辨率重新生成或者超分。
+简单说就是使用低分辨率重新生成或者超分。见钩吻
 
 1. 使用 `--medvram` 或者 `--lowvram` 参数启动webui
 
