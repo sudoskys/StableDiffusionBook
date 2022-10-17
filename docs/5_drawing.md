@@ -528,7 +528,10 @@ Batch 数设置控制获得多少次迭代
 #### Img2Img 让低显存生成大分辨率图片
 
 在前面提到了，如果遇到生成鬼图或者 低显存生产高分辨率图片 可以采用的 Img2Img 画质提升脚本。
-[解决方案来源于此](https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99#%E9%AB%98%E5%88%86%E8%BE%A8%E7%8E%87%E4%B8%8B%E5%87%BA%E6%80%AA%E5%9B%BE)
+
+其实我**更推荐**你使用 Extras 的功能对低分辨率进行重放，效果不错的。
+
+[脚本解决方案来源于此](https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99#%E9%AB%98%E5%88%86%E8%BE%A8%E7%8E%87%E4%B8%8B%E5%87%BA%E6%80%AA%E5%9B%BE)
 
 具体流程
 
@@ -546,9 +549,9 @@ Batch 数设置控制获得多少次迭代
 
 7. 确认你的 `Width` 和 `Height` 与**原图**一致
 
-这里的 Width 和 Height 是超分时 img2img 的图片大小，如果不等会导致出现重叠问题
-
 8. 将第 2 步复制的 Seed 填入img2img的 Seed 里并生成
+
+这里的 Width 和 Height 是超分时 img2img 的图片大小，如果不等会导致出现重叠问题
 
 SD Upscale 选项在 Img2Img 的 Script 栏目中，主要作用是提升分辨率。
 
