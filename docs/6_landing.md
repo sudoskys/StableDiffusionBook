@@ -109,12 +109,13 @@ https://huggingface.co/Deltaadams/Hentai-Diffusion
 
 @sudoskys
 
+@huige233
+
 @ReOracle
 
 @lychees
 
-@huige233
-
+@CCRcmcpe
 
 ## 鸣谢
 

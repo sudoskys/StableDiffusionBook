@@ -160,7 +160,11 @@ Windows: <https://developer.nvidia.com/compute/cudnn/secure/8.5.0/local_installe
 
 ### 使用 latest (7G) 还是 pruned (4G) 模型
 
-个人用户只需要使用 pruned。使用 latest 只会白费 RAM 和 VRAM。
+4GB 的模型由 7GB 的模型修剪而来，去除了最后一次的权重，留下了 EMA 权重。
+
+个人用户只需要使用 pruned 4GB 模型。使用 latest 会过度占用 RAM 和 VRAM。
+
+且 NAI 在线上也使用 EMA 权重，所以选择 latest 7GB 模型是没有意义的。
 
 [结论由此贴讨论得到](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017#discussioncomment-3882551)。
 
@@ -210,6 +214,7 @@ Steps: 28, Sampler: Euler, CFG scale: 12, Seed: [SEE COLUMN], Size: 512x512, Mod
 
 ### 生成图片发生BUG的自救
 
+
 #### 生成黑/绿图
 
 [Green or Black screen](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Install-and-Run-on-NVidia-GPUs)
@@ -218,17 +223,41 @@ Steps: 28, Sampler: Euler, CFG scale: 12, Seed: [SEE COLUMN], Size: 512x512, Mod
 
 如果是其他显卡而且加载了 VAE 时出现黑图，加入 `--no-half-vae` 参数[^2]。
 
+
 #### RuntimeError Sizes of tensors must match
 
 (img2img) 如果你得到RuntimeError: Sizes of tensors must match，你需要改变输入图像的分辨率
 
+
 #### 彩虹混乱图
 
-如果您的输出是混乱的彩虹混乱，则您的图像分辨率设置得太低
+如果 AI 输出了混乱的彩虹色图片，则生成分辨率被设置得太低
 
-#### 高分辨率出怪图
 
-[具体的解决方案](https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99#%E9%AB%98%E5%88%86%E8%BE%A8%E7%8E%87%E4%B8%8B%E5%87%BA%E6%80%AA%E5%9B%BE)
+#### 高分辨率出鬼图 / 低显存生成大分辨率图片
+
+简单说就是使用低分辨率重新生成或者超分。
+
+1. 使用 `--medvram` 或者 `--lowvram` 参数启动webui
+
+2. 选择较小分辨率生成图片。记住你生成图片的分辨率。生成完毕之后，复制图片的 `Seed`
+
+3. 生成完毕后，先查看图片效果是否满意。如果满意，直接将图片送进Img2img。（点击 `Send to img2img`）
+
+4. 在img2img界面底部，有一个 `Script` 选项。将 `Script` 选为 `SD Upscale`，里面的 Tile overlap 尽量调小
+
+5. 一般送入 Img2img 的图，输入框自动填充原提示词。如果你发现prompt有变动，请手动填充
+
+6. 选择合适的 `Sampling Steps` 和 `Sampling method`
+
+7. 确认你的 `Width` 和 `Height` 与原图一致
+
+>这里的 Width 和 Height 是超分时 img2img 的图片比大小，如果不合适会导致出现重叠问题
+
+8. 将第 2 步复制的 Seed 填入img2img的 Seed 里并生成
+
+[解决方案来源于此](https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99#%E9%AB%98%E5%88%86%E8%BE%A8%E7%8E%87%E4%B8%8B%E5%87%BA%E6%80%AA%E5%9B%BE)
+
 
 #### RuntimeError: Unable to find a valid cuDNN algorithm to run convolution
 
@@ -246,6 +275,7 @@ print(torch.cuda.is_available())
 #### CUDA out of memory
 
 原因：显存不足。`--lowvram` 和 `--medvram` 启动参数都可以改善此问题。
+
 
 ### ckpt 文件安全/误报[^4]
 

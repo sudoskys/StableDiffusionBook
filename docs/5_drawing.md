@@ -360,6 +360,8 @@ normal quality, text, censored, gown, latex, pencil
 
 ### 种子调试
 
+Seed 是一个 “随机噪声” ，它是一个随机初始值，不代表任何内容。
+
 在相同 Step ，cfg ，Seed,参数（prompts） 的情况下，生产的图片基本相同！
 
 在同一模型和后端实现中，保持所有参数一致的情况下，相同的种子会产生同样的图片。取决于其他参数。
