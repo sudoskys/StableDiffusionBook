@@ -533,7 +533,7 @@ Batch 数设置控制获得多少次迭代
 
 [脚本解决方案来源于此](https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99#%E9%AB%98%E5%88%86%E8%BE%A8%E7%8E%87%E4%B8%8B%E5%87%BA%E6%80%AA%E5%9B%BE)
 
-具体流程
+如果你想使用脚本提供的分辨率增强，这里有 Img2Img 的具体流程
 
 1. 使用 `--medvram` 或者 `--lowvram` 参数启动webui
 
