@@ -13,7 +13,8 @@
 !!! info "版权"
     本仓库不提供具体链接（版权警告），可以看页面下标或关注中文社区 t.me@StableDiffusion_CN_WIKI。
 
-[SDWebUi是一个框架，所以除了NAI模型外还有许多其他模型：Stable Diffusion Models](https://rentry.org/sdmodels)
+SDWebUi是一个框架，所以除了NAI模型外还有许多[其他模型](https://rentry.org/sdmodels)
+
 
 ## 关于显卡
 
@@ -30,6 +31,7 @@ print(torch.__version__)
 print(torch.cuda.is_available())
 ```
 
+
 **查看 torch 对应的 cuda 版本**
 
 ```
@@ -37,6 +39,7 @@ torch.version.cuda
 ```
 
 输入 ctrl + z 退出
+
 
 ### 多 GPU 支持
 
@@ -149,23 +152,24 @@ Windows: <https://developer.nvidia.com/compute/cudnn/secure/8.5.0/local_installe
 
 启动 cli 有提示加载就 OK, 同时可以去设置选模型那里选喜欢的 `hypernetwork`
 
-### 对于 NAI 模型的说明
+### 全量和基线模型
 
 `animesfw-latest` = NAI 基线模型
 
 `animefull-final-pruned` = `full-latest` = NAI 全量模型(包含成人内容)
 
-#### 使用 latest (7G) 还是 pruned (4G) 模型
+### 使用 latest (7G) 还是 pruned (4G) 模型
 
-请用 pruned。使用 latest 只会白费 RAM 和 VRAM。
-如何证明的：[链接](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017#discussioncomment-3882551)。
+个人用户只需要使用 pruned。使用 latest 只会白费 RAM 和 VRAM。
+
+[结论由此贴讨论得到](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017#discussioncomment-3882551)。
 
 **详细介绍**
 
 <iframe src="//player.bilibili.com/player.html?aid=688965561&cid=857942294&page=1&danmaku=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 BV1Gm4y1A7VM
 
-#### 风格化[^5]
+### 风格化[^5]
 
 ![furry](https://user-images.githubusercontent.com/474879/194965036-4c9f70ca-a32f-4f68-a9a1-17a827e8e61e.jpg)
 >furry
@@ -183,6 +187,7 @@ Steps: 28, Sampler: Euler, CFG scale: 12, Seed: [SEE COLUMN], Size: 512x512, Mod
 `anime_3`是该系列中质量最高的，但它们都有些不一致. 我一般不会推荐他们。
 
 可以看到 `furry`的超网络在添加动物特征方面更加激进，因此这里更保守的变化可能与采样器、步骤和 CFG 有关。[^5]
+
 
 ## 说明
 
@@ -202,6 +207,7 @@ Steps: 28, Sampler: Euler, CFG scale: 12, Seed: [SEE COLUMN], Size: 512x512, Mod
 
 [一个小指南：RedditAbout](https://www.reddit.com/r/StableDiffusion/comments/xbeyw3/can_anyone_offer_a_little_guidance_on_the/)
 
+
 ### 生成图片发生BUG的自救
 
 #### 生成黑/绿图
@@ -220,9 +226,9 @@ Steps: 28, Sampler: Euler, CFG scale: 12, Seed: [SEE COLUMN], Size: 512x512, Mod
 
 如果您的输出是混乱的彩虹混乱，则您的图像分辨率设置得太低
 
-#### 但是高分辨率下出怪图
+#### 高分辨率出怪图
 
-[读这里](https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99#%E9%AB%98%E5%88%86%E8%BE%A8%E7%8E%87%E4%B8%8B%E5%87%BA%E6%80%AA%E5%9B%BE)
+[具体的解决方案](https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99#%E9%AB%98%E5%88%86%E8%BE%A8%E7%8E%87%E4%B8%8B%E5%87%BA%E6%80%AA%E5%9B%BE)
 
 #### RuntimeError: Unable to find a valid cuDNN algorithm to run convolution
 
@@ -248,15 +254,19 @@ ckpt文件被加载时基本上可以执行任何内容，盲目加载有安全�
 
 可以通过此脚本检查风险：<https://rentry.org/safeunpickle2>
 
+
 -----
 
+
 ## 进阶
+
 
 ### 使用 webui 复现 NAI 官网
 
 [相关讨论，应该读一读！](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017)
 
 >由于 torch 及其相关框架的性质，尝试完全复原在不同机器上生成的图片是不明智的。所以不要纠结一些细节不能复现。
+
 
 #### 需要做的事情
 * 加载 VAE 和模型附带的 config.yaml。
@@ -268,9 +278,9 @@ ckpt文件被加载时基本上可以执行任何内容，盲目加载有安全�
 
 * hypernetwork。官网默认并不使用 hypernetwork。
 
-> 为什么要设置 Stop At last layers of CLIP model？
 
-这是为了匹配 NAI 的一个优化。如果你想了解 NAI 为什么这么做，请看[这里](https://blog.novelai.net/novelai-improvements-on-stable-diffusion-e10d38db82ac)。
+设置 `Stop At last layers of CLIP model` 是为了匹配 NAI 的一个[优化](https://blog.novelai.net/novelai-improvements-on-stable-diffusion-e10d38db82ac)。
+
 
 #### NAI 官网默认的参数
 
@@ -284,9 +294,11 @@ Negative prompt:
 lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry
 ```
 
+
 ### 半精度还是单精度？
 
 如果能，尽量使用半精度，可以节省运算时间/RAM/VRAM，同时图片质量并不会和单精度差多少。~真要说差别可能和你电脑被宇宙射线打了差不多~。
+
 
 ### **Euler等Samplers采样器参数**
 
@@ -303,6 +315,7 @@ DDIM 是一种神经网络方法。 每一步都相当快，但效率相对较�
 
 [英文原版](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#attentionemphasis)
 
+
 ### xformers
 
 xformers 分辨率越高加速效果越好。使用 xformers 会引入一些随机性，稍微影响生成的图像。
@@ -312,6 +325,7 @@ xformers 分辨率越高加速效果越好。使用 xformers 会引入一些随�
 !!! tip
     有人说在 700 和 900 系列卡上使用 xformers 的性能明显较差，请注意这一点。
     本人实测，2050 在启用xformers之后，速度慢了 50%
+
 
 #### 在 Windows 上编译 Xformers
 
@@ -407,6 +421,7 @@ pip install xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl
 
 >COMMANDLINE_ARGS=
 
+
 #### Windows 编译错误自查
 
 >错误:`Filename too long` 和 `fatal error C1083: Cannot open compiler generated file: '': Invalid argument`
@@ -423,11 +438,13 @@ pip install xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl
 
 自己编译指路 [wiki/Xformers](https://rentry.org/sdg_faq#xformers-increase-your-its-more-cards-supported) 还有 [这个 Post](https://www.reddit.com/r/StableDiffusion/comments/xz26lq/automatic1111_xformers_cross_attention_with_on/)
 
+
 ### 使用CPU进行绘画
 
 根据此 [pr](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2597)
 
 可以通过 `--use-cpu all` 尽可能的使用CPU进行生成
+
 
 ### X/Y 图
 
