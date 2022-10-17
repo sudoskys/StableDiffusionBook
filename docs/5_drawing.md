@@ -888,32 +888,26 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-edi
 https://github.com/DominikDoom/a1111-sd-webui-tagcomplete
 
 
-### NAI 官方在使用的参数
+### NAI 在使用的出图参数
 
-个人跑不起来的参数
-
-- 使用全量模型(官方的GPU云特别强悍)
-- 使用 ema 权重加载，将yaml 配置其中的 `use_ema` 设置为 true
-- CLIP layer = 2
 - 将` sigma noise/strength`重置为默认值 1（无需使用 0.69 / 0.67）
 - 设定 `eta noise seed delta` 为 31337
-- 如果使用欧拉 a，eta 噪声种子 delta = 31337
 - 如果prompt有权重，转换权重（WebUi用1.1，NAI用1.05）
-- 使用 --no-half 参数（次要）
-
-
-**NAI 默认的 `SFW` 消极提示词为**
-```
-nsfw, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry
-```
+- 使用 `--no-half` 参数（次要）
 
 **NAI 默认的模型设置**
+
 ```
 steps": 28, "sampler": "[sampler]", "seed": [seed], "strength": 0.69, "noise": 0.667, "scale": 11.0,
 
 Strength ， noise 是 eta 和 sigma
 
 scale 就是 CFG scale
+```
+
+**NAI 默认的 `SFW` 消极提示词为**
+```
+lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry
 ```
 
 

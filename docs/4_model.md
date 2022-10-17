@@ -189,7 +189,7 @@ Steps: 28, Sampler: Euler, CFG scale: 12, Seed: [SEE COLUMN], Size: 512x512, Mod
 可以看到 `furry`的超网络在添加动物特征方面更加激进，因此这里更保守的变化可能与采样器、步骤和 CFG 有关。[^5]
 
 
-## 说明
+## 基础
 
 ### 横条参数说明
 
@@ -282,17 +282,12 @@ ckpt文件被加载时基本上可以执行任何内容，盲目加载有安全�
 设置 `Stop At last layers of CLIP model` 是为了匹配 NAI 的一个[优化](https://blog.novelai.net/novelai-improvements-on-stable-diffusion-e10d38db82ac)。
 
 
-#### NAI 官网默认的参数
+### NAI 在使用的模型参数
 
-截至 2022/10/17：
+- 使用全量模型(官方的GPU云特别强悍)
+- CLIP layer = 2
+- 使用 ema 权重加载，将yaml 配置其中的 `use_ema` 设置为 true
 
-Step: 28, Scale: 11, Sampler: Euler-A
-
-Negative prompt:
-
-```
-lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry
-```
 
 
 ### 半精度还是单精度？
