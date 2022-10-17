@@ -238,25 +238,7 @@ Steps: 28, Sampler: Euler, CFG scale: 12, Seed: [SEE COLUMN], Size: 512x512, Mod
 
 简单说就是使用低分辨率重新生成或者超分。见钩吻
 
-1. 使用 `--medvram` 或者 `--lowvram` 参数启动webui
-
-2. 选择较小分辨率生成图片。记住你生成图片的分辨率。生成完毕之后，复制图片的 `Seed`
-
-3. 生成完毕后，先查看图片效果是否满意。如果满意，直接将图片送进Img2img。（点击 `Send to img2img`）
-
-4. 在img2img界面底部，有一个 `Script` 选项。将 `Script` 选为 `SD Upscale`，里面的 Tile overlap 尽量调小
-
-5. 一般送入 Img2img 的图，输入框自动填充原提示词。如果你发现prompt有变动，请手动填充
-
-6. 选择合适的 `Sampling Steps` 和 `Sampling method`
-
-7. 确认你的 `Width` 和 `Height` 与**原图**一致
-
->这里的 Width 和 Height 是超分时 img2img 的图片大小，如果不等会导致出现重叠问题
-
-8. 将第 2 步复制的 Seed 填入img2img的 Seed 里并生成
-
-[解决方案来源于此](https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99#%E9%AB%98%E5%88%86%E8%BE%A8%E7%8E%87%E4%B8%8B%E5%87%BA%E6%80%AA%E5%9B%BE)
+你可以在下个章节看到具体操作流程。
 
 
 #### RuntimeError: Unable to find a valid cuDNN algorithm to run convolution
