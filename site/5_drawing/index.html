@@ -597,18 +597,20 @@
     Img2Img Loopback 回环生成
   </a>
   
-    <nav class="md-nav" aria-label="Img2Img Loopback 回环生成">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#img2img_2" class="md-nav__link">
     Img2Img 让低显存生成大分辨率图片
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Img2Img 让低显存生成大分辨率图片">
+      <ul class="md-nav__list">
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    脚本
+  </a>
   
 </li>
         
@@ -619,8 +621,13 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
+  <a href="#_16" class="md-nav__link">
     图像去噪
   </a>
   
@@ -649,42 +656,42 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_16" class="md-nav__link">
+  <a href="#_17" class="md-nav__link">
     模型环境要求
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_17" class="md-nav__link">
+  <a href="#_18" class="md-nav__link">
     设置
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_18" class="md-nav__link">
+  <a href="#_19" class="md-nav__link">
     创建训练
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_19" class="md-nav__link">
+  <a href="#_20" class="md-nav__link">
     预处理
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_20" class="md-nav__link">
+  <a href="#_21" class="md-nav__link">
     训练
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_21" class="md-nav__link">
+  <a href="#_22" class="md-nav__link">
     备注
   </a>
   
@@ -703,28 +710,28 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_22" class="md-nav__link">
+  <a href="#_23" class="md-nav__link">
     渐变提示词
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_23" class="md-nav__link">
+  <a href="#_24" class="md-nav__link">
     注意 尺寸
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_24" class="md-nav__link">
+  <a href="#_25" class="md-nav__link">
     提示词速查
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_25" class="md-nav__link">
+  <a href="#_26" class="md-nav__link">
     调参工程师
   </a>
   
@@ -736,7 +743,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_26" class="md-nav__link">
+  <a href="#_27" class="md-nav__link">
     参数
   </a>
   
@@ -744,7 +751,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_27" class="md-nav__link">
+  <a href="#_28" class="md-nav__link">
     自动补全
   </a>
   
@@ -773,21 +780,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_28" class="md-nav__link">
+  <a href="#_29" class="md-nav__link">
     草图风格
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_29" class="md-nav__link">
+  <a href="#_30" class="md-nav__link">
     艺术风格
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_30" class="md-nav__link">
+  <a href="#_31" class="md-nav__link">
     杂志/设定集 风格
   </a>
   
@@ -1277,9 +1284,10 @@ PS：调太高步数(&gt;30)效果不会更好</p>
 <p>在 img2img 中设置loopback脚本，它允许自动将输出图像作为下一批的Batch提供，相当于保存输出图像，并用它替换输入图像。</p>
 <p>Batch 数设置控制获得多少次迭代</p>
 <p>通常，在执行此操作时，您会自己为下一次迭代选择许多图像中的一个，因此此功能的有用性可能值得怀疑，但反正我已经设法获得了一些我无法获得的非常好的输出。</p>
-<h4 id="img2img_2">Img2Img 让低显存生成大分辨率图片</h4>
+<h3 id="img2img_2">Img2Img 让低显存生成大分辨率图片</h3>
 <p>在前面提到了，如果遇到生成鬼图或者 低显存生产高分辨率图片 可以采用的 Img2Img 画质提升脚本。</p>
 <p>其实我<strong>强烈推荐</strong>你使用 Extras 的功能对低分辨率进行重放，效果不错的，且体验良好！</p>
+<h4 id="_15">脚本</h4>
 <p>但是如果你想使用脚本提供的分辨率增强，这里有 Img2Img 的具体流程</p>
 <ol>
 <li>
@@ -1309,13 +1317,10 @@ PS：调太高步数(&gt;30)效果不会更好</p>
 </ol>
 <p>这里的 Width 和 Height 是超分时 img2img 的图片大小，如果不等会导致出现重叠问题</p>
 <p>SD Upscale 选项在 Img2Img 的 Script 栏目中，主要作用是提升分辨率。</p>
-<p><strong>应该使用什么 Upscaler？</strong></p>
-<p><code>SD Upscaler</code> 在注重细节的同时还提升分辨率。</p>
-<p>曾经有段时间，<code>LSDR</code> 被认为是最好的。有些人喜欢 swinir，有些喜欢<code>esrgan4x</code>，<code>ymmv</code>，推荐使用 <code>ESRGAN_4x</code></p>
 <p><a href="https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99#%E9%AB%98%E5%88%86%E8%BE%A8%E7%8E%87%E4%B8%8B%E5%87%BA%E6%80%AA%E5%9B%BE">脚本解决方案来源于此</a></p>
-<h3 id="extras">超分图像 extras</h3>
+<h4 id="extras">超分图像 extras</h4>
 <p><code>webui</code> extras 页有一个自带的超分功能，可以使用 <code>ESRGAN_4x</code>模型</p>
-<p>当然 <code>realesrgan</code> 或者 <code>realcugan</code> 也可以，<a href="https://github.com/bilibili/ailab/tree/main/Real-CUGAN">realcugan</a></p>
+<p>当然 <code>realesrgan</code> 或者 <code>realcugan</code> 也可以。</p>
 <div class="admonition tip">
 <p class="admonition-title">相关模型</p>
 <p>文件统一下载到 <code>SDwebUI文件夹\models</code> 下</p>
@@ -1325,7 +1330,11 @@ PS：调太高步数(&gt;30)效果不会更好</p>
 <p><a href="https://github.com/cszn/KAIR/releases/download/v1.0/scunet_color_real_gan.pth&quot; to D:\stable-diffusio\models\ScuNET\ScuNET.pth">ScuNET GAN/PSNR</a>，文件大小为68.6MB</p>
 <p><a href="https://github.com/JingyunLiang/SwinIR/releases/download/v0.0/003_realSR_BSRGAN_DFOWMFC_s64w8_SwinIR-L_x4_GAN.pth">SwinIR 4x</a>，文件大小为136MB</p>
 </div>
-<h3 id="_15">图像去噪</h3>
+<p><strong>应该使用什么 Upscaler？</strong></p>
+<p><code>SD Upscaler</code> 在注重细节的同时还提升分辨率。</p>
+<p>曾经有段时间，<code>LSDR</code> 被认为是最好的。有些人喜欢 swinir，有些喜欢<code>esrgan4x</code>，<code>ymmv</code>，推荐使用 <code>ESRGAN_4x</code></p>
+<p>如果你要搞二次元，推荐使用<a href="https://github.com/bilibili/ailab/tree/main/Real-CUGAN">realcugan</a></p>
+<h3 id="_16">图像去噪</h3>
 <p>推荐使用 <a href="https://github.com/xinntao/Real-ESRGAN">Real-ESRGAN</a> 降噪。</p>
 <p><img alt="效果" src="https://raw.githubusercontent.com/xinntao/Real-ESRGAN/master/assets/teaser.jpg" /></p>
 <blockquote>
@@ -1355,7 +1364,7 @@ PS：调太高步数(&gt;30)效果不会更好</p>
 <p>重命名VAE模型文件非常关键，如果带着VAE训练效果十分差。</p>
 <p>或者不需要重命名vae文件，直接在设置里打开 <code>auto unload</code></p>
 </div>
-<h4 id="_16">模型环境要求</h4>
+<h4 id="_17">模型环境要求</h4>
 <p>WebUi 应该是 Git 的最新版本。</p>
 <p>显存至少 6GB，正常使用需要 12GB 显存。根据实验数据，8GB显存应该选择 <code>512x512</code> 分辨率。</p>
 <p>训练可使用半精度浮点，但是否好用还需要进行实验。</p>
@@ -1363,7 +1372,7 @@ PS：调太高步数(&gt;30)效果不会更好</p>
 <p>你可以中断和恢复训练而不会丢失任何数据（AdamW 优化参数除外，但似乎现有的存储库都没有保存这些，所以一般认为它们并不重要）。</p>
 <p>不支持 <code>batch sizes</code> 和 <code>gradient accumulation</code>。</p>
 <p>不可能在 <code>--lowvram</code> and <code>--medvram</code> 参数下运行起来。</p>
-<h4 id="_17">设置</h4>
+<h4 id="_18">设置</h4>
 <p>准备 30 张以上的目标人设图片，每一张图片应当裁剪为同样的比例。（即使WebUi已经支持了长方形图片的裁剪）</p>
 <p>在 <code>Interrogate Options</code> 设置中，<code>Interrogate: deepbooru score threshold</code> 是 deepbooru(从图像提取标签) 可用标签的阀值。建议使用 0.75,也就是保留预测结果大于 75%的结果。</p>
 <p>比如，假定识别结果为
@@ -1382,13 +1391,13 @@ PS：调太高步数(&gt;30)效果不会更好</p>
 就会丢弃 <code>wide_sleeves</code> 以下的内容</p>
 <p><code>Interrogate: deepbooru sort alphabetically</code> 是按照字母顺序排序 Tag，因为 Tag 对结果影响很大，所以我们取消勾选此项。</p>
 <p>按下 <code>Apply setting</code> 保存设置。</p>
-<h4 id="_18">创建训练</h4>
+<h4 id="_19">创建训练</h4>
 <p>打开 <code>train</code> 选项卡，在 <code>Create embedding</code>选项卡新建一个 <code>embedding</code> 模型。</p>
 <p><code>Name</code> 输入框输入你预想的出现此人设的 提示词。</p>
 <p><code>Initialization text</code> 可以输入 <code>one girl</code> 这种大分类，只能填一个，人物可以是1girl或者1boy，或者画风。</p>
 <p><code>Number of vectors per token</code> 是此 <code>embedding</code> 要占据的 token 位数量，越多越好，但是相应也会减少其他提示词 token 的位置。</p>
 <p>新建，会创建一个在 <code>embedding</code> 下的 pt 文件。</p>
-<h4 id="_19">预处理</h4>
+<h4 id="_20">预处理</h4>
 <p>打开 <code>Preprocess images</code> 选项卡。</p>
 <p><code>Source directory</code> 中填入你的训练用图片文件夹目录，里面只允许有训练图片。</p>
 <p><code>Destination directory</code> 中填入预处理完毕后图片保存路径。</p>
@@ -1417,7 +1426,7 @@ PS：调太高步数(&gt;30)效果不会更好</p>
 <p>意思就是将超大图像一分为二，一般不用。</p>
 <p>我们勾选 <code>Use deepbooru caption as filename</code> 和 <code>Create flipped copies</code></p>
 <p>点击按钮，等待处理结束。</p>
-<h4 id="_20">训练</h4>
+<h4 id="_21">训练</h4>
 <p>在 <code>Train</code> 子选项卡中，选择你要训练的模型。</p>
 <p><code>Learning rate</code>(学习率)，决定训练的速度。Learning rate越低学习越慢（花费更长的时间收敛）。</p>
 <p>一般为 0.005。，如果想快一些，可以使用 0.001 加快，但是如果设置得太高，可能会破坏 <code>embedding</code></p>
@@ -1455,7 +1464,7 @@ PS：调太高步数(&gt;30)效果不会更好</p>
 </div>
 <p>点击 右下角训练，等待。</p>
 <p>训练完毕。再次重命名 Vae 文件，重启程序。</p>
-<h4 id="_21">备注</h4>
+<h4 id="_22">备注</h4>
 <p><strong>[filewords]</strong></p>
 <p>是 提示词模板文件 的 Tag，可以实现把文件名中的词汇插入提示。</p>
 <p>第一，默认情况下，文件的扩展名以及-文件名开头的所有数字和破折号 ( ) 都会被删除。</p>
@@ -1483,7 +1492,7 @@ PS：调太高步数(&gt;30)效果不会更好</p>
 <blockquote>
 <p>hypernet对比图</p>
 </blockquote>
-<h3 id="_22"><strong>渐变提示词</strong></h3>
+<h3 id="_23"><strong>渐变提示词</strong></h3>
 <p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-editing</p>
 <p>允许您开始对一张图片进行采样，但在中间切换到其他图片。基本语法是：</p>
 <div class="highlight"><pre><span></span><code>[from:to:when]
@@ -1497,13 +1506,13 @@ PS：调太高步数(&gt;30)效果不会更好</p>
 <p>开始时，模型将绘制a fantasy landscape。</p>
 <p>在第 16 步之后，它将切换到绘图a <code>cyberpunk landscape</code>，从幻想停止的地方继续。</p>
 <p>比如 [male:female:0.0], 意味着你开始时就要求画一个女性。</p>
-<h3 id="_23">注意 <code>尺寸</code></h3>
+<h3 id="_24">注意 <code>尺寸</code></h3>
 <p>比如出图尺寸宽了人可能会多</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>要匹配好姿势，镜头和人物才不畸形，有时候需要限定量词，多人物时要处理空间关系和 prompt 遮挡优先级。人数-&gt;人物样貌-&gt;环境样式-&gt;人物状态</p>
 </div>
-<h3 id="_24">提示词速查</h3>
+<h3 id="_25">提示词速查</h3>
 <p><strong><a href="https://docs.google.com/spreadsheets/d/14Gg1kIGWdZGXyCC8AgYVT0lqI6IivLzZOdIT3QMWwVI/edit">手抄本法术书</a></strong></p>
 <p><strong><a href="https://gelbooru.com/index.php?page=tags&amp;s=list">Danbooru全部Tag列表</a></strong></p>
 <p><strong><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml#">参数法术全典</a></strong></p>
@@ -1511,11 +1520,11 @@ PS：调太高步数(&gt;30)效果不会更好</p>
 <p><strong><a href="https://github.com/scooderic/exhentai-tags-chinese-translation">NSFWTag</a></strong></p>
 <p><strong><a href="https://docs.google.com/spreadsheets/d/1SRqJ7F_6yHVSOeCi3U82aA448TqEGrUlRrLLZ51abLg/htmlview#">Ai艺术家文档</a></strong></p>
 <p><strong><a href="https://www.bilibili.com/read/cv19023021">Novelai 关键词组合器</a></strong></p>
-<h3 id="_25">调参工程师</h3>
+<h3 id="_26">调参工程师</h3>
 <p><a href="https://github.com/Maks-s/sd-akashic">https://github.com/Maks-s/sd-akashic</a></p>
 <p><a href="https://github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference">https://github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference</a></p>
-<h2 id="_26">参数</h2>
-<h3 id="_27">自动补全</h3>
+<h2 id="_27">参数</h2>
+<h3 id="_28">自动补全</h3>
 <p>这里有一个项目，可以使SD做到类似 NAI 的补全效果。</p>
 <p>https://github.com/DominikDoom/a1111-sd-webui-tagcomplete</p>
 <h3 id="nai">NAI 在使用的出图参数</h3>
@@ -1562,7 +1571,7 @@ scale 就是 CFG scale
 <h3 id="1">良好参数(风格趋向插画)<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">1</a></sup></h3>
 <div class="highlight"><pre><span></span><code>{an extremely delicate and beautiful}
 </code></pre></div>
-<h4 id="_28">草图风格</h4>
+<h4 id="_29">草图风格</h4>
 <table>
 <thead>
 <tr>
@@ -1598,7 +1607,7 @@ scale 就是 CFG scale
 </tbody>
 </table>
 <p>利用sketch，pastel color，lineart的tag模拟一张图的绘画过程</p>
-<h4 id="_29">艺术风格</h4>
+<h4 id="_30">艺术风格</h4>
 <table>
 <thead>
 <tr>
@@ -1637,7 +1646,7 @@ scale 就是 CFG scale
 </tr>
 </tbody>
 </table>
-<h4 id="_30">杂志/设定集 风格</h4>
+<h4 id="_31">杂志/设定集 风格</h4>
 <table>
 <thead>
 <tr>
@@ -2082,11 +2091,11 @@ scale 就是 CFG scale
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 17, 2022 16:43:29</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 17, 2022 16:47:52</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 17, 2022 16:43:29</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 17, 2022 16:47:52</span>
       
     
   </small>
