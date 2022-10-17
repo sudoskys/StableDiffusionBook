@@ -380,7 +380,7 @@ PS：调太高步数(>30)效果不会更好。
 
 |预览一|预览二|
 |--|--|
-|<img src="https://user-images.githubusercontent.com/22421310/187063145-3d4f16d7-7bd6-4804-be1c-acf228ed2507.jpg" width="40%" alt="效果">|<img src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/raw_sample.jpg" width="40%" alt="效果">|
+|<img src="https://user-images.githubusercontent.com/22421310/187063145-3d4f16d7-7bd6-4804-be1c-acf228ed2507.jpg" width="400" alt="效果">|<img src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/raw_sample.jpg" width="400" alt="效果">|
 
 >不同 step 和 采样器 的不同效果
 
