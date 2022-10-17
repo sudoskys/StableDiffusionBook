@@ -453,10 +453,10 @@
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    说明
+    基础
   </a>
   
-    <nav class="md-nav" aria-label="说明">
+    <nav class="md-nav" aria-label="基础">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -563,15 +563,15 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#nai" class="md-nav__link">
-    NAI 官网默认的参数
-  </a>
+      </ul>
+    </nav>
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#nai" class="md-nav__link">
+    NAI 在使用的模型参数
+  </a>
   
 </li>
         
@@ -966,7 +966,7 @@ Steps: 28, Sampler: Euler, CFG scale: 12, Seed: [SEE COLUMN], Size: 512x512, Mod
 <p><code>aini</code> 有一种你可能不喜欢的强烈风格，我认为它具有最高的一致性和质量。</p>
 <p><code>anime_3</code>是该系列中质量最高的，但它们都有些不一致. 我一般不会推荐他们。</p>
 <p>可以看到 <code>furry</code>的超网络在添加动物特征方面更加激进，因此这里更保守的变化可能与采样器、步骤和 CFG 有关。<sup id="fnref2:5"><a class="footnote-ref" href="#fn:5">4</a></sup></p>
-<h2 id="_4">说明</h2>
+<h2 id="_4">基础</h2>
 <h3 id="_5">横条参数说明</h3>
 <p><code>step</code> 迭代多少次, 取值和 <code>sampling method</code> 有关, <code>DDIM</code> 采样方法收敛较快, 具体差别见调参魔法 <code>Sampler vs. Steps Comparison (low to mid step counts)</code> 。</p>
 <p><code>batch count/batch size</code> 决定生成的图片数量, 显存够就加 batch size, 不够就 batch count, 得到的图片数量是两者之积 (小显存还是只动 count 就好)</p>
@@ -1019,12 +1019,12 @@ print(torch.cuda.is_available())
 <li>hypernetwork。官网默认并不使用 hypernetwork。</li>
 </ul>
 <p>设置 <code>Stop At last layers of CLIP model</code> 是为了匹配 NAI 的一个<a href="https://blog.novelai.net/novelai-improvements-on-stable-diffusion-e10d38db82ac">优化</a>。</p>
-<h4 id="nai">NAI 官网默认的参数</h4>
-<p>截至 2022/10/17：</p>
-<p>Step: 28, Scale: 11, Sampler: Euler-A</p>
-<p>Negative prompt:</p>
-<div class="highlight"><pre><span></span><code>lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry
-</code></pre></div>
+<h3 id="nai">NAI 在使用的模型参数</h3>
+<ul>
+<li>使用全量模型(官方的GPU云特别强悍)</li>
+<li>CLIP layer = 2</li>
+<li>使用 ema 权重加载，将yaml 配置其中的 <code>use_ema</code> 设置为 true</li>
+</ul>
 <h3 id="_12">半精度还是单精度？</h3>
 <p>如果能，尽量使用半精度，可以节省运算时间/RAM/VRAM，同时图片质量并不会和单精度差多少。~真要说差别可能和你电脑被宇宙射线打了差不多~。</p>
 <h3 id="eulersamplers"><strong>Euler等Samplers采样器参数</strong></h3>
@@ -1230,11 +1230,11 @@ pip install xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 17, 2022 07:33:33</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 17, 2022 12:27:04</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 17, 2022 07:33:33</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 17, 2022 12:27:04</span>
       
     
   </small>

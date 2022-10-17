@@ -739,7 +739,7 @@
         
           <li class="md-nav__item">
   <a href="#nai" class="md-nav__link">
-    NAI 官方在使用的参数
+    NAI 在使用的出图参数
   </a>
   
 </li>
@@ -1444,27 +1444,22 @@ normal quality, text, censored, gown, latex, pencil
 <h3 id="_29">自动补全</h3>
 <p>这里有一个项目，可以使SD做到类似 NAI 的补全效果。</p>
 <p>https://github.com/DominikDoom/a1111-sd-webui-tagcomplete</p>
-<h3 id="nai">NAI 官方在使用的参数</h3>
-<p>个人跑不起来的参数</p>
+<h3 id="nai">NAI 在使用的出图参数</h3>
 <ul>
-<li>使用全量模型(官方的GPU云特别强悍)</li>
-<li>使用 ema 权重加载，将yaml 配置其中的 <code>use_ema</code> 设置为 true</li>
-<li>CLIP layer = 2</li>
 <li>将<code>sigma noise/strength</code>重置为默认值 1（无需使用 0.69 / 0.67）</li>
 <li>设定 <code>eta noise seed delta</code> 为 31337</li>
-<li>如果使用欧拉 a，eta 噪声种子 delta = 31337</li>
 <li>如果prompt有权重，转换权重（WebUi用1.1，NAI用1.05）</li>
-<li>使用 --no-half 参数（次要）</li>
+<li>使用 <code>--no-half</code> 参数（次要）</li>
 </ul>
-<p><strong>NAI 默认的 <code>SFW</code> 消极提示词为</strong>
-<div class="highlight"><pre><span></span><code>nsfw, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry
-</code></pre></div></p>
-<p><strong>NAI 默认的模型设置</strong>
+<p><strong>NAI 默认的模型设置</strong></p>
 <div class="highlight"><pre><span></span><code>steps&quot;: 28, &quot;sampler&quot;: &quot;[sampler]&quot;, &quot;seed&quot;: [seed], &quot;strength&quot;: 0.69, &quot;noise&quot;: 0.667, &quot;scale&quot;: 11.0,
 
 Strength ， noise 是 eta 和 sigma
 
 scale 就是 CFG scale
+</code></pre></div>
+<p><strong>NAI 默认的 <code>SFW</code> 消极提示词为</strong>
+<div class="highlight"><pre><span></span><code>lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry
 </code></pre></div></p>
 <p><strong>其他</strong></p>
 <p>将所有提示词前面加入 <code>masterpiece, best quality</code></p>
@@ -1996,11 +1991,11 @@ scale 就是 CFG scale
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 17, 2022 07:33:33</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 17, 2022 12:27:04</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 17, 2022 07:33:33</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 17, 2022 12:27:04</span>
       
     
   </small>
