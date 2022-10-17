@@ -54,6 +54,7 @@
 
 - [一个小指南：RedditAbout](https://www.reddit.com/r/StableDiffusion/comments/xbeyw3/can_anyone_offer_a_little_guidance_on_the/)
 
+- [火药教程](https://rentry.org/stablediffgpubuy)
 
 #### 项目
 
