@@ -275,6 +275,12 @@ a \(word\) - 在提示中使用文字 () 字符
 
     NAI花括号权重为1.05/个，WebUi圆权重为1.1/个
 
+??? tip "How It Work"
+    每个单词都有一个768个值的相关向量，该向量“指向”概念的方向（在768维空间中）。
+    
+    如果你缩放这个向量，这个概念会变得更强或更弱。
+
+    From [Here](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2905)
 
 ### 消极提示词
 
@@ -397,6 +403,8 @@ Seed 是一个 “随机噪声” ，它是一个随机初始值，不代表任�
 
 生成按钮下有一个 `Interrogate CLIP`，点击后会下载 `CLIP`，用于生成当前图片框内图片的 Tag 并填充到提示词。
 
+CLIP 询问器有两个部分：一个是 BLIP 模型，它从图片中创建文本描述。另一种是 CLIP 模型，它会从列表中挑选出与图片相关的几行
+
 !!! tip 
     本文件为 [model_base_caption_capfilt_large.pth](https://storage.googleapis.com/sfr-vision-language-research/BLIP/models/model_base_caption_capfilt_large.pth)
     
@@ -406,6 +414,8 @@ Seed 是一个 “随机噪声” ，它是一个随机初始值，不代表任�
 ### Img2Img 介绍
 
 一般我们有两种途径对图像进行修复：**PS 和 InPaint**，使用方法也十分多样。
+
+WebUi 使用 `--gradio-img2img-tool color-sketch` 启动会带入一个插件对图片进行颜色涂抹(这里不是 Inpaint)
 
 !!! tip "不同之处"
     PS 重新绘画投入 Img2Img 的话，会导致画风的变动，而 Inpaint 就不会。
@@ -574,7 +584,7 @@ https://github.com/XavierXiao/Dreambooth-Stable-Diffusion
 
 [官方英文说明和效果图](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion)
 
-`Textual Inversion`允许你在自己的图片上训练一小部分神经网络，并在生成新图片时使用结果。可以数据集没有新出的角色画不出的问题，模仿特定的艺术风格。
+`Textual Inversion`允许你在自己的图片上训练一小部分神经网络，并在生成新图片时使用结果。可以数据集没有新出的角色画不出的问题，模仿特定的艺术风格。实际上是 NLP 中的即时调优。
 
 这对制作数据集没有囊括的 2021 年之后的动漫人物非常有效。（PS:相应的，Miku因为图多所以效果最好）
 
