@@ -15,11 +15,9 @@
 
 [SDWebUi是一个框架，所以除了NAI模型外还有许多其他模型：Stable Diffusion Models](https://rentry.org/sdmodels)
 
-
 ## 关于显卡
 
-!!! info 
-    注意你的温度并增加它们的冷却，有报道称 GPU 太热炸了.
+!!! 主要显卡温度，有报道称显卡太热炸了。
 
 先判断 cuda 是否可用。
 
@@ -32,11 +30,12 @@ print(torch.cuda.is_available())
 ```
 
 **查看 torch 对应的 cuda 版本**
+
 ```
 torch.version.cuda
 ```
-输入 ctrl + z 退出
 
+输入 ctrl + z 退出
 
 ### 多 GPU 支持
 
@@ -46,20 +45,20 @@ Given the amount of features this repo provides I think it could take some time 
 
 [查看此 issue 页面](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/156)
 
-
 ### 16xx系显卡使用半精度生成图片[^3]
-
 
 方案来自 [这个讨论](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/28#issuecomment-1241448049)
 
 1. 激活webui使用的venv,要在正确的虚拟环境里运行
 
 2. 卸载掉现在所用的 torch 和 torchvision:
+
 ```
 pip uninstall torch torchvision
 ```
 
 3. 重新安装 `cuda 11.6`编译的 `torch` 和 `torchvision`。
+
 ```
 pip install torch torchvision --extra-index-url https://download.pytorch.org/whl/cu116
 ```
@@ -68,16 +67,15 @@ pip install torch torchvision --extra-index-url https://download.pytorch.org/whl
 
 使用下载工具下载，直接下载会跳转到 Nvidia 的开发者注册界面
 
-Windows: https://developer.nvidia.com/compute/cudnn/secure/8.5.0/local_installers/11.7/cudnn-windows-x86_64-8.5.0.96_cuda11-archive.zip
+Windows: <https://developer.nvidia.com/compute/cudnn/secure/8.5.0/local_installers/11.7/cudnn-windows-x86_64-8.5.0.96_cuda11-archive.zip>
 
-其他版本：https://developer.nvidia.com/rdp/cudnn-archive
+其他版本：<https://developer.nvidia.com/rdp/cudnn-archive>
 
 5. 将Cudnn 8.5压缩包里的bin和lib文件夹里的所有文件复制到 `venv\Lib\site-packages\torch\lib` 里，覆盖所有文件。
 
 6. 然后16xx系显卡也可以愉快地使用半精度生成图片了！大幅降低显存占用，6G加载Full模型可以生成1024x640的图片。
 
 但是，依然不能使用 `DDIM Sampling` ，但可以使用 `Euler a`
-
 
 ## NAI Leak 模型
 
@@ -112,7 +110,6 @@ Windows: https://developer.nvidia.com/compute/cudnn/secure/8.5.0/local_installer
 
 其中，hypernetworks 和 Stable-diffusion 是需要新建的文件夹。其他文件根据规则重命名。
 
-
 ### Part 1
 
 |文件|对应 Leak 路径|说明|
@@ -123,20 +120,17 @@ Windows: https://developer.nvidia.com/compute/cudnn/secure/8.5.0/local_installer
 |`stableckpt/vector_adjust/v2.pt`|风格化|感觉不如 `hypernet`|
 |个人不需要下载的|`workspace`|前后端全套，40GB仅能启动|
 
-
 注意，`final-pruned .yaml` 的名称应该对应 `final-pruned .ckpt`
 
 `hypernetworks` 包含了 `stableckpt/modules/modules` 里的文件，是风格相关的数据集，可以作为特定人物的 `embedding model` 调用，和 model 使用可以生成特定风格。主要格式为 `*.pt`。需要在WebUi的设置标签页启用这个增强模型。
 
 `workspace` 不是个人可以负载的，NAI采用的是 GPU 集群云。
 
-
 ### Part 2
 
 `prodmodels` 是GPT模型(语言处理)，但是实际用了CLIP，所以不用我们管。
 
 `random_stableckpt` 是一些模型，有的与Part1重复
-
 
 ![Part1](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/models.jpg)
 
@@ -154,35 +148,21 @@ Windows: https://developer.nvidia.com/compute/cudnn/secure/8.5.0/local_installer
 
 启动 cli 有提示加载就 OK, 同时可以去设置选模型那里选喜欢的 `hypernetwork`
 
-
 ### 对于 NAI 模型的说明
-
 
 `animesfw-latest` = NAI 基线模型
 
 `animefull-final-pruned` = `full-latest` = NAI 全量模型(包含成人内容)
 
+### 使用 latest (7G) 还是 pruned (4G) 模型
 
-!!!info "**4GB版本 or 7GB ？**"
-        
-        网上的两种模型，4GB是针对个人部署修剪后的。
-
-        *diffusion model* 训练会产生两个模型：当前权重和加权平均后优化的EMA（效果好）
-
-        7GB 的 ckpt 里包含了 当前权重 和 EMA权重(加权平均)，pruned.py 删除了当前权重，留下了 EMA权重并重命名。所以差别不大。
-
-        谈谈 EMA，Full Stable-Diffusion 模型包含两组权重，标准权重和 EMA 权重。标准权重是为训练而设计的，而 EMA 权重是为推理而优化的。
-        
-        修剪模型时，通常会丢弃标准权重，只保留 EMA 权重。这就是为什么尺寸减少了大约一半。
-        
-        **在启用 EMA 的情况下运行完整模型等同于运行修剪模型**
-
+请用 pruned。使用 latest 只会白费 RAM 和 VRAM。
+如何证明的：[链接](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017#discussioncomment-3882551)。
 
 **详细介绍**
 
 <iframe src="//player.bilibili.com/player.html?aid=688965561&cid=857942294&page=1&danmaku=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 BV1Gm4y1A7VM
-
 
 ### 风格化[^5]
 
@@ -203,45 +183,7 @@ Steps: 28, Sampler: Euler, CFG scale: 12, Seed: [SEE COLUMN], Size: 512x512, Mod
 
 可以看到 `furry`的超网络在添加动物特征方面更加激进，因此这里更保守的变化可能与采样器、步骤和 CFG 有关。[^5]
 
-
 ## 说明
-
-
-### ckpt 文件安全/误报[^4]
-
-ckpt文件是一个脚本，基本上可以执行它想要的任何内容，并且有权执行。盲目运行它们有安全风险。
-
-Ckpt文件可能很危险。Windows会拦截此文件，要么创建者向文件中注入了某种恶意的python代码，要么是误报。
-
-可以通过此脚本运行它来查看执行的内容：https://rentry.org/safeunpickle2
-
-不要在未检查其来源的情况下安装随机模型。
-
-
-### Config.yaml？
-
-NAIleak里边有个 config.yaml ， 将其改名为 `模型前缀.yaml` 和模型丢在一起就能加载,，但不建议加载 yaml，因为它会使内存占用加倍而不会对输出改变不大，但如果你真的想要，将其重命名为 [model name].yaml 并将其放在你的模型旁边。
-
-它包含主要用于配置用于训练或微调模型的数据加载器的参数，它有一个影响推理的`use_ema`选项。它决定了推理是使用`标准权重`还是使用 `EMA 权重`。
-
-如果`use_ema`未指定该选项，则默认为false不使用 EMA 权重的结果。
-
-
-### Vae 额外的权重
-
-如果需要更好模拟NAI,你需要使用 `animevae.pt`，这可以稳定杂乱的生成风格。
-
-
-### 半精度/全精度
-
-float32 用于较旧的 gpus，或者你想要 100% 的精度
-
-两者的输出应该几乎相同，主要区别在于大小和支持它的 GPU。
-
-大多数新 GPU 使用半精度，因为它会降低 VRAM。
-
-如果您想获得绝对的最佳质量或运行 16xx 卡，请仅使用非半精度和/或全精度。
-
 
 ### 横条参数说明
 
@@ -259,32 +201,27 @@ float32 用于较旧的 gpus，或者你想要 100% 的精度
 
 [一个小指南：RedditAbout](https://www.reddit.com/r/StableDiffusion/comments/xbeyw3/can_anyone_offer_a_little_guidance_on_the/)
 
-
 ### 生成图片发生BUG的自救
 
-
-#### 16系显卡生成黑/绿图
+#### 生成黑/绿图
 
 [Green or Black screen](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Install-and-Run-on-NVidia-GPUs)
 
-启动参数需要加 `--precision full --no-half`, 显存不足还要加 `--medvram`
+如果是GTX 16xx系列，启动参数需要加 `--precision full --no-half`, 因此如果显存不足还要加 `--medvram`。
 
-使用 vae 模型后如果偶尔黑图，尝试加入 `--no-half-vae` 参数[^2]
-
+如果是其他显卡而且加载了 VAE 时出现黑图，加入 `--no-half-vae` 参数[^2]。
 
 #### RuntimeError Sizes of tensors must match
-(img2img) 如果你得到RuntimeError: Sizes of tensors must match，你需要改变输入图像的分辨率
 
+(img2img) 如果你得到RuntimeError: Sizes of tensors must match，你需要改变输入图像的分辨率
 
 #### 彩虹混乱图
 
 如果您的输出是混乱的彩虹混乱，则您的图像分辨率设置得太低
 
-
 #### 但是高分辨率下出怪图
 
 [读这里](https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99#%E9%AB%98%E5%88%86%E8%BE%A8%E7%8E%87%E4%B8%8B%E5%87%BA%E6%80%AA%E5%9B%BE)
-
 
 #### RuntimeError: Unable to find a valid cuDNN algorithm to run convolution
 
@@ -299,105 +236,63 @@ import torch
 print(torch.cuda.is_available())
 ```
 
-如果仍未解决，请使用 `--lowvram` 启动参数，且确保在浏览器中禁用硬件加速，并在出现内存不足错误时关闭任何可能占用 VRAM 的内容。
-
-
 #### CUDA out of memory
 
-前面那节有相关的参数建议。
+原因：显存不足。`--lowvram` 和 `--medvram` 启动参数都可以改善此问题。
 
-生成报错解释：显存不足，硬件显存过低，需要买显卡。
+### ckpt 文件安全/误报[^4]
 
--------
+ckpt文件被加载时基本上可以执行任何内容，盲目加载有安全风险。请检查来源是否可靠再加载。
+如果杀毒软件拦截，有可能创建者向文件中注入了恶意的python代码。
 
+可以通过此脚本检查风险：<https://rentry.org/safeunpickle2>
 
-## 优化靠近 NAI
+-----
 
-[对NAI模型靠近NAI效果相关讨论，应该读一读！](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017)
+## 进阶
 
+### 使用 webui 复现 NAI 官网
 
-### 进一步优化
+[相关讨论，应该读一读！](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017)
 
-出图后，可以将喜欢的结果从右侧的输出选项卡拖回 img2img 以进行进一步迭代。
+_由于 torch 及其相关框架的性质，尝试完全复原在不同机器上生成的图片是不明智的。所以不要纠结一些细节不能复现。_
 
+#### 需要做的事情
 
-### **靠近NAI,调整 Eta noise seed delta**
-
-设置为 `31337` 可以更靠近 NAI 的效果。
-
-相关讨论 https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017
-
-
-### **对NAI模型更改 layers 忽略层数**
-
-在 WebUi 的设置页面把 ignore last layers of clip mode 的横条改成 `2`
-
-**这是 NAI 官方对模型的优化**
-
-Stable Diffusion 使用 CLIP 基于转换器的文本编码器的最终隐藏状态来使用分类器自由指导来指导生成。
-
-在Imagen (Saharia et al., 2022) 中，倒数第二层的隐藏状态用于指导，而不是最后一层的隐藏状态。
-
-关于`EleutherAI Discord`的讨论还表明，倒数第二层可能会提供更好的指导结果，因为隐藏状态值在最后一层突然变化。
-
-在实验过程中，NAI 发现稳定扩散能够解释倒数第二层的隐藏状态，只要应用 CLIP 文本转换器的最后一层规范，并生成仍然匹配提示的图像，尽管准确性略有降低。
-
-进一步的测试中 NAI 使用倒数第二层的隐藏状态而不是最后一层的隐藏状态进行训练，因为我们发现它可以让模型更好地利用基于标签的提示中的密集信息，从而使模型能够更快地学习如何解开某些概念。
-
-当使用最后一层时，模型在解开不同的概念以及正确分配颜色方面遇到了更多困难。
-
-全文在 [这里](https://blog.novelai.net/novelai-improvements-on-stable-diffusion-e10d38db82ac)
+* 加载 VAE 和模型附带的 config.yaml。
+* Stop At last layers of CLIP model 设为 `2`。
+* Eta noise seed delta 设置为 `31337`。
 
 
-### **模型超参数**
+#### **不需要**做的事情
 
-如果你想接近 NovelAi 的效果，需要使用 negative prompt（消极提示）过滤结果, 加载 `hypernetwork` 风格化 和 vae 稳定。
+* hypernetwork。官网默认并不使用 hypernetwork。
 
+> 为什么要设置 Stop At last layers of CLIP model？
 
-https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/1868#discussioncomment-3824077
+这是为了匹配 NAI 的一个优化。如果你想了解 NAI 为什么这么做，请看[这里](https://blog.novelai.net/novelai-improvements-on-stable-diffusion-e10d38db82ac)。
 
+#### NAI 官网默认的参数
 
-### **NAI模型消极令牌**
+截至 2022/10/17：
 
-比如，使用以下令牌削除水印和文字内容
+Step: 28, Scale: 11, Sampler: Euler-A
+
+Negative prompt:
 
 ```
 lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry
 ```
 
-from [Here](https://t.me/StableDiffusion_CN/6043)
+### 半精度还是单精度？
 
+如果能，尽量使用半精度，可以节省运算时间/RAM/VRAM，同时图片质量并不会和单精度差多少。真要说差别可能和你电脑被宇宙射线打了差不多。
 
 ### **Euler等Samplers采样器参数**
 
-请阅读 https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/1162
-
+请阅读 <https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/1162>
 
 下面的引用是来自 [Reddit](https://www.reddit.com/r/StableDiffusion/comments/xbeyw3/can_anyone_offer_a_little_guidance_on_the/) 的内容
-
-??? info 
-    Has to do with how diffusion-based models work. Basically, they start with a random noise image and 'mine' the noisy image for a less noisy output.
-
-    This process is defined by a differential equation that describes how much noise is removed in a step.
-
-    Solving these equations is a bit tricky; there's different approaches with tradeoffs between speed and accuracy and occasionally some special sauce to make this more than a zero-sum tradeoff (i.e. can make something a little bit faster and a lot more accurate, or vice versa, for example).
-
-??? info "采样器不同"
-    Euler is the simplest, and thus one of the fastest. It and Heun are classics in terms of solving ODEs.
-
-    Euler & Heun are closely related. Heun is an 'improvement' on Euler in terms of accuracy, but it runs at about half the speed (which makes sense - it has to calculate the normal Euler term, then do it again to get the final output).
-
-    LMS and PLMS are their cousins - they use a related, but slightly different approach (averaging out a couple of steps in the past to improve accuracy). As I understand it, PLMS is effectively LMS (a classical method) adapted to better deal with the weirdness in neural network structure.
-
-    DDIM is a neural network method. It's quite fast per step, but relatively inefficient in that it takes a bunch of steps to get a good result.
-
-    DPM2 is a fancy method designed for diffusion models explicitly aiming to improve on DDIM in terms of taking less steps to get a good output. It needs to run the denoising twice per step, so once again - it's about twice as slow.
-
-    The Ancestral samplers are deceptively much further away from the corresponding non-Ancestral samplers and closer to each other. The corresponding algorithms are used - hence the names - but in a different context.
-
-    They can add a bunch of noise per step, so they are more chaotic and diverge heavily from non-Ancestral samplers in terms of the output images. As per the normal-flavored samplers, DPM2-A is about half as fast as Euler-A.
-
-    Weirdly, in some comparisons DPM2-A generates very similar images as Euler-A... on the previous seed. Might be due to it being a second-order method vs first-order, might be an experiment muck-up.
 
 Euler 是最简单的，因此也是最快的。
 
@@ -406,12 +301,13 @@ Heun 在准确性方面是对 Euler 的“改进”，但它以大约一半的�
 
 DDIM 是一种神经网络方法。 每一步都相当快，但效率相对较低，因为它需要很多步骤才能获得好的结果。
 
+[英文原版](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#attentionemphasis)
 
-### **xformers加速**
+### xformers
 
-加速推理,分辨率越高加速效果越好。使用 xformers 会在一定程度上影响生成的图像.
+xformers 分辨率越高加速效果越好。使用 xformers 会引入一些随机性，稍微影响生成的图像。
 
-如果你是 Pascal、Turing 或者 Ampere（1000、2000、3000 系列）卡,只需要添加 `--xformers` 参数到 `webui-user.bat` 中的 `COMMANDLINE_ARGS`
+要启用，如果你是 Pascal、Turing 或者 Ampere 架构的卡（包括 GTX 1000，RTX 2000、3000 系列），添加 `--xformers` 参数到 `webui-user.bat` 中的 `COMMANDLINE_ARGS`。
 
 !!! tip
     有人说在 700 和 900 系列卡上使用 xformers 的性能明显较差，请注意这一点。
@@ -423,17 +319,17 @@ DDIM 是一种神经网络方法。 每一步都相当快，但效率相对较�
 
     你可以在右边的链接下载预构建的Xformers！https://rentry.org/25i6yn ，记得先查看[GPU 架构](https://developer.nvidia.com/cuda-gpus)
 
-确保Python 版本为 3.10 或更高版本(使用 `python --version`)，然后安装 
+确保Python 版本为 3.10 或更高版本(使用 `python --version`)，然后安装
 
 安装 [VS Build Tools 2022](https://visualstudio.microsoft.com/zh-hans/downloads/?q=build+tools)，运行安装时只需要选择 `Desktop development with C++`
 
 安装 [CUDA 11.3](https://developer.nvidia.com/cuda-11.3.0-download-archive)，（后期版本未测试），选择`custom`，VS集成可能不需要
 
-- 确认 nvcc 可用
+* 确认 nvcc 可用
 
 `nvcc --version`
 
-- 克隆`xFormers` 存储库，在环境中激活它
+* 克隆`xFormers` 存储库，在环境中激活它
 
 ```bash
 git clone https://github.com/facebookresearch/xformers.git
@@ -441,7 +337,7 @@ cd xformers
 git submodule update --init --recursive
 ```
 
-- 创建虚拟环境且激活环境
+* 创建虚拟环境且激活环境
 
 ```bash
 python -m venv venv
@@ -454,13 +350,13 @@ source ./venv/bin/activate
 source ./venv/Scripts/activate
 ```
 
-- 为避免获取 CPU 版本时出现问题，请单独安装 pyTorch：
+* 为避免获取 CPU 版本时出现问题，请单独安装 pyTorch：
 
 ```
 pip install torch torchvision --extra-index-url https://download.pytorch.org/whl/cu113
 ```
 
-- 然后安装其余的依赖项
+* 然后安装其余的依赖项
 
 ```
 pip install -r requirements.txt
@@ -468,13 +364,13 @@ pip install wheel
 pip install ninja
 ```
 
-- 由于 CUDA 11.3 很旧，需要 强制启用 它以在 MS Build Tools 2022 上构建。 
+* 由于 CUDA 11.3 很旧，需要 强制启用 它以在 MS Build Tools 2022 上构建。
 
 在 CMD 设置 `set NVCC_FLAGS=-allow-unsupported-compiler"`
 
 或在 Bash 设置`export NVCC_FLAGS=-allow-unsupported-compiler`
 
-- 查看你自己的 GPU 架构
+* 查看你自己的 GPU 架构
 
 [GPU 架构](https://developer.nvidia.com/cuda-gpus)
 
@@ -483,9 +379,9 @@ pip install ninja
 
 *BASH*  `export TORCH_CUDA_ARCH_LIST=6.1`
 
-- 构建 xFormers，请注意构建将需要很长时间（可能需要 10-20 分钟），它最初可能会抱怨一些错误，但它仍然应该可以正确编译。
+* 构建 xFormers，请注意构建将需要很长时间（可能需要 10-20 分钟），它最初可能会抱怨一些错误，但它仍然应该可以正确编译。
 
-- 安装在环境中(Conda)
+* 安装在环境中(Conda)
 
 ```bash
 python setup.py build
@@ -513,7 +409,7 @@ pip install xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl
 
 #### Windows 编译错误自查
 
->错误:`Filename too long ` 和 `fatal error C1083: Cannot open compiler generated file: '': Invalid argument`
+>错误:`Filename too long` 和 `fatal error C1083: Cannot open compiler generated file: '': Invalid argument`
 
 说明你的路径太长了。
 
@@ -523,11 +419,9 @@ pip install xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl
 
 如果你移动了Xformers，那么应该删除里面的 venv 目录
 
-
 [Windows](https://github.com/C43H66N12O12S2/stable-diffusion-webui/releases) (30 系之外要自己编译)
 
 自己编译指路 [wiki/Xformers](https://rentry.org/sdg_faq#xformers-increase-your-its-more-cards-supported) 还有 [这个 Post](https://www.reddit.com/r/StableDiffusion/comments/xz26lq/automatic1111_xformers_cross_attention_with_on/)
-
 
 ### 使用CPU进行绘画
 
@@ -535,23 +429,18 @@ pip install xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl
 
 可以通过 `--use-cpu all` 尽可能的使用CPU进行生成
 
------
-
-## 进阶
-
-[英文原版](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#attentionemphasis)
-
-
 ### X/Y 图
 
 创建具有不同参数的图像网格。使用X类型和Y类型字段选择应由行和列共享的参数，并将这些参数以逗号分隔输入X值/Y值字段。支持整数、浮点数和范围。
 
 Simple ranges 简单范围
+
 ```
 1-5 = 1, 2, 3, 4, 5
 ```
 
 Ranges with increment in bracket 括号范围
+
 ```
 1-5 (+2) = 1, 3, 5
 10-5 (-3) = 10, 7
@@ -559,6 +448,7 @@ Ranges with increment in bracket 括号范围
 ```
 
 Ranges with the count in square brackets 方括号范围
+
 ```
 1-10 [5] = 1, 3, 5, 7, 10
 0.0-1.0 [6] = 0.0, 0.2, 0.4, 0.6, 0.8, 1.0
@@ -569,12 +459,10 @@ Ranges with the count in square brackets 方括号范围
 ![引用官方 Wiki 的设置图](https://raw.githubusercontent.com/wiki/AUTOMATIC1111/stable-diffusion-webui/images/xy_grid-medusa-ui.png)
 >引用官方 Wiki 的设置图
 
-
 ### **Variations种子变化**
 
 Variation strength slider 和 Variation seed field 允许您指定现有图片应更改多少以使其看起来不同。
 在最大强度下，您将获得带有变异种子的图片，至少 - 带有原始种子的图片（使用先前采样器时除外）。
-
 
 ### **提示词模板**
 
@@ -584,23 +472,19 @@ Variation strength slider 和 Variation seed field 允许您指定现有图片�
 
 要删除样式，请从 styles.csv 中手动将其删除并重新启动程序。
 
-
-### **Clip**
+### CLIP Interrogate
 
 CLIP 可以从图像中提取令牌。
-
-令牌提示 不会让你重现这个图像（有时甚至不会很接近），但它可能有用。
 
 默认情况下，只有一个列表 - 艺术家列表（来自artists.csv）。
 
 不过你可以通过执行以下操作添加更多列表：
-- interrogate 在与 webui 相同的位置创建目录
-- 将文本文件放入其中，每行都有相关描述
+* interrogate 在与 webui 相同的位置创建目录
+* 将文本文件放入其中，每行都有相关描述
 
 ```
 For example of what text files to use, see https://github.com/pharmapsychotic/clip-interrogator/tree/main/data. In fact, you can just take files from there and use them - just skip artists.txt because you already have a list of artists in artists.csv (or use that too, who's going to stop you). Each file adds one line of text to the final description. If you add ".top3." to filename, for example, flavors.top3.txt, the three most relevant lines from this file will be added to the prompt (other numbers also work).
 ```
-
 
 ### **Face restoration三次元人脸修复**
 
@@ -608,23 +492,21 @@ For example of what text files to use, see https://github.com/pharmapsychotic/cl
 
 [https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#face-restoration](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#face-restoration)
 
-
 ### 自定义.css
 
 创建一个名为 user.cssnear 的文件 webui.py 并将自定义 CSS 代码放入其中。
 
 For example, this makes the gallery taller:
+
 ```
 #txt2img_gallery, #img2img_gallery{
     min-height: 768px;
 }
 ```
 
-
 ### notification.mp3 提示声音
 
 If an audio file named `notification.mp3` is present in `webui's root folder`, it will be played when the generation process completes.
-
 
 ### 开发自定义脚本
 
@@ -635,8 +517,8 @@ If an audio file named `notification.mp3` is present in `webui's root folder`, i
 Script 类有四个主要方法，这里通过一个简单的[示例脚本](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Developing-custom-scripts)进行更详细的描述，这个脚本可以旋转和/或翻转生成的图像。
 
 
-## 运行
 
+## 运行
 
 ### 4GB 显卡支持
 
@@ -651,21 +533,17 @@ Script 类有四个主要方法，这里通过一个简单的[示例脚本](http
 
 当然也可以减半精度，或者生成一张 64x64 清理 vram
 
-
 ### 不间断生产
 
 在 WebUi 的生成键右击即可出现 不间断生成 的选项。
-
 
 ### 图片信息 Png info
 
 生成的图片自带 令牌信息，拖放到 查看页面即可查看 。
 
-
 ### Colab
 
 Tip：每天重置资源
-
 
 ### NAI 4chan简化版本
 
