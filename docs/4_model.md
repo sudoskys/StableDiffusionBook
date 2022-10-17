@@ -17,7 +17,8 @@
 
 ## 关于显卡
 
-!!! 主要显卡温度，有报道称显卡太热炸了。
+!!! tip
+    注意显卡温度，有报道称显卡太热炸了。
 
 先判断 cuda 是否可用。
 
@@ -255,10 +256,9 @@ ckpt文件被加载时基本上可以执行任何内容，盲目加载有安全�
 
 [相关讨论，应该读一读！](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017)
 
-_由于 torch 及其相关框架的性质，尝试完全复原在不同机器上生成的图片是不明智的。所以不要纠结一些细节不能复现。_
+>由于 torch 及其相关框架的性质，尝试完全复原在不同机器上生成的图片是不明智的。所以不要纠结一些细节不能复现。
 
 #### 需要做的事情
-
 * 加载 VAE 和模型附带的 config.yaml。
 * Stop At last layers of CLIP model 设为 `2`。
 * Eta noise seed delta 设置为 `31337`。
