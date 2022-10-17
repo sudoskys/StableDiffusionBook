@@ -299,22 +299,6 @@ ckpt文件被加载时基本上可以执行任何内容，盲目加载有安全�
 如果能，尽量使用半精度，可以节省运算时间/RAM/VRAM，同时图片质量并不会和单精度差多少。~真要说差别可能和你电脑被宇宙射线打了差不多~。
 
 
-### **Euler等Samplers采样器参数**
-
-请阅读 <https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/1162>
-
-下面的引用是来自 [Reddit](https://www.reddit.com/r/StableDiffusion/comments/xbeyw3/can_anyone_offer_a_little_guidance_on_the/) 的内容
-
-Euler 是最简单的，因此也是最快的。
-
-Euler & Heun 密切相关。
-Heun 在准确性方面是对 Euler 的“改进”，但它以大约一半的速度运行（它必须计算正常的 Euler，然后再次执行以获得最终输出）。
-
-DDIM 是一种神经网络方法。 每一步都相当快，但效率相对较低，因为它需要很多步骤才能获得好的结果。
-
-[英文原版](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#attentionemphasis)
-
-
 ### xformers
 
 xformers 分辨率越高加速效果越好。使用 xformers 会引入一些随机性，稍微影响生成的图像。

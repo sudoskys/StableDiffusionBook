@@ -110,27 +110,6 @@
     一个迭代 = 一个正向通过+一个反向通过
 
 
-### 迭代步数
-
-更多的迭代步数可能会有更好的生成效果，但是一定会导致生成时间变长。太多的 steps 也可能适得其反，几乎不会有提高。
-
-
-### 采样器
-
-观看前面章节对于采样器的介绍。
-
-目前好用的有 `eular`，`eular a`，更细腻，和`Ddim`，DDIM 收敛较快,
-
-一般推荐 `eular a` 和 `Ddim`
-
-
-举个例子
-
-![效果](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/raw_sample.jpg)
-
->不同 step 和 采样器 的不同效果
-
-
 ### 如何书写提示词(提示)
 
 结合法术书编写它。
@@ -364,9 +343,54 @@ normal quality, text, censored, gown, latex, pencil
 同样地，`loli` Tag 附带了强画风属性，会很大地影响结果！改成 `femeal child` 会好一点。
 
 
+### Step 迭代步数
+
+更多的迭代步数可能会有更好的生成效果，但是一定会导致生成时间变长。太多的 steps 也可能适得其反，几乎不会有提高。
+
+
+### Samplers 采样器
+
+
+观看前面章节对于采样器的介绍。
+
+目前好用的有 `eular`，`eular a`，更细腻，和`Ddim`。
+
+推荐 `eular a` 和 `Ddim`
+
+`eular a` 富有创造力，不同步数可以生产出不同的图片。
+PS：调太高步数(>30)效果不会更好。
+
+`DDIM` 收敛快，但效率相对较低，因为需要很多 step 才能获得好的结果，适合在重绘时候使用。
+
+`LMS`和`PLMS`是`eular`的衍生，它们使用一种相关但稍有不同的方法（平均过去的几个步骤以提高准确性）。大概 30 step 可以得到稳定结果。
+
+`PLMS`是一种有效的LMS（经典方法），可以更好地处理神经网络结构中的奇异性。
+
+
+`DPM2`是一种神奇的方法，它旨在改进DDIM，减少步骤以获得良好的结果。它需要每一步运行两次去噪，它的速度大约是 DDIM 的两倍。但是如果你在进行调试提示词的实验，这个采样器效果不怎么样。
+
+`Euler` 是最简单的，因此也是最快的之一。
+
+[英文Wiki介绍](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#attentionemphasis)
+
+[英文论坛介绍](https://www.reddit.com/r/StableDiffusion/comments/xbeyw3/can_anyone_offer_a_little_guidance_on_the/)
+
+- 举个例子
+
+
+|预览一|预览二|
+|--|--|
+|<img src="https://user-images.githubusercontent.com/22421310/187063145-3d4f16d7-7bd6-4804-be1c-acf228ed2507.jpg" width="40%" alt="效果">|<img src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/raw_sample.jpg" width="40%" alt="效果">|
+
+>不同 step 和 采样器 的不同效果
+
+
+
 ### 种子调试
 
-Seed 是一个 “随机噪声” ，它是一个随机初始值，不代表任何内容。
+实际的种子整数并不重要。它只是初始化一个定义扩散起点的随机数生成器，它是一个随机初始值。
+
+一个好的种子可以在各种提示、采样器和CFG中执行成分和颜色等内容。但是它现在作用有限。
 
 在相同 Step ，cfg ，Seed,参数（prompts） 的情况下，生产的图片基本相同！
 
