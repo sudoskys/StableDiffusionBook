@@ -552,11 +552,9 @@ Batch 数设置控制获得多少次迭代
 
 在前面提到了，如果遇到生成鬼图或者 低显存生产高分辨率图片 可以采用的 Img2Img 画质提升脚本。
 
-其实我**更推荐**你使用 Extras 的功能对低分辨率进行重放，效果不错的。
+其实我**强烈推荐**你使用 Extras 的功能对低分辨率进行重放，效果不错的，且体验良好！
 
-[脚本解决方案来源于此](https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99#%E9%AB%98%E5%88%86%E8%BE%A8%E7%8E%87%E4%B8%8B%E5%87%BA%E6%80%AA%E5%9B%BE)
-
-如果你想使用脚本提供的分辨率增强，这里有 Img2Img 的具体流程
+但是如果你想使用脚本提供的分辨率增强，这里有 Img2Img 的具体流程
 
 1. 使用 `--medvram` 或者 `--lowvram` 参数启动webui
 
@@ -584,7 +582,7 @@ SD Upscale 选项在 Img2Img 的 Script 栏目中，主要作用是提升分辨�
 
 曾经有段时间，`LSDR` 被认为是最好的。有些人喜欢 swinir，有些喜欢`esrgan4x`，`ymmv`，推荐使用 `ESRGAN_4x`
 
-
+[脚本解决方案来源于此](https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99#%E9%AB%98%E5%88%86%E8%BE%A8%E7%8E%87%E4%B8%8B%E5%87%BA%E6%80%AA%E5%9B%BE)
 
 ### 超分图像 extras
 
