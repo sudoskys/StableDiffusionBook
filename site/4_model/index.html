@@ -576,13 +576,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#eulersamplers" class="md-nav__link">
-    Euler等Samplers采样器参数
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#xformers" class="md-nav__link">
     xformers
   </a>
@@ -1017,14 +1010,6 @@ print(torch.cuda.is_available())
 <p>设置 <code>Stop At last layers of CLIP model</code> 是为了匹配 NAI 的一个<a href="https://blog.novelai.net/novelai-improvements-on-stable-diffusion-e10d38db82ac">优化</a>。</p>
 <h3 id="_12">半精度还是单精度？</h3>
 <p>如果能，尽量使用半精度，可以节省运算时间/RAM/VRAM，同时图片质量并不会和单精度差多少。~真要说差别可能和你电脑被宇宙射线打了差不多~。</p>
-<h3 id="eulersamplers"><strong>Euler等Samplers采样器参数</strong></h3>
-<p>请阅读 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/1162">https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/1162</a></p>
-<p>下面的引用是来自 <a href="https://www.reddit.com/r/StableDiffusion/comments/xbeyw3/can_anyone_offer_a_little_guidance_on_the/">Reddit</a> 的内容</p>
-<p>Euler 是最简单的，因此也是最快的。</p>
-<p>Euler &amp; Heun 密切相关。
-Heun 在准确性方面是对 Euler 的“改进”，但它以大约一半的速度运行（它必须计算正常的 Euler，然后再次执行以获得最终输出）。</p>
-<p>DDIM 是一种神经网络方法。 每一步都相当快，但效率相对较低，因为它需要很多步骤才能获得好的结果。</p>
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#attentionemphasis">英文原版</a></p>
 <h3 id="xformers">xformers</h3>
 <p>xformers 分辨率越高加速效果越好。使用 xformers 会引入一些随机性，稍微影响生成的图像。</p>
 <p>要启用，如果你是 Pascal、Turing 或者 Ampere 架构的卡（包括 GTX 1000，RTX 2000、3000 系列），添加 <code>--xformers</code> 参数到 <code>webui-user.bat</code> 中的 <code>COMMANDLINE_ARGS</code>。</p>
@@ -1220,11 +1205,11 @@ pip install xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 17, 2022 15:30:50</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 17, 2022 16:06:27</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 17, 2022 15:30:50</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 17, 2022 16:06:27</span>
       
     
   </small>
