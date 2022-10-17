@@ -569,13 +569,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#nai" class="md-nav__link">
-    NAI 在使用的模型参数
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#_12" class="md-nav__link">
     半精度还是单精度？
   </a>
@@ -1022,12 +1015,6 @@ print(torch.cuda.is_available())
 <li>hypernetwork。官网默认并不使用 hypernetwork。</li>
 </ul>
 <p>设置 <code>Stop At last layers of CLIP model</code> 是为了匹配 NAI 的一个<a href="https://blog.novelai.net/novelai-improvements-on-stable-diffusion-e10d38db82ac">优化</a>。</p>
-<h3 id="nai">NAI 在使用的模型参数</h3>
-<ul>
-<li>使用全量模型(官方的GPU云特别强悍)</li>
-<li>CLIP layer = 2</li>
-<li>使用 ema 权重加载，将yaml 配置其中的 <code>use_ema</code> 设置为 true</li>
-</ul>
 <h3 id="_12">半精度还是单精度？</h3>
 <p>如果能，尽量使用半精度，可以节省运算时间/RAM/VRAM，同时图片质量并不会和单精度差多少。~真要说差别可能和你电脑被宇宙射线打了差不多~。</p>
 <h3 id="eulersamplers"><strong>Euler等Samplers采样器参数</strong></h3>
@@ -1233,11 +1220,11 @@ pip install xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 17, 2022 15:25:12</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 17, 2022 15:30:50</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 17, 2022 15:25:12</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 17, 2022 15:30:50</span>
       
     
   </small>
