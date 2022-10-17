@@ -294,14 +294,6 @@ ckpt文件被加载时基本上可以执行任何内容，盲目加载有安全�
 设置 `Stop At last layers of CLIP model` 是为了匹配 NAI 的一个[优化](https://blog.novelai.net/novelai-improvements-on-stable-diffusion-e10d38db82ac)。
 
 
-### NAI 在使用的模型参数
-
-- 使用全量模型(官方的GPU云特别强悍)
-- CLIP layer = 2
-- 使用 ema 权重加载，将yaml 配置其中的 `use_ema` 设置为 true
-
-
-
 ### 半精度还是单精度？
 
 如果能，尽量使用半精度，可以节省运算时间/RAM/VRAM，同时图片质量并不会和单精度差多少。~真要说差别可能和你电脑被宇宙射线打了差不多~。

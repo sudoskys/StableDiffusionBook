@@ -923,6 +923,12 @@ https://github.com/DominikDoom/a1111-sd-webui-tagcomplete
 
 ### NAI 在使用的出图参数
 
+- 使用全量模型(官方的GPU云特别强悍)
+
+- CLIP layer = 2
+
+- 使用 ema 权重加载，将yaml 配置其中的 `use_ema` 设置为 true
+
 - 将 ` sigma noise/strength` 重置为默认值 1
 
 - 设定 `eta noise seed delta` 为 31337（使 ` sigma noise/strength` 无需使用 0.69 / 0.67）
