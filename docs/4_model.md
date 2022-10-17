@@ -155,7 +155,7 @@ Windows: <https://developer.nvidia.com/compute/cudnn/secure/8.5.0/local_installe
 
 `animefull-final-pruned` = `full-latest` = NAI 全量模型(包含成人内容)
 
-### 使用 latest (7G) 还是 pruned (4G) 模型
+#### 使用 latest (7G) 还是 pruned (4G) 模型
 
 请用 pruned。使用 latest 只会白费 RAM 和 VRAM。
 如何证明的：[链接](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017#discussioncomment-3882551)。
@@ -165,7 +165,7 @@ Windows: <https://developer.nvidia.com/compute/cudnn/secure/8.5.0/local_installe
 <iframe src="//player.bilibili.com/player.html?aid=688965561&cid=857942294&page=1&danmaku=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 BV1Gm4y1A7VM
 
-### 风格化[^5]
+#### 风格化[^5]
 
 ![furry](https://user-images.githubusercontent.com/474879/194965036-4c9f70ca-a32f-4f68-a9a1-17a827e8e61e.jpg)
 >furry
@@ -286,7 +286,7 @@ lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer
 
 ### 半精度还是单精度？
 
-如果能，尽量使用半精度，可以节省运算时间/RAM/VRAM，同时图片质量并不会和单精度差多少。真要说差别可能和你电脑被宇宙射线打了差不多。
+如果能，尽量使用半精度，可以节省运算时间/RAM/VRAM，同时图片质量并不会和单精度差多少。~真要说差别可能和你电脑被宇宙射线打了差不多~。
 
 ### **Euler等Samplers采样器参数**
 
