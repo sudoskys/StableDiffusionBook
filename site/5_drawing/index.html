@@ -1071,16 +1071,15 @@ normal quality, text, censored, gown, latex, pencil
 <h3 id="step">Step 迭代步数</h3>
 <p>更多的迭代步数可能会有更好的生成效果，但是一定会导致生成时间变长。太多的 steps 也可能适得其反，几乎不会有提高。</p>
 <h3 id="samplers">Samplers 采样器</h3>
-<p>观看前面章节对于采样器的介绍。</p>
 <p>目前好用的有 <code>eular</code>，<code>eular a</code>，更细腻，和<code>Ddim</code>。</p>
-<p>推荐 <code>eular a</code> 和 <code>Ddim</code></p>
+<p>推荐 <code>eular a</code> 和 <code>Ddim</code>，<strong>新手推荐使用 <code>eular a</code></strong></p>
 <p><code>eular a</code> 富有创造力，不同步数可以生产出不同的图片。
-PS：调太高步数(&gt;30)效果不会更好。</p>
-<p><code>DDIM</code> 收敛快，但效率相对较低，因为需要很多 step 才能获得好的结果，适合在重绘时候使用。</p>
-<p><code>LMS</code>和<code>PLMS</code>是<code>eular</code>的衍生，它们使用一种相关但稍有不同的方法（平均过去的几个步骤以提高准确性）。大概 30 step 可以得到稳定结果。</p>
-<p><code>PLMS</code>是一种有效的LMS（经典方法），可以更好地处理神经网络结构中的奇异性。</p>
-<p><code>DPM2</code>是一种神奇的方法，它旨在改进DDIM，减少步骤以获得良好的结果。它需要每一步运行两次去噪，它的速度大约是 DDIM 的两倍。但是如果你在进行调试提示词的实验，这个采样器效果不怎么样。</p>
-<p><code>Euler</code> 是最简单的，因此也是最快的之一。</p>
+PS：调太高步数(&gt;30)效果不会更好</p>
+<p><code>DDIM</code> 收敛快，但效率相对较低，因为需要很多 step 才能获得好的结果，<strong>适合在重绘时候使用</strong></p>
+<p><code>LMS</code>和<code>PLMS</code>是<code>eular</code>的衍生，它们使用一种相关但稍有不同的方法（平均过去的几个步骤以提高准确性）。大概 30 step 可以得到稳定结果</p>
+<p><code>PLMS</code>是一种有效的LMS（经典方法），可以更好地处理神经网络结构中的奇异性</p>
+<p><code>DPM2</code>是一种神奇的方法，它旨在改进DDIM，减少步骤以获得良好的结果。它需要每一步运行两次去噪，它的速度大约是 DDIM 的两倍。但是如果你在进行调试提示词的实验，这个采样器效果不怎么样</p>
+<p><code>Euler</code> 是最简单的，因此也是最快的之一</p>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#attentionemphasis">英文Wiki介绍</a></p>
 <p><a href="https://www.reddit.com/r/StableDiffusion/comments/xbeyw3/can_anyone_offer_a_little_guidance_on_the/">英文论坛介绍</a></p>
 <ul>
@@ -2083,11 +2082,11 @@ scale 就是 CFG scale
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 17, 2022 16:14:25</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 17, 2022 16:16:42</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 17, 2022 16:14:25</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 17, 2022 16:16:42</span>
       
     
   </small>
