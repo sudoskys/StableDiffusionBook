@@ -426,12 +426,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#nai" class="md-nav__link">
-    对于 NAI 模型的说明
+  <a href="#_3" class="md-nav__link">
+    全量和基线模型
   </a>
   
-    <nav class="md-nav" aria-label="对于 NAI 模型的说明">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#latest-7g-pruned-4g" class="md-nav__link">
@@ -451,14 +450,9 @@
     </nav>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     说明
   </a>
   
@@ -466,7 +460,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     横条参数说明
   </a>
   
@@ -481,7 +475,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     生成黑/绿图
   </a>
   
@@ -495,15 +489,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     彩虹混乱图
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    但是高分辨率下出怪图
+  <a href="#_8" class="md-nav__link">
+    高分辨率出怪图
   </a>
   
 </li>
@@ -540,7 +534,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     进阶
   </a>
   
@@ -556,21 +550,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     需要做的事情
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     不需要做的事情
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#nai_1" class="md-nav__link">
+  <a href="#nai" class="md-nav__link">
     NAI 官网默认的参数
   </a>
   
@@ -582,7 +576,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     半精度还是单精度？
   </a>
   
@@ -644,7 +638,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     提示词模板
   </a>
   
@@ -679,7 +673,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#_14" class="md-nav__link">
     开发自定义脚本
   </a>
   
@@ -691,7 +685,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
+  <a href="#_15" class="md-nav__link">
     运行
   </a>
   
@@ -706,7 +700,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
+  <a href="#_16" class="md-nav__link">
     不间断生产
   </a>
   
@@ -810,7 +804,7 @@
 <p class="admonition-title">版权</p>
 <p>本仓库不提供具体链接（版权警告），可以看页面下标或关注中文社区 t.me@StableDiffusion_CN_WIKI。</p>
 </div>
-<p><a href="https://rentry.org/sdmodels">SDWebUi是一个框架，所以除了NAI模型外还有许多其他模型：Stable Diffusion Models</a></p>
+<p>SDWebUi是一个框架，所以除了NAI模型外还有许多<a href="https://rentry.org/sdmodels">其他模型</a></p>
 <h2 id="_2">关于显卡</h2>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -950,16 +944,16 @@ print(torch.cuda.is_available())
 </ul>
 </details>
 <p>启动 cli 有提示加载就 OK, 同时可以去设置选模型那里选喜欢的 <code>hypernetwork</code></p>
-<h3 id="nai">对于 NAI 模型的说明</h3>
+<h3 id="_3">全量和基线模型</h3>
 <p><code>animesfw-latest</code> = NAI 基线模型</p>
 <p><code>animefull-final-pruned</code> = <code>full-latest</code> = NAI 全量模型(包含成人内容)</p>
-<h4 id="latest-7g-pruned-4g">使用 latest (7G) 还是 pruned (4G) 模型</h4>
-<p>请用 pruned。使用 latest 只会白费 RAM 和 VRAM。
-如何证明的：<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017#discussioncomment-3882551">链接</a>。</p>
+<h3 id="latest-7g-pruned-4g">使用 latest (7G) 还是 pruned (4G) 模型</h3>
+<p>个人用户只需要使用 pruned。使用 latest 只会白费 RAM 和 VRAM。</p>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017#discussioncomment-3882551">结论由此贴讨论得到</a>。</p>
 <p><strong>详细介绍</strong></p>
 <iframe src="//player.bilibili.com/player.html?aid=688965561&cid=857942294&page=1&danmaku=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 <p>BV1Gm4y1A7VM</p>
-<h4 id="4">风格化<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">4</a></sup></h4>
+<h3 id="4">风格化<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">4</a></sup></h3>
 <p><img alt="furry" src="https://user-images.githubusercontent.com/474879/194965036-4c9f70ca-a32f-4f68-a9a1-17a827e8e61e.jpg" /></p>
 <blockquote>
 <p>furry</p>
@@ -972,8 +966,8 @@ Steps: 28, Sampler: Euler, CFG scale: 12, Seed: [SEE COLUMN], Size: 512x512, Mod
 <p><code>aini</code> 有一种你可能不喜欢的强烈风格，我认为它具有最高的一致性和质量。</p>
 <p><code>anime_3</code>是该系列中质量最高的，但它们都有些不一致. 我一般不会推荐他们。</p>
 <p>可以看到 <code>furry</code>的超网络在添加动物特征方面更加激进，因此这里更保守的变化可能与采样器、步骤和 CFG 有关。<sup id="fnref2:5"><a class="footnote-ref" href="#fn:5">4</a></sup></p>
-<h2 id="_3">说明</h2>
-<h3 id="_4">横条参数说明</h3>
+<h2 id="_4">说明</h2>
+<h3 id="_5">横条参数说明</h3>
 <p><code>step</code> 迭代多少次, 取值和 <code>sampling method</code> 有关, <code>DDIM</code> 采样方法收敛较快, 具体差别见调参魔法 <code>Sampler vs. Steps Comparison (low to mid step counts)</code> 。</p>
 <p><code>batch count/batch size</code> 决定生成的图片数量, 显存够就加 batch size, 不够就 batch count, 得到的图片数量是两者之积 (小显存还是只动 count 就好)</p>
 <p><code>sample method</code>  采样方法。DDIM, Eula 也挺好用。 (带 a 的是 ancestral 的意思, step 增长出图不稳定)</p>
@@ -984,16 +978,16 @@ Steps: 28, Sampler: Euler, CFG scale: 12, Seed: [SEE COLUMN], Size: 512x512, Mod
 <p><code>denoise strength</code> img2img 专属参数, 从 0 到 1 取值, 值越高 AI 对原图的参考程度就越低 (同时增加迭代次数), 个人喜欢低 cfg 高 denoise 重绘图, 高 cfg 低 denoise 改细节.</p>
 <p><a href="https://www.reddit.com/r/StableDiffusion/comments/xbeyw3/can_anyone_offer_a_little_guidance_on_the/">一个小指南：RedditAbout</a></p>
 <h3 id="bug">生成图片发生BUG的自救</h3>
-<h4 id="_5">生成黑/绿图</h4>
+<h4 id="_6">生成黑/绿图</h4>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Install-and-Run-on-NVidia-GPUs">Green or Black screen</a></p>
 <p>如果是GTX 16xx系列，启动参数需要加 <code>--precision full --no-half</code>, 因此如果显存不足还要加 <code>--medvram</code>。</p>
 <p>如果是其他显卡而且加载了 VAE 时出现黑图，加入 <code>--no-half-vae</code> 参数<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">1</a></sup>。</p>
 <h4 id="runtimeerror-sizes-of-tensors-must-match">RuntimeError Sizes of tensors must match</h4>
 <p>(img2img) 如果你得到RuntimeError: Sizes of tensors must match，你需要改变输入图像的分辨率</p>
-<h4 id="_6">彩虹混乱图</h4>
+<h4 id="_7">彩虹混乱图</h4>
 <p>如果您的输出是混乱的彩虹混乱，则您的图像分辨率设置得太低</p>
-<h4 id="_7">但是高分辨率下出怪图</h4>
-<p><a href="https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99#%E9%AB%98%E5%88%86%E8%BE%A8%E7%8E%87%E4%B8%8B%E5%87%BA%E6%80%AA%E5%9B%BE">读这里</a></p>
+<h4 id="_8">高分辨率出怪图</h4>
+<p><a href="https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99#%E9%AB%98%E5%88%86%E8%BE%A8%E7%8E%87%E4%B8%8B%E5%87%BA%E6%80%AA%E5%9B%BE">具体的解决方案</a></p>
 <h4 id="runtimeerror-unable-to-find-a-valid-cudnn-algorithm-to-run-convolution">RuntimeError: Unable to find a valid cuDNN algorithm to run convolution</h4>
 <p>前面那节有相关的参数建议。</p>
 <p>生成报错解释：显存不足</p>
@@ -1008,33 +1002,30 @@ print(torch.cuda.is_available())
 如果杀毒软件拦截，有可能创建者向文件中注入了恶意的python代码。</p>
 <p>可以通过此脚本检查风险：<a href="https://rentry.org/safeunpickle2">https://rentry.org/safeunpickle2</a></p>
 <hr />
-<h2 id="_8">进阶</h2>
+<h2 id="_9">进阶</h2>
 <h3 id="webui-nai">使用 webui 复现 NAI 官网</h3>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017">相关讨论，应该读一读！</a></p>
 <blockquote>
 <p>由于 torch 及其相关框架的性质，尝试完全复原在不同机器上生成的图片是不明智的。所以不要纠结一些细节不能复现。</p>
 </blockquote>
-<h4 id="_9">需要做的事情</h4>
+<h4 id="_10">需要做的事情</h4>
 <ul>
 <li>加载 VAE 和模型附带的 config.yaml。</li>
 <li>Stop At last layers of CLIP model 设为 <code>2</code>。</li>
 <li>Eta noise seed delta 设置为 <code>31337</code>。</li>
 </ul>
-<h4 id="_10"><strong>不需要</strong>做的事情</h4>
+<h4 id="_11"><strong>不需要</strong>做的事情</h4>
 <ul>
 <li>hypernetwork。官网默认并不使用 hypernetwork。</li>
 </ul>
-<blockquote>
-<p>为什么要设置 Stop At last layers of CLIP model？</p>
-</blockquote>
-<p>这是为了匹配 NAI 的一个优化。如果你想了解 NAI 为什么这么做，请看<a href="https://blog.novelai.net/novelai-improvements-on-stable-diffusion-e10d38db82ac">这里</a>。</p>
-<h4 id="nai_1">NAI 官网默认的参数</h4>
+<p>设置 <code>Stop At last layers of CLIP model</code> 是为了匹配 NAI 的一个<a href="https://blog.novelai.net/novelai-improvements-on-stable-diffusion-e10d38db82ac">优化</a>。</p>
+<h4 id="nai">NAI 官网默认的参数</h4>
 <p>截至 2022/10/17：</p>
 <p>Step: 28, Scale: 11, Sampler: Euler-A</p>
 <p>Negative prompt:</p>
 <div class="highlight"><pre><span></span><code>lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry
 </code></pre></div>
-<h3 id="_11">半精度还是单精度？</h3>
+<h3 id="_12">半精度还是单精度？</h3>
 <p>如果能，尽量使用半精度，可以节省运算时间/RAM/VRAM，同时图片质量并不会和单精度差多少。~真要说差别可能和你电脑被宇宙射线打了差不多~。</p>
 <h3 id="eulersamplers"><strong>Euler等Samplers采样器参数</strong></h3>
 <p>请阅读 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/1162">https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/1162</a></p>
@@ -1170,7 +1161,7 @@ pip install xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl
 <h3 id="variations"><strong>Variations种子变化</strong></h3>
 <p>Variation strength slider 和 Variation seed field 允许您指定现有图片应更改多少以使其看起来不同。
 在最大强度下，您将获得带有变异种子的图片，至少 - 带有原始种子的图片（使用先前采样器时除外）。</p>
-<h3 id="_12"><strong>提示词模板</strong></h3>
+<h3 id="_13"><strong>提示词模板</strong></h3>
 <p>“Save prompt as style” 按钮将当前的提示写入 styles.csv，该文件包含样式集合</p>
 <p>提示右侧的下拉框将允许您从以前保存的样式中选择任何样式，并自动将其<strong>附加</strong>到输入中</p>
 <p>要删除样式，请从 styles.csv 中手动将其删除并重新启动程序。</p>
@@ -1194,11 +1185,11 @@ pip install xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl
 </code></pre></div>
 <h3 id="notificationmp3">notification.mp3 提示声音</h3>
 <p>If an audio file named <code>notification.mp3</code> is present in <code>webui's root folder</code>, it will be played when the generation process completes.</p>
-<h3 id="_13">开发自定义脚本</h3>
+<h3 id="_14">开发自定义脚本</h3>
 <p>你可以在<code>modules/scripts.py</code>中找到Script类。</p>
 <p>如果要创建你自己的自定义脚本，请创建一个实现类的python脚本，并将其放到scripts文件夹中，使用以下示例或文件夹中已有的其他脚本作为指导。</p>
 <p>Script 类有四个主要方法，这里通过一个简单的<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Developing-custom-scripts">示例脚本</a>进行更详细的描述，这个脚本可以旋转和/或翻转生成的图像。</p>
-<h2 id="_14">运行</h2>
+<h2 id="_15">运行</h2>
 <h3 id="4gb">4GB 显卡支持</h3>
 <p>针对具有低 VRAM 的 GPU 的优化。这应该可以在具有 4GB 内存的视频卡上生成 512x512 图像。</p>
 <p><code>--lowvram</code> 是 basujindal 对优化思想的重新实现。模型被分成模块，GPU内存中只保存一个模块；当另一个模块需要运行时，前一个模块将从 GPU 内存中删除。这种优化的性质使处理速度变慢——与我的 RTX 3090 上的正常操作相比，速度慢了大约 10 倍。</p>
@@ -1208,7 +1199,7 @@ pip install xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl
 <p>经过 10/10 的优化，RTX2050 的 4GB 显卡也可以使用 <code>--medvram</code> 。</p>
 </div>
 <p>当然也可以减半精度，或者生成一张 64x64 清理 vram</p>
-<h3 id="_15">不间断生产</h3>
+<h3 id="_16">不间断生产</h3>
 <p>在 WebUi 的生成键右击即可出现 不间断生成 的选项。</p>
 <h3 id="png-info">图片信息 Png info</h3>
 <p>生成的图片自带 令牌信息，拖放到 查看页面即可查看 。</p>
@@ -1239,11 +1230,11 @@ pip install xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 17, 2022 07:10:00</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 17, 2022 07:33:33</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 17, 2022 07:10:00</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 17, 2022 07:33:33</span>
       
     
   </small>
