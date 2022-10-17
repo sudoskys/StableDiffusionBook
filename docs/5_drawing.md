@@ -890,10 +890,14 @@ https://github.com/DominikDoom/a1111-sd-webui-tagcomplete
 
 ### NAI 在使用的出图参数
 
-- 将` sigma noise/strength`重置为默认值 1（无需使用 0.69 / 0.67）
-- 设定 `eta noise seed delta` 为 31337
-- 如果prompt有权重，转换权重（WebUi用1.1，NAI用1.05）
-- 使用 `--no-half` 参数（次要）
+- 将 ` sigma noise/strength` 重置为默认值 1
+
+- 设定 `eta noise seed delta` 为 31337（使 ` sigma noise/strength` 无需使用 0.69 / 0.67）
+
+- 如果 prompt 有权重，转换权重（ WebUi 占比 1.1 ，NAI 占比 1.05）
+
+- 使用 `--no-half` 参数启动程序（次要）
+
 
 **NAI 默认的模型设置**
 
