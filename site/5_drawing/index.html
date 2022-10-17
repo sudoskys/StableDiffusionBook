@@ -600,6 +600,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#sd-upscaler" class="md-nav__link">
+    SD Upscaler 升频器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#extras" class="md-nav__link">
     超分图像 extras
   </a>
@@ -1232,6 +1239,12 @@ normal quality, text, censored, gown, latex, pencil
 <p>在 img2img 中设置loopback脚本，它允许自动将输出图像作为下一批的Batch提供，相当于保存输出图像，并用它替换输入图像。</p>
 <p>Batch 数设置控制获得多少次迭代</p>
 <p>通常，在执行此操作时，您会自己为下一次迭代选择许多图像中的一个，因此此功能的有用性可能值得怀疑，但反正我已经设法获得了一些我无法获得的非常好的输出。</p>
+<h3 id="sd-upscaler">SD Upscaler 升频器</h3>
+<p>在前面提到了，如果遇到生成鬼图或者 低显存生产高分辨率图片 可以采用的 Img2Img 画质提升脚本。</p>
+<p>这个选项在 Img2Img 的 Script 栏目中，主要作用是提升分辨率。</p>
+<p><strong>应该使用什么 Upscaler？</strong></p>
+<p><code>SD Upscaler</code> 在注重细节的同时还提升分辨率。</p>
+<p>曾经有段时间，<code>LSDR</code> 被认为是最好的。有些人喜欢 swinir，有些喜欢<code>esrgan4x</code>，<code>ymmv</code></p>
 <h3 id="extras">超分图像 extras</h3>
 <p><code>webui</code> extras 页有一个自带的超分功能，可以使用 <code>ESRGAN_4x</code>模型</p>
 <p>当然 <code>realesrgan</code> 或者 <code>realcugan</code> 也可以，<a href="https://github.com/bilibili/ailab/tree/main/Real-CUGAN">realcugan</a></p>
@@ -1249,9 +1262,6 @@ normal quality, text, censored, gown, latex, pencil
 <p><a href="https://github.com/JingyunLiang/SwinIR/releases/download/v0.0/003_realSR_BSRGAN_DFOWMFC_s64w8_SwinIR-L_x4_GAN.pth">SwinIR 4x</a> </p>
 <p>文件大小为136MB</p>
 </div>
-<p><strong>应该使用什么 Upscaler？</strong></p>
-<p>推荐 <code>SD Upscaler</code>, 它注重细节的同时还提升分辨率。</p>
-<p>曾经有段时间，<code>LSDR</code> 被认为是最好的。有些人喜欢 swinir，有些喜欢<code>esrgan4x</code>，<code>ymmv</code></p>
 <h3 id="_17">图像去噪</h3>
 <p>推荐使用 <a href="https://github.com/xinntao/Real-ESRGAN">Real-ESRGAN</a> 降噪。</p>
 <p><img alt="效果" src="https://raw.githubusercontent.com/xinntao/Real-ESRGAN/master/assets/teaser.jpg" /></p>
@@ -2000,11 +2010,11 @@ scale 就是 CFG scale
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 17, 2022 13:04:28</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 17, 2022 13:10:46</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 17, 2022 13:04:28</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 17, 2022 13:10:46</span>
       
     
   </small>
