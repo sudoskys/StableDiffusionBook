@@ -301,6 +301,8 @@ normal quality, text, censored, gown, latex, pencil
 
 对于没有压缩的原图，我们可以将文件拖入 `PNG Info` 选项卡，进行提示词(Token)查看。
 
+或者使用 [网页工具](https://spell.novelai.dev/)
+
 
 ### 逆向提示词
 
