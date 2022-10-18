@@ -254,7 +254,7 @@ COMMANDLINE_ARGS="--medvram --always-batch-cond-uncond" REQS_FILE="requirements.
     所以，你可以使用参数为 `gradio` 共享实例设置身份验证：`--gradio-auth username:password` (可选择提供多组用户名和密码，以逗号分隔)
 
     例子
-    --share --gradio-auth admin:admin,user1:user_password
+    `--share --gradio-auth admin:admin,user1:user_password`
 
     使用该例子将会创建两个用户，一个是账号密码为admin的用户，另外一个是账号为user1,密码为user_password的用户
     
