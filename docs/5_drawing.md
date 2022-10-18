@@ -603,7 +603,7 @@ SD Upscale 选项在 Img2Img 的 Script 栏目中，主要作用是提升分辨�
 
     [SwinIR 4x](https://github.com/JingyunLiang/SwinIR/releases/download/v0.0/003_realSR_BSRGAN_DFOWMFC_s64w8_SwinIR-L_x4_GAN.pth)，文件大小为136MB
 
-**应该使用什么 Upscaler？**
+**Highres Fix/超分应该使用什么 Upscaler？**
 
 `SD Upscaler` 在注重细节的同时还提升分辨率。
 
@@ -825,8 +825,6 @@ Windows 需要在 `web-user.bat的COMMANDLINE_ARGS=` 一行添加，或者直接
 点击 右下角训练，等待。
 
 训练完毕。再次重命名 Vae 文件，重启程序。
-
-
 
 
 #### 备注

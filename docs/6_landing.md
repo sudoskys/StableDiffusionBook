@@ -12,7 +12,7 @@
 
 - [人工智能艺术的工具和资源](https://pharmapsychotic.com/tools.html)
 
-- [SD资源金矿](https://rentry.org/sdupdates)
+- **[SD资源金矿](https://rentry.org/sdupdates)**
 
 - [NovelAI 5ch Wiki](https://seesaawiki.jp/nai_ch/)
 
@@ -21,6 +21,8 @@
 - [参数法术全典](https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml#)
 
 - [Tag在线协作](https://docs.google.com/spreadsheets/d/1zij5OzCZIaQuhAbiSayhFznjgJ3rwbaNwnUnaUMxyTQ/edit?usp=drivesdk)
+
+- [元素法典](https://docs.qq.com/doc/DWHl3am5Zb05QbGVs)
 
 - [PasteBinWiki](https://rentry.co/voldy)
 

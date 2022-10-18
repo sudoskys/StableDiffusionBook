@@ -280,6 +280,10 @@ COMMANDLINE_ARGS="--medvram --always-batch-cond-uncond" REQS_FILE="requirements.
 
 如果可用，则默认为端口 7860
 
+- 主题
+
+使用 `--theme` 参数，使用主题
+
 
 #### 自定义运行
 
@@ -287,7 +291,7 @@ COMMANDLINE_ARGS="--medvram --always-batch-cond-uncond" REQS_FILE="requirements.
 
 生成报错？请读 `绘画调试` 章节。
 
-首先，你可以运行 `python webui.py --help` 查看所有命令参数。
+首先，你可以运行 `python webui.py --help` 查看所有命令参数，或者在[源码文件](https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/modules/shared.py)中读到它们。 
 
 Tip:
 自定义程序运行方式的推荐方法是编辑webui-user.bat(Windows) 和webui-user.sh(Linux)
@@ -331,6 +335,7 @@ set COMMANDLINE_ARGS设置命令行参数webui.py运行
 | `--opt-channelslast`            | 更改 torch 内存类型，以稳定扩散到最后一个通道,效果没有仔细研究。|
 
 
+
 #### 令牌参数生成第一幅图片
 
 令牌请读后面的内容，这里给出一个实例来供你完成测试
@@ -367,6 +372,13 @@ Steps: 28, Sampler: Euler a, CFG scale: 7, Seed: 2706937631, Size: 1024x512, Mod
 Time taken: 33.97s
 Torch active/reserved: 1975/2144 MiB, Sys VRAM: 7890/8134 MiB (93.61%)
 ```
+
+**快捷设置**
+
+不想来回设置 Clip？
+
+添加`sd_hypernetwork`和`CLIP_stop_at_last_layers`到设置页面的`Quicksettings list`，保存并重新启动 webui，你就可以在Ui顶部看到一个快速切换选项啦～
+
 
 --------
 

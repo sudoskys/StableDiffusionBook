@@ -55,6 +55,16 @@ NAI 是一个在线**服务**。
 以下是新闻和测试内容。
 
 -------
+- 10/19 更新
+
+各种模型链接正在失效，有余力可以分流备链。
+
+-------
+- 10/14 更新
+
+[Rce 漏洞曝光](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2571)，但是新版本中得到修复，请为实例设置密码。
+
+-------
 - 10/13 更新
 
 automatic1111 的 repo 从 r/stablediffusion 的固定指南中删除
