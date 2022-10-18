@@ -826,10 +826,14 @@ conda activate aidraw
 <p>参数 <code>--port xxxx</code> 使服务器监听特定端口。</p>
 <p>低于 1024 的所有端口都需要 <code>root</code>权限，因此建议使用高于 1024 的端口。</p>
 <p>如果可用，则默认为端口 7860</p>
+<ul>
+<li>主题</li>
+</ul>
+<p>使用 <code>--theme</code> 参数，使用主题</p>
 <h4 id="_11">自定义运行</h4>
 <p>进一步熟悉这个程序，你会发现可以修改 Bat运行脚本 添加参数！具体参数列表请读下文。</p>
 <p>生成报错？请读 <code>绘画调试</code> 章节。</p>
-<p>首先，你可以运行 <code>python webui.py --help</code> 查看所有命令参数。</p>
+<p>首先，你可以运行 <code>python webui.py --help</code> 查看所有命令参数，或者在<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/modules/shared.py">源码文件</a>中读到它们。 </p>
 <p>Tip:
 自定义程序运行方式的推荐方法是编辑webui-user.bat(Windows) 和webui-user.sh(Linux)</p>
 <p><em>环境定制</em></p>
@@ -920,6 +924,9 @@ set COMMANDLINE_ARGS设置命令行参数webui.py运行
 <div class="highlight"><pre><span></span><code>Time taken: 33.97s
 Torch active/reserved: 1975/2144 MiB, Sys VRAM: 7890/8134 MiB (93.61%)
 </code></pre></div></p>
+<p><strong>快捷设置</strong></p>
+<p>不想来回设置 Clip？</p>
+<p>添加<code>sd_hypernetwork</code>和<code>CLIP_stop_at_last_layers</code>到设置页面的<code>Quicksettings list</code>，保存并重新启动 webui，你就可以在Ui顶部看到一个快速切换选项啦～</p>
 <hr />
 <h2 id="novel-ai">安装 Novel Ai 的原版后端</h2>
 <p>此教程来自 sanae<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
@@ -1065,11 +1072,11 @@ sudo systemctl restart docker
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 18, 2022 10:23:31</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 18, 2022 17:00:30</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 18, 2022 10:23:31</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 18, 2022 17:00:30</span>
       
     
   </small>
