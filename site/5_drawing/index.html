@@ -1429,8 +1429,9 @@ PS：调太高步数(&gt;30)效果不会更好</p>
 <p>点击按钮，等待处理结束。</p>
 <h4 id="_21">训练</h4>
 <p>在 <code>Train</code> 子选项卡中，选择你要训练的模型。</p>
-<p><code>Learning rate</code>(学习率)，决定训练的速度。Learning rate越低学习越慢（花费更长的时间收敛）。</p>
-<p>一般为 0.005。，如果想快一些，可以使用 0.001 加快，但是如果设置得太高，可能会破坏 <code>embedding</code></p>
+<p><code>Learning rate</code>(超参数：学习率)，学习速率代表了神经网络中随时间推移，信息累积的速度，这个参数较大地影响了影响训练的速度。</p>
+<p>通常，Learning rate越低学习越慢（花费更长的时间收敛）。</p>
+<p>训练时一般设置为 0.005，如果想快一些，可以使用 0.01 加快。但是如果设置得太高，可能会破坏 <code>embedding</code> ， loss 达不到预期。</p>
 <p><code>Log directory</code> 是日志目录</p>
 <p><code>Prompt template file</code>是带有提示的文本文件，每行一个，用于训练模型。</p>
 <p>目录中<code>textual_inversion_templates</code>，解释了你可以使用这些文件做什么。</p>
@@ -2092,11 +2093,11 @@ scale 就是 CFG scale
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 18, 2022 02:20:56</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 18, 2022 02:32:58</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 18, 2022 02:20:56</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 18, 2022 02:32:58</span>
       
     
   </small>
