@@ -952,7 +952,7 @@ NAI的 [word] = WebUi(word:0.952)(0.952 = 1/1.05)</p>
 <ul>
 <li>提示不要太长，超过 100 就有失败风险。</li>
 </ul>
-<p>根据 手抄本的Tip，由于GPT-3模型限制，promot 并不是无限的，positive token 在 75-80 之间，negative 大概65，加太多会提示你 xxx of xxx are truncated，所以别人那边的圣经不要照抄，太长的咒语后半都没有意义了，所以用简易反咒就足够，除非你有特定想屏蔽的东西。</p>
+<p>根据 手抄本的Tip，由于GPT-3模型限制，prompt 并不是无限的，positive token 在 75-80 之间，negative 大概65，加太多会提示你 xxx of xxx are truncated，所以别人那边的圣经不要照抄，太长的咒语后半都没有意义了，所以用简易反咒就足够，除非你有特定想屏蔽的东西。</p>
 <p>当提示超过75个<code>token</code>（比如150个<code>token</code>）时，WebUi 将分组提示词，提交多组75个 <code>token</code>。标记只具有同一集合中其他内容的上下文。这意味着您可能在第一组和第二组之间的边界处有<code>bule hair</code>，标记<code>blue</code>将在第一组中，<code>hair</code>将在第二组中。这导致了结果的不准确，因为这两个词是分开的。</p>
 <p>新版本增加了一个选项 <code>Increase coherency by padding from the last comma within n tokens when using more than 75 tokens</code></p>
 <p>这个设置让程序试图通过查找最后N个标记中是否有最后一个逗号来缓解这种情况，如果有，则将所有经过该逗号的内容一起移动到下一个集合中。</p>
@@ -1075,7 +1075,7 @@ normal quality, text, censored, gown, latex, pencil
 <p><code>cat :2 | dog</code> 也就是更像猫的狗</p>
 <h3 id="_10">参数冲突(提示词)</h3>
 <p>比如 <code>sex</code> 包含较多姿势体位，在使用者想要特定姿势时，法术内单一的 <code>sex</code> tag就应该被删除。</p>
-<p>同样地，<code>loli</code> Tag 附带了强画风属性，会很大地影响结果！改成 <code>femeal child</code> 会好一点。</p>
+<p>同样地，<code>loli</code> Tag 附带了强画风属性，会很大地影响结果！改成 <code>female child</code> 会好一点。</p>
 <h3 id="step">Step 迭代步数</h3>
 <p>更多的迭代步数可能会有更好的生成效果，但是一定会导致生成时间变长。太多的 steps 也可能适得其反，几乎不会有提高。</p>
 <h3 id="samplers">Samplers 采样器</h3>
@@ -1430,7 +1430,7 @@ PS：调太高步数(&gt;30)效果不会更好</p>
 <h4 id="_21">训练</h4>
 <p>在 <code>Train</code> 子选项卡中，选择你要训练的模型。</p>
 <p><code>Learning rate</code>(超参数：学习率)，学习速率代表了神经网络中随时间推移，信息累积的速度，这个参数较大地影响了影响训练的速度。</p>
-<p>通常，Learning rate越低学习越慢（花费更长的时间收敛）。</p>
+<p>通常，Learning rate越低学习越慢（花费更长的时间收敛），但是效果一般更好。</p>
 <p>训练时一般设置为 0.005，如果想快一些，可以使用 0.01 加快。但是如果设置得太高，可能会破坏 <code>embedding</code> ， loss 达不到预期。</p>
 <p><code>Log directory</code> 是日志目录</p>
 <p><code>Prompt template file</code>是带有提示的文本文件，每行一个，用于训练模型。</p>
@@ -2093,11 +2093,11 @@ scale 就是 CFG scale
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 18, 2022 02:32:58</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 18, 2022 10:23:31</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 18, 2022 02:32:58</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 18, 2022 10:23:31</span>
       
     
   </small>
