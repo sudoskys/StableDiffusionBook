@@ -11,11 +11,18 @@
 <h2 align="center">StableDiffusionBook</h2>
 
 
-关于 Ai 绘画的 Wiki ，翻译，教程，相关资源。
+关于 Ai 绘画的 Wiki ，翻译，教程，相关资源。欢迎互动～
 
-请阅读 https://stable-diffusion-book.vercel.app/
 
-欢迎互动～
+## 分流地址
+
+- Vercel 部署
+
+https://stable-diffusion-book.vercel.app/  短链为(https://b23.ink/aibook)
+
+- 国内可用分流
+
+https://stablediffusionbook.netlify.app/
 
 
 ## 帮助改进
