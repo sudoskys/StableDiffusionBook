@@ -58,6 +58,7 @@
 
 - [火药教程](https://rentry.org/stablediffgpubuy)
 
+- [人偶教室：风格化教学](https://www.yuque.com/longyuye/lmgcwy)
 
 #### 项目
 
