@@ -14,12 +14,14 @@
 ## 分流地址
 
 - Vercel 部署
+[https://stable-diffusion-book.vercel.app/](https://stable-diffusion-book.vercel.app/) 
 
-https://stable-diffusion-book.vercel.app/  短链为(https://b23.ink/aibook)
+短链为(https://b23.ink/aibook)
 
 - 国内可用分流
+[https://stablediffusionbook.netlify.app/](https://stablediffusionbook.netlify.app/)
 
-https://stablediffusionbook.netlify.app/
+
 
 ## Stable Diffusion 和 NAI 关系？我该怎么办？
 
