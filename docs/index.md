@@ -11,8 +11,15 @@
 
 [NovelAI](https://novelai.net/)简称 NAI， 是一项每月订阅服务，用于 AI 辅助创作、讲故事、虚拟陪伴，或者只是供您想象的 GPT 驱动的沙盒。
 
+## 分流地址
 
+- Vercel 部署
 
+https://stable-diffusion-book.vercel.app/  短链为(https://b23.ink/aibook)
+
+- 国内可用分流
+
+https://stablediffusionbook.netlify.app/
 
 ## Stable Diffusion 和 NAI 关系？我该怎么办？
 
