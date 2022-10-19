@@ -3,19 +3,19 @@
 # 附录
 
 
-### 社区
+## 社区
 
 这里是相关的社区资源
 
 
-#### 文档
+### 文档
+
+#### 提示词相关
+
+- [人偶教室：风格化教学](https://www.yuque.com/longyuye/lmgcwy)
 
 - [人工智能艺术的工具和资源](https://pharmapsychotic.com/tools.html)
-
-- **[SD资源金矿](https://rentry.org/sdupdates)**
-
-- [NovelAI 5ch Wiki](https://seesaawiki.jp/nai_ch/)
-
+- 
 - [手抄本法术书](https://docs.google.com/spreadsheets/d/14Gg1kIGWdZGXyCC8AgYVT0lqI6IivLzZOdIT3QMWwVI/edit)
 
 - [参数法术全典](https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml#)
@@ -24,27 +24,27 @@
 
 - [元素法典](https://docs.qq.com/doc/DWHl3am5Zb05QbGVs)
 
-- [PasteBinWiki](https://rentry.co/voldy)
-
-- [Reddit](https://www.reddit.com/r/StableDiffusion/)
-
-- [中文社区 StableDiffusion_CN](https://t.me/StableDiffusion_CN/)
-
-- [StableDiffusion_Github_discussions](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions)
-
-- [WebUi使用手册](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features)
-
-- [AIBooru](https://aibooru.online/)
+- [图像合成风格研究数据库](https://docs.google.com/spreadsheets/d/14xTqtuV3BuKDNhLotB_d1aFlBGnDJOY0BRXJ8-86GpA/edit#gid=0)
 
 - [StableDiffusion Show](https://t.me/StableDiffusion_Show)
+
+#### 文档
+
+- **[SD资源金矿](https://rentry.org/sdupdates)**
+- 
+- [WebUi使用手册](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features)
+
+- [NovelAI 5ch Wiki](https://seesaawiki.jp/nai_ch/)
+
+- [PasteBinWiki](https://rentry.co/voldy)
+
+- [一个小指南：RedditAbout](https://www.reddit.com/r/StableDiffusion/comments/xbeyw3/can_anyone_offer_a_little_guidance_on_the/)
 
 - [WebUi自定义脚本](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts)
 
 - [SD相关的Faq](https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99)
 
 - [Ai艺术家文档——深入了解](https://docs.google.com/spreadsheets/d/1SRqJ7F_6yHVSOeCi3U82aA448TqEGrUlRrLLZ51abLg/htmlview#)
-
-- [图像合成风格研究数据库](https://docs.google.com/spreadsheets/d/14xTqtuV3BuKDNhLotB_d1aFlBGnDJOY0BRXJ8-86GpA/edit#gid=0)
 
 - [为文字转图像Ai提示编写指南：A Guide to Writing Prompts for Text-to-image AI](https://docs.google.com/document/d/1XUT2G9LmkZataHFzmuOtRXnuWBfhvXDAo8DkS--8tec/edit#)
 
@@ -54,13 +54,19 @@
 
 - [novelai对Sd的优化日志](https://blog.novelai.net/novelai-improvements-on-stable-diffusion-e10d38db82ac)
 
-- [一个小指南：RedditAbout](https://www.reddit.com/r/StableDiffusion/comments/xbeyw3/can_anyone_offer_a_little_guidance_on_the/)
-
 - [火药教程](https://rentry.org/stablediffgpubuy)
 
-- [人偶教室：风格化教学](https://www.yuque.com/longyuye/lmgcwy)
+#### 社区
 
-#### 项目
+- [StableDiffusion_Github_discussions](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions)
+
+- [AIBooru](https://aibooru.online/)
+
+- [中文社区 StableDiffusion_CN](https://t.me/StableDiffusion_CN/)
+
+- [Reddit](https://www.reddit.com/r/StableDiffusion/)
+
+### 项目
 
 - [基于 NovelAI 的画图机器人](https://github.com/koishijs/novelai-bot#token)
 
@@ -69,7 +75,7 @@
 - [参数转换-M2NM2NBot](https://t.me/M2NM2NBot)
 
 
-#### embeddings
+### embeddings
 
 [HuggingFace 的e mbeddings 库](https://cyberes.github.io/stable-diffusion-textual-inversion-models/)
 
