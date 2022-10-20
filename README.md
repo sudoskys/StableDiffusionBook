@@ -11,7 +11,9 @@
 <h2 align="center">StableDiffusionBook</h2>
 
 
-关于 Ai 绘画的 Wiki ，翻译，教程，相关资源。欢迎互动～
+关于使用 Ai 绘画的 Wiki ，翻译，教程，相关资源。主要内容为 StableDiffusionWebUi
+
+欢迎互动～
 
 
 ## 分流地址
