@@ -49,6 +49,7 @@
 
 请先在前面了解一下 WebUi(SD) 网页应用的参数。
 
+
 ### 提示词语法简介
 
 对于NAI用户，请阅读[官网Docs](https://docs.novelai.net/image/promptmixing.html)
@@ -453,6 +454,7 @@ WebUi 使用 `--gradio-img2img-tool color-sketch` 启动会带入一个插件对
 !!! tip "不同之处"
     PS 重新绘画投入 Img2Img 的话，会导致画风的变动，而 Inpaint 就不会。
 
+#### 横条参数
 
 **CFG Scale**
 
@@ -464,6 +466,13 @@ WebUi 使用 `--gradio-img2img-tool color-sketch` 启动会带入一个插件对
 
 对于以图做图来说，低 `denoising` 意味着修正原图，高 `denoising` 就和原图就没有大的相关性了。一般来讲阈值是 0.7 左右，超过 0.7 和原图基本上无关，0.3 以下就是稍微改一些。
 
+### 图形参数
+
+Just resize : 将图像调整为目标分辨率。除非高度和宽度完全匹配，否则图片会被挤压
+
+Crop and resize：调整图像大小，使整个目标分辨率都被图像填充。裁剪多余部分。
+
+Resize and fill：调整图像大小，使整个图像在目标分辨率内。用图像的颜色填充空白区域。
 
 ###  Img2Img 三渲二
 
