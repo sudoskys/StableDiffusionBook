@@ -15,7 +15,7 @@
 - [人偶教室：风格化教学](https://www.yuque.com/longyuye/lmgcwy)
 
 - [人工智能艺术的工具和资源](https://pharmapsychotic.com/tools.html)
-- 
+
 - [手抄本法术书](https://docs.google.com/spreadsheets/d/14Gg1kIGWdZGXyCC8AgYVT0lqI6IivLzZOdIT3QMWwVI/edit)
 
 - [参数法术全典](https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml#)
