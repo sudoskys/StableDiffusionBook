@@ -56,6 +56,8 @@
 
 - [火药教程](https://rentry.org/stablediffgpubuy)
 
+- [WebUi的鼠标悬浮提示](https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/javascript/hints.js)
+
 #### 社区
 
 - [StableDiffusion_Github_discussions](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions)
