@@ -634,11 +634,45 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dreambooth" class="md-nav__link">
-    DreamBooth 训练
+  <a href="#_17" class="md-nav__link">
+    渐变提示词
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    注意 尺寸
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    提示词速查
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    调参工程师
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    自训练
+  </a>
+  
+    <nav class="md-nav" aria-label="自训练">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#textual-inversion" class="md-nav__link">
@@ -656,42 +690,49 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_17" class="md-nav__link">
-    模型环境要求
+  <a href="#_22" class="md-nav__link">
+    准备数据集
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_18" class="md-nav__link">
-    设置
+  <a href="#_23" class="md-nav__link">
+    模型要求
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_19" class="md-nav__link">
+  <a href="#_24" class="md-nav__link">
+    设置说明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
     创建训练
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_20" class="md-nav__link">
+  <a href="#_26" class="md-nav__link">
     预处理
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_21" class="md-nav__link">
+  <a href="#_27" class="md-nav__link">
     训练
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_22" class="md-nav__link">
+  <a href="#_28" class="md-nav__link">
     备注
   </a>
   
@@ -707,32 +748,31 @@
     训练 Hypernetworks
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="训练 Hypernetworks">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_23" class="md-nav__link">
-    渐变提示词
+  <a href="#hyper-network-layer-structure" class="md-nav__link">
+    hyper network layer structure
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_24" class="md-nav__link">
-    注意 尺寸
+  <a href="#add-layer-normalization" class="md-nav__link">
+    Add layer normalization
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#_25" class="md-nav__link">
-    提示词速查
-  </a>
+      </ul>
+    </nav>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_26" class="md-nav__link">
-    调参工程师
+  <a href="#dreambooth" class="md-nav__link">
+    DreamBooth 训练
   </a>
   
 </li>
@@ -743,7 +783,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_27" class="md-nav__link">
+  <a href="#_29" class="md-nav__link">
     参数
   </a>
   
@@ -751,7 +791,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_28" class="md-nav__link">
+  <a href="#_30" class="md-nav__link">
     自动补全
   </a>
   
@@ -780,21 +820,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_29" class="md-nav__link">
+  <a href="#_31" class="md-nav__link">
     草图风格
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_30" class="md-nav__link">
+  <a href="#_32" class="md-nav__link">
     艺术风格
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_31" class="md-nav__link">
+  <a href="#_33" class="md-nav__link">
     杂志/设定集 风格
   </a>
   
@@ -892,7 +932,13 @@
 <h2 id="_3">魔法入门</h2>
 <p>请先在前面了解一下 WebUi(SD) 网页应用的参数。</p>
 <h3 id="_4">提示词语法简介</h3>
-<p>对于NAI用户，请阅读<a href="https://docs.novelai.net/image/promptmixing.html">官网Docs</a>,两方的提示词语法不通用。</p>
+<p>对于NAI用户，请阅读<a href="https://docs.novelai.net/image/promptmixing.html">官网Docs</a></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>两方的提示词语法<strong>不通用</strong>
+用 <code>()</code>在WebUi做增强，而在NAi用 <code>{}</code> 做增强，注意NAI不支持单个词语指定权重</p>
+<p>如果你想便捷转换权重，可以使用<a href="https://t.me/M2NM2NBot">转换服务</a></p>
+</div>
 <p><strong>表示方法</strong></p>
 <p>分隔，英文半角 <code>,</code> 做分隔符，在英文逗号前后存在一个或数个空格并不影响实际使用。</p>
 <p>混合，WebUi 使用 <code>|</code> 分隔多个关键词以混合多个要素，字面意义上的混合，可以多个使用。</p>
@@ -917,7 +963,6 @@ NAI的 [word] = WebUi(word:0.952)(0.952 = 1/1.05)</p>
 <p>NAI的{word} = WeUi的(word:1.05)</p>
 <p>NAI花括号权重为1.05/个，WebUi圆权重为1.1/个</p>
 </div>
-<p>用 <code>{}</code> 在 NAI 做增强，注意NAI不支持单个词语指定权重，只支持</p>
 <h3 id="batch-countbatch-size">Batch count&amp;batch size</h3>
 <p><code>batch count</code> 指定训练几批次图像。</p>
 <p><code>batchsize</code> 中文翻译为批大小（批尺寸）</p>
@@ -1342,18 +1387,46 @@ PS：调太高步数(&gt;30)效果不会更好</p>
 <blockquote>
 <p>效果图</p>
 </blockquote>
-<h3 id="dreambooth">DreamBooth 训练</h3>
-<p>DreamBooth 的模型是一种新的文本到图像“个性化”（可适应用户特定的图像生成需求）扩散模型</p>
-<p><a href="https://colab.research.google.com/drive/17yM4mlPVOFdJE_81oWBz5mXH9cxvhmz8#scrollTo=lJoOgLQHnC8L">Colab 在线训练模型</a>，需要Pro套餐算力(18-24G显存需要)</p>
-<p><a href="https://colab.research.google.com/github/ShivamShrirao/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion.ipynb#scrollTo=K6xoHWSsbcS3">DreamBooth_Stable_Diffusion</a></p>
-<p><a href="https://colab.research.google.com/github/TheLastBen/fast-stable-diffusion/blob/main/fast-DreamBooth.ipynb">fast-DreamBooth</a></p>
-<p>https://github.com/XavierXiao/Dreambooth-Stable-Diffusion</p>
+<h3 id="_17"><strong>渐变提示词</strong></h3>
+<p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-editing</p>
+<p>允许您开始对一张图片进行采样，但在中间切换到其他图片。基本语法是：</p>
+<div class="highlight"><pre><span></span><code>[from:to:when]
+</code></pre></div>
+<p>其中from和to是任意文本，并且when是一个数字，用于定义应在采样周期多长时间内进行切换。越晚，模型绘制to文本代替from文本的能力就越小。如果when是介于 0 和 1 之间的数字，则它是进行切换之后的步数的一小部分。如果它是一个大于零的整数，那么这只是进行切换的步骤。</p>
+<p>将一个提示编辑嵌套在另一个提示中不起作用。</p>
+<p><strong>使用方法</strong></p>
+<p>[to:when] 在固定数量的step后添加to到提示 ( when)</p>
+<p>[from::when] 在固定数量的step后从提示中删除from( when)</p>
+<p>例子： a [fantasy:cyberpunk:16] landscape</p>
+<p>开始时，模型将绘制a fantasy landscape。</p>
+<p>在第 16 步之后，它将切换到绘图a <code>cyberpunk landscape</code>，从幻想停止的地方继续。</p>
+<p>比如 [male:female:0.0], 意味着你开始时就要求画一个女性。</p>
+<h3 id="_18">注意 <code>尺寸</code></h3>
+<p>比如出图尺寸宽了人可能会多</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>要匹配好姿势，镜头和人物才不畸形，有时候需要限定量词，多人物时要处理空间关系和 prompt 遮挡优先级。人数-&gt;人物样貌-&gt;环境样式-&gt;人物状态</p>
+</div>
+<h3 id="_19">提示词速查</h3>
+<p><strong><a href="https://docs.google.com/spreadsheets/d/14Gg1kIGWdZGXyCC8AgYVT0lqI6IivLzZOdIT3QMWwVI/edit">手抄本法术书</a></strong></p>
+<p><strong><a href="https://gelbooru.com/index.php?page=tags&amp;s=list">Danbooru全部Tag列表</a></strong></p>
+<p><strong><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml#">参数法术全典</a></strong></p>
+<p><strong><a href="https://docs.google.com/spreadsheets/d/1zij5OzCZIaQuhAbiSayhFznjgJ3rwbaNwnUnaUMxyTQ/edit?usp=drivesdk">Tag在线协作</a></strong></p>
+<p><strong><a href="https://github.com/scooderic/exhentai-tags-chinese-translation">NSFWTag</a></strong></p>
+<p><strong><a href="https://docs.google.com/spreadsheets/d/1SRqJ7F_6yHVSOeCi3U82aA448TqEGrUlRrLLZ51abLg/htmlview#">Ai艺术家文档</a></strong></p>
+<p><strong><a href="https://www.bilibili.com/read/cv19023021">Novelai 关键词组合器</a></strong></p>
+<h3 id="_20">调参工程师</h3>
+<p><a href="https://github.com/Maks-s/sd-akashic">https://github.com/Maks-s/sd-akashic</a></p>
+<p><a href="https://github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference">https://github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference</a></p>
+<h2 id="_21">自训练</h2>
+<p>Textual Inversion 训练为了 embeddings，embeddings 为 Ai 提供处理过的输入数据，告诉这个角色“具体是什么”，训练特殊的人物，角色会更好。</p>
+<p>Hypernetworks 则会对超网络的改动，与 embeddings 不同，Hypernetworks 会对模型进行微调，所以泛化效果更加好，训练画风会更好。</p>
 <h3 id="textual-inversion">Textual Inversion 训练新角色</h3>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion">官方英文说明和效果图</a></p>
 <p><code>Textual Inversion</code>允许你在自己的图片上训练一小部分神经网络，并在生成新图片时使用结果。可以数据集没有新出的角色画不出的问题，模仿特定的艺术风格。实际上是 NLP 中的即时调优。</p>
 <p>这对制作数据集没有囊括的 2021 年之后的动漫人物非常有效。（PS:相应的，Miku因为图多所以效果最好）</p>
 <p>在许多情况下（例如不同的环境和姿势）对一个主题执行此操作通常可以让 AI 创建更好的嵌入</p>
-<p>使用时，将 embedding(一个 .pt 或一个 .bin 文件) 放入<code>embeddings</code> 目录并在 prompt 提示词中提到你要用的 embedding 的文件名(*.pt)即可。不必重新启动程序即可使其正常工作。</p>
+<p>使用时，将 embedding(一个 .pt 或一个 .bin 文件) 放入 <code>embeddings</code> 目录并在 prompt 提示词中提到你要用的 embedding 的文件名(*.pt)即可。不必重新启动程序即可使其正常工作。</p>
 <p>没错，NAI 的 <code>hypernetworks</code> 就是超网络，用来做 embeddings（风格化）。</p>
 <p>多 <code>embeddings</code> 可以一起用，启动时候会自动加载。</p>
 <p><a href="https://gitlab.com/16777216c/stable-diffusion-embeddings">相关 embeddings</a>，里面有相关效果预览。</p>
@@ -1366,7 +1439,10 @@ PS：调太高步数(&gt;30)效果不会更好</p>
 <p>重命名VAE模型文件非常关键，如果带着VAE训练效果十分差。</p>
 <p>或者不需要重命名vae文件，直接在设置里打开 <code>auto unload</code></p>
 </div>
-<h4 id="_17">模型环境要求</h4>
+<h4 id="_22">准备数据集</h4>
+<p>数据集在保证质量和特征一致的情况下，如果算力允许，越多越好。</p>
+<p>可以从 <a href="yande.re">yande</a> pixiv 获取数据集。<sup id="fnref:10"><a class="footnote-ref" href="#fn:10">7</a></sup></p>
+<h4 id="_23">模型要求</h4>
 <p>WebUi 应该是 Git 的最新版本。</p>
 <p>显存至少 6GB，正常使用需要 12GB 显存。根据实验数据，8GB显存应该选择 <code>512x512</code> 分辨率。</p>
 <p>训练可使用半精度浮点，但是否好用还需要进行实验。</p>
@@ -1374,7 +1450,7 @@ PS：调太高步数(&gt;30)效果不会更好</p>
 <p>你可以中断和恢复训练而不会丢失任何数据（AdamW 优化参数除外，但似乎现有的存储库都没有保存这些，所以一般认为它们并不重要）。</p>
 <p>不支持 <code>batch sizes</code> 和 <code>gradient accumulation</code>。</p>
 <p>不可能在 <code>--lowvram</code> and <code>--medvram</code> 参数下运行起来。</p>
-<h4 id="_18">设置</h4>
+<h4 id="_24">设置说明</h4>
 <p>准备 30 张以上的目标人设图片，每一张图片应当裁剪为同样的比例。（即使WebUi已经支持了长方形图片的裁剪）</p>
 <p>在 <code>Interrogate Options</code> 设置中，<code>Interrogate: deepbooru score threshold</code> 是 deepbooru(从图像提取标签) 可用标签的阀值。建议使用 0.75,也就是保留预测结果大于 75%的结果。</p>
 <p>比如，假定识别结果为
@@ -1393,13 +1469,15 @@ PS：调太高步数(&gt;30)效果不会更好</p>
 就会丢弃 <code>wide_sleeves</code> 以下的内容</p>
 <p><code>Interrogate: deepbooru sort alphabetically</code> 是按照字母顺序排序 Tag，因为 Tag 对结果影响很大，所以我们取消勾选此项。</p>
 <p>按下 <code>Apply setting</code> 保存设置。</p>
-<h4 id="_19">创建训练</h4>
+<h4 id="_25">创建训练</h4>
 <p>打开 <code>train</code> 选项卡，在 <code>Create embedding</code>选项卡新建一个 <code>embedding</code> 模型。</p>
+<p><code>Number of vectors per token</code> 是 embedding 的宽度，与数据集有关，如果少于 百张，可以设置 3。</p>
+<p>宽度越大时效果越强，但是需要数万轮训练。据 <a href="https://space.bilibili.com/99162407">usim-U</a> 的视频，设置 24 至少需要三百张高质量作品。</p>
 <p><code>Name</code> 输入框输入你预想的出现此人设的 提示词。</p>
 <p><code>Initialization text</code> 可以输入 <code>one girl</code> 这种大分类，只能填一个，人物可以是1girl或者1boy，或者画风。</p>
 <p><code>Number of vectors per token</code> 是此 <code>embedding</code> 要占据的 token 位数量，越多越好，但是相应也会减少其他提示词 token 的位置。</p>
 <p>新建，会创建一个在 <code>embedding</code> 下的 pt 文件。</p>
-<h4 id="_20">预处理</h4>
+<h4 id="_26">预处理</h4>
 <p>打开 <code>Preprocess images</code> 选项卡。</p>
 <p><code>Source directory</code> 中填入你的训练用图片文件夹目录，里面只允许有训练图片。</p>
 <p><code>Destination directory</code> 中填入预处理完毕后图片保存路径。</p>
@@ -1428,11 +1506,13 @@ PS：调太高步数(&gt;30)效果不会更好</p>
 <p>意思就是将超大图像一分为二，一般不用。</p>
 <p>我们勾选 <code>Use deepbooru caption as filename</code> 和 <code>Create flipped copies</code></p>
 <p>点击按钮，等待处理结束。</p>
-<h4 id="_21">训练</h4>
+<h4 id="_27">训练</h4>
+<p>训练是一个动态的过程！</p>
 <p>在 <code>Train</code> 子选项卡中，选择你要训练的模型。</p>
 <p><code>Learning rate</code>(超参数：学习率)，学习速率代表了神经网络中随时间推移，信息累积的速度，这个参数较大地影响了影响训练的速度。</p>
 <p>通常，Learning rate越低学习越慢（花费更长的时间收敛），但是效果一般更好。</p>
-<p>训练时一般设置为 0.005，如果想快一些，可以使用 0.01 加快。但是如果设置得太高，可能会破坏 <code>embedding</code> ， loss 达不到预期。</p>
+<p>训练时，可以先用较大的学习率进行测试，然后逐步调小 <code>0.1 -- 0.02 -- 0.005</code> ，每次测试都用上一次效果最好的。</p>
+<p>一般设置为 0.005，如果想快一些，可以使用 0.01 加快。但是如果设置得太高，梯度下降时候步长太大无法收敛，会且可能会破坏 <code>embedding</code> ， 效果达不到预期。如果设置的太小，容易陷入局部最优。</p>
 <p><code>Log directory</code> 是日志目录</p>
 <p><code>Prompt template file</code>是带有提示的文本文件，每行一个，用于训练模型。</p>
 <p>目录中<code>textual_inversion_templates</code>，解释了你可以使用这些文件做什么。</p>
@@ -1459,7 +1539,7 @@ PS：调太高步数(&gt;30)效果不会更好</p>
 <p>如果Loss大于 0.3 ，效果就不是很好</p>
 </div>
 <p>如果太多会过拟合(可以理解为Ai的死板)</p>
-<p>随时观察，如果过拟合，可以停止。如果效果不是很好，可以去找早些时候的模型继续训练。找到一个好的效果。</p>
+<p>随时观察，如果过拟合，可以停止。如果效果不是很好，可以去找早些时候的模型继续训练。<strong>不断调整</strong>找到一个好的效果。</p>
 <div class="admonition danger">
 <p class="admonition-title">重命名 VAE 文件</p>
 <p>重命名VAE模型文件非常关键，或者确定你已经设置里打开 <code>auto unload</code>。</p>
@@ -1467,7 +1547,9 @@ PS：调太高步数(&gt;30)效果不会更好</p>
 </div>
 <p>点击 右下角训练，等待。</p>
 <p>训练完毕。再次重命名 Vae 文件，重启程序。</p>
-<h4 id="_22">备注</h4>
+<h4 id="_28">备注</h4>
+<p><strong>效果评价</strong></p>
+<p>可以尝试模仿原作品。</p>
 <p><strong>[filewords]</strong></p>
 <p>是 提示词模板文件 的 Tag，可以实现把文件名中的词汇插入提示。</p>
 <p>第一，默认情况下，文件的扩展名以及-文件名开头的所有数字和破折号 ( ) 都会被删除。</p>
@@ -1486,48 +1568,29 @@ PS：调太高步数(&gt;30)效果不会更好</p>
 
 <h3 id="hypernetworks">训练 Hypernetworks</h3>
 <p>Hypernetworks 是一种新颖的概念，用于在不触及任何权重的情况下微调模型。</p>
-<p>你可以在 <code>Textual Inversion</code> <code>train</code> 选项卡训练Hypernetworks</p>
+<p>你可以在 <code>Textual Inversion</code> <code>train</code> 选项卡训练 <code>Hypernetworks</code></p>
 <p>训练的工作方式与文本倒置相同。</p>
 <p>唯一的要求是使用非常非常低的学习率，例如 0.000005 或 0.0000005。</p>
+<h4 id="hyper-network-layer-structure">hyper network layer structure</h4>
+<p>If write "1, 2, 1", hypernetworks are composed of 2 fully connected layers whose intermediate dim is 2x, which is same as up to now.</p>
+<p>The more you add the number, like "1, 2, 4, 2, 1", the more the structure of hypernetworks becomes deeper. Deep hypernetworks are suited for training with large datasets.</p>
+<h4 id="add-layer-normalization">Add layer normalization</h4>
+<p>If checked, add layer normalization after every fully connected layer.</p>
+<p>防止超网络过拟合，使训练更加稳定。</p>
 <p><a href="https://rentry.org/hypernetwork4dumdums">应该查看的英文指南</a></p>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2670">相关的英文讨论</a></p>
 <p><img alt="hypernet对比图" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/exp_hypernet.jpg" /></p>
 <blockquote>
 <p>hypernet对比图</p>
 </blockquote>
-<h3 id="_23"><strong>渐变提示词</strong></h3>
-<p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-editing</p>
-<p>允许您开始对一张图片进行采样，但在中间切换到其他图片。基本语法是：</p>
-<div class="highlight"><pre><span></span><code>[from:to:when]
-</code></pre></div>
-<p>其中from和to是任意文本，并且when是一个数字，用于定义应在采样周期多长时间内进行切换。越晚，模型绘制to文本代替from文本的能力就越小。如果when是介于 0 和 1 之间的数字，则它是进行切换之后的步数的一小部分。如果它是一个大于零的整数，那么这只是进行切换的步骤。</p>
-<p>将一个提示编辑嵌套在另一个提示中不起作用。</p>
-<p><strong>使用方法</strong></p>
-<p>[to:when] 在固定数量的step后添加to到提示 ( when)</p>
-<p>[from::when] 在固定数量的step后从提示中删除from( when)</p>
-<p>例子： a [fantasy:cyberpunk:16] landscape</p>
-<p>开始时，模型将绘制a fantasy landscape。</p>
-<p>在第 16 步之后，它将切换到绘图a <code>cyberpunk landscape</code>，从幻想停止的地方继续。</p>
-<p>比如 [male:female:0.0], 意味着你开始时就要求画一个女性。</p>
-<h3 id="_24">注意 <code>尺寸</code></h3>
-<p>比如出图尺寸宽了人可能会多</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>要匹配好姿势，镜头和人物才不畸形，有时候需要限定量词，多人物时要处理空间关系和 prompt 遮挡优先级。人数-&gt;人物样貌-&gt;环境样式-&gt;人物状态</p>
-</div>
-<h3 id="_25">提示词速查</h3>
-<p><strong><a href="https://docs.google.com/spreadsheets/d/14Gg1kIGWdZGXyCC8AgYVT0lqI6IivLzZOdIT3QMWwVI/edit">手抄本法术书</a></strong></p>
-<p><strong><a href="https://gelbooru.com/index.php?page=tags&amp;s=list">Danbooru全部Tag列表</a></strong></p>
-<p><strong><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml#">参数法术全典</a></strong></p>
-<p><strong><a href="https://docs.google.com/spreadsheets/d/1zij5OzCZIaQuhAbiSayhFznjgJ3rwbaNwnUnaUMxyTQ/edit?usp=drivesdk">Tag在线协作</a></strong></p>
-<p><strong><a href="https://github.com/scooderic/exhentai-tags-chinese-translation">NSFWTag</a></strong></p>
-<p><strong><a href="https://docs.google.com/spreadsheets/d/1SRqJ7F_6yHVSOeCi3U82aA448TqEGrUlRrLLZ51abLg/htmlview#">Ai艺术家文档</a></strong></p>
-<p><strong><a href="https://www.bilibili.com/read/cv19023021">Novelai 关键词组合器</a></strong></p>
-<h3 id="_26">调参工程师</h3>
-<p><a href="https://github.com/Maks-s/sd-akashic">https://github.com/Maks-s/sd-akashic</a></p>
-<p><a href="https://github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference">https://github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference</a></p>
-<h2 id="_27">参数</h2>
-<h3 id="_28">自动补全</h3>
+<h3 id="dreambooth">DreamBooth 训练</h3>
+<p>DreamBooth 的模型是一种新的文本到图像“个性化”（可适应用户特定的图像生成需求）扩散模型</p>
+<p><a href="https://colab.research.google.com/drive/17yM4mlPVOFdJE_81oWBz5mXH9cxvhmz8#scrollTo=lJoOgLQHnC8L">Colab 在线训练模型</a>，需要Pro套餐算力(18-24G显存需要)</p>
+<p><a href="https://colab.research.google.com/github/ShivamShrirao/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion.ipynb#scrollTo=K6xoHWSsbcS3">DreamBooth_Stable_Diffusion</a></p>
+<p><a href="https://colab.research.google.com/github/TheLastBen/fast-stable-diffusion/blob/main/fast-DreamBooth.ipynb">fast-DreamBooth</a></p>
+<p>https://github.com/XavierXiao/Dreambooth-Stable-Diffusion</p>
+<h2 id="_29">参数</h2>
+<h3 id="_30">自动补全</h3>
 <p>这里有一个项目，可以使SD做到类似 NAI 的补全效果。</p>
 <p>https://github.com/DominikDoom/a1111-sd-webui-tagcomplete</p>
 <h3 id="nai">NAI 在使用的出图参数</h3>
@@ -1575,7 +1638,7 @@ scale 就是 CFG scale
 <p><div class="highlight"><pre><span></span><code>{an extremely delicate and beautiful}
 </code></pre></div>
 <a href="https://www.yuque.com/longyuye/lmgcwy">风格化：人偶教室</a></p>
-<h4 id="_29">草图风格</h4>
+<h4 id="_31">草图风格</h4>
 <table>
 <thead>
 <tr>
@@ -1611,7 +1674,7 @@ scale 就是 CFG scale
 </tbody>
 </table>
 <p>利用sketch，pastel color，lineart的tag模拟一张图的绘画过程</p>
-<h4 id="_30">艺术风格</h4>
+<h4 id="_32">艺术风格</h4>
 <table>
 <thead>
 <tr>
@@ -1650,7 +1713,7 @@ scale 就是 CFG scale
 </tr>
 </tbody>
 </table>
-<h4 id="_31">杂志/设定集 风格</h4>
+<h4 id="_33">杂志/设定集 风格</h4>
 <table>
 <thead>
 <tr>
@@ -2087,6 +2150,9 @@ scale 就是 CFG scale
 <li id="fn:9">
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/1733">交替单词</a>&#160;<a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 6 in the text">&#8617;</a></p>
 </li>
+<li id="fn:10">
+<p><a href="https://www.bilibili.com/video/BV1xt4y1F7Y2/">角色与画风tag训练十问</a>&#160;<a class="footnote-backref" href="#fnref:10" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
 </ol>
 </div>
 
@@ -2095,11 +2161,11 @@ scale 就是 CFG scale
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 20, 2022 01:25:44</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 20, 2022 05:52:50</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 20, 2022 01:25:44</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 20, 2022 05:52:50</span>
       
     
   </small>
