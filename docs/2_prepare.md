@@ -24,8 +24,9 @@
 
 [对于支持AMD Gpu方案相关讨论](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/1046)
 
-!!! tip "显卡保修"
+!!! danger "显卡保修"
     显卡厂家对于深度学习卡的保修政策等同于矿卡
+    过度玩耍(比如连续3天出图)，显卡会坏掉
 
 ## 目前的五种方案
 
