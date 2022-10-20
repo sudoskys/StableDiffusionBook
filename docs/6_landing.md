@@ -31,7 +31,7 @@
 #### 文档
 
 - **[SD资源金矿](https://rentry.org/sdupdates)**
-- 
+
 - [WebUi使用手册](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features)
 
 - [NovelAI 5ch Wiki](https://seesaawiki.jp/nai_ch/)
