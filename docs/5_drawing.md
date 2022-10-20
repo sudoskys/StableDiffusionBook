@@ -700,6 +700,8 @@ Textual Inversion 训练为了 embeddings，embeddings 为 Ai 提供处理过的
 
 Hypernetworks 则会对超网络的改动，与 embeddings 不同，Hypernetworks 会对模型进行微调，所以泛化效果更加好，训练画风会更好。
 
+关于 [损失函数](https://fangkaipeng.com/?p=2056#header-id-16)
+
 
 ### Textual Inversion 训练新角色
 
@@ -853,6 +855,8 @@ Windows 需要在 `web-user.bat的COMMANDLINE_ARGS=` 一行添加，或者直接
 训练时，可以先用较大的学习率进行测试，然后逐步调小 `0.1 -- 0.02 -- 0.005` ，每次测试都用上一次效果最好的。
 
 一般设置为 0.005，如果想快一些，可以使用 0.01 加快。但是如果设置得太高，梯度下降时候步长太大无法收敛，会且可能会破坏 `embedding` ， 效果达不到预期。如果设置的太小，容易陷入局部最优。
+
+[CS231n](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/CS231n.png)
 
 
 `Log directory` 是日志目录
