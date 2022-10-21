@@ -2,17 +2,16 @@
 
 # 调参魔法
 
-这节会介绍 参数 和 相关的 WebUi(SD)  网页应用资源。部分内容只做简单介绍，因为前面有相关描述。
+这节会介绍 参数 和 相关的 WebUi(SD)  网页应用资源。如果你会画画，那么效果会更加稳定可观。
 
-如果你会画画，那么效果会更加稳定可观。
+标签参考应该使用 [Danbooru wiki Tag](https://danbooru.donmai.us/wiki_pages/help:home) 和 [MidJourney-Styles-and-Keywords-Reference](https://github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference) ，因为它们都比较原生。 
 
-先请拿上[danbooru wiki标签](https://danbooru.donmai.us/wiki_pages/help:home)，如果需要读中文，请看[调参魔法书](https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml)和 [手抄魔法本](https://docs.google.com/spreadsheets/d/14Gg1kIGWdZGXyCC8AgYVT0lqI6IivLzZOdIT3QMWwVI/)
+如果需要中文的标签参考，请看[调参魔法书](https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml)和 [手抄魔法本](https://docs.google.com/spreadsheets/d/14Gg1kIGWdZGXyCC8AgYVT0lqI6IivLzZOdIT3QMWwVI/)
+
 
 如果你觉得查表很麻烦，可以打开 [Danbooru 标签超市](https://tags.novelai.dev/),[项目地址](https://github.com/wfjsw/danbooru-diffusion-prompt-builder) 或者[AI绘画tag生成器](https://aitag.top/)(后者不支持负面Tag)
 
-如果你不想读文字，可以打开 [推荐的视频教程](https://space.bilibili.com/35723238/channel/collectiondetail?sid=779851)
-
-需要了解 通过 AI 模仿画风，特定镜头，增加特效，微修微调，PS嫁接出图，通过3D特定姿势，重画，迭代等等操作的话，需要通读下面的内容。
+如果你不想读文字，可以打开 [推荐的视频教程](https://space.bilibili.com/35723238/channel/collectiondetail?sid=779851)，但需要了解 通过 AI 模仿画风，特定镜头，增加特效，微修微调，PS嫁接出图，通过3D特定姿势，重画，迭代等等操作的话，需要通读下面的内容。
 
 提前告知：WebUi 的设置页面需要按下 `Apply setting` 才能保存设置。
 
