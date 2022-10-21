@@ -792,7 +792,7 @@ Hypernetworks 则会对超网络的改动，与 embeddings 不同，Hypernetwork
 
 #### 准备数据集
 
-数据集在保证质量和特征一致的情况下，如果算力允许，越多越好。
+数据集在保证质量和特征一致的情况下，如果算力允许，越多越好。可以是插画，风格抽象画作，表情包。
 
 可以从 [yande](https://yande.re/post) pixiv 获取数据集。[^10]
 
