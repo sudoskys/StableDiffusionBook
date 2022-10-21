@@ -532,6 +532,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#aesthetic-gradients" class="md-nav__link">
+    Aesthetic Gradients 美学权重
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_14" class="md-nav__link">
     方位调参
   </a>
@@ -1220,6 +1227,11 @@ PS：调太高步数(&gt;30)效果不会更好</p>
 <p>在同一模型和后端实现中，保持所有参数一致的情况下，相同的种子会产生同样的图片。取决于其他参数。</p>
 <p>但是注意，<strong>不同显卡可能会造成预料之外的不同结果</strong>（比如精度这样的东西）</p>
 <p>10xx 系列看起来与其他所有卡如此不同,见<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017#discussioncomment-3873467">这里</a></p>
+<h3 id="aesthetic-gradients">Aesthetic Gradients 美学权重</h3>
+<p>10/21/22 WebUi合并了这个 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2585">Pull</a>，提供了美学权重调节功能。</p>
+<p>此功能可以保持作品原始的总体构图，并提高美观度。在低精度提示词情况下也可以生成效果不错的作品。</p>
+<p>据暗影·夜光所言<sup id="fnref:11"><a class="footnote-ref" href="#fn:11">8</a></sup>，添加 25% 以内的权重，就可以稍微改善画面的美观度而不影响内容。</p>
+<p>注意：当种子改变时，训练结果也会改变。推荐在 Img2Img 中使用此项功能。</p>
 <h3 id="_14">方位调参</h3>
 <p>竖着看</p>
 <table>
@@ -2228,6 +2240,9 @@ scale 就是 CFG scale
 <li id="fn:10">
 <p><a href="https://www.bilibili.com/video/BV1xt4y1F7Y2/">角色与画风tag训练十问</a>&#160;<a class="footnote-backref" href="#fnref:10" title="Jump back to footnote 7 in the text">&#8617;</a></p>
 </li>
+<li id="fn:11">
+<p><a href="https://www.bilibili.com/read/cv19102552">WebUI即将引入重磅更新，大幅提升图像品质</a>&#160;<a class="footnote-backref" href="#fnref:11" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
 </ol>
 </div>
 
@@ -2236,11 +2251,11 @@ scale 就是 CFG scale
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 21, 2022 13:33:07</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 21, 2022 14:31:27</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 21, 2022 13:33:07</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 21, 2022 14:31:27</span>
       
     
   </small>
