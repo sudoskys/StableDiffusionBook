@@ -768,6 +768,7 @@ Hypernetworks 则会对超网络的改动，与 embeddings 不同，Hypernetwork
 
 [HuggingFace 的embeddings库](https://cyberes.github.io/stable-diffusion-textual-inversion-models/)
 
+
 ### Textual Inversion 自训练[^7]
 
 [英文:自己训练 embedding](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion#training-embeddings)
@@ -788,6 +789,7 @@ Hypernetworks 则会对超网络的改动，与 embeddings 不同，Hypernetwork
     如果作品不是公共版权，请获取授权再进行操作。
 
 
+
 #### 模型要求
 
 WebUi 应该是 Git 的最新版本。
@@ -803,6 +805,7 @@ WebUi 应该是 Git 的最新版本。
 不支持 `batch sizes` 和 `gradient accumulation`。
 
 不可能在 `--lowvram` and `--medvram` 参数下运行起来。
+
 
 #### 设置说明
 
@@ -887,6 +890,7 @@ Windows 需要在 `web-user.bat的COMMANDLINE_ARGS=` 一行添加，或者直接
 我们勾选 `Use deepbooru caption as filename` 和 `Create flipped copies`
 
 点击按钮，等待处理结束。
+
 
 #### 训练
 
