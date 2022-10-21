@@ -20,11 +20,6 @@
 [https://draw.dianas.cyou/](https://draw.dianas.cyou/)
 
 
-- 分流
-[https://stablediffusionbook.netlify.app/](https://stablediffusionbook.netlify.app/)
-
-
-
 ## Stable Diffusion 和 NAI 关系？我该怎么办？
 
 因为泄漏事件，NAI 使用数千万 Danbooru（图站）图片训练的模型被泄漏了两次，而后来 **Stable Diffusion WebUi(一个通用的生成框架)** 对模型进行了支持，所以可以 使用 WebUi（简称 SDWebUi）装载 NAI 的模型。
