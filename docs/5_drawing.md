@@ -484,7 +484,7 @@ Resize and fill：调整图像大小，使整个图像在目标分辨率内。�
 
 如果是真人图片，需要适当提高 `CFG Scale`。
 
-推荐使用DAZ 或者 blender 或者 Unity ，在对 3D 模型的测试中，**色彩主要影响 AI 的绘画效果**，所以你的模型需要有纹理。
+推荐使用 [DAZ](https://www.daz3d.com/get_studio) 或者 [blender](https://www.blender.org/) 或者 Unity ，在对 3D 模型的测试中，**色彩主要影响 AI 的绘画效果**，所以你的模型需要有纹理。
 
 不知道 VRchat 怎么样。
 
