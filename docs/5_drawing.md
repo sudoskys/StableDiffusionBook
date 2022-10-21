@@ -189,7 +189,7 @@ Nai 出图默认是一种风格，你可以通过 训练风格模型，指定风
 
 webui 突破 tag 75 个限制的方式是把 75 个分为一组。
 
-推荐主体往前放，接着描述装扮的词，画质提升词穿插在这些描述词之间，一般为了提高成品率要把动作、nsfw 词等改变构图的词往后放，或者手动调低权重（主要是为了防止ai强行凑动作导致肢体到处跑）。
+出于提高可读性的目地，推荐主体往前放，接着描述装扮的词，画质提升词穿插在这些描述词之间，一般为了提高成品率要把动作、nsfw 词等改变构图的词往后放，或者手动调低权重。
 
 以上排序是每组tag都要遵守的，所以如果后面的tag超过 75 了就应该把前面的分一部分过来。
 
@@ -302,7 +302,7 @@ normal quality, text, censored, gown, latex, pencil
 ```
 
 
-### 渐变
+### 渐变标签
 
 渐变标签，指示 WebUi 在训练中替换 Token，语法使用 `[some1:some2:num]`
 
@@ -341,7 +341,7 @@ normal quality, text, censored, gown, latex, pencil
 [LEXICA搜索引擎](https://lexica.art/?q=Miku)
 
 
-### **Prompt matrix 参数矩阵/要素混合**
+### Prompt matrix 参数矩阵/要素混合
 
 使用 | 分隔多个Tag，程序将为它们的每个组合生成一个图像。 例如，如果使用 `a busy city street in a modern city|illustration|cinematic lighting` ，则可能有四种组合（始终保留提示的第一部分）：
 
@@ -355,6 +355,26 @@ normal quality, text, censored, gown, latex, pencil
 `cat :2 | dog` 也就是更像猫的狗
 
 
+### 提示词处理
+
+咒语的科学原理。
+
+在程序中，提示词的解析由 CLIP 处理
+
+[WebUi的prompt_parser](https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/modules/prompt_parser.py) 实现了渐变等功能
+
+CLIP 无法处理中文，中文字符会被分解。
+
+**关于权重的实现**：权重增加通常会占一个提示词位。
+
+
+**关于渐变的实现**：到了指定 Step ，WebUi 程序会替换对应 提示词，达到渐变效果。
+
+其他以此类推。
+
+WebUi prompt 语法会转换为相应时间的 prompt,然后通过 embedding 交给 Ai 处理。
+
+
 ### 参数冲突(提示词)
 
 比如 `sex` 包含较多姿势体位，在使用者想要特定姿势时，法术内单一的 `sex` tag就应该被删除。
@@ -362,14 +382,14 @@ normal quality, text, censored, gown, latex, pencil
 同样地，`loli` Tag 附带了强画风属性，会很大地影响结果！改成 `female child` 会好一点。
 
 
+
 ### Step 迭代步数
 
 更多的迭代步数可能会有更好的生成效果，但是一定会导致生成时间变长。太多的 steps 也可能适得其反，几乎不会有提高。
 
 
+
 ### Samplers 采样器
-
-
 
 目前好用的有 `eular`，`eular a`，更细腻，和`Ddim`。
 
@@ -418,6 +438,8 @@ PS：调太高步数(>30)效果不会更好
 
 10xx 系列看起来与其他所有卡如此不同,见[这里](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017#discussioncomment-3873467)
 
+
+
 ###  方位调参
 
 竖着看
@@ -431,6 +453,7 @@ PS：调太高步数(>30)效果不会更好
 |状态|人物事件地|||
 |姿势位||||
 |镜头位||||
+
 
 
 ## 魔法进阶
@@ -462,6 +485,7 @@ WebUi 使用 `--gradio-img2img-tool color-sketch` 启动会带入一个插件对
 !!! tip "不同之处"
     PS 重新绘画投入 Img2Img 的话，会导致画风的变动，而 Inpaint 就不会。
 
+
 #### 横条参数
 
 **CFG Scale**
@@ -474,6 +498,7 @@ WebUi 使用 `--gradio-img2img-tool color-sketch` 启动会带入一个插件对
 
 对于以图做图来说，低 `denoising` 意味着修正原图，高 `denoising` 就和原图就没有大的相关性了。一般来讲阈值是 0.7 左右，超过 0.7 和原图基本上无关，0.3 以下就是稍微改一些。
 
+
 #### 图形参数
 
 Just resize : 将图像调整为目标分辨率。除非高度和宽度完全匹配，否则图片会被挤压
@@ -481,6 +506,7 @@ Just resize : 将图像调整为目标分辨率。除非高度和宽度完全匹
 Crop and resize：调整图像大小，使整个目标分辨率都被图像填充。裁剪多余部分。
 
 Resize and fill：调整图像大小，使整个图像在目标分辨率内。用图像的颜色填充空白区域。
+
 
 ###  Img2Img 三渲二
 
@@ -756,7 +782,7 @@ Hypernetworks 则会对超网络的改动，与 embeddings 不同，Hypernetwork
 
 数据集在保证质量和特征一致的情况下，如果算力允许，越多越好。
 
-可以从 [yande](yande.re) pixiv 获取数据集。[^10]
+可以从 [yande](https://yande.re/post) pixiv 获取数据集。[^10]
 
 !!! tip
     如果作品不是公共版权，请获取授权再进行操作。
