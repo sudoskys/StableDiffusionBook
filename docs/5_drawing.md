@@ -442,13 +442,15 @@ PS：调太高步数(>30)效果不会更好
 
 ### Aesthetic Gradients 美学权重
 
-10/21/22 WebUi合并了这个 [Pull](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2585)，提供了美学权重调节功能。
+来自这个 [存储库](https://github.com/vicgalle/stable-diffusion-aesthetic-gradients)
 
-此功能可以保持作品原始的总体构图，并提高美观度。在低精度提示词情况下也可以生成效果不错的作品。
+10/21/22 WebUi合并了这个 [Pull](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2585)，提供了美学权重调节功能。在 Img2Img 中使用此项功能。
+
+此功能可以保持作品原始的总体构图，并提高美观度。在低限制度提示词情况下也可以生成效果不错的作品。
 
 据暗影·夜光所言[^11]，添加 25% 以内的权重，就可以稍微改善画面的美观度而不影响内容。
 
-注意：当种子改变时，训练结果也会改变。推荐在 Img2Img 中使用此项功能。
+注意：当种子改变时，训练结果也会改变。
 
 
 ###  方位调参
