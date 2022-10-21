@@ -1504,6 +1504,8 @@ PS：调太高步数(&gt;30)效果不会更好</p>
 <p>Textual Inversion 训练为了 embeddings，embeddings 为 Ai 提供处理过的输入数据，告诉这个角色“具体是什么”，训练特殊的人物，角色会更好。</p>
 <p>Hypernetworks 则会对超网络的改动，与 embeddings 不同，Hypernetworks 会对模型进行微调，所以泛化效果更加好，训练画风会更好。</p>
 <p>关于 <a href="https://fangkaipeng.com/?p=2056#header-id-16">损失函数</a></p>
+<p>如果你在 <code>--medvram</code> 参数下开始训练，可能会出现 <code>RuntimeError: Expected all tensors to be on the same device</code> 错误，无法创建训练。
+这是优化机制导致的<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2399">问题</a>，只需要去除这个参数。</p>
 <h3 id="textual-inversion">Textual Inversion 训练新角色</h3>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion">官方英文说明和效果图</a></p>
 <p><code>Textual Inversion</code>允许你在自己的图片上训练一小部分神经网络，并在生成新图片时使用结果。可以数据集没有新出的角色画不出的问题，模仿特定的艺术风格。实际上是 NLP 中的即时调优。</p>
@@ -2262,11 +2264,11 @@ scale 就是 CFG scale
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 21, 2022 15:38:41</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 21, 2022 15:58:00</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 21, 2022 15:38:41</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 21, 2022 15:58:00</span>
       
     
   </small>
