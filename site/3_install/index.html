@@ -779,17 +779,17 @@ conda activate aidraw
 <h4 id="_8">时间花销过大</h4>
 <p>设镜像或者挂代理，<strong>依赖项 &gt;2GB</strong>,请做好准备，而且对于Windows,<strong>依赖默认安装在C盘</strong>！</p>
 <h4 id="cuda-out-of-memory">低显存显卡/CUDA out of memory</h4>
-<p>确保您拥有可以运行的最新CUDA 工具包和 GPU 驱动程序.</p>
+<p>确保你拥有可以运行的最新CUDA 工具包和 GPU 驱动程序.</p>
 <p>在具有少量 VRAM (&lt;=4GB) 的视频卡上运行时，可能会出现内存不足错误。可以通过命令行参数启用各种优化，牺牲一些/很多速度来支持使用更少的 VRAM：</p>
-<p>如果您有 4GB VRAM 并且想要制作 512x512（或者可能高达 640x640）的图像，请使用 <code>--medvram</code></p>
-<p>如果您有 4GB VRAM 并且想要制作 512x512 图像，但使用 <code>--medvram</code> 遇到内存不足错误 ，请改用<code>--medvram --opt-split-attention</code></p>
-<p>如果您有 4GB VRAM 并想要制作 512x512 图像，但仍然出现内存不足错误，请改用 <code>--lowvram --always-batch-cond-uncond --opt-split-attention</code></p>
-<p>如果您有 4GB VRAM 并且想要制作比您可以使用的更大的图像<code>--medvram</code>，请使用 <code>--lowvram --opt-split-attention</code></p>
-<p>如果您有更多的 VRAM 并且想要制作比您通常制作的更大的图像（例如 1024x1024 而不是 512x512），请使用<code>--medvram --opt-split-attention</code>.</p>
-<p>您也可以使用 <code>--lowvram</code> 但可能几乎看不到效果</p>
-<p>如果还不行，请勿使用其中任何一种。</p>
+<p>如果你有 4GB VRAM 并且想要制作 512x512（或者可能高达 640x640）的图像，请使用 <code>--medvram</code></p>
+<p>如果你有 4GB VRAM 并且想要制作 512x512 图像，但使用 <code>--medvram</code> 遇到内存不足错误 ，请改用<code>--medvram --opt-split-attention</code></p>
+<p>如果你有 4GB VRAM 并想要制作 512x512 图像，但仍然出现内存不足错误，请改用 <code>--lowvram --always-batch-cond-uncond --opt-split-attention</code></p>
+<p>如果你有 4GB VRAM 并且想要制作比你可以使用的更大的图像<code>--medvram</code>，请使用 <code>--lowvram --opt-split-attention</code></p>
+<p>如果你有更多的 VRAM 并且想要制作比你通常制作的更大的图像（例如 1024x1024 而不是 512x512），请使用<code>--medvram --opt-split-attention</code>.</p>
+<p>你也可以使用 <code>--lowvram</code> ，启动这个参数后，模型被分成模块，GPU内存中只保存一个模块； 当另一个模块需要运行时，前一个从 GPU 内存中删除，这种牺牲使处理运行速度大约慢 10 倍。 </p>
+<p>如果还不行....</p>
 <h4 id="python">我 Python 呢？</h4>
-<p>如果您的 Python 版本不在 PATH 中，则在文件夹中创建或修改 webui.settings.bat 添加行 <code>set PYTHON=python</code>来说明 Python 可执行文件的完整路径（请看下面的参数说明！</p>
+<p>如果你的 Python 版本不在 PATH 中，则在文件夹中创建或修改 webui.settings.bat 添加行 <code>set PYTHON=python</code>来说明 Python 可执行文件的完整路径（请看下面的参数说明！</p>
 <h4 id="_9">虚拟环境</h4>
 <p>如果你使用 conda 可以不使用一键脚本，可以自己运行 launch 安装依赖。</p>
 <p>因为仓库给出的一键安装脚本会创建虚拟环境，然后启动 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/launch.py">launch.py</a>。</p>
@@ -1083,11 +1083,11 @@ sudo systemctl restart docker
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 21, 2022 15:35:56</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 21, 2022 15:38:41</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 21, 2022 15:35:56</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 21, 2022 15:38:41</span>
       
     
   </small>
