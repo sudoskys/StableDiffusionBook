@@ -785,6 +785,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#aesthetic-gradients-embedding" class="md-nav__link">
+    训练 Aesthetic Gradients 美学权重 embedding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#hypernetworks" class="md-nav__link">
     训练 Hypernetworks
   </a>
@@ -1228,9 +1235,9 @@ PS：调太高步数(&gt;30)效果不会更好</p>
 <p>但是注意，<strong>不同显卡可能会造成预料之外的不同结果</strong>（比如精度这样的东西）</p>
 <p>10xx 系列看起来与其他所有卡如此不同,见<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017#discussioncomment-3873467">这里</a></p>
 <h3 id="aesthetic-gradients">Aesthetic Gradients 美学权重</h3>
-<p>来自这个 <a href="https://github.com/vicgalle/stable-diffusion-aesthetic-gradients">存储库</a></p>
-<p>10/21/22 WebUi合并了这个 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2585">Pull</a>，提供了美学权重调节功能。在 Img2Img 中使用此项功能。</p>
-<p>通过这项技术，你不需要通过过多修饰来提升图片的质量。此功能可以保持作品原始的总体构图，并提高美观度。在低限制度提示词情况下也可以生成效果不错的作品。</p>
+<p>提供 <code>我不说你应该懂往哪里训练</code> 的功能。</p>
+<p>此项功能来自这个 <a href="https://github.com/vicgalle/stable-diffusion-aesthetic-gradients">存储库</a>，在 10/21/22 WebUi合并了这个 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2585">Pull</a>，正式提供了美学权重调节功能。</p>
+<p>你可以在 Img2Img 中使用此项功能，通过这项技术，你不需要通过 过多提示词 来提升图片的质量，而是保持作品原始的总体构图，并提高美观度。在少量提示词情况下也可以生成效果不错的作品。</p>
 <p>据暗影·夜光所言<sup id="fnref:11"><a class="footnote-ref" href="#fn:11">8</a></sup>，添加 25% 以内的权重，就可以稍微改善画面的美观度而不影响内容。</p>
 <p>注意：当种子改变时，训练结果也会改变。</p>
 <h3 id="_14">方位调参</h3>
@@ -1619,10 +1626,10 @@ PS：调太高步数(&gt;30)效果不会更好</p>
 <p>关键在于 Loss 率，Loss 10 轮不降低就可以停止了。</p>
 <p>如果Loss大于 0.3 ，效果就不是很好</p>
 </div>
-<p>如果太多会过拟合(可以理解为Ai的死板)</p>
-<p>随时观察，如果过拟合，可以停止。如果效果不是很好，可以去找早些时候的模型继续训练。<strong>不断调整</strong>找到一个好的效果。</p>
+<p>如果太多会过拟合(可以理解为Ai的死板)，请随时观察，如果过拟合，可以停止。如果效果不是很好，可以去找早些时候的模型继续训练。<strong>不断调整</strong>找到一个好的效果。</p>
+<p><code>Save images with embedding in PNG chunks</code> 是生成一个图片形式的 pt 文件。~人物卡~</p>
 <div class="admonition danger">
-<p class="admonition-title">重命名 VAE 文件</p>
+<p class="admonition-title">等一下！ VAE 文件</p>
 <p>重命名VAE模型文件非常关键，或者确定你已经设置里打开 <code>auto unload</code>。</p>
 <p>如果带着VAE训练效果十分差。</p>
 </div>
@@ -1647,6 +1654,9 @@ PS：调太高步数(&gt;30)效果不会更好</p>
 <p>训练的结果是一个 .pt 或一个 .bin 文件（前者是原作者使用的格式，后者作为 diffusers library）</p>
 <iframe src="//player.bilibili.com/player.html?aid=559085039&bvid=BV1ae4y1S7v9&cid=859894044&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 
+<h3 id="aesthetic-gradients-embedding">训练 Aesthetic Gradients 美学权重 embedding</h3>
+<p>Source directory 填数据源文件夹地址。</p>
+<p>生成的embedding在models文件夹里面。</p>
 <h3 id="hypernetworks">训练 Hypernetworks</h3>
 <p>Hypernetworks 是一种新颖的概念，用于在不触及任何权重的情况下微调模型。</p>
 <p>你可以在 <code>Textual Inversion</code> <code>train</code> 选项卡训练 <code>Hypernetworks</code></p>
@@ -2252,11 +2262,11 @@ scale 就是 CFG scale
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 21, 2022 15:19:27</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 21, 2022 15:35:56</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 21, 2022 15:19:27</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 21, 2022 15:35:56</span>
       
     
   </small>
