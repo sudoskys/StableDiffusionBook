@@ -792,6 +792,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#activation-functions" class="md-nav__link">
+    激活函数 activation functions
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1618,6 +1625,13 @@ PS：调太高步数(&gt;30)效果不会更好</p>
 <h4 id="add-layer-normalization">Add layer normalization</h4>
 <p>If checked, add layer normalization after every fully connected layer.</p>
 <p>防止超网络过拟合，使训练更加稳定。</p>
+<h4 id="activation-functions">激活函数 activation functions</h4>
+<p>关于<a href="https://www.geeksforgeeks.org/activation-functions-neural-networks/">激活函数</a></p>
+<p>激活函数是神经网络中非线性的来源。如果去掉激活函数，神经网络的权重和偏差只会进行线性变换(不管神经网络有多少层，线性运算的复合还是线性运算的)，最终的效果只相当于单层的线性模型。</p>
+<p>激活函数对输入进行非线性变换，使其能够学习和执行更复杂的任务，深层神经网络表达能力更加强大。</p>
+<p>在 10/21/22 的一个 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3199">合并请求</a> 中，这项功能被 discus0434 提出。</p>
+<p>支持 relu、leakyrelu 和 linear 。选择 linear(线性) 的效果和没有激活函数一样。</p>
+<p>一般来说relu用的最多。</p>
 <p><a href="https://rentry.org/hypernetwork4dumdums">应该查看的英文指南</a></p>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2670">相关的英文讨论</a></p>
 <p><img alt="hypernet对比图" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/exp_hypernet.jpg" /></p>
@@ -2202,11 +2216,11 @@ scale 就是 CFG scale
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 21, 2022 07:08:24</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 21, 2022 07:30:12</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 21, 2022 07:08:24</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 21, 2022 07:30:12</span>
       
     
   </small>
