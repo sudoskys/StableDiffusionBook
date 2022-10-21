@@ -425,7 +425,6 @@ PS：调太高步数(>30)效果不会更好
 >不同 step 和 采样器 的不同效果
 
 
-
 ### 种子调试
 
 实际的种子整数并不重要。它只是初始化一个定义扩散起点的随机数生成器，是一个随机初始值。
@@ -440,6 +439,16 @@ PS：调太高步数(>30)效果不会更好
 
 10xx 系列看起来与其他所有卡如此不同,见[这里](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017#discussioncomment-3873467)
 
+
+### Aesthetic Gradients 美学权重
+
+10/21/22 WebUi合并了这个 [Pull](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2585)，提供了美学权重调节功能。
+
+此功能可以保持作品原始的总体构图，并提高美观度。在低精度提示词情况下也可以生成效果不错的作品。
+
+据暗影·夜光所言[^11]，添加 25% 以内的权重，就可以稍微改善画面的美观度而不影响内容。
+
+注意：当种子改变时，训练结果也会改变。推荐在 Img2Img 中使用此项功能。
 
 
 ###  方位调参
@@ -1284,3 +1293,5 @@ Clip 跳过 0，其他一切都很好（afaik 不要使用超网络、v2、yaml�
 [^9]:[交替单词](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/1733)
 
 [^10]:[角色与画风tag训练十问](https://www.bilibili.com/video/BV1xt4y1F7Y2/)
+
+[^11]:[WebUI即将引入重磅更新，大幅提升图像品质](https://www.bilibili.com/read/cv19102552)

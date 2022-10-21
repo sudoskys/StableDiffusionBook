@@ -56,6 +56,20 @@ NAI 是一个在线**服务**。
 以下是新闻和测试内容。
 
 -------
+- 10/21 更新
+
+Implementation of Stable Diffusion with Aesthetic Gradients 美学权重
+
+https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2585
+
+-------
+- 10/20 更新
+
+激活函数
+
+https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3199
+
+-------
 - 10/19 更新
 
 各种模型链接正在失效，有余力可以分流备链。
