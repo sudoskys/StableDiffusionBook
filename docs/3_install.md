@@ -181,28 +181,28 @@ HTTP_PROXY 和 HTTPS_PROXY 环境变量，或者使用 clash 的tun模式. 或�
 
 #### 低显存显卡/CUDA out of memory
 
-确保您拥有可以运行的最新CUDA 工具包和 GPU 驱动程序.
+确保你拥有可以运行的最新CUDA 工具包和 GPU 驱动程序.
 
 在具有少量 VRAM (<=4GB) 的视频卡上运行时，可能会出现内存不足错误。可以通过命令行参数启用各种优化，牺牲一些/很多速度来支持使用更少的 VRAM：
 
-如果您有 4GB VRAM 并且想要制作 512x512（或者可能高达 640x640）的图像，请使用 `--medvram`
+如果你有 4GB VRAM 并且想要制作 512x512（或者可能高达 640x640）的图像，请使用 `--medvram`
 
-如果您有 4GB VRAM 并且想要制作 512x512 图像，但使用 `--medvram` 遇到内存不足错误 ，请改用`--medvram --opt-split-attention`
+如果你有 4GB VRAM 并且想要制作 512x512 图像，但使用 `--medvram` 遇到内存不足错误 ，请改用`--medvram --opt-split-attention`
 
-如果您有 4GB VRAM 并想要制作 512x512 图像，但仍然出现内存不足错误，请改用 `--lowvram --always-batch-cond-uncond --opt-split-attention`
+如果你有 4GB VRAM 并想要制作 512x512 图像，但仍然出现内存不足错误，请改用 `--lowvram --always-batch-cond-uncond --opt-split-attention`
 
-如果您有 4GB VRAM 并且想要制作比您可以使用的更大的图像`--medvram`，请使用 `--lowvram --opt-split-attention`
+如果你有 4GB VRAM 并且想要制作比你可以使用的更大的图像`--medvram`，请使用 `--lowvram --opt-split-attention`
 
-如果您有更多的 VRAM 并且想要制作比您通常制作的更大的图像（例如 1024x1024 而不是 512x512），请使用`--medvram --opt-split-attention`.
+如果你有更多的 VRAM 并且想要制作比你通常制作的更大的图像（例如 1024x1024 而不是 512x512），请使用`--medvram --opt-split-attention`.
 
-您也可以使用 `--lowvram` 但可能几乎看不到效果
+你也可以使用 `--lowvram` ，启动这个参数后，模型被分成模块，GPU内存中只保存一个模块； 当另一个模块需要运行时，前一个从 GPU 内存中删除，这种牺牲使处理运行速度大约慢 10 倍。 
 
 如果还不行，请勿使用其中任何一种。
 
 
 #### 我 Python 呢？
 
-如果您的 Python 版本不在 PATH 中，则在文件夹中创建或修改 webui.settings.bat 添加行 `set PYTHON=python `来说明 Python 可执行文件的完整路径（请看下面的参数说明！
+如果你的 Python 版本不在 PATH 中，则在文件夹中创建或修改 webui.settings.bat 添加行 `set PYTHON=python `来说明 Python 可执行文件的完整路径（请看下面的参数说明！
 
 
 #### 虚拟环境
