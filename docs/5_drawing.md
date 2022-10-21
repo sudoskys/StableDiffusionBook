@@ -125,12 +125,6 @@
 
 [为文字转图像Ai提示编写指南：A Guide to Writing Prompts for Text-to-image AI](https://docs.google.com/document/d/1XUT2G9LmkZataHFzmuOtRXnuWBfhvXDAo8DkS--8tec/edit#)
 
-**风格化**
-
-Nai 出图默认是一种风格，你可以通过 训练风格模型，指定风格关键词等方法来创作带有特效或指定画风的图片。
-
-[人偶教室的测试记录](https://www.yuque.com/longyuye/lmgcwy)
-
 **书写长度**
 
 - 提示不要太长，超过 100 就有失败风险。
@@ -176,6 +170,14 @@ caustics, masterpiece, high resolution,
 以上顺序已经比较合理，但是你也可以调整提示词的顺序以产生不同的结果。 你可以手动调整，也可以 [使用 X/Y 图自动生成各种顺序](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/1607)
 
 Ai 难以解析下划线，请少用。
+
+**风格化**
+
+Nai 出图默认是一种风格，你可以通过 训练风格模型，指定风格关键词等方法来创作带有特效或指定画风的图片。
+
+[NovelAI使用教程和魔咒课堂](https://space.bilibili.com/8612008/channel/collectiondetail?sid=787691)
+
+[人偶教室的测试记录](https://www.yuque.com/longyuye/lmgcwy)
 
 ### 调序编译
 
