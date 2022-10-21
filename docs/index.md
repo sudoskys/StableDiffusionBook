@@ -19,6 +19,7 @@
 - 别名
 [https://draw.dianas.cyou/](https://draw.dianas.cyou/)
 
+>图片托管在Github,如果不能访问图片，请切换网络环境。
 
 ## Stable Diffusion 和 NAI 关系？我该怎么办？
 
