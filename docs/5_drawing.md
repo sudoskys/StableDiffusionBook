@@ -357,6 +357,7 @@ normal quality, text, censored, gown, latex, pencil
 ### 提示词处理
 
 咒语的科学原理。
+
 ![prompt_draw](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/prompt_draw_fix.png)
 >By RcINS
 
