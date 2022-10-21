@@ -990,6 +990,20 @@ If checked, add layer normalization after every fully connected layer.
 
 防止超网络过拟合，使训练更加稳定。
 
+#### 激活函数 activation functions
+
+关于[激活函数](https://www.geeksforgeeks.org/activation-functions-neural-networks/)
+
+激活函数是神经网络中非线性的来源。如果去掉激活函数，神经网络的权重和偏差只会进行线性变换(不管神经网络有多少层，线性运算的复合还是线性运算的)，最终的效果只相当于单层的线性模型。
+
+激活函数对输入进行非线性变换，使其能够学习和执行更复杂的任务，深层神经网络表达能力更加强大。
+
+在 10/21/22 的一个 [合并请求](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3199) 中，这项功能被 discus0434 提出。
+
+支持 relu、leakyrelu 和 linear 。选择 linear(线性) 的效果和没有激活函数一样。
+
+一般来说relu用的最多。
+
 
 [应该查看的英文指南](https://rentry.org/hypernetwork4dumdums)
 
