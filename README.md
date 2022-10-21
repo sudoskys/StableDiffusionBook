@@ -15,15 +15,14 @@
 
 欢迎互动～
 
+访问: https://draw.dianas.cyou/
 
 ## 分流地址
+
 
 - Vercel 部署/国内不可用
 
 https://stable-diffusion-book.vercel.app/  短链为(https://b23.ink/aibook)
-
-- 别名
-https://draw.dianas.cyou/
 
 
 ## 帮助改进
