@@ -13,12 +13,16 @@
 
 ## 分流地址
 
-- Vercel 部署
+- Vercel 部署主域名(国内不可用)
 [https://stable-diffusion-book.vercel.app/](https://stable-diffusion-book.vercel.app/) 
 
 短链为(https://b23.ink/aibook)
 
-- 国内可用分流
+- 别名
+[https://ai.dianas.cyou/](https://ai.dianas.cyou/)
+
+
+- 分流
 [https://stablediffusionbook.netlify.app/](https://stablediffusionbook.netlify.app/)
 
 
