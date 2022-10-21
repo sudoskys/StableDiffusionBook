@@ -442,12 +442,11 @@ PS：调太高步数(>30)效果不会更好
 
 ### Aesthetic Gradients 美学权重
 
-来自这个 [存储库](https://github.com/vicgalle/stable-diffusion-aesthetic-gradients)
+提供 `我不说你应该懂往哪里训练` 的功能。
 
-10/21/22 WebUi合并了这个 [Pull](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2585)，提供了美学权重调节功能。在 Img2Img 中使用此项功能。
+此项功能来自这个 [存储库](https://github.com/vicgalle/stable-diffusion-aesthetic-gradients)，在 10/21/22 WebUi合并了这个 [Pull](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2585)，正式提供了美学权重调节功能。
 
-通过这项技术，你不需要通过过多修饰来提升图片的质量。此功能可以保持作品原始的总体构图，并提高美观度。在低限制度提示词情况下也可以生成效果不错的作品。
-
+你可以在 Img2Img 中使用此项功能，通过这项技术，你不需要通过 过多提示词 来提升图片的质量，而是保持作品原始的总体构图，并提高美观度。在少量提示词情况下也可以生成效果不错的作品。
 
 据暗影·夜光所言[^11]，添加 25% 以内的权重，就可以稍微改善画面的美观度而不影响内容。
 
@@ -964,11 +963,11 @@ Windows 需要在 `web-user.bat的COMMANDLINE_ARGS=` 一行添加，或者直接
 
     如果Loss大于 0.3 ，效果就不是很好
 
-如果太多会过拟合(可以理解为Ai的死板)
+如果太多会过拟合(可以理解为Ai的死板)，请随时观察，如果过拟合，可以停止。如果效果不是很好，可以去找早些时候的模型继续训练。**不断调整**找到一个好的效果。
 
-随时观察，如果过拟合，可以停止。如果效果不是很好，可以去找早些时候的模型继续训练。**不断调整**找到一个好的效果。
+`Save images with embedding in PNG chunks` 是生成一个图片形式的 pt 文件。~人物卡~
 
-!!! danger "重命名 VAE 文件"
+!!! danger "等一下！ VAE 文件"
     重命名VAE模型文件非常关键，或者确定你已经设置里打开 `auto unload`。
     
     如果带着VAE训练效果十分差。
@@ -1014,6 +1013,12 @@ Windows 需要在 `web-user.bat的COMMANDLINE_ARGS=` 一行添加，或者直接
 
 <iframe src="//player.bilibili.com/player.html?aid=559085039&bvid=BV1ae4y1S7v9&cid=859894044&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 
+### 训练 Aesthetic Gradients 美学权重 embedding
+
+
+Source directory 填数据源文件夹地址。
+
+生成的embedding在models文件夹里面。
 
 ### 训练 Hypernetworks
 

@@ -334,7 +334,14 @@ set COMMANDLINE_ARGS设置命令行参数webui.py运行
 | `--always-batch-cond-uncond`    | 禁用上述优化。只有与`--medvram`或`--lowvram`一起使用才有意义 |
 | `--opt-channelslast`            | 更改 torch 内存类型，以稳定扩散到最后一个通道,效果没有仔细研究。|
 
+#### 本地化
 
+本地化作为单个 `.json` 文件提供。 将此文件放入 `localizations` 目录并在设置中选择即可。
+
+
+**创建本地化文件**
+
+转到设置并单击 `Download localization template` 底部的按钮，下载一个可以编辑的本地化模板。 
 
 #### 令牌参数生成第一幅图片
 
