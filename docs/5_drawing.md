@@ -750,13 +750,14 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-edi
 
 ## 自训练
 
-
-
 Textual Inversion 训练为了 embeddings，embeddings 为 Ai 提供处理过的输入数据，告诉这个角色“具体是什么”，训练特殊的人物，角色会更好。
 
 Hypernetworks 则会对超网络的改动，与 embeddings 不同，Hypernetworks 会对模型进行微调，所以泛化效果更加好，训练画风会更好。
 
 关于 [损失函数](https://fangkaipeng.com/?p=2056#header-id-16)
+
+如果你在 `--medvram` 参数下开始训练，可能会出现 `RuntimeError: Expected all tensors to be on the same device` 错误，无法创建训练。
+这是优化机制导致的[问题](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2399)，只需要去除这个参数。
 
 
 ### Textual Inversion 训练新角色
