@@ -19,7 +19,7 @@
 短链为(https://b23.ink/aibook)
 
 - 别名
-[https://ai.dianas.cyou/](https://ai.dianas.cyou/)
+[https://draw.dianas.cyou/](https://draw.dianas.cyou/)
 
 
 - 分流

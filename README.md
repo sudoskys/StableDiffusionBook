@@ -23,7 +23,7 @@
 https://stable-diffusion-book.vercel.app/  短链为(https://b23.ink/aibook)
 
 - 别名
-https://ai.dianas.cyou/
+https://draw.dianas.cyou/
 
 - 分流
 https://stablediffusionbook.netlify.app/
