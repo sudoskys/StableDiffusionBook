@@ -7,13 +7,6 @@
 
 这里是相关的社区资源
 
-### 服务
-<!--
-    バグ報告、提案、PRはここまでお願いします。
-    https://naisd5ch.github.io/novel-ai-5ch-wiki-js/
--->
-<link href="https://naisd5ch.github.io/novel-ai-5ch-wiki-js/src/prompt-table.css" rel="stylesheet">
-<script src="https://naisd5ch.github.io/novel-ai-5ch-wiki-js/src/prompt-table.js"></script>
 
 ### 文档
 
@@ -85,6 +78,7 @@
 
 - [参数转换-M2NM2NBot](https://t.me/M2NM2NBot)
 
+- [参数转换 - Js项目](https://naisd5ch.github.io/novel-ai-5ch-wiki-js/)
 
 ### embeddings
 
