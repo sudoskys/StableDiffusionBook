@@ -16,7 +16,7 @@
 - Vercel 部署主域名(国内不可用)
 [https://stable-diffusion-book.vercel.app/](https://stable-diffusion-book.vercel.app/) 短链为(https://b23.ink/aibook)
 
-- 别名
+- 别名(国内可用)
 [https://draw.dianas.cyou/](https://draw.dianas.cyou/)
 
 >图片托管在Github,如果不能访问图片，请切换网络环境。
