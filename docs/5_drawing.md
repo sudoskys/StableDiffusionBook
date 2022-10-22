@@ -442,7 +442,7 @@ PS：调太高步数(>30)效果不会更好
 
 ### Aesthetic Gradients 美学权重
 
-提供 `我不说你应该懂往哪里训练` 的功能。
+提供 `我不说你应该懂往哪里训练` 的功能。让ai理解图片，调整并增加细节。
 
 此项功能来自这个 [存储库](https://github.com/vicgalle/stable-diffusion-aesthetic-gradients)，在 10/21/22 WebUi合并了这个 [Pull](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2585)，正式提供了美学权重调节功能。
 
@@ -451,6 +451,13 @@ PS：调太高步数(>30)效果不会更好
 据暗影·夜光所言[^11]，添加 25% 以内的权重，就可以稍微改善画面的美观度而不影响内容。
 
 注意：当种子改变时，训练结果也会改变。
+
+训练这项模型很快，但是在每一次生产时都会重新为图片计算一次，所以很慢！
+
+美学 与 Hypernetworks 让 Ai 作品更接近原画师风格，但是美学权重本身效果并不好。需要配合 Hypernetworks 超网络。
+
+![Aesthetic_other](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/Aesthetic_other.png)
+
 
 
 ###  方位调参
