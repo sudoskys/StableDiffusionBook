@@ -223,7 +223,6 @@ HTTP_PROXY 和 HTTPS_PROXY 环境变量，或者使用 clash 的tun模式. 或�
 
 
 
-
 ### 启动(但是必须首先下载一个4GB模型)
 
 如果你运行报错，请读前面的自救提示。
@@ -312,9 +311,10 @@ set COMMANDLINE_ARGS设置命令行参数webui.py运行
 
 *GPU指定*
 
-例如 `CUDA_VISIBLE_DEVICES=1 python launch.py​​ --listen --port 7861`
+选择要使用的默认Gpu `--device-id 0`，来代替旧版本的 `CUDA_VISIBLE_DEVICES=0`，可以选择第二个 GPU 允许同时运行两个实例，从而能够以更简洁的方式简单地选择设备。
 
-在 WebUi 支持多 GPU 之前，你可以使用这种方法运行多个实例
+查看 GPU 序号，可以使用 `nvidia-smi`
+
 
 **优化命令参数**
 
