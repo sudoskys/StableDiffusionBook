@@ -8,6 +8,7 @@
 
 如果需要中文的标签参考，请看[调参魔法书](https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml)和 [手抄魔法本](https://docs.google.com/spreadsheets/d/14Gg1kIGWdZGXyCC8AgYVT0lqI6IivLzZOdIT3QMWwVI/)
 
+如果你习惯使用日语，也可以在 [日语Wiki](https://seesaawiki.jp/nai_ch/d/%be%ec%bd%ea%a1%a6%c7%d8%b7%ca) 中进行检索。
 
 如果你觉得查表很麻烦，可以打开 [Danbooru 标签超市](https://tags.novelai.dev/),[项目地址](https://github.com/wfjsw/danbooru-diffusion-prompt-builder) 或者[AI绘画tag生成器](https://aitag.top/)(后者不支持负面Tag)
 
@@ -564,6 +565,10 @@ Resize and fill：调整图像大小，使整个图像在目标分辨率内。�
 >一张图片[^5]展现WebUI下img2img中不同参数下效果的详细对比图（prompt、steps、scale、各种seed等参数均保持一致）
 
 纵轴是Denoising strength（线上版的strength），横轴是Variation strength
+
+#### 关于差分
+
+如果你想了解一些差分的实例，[5CH日语Wiki](https://seesaawiki.jp/nai_ch/d/%c7%ed%a4%ae%a5%b3%a5%e9%a5%c6%a5%af) 提供了一个实例。
 
 
 #### 重绘画技巧/去除/替换
@@ -1162,7 +1167,10 @@ Clip 跳过 0，其他一切都很好（afaik 不要使用超网络、v2、yaml�
 ```
 {an extremely delicate and beautiful}
 ```
+
 [风格化：人偶教室](https://www.yuque.com/longyuye/lmgcwy)
+
+[风格化，日语Wiki](https://seesaawiki.jp/nai_ch/d/%b2%e8%c9%f7%a1%a6%b9%bd%bf%de)
 
 #### 草图风格
 

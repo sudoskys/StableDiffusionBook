@@ -7,6 +7,13 @@
 
 这里是相关的社区资源
 
+### 服务
+<!--
+    バグ報告、提案、PRはここまでお願いします。
+    https://naisd5ch.github.io/novel-ai-5ch-wiki-js/
+-->
+<link href="https://naisd5ch.github.io/novel-ai-5ch-wiki-js/src/prompt-table.css" rel="stylesheet">
+<script src="https://naisd5ch.github.io/novel-ai-5ch-wiki-js/src/prompt-table.js"></script>
 
 ### 文档
 
