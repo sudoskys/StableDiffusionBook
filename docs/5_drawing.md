@@ -442,11 +442,19 @@ PS：调太高步数(>30)效果不会更好
 
 ### Aesthetic Gradients 美学权重
 
-New：在 [这次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/2b91251637078e04472c91a06a8d9c4db9c1dcf0) 中，仓库移除了这项内容
 
 提供 `我不说你应该懂往哪里训练` 的功能。让ai理解图片，调整并增加细节。
 
-此项功能来自这个 [存储库](https://github.com/vicgalle/stable-diffusion-aesthetic-gradients)，在 10/21/22 WebUi合并了这个 [Pull](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2585)，正式提供了美学权重调节功能。
+此项功能来自这个 [存储库](https://github.com/vicgalle/stable-diffusion-aesthetic-gradients)，在 [这次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/2b91251637078e04472c91a06a8d9c4db9c1dcf0) 中，仓库移除了这项内容。
+
+这项功能被剥离为插件。你可以使用 Git 安装它
+
+```commandline
+git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients extensions/aesthetic-gradients
+```
+
+安装后确认 webui 的 `extensions` 文件夹下面有 `aesthetic-gradients` 文件夹
+
 
 你可以在 Img2Img 中使用此项功能，通过这项技术，你不需要通过 过多提示词 来提升图片的质量，而是保持作品原始的总体构图，并提高美观度。在少量提示词情况下也可以生成效果不错的作品。
 

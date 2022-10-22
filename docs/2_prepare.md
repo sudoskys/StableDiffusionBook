@@ -58,7 +58,10 @@ NAI 是一个在线**服务**。
 -------
 - 10/22 更新
 
-在 [这次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/2b91251637078e04472c91a06a8d9c4db9c1dcf0) 中，仓库移除了美学权重
+在 [这次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/2b91251637078e04472c91a06a8d9c4db9c1dcf0) 中，仓库移除了美学权重。
+
+这项功能已经被转为 插件。
+
 
 -------
 - 10/21 更新
