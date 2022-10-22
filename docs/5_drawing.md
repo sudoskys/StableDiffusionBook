@@ -442,6 +442,8 @@ PS：调太高步数(>30)效果不会更好
 
 ### Aesthetic Gradients 美学权重
 
+New：在 [这次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/2b91251637078e04472c91a06a8d9c4db9c1dcf0) 中，仓库移除了这项内容
+
 提供 `我不说你应该懂往哪里训练` 的功能。让ai理解图片，调整并增加细节。
 
 此项功能来自这个 [存储库](https://github.com/vicgalle/stable-diffusion-aesthetic-gradients)，在 10/21/22 WebUi合并了这个 [Pull](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2585)，正式提供了美学权重调节功能。
