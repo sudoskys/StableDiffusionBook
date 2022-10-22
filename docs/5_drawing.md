@@ -1161,6 +1161,8 @@ Clip 跳过 0，其他一切都很好（afaik 不要使用超网络、v2、yaml�
 
 在 NAI 和 Webui 之间转换加强参数，相关的机器人服务 [M2NM2NBot](https://t.me/M2NM2NBot)
 
+相关的 [网页JS](https://github.com/naisd5ch/novel-ai-5ch-wiki-js)
+
 权重增强标识：NAI 是 `{}` ，WebUi(SD) 是 `()`
 
 
