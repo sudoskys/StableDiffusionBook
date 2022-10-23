@@ -576,6 +576,27 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#xy" class="md-nav__link">
+    X/Y 图
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variations" class="md-nav__link">
+    Variations种子变化
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    提示词模板
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#xformers" class="md-nav__link">
     xformers
   </a>
@@ -605,27 +626,6 @@
           <li class="md-nav__item">
   <a href="#cpu" class="md-nav__link">
     使用CPU进行绘画
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#xy" class="md-nav__link">
-    X/Y 图
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#variations" class="md-nav__link">
-    Variations种子变化
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
-    提示词模板
   </a>
   
 </li>
@@ -1010,6 +1010,32 @@ print(torch.cuda.is_available())
 <p>设置 <code>Stop At last layers of CLIP model</code> 是为了匹配 NAI 的一个<a href="https://blog.novelai.net/novelai-improvements-on-stable-diffusion-e10d38db82ac">优化</a>。</p>
 <h3 id="_12">半精度还是单精度？</h3>
 <p>如果能，尽量使用半精度，可以节省运算时间/RAM/VRAM，同时图片质量并不会和单精度差多少。~真要说差别可能和你电脑被宇宙射线打了差不多~。</p>
+<h3 id="xy">X/Y 图</h3>
+<p>创建具有不同参数的图像网格。使用X类型和Y类型字段选择应由行和列共享的参数，并将这些参数以逗号分隔输入X值/Y值字段。支持整数、浮点数和范围。</p>
+<p>Simple ranges 简单范围</p>
+<div class="highlight"><pre><span></span><code>1-5 = 1, 2, 3, 4, 5
+</code></pre></div>
+<p>Ranges with increment in bracket 括号范围</p>
+<div class="highlight"><pre><span></span><code>1-5 (+2) = 1, 3, 5
+10-5 (-3) = 10, 7
+1-3 (+0.5) = 1, 1.5, 2, 2.5, 3
+</code></pre></div>
+<p>Ranges with the count in square brackets 方括号范围</p>
+<div class="highlight"><pre><span></span><code>1-10 [5] = 1, 3, 5, 7, 10
+0.0-1.0 [6] = 0.0, 0.2, 0.4, 0.6, 0.8, 1.0
+</code></pre></div>
+<p>设置截图</p>
+<p><img alt="引用官方 Wiki 的设置图" src="https://raw.githubusercontent.com/wiki/AUTOMATIC1111/stable-diffusion-webui/images/xy_grid-medusa-ui.png" /></p>
+<blockquote>
+<p>引用官方 Wiki 的设置图</p>
+</blockquote>
+<h3 id="variations"><strong>Variations种子变化</strong></h3>
+<p>Variation strength slider 和 Variation seed field 允许您指定现有图片应更改多少以使其看起来不同。
+在最大强度下，您将获得带有变异种子的图片，至少 - 带有原始种子的图片（使用先前采样器时除外）。</p>
+<h3 id="_13"><strong>提示词模板</strong></h3>
+<p>“Save prompt as style” 按钮将当前的提示写入 styles.csv，该文件包含样式集合</p>
+<p>提示右侧的下拉框将允许您从以前保存的样式中选择任何样式，并自动将其<strong>附加</strong>到输入中</p>
+<p>要删除样式，请从 styles.csv 中手动将其删除并重新启动程序。</p>
 <h3 id="xformers">xformers</h3>
 <p>xformers 分辨率越高加速效果越好。使用 xformers 会引入一些随机性，稍微影响生成的图像。</p>
 <p>要启用，如果你是 Pascal、Turing 或者 Ampere 架构的卡（包括 GTX 1000，RTX 2000、3000 系列），添加 <code>--xformers</code> 参数到 <code>webui-user.bat</code> 中的 <code>COMMANDLINE_ARGS</code>。</p>
@@ -1113,33 +1139,7 @@ pip install xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl
 <p>自己编译指路 <a href="https://rentry.org/sdg_faq#xformers-increase-your-its-more-cards-supported">wiki/Xformers</a> 还有 <a href="https://www.reddit.com/r/StableDiffusion/comments/xz26lq/automatic1111_xformers_cross_attention_with_on/">这个 Post</a></p>
 <h3 id="cpu">使用CPU进行绘画</h3>
 <p>根据此 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2597">pr</a></p>
-<p>可以通过 <code>--use-cpu all</code> 尽可能的使用CPU进行生成</p>
-<h3 id="xy">X/Y 图</h3>
-<p>创建具有不同参数的图像网格。使用X类型和Y类型字段选择应由行和列共享的参数，并将这些参数以逗号分隔输入X值/Y值字段。支持整数、浮点数和范围。</p>
-<p>Simple ranges 简单范围</p>
-<div class="highlight"><pre><span></span><code>1-5 = 1, 2, 3, 4, 5
-</code></pre></div>
-<p>Ranges with increment in bracket 括号范围</p>
-<div class="highlight"><pre><span></span><code>1-5 (+2) = 1, 3, 5
-10-5 (-3) = 10, 7
-1-3 (+0.5) = 1, 1.5, 2, 2.5, 3
-</code></pre></div>
-<p>Ranges with the count in square brackets 方括号范围</p>
-<div class="highlight"><pre><span></span><code>1-10 [5] = 1, 3, 5, 7, 10
-0.0-1.0 [6] = 0.0, 0.2, 0.4, 0.6, 0.8, 1.0
-</code></pre></div>
-<p>设置截图</p>
-<p><img alt="引用官方 Wiki 的设置图" src="https://raw.githubusercontent.com/wiki/AUTOMATIC1111/stable-diffusion-webui/images/xy_grid-medusa-ui.png" /></p>
-<blockquote>
-<p>引用官方 Wiki 的设置图</p>
-</blockquote>
-<h3 id="variations"><strong>Variations种子变化</strong></h3>
-<p>Variation strength slider 和 Variation seed field 允许您指定现有图片应更改多少以使其看起来不同。
-在最大强度下，您将获得带有变异种子的图片，至少 - 带有原始种子的图片（使用先前采样器时除外）。</p>
-<h3 id="_13"><strong>提示词模板</strong></h3>
-<p>“Save prompt as style” 按钮将当前的提示写入 styles.csv，该文件包含样式集合</p>
-<p>提示右侧的下拉框将允许您从以前保存的样式中选择任何样式，并自动将其<strong>附加</strong>到输入中</p>
-<p>要删除样式，请从 styles.csv 中手动将其删除并重新启动程序。</p>
+<p>可以通过 <code>--use-cpu all</code> 尽可能的使用CPU进行生成，虽然慢 100 倍。</p>
 <h3 id="clip-interrogate">CLIP Interrogate</h3>
 <p>CLIP 可以从图像中提取令牌。</p>
 <p>默认情况下，只有一个列表 - 艺术家列表（来自artists.csv）。</p>
@@ -1205,11 +1205,11 @@ pip install xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 23, 2022 05:54:24</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 23, 2022 05:58:04</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 23, 2022 05:54:24</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 23, 2022 05:58:04</span>
       
     
   </small>
