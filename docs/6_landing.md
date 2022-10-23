@@ -171,9 +171,11 @@ https://markdown.lovejade.cn/
 
 模型中没有存储任何素材，[算法实现](https://zhuanlan.zhihu.com/p/572986232)，目前的版权还很模糊。
 
-节省了画师的底稿时间，但是也牺牲了一部分创作的独立性。
+所谓威胁没有在创造力，而是给市场带来的变化
 
-节省了小工作室和个人的成本，但是会导致低端美术市场的需求缩水。
+节省了小工作室和个人的成本，但是会导致低端美术市场的需求缩水
+
+生产力提高，但社会关系也有变革
 
 <iframe src="//player.bilibili.com/player.html?aid=731418335&bvid=BV1YD4y1k7Cr&cid=858424971&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 
