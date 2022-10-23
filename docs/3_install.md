@@ -202,6 +202,16 @@ HTTP_PROXY 和 HTTPS_PROXY 环境变量，或者使用 clash 的tun模式. 或�
 
 如果你的 Python 版本不在 PATH 中，则在文件夹中创建或修改 webui.settings.bat 添加行 `set PYTHON=python `来说明 Python 可执行文件的完整路径（请看下面的参数说明！
 
+#### ERROR:asyncio:Accept failed on a socket
+
+先检查端口冲突，有没有和什么软件冲突
+
+这个错误有可能是 `Python38` 的 `asyncio` 库对 `Windows` 的兼容性问题。
+
+尝试用 CMD 管理员身份运行`netsh winsock reset`，不行的话，切换端口。
+
+如果还是不行，请切换至 Python 的 `3.10.6`，WebUi 的开发环境为此版本。
+
 
 #### 虚拟环境
 
