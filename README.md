@@ -27,10 +27,11 @@ https://stable-diffusion-book.vercel.app/  短链为(https://b23.ink/aibook)
 
 ## 帮助改进
 
-如果你发现了本文的的错误或不足，欢迎向[项目仓库](https://github.com/sudoskys/StableDiffusionBook/)提 issue 和 PR
+如果你发现了本文的的错误或不足，欢迎向[项目仓库](https://github.com/sudoskys/StableDiffusionBook/)提 issue 和 PR。
 
 贡献之前先读 [贡献指南](https://github.com/sudoskys/StableDiffusionBook/blob/main/CONTRIBUTING.md)
 
+在键盘按下 `。` 键自动克隆仓库并开始协作
 
 ## 需求
 
@@ -41,7 +42,9 @@ https://stable-diffusion-book.vercel.app/  短链为(https://b23.ink/aibook)
 
 ## 声明
 
-本文档不托管任何模型及相关源代码，本网站托管方不提供模型的下载，不直接分发任何不合法模型文件。不鼓励违背开源项目协议盈利的行为。不赞成使用泄漏模型进行商业行为。
+本文档不托管任何模型及相关源代码，本网站托管方不提供模型的下载，不直接分发任何不合法模型文件。
 
-如果本文档外链的内容中有不合适的内容，与本文档无关。
+不鼓励违背开源项目协议盈利的行为。不赞成使用泄漏模型进行商业行为
+
+如果本文档外链的内容中有不合适的内容，与本文档无关
 
