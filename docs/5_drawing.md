@@ -487,7 +487,10 @@ git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-grad
 |姿势位||||
 |镜头位||||
 
+#### 使用 Ai 进行立绘设计
 
+<iframe src="//player.bilibili.com/player.html?aid=559362671&bvid=BV14e4y1U7r9&cid=869144379&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
+>BV14e4y1U7r9
 
 ## 魔法进阶
 

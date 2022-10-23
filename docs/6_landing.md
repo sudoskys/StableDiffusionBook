@@ -156,7 +156,11 @@ https://markdown.lovejade.cn/
 
 ## 碎言
 
-模型中没有存储任何素材，算法实现，目前的版权还很模糊。
+
+<iframe src="//player.bilibili.com/player.html?aid=559362671&bvid=BV14e4y1U7r9&cid=869144379&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
+
+
+模型中没有存储任何素材，[算法实现](https://zhuanlan.zhihu.com/p/572986232)，目前的版权还很模糊。
 
 节省了画师的底稿时间，但是也牺牲了一部分创作的独立性。
 
@@ -164,19 +168,5 @@ https://markdown.lovejade.cn/
 
 <iframe src="//player.bilibili.com/player.html?aid=731418335&bvid=BV1YD4y1k7Cr&cid=858424971&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 
-```
-NOBLE6浩
-AI作画，与画师的抵制，无非是英国卢德运动的“再现”罢了。现阶段的画师作画和小农经济有着相似之处，而不同之处便在于现在的画师是新自由主义思想“指导”下诞生的新手工业。
-我们都知道，在这之后，英国的工业革命滚滚而来，卢德运动无足轻重，手工业的生产集中于工厂之中，但也不意味着全面失业，就像那些之前从事小手工业的人们一样，他们将进入名为AI作画的工厂中，为AI提供作画的原材料，结合着新自由主义下的临时工，他们的价值就像一次性电池，被压榨完之后便会被丢弃。
-但这不意味着AI作画本身是不好的，刚才也讲了，AI作画和纺织机一样，能够解决重复劳动的繁琐问题，对于生产（游戏原画之类的）来讲是绝对的福音。 
-再说回绘画与艺术本身，我始终认为绘画是一种记述形式，其承载着的是绘画者在绘画过程中的思绪与情感，AI作画无非是各种符号的组合，其就不能称为画，借用鲍德里亚的说法，AI作画的产物是符号的符号，是“拟像”。
-更现实的层面，版权问题是需要解决的，不过总体上讲也就是利益分配的问题，这个问题比第二段讲到的要好解决得多。
-
-
-非想非非想天之娘
-你这里没去考虑到目前ai背后的行为主义与联结主义都是存在逻辑原子主义底色对大众思想的无意识渗透，你甚至把绘画从艺术中割裂出去就没有意识到现在的画师作画其实是为了文化商品景观再生产，绘画一种都是艺术的实践活动，是具有解放性的，而目前的ai绘画只是加重了文化商品景观毫无解放性，因为一旦把艺术以生产力去衡量那艺术就被吸纳到文化商品景观下
-```
-
-<iframe src="//player.bilibili.com/player.html?aid=986394990&bvid=BV1mt4y1c7VJ&cid=859387066&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 
 另外，欢迎参与文档编写。
