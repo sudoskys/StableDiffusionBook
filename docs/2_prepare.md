@@ -68,6 +68,9 @@ parser.add_argument("--freeze-settings", action='store_true', help="disable edit
 
 有网友称，最近发布的的Stable diffusion 1.5偏向三次元一些。
 
+WebUi 增加了俄语翻译，添加了 img2img API。
+
+在 [这次请求](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2067) 中，WebUi 更新了 ESRGAN 架构和模型以支持所有 ESRGAN 模型。
 
 -------
 - 10/22 更新
