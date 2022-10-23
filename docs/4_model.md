@@ -299,6 +299,50 @@ ckpt文件被加载时基本上可以执行任何内容，盲目加载有安全�
 如果能，尽量使用半精度，可以节省运算时间/RAM/VRAM，同时图片质量并不会和单精度差多少。~真要说差别可能和你电脑被宇宙射线打了差不多~。
 
 
+### X/Y 图
+
+创建具有不同参数的图像网格。使用X类型和Y类型字段选择应由行和列共享的参数，并将这些参数以逗号分隔输入X值/Y值字段。支持整数、浮点数和范围。
+
+Simple ranges 简单范围
+
+```
+1-5 = 1, 2, 3, 4, 5
+```
+
+Ranges with increment in bracket 括号范围
+
+```
+1-5 (+2) = 1, 3, 5
+10-5 (-3) = 10, 7
+1-3 (+0.5) = 1, 1.5, 2, 2.5, 3
+```
+
+Ranges with the count in square brackets 方括号范围
+
+```
+1-10 [5] = 1, 3, 5, 7, 10
+0.0-1.0 [6] = 0.0, 0.2, 0.4, 0.6, 0.8, 1.0
+```
+
+设置截图
+
+![引用官方 Wiki 的设置图](https://raw.githubusercontent.com/wiki/AUTOMATIC1111/stable-diffusion-webui/images/xy_grid-medusa-ui.png)
+>引用官方 Wiki 的设置图
+
+### **Variations种子变化**
+
+Variation strength slider 和 Variation seed field 允许您指定现有图片应更改多少以使其看起来不同。
+在最大强度下，您将获得带有变异种子的图片，至少 - 带有原始种子的图片（使用先前采样器时除外）。
+
+### **提示词模板**
+
+“Save prompt as style” 按钮将当前的提示写入 styles.csv，该文件包含样式集合
+
+提示右侧的下拉框将允许您从以前保存的样式中选择任何样式，并自动将其**附加**到输入中
+
+要删除样式，请从 styles.csv 中手动将其删除并重新启动程序。
+
+
 ### xformers
 
 xformers 分辨率越高加速效果越好。使用 xformers 会引入一些随机性，稍微影响生成的图像。
@@ -426,51 +470,9 @@ pip install xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl
 
 根据此 [pr](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2597)
 
-可以通过 `--use-cpu all` 尽可能的使用CPU进行生成
+可以通过 `--use-cpu all` 尽可能的使用CPU进行生成，虽然慢 100 倍。
 
 
-### X/Y 图
-
-创建具有不同参数的图像网格。使用X类型和Y类型字段选择应由行和列共享的参数，并将这些参数以逗号分隔输入X值/Y值字段。支持整数、浮点数和范围。
-
-Simple ranges 简单范围
-
-```
-1-5 = 1, 2, 3, 4, 5
-```
-
-Ranges with increment in bracket 括号范围
-
-```
-1-5 (+2) = 1, 3, 5
-10-5 (-3) = 10, 7
-1-3 (+0.5) = 1, 1.5, 2, 2.5, 3
-```
-
-Ranges with the count in square brackets 方括号范围
-
-```
-1-10 [5] = 1, 3, 5, 7, 10
-0.0-1.0 [6] = 0.0, 0.2, 0.4, 0.6, 0.8, 1.0
-```
-
-设置截图
-
-![引用官方 Wiki 的设置图](https://raw.githubusercontent.com/wiki/AUTOMATIC1111/stable-diffusion-webui/images/xy_grid-medusa-ui.png)
->引用官方 Wiki 的设置图
-
-### **Variations种子变化**
-
-Variation strength slider 和 Variation seed field 允许您指定现有图片应更改多少以使其看起来不同。
-在最大强度下，您将获得带有变异种子的图片，至少 - 带有原始种子的图片（使用先前采样器时除外）。
-
-### **提示词模板**
-
-“Save prompt as style” 按钮将当前的提示写入 styles.csv，该文件包含样式集合
-
-提示右侧的下拉框将允许您从以前保存的样式中选择任何样式，并自动将其**附加**到输入中
-
-要删除样式，请从 styles.csv 中手动将其删除并重新启动程序。
 
 ### CLIP Interrogate
 
