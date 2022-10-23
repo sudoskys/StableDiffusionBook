@@ -820,7 +820,7 @@ Hypernetworks 则会对超网络的改动，与 embeddings 不同，Hypernetwork
 
     重命名VAE模型文件非常关键，如果带着VAE训练效果十分差。
 
-    或者不需要重命名vae文件，直接在设置里打开 `auto unload`
+    或者不需要重命名vae文件，直接在设置里打开 `Move Vae...`
 
 #### 准备数据集
 
@@ -998,7 +998,7 @@ Windows 需要在 `web-user.bat的COMMANDLINE_ARGS=` 一行添加，或者直接
 `Save images with embedding in PNG chunks` 是生成一个图片形式的 pt 文件。~人物卡~
 
 !!! danger "等一下！ VAE 文件"
-    重命名VAE模型文件非常关键，或者确定你已经设置里打开 `auto unload`。
+    重命名VAE模型文件非常关键，或者确定你已经设置里打开  `Move Vae...`
     
     如果带着VAE训练效果十分差。
     
