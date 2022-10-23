@@ -398,7 +398,9 @@ Torch active/reserved: 1975/2144 MiB, Sys VRAM: 7890/8134 MiB (93.61%)
 
 ## 使用 Colab 搭建
 
-目前 Colab 的[协议](https://research.google.com/colaboratory/faq.html#limitations-and-restrictions)禁止了 `创建深度伪造内容` ，如果你使用，会承担封号风险。
+Colab 开始反滥用，目前 Colab 的[协议](https://research.google.com/colaboratory/faq.html#limitations-and-restrictions) `禁止穿透` ，如果你使用，会承担风险。
+
+但是有人指出 [Colab并没有计划封禁 SD](https://github.com/googlecolab/colabtools/issues/3147)
 
 Colab 资源每日重置。
 

@@ -72,7 +72,7 @@ WebUi 增加了俄语翻译，添加了 img2img API。
 
 在 [这次请求](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2067) 中，WebUi 更新了 ESRGAN 架构和模型以支持所有 ESRGAN 模型。
 
-Colab 开始反滥用，协议新增：禁止创建深度伪造内容，禁止穿透。
+Colab 开始反滥用，[协议](https://research.google.com/colaboratory/faq.html#limitations-and-restrictions)禁止穿透。但是有人指出 [Colab并没有计划封禁 SD](https://github.com/googlecolab/colabtools/issues/3147)
 
 有人反映 某度好像会封锁NAI的模型。
 
