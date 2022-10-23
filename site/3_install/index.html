@@ -461,6 +461,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#errorasyncioaccept-failed-on-a-socket" class="md-nav__link">
+    ERROR:asyncio:Accept failed on a socket
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_9" class="md-nav__link">
     虚拟环境
   </a>
@@ -784,6 +791,11 @@ conda activate aidraw
 <p>如果还不行....</p>
 <h4 id="python">我 Python 呢？</h4>
 <p>如果你的 Python 版本不在 PATH 中，则在文件夹中创建或修改 webui.settings.bat 添加行 <code>set PYTHON=python</code>来说明 Python 可执行文件的完整路径（请看下面的参数说明！</p>
+<h4 id="errorasyncioaccept-failed-on-a-socket">ERROR:asyncio:Accept failed on a socket</h4>
+<p>先检查端口冲突，有没有和什么软件冲突</p>
+<p>这个错误有可能是 <code>Python38</code> 的 <code>asyncio</code> 库对 <code>Windows</code> 的兼容性问题。</p>
+<p>尝试用 CMD 管理员身份运行<code>netsh winsock reset</code>，不行的话，切换端口。</p>
+<p>如果还是不行，请切换至 Python 的 <code>3.10.6</code>，WebUi 的开发环境为此版本。</p>
 <h4 id="_9">虚拟环境</h4>
 <p>如果你使用 conda 可以不使用一键脚本，可以自己运行 launch 安装依赖。</p>
 <p>因为仓库给出的一键安装脚本会创建虚拟环境，然后启动 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/launch.py">launch.py</a>。</p>
@@ -1037,11 +1049,11 @@ Torch active/reserved: 1975/2144 MiB, Sys VRAM: 7890/8134 MiB (93.61%)
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 23, 2022 12:35:14</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 23, 2022 12:46:06</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 23, 2022 12:35:14</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 23, 2022 12:46:06</span>
       
     
   </small>
