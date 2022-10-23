@@ -21,7 +21,7 @@ Copyright (C)  2022  StableDiffusionBook.
 
 [NovelAI](https://novelai.net/)简称 NAI， 是一项每月订阅服务，用于 AI 辅助创作、讲故事、虚拟陪伴，或者只是供您想象的 GPT 驱动的沙盒。
 
-Stable diffusion本来就是面向三次元的，但是 NAI 是二次元特化版本。
+Stable diffusion本来是面向三次元的，而 NAI 是二次元特化版本。
 
 
 ## 分流地址

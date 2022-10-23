@@ -259,9 +259,9 @@ print(torch.cuda.is_available())
 原因：显存不足。`--lowvram` 和 `--medvram` 启动参数都可以改善此问题。
 
 
-### ckpt 文件安全/误报[^4]
+### ckpt 文件安全问题[^4]
 
-ckpt文件被加载时基本上可以执行任何内容，盲目加载有安全风险。请检查来源是否可靠再加载。
+ckpt 文件被加载时基本上可以执行任何内容，盲目加载有安全风险。请检查来源是否可靠再加载。
 如果杀毒软件拦截，有可能创建者向文件中注入了恶意的python代码。
 
 可以通过此脚本检查风险：<https://rentry.org/safeunpickle2>
@@ -275,13 +275,14 @@ ckpt文件被加载时基本上可以执行任何内容，盲目加载有安全�
 ### 关于模型？[^6]
 
 ![Roaming_info.png](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/Roaming_info.png)
->allophane.com/index.php/2022/10/17/roaming_info_for_latent_diffusion/
+>来自 allophane.com/index.php/2022/10/17/roaming_info_for_latent_diffusion/
+
 
 ### 使用 webui 复现 NAI 官网
 
 [相关讨论，应该读一读！](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017)
 
->由于 torch 及其相关框架的性质，尝试完全复原在不同机器上生成的图片是不明智的。所以不要纠结一些细节不能复现。
+提示:由于 torch 及其相关框架的性质，尝试完全复原在不同机器上生成的图片是不明智的。所以不要纠结一些细节不能复现。
 
 
 #### 需要做的事情
