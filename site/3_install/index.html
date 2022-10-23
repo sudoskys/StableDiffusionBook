@@ -570,22 +570,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#nvidia-container-toolkit" class="md-nav__link">
-    安装nvidia-container-toolkit
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#_16" class="md-nav__link">
-    驱动
+    驱动相关
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_17" class="md-nav__link">
-    配置并运行
+    运行相关
   </a>
   
 </li>
@@ -953,8 +946,8 @@ Torch active/reserved: 1975/2144 MiB, Sys VRAM: 7890/8134 MiB (93.61%)
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Installation-on-Apple-Silicon">读Wiki此页</a></p>
 <hr />
 <h2 id="novel-ai">安装 Novel Ai 的原版后端</h2>
-<p>此教程来自 sanae<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
-<p><strong>阅读前请读最新的教程<a href="https://telegra.ph/NovelAI-%E5%8E%9F%E7%89%88%E7%BD%91%E9%A1%B5UI%E5%90%8E%E7%AB%AF%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B-10-10">NovelAI 原版网页UI+后端部署教程</a></strong></p>
+<p>阅读此教程:<a href="https://telegra.ph/NovelAI-%E5%8E%9F%E7%89%88%E7%BD%91%E9%A1%B5UI%E5%90%8E%E7%AB%AF%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B-10-10">NovelAI 原版网页UI+后端部署教程</a></p>
+<p>下面是一些简短的提示信息。</p>
 <h3 id="_14">硬件需求</h3>
 <p>建议显存低于24G的就不要尝试使用官方版本前后端.</p>
 <p>一台拥有一张至少有11G 显存的NVIDIA GPU的linux系统的x86设备。</p>
@@ -976,58 +969,11 @@ Torch active/reserved: 1975/2144 MiB, Sys VRAM: 7890/8134 MiB (93.61%)
 <p><strong>国内镜像</strong></p>
 <div class="highlight"><pre><span></span><code>curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
 </code></pre></div>
-<h4 id="nvidia-container-toolkit">安装nvidia-container-toolkit</h4>
-<p><strong>Ubuntu, Debian</strong></p>
-<div class="highlight"><pre><span></span><code><span class="nv">distribution</span><span class="o">=</span><span class="k">$(</span>. /etc/os-release<span class="p">;</span><span class="nb">echo</span> <span class="nv">$ID$VERSION_ID</span><span class="k">)</span>
-
-curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey <span class="p">|</span> sudo apt-key add -
-
-curl -s -L https://nvidia.github.io/nvidia-docker/<span class="nv">$distribution</span>/nvidia-docker.list <span class="p">|</span> sudo tee /etc/apt/sources.list.d/nvidia-docker.list
-
-sudo apt-get update <span class="o">&amp;&amp;</span> sudo apt-get install -y nvidia-container-toolkit
-
-sudo systemctl restart docker
-</code></pre></div>
-<p><strong>CentOS/RHEL</strong>
-<div class="highlight"><pre><span></span><code><span class="nv">distribution</span><span class="o">=</span><span class="k">$(</span>. /etc/os-release<span class="p">;</span><span class="nb">echo</span> <span class="nv">$ID$VERSION_ID</span><span class="k">)</span>
-
-curl -s -L https://nvidia.github.io/nvidia-docker/<span class="nv">$distribution</span>/nvidia-docker.repo <span class="p">|</span> sudo tee /etc/yum.repos.d/nvidia-docker.repo
-
-sudo yum install -y nvidia-container-toolkit
-
-sudo systemctl restart docker
-</code></pre></div></p>
-<h4 id="_16">驱动</h4>
+<h4 id="_16">驱动相关</h4>
 <p><strong>安装显卡驱动</strong></p>
 <p>使用 <code>nvidia-smi</code> 查看显卡状态。</p>
 <p>使用 <code>docker run --help | grep -i gpus</code> 确认nvidia-container-toolkit安装成功。</p>
-<h4 id="_17">配置并运行</h4>
-<p><strong>模型</strong></p>
-<ul>
-<li>下载模型文件</li>
-</ul>
-<p><a href="https://sanae1-my.sharepoint.cn/:u:/g/personal/kaze_sanae1_partner_onmschina_cn/Eezd5aJPk9xHmb5iVcXb768Bm5AUEHp2DM9biozM-54y9w?e=T6DaPd">SharePoint</a></p>
-<ul>
-<li>解压相关文件</li>
-</ul>
-<p><code>tar -zxvf novelai.tar.gz</code></p>
-<p><strong>docker 镜像</strong></p>
-<ul>
-<li>
-<p><a href="https://sanae1-my.sharepoint.cn/:u:/g/personal/kaze_sanae1_partner_onmschina_cn/ESe-AjlXEhNDvnwOyZtBjKkBnLa69b8qTYi2dGzJmKq5IA?e=EQol8q">下载相关文件</a></p>
-</li>
-<li>
-<p>导入 Docker 镜像</p>
-</li>
-</ul>
-<p><code>docker load -i novelaidocker.tar</code></p>
-<ul>
-<li>运行</li>
-</ul>
-<div class="highlight"><pre><span></span><code>docker run --gpus all -d -p 80:80 -v 解压的NovelAI位置:/root -e DTYPE=&quot;float32&quot; -e AMP=&quot;1&quot; -e MODEL=&quot;stable-diffusion&quot; -e DEV=&quot;True&quot; -e MODEL_PATH=&quot;/root/stableckpt/animesfw-latest&quot; -e MODULE_PATH=&quot;/root/stableckpt/modules&quot; -e TRANSFORMERS_CACHE=&quot;/root/transformer_cache&quot; -e SENTRY_URL=&quot;&quot; -e ENABLE_EMA=&quot;1&quot; -e VAE_PATH=&quot;/root/stableckpt/animevae.pt&quot; -e BASEDFORMER=&quot;1&quot; -e PENULTIMATE=&quot;1&quot; novelai:latest gunicorn main:app --workers 1 --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:80
-</code></pre></div>
-<p>如果希望包含 nsfw 内容，则把<code>-e MODEL_PATH="/root/stableckpt/animesfw-latest"</code> 改成 <code>-e MODEL_PATH="/root/stableckpt/animefull-latest"</code></p>
-<p>解压的 Novelai 位置替换为你实际解压 NovelAI 模型相关文件出来的 novelai 文件夹的位置，如 /root/novelai</p>
+<h4 id="_17">运行相关</h4>
 <ul>
 <li>容器状态</li>
 </ul>
@@ -1089,11 +1035,11 @@ sudo systemctl restart docker
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 23, 2022 05:33:23</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 23, 2022 05:36:31</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 23, 2022 05:33:23</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 23, 2022 05:36:31</span>
       
     
   </small>
