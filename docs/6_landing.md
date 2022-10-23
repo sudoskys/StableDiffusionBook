@@ -115,6 +115,10 @@ https://huggingface.co/Deltaadams/Hentai-Diffusion
 
 生成的图像没有喂给模型，NAI会继续优化模型，而 Leak 的模型则是一个固定的版本。
 
+10月份的热潮可能会是短暂的。
+
+NAI模型使用 Danbooru2021 的数据, 而 Danbooru2022 还未训练(个人不能负载如此昂贵的继续训练成本)，且某公司的模型也不会再次泄漏。
+
 
 ## 关于文档
 
