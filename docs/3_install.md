@@ -263,6 +263,8 @@ COMMANDLINE_ARGS="--medvram --always-batch-cond-uncond" REQS_FILE="requirements.
 你会得到一个 `xxx.app.gradio` 链接，这是在协作中使用该程序的预期方式，而且你可以使用参数为所述 `gradio` 共享实例设置身份验证：`--gradio-auth username:password`
 可选择提供多组用户名和密码，以逗号分隔。
 
+你可以通过添加 `--freeze-settings`  启动参数来锁定设置，防止他人编辑。
+
 - 端口转发
 
 参数 `--listen` 使服务器监听网络连接。

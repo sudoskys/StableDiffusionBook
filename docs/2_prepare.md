@@ -56,6 +56,17 @@ NAI 是一个在线**服务**。
 以下是新闻和测试内容。
 
 -------
+- 10/23 更新
+
+在 [这次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/070fda592bf80fb348ffe8e17b7c71cc288db729) 中，WebUi增加了日本语翻译。
+
+在 [这次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/be748e8b086bd9834d08bdd9160649a5e7700af7) 中，WebUi 增加了设置锁定启动参数。
+
+```
+parser.add_argument("--freeze-settings", action='store_true', help="disable editing settings", default=False)
+```
+
+-------
 - 10/22 更新
 
 在 [这次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/2b91251637078e04472c91a06a8d9c4db9c1dcf0) 中，仓库移除了美学权重。
