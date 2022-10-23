@@ -119,6 +119,11 @@ https://huggingface.co/Deltaadams/Hentai-Diffusion
 
 NAI模型使用 Danbooru2021 的数据, 而 Danbooru2022 还未训练(个人不能负载如此昂贵的继续训练成本)，且某公司的模型也不会再次泄漏。
 
+以后就是大公司的对弈了。
+
+### Ps插件
+
+有人在做，不过需要等等。
 
 ## 关于文档
 
@@ -172,5 +177,7 @@ https://markdown.lovejade.cn/
 
 <iframe src="//player.bilibili.com/player.html?aid=731418335&bvid=BV1YD4y1k7Cr&cid=858424971&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 
+
+<iframe src="//player.bilibili.com/player.html?aid=219246962&bvid=BV1N8411e766&cid=864564133&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 
 另外，欢迎参与文档编写和文档备份。
