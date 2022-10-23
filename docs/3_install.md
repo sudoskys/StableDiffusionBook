@@ -389,6 +389,29 @@ Torch active/reserved: 1975/2144 MiB, Sys VRAM: 7890/8134 MiB (93.61%)
 添加`sd_hypernetwork`和`CLIP_stop_at_last_layers`到设置页面的`Quicksettings list`，保存并重新启动 webui，你就可以在Ui顶部看到一个快速切换选项啦～
 
 
+## 使用 Colab 搭建
+
+Colab 资源是每日重置的。
+
+!!! tip
+    为什么不放笔记本地址？
+
+    因为 Colab 是谷歌开放的一款免费的研究工具，不应将其用于生产环境。
+
+
+具体笔记本地址请关注中文社区 t.me@StableDiffusion_CN_WIKI
+
+
+## 在 AMD 上安装
+
+[读Wiki此页](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Install-and-Run-on-AMD-GPUs)
+
+
+## 在 Apple Silicon 上安装
+
+[读Wiki此页](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Installation-on-Apple-Silicon)
+
+
 --------
 
 
@@ -548,19 +571,6 @@ for x in output:
     f.write(img)
 ```
 
-## 使用 Colab 搭建
-
-Colab 资源每日重置。
-
-具体笔记本地址请关注中文社区 t.me@StableDiffusion_CN_WIKI
-
-## 在 AMD 上安装
-
-[读Wiki此页](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Install-and-Run-on-AMD-GPUs)
-
-## 在 Apple Silicon 上安装
-
-[读Wiki此页](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Installation-on-Apple-Silicon)
 
 
 [^1]:[NovelAI原版部署教程](https://telegra.ph/NovelAI%E5%8E%9F%E7%89%88%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B-10-07)
