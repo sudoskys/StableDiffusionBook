@@ -85,7 +85,7 @@
 
 转义，WebUi 对于带括号的参数，`a (word)`  请在参数中使用 `\` 字符转义为 `a \(word\)`。
 
-降低权重，`[]` 或者 `(word:0.952)`，后者仅 WebUi
+降低权重，`[]` 或者 `(word:0.952)`。NAI 仅能使用 `[]`
 
 交替（alternate prompt）[^7]，这使您可以创建动物、人或风格的混合体，每一个 step 切换一个项，`[alison brie|emma stone|elizabeth olsen|scarlett johansson|anne hathaway|emma roberts], still film` 这是WebUi 语法，在 NAI 中是混合。
 
