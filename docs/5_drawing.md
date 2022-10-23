@@ -184,6 +184,7 @@ Nai 出图默认是一种风格，你可以通过 训练风格模型，指定风
 
 [人偶教室的测试记录](https://www.yuque.com/longyuye/lmgcwy)
 
+[风格化: 32种](https://www.bilibili.com/video/BV1TP411N71t/)
 
 ### 调序编译
 
@@ -1180,6 +1181,8 @@ Clip 跳过 0，其他一切都很好（afaik 不要使用超网络、v2、yaml�
 [风格化：人偶教室](https://www.yuque.com/longyuye/lmgcwy)
 
 [风格化，日语Wiki](https://seesaawiki.jp/nai_ch/d/%b2%e8%c9%f7%a1%a6%b9%bd%bf%de)
+
+[风格化: 32种](https://www.bilibili.com/video/BV1TP411N71t/)
 
 #### 草图风格
 
