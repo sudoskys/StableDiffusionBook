@@ -2,32 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://stable-diffusion-book.vercel.app/</loc>
-         <lastmod>2022-10-22</lastmod>
+         <lastmod>2022-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://stable-diffusion-book.vercel.app/2_prepare/</loc>
-         <lastmod>2022-10-22</lastmod>
+         <lastmod>2022-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://stable-diffusion-book.vercel.app/3_install/</loc>
-         <lastmod>2022-10-22</lastmod>
+         <lastmod>2022-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://stable-diffusion-book.vercel.app/4_model/</loc>
-         <lastmod>2022-10-22</lastmod>
+         <lastmod>2022-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://stable-diffusion-book.vercel.app/5_drawing/</loc>
-         <lastmod>2022-10-22</lastmod>
+         <lastmod>2022-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://stable-diffusion-book.vercel.app/6_landing/</loc>
-         <lastmod>2022-10-22</lastmod>
+         <lastmod>2022-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
