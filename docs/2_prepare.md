@@ -66,6 +66,9 @@ NAI 是一个在线**服务**。
 parser.add_argument("--freeze-settings", action='store_true', help="disable editing settings", default=False)
 ```
 
+有网友称，最近发布的的Stable diffusion 1.5偏向三次元一些。
+
+
 -------
 - 10/22 更新
 
