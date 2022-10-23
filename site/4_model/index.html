@@ -523,7 +523,7 @@
         
           <li class="md-nav__item">
   <a href="#ckpt-3" class="md-nav__link">
-    ckpt 文件安全/误报3
+    ckpt 文件安全问题3
   </a>
   
 </li>
@@ -993,8 +993,8 @@ print(torch.cuda.is_available())
 </code></pre></div>
 <h4 id="cuda-out-of-memory">CUDA out of memory</h4>
 <p>原因：显存不足。<code>--lowvram</code> 和 <code>--medvram</code> 启动参数都可以改善此问题。</p>
-<h3 id="ckpt-3">ckpt 文件安全/误报<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">3</a></sup></h3>
-<p>ckpt文件被加载时基本上可以执行任何内容，盲目加载有安全风险。请检查来源是否可靠再加载。
+<h3 id="ckpt-3">ckpt 文件安全问题<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">3</a></sup></h3>
+<p>ckpt 文件被加载时基本上可以执行任何内容，盲目加载有安全风险。请检查来源是否可靠再加载。
 如果杀毒软件拦截，有可能创建者向文件中注入了恶意的python代码。</p>
 <p>可以通过此脚本检查风险：<a href="https://rentry.org/safeunpickle2">https://rentry.org/safeunpickle2</a></p>
 <hr />
@@ -1002,13 +1002,11 @@ print(torch.cuda.is_available())
 <h3 id="5">关于模型？<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">5</a></sup></h3>
 <p><img alt="Roaming_info.png" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/Roaming_info.png" /></p>
 <blockquote>
-<p>allophane.com/index.php/2022/10/17/roaming_info_for_latent_diffusion/</p>
+<p>来自 allophane.com/index.php/2022/10/17/roaming_info_for_latent_diffusion/</p>
 </blockquote>
 <h3 id="webui-nai">使用 webui 复现 NAI 官网</h3>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017">相关讨论，应该读一读！</a></p>
-<blockquote>
-<p>由于 torch 及其相关框架的性质，尝试完全复原在不同机器上生成的图片是不明智的。所以不要纠结一些细节不能复现。</p>
-</blockquote>
+<p>提示:由于 torch 及其相关框架的性质，尝试完全复原在不同机器上生成的图片是不明智的。所以不要纠结一些细节不能复现。</p>
 <h4 id="_10">需要做的事情</h4>
 <ul>
 <li>加载 VAE 和模型附带的 config.yaml。</li>
@@ -1220,11 +1218,11 @@ pip install xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 23, 2022 06:01:44</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 23, 2022 06:03:31</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 23, 2022 06:01:44</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 23, 2022 06:03:31</span>
       
     
   </small>
