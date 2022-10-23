@@ -285,6 +285,7 @@ ckpt文件被加载时基本上可以执行任何内容，盲目加载有安全�
 
 
 #### 需要做的事情
+
 * 加载 VAE 和模型附带的 config.yaml。
 * Stop At last layers of CLIP model 设为 `2`。
 * Eta noise seed delta 设置为 `31337`。
