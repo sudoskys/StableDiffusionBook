@@ -72,6 +72,8 @@ WebUi 增加了俄语翻译，添加了 img2img API。
 
 在 [这次请求](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2067) 中，WebUi 更新了 ESRGAN 架构和模型以支持所有 ESRGAN 模型。
 
+Colab 开始反滥用，请注意。
+
 -------
 - 10/22 更新
 
