@@ -272,6 +272,10 @@ ckpt文件被加载时基本上可以执行任何内容，盲目加载有安全�
 
 ## 进阶
 
+### 关于模型？[^6]
+
+![Roaming_info.png](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/Roaming_info.png)
+>allophane.com/index.php/2022/10/17/roaming_info_for_latent_diffusion/
 
 ### 使用 webui 复现 NAI 官网
 
@@ -558,3 +562,5 @@ Tip：每天重置资源
 [^4]:[It's not a virus it's a checkpoint file](https://huggingface.co/Deltaadams/Hentai-Diffusion/discussions/12)
 
 [^5]:[所有超网络的 X/Y](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017#discussioncomment-3836360)
+
+[^6]:[Roaming_info_for_latent_diffusion](http://allophane.com/index.php/2022/10/17/roaming_info_for_latent_diffusion/)
