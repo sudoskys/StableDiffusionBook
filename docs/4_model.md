@@ -287,14 +287,16 @@ ckpt 文件被加载时基本上可以执行任何内容，盲目加载有安全
 
 #### 需要做的事情
 
-* 加载 VAE 和模型附带的 config.yaml。
-* Stop At last layers of CLIP model 设为 `2`。
-* Eta noise seed delta 设置为 `31337`。
+* 加载 VAE 和模型附带的 config.yaml (可选，有人说此操作空耗显存)
+
+* Stop At last layers of CLIP model 设为 `2`
+
+* Eta noise seed delta 设置为 `31337`
 
 
 #### **不需要**做的事情
 
-* hypernetwork。官网默认并不使用 hypernetwork。
+* hypernetwork。官网默认并不使用 hypernetwork
 
 
 设置 `Stop At last layers of CLIP model` 是为了匹配 NAI 的一个[优化](https://blog.novelai.net/novelai-improvements-on-stable-diffusion-e10d38db82ac)。
