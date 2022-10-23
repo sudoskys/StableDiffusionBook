@@ -417,9 +417,10 @@ Colab 资源是每日重置的。
 
 ## 安装 Novel Ai 的原版后端
 
-此教程来自 sanae[^1]
+阅读此教程:[NovelAI 原版网页UI+后端部署教程](https://telegra.ph/NovelAI-%E5%8E%9F%E7%89%88%E7%BD%91%E9%A1%B5UI%E5%90%8E%E7%AB%AF%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B-10-10)
 
-**阅读前请读最新的教程[NovelAI 原版网页UI+后端部署教程](https://telegra.ph/NovelAI-%E5%8E%9F%E7%89%88%E7%BD%91%E9%A1%B5UI%E5%90%8E%E7%AB%AF%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B-10-10)**
+
+下面是一些简短的提示信息。
 
 ### 硬件需求
 
@@ -448,34 +449,8 @@ curl -fsSL https://get.docker.com | bash
 curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
 ```
 
-#### 安装nvidia-container-toolkit
 
-**Ubuntu, Debian**
-
-```bash
-distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
-
-curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
-
-curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
-
-sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit
-
-sudo systemctl restart docker
-```
-
-**CentOS/RHEL**
-```bash
-distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
-
-curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.repo | sudo tee /etc/yum.repos.d/nvidia-docker.repo
-
-sudo yum install -y nvidia-container-toolkit
-
-sudo systemctl restart docker
-```
-
-#### 驱动
+#### 驱动相关
 
 **安装显卡驱动**
 
@@ -485,37 +460,7 @@ sudo systemctl restart docker
 
 
 
-#### 配置并运行
-
-**模型**
-
-- 下载模型文件
- 
- [SharePoint](https://sanae1-my.sharepoint.cn/:u:/g/personal/kaze_sanae1_partner_onmschina_cn/Eezd5aJPk9xHmb5iVcXb768Bm5AUEHp2DM9biozM-54y9w?e=T6DaPd)
-
-- 解压相关文件
- 
-`tar -zxvf novelai.tar.gz`
-
-**docker 镜像**
-
-- [下载相关文件](https://sanae1-my.sharepoint.cn/:u:/g/personal/kaze_sanae1_partner_onmschina_cn/ESe-AjlXEhNDvnwOyZtBjKkBnLa69b8qTYi2dGzJmKq5IA?e=EQol8q)
-
-
-- 导入 Docker 镜像
-
-`docker load -i novelaidocker.tar`
-
-- 运行
-
-```
-docker run --gpus all -d -p 80:80 -v 解压的NovelAI位置:/root -e DTYPE="float32" -e AMP="1" -e MODEL="stable-diffusion" -e DEV="True" -e MODEL_PATH="/root/stableckpt/animesfw-latest" -e MODULE_PATH="/root/stableckpt/modules" -e TRANSFORMERS_CACHE="/root/transformer_cache" -e SENTRY_URL="" -e ENABLE_EMA="1" -e VAE_PATH="/root/stableckpt/animevae.pt" -e BASEDFORMER="1" -e PENULTIMATE="1" novelai:latest gunicorn main:app --workers 1 --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:80
-```
-
-如果希望包含 nsfw 内容，则把`-e MODEL_PATH="/root/stableckpt/animesfw-latest"` 改成 `-e MODEL_PATH="/root/stableckpt/animefull-latest"`
-
-解压的 Novelai 位置替换为你实际解压 NovelAI 模型相关文件出来的 novelai 文件夹的位置，如 /root/novelai
-
+#### 运行相关
 
 - 容器状态
 
