@@ -1009,13 +1009,19 @@ print(torch.cuda.is_available())
 <p>提示:由于 torch 及其相关框架的性质，尝试完全复原在不同机器上生成的图片是不明智的。所以不要纠结一些细节不能复现。</p>
 <h4 id="_10">需要做的事情</h4>
 <ul>
-<li>加载 VAE 和模型附带的 config.yaml。</li>
-<li>Stop At last layers of CLIP model 设为 <code>2</code>。</li>
-<li>Eta noise seed delta 设置为 <code>31337</code>。</li>
+<li>
+<p>加载 VAE 和模型附带的 config.yaml (可选，有人说此操作空耗显存)</p>
+</li>
+<li>
+<p>Stop At last layers of CLIP model 设为 <code>2</code></p>
+</li>
+<li>
+<p>Eta noise seed delta 设置为 <code>31337</code></p>
+</li>
 </ul>
 <h4 id="_11"><strong>不需要</strong>做的事情</h4>
 <ul>
-<li>hypernetwork。官网默认并不使用 hypernetwork。</li>
+<li>hypernetwork。官网默认并不使用 hypernetwork</li>
 </ul>
 <p>设置 <code>Stop At last layers of CLIP model</code> 是为了匹配 NAI 的一个<a href="https://blog.novelai.net/novelai-improvements-on-stable-diffusion-e10d38db82ac">优化</a>。</p>
 <h3 id="_12">半精度还是单精度？</h3>
@@ -1218,11 +1224,11 @@ pip install xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 23, 2022 12:53:22</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 23, 2022 13:00:21</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 23, 2022 12:53:22</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 23, 2022 13:00:21</span>
       
     
   </small>
