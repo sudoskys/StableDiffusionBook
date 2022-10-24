@@ -1,4 +1,3 @@
-
 # 自训练
 
 本节讨论 WebUi 的高度自定义功能：train ，通过这项功能，我们可以为其增加 DLC 扩展包。
@@ -12,8 +11,12 @@ Aesthetic Gradients 通过计算平均权重，来提升图片的质量，提高
 
 关于 [损失函数](https://fangkaipeng.com/?p=2056#header-id-16)
 
+
 如果你在 `--medvram` 参数下开始训练，可能会出现 `RuntimeError: Expected all tensors to be on the same device` 错误，无法创建训练。
-这是优化机制导致的[问题](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2399)，只需要去除这个参数。
+
+这是优化机制导致的[问题](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2399)，解决方法是去除这个参数。这节对显卡的要求较高。
+
+>此页面还在起步阶段，欢迎贡献。
 
 
 ## Textual Inversion 识别新角色
@@ -41,6 +44,7 @@ Aesthetic Gradients 通过计算平均权重，来提升图片的质量，提高
 
 ## Hypernetworks 超网络
 
+超网络是一种新颖的概念，用于在不触及任何权重的情况下微调模型。
 
 
 
@@ -306,6 +310,7 @@ Windows 需要在 `web-user.bat的COMMANDLINE_ARGS=` 一行添加，或者直接
 
 <iframe src="//player.bilibili.com/player.html?aid=559085039&bvid=BV1ae4y1S7v9&cid=859894044&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 
+
 ##  Aesthetic Gradients 美学权重自训练
 
 
@@ -313,16 +318,15 @@ Source directory 填数据源文件夹地址。
 
 生成的embedding在models文件夹里面。
 
+
+
 ## Hypernetworks 自训练
 
 Hypernetworks 是一种新颖的概念，用于在不触及任何权重的情况下微调模型。
 
-你可以在 `Textual Inversion` `train` 选项卡训练 `Hypernetworks`
+你可以在`train` 选项卡训练 `Hypernetworks`，训练方式与 Textual Inversion 相同。
 
-训练的工作方式与文本倒置相同。
-
-唯一的要求是使用非常非常低的学习率，例如 0.000005 或 0.0000005。
-
+唯一的要求是使用非常非常低的学习率，例如 0.000005 或 0.0000005
 
 ### hyper network layer structure
 
@@ -362,6 +366,9 @@ If checked, add layer normalization after every fully connected layer.
 ## DreamBooth 训练
 
 DreamBooth 的模型是一种新的文本到图像“个性化”（可适应用户特定的图像生成需求）扩散模型
+
+
+
 
 [Colab 在线训练模型](https://colab.research.google.com/drive/17yM4mlPVOFdJE_81oWBz5mXH9cxvhmz8#scrollTo=lJoOgLQHnC8L)，需要Pro套餐算力(18-24G显存需要)
 
