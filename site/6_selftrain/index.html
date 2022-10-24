@@ -601,7 +601,9 @@
 
 <h1 id="_1">自训练</h1>
 <blockquote>
-<p>此页面还在起步阶段，欢迎贡献。</p>
+<p>此页面正在精修</p>
+<p>Todo 
+Dreambooth</p>
 </blockquote>
 <p>本节讨论 WebUi 的高度自定义功能：<code>train</code>，通过这项功能，我们可以为 Ai 增加类似 DLC 扩展包一样的功能。</p>
 <p><code>Textual Inversion</code> 训练为了 <code>embeddings</code>，<code>embeddings</code> 为 Ai 提供处理过的输入数据，告诉这个角色“具体是什么”，训练特殊的人物，角色会更好。</p>
@@ -625,12 +627,12 @@
 <h2 id="dreambooth">Dreambooth</h2>
 <p>更改主模型</p>
 <h2 id="aesthetic-gradients">Aesthetic Gradients 美学权重</h2>
-<p>提供 <code>我不说你应该懂往哪里训练</code> 的功能。让ai理解图片，调整并增加细节。</p>
-<p>此项功能来自这个 <a href="https://github.com/vicgalle/stable-diffusion-aesthetic-gradients">存储库</a>，在 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/2b91251637078e04472c91a06a8d9c4db9c1dcf0">这次提交</a> 中，仓库移除了这项内容。</p>
-<p>这项功能被剥离为插件。你可以使用 Git 安装它</p>
+<p>这项技术通过在生成时计算每个图片的权重，提供了一个 <code>我不说你应该懂往哪里训练</code> 的功能。使AI更聪明地调整并增加细节。</p>
+<p>此项功能来自这个 <a href="https://github.com/vicgalle/stable-diffusion-aesthetic-gradients">存储库</a>，在 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/2b91251637078e04472c91a06a8d9c4db9c1dcf0">这次提交</a> 中，此功能被剥离为插件。</p>
+<p>你可以使用下面的 Git 命令来安装这个东西。</p>
 <div class="highlight"><pre><span></span><code>git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients extensions/aesthetic-gradients
 </code></pre></div>
-<p>安装后确认 webui 的 <code>extensions</code> 文件夹下面有 <code>aesthetic-gradients</code> 文件夹</p>
+<p>安装后，在 webui 的 <code>extensions</code> 文件夹下面创建 <code>aesthetic-gradients</code> 文件夹。</p>
 <p>你可以在 Img2Img 中使用此项功能，通过这项技术，你不需要通过 过多提示词 来提升图片的质量，而是保持作品原始的总体构图，并提高美观度。在少量提示词情况下也可以生成效果不错的作品。</p>
 <p>据暗影·夜光所言<sup id="fnref:11"><a class="footnote-ref" href="#fn:11">5</a></sup>，添加 25% 以内的权重，就可以稍微改善画面的美观度而不影响内容。</p>
 <p>注意：当种子改变时，训练结果也会改变。</p>
@@ -840,11 +842,11 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 24, 2022 07:03:11</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 24, 2022 07:07:39</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 24, 2022 07:03:11</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 24, 2022 07:07:39</span>
       
     
   </small>
