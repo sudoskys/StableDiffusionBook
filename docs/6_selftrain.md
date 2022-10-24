@@ -3,9 +3,9 @@
 >此页面正在精修
 
 >Todo 
->Dreambooth
->
->
+>下面的东西有时间再..
+>https://github.com/huggingface/diffusers/issues/712
+>https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2002
 >
 >
 

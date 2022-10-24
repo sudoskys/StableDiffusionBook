@@ -43,9 +43,9 @@ https://stable-diffusion-book.vercel.app/  短链为(https://b23.ink/aibook)
 
 [Stable Diffusion WebUi](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
 
-[集成Tag工具/支持超网络的Web](https://git.hudaye.work/MiuliKain/Kamiya-OpenUI)
+[集成Tag工具/支持超网络的Web前端](https://git.hudaye.work/MiuliKain/Kamiya-OpenUI)
 
-[基于 NovelAI 的画图机器人](https://github.com/koishijs/novelai-bot#token)
+[基于 NAI 的画图机器人](https://github.com/koishijs/novelai-bot#token)
 
 [Danbooru 标签超市](https://github.com/wfjsw/danbooru-diffusion-prompt-builder)
 
