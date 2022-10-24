@@ -35,7 +35,7 @@
 
 通过这项技术，我们可以让 Ai 认识 2021 年之后的动漫人物（数据集没有囊括的）。
 
-多 `embeddings` 可以一起使用，程序启动时会自动加载它们。
+多 `embeddings` 可以一起使用，程序启动时会自动加载它们
 
 [相关 embeddings](https://gitlab.com/16777216c/stable-diffusion-embeddings)，里面有相关效果预览。
 
@@ -52,6 +52,8 @@ NAI Leak 的 `hypernetworks` 就是超网络，用来做 embeddings（风格化�
 
 使用时，将 Pt 放入 `/models/hypernetworks` 并在设置选项勾选启用它。
 
+!!! tip
+    Pt文件，小的是 embedding 大的是 hypernetworks
 
 ## Dreambooth 
 
