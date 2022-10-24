@@ -44,9 +44,13 @@ Aesthetic Gradients 通过计算平均权重，来提升图片的质量，提高
 
 ## Hypernetworks 超网络
 
-超网络是一种新颖的概念，用于在不触及任何权重的情况下微调模型。
+超网络是一种新颖的概念，用于在不触及任何权重的情况下微调模型。[^12]
 
+使用时，将 Pt 放入 `/models/hypernetworks` 并在设置选项勾选启用它
 
+## Dreambooth 
+
+更改主模型
 
 ## Aesthetic Gradients 美学权重
 
@@ -319,14 +323,15 @@ Source directory 填数据源文件夹地址。
 生成的embedding在models文件夹里面。
 
 
-
-## Hypernetworks 自训练
+## Hypernetworks 自训练[^13]
 
 Hypernetworks 是一种新颖的概念，用于在不触及任何权重的情况下微调模型。
 
 你可以在`train` 选项卡训练 `Hypernetworks`，训练方式与 Textual Inversion 相同。
 
 唯一的要求是使用非常非常低的学习率，例如 0.000005 或 0.0000005
+
+
 
 ### hyper network layer structure
 
@@ -377,4 +382,22 @@ DreamBooth 的模型是一种新的文本到图像“个性化”（可适应用
 [fast-DreamBooth](https://colab.research.google.com/github/TheLastBen/fast-stable-diffusion/blob/main/fast-DreamBooth.ipynb)
 
 https://github.com/XavierXiao/Dreambooth-Stable-Diffusion
+
+
+
+
+[^7]:[风格模型训练](https://www.bilibili.com/video/BV1ae4y1S7v9/)
+
+[^8]:[迭代草图](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2473)
+
+[^9]:[交替单词](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/1733)
+
+[^10]:[角色与画风tag训练十问](https://www.bilibili.com/video/BV1xt4y1F7Y2/)
+
+[^11]:[WebUI即将引入重磅更新，大幅提升图像品质](https://www.bilibili.com/read/cv19102552)
+
+[^12]:[超网络训练](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2284)
+
+[^13]:[超网络训练指南](https://rentry.org/hypernetwork4dumdums)
+
 
