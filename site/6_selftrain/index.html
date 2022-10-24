@@ -598,8 +598,11 @@
 <p>Hypernetworks 则会对超网络的改动，与 embeddings 不同，Hypernetworks 会对模型进行微调，所以泛化效果更加好，训练画风会更好。</p>
 <p>Aesthetic Gradients 通过计算平均权重，来提升图片的质量，提高美观度。在少量提示词情况下也可以生成效果不错的作品。</p>
 <p>关于 <a href="https://fangkaipeng.com/?p=2056#header-id-16">损失函数</a></p>
-<p>如果你在 <code>--medvram</code> 参数下开始训练，可能会出现 <code>RuntimeError: Expected all tensors to be on the same device</code> 错误，无法创建训练。
-这是优化机制导致的<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2399">问题</a>，只需要去除这个参数。</p>
+<p>如果你在 <code>--medvram</code> 参数下开始训练，可能会出现 <code>RuntimeError: Expected all tensors to be on the same device</code> 错误，无法创建训练。</p>
+<p>这是优化机制导致的<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2399">问题</a>，解决方法是去除这个参数。这节对显卡的要求较高。</p>
+<blockquote>
+<p>此页面还在起步阶段，欢迎贡献。</p>
+</blockquote>
 <h2 id="textual-inversion">Textual Inversion 识别新角色</h2>
 <p><code>Textual Inversion</code>允许你在自己的图片上训练一小部分神经网络，并在生成新图片时使用结果。可以数据集没有新出的角色画不出的问题，模仿特定的艺术风格。实际上是 NLP 中的即时调优。</p>
 <p>使用时，将 embedding(一个 .pt 或一个 .bin 文件) 放入 <code>Textual Inversion</code> 目录并在 prompt 提示词中提到你要用的 embedding 的文件名(*.pt)即可。不必重新启动程序即可使其正常工作。</p>
@@ -611,6 +614,7 @@
 <p><a href="https://rentry.org/embeddings">list of Textual Inversion embeddings for WebUi(SD)</a></p>
 <p><a href="https://cyberes.github.io/stable-diffusion-textual-inversion-models/">HuggingFace 的embeddings库</a></p>
 <h2 id="hypernetworks">Hypernetworks 超网络</h2>
+<p>超网络是一种新颖的概念，用于在不触及任何权重的情况下微调模型。</p>
 <h2 id="aesthetic-gradients">Aesthetic Gradients 美学权重</h2>
 <p>提供 <code>我不说你应该懂往哪里训练</code> 的功能。让ai理解图片，调整并增加细节。</p>
 <p>此项功能来自这个 <a href="https://github.com/vicgalle/stable-diffusion-aesthetic-gradients">存储库</a>，在 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/2b91251637078e04472c91a06a8d9c4db9c1dcf0">这次提交</a> 中，仓库移除了这项内容。</p>
@@ -768,9 +772,8 @@
 <p>生成的embedding在models文件夹里面。</p>
 <h2 id="hypernetworks_1">Hypernetworks 自训练</h2>
 <p>Hypernetworks 是一种新颖的概念，用于在不触及任何权重的情况下微调模型。</p>
-<p>你可以在 <code>Textual Inversion</code> <code>train</code> 选项卡训练 <code>Hypernetworks</code></p>
-<p>训练的工作方式与文本倒置相同。</p>
-<p>唯一的要求是使用非常非常低的学习率，例如 0.000005 或 0.0000005。</p>
+<p>你可以在<code>train</code> 选项卡训练 <code>Hypernetworks</code>，训练方式与 Textual Inversion 相同。</p>
+<p>唯一的要求是使用非常非常低的学习率，例如 0.000005 或 0.0000005</p>
 <h3 id="hyper-network-layer-structure">hyper network layer structure</h3>
 <p>If write "1, 2, 1", hypernetworks are composed of 2 fully connected layers whose intermediate dim is 2x, which is same as up to now.</p>
 <p>The more you add the number, like "1, 2, 4, 2, 1", the more the structure of hypernetworks becomes deeper. Deep hypernetworks are suited for training with large datasets.</p>
@@ -802,11 +805,11 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 24, 2022 06:31:40</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 24, 2022 06:37:31</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 24, 2022 06:31:40</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 24, 2022 06:37:31</span>
       
     
   </small>
