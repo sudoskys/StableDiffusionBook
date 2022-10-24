@@ -21,6 +21,8 @@
 
 `dreambooth` 可适应用户特定的图像生成需求。"只需几张指定物体的照片和相应的类名（如“狗”）作为输入，并添加一个唯一标识符植入不同的文字描述中，DreamBooth 就能让被指定物体“完美”出现在用户想要生成的场景中。" 和 Textual Inversion 不同，dreambooth 向输出插入训练数据，可以做到高相似，效果特别好。
 
+但是不能即插即用, 强度不可调。
+
 如果你在 `--medvram` 参数下开始训练，可能会出现 `RuntimeError: Expected all tensors to be on the same device` 错误，无法创建训练。
 
 更大的 `batch size` 可以加快训练，但也需要更大的显存。
