@@ -617,6 +617,7 @@ Dreambooth</p>
 <p><code>Hypernetworks</code> 则会对超网络的改动，与 <code>embeddings</code> 不同，<code>Hypernetworks</code> 会对模型进行微调，所以泛化效果更加好，训练画风会更好。</p>
 <p><code>Aesthetic Gradients</code> 通过计算平均权重，来提升图片的质量，提高美观度。在少量提示词情况下也可以生成效果不错的作品。</p>
 <p>如果你在 <code>--medvram</code> 参数下开始训练，可能会出现 <code>RuntimeError: Expected all tensors to be on the same device</code> 错误，无法创建训练。</p>
+<p>更大的 <code>batch size</code> 可以加快训练，但也需要更大的显存。</p>
 <p>这是优化机制导致的<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2399">问题</a>，解决方法是去除这个参数。这节对显卡的要求较高。</p>
 <h2 id="textual-inversion">Textual Inversion 识别新角色</h2>
 <p><code>Textual Inversion</code> 允许你在自己的图片上训练一小部分神经网络，并在生成新图片时使用结果。可以数据集没有新出的角色画不出的问题，模仿特定的艺术风格。实际上是 NLP 中的即时调优。</p>
@@ -789,8 +790,9 @@ Dreambooth</p>
 <p>生成的embedding在models文件夹里面。</p>
 <h2 id="hypernetworks-7">Hypernetworks 自训练<sup id="fnref:13"><a class="footnote-ref" href="#fn:13">7</a></sup></h2>
 <p>Hypernetworks 是一种新颖的概念，用于在不触及任何权重的情况下微调模型。</p>
-<p>你可以在<code>train</code> 选项卡训练 <code>Hypernetworks</code>，训练方式与 <code>Textual Inversion</code> 相同。</p>
-<p>注意,应该使用非常低的学习率，例如 0.000005 或 0.0000005</p>
+<p>你可以在 <code>train</code> 选项卡训练 <code>Hypernetworks</code>，训练方式与  <code>Textual Inversion</code> 相同。</p>
+<p>注意,应该使用非常低的学习率，例如 0.000005 或 0.0000005.</p>
+<p>如果学习率是5e-6 ，步数大约 10000 到 20000 。</p>
 <p>分辨率设置为要训练的分辨率，最好使用 1:1 的纵横比。</p>
 <p>如果数据集的图片是长条或者横条，请勾选 <code>Split cversized images into two</code></p>
 <p>如果你还没有打标签，可以勾选 <code>Using deepbooru for caption</code> ，来让 deepbooru 识别标签。</p>
@@ -809,7 +811,7 @@ Dreambooth</p>
 <p>在 10/21/22 的一个 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3199">合并请求</a> 中，这项功能被 discus0434 提出。</p>
 <p>支持 relu、leakyrelu 和 linear 。选择 linear(线性) 的效果和没有激活函数一样。</p>
 <p>一般来说relu用的最多。</p>
-<p><a href="https://rentry.org/hypernetwork4dumdums">应该查看的英文指南</a></p>
+<p><a href="https://rentry.org/hypernetwork4dumdums">相关的英文指南</a></p>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2670">相关的英文讨论</a></p>
 <p><img alt="hypernet对比图" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/exp_hypernet.jpg" /></p>
 <blockquote>
@@ -853,11 +855,11 @@ Dreambooth</p>
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 24, 2022 07:28:12</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 24, 2022 07:33:25</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 24, 2022 07:28:12</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 24, 2022 07:33:25</span>
       
     
   </small>
