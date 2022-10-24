@@ -45,6 +45,9 @@ SdWebui 是一个可以使用 模型 生产图片的**框架**。
 
 NAI 是一个在线**服务**。
 
+## 二次元之外
+
+如果你想知道没有 NAI模型 的 stable-diffustion (~因为本文档大概率主要是二次元文档~)，请看 [这个合集](https://space.bilibili.com/250989068/channel/collectiondetail?sid=660352)
 
 
 ## 新闻
