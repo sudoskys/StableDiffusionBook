@@ -433,6 +433,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#dreambooth" class="md-nav__link">
+    Dreambooth
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#aesthetic-gradients" class="md-nav__link">
     Aesthetic Gradients 美学权重
   </a>
@@ -440,11 +447,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#textual-inversion-7" class="md-nav__link">
-    Textual Inversion 自训练[^7]
+  <a href="#textual-inversion-1" class="md-nav__link">
+    Textual Inversion 自训练1
   </a>
   
-    <nav class="md-nav" aria-label="Textual Inversion 自训练[^7]">
+    <nav class="md-nav" aria-label="Textual Inversion 自训练1">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -509,11 +516,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hypernetworks_1" class="md-nav__link">
-    Hypernetworks 自训练
+  <a href="#hypernetworks-7" class="md-nav__link">
+    Hypernetworks 自训练7
   </a>
   
-    <nav class="md-nav" aria-label="Hypernetworks 自训练">
+    <nav class="md-nav" aria-label="Hypernetworks 自训练7">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -543,7 +550,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dreambooth" class="md-nav__link">
+  <a href="#dreambooth_1" class="md-nav__link">
     DreamBooth 训练
   </a>
   
@@ -614,7 +621,10 @@
 <p><a href="https://rentry.org/embeddings">list of Textual Inversion embeddings for WebUi(SD)</a></p>
 <p><a href="https://cyberes.github.io/stable-diffusion-textual-inversion-models/">HuggingFace 的embeddings库</a></p>
 <h2 id="hypernetworks">Hypernetworks 超网络</h2>
-<p>超网络是一种新颖的概念，用于在不触及任何权重的情况下微调模型。</p>
+<p>超网络是一种新颖的概念，用于在不触及任何权重的情况下微调模型。<sup id="fnref:12"><a class="footnote-ref" href="#fn:12">6</a></sup></p>
+<p>使用时，将 Pt 放入 <code>/models/hypernetworks</code> 并在设置选项勾选启用它</p>
+<h2 id="dreambooth">Dreambooth</h2>
+<p>更改主模型</p>
 <h2 id="aesthetic-gradients">Aesthetic Gradients 美学权重</h2>
 <p>提供 <code>我不说你应该懂往哪里训练</code> 的功能。让ai理解图片，调整并增加细节。</p>
 <p>此项功能来自这个 <a href="https://github.com/vicgalle/stable-diffusion-aesthetic-gradients">存储库</a>，在 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/2b91251637078e04472c91a06a8d9c4db9c1dcf0">这次提交</a> 中，仓库移除了这项内容。</p>
@@ -623,12 +633,12 @@
 </code></pre></div>
 <p>安装后确认 webui 的 <code>extensions</code> 文件夹下面有 <code>aesthetic-gradients</code> 文件夹</p>
 <p>你可以在 Img2Img 中使用此项功能，通过这项技术，你不需要通过 过多提示词 来提升图片的质量，而是保持作品原始的总体构图，并提高美观度。在少量提示词情况下也可以生成效果不错的作品。</p>
-<p>据暗影·夜光所言[^11]，添加 25% 以内的权重，就可以稍微改善画面的美观度而不影响内容。</p>
+<p>据暗影·夜光所言<sup id="fnref:11"><a class="footnote-ref" href="#fn:11">5</a></sup>，添加 25% 以内的权重，就可以稍微改善画面的美观度而不影响内容。</p>
 <p>注意：当种子改变时，训练结果也会改变。</p>
 <p>训练这项模型很快，但是在每一次生产时都会重新为图片计算一次，所以很慢！</p>
 <p>美学 与 Hypernetworks 让 Ai 作品更接近原画师风格，但是美学权重本身效果并不好。需要配合 Hypernetworks 超网络。</p>
 <p><img alt="Aesthetic_other" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/Aesthetic_other.png" /></p>
-<h2 id="textual-inversion-7">Textual Inversion 自训练[^7]</h2>
+<h2 id="textual-inversion-1">Textual Inversion 自训练<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">1</a></sup></h2>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion#training-embeddings">英文:自己训练 embedding</a></p>
 <div class="admonition danger">
 <p class="admonition-title">重命名 VAE 文件</p>
@@ -637,7 +647,7 @@
 </div>
 <h3 id="_2">准备数据集</h3>
 <p>数据集在保证质量和特征一致的情况下，如果算力允许，越多越好。可以是插画，风格抽象画作，表情包。</p>
-<p>可以从 <a href="https://yande.re/post">yande</a> pixiv 获取数据集。[^10]</p>
+<p>可以从 <a href="https://yande.re/post">yande</a> pixiv 获取数据集。<sup id="fnref:10"><a class="footnote-ref" href="#fn:10">4</a></sup></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>如果作品不是公共版权，请获取授权再进行操作。</p>
@@ -770,7 +780,7 @@
 <h2 id="aesthetic-gradients_1">Aesthetic Gradients 美学权重自训练</h2>
 <p>Source directory 填数据源文件夹地址。</p>
 <p>生成的embedding在models文件夹里面。</p>
-<h2 id="hypernetworks_1">Hypernetworks 自训练</h2>
+<h2 id="hypernetworks-7">Hypernetworks 自训练<sup id="fnref:13"><a class="footnote-ref" href="#fn:13">7</a></sup></h2>
 <p>Hypernetworks 是一种新颖的概念，用于在不触及任何权重的情况下微调模型。</p>
 <p>你可以在<code>train</code> 选项卡训练 <code>Hypernetworks</code>，训练方式与 Textual Inversion 相同。</p>
 <p>唯一的要求是使用非常非常低的学习率，例如 0.000005 或 0.0000005</p>
@@ -793,23 +803,49 @@
 <blockquote>
 <p>hypernet对比图</p>
 </blockquote>
-<h2 id="dreambooth">DreamBooth 训练</h2>
+<h2 id="dreambooth_1">DreamBooth 训练</h2>
 <p>DreamBooth 的模型是一种新的文本到图像“个性化”（可适应用户特定的图像生成需求）扩散模型</p>
 <p><a href="https://colab.research.google.com/drive/17yM4mlPVOFdJE_81oWBz5mXH9cxvhmz8#scrollTo=lJoOgLQHnC8L">Colab 在线训练模型</a>，需要Pro套餐算力(18-24G显存需要)</p>
 <p><a href="https://colab.research.google.com/github/ShivamShrirao/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion.ipynb#scrollTo=K6xoHWSsbcS3">DreamBooth_Stable_Diffusion</a></p>
 <p><a href="https://colab.research.google.com/github/TheLastBen/fast-stable-diffusion/blob/main/fast-DreamBooth.ipynb">fast-DreamBooth</a></p>
 <p>https://github.com/XavierXiao/Dreambooth-Stable-Diffusion</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:7">
+<p><a href="https://www.bilibili.com/video/BV1ae4y1S7v9/">风格模型训练</a>&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:8">
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2473">迭代草图</a>&#160;<a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:9">
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/1733">交替单词</a>&#160;<a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:10">
+<p><a href="https://www.bilibili.com/video/BV1xt4y1F7Y2/">角色与画风tag训练十问</a>&#160;<a class="footnote-backref" href="#fnref:10" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:11">
+<p><a href="https://www.bilibili.com/read/cv19102552">WebUI即将引入重磅更新，大幅提升图像品质</a>&#160;<a class="footnote-backref" href="#fnref:11" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:12">
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2284">超网络训练</a>&#160;<a class="footnote-backref" href="#fnref:12" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:13">
+<p><a href="https://rentry.org/hypernetwork4dumdums">超网络训练指南</a>&#160;<a class="footnote-backref" href="#fnref:13" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 24, 2022 06:37:31</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 24, 2022 06:43:35</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 24, 2022 06:37:31</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 24, 2022 06:43:35</span>
       
     
   </small>
