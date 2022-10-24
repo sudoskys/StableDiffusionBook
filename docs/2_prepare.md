@@ -60,6 +60,7 @@ NAI 是一个在线**服务**。
 
 Colab 昨天的封号称是 [错误的滥用判定](https://github.com/googlecolab/colabtools/issues/3181)
 
+WebUi [移除了图像浏览器](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3537)，转换为 [插件](https://github.com/yfszzx/stable-diffusion-webui-images-browser)
 
 -------
 - 10/23 更新
