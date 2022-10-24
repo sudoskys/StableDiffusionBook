@@ -1,6 +1,13 @@
 # 自训练
->此页面还在起步阶段，欢迎贡献。
 
+>此页面正在精修
+
+>Todo 
+>Dreambooth
+>
+>
+>
+>
 
 本节讨论 WebUi 的高度自定义功能：`train`，通过这项功能，我们可以为 Ai 增加类似 DLC 扩展包一样的功能。
 
@@ -49,18 +56,17 @@ NAI Leak 的 `hypernetworks` 就是超网络，用来做 embeddings（风格化�
 
 ## Aesthetic Gradients 美学权重
 
+这项技术通过在生成时计算每个图片的权重，提供了一个 `我不说你应该懂往哪里训练` 的功能。使AI更聪明地调整并增加细节。
 
-提供 `我不说你应该懂往哪里训练` 的功能。让ai理解图片，调整并增加细节。
+此项功能来自这个 [存储库](https://github.com/vicgalle/stable-diffusion-aesthetic-gradients)，在 [这次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/2b91251637078e04472c91a06a8d9c4db9c1dcf0) 中，此功能被剥离为插件。
 
-此项功能来自这个 [存储库](https://github.com/vicgalle/stable-diffusion-aesthetic-gradients)，在 [这次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/2b91251637078e04472c91a06a8d9c4db9c1dcf0) 中，仓库移除了这项内容。
-
-这项功能被剥离为插件。你可以使用 Git 安装它
+你可以使用下面的 Git 命令来安装这个东西。
 
 ```commandline
 git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients extensions/aesthetic-gradients
 ```
 
-安装后确认 webui 的 `extensions` 文件夹下面有 `aesthetic-gradients` 文件夹
+安装后，在 webui 的 `extensions` 文件夹下面创建 `aesthetic-gradients` 文件夹。
 
 
 你可以在 Img2Img 中使用此项功能，通过这项技术，你不需要通过 过多提示词 来提升图片的质量，而是保持作品原始的总体构图，并提高美观度。在少量提示词情况下也可以生成效果不错的作品。
