@@ -18,7 +18,6 @@
 
 如果你习惯阅读日语的标签参考和技巧，可以在 [日语Wiki](https://seesaawiki.jp/nai_ch/d/%be%ec%bd%ea%a1%a6%c7%d8%b7%ca) 中进行检索。
 
-
 如果你觉得查表很麻烦，可以打开 [Danbooru 标签超市](https://tags.novelai.dev/),[项目地址](https://github.com/wfjsw/danbooru-diffusion-prompt-builder) 或者[AI绘画tag生成器](https://aitag.top/)(后者不支持负面Tag)
 
 如果你不想读文字，可以打开 [推荐的视频教程](https://space.bilibili.com/35723238/channel/collectiondetail?sid=779851)，但需要了解 **通过 AI 模仿画风，特定镜头，增加特效，微修微调，PS嫁接出图，通过3D特定姿势，重画，迭代** 等等操作的话，需要**通读**下面的内容。
@@ -451,6 +450,24 @@ PS：调太高步数(>30)效果不会更好
 
 10xx 系列看起来与其他所有卡如此不同,见[这里](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017#discussioncomment-3873467)
 
+### 插件
+
+
+#### 随机艺术家插件
+
+[地址](https://github.com/yfszzx/stable-diffusion-webui-inspiration)
+
+```bash
+git clone https://github.com/yfszzx/stable-diffusion-webui-inspiration extensions
+```
+
+#### 美学权重插件
+
+[地址](https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients)
+
+```bash
+git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients extensions/aesthetic-gradients
+```
 
 
 
@@ -467,6 +484,13 @@ PS：调太高步数(>30)效果不会更好
 |状态|人物事件地|||
 |姿势位||||
 |镜头位||||
+
+#### 关于多人物生成
+
+多人最好使用草稿/有色3d + 图生图。
+
+人数超过三个就难以控制效果，人数大于6的图像模型里没有。
+
 
 #### 使用 Ai 进行立绘设计
 
@@ -557,6 +581,7 @@ Resize and fill：调整图像大小，使整个图像在目标分辨率内。�
 #### 关于差分
 
 如果你想了解一些差分的实例，[5CH日语Wiki](https://seesaawiki.jp/nai_ch/d/%c7%ed%a4%ae%a5%b3%a5%e9%a5%c6%a5%af) 提供了一个实例。
+
 
 
 #### 重绘画技巧/去除/替换

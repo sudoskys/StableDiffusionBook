@@ -7,10 +7,26 @@
 
 这里是相关的社区资源
 
+### 项目
 
-### 文档
+#### 其他前端
 
-#### 提示词相关
+- [集成Tag工具/支持超网络的Web](https://kamiya.hudaye.work/)，[项目地址](https://git.hudaye.work/MiuliKain/Kamiya-OpenUI)
+
+#### 服务
+
+- [Danbooru 标签超市](https://tags.novelai.dev/),[项目地址](https://github.com/wfjsw/danbooru-diffusion-prompt-builder)
+
+- [基于 NovelAI 的画图机器人](https://github.com/koishijs/novelai-bot#token)
+
+- [SDWebUi自动补全]( https://github.com/DominikDoom/a1111-sd-webui-tagcomplete)
+
+- [参数转换-M2NM2NBot](https://t.me/M2NM2NBot)
+
+- [参数转换 - Js项目](https://naisd5ch.github.io/novel-ai-5ch-wiki-js/)
+
+
+### 提示词相关
 
 - [人偶教室：风格化教学](https://www.yuque.com/longyuye/lmgcwy)
 
@@ -28,7 +44,7 @@
 
 - [StableDiffusion Show](https://t.me/StableDiffusion_Show)
 
-#### 文档
+### 文档
 
 - **[SD资源金矿](https://rentry.org/sdupdates)**
 
@@ -58,7 +74,7 @@
 
 - [WebUi的鼠标悬浮提示](https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/javascript/hints.js)
 
-#### 社区
+### 社区
 
 - [StableDiffusion_Github_discussions](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions)
 
@@ -70,15 +86,6 @@
 
 ------
 
-### 项目
-
-- [基于 NovelAI 的画图机器人](https://github.com/koishijs/novelai-bot#token)
-
-- [SDWebUi自动补全]( https://github.com/DominikDoom/a1111-sd-webui-tagcomplete)
-
-- [参数转换-M2NM2NBot](https://t.me/M2NM2NBot)
-
-- [参数转换 - Js项目](https://naisd5ch.github.io/novel-ai-5ch-wiki-js/)
 
 ### embeddings
 
