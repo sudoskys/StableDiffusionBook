@@ -11,12 +11,15 @@
 
 本节讨论 WebUi 的高度自定义功能：`train`，通过这项功能，我们可以为 Ai 增加类似 DLC 扩展包一样的功能。
 
+目前个人认为效果认为效果最好的是 `dreambooth`，但是其对显存要求较高（>12GB）
 
 `Textual Inversion` 训练为了 `embeddings`，`embeddings` 为 Ai 提供处理过的输入数据，告诉这个角色“具体是什么”，训练特殊的人物，角色会更好。
 
 `Hypernetworks` 则会对超网络的改动，与 `embeddings` 不同，`Hypernetworks` 会对模型进行微调，所以泛化效果更加好，训练画风会更好。
 
 `Aesthetic Gradients` 通过计算平均权重，来提升图片的质量，提高美观度。在少量提示词情况下也可以生成效果不错的作品。
+
+`dreambooth` 可适应用户特定的图像生成需求。"只需几张指定物体的照片和相应的类名（如“狗”）作为输入，并添加一个唯一标识符植入不同的文字描述中，DreamBooth 就能让被指定物体“完美”出现在用户想要生成的场景中。"
 
 如果你在 `--medvram` 参数下开始训练，可能会出现 `RuntimeError: Expected all tensors to be on the same device` 错误，无法创建训练。
 
@@ -33,7 +36,7 @@
 
 使用时，将 `embedding` (一个 .pt 或一个 .bin 文件) 放入 `Textual Inversion` 目录并在 `prompt` 提示词中提到你要用的 `embedding` 的文件名(*.pt)即可。不必重新启动程序即可使其正常工作。
 
-通过这项技术，我们可以让 Ai 认识 2021 年之后的动漫人物（数据集没有囊括的）。
+通过这项技术，我们可以让 Ai 认识 2021 年之后的动漫人物（数据集没有囊括的）。但是使用场景单一，构图必须和原素材一致。
 
 多 `embeddings` 可以一起使用，程序启动时会自动加载它们
 
@@ -57,7 +60,21 @@ NAI Leak 的 `hypernetworks` 就是超网络，用来做 embeddings（风格化�
 
 ## Dreambooth 
 
-更改主模型
+DreamBooth 的模型是一种很新的扩散模型，给定3-5张自己随意拍摄的某一物体的图片，就能得到不同背景下的该物体的新颖再现。
+
+`Dreambooth` 会把你给出的数据插入到模型的输出中，而 Textual Inversion 从模型中挖掘内容。 所以如果你要画一个非常冷门的东西，它的数据恰巧又不在模型中，AI就傻了。
+
+另外，这个模型不可以学习画风，只能学习物体人物特点。但可以适应画风。模型无法很好地学习到照片中物体的整体特征，反而可能出现过拟合。
+
+生成的模型是剪切过训练数据的 ckpt 模型，需要放进 model 目录里进行替换。
+
+![SAMPLE](https://dreambooth.github.io/DreamBooth_files/high_level.png)
+
+https://dreambooth.github.io/
+
+https://arxiv.org/abs/2208.12242
+
+
 
 ## Aesthetic Gradients 美学权重
 
@@ -106,7 +123,7 @@ git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-grad
 
 ### 准备数据集
 
-数据集在保证质量和特征一致的情况下，如果算力允许，越多越好。数据内容可以是插画，风格抽象画作，表情包。
+数据集在保证风格一致和内容同质化的情况下，如果算力允许，越多越好。数据内容可以是插画，风格抽象画作，表情包。
 
 可以从 [yande](https://yande.re/post)，pixiv 等平台获取数据集。[^10]
 
@@ -420,4 +437,6 @@ https://github.com/XavierXiao/Dreambooth-Stable-Diffusion
 
 [^13]:[超网络训练指南](https://rentry.org/hypernetwork4dumdums)
 
+
+[^14]:[dreambooth-小鬼峰](https://www.bilibili.com/read/cv18935031?from=search)
 
