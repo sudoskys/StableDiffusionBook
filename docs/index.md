@@ -12,6 +12,7 @@ Copyright (C)  2022  StableDiffusionBook.
 
 本页交代写给新人的话和术语解释。
 
+
 ## 项目
 
 本文档主要涉及以下两个项目。
@@ -34,6 +35,7 @@ Stable diffusion本来是面向三次元的，而 NAI 是二次元特化版本�
 
 >图片托管在Github,如果不能访问图片，请切换网络环境。
 
+
 ## Stable Diffusion 和 NAI 关系？我该怎么办？
 
 因为泄漏事件，NAI 使用数千万 Danbooru（图站）图片训练的模型被泄漏了两次，而后来 **Stable Diffusion WebUi(一个通用的生成框架)** 对模型进行了支持，所以可以 使用 WebUi（简称 SDWebUi）装载 NAI 的模型。
@@ -44,6 +46,17 @@ Stable diffusion本来是面向三次元的，而 NAI 是二次元特化版本�
     泄露 Part 1 —— 包含生产模型，程序 —— 53.66 GB，其中需要下载的相关模型有 7GB 和 4GB 两种。
 
     泄露 Part 2 —— 包含历史测试代码和模型，程序 —— 124.54 GB，其中需要下载的相关模型与 Part1 相同。
+
+
+## 社区
+
+海外。
+
+[Telegram](https://t.me/StableDiffusion_CN)
+
+[测试中的 Discord](https://discord.gg/vhsArSSA6K)
+
+
 
 ## 名词
 
@@ -75,6 +88,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
 CLIP 在生成模型的潜在空间进行搜索，从而找到与给定的文字描述相匹配的潜在图像。
 
 它非常现代且高效。
+
 
 ### CUDA
 

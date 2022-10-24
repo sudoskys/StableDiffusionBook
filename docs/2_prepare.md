@@ -56,6 +56,12 @@ NAI 是一个在线**服务**。
 以下是新闻和测试内容。
 
 -------
+- 10/24
+
+Colab 昨天的封号称是 [错误的滥用判定](https://github.com/googlecolab/colabtools/issues/3181)
+
+
+-------
 - 10/23 更新
 
 在 [这次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/070fda592bf80fb348ffe8e17b7c71cc288db729) 中，WebUi增加了日本语翻译。
@@ -72,7 +78,7 @@ WebUi 增加了俄语翻译，添加了 img2img API。
 
 在 [这次请求](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2067) 中，WebUi 更新了 ESRGAN 架构和模型以支持所有 ESRGAN 模型。
 
-Colab 开始反滥用，[协议](https://research.google.com/colaboratory/faq.html#limitations-and-restrictions)禁止穿透。但是有人指出 [Colab并没有计划封禁 SD](https://github.com/googlecolab/colabtools/issues/3147)
+Colab 开始反滥用，[协议](https://research.google.com/colaboratory/faq.html#limitations-and-restrictions)禁止穿透。但是有人指出 [Colab并没有计划封禁 SD](https://github.com/googlecolab/colabtools/issues/3147)，确认误封。
 
 有人反映 某度好像会封锁NAI的模型。
 
