@@ -50,11 +50,11 @@ Stable diffusion本来是面向三次元的，而 NAI 是二次元特化版本�
 
 ## 社区
 
-海外。
+海外
 
-[Telegram](https://t.me/StableDiffusion_CN)
+<img src="https://img.shields.io/github/stars/sudoskys/StableDiffusionBook.svg" alt="Stars">
 
-[测试中的 Discord](https://discord.gg/vhsArSSA6K)
+<a href="https://github.com/sudoskys/StableDiffusionBook/issues"><img src="https://img.shields.io/github/issues/sudoskys/StableDiffusionBook" alt="Issues"></a>
 
 
 
