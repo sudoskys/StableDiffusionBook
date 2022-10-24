@@ -68,7 +68,9 @@ Textual Inversion 从模型中挖掘内容，所以如果你要画一个非常�
 
 另外，这个模型不可以学习画风[^14]，只能学习物体人物特点。但可以适应画风。模型无法很好地学习到照片中物体的整体特征，反而可能出现过拟合。
 
-生成的模型是剪切过训练数据的 ckpt 模型，需要放进 model 目录里进行**替换**。
+生成的模型是剪切过训练数据的 ckpt 模型。
+
+使用时，需要放进 model 目录里进行**替换**。
 
 ![SAMPLE](https://dreambooth.github.io/DreamBooth_files/high_level.png)
 
@@ -92,7 +94,7 @@ git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-grad
 
 安装后，在 webui 的 `extensions` 文件夹下面创建 `aesthetic-gradients` 文件夹。
 
-使用的时候把 Pt 放在 `models/aesthetic_embeddings/`
+使用时，把 Pt 放在 `models/aesthetic_embeddings/`
 
 然后重启程序，你就可以在 Img2Img 中使用此项功能。
 
