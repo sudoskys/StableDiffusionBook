@@ -62,11 +62,11 @@ NAI Leak 的 `hypernetworks` 就是超网络，用来做 embeddings（风格化�
 
 ## Dreambooth 
 
-DreamBooth 的模型是一种*很新的*扩散模型，给定3-5张自己随意拍摄的某一物体的图片，就能得到不同背景下的该物体的新颖再现。
+DreamBooth 是一种 *很新的* 方法(finetune LDM)，给定3-5张自己随意拍摄的某一物体的图片，就能得到不同背景下的该物体的新颖再现。[^15]
 
 Textual Inversion 从模型中挖掘内容，所以如果你要画一个非常冷门的东西，它的数据恰巧又不在模型中，AI 就傻了。而 `Dreambooth` 会把你给出的数据插入到模型的输出中，效果特别好，因为 Ai “知道”。
 
-另外，这个模型不可以学习画风，只能学习物体人物特点。但可以适应画风。模型无法很好地学习到照片中物体的整体特征，反而可能出现过拟合。
+另外，这个模型不可以学习画风[^14]，只能学习物体人物特点。但可以适应画风。模型无法很好地学习到照片中物体的整体特征，反而可能出现过拟合。
 
 生成的模型是剪切过训练数据的 ckpt 模型，需要放进 model 目录里进行替换。
 
@@ -117,11 +117,10 @@ git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-grad
 
 [官方Wiki](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion#training-embeddings)
 
+
 !!! danger "重命名 VAE 文件"
 
     重命名VAE模型文件非常关键，如果带着VAE训练效果十分差。
-
-    或者不需要重命名vae文件，直接在设置里打开 `Move Vae...`
 
 ### 准备数据集
 
@@ -409,8 +408,6 @@ Dropout 似乎很有用，如果需要避免过拟合/重影，请勾选这个�
 
 ## DreamBooth 训练
 
-
-
 DreamBooth 的模型是一种新的文本到图像“个性化”（可适应用户特定的图像生成需求）扩散模型。
 
 [Nyanko Lepsoni 的 Colab 笔记本](https://colab.research.google.com/drive/17yM4mlPVOFdJE_81oWBz5mXH9cxvhmz8)，需要Pro套餐算力(18-24G显存需要)
@@ -453,3 +450,4 @@ https://github.com/XavierXiao/Dreambooth-Stable-Diffusion
 
 [^14]:[dreambooth-小鬼峰](https://www.bilibili.com/read/cv18935031?from=search)
 
+[^15]:[dreambooth-论文](https://arxiv.org/abs/2208.12242)
