@@ -53,7 +53,7 @@ NAI 是一个在线**服务**。
 
 ## 新闻
 
-!!! tip
+!!! info
     [集成Tag工具/支持超网络的Web](https://git.hudaye.work/MiuliKain/Kamiya-OpenUI)开源项目说他们缺人。
 
 !!! tip
