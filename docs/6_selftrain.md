@@ -28,6 +28,8 @@
 这是优化机制导致的[问题](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2399)，解决方法是去除这个参数。这节对显卡的要求较高。
 
 
+[推荐的教程](https://space.bilibili.com/250989068/channel/collectiondetail?sid=660352)
+
 ## Textual Inversion 识别新角色
 
 `Textual Inversion` 允许你在自己的图片上训练一小部分神经网络，并在生成新图片时使用结果。可以数据集没有新出的角色画不出的问题，模仿特定的艺术风格。实际上是 NLP 中的即时调优。
