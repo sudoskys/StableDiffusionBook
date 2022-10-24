@@ -640,7 +640,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2002</p>
 <h2 id="textual-inversion">Textual Inversion 识别新角色</h2>
 <p><code>Textual Inversion</code> 允许你在自己的图片上训练一小部分神经网络，并在生成新图片时使用结果。可以数据集没有新出的角色画不出的问题，模仿特定的艺术风格。实际上是 NLP 中的即时调优。</p>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion">官方英文说明和效果图</a></p>
-<p>使用时，将 <code>embedding</code> (一个 .pt 或一个 .bin 文件) 放入 <code>Textual Inversion</code> 目录并在 <code>prompt</code> 提示词中提到你要用的 <code>embedding</code> 的文件名(*.pt)即可。不必重新启动程序即可使其正常工作。</p>
+<p>使用时，将 <code>embedding</code> (一个 .pt 或一个 .bin 文件) 放入 <code>stable-diffusion-webui/embeddings/</code> 目录并在 <code>prompt</code> 提示词中提到你要用的 <code>embedding</code> 的文件名(*.pt)即可。不必重新启动程序即可使其正常工作。</p>
 <p>通过这项技术，我们可以让 Ai 认识 2021 年之后的动漫人物（数据集没有囊括的）。但是使用场景单一，构图必须和原素材一致。</p>
 <p>多 <code>embeddings</code> 可以一起使用，程序启动时会自动加载它们</p>
 <p><a href="https://gitlab.com/16777216c/stable-diffusion-embeddings">相关 embeddings</a>，里面有相关效果预览。</p>
@@ -658,7 +658,8 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2002</p>
 <p>DreamBooth 是一种 <em>很新的</em> 方法(finetune LDM)，给定3-5张自己随意拍摄的某一物体的图片，就能得到不同背景下的该物体的新颖再现。<sup id="fnref:15"><a class="footnote-ref" href="#fn:15">9</a></sup></p>
 <p>Textual Inversion 从模型中挖掘内容，所以如果你要画一个非常冷门的东西，它的数据恰巧又不在模型中，AI 就傻了。而 <code>Dreambooth</code> 会把你给出的数据插入到模型的输出中，效果特别好，因为 Ai “知道”。</p>
 <p>另外，这个模型不可以学习画风<sup id="fnref:14"><a class="footnote-ref" href="#fn:14">8</a></sup>，只能学习物体人物特点。但可以适应画风。模型无法很好地学习到照片中物体的整体特征，反而可能出现过拟合。</p>
-<p>生成的模型是剪切过训练数据的 ckpt 模型，需要放进 model 目录里进行替换。</p>
+<p>生成的模型是剪切过训练数据的 ckpt 模型。</p>
+<p>使用时，需要放进 model 目录里进行<strong>替换</strong>。</p>
 <p><img alt="SAMPLE" src="https://dreambooth.github.io/DreamBooth_files/high_level.png" /></p>
 <p>https://dreambooth.github.io/</p>
 <p>https://arxiv.org/abs/2208.12242</p>
@@ -669,6 +670,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2002</p>
 <div class="highlight"><pre><span></span><code>git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients extensions/aesthetic-gradients
 </code></pre></div>
 <p>安装后，在 webui 的 <code>extensions</code> 文件夹下面创建 <code>aesthetic-gradients</code> 文件夹。</p>
+<p>使用时，把 Pt 放在 <code>models/aesthetic_embeddings/</code></p>
 <p>然后重启程序，你就可以在 Img2Img 中使用此项功能。</p>
 <p>通过这项技术，你不需要通过 过多提示词 来提升图片的质量，而是保持作品原始的总体构图，并提高美观度。在少量提示词情况下也可以生成效果不错的作品。</p>
 <p>据暗影·夜光所言<sup id="fnref:11"><a class="footnote-ref" href="#fn:11">5</a></sup>，添加 25% 以内的权重，就可以稍微改善画面的美观度而不影响内容。美学 与 Hypernetworks 让 Ai 作品更接近原画师风格，但是美学权重本身效果并不好。需要配合 Hypernetworks 超网络。</p>
@@ -892,11 +894,11 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2002</p>
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 24, 2022 16:28:09</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 24, 2022 16:32:16</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 24, 2022 16:28:09</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 24, 2022 16:32:16</span>
       
     
   </small>
