@@ -633,38 +633,36 @@ Dreambooth</p>
 <div class="highlight"><pre><span></span><code>git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients extensions/aesthetic-gradients
 </code></pre></div>
 <p>安装后，在 webui 的 <code>extensions</code> 文件夹下面创建 <code>aesthetic-gradients</code> 文件夹。</p>
-<p>你可以在 Img2Img 中使用此项功能，通过这项技术，你不需要通过 过多提示词 来提升图片的质量，而是保持作品原始的总体构图，并提高美观度。在少量提示词情况下也可以生成效果不错的作品。</p>
-<p>据暗影·夜光所言<sup id="fnref:11"><a class="footnote-ref" href="#fn:11">5</a></sup>，添加 25% 以内的权重，就可以稍微改善画面的美观度而不影响内容。</p>
+<p>然后重启程序，你就可以在 Img2Img 中使用此项功能。</p>
+<p>通过这项技术，你不需要通过 过多提示词 来提升图片的质量，而是保持作品原始的总体构图，并提高美观度。在少量提示词情况下也可以生成效果不错的作品。</p>
+<p>据暗影·夜光所言<sup id="fnref:11"><a class="footnote-ref" href="#fn:11">5</a></sup>，添加 25% 以内的权重，就可以稍微改善画面的美观度而不影响内容。美学 与 Hypernetworks 让 Ai 作品更接近原画师风格，但是美学权重本身效果并不好。需要配合 Hypernetworks 超网络。</p>
+<p>训练这项模型很快，但是在每一次生产时都会重新为图片计算一次，所以出图很慢。</p>
 <p>注意：当种子改变时，训练结果也会改变。</p>
-<p>训练这项模型很快，但是在每一次生产时都会重新为图片计算一次，所以很慢！</p>
-<p>美学 与 Hypernetworks 让 Ai 作品更接近原画师风格，但是美学权重本身效果并不好。需要配合 Hypernetworks 超网络。</p>
 <p><img alt="Aesthetic_other" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/Aesthetic_other.png" /></p>
 <h2 id="textual-inversion-1">Textual Inversion 自训练<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">1</a></sup></h2>
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion#training-embeddings">英文:自己训练 embedding</a></p>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion#training-embeddings">官方Wiki</a></p>
 <div class="admonition danger">
 <p class="admonition-title">重命名 VAE 文件</p>
 <p>重命名VAE模型文件非常关键，如果带着VAE训练效果十分差。</p>
 <p>或者不需要重命名vae文件，直接在设置里打开 <code>Move Vae...</code></p>
 </div>
 <h3 id="_2">准备数据集</h3>
-<p>数据集在保证质量和特征一致的情况下，如果算力允许，越多越好。可以是插画，风格抽象画作，表情包。</p>
-<p>可以从 <a href="https://yande.re/post">yande</a> pixiv 获取数据集。<sup id="fnref:10"><a class="footnote-ref" href="#fn:10">4</a></sup></p>
+<p>数据集在保证质量和特征一致的情况下，如果算力允许，越多越好。数据内容可以是插画，风格抽象画作，表情包。</p>
+<p>可以从 <a href="https://yande.re/post">yande</a>，pixiv 等平台获取数据集。<sup id="fnref:10"><a class="footnote-ref" href="#fn:10">4</a></sup></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>如果作品不是公共版权，请获取授权再进行操作。</p>
 </div>
 <h3 id="_3">模型要求</h3>
 <p>WebUi 应该是 Git 的最新版本。</p>
-<p>显存至少 6GB，正常使用需要 12GB 显存。根据实验数据，8GB显存应该选择 <code>512x512</code> 分辨率。</p>
+<p>显存至少 6GB，正常使用需要 12GB 显存。根据实验数据，8GB 显存应该选择 <code>512x512</code> 分辨率，不能在 <code>--lowvram</code> 和 <code>--medvram</code> 参数下进行训练，不支持 <code>batch sizes</code> 和 <code>gradient accumulation</code> 。</p>
 <p>训练可使用半精度浮点，但是否好用还需要进行实验。</p>
-<p>如果你有足够的内存，那么在<code>--no-half --precision full</code>下运行会更安全。</p>
+<p>如果你有足够的内存，那么在 <code>--no-half --precision full</code> 下运行会更安全。</p>
 <p>你可以中断和恢复训练而不会丢失任何数据（AdamW 优化参数除外，但似乎现有的存储库都没有保存这些，所以一般认为它们并不重要）。</p>
-<p>不支持 <code>batch sizes</code> 和 <code>gradient accumulation</code>。</p>
-<p>不可能在 <code>--lowvram</code> and <code>--medvram</code> 参数下运行起来。</p>
 <h3 id="_4">设置说明</h3>
 <p>准备 30 张以上的目标人设图片，每一张图片应当裁剪为同样的比例。（即使WebUi已经支持了长方形图片的裁剪）</p>
 <p>在 <code>Interrogate Options</code> 设置中，<code>Interrogate: deepbooru score threshold</code> 是 deepbooru(从图像提取标签) 可用标签的阀值。建议使用 0.75,也就是保留预测结果大于 75%的结果。</p>
-<p>比如，假定识别结果为
+<p>比如，假定识别结果为</p>
 <div class="highlight"><pre><span></span><code>1.000 1girl
 0.986 blush
 0.981 long_hair
@@ -677,7 +675,7 @@ Dreambooth</p>
 0.637 long_sleeves
 0.628 monochrome
 </code></pre></div>
-就会丢弃 <code>wide_sleeves</code> 以下的内容</p>
+<p>就会丢弃 <code>wide_sleeves</code> 以下的内容</p>
 <p><code>Interrogate: deepbooru sort alphabetically</code> 是按照字母顺序排序 Tag，因为 Tag 对结果影响很大，所以我们取消勾选此项。</p>
 <p>按下 <code>Apply setting</code> 保存设置。</p>
 <h3 id="_5">创建训练</h3>
@@ -842,11 +840,11 @@ Dreambooth</p>
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 24, 2022 07:07:39</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 24, 2022 07:12:25</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 24, 2022 07:07:39</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 24, 2022 07:12:25</span>
       
     
   </small>
