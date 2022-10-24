@@ -53,6 +53,8 @@ NAI 是一个在线**服务**。
 
 ## 新闻
 
+!!! tip
+    [集成Tag工具/支持超网络的Web](https://git.hudaye.work/MiuliKain/Kamiya-OpenUI)开源项目说他们缺人。
 
 !!! tip
     目前stable-diffusion-webui迭代非常快，每天都会有大量更新，因此建议每天都拉取最新代码。

@@ -55,6 +55,13 @@
 
 如果你提供一个种子（而不是随机的 -1），你的图像很快就会变得过饱和、过度锐化、过度像素化..... 当然如果想微调，可以使用固定种子。
 
+### 应用实例
+
+先让我们看看稳定扩散都有什么使用姿势。
+
+[稳定扩散的真实用例](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3219)
+
+[稳定扩散的应用结合](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3572)
 
 ## 魔法入门
 
@@ -452,21 +459,32 @@ PS：调太高步数(>30)效果不会更好
 
 ### 插件
 
+安装完毕重启程序。
 
 #### 随机艺术家插件
 
-[地址](https://github.com/yfszzx/stable-diffusion-webui-inspiration)
+[项目地址](https://github.com/yfszzx/stable-diffusion-webui-inspiration)
 
 ```bash
-git clone https://github.com/yfszzx/stable-diffusion-webui-inspiration extensions
+cd extensions
+git clone https://github.com/yfszzx/stable-diffusion-webui-inspiration
 ```
 
 #### 美学权重插件
 
-[地址](https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients)
+[项目地址](https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients)
 
 ```bash
 git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients extensions/aesthetic-gradients
+```
+
+#### 历史记录画廊
+
+[项目地址](https://github.com/yfszzx/stable-diffusion-webui-images-browser)
+
+```bash
+cd extensions
+git clone https://github.com/yfszzx/stable-diffusion-webui-images-browser 
 ```
 
 
