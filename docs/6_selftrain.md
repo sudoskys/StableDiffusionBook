@@ -69,15 +69,15 @@ git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-grad
 安装后，在 webui 的 `extensions` 文件夹下面创建 `aesthetic-gradients` 文件夹。
 
 
-你可以在 Img2Img 中使用此项功能，通过这项技术，你不需要通过 过多提示词 来提升图片的质量，而是保持作品原始的总体构图，并提高美观度。在少量提示词情况下也可以生成效果不错的作品。
+然后重启程序，你就可以在 Img2Img 中使用此项功能。
 
-据暗影·夜光所言[^11]，添加 25% 以内的权重，就可以稍微改善画面的美观度而不影响内容。
+通过这项技术，你不需要通过 过多提示词 来提升图片的质量，而是保持作品原始的总体构图，并提高美观度。在少量提示词情况下也可以生成效果不错的作品。
+
+据暗影·夜光所言[^11]，添加 25% 以内的权重，就可以稍微改善画面的美观度而不影响内容。美学 与 Hypernetworks 让 Ai 作品更接近原画师风格，但是美学权重本身效果并不好。需要配合 Hypernetworks 超网络。
+
+训练这项模型很快，但是在每一次生产时都会重新为图片计算一次，所以出图很慢。
 
 注意：当种子改变时，训练结果也会改变。
-
-训练这项模型很快，但是在每一次生产时都会重新为图片计算一次，所以很慢！
-
-美学 与 Hypernetworks 让 Ai 作品更接近原画师风格，但是美学权重本身效果并不好。需要配合 Hypernetworks 超网络。
 
 ![Aesthetic_other](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/Aesthetic_other.png)
 
@@ -86,7 +86,7 @@ git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-grad
 
 ## Textual Inversion 自训练[^7]
 
-[英文:自己训练 embedding](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion#training-embeddings)
+[官方Wiki](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion#training-embeddings)
 
 !!! danger "重命名 VAE 文件"
 
@@ -96,30 +96,28 @@ git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-grad
 
 ### 准备数据集
 
-数据集在保证质量和特征一致的情况下，如果算力允许，越多越好。可以是插画，风格抽象画作，表情包。
+数据集在保证质量和特征一致的情况下，如果算力允许，越多越好。数据内容可以是插画，风格抽象画作，表情包。
 
-可以从 [yande](https://yande.re/post) pixiv 获取数据集。[^10]
+可以从 [yande](https://yande.re/post)，pixiv 等平台获取数据集。[^10]
 
 !!! tip
     如果作品不是公共版权，请获取授权再进行操作。
-
 
 
 ### 模型要求
 
 WebUi 应该是 Git 的最新版本。
 
-显存至少 6GB，正常使用需要 12GB 显存。根据实验数据，8GB显存应该选择 `512x512` 分辨率。
+显存至少 6GB，正常使用需要 12GB 显存。根据实验数据，8GB 显存应该选择 `512x512` 分辨率，不能在 `--lowvram` 和 `--medvram` 参数下进行训练，不支持 `batch sizes` 和 `gradient accumulation` 。
 
 训练可使用半精度浮点，但是否好用还需要进行实验。
 
-如果你有足够的内存，那么在`--no-half --precision full`下运行会更安全。
+如果你有足够的内存，那么在 `--no-half --precision full` 下运行会更安全。
+
 
 你可以中断和恢复训练而不会丢失任何数据（AdamW 优化参数除外，但似乎现有的存储库都没有保存这些，所以一般认为它们并不重要）。
 
-不支持 `batch sizes` 和 `gradient accumulation`。
 
-不可能在 `--lowvram` and `--medvram` 参数下运行起来。
 
 
 ### 设置说明
@@ -129,6 +127,7 @@ WebUi 应该是 Git 的最新版本。
 在 `Interrogate Options` 设置中，`Interrogate: deepbooru score threshold` 是 deepbooru(从图像提取标签) 可用标签的阀值。建议使用 0.75,也就是保留预测结果大于 75%的结果。
 
 比如，假定识别结果为
+
 ```
 1.000 1girl
 0.986 blush
@@ -142,6 +141,7 @@ WebUi 应该是 Git 的最新版本。
 0.637 long_sleeves
 0.628 monochrome
 ```
+
 就会丢弃 `wide_sleeves` 以下的内容
 
 `Interrogate: deepbooru sort alphabetically` 是按照字母顺序排序 Tag，因为 Tag 对结果影响很大，所以我们取消勾选此项。
