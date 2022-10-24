@@ -1,39 +1,32 @@
 # 自训练
-
-本节讨论 WebUi 的高度自定义功能：train ，通过这项功能，我们可以为其增加 DLC 扩展包。
-
-Textual Inversion 训练为了 embeddings，embeddings 为 Ai 提供处理过的输入数据，告诉这个角色“具体是什么”，训练特殊的人物，角色会更好。
-
-Hypernetworks 则会对超网络的改动，与 embeddings 不同，Hypernetworks 会对模型进行微调，所以泛化效果更加好，训练画风会更好。
-
-Aesthetic Gradients 通过计算平均权重，来提升图片的质量，提高美观度。在少量提示词情况下也可以生成效果不错的作品。
+>此页面还在起步阶段，欢迎贡献。
 
 
-关于 [损失函数](https://fangkaipeng.com/?p=2056#header-id-16)
+本节讨论 WebUi 的高度自定义功能：`train`，通过这项功能，我们可以为 Ai 增加类似 DLC 扩展包一样的功能。
 
+
+`Textual Inversion` 训练为了 `embeddings`，`embeddings` 为 Ai 提供处理过的输入数据，告诉这个角色“具体是什么”，训练特殊的人物，角色会更好。
+
+`Hypernetworks` 则会对超网络的改动，与 `embeddings` 不同，`Hypernetworks` 会对模型进行微调，所以泛化效果更加好，训练画风会更好。
+
+`Aesthetic Gradients` 通过计算平均权重，来提升图片的质量，提高美观度。在少量提示词情况下也可以生成效果不错的作品。
 
 如果你在 `--medvram` 参数下开始训练，可能会出现 `RuntimeError: Expected all tensors to be on the same device` 错误，无法创建训练。
 
 这是优化机制导致的[问题](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2399)，解决方法是去除这个参数。这节对显卡的要求较高。
 
->此页面还在起步阶段，欢迎贡献。
-
 
 ## Textual Inversion 识别新角色
 
-`Textual Inversion`允许你在自己的图片上训练一小部分神经网络，并在生成新图片时使用结果。可以数据集没有新出的角色画不出的问题，模仿特定的艺术风格。实际上是 NLP 中的即时调优。
-
-使用时，将 embedding(一个 .pt 或一个 .bin 文件) 放入 `Textual Inversion` 目录并在 prompt 提示词中提到你要用的 embedding 的文件名(*.pt)即可。不必重新启动程序即可使其正常工作。
+`Textual Inversion` 允许你在自己的图片上训练一小部分神经网络，并在生成新图片时使用结果。可以数据集没有新出的角色画不出的问题，模仿特定的艺术风格。实际上是 NLP 中的即时调优。
 
 [官方英文说明和效果图](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion)
 
+使用时，将 `embedding` (一个 .pt 或一个 .bin 文件) 放入 `Textual Inversion` 目录并在 `prompt` 提示词中提到你要用的 `embedding` 的文件名(*.pt)即可。不必重新启动程序即可使其正常工作。
 
-这对制作数据集没有囊括的 2021 年之后的动漫人物非常有效。（PS:相应的，Miku因为图多所以效果最好），在许多情况下（例如不同的环境和姿势）对一个主题执行此操作通常可以让 AI 创建更好的嵌入。
+通过这项技术，我们可以让 Ai 认识 2021 年之后的动漫人物（数据集没有囊括的）。
 
-
-没错，NAI 的 `hypernetworks` 就是超网络，用来做 embeddings（风格化）。
-
-多 `embeddings` 可以一起用，启动时候会自动加载。
+多 `embeddings` 可以一起使用，程序启动时会自动加载它们。
 
 [相关 embeddings](https://gitlab.com/16777216c/stable-diffusion-embeddings)，里面有相关效果预览。
 
@@ -46,7 +39,9 @@ Aesthetic Gradients 通过计算平均权重，来提升图片的质量，提高
 
 超网络是一种新颖的概念，用于在不触及任何权重的情况下微调模型。[^12]
 
-使用时，将 Pt 放入 `/models/hypernetworks` 并在设置选项勾选启用它
+NAI Leak 的 `hypernetworks` 就是超网络，用来做 embeddings（风格化）。
+
+使用时，将 Pt 放入 `/models/hypernetworks` 并在设置选项勾选启用它。
 
 ## Dreambooth 
 
