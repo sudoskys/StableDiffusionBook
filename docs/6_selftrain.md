@@ -50,6 +50,7 @@ NAI Leak 的 `hypernetworks` 就是超网络，用来做 embeddings（风格化�
 
 使用时，将 Pt 放入 `/models/hypernetworks` 并在设置选项勾选启用它。
 
+
 ## Dreambooth 
 
 更改主模型
@@ -81,6 +82,11 @@ git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-grad
 
 ![Aesthetic_other](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/Aesthetic_other.png)
 
+
+
+
+
+---------------
 
 
 
@@ -289,7 +295,7 @@ Windows 需要在 `web-user.bat的COMMANDLINE_ARGS=` 一行添加，或者直接
 
 **[filewords]**
 
-是 提示词模板文件 的 Tag，可以实现把文件名中的词汇插入提示。
+这个是代表 提示词模板文件 的 Tag，可以实现把**文件名插入提示词**。
 
 第一，默认情况下，文件的扩展名以及-文件名开头的所有数字和破折号 ( ) 都会被删除。
 
@@ -328,10 +334,15 @@ Source directory 填数据源文件夹地址。
 
 Hypernetworks 是一种新颖的概念，用于在不触及任何权重的情况下微调模型。
 
-你可以在`train` 选项卡训练 `Hypernetworks`，训练方式与 Textual Inversion 相同。
+你可以在`train` 选项卡训练 `Hypernetworks`，训练方式与 `Textual Inversion` 相同。
 
-唯一的要求是使用非常非常低的学习率，例如 0.000005 或 0.0000005
+注意,应该使用非常低的学习率，例如 0.000005 或 0.0000005
 
+分辨率设置为要训练的分辨率，最好使用 1:1 的纵横比。
+
+如果数据集的图片是长条或者横条，请勾选 `Split cversized images into two`
+
+如果你还没有打标签，可以勾选 `Using deepbooru for caption` ，来让 deepbooru 识别标签。
 
 
 ### hyper network layer structure
@@ -345,6 +356,10 @@ The more you add the number, like "1, 2, 4, 2, 1", the more the structure of hyp
 If checked, add layer normalization after every fully connected layer.
 
 防止超网络过拟合，使训练更加稳定。
+
+### USE Dropout
+
+Dropout 似乎很有用，如果需要避免过拟合/重影，请勾选这个。
 
 ### 激活函数 activation functions
 
