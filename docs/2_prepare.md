@@ -47,8 +47,9 @@ NAI 是一个在线**服务**。
 
 ## 二次元之外
 
-如果你想知道没有 NAI模型 的 stable-diffustion (~因为本文档大概率主要是二次元文档~)，请看 [这个合集](https://space.bilibili.com/250989068/channel/collectiondetail?sid=660352)
+如果你想知道没有 NAI模型 的 stable-diffustion，请看 [这个合集](https://space.bilibili.com/250989068/channel/collectiondetail?sid=660352)。
 
+顺便贴一个 [最近发布的1.5模型](https://huggingface.co/runwayml/stable-diffusion-v1-5) 和 [稳定体积小的1.4模型](https://huggingface.co/CompVis/stable-diffusion-v1-4)
 
 ## 新闻
 
