@@ -36,7 +36,7 @@
 
 [官方英文说明和效果图](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion)
 
-使用时，将 `embedding` (一个 .pt 或一个 .bin 文件) 放入 `Textual Inversion` 目录并在 `prompt` 提示词中提到你要用的 `embedding` 的文件名(*.pt)即可。不必重新启动程序即可使其正常工作。
+使用时，将 `embedding` (一个 .pt 或一个 .bin 文件) 放入 `stable-diffusion-webui/embeddings/` 目录并在 `prompt` 提示词中提到你要用的 `embedding` 的文件名(*.pt)即可。不必重新启动程序即可使其正常工作。
 
 通过这项技术，我们可以让 Ai 认识 2021 年之后的动漫人物（数据集没有囊括的）。但是使用场景单一，构图必须和原素材一致。
 
@@ -68,7 +68,7 @@ Textual Inversion 从模型中挖掘内容，所以如果你要画一个非常�
 
 另外，这个模型不可以学习画风[^14]，只能学习物体人物特点。但可以适应画风。模型无法很好地学习到照片中物体的整体特征，反而可能出现过拟合。
 
-生成的模型是剪切过训练数据的 ckpt 模型，需要放进 model 目录里进行替换。
+生成的模型是剪切过训练数据的 ckpt 模型，需要放进 model 目录里进行**替换**。
 
 ![SAMPLE](https://dreambooth.github.io/DreamBooth_files/high_level.png)
 
@@ -92,6 +92,7 @@ git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-grad
 
 安装后，在 webui 的 `extensions` 文件夹下面创建 `aesthetic-gradients` 文件夹。
 
+使用的时候把 Pt 放在 `models/aesthetic_embeddings/`
 
 然后重启程序，你就可以在 Img2Img 中使用此项功能。
 
