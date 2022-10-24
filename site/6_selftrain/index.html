@@ -655,9 +655,9 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2002</p>
 <p>Pt文件，小的是 embedding 大的是 hypernetworks</p>
 </div>
 <h2 id="dreambooth">Dreambooth</h2>
-<p>DreamBooth 的模型是一种<em>很新的</em>扩散模型，给定3-5张自己随意拍摄的某一物体的图片，就能得到不同背景下的该物体的新颖再现。</p>
+<p>DreamBooth 是一种 <em>很新的</em> 方法(finetune LDM)，给定3-5张自己随意拍摄的某一物体的图片，就能得到不同背景下的该物体的新颖再现。<sup id="fnref:15"><a class="footnote-ref" href="#fn:15">9</a></sup></p>
 <p>Textual Inversion 从模型中挖掘内容，所以如果你要画一个非常冷门的东西，它的数据恰巧又不在模型中，AI 就傻了。而 <code>Dreambooth</code> 会把你给出的数据插入到模型的输出中，效果特别好，因为 Ai “知道”。</p>
-<p>另外，这个模型不可以学习画风，只能学习物体人物特点。但可以适应画风。模型无法很好地学习到照片中物体的整体特征，反而可能出现过拟合。</p>
+<p>另外，这个模型不可以学习画风<sup id="fnref:14"><a class="footnote-ref" href="#fn:14">8</a></sup>，只能学习物体人物特点。但可以适应画风。模型无法很好地学习到照片中物体的整体特征，反而可能出现过拟合。</p>
 <p>生成的模型是剪切过训练数据的 ckpt 模型，需要放进 model 目录里进行替换。</p>
 <p><img alt="SAMPLE" src="https://dreambooth.github.io/DreamBooth_files/high_level.png" /></p>
 <p>https://dreambooth.github.io/</p>
@@ -681,7 +681,6 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2002</p>
 <div class="admonition danger">
 <p class="admonition-title">重命名 VAE 文件</p>
 <p>重命名VAE模型文件非常关键，如果带着VAE训练效果十分差。</p>
-<p>或者不需要重命名vae文件，直接在设置里打开 <code>Move Vae...</code></p>
 </div>
 <h3 id="_2">准备数据集</h3>
 <p>数据集在保证风格一致和内容同质化的情况下，如果算力允许，越多越好。数据内容可以是插画，风格抽象画作，表情包。</p>
@@ -882,6 +881,9 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2002</p>
 <li id="fn:14">
 <p><a href="https://www.bilibili.com/read/cv18935031?from=search">dreambooth-小鬼峰</a>&#160;<a class="footnote-backref" href="#fnref:14" title="Jump back to footnote 8 in the text">&#8617;</a></p>
 </li>
+<li id="fn:15">
+<p><a href="https://arxiv.org/abs/2208.12242">dreambooth-论文</a>&#160;<a class="footnote-backref" href="#fnref:15" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
 </ol>
 </div>
 
@@ -890,11 +892,11 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2002</p>
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 24, 2022 16:19:05</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 24, 2022 16:28:09</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 24, 2022 16:19:05</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 24, 2022 16:28:09</span>
       
     
   </small>
