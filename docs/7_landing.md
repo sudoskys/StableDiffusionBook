@@ -140,13 +140,14 @@ NAI模型使用 Danbooru2021 的数据, 而 Danbooru2022 还未训练(个人不�
 
 @sudoskys
 
-@huige233
+@CCRcmcpe
 
-@ReOracle
+@huige233
 
 @lychees
 
-@CCRcmcpe
+@ReOracle
+
 
 ## 鸣谢
 
