@@ -17,7 +17,7 @@
 
 访问: https://draw.dianas.cyou/
 
-## 分流地址
+### 分流地址
 
 
 - Vercel 部署/国内不可用
@@ -25,7 +25,7 @@
 https://stable-diffusion-book.vercel.app/  短链为(https://b23.ink/aibook)
 
 
-## 帮助改进
+### 帮助改进
 
 如果你发现了本文的的错误或不足，欢迎向[项目仓库](https://github.com/sudoskys/StableDiffusionBook/)提 issue 和 PR。
 
@@ -33,14 +33,24 @@ https://stable-diffusion-book.vercel.app/  短链为(https://b23.ink/aibook)
 
 在键盘按下 `。` 键自动克隆仓库并开始协作
 
-## 需求
+### 需求
 
 显存 2GB 可用，4 GB 能用
 
 ![效果.png](https://s1.ax1x.com/2022/10/10/xtdNNR.png)
 
+### 相关
 
-## 声明
+[Stable Diffusion WebUi](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
+
+[集成Tag工具/支持超网络的Web](https://git.hudaye.work/MiuliKain/Kamiya-OpenUI)
+
+[基于 NovelAI 的画图机器人](https://github.com/koishijs/novelai-bot#token)
+
+[Danbooru 标签超市](https://github.com/wfjsw/danbooru-diffusion-prompt-builder)
+
+
+### 声明
 
 本文档不托管任何模型及相关源代码，本网站托管方不提供模型的下载，不直接分发任何不合法模型文件。
 
@@ -49,4 +59,5 @@ https://stable-diffusion-book.vercel.app/  短链为(https://b23.ink/aibook)
 如果本文档外链的内容中有不合适的内容，与本文档无关
 
 >文档使用 GFDL 许可
+
 

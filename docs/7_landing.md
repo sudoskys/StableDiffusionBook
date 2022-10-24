@@ -11,12 +11,11 @@
 
 - [集成Tag工具/支持超网络的Web](https://kamiya.hudaye.work/)，[项目地址](https://git.hudaye.work/MiuliKain/Kamiya-OpenUI)
 
+- [基于 NovelAI 的画图机器人](https://github.com/koishijs/novelai-bot#token)
 
 #### 服务
 
 - [Danbooru 标签超市](https://tags.novelai.dev/),[项目地址](https://github.com/wfjsw/danbooru-diffusion-prompt-builder)
-
-- [基于 NovelAI 的画图机器人](https://github.com/koishijs/novelai-bot#token)
 
 - [SDWebUi自动补全]( https://github.com/DominikDoom/a1111-sd-webui-tagcomplete)
 
