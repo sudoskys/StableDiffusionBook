@@ -624,7 +624,7 @@ Dreambooth</p>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion">官方英文说明和效果图</a></p>
 <p>使用时，将 <code>embedding</code> (一个 .pt 或一个 .bin 文件) 放入 <code>Textual Inversion</code> 目录并在 <code>prompt</code> 提示词中提到你要用的 <code>embedding</code> 的文件名(*.pt)即可。不必重新启动程序即可使其正常工作。</p>
 <p>通过这项技术，我们可以让 Ai 认识 2021 年之后的动漫人物（数据集没有囊括的）。</p>
-<p>多 <code>embeddings</code> 可以一起使用，程序启动时会自动加载它们。</p>
+<p>多 <code>embeddings</code> 可以一起使用，程序启动时会自动加载它们</p>
 <p><a href="https://gitlab.com/16777216c/stable-diffusion-embeddings">相关 embeddings</a>，里面有相关效果预览。</p>
 <p><a href="https://rentry.org/embeddings">list of Textual Inversion embeddings for WebUi(SD)</a></p>
 <p><a href="https://cyberes.github.io/stable-diffusion-textual-inversion-models/">HuggingFace 的embeddings库</a></p>
@@ -632,6 +632,10 @@ Dreambooth</p>
 <p>超网络是一种新颖的概念，用于在不触及任何权重的情况下微调模型。<sup id="fnref:12"><a class="footnote-ref" href="#fn:12">6</a></sup></p>
 <p>NAI Leak 的 <code>hypernetworks</code> 就是超网络，用来做 embeddings（风格化）。</p>
 <p>使用时，将 Pt 放入 <code>/models/hypernetworks</code> 并在设置选项勾选启用它。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Pt文件，小的是 embedding 大的是 hypernetworks</p>
+</div>
 <h2 id="dreambooth">Dreambooth</h2>
 <p>更改主模型</p>
 <h2 id="aesthetic-gradients">Aesthetic Gradients 美学权重</h2>
@@ -855,11 +859,11 @@ Dreambooth</p>
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 24, 2022 07:33:25</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 24, 2022 11:49:30</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 24, 2022 07:33:25</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 24, 2022 11:49:30</span>
       
     
   </small>
