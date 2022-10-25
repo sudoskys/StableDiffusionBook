@@ -380,7 +380,7 @@ Hypernetworks 是一种新颖的概念，用于在不触及任何权重的情况
 
 注意,应该使用非常低的学习率，例如 0.000005 或 0.0000005.
 
-如果学习率是5e-6 ，步数大约 10000 到 20000 。
+如果学习率是5e-6 ，步数大约 10000 到 20000 。[学习率计算器](https://colab.research.google.com/drive/1qzweYEMIFkG6jPa04tD1MhWWOzgSnDvP?usp=sharing)，来自 [这里](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2670)
 
 分辨率设置为要训练的分辨率，最好使用 1:1 的纵横比。
 
@@ -446,7 +446,7 @@ Swish对比Relu和Linear要更好，Swish适合更大的网络，而Elu可能对
 
 DreamBooth 的模型是一种新的文本到图像“个性化”（可适应用户特定的图像生成需求）扩散模型。
 
-[Nyanko Lepsoni 的 Colab 笔记本](https://colab.research.google.com/drive/17yM4mlPVOFdJE_81oWBz5mXH9cxvhmz8)，需要Pro套餐算力(18-24G显存需要)
+[Nyanko Lepsoni 的 Colab 笔记本](https://colab.research.google.com/drive/17yM4mlPVOFdJE_81oWBz5mXH9cxvhmz8)
 
 [RcINS 的 Colab 笔记本](https://colab.research.google.com/drive/1C1vVZ59S4kWfL7jIsczyLpmxbD4cOA-k)
 
@@ -454,7 +454,7 @@ DreamBooth 的模型是一种新的文本到图像“个性化”（可适应用
 
 ### 配置要求
 
-Windows 系统至少需要16,Linux 系统要求显存大于 12 GB
+Windows 系统至少需要 16, Linux 系统要求显存大于 8 GB
 
 
 相关的还有 [DreamBooth_Stable_Diffusion](https://colab.research.google.com/github/ShivamShrirao/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion.ipynb#scrollTo=K6xoHWSsbcS3) 和 [fast-DreamBooth](https://colab.research.google.com/github/TheLastBen/fast-stable-diffusion/blob/main/fast-DreamBooth.ipynb)
