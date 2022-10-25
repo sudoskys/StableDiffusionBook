@@ -480,7 +480,9 @@ Windows 系统至少需要 16, Linux 系统要求显存大于 8 GB
 
 [ShivamShrirao/diffusers](https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth)
 
+<!--
 [飞桨dreambooth训练教程](https://docs.qq.com/doc/DUHVuZ3BNV0FkT1R6)
+-->
 
 https://github.com/XavierXiao/Dreambooth-Stable-Diffusion
 
