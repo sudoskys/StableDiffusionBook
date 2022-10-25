@@ -695,7 +695,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2002</p>
 <p>WebUi 应该是 Git 的最新版本。</p>
 <p>显存至少 6GB，正常使用需要 12GB 显存。根据实验数据，8GB 显存应该选择 <code>512x512</code> 分辨率，不能在 <code>--lowvram</code> 和 <code>--medvram</code> 参数下进行训练，不支持 <code>batch sizes</code> 和 <code>gradient accumulation</code> 。</p>
 <p>训练可使用半精度浮点，但是否好用还需要进行实验。</p>
-<p>如果你有足够的内存，那么在 <code>--no-half --precision full</code> 下运行会更安全。</p>
+<p>如果你有足够的Vram，那么在 <code>--no-half --precision full</code> 下运行会更安全。</p>
 <p>你可以中断和恢复训练而不会丢失任何数据（AdamW 优化参数除外，但似乎现有的存储库都没有保存这些，所以一般认为它们并不重要）。</p>
 <h3 id="_4">设置说明</h3>
 <p>准备 30 张以上的目标人设图片，每一张图片应当裁剪为同样的比例。（即使WebUi已经支持了长方形图片的裁剪）</p>
@@ -894,11 +894,11 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2002</p>
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 24, 2022 16:49:10</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 25, 2022 06:02:00</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 24, 2022 16:49:10</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 25, 2022 06:02:00</span>
       
     
   </small>
