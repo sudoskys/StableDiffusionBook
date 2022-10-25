@@ -407,6 +407,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    黑话
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -592,17 +599,84 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
 <p>使用 CUDA 技术，GPU 可以用来进行通用处理（不仅仅是图形）；这种方法被称为 GPGPU。与 CPU 不同的是，GPU 以较慢速度并发大量线程，而非快速执行单一线程。以 GeForce 8800 GTX 为例，其核心拥有 128 个内处理器。利用 CUDA 技术，就可以将那些内处理器做为线程处理器，以解决数据密集的计算。</p>
 <h3 id="_5">损失函数</h3>
 <p>关于 <a href="https://fangkaipeng.com/?p=2056#header-id-16">损失函数</a></p>
+<h3 id="_6">黑话</h3>
+<table>
+<thead>
+<tr>
+<th>缩写</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NAI</td>
+<td>(Novel AI ，一般特指Leak)</td>
+</tr>
+<tr>
+<td>咒语/念咒</td>
+<td>prompts</td>
+</tr>
+<tr>
+<td>施法/吟唱/t2i</td>
+<td>Text2Image</td>
+</tr>
+<tr>
+<td>魔杖</td>
+<td>t2i/i2i参数</td>
+</tr>
+<tr>
+<td>i2i</td>
+<td>Image2Image,一般特指全部图片生成</td>
+</tr>
+<tr>
+<td>inpaint</td>
+<td>i2i一种maskredraw，可以局部重绘</td>
+</tr>
+<tr>
+<td>ti/emb/炼丹</td>
+<td>Train中的文本反转，一般特指Embedding插件</td>
+</tr>
+<tr>
+<td>hn/hyper/冶金</td>
+<td>hypernetwork，超网络</td>
+</tr>
+<tr>
+<td>炸炉</td>
+<td>指训练过程中过度拟合，但炸炉前的日志插件可以提取二次训练</td>
+</tr>
+<tr>
+<td>废丹</td>
+<td>指完全没有训练成功</td>
+</tr>
+<tr>
+<td>美学/ext</td>
+<td>aesthetic_embeddings,emb一种，特性是训练飞快，但在生产图片时实时计算。</td>
+</tr>
+<tr>
+<td>db/梦展</td>
+<td>DreamBooth，目前一种性价比高（可以在极少步数内完成训练）的微调方式，但要求过高</td>
+</tr>
+<tr>
+<td>ds</td>
+<td>DeepSpeed，微软开发的训练方式，移动不需要的组件到内存来降低显存占用，可使db的vram需求降到8g以下。开发时未考虑win,目前在win有兼容性问题故不可用</td>
+</tr>
+<tr>
+<td>8bit/bsb</td>
+<td>一般指Bitsandbyte，一种8比特算法，能极大降低vram占用，使16g可用于训练db。由于链接库问题，目前/预计未来在win不可用</td>
+</tr>
+</tbody>
+</table>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 25, 2022 14:11:00</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 25, 2022 14:21:38</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 25, 2022 14:11:00</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 25, 2022 14:21:38</span>
       
     
   </small>
