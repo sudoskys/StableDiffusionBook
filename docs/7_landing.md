@@ -25,6 +25,8 @@
 
 - [WANDB-MLOps平台](https://wandb.ai/site)
 
+- [MD设计标签选择](https://aispells.art/)
+
 ### 提示词相关
 
 - [人偶教室：风格化教学](https://www.yuque.com/longyuye/lmgcwy)
