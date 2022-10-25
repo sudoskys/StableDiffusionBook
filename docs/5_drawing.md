@@ -55,13 +55,7 @@
 
 如果你提供一个种子（而不是随机的 -1），你的图像很快就会变得过饱和、过度锐化、过度像素化..... 当然如果想微调，可以使用固定种子。
 
-### 应用实例
 
-先让我们看看稳定扩散都有什么使用姿势。
-
-[稳定扩散的真实用例](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3219)
-
-[稳定扩散的应用结合](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3572)
 
 ## 魔法入门
 
@@ -804,6 +798,14 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-edi
 
 [https://github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference](https://github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference)
 
+
+## 应用指南
+
+先让我们看看稳定扩散都有什么使用姿势。
+
+[稳定扩散的真实用例](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3219)
+
+[稳定扩散的应用结合](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3572)
 
 
 
