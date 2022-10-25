@@ -151,7 +151,9 @@ NAI模型使用 Danbooru2021 的数据, 而 Danbooru2022 还未训练(个人不�
 
 有人在做，不过需要等等。
 
+### 入门 SD Ai艺术
 
+[SD GUIDE FOR ARTISTS AND NON-ARTISTS](https://docs.google.com/document/d/1R2UZi5G-DXiz2HcCrfAFLYJoer_JPDEoZmV7wy1tEz0/edit#)
 
 ## 关于文档
 

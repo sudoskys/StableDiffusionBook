@@ -80,9 +80,9 @@ Textual Inversion 从模型中挖掘内容，所以如果你要画一个非常�
 
 ![SAMPLE](https://dreambooth.github.io/DreamBooth_files/high_level.png)
 
-https://dreambooth.github.io/
+官网 https://dreambooth.github.io/
 
-https://arxiv.org/abs/2208.12242
+论文 https://arxiv.org/abs/2208.12242
 
 
 
@@ -471,7 +471,9 @@ Windows 系统至少需要 16, Linux 系统要求显存大于 8 GB
 
 [Dreambooth Gui](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2927)
 
+[ShivamShrirao/diffusers](https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth)
 
+[飞桨dreambooth训练教程](https://docs.qq.com/doc/DUHVuZ3BNV0FkT1R6)
 
 https://github.com/XavierXiao/Dreambooth-Stable-Diffusion
 
