@@ -674,6 +674,7 @@ Tip: `fill` 要更多 step 才能消除不自然感.
 
 <iframe src="//player.bilibili.com/player.html?aid=559044202&cid=859852841&page=1&danmaku=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 
+
 ### Img2Img Loopback 回环生成
 
 在 img2img 中设置loopback脚本，它允许自动将输出图像作为下一批的Batch提供，相当于保存输出图像，并用它替换输入图像。
@@ -682,11 +683,13 @@ Batch 数设置控制获得多少次迭代
 
 通常，在执行此操作时，您会自己为下一次迭代选择许多图像中的一个，因此此功能的有用性可能值得怀疑，但反正我已经设法获得了一些我无法获得的非常好的输出。
 
+
 ### Img2Img 让低显存生成大分辨率图片
 
 在前面提到了，如果遇到生成鬼图或者 低显存生产高分辨率图片 可以采用的 Img2Img 画质提升脚本。
 
 其实我**强烈推荐**你使用 Extras 的功能对低分辨率进行重放，效果不错的，且体验良好！
+
 
 #### 脚本
 

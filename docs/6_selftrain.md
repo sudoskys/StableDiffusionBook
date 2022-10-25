@@ -395,6 +395,10 @@ If write "1, 2, 1", hypernetworks are composed of 2 fully connected layers whose
 
 The more you add the number, like "1, 2, 4, 2, 1", the more the structure of hypernetworks becomes deeper. Deep hypernetworks are suited for training with large datasets.
 
+层结构目前还是推荐1，2，1，如果想扩展的话，可以尝试1，2，2，1.[^16]
+
+1，2，1的pt文件大概是83.8MB，1，2，2，1大概是167MB。如果要扩展的话，一定要注意盘空间是否足够，否则很容易爆盘。[^16]
+
 ### Add layer normalization
 
 If checked, add layer normalization after every fully connected layer.
