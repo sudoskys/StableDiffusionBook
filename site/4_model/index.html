@@ -684,6 +684,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    修剪模型6
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1200,6 +1207,10 @@ pip install xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl
 <p>你可以在<code>modules/scripts.py</code>中找到Script类。</p>
 <p>如果要创建你自己的自定义脚本，请创建一个实现类的python脚本，并将其放到scripts文件夹中，使用以下示例或文件夹中已有的其他脚本作为指导。</p>
 <p>Script 类有四个主要方法，这里通过一个简单的<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Developing-custom-scripts">示例脚本</a>进行更详细的描述，这个脚本可以旋转和/或翻转生成的图像。</p>
+<h3 id="6">修剪模型<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">6</a></sup></h3>
+<p>将要修剪的 <code>.ckpt</code> 文件放在 <code>/stable-diffusion-webui</code> 文件夹，把 <a href="https://raw.githubusercontent.com/harubaru/waifu-diffusion/main/scripts/prune.py">脚本</a> 另存本地，删除第 6 行和 第 8 行。然后在 prune.py 中的最后一行编辑 ckpt 的名称。</p>
+<p>比如，<code>prune_it('wd-v1-2-full-emma.ckpt')</code></p>
+<p>然后运行这个脚本，修剪过程可能需要几分钟。</p>
 <h2 id="_15">运行</h2>
 <h3 id="4gb">4GB 显卡支持</h3>
 <p>针对具有低 VRAM 的 GPU 的优化。这应该可以在具有 4GB 内存的视频卡上生成 512x512 图像。</p>
@@ -1234,6 +1245,9 @@ pip install xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl
 <li id="fn:6">
 <p><a href="http://allophane.com/index.php/2022/10/17/roaming_info_for_latent_diffusion/">Roaming_info_for_latent_diffusion</a>&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 5 in the text">&#8617;</a></p>
 </li>
+<li id="fn:7">
+<p><a href="https://rentry.co/voldy#-pruning-a-ckpt-">pruning-a-ckpt</a>&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
 </ol>
 </div>
 
@@ -1242,11 +1256,11 @@ pip install xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 25, 2022 12:06:41</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 25, 2022 12:51:59</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 25, 2022 12:06:41</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 25, 2022 12:51:59</span>
       
     
   </small>

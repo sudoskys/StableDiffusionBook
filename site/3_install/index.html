@@ -486,6 +486,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#api-ms-win-core-path-l1-1-0dll-is-missing3" class="md-nav__link">
+    api-ms-win-core-path-l1-1-0.dll is missing3
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -829,6 +836,11 @@ conda activate aidraw
 <p>因为仓库给出的一键安装脚本会创建虚拟环境，然后启动 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/launch.py">launch.py</a>。</p>
 <p>在运行时，一键安装程序会创建一个 python 虚拟环境，因此如果你在安装之前安装了一个模块，那么任何已安装的模块都不会影响你</p>
 <p>如果需要防止创建虚拟环境而使用系统 python，编辑 <code>webui.bat</code> 替换 <code>setVENV_DIR=venv</code>为<code>set VENV_DIR=</code></p>
+<h4 id="api-ms-win-core-path-l1-1-0dll-is-missing3">api-ms-win-core-path-l1-1-0.dll is missing<sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">3</a></sup></h4>
+<p>Windows 7上运行很可能会报错: <code>api-ms-win-core-path-l1-1-0.dll is missing</code>，这是因为许多程序需要新版本的 Windows 的系统文件。</p>
+<p>如果没有出现该错误，不需要执行下面的操作。 </p>
+<p>这些文件已经被移植来与 W7 兼容，并且可以在 <a href="https://github.com/nalexandru/api-ms-win-core-path-HACK/releases/download/0.3.1/api-ms-win-core-path-blender-0.3.1.zip">这里</a> 下载。它的 <a href="https://github.com/nalexandru/api-ms-win-core-path-HACK/">Github 页面</a></p>
+<p>解压缩并将 <code>x86.dll</code> 复制到 <code>C:\Windows\SysWOW64</code> ，将 <code>x64.dll</code> 复制到 <code>C:\Windows\System32</code> 并重启。</p>
 <p><strong>生成图片问题见下一章</strong></p>
 <h3 id="4gb">启动(但是必须首先下载一个4GB模型)</h3>
 <p>如果你运行报错，请读前面的自救提示。</p>
@@ -1074,7 +1086,7 @@ Colab 开始反滥用，目前 Colab 的[协议](https://research.google.com/col
 <p><a href="https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99">关于 AUTOMATIC1111 /stable-diffusion-webui 的 FAQ:</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:3">
-<p><a href="https://rentry.co/voldy">Wiki2</a>&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<p><a href="https://rentry.co/voldy">Wiki2</a>&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -1084,11 +1096,11 @@ Colab 开始反滥用，目前 Colab 的[协议](https://research.google.com/col
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 25, 2022 12:06:41</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 25, 2022 12:51:59</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 25, 2022 12:06:41</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 25, 2022 12:51:59</span>
       
     
   </small>
