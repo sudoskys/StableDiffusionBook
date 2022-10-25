@@ -456,6 +456,12 @@ DreamBooth 的模型是一种新的文本到图像“个性化”（可适应用
 
 以上笔记本来自 [社区置顶](https://t.me/StableDiffusion_CN/196744)
 
+
+
+
+[使用 Dreambooth 训练稳定扩散的实验的分析](https://wandb.ai/psuraj/dreambooth/reports/Dreambooth-training-analysis--VmlldzoyNzk0NDc3)
+
+
 ### 配置要求
 
 Windows 系统至少需要 16, Linux 系统要求显存大于 8 GB
@@ -464,6 +470,7 @@ Windows 系统至少需要 16, Linux 系统要求显存大于 8 GB
 相关的还有 [DreamBooth_Stable_Diffusion](https://colab.research.google.com/github/ShivamShrirao/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion.ipynb#scrollTo=K6xoHWSsbcS3) 和 [fast-DreamBooth](https://colab.research.google.com/github/TheLastBen/fast-stable-diffusion/blob/main/fast-DreamBooth.ipynb)
 
 [Dreambooth Gui](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2927)
+
 
 
 https://github.com/XavierXiao/Dreambooth-Stable-Diffusion

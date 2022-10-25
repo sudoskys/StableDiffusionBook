@@ -66,6 +66,9 @@ Stable diffusion本来是面向三次元的，而 NAI 是二次元特化版本�
 
 关于 [损失函数](https://fangkaipeng.com/?p=2056#header-id-16)
 
+### 潜在空间
+
+压缩数据的表示，其中相似的数据点在空间上更靠近在一起。
 
 ### 黑话
 
