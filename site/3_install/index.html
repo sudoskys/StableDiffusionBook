@@ -493,6 +493,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#an-illegal-memory-access-was-encountered-cuda-kernel-errors" class="md-nav__link">
+    an illegal memory access was encountered ....CUDA kernel errors...
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -709,7 +716,7 @@
 
 <h1 id="_1">安装</h1>
 <h2 id="stable-diffusion-webui">安装 Stable-Diffusion-webui 开源框架</h2>
-<p>此教程参考了 crosstyan<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></p>
+<p>此教程参考了 crosstyan<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> 的 <a href="https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99#prompt-editingmixing">FAQ</a></p>
 <p>WebUi的官方代码仓库地址为 https://github.com/AUTOMATIC1111/stable-diffusion-webui</p>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui#installation-and-running">官方英文安装教程</a></p>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Dependencies">官方给定的依赖列表</a></p>
@@ -841,6 +848,10 @@ conda activate aidraw
 <p>如果没有出现该错误，不需要执行下面的操作。 </p>
 <p>这些文件已经被移植来与 W7 兼容，并且可以在 <a href="https://github.com/nalexandru/api-ms-win-core-path-HACK/releases/download/0.3.1/api-ms-win-core-path-blender-0.3.1.zip">这里</a> 下载。它的 <a href="https://github.com/nalexandru/api-ms-win-core-path-HACK/">Github 页面</a></p>
 <p>解压缩并将 <code>x86.dll</code> 复制到 <code>C:\Windows\SysWOW64</code> ，将 <code>x64.dll</code> 复制到 <code>C:\Windows\System32</code> 并重启。</p>
+<h4 id="an-illegal-memory-access-was-encountered-cuda-kernel-errors">an illegal memory access was encountered ....CUDA kernel errors...</h4>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/1766">相关问题Issue</a></p>
+<p>在多数情况下，这代表显存溢出，也有可能是 GPU 硬件问题。</p>
+<p>据说使用 deepdanbooru 的话会有这个提示，可以尝试重新启动 或 安装cpu版本的deepdanbooru.</p>
 <p><strong>生成图片问题见下一章</strong></p>
 <h3 id="4gb">启动(但是必须首先下载一个4GB模型)</h3>
 <p>如果你运行报错，请读前面的自救提示。</p>
@@ -1096,11 +1107,11 @@ Colab 开始反滥用，目前 Colab 的[协议](https://research.google.com/col
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 25, 2022 12:51:59</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 25, 2022 13:48:20</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 25, 2022 12:51:59</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 25, 2022 13:48:20</span>
       
     
   </small>
