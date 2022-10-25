@@ -73,7 +73,7 @@ NAI 是一个在线**服务**。
 
 你可以在[这里](https://upscale.wiki/wiki/Official_Research_Models) 找到 `BSRGAN` ，下载的模型放到esrgan文件夹就可以使用。
 
-#3505之后超网络训练不稳定 ，[问题](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/3505)
+`#3505`之后超网络训练不稳定 ，[问题](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/3505)
 
 -------
 - 10/24
