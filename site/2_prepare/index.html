@@ -500,17 +500,17 @@
 <p>本文档目的是为刚入门接触使用Stable Diffusion绘画的小白一个简易的指南。</p>
 <h2 id="_2">在社区礼貌提问</h2>
 <p><a href="https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md">如何提问才是正确的？</a></p>
-<p>如果你确认有错误的内容或者需要补充的重要内容，可以发 Issue 或 Pr 这个仓库，帮助完成文档，帮到更多人。</p>
+<p>如果你确认有错误的内容或者需要补充的重要内容，可以发 <strong>Issue</strong> 或 提交 <strong>Pr</strong> 到此仓库，帮助完成文档，帮到更多人。</p>
 <p>欢迎交流，不欢迎伸手党。问问题前请先自己确认文档内没有解释，且你应该明白任何人或社区成员在没有利益关系的情况下，没有义务为你解答问题。</p>
 <p>如果看到不认识的章节，有可能是你的版本太低了。</p>
 <h2 id="party">我可以参加 Party 吗？</h2>
-<p>首先，很不幸地，因为需要用到 <code>CUDA</code> 加速，所以只有<strong>英伟达显卡</strong>支持良好。（AMD 可以用但速度不行，~当然没显卡也可以用 CPU 花几百倍时间生成~）</p>
+<p>首先，很不幸地，因为需要用到 <code>CUDA</code> 加速，所以只有<strong>英伟达显卡</strong>支持良好。（AMD 可以用但速度明显慢于英伟达显卡，~当然没显卡也可以用 CPU 花几百倍时间生成~）</p>
 <p><strong>Linux + AMD卡</strong> 请读 <a href="https://rentry.org/ayymd-stable-diffustion-v1_4-guide">AMD安装指南</a> 和 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Install-and-Run-on-AMD-GPUs">AMD安装WebUi指北</a></p>
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/1046">对于支持AMD Gpu方案相关讨论</a></p>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/1046">对于支持AMD GPU方案相关讨论</a></p>
 <div class="admonition danger">
 <p class="admonition-title">显卡保修</p>
 <p>显卡厂家对于深度学习卡的保修政策等同于矿卡
-过度玩耍(比如连续3天出图)，显卡会坏掉</p>
+过度玩耍(比如连续3天出图)，显卡会有坏掉的风险</p>
 </div>
 <p><a href="https://docs.google.com/spreadsheets/d/1Zlv4UFiciSgmJZncCujuXKHwc4BcxbjbSBg71-SdeNk/edit#gid=0">各种显卡的稳定扩散性能测试报告</a></p>
 <h2 id="_3">目前的五种方案</h2>
@@ -551,7 +551,7 @@
 </tbody>
 </table>
 <p>NAI 原版网页UI+后端部署需要准备一台拥有12GB以上显存的 <em>Linux系统</em> 的GPU服务器。个人使用 4GB 精简 Leak 模型更加划算。NAI官方使用的是全量模型，但是这需要大量的显存，~你需要淘宝售价 7W 的 A100 显卡~</p>
-<p>SdWebui 是一个可以使用 模型 生产图片的<strong>框架</strong>。</p>
+<p>SDWebUi 是一个可以使用 模型 生产图片的<strong>框架</strong>。</p>
 <p>NAI 是一个在线<strong>服务</strong>。</p>
 <h2 id="_4">二次元之外</h2>
 <p>如果你想知道没有 NAI模型 的 stable-diffustion，请看 <a href="https://space.bilibili.com/250989068/channel/collectiondetail?sid=660352">这个合集</a>。</p>
@@ -559,7 +559,7 @@
 <h2 id="_5">新闻</h2>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>目前stable-diffusion-webui迭代非常快，每天都会有大量更新，因此建议每天都拉取最新代码。</p>
+<p>目前Stable Diffusion WebUi迭代非常快，每天都会有大量更新，因此建议每天都拉取最新代码。</p>
 </div>
 <p>以下是新闻和测试内容。</p>
 <hr />
@@ -574,7 +574,7 @@
 <ul>
 <li>10/24</li>
 </ul>
-<p>Colab 昨天的封号称是 <a href="https://github.com/googlecolab/colabtools/issues/3181">错误的滥用判定</a></p>
+<p>Colab 称昨天的封号是 <a href="https://github.com/googlecolab/colabtools/issues/3181">错误的滥用判定</a></p>
 <p>WebUi <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3537">移除了图像浏览器</a>，转换为 <a href="https://github.com/yfszzx/stable-diffusion-webui-images-browser">插件</a></p>
 <hr />
 <ul>
@@ -594,7 +594,7 @@
 <li>10/22 更新</li>
 </ul>
 <p>在 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/2b91251637078e04472c91a06a8d9c4db9c1dcf0">这次提交</a> 中，仓库移除了美学权重。</p>
-<p>这项功能已经被转为 插件。</p>
+<p>这项功能已经被转为 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients">插件</a>。</p>
 <hr />
 <ul>
 <li>10/21 更新</li>
@@ -634,24 +634,23 @@
 <li>10/11 更新
 新版本 Webui 增加了 Eta noise seed delta ，设为 31337 后会贴近NAI官方</li>
 </ul>
-<p>现在可以训练 hypernetworks</p>
+<p>现在可以训练 <strong>Hypernetworks</strong></p>
 <hr />
 <ul>
 <li>10/10 更新
-测试发现,新版本 Webui 优化显存占用(20xx—&gt;10xx)，关闭浏览器和TG的硬件加速后，即使是4GB的  RTX2050 也可以启动 --medvram 模式！而且很快.</li>
+测试发现,新版本 WebUi 优化显存占用(20xx—&gt;10xx)，关闭浏览器和TG的硬件加速后，即使是4GB的  RTX2050 也可以启动 --medvram 模式！而且很快.</li>
 </ul>
-<p>谈话
-https://github.com/brycedrennan/imaginAIry/blob/master/docs/emad-qa-2020-10-10.md</p>
+<p><a href="https://github.com/brycedrennan/imaginAIry/blob/master/docs/emad-qa-2020-10-10.md">Q &amp; A</a></p>
 <hr />
 <ul>
 <li>背景故事</li>
 </ul>
 <p>NovelAI 是一个使用 AI 生成故事文本和<strong>通过描述文字生成图片</strong>的服务，而 Stable Diffusion 是由 Stability AI 发布的透过文字等生成图片的模型。</p>
-<p>开发者 AUTOMATIC 是 Stable-Diffusion-Webui 的主要开发者：此项目可以用于在使用 Stable Diffusion 等模型时调整参数，极大地方便了尤其是没有计算机背景或 AI/ML 背景的模型用户。</p>
+<p>开发者 <a href="https://github.com/AUTOMATIC1111">AUTOMATIC</a> 是 Stable-Diffusion-Webui 的主要开发者：此项目可以用于在使用 Stable Diffusion 等模型时调整参数，极大地方便了尤其是没有计算机背景或 AI/ML 背景的模型用户。</p>
 <p>前几日 NovelAI <a href="https://old.reddit.com/r/NovelAi/comments/xydjc6/">称其部分软件和源码泄露</a>。在模型泄露后， AUTOMATIC 在 Webui 项目中添加了对 <strong>Hypernetwork</strong> 模型的支持，使得此项目可以和泄露模型共用。</p>
 <p>此 Reddit 贴称， Stability AI 创始人 Emad Mostaque 谴责 AUTOMATIC 此行为，并称后者窃取了代码； </p>
 <p>AUTOMATIC 则称自己没有窃取代码，并解释说他编写的代码是基于很久以前已经完成的研究和开发，并且是开源的。有问题的函数于 2021 年 12 月 21 日在 <a href="https://github.com/CompVis/latent-diffusion/commit/e66308c7f2e64cb581c6d27ab6fbeb846828253b">此处</a> 发布，并称反倒是 NovelAI 使用了自己的代码(https://imgur.com/a/Z2QsOEw)。</p>
-<p>Stable Diffusion 社群管理员后又要求 AUTOMATIC 移除项目中的 Hypernetwork 支持，称 NovelAI 核心开发者认为相关代码必然与泄露源码有联系；但被以代码原创且 Hypernetwork <strong>并非泄露模型独创</strong>的理由回绝。</p>
+<p>Stable Diffusion 社群管理员后又要求 AUTOMATIC 移除项目中的 Hypernetwork 支持，称 NovelAI 核心开发者认为相关代码必然与泄露源码有联系；但被以代码原创且 Hypernetwork <strong>并非泄露模型独创</strong> 的理由回绝。</p>
 <p>而后， AUTOMATIC 被从 Stable Diffusion 的（Slack?）社群服务器中封禁。</p>
 <p>来自 https://rentry.org/sd-tldr</p>
 <h2 id="_6">声明</h2>
@@ -672,11 +671,11 @@ https://github.com/brycedrennan/imaginAIry/blob/master/docs/emad-qa-2020-10-10.m
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 25, 2022 15:42:03</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 25, 2022 15:44:57</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 25, 2022 15:42:03</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 25, 2022 15:44:57</span>
       
     
   </small>
