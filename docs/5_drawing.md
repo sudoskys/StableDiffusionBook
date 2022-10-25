@@ -664,6 +664,8 @@ Tip: `fill` 要更多 step 才能消除不自然感.
 
 - 将模式（图片右下角）更改为"Upload mask"并为蒙版选择单独的黑白图像(white=inpaint)。
 
+如果 `inpaint at full resolution` 出现黑块，可能是RAM不足，尝试卸载 vae.
+
 ![result](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting.png)
 
 <iframe src="//player.bilibili.com/player.html?aid=474043788&bvid=BV1HK411Q7uk&cid=860273094&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
