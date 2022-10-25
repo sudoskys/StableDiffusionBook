@@ -23,6 +23,7 @@
 
 - [参数转换 - Js项目](https://naisd5ch.github.io/novel-ai-5ch-wiki-js/)
 
+- [WANDB-MLOps平台](https://wandb.ai/site)
 
 ### 提示词相关
 
