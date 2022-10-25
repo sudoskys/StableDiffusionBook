@@ -3,7 +3,7 @@
 
 ## 安装 Stable-Diffusion-webui 开源框架
 
-此教程参考了 crosstyan[^2]
+此教程参考了 crosstyan[^2] 的 [FAQ](https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99#prompt-editingmixing)
 
 WebUi的官方代码仓库地址为 https://github.com/AUTOMATIC1111/stable-diffusion-webui
 
@@ -233,6 +233,16 @@ Windows 7上运行很可能会报错: `api-ms-win-core-path-l1-1-0.dll is missin
 这些文件已经被移植来与 W7 兼容，并且可以在 [这里](https://github.com/nalexandru/api-ms-win-core-path-HACK/releases/download/0.3.1/api-ms-win-core-path-blender-0.3.1.zip) 下载。它的 [Github 页面](https://github.com/nalexandru/api-ms-win-core-path-HACK/)
 
 解压缩并将 `x86.dll` 复制到 `C:\Windows\SysWOW64` ，将 `x64.dll` 复制到 `C:\Windows\System32` 并重启。
+
+#### an illegal memory access was encountered ....CUDA kernel errors...
+
+[相关问题Issue](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/1766)
+
+在多数情况下，这代表显存溢出，也有可能是 GPU 硬件问题。
+
+据说使用 deepdanbooru 的话会有这个提示，可以尝试重新启动 或 安装cpu版本的deepdanbooru.
+
+
 
 **生成图片问题见下一章**
 

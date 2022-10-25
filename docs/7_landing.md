@@ -42,6 +42,7 @@
 
 - [StableDiffusion Show](https://t.me/StableDiffusion_Show)
 
+
 ### 文档
 
 - **[SD资源金矿](https://rentry.org/sdupdates)**
@@ -58,7 +59,6 @@
 
 - [SD相关的Faq](https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99)
 
-- [Ai艺术家文档——深入了解](https://docs.google.com/spreadsheets/d/1SRqJ7F_6yHVSOeCi3U82aA448TqEGrUlRrLLZ51abLg/htmlview#)
 
 - [为文字转图像Ai提示编写指南：A Guide to Writing Prompts for Text-to-image AI](https://docs.google.com/document/d/1XUT2G9LmkZataHFzmuOtRXnuWBfhvXDAo8DkS--8tec/edit#)
 
@@ -71,6 +71,24 @@
 - [火药教程](https://rentry.org/stablediffgpubuy)
 
 - [WebUi的鼠标悬浮提示](https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/javascript/hints.js)
+
+- [匿名者的绘画技巧/nsfw](https://rentry.org/inpainting-guide-SD)
+
+### 风格化
+
+- [Ai艺术家文档——深入了解](https://docs.google.com/spreadsheets/d/1SRqJ7F_6yHVSOeCi3U82aA448TqEGrUlRrLLZ51abLg/htmlview#)
+
+- [动漫人物/艺术家/风格化列表/Pt文件](https://rentry.org/anime_and_titties)
+
+- [风格化：人偶教室](https://www.yuque.com/longyuye/lmgcwy)
+
+- [风格化，日语Wiki](https://seesaawiki.jp/nai_ch/d/%b2%e8%c9%f7%a1%a6%b9%bd%bf%de)
+
+- [风格化: 32种](https://www.bilibili.com/video/BV1TP411N71t/)
+
+- [艺术家列表/SD1.4](https://rentry.org/artists_sd-v1-4)
+
+- [艺术家列表/SD1.4/1,833 位艺术家查询](https://www.urania.ai/top-sd-artists)
 
 ### 社区
 
