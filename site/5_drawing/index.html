@@ -959,7 +959,10 @@
 <p>提前告知：WebUi 的设置页面需要按下 <code>Apply setting</code> 才能保存设置。</p>
 </blockquote>
 <h2 id="_2">基本流程</h2>
-<p><img alt="WorkFlow" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/draw_workflow.svg" /></p>
+<p><img alt="WorkFlow" src="https://user-images.githubusercontent.com/75739606/197821744-99b18fbc-1ae4-4e37-b7e7-9a47adaa6ae5.svg" /></p>
+<!--
+![WorkFlow](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/draw_workflow.svg)
+-->
 <p>这幅图演示了循环迭代的流程
 迭代方式，有循环迭代和线性迭代两种，线性迭代适用于多样性测试，而 <strong>循环迭代</strong> 是优化的更好选择。</p>
 <p>来回改提示+固定种子并不是好选择。</p>
@@ -1145,7 +1148,10 @@ normal quality, text, censored, gown, latex, pencil
 <p><code>[fantasy:cyberpunk:16]</code> 代表从第 16 step 后，使用 <code>cyberpunk</code> 标签替换 <code>fantasy</code></p>
 <p><code>[to:when]</code> 在固定数量的step后添加 <code>to</code> 到提示 ( when)</p>
 <p><code>[from::when]</code> 在固定数量的step后从提示中删除 <code>from</code>( when)</p>
-<p><img alt="sample_Gradient" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/sample_Gradient.jpg" /></p>
+<p><img alt="sample_Gradient" src="https://user-images.githubusercontent.com/75739606/197822841-f7323afa-8c6a-46a2-a8e2-a1c457bb31d5.jpg" /></p>
+<!--
+![sample_Gradient](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/sample_Gradient.jpg)
+-->
 <h3 id="_9">重现提示词</h3>
 <p>对于没有压缩的原图，我们可以将文件拖入 <code>PNG Info</code> 选项卡，进行提示词(Token)查看。</p>
 <p>或者使用 <a href="https://spell.novelai.dev/">网页工具</a></p>
@@ -1170,7 +1176,10 @@ normal quality, text, censored, gown, latex, pencil
 <p><code>cat :2 | dog</code> 也就是更像猫的狗</p>
 <h3 id="_11">提示词原理</h3>
 <p>咒语的科学原理。</p>
-<p><img alt="prompt_draw" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/prompt_draw_fix.png" /></p>
+<p><img alt="prompt_draw" src="https://user-images.githubusercontent.com/75739606/197823203-79263ee2-a9b3-4db7-9b7d-0ce557b94f3c.png" /></p>
+<!--
+![prompt_draw](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/prompt_draw_fix.png)
+-->
 <blockquote>
 <p>By RcINS</p>
 </blockquote>
@@ -1212,7 +1221,7 @@ PS：调太高步数(&gt;30)效果不会更好</p>
 <tbody>
 <tr>
 <td><img src="https://user-images.githubusercontent.com/22421310/187063145-3d4f16d7-7bd6-4804-be1c-acf228ed2507.jpg" width="400" alt="效果"></td>
-<td><img src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/raw_sample.jpg" width="400" alt="效果"></td>
+<td><img src="https://user-images.githubusercontent.com/75739606/197824518-f68188a3-0572-4b52-8fe7-289b6d7b640b.jpg" width="400" alt="效果"></td>
 </tr>
 </tbody>
 </table>
@@ -1367,7 +1376,10 @@ git clone https://github.com/yfszzx/stable-diffusion-webui-images-browser
 <p>使用PS软件增删元素，然后重新生产。这可以解决画手的问题。</p>
 <p>比如我们可以通过 PS 给角色移植一个手让Ai来润色它，或者为没有下半身的半身像嫁接其他作品的下半身让 AI 润色它。</p>
 <p>或者涂鸦特定部位指定形状动作(比如衣料的覆盖率或者形状)</p>
-<p><img alt="info" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/00119_136826557_masterpiece%2C_best_quality%2C_1girl%2C_black_hair%2C_hat1.jpg" /></p>
+<p><img alt="test_woman" src="https://user-images.githubusercontent.com/75739606/197823480-5de77d69-46d5-4817-948f-4e514e1f8204.jpg" /></p>
+<!--
+![info](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/00119_136826557_masterpiece%2C_best_quality%2C_1girl%2C_black_hair%2C_hat1.jpg)
+-->
 <blockquote>
 <p>一张图片<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">2</a></sup>展现WebUI下img2img中不同参数下效果的详细对比图（prompt、steps、scale、各种seed等参数均保持一致）</p>
 </blockquote>
@@ -2138,11 +2150,11 @@ scale 就是 CFG scale
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 25, 2022 15:49:41</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 25, 2022 16:04:15</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 25, 2022 15:49:41</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 25, 2022 16:04:15</span>
       
     
   </small>

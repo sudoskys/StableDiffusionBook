@@ -694,7 +694,11 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2002</p>
 <p>据暗影·夜光所言<sup id="fnref:11"><a class="footnote-ref" href="#fn:11">5</a></sup>，添加 25% 以内的权重，就可以稍微改善画面的美观度而不影响内容。美学 与 Hypernetworks 让 Ai 作品更接近原画师风格，但是美学权重本身效果并不好。需要配合 Hypernetworks 超网络。</p>
 <p>训练这项模型很快，但是在每一次生产时都会重新为图片计算一次，所以出图很慢。</p>
 <p>注意：当种子改变时，训练结果也会改变。</p>
-<p><img alt="Aesthetic_other" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/Aesthetic_other.png" /></p>
+<p><img alt="Aesthetic_other" src="https://user-images.githubusercontent.com/75739606/197824140-50dca98e-856f-44ca-99e6-da2fee5bb23c.png" /></p>
+<!--
+![Aesthetic_other](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/Aesthetic_other.png)
+-->
+
 <h2 id="apt">APT</h2>
 <p>propose an advanced Prompt Tuning method (APT), can super dramatically improve the image quality and diversity</p>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2945">Pull Here</a></p>
@@ -784,7 +788,11 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2002</p>
 <p>通常，Learning rate越低学习越慢（花费更长的时间收敛），但是效果一般更好。</p>
 <p>训练时，可以先用较大的学习率进行测试，然后逐步调小 <code>0.1 -- 0.02 -- 0.005</code> ，每次测试都用上一次效果最好的。</p>
 <p>一般设置为 0.005，如果想快一些，可以使用 0.01 加快。但是如果设置得太高，梯度下降时候步长太大无法收敛，会且可能会破坏 <code>embedding</code> ， 效果达不到预期。如果设置的太小，容易陷入局部最优。</p>
-<p><img alt="CS231n" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/CS231n.png" /></p>
+<p><img alt="CS231n" src="https://user-images.githubusercontent.com/75739606/197824268-273f074d-9622-41ad-9f1a-2980f180dbd9.png" /></p>
+<!--
+![CS231n](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/CS231n.png)
+-->
+
 <p><code>Log directory</code> 是日志目录</p>
 <p><code>Prompt template file</code>是带有提示的文本文件，每行一个，用于训练模型。</p>
 <p>目录中<code>textual_inversion_templates</code>，解释了你可以使用这些文件做什么。</p>
@@ -875,9 +883,12 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2002</p>
 <p>Swish对比Relu和Linear要更好，Swish适合更大的网络，而Elu可能对1，2，1的超网络带来更好的结果。<sup id="fnref5:16"><a class="footnote-ref" href="#fn:16">10</a></sup></p>
 <p><a href="https://rentry.org/hypernetwork4dumdums">相关的英文指南</a></p>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2670">相关的英文讨论</a></p>
-<p><img alt="hypernet对比图" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/exp_hypernet.jpg" /></p>
+<p><img alt="hypernet对比图" src="https://user-images.githubusercontent.com/75739606/197823893-88a3bece-9100-41d1-8f07-bc6d9b3aa92c.jpg" /></p>
+<!--
+![hypernet对比图](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/exp_hypernet.jpg)
+-->
 <blockquote>
-<p>hypernet对比图</p>
+<p>hypernet对比图,the woman in picture is 24 years old</p>
 </blockquote>
 <h3 id="10">额外注意<sup id="fnref6:16"><a class="footnote-ref" href="#fn:16">10</a></sup></h3>
 <p>在开启LN选用激活函数并开启Dropout后，超网络没以前那么容易过拟合，但是可能需要更大的学习率进行学习。</p>
@@ -936,11 +947,11 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2002</p>
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 25, 2022 15:49:41</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 25, 2022 16:04:15</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 25, 2022 15:49:41</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 25, 2022 16:04:15</span>
       
     
   </small>
