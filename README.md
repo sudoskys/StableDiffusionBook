@@ -15,29 +15,22 @@
 
 **目前状态：需要大佬校稿，审计**
 
-访问: https://draw.dianas.cyou/
+访问 https://draw.dianas.cyou/ ～
+
 
 ### 分流地址
-
 
 - Vercel 部署/国内不可用
 
 https://stable-diffusion-book.vercel.app/  短链为(https://b23.ink/aibook)
 
 
-### 帮助改进
-
-如果你发现了本文的的错误或不足，欢迎向[项目仓库](https://github.com/sudoskys/StableDiffusionBook/)提 issue 和 PR。
-
-贡献之前先读 [贡献指南](https://github.com/sudoskys/StableDiffusionBook/blob/main/CONTRIBUTING.md)
-
-在键盘按下 `。` 键自动克隆仓库并开始协作
-
 ### 需求
 
 显存 2GB 可用，4 GB 能用
 
 ![效果.png](https://s1.ax1x.com/2022/10/10/xtdNNR.png)
+
 
 ### 相关
 
@@ -49,6 +42,23 @@ https://stable-diffusion-book.vercel.app/  短链为(https://b23.ink/aibook)
 
 [Danbooru 标签超市](https://github.com/wfjsw/danbooru-diffusion-prompt-builder)
 
+### 帮助改进
+
+如果你发现了本文的的错误或不足，欢迎向[项目仓库](https://github.com/sudoskys/StableDiffusionBook/)提 issue 和 PR。
+
+贡献之前先读 [贡献指南](https://github.com/sudoskys/StableDiffusionBook/blob/main/CONTRIBUTING.md)
+
+在键盘按下 `。` 键自动克隆仓库并开始协作。
+
+**第一次审计任务**
+
+- [] 查找内容错误
+
+- [] 查找逻辑错误，语法病句，结构混乱，内容过时，上下冲突，错词怪词
+
+**备份任务**
+
+因为WebDev的特殊性，每三天自动 Clone
 
 ### 声明
 
