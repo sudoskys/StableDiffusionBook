@@ -13,7 +13,7 @@
 
 关于使用 Ai 绘画的 Wiki ，翻译，教程，相关资源。主要内容为 StableDiffusionWebUi
 
-欢迎互动～
+**目前状态：需要大佬校稿，审计**
 
 访问: https://draw.dianas.cyou/
 

@@ -27,6 +27,9 @@
     显卡厂家对于深度学习卡的保修政策等同于矿卡
     过度玩耍(比如连续3天出图)，显卡会坏掉
 
+[各种显卡的稳定扩散性能测试报告](https://docs.google.com/spreadsheets/d/1Zlv4UFiciSgmJZncCujuXKHwc4BcxbjbSBg71-SdeNk/edit#gid=0)
+
+
 ## 目前的五种方案
 
 | 名称             | 需求                      | 效果                                                                  |
@@ -64,7 +67,7 @@ NAI 是一个在线**服务**。
 
 [集成Tag工具/支持超网络的Web](https://git.hudaye.work/MiuliKain/Kamiya-OpenUI)开源项目说他们缺人。
 
-在 [此次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3624) 中，从 `--use-cpu` 中删除 BSRGAN，将 SwinIR 添加到 `--use-cpu` 并修复 MPS 上的 `upscalers`
+在 [此次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3624) 中，从 `--use-cpu` 中删除了 `BSRGAN`，将 `SwinIR` 添加到 `--use-cpu` 并修复 MPS 上的 `upscalers`。
 
 -------
 - 10/24

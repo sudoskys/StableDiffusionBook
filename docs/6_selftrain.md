@@ -72,6 +72,9 @@ Textual Inversion 从模型中挖掘内容，所以如果你要画一个非常�
 
 使用时，需要放进 model 目录里进行**替换**。
 
+!!! info 
+    可以迭代加练，但是迭代不可以转变画风。
+
 ![SAMPLE](https://dreambooth.github.io/DreamBooth_files/high_level.png)
 
 https://dreambooth.github.io/

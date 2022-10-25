@@ -526,7 +526,13 @@ If an audio file named `notification.mp3` is present in `webui's root folder`, i
 
 Script 类有四个主要方法，这里通过一个简单的[示例脚本](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Developing-custom-scripts)进行更详细的描述，这个脚本可以旋转和/或翻转生成的图像。
 
+### 修剪模型[^7]
 
+将要修剪的 `.ckpt` 文件放在 `/stable-diffusion-webui` 文件夹，把 [脚本](https://raw.githubusercontent.com/harubaru/waifu-diffusion/main/scripts/prune.py) 另存本地，删除第 6 行和 第 8 行。然后在 prune.py 中的最后一行编辑 ckpt 的名称。
+
+比如，`prune_it('wd-v1-2-full-emma.ckpt')`
+
+然后运行这个脚本，修剪过程可能需要几分钟。
 
 ## 运行
 
@@ -567,3 +573,5 @@ Script 类有四个主要方法，这里通过一个简单的[示例脚本](http
 [^5]:[所有超网络的 X/Y](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017#discussioncomment-3836360)
 
 [^6]:[Roaming_info_for_latent_diffusion](http://allophane.com/index.php/2022/10/17/roaming_info_for_latent_diffusion/)
+
+[^7]:[pruning-a-ckpt](https://rentry.co/voldy#-pruning-a-ckpt-)
