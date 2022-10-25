@@ -801,7 +801,28 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-edi
 
 ## 应用指南
 
-先让我们看看稳定扩散都有什么使用姿势。
+这里是稳定扩散（非 NAI 模型）的应用情况。
+
+- 3D
+
+在 blender 上，Ai 有 [渲染插件](https://blendermarket.com/products/ai-render/?ref=110)
+
+- 设计
+
+[Microsoft 365 工具套件](https://www.xda-developers.com/microsoft-designer-image-creator-ai-dall-e-2/)
+
+
+[为 Age of Empires 3 Definitive edition 的游戏模组生成肖像](https://github.com/matrix4767)
+
+[产品和架构设计/素描](https://github.com/horribleCodes)
+
+- 音乐制作
+
+[用稳定扩散生成歌手的图像放入视频](https://github.com/Chilluminati91)
+
+- 配图
+
+[制作怪图作为记忆工具](https://github.com/ClashSAN)
 
 [稳定扩散的真实用例](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3219)
 
@@ -875,11 +896,14 @@ Clip 跳过 0，其他一切都很好（afaik 不要使用超网络、v2、yaml�
 {an extremely delicate and beautiful}
 ```
 
+[动漫人物/艺术家/风格化列表/Pt文件](https://rentry.org/anime_and_titties)
+
 [风格化：人偶教室](https://www.yuque.com/longyuye/lmgcwy)
 
 [风格化，日语Wiki](https://seesaawiki.jp/nai_ch/d/%b2%e8%c9%f7%a1%a6%b9%bd%bf%de)
 
 [风格化: 32种](https://www.bilibili.com/video/BV1TP411N71t/)
+
 
 #### 草图风格
 

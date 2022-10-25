@@ -87,6 +87,8 @@
 
 ### embeddings
 
+[动漫人物/艺术家/风格化列表/Pt文件](https://rentry.org/anime_and_titties)
+
 [HuggingFace 的e mbeddings 库](https://cyberes.github.io/stable-diffusion-textual-inversion-models/)
 
 [(NSFW)embeddings 风格化](https://gitlab.com/16777216c/stable-diffusion-embeddings)
