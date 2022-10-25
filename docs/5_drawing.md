@@ -38,21 +38,6 @@
 
 - 提示词 + 3D 参考
 
-### 迭代草图[^8]
-
-这里讨论一下如何将**手绘草图**通过 Ai 绘画优化，*注意不是二次元*。
-
-在第一次迭代中，您不需要太多 Steps，CFG 可以非常低（以获得更好的多样化结果），如果不想完全丢失草图，Denoising 应该在 0.3-0.4 左右。
-
-在最后的迭代中，增加 Steps 和 Denoising 强度（但不超过 0.8，否则图像将被破坏，尤其是在大于 512*512 时）请参见[这里](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2213#issuecomment-1274137775)，同时根据需要提高 CFG 和尺寸。
-
-你可以随时修复提示（添加或删除出现的细节）并尝试不同的采样器。
-
-另外，你不应该在初次生成使用一个固定不变的种子？
-
-如果你提供一个种子（而不是随机的 -1），你的图像很快就会变得过饱和、过度锐化、过度像素化..... 当然如果想微调，可以使用固定种子。
-
-
 
 ## 魔法入门
 
@@ -451,7 +436,7 @@ PS：调太高步数(>30)效果不会更好
 
 10xx 系列看起来与其他所有卡如此不同,见[这里](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017#discussioncomment-3873467)
 
-### 插件
+### 绘画插件
 
 安装完毕重启程序。
 
@@ -464,6 +449,7 @@ cd extensions
 git clone https://github.com/yfszzx/stable-diffusion-webui-inspiration
 ```
 
+
 #### 美学权重插件
 
 [项目地址](https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients)
@@ -471,6 +457,7 @@ git clone https://github.com/yfszzx/stable-diffusion-webui-inspiration
 ```bash
 git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients extensions/aesthetic-gradients
 ```
+
 
 #### 历史记录画廊
 
@@ -482,8 +469,25 @@ git clone https://github.com/yfszzx/stable-diffusion-webui-images-browser
 ```
 
 
+#### 通配符
 
-###  方位调参
+[项目地址](https://github.com/AUTOMATIC1111/stable-diffusion-webui-wildcards)
+
+允许使用类似 `__name__` 提示的语法，以从名为 `name.txt` 的文件中获取随机一行。 
+
+
+#### Deforum
+
+[项目地址](https://github.com/deforum-art/deforum-for-automatic1111-webui)
+
+Deforum 的官方API，一个用于 2D 和 3D 动画的扩展脚本，supporting keyframable sequences, dynamic math parameters (even inside the prompts), dynamic masking, depth estimation and warping.
+
+
+##  实战指南
+
+这个简短的实战指南，可以让你快速了解如何合理调整参数达成目的效果。
+
+### 场景表
 
 竖着看
 
@@ -497,18 +501,41 @@ git clone https://github.com/yfszzx/stable-diffusion-webui-images-browser
 |姿势位||||
 |镜头位||||
 
-#### 关于多人物生成
+
+### 迭代草图[^8]
+
+这里讨论一下如何将**手绘草图**通过 Ai 绘画优化，*注意不是二次元*。
+
+在第一次迭代中，您不需要太多 Steps，CFG 可以非常低（以获得更好的多样化结果），如果不想完全丢失草图，Denoising 应该在 0.3-0.4 左右。
+
+在最后的迭代中，增加 Steps 和 Denoising 强度（但不超过 0.8，否则图像将被破坏，尤其是在大于 512*512 时）请参见[这里](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2213#issuecomment-1274137775)，同时根据需要提高 CFG 和尺寸。
+
+你可以随时修复提示（添加或删除出现的细节）并尝试不同的采样器。
+
+另外，你不应该在初次生成使用一个固定不变的种子？
+
+如果你提供一个种子（而不是随机的 -1），你的图像很快就会变得过饱和、过度锐化、过度像素化..... 当然如果想微调，可以使用固定种子。
+
+
+### 关于多人物生成
 
 多人最好使用草稿/有色3d + 图生图。
 
 人数超过三个就难以控制效果，人数大于6的图像模型里没有。
 
+### 进行手掌修复
 
-#### 使用 Ai 进行立绘设计
+将图片送入 inpaint，使用大致相同的提示词，将关于 `手` 的提示放在前面，根据你希望它变动多少来设置降噪（如果只是希望手更完整，调至0.25以下)，然后保留步骤和 CFG 与 txt2img gen 相同。
+
+或者仅遮住手部，以全分辨率修复，大大降低填充（它使用周围的像素来创建上下文，但只是在重新制作手部）并仅提示手部问题（详细的手部描写等）
+
+CFG 越高，越符合提示词，降噪越高越偏离原图。
+
+
+### 使用 Ai 进行立绘设计
 
 <iframe src="//player.bilibili.com/player.html?aid=559362671&bvid=BV14e4y1U7r9&cid=869144379&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 >BV14e4y1U7r9
-
 
 
 ## 魔法进阶
@@ -578,6 +605,8 @@ Resize and fill：调整图像大小，使整个图像在目标分辨率内。�
 
 ### Img2Img PS重绘画/嫁接修复
 
+**尺寸上应该尽量靠近原图尺寸，然后选择 `Crop and resize` 也就是裁切后调整大小**
+
 使用PS软件增删元素，然后重新生产。这可以解决画手的问题。
 
 比如我们可以通过 PS 给角色移植一个手让Ai来润色它，或者为没有下半身的半身像嫁接其他作品的下半身让 AI 润色它。
@@ -593,7 +622,6 @@ Resize and fill：调整图像大小，使整个图像在目标分辨率内。�
 #### 关于差分
 
 如果你想了解一些差分的实例，[5CH日语Wiki](https://seesaawiki.jp/nai_ch/d/%c7%ed%a4%ae%a5%b3%a5%e9%a5%c6%a5%af) 提供了一个实例。
-
 
 
 #### 重绘画技巧/去除/替换
@@ -645,6 +673,8 @@ Tip: `fill` 要更多 step 才能消除不自然感.
 
 - 将模式（图片右下角）更改为"Upload mask"并为蒙版选择单独的黑白图像(white=inpaint)。
 
+如果 `inpaint at full resolution` 出现黑块，可能是RAM不足，尝试卸载 vae.
+
 ![result](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting.png)
 
 <iframe src="//player.bilibili.com/player.html?aid=474043788&bvid=BV1HK411Q7uk&cid=860273094&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
@@ -652,6 +682,7 @@ Tip: `fill` 要更多 step 才能消除不自然感.
 通过这种方法，我们可以更改角色衣物风格或者其他任何细节。
 
 <iframe src="//player.bilibili.com/player.html?aid=559044202&cid=859852841&page=1&danmaku=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
+
 
 ### Img2Img Loopback 回环生成
 
@@ -661,11 +692,13 @@ Batch 数设置控制获得多少次迭代
 
 通常，在执行此操作时，您会自己为下一次迭代选择许多图像中的一个，因此此功能的有用性可能值得怀疑，但反正我已经设法获得了一些我无法获得的非常好的输出。
 
+
 ### Img2Img 让低显存生成大分辨率图片
 
 在前面提到了，如果遇到生成鬼图或者 低显存生产高分辨率图片 可以采用的 Img2Img 画质提升脚本。
 
 其实我**强烈推荐**你使用 Extras 的功能对低分辨率进行重放，效果不错的，且体验良好！
+
 
 #### 脚本
 

@@ -80,9 +80,9 @@ Textual Inversion 从模型中挖掘内容，所以如果你要画一个非常�
 
 ![SAMPLE](https://dreambooth.github.io/DreamBooth_files/high_level.png)
 
-https://dreambooth.github.io/
+官网 https://dreambooth.github.io/
 
-https://arxiv.org/abs/2208.12242
+论文 https://arxiv.org/abs/2208.12242
 
 
 
@@ -380,7 +380,7 @@ Hypernetworks 是一种新颖的概念，用于在不触及任何权重的情况
 
 注意,应该使用非常低的学习率，例如 0.000005 或 0.0000005.
 
-如果学习率是5e-6 ，步数大约 10000 到 20000 。
+如果学习率是5e-6 ，步数大约 10000 到 20000 。[学习率计算器](https://colab.research.google.com/drive/1qzweYEMIFkG6jPa04tD1MhWWOzgSnDvP?usp=sharing)，来自 [这里](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2670)
 
 分辨率设置为要训练的分辨率，最好使用 1:1 的纵横比。
 
@@ -394,6 +394,10 @@ Hypernetworks 是一种新颖的概念，用于在不触及任何权重的情况
 If write "1, 2, 1", hypernetworks are composed of 2 fully connected layers whose intermediate dim is 2x, which is same as up to now.
 
 The more you add the number, like "1, 2, 4, 2, 1", the more the structure of hypernetworks becomes deeper. Deep hypernetworks are suited for training with large datasets.
+
+层结构目前还是推荐1，2，1，如果想扩展的话，可以尝试1，2，2，1.[^16]
+
+1，2，1的pt文件大概是83.8MB，1，2，2，1大概是167MB。如果要扩展的话，一定要注意盘空间是否足够，否则很容易爆盘。[^16]
 
 ### Add layer normalization
 
@@ -446,21 +450,30 @@ Swish对比Relu和Linear要更好，Swish适合更大的网络，而Elu可能对
 
 DreamBooth 的模型是一种新的文本到图像“个性化”（可适应用户特定的图像生成需求）扩散模型。
 
-[Nyanko Lepsoni 的 Colab 笔记本](https://colab.research.google.com/drive/17yM4mlPVOFdJE_81oWBz5mXH9cxvhmz8)，需要Pro套餐算力(18-24G显存需要)
+[Nyanko Lepsoni 的 Colab 笔记本](https://colab.research.google.com/drive/17yM4mlPVOFdJE_81oWBz5mXH9cxvhmz8)
 
 [RcINS 的 Colab 笔记本](https://colab.research.google.com/drive/1C1vVZ59S4kWfL7jIsczyLpmxbD4cOA-k)
 
 以上笔记本来自 [社区置顶](https://t.me/StableDiffusion_CN/196744)
 
+
+
+
+[使用 Dreambooth 训练稳定扩散的实验的分析](https://wandb.ai/psuraj/dreambooth/reports/Dreambooth-training-analysis--VmlldzoyNzk0NDc3)
+
+
 ### 配置要求
 
-Windows 系统至少需要16,Linux 系统要求显存大于 12 GB
+Windows 系统至少需要 16, Linux 系统要求显存大于 8 GB
 
 
 相关的还有 [DreamBooth_Stable_Diffusion](https://colab.research.google.com/github/ShivamShrirao/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion.ipynb#scrollTo=K6xoHWSsbcS3) 和 [fast-DreamBooth](https://colab.research.google.com/github/TheLastBen/fast-stable-diffusion/blob/main/fast-DreamBooth.ipynb)
 
 [Dreambooth Gui](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2927)
 
+[ShivamShrirao/diffusers](https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth)
+
+[飞桨dreambooth训练教程](https://docs.qq.com/doc/DUHVuZ3BNV0FkT1R6)
 
 https://github.com/XavierXiao/Dreambooth-Stable-Diffusion
 

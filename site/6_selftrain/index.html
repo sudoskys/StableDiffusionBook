@@ -679,8 +679,8 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2002</p>
 <p>可以迭代加练，但是迭代不可以转变画风。</p>
 </div>
 <p><img alt="SAMPLE" src="https://dreambooth.github.io/DreamBooth_files/high_level.png" /></p>
-<p>https://dreambooth.github.io/</p>
-<p>https://arxiv.org/abs/2208.12242</p>
+<p>官网 https://dreambooth.github.io/</p>
+<p>论文 https://arxiv.org/abs/2208.12242</p>
 <h2 id="aesthetic-gradients">Aesthetic Gradients 美学权重</h2>
 <p>这项技术通过在生成时计算每个图片的权重，提供了一个 <code>我不说你应该懂往哪里训练</code> 的功能。使AI更聪明地调整并增加细节。</p>
 <p>此项功能来自这个 <a href="https://github.com/vicgalle/stable-diffusion-aesthetic-gradients">存储库</a>，在 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/2b91251637078e04472c91a06a8d9c4db9c1dcf0">这次提交</a> 中，此功能被剥离为插件。</p>
@@ -849,17 +849,19 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2002</p>
 </div>
 <p>你可以在 <code>train</code> 选项卡训练 <code>Hypernetworks</code>，训练方式与  <code>Textual Inversion</code> 相同。</p>
 <p>注意,应该使用非常低的学习率，例如 0.000005 或 0.0000005.</p>
-<p>如果学习率是5e-6 ，步数大约 10000 到 20000 。</p>
+<p>如果学习率是5e-6 ，步数大约 10000 到 20000 。<a href="https://colab.research.google.com/drive/1qzweYEMIFkG6jPa04tD1MhWWOzgSnDvP?usp=sharing">学习率计算器</a>，来自 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2670">这里</a></p>
 <p>分辨率设置为要训练的分辨率，最好使用 1:1 的纵横比。</p>
 <p>如果数据集的图片是长条或者横条，请勾选 <code>Split cversized images into two</code></p>
 <p>如果你还没有打标签，可以勾选 <code>Using deepbooru for caption</code> ，来让 deepbooru 识别标签。</p>
 <h3 id="hyper-network-layer-structure">hyper network layer structure</h3>
 <p>If write "1, 2, 1", hypernetworks are composed of 2 fully connected layers whose intermediate dim is 2x, which is same as up to now.</p>
 <p>The more you add the number, like "1, 2, 4, 2, 1", the more the structure of hypernetworks becomes deeper. Deep hypernetworks are suited for training with large datasets.</p>
+<p>层结构目前还是推荐1，2，1，如果想扩展的话，可以尝试1，2，2，1.<sup id="fnref2:16"><a class="footnote-ref" href="#fn:16">10</a></sup></p>
+<p>1，2，1的pt文件大概是83.8MB，1，2，2，1大概是167MB。如果要扩展的话，一定要注意盘空间是否足够，否则很容易爆盘。<sup id="fnref3:16"><a class="footnote-ref" href="#fn:16">10</a></sup></p>
 <h3 id="add-layer-normalization">Add layer normalization</h3>
 <p>If checked, add layer normalization after every fully connected layer.</p>
 <p>防止超网络过拟合，使训练更加稳定。</p>
-<p>LN对防止过拟合使训练更加稳定是有意义的，但是根据之前的测试，linear开开启LN的情况，可能学不进去东西，出空包弹。使用激活函数后，LN现在是可使用的。<sup id="fnref2:16"><a class="footnote-ref" href="#fn:16">10</a></sup></p>
+<p>LN对防止过拟合使训练更加稳定是有意义的，但是根据之前的测试，linear开开启LN的情况，可能学不进去东西，出空包弹。使用激活函数后，LN现在是可使用的。<sup id="fnref4:16"><a class="footnote-ref" href="#fn:16">10</a></sup></p>
 <p>Swish似乎并不需要开启LN，因为Swish的训练速度慢，所以应该使用更高的学习率。</p>
 <h3 id="use-dropout">USE Dropout</h3>
 <p>启用Dropout可以防止超网络过拟合，目前不支持自定义dropout比率，默认为0.3</p>
@@ -870,25 +872,28 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2002</p>
 <p>激活函数对输入进行非线性变换，使其能够学习和执行更复杂的任务，深层神经网络表达能力更加强大。</p>
 <p>在 10/21/22 的一个 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3199">合并请求</a> 中，这项功能被 discus0434 提出。</p>
 <p>支持 relu、leakyrelu 和 linear 。选择 linear(线性) 的效果和没有激活函数一样。</p>
-<p>Swish对比Relu和Linear要更好，Swish适合更大的网络，而Elu可能对1，2，1的超网络带来更好的结果。<sup id="fnref3:16"><a class="footnote-ref" href="#fn:16">10</a></sup></p>
+<p>Swish对比Relu和Linear要更好，Swish适合更大的网络，而Elu可能对1，2，1的超网络带来更好的结果。<sup id="fnref5:16"><a class="footnote-ref" href="#fn:16">10</a></sup></p>
 <p><a href="https://rentry.org/hypernetwork4dumdums">相关的英文指南</a></p>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2670">相关的英文讨论</a></p>
 <p><img alt="hypernet对比图" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/exp_hypernet.jpg" /></p>
 <blockquote>
 <p>hypernet对比图</p>
 </blockquote>
-<h3 id="10">额外注意<sup id="fnref4:16"><a class="footnote-ref" href="#fn:16">10</a></sup></h3>
+<h3 id="10">额外注意<sup id="fnref6:16"><a class="footnote-ref" href="#fn:16">10</a></sup></h3>
 <p>在开启LN选用激活函数并开启Dropout后，超网络没以前那么容易过拟合，但是可能需要更大的学习率进行学习。</p>
 <p><a href="https://shiina-h.notion.site/shiina-h/Hypernetwork-1fc0b60645284c5e96bb41b583a4e86f">Hypernetwork画风训练经验分享</a></p>
 <h2 id="dreambooth_1">DreamBooth 训练</h2>
 <p>DreamBooth 的模型是一种新的文本到图像“个性化”（可适应用户特定的图像生成需求）扩散模型。</p>
-<p><a href="https://colab.research.google.com/drive/17yM4mlPVOFdJE_81oWBz5mXH9cxvhmz8">Nyanko Lepsoni 的 Colab 笔记本</a>，需要Pro套餐算力(18-24G显存需要)</p>
+<p><a href="https://colab.research.google.com/drive/17yM4mlPVOFdJE_81oWBz5mXH9cxvhmz8">Nyanko Lepsoni 的 Colab 笔记本</a></p>
 <p><a href="https://colab.research.google.com/drive/1C1vVZ59S4kWfL7jIsczyLpmxbD4cOA-k">RcINS 的 Colab 笔记本</a></p>
 <p>以上笔记本来自 <a href="https://t.me/StableDiffusion_CN/196744">社区置顶</a></p>
+<p><a href="https://wandb.ai/psuraj/dreambooth/reports/Dreambooth-training-analysis--VmlldzoyNzk0NDc3">使用 Dreambooth 训练稳定扩散的实验的分析</a></p>
 <h3 id="_9">配置要求</h3>
-<p>Windows 系统至少需要16,Linux 系统要求显存大于 12 GB</p>
+<p>Windows 系统至少需要 16, Linux 系统要求显存大于 8 GB</p>
 <p>相关的还有 <a href="https://colab.research.google.com/github/ShivamShrirao/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion.ipynb#scrollTo=K6xoHWSsbcS3">DreamBooth_Stable_Diffusion</a> 和 <a href="https://colab.research.google.com/github/TheLastBen/fast-stable-diffusion/blob/main/fast-DreamBooth.ipynb">fast-DreamBooth</a></p>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2927">Dreambooth Gui</a></p>
+<p><a href="https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth">ShivamShrirao/diffusers</a></p>
+<p><a href="https://docs.qq.com/doc/DUHVuZ3BNV0FkT1R6">飞桨dreambooth训练教程</a></p>
 <p>https://github.com/XavierXiao/Dreambooth-Stable-Diffusion</p>
 <div class="footnote">
 <hr />
@@ -921,7 +926,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2002</p>
 <p><a href="https://arxiv.org/abs/2208.12242">dreambooth-论文</a>&#160;<a class="footnote-backref" href="#fnref:15" title="Jump back to footnote 9 in the text">&#8617;</a></p>
 </li>
 <li id="fn:16">
-<p><a href="https://shiina-h.notion.site/shiina-h/Hypernetwork-1fc0b60645284c5e96bb41b583a4e86f">Hypernetwork画风训练经验分享</a>&#160;<a class="footnote-backref" href="#fnref:16" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:16" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:16" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:16" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+<p><a href="https://shiina-h.notion.site/shiina-h/Hypernetwork-1fc0b60645284c5e96bb41b583a4e86f">Hypernetwork画风训练经验分享</a>&#160;<a class="footnote-backref" href="#fnref:16" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:16" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:16" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:16" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:16" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:16" title="Jump back to footnote 10 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -931,11 +936,11 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2002</p>
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 25, 2022 13:58:46</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 25, 2022 15:42:03</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 25, 2022 13:58:46</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 25, 2022 15:42:03</span>
       
     
   </small>

@@ -12,6 +12,8 @@
 
 欢迎交流，不欢迎伸手党。问问题前请先自己确认文档内没有解释，且你应该明白任何人或社区成员在没有利益关系的情况下，没有义务为你解答问题。
 
+如果看到不认识的章节，有可能是你的版本太低了。
+
 
 ## 我可以参加 Party 吗？
 
@@ -34,8 +36,8 @@
 
 | 名称             | 需求                      | 效果                                                                  |
 |------------------|---------------------------|-----------------------------------------------------------------------|
-| SDWebUi(4GB Leak模型) | 2GB显存起步               | 4GB显存默认出图速度 10s,单次最大出 920x920                            |
-| SDWebUi(7GB Leak模型) | 8GB显存                   | 和4GB效果相差不大，但是数据中带有最后一次训练的权重，所以耗费较多显存 |
+| SdWebui(4GB Leak模型) | 3GB显存勉强               | 4GB显存被512x512吃满，默认出图速度 17s                            |
+| SdWebui(7GB Leak模型) | 8GB显存                   | 和4GB效果相差不大，但是数据中带有最后一次训练的权重，所以耗费较多显存 |
 | Naifu(4GB Leak模型)   | 最低8GB显存&8GB显存       | 和官方接近                                                            |
 | Naifu(7GB Leak模型)   | 最低8GB显存(向上浮动10GB) | 和官方接近                                                            |
 | 官方后端         | 16GBfp16/24GBfp32 & 服务器系统           | 和官方99.9相似                                                        |
@@ -68,6 +70,10 @@ NAI 是一个在线**服务**。
 [集成Tag工具/支持超网络的Web](https://git.hudaye.work/MiuliKain/Kamiya-OpenUI)开源项目说他们缺人。
 
 在 [此次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3624) 中，从 `--use-cpu` 中删除了 `BSRGAN`，将 `SwinIR` 添加到 `--use-cpu` 并修复 MPS 上的 `upscalers`。
+
+你可以在[这里](https://upscale.wiki/wiki/Official_Research_Models) 找到 `BSRGAN` ，下载的模型放到esrgan文件夹就可以使用。
+
+#3505之后超网络训练不稳定 ，[问题](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/3505)
 
 -------
 - 10/24
@@ -186,3 +192,10 @@ Stable Diffusion 社群管理员后又要求 AUTOMATIC 移除项目中的 Hypern
 
 3.其他声明请阅读 Readme 
 
+>文档使用 GFDL 许可，
+>如果您需要在您自己的著作／文章／网站或其他出版物中使用Aidraw Wiki的材料，您必须遵守 GFDL
+
+>如果您创建了一个修改或添加了内容的派生版本，它将继承以下条款： 
+>您的作品也必须以 GFDL 的形式发布
+>您必须注明文章的作者
+>您必须提供取得材料“透明版本”的方法
