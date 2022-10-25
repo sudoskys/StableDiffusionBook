@@ -38,21 +38,6 @@
 
 - 提示词 + 3D 参考
 
-### 迭代草图[^8]
-
-这里讨论一下如何将**手绘草图**通过 Ai 绘画优化，*注意不是二次元*。
-
-在第一次迭代中，您不需要太多 Steps，CFG 可以非常低（以获得更好的多样化结果），如果不想完全丢失草图，Denoising 应该在 0.3-0.4 左右。
-
-在最后的迭代中，增加 Steps 和 Denoising 强度（但不超过 0.8，否则图像将被破坏，尤其是在大于 512*512 时）请参见[这里](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2213#issuecomment-1274137775)，同时根据需要提高 CFG 和尺寸。
-
-你可以随时修复提示（添加或删除出现的细节）并尝试不同的采样器。
-
-另外，你不应该在初次生成使用一个固定不变的种子？
-
-如果你提供一个种子（而不是随机的 -1），你的图像很快就会变得过饱和、过度锐化、过度像素化..... 当然如果想微调，可以使用固定种子。
-
-
 
 ## 魔法入门
 
@@ -451,7 +436,7 @@ PS：调太高步数(>30)效果不会更好
 
 10xx 系列看起来与其他所有卡如此不同,见[这里](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017#discussioncomment-3873467)
 
-### 插件
+### 绘画插件
 
 安装完毕重启程序。
 
@@ -464,6 +449,7 @@ cd extensions
 git clone https://github.com/yfszzx/stable-diffusion-webui-inspiration
 ```
 
+
 #### 美学权重插件
 
 [项目地址](https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients)
@@ -471,6 +457,7 @@ git clone https://github.com/yfszzx/stable-diffusion-webui-inspiration
 ```bash
 git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients extensions/aesthetic-gradients
 ```
+
 
 #### 历史记录画廊
 
@@ -482,8 +469,25 @@ git clone https://github.com/yfszzx/stable-diffusion-webui-images-browser
 ```
 
 
+#### 通配符
 
-###  方位调参
+[项目地址](https://github.com/AUTOMATIC1111/stable-diffusion-webui-wildcards)
+
+允许使用类似 `__name__` 提示的语法，以从名为 `name.txt` 的文件中获取随机一行。 
+
+
+#### Deforum
+
+[项目地址](https://github.com/deforum-art/deforum-for-automatic1111-webui)
+
+Deforum 的官方API，一个用于 2D 和 3D 动画的扩展脚本，supporting keyframable sequences, dynamic math parameters (even inside the prompts), dynamic masking, depth estimation and warping.
+
+
+##  实战指南
+
+这个简短的实战指南，可以让你快速了解如何合理调整参数达成目的效果。
+
+### 场景表
 
 竖着看
 
@@ -497,18 +501,33 @@ git clone https://github.com/yfszzx/stable-diffusion-webui-images-browser
 |姿势位||||
 |镜头位||||
 
-#### 关于多人物生成
+
+### 迭代草图[^8]
+
+这里讨论一下如何将**手绘草图**通过 Ai 绘画优化，*注意不是二次元*。
+
+在第一次迭代中，您不需要太多 Steps，CFG 可以非常低（以获得更好的多样化结果），如果不想完全丢失草图，Denoising 应该在 0.3-0.4 左右。
+
+在最后的迭代中，增加 Steps 和 Denoising 强度（但不超过 0.8，否则图像将被破坏，尤其是在大于 512*512 时）请参见[这里](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2213#issuecomment-1274137775)，同时根据需要提高 CFG 和尺寸。
+
+你可以随时修复提示（添加或删除出现的细节）并尝试不同的采样器。
+
+另外，你不应该在初次生成使用一个固定不变的种子？
+
+如果你提供一个种子（而不是随机的 -1），你的图像很快就会变得过饱和、过度锐化、过度像素化..... 当然如果想微调，可以使用固定种子。
+
+
+### 关于多人物生成
 
 多人最好使用草稿/有色3d + 图生图。
 
 人数超过三个就难以控制效果，人数大于6的图像模型里没有。
 
 
-#### 使用 Ai 进行立绘设计
+### 使用 Ai 进行立绘设计
 
 <iframe src="//player.bilibili.com/player.html?aid=559362671&bvid=BV14e4y1U7r9&cid=869144379&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 >BV14e4y1U7r9
-
 
 
 ## 魔法进阶

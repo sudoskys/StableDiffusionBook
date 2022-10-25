@@ -44,7 +44,7 @@ https://stable-diffusion-book.vercel.app/  短链为(https://b23.ink/aibook)
 
 ### 帮助改进
 
-如果你发现了本文的的错误或不足，欢迎向[项目仓库](https://github.com/sudoskys/StableDiffusionBook/)提 issue 和 PR。
+如果你发现了本文的的错误或不足（逻辑错误，语法病句，结构混乱，内容过时，上下冲突，错词怪词），欢迎向[项目仓库](https://github.com/sudoskys/StableDiffusionBook/)提 issue 和 PR。
 
 贡献之前先读 [贡献指南](https://github.com/sudoskys/StableDiffusionBook/blob/main/CONTRIBUTING.md)
 
