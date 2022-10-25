@@ -25,8 +25,10 @@
 
 ## 基本流程
 
+![WorkFlow](https://user-images.githubusercontent.com/75739606/197821744-99b18fbc-1ae4-4e37-b7e7-9a47adaa6ae5.svg)
+<!--
 ![WorkFlow](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/draw_workflow.svg)
-
+-->
 这幅图演示了循环迭代的流程
 迭代方式，有循环迭代和线性迭代两种，线性迭代适用于多样性测试，而 **循环迭代** 是优化的更好选择。
 
@@ -307,8 +309,10 @@ normal quality, text, censored, gown, latex, pencil
 
 `[from::when]` 在固定数量的step后从提示中删除 `from`( when)
 
+![sample_Gradient](https://user-images.githubusercontent.com/75739606/197822841-f7323afa-8c6a-46a2-a8e2-a1c457bb31d5.jpg)
+<!--
 ![sample_Gradient](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/sample_Gradient.jpg)
-
+-->
 ### 重现提示词
 
 对于没有压缩的原图，我们可以将文件拖入 `PNG Info` 选项卡，进行提示词(Token)查看。
@@ -354,7 +358,10 @@ normal quality, text, censored, gown, latex, pencil
 
 咒语的科学原理。
 
+![prompt_draw](https://user-images.githubusercontent.com/75739606/197823203-79263ee2-a9b3-4db7-9b7d-0ce557b94f3c.png)
+<!--
 ![prompt_draw](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/prompt_draw_fix.png)
+-->
 >By RcINS
 
 在程序中，提示词的解析由 CLIP 处理
@@ -417,7 +424,7 @@ PS：调太高步数(>30)效果不会更好
 
 |预览一|预览二|
 |--|--|
-|<img src="https://user-images.githubusercontent.com/22421310/187063145-3d4f16d7-7bd6-4804-be1c-acf228ed2507.jpg" width="400" alt="效果">|<img src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/raw_sample.jpg" width="400" alt="效果">|
+|<img src="https://user-images.githubusercontent.com/22421310/187063145-3d4f16d7-7bd6-4804-be1c-acf228ed2507.jpg" width="400" alt="效果">|<img src="https://user-images.githubusercontent.com/75739606/197824518-f68188a3-0572-4b52-8fe7-289b6d7b640b.jpg" width="400" alt="效果">|
 
 >不同 step 和 采样器 的不同效果
 
@@ -613,8 +620,10 @@ Resize and fill：调整图像大小，使整个图像在目标分辨率内。�
 
 或者涂鸦特定部位指定形状动作(比如衣料的覆盖率或者形状)
 
+![test_woman](https://user-images.githubusercontent.com/75739606/197823480-5de77d69-46d5-4817-948f-4e514e1f8204.jpg)
+<!--
 ![info](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/00119_136826557_masterpiece%2C_best_quality%2C_1girl%2C_black_hair%2C_hat1.jpg)
-
+-->
 >一张图片[^5]展现WebUI下img2img中不同参数下效果的详细对比图（prompt、steps、scale、各种seed等参数均保持一致）
 
 纵轴是Denoising strength（线上版的strength），横轴是Variation strength

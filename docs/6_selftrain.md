@@ -112,8 +112,10 @@ git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-grad
 
 注意：当种子改变时，训练结果也会改变。
 
+![Aesthetic_other](https://user-images.githubusercontent.com/75739606/197824140-50dca98e-856f-44ca-99e6-da2fee5bb23c.png)
+<!--
 ![Aesthetic_other](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/Aesthetic_other.png)
-
+-->
 
 ## APT
 
@@ -266,8 +268,10 @@ Windows 需要在 `web-user.bat的COMMANDLINE_ARGS=` 一行添加，或者直接
 
 一般设置为 0.005，如果想快一些，可以使用 0.01 加快。但是如果设置得太高，梯度下降时候步长太大无法收敛，会且可能会破坏 `embedding` ， 效果达不到预期。如果设置的太小，容易陷入局部最优。
 
+![CS231n](https://user-images.githubusercontent.com/75739606/197824268-273f074d-9622-41ad-9f1a-2980f180dbd9.png)
+<!--
 ![CS231n](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/CS231n.png)
-
+-->
 
 `Log directory` 是日志目录
 
@@ -435,8 +439,11 @@ Swish对比Relu和Linear要更好，Swish适合更大的网络，而Elu可能对
 
 [相关的英文讨论](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2670)
 
+![hypernet对比图](https://user-images.githubusercontent.com/75739606/197823893-88a3bece-9100-41d1-8f07-bc6d9b3aa92c.jpg)
+<!--
 ![hypernet对比图](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/exp_hypernet.jpg)
->hypernet对比图
+-->
+>hypernet对比图,the woman in picture is 24 years old
 
 ### 额外注意[^16]
 

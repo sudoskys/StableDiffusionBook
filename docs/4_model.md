@@ -136,8 +136,11 @@ Windows: <https://developer.nvidia.com/compute/cudnn/secure/8.5.0/local_installe
 
 `random_stableckpt` 是一些模型，有的与Part1重复
 
-![Part1](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/models.jpg)
 
+![Part1](https://user-images.githubusercontent.com/75739606/197821809-7eed7776-9508-4c71-9b07-5f02e13290b2.jpg)
+<!--
+![Part1](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/models.jpg)
+-->
 ??? info "附内容"
     - stableckpt/ - Stable Diffusion checkpoints
     - animefull-latest - The model NovelAI uses in production
@@ -274,7 +277,10 @@ ckpt 文件被加载时基本上可以执行任何内容，盲目加载有安全
 
 ### 关于模型？[^6]
 
+![Roaming_info.png](https://user-images.githubusercontent.com/75739606/197822354-51269567-6478-4bd9-97b1-e18cfbf851af.png)
+<!--
 ![Roaming_info.png](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/Roaming_info.png)
+-->
 >来自 allophane.com/index.php/2022/10/17/roaming_info_for_latent_diffusion/
 
 
