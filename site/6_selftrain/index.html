@@ -420,10 +420,10 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    介绍
+    认知炼丹
   </a>
   
-    <nav class="md-nav" aria-label="介绍">
+    <nav class="md-nav" aria-label="认知炼丹">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -448,15 +448,15 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-        
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     相关
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -750,18 +750,18 @@
 <h1 id="_1">炼丹</h1>
 <blockquote>
 <p>Todo 
-下面的东西有时间再..
-https://github.com/huggingface/diffusers/issues/712
-https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2002</p>
+材料</p>
+<p>https://github.com/huggingface/diffusers/issues/712</p>
+<p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2002</p>
 </blockquote>
 <p>这节对显卡的要求较高。</p>
 <p>在法律上，<strong>不应该</strong>无视画师约定的版权许可，采集作品数据进行训练。在道德上，<strong>不应该</strong>用训练结果贬低原画师作品价值，俗谚有 “吃水不忘挖井人”，训练数据并不能作为你的贡献。</p>
 <p>目前个人认为效果认为效果最好的是 DreamBooth，但是其训练时对显存要求较高（&gt;12GB）。</p>
+<h2 id="_2">认知炼丹</h2>
 <p>如果你在 <code>--medvram</code> 参数下开始训练，可能会出现 <code>RuntimeError: Expected all tensors to be on the same device</code> 错误，无法创建训练。
 这是优化机制导致的<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2399">问题</a>，WebUi 在 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/cbb857b675cf0f169b21515c29da492b513cc8c4">这次提交</a> 中允许了在 <code>--medvram</code> 下创建 embedding 的情况。请更新版本到这个版本之后。</p>
 <p><strong>关于 batch size</strong></p>
 <p>更大的 batch size 可能稍微加快训练并稍微提升训练效果，但也需要更大的显存。</p>
-<h2 id="_2">介绍</h2>
 <h3 id="textual-inversion-ti">Textual Inversion (TI)</h3>
 <p>从一些具有共同语义 [v] 的图片中，提取 [v] 的一个方法。提取出的 [v] 张量称之为 "Embedding"。将 Embedding 保存为文件，之后生成图片时就可以在 prompt 中以文件名引用。</p>
 <h4 id="_3">特征</h4>
@@ -769,7 +769,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2002</p>
 <p>可以解决新出的角色画不出的问题，或者模仿特定的可以用语言精确描述的艺术风格。因为 TI 是在 Text Encoder 的输出做处理，所以并不能让模型学习到它不知道的概念。</p>
 <h4 id="_4">使用</h4>
 <p>使用时，将 embedding（一个 .pt 或一个 .bin 文件）放入 webui 的 <code>embeddings</code> 目录并在 prompt 中写要用的 embedding 的文件名（不包括扩展名）即可，不必重启 webui。可以同时使用多个 embedding。</p>
-<h3 id="_5">相关</h3>
+<h4 id="_5">相关</h4>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion">webui 给的英文说明和效果图</a></p>
 <p><a href="https://gitlab.com/16777216c/stable-diffusion-embeddings">相关 embeddings</a>，里面有相关效果预览。</p>
 <p><a href="https://rentry.org/embeddings">list of Textual Inversion embeddings for webui(SD)</a></p>
@@ -1079,11 +1079,11 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2002</p>
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 26, 2022 16:48:07</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 26, 2022 16:51:00</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 26, 2022 16:48:07</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 26, 2022 16:51:00</span>
       
     
   </small>
