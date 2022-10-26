@@ -1,4 +1,3 @@
-
 # 准备
 
 本文档目的是为了总结社区讨论成果，为刚入门接触使用Stable Diffusion绘画的小白编写一个自助指南，从 WebUi 入手接触 Ai绘画，并学习相关知识。
@@ -63,6 +62,25 @@ NAI 是一个在线**服务**。
     目前Stable Diffusion WebUi迭代非常快，每天都会有大量更新，因此建议每天都拉取最新代码。
 
 以下是新闻和测试内容。
+
+-------
+- 10/26
+
+[中文翻译上线](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/dde8c435987dcd071c63d16f247ae832bce0101f)
+
+[法语翻译上线](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3653)
+
+[土耳其翻译上线](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3631)
+
+WebUi 在 [这次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/1e428238db4e399b7a06ad5251cb16eef23a014d) 中将 override_settings 添加到 API
+
+在 [这次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/cb49800c08a9f6619733250401952e5571dc12f8) 后，img2img 使用了手机照片的 EXIF 方向。
+
+WebUi 在 [这次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/de096d0ce752c96e45508dcc7b9e84f7dbe10cca) 中添加了权重初始化和更多激活函数。
+
+WebUi 在 [这次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/cbb857b675cf0f169b21515c29da492b513cc8c4) 中允许了在 `--medvram` 下创建 embedding 的情况。
+
+`Hint:will send cond model to GPU if lowvram/medvram is active`
 
 -------
 - 10/25

@@ -66,8 +66,14 @@ WSL 不可以迁移，如果 C 盘不够，寄！
 
 亦或在想要运行的目录下打开 CMD
 
+**拉取仓库**
+
 
 在命令框中运行 `git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git` 拉取仓库，这里如果如果失败请设置代理。
+
+使用Git下载的源代码，可以直接使用 `git pull` 更新代码。推荐经常更新，并关注社区讨论。
+
+如果是整合或者其他，请向上游（谁分发的）索取。
 
 !!! tip 
     如果你不会设置代理，可以使用以下命令拉取镜像
@@ -99,7 +105,6 @@ WSL 不可以迁移，如果 C 盘不够，寄！
 
 #### Windows 从整合包迁移
 
-
 使用上面的命令拉取代码但先不运行，然后将 Bat 文件和里面指定的文件夹复制到全新环境，把 `models` 和 `outputs` 以及 `embeddings` 复制到新文件夹，自行处理冲突。
 
 !!! tip "命令"
@@ -113,6 +118,7 @@ WSL 不可以迁移，如果 C 盘不够，寄！
 然后在新代码目录下，尝试运行原来的 Bat，如果报错，就根据提示排查是不是 NotFound 什么依赖，或者根据下面的命令说明修改 Bat 文件。
 
 如果你不想迁移你的整合包，你也可以参考 [带图片的教程](https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99#%E6%87%92%E4%BA%BA%E5%8C%85%E6%94%B9-git-%E4%BB%93%E5%BA%93%E8%BF%9B%E8%A1%8C%E6%9B%B4%E6%96%B0)
+
 
 #### Linux 安装
 
@@ -146,107 +152,6 @@ bash <(wget -qO- https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusio
     ```
 
 
-#### 更新框架
-
-使用Git下载的源代码，可以直接使用 `git pull` 更新代码。推荐经常更新，并关注社区讨论。
-
-如果是整合或者其他，请向上游（谁分发的）索取。
-
-
-### 错误处理
-
-翻译整理自[^3]
-
-
-
-#### 首先...
-
-路径不允许含有空格，确保您的文件夹路径没有空格。
-
-
-#### 网络问题/没响应
-
-- Git 报错
-
-HTTP_PROXY 和 HTTPS_PROXY 环境变量，或者使用 clash 的tun模式. 或者把 git clone 的仓库源换成 huggingface
-
-其他依赖报错也需要设置代理或者使用镜像，不然特慢。
-
-
-#### 时间花销过大
-
-设镜像或者挂代理，**依赖项 >2GB**,请做好准备，而且对于Windows,**依赖默认安装在C盘**！
-
-
-#### 低显存显卡/CUDA out of memory
-
-确保你拥有可以运行的最新CUDA 工具包和 GPU 驱动程序.
-
-在具有少量 VRAM (<=4GB) 的视频卡上运行时，可能会出现内存不足错误。可以通过命令行参数启用各种优化，牺牲一些/很多速度来支持使用更少的 VRAM：
-
-如果你有 4GB VRAM 并且想要制作 512x512（或者可能高达 640x640）的图像，请使用 `--medvram`
-
-如果你有 4GB VRAM 并且想要制作 512x512 图像，但使用 `--medvram` 遇到内存不足错误 ，请改用`--medvram --opt-split-attention`
-
-如果你有 4GB VRAM 并想要制作 512x512 图像，但仍然出现内存不足错误，请改用 `--lowvram --always-batch-cond-uncond --opt-split-attention`
-
-如果你有 4GB VRAM 并且想要制作比你可以使用的更大的图像`--medvram`，请使用 `--lowvram --opt-split-attention`
-
-如果你有更多的 VRAM 并且想要制作比你通常制作的更大的图像（例如 1024x1024 而不是 512x512），请使用`--medvram --opt-split-attention`.
-
-你也可以使用 `--lowvram` ，启动这个参数后，模型被分成模块，GPU内存中只保存一个模块； 当另一个模块需要运行时，前一个从 GPU 内存中删除，这种牺牲使处理运行速度大约慢 10 倍。 
-
-如果还不行....
-
-
-#### 我 Python 呢？
-
-如果你的 Python 版本不在 PATH 中，则在文件夹中创建或修改 webui.settings.bat 添加行 `set PYTHON=python `来说明 Python 可执行文件的完整路径（请看下面的参数说明！
-
-#### ERROR:asyncio:Accept failed on a socket
-
-先检查端口冲突，有没有和什么软件冲突
-
-这个错误有可能是 `Python38` 的 `asyncio` 库对 `Windows` 的兼容性问题。
-
-尝试用 CMD 管理员身份运行`netsh winsock reset`，不行的话，切换端口。
-
-如果还是不行，请切换至 Python 的 `3.10.6`，WebUi 的开发环境为此版本。
-
-
-#### 虚拟环境
-
-如果你使用 conda 可以不使用一键脚本，可以自己运行 launch 安装依赖。
-
-因为仓库给出的一键安装脚本会创建虚拟环境，然后启动 [launch.py](https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/launch.py)。
-
-在运行时，一键安装程序会创建一个 python 虚拟环境，因此如果你在安装之前安装了一个模块，那么任何已安装的模块都不会影响你
-
-如果需要防止创建虚拟环境而使用系统 python，编辑 `webui.bat` 替换 `setVENV_DIR=venv`为`set VENV_DIR=`
-
-#### api-ms-win-core-path-l1-1-0.dll is missing[^3]
-
-Windows 7上运行很可能会报错: `api-ms-win-core-path-l1-1-0.dll is missing`，这是因为许多程序需要新版本的 Windows 的系统文件。
-
-如果没有出现该错误，不需要执行下面的操作。 
-
-这些文件已经被移植来与 W7 兼容，并且可以在 [这里](https://github.com/nalexandru/api-ms-win-core-path-HACK/releases/download/0.3.1/api-ms-win-core-path-blender-0.3.1.zip) 下载。它的 [Github 页面](https://github.com/nalexandru/api-ms-win-core-path-HACK/)
-
-解压缩并将 `x86.dll` 复制到 `C:\Windows\SysWOW64` ，将 `x64.dll` 复制到 `C:\Windows\System32` 并重启。
-
-#### an illegal memory access was encountered ....CUDA kernel errors...
-
-[相关问题Issue](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/1766)
-
-在多数情况下，这代表显存溢出，也有可能是 GPU 硬件问题。
-
-据说使用 deepdanbooru 的话会有这个提示，可以尝试重新启动 或 安装cpu版本的deepdanbooru.
-
-
-
-**生成图片问题见下一章**
-
-
 
 ### 启动(但是必须首先下载一个4GB模型)
 
@@ -263,6 +168,61 @@ Linux 用户采用
 ```
 COMMANDLINE_ARGS="--medvram --always-batch-cond-uncond" REQS_FILE="requirements.txt" python launch.py
 ```
+
+#### 令牌参数生成第一幅图片
+
+咳咳，这里使用的是某个模型，示例仅仅适用于 `那个模型`。
+
+令牌请读后面的内容，这里给出一个实例来供你完成测试。
+
+顶上那个是选择模型，暂时用不到。
+
+- 第一个框是正向令牌
+
+可以使用 颜文字 和 emoji，使用 () 来增强权重，具体规则见后
+
+```
+((masterpiece)), best quality, illustration, 1 girl, beautiful,beautiful detailed sky, catgirl,beautiful detailed water, cinematic lighting, dramatic angle, Grey T-Shirt, (few clothes),(yuri),(medium breasts),white hair,cat ears,masturbation,bare shoulders ,(gold eyes),wet clothes
+```
+
+- 第二个框是反向令牌
+
+指定需要过滤什么标签
+
+```
+lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, bad feet
+```
+
+**第一次调整参数**
+
+选定分辨率参数，越大越慢越卡。
+
+生成后的结果结尾类似为
+```
+Steps: 28, Sampler: Euler a, CFG scale: 7, Seed: 2706937631, Size: 1024x512, Model hash: 925997e9
+```
+通过一样的参数和 Seed(-1就是随机)，可以生产一样的图像，这用于微调！
+还有占用信息
+```
+Time taken: 33.97s
+Torch active/reserved: 1975/2144 MiB, Sys VRAM: 7890/8134 MiB (93.61%)
+```
+
+**快捷设置**
+
+不想来回设置 Clip？
+
+添加`sd_hypernetwork`和`CLIP_stop_at_last_layers`到设置页面的`Quicksettings list`，保存并重新启动 webui，你就可以在Ui顶部看到一个快速切换选项啦～
+
+#### 中文/本地化
+
+本地化作为单个 `.json` 文件提供。 将此文件放入 `localizations` 目录并在设置中选择即可。
+
+在 22/10/26 下午，WebUi 添加了中文的翻译。
+
+**创建本地化文件**
+
+转到设置并单击 `Download localization template` 底部的按钮，下载一个可以编辑的本地化模板。 
 
 #### 共享链接
 
@@ -361,59 +321,102 @@ set COMMANDLINE_ARGS设置命令行参数webui.py运行
 | `--always-batch-cond-uncond`    | 禁用上述优化。只有与`--medvram`或`--lowvram`一起使用才有意义 |
 | `--opt-channelslast`            | 更改 torch 内存类型，以稳定扩散到最后一个通道,效果没有仔细研究。|
 
-#### 本地化
+#### API 文档
 
-本地化作为单个 `.json` 文件提供。 将此文件放入 `localizations` 目录并在设置中选择即可。
+在浏览器访问 `{网址}/docs` 就可以查看到 WebUi 的 Api 文档。
+
+### 错误处理 Troubleshooting
+
+翻译整理自[^3]
+
+文件路径，路径不允许含有空格，确保您的程序文件夹路径中没有空格。该程序经过测试可在 Python 3.10.6 上运行，低版本 Python 可能会发生错误。
+
+重新安装，请删除目录： `venv`, `repositories`。
 
 
-**创建本地化文件**
+#### 网络问题/没响应
 
-转到设置并单击 `Download localization template` 底部的按钮，下载一个可以编辑的本地化模板。 
+- Git 报错
 
-#### 令牌参数生成第一幅图片
+HTTP_PROXY 和 HTTPS_PROXY 环境变量，或者使用 clash 的tun模式. 或者把 git clone 的仓库源换成 huggingface
 
-咳咳，这里使用的是某个模型，示例仅仅适用于 `那个模型`。
+其他依赖报错也需要设置代理或者使用镜像，不然特慢。
 
-令牌请读后面的内容，这里给出一个实例来供你完成测试。
 
-顶上那个是选择模型，暂时用不到。
+#### 时间花销过大
 
-- 第一个框是正向令牌
+设镜像或者挂代理，**依赖项 >2GB**,请做好准备，而且对于Windows,**依赖默认安装在C盘**！
 
-可以使用 颜文字 和 emoji，使用 () 来增强权重，具体规则见后
 
-```
-((masterpiece)), best quality, illustration, 1 girl, beautiful,beautiful detailed sky, catgirl,beautiful detailed water, cinematic lighting, dramatic angle, Grey T-Shirt, (few clothes),(yuri),(medium breasts),white hair,cat ears,masturbation,bare shoulders ,(gold eyes),wet clothes
-```
+#### 低显存显卡/CUDA out of memory
 
-- 第二个框是反向令牌
+确保你拥有可以运行的最新CUDA 工具包和 GPU 驱动程序。
 
-指定需要过滤什么标签
+程序在具有少量 VRAM (<=4GB) 的视频卡上运行时，可能会出现内存不足错误。
 
-```
-lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, bad feet
-```
+**牺牲速度来支持低显存显卡**
 
-**第一次调整参数**
+如果你有 `4GB VRAM` 并且想要制作 512x512（或者可能高达 640x640）的图像，请使用 `--medvram`
 
-选定分辨率参数，越大越慢越卡。
+如果你有 `4GB VRAM` 并且想要制作 512x512 图像，但使用 `--medvram` 遇到内存不足错误 ，请改用`--medvram --opt-split-attention`
 
-生成后的结果结尾类似为
-```
-Steps: 28, Sampler: Euler a, CFG scale: 7, Seed: 2706937631, Size: 1024x512, Model hash: 925997e9
-```
-通过一样的参数和 Seed(-1就是随机)，可以生产一样的图像，这用于微调！
-还有占用信息
-```
-Time taken: 33.97s
-Torch active/reserved: 1975/2144 MiB, Sys VRAM: 7890/8134 MiB (93.61%)
-```
+如果你有 `4GB VRAM` 并想要制作 512x512 图像，但仍然出现内存不足错误，请改用 `--lowvram --always-batch-cond-uncond --opt-split-attention`
 
-**快捷设置**
+如果你有 `4GB VRAM` 并且想要制作比你可以使用的更大的图像`--medvram`，请使用 `--lowvram --opt-split-attention`
 
-不想来回设置 Clip？
+如果你有更多的 `VRAM` 并且想要制作比你通常制作的更大的图像（例如 1024x1024 而不是 512x512），请使用`--medvram --opt-split-attention`.
 
-添加`sd_hypernetwork`和`CLIP_stop_at_last_layers`到设置页面的`Quicksettings list`，保存并重新启动 webui，你就可以在Ui顶部看到一个快速切换选项啦～
+你也可以使用 `--lowvram` ，启动这个参数后，模型被分成模块，GPU内存中只保存一个模块； 当另一个模块需要运行时，前一个从 GPU 内存中删除，这种牺牲使处理运行速度大约慢 10 倍。 
+
+如果还不行，建议你升级设备。
+
+
+#### 我 Python 呢？
+
+如果你的 Python 版本不在 PATH 中，则在文件夹中创建或修改 webui.settings.bat 添加行 `set PYTHON=python `来说明 Python 可执行文件的完整路径（请看参数说明表格）
+
+#### ERROR:asyncio:Accept failed on a socket
+
+先检查端口冲突，有没有和什么软件冲突
+
+这个错误有可能是 `Python38` 的 `asyncio` 库对 `Windows` 的兼容性问题。
+
+尝试用 CMD 管理员身份运行`netsh winsock reset`，不行的话，切换端口。
+
+如果还是不行，请切换至 Python 的 `3.10.6`，WebUi 的开发环境为此版本。
+
+
+#### 虚拟环境
+
+如果你使用 conda 可以不使用一键脚本，可以自己运行 launch 安装依赖。
+
+因为仓库给出的一键安装脚本会创建虚拟环境，然后启动 [launch.py](https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/launch.py)。
+
+在运行时，一键安装程序会创建一个 python 虚拟环境，因此如果你在安装之前安装了一个模块，那么任何已安装的模块都不会引发冲突。
+
+如果需要防止创建虚拟环境而使用系统 python，编辑 `webui.bat` 替换 `setVENV_DIR=venv`为`set VENV_DIR=`
+
+#### api-ms-win-core-path-l1-1-0.dll is missing[^3]
+
+Windows 7上运行很可能会报错: `api-ms-win-core-path-l1-1-0.dll is missing`，这是因为许多程序需要新版本的 Windows 的系统文件。
+
+如果没有出现该错误，不需要执行下面的操作。 
+
+这些文件已经被移植来与 W7 兼容，并且可以在 [这里](https://github.com/nalexandru/api-ms-win-core-path-HACK/releases/download/0.3.1/api-ms-win-core-path-blender-0.3.1.zip) 下载。它的 [Github 页面](https://github.com/nalexandru/api-ms-win-core-path-HACK/)
+
+解压缩并将 `x86.dll` 复制到 `C:\Windows\SysWOW64` ，将 `x64.dll` 复制到 `C:\Windows\System32` 并重启。
+
+#### an illegal memory access was encountered ....CUDA kernel errors...
+
+[相关问题Issue](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/1766)
+
+在多数情况下，这代表显存溢出，也有可能是 GPU 硬件问题。
+
+据说使用 deepdanbooru 的话会有这个提示，可以尝试重新启动 或 安装cpu版本的deepdanbooru.
+
+
+
+**生成图片问题见下一章**
 
 
 ## 使用 Colab 搭建

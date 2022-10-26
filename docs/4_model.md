@@ -1,5 +1,4 @@
-
-# 模型技法
+# 架炉生火
 
 这节介绍 Debug 和一些 关于 WebUi 网页应用模型参数 的优化方案，让它更好用。
 
@@ -170,6 +169,14 @@ Windows: <https://developer.nvidia.com/compute/cudnn/secure/8.5.0/local_installe
 且 NAI 在线上也使用 EMA 权重，所以选择 latest 7GB 模型是没有意义的。
 
 [结论由此贴讨论得到](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017#discussioncomment-3882551)。
+
+**关于 EMA**
+
+ema移动平均值对生成图像没有任何帮助。
+
+They do prevent overfitting or something if you resume training the model.
+
+Not sure if they matter for dreambooth style training though.
 
 **详细介绍**
 
