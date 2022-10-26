@@ -9,7 +9,7 @@
 >
 >
 
-本节讨论 WebUi 的高度自定义功能：`train`，通过这项功能，我们可以为 Ai 增加类似 DLC 扩展包一样的功能。
+本节讨论 WebUi 的高度自定义功能：`train`，通过这项功能，我们可以为 Ai 增加类似 DLC 扩展包一样的功能。这节对显卡的要求较高。
 
 目前个人认为效果认为效果最好的是 `dreambooth`，但是其对显存要求较高（>12GB）
 
@@ -22,7 +22,9 @@
 `dreambooth` 可适应用户特定的图像生成需求。"只需几张指定物体的照片和相应的类名（如“狗”）作为输入，并添加一个唯一标识符植入不同的文字描述中，DreamBooth 就能让被指定物体“完美”出现在用户想要生成的场景中。" 和 Textual Inversion 不同，dreambooth 向输出插入训练数据，可以做到高相似，效果特别好。但是不能即插即用, 强度不可调。
 
 
-如果你在 `--medvram` 参数下开始训练，可能会出现 `RuntimeError: Expected all tensors to be on the same device` 错误，无法创建训练。这是优化机制导致的[问题](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2399)，解决方法是去除这个参数。这节对显卡的要求较高。
+如果你在 `--medvram` 参数下开始训练，可能会出现 `RuntimeError: Expected all tensors to be on the same device` 错误，无法创建训练。
+这是优化机制导致的[问题](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2399)，WebUi 在 [这次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/cbb857b675cf0f169b21515c29da492b513cc8c4) 中允许了在 `--medvram` 下创建 embedding 的情况。请更新版本到这个版本之后。
+
 
 
 **关于batch size**
@@ -30,7 +32,6 @@
 更大的 `batch size` 可以加快训练，但也需要更大的显存。batch size 与学习率应该保持比率一致，提高几倍batch size就提高几倍学习率。[^16]
 
 先确定你要使用的学习率，再确定你想设置的batch size，然后batch size增大了几倍，学习率就同步增大几倍。
-
 
 
 ## Textual Inversion 识别新角色
