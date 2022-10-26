@@ -655,13 +655,14 @@
 https://github.com/huggingface/diffusers/issues/712
 https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2002</p>
 </blockquote>
-<p>本节讨论 WebUi 的高度自定义功能：<code>train</code>，通过这项功能，我们可以为 Ai 增加类似 DLC 扩展包一样的功能。</p>
+<p>本节讨论 WebUi 的高度自定义功能：<code>train</code>，通过这项功能，我们可以为 Ai 增加类似 DLC 扩展包一样的功能。这节对显卡的要求较高。</p>
 <p>目前个人认为效果认为效果最好的是 <code>dreambooth</code>，但是其对显存要求较高（&gt;12GB）</p>
 <p><code>Textual Inversion</code> 训练为了 <code>embeddings</code>，<code>embeddings</code> 为 Ai 提供处理过的输入数据，告诉这个角色“具体是什么”，训练特殊的人物，角色会更好。</p>
 <p><code>Hypernetworks</code> 则会对超网络的改动，与 <code>embeddings</code> 不同，<code>Hypernetworks</code> 会对模型进行微调，所以泛化效果更加好，训练画风会更好。</p>
 <p><code>Aesthetic Gradients</code> 通过计算平均权重，来提升图片的质量，提高美观度。在少量提示词情况下也可以生成效果不错的作品。</p>
 <p><code>dreambooth</code> 可适应用户特定的图像生成需求。"只需几张指定物体的照片和相应的类名（如“狗”）作为输入，并添加一个唯一标识符植入不同的文字描述中，DreamBooth 就能让被指定物体“完美”出现在用户想要生成的场景中。" 和 Textual Inversion 不同，dreambooth 向输出插入训练数据，可以做到高相似，效果特别好。但是不能即插即用, 强度不可调。</p>
-<p>如果你在 <code>--medvram</code> 参数下开始训练，可能会出现 <code>RuntimeError: Expected all tensors to be on the same device</code> 错误，无法创建训练。这是优化机制导致的<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2399">问题</a>，解决方法是去除这个参数。这节对显卡的要求较高。</p>
+<p>如果你在 <code>--medvram</code> 参数下开始训练，可能会出现 <code>RuntimeError: Expected all tensors to be on the same device</code> 错误，无法创建训练。
+这是优化机制导致的<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2399">问题</a>，WebUi 在 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/cbb857b675cf0f169b21515c29da492b513cc8c4">这次提交</a> 中允许了在 <code>--medvram</code> 下创建 embedding 的情况。请更新版本到这个版本之后。</p>
 <p><strong>关于batch size</strong></p>
 <p>更大的 <code>batch size</code> 可以加快训练，但也需要更大的显存。batch size 与学习率应该保持比率一致，提高几倍batch size就提高几倍学习率。<sup id="fnref:16"><a class="footnote-ref" href="#fn:16">10</a></sup></p>
 <p>先确定你要使用的学习率，再确定你想设置的batch size，然后batch size增大了几倍，学习率就同步增大几倍。</p>
@@ -978,11 +979,11 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2002</p>
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 26, 2022 15:36:09</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 26, 2022 16:31:48</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 26, 2022 15:36:09</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 26, 2022 16:31:48</span>
       
     
   </small>
