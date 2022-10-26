@@ -603,11 +603,12 @@ Resize and fill：调整图像大小，使整个图像在目标分辨率内。�
 
 可以结合 **3D建模** 摆 Pose,可以使用 MMD 相关软件。
 
-如果是真人图片，需要适当提高 `CFG Scale`。
+如果是真人图片，需要适当提高 `CFG Scale` 相似度，结合提示词一起生成。降噪 `denoising` 越高，相关性越低。
 
 推荐使用 [DAZ](https://www.daz3d.com/get_studio) 或者 [blender](https://www.blender.org/) 或者 Unity ，在对 3D 模型的测试中，**色彩主要影响 AI 的绘画效果**，所以你的模型需要有纹理。
 
 不知道 VRchat 怎么样。
+
 
 
 ### Img2Img PS重绘画/嫁接修复
@@ -840,7 +841,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-edi
 [https://github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference](https://github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference)
 
 
-## 应用指南
+## 市场应用情况调查
 
 这里是稳定扩散（非 NAI 模型）的应用情况。
 
@@ -868,7 +869,6 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-edi
 [稳定扩散的真实用例](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3219)
 
 [稳定扩散的应用结合](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3572)
-
 
 
 
