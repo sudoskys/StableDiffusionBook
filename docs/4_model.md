@@ -1,18 +1,14 @@
 # 架炉生火
 
-这节介绍 Debug 和一些 关于 WebUi 网页应用模型参数 的优化方案，让它更好用。
+这节介绍 Debug 和一些 关于 WebUi 网页应用模型参数 的优化方案，让它更好用。本节演示所用模型为 NAI 展开教程。**部分源教程来自：[^2]**
 
-至于如何出图，请看下一节。
-
-!!! tip
-    注意要经常从远端代码库拉取代码更新 WebUi 网页应用～
-
->本节只针对 NAI 模型展开教程。请多多关注 About 页面的社区获取最新进展和新闻。**大部分源教程来自：[^2]**
+推荐经常从远端代码库拉取代码 `git pull` 更新 WebUi 网页应用。
 
 !!! info "版权"
-    本仓库不提供具体链接（版权警告），可以看页面下标或关注中文社区 t.me@StableDiffusion_CN_WIKI。
+    为避免涉及版权纠纷，本仓库不提供 NAI 的模型链接。
+    可以尝试关注中文社区 t.me@StableDiffusion_CN_WIKI 或 打开整合包自行查看 `model` 目录。
 
-SDWebUi是一个框架，所以除了NAI模型外还有许多[其他模型](https://rentry.org/sdmodels)
+SDWebUi是一个框架，除了 NAI 模型外还有许多[其他模型](https://rentry.org/sdmodels)
 
 
 ## 关于显卡
