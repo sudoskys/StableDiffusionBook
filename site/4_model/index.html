@@ -811,20 +811,14 @@
 
 
 <h1 id="_1">架炉生火</h1>
-<p>这节介绍 Debug 和一些 关于 WebUi 网页应用模型参数 的优化方案，让它更好用。</p>
-<p>至于如何出图，请看下一节。</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>注意要经常从远端代码库拉取代码更新 WebUi 网页应用～</p>
-</div>
-<blockquote>
-<p>本节只针对 NAI 模型展开教程。请多多关注 About 页面的社区获取最新进展和新闻。<strong>大部分源教程来自：<sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">1</a></sup></strong></p>
-</blockquote>
+<p>这节介绍 Debug 和一些 关于 WebUi 网页应用模型参数 的优化方案，让它更好用。本节演示所用模型为 NAI 展开教程。<strong>部分源教程来自：<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">1</a></sup></strong></p>
+<p>推荐经常从远端代码库拉取代码 <code>git pull</code> 更新 WebUi 网页应用。</p>
 <div class="admonition info">
 <p class="admonition-title">版权</p>
-<p>本仓库不提供具体链接（版权警告），可以看页面下标或关注中文社区 t.me@StableDiffusion_CN_WIKI。</p>
+<p>为避免涉及版权纠纷，本仓库不提供 NAI 的模型链接。
+可以尝试关注中文社区 t.me@StableDiffusion_CN_WIKI 或 打开整合包自行查看 <code>model</code> 目录。</p>
 </div>
-<p>SDWebUi是一个框架，所以除了NAI模型外还有许多<a href="https://rentry.org/sdmodels">其他模型</a></p>
+<p>SDWebUi是一个框架，除了 NAI 模型外还有许多<a href="https://rentry.org/sdmodels">其他模型</a></p>
 <h2 id="_2">关于显卡</h2>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -1010,7 +1004,7 @@ Steps: 28, Sampler: Euler, CFG scale: 12, Seed: [SEE COLUMN], Size: 512x512, Mod
 <h4 id="_6">生成黑/绿图</h4>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Install-and-Run-on-NVidia-GPUs">Green or Black screen</a></p>
 <p>如果是GTX 16xx系列，启动参数需要加 <code>--precision full --no-half</code>, 因此如果显存不足还要加 <code>--medvram</code>。</p>
-<p>如果是其他显卡而且加载了 VAE 时出现黑图，加入 <code>--no-half-vae</code> 参数<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">1</a></sup>。</p>
+<p>如果是其他显卡而且加载了 VAE 时出现黑图，加入 <code>--no-half-vae</code> 参数<sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">1</a></sup>。</p>
 <h4 id="runtimeerror-sizes-of-tensors-must-match">RuntimeError Sizes of tensors must match</h4>
 <p>(img2img) 如果你得到RuntimeError: Sizes of tensors must match，你需要改变输入图像的分辨率</p>
 <h4 id="_7">彩虹混乱图</h4>
@@ -1266,11 +1260,11 @@ pip install xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 26, 2022 15:29:50</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 26, 2022 15:36:09</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 26, 2022 15:29:50</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 26, 2022 15:36:09</span>
       
     
   </small>
