@@ -417,9 +417,50 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4gb" class="md-nav__link">
+    启动(但是必须首先下载一个4GB模型)
+  </a>
+  
+    <nav class="md-nav" aria-label="启动(但是必须首先下载一个4GB模型)">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    更新框架
+    令牌参数生成第一幅图片
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    中文/本地化
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    共享链接
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    自定义运行
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    API 文档
   </a>
   
 </li>
@@ -430,29 +471,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    错误处理
+  <a href="#troubleshooting" class="md-nav__link">
+    错误处理 Troubleshooting
   </a>
   
-    <nav class="md-nav" aria-label="错误处理">
+    <nav class="md-nav" aria-label="错误处理 Troubleshooting">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    首先...
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     网络问题/没响应
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     时间花销过大
   </a>
   
@@ -480,7 +514,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     虚拟环境
   </a>
   
@@ -496,47 +530,6 @@
           <li class="md-nav__item">
   <a href="#an-illegal-memory-access-was-encountered-cuda-kernel-errors" class="md-nav__link">
     an illegal memory access was encountered ....CUDA kernel errors...
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4gb" class="md-nav__link">
-    启动(但是必须首先下载一个4GB模型)
-  </a>
-  
-    <nav class="md-nav" aria-label="启动(但是必须首先下载一个4GB模型)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    共享链接
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    自定义运行
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    本地化
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
-    令牌参数生成第一幅图片
   </a>
   
 </li>
@@ -581,7 +574,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     硬件需求
   </a>
   
@@ -589,7 +582,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     软件需求
   </a>
   
@@ -603,14 +596,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_16" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     驱动相关
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_17" class="md-nav__link">
+  <a href="#_14" class="md-nav__link">
     运行相关
   </a>
   
@@ -755,7 +748,10 @@
 <p>在 <a href="https://git-scm.com/download/win">GitScm</a> 下载 Git安装包并安装，然后在开始菜单中找到 <code>git bash</code> </p>
 <p>或打开想要放置的目录，右键打开快捷菜单中寻找 <code>Git Base Here</code></p>
 <p>亦或在想要运行的目录下打开 CMD</p>
+<p><strong>拉取仓库</strong></p>
 <p>在命令框中运行 <code>git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git</code> 拉取仓库，这里如果如果失败请设置代理。</p>
+<p>使用Git下载的源代码，可以直接使用 <code>git pull</code> 更新代码。推荐经常更新，并关注社区讨论。</p>
+<p>如果是整合或者其他，请向上游（谁分发的）索取。</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>如果你不会设置代理，可以使用以下命令拉取镜像</p>
@@ -806,53 +802,6 @@ conda activate aidraw
 <span class="nv">COMMANDLINE_ARGS</span><span class="o">=</span><span class="s2">&quot;--medvram&quot;</span> <span class="nv">REQS_FILE</span><span class="o">=</span><span class="s2">&quot;requirements.txt&quot;</span> python launch.py
 </code></pre></div>
 </div>
-<h4 id="_4">更新框架</h4>
-<p>使用Git下载的源代码，可以直接使用 <code>git pull</code> 更新代码。推荐经常更新，并关注社区讨论。</p>
-<p>如果是整合或者其他，请向上游（谁分发的）索取。</p>
-<h3 id="_5">错误处理</h3>
-<p>翻译整理自<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></p>
-<h4 id="_6">首先...</h4>
-<p>路径不允许含有空格，确保您的文件夹路径没有空格。</p>
-<h4 id="_7">网络问题/没响应</h4>
-<ul>
-<li>Git 报错</li>
-</ul>
-<p>HTTP_PROXY 和 HTTPS_PROXY 环境变量，或者使用 clash 的tun模式. 或者把 git clone 的仓库源换成 huggingface</p>
-<p>其他依赖报错也需要设置代理或者使用镜像，不然特慢。</p>
-<h4 id="_8">时间花销过大</h4>
-<p>设镜像或者挂代理，<strong>依赖项 &gt;2GB</strong>,请做好准备，而且对于Windows,<strong>依赖默认安装在C盘</strong>！</p>
-<h4 id="cuda-out-of-memory">低显存显卡/CUDA out of memory</h4>
-<p>确保你拥有可以运行的最新CUDA 工具包和 GPU 驱动程序.</p>
-<p>在具有少量 VRAM (&lt;=4GB) 的视频卡上运行时，可能会出现内存不足错误。可以通过命令行参数启用各种优化，牺牲一些/很多速度来支持使用更少的 VRAM：</p>
-<p>如果你有 4GB VRAM 并且想要制作 512x512（或者可能高达 640x640）的图像，请使用 <code>--medvram</code></p>
-<p>如果你有 4GB VRAM 并且想要制作 512x512 图像，但使用 <code>--medvram</code> 遇到内存不足错误 ，请改用<code>--medvram --opt-split-attention</code></p>
-<p>如果你有 4GB VRAM 并想要制作 512x512 图像，但仍然出现内存不足错误，请改用 <code>--lowvram --always-batch-cond-uncond --opt-split-attention</code></p>
-<p>如果你有 4GB VRAM 并且想要制作比你可以使用的更大的图像<code>--medvram</code>，请使用 <code>--lowvram --opt-split-attention</code></p>
-<p>如果你有更多的 VRAM 并且想要制作比你通常制作的更大的图像（例如 1024x1024 而不是 512x512），请使用<code>--medvram --opt-split-attention</code>.</p>
-<p>你也可以使用 <code>--lowvram</code> ，启动这个参数后，模型被分成模块，GPU内存中只保存一个模块； 当另一个模块需要运行时，前一个从 GPU 内存中删除，这种牺牲使处理运行速度大约慢 10 倍。 </p>
-<p>如果还不行....</p>
-<h4 id="python">我 Python 呢？</h4>
-<p>如果你的 Python 版本不在 PATH 中，则在文件夹中创建或修改 webui.settings.bat 添加行 <code>set PYTHON=python</code>来说明 Python 可执行文件的完整路径（请看下面的参数说明！</p>
-<h4 id="errorasyncioaccept-failed-on-a-socket">ERROR:asyncio:Accept failed on a socket</h4>
-<p>先检查端口冲突，有没有和什么软件冲突</p>
-<p>这个错误有可能是 <code>Python38</code> 的 <code>asyncio</code> 库对 <code>Windows</code> 的兼容性问题。</p>
-<p>尝试用 CMD 管理员身份运行<code>netsh winsock reset</code>，不行的话，切换端口。</p>
-<p>如果还是不行，请切换至 Python 的 <code>3.10.6</code>，WebUi 的开发环境为此版本。</p>
-<h4 id="_9">虚拟环境</h4>
-<p>如果你使用 conda 可以不使用一键脚本，可以自己运行 launch 安装依赖。</p>
-<p>因为仓库给出的一键安装脚本会创建虚拟环境，然后启动 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/launch.py">launch.py</a>。</p>
-<p>在运行时，一键安装程序会创建一个 python 虚拟环境，因此如果你在安装之前安装了一个模块，那么任何已安装的模块都不会影响你</p>
-<p>如果需要防止创建虚拟环境而使用系统 python，编辑 <code>webui.bat</code> 替换 <code>setVENV_DIR=venv</code>为<code>set VENV_DIR=</code></p>
-<h4 id="api-ms-win-core-path-l1-1-0dll-is-missing3">api-ms-win-core-path-l1-1-0.dll is missing<sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">3</a></sup></h4>
-<p>Windows 7上运行很可能会报错: <code>api-ms-win-core-path-l1-1-0.dll is missing</code>，这是因为许多程序需要新版本的 Windows 的系统文件。</p>
-<p>如果没有出现该错误，不需要执行下面的操作。 </p>
-<p>这些文件已经被移植来与 W7 兼容，并且可以在 <a href="https://github.com/nalexandru/api-ms-win-core-path-HACK/releases/download/0.3.1/api-ms-win-core-path-blender-0.3.1.zip">这里</a> 下载。它的 <a href="https://github.com/nalexandru/api-ms-win-core-path-HACK/">Github 页面</a></p>
-<p>解压缩并将 <code>x86.dll</code> 复制到 <code>C:\Windows\SysWOW64</code> ，将 <code>x64.dll</code> 复制到 <code>C:\Windows\System32</code> 并重启。</p>
-<h4 id="an-illegal-memory-access-was-encountered-cuda-kernel-errors">an illegal memory access was encountered ....CUDA kernel errors...</h4>
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/1766">相关问题Issue</a></p>
-<p>在多数情况下，这代表显存溢出，也有可能是 GPU 硬件问题。</p>
-<p>据说使用 deepdanbooru 的话会有这个提示，可以尝试重新启动 或 安装cpu版本的deepdanbooru.</p>
-<p><strong>生成图片问题见下一章</strong></p>
 <h3 id="4gb">启动(但是必须首先下载一个4GB模型)</h3>
 <p>如果你运行报错，请读前面的自救提示。</p>
 <p>不提供NV模型，你可以去 关于/底部图标 页面找到 <code>中文社区</code> 的频道，里面应该有你想要的哈。</p>
@@ -861,7 +810,41 @@ conda activate aidraw
 <p>Linux 用户采用
 <div class="highlight"><pre><span></span><code>COMMANDLINE_ARGS=&quot;--medvram --always-batch-cond-uncond&quot; REQS_FILE=&quot;requirements.txt&quot; python launch.py
 </code></pre></div></p>
-<h4 id="_10">共享链接</h4>
+<h4 id="_4">令牌参数生成第一幅图片</h4>
+<p>咳咳，这里使用的是某个模型，示例仅仅适用于 <code>那个模型</code>。</p>
+<p>令牌请读后面的内容，这里给出一个实例来供你完成测试。</p>
+<p>顶上那个是选择模型，暂时用不到。</p>
+<ul>
+<li>第一个框是正向令牌</li>
+</ul>
+<p>可以使用 颜文字 和 emoji，使用 () 来增强权重，具体规则见后</p>
+<div class="highlight"><pre><span></span><code>((masterpiece)), best quality, illustration, 1 girl, beautiful,beautiful detailed sky, catgirl,beautiful detailed water, cinematic lighting, dramatic angle, Grey T-Shirt, (few clothes),(yuri),(medium breasts),white hair,cat ears,masturbation,bare shoulders ,(gold eyes),wet clothes
+</code></pre></div>
+<ul>
+<li>第二个框是反向令牌</li>
+</ul>
+<p>指定需要过滤什么标签</p>
+<div class="highlight"><pre><span></span><code>lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, bad feet
+</code></pre></div>
+<p><strong>第一次调整参数</strong></p>
+<p>选定分辨率参数，越大越慢越卡。</p>
+<p>生成后的结果结尾类似为
+<div class="highlight"><pre><span></span><code>Steps: 28, Sampler: Euler a, CFG scale: 7, Seed: 2706937631, Size: 1024x512, Model hash: 925997e9
+</code></pre></div>
+通过一样的参数和 Seed(-1就是随机)，可以生产一样的图像，这用于微调！
+还有占用信息
+<div class="highlight"><pre><span></span><code>Time taken: 33.97s
+Torch active/reserved: 1975/2144 MiB, Sys VRAM: 7890/8134 MiB (93.61%)
+</code></pre></div></p>
+<p><strong>快捷设置</strong></p>
+<p>不想来回设置 Clip？</p>
+<p>添加<code>sd_hypernetwork</code>和<code>CLIP_stop_at_last_layers</code>到设置页面的<code>Quicksettings list</code>，保存并重新启动 webui，你就可以在Ui顶部看到一个快速切换选项啦～</p>
+<h4 id="_5">中文/本地化</h4>
+<p>本地化作为单个 <code>.json</code> 文件提供。 将此文件放入 <code>localizations</code> 目录并在设置中选择即可。</p>
+<p>在 22/10/26 下午，WebUi 添加了中文的翻译。</p>
+<p><strong>创建本地化文件</strong></p>
+<p>转到设置并单击 <code>Download localization template</code> 底部的按钮，下载一个可以编辑的本地化模板。 </p>
+<h4 id="_6">共享链接</h4>
 <ul>
 <li>使用 <code>--share</code> 选项来在线运行</li>
 </ul>
@@ -895,7 +878,7 @@ conda activate aidraw
 <li>主题</li>
 </ul>
 <p>使用 <code>--theme</code> 参数，使用主题</p>
-<h4 id="_11">自定义运行</h4>
+<h4 id="_7">自定义运行</h4>
 <p>进一步熟悉这个程序，你会发现可以修改 Bat运行脚本 添加参数！具体参数列表请读下文。</p>
 <p>生成报错？请读 <code>绘画调试</code> 章节。</p>
 <p>首先，你可以运行 <code>python webui.py --help</code> 查看所有命令参数，或者在<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/modules/shared.py">源码文件</a>中读到它们。 </p>
@@ -964,39 +947,53 @@ set COMMANDLINE_ARGS设置命令行参数webui.py运行
 </tr>
 </tbody>
 </table>
-<h4 id="_12">本地化</h4>
-<p>本地化作为单个 <code>.json</code> 文件提供。 将此文件放入 <code>localizations</code> 目录并在设置中选择即可。</p>
-<p><strong>创建本地化文件</strong></p>
-<p>转到设置并单击 <code>Download localization template</code> 底部的按钮，下载一个可以编辑的本地化模板。 </p>
-<h4 id="_13">令牌参数生成第一幅图片</h4>
-<p>咳咳，这里使用的是某个模型，示例仅仅适用于 <code>那个模型</code>。</p>
-<p>令牌请读后面的内容，这里给出一个实例来供你完成测试。</p>
-<p>顶上那个是选择模型，暂时用不到。</p>
+<h4 id="api">API 文档</h4>
+<p>在浏览器访问 <code>{网址}/docs</code> 就可以查看到 WebUi 的 Api 文档。</p>
+<h3 id="troubleshooting">错误处理 Troubleshooting</h3>
+<p>翻译整理自<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></p>
+<p>文件路径，路径不允许含有空格，确保您的程序文件夹路径中没有空格。该程序经过测试可在 Python 3.10.6 上运行，低版本 Python 可能会发生错误。</p>
+<p>重新安装，请删除目录： <code>venv</code>, <code>repositories</code>。</p>
+<h4 id="_8">网络问题/没响应</h4>
 <ul>
-<li>第一个框是正向令牌</li>
+<li>Git 报错</li>
 </ul>
-<p>可以使用 颜文字 和 emoji，使用 () 来增强权重，具体规则见后</p>
-<div class="highlight"><pre><span></span><code>((masterpiece)), best quality, illustration, 1 girl, beautiful,beautiful detailed sky, catgirl,beautiful detailed water, cinematic lighting, dramatic angle, Grey T-Shirt, (few clothes),(yuri),(medium breasts),white hair,cat ears,masturbation,bare shoulders ,(gold eyes),wet clothes
-</code></pre></div>
-<ul>
-<li>第二个框是反向令牌</li>
-</ul>
-<p>指定需要过滤什么标签</p>
-<div class="highlight"><pre><span></span><code>lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, bad feet
-</code></pre></div>
-<p><strong>第一次调整参数</strong></p>
-<p>选定分辨率参数，越大越慢越卡。</p>
-<p>生成后的结果结尾类似为
-<div class="highlight"><pre><span></span><code>Steps: 28, Sampler: Euler a, CFG scale: 7, Seed: 2706937631, Size: 1024x512, Model hash: 925997e9
-</code></pre></div>
-通过一样的参数和 Seed(-1就是随机)，可以生产一样的图像，这用于微调！
-还有占用信息
-<div class="highlight"><pre><span></span><code>Time taken: 33.97s
-Torch active/reserved: 1975/2144 MiB, Sys VRAM: 7890/8134 MiB (93.61%)
-</code></pre></div></p>
-<p><strong>快捷设置</strong></p>
-<p>不想来回设置 Clip？</p>
-<p>添加<code>sd_hypernetwork</code>和<code>CLIP_stop_at_last_layers</code>到设置页面的<code>Quicksettings list</code>，保存并重新启动 webui，你就可以在Ui顶部看到一个快速切换选项啦～</p>
+<p>HTTP_PROXY 和 HTTPS_PROXY 环境变量，或者使用 clash 的tun模式. 或者把 git clone 的仓库源换成 huggingface</p>
+<p>其他依赖报错也需要设置代理或者使用镜像，不然特慢。</p>
+<h4 id="_9">时间花销过大</h4>
+<p>设镜像或者挂代理，<strong>依赖项 &gt;2GB</strong>,请做好准备，而且对于Windows,<strong>依赖默认安装在C盘</strong>！</p>
+<h4 id="cuda-out-of-memory">低显存显卡/CUDA out of memory</h4>
+<p>确保你拥有可以运行的最新CUDA 工具包和 GPU 驱动程序。</p>
+<p>程序在具有少量 VRAM (&lt;=4GB) 的视频卡上运行时，可能会出现内存不足错误。</p>
+<p><strong>牺牲速度来支持低显存显卡</strong></p>
+<p>如果你有 <code>4GB VRAM</code> 并且想要制作 512x512（或者可能高达 640x640）的图像，请使用 <code>--medvram</code></p>
+<p>如果你有 <code>4GB VRAM</code> 并且想要制作 512x512 图像，但使用 <code>--medvram</code> 遇到内存不足错误 ，请改用<code>--medvram --opt-split-attention</code></p>
+<p>如果你有 <code>4GB VRAM</code> 并想要制作 512x512 图像，但仍然出现内存不足错误，请改用 <code>--lowvram --always-batch-cond-uncond --opt-split-attention</code></p>
+<p>如果你有 <code>4GB VRAM</code> 并且想要制作比你可以使用的更大的图像<code>--medvram</code>，请使用 <code>--lowvram --opt-split-attention</code></p>
+<p>如果你有更多的 <code>VRAM</code> 并且想要制作比你通常制作的更大的图像（例如 1024x1024 而不是 512x512），请使用<code>--medvram --opt-split-attention</code>.</p>
+<p>你也可以使用 <code>--lowvram</code> ，启动这个参数后，模型被分成模块，GPU内存中只保存一个模块； 当另一个模块需要运行时，前一个从 GPU 内存中删除，这种牺牲使处理运行速度大约慢 10 倍。 </p>
+<p>如果还不行，建议你升级设备。</p>
+<h4 id="python">我 Python 呢？</h4>
+<p>如果你的 Python 版本不在 PATH 中，则在文件夹中创建或修改 webui.settings.bat 添加行 <code>set PYTHON=python</code>来说明 Python 可执行文件的完整路径（请看参数说明表格）</p>
+<h4 id="errorasyncioaccept-failed-on-a-socket">ERROR:asyncio:Accept failed on a socket</h4>
+<p>先检查端口冲突，有没有和什么软件冲突</p>
+<p>这个错误有可能是 <code>Python38</code> 的 <code>asyncio</code> 库对 <code>Windows</code> 的兼容性问题。</p>
+<p>尝试用 CMD 管理员身份运行<code>netsh winsock reset</code>，不行的话，切换端口。</p>
+<p>如果还是不行，请切换至 Python 的 <code>3.10.6</code>，WebUi 的开发环境为此版本。</p>
+<h4 id="_10">虚拟环境</h4>
+<p>如果你使用 conda 可以不使用一键脚本，可以自己运行 launch 安装依赖。</p>
+<p>因为仓库给出的一键安装脚本会创建虚拟环境，然后启动 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/launch.py">launch.py</a>。</p>
+<p>在运行时，一键安装程序会创建一个 python 虚拟环境，因此如果你在安装之前安装了一个模块，那么任何已安装的模块都不会引发冲突。</p>
+<p>如果需要防止创建虚拟环境而使用系统 python，编辑 <code>webui.bat</code> 替换 <code>setVENV_DIR=venv</code>为<code>set VENV_DIR=</code></p>
+<h4 id="api-ms-win-core-path-l1-1-0dll-is-missing3">api-ms-win-core-path-l1-1-0.dll is missing<sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">3</a></sup></h4>
+<p>Windows 7上运行很可能会报错: <code>api-ms-win-core-path-l1-1-0.dll is missing</code>，这是因为许多程序需要新版本的 Windows 的系统文件。</p>
+<p>如果没有出现该错误，不需要执行下面的操作。 </p>
+<p>这些文件已经被移植来与 W7 兼容，并且可以在 <a href="https://github.com/nalexandru/api-ms-win-core-path-HACK/releases/download/0.3.1/api-ms-win-core-path-blender-0.3.1.zip">这里</a> 下载。它的 <a href="https://github.com/nalexandru/api-ms-win-core-path-HACK/">Github 页面</a></p>
+<p>解压缩并将 <code>x86.dll</code> 复制到 <code>C:\Windows\SysWOW64</code> ，将 <code>x64.dll</code> 复制到 <code>C:\Windows\System32</code> 并重启。</p>
+<h4 id="an-illegal-memory-access-was-encountered-cuda-kernel-errors">an illegal memory access was encountered ....CUDA kernel errors...</h4>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/1766">相关问题Issue</a></p>
+<p>在多数情况下，这代表显存溢出，也有可能是 GPU 硬件问题。</p>
+<p>据说使用 deepdanbooru 的话会有这个提示，可以尝试重新启动 或 安装cpu版本的deepdanbooru.</p>
+<p><strong>生成图片问题见下一章</strong></p>
 <h2 id="colab">使用 Colab 搭建</h2>
 <!--
 Colab 开始反滥用，目前 Colab 的[协议](https://research.google.com/colaboratory/faq.html#limitations-and-restrictions) `禁止穿透` ，如果你使用，会承担风险。
@@ -1020,10 +1017,10 @@ Colab 开始反滥用，目前 Colab 的[协议](https://research.google.com/col
 <h2 id="novel-ai">安装 Novel Ai 的原版后端</h2>
 <p>阅读此教程:<a href="https://telegra.ph/NovelAI-%E5%8E%9F%E7%89%88%E7%BD%91%E9%A1%B5UI%E5%90%8E%E7%AB%AF%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B-10-10">NovelAI 原版网页UI+后端部署教程</a></p>
 <p>下面是一些简短的提示信息。</p>
-<h3 id="_14">硬件需求</h3>
+<h3 id="_11">硬件需求</h3>
 <p>建议显存低于24G的就不要尝试使用官方版本前后端.</p>
 <p>一台拥有一张至少有11G 显存的NVIDIA GPU的linux系统的x86设备。</p>
-<h4 id="_15">软件需求</h4>
+<h4 id="_12">软件需求</h4>
 <ul>
 <li>
 <p>NVIDIA驱动(CUDA 11.6 Toolkit)</p>
@@ -1041,11 +1038,11 @@ Colab 开始反滥用，目前 Colab 的[协议](https://research.google.com/col
 <p><strong>国内镜像</strong></p>
 <div class="highlight"><pre><span></span><code>curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
 </code></pre></div>
-<h4 id="_16">驱动相关</h4>
+<h4 id="_13">驱动相关</h4>
 <p><strong>安装显卡驱动</strong></p>
 <p>使用 <code>nvidia-smi</code> 查看显卡状态。</p>
 <p>使用 <code>docker run --help | grep -i gpus</code> 确认nvidia-container-toolkit安装成功。</p>
-<h4 id="_17">运行相关</h4>
+<h4 id="_14">运行相关</h4>
 <ul>
 <li>容器状态</li>
 </ul>
@@ -1107,11 +1104,11 @@ Colab 开始反滥用，目前 Colab 的[协议](https://research.google.com/col
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 26, 2022 14:09:56</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 26, 2022 15:29:50</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 26, 2022 14:09:56</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 26, 2022 15:29:50</span>
       
     
   </small>

@@ -810,7 +810,7 @@
   </a>
 
 
-<h1 id="_1">模型技法</h1>
+<h1 id="_1">架炉生火</h1>
 <p>这节介绍 Debug 和一些 关于 WebUi 网页应用模型参数 的优化方案，让它更好用。</p>
 <p>至于如何出图，请看下一节。</p>
 <div class="admonition tip">
@@ -975,6 +975,10 @@ print(torch.cuda.is_available())
 <p>个人用户只需要使用 pruned 4GB 模型。使用 latest 会过度占用 RAM 和 VRAM。</p>
 <p>且 NAI 在线上也使用 EMA 权重，所以选择 latest 7GB 模型是没有意义的。</p>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017#discussioncomment-3882551">结论由此贴讨论得到</a>。</p>
+<p><strong>关于 EMA</strong></p>
+<p>ema移动平均值对生成图像没有任何帮助。</p>
+<p>They do prevent overfitting or something if you resume training the model.</p>
+<p>Not sure if they matter for dreambooth style training though.</p>
 <p><strong>详细介绍</strong></p>
 <iframe src="//player.bilibili.com/player.html?aid=688965561&cid=857942294&page=1&danmaku=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 <p>BV1Gm4y1A7VM</p>
@@ -1262,11 +1266,11 @@ pip install xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 26, 2022 14:09:56</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 26, 2022 15:29:50</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 26, 2022 14:09:56</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 26, 2022 15:29:50</span>
       
     
   </small>
