@@ -1,83 +1,86 @@
-# 自训练
-
->此页面正在精修
-
+# 炼丹
 >Todo 
 >下面的东西有时间再..
 >https://github.com/huggingface/diffusers/issues/712
 >https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2002
->
->
+
 
 本节讨论 WebUi 的高度自定义功能：`train`，通过这项功能，我们可以为 Ai 增加类似 DLC 扩展包一样的功能。这节对显卡的要求较高。
 
-目前个人认为效果认为效果最好的是 `dreambooth`，但是其对显存要求较高（>12GB）
+在法律上，**不应该**无视画师约定的版权许可，采集作品数据进行训练。在道德上，**不应该**用训练结果贬低原画师作品价值，俗谚有 “吃水不忘挖井人”，训练数据并不能作为你的贡献。
 
-`Textual Inversion` 训练为了 `embeddings`，`embeddings` 为 Ai 提供处理过的输入数据，告诉这个角色“具体是什么”，训练特殊的人物，角色会更好。
-
-`Hypernetworks` 则会对超网络的改动，与 `embeddings` 不同，`Hypernetworks` 会对模型进行微调，所以泛化效果更加好，训练画风会更好。
-
-`Aesthetic Gradients` 通过计算平均权重，来提升图片的质量，提高美观度。在少量提示词情况下也可以生成效果不错的作品。
-
-`dreambooth` 可适应用户特定的图像生成需求。"只需几张指定物体的照片和相应的类名（如“狗”）作为输入，并添加一个唯一标识符植入不同的文字描述中，DreamBooth 就能让被指定物体“完美”出现在用户想要生成的场景中。" 和 Textual Inversion 不同，dreambooth 向输出插入训练数据，可以做到高相似，效果特别好。但是不能即插即用, 强度不可调。
-
+目前个人认为效果认为效果最好的是 DreamBooth，但是其训练时对显存要求较高（>12GB）。
 
 如果你在 `--medvram` 参数下开始训练，可能会出现 `RuntimeError: Expected all tensors to be on the same device` 错误，无法创建训练。
 这是优化机制导致的[问题](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2399)，WebUi 在 [这次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/cbb857b675cf0f169b21515c29da492b513cc8c4) 中允许了在 `--medvram` 下创建 embedding 的情况。请更新版本到这个版本之后。
 
+**关于 batch size**
+
+更大的 batch size 可能稍微加快训练并稍微提升训练效果，但也需要更大的显存。
 
 
-**关于batch size**
-
-更大的 `batch size` 可以加快训练，但也需要更大的显存。batch size 与学习率应该保持比率一致，提高几倍batch size就提高几倍学习率。[^16]
-
-先确定你要使用的学习率，再确定你想设置的batch size，然后batch size增大了几倍，学习率就同步增大几倍。
+## 介绍
 
 
-## Textual Inversion 识别新角色
+### Textual Inversion (TI)
 
-`Textual Inversion` 允许你在自己的图片上训练一小部分神经网络，并在生成新图片时使用结果。可以数据集没有新出的角色画不出的问题，模仿特定的艺术风格。实际上是 NLP 中的即时调优。
+从一些具有共同语义 [v] 的图片中，提取 [v] 的一个方法。提取出的 [v] 张量称之为 "Embedding"。将 Embedding 保存为文件，之后生成图片时就可以在 prompt 中以文件名引用。
 
-[官方英文说明和效果图](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion)
+#### 特征
 
-使用时，将 `embedding` (一个 .pt 或一个 .bin 文件) 放入 `stable-diffusion-webui/embeddings/` 目录并在 `prompt` 提示词中提到你要用的 `embedding` 的文件名(*.pt)即可。不必重新启动程序即可使其正常工作。
+训练产物大小较小，webui 自带训练支持。
 
-通过这项技术，我们可以让 Ai 认识 2021 年之后的动漫人物（数据集没有囊括的）。但是使用场景单一，构图必须和原素材一致。
+可以解决新出的角色画不出的问题，或者模仿特定的可以用语言精确描述的艺术风格。因为 TI 是在 Text Encoder 的输出做处理，所以并不能让模型学习到它不知道的概念。
 
-多 `embeddings` 可以一起使用，程序启动时会自动加载它们
+#### 使用
+
+使用时，将 embedding（一个 .pt 或一个 .bin 文件）放入 webui 的 `embeddings` 目录并在 prompt 中写要用的 embedding 的文件名（不包括扩展名）即可，不必重启 webui。可以同时使用多个 embedding。
+
+### 相关
+
+[webui 给的英文说明和效果图](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion)
 
 [相关 embeddings](https://gitlab.com/16777216c/stable-diffusion-embeddings)，里面有相关效果预览。
 
-[list of Textual Inversion embeddings for WebUi(SD)](https://rentry.org/embeddings)
+[list of Textual Inversion embeddings for webui(SD)](https://rentry.org/embeddings)
 
-[HuggingFace 的embeddings库](https://cyberes.github.io/stable-diffusion-textual-inversion-models/)
+[HuggingFace 的 embedding 库](https://cyberes.github.io/stable-diffusion-textual-inversion-models/)
 
 
-## Hypernetworks 超网络
+### Hypernetwork (HN)
 
-超网络是一种新颖的概念，用于在不触及任何权重的情况下微调模型。[^12]
+一类给模型生成权重的网络，在这里是给 LDM 生成权重。是一个较为实验性的方法，NAI 率先探索了在 LDM 上使用。
 
-NAI Leak 的 `hypernetworks` 就是超网络，用来做 embeddings（风格化）。
+#### 特征
+
+与 TI 不同，Hypernetwork 会改动 LDM 本身的权重，所以可以训练出无法用语言精确表述的细节，也更适用于画风的训练。
+
+训练产物大小中等，webui 自带训练支持。
+
+#### 使用
 
 使用时，将 Pt 放入 `/models/hypernetworks` 并在设置选项勾选启用它。
 
+NAI Leaks 的 `novelaileak\stableckpt\modules\modules` 中有 NAI 训练的一些 Hypernetwork。
+
 !!! tip
-    Pt文件，小的是 embedding 大的是 hypernetworks
+    `.pt`文件，一般情况下小的是 embedding 大的是 hypernetwork。
 
-## Dreambooth 
+### DreamBooth (DB)
 
-DreamBooth 是一种 *很新的* 方法(finetune LDM)，给定3-5张自己随意拍摄的某一物体的图片，就能得到不同背景下的该物体的新颖再现。[^15]
+直接微调 LDM 和 Text Encoder 以适应用户特定的图像生成需求的一个方法。
 
-Textual Inversion 从模型中挖掘内容，所以如果你要画一个非常冷门的东西，它的数据恰巧又不在模型中，AI 就傻了。而 `Dreambooth` 会把你给出的数据插入到模型的输出中，效果特别好，因为 Ai “知道”。
+> 你能想象你自己的狗环游世界，或者你最喜欢的包在巴黎最独特的展厅里展示吗？你的鹦鹉成为一本插图故事书的主角呢？
 
-另外，这个模型不可以学习画风[^14]，只能学习物体人物特点。但可以适应画风。模型无法很好地学习到照片中物体的整体特征，反而可能出现过拟合。
+#### 特征
 
-生成的模型是剪切过训练数据的 ckpt 模型。
+与 TI 和 HN 不同，DreamBooth 可以做到出图和训练集高度相似但是却不失泛化能力，用于训练特定具象概念（比如一个角色穿着特定衣服）效果特别好。但是不像 TI 和 HN 像完整权重的 “插件” 一样即插即用，强度也不可调。
 
-使用时，需要放进 model 目录里进行**替换**。
+这个模型并非为学习画风（抽象概念）而设计。但似乎可以一定程度上适应“画风”。具体效果交由读者你实验。
 
-!!! info 
-    可以迭代加练，但是迭代不可以转变画风。
+#### 使用
+
+把 DreamBooth 训练出的 .ckpt 文件放进 webui 的 `models\Stable-diffusion` 目录里，在 webui 的左上角切换到即可使用。
 
 ![SAMPLE](https://dreambooth.github.io/DreamBooth_files/high_level.png)
 
@@ -85,13 +88,37 @@ Textual Inversion 从模型中挖掘内容，所以如果你要画一个非常�
 
 论文 https://arxiv.org/abs/2208.12242
 
+### Advanced Prompt Tuning (APT)
 
+> "Can super dramatically improve the image quality and diversity"
 
-## Aesthetic Gradients 美学权重
+[Pull Here](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2945)
+
+添加对否定词的即时嵌入学习，以显着提高生成图像的质量。 高质量的概念可以从单个图像中学习。 
+
+添加重建损失以提高生成图像的细节质量和丰富度。
+
+添加通过人工注释训练的鉴别器（使用 convnext 实现）允许嵌入基于模型进行学习。 
+
+### Aesthetic Gradients
+
+微调 CLIP 以适应某个特定生成需求的方法，可以和 TI 一样起到缩短 prompt 的作用。可能略微提升出图的质量。
 
 这项技术通过在生成时计算每个图片的权重，提供了一个 `我不说你应该懂往哪里训练` 的功能。使AI更聪明地调整并增加细节。
 
 此项功能来自这个 [存储库](https://github.com/vicgalle/stable-diffusion-aesthetic-gradients)，在 [这次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/2b91251637078e04472c91a06a8d9c4db9c1dcf0) 中，此功能被剥离为插件。
+
+#### 特征
+
+通过这项技术，你不需要通过 过多提示词 来提升图片的质量，而是保持作品原始的总体构图，并提高美观度。在少量提示词情况下也可以生成效果不错的作品。
+
+据暗影·夜光所言[^11]，添加 25% 以内的权重，就可以稍微改善画面的美观度而不影响内容。美学 与 Hypernetworks 让 Ai 作品更接近原画师风格，但是美学权重本身效果并不好。需要配合 Hypernetworks 超网络。
+
+训练这项模型很快，但是在每一次生产时都会重新为图片计算一次，所以出图很慢。
+
+注意：当种子改变时，训练结果也会改变。
+
+#### 使用
 
 你可以使用下面的 Git 命令来安装这个东西。
 
@@ -105,76 +132,44 @@ git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-grad
 
 然后重启程序，你就可以在 Img2Img 中使用此项功能。
 
-通过这项技术，你不需要通过 过多提示词 来提升图片的质量，而是保持作品原始的总体构图，并提高美观度。在少量提示词情况下也可以生成效果不错的作品。
-
-据暗影·夜光所言[^11]，添加 25% 以内的权重，就可以稍微改善画面的美观度而不影响内容。美学 与 Hypernetworks 让 Ai 作品更接近原画师风格，但是美学权重本身效果并不好。需要配合 Hypernetworks 超网络。
-
-训练这项模型很快，但是在每一次生产时都会重新为图片计算一次，所以出图很慢。
-
-注意：当种子改变时，训练结果也会改变。
-
 ![Aesthetic_other](https://user-images.githubusercontent.com/75739606/197824140-50dca98e-856f-44ca-99e6-da2fee5bb23c.png)
 <!--
 ![Aesthetic_other](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/Aesthetic_other.png)
 -->
 
-## APT
-
-propose an advanced Prompt Tuning method (APT), can super dramatically improve the image quality and diversity
-
-[Pull Here](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2945)
-
-添加对否定词的即时嵌入学习，以显着提高生成图像的质量。 高质量的概念可以从单个图像中学习。 
-
-添加重建损失以提高生成图像的细节质量和丰富度。
-
-添加通过人工注释训练的鉴别器（使用 convnext 实现）允许嵌入基于模型进行学习。 
-
 
 ---------------
 
-
-
-## Textual Inversion 自训练[^7]
+## Textual Inversion[^7]
 
 [官方Wiki](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion#training-embeddings)
 
-
 !!! danger "重命名 VAE 文件"
 
-    重命名VAE模型文件非常关键，如果带着VAE训练效果十分差。
+​	重命名 VAE 权重文件非常关键，如果带着VAE训练效果十分差。你应该在启动 webui 前把 "xxx.vae.pt" 重命名为 "xxx.vae.pt.disabled" 或其他名字。
 
-### 准备数据集
+#### 准备数据集
 
-数据集在保证风格一致和内容同质化的情况下，如果算力允许，越多越好。数据内容可以是插画，风格抽象画作，表情包。
-
-可以从 [yande](https://yande.re/post)，pixiv 等平台获取数据集。[^10]
-
-!!! tip
-    如果作品不是公共版权，请获取授权再进行操作。
+数据集应保证风格一致，内容具有同一概念。如果算力允许，图片越多越好。数据内容可以是插画，抽象画作，也可以是表情包。
 
 
-### 模型要求
+### 要求
 
-WebUi 应该是 Git 的最新版本。
+显存至少 6GB，舒适使用需要 12GB 显存。根据实验数据，8GB 显存应该选择 `512x512` 分辨率；不推荐 `--lowvram` 和 `--medvram` 参数下进行训练。
 
-显存至少 6GB，正常使用需要 12GB 显存。根据实验数据，8GB 显存应该选择 `512x512` 分辨率，不能在 `--lowvram` 和 `--medvram` 参数下进行训练，不支持 `batch sizes` 和 `gradient accumulation` 。
-
-训练可使用半精度浮点，但是否好用还需要进行实验。
-
-如果你有足够的Vram，那么在 `--no-half --precision full` 下运行会更安全。
+如果你有足够的 VRAM，那么使用 `--no-half --precision full` 可能会防止溢出带来的问题。
 
 
-你可以中断和恢复训练而不会丢失任何数据（AdamW 优化参数除外，但似乎现有的存储库都没有保存这些，所以一般认为它们并不重要）。
+你可以中断和恢复训练，但是 optimizer state 不会被保存，所以不推荐这样做。
 
 
 ### 设置说明
 
-准备 30 张以上的目标人设图片，每一张图片应当裁剪为同样的比例。（即使WebUi已经支持了长方形图片的裁剪）
+准备 30 张以上的目标人设图片，每一张图片应当裁剪为同样的比例。（ webui 已经支持了长方形图片的裁剪）
 
-在 `Interrogate Options` 设置中，`Interrogate: deepbooru score threshold` 是 deepbooru(从图像提取标签) 可用标签的阀值。建议使用 0.75,也就是保留预测结果大于 75%的结果。
+在 `Interrogate Options` 设置中，`Interrogate: deepbooru score threshold` 是 deepdanbooru (从图像提取标签的一个模型) 标签置信度阀值。建议使用 0.75，也就是保留置信度大于 0.75 的结果。
 
-比如，假定识别结果为
+比如，假定识别结果为：
 
 ```
 1.000 1girl
@@ -190,9 +185,13 @@ WebUi 应该是 Git 的最新版本。
 0.628 monochrome
 ```
 
-就会丢弃 `wide_sleeves` 以下的内容
+就会丢弃 `wide_sleeves` 以下的内容。
 
 `Interrogate: deepbooru sort alphabetically` 是按照字母顺序排序 Tag，因为 Tag 对结果影响很大，所以我们取消勾选此项。
+
+`use spaces for tags in deepbooru` 应当开启。
+
+`escape (\) brackets in deepbooru (so they are used as literal brackets and not for emphasis)` 应当开启。
 
 按下 `Apply setting` 保存设置。
 
@@ -236,21 +235,14 @@ WebUi 应该是 Git 的最新版本。
 
 深度学习识 Tag，勾选后可以训练适用于 NAI 的 `embedding`。 如果你没有这个选项，需要在启动项添加`--deepdanbooru`
 
-Windows 需要在 `web-user.bat的COMMANDLINE_ARGS=` 一行添加，或者直接 `python webui.py --deepdanbooru` ，如果设施条件比较好可以加上 `--precision full`
-(如果启动卡住就是网络问题咯)
+Windows 需要在 `webui-user.bat` 的 `COMMANDLINE_ARGS=` 一行添加，或者直接 `python launch.py --deepdanbooru` 。（如果启动卡住是网络问题）
 
-- `Use BLIP for caption`
+- `Use BLIP for caption` 使用 BLIP 模型为文件名添加标题。不太适合二次元图片。
 
-使用来自 interrogator 的 BLIP 模型为文件名添加标题。
-
-勾选后适用于 `Stable Diffusion` 的训练。
-
-- `Split oversized images into two` 
-
-意思就是将超大图像一分为二，一般不用。
+- `Split oversized images into two` 将超大图像一分为二，一般不用。
 
 
-我们勾选 `Use deepbooru caption as filename` 和 `Create flipped copies`
+所以我们勾选 `Use deepbooru caption as filename` 和 `Create flipped copies` 。
 
 点击按钮，等待处理结束。
 
@@ -312,22 +304,21 @@ Windows 需要在 `web-user.bat的COMMANDLINE_ARGS=` 一行添加，或者直接
     这里给出的是一个参考，实际上 5000 和 7000 也有人成功。
     
     关键在于 Loss 率，Loss 10 轮不降低就可以停止了。
-
+    
     如果Loss大于 0.3 ，效果就不是很好
 
 如果太多会过拟合(可以理解为Ai的死板)，请随时观察，如果过拟合，可以停止。如果效果不是很好，可以去找早些时候的模型继续训练。**不断调整**找到一个好的效果。
 
 `Save images with embedding in PNG chunks` 是生成一个图片形式的 pt 文件。~人物卡~
 
-!!! danger "等一下！ VAE 文件"
-    重命名VAE模型文件非常关键，或者确定你已经设置里打开  `Move Vae...`
-    
-    如果带着VAE训练效果十分差。
-    
+!!! danger "再次检查你有没有重命名 VAE 文件"
+
+​	如果你忘了，带着VAE训练效果十分差。重启把 "xxx.vae.pt" 重命名为 "xxx.vae.pt.disabled" 或其他名字。
+
 
 点击 右下角训练，等待。
 
-训练完毕。再次重命名 Vae 文件，重启程序。
+训练完毕。将 VAE 权重文件重命名回去，重启程序。
 
 
 ### 备注
@@ -366,15 +357,7 @@ Windows 需要在 `web-user.bat的COMMANDLINE_ARGS=` 一行添加，或者直接
 <iframe src="//player.bilibili.com/player.html?aid=559085039&bvid=BV1ae4y1S7v9&cid=859894044&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 
 
-##  Aesthetic Gradients 美学权重自训练
-
-
-Source directory 填数据源文件夹地址。
-
-生成的embedding在models文件夹里面。
-
-
-## Hypernetworks 自训练[^13]
+## Hypernetwork[^13]
 
 Hypernetworks 是一种新颖的概念，用于在不触及任何权重的情况下微调模型。
 
@@ -454,7 +437,7 @@ Swish对比Relu和Linear要更好，Swish适合更大的网络，而Elu可能对
 
 
 
-## DreamBooth 训练
+## DreamBooth
 
 DreamBooth 的模型是一种新的文本到图像“个性化”（可适应用户特定的图像生成需求）扩散模型方法。
 
@@ -476,12 +459,9 @@ Windows 系统至少需要 16, Linux 系统要求显存大于 8 GB
 
 - Windows
 
-
-
 - 参数分析
 
 [使用 Dreambooth 训练稳定扩散的实验的分析](https://wandb.ai/psuraj/dreambooth/reports/Dreambooth-training-analysis--VmlldzoyNzk0NDc3)
-
 
 ### 其他 
 
@@ -497,9 +477,12 @@ Windows 系统至少需要 16, Linux 系统要求显存大于 8 GB
 
 https://github.com/XavierXiao/Dreambooth-Stable-Diffusion
 
+##  Aesthetic Gradients
 
 
+Source directory 填数据源文件夹地址。
 
+生成的embedding在models文件夹里面。
 
 
 [^7]:[风格模型训练](https://www.bilibili.com/video/BV1ae4y1S7v9/)
