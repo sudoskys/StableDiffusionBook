@@ -1,13 +1,13 @@
 # 须知
+>Todo 
+>下面的东西有时间再..
+>https://github.com/huggingface/diffusers/issues/712
+>https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2002
 
 **本教程不鼓励在画师明文禁止使用其作品训练 AI 的情况下继续使用其作品作为训练数据；也不鼓励拿训练结果跳脸画师。训练的成功是基于这些画师的作品。**
 
 # 炼丹大法综述
 
->Todo 
->下面的东西有时间再..
->https://github.com/huggingface/diffusers/issues/712
->https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2002
 
 目前个人认为效果认为效果最好的是 DreamBooth，但是其训练时对显存要求较高（>12GB）。
 
