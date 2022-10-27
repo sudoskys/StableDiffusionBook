@@ -59,4 +59,5 @@ https://stable-diffusion-book.vercel.app/  短链为(https://b23.ink/aibook)
 
 如果本文档外链的内容中有不合适的内容，与本文档无关
 
->文档使用 GFDL 许可，
+
+>本文档采用 CC BY-SA-NC 4.0 进行许可
