@@ -480,7 +480,7 @@ pip install xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl
 
 [Windows](https://github.com/C43H66N12O12S2/stable-diffusion-webui/releases) (30 系之外要自己编译)
 
-自己编译指路 [wiki/Xformers](https://rentry.org/sdg_faq#xformers-increase-your-its-more-cards-supported) 还有 [这个 Post](https://www.reddit.com/r/StableDiffusion/comments/xz26lq/automatic1111_xformers_cross_attention_with_on/)
+自己编译指路 [wiki/Xformers](https://rentry.org/sdg_faq#xformers-increase-your-its-more-cards-supported)， 还有[这篇文章](https://www.reddit.com/r/StableDiffusion/comments/xz26lq/automatic1111_xformers_cross_attention_with_on/)
 
 
 ### 使用CPU进行绘画
@@ -501,9 +501,16 @@ CLIP 可以从图像中提取令牌。
 * interrogate 在与 webui 相同的位置创建目录
 * 将文本文件放入其中，每行都有相关描述
 
-```
-For example of what text files to use, see https://github.com/pharmapsychotic/clip-interrogator/tree/main/data. In fact, you can just take files from there and use them - just skip artists.txt because you already have a list of artists in artists.csv (or use that too, who's going to stop you). Each file adds one line of text to the final description. If you add ".top3." to filename, for example, flavors.top3.txt, the three most relevant lines from this file will be added to the prompt (other numbers also work).
-```
+
+你可以在[这里](https://github.com/pharmapsychotic/clip-interrogator/tree/main/data)查看使用哪个文本文件的例子。实际上，你可以直接用这个例子中的文件 —— 除了 `artists.txt` ，你已经有一份艺术家列表在 `artists.csv` 中了不是吗（或者用这个也行，随你）。每个文件都会使最后的描述增加一行字。如果你将 `.top3.` 放到文件名中，比如 `flavors.top3.txt` ，文件中相关度最高的三行将会被添加到提示词中（其他数量也行）。
+
+<!--
+这里的最后一句 “文件中相关度最高的三行”，关于 “相关度” 可能让人有点迷惑，后来的人可以看看有没有什么更贴切的翻译
+For example of what text files to use, see https://github.com/pharmapsychotic/clip-interrogator/tree/main/data. 
+In fact, you can just take files from there and use them - just skip artists.txt because you already have a list of artists in artists.csv (or use that too, who's going to stop you). 
+Each file adds one line of text to the final description. 
+If you add ".top3." to filename, for example, flavors.top3.txt, the three most relevant lines from this file will be added to the prompt (other numbers also work).
+-->
 
 ### **Face restoration三次元人脸修复**
 
@@ -513,9 +520,9 @@ For example of what text files to use, see https://github.com/pharmapsychotic/cl
 
 ### 自定义.css
 
-创建一个名为 user.cssnear 的文件 webui.py 并将自定义 CSS 代码放入其中。
+创建一个名为 `user.css` 的文件并放在 `webui.py` 旁，将自定义 CSS 代码放入 `user.css` 中。
 
-For example, this makes the gallery taller:
+下面的例子将会使得画廊更长：
 
 ```
 #txt2img_gallery, #img2img_gallery{
@@ -523,9 +530,9 @@ For example, this makes the gallery taller:
 }
 ```
 
-### notification.mp3 提示声音
+### notification.mp3 提示音
 
-If an audio file named `notification.mp3` is present in `webui's root folder`, it will be played when the generation process completes.
+放在 webui 的根目录的名为 `notification.mp3` 的音频文件将会在处理完成后播放。
 
 ### 开发自定义脚本
 
