@@ -562,10 +562,10 @@
         
           <li class="md-nav__item">
   <a href="#webui-nai" class="md-nav__link">
-    使用 webui 复现 NAI 官网
+    使用 WebUI 复现 NAI 官网
   </a>
   
-    <nav class="md-nav" aria-label="使用 webui 复现 NAI 官网">
+    <nav class="md-nav" aria-label="使用 WebUI 复现 NAI 官网">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -672,7 +672,7 @@
         
           <li class="md-nav__item">
   <a href="#notificationmp3" class="md-nav__link">
-    notification.mp3 提示声音
+    notification.mp3 提示音
   </a>
   
 </li>
@@ -811,8 +811,8 @@
 
 
 <h1 id="_1">架炉生火</h1>
-<p>这节介绍 Debug 和一些 关于 WebUi 网页应用模型参数 的优化方案，让它更好用。本节演示所用模型为 NAI 展开教程。<strong>部分源教程来自：<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">1</a></sup></strong></p>
-<p>推荐经常从远端代码库拉取代码 <code>git pull</code> 更新 WebUi 网页应用。</p>
+<p>这节介绍 Debug 和一些 关于 WebUI 网页应用模型参数 的优化方案，让它更好用。本节演示所用模型为 NAI 展开教程。<strong>部分源教程来自：<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">1</a></sup></strong></p>
+<p>推荐经常从远端代码库拉取代码 <code>git pull</code> 更新 WebUI 网页应用。</p>
 <div class="admonition info">
 <p class="admonition-title">版权</p>
 <p>为避免涉及版权纠纷，本仓库不提供 NAI 的模型链接。
@@ -824,25 +824,26 @@
 <p class="admonition-title">Tip</p>
 <p>注意显卡温度，有报道称显卡太热炸了。</p>
 </div>
-<p>先判断 cuda 是否可用。</p>
-<p>打开命令窗，输入 python 进入，分行输入</p>
-<div class="highlight"><pre><span></span><code>import torch
-print(torch.__version__)
-print(torch.cuda.is_available())
+<p>先判断 CUDA 是否可用。</p>
+<p>打开终端，输入 python 进入，分行输入</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">torch</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">())</span>
 </code></pre></div>
-<p><strong>查看 torch 对应的 cuda 版本</strong></p>
-<div class="highlight"><pre><span></span><code>torch.version.cuda
+<p><strong>查看 torch 对应的 CUDA 版本</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">torch</span>
+<span class="n">torch</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">cuda</span>
 </code></pre></div>
 <p>输入 ctrl + z 退出</p>
 <h3 id="gpu">多 GPU 支持</h3>
-<p>Easiest mode would be implementing a ~data parallel approach, in which we have one model per GPU and you distribute the workload among them.</p>
-<p>Given the amount of features this repo provides I think it could take some time to have em all supported in the parallel version.</p>
+<p>最简单的模式就是实现一个多数据并行处理的方法，每个 GPU 加载一个模型，然后给她们分配工作。</p>
+<p>考虑到这个项目所提供的功能众多，我（作者）认为可能需要一段时间才能在并行的情况下使用所有的功能。</p>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/156">查看此 issue 页面</a></p>
 <h3 id="16xx2">16xx系显卡使用半精度生成图片<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">2</a></sup></h3>
-<p>方案来自 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/28#issuecomment-1241448049">这个讨论</a></p>
+<p>方案来自<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/28#issuecomment-1241448049">这个讨论</a></p>
 <ol>
 <li>
-<p>激活webui使用的venv,要在正确的虚拟环境里运行</p>
+<p>激活 WebUI 使用的 venv,要在正确的虚拟环境里运行</p>
 </li>
 <li>
 <p>卸载掉现在所用的 torch 和 torchvision:</p>
@@ -851,7 +852,7 @@ print(torch.cuda.is_available())
 <div class="highlight"><pre><span></span><code>pip uninstall torch torchvision
 </code></pre></div>
 <ol>
-<li>重新安装 <code>cuda 11.6</code>编译的 <code>torch</code> 和 <code>torchvision</code>。</li>
+<li>重新安装 <code>CUDA 11.6</code> 编译的 <code>torch</code> 和 <code>torchvision</code>。</li>
 </ol>
 <div class="highlight"><pre><span></span><code>pip install torch torchvision --extra-index-url https://download.pytorch.org/whl/cu116
 </code></pre></div>
@@ -863,10 +864,10 @@ print(torch.cuda.is_available())
 <p>其他版本：<a href="https://developer.nvidia.com/rdp/cudnn-archive">https://developer.nvidia.com/rdp/cudnn-archive</a></p>
 <ol>
 <li>
-<p>将Cudnn 8.5压缩包里的bin和lib文件夹里的所有文件复制到 <code>venv\Lib\site-packages\torch\lib</code> 里，覆盖所有文件。</p>
+<p>将 Cudnn 8.5 压缩包里的 bin 和 lib 文件夹里的所有文件复制到 <code>venv\Lib\site-packages\torch\lib</code> 里，覆盖所有文件。</p>
 </li>
 <li>
-<p>然后16xx系显卡也可以愉快地使用半精度生成图片了！大幅降低显存占用，6G加载Full模型可以生成1024x640的图片。</p>
+<p>然后 16xx 系显卡也可以愉快地使用半精度生成图片了！大幅降低显存占用，6G 加载 Full 模型可以生成 1024x640 的图片。</p>
 </li>
 </ol>
 <p>但是，依然不能使用 <code>DDIM Sampling</code> ，但可以使用 <code>Euler a</code></p>
@@ -937,10 +938,10 @@ print(torch.cuda.is_available())
 </table>
 <p>注意，<code>final-pruned .yaml</code> 的名称应该对应 <code>final-pruned .ckpt</code></p>
 <p><code>hypernetworks</code> 包含了 <code>stableckpt/modules/modules</code> 里的文件，是风格相关的数据集，可以作为特定人物的 <code>embedding model</code> 调用，和 model 使用可以生成特定风格。主要格式为 <code>*.pt</code>。需要在WebUi的设置标签页启用这个增强模型。</p>
-<p><code>workspace</code> 不是个人可以负载的，NAI采用的是 GPU 集群云。</p>
+<p><code>workspace</code> 不是个人可以负载的，NAI 采用的是 GPU 集群云。</p>
 <h3 id="part-2">Part 2</h3>
-<p><code>prodmodels</code> 是GPT模型(语言处理)，但是实际用了CLIP，所以不用我们管。</p>
-<p><code>random_stableckpt</code> 是一些模型，有的与Part1重复</p>
+<p><code>prodmodels</code> 是 GPT 模型(语言处理)，但是实际用了 CLIP，所以不用我们管。</p>
+<p><code>random_stableckpt</code> 是一些模型，有的与 Part1 重复</p>
 <p><img alt="Part1" src="https://user-images.githubusercontent.com/75739606/197821809-7eed7776-9508-4c71-9b07-5f02e13290b2.jpg" /></p>
 <!--
 ![Part1](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/models.jpg)
@@ -970,9 +971,9 @@ print(torch.cuda.is_available())
 <p>且 NAI 在线上也使用 EMA 权重，所以选择 latest 7GB 模型是没有意义的。</p>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017#discussioncomment-3882551">结论由此贴讨论得到</a>。</p>
 <p><strong>关于 EMA</strong></p>
-<p>ema移动平均值对生成图像没有任何帮助。</p>
-<p>They do prevent overfitting or something if you resume training the model.</p>
-<p>Not sure if they matter for dreambooth style training though.</p>
+<p>EMA 移动平均值对生成图像没有任何帮助。</p>
+<p>但确实可以在后续的训练中防止过拟合。</p>
+<p>不确定在 dreambooth 的训练中是否起作用。</p>
 <p><strong>详细介绍</strong></p>
 <iframe src="//player.bilibili.com/player.html?aid=688965561&cid=857942294&page=1&danmaku=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 <p>BV1Gm4y1A7VM</p>
@@ -987,26 +988,26 @@ Negative prompt: nsfw, lowres, bad anatomy, bad hands, text, error, missing fing
 Steps: 28, Sampler: Euler, CFG scale: 12, Seed: [SEE COLUMN], Size: 512x512, Model hash: 925997e9, Hypernet: [SEE ROW]
 </code></pre></div>
 <p><code>aini</code> 有一种你可能不喜欢的强烈风格，我认为它具有最高的一致性和质量。</p>
-<p><code>anime_3</code>是该系列中质量最高的，但它们都有些不一致. 我一般不会推荐他们。</p>
-<p>可以看到 <code>furry</code>的超网络在添加动物特征方面更加激进，因此这里更保守的变化可能与采样器、步骤和 CFG 有关。<sup id="fnref2:5"><a class="footnote-ref" href="#fn:5">4</a></sup></p>
+<p><code>anime_3</code> 是该系列中质量最高的，但它们都有些不一致. 我一般不会推荐他们。</p>
+<p>可以看到 <code>furry</code> 的超网络在添加动物特征方面更加激进，因此这里更保守的变化可能与采样器、步骤和 CFG 有关。<sup id="fnref2:5"><a class="footnote-ref" href="#fn:5">4</a></sup></p>
 <h2 id="_4">基础</h2>
 <h3 id="_5">横条参数说明</h3>
 <p><code>step</code> 迭代多少次, 取值和 <code>sampling method</code> 有关, <code>DDIM</code> 采样方法收敛较快, 具体差别见调参魔法 <code>Sampler vs. Steps Comparison (low to mid step counts)</code> 。</p>
 <p><code>batch count/batch size</code> 决定生成的图片数量, 显存够就加 batch size, 不够就 batch count, 得到的图片数量是两者之积 (小显存还是只动 count 就好)</p>
 <p><code>sample method</code>  采样方法。DDIM, Eula 也挺好用。 (带 a 的是 ancestral 的意思, step 增长出图不稳定)</p>
-<p><code>cfg scale</code> 符合 prompt 的程度, 值越高越会字面看待 prompt, 低则给模型较大的发挥空间, 但是实际模型表现上来看 cfg scale 低 (6-8) 饱和度低, 偏线稿, 偏杂乱, 高 (18-22) 则饱和度偏高, 偏 CG 风格.</p>
+<p><code>cfg scale</code> 符合 prompt 的程度, 值越高越会字面看待 prompt, 低则给模型较大的发挥空间, 但是实际模型表现上来看 CFG scale 低 (6-8) 饱和度低, 偏线稿, 偏杂乱, 高 (18-22) 则饱和度偏高, 偏 CG 风格.</p>
 <blockquote>
 <p>过高的 CFG 会引起颜色失真，CFG 应该在 5-15 之间</p>
 </blockquote>
-<p><code>denoise strength</code> img2img 专属参数, 从 0 到 1 取值, 值越高 AI 对原图的参考程度就越低 (同时增加迭代次数), 个人喜欢低 cfg 高 denoise 重绘图, 高 cfg 低 denoise 改细节.</p>
+<p><code>denoise strength</code> img2img 专属参数, 从 0 到 1 取值, 值越高 AI 对原图的参考程度就越低 (同时增加迭代次数), 个人喜欢低 CFG 高 denoise 重绘图, 高 CFG 低 denoise 改细节.</p>
 <p><a href="https://www.reddit.com/r/StableDiffusion/comments/xbeyw3/can_anyone_offer_a_little_guidance_on_the/">一个小指南：RedditAbout</a></p>
 <h3 id="bug">生成图片发生BUG的自救</h3>
 <h4 id="_6">生成黑/绿图</h4>
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Install-and-Run-on-NVidia-GPUs">Green or Black screen</a></p>
-<p>如果是GTX 16xx系列，启动参数需要加 <code>--precision full --no-half</code>, 因此如果显存不足还要加 <code>--medvram</code>。</p>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Install-and-Run-on-NVidia-GPUs">生成黑/绿图</a></p>
+<p>如果是 GTX 16xx 系列，启动参数需要加 <code>--precision full --no-half</code>, 因此如果显存不足还要加 <code>--medvram</code>。</p>
 <p>如果是其他显卡而且加载了 VAE 时出现黑图，加入 <code>--no-half-vae</code> 参数<sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">1</a></sup>。</p>
 <h4 id="runtimeerror-sizes-of-tensors-must-match">RuntimeError Sizes of tensors must match</h4>
-<p>(img2img) 如果你得到RuntimeError: Sizes of tensors must match，你需要改变输入图像的分辨率</p>
+<p>(img2img) 如果出现 <code>RuntimeError: Sizes of tensors must match</code>，请调整输入图像的分辨率</p>
 <h4 id="_7">彩虹混乱图</h4>
 <p>如果 AI 输出了混乱的彩虹色图片，则生成分辨率被设置得太低</p>
 <h4 id="_8">高分辨率出鬼图 / 低显存生成大分辨率图片</h4>
@@ -1015,15 +1016,15 @@ Steps: 28, Sampler: Euler, CFG scale: 12, Seed: [SEE COLUMN], Size: 512x512, Mod
 <h4 id="runtimeerror-unable-to-find-a-valid-cudnn-algorithm-to-run-convolution">RuntimeError: Unable to find a valid cuDNN algorithm to run convolution</h4>
 <p>前面那节有相关的参数建议。</p>
 <p>生成报错解释：显存不足</p>
-<p>先检查 cuda 是否可用，打开命令窗，输入 python 并分行输入</p>
-<div class="highlight"><pre><span></span><code>import torch
-print(torch.cuda.is_available())
+<p>先检查 CUDA 是否可用，打开命令窗，输入 python 并分行输入</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">torch</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">())</span>
 </code></pre></div>
 <h4 id="cuda-out-of-memory">CUDA out of memory</h4>
 <p>原因：显存不足。<code>--lowvram</code> 和 <code>--medvram</code> 启动参数都可以改善此问题。</p>
 <h3 id="ckpt-3">ckpt 文件安全问题<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">3</a></sup></h3>
 <p>ckpt 文件被加载时基本上可以执行任何内容，盲目加载有安全风险。请检查来源是否可靠再加载。
-如果杀毒软件拦截，有可能创建者向文件中注入了恶意的python代码。</p>
+如果杀毒软件拦截，有可能创建者向文件中注入了恶意的 Python 代码。</p>
 <p>可以通过此脚本检查风险：<a href="https://rentry.org/safeunpickle2">https://rentry.org/safeunpickle2</a></p>
 <hr />
 <h2 id="_9">进阶</h2>
@@ -1035,19 +1036,19 @@ print(torch.cuda.is_available())
 <blockquote>
 <p>来自 allophane.com/index.php/2022/10/17/roaming_info_for_latent_diffusion/</p>
 </blockquote>
-<h3 id="webui-nai">使用 webui 复现 NAI 官网</h3>
+<h3 id="webui-nai">使用 WebUI 复现 NAI 官网</h3>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017">相关讨论，应该读一读！</a></p>
 <p>提示:由于 torch 及其相关框架的性质，尝试完全复原在不同机器上生成的图片是不明智的。所以不要纠结一些细节不能复现。</p>
 <h4 id="_10">需要做的事情</h4>
 <ul>
 <li>
-<p>加载 VAE 和模型附带的 config.yaml (可选，有人说此操作空耗显存)</p>
+<p>加载 VAE 和模型附带的 <code>config.yaml</code> (可选，有人说此操作空耗显存)</p>
 </li>
 <li>
-<p>Stop At last layers of CLIP model 设为 <code>2</code></p>
+<p><code>Stop At last layers of CLIP model</code> 设为 <code>2</code></p>
 </li>
 <li>
-<p>Eta noise seed delta 设置为 <code>31337</code></p>
+<p><code>Eta noise seed delta</code> 设置为 <code>31337</code></p>
 </li>
 </ul>
 <h4 id="_11"><strong>不需要</strong>做的事情</h4>
@@ -1059,15 +1060,15 @@ print(torch.cuda.is_available())
 <p>如果能，尽量使用半精度，可以节省运算时间/RAM/VRAM，同时图片质量并不会和单精度差多少。~真要说差别可能和你电脑被宇宙射线打了差不多~。</p>
 <h3 id="xy">X/Y 图</h3>
 <p>创建具有不同参数的图像网格。使用X类型和Y类型字段选择应由行和列共享的参数，并将这些参数以逗号分隔输入X值/Y值字段。支持整数、浮点数和范围。</p>
-<p>Simple ranges 简单范围</p>
+<p><code>Simple ranges</code> 简单范围</p>
 <div class="highlight"><pre><span></span><code>1-5 = 1, 2, 3, 4, 5
 </code></pre></div>
-<p>Ranges with increment in bracket 括号范围</p>
+<p><code>Ranges with increment in bracket</code> 括号范围</p>
 <div class="highlight"><pre><span></span><code>1-5 (+2) = 1, 3, 5
 10-5 (-3) = 10, 7
 1-3 (+0.5) = 1, 1.5, 2, 2.5, 3
 </code></pre></div>
-<p>Ranges with the count in square brackets 方括号范围</p>
+<p><code>Ranges with the count in square brackets</code> 方括号范围</p>
 <div class="highlight"><pre><span></span><code>1-10 [5] = 1, 3, 5, 7, 10
 0.0-1.0 [6] = 0.0, 0.2, 0.4, 0.6, 0.8, 1.0
 </code></pre></div>
@@ -1077,26 +1078,26 @@ print(torch.cuda.is_available())
 <p>引用官方 Wiki 的设置图</p>
 </blockquote>
 <h3 id="variations"><strong>Variations种子变化</strong></h3>
-<p>Variation strength slider 和 Variation seed field 允许您指定现有图片应更改多少以使其看起来不同。
+<p><code>Variation strength slider</code> 和 <code>Variation seed field</code> 允许您指定现有图片应更改多少以使其看起来不同。
 在最大强度下，您将获得带有变异种子的图片，至少 - 带有原始种子的图片（使用先前采样器时除外）。</p>
 <h3 id="_13"><strong>提示词模板</strong></h3>
-<p>“Save prompt as style” 按钮将当前的提示写入 styles.csv，该文件包含样式集合</p>
+<p>“Save prompt as style” 按钮将当前的提示写入 <code>styles.csv</code>，该文件包含样式集合</p>
 <p>提示右侧的下拉框将允许您从以前保存的样式中选择任何样式，并自动将其<strong>附加</strong>到输入中</p>
-<p>要删除样式，请从 styles.csv 中手动将其删除并重新启动程序。</p>
+<p>要删除样式，请从 <code>styles.csv</code> 中手动将其删除并重新启动程序。</p>
 <h3 id="xformers">xformers</h3>
 <p>xformers 分辨率越高加速效果越好。使用 xformers 会引入一些随机性，稍微影响生成的图像。</p>
 <p>要启用，如果你是 Pascal、Turing 或者 Ampere 架构的卡（包括 GTX 1000，RTX 2000、3000 系列），添加 <code>--xformers</code> 参数到 <code>webui-user.bat</code> 中的 <code>COMMANDLINE_ARGS</code>。</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>有人说在 700 和 900 系列卡上使用 xformers 的性能明显较差，请注意这一点。
-本人实测，2050 在启用xformers之后，速度慢了 50%</p>
+本人实测，2050 在启用 xformers 之后，速度慢了 50%</p>
 </div>
 <h4 id="windows-xformers">在 Windows 上编译 Xformers</h4>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>你可以在右边的链接下载预构建的Xformers！https://rentry.org/25i6yn ，记得先查看<a href="https://developer.nvidia.com/cuda-gpus">GPU 架构</a></p>
+<p>你可以在右边的链接下载预构建的 Xformers！https://rentry.org/25i6yn ，记得先查看 <a href="https://developer.nvidia.com/cuda-gpus">GPU 架构</a></p>
 </div>
-<p>确保Python 版本为 3.10 或更高版本(使用 <code>python --version</code>)，然后安装</p>
+<p>确保 Python 版本为 3.10 或更高版本(使用 <code>Python --version</code>)，然后安装</p>
 <p>安装 <a href="https://visualstudio.microsoft.com/zh-hans/downloads/?q=build+tools">VS Build Tools 2022</a>，运行安装时只需要选择 <code>Desktop development with C++</code></p>
 <p>安装 <a href="https://developer.nvidia.com/cuda-11.3.0-download-archive">CUDA 11.3</a>，（后期版本未测试），选择<code>custom</code>，VS集成可能不需要</p>
 <ul>
@@ -1135,20 +1136,20 @@ pip install wheel
 pip install ninja
 </code></pre></div>
 <ul>
-<li>由于 CUDA 11.3 很旧，需要 强制启用 它以在 MS Build Tools 2022 上构建。</li>
+<li>由于 CUDA 11.3 很旧，需要<strong>强制启用</strong>它以在 MS Build Tools 2022 上构建。</li>
 </ul>
 <p>在 CMD 设置 <code>set NVCC_FLAGS=-allow-unsupported-compiler"</code></p>
 <p>或在 Bash 设置<code>export NVCC_FLAGS=-allow-unsupported-compiler</code></p>
 <ul>
 <li>查看你自己的 GPU 架构</li>
 </ul>
-<p><a href="https://developer.nvidia.com/cuda-gpus">GPU 架构</a></p>
+<p><a href="https://developer.nvidia.com/cuda-GPUs">GPU 架构</a></p>
 <p>比如说，如果你的 GPU 是 GTX 1070，基于该表，架构是 6.1
 <em>CMD</em>  <code>set TORCH_CUDA_ARCH_LIST=6.1</code></p>
 <p><em>BASH</em>  <code>export TORCH_CUDA_ARCH_LIST=6.1</code></p>
 <ul>
 <li>
-<p>构建 xFormers，请注意构建将需要很长时间（可能需要 10-20 分钟），它最初可能会抱怨一些错误，但它仍然应该可以正确编译。</p>
+<p>构建 xFormers，请注意构建需要很长时间（可能要 10-20 分钟），它最开始时可能会出现一些错误，但应该仍能正确编译。</p>
 </li>
 <li>
 <p>安装在环境中(Conda)</p>
@@ -1158,7 +1159,7 @@ pip install ninja
 python setup.py bdist_wheel
 </code></pre></div>
 <p>找到 dist 文件夹并将文件 <code>*.whl</code> 复制到 <code>stable-diffusion-webui</code>
-在 <code>stable-diffusion-webui</code> 目录中安装<code>.whl</code>。</p>
+在 <code>stable-diffusion-webui</code> 目录中安装 <code>.whl</code>。</p>
 <p>如果构建的 whl 名称不同，请在下面的安装命令中更改文件名</p>
 <div class="highlight"><pre><span></span><code><span class="c1">#CMD</span>
 ./venv/scripts/activate
@@ -1181,35 +1182,48 @@ pip install xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl
 <p>RuntimeError: CUDA error: no kernel image is available for execution on the device</p>
 </blockquote>
 <p>现在更多 GPU 架构是自动支持的，尝试重新安装并使用 --xformers 参数。</p>
-<p>如果你移动了Xformers，那么应该删除里面的 venv 目录</p>
+<p>如果你移动了 Xformers，那么应该删除里面的 venv 目录</p>
 <p><a href="https://github.com/C43H66N12O12S2/stable-diffusion-webui/releases">Windows</a> (30 系之外要自己编译)</p>
-<p>自己编译指路 <a href="https://rentry.org/sdg_faq#xformers-increase-your-its-more-cards-supported">wiki/Xformers</a> 还有 <a href="https://www.reddit.com/r/StableDiffusion/comments/xz26lq/automatic1111_xformers_cross_attention_with_on/">这个 Post</a></p>
+<p>自己编译指路 <a href="https://rentry.org/sdg_faq#xformers-increase-your-its-more-cards-supported">wiki/Xformers</a>， 还有<a href="https://www.reddit.com/r/StableDiffusion/comments/xz26lq/automatic1111_xformers_cross_attention_with_on/">这篇文章</a></p>
 <h3 id="cpu">使用CPU进行绘画</h3>
 <p>根据此 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2597">pr</a></p>
-<p>可以通过 <code>--use-cpu all</code> 尽可能的使用CPU进行生成，虽然慢 100 倍。</p>
+<p>可以通过 <code>--use-cpu all</code> 尽可能的使用 CPU 进行生成，虽然慢 100 倍。</p>
 <h3 id="clip-interrogate">CLIP Interrogate</h3>
 <p>CLIP 可以从图像中提取令牌。</p>
-<p>默认情况下，只有一个列表 - 艺术家列表（来自artists.csv）。</p>
+<p>默认情况下，只有一个列表 - 艺术家列表（来自 artists.csv）。</p>
 <p>不过你可以通过执行以下操作添加更多列表：
-* interrogate 在与 webui 相同的位置创建目录
+* interrogate 在与 WebUI 相同的位置创建目录
 * 将文本文件放入其中，每行都有相关描述</p>
-<div class="highlight"><pre><span></span><code>For example of what text files to use, see https://github.com/pharmapsychotic/clip-interrogator/tree/main/data. In fact, you can just take files from there and use them - just skip artists.txt because you already have a list of artists in artists.csv (or use that too, who&#39;s going to stop you). Each file adds one line of text to the final description. If you add &quot;.top3.&quot; to filename, for example, flavors.top3.txt, the three most relevant lines from this file will be added to the prompt (other numbers also work).
-</code></pre></div>
+<p>你可以在<a href="https://github.com/pharmapsychotic/clip-interrogator/tree/main/data">这里</a>查看使用哪个文本文件的例子。实际上，你可以直接用这个例子中的文件 —— 除了 <code>artists.txt</code> ，你已经有一份艺术家列表在 <code>artists.csv</code> 中了不是吗（或者用这个也行，随你）。每个文件都会使最后的描述增加一行字。如果你将 <code>.top3.</code> 放到文件名中，比如 <code>flavors.top3.txt</code> ，文件中相关度最高的三行将会被添加到提示词中（其他数量也行）。</p>
+<!--
+这里的最后一句 “文件中相关度最高的三行”，关于 “相关度” 可能让人有点迷惑，后来的人可以看看有没有什么更贴切的翻译
+For example of what text files to use, see https://github.com/pharmapsychotic/clip-interrogator/tree/main/data. 
+In fact, you can just take files from there and use them - just skip artists.txt because you already have a list of artists in artists.csv (or use that too, who's going to stop you). 
+Each file adds one line of text to the final description. 
+If you add ".top3." to filename, for example, flavors.top3.txt, the three most relevant lines from this file will be added to the prompt (other numbers also work).
+-->
+
 <h3 id="face-restoration"><strong>Face restoration三次元人脸修复</strong></h3>
 <p>适用于三次元。</p>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#face-restoration">https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#face-restoration</a></p>
 <h3 id="css">自定义.css</h3>
-<p>创建一个名为 user.cssnear 的文件 webui.py 并将自定义 CSS 代码放入其中。</p>
-<p>For example, this makes the gallery taller:</p>
+<p>创建一个名为 <code>user.css</code> 的文件并放在 <code>webui.py</code> 旁，将自定义 CSS 代码放入 <code>user.css</code> 中。</p>
+<p>下面的例子将会使得画廊更长：</p>
+<!--
+此处将 taller 译作 更长。原文使用 taller 是因为在网页的情况下，元素在纵向上的长度是用 height 来描述的。
+但是在中文语境下，译作 更高 会略显奇怪，故译作 更长。
+如果有更好的翻译可以直接顶上
+-->
+
 <div class="highlight"><pre><span></span><code>#txt2img_gallery, #img2img_gallery{
     min-height: 768px;
 }
 </code></pre></div>
-<h3 id="notificationmp3">notification.mp3 提示声音</h3>
-<p>If an audio file named <code>notification.mp3</code> is present in <code>webui's root folder</code>, it will be played when the generation process completes.</p>
+<h3 id="notificationmp3">notification.mp3 提示音</h3>
+<p>放在 WebUI 的根目录的名为 <code>notification.mp3</code> 的音频文件将会在处理完成后播放。</p>
 <h3 id="_14">开发自定义脚本</h3>
-<p>你可以在<code>modules/scripts.py</code>中找到Script类。</p>
-<p>如果要创建你自己的自定义脚本，请创建一个实现类的python脚本，并将其放到scripts文件夹中，使用以下示例或文件夹中已有的其他脚本作为指导。</p>
+<p>你可以在 <code>modules/scripts.py</code> 中找到 Script 类。</p>
+<p>如果要创建你自己的自定义脚本，请创建一个实现类的 Python 脚本，并将其放到 scripts 文件夹中，使用以下示例或文件夹中已有的其他脚本作为指导。</p>
 <p>Script 类有四个主要方法，这里通过一个简单的<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Developing-custom-scripts">示例脚本</a>进行更详细的描述，这个脚本可以旋转和/或翻转生成的图像。</p>
 <h3 id="6">修剪模型<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">6</a></sup></h3>
 <p>将要修剪的 <code>.ckpt</code> 文件放在 <code>/stable-diffusion-webui</code> 文件夹，把 <a href="https://raw.githubusercontent.com/harubaru/waifu-diffusion/main/scripts/prune.py">脚本</a> 另存本地，删除第 6 行和 第 8 行。然后在 prune.py 中的最后一行编辑 ckpt 的名称。</p>
@@ -1218,17 +1232,17 @@ pip install xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl
 <h2 id="_15">运行</h2>
 <h3 id="4gb">4GB 显卡支持</h3>
 <p>针对具有低 VRAM 的 GPU 的优化。这应该可以在具有 4GB 内存的视频卡上生成 512x512 图像。</p>
-<p><code>--lowvram</code> 是 basujindal 对优化思想的重新实现。模型被分成模块，GPU内存中只保存一个模块；当另一个模块需要运行时，前一个模块将从 GPU 内存中删除。这种优化的性质使处理速度变慢——与我的 RTX 3090 上的正常操作相比，速度慢了大约 10 倍。</p>
+<p><code>--lowvram</code> 是 basujindal 对优化思想的重新实现。模型被分成模块，GPU 内存中只保存一个模块；当另一个模块需要运行时，前一个模块将从 GPU 内存中删除。这种优化的性质使处理速度变慢——与我的 RTX 3090 上的正常操作相比，速度慢了大约 10 倍。</p>
 <p><code>--medvram</code> 是另一个优化，通过不在同一批次中处理条件和无条件去噪，可以显着减少 VRAM 的使用。这种优化的实现不需要对原始的稳定扩散代码进行任何修改。</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>经过 10/10 的优化，RTX2050 的 4GB 显卡也可以使用 <code>--medvram</code> 。</p>
 </div>
-<p>当然也可以减半精度，或者生成一张 64x64 清理 vram</p>
+<p>当然也可以减半精度，或者生成一张 64x64 清理 VRAM</p>
 <h3 id="_16">不间断生产</h3>
-<p>在 WebUi 的生成键右击即可出现 不间断生成 的选项。</p>
+<p>在 WebUI 的生成键右击即可出现<strong>不间断生成</strong>的选项。</p>
 <h3 id="png-info">图片信息 Png info</h3>
-<p>生成的图片自带 令牌信息，拖放到 查看页面即可查看 。</p>
+<p>生成的图片自带令牌信息，拖放到查看页面即可查看 。</p>
 <h3 id="nai-4chan">NAI 4chan简化版本</h3>
 <p>4chan 版本魔改官后程序，会动态分配，显存不够内存来凑。</p>
 <div class="footnote">
@@ -1260,11 +1274,11 @@ pip install xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 26, 2022 17:07:02</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 27, 2022 09:49:09</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 26, 2022 17:07:02</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 27, 2022 09:49:09</span>
       
     
   </small>
