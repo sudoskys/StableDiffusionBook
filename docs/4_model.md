@@ -18,7 +18,7 @@ SDWebUi是一个框架，除了 NAI 模型外还有许多[其他模型](https://
 
 先判断 cuda 是否可用。
 
-打开命令窗，输入 python 进入，分行输入
+打开命令窗，输入 Python 进入，分行输入
 
 ```
 import torch
@@ -70,9 +70,9 @@ Windows: <https://developer.nvidia.com/compute/cudnn/secure/8.5.0/local_installe
 
 其他版本：<https://developer.nvidia.com/rdp/cudnn-archive>
 
-5. 将Cudnn 8.5压缩包里的bin和lib文件夹里的所有文件复制到 `venv\Lib\site-packages\torch\lib` 里，覆盖所有文件。
+5. 将 Cudnn 8.5 压缩包里的 bin 和 lib 文件夹里的所有文件复制到 `venv\Lib\site-packages\torch\lib` 里，覆盖所有文件。
 
-6. 然后16xx系显卡也可以愉快地使用半精度生成图片了！大幅降低显存占用，6G加载Full模型可以生成1024x640的图片。
+6. 然后 16xx 系显卡也可以愉快地使用半精度生成图片了！大幅降低显存占用，6G 加载 Full 模型可以生成 1024x640 的图片。
 
 但是，依然不能使用 `DDIM Sampling` ，但可以使用 `Euler a`
 
@@ -123,13 +123,13 @@ Windows: <https://developer.nvidia.com/compute/cudnn/secure/8.5.0/local_installe
 
 `hypernetworks` 包含了 `stableckpt/modules/modules` 里的文件，是风格相关的数据集，可以作为特定人物的 `embedding model` 调用，和 model 使用可以生成特定风格。主要格式为 `*.pt`。需要在WebUi的设置标签页启用这个增强模型。
 
-`workspace` 不是个人可以负载的，NAI采用的是 GPU 集群云。
+`workspace` 不是个人可以负载的，NAI 采用的是 GPU 集群云。
 
 ### Part 2
 
-`prodmodels` 是GPT模型(语言处理)，但是实际用了CLIP，所以不用我们管。
+`prodmodels` 是 GPT 模型(语言处理)，但是实际用了 CLIP，所以不用我们管。
 
-`random_stableckpt` 是一些模型，有的与Part1重复
+`random_stableckpt` 是一些模型，有的与 Part1 重复
 
 
 ![Part1](https://user-images.githubusercontent.com/75739606/197821809-7eed7776-9508-4c71-9b07-5f02e13290b2.jpg)
@@ -253,7 +253,7 @@ Steps: 28, Sampler: Euler, CFG scale: 12, Seed: [SEE COLUMN], Size: 512x512, Mod
 
 生成报错解释：显存不足
 
-先检查 cuda 是否可用，打开命令窗，输入 python 并分行输入
+先检查 cuda 是否可用，打开命令窗，输入 Python 并分行输入
 
 ```
 import torch
@@ -268,7 +268,7 @@ print(torch.cuda.is_available())
 ### ckpt 文件安全问题[^4]
 
 ckpt 文件被加载时基本上可以执行任何内容，盲目加载有安全风险。请检查来源是否可靠再加载。
-如果杀毒软件拦截，有可能创建者向文件中注入了恶意的python代码。
+如果杀毒软件拦截，有可能创建者向文件中注入了恶意的 Python 代码。
 
 可以通过此脚本检查风险：<https://rentry.org/safeunpickle2>
 
@@ -368,16 +368,16 @@ xformers 分辨率越高加速效果越好。使用 xformers 会引入一些随�
 
 !!! tip
     有人说在 700 和 900 系列卡上使用 xformers 的性能明显较差，请注意这一点。
-    本人实测，2050 在启用xformers之后，速度慢了 50%
+    本人实测，2050 在启用 xformers 之后，速度慢了 50%
 
 
 #### 在 Windows 上编译 Xformers
 
 !!! info
 
-    你可以在右边的链接下载预构建的Xformers！https://rentry.org/25i6yn ，记得先查看[GPU 架构](https://developer.nvidia.com/cuda-gpus)
+    你可以在右边的链接下载预构建的Xformers！https://rentry.org/25i6yn ，记得先查看 [GPU 架构](https://developer.nvidia.com/cuda-gpus)
 
-确保Python 版本为 3.10 或更高版本(使用 `python --version`)，然后安装
+确保 Python 版本为 3.10 或更高版本(使用 `Python --version`)，然后安装
 
 安装 [VS Build Tools 2022](https://visualstudio.microsoft.com/zh-hans/downloads/?q=build+tools)，运行安装时只需要选择 `Desktop development with C++`
 
@@ -430,7 +430,7 @@ pip install ninja
 
 * 查看你自己的 GPU 架构
 
-[GPU 架构](https://developer.nvidia.com/cuda-gpus)
+[GPU 架构](https://developer.nvidia.com/cuda-GPUs)
 
 比如说，如果你的 GPU 是 GTX 1070，基于该表，架构是 6.1
 *CMD*  `set TORCH_CUDA_ARCH_LIST=6.1`
@@ -476,7 +476,7 @@ pip install xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl
 
 现在更多 GPU 架构是自动支持的，尝试重新安装并使用 --xformers 参数。
 
-如果你移动了Xformers，那么应该删除里面的 venv 目录
+如果你移动了 Xformers，那么应该删除里面的 venv 目录
 
 [Windows](https://github.com/C43H66N12O12S2/stable-diffusion-webui/releases) (30 系之外要自己编译)
 
@@ -487,7 +487,7 @@ pip install xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl
 
 根据此 [pr](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2597)
 
-可以通过 `--use-cpu all` 尽可能的使用CPU进行生成，虽然慢 100 倍。
+可以通过 `--use-cpu all` 尽可能的使用 CPU 进行生成，虽然慢 100 倍。
 
 
 
@@ -495,7 +495,7 @@ pip install xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl
 
 CLIP 可以从图像中提取令牌。
 
-默认情况下，只有一个列表 - 艺术家列表（来自artists.csv）。
+默认情况下，只有一个列表 - 艺术家列表（来自 artists.csv）。
 
 不过你可以通过执行以下操作添加更多列表：
 * interrogate 在与 webui 相同的位置创建目录
@@ -529,9 +529,9 @@ If an audio file named `notification.mp3` is present in `webui's root folder`, i
 
 ### 开发自定义脚本
 
-你可以在`modules/scripts.py`中找到Script类。
+你可以在`modules/scripts.py`中找到 Script 类。
 
-如果要创建你自己的自定义脚本，请创建一个实现类的python脚本，并将其放到scripts文件夹中，使用以下示例或文件夹中已有的其他脚本作为指导。
+如果要创建你自己的自定义脚本，请创建一个实现类的 Python 脚本，并将其放到 scripts 文件夹中，使用以下示例或文件夹中已有的其他脚本作为指导。
 
 Script 类有四个主要方法，这里通过一个简单的[示例脚本](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Developing-custom-scripts)进行更详细的描述，这个脚本可以旋转和/或翻转生成的图像。
 
@@ -549,14 +549,14 @@ Script 类有四个主要方法，这里通过一个简单的[示例脚本](http
 
 针对具有低 VRAM 的 GPU 的优化。这应该可以在具有 4GB 内存的视频卡上生成 512x512 图像。
 
-`--lowvram` 是 basujindal 对优化思想的重新实现。模型被分成模块，GPU内存中只保存一个模块；当另一个模块需要运行时，前一个模块将从 GPU 内存中删除。这种优化的性质使处理速度变慢——与我的 RTX 3090 上的正常操作相比，速度慢了大约 10 倍。
+`--lowvram` 是 basujindal 对优化思想的重新实现。模型被分成模块，GPU 内存中只保存一个模块；当另一个模块需要运行时，前一个模块将从 GPU 内存中删除。这种优化的性质使处理速度变慢——与我的 RTX 3090 上的正常操作相比，速度慢了大约 10 倍。
 
 `--medvram` 是另一个优化，通过不在同一批次中处理条件和无条件去噪，可以显着减少 VRAM 的使用。这种优化的实现不需要对原始的稳定扩散代码进行任何修改。
 
 !!! info
     经过 10/10 的优化，RTX2050 的 4GB 显卡也可以使用 `--medvram` 。
 
-当然也可以减半精度，或者生成一张 64x64 清理 vram
+当然也可以减半精度，或者生成一张 64x64 清理 VRAM
 
 ### 不间断生产
 
