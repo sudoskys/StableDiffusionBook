@@ -1098,7 +1098,7 @@
 <p><strong>表示方法</strong></p>
 <p>分隔，英文半角 <code>,</code> 做分隔符，在英文逗号前后存在一个或数个空格并不影响实际使用。</p>
 <p>混合，WebUi 使用 <code>|</code> 分隔多个关键词以混合多个要素，字面意义上的混合，可以多个使用。</p>
-<p>增强，用 <code>(提示词:权重)</code> 在 WebUi 权重增强，增强的范围是 <code>0.1 ~:100</code>，允许小数。NAI使用 <code>{}</code></p>
+<p>增强，用 <code>(提示词:权重)</code> 在 WebUi 权重增强，增强的范围是 <code>0.1 ~:100</code>，允许小数。而NAI使用 <code>{}</code></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p><code>a ((((farm))), daytime</code> 的语法可能会吃掉逗号</p>
@@ -1107,9 +1107,9 @@
 <p><code>[fantasy:cyberpunk:16]</code> 代表从第 16 step 后，使用 <code>cyberpunk</code> 标签替换 <code>fantasy</code></p>
 <p><code>[to:when]</code> 在固定数量的step后添加 <code>to</code> 到提示 ( when)</p>
 <p><code>[from::when]</code> 在固定数量的step后从提示中删除 <code>from</code>( when)</p>
-<p>转义，WebUi 对于带括号的参数，<code>a (word)</code>  请在参数中使用 <code>\</code> 字符转义为 <code>a \(word\)</code>。</p>
+<p>转义，WebUi 对于带括号提示词比如<code>a (word)</code>  请使用 <code>\</code> 字符转义为 <code>a \(word\)</code>，这适用于带括号的Tag,防止出现本来不想要的增强效果。</p>
 <p>降低权重，<code>[]</code> 或者 <code>(word:0.952)</code>。NAI 仅能使用 <code>[]</code></p>
-<p>交替（alternate prompt）<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">4</a></sup>，这使您可以创建动物、人或风格的混合体，每一个 step 切换一个项，<code>[alison brie|emma stone|elizabeth olsen|scarlett johansson|anne hathaway|emma roberts], still film</code> 这是WebUi 语法，在 NAI 中是混合。</p>
+<p>交替（alternate prompt）<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">4</a></sup>，混合机。这使您可以创建动物、人或风格的混合体，每一个 step 切换一项(一步一换)，轮回渲染，<code>[alison brie|emma stone|elizabeth olsen|scarlett johansson|anne hathaway|emma roberts], still film</code> 这是WebUi 语法，在 NAI 中代表平均权重混合(前半部分和后半部分)。</p>
 <div class="admonition tip">
 <p class="admonition-title">NAI</p>
 <p>NAI中不允许单独指定权重，但支持混合权重 <code>cat:1|happy:-0.2|cute:-0:3</code> 这样的语法。</p>
@@ -2322,11 +2322,11 @@ scale 就是 CFG scale
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 27, 2022 16:44:32</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 27, 2022 17:30:39</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 27, 2022 16:44:32</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 27, 2022 17:30:39</span>
       
     
   </small>
