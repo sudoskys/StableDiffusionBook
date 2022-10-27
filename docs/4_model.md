@@ -48,7 +48,7 @@ Given the amount of features this repo provides I think it could take some time 
 
 方案来自 [这个讨论](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/28#issuecomment-1241448049)
 
-1. 激活webui使用的venv,要在正确的虚拟环境里运行
+1. 激活 webui 使用的 venv,要在正确的虚拟环境里运行
 
 2. 卸载掉现在所用的 torch 和 torchvision:
 
@@ -168,7 +168,7 @@ Windows: <https://developer.nvidia.com/compute/cudnn/secure/8.5.0/local_installe
 
 **关于 EMA**
 
-ema移动平均值对生成图像没有任何帮助。
+EMA 移动平均值对生成图像没有任何帮助。
 
 They do prevent overfitting or something if you resume training the model.
 
@@ -194,9 +194,9 @@ Steps: 28, Sampler: Euler, CFG scale: 12, Seed: [SEE COLUMN], Size: 512x512, Mod
 
 `aini` 有一种你可能不喜欢的强烈风格，我认为它具有最高的一致性和质量。
 
-`anime_3`是该系列中质量最高的，但它们都有些不一致. 我一般不会推荐他们。
+`anime_3` 是该系列中质量最高的，但它们都有些不一致. 我一般不会推荐他们。
 
-可以看到 `furry`的超网络在添加动物特征方面更加激进，因此这里更保守的变化可能与采样器、步骤和 CFG 有关。[^5]
+可以看到 `furry` 的超网络在添加动物特征方面更加激进，因此这里更保守的变化可能与采样器、步骤和 CFG 有关。[^5]
 
 
 ## 基础
@@ -209,11 +209,11 @@ Steps: 28, Sampler: Euler, CFG scale: 12, Seed: [SEE COLUMN], Size: 512x512, Mod
 
 `sample method`  采样方法。DDIM, Eula 也挺好用。 (带 a 的是 ancestral 的意思, step 增长出图不稳定)
 
-`cfg scale` 符合 prompt 的程度, 值越高越会字面看待 prompt, 低则给模型较大的发挥空间, 但是实际模型表现上来看 cfg scale 低 (6-8) 饱和度低, 偏线稿, 偏杂乱, 高 (18-22) 则饱和度偏高, 偏 CG 风格.
+`cfg scale` 符合 prompt 的程度, 值越高越会字面看待 prompt, 低则给模型较大的发挥空间, 但是实际模型表现上来看 CFG scale 低 (6-8) 饱和度低, 偏线稿, 偏杂乱, 高 (18-22) 则饱和度偏高, 偏 CG 风格.
 
 >过高的 CFG 会引起颜色失真，CFG 应该在 5-15 之间
 
-`denoise strength` img2img 专属参数, 从 0 到 1 取值, 值越高 AI 对原图的参考程度就越低 (同时增加迭代次数), 个人喜欢低 cfg 高 denoise 重绘图, 高 cfg 低 denoise 改细节.
+`denoise strength` img2img 专属参数, 从 0 到 1 取值, 值越高 AI 对原图的参考程度就越低 (同时增加迭代次数), 个人喜欢低 CFG 高 denoise 重绘图, 高 CFG 低 denoise 改细节.
 
 [一个小指南：RedditAbout](https://www.reddit.com/r/StableDiffusion/comments/xbeyw3/can_anyone_offer_a_little_guidance_on_the/)
 
@@ -223,7 +223,7 @@ Steps: 28, Sampler: Euler, CFG scale: 12, Seed: [SEE COLUMN], Size: 512x512, Mod
 
 #### 生成黑/绿图
 
-[Green or Black screen](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Install-and-Run-on-NVidia-GPUs)
+[生成黑/绿图](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Install-and-Run-on-NVidia-GPUs)
 
 如果是GTX 16xx系列，启动参数需要加 `--precision full --no-half`, 因此如果显存不足还要加 `--medvram`。
 
@@ -232,7 +232,7 @@ Steps: 28, Sampler: Euler, CFG scale: 12, Seed: [SEE COLUMN], Size: 512x512, Mod
 
 #### RuntimeError Sizes of tensors must match
 
-(img2img) 如果你得到RuntimeError: Sizes of tensors must match，你需要改变输入图像的分辨率
+(img2img) 如果你得到 `RuntimeError: Sizes of tensors must match`，你需要改变输入图像的分辨率
 
 
 #### 彩虹混乱图
@@ -253,7 +253,7 @@ Steps: 28, Sampler: Euler, CFG scale: 12, Seed: [SEE COLUMN], Size: 512x512, Mod
 
 生成报错解释：显存不足
 
-先检查 CUDA 是否可用，打开命令窗，输入 Python 并分行输入
+先检查 CUDA 是否可用，打开命令窗，输入 python 并分行输入
 
 ```
 import torch
@@ -296,11 +296,11 @@ ckpt 文件被加载时基本上可以执行任何内容，盲目加载有安全
 
 #### 需要做的事情
 
-* 加载 VAE 和模型附带的 config.yaml (可选，有人说此操作空耗显存)
+* 加载 VAE 和模型附带的 `config.yaml` (可选，有人说此操作空耗显存)
 
-* Stop At last layers of CLIP model 设为 `2`
+* `Stop At last layers of CLIP model` 设为 `2`
 
-* Eta noise seed delta 设置为 `31337`
+* `Eta noise seed delta` 设置为 `31337`
 
 
 #### **不需要**做的事情
@@ -375,7 +375,7 @@ xformers 分辨率越高加速效果越好。使用 xformers 会引入一些随�
 
 !!! info
 
-    你可以在右边的链接下载预构建的Xformers！https://rentry.org/25i6yn ，记得先查看 [GPU 架构](https://developer.nvidia.com/cuda-gpus)
+    你可以在右边的链接下载预构建的 Xformers！https://rentry.org/25i6yn ，记得先查看 [GPU 架构](https://developer.nvidia.com/cuda-gpus)
 
 确保 Python 版本为 3.10 或更高版本(使用 `Python --version`)，然后安装
 
@@ -422,7 +422,7 @@ pip install wheel
 pip install ninja
 ```
 
-* 由于 CUDA 11.3 很旧，需要 强制启用 它以在 MS Build Tools 2022 上构建。
+* 由于 CUDA 11.3 很旧，需要**强制启用**它以在 MS Build Tools 2022 上构建。
 
 在 CMD 设置 `set NVCC_FLAGS=-allow-unsupported-compiler"`
 
@@ -447,7 +447,7 @@ python setup.py bdist_wheel
 ```
 
 找到 dist 文件夹并将文件 `*.whl` 复制到 `stable-diffusion-webui`
-在 `stable-diffusion-webui` 目录中安装`.whl`。
+在 `stable-diffusion-webui` 目录中安装 `.whl`。
 
 如果构建的 whl 名称不同，请在下面的安装命令中更改文件名
 
