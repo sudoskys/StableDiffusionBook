@@ -775,9 +775,9 @@
 <p><a href="https://rentry.org/embeddings">list of Textual Inversion embeddings for webui(SD)</a></p>
 <p><a href="https://cyberes.github.io/stable-diffusion-textual-inversion-models/">HuggingFace 的 embedding 库</a></p>
 <h3 id="hypernetwork-hn">Hypernetwork (HN)</h3>
-<p>一类给模型生成权重的网络，在这里是给 LDM 生成权重。是一个较为实验性的方法，NAI 率先探索了在 LDM 上使用。</p>
+<p>一类给模型生成权重的网络，在这里是给 LDM(潜在扩散模型) 生成权重。是一个较为实验性的方法，NAI 率先探索了在 LDM 上使用。</p>
 <h4 id="_6">特征</h4>
-<p>与 TI 不同，Hypernetwork 会改动 LDM 本身的权重，所以可以训练出无法用语言精确表述的细节，也更适用于画风的训练。</p>
+<p>与 TI 不同，Hypernetwork 会改动 LDM(潜在扩散模型) 本身的权重，所以可以训练出无法用语言精确表述的细节，也更适用于画风的训练。</p>
 <p>训练产物大小中等，webui 自带训练支持。</p>
 <h4 id="_7">使用</h4>
 <p>使用时，将 Pt 放入 <code>/models/hypernetworks</code> 并在设置选项勾选启用它。</p>
@@ -787,7 +787,7 @@
 <p><code>.pt</code>文件，一般情况下小的是 embedding 大的是 hypernetwork。</p>
 </div>
 <h3 id="dreambooth-db">DreamBooth (DB)</h3>
-<p>直接微调 LDM 和 Text Encoder 以适应用户特定的图像生成需求的一个方法。</p>
+<p>直接微调 LDM(潜在扩散模型) 和 Text Encoder 以适应用户特定的图像生成需求的一个方法。</p>
 <blockquote>
 <p>你能想象你自己的狗环游世界，或者你最喜欢的包在巴黎最独特的展厅里展示吗？你的鹦鹉成为一本插图故事书的主角呢？</p>
 </blockquote>
@@ -1078,11 +1078,11 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 27, 2022 14:07:57</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 27, 2022 14:21:07</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 27, 2022 14:07:57</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 27, 2022 14:21:07</span>
       
     
   </small>
