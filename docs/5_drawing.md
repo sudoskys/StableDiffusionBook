@@ -277,11 +277,26 @@ a \(word\) - 在提示中使用文字 () 字符
 
     From [Here](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2905)
 
-### 消极提示词
+### 否定提示词
 
-WebUi(SD)网页应用会在生成时**拒绝消极提示词有关的内容**。
+WebUi(SD)网页应用会在生成时**拒绝否定提示词有关的内容**。
 
-比如使用以下提示词削除水印和文字内容
+否定提示是一种使用稳定扩散的方式，允许用户指定他不想看到的内容，而不对模型做额外的要求。
+
+通过指定 `unconditional_conditioning` 参数，在生成中采样器会查看去噪后符合提示的图像（城堡） 和 去噪后看起来符合负面提示的图像（颗粒状、雾状）之间的差异，并尝试将最终结果远离否定提示词。
+
+```python
+# prompts = ["a castle in a forest"]
+# negative_prompts = ["grainy, fog"]
+
+c = model.get_learned_conditioning(prompts)
+uc = model.get_learned_conditioning(negative_prompts)
+
+samples_ddim, _ = sampler.sample(conditioning=c, unconditional_conditioning=uc, [...])
+```
+
+
+比如使用以下提示词拒绝水印和文字内容
 
 ```
 lowres, bad anatomy, bad hands, text, error, missing fingers, 
@@ -300,6 +315,7 @@ mutilated, tranny, trans, trannsexual, [out of frame], (bad proportions),
 normal quality, text, censored, gown, latex, pencil
 ```
 
+[官方Wiki](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Negative-prompt#examples)
 
 ### 渐变标签
 
