@@ -361,7 +361,7 @@ payload = {
     "steps": 20
 }
 # 其他参数会使用默认值
-WebUi(url="http://127.0.0.1:7860").txt2img(payload=payload,outpath="1145.png",infotie=True)
+WebUiApi(url="http://127.0.0.1:7860").txt2img(payload=payload,outpath="1145.png",infotie=True)
 
 # 实际使用的时候不应该保存到本地再发送，而是直接发送，避免存储图片作品造成 版权 问题。
 ```
