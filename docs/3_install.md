@@ -323,7 +323,7 @@ set COMMANDLINE_ARGS设置命令行参数webui.py运行
 
 #### API 文档
 
-使用 `--api` 参数运行程序，在浏览器访问 `{输出的网址}/docs` 就可以查看到 WebUi 的 Api 文档。
+使用 `--api` 参数运行程序，在浏览器访问 `{输出的网址}/docs` 就可以查看到 WebUi 的 Api 文档。[^4]
 
 下面是一个同步类实现。
 
@@ -609,3 +609,4 @@ for x in output:
 
 [^3]:[Wiki2](https://rentry.co/voldy)
 
+[^4]:[Basic Documentation and Examples for using API](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3734)
