@@ -631,6 +631,19 @@
     进行手掌修复
   </a>
   
+    <nav class="md-nav" aria-label="进行手掌修复">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    同人物&amp;差分
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -646,7 +659,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_24" class="md-nav__link">
+  <a href="#_25" class="md-nav__link">
     魔法进阶
   </a>
   
@@ -669,14 +682,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_25" class="md-nav__link">
+  <a href="#_26" class="md-nav__link">
     横条参数
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_26" class="md-nav__link">
+  <a href="#_27" class="md-nav__link">
     图形参数
   </a>
   
@@ -701,13 +714,6 @@
   
     <nav class="md-nav" aria-label="Img2Img PS重绘画/嫁接修复">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_27" class="md-nav__link">
-    关于差分
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#_28" class="md-nav__link">
@@ -1401,12 +1407,17 @@ git clone https://github.com/yfszzx/stable-diffusion-webui-images-browser
 <p>将图片送入 inpaint，使用大致相同的提示词，将关于 <code>手</code> 的提示放在前面，根据你希望它变动多少来设置降噪（如果只是希望手更完整，调至0.25以下)，然后保留步骤和 CFG 与 txt2img gen 相同。</p>
 <p>或者仅遮住手部，以全分辨率修复，大大降低填充（它使用周围的像素来创建上下文，但只是在重新制作手部）并仅提示手部问题（详细的手部描写等）</p>
 <p>CFG 越高，越符合提示词，降噪越高越偏离原图。</p>
+<h4 id="_24">同人物&amp;差分</h4>
+<p>需要用到进阶的 Img2Img 相关内容，最好的方法是准备一个带有色彩的 3D 母本模型，然后这样就可以保证基本一致。</p>
+<p>也可以用很多提示词来限制角色内容，出很多张，挑能用的作品。</p>
+<p>如果是表情或者是背景，可以采用进阶教程中的 重绘画 技巧。</p>
+<p>如果你想了解一些差分的实例，<a href="https://seesaawiki.jp/nai_ch/d/%c7%ed%a4%ae%a5%b3%a5%e9%a5%c6%a5%af">5CH日语Wiki</a> 提供了一个实例。</p>
 <h3 id="ai">使用 Ai 进行立绘设计</h3>
 <iframe src="//player.bilibili.com/player.html?aid=559362671&bvid=BV14e4y1U7r9&cid=869144379&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 <blockquote>
 <p>BV14e4y1U7r9</p>
 </blockquote>
-<h2 id="_24">魔法进阶</h2>
+<h2 id="_25">魔法进阶</h2>
 <p>调参基本原理模糊的说是：限定好的数据范围内相似样本越多，越稳定。</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -1427,13 +1438,13 @@ git clone https://github.com/yfszzx/stable-diffusion-webui-images-browser
 <p class="admonition-title">不同之处</p>
 <p>PS 重新绘画投入 Img2Img 的话，会导致画风的变动，而 Inpaint 就不会。</p>
 </div>
-<h4 id="_25">横条参数</h4>
+<h4 id="_26">横条参数</h4>
 <p><strong>CFG Scale</strong></p>
 <p><code>cfg scale</code> 就是符合 prompt 的程度,Scale越高，程序对提示词越忠诚，越符合。</p>
 <p><strong>Denoising strength 降低噪声</strong></p>
 <p><code>Denoising strength</code> 决定算法对图像内容的保留程度,可以减少对画风的变得，但也会弱化img2img能力。值越高 AI 对原图的参考程度就越低 (同时增加迭代次数)。</p>
 <p>对于以图做图来说，低 <code>denoising</code> 意味着修正原图，高 <code>denoising</code> 就和原图就没有大的相关性了。一般来讲阈值是 0.7 左右，超过 0.7 和原图基本上无关，0.3 以下就是稍微改一些。</p>
-<h4 id="_26">图形参数</h4>
+<h4 id="_27">图形参数</h4>
 <p>Just resize : 将图像调整为目标分辨率。除非高度和宽度完全匹配，否则图片会被挤压</p>
 <p>Crop and resize：调整图像大小，使整个目标分辨率都被图像填充。裁剪多余部分。</p>
 <p>Resize and fill：调整图像大小，使整个图像在目标分辨率内。用图像的颜色填充空白区域。</p>
@@ -1456,8 +1467,6 @@ git clone https://github.com/yfszzx/stable-diffusion-webui-images-browser
 <p>一张图片<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">2</a></sup>展现WebUI下img2img中不同参数下效果的详细对比图（prompt、steps、scale、各种seed等参数均保持一致）</p>
 </blockquote>
 <p>纵轴是Denoising strength（线上版的strength），横轴是Variation strength</p>
-<h4 id="_27">关于差分</h4>
-<p>如果你想了解一些差分的实例，<a href="https://seesaawiki.jp/nai_ch/d/%c7%ed%a4%ae%a5%b3%a5%e9%a5%c6%a5%af">5CH日语Wiki</a> 提供了一个实例。</p>
 <h4 id="_28">重绘画技巧/去除/替换</h4>
 <ul>
 <li>
@@ -2237,11 +2246,11 @@ scale 就是 CFG scale
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 27, 2022 13:20:32</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 27, 2022 13:26:26</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 27, 2022 13:20:32</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 27, 2022 13:26:26</span>
       
     
   </small>
