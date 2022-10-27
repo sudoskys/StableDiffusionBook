@@ -155,7 +155,7 @@ NAI模型使用 Danbooru2021 的数据, 而 Danbooru2022 还未训练(个人不�
 
 ### Ps插件
 
-有人在做，不过需要等等。
+不确定是否安全的 [插件](https://internationaltd.github.io/defuser/)
 
 ### 入门 SD Ai艺术
 
