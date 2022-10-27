@@ -989,6 +989,7 @@ lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer
 
 Clip 跳过 0，其他一切都很好（afaik 不要使用超网络、v2、yaml、VAE）
 
+
 ### 转换——NAI和WebUi(SD)的增强语法不同
 
 **Prompts 参数括号转换**
@@ -998,6 +999,15 @@ Clip 跳过 0，其他一切都很好（afaik 不要使用超网络、v2、yaml�
 相关的 [网页JS](https://github.com/naisd5ch/novel-ai-5ch-wiki-js)
 
 权重增强标识：NAI 是 `{}` ，WebUi(SD) 是 `()`
+
+
+### 关于元素法典
+
+元素法典提供了一个即查即用的模板库(类比作文大全)，里面有Tag的调试记录，可以作为灵感参考。
+
+[元素法典一卷](https://docs.qq.com/doc/DWHl3am5Zb05QbGVs)
+
+[元素法典第一点五卷](https://docs.qq.com/doc/DWGh4QnZBVlJYRkly)
 
 
 ### 良好参数(风格趋向插画)[^4]
