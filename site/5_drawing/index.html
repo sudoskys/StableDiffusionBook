@@ -455,7 +455,7 @@
         
           <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
-    消极提示词
+    否定提示词
   </a>
   
 </li>
@@ -1177,9 +1177,19 @@ NAI的 [word] = WebUi(word:0.952)(0.952 = 1/1.05)</p>
 <p>如果你缩放这个向量，这个概念会变得更强或更弱。</p>
 <p>From <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2905">Here</a></p>
 </details>
-<h3 id="_7">消极提示词</h3>
-<p>WebUi(SD)网页应用会在生成时<strong>拒绝消极提示词有关的内容</strong>。</p>
-<p>比如使用以下提示词削除水印和文字内容</p>
+<h3 id="_7">否定提示词</h3>
+<p>WebUi(SD)网页应用会在生成时<strong>拒绝否定提示词有关的内容</strong>。</p>
+<p>否定提示是一种使用稳定扩散的方式，允许用户指定他不想看到的内容，而不对模型做额外的要求。</p>
+<p>通过指定 <code>unconditional_conditioning</code> 参数，在生成中采样器会查看去噪后符合提示的图像（城堡） 和 去噪后看起来符合负面提示的图像（颗粒状、雾状）之间的差异，并尝试将最终结果远离否定提示词。</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># prompts = [&quot;a castle in a forest&quot;]</span>
+<span class="c1"># negative_prompts = [&quot;grainy, fog&quot;]</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_learned_conditioning</span><span class="p">(</span><span class="n">prompts</span><span class="p">)</span>
+<span class="n">uc</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_learned_conditioning</span><span class="p">(</span><span class="n">negative_prompts</span><span class="p">)</span>
+
+<span class="n">samples_ddim</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">sampler</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">conditioning</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">unconditional_conditioning</span><span class="o">=</span><span class="n">uc</span><span class="p">,</span> <span class="p">[</span><span class="o">...</span><span class="p">])</span>
+</code></pre></div>
+<p>比如使用以下提示词拒绝水印和文字内容</p>
 <div class="highlight"><pre><span></span><code>lowres, bad anatomy, bad hands, text, error, missing fingers, 
 extra digit, fewer digits, cropped, worst quality, low quality, 
 normal quality, jpeg artifacts, signature, watermark, username, blurry
@@ -1192,6 +1202,7 @@ mutilated, tranny, trans, trannsexual, [out of frame], (bad proportions),
 (poorly drawn body), (poorly drawn legs), worst quality, low quality, 
 normal quality, text, censored, gown, latex, pencil
 </code></pre></div>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Negative-prompt#examples">官方Wiki</a></p>
 <h3 id="_8">渐变标签</h3>
 <p>渐变标签，指示 WebUi 在训练中替换 Token，语法使用 <code>[some1:some2:num]</code></p>
 <p><code>[fantasy:cyberpunk:16]</code> 代表从第 16 step 后，使用 <code>cyberpunk</code> 标签替换 <code>fantasy</code></p>
@@ -2217,11 +2228,11 @@ scale 就是 CFG scale
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 27, 2022 10:40:10</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 27, 2022 10:52:52</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 27, 2022 10:40:10</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 27, 2022 10:52:52</span>
       
     
   </small>
