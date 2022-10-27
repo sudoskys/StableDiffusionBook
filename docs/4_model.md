@@ -1,8 +1,8 @@
 # 架炉生火
 
-这节介绍 Debug 和一些 关于 WebUi 网页应用模型参数 的优化方案，让它更好用。本节演示所用模型为 NAI 展开教程。**部分源教程来自：[^2]**
+这节介绍 Debug 和一些 关于 WebUI 网页应用模型参数 的优化方案，让它更好用。本节演示所用模型为 NAI 展开教程。**部分源教程来自：[^2]**
 
-推荐经常从远端代码库拉取代码 `git pull` 更新 WebUi 网页应用。
+推荐经常从远端代码库拉取代码 `git pull` 更新 WebUI 网页应用。
 
 !!! info "版权"
     为避免涉及版权纠纷，本仓库不提供 NAI 的模型链接。
@@ -18,9 +18,9 @@ SDWebUi是一个框架，除了 NAI 模型外还有许多[其他模型](https://
 
 先判断 CUDA 是否可用。
 
-打开命令窗，输入 Python 进入，分行输入
+打开终端，输入 python 进入，分行输入
 
-```
+```python
 import torch
 print(torch.__version__)
 print(torch.cuda.is_available())
@@ -29,7 +29,8 @@ print(torch.cuda.is_available())
 
 **查看 torch 对应的 CUDA 版本**
 
-```
+```python
+import torch
 torch.version.cuda
 ```
 
@@ -38,27 +39,27 @@ torch.version.cuda
 
 ### 多 GPU 支持
 
-Easiest mode would be implementing a ~data parallel approach, in which we have one model per GPU and you distribute the workload among them.
+最简单的模式就是实现一个多数据并行处理的方法，每个 GPU 加载一个模型，然后给她们分配工作。
 
-Given the amount of features this repo provides I think it could take some time to have em all supported in the parallel version.
+考虑到这个项目所提供的功能众多，我（作者）认为可能需要一段时间才能在并行的情况下使用所有的功能。
 
 [查看此 issue 页面](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/156)
 
 ### 16xx系显卡使用半精度生成图片[^3]
 
-方案来自 [这个讨论](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/28#issuecomment-1241448049)
+方案来自[这个讨论](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/28#issuecomment-1241448049)
 
-1. 激活 webui 使用的 venv,要在正确的虚拟环境里运行
+1. 激活 WebUI 使用的 venv,要在正确的虚拟环境里运行
 
 2. 卸载掉现在所用的 torch 和 torchvision:
 
-```
+```bash
 pip uninstall torch torchvision
 ```
 
 3. 重新安装 `CUDA 11.6` 编译的 `torch` 和 `torchvision`。
 
-```
+```bash
 pip install torch torchvision --extra-index-url https://download.pytorch.org/whl/cu116
 ```
 
@@ -170,9 +171,9 @@ Windows: <https://developer.nvidia.com/compute/cudnn/secure/8.5.0/local_installe
 
 EMA 移动平均值对生成图像没有任何帮助。
 
-They do prevent overfitting or something if you resume training the model.
+但确实可以在后续的训练中防止过拟合。
 
-Not sure if they matter for dreambooth style training though.
+不确定在 dreambooth 的训练中是否起作用。
 
 **详细介绍**
 
@@ -225,14 +226,14 @@ Steps: 28, Sampler: Euler, CFG scale: 12, Seed: [SEE COLUMN], Size: 512x512, Mod
 
 [生成黑/绿图](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Install-and-Run-on-NVidia-GPUs)
 
-如果是GTX 16xx系列，启动参数需要加 `--precision full --no-half`, 因此如果显存不足还要加 `--medvram`。
+如果是 GTX 16xx 系列，启动参数需要加 `--precision full --no-half`, 因此如果显存不足还要加 `--medvram`。
 
 如果是其他显卡而且加载了 VAE 时出现黑图，加入 `--no-half-vae` 参数[^2]。
 
 
 #### RuntimeError Sizes of tensors must match
 
-(img2img) 如果你得到 `RuntimeError: Sizes of tensors must match`，你需要改变输入图像的分辨率
+(img2img) 如果出现 `RuntimeError: Sizes of tensors must match`，请调整输入图像的分辨率
 
 
 #### 彩虹混乱图
@@ -255,7 +256,7 @@ Steps: 28, Sampler: Euler, CFG scale: 12, Seed: [SEE COLUMN], Size: 512x512, Mod
 
 先检查 CUDA 是否可用，打开命令窗，输入 python 并分行输入
 
-```
+```python
 import torch
 print(torch.cuda.is_available())
 ```
@@ -287,7 +288,7 @@ ckpt 文件被加载时基本上可以执行任何内容，盲目加载有安全
 >来自 allophane.com/index.php/2022/10/17/roaming_info_for_latent_diffusion/
 
 
-### 使用 webui 复现 NAI 官网
+### 使用 WebUI 复现 NAI 官网
 
 [相关讨论，应该读一读！](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017)
 
@@ -320,13 +321,13 @@ ckpt 文件被加载时基本上可以执行任何内容，盲目加载有安全
 
 创建具有不同参数的图像网格。使用X类型和Y类型字段选择应由行和列共享的参数，并将这些参数以逗号分隔输入X值/Y值字段。支持整数、浮点数和范围。
 
-Simple ranges 简单范围
+`Simple ranges` 简单范围
 
 ```
 1-5 = 1, 2, 3, 4, 5
 ```
 
-Ranges with increment in bracket 括号范围
+`Ranges with increment in bracket` 括号范围
 
 ```
 1-5 (+2) = 1, 3, 5
@@ -334,7 +335,7 @@ Ranges with increment in bracket 括号范围
 1-3 (+0.5) = 1, 1.5, 2, 2.5, 3
 ```
 
-Ranges with the count in square brackets 方括号范围
+`Ranges with the count in square brackets` 方括号范围
 
 ```
 1-10 [5] = 1, 3, 5, 7, 10
@@ -348,16 +349,16 @@ Ranges with the count in square brackets 方括号范围
 
 ### **Variations种子变化**
 
-Variation strength slider 和 Variation seed field 允许您指定现有图片应更改多少以使其看起来不同。
+`Variation strength slider` 和 `Variation seed field` 允许您指定现有图片应更改多少以使其看起来不同。
 在最大强度下，您将获得带有变异种子的图片，至少 - 带有原始种子的图片（使用先前采样器时除外）。
 
 ### **提示词模板**
 
-“Save prompt as style” 按钮将当前的提示写入 styles.csv，该文件包含样式集合
+“Save prompt as style” 按钮将当前的提示写入 `styles.csv`，该文件包含样式集合
 
 提示右侧的下拉框将允许您从以前保存的样式中选择任何样式，并自动将其**附加**到输入中
 
-要删除样式，请从 styles.csv 中手动将其删除并重新启动程序。
+要删除样式，请从 `styles.csv` 中手动将其删除并重新启动程序。
 
 
 ### xformers
@@ -416,7 +417,7 @@ pip install torch torchvision --extra-index-url https://download.pytorch.org/whl
 
 * 然后安装其余的依赖项
 
-```
+```bash
 pip install -r requirements.txt
 pip install wheel
 pip install ninja
@@ -498,7 +499,7 @@ CLIP 可以从图像中提取令牌。
 默认情况下，只有一个列表 - 艺术家列表（来自 artists.csv）。
 
 不过你可以通过执行以下操作添加更多列表：
-* interrogate 在与 webui 相同的位置创建目录
+* interrogate 在与 WebUI 相同的位置创建目录
 * 将文本文件放入其中，每行都有相关描述
 
 
@@ -524,6 +525,12 @@ If you add ".top3." to filename, for example, flavors.top3.txt, the three most r
 
 下面的例子将会使得画廊更长：
 
+<!--
+此处将 taller 译作 更长。原文使用 taller 是因为在网页的情况下，元素在纵向上的长度是用 height 来描述的。
+但是在中文语境下，译作 更高 会略显奇怪，故译作 更长。
+如果有更好的翻译可以直接顶上
+-->
+
 ```
 #txt2img_gallery, #img2img_gallery{
     min-height: 768px;
@@ -532,11 +539,11 @@ If you add ".top3." to filename, for example, flavors.top3.txt, the three most r
 
 ### notification.mp3 提示音
 
-放在 webui 的根目录的名为 `notification.mp3` 的音频文件将会在处理完成后播放。
+放在 WebUI 的根目录的名为 `notification.mp3` 的音频文件将会在处理完成后播放。
 
 ### 开发自定义脚本
 
-你可以在`modules/scripts.py`中找到 Script 类。
+你可以在 `modules/scripts.py` 中找到 Script 类。
 
 如果要创建你自己的自定义脚本，请创建一个实现类的 Python 脚本，并将其放到 scripts 文件夹中，使用以下示例或文件夹中已有的其他脚本作为指导。
 
@@ -567,11 +574,11 @@ Script 类有四个主要方法，这里通过一个简单的[示例脚本](http
 
 ### 不间断生产
 
-在 WebUi 的生成键右击即可出现 不间断生成 的选项。
+在 WebUI 的生成键右击即可出现**不间断生成**的选项。
 
 ### 图片信息 Png info
 
-生成的图片自带 令牌信息，拖放到 查看页面即可查看 。
+生成的图片自带令牌信息，拖放到查看页面即可查看 。
 
 
 
