@@ -836,9 +836,12 @@
 </code></pre></div>
 <p>输入 ctrl + z 退出</p>
 <h3 id="gpu">多 GPU 支持</h3>
-<p>最简单的模式就是实现一个多数据并行处理的方法，每个 GPU 加载一个模型，然后给她们分配工作。</p>
+<p>最简单的模式就是实现一个多数据并行处理的方法，通过 <code>--device-id</code> 参数启动多个实例。每个 GPU 加载一个模型，然后给她们分配工作。</p>
 <p>考虑到这个项目所提供的功能众多，我（作者）认为可能需要一段时间才能在并行的情况下使用所有的功能。</p>
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/156">查看此 issue 页面</a></p>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/156#issuecomment-1241218733">作者的回应</a></p>
+<blockquote>
+<p>Using memory from between two GPUs is not simple. I only have one so I can't research/develop this.</p>
+</blockquote>
 <h3 id="16xx2">16xx系显卡使用半精度生成图片<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">2</a></sup></h3>
 <p>方案来自<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/28#issuecomment-1241448049">这个讨论</a></p>
 <ol>
@@ -1274,11 +1277,11 @@ If you add ".top3." to filename, for example, flavors.top3.txt, the three most r
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 27, 2022 09:49:09</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 27, 2022 10:40:10</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 27, 2022 09:49:09</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 27, 2022 10:40:10</span>
       
     
   </small>

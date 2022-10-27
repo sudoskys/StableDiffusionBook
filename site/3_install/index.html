@@ -948,7 +948,47 @@ set COMMANDLINE_ARGS设置命令行参数webui.py运行
 </tbody>
 </table>
 <h4 id="api">API 文档</h4>
-<p>在浏览器访问 <code>{网址}/docs</code> 就可以查看到 WebUi 的 Api 文档。</p>
+<p>使用 <code>--api</code> 参数运行程序，在浏览器访问 <code>{输出的网址}/docs</code> 就可以查看到 WebUi 的 Api 文档。</p>
+<p>下面是一个同步类实现。</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">io</span>
+<span class="kn">import</span> <span class="nn">base64</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">PngImagePlugin</span>
+
+<span class="k">class</span> <span class="nc">WebUiApi</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="o">=</span><span class="n">url</span>
+
+    <span class="k">def</span> <span class="nf">txt2img</span><span class="p">(</span><span class="n">payload</span><span class="p">,</span><span class="n">outpath</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">infotie</span><span class="p">:</span><span class="nb">bool</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="n">payload_json</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s1">/sdapi/v1/txt2img&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload_json</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+        <span class="c1"># response 响应包含 images、parameters 和 info,image 可能会含有多个图像。</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">response</span><span class="p">[</span><span class="s1">&#39;images&#39;</span><span class="p">]:</span>
+            <span class="c1"># 解码 base64</span>
+            <span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">i</span><span class="p">)))</span>
+            <span class="c1"># 元信息输出</span>
+            <span class="n">pnginfo</span> <span class="o">=</span> <span class="n">PngImagePlugin</span><span class="o">.</span><span class="n">PngInfo</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">infotie</span><span class="p">:</span>
+               <span class="n">pnginfo</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="s2">&quot;parameters&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">response</span><span class="p">[</span><span class="s1">&#39;info&#39;</span><span class="p">]))</span>
+            <span class="c1"># 保存，因为本地不会自动生成文件。</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">outpath</span><span class="p">:</span>
+               <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Random file name&quot;</span><span class="p">)</span>
+               <span class="n">outpath</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span><span class="si">}</span><span class="s2">.png&quot;</span>
+            <span class="n">image</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">outpath</span><span class="p">,</span> <span class="n">pnginfo</span><span class="o">=</span><span class="n">pnginfo</span><span class="p">)</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;prompt&quot;</span><span class="p">:</span> <span class="s2">&quot;1girl&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;steps&quot;</span><span class="p">:</span> <span class="mi">20</span>
+<span class="p">}</span>
+<span class="c1"># 其他参数会使用默认值</span>
+<span class="n">WebUi</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;http://127.0.0.1:7860&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">txt2img</span><span class="p">(</span><span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">,</span><span class="n">outpath</span><span class="o">=</span><span class="s2">&quot;1145.png&quot;</span><span class="p">,</span><span class="n">infotie</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># 实际使用的时候不应该保存到本地再发送，而是直接发送，避免存储图片作品造成 版权 问题。</span>
+</code></pre></div>
+<p>跨平台多后端项目 <a href="https://github.com/koishijs/novelai-bot">novelai-bot</a></p>
+<p>Discord 机器人项目 <a href="https://github.com/Kilvoctu/aiyabot/blob/main/core/stablecog.py">aiyabot</a></p>
 <h3 id="troubleshooting">错误处理 Troubleshooting</h3>
 <p>翻译整理自<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></p>
 <p>文件路径，路径不允许含有空格，确保您的程序文件夹路径中没有空格。该程序经过测试可在 Python 3.10.6 上运行，低版本 Python 可能会发生错误。</p>
@@ -1104,11 +1144,11 @@ Colab 开始反滥用，目前 Colab 的[协议](https://research.google.com/col
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 27, 2022 09:49:09</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 27, 2022 10:40:10</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 27, 2022 09:49:09</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 27, 2022 10:40:10</span>
       
     
   </small>

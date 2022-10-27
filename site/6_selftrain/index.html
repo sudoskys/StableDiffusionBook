@@ -833,8 +833,8 @@
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion#training-embeddings">官方Wiki</a></p>
 <div class="admonition danger">
 <p class="admonition-title">重命名 VAE 文件</p>
+<p>重命名 VAE 权重文件非常关键，如果带着VAE训练效果十分差。你应该在启动 webui 前把 "xxx.vae.pt" 重命名为 "xxx.vae.pt.disabled" 或其他名字。</p>
 </div>
-<p>​   重命名 VAE 权重文件非常关键，如果带着VAE训练效果十分差。你应该在启动 webui 前把 "xxx.vae.pt" 重命名为 "xxx.vae.pt.disabled" 或其他名字。</p>
 <h4 id="_12">准备数据集</h4>
 <p>数据集应保证风格一致，内容具有同一概念。如果算力允许，图片越多越好。数据内容可以是插画，抽象画作，也可以是表情包。</p>
 <h3 id="_13">要求</h3>
@@ -938,8 +938,8 @@
 <p><code>Save images with embedding in PNG chunks</code> 是生成一个图片形式的 pt 文件。~人物卡~</p>
 <div class="admonition danger">
 <p class="admonition-title">再次检查你有没有重命名 VAE 文件</p>
+<p>如果你忘了，带着VAE训练效果十分差。重启把 "xxx.vae.pt" 重命名为 "xxx.vae.pt.disabled" 或其他名字。</p>
 </div>
-<p>​   如果你忘了，带着VAE训练效果十分差。重启把 "xxx.vae.pt" 重命名为 "xxx.vae.pt.disabled" 或其他名字。</p>
 <p>点击 右下角训练，等待。</p>
 <p>训练完毕。将 VAE 权重文件重命名回去，重启程序。</p>
 <h3 id="_18">备注</h3>
@@ -987,7 +987,7 @@
 <p>启用Dropout可以防止超网络过拟合，目前不支持自定义dropout比率，默认为0.3</p>
 <p>在1，2，1的层结构上，dropout可能只会对小数据集有帮助。</p>
 <h3 id="activation-functions">激活函数 activation functions</h3>
-<p>关于<a href="https://www.geeksforgeeks.org/activation-functions-neural-networks/">激活函数</a></p>
+<p>关于<a href="https://www.geeksforgeeks.org/activation-functions-neural-networks/">激活函数</a>，<a href="https://en.wikipedia.org/wiki/Activation_function">维基</a></p>
 <p>激活函数是神经网络中非线性的来源。如果去掉激活函数，神经网络的权重和偏差只会进行线性变换(不管神经网络有多少层，线性运算的复合还是线性运算的)，最终的效果只相当于单层的线性模型。</p>
 <p>激活函数对输入进行非线性变换，使其能够学习和执行更复杂的任务，深层神经网络表达能力更加强大。</p>
 <p>在 10/21/22 的一个 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3199">合并请求</a> 中，这项功能被 discus0434 提出。</p>
@@ -1078,11 +1078,11 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 27, 2022 09:49:09</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 27, 2022 10:40:10</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 27, 2022 09:49:09</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 27, 2022 10:40:10</span>
       
     
   </small>
