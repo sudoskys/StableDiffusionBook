@@ -948,7 +948,7 @@ set COMMANDLINE_ARGS设置命令行参数webui.py运行
 </tbody>
 </table>
 <h4 id="api">API 文档</h4>
-<p>使用 <code>--api</code> 参数运行程序，在浏览器访问 <code>{输出的网址}/docs</code> 就可以查看到 WebUi 的 Api 文档。</p>
+<p>使用 <code>--api</code> 参数运行程序，在浏览器访问 <code>{输出的网址}/docs</code> 就可以查看到 WebUi 的 Api 文档。<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup></p>
 <p>下面是一个同步类实现。</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">json</span>
@@ -983,7 +983,7 @@ set COMMANDLINE_ARGS设置命令行参数webui.py运行
     <span class="s2">&quot;steps&quot;</span><span class="p">:</span> <span class="mi">20</span>
 <span class="p">}</span>
 <span class="c1"># 其他参数会使用默认值</span>
-<span class="n">WebUi</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;http://127.0.0.1:7860&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">txt2img</span><span class="p">(</span><span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">,</span><span class="n">outpath</span><span class="o">=</span><span class="s2">&quot;1145.png&quot;</span><span class="p">,</span><span class="n">infotie</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">WebUiApi</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;http://127.0.0.1:7860&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">txt2img</span><span class="p">(</span><span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">,</span><span class="n">outpath</span><span class="o">=</span><span class="s2">&quot;1145.png&quot;</span><span class="p">,</span><span class="n">infotie</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="c1"># 实际使用的时候不应该保存到本地再发送，而是直接发送，避免存储图片作品造成 版权 问题。</span>
 </code></pre></div>
@@ -1136,6 +1136,9 @@ Colab 开始反滥用，目前 Colab 的[协议](https://research.google.com/col
 <li id="fn:3">
 <p><a href="https://rentry.co/voldy">Wiki2</a>&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
+<li id="fn:4">
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3734">Basic Documentation and Examples for using API</a>&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
 </ol>
 </div>
 
@@ -1144,11 +1147,11 @@ Colab 开始反滥用，目前 Colab 的[协议](https://research.google.com/col
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 27, 2022 10:52:52</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 27, 2022 11:03:42</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 27, 2022 10:52:52</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 27, 2022 11:03:42</span>
       
     
   </small>
