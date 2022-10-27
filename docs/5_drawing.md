@@ -891,7 +891,6 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-edi
 
 [Microsoft 365 工具套件](https://www.xda-developers.com/microsoft-designer-image-creator-ai-dall-e-2/)
 
-
 [为 Age of Empires 3 Definitive edition 的游戏模组生成肖像](https://github.com/matrix4767)
 
 [产品和架构设计/素描](https://github.com/horribleCodes)
@@ -908,6 +907,19 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-edi
 
 [稳定扩散的应用结合](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3572)
 
+- 自媒体
+
+哔哩哔哩已经一大堆了，抖音也不少，可以做的话题很多
+
+- 套壳
+
+无良某些公司套壳开源项目，比如 某某画廊，某某版图。
+
+(题外：韭菜采收容易，可用于园艺，在世界广泛种植)
+
+### 谈论
+
+细节肯定受限，关键环节必须人力。写到这里的时候，我忘了要说什么了。
 
 
 ## 自定义脚本
