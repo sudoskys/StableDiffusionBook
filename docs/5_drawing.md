@@ -948,6 +948,9 @@ https://github.com/lilly1987/AI-WEBUI-scripts-Random
 
 ## 参数
 
+为什么不去 [这里](https://danbooru.donmai.us/wiki_pages/howto%3Atag_checklist) 看[原始数据站点](https://danbooru.donmai.us/wiki_pages/help:home)的参数呢？
+
+[E 站标签翻译项目](https://github.com/EhTagTranslation)
 
 ### NAI 在使用的出图参数
 

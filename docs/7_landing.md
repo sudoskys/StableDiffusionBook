@@ -221,3 +221,10 @@ NAI模型使用 Danbooru2021 的数据, 而 Danbooru2022 还未训练(个人不�
 <iframe src="//player.bilibili.com/player.html?aid=219246962&bvid=BV1N8411e766&cid=864564133&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 
 另外，欢迎参与文档编写和文档备份。
+
+#### 关于对 Danbooru 标签翻译项目的碎碎念
+
+[在线文档](https://t.bilibili.com/720572354272428097)开展的结果是 `此文档违反XX文档社区公约，暂时无法查看，请所有者联系平台申诉`
+
+个人认为参考 [EhTagTranslation](https://github.com/EhTagTranslation) [Web页面提交翻译呢](https://ehtt.vercel.app/list/all)，可以提供 Json 化的数据，便于接入和展开，是一个更好的选择。
+
