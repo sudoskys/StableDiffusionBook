@@ -437,7 +437,7 @@ pip install ninja
 
 *BASH*  `export TORCH_CUDA_ARCH_LIST=6.1`
 
-* 构建 xFormers，请注意构建需要很长时间（可能要 10-20 分钟），它最开始时可能会有一些错误，但它应该可以正确编译。
+* 构建 xFormers，请注意构建需要很长时间（可能要 10-20 分钟），它最开始时可能会出现一些错误，但应该仍能正确编译。
 
 * 安装在环境中(Conda)
 
