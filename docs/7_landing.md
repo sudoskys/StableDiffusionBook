@@ -164,17 +164,19 @@ NAI模型使用 Danbooru2021 的数据, 而 Danbooru2022 还未训练(个人不�
 
 ### 贡献支持
 
-此项目由以下人员参与编写整理:
-
-@sudoskys
+此项目由以下人员参与编写整理校对，排名不分先后:
 
 @CCRcmcpe
 
+@sudoskys
+
 @huige233
 
-@lychees
+@sakurayang
 
 @ReOracle
+
+@lychees
 
 
 ## 鸣谢
