@@ -16,7 +16,7 @@ SDWebUi是一个框架，除了 NAI 模型外还有许多[其他模型](https://
 !!! tip
     注意显卡温度，有报道称显卡太热炸了。
 
-先判断 cuda 是否可用。
+先判断 CUDA 是否可用。
 
 打开命令窗，输入 Python 进入，分行输入
 
@@ -27,7 +27,7 @@ print(torch.cuda.is_available())
 ```
 
 
-**查看 torch 对应的 cuda 版本**
+**查看 torch 对应的 CUDA 版本**
 
 ```
 torch.version.cuda
@@ -56,7 +56,7 @@ Given the amount of features this repo provides I think it could take some time 
 pip uninstall torch torchvision
 ```
 
-3. 重新安装 `cuda 11.6`编译的 `torch` 和 `torchvision`。
+3. 重新安装 `CUDA 11.6` 编译的 `torch` 和 `torchvision`。
 
 ```
 pip install torch torchvision --extra-index-url https://download.pytorch.org/whl/cu116
@@ -253,7 +253,7 @@ Steps: 28, Sampler: Euler, CFG scale: 12, Seed: [SEE COLUMN], Size: 512x512, Mod
 
 生成报错解释：显存不足
 
-先检查 cuda 是否可用，打开命令窗，输入 Python 并分行输入
+先检查 CUDA 是否可用，打开命令窗，输入 Python 并分行输入
 
 ```
 import torch
