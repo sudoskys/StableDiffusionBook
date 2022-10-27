@@ -45,6 +45,7 @@
 
 - [StableDiffusion Show](https://t.me/StableDiffusion_Show)
 
+- [E 站标签翻译项目](https://github.com/EhTagTranslation)
 
 ### 文档
 
