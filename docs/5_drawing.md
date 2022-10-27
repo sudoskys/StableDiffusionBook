@@ -64,7 +64,7 @@
 
 混合，WebUi 使用 `|` 分隔多个关键词以混合多个要素，字面意义上的混合，可以多个使用。
 
-增强，用 `(提示词:权重)` 在 WebUi 权重增强，增强的范围是 `0.1 ~:100`，允许小数。NAI使用 `{}`
+增强，用 `(提示词:权重)` 在 WebUi 权重增强，增强的范围是 `0.1 ~:100`，允许小数。而NAI使用 `{}`
 
 !!! tip
     `a ((((farm))), daytime` 的语法可能会吃掉逗号
@@ -77,11 +77,11 @@
 
 `[from::when]` 在固定数量的step后从提示中删除 `from`( when)
 
-转义，WebUi 对于带括号的参数，`a (word)`  请在参数中使用 `\` 字符转义为 `a \(word\)`。
+转义，WebUi 对于带括号提示词比如`a (word)`  请使用 `\` 字符转义为 `a \(word\)`，这适用于带括号的Tag,防止出现本来不想要的增强效果。
 
 降低权重，`[]` 或者 `(word:0.952)`。NAI 仅能使用 `[]`
 
-交替（alternate prompt）[^7]，这使您可以创建动物、人或风格的混合体，每一个 step 切换一个项，`[alison brie|emma stone|elizabeth olsen|scarlett johansson|anne hathaway|emma roberts], still film` 这是WebUi 语法，在 NAI 中是混合。
+交替（alternate prompt）[^7]，混合机。这使您可以创建动物、人或风格的混合体，每一个 step 切换一项(一步一换)，轮回渲染，`[alison brie|emma stone|elizabeth olsen|scarlett johansson|anne hathaway|emma roberts], still film` 这是WebUi 语法，在 NAI 中代表平均权重混合(前半部分和后半部分)。
 
 !!! tip "NAI"
 
