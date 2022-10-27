@@ -569,6 +569,16 @@ Deforum 的官方API，一个用于 2D 和 3D 动画的扩展脚本，supporting
 
 CFG 越高，越符合提示词，降噪越高越偏离原图。
 
+#### 同人物&差分
+
+如果你想了解一些差分的实例，[5CH日语Wiki](https://seesaawiki.jp/nai_ch/d/%c7%ed%a4%ae%a5%b3%a5%e9%a5%c6%a5%af) 提供了一个实例。
+
+需要用到进阶的 Img2Img 相关内容，最好的方法是准备一个带有色彩的 3D 母本模型，然后这样就可以保证基本一致。
+
+也可以用很多提示词来限制角色内容，出很多张，挑能用的作品。
+
+如果是表情或者是背景，可以采用进阶教程中的 重绘画 技巧。
+
 
 ### 使用 Ai 进行立绘设计
 
@@ -659,9 +669,6 @@ Resize and fill：调整图像大小，使整个图像在目标分辨率内。�
 
 纵轴是Denoising strength（线上版的strength），横轴是Variation strength
 
-#### 关于差分
-
-如果你想了解一些差分的实例，[5CH日语Wiki](https://seesaawiki.jp/nai_ch/d/%c7%ed%a4%ae%a5%b3%a5%e9%a5%c6%a5%af) 提供了一个实例。
 
 
 #### 重绘画技巧/去除/替换
