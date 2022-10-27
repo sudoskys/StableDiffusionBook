@@ -161,8 +161,7 @@ git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-grad
 [官方Wiki](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion#training-embeddings)
 
 !!! danger "重命名 VAE 文件"
-
-​	重命名 VAE 权重文件非常关键，如果带着VAE训练效果十分差。你应该在启动 webui 前把 "xxx.vae.pt" 重命名为 "xxx.vae.pt.disabled" 或其他名字。
+    重命名 VAE 权重文件非常关键，如果带着VAE训练效果十分差。你应该在启动 webui 前把 "xxx.vae.pt" 重命名为 "xxx.vae.pt.disabled" 或其他名字。
 
 #### 准备数据集
 
@@ -328,8 +327,7 @@ Windows 需要在 `webui-user.bat` 的 `COMMANDLINE_ARGS=` 一行添加，或者
 `Save images with embedding in PNG chunks` 是生成一个图片形式的 pt 文件。~人物卡~
 
 !!! danger "再次检查你有没有重命名 VAE 文件"
-
-​	如果你忘了，带着VAE训练效果十分差。重启把 "xxx.vae.pt" 重命名为 "xxx.vae.pt.disabled" 或其他名字。
+    如果你忘了，带着VAE训练效果十分差。重启把 "xxx.vae.pt" 重命名为 "xxx.vae.pt.disabled" 或其他名字。
 
 
 点击 右下角训练，等待。
@@ -422,7 +420,7 @@ Swish似乎并不需要开启LN，因为Swish的训练速度慢，所以应该�
 
 ### 激活函数 activation functions
 
-关于[激活函数](https://www.geeksforgeeks.org/activation-functions-neural-networks/)
+关于[激活函数](https://www.geeksforgeeks.org/activation-functions-neural-networks/)，[维基](https://en.wikipedia.org/wiki/Activation_function)
 
 激活函数是神经网络中非线性的来源。如果去掉激活函数，神经网络的权重和偏差只会进行线性变换(不管神经网络有多少层，线性运算的复合还是线性运算的)，最终的效果只相当于单层的线性模型。
 

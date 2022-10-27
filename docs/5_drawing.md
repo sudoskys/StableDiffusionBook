@@ -5,6 +5,8 @@
 >Todo 
 >修复混乱的逻辑
 >
+>Upscaler 2 的预期用途 https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3749
+>
 
 
 这节会介绍 参数 和 相关的 WebUi(SD)  网页应用资源。如果你会画画，那么效果会更加稳定可观。
@@ -390,9 +392,10 @@ WebUi prompt 语法会转换为相应时间的 prompt,然后通过 embedding 交
 
 ### Step 迭代步数
 
-更多的迭代步数可能会有更好的生成效果，更多细节和锐化，但是会导致生成时间变长。
+更多的迭代步数可能会有更好的生成效果，更多细节和锐化，但是会导致生成时间变长。而在实际应用中，30 步和 50 步之间的差异几乎无法区分。
 
 太多的 steps 也可能适得其反，几乎不会有提高。
+
 
 
 ### Samplers 采样器

@@ -39,11 +39,14 @@ torch.version.cuda
 
 ### 多 GPU 支持
 
-最简单的模式就是实现一个多数据并行处理的方法，每个 GPU 加载一个模型，然后给她们分配工作。
+最简单的模式就是实现一个多数据并行处理的方法，通过 `--device-id` 参数启动多个实例。每个 GPU 加载一个模型，然后给她们分配工作。
 
 考虑到这个项目所提供的功能众多，我（作者）认为可能需要一段时间才能在并行的情况下使用所有的功能。
 
-[查看此 issue 页面](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/156)
+[作者的回应](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/156#issuecomment-1241218733)
+
+>Using memory from between two GPUs is not simple. I only have one so I can't research/develop this.
+
 
 ### 16xx系显卡使用半精度生成图片[^3]
 
