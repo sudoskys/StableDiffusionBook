@@ -5,7 +5,7 @@
   <img src="https://img.shields.io/github/stars/sudoskys/StableDiffusionBook.svg" alt="Stars">
   <a href="https://github.com/sudoskys/StableDiffusionBook/issues"><img src="https://img.shields.io/github/issues/sudoskys/StableDiffusionBook" alt="Issues"></a>
   <a href="https://github.com/sudoskys/StableDiffusionBook/actions/workflows/ci.yml"><img src="https://github.com/sudoskys/StableDiffusionBook/actions/workflows/ci.yml/badge.svg" alt="Test"></a>
-  <a href="https://discord.gg/vhsArSSA6K"><img src="https://img.shields.io/discord/1033769426216046622?color=blue&label=Discord_Ai%E7%BB%98%E7%94%BB%E4%B8%AD%E6%96%87%E7%BB%84" alt="Discord"></a>
+  <a href="https://discord.gg/vhsArSSA6K"><img src="https://img.shields.io/discord/1033769426216046622?color=blue&label=Discord-Ai%E7%BB%98%E7%94%BB%E4%B8%AD%E6%96%87%E7%BB%84" alt="Discord"></a>
   <a href="https://t.me/StableDiffusion_CN"><img src="https://img.shields.io/badge/Telegram-Group-blue" alt="Telegram"></a>
 </p>
 
