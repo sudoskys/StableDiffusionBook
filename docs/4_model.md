@@ -180,8 +180,10 @@ EMA 移动平均值对生成图像没有任何帮助。
 
 **详细介绍**
 
+<!--
 <iframe src="//player.bilibili.com/player.html?aid=688965561&cid=857942294&page=1&danmaku=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
-BV1Gm4y1A7VM
+-->
+拆包视频可以看 [BV1Gm4y1A7VM](https://www.bilibili.com/video/av688965561/?zw)
 
 ### 风格化[^5]
 

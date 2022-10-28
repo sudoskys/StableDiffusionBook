@@ -131,7 +131,7 @@ CLIP 在生成模型的潜在空间进行搜索，从而找到与给定的文字
 
 ### LDM
 
-latent diffusion model 潜在扩散模型。
+Latent Diffusion Model 潜在扩散模型。
 
 ![？](https://user-images.githubusercontent.com/75739606/198675128-c2c849d0-d024-468b-80c4-374f13e933e3.png)
 >下面的框
