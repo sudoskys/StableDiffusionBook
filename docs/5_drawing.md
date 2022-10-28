@@ -917,7 +917,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-edi
 
 [产品和架构设计/素描](https://github.com/horribleCodes)
 
-- 音乐制作
+- 专辑图
 
 [用稳定扩散生成歌手的图像放入视频](https://github.com/Chilluminati91)
 
@@ -938,6 +938,14 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-edi
 无良某些公司套壳开源项目，比如 某某画廊，某某版图。
 
 (题外：韭菜采收容易，可用于园艺，在世界广泛种植)
+
+- 插图/背景
+
+小说插图，AI画背景(据说原版模型也很好用)
+
+- NFT
+
+？
 
 ### 谈论
 
