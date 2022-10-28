@@ -579,6 +579,8 @@ https://github.com/tsngo/stable-diffusion-webui-aesthetic-image-scorer
 
 景深，光圈，构图，拍摄机位，运动元素，[艺术摄影术语表中文介绍](https://gallerix.asia/pedia/photography-glossary/)
 
+**但是**这种效果可能会带来附加作用:引入你不希望见到的风格(如实景)数据进入图片。把握好量度。
+
 扩展阅读
 
 有用的电影术语 https://en.wikipedia.org/wiki/Category:Cinematic_techniques
