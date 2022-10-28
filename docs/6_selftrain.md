@@ -61,7 +61,7 @@
 
 #### 特征
 
-与 TI 不同，Hypernetwork 会改动 LDM(潜在扩散模型) 本身的权重，所以可以训练出无法用语言精确表述的细节，也更适用于画风的训练。
+与 TI 不同，Hypernetwork 会改动 LDM 本身的权重，所以可以训练出无法用语言精确表述的细节，也更适用于画风的训练。
 
 训练产物大小中等，webui 自带训练支持。
 
@@ -78,7 +78,7 @@ NAI Leaks 的 `novelaileak\stableckpt\modules\modules` 中有 NAI 训练的一�
 
 ### DreamBooth (DB)
 
-直接微调 LDM(潜在扩散模型) 和 Text Encoder 以适应用户特定的图像生成需求的一个方法。
+直接微调 LDM 和 Text Encoder 以适应用户特定的图像生成需求的一个方法。
 
 > 你能想象你自己的狗环游世界，或者你最喜欢的包在巴黎最独特的展厅里展示吗？你的鹦鹉成为一本插图故事书的主角呢？
 
@@ -162,8 +162,11 @@ git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-grad
 
 [官方Wiki](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion#training-embeddings)
 
-!!! danger "重命名 VAE 文件"
-    重命名 VAE 权重文件非常关键，如果带着VAE训练效果十分差。你应该在启动 webui 前把 "xxx.vae.pt" 重命名为 "xxx.vae.pt.disabled" 或其他名字。
+!!! tip
+    VAE对HN训练并不会造成灾难性的影响。如需卸载，在启动 webui 前把 "xxx.vae.pt" 重命名为 "xxx.vae.pt.disabled" 或其他名字。
+    
+    在设置内勾选 **Move VAE and CLIP to RAM when training hypernetwork. Saves VRAM.** 的效果是转移 VAE 到 RAM,而不是卸载，
+    
 
 #### 准备数据集
 
@@ -328,13 +331,11 @@ Windows 需要在 `webui-user.bat` 的 `COMMANDLINE_ARGS=` 一行添加，或者
 
 `Save images with embedding in PNG chunks` 是生成一个图片形式的 pt 文件。~人物卡~
 
-!!! danger "再次检查你有没有重命名 VAE 文件"
-    如果你忘了，带着VAE训练效果十分差。重启把 "xxx.vae.pt" 重命名为 "xxx.vae.pt.disabled" 或其他名字。
 
 
 点击 右下角训练，等待。
 
-训练完毕。将 VAE 权重文件重命名回去，重启程序。
+训练完毕。如果卸载了 VAE ，将 VAE 权重文件重命名回去，重启程序。
 
 
 ### 备注
@@ -363,7 +364,7 @@ Windows 需要在 `webui-user.bat` 的 `COMMANDLINE_ARGS=` 一行添加，或者
 
 也可以创建一个与图像 ( 000001-1-a man in suit.txt) 具有相同文件名的文本文件，然后将提示文本放在那里。将不使用文件名和正则表达式选项。
 
-**Unload VAE and CLIP from VRAM when training**
+**Move VAE and CLIP from VRAM when training. Saves VRAM.**
 
 训练时从 VRAM 中卸载 VAE 和 CLIP
 设置选项卡上的此选项允许您以较慢的预览图片生成为代价节省一些内存。
@@ -378,7 +379,9 @@ Windows 需要在 `webui-user.bat` 的 `COMMANDLINE_ARGS=` 一行添加，或者
 Hypernetworks 是一种新颖的概念，用于在不触及任何权重的情况下微调模型。
 
 !!! tip
-    在设置内勾选 **Move VAE and CLIP to RAM when training hypernetwork. Saves VRAM.**，防止VAE引起问题。
+    在设置内勾选 **Move VAE and CLIP to RAM when training hypernetwork. Saves VRAM.** 的效果是转移 VAE 到 RAM,而不是卸载，
+
+    如需卸载，请重命名。
 
 你可以在 `train` 选项卡训练 `Hypernetworks`，训练方式与  `Textual Inversion` 相同。
 

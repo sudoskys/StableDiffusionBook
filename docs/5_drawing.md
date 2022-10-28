@@ -567,6 +567,7 @@ https://github.com/tsngo/stable-diffusion-webui-aesthetic-image-scorer
 
 跨领域！你甚至可以使用各种惊险运动的名词来生产一些特效....比如空降
 
+景深，光圈，构图，拍摄机位，运动元素，[艺术摄影](https://gallerix.asia/pedia/photography-glossary/)
 
 ### 迭代草图[^8]
 
