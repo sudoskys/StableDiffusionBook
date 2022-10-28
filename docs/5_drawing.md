@@ -570,7 +570,7 @@ https://github.com/tsngo/stable-diffusion-webui-aesthetic-image-scorer
 -->
 >引用来自日本 Wiki 的图片，作者不明
 
-### 跨领域:摄影术语？
+### 跨领域术语
 
 
 是的！你可以在提示中使用 [拍摄术语](https://www.owlnet.rice.edu/~engl377/film.html) [摄影术语](http://userhome.brooklyn.cuny.edu/anthro/jbeatty/COURSES/glossary.htm)， [电影拍摄术语](https://en.wikipedia.org/wiki/Category:Cinematic_techniques)，以及绘画术语(类型) 来控制基本情况。
