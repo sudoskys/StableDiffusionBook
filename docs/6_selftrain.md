@@ -5,6 +5,8 @@
 >https://github.com/huggingface/diffusers/issues/712
 >
 >https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2002
+>
+>https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth
 
 
 这节对显卡的要求较高。
