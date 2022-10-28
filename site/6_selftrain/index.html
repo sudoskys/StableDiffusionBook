@@ -805,7 +805,7 @@
 <h3 id="hypernetwork-hn">Hypernetwork (HN)</h3>
 <p>一类给模型生成权重的网络，在这里是给 LDM(潜在扩散模型) 生成权重。是一个较为实验性的方法，NAI 率先探索了在 LDM 上使用。</p>
 <h4 id="_6">特征</h4>
-<p>与 TI 不同，Hypernetwork 会改动 LDM(潜在扩散模型) 本身的权重，所以可以训练出无法用语言精确表述的细节，也更适用于画风的训练。</p>
+<p>与 TI 不同，Hypernetwork 会改动 LDM 本身的权重，所以可以训练出无法用语言精确表述的细节，也更适用于画风的训练。</p>
 <p>训练产物大小中等，webui 自带训练支持。</p>
 <h4 id="_7">使用</h4>
 <p>使用时，将 Pt 放入 <code>/models/hypernetworks</code> 并在设置选项勾选启用它。</p>
@@ -815,7 +815,7 @@
 <p><code>.pt</code>文件，一般情况下小的是 embedding 大的是 hypernetwork。</p>
 </div>
 <h3 id="dreambooth-db">DreamBooth (DB)</h3>
-<p>直接微调 LDM(潜在扩散模型) 和 Text Encoder 以适应用户特定的图像生成需求的一个方法。</p>
+<p>直接微调 LDM 和 Text Encoder 以适应用户特定的图像生成需求的一个方法。</p>
 <blockquote>
 <p>你能想象你自己的狗环游世界，或者你最喜欢的包在巴黎最独特的展厅里展示吗？你的鹦鹉成为一本插图故事书的主角呢？</p>
 </blockquote>
@@ -859,9 +859,10 @@
 <hr />
 <h2 id="textual-inversion1">Textual Inversion<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">1</a></sup></h2>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion#training-embeddings">官方Wiki</a></p>
-<div class="admonition danger">
-<p class="admonition-title">重命名 VAE 文件</p>
-<p>重命名 VAE 权重文件非常关键，如果带着VAE训练效果十分差。你应该在启动 webui 前把 "xxx.vae.pt" 重命名为 "xxx.vae.pt.disabled" 或其他名字。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>VAE对HN训练并不会造成灾难性的影响。如需卸载，在启动 webui 前把 "xxx.vae.pt" 重命名为 "xxx.vae.pt.disabled" 或其他名字。</p>
+<p>在设置内勾选 <strong>Move VAE and CLIP to RAM when training hypernetwork. Saves VRAM.</strong> 的效果是转移 VAE 到 RAM,而不是卸载，</p>
 </div>
 <h4 id="_12">准备数据集</h4>
 <p>数据集应保证风格一致，内容具有同一概念。如果算力允许，图片越多越好。数据内容可以是插画，抽象画作，也可以是表情包。</p>
@@ -964,12 +965,8 @@
 </div>
 <p>如果太多会过拟合(可以理解为Ai的死板)，请随时观察，如果过拟合，可以停止。如果效果不是很好，可以去找早些时候的模型继续训练。<strong>不断调整</strong>找到一个好的效果。</p>
 <p><code>Save images with embedding in PNG chunks</code> 是生成一个图片形式的 pt 文件。~人物卡~</p>
-<div class="admonition danger">
-<p class="admonition-title">再次检查你有没有重命名 VAE 文件</p>
-<p>如果你忘了，带着VAE训练效果十分差。重启把 "xxx.vae.pt" 重命名为 "xxx.vae.pt.disabled" 或其他名字。</p>
-</div>
 <p>点击 右下角训练，等待。</p>
-<p>训练完毕。将 VAE 权重文件重命名回去，重启程序。</p>
+<p>训练完毕。如果卸载了 VAE ，将 VAE 权重文件重命名回去，重启程序。</p>
 <h3 id="_18">备注</h3>
 <p><strong>效果评价</strong></p>
 <p>可以尝试模仿原作品。</p>
@@ -983,7 +980,7 @@
 <code>['a', 'man', 'in', 'suit', ]</code></p>
 <p>并将连接字符串（'，'）放在这些单词之间以创建一个文本<code>a, man, in, suit</code></p>
 <p>也可以创建一个与图像 ( 000001-1-a man in suit.txt) 具有相同文件名的文本文件，然后将提示文本放在那里。将不使用文件名和正则表达式选项。</p>
-<p><strong>Unload VAE and CLIP from VRAM when training</strong></p>
+<p><strong>Move VAE and CLIP from VRAM when training. Saves VRAM.</strong></p>
 <p>训练时从 VRAM 中卸载 VAE 和 CLIP
 设置选项卡上的此选项允许您以较慢的预览图片生成为代价节省一些内存。</p>
 <p>训练的结果是一个 .pt 或一个 .bin 文件（前者是原作者使用的格式，后者作为 diffusers library）</p>
@@ -993,7 +990,8 @@
 <p>Hypernetworks 是一种新颖的概念，用于在不触及任何权重的情况下微调模型。</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>在设置内勾选 <strong>Move VAE and CLIP to RAM when training hypernetwork. Saves VRAM.</strong>，防止VAE引起问题。</p>
+<p>在设置内勾选 <strong>Move VAE and CLIP to RAM when training hypernetwork. Saves VRAM.</strong> 的效果是转移 VAE 到 RAM,而不是卸载，</p>
+<p>如需卸载，请重命名。</p>
 </div>
 <p>你可以在 <code>train</code> 选项卡训练 <code>Hypernetworks</code>，训练方式与  <code>Textual Inversion</code> 相同。</p>
 <p>注意,应该使用非常低的学习率，例如 0.000005 或 0.0000005.</p>
@@ -1159,11 +1157,11 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 28, 2022 14:43:22</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 28, 2022 15:04:02</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 28, 2022 14:43:22</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 28, 2022 15:04:02</span>
       
     
   </small>
