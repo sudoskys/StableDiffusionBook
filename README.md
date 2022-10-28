@@ -40,6 +40,7 @@ https://stable-diffusion-book.vercel.app/  短链为(https://b23.ink/aibook)
 
 在键盘按下 `。` 键自动克隆仓库并开始协作。
 
+>There is currently no English version of the documentation. If you think it is appropriate, you can contribute to this repository and add support for multiple languages.
 
 ### 相关
 
