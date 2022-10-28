@@ -284,7 +284,7 @@ ckpt 文件被加载时基本上可以执行任何内容，盲目加载有安全
 
 ## 进阶
 
-### 关于模型？[^6]
+### 启动流程[^6]
 
 ![Roaming_info.png](https://user-images.githubusercontent.com/75739606/198679721-2a7b38b8-41f3-405c-9ea3-40f1b5e8cc7e.png)
 <!--
