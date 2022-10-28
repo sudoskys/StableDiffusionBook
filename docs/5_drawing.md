@@ -573,11 +573,11 @@ https://github.com/tsngo/stable-diffusion-webui-aesthetic-image-scorer
 ### 跨领域术语
 
 
-是的！你可以在提示中使用 [拍摄术语](https://www.owlnet.rice.edu/~engl377/film.html) [摄影术语](http://userhome.brooklyn.cuny.edu/anthro/jbeatty/COURSES/glossary.htm)， [电影拍摄术语](https://en.wikipedia.org/wiki/Category:Cinematic_techniques)，以及绘画术语(类型) 来控制基本情况。
+是的！你可以在提示中使用 [Film Glossary](https://www.owlnet.rice.edu/~engl377/film.html) [FILM GLOSSARY摄影术语](http://userhome.brooklyn.cuny.edu/anthro/jbeatty/COURSES/glossary.htm)， [Cinematic techniques摄影技术](https://en.wikipedia.org/wiki/Category:Cinematic_techniques)，以及绘画术语(类型) 来控制基本情况。
 
 跨领域！你甚至可以使用各种惊险运动的名词来生产一些特效....比如空降
 
-景深，光圈，构图，拍摄机位，运动元素，[艺术摄影](https://gallerix.asia/pedia/photography-glossary/)
+景深，光圈，构图，拍摄机位，运动元素，[艺术摄影术语表中文介绍](https://gallerix.asia/pedia/photography-glossary/)
 
 扩展阅读
 
