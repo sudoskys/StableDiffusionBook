@@ -131,9 +131,9 @@ CLIP 在生成模型的潜在空间进行搜索，从而找到与给定的文字
 
 ### LDM
 
- latent diffusion model 潜在扩散模型，利用GANs的感知能力、扩散模型的细节保持能力和transformer的语义能力，将三者合并在一起的技术。
+latent diffusion model 潜在扩散模型。
 
-![？](https://user-images.githubusercontent.com/75739606/197823203-79263ee2-a9b3-4db7-9b7d-0ce557b94f3c.png)
->右上角
+![？](https://user-images.githubusercontent.com/75739606/198675128-c2c849d0-d024-468b-80c4-374f13e933e3.png)
+>下面的框
 
 [潜在扩散模型](https://zhuanlan.zhihu.com/p/573984443)

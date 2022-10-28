@@ -376,7 +376,7 @@ normal quality, text, censored, gown, latex, pencil
 
 咒语的科学原理。
 
-![prompt_draw](https://user-images.githubusercontent.com/75739606/197823203-79263ee2-a9b3-4db7-9b7d-0ce557b94f3c.png)
+![prompt_draw](https://user-images.githubusercontent.com/75739606/198675128-c2c849d0-d024-468b-80c4-374f13e933e3.png)
 <!--
 ![prompt_draw](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/prompt_draw_fix.png)
 -->
