@@ -614,7 +614,7 @@ https://github.com/tsngo/stable-diffusion-webui-aesthetic-image-scorer
 
 打草图+IMG2IMG,这就秘诀～
 
-宽幅度单人物生成最好打草图，进行色彩涂抹，确定主体。
+宽幅画作单人物生成最好打草图，进行色彩涂抹，确定画面主体。
 
 多人物确定人物数量，最好使用草稿/有色3d 排列 + 图生图。
 
