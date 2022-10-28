@@ -20,7 +20,7 @@ Copyright (C)  2022  StableDiffusionBook.
 本文档主要涉及以下两个项目。
 
 
-[Stable Diffusion WebUi](https://github.com/AUTOMATIC1111/stable-diffusion-webui)简称 SDWebUi，web UI是一个基于 Gradio 库的 Stable Diffusion 浏览器界面。
+[Stable Diffusion WebUi](https://github.com/AUTOMATIC1111/stable-diffusion-webui)简称 SDWebUi，web UI是一个基于 Gradio 库的 Stable Diffusion 浏览器界面。该项目目前还没有 [许可证](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/24) [相关Issue](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2059)。
 
 [NovelAI](https://novelai.net/)简称 NAI， 是一项每月订阅服务，用于 AI 辅助创作、讲故事、虚拟陪伴，或者只是供您想象的 GPT 驱动的沙盒。
 

@@ -51,6 +51,8 @@
 
 - **[SD资源金矿](https://rentry.org/sdupdates)**
 
+- [Notion：关于人工智能艺术](https://proximacentaurib.notion.site/proximacentaurib/parrot-zone-74a5c04d4feb4f12b52a41fc8750b205)
+
 - [WebUi使用手册](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features)
 
 - [NovelAI 5ch Wiki](https://seesaawiki.jp/nai_ch/)
