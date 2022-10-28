@@ -582,6 +582,10 @@ https://github.com/tsngo/stable-diffusion-webui-aesthetic-image-scorer
 
 摄影术语 https://zh.wikipedia.org/zh-cn/%E9%AB%98%E9%80%9F%E6%91%84%E5%BD%B1
 
+极限运动 https://en.wikipedia.org/wiki/Extreme_sport https://en.wikipedia.org/wiki/Category:Sports_by_type
+
+构图艺术 https://en.wikipedia.org/wiki/Composition_(visual_arts)
+
 ### 迭代草图[^8]
 
 这里讨论一下如何将**手绘草图**通过 Ai 绘画优化，*注意不是二次元*。
