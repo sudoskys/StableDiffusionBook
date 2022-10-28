@@ -616,7 +616,7 @@ https://github.com/tsngo/stable-diffusion-webui-aesthetic-image-scorer
 
 单人物生成最好打草图，进行色彩涂抹，确定主体。
 
-多人最好使用草稿/有色3d 草图 + 图生图。
+多人最好使用草稿/有色3d 排列 + 图生图。
 
 人数超过三个就难以控制效果，人数大于6的图像模型里估计没有...
 
