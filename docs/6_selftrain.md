@@ -457,6 +457,8 @@ Swish对比Relu和Linear要更好，Swish适合更大的网络，而Elu可能对
 
 DreamBooth 的模型是一种新的文本到图像“个性化”（可适应用户特定的图像生成需求）扩散模型方法。
 
+[适用于Autodl的项目](https://github.com/crosstyan/dreambooth-scripts-for-autodl)
+
 ### 配置要求
 
 Windows 系统至少需要 16, Linux 系统要求显存大于 8 GB
@@ -472,6 +474,7 @@ Windows 系统至少需要 16, Linux 系统要求显存大于 8 GB
 [RcINS 的 Colab 笔记本](https://colab.research.google.com/drive/1C1vVZ59S4kWfL7jIsczyLpmxbD4cOA-k)
 
 以上笔记本来自 [社区置顶](https://t.me/StableDiffusion_CN/196744)
+
 
 #### Windows
 
