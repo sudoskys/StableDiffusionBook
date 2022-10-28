@@ -32,6 +32,15 @@ https://stable-diffusion-book.vercel.app/  短链为(https://b23.ink/aibook)
 ![效果.png](https://s1.ax1x.com/2022/10/10/xtdNNR.png)
 
 
+### 加入我们
+
+如果你发现了本文的的错误或不足（逻辑错误，语法病句，结构混乱，内容过时，上下冲突，错词怪词），欢迎向[项目仓库](https://github.com/sudoskys/StableDiffusionBook/)提 issue 和 PR。
+
+贡献之前先读 [贡献指南](https://github.com/sudoskys/StableDiffusionBook/blob/main/CONTRIBUTING.md)
+
+在键盘按下 `。` 键自动克隆仓库并开始协作。
+
+
 ### 相关
 
 [Stable Diffusion WebUi](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
@@ -41,14 +50,6 @@ https://stable-diffusion-book.vercel.app/  短链为(https://b23.ink/aibook)
 [基于 NAI 的画图机器人](https://github.com/koishijs/novelai-bot#token)
 
 [Danbooru 标签超市](https://github.com/wfjsw/danbooru-diffusion-prompt-builder)
-
-### 帮助改进
-
-如果你发现了本文的的错误或不足（逻辑错误，语法病句，结构混乱，内容过时，上下冲突，错词怪词），欢迎向[项目仓库](https://github.com/sudoskys/StableDiffusionBook/)提 issue 和 PR。
-
-贡献之前先读 [贡献指南](https://github.com/sudoskys/StableDiffusionBook/blob/main/CONTRIBUTING.md)
-
-在键盘按下 `。` 键自动克隆仓库并开始协作。
 
 
 ### 声明
