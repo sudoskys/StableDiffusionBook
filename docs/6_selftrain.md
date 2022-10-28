@@ -477,6 +477,11 @@ Windows 系统至少需要 16, Linux 系统要求显存大于 8 GB
 
 翻译自[^16]
 
+!!! danger
+    以下内容目前并不可靠，正在进入审计内容！
+
+    2022/10/28
+
 准备环境 `Git`，`Python`，`MiniConda` (或 `MiniConda` )。
 
 **安装 Dreambooth-SD-Optimized**
