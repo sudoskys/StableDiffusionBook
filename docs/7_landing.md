@@ -84,6 +84,8 @@
 
 ### 风格化
 
+- [艺术家博物馆](https://gallerix.asia/storeroom/)
+
 - [Ai艺术家文档——深入了解](https://docs.google.com/spreadsheets/d/1SRqJ7F_6yHVSOeCi3U82aA448TqEGrUlRrLLZ51abLg/htmlview#)
 
 - [动漫人物/艺术家/风格化列表/Pt文件](https://rentry.org/anime_and_titties)

@@ -563,11 +563,24 @@ https://github.com/tsngo/stable-diffusion-webui-aesthetic-image-scorer
 
 ### 跨领域:摄影术语？
 
-是的！你可以在提示中使用 摄影术语， 电影拍摄术语，以及绘画术语(类型) 来控制基本情况。
+
+是的！你可以在提示中使用 [拍摄术语](https://www.owlnet.rice.edu/~engl377/film.html) [摄影术语](http://userhome.brooklyn.cuny.edu/anthro/jbeatty/COURSES/glossary.htm)， [电影拍摄术语](https://en.wikipedia.org/wiki/Category:Cinematic_techniques)，以及绘画术语(类型) 来控制基本情况。
 
 跨领域！你甚至可以使用各种惊险运动的名词来生产一些特效....比如空降
 
 景深，光圈，构图，拍摄机位，运动元素，[艺术摄影](https://gallerix.asia/pedia/photography-glossary/)
+
+扩展阅读
+
+有用的电影术语 https://en.wikipedia.org/wiki/Category:Cinematic_techniques
+
+镜头类型 https://www.bhphotovideo.com/explora/video/tips-and-solutions/filmmaking-101-camera-shot-types
+
+电视术语  https://en.wikipedia.org/wiki/Category:Television_terminology
+
+摄影类型 https://en.wikipedia.org/wiki/Category:Photography_by_genre
+
+摄影术语 https://zh.wikipedia.org/zh-cn/%E9%AB%98%E9%80%9F%E6%91%84%E5%BD%B1
 
 ### 迭代草图[^8]
 
@@ -1080,7 +1093,7 @@ Clip 跳过 0，其他一切都很好（afaik 不要使用超网络、v2、yaml�
 
 [艺术家列表/SD1.4/1,833 位艺术家](https://www.urania.ai/top-sd-artists)
 
-
+[艺术家博物馆](https://gallerix.asia/storeroom/)
 
 #### 草图风格
 
