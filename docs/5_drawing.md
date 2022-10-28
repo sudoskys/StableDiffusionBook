@@ -561,6 +561,15 @@ https://github.com/tsngo/stable-diffusion-webui-aesthetic-image-scorer
 
 画质可以使用 超分指南 进行操作。
 
+### 视角
+
+
+![shot](https://user-images.githubusercontent.com/75739606/198682933-25c1b2df-c573-44ea-aba7-2df4609299e5.png)
+<!--
+![shot](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/shot.png)
+-->
+>引用来自日本 Wiki 的图片，作者不明
+
 ### 跨领域:摄影术语？
 
 
