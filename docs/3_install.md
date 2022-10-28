@@ -474,7 +474,7 @@ Colab 开始反滥用，目前 Colab 的[协议](https://research.google.com/col
 但是有人指出 [Colab并没有计划封禁 SD](https://github.com/googlecolab/colabtools/issues/3147)
 -->
 
-Colab 资源每日重置。
+Colab 资源每日重置。Colab的 [协议](https://research.google.com/colaboratory/faq.html?hl=zh-CN) 不允许利用多个帐号绕过访问权限或资源使用情况限制。
 
 !!! tip
     为什么不放笔记本地址？

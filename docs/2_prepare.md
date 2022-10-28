@@ -126,6 +126,8 @@ WebUi 增加了俄语翻译，添加了 img2img API。
 
 Colab 开始反滥用，[协议](https://research.google.com/colaboratory/faq.html#limitations-and-restrictions)禁止穿透。但是有人指出 [Colab并没有计划封禁 SD](https://github.com/googlecolab/colabtools/issues/3147)，确认误封。
 
+Colab的 [协议](https://research.google.com/colaboratory/faq.html?hl=zh-CN) 不允许利用多个帐号绕过访问权限或资源使用情况限制。
+
 有人反映 某度好像会封锁NAI的模型。
 
 -------
