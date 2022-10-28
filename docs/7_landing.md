@@ -80,6 +80,8 @@
 
 - [匿名者的绘画技巧/nsfw](https://rentry.org/inpainting-guide-SD)
 
+- [梦想家指南](https://stablediffusionguides.carrd.co/#)
+
 ### 风格化
 
 - [Ai艺术家文档——深入了解](https://docs.google.com/spreadsheets/d/1SRqJ7F_6yHVSOeCi3U82aA448TqEGrUlRrLLZ51abLg/htmlview#)

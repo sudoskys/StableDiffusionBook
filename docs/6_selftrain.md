@@ -461,7 +461,7 @@ Windows 系统至少需要 16, Linux 系统要求显存大于 8 GB
 
 ### 训练
 
-- Linux
+#### Linux
 
 直接用下面的笔记本里的代码，不过需要英文基础。
 
@@ -471,17 +471,121 @@ Windows 系统至少需要 16, Linux 系统要求显存大于 8 GB
 
 以上笔记本来自 [社区置顶](https://t.me/StableDiffusion_CN/196744)
 
-- Windows
+#### Windows
 
-？
+翻译自[^16]
 
-- 参数分析
+准备环境 `Git`，`Python`，`MiniConda` (或 `MiniConda` )。
+
+**安装 Dreambooth-SD-Optimized**
+ 
+在终端使用 `cd` 切换到一个新的文件夹或在目标文件夹按住 `Shift` 右键打开 `shell` 。
+
+克隆 Dreambooth-SD-optimized `git clone https://github.com/gammagec/Dreambooth-SD-optimized.git`
+ 
+XavierXiao 的版本步骤相同，只是文件夹名称不同。`git clone https://github.com/XavierXiao/Dreambooth-Stable-Diffusion.git`
+ 
+
+**Dreambooth-SD-Optimized 构建环境&编辑文件**
+
+在记事本等编辑器中打开 `Dreambooth-SD-optimized` 文件夹中的 `environment.yaml` 文件。同时你可以在 `configs/stable-diffusion/v1-finetune_unfrozen.yaml` 更改训练步数
+
+将第一行（`ldm`）编辑选择的环境名称 `SD-Optimized`，保存并关闭。
+ 
+从开始菜单启动 `Anaconda Prompt` 或 `MiniConda`
+
+在当前目录使用 `conda env create -f environment.yaml` 构建环境。Tip：激活环境使用 `conda activate SD-Optimized`，停用此环境，请使用 `conda deactivate` 
+
+
+**复制文件**
+
+将 `model.ckpt` 从 `\stable-diffusion-webui\models` 复制到 `Dreambooth-SD-optimized`
+ 
+!!! tip
+    在当前目录激活环境 `conda activate SD-Optimized`
+
+
+**Regularization Images 预训练**
+ 
+在 `Dreambooth-SD-optimized` 根文件夹中创建文件夹结构 `./outputs/txt2img-samples/samples/`
+ 
+使用 `cd` 命令，在 Conda 环境中切换到此文件夹(可以拖入文件夹快速显示地址)。
+
+选择数据集之一 man_euler、man_unsplash、person_not、woman_not
+ 
+用您的选择替换 [DATASET](https://github.com/djbielejeski/Stable-Diffusion-Regularization-Images-DATASET.git)
+
+运行你的数据集克隆 `git clone https://github.com/djbielejeski/Stable-Diffusion-Regularization-Images-woman_ddim.git`
+ 
+
+打开文件夹，将 DATASET 文件夹 `woman_ddim` 复制到 samples 文件夹。
+
+现在应该在文件夹中有 1500 张图像`.\Dreambooth-SD-optimized\outputs\txt2img-samples\samples\woman_ddim`
+
+
+**预训练 准备训练样本**
+
+收集至少十张您想要使用的示例图片，*图像上的集合必须是偶数*。如果目地是训练角色，请抠图！
+ 
+使用 (https://www.birme.net/?target_width=512&target_height=512) 批量裁剪和调整图像大小下载压缩包。
+
+然后在根文件夹 `Dreambooth-SD-optimized` 中创建一个名为 `training_samples` 的文件夹。
+ 
+在训练集的 `training_samples `中创建一个文件夹命名为你想要的名字，把需要训练的已经调整好的图像复制到这个文件夹。
+
+在记事本等编辑器中打开 `Dreambooth-SD-optimized\ldm\data\personalized.py`，编辑第 11 行 `photo of a sks {}` 改为 `英文名字 {}`
+
+
+**训练模型**
+ 
+切换到 `Dreambooth-SD-optimized` 根文件夹。
+
+记下 TRAINING-SAMPLES-NAME (英文名字) 您的 REGULARIZATION-IMAGES-NAME (woman_ddim) 和 CLASS (woman)。
+
+编辑以下代码
+
+```bash
+python main.py --base configs/stable-diffusion/v1-finetune_unfrozen.yaml -t --actual_resume model.ckpt --reg_data_root outputs\txt2img-samples\samples\REGULARIZATION-IMAGES-NAME -n TRAINING-SAMPLES-NAME - -gpus 0, --data_root training_samples\TRAINING-SAMPLES-NAME --batch_size 2020 --class_word 类
+```
+
+示例为
+```bash
+python main.py --base configs/stable-diffusion/v1-finetune_unfrozen.yaml -t --actual_resume model.ckpt --reg_data_root outputs\txt2img-samples\samples\woman_ddim -n 英文名字 --gpus 0, --data_root training_samples \英文名字 --batch_size 2020 --class_word 女人
+```
+
+运行后，只要看到 `Another one beats the dust...` 出现，就算出错训练也结束了。
+ 
+
+**修剪和转移模型**
+ 
+??? info "Dreambooth-SD-optimized"
+    如果您运行的是 `Dreambooth-SD-optimized`，则需要将 `XavierXiao Dreambooth-Stable-Diffusion` 克隆库中的 `prune_ckpt.py` 添加到`Dreambooth-SD-optimized` 根文件夹中。
+
+
+找到训练数据文件夹的名称 `.\Dreambooth-SD-optimized\logs\xxxx` 
+
+进入 `Dreambooth-SD-optimized` 根文件夹，比如 `cd .\Dreambooth-SD-optimized`。运行以下命令，替换 `TRAINED-DATA-FOLDER` 字段为输出的文件夹名字：
+
+```python
+python "prune_ckpt.py" --ckpt "TRAINED-DATA-FOLDER\checkpoints\last.ckpt 的路径，记得替换啊！！"
+```
+
+[prune_ckpt.py](https://github.com/JoePenna/Dreambooth-Stable-Diffusion/tree/main/scripts)
+
+然后等待运行完毕后，将 `checkpoints` 内的裁剪模型 `last-pruned.ckpt` 文件重命名为(TRAINING-SAMPLES-NAME的名字)移动到 WebUi 的 `models` 目录，在界面顶栏即可切换模型。
+
+
+### 参数分析
 
 [使用 Dreambooth 训练稳定扩散的实验的分析](https://wandb.ai/psuraj/dreambooth/reports/Dreambooth-training-analysis--VmlldzoyNzk0NDc3)
 
 ### 其他 
 
-相关的还有 [DreamBooth_Stable_Diffusion](https://colab.research.google.com/github/ShivamShrirao/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion.ipynb#scrollTo=K6xoHWSsbcS3) 和 [fast-DreamBooth](https://colab.research.google.com/github/TheLastBen/fast-stable-diffusion/blob/main/fast-DreamBooth.ipynb)
+[fast-stable-diffusion colabs](https://github.com/TheLastBen/fast-stable-diffusion)
+
+相关的还有 [DreamBooth_Stable_Diffusion](https://colab.research.google.com/github/ShivamShrirao/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion.ipynb#scrollTo=K6xoHWSsbcS3) 和 
+[fast-DreamBooth](https://colab.research.google.com/github/TheLastBen/fast-stable-diffusion/blob/main/fast-DreamBooth.ipynb)
+
 
 [Dreambooth Gui](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2927)
 
@@ -521,4 +625,6 @@ Source directory 填数据源文件夹地址。
 [^15]:[dreambooth-论文](https://arxiv.org/abs/2208.12242)
 
 [^16]:[Hypernetwork画风训练经验分享](https://shiina-h.notion.site/shiina-h/Hypernetwork-1fc0b60645284c5e96bb41b583a4e86f)
+
+[^16]:[Installing Stable Diffusion & Dreambooth for Windows](https://pastebin.com/xcFpp9Mr)
 
