@@ -286,9 +286,9 @@ ckpt 文件被加载时基本上可以执行任何内容，盲目加载有安全
 
 ### 关于模型？[^6]
 
-![Roaming_info.png](https://user-images.githubusercontent.com/75739606/197822354-51269567-6478-4bd9-97b1-e18cfbf851af.png)
+![Roaming_info.png](https://user-images.githubusercontent.com/75739606/198679721-2a7b38b8-41f3-405c-9ea3-40f1b5e8cc7e.png)
 <!--
-![Roaming_info.png](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/Roaming_info.png)
+![Roaming_info.png](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/infofrom_bili_uid_87077691.png)
 -->
 >来自 allophane.com/index.php/2022/10/17/roaming_info_for_latent_diffusion/
 
