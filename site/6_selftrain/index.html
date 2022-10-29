@@ -932,7 +932,7 @@
 <p><code>Learning rate</code>(超参数：学习率)，学习速率代表了神经网络中随时间推移，信息累积的速度，这个参数较大地影响了影响训练的速度。</p>
 <p>通常，Learning rate越低学习越慢（花费更长的时间收敛），但是效果一般更好。</p>
 <p>训练时，可以先用较大的学习率进行测试，然后逐步调小 <code>0.1 -- 0.02 -- 0.005</code> ，每次测试都用上一次效果最好的。</p>
-<p>一般设置为 0.005，如果想快一些，可以使用 0.01 加快。但是如果设置得太高，梯度下降时候步长太大无法收敛，会且可能会破坏 <code>embedding</code> ， 效果达不到预期。如果设置的太小，容易陷入局部最优。</p>
+<p>一般设置为 0.005，如果想快一些，可以使用 0.01 加快。但是如果设置得太高，梯度下降时候步长太大无法收敛，会且可能会破坏 <code>embedding</code> ， 效果达不到预期。如果设置的太小，容易陷入局部最优。目前 TI 支持设置 <code>0.1:500, 0.01:1000, 0.001:10000</code> 的学习率，它会按照时间表进行。</p>
 <p><img alt="CS231n" src="https://user-images.githubusercontent.com/75739606/197824268-273f074d-9622-41ad-9f1a-2980f180dbd9.png" /></p>
 <!--
 ![CS231n](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/CS231n.png)
@@ -1046,7 +1046,8 @@
 <p>翻译自<sup id="fnref6:16"><a class="footnote-ref" href="#fn:16">10</a></sup></p>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
-<p>以下内容目前并不可靠，正在进入审计内容！</p>
+<p>以下内容目前并不可靠。</p>
+<p>因为此段撰稿人并没有训练条件，需要有经验者再次进行内容审计。</p>
 <p>2022/10/28</p>
 </div>
 <p>准备环境 <code>Git</code>，<code>Python</code>，<code>MiniConda</code> (或 <code>MiniConda</code> )。</p>
@@ -1157,11 +1158,11 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 29, 2022 14:38:37</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 29, 2022 15:05:04</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 29, 2022 14:38:37</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 29, 2022 15:05:04</span>
       
     
   </small>
