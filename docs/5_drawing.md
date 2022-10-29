@@ -563,6 +563,7 @@ https://github.com/tsngo/stable-diffusion-webui-aesthetic-image-scorer
 
 ### 视角
 
+[推荐使用 Danbooru含有的术语](https://danbooru.donmai.us/wiki_pages/tag_group%3Aimage_composition)
 
 ![shot](https://user-images.githubusercontent.com/75739606/198682933-25c1b2df-c573-44ea-aba7-2df4609299e5.png)
 <!--
@@ -582,6 +583,8 @@ https://github.com/tsngo/stable-diffusion-webui-aesthetic-image-scorer
 **但是**这种效果可能会带来附加作用:引入你不希望见到的风格(如实景)数据进入图片。把握好量度。
 
 扩展阅读
+
+[推荐使用 Danbooru含有的术语](https://danbooru.donmai.us/wiki_pages/tag_group%3Aimage_composition)
 
 有用的电影术语 https://en.wikipedia.org/wiki/Category:Cinematic_techniques
 
