@@ -29,6 +29,8 @@
 
 ### 提示词相关
 
+- [Danbooru tag组](https://danbooru.donmai.us/wiki_pages/tag_groups)
+
 - [人偶教室：风格化教学](https://www.yuque.com/longyuye/lmgcwy)
 
 - [人工智能艺术的工具和资源](https://pharmapsychotic.com/tools.html)

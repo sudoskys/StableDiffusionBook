@@ -11,7 +11,7 @@
 
 这节会介绍 参数 和 相关的 WebUi(SD)  网页应用资源。如果你会画画，那么效果会更加稳定可观。
 
-标签参考应该使用 [Danbooru wiki Tag](https://danbooru.donmai.us/wiki_pages/help:home) 和 [MidJourney-Styles-and-Keywords-Reference](https://github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference) ，因为它们都比较原生。 
+标签参考应该使用 [Danbooru wiki Tag](https://danbooru.donmai.us/wiki_pages/tag_groups) 和 [MidJourney-Styles-and-Keywords-Reference](https://github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference) ，因为它们都比较原生。 
 
 如果需要中文的标签参考，请看[调参魔法书](https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml)和 [手抄魔法本](https://docs.google.com/spreadsheets/d/14Gg1kIGWdZGXyCC8AgYVT0lqI6IivLzZOdIT3QMWwVI/)
 
@@ -585,9 +585,11 @@ https://github.com/tsngo/stable-diffusion-webui-aesthetic-image-scorer
 
 你还可以使用**平台名**来限定数据集的范围，比如 pixiv 之类的词汇。
 
-扩展阅读
+**扩展阅读**
 
 [推荐使用 Danbooru含有的术语](https://danbooru.donmai.us/wiki_pages/tag_group%3Aimage_composition)
+
+[Danbooru tag组](https://danbooru.donmai.us/wiki_pages/tag_groups)
 
 有用的电影术语 https://en.wikipedia.org/wiki/Category:Cinematic_techniques
 
@@ -1042,7 +1044,7 @@ https://github.com/lilly1987/AI-WEBUI-scripts-Random
 
 ## 参数
 
-为什么不去 [这里](https://danbooru.donmai.us/wiki_pages/howto%3Atag_checklist) 看[原始数据站点](https://danbooru.donmai.us/wiki_pages/help:home)的参数呢？
+为什么不去 [这里](https://danbooru.donmai.us/wiki_pages/howto%3Atag_checklist) 看[原始数据站点](https://danbooru.donmai.us/wiki_pages/tag_groups)的参数呢？
 
 [E 站标签翻译项目](https://github.com/EhTagTranslation)
 
