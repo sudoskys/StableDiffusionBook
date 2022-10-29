@@ -114,6 +114,9 @@
 
 ------
 
+### 超网络
+
+[韩国论坛模型共享计划](https://arca.live/b/hypernetworks/60940948)
 
 ### embeddings
 

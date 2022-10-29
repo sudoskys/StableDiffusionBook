@@ -726,7 +726,7 @@ Resize and fill：调整图像大小，使整个图像在目标分辨率内。�
 
 推荐使用 [DAZ](https://www.daz3d.com/get_studio) 或者 [blender](https://www.blender.org/) 或者 Unity ，在对 3D 模型的测试中，**色彩主要影响 AI 的绘画效果**，所以你的模型需要有纹理。
 
-不知道 VRchat 怎么样。
+如果你使用 blender ，你可以使用 [这个视频](https://youtu.be/MClbPwu-75o) 分享的 [模型娃娃](https://www.artstation.com/marketplace/p/VOAyv/stable-diffusion-3d-posable-manekin-doll?utm_source=artstation&utm_medium=referral&utm_campaign=homepage&utm_term=marketplace)
 
 
 ### Img2Img PS重绘画/嫁接修复/躺姿补全
