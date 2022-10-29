@@ -63,6 +63,11 @@ NAI 是一个在线**服务**。
 
 以下是新闻和测试内容。
 
+-------
+- 10/29
+
+[讨论](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3889) 有人认为，通过在 Windows 设置上禁用硬件加速 GPU 调度，WebUi 性能提高了大约 10-50%
+
 
 -------
 - 10/27
