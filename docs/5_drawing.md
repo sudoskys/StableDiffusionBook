@@ -571,16 +571,19 @@ https://github.com/tsngo/stable-diffusion-webui-aesthetic-image-scorer
 -->
 >引用来自日本 Wiki 的图片，作者不明
 
-### 跨领域术语
+### 跨领域术语/奇门遁甲
 
+跨领域术语的核心逻辑就是**缩小指定的数据范围**，从画面内容之外的**平台，领域，事件**上入手来提升效果。
 
 是的！你可以在提示中使用 [Film Glossary](https://www.owlnet.rice.edu/~engl377/film.html) [FILM GLOSSARY摄影术语](http://userhome.brooklyn.cuny.edu/anthro/jbeatty/COURSES/glossary.htm)， [Cinematic techniques摄影技术](https://en.wikipedia.org/wiki/Category:Cinematic_techniques)，以及绘画术语(类型) 来控制基本情况。
 
 跨领域！你甚至可以使用各种惊险运动的名词来生产一些特效....比如空降
 
-景深，光圈，构图，拍摄机位，运动元素，[艺术摄影术语表中文介绍](https://gallerix.asia/pedia/photography-glossary/)
+比如，景深，光圈，构图，拍摄机位，运动元素，[艺术摄影术语表中文介绍](https://gallerix.asia/pedia/photography-glossary/)
 
-**但是**这种效果可能会带来附加作用:引入你不希望见到的风格(如实景)数据进入图片。把握好量度。
+**但是**这种效果可能会带来附加作用:引入你不希望见到的风格(如实景**而不是**而二次元)数据进入图片。把握好量度。适当增加 Step 和 风格提示 来改善.
+
+你还可以使用**平台名**来限定数据集的范围，比如 pixiv 之类的词汇。
 
 扩展阅读
 
