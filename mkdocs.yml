@@ -4,7 +4,7 @@ nav:
     - 术语解释: index.md
     - 起步于此: 2_prepare.md
     - 安装配置: 3_install.md
-    - 模型调试: 4_model.md
+    - 装置调试: 4_model.md
     - 绘画调试: 5_drawing.md
     - 训练模型: 6_selftrain.md
     - 参考资料: 7_landing.md
