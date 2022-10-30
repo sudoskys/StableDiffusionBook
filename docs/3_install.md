@@ -44,7 +44,7 @@ WSL 不可以迁移，如果 C 盘不够，寄！
 
 **安装 Python**
 
-安装[Python 3.10.6](https://www.python.org/downloads/windows/)，安装时选中“Add Pythone to PATH”
+安装[Python 3.10.6](https://www.python.org/downloads/windows/)，安装时选中“Add Python to PATH”
 
 >为什么整合包不需要安装 Python？他们的脚本中指定了同目录下的环境，阅读之后的文档就可以知道
 
