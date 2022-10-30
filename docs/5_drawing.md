@@ -685,10 +685,7 @@ CFG 越高，越符合提示词，降噪越高越偏离原图。
 
 ### 使用 Ai 进行设计
 
-- 立绘
 
-<iframe src="//player.bilibili.com/player.html?aid=559362671&bvid=BV14e4y1U7r9&cid=869144379&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
->BV14e4y1U7r9
 
 - 图标
 
@@ -716,6 +713,11 @@ bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits,
 low quality 可加可不加
 
 尺寸要求正方形。
+
+- 立绘
+
+<iframe src="//player.bilibili.com/player.html?aid=559362671&bvid=BV14e4y1U7r9&cid=869144379&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
+>BV14e4y1U7r9
 
 ## 魔法进阶
 
