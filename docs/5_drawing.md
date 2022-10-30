@@ -698,6 +698,21 @@ CFG 越高，越符合提示词，降噪越高越偏离原图。
 
 表情包效果真的很好。 `sticker` 配合 西方颜文字 完成度超高！
 
+文档编写者试了一下，以下 prompt 可以出高质量表情包。
+
+**积极词汇**
+
+```
+masterpiece, best quality,1girl,sticker,Chibi,Q,
+white background,lowres,
+```
+**消极词汇**
+
+```
+bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, jpeg artifacts, signature, watermark, username, blurry, bad feet
+```
+
+尺寸要求正方形。
 
 ## 魔法进阶
 
