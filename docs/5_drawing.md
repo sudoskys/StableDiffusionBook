@@ -277,6 +277,7 @@ a \(word\) - 在提示中使用文字 () 字符
 
     From [Here](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2905)
 
+
 ### 否定提示词
 
 WebUi(SD)网页应用会在生成时**拒绝否定提示词有关的内容**。
@@ -317,6 +318,21 @@ normal quality, text, censored, gown, latex, pencil
 
 [官方Wiki](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Negative-prompt#examples)
 
+
+#### CFG Scale/Denoising strength 契合度/降噪
+
+**CFG Scale**
+
+`cfg scale` 就是图像与 prompt 的契合度,Scale越高，程序对提示词越忠诚，契合度越高。
+
+**Denoising strength 降低噪声**
+
+`Denoising strength` 决定算法对图像内容的保留程度,可以减少对画风的变得，但也会弱化img2img能力。值越高 AI 对原图的参考程度就越低 (同时增加迭代次数)。
+
+对于以图做图来说，低 `denoising` 意味着修正原图，高 `denoising` 就和原图就没有大的相关性了。一般来讲阈值是 0.7 左右，超过 0.7 和原图基本上无关，0.3 以下就是稍微改一些。
+
+
+
 ### 渐变标签
 
 渐变标签，指示 WebUi 在训练中替换 Token，语法使用 `[some1:some2:num]`
@@ -331,11 +347,11 @@ normal quality, text, censored, gown, latex, pencil
 <!--
 ![sample_Gradient](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/sample_Gradient.jpg)
 -->
-### 重现提示词
+### 从图片重现提示词
 
-对于没有压缩的原图，我们可以将文件拖入 `PNG Info` 选项卡，进行提示词(Token)查看。
+程序默认会在图片中加入提示词，参数，模型信息，对于没有压缩的原图，我们可以将文件拖入 `PNG Info` 选项卡，进行提示词(Token)查看。
 
-或者使用 [网页工具](https://spell.novelai.dev/)
+或者使用 [在线工具](https://spell.novelai.dev/) 查看它。
 
 
 ### 逆向提示词
@@ -707,19 +723,6 @@ WebUi 使用 `--gradio-img2img-tool color-sketch` 启动会带入一个插件对
 
 !!! tip "不同之处"
     PS 重新绘画投入 Img2Img 的话，会导致画风的变动，而 Inpaint 就不会。
-
-
-#### 横条参数
-
-**CFG Scale**
-
-`cfg scale` 就是符合 prompt 的程度,Scale越高，程序对提示词越忠诚，越符合。
-
-**Denoising strength 降低噪声**
-
-`Denoising strength` 决定算法对图像内容的保留程度,可以减少对画风的变得，但也会弱化img2img能力。值越高 AI 对原图的参考程度就越低 (同时增加迭代次数)。
-
-对于以图做图来说，低 `denoising` 意味着修正原图，高 `denoising` 就和原图就没有大的相关性了。一般来讲阈值是 0.7 左右，超过 0.7 和原图基本上无关，0.3 以下就是稍微改一些。
 
 
 #### 图形参数
