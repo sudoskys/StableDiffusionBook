@@ -13,8 +13,7 @@
 
 标签参考应该使用 [Danbooru wiki Tag](https://danbooru.donmai.us/wiki_pages/tag_groups) 和 [MidJourney-Styles-and-Keywords-Reference](https://github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference) ，因为它们都比较原生。 
 
-笔触/绘画工具/风格化/绘画技术 请看 [Danbooru](https://danbooru.donmai.us/wiki_pages/tag_group%3Aimage_composition)
-
+笔触/绘画工具/风格化/绘画技术标签组请看 [Danbooru](https://danbooru.donmai.us/wiki_pages/tag_group%3Aimage_composition)
 
 如果需要中文的标签参考，请看[调参魔法书](https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml)和 [手抄魔法本](https://docs.google.com/spreadsheets/d/14Gg1kIGWdZGXyCC8AgYVT0lqI6IivLzZOdIT3QMWwVI/)
 
