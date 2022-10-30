@@ -480,113 +480,100 @@ Windows 系统至少需要 16, Linux 系统要求显存大于 8 GB
 
 #### Windows
 
-翻译自[^16]
+#### Windows
 
-!!! danger
-    以下内容目前并不可靠，是原版的训练过程，请勿使用。
-    
-    因为 此段初始撰稿人 并没有训练条件，如果您有能力完成此部分内容，欢迎贡献一个 PR.
+Windows上的Dreambooth 可以采用ShivamShrirao的优化版本来节省显存，
 
-    2022/10/28
+[diffusers/examples/dreambooth at main · ShivamShrirao/diffusers · GitHub](https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth)
+
+但是，由于相关链接库的原因，用于在Linux上的部署方法无法直接在windows上使用，由于同样的原因，该优化版本在colab上最低9.9G的显存需求在windows上应该稍高，因此推荐至少使用显存12G的显卡。笔者仅在16G显存PC上测试成功，12G理论可以，待测试。
+
+修改或覆盖原始库中的文件前请备份！
 
 准备环境 `Git`，`Python`，`MiniConda` (或 `MiniConda` )。
 
-**安装 Dreambooth-SD-Optimized**
- 
-在终端使用 `cd` 切换到一个新的文件夹或在目标文件夹按住 `Shift` 右键打开 `shell` 。
+以下步骤在python3.8，windows10 22H2中操作，其他环境未测试
 
-克隆 Dreambooth-SD-optimized `git clone https://github.com/gammagec/Dreambooth-SD-optimized.git`
- 
-XavierXiao 的版本步骤相同，只是文件夹名称不同。`git clone https://github.com/XavierXiao/Dreambooth-Stable-Diffusion.git`
- 
+**创建工作目录 ，在目录下构建python3.8的venv虚拟环境**
 
-**Dreambooth-SD-Optimized 构建环境&编辑文件**
+    python -m venv --system-site-packages venv_dbwin
+    venv_dbwin\Scripts\activate
+    python.exe -m pip install --upgrade pip
 
-在记事本等编辑器中打开 `Dreambooth-SD-optimized` 文件夹中的 `environment.yaml` 文件。同时你可以在 `configs/stable-diffusion/v1-finetune_unfrozen.yaml` 更改训练步数
+克隆ShivamShrirao的优化版本dreambooth到工作目录中并安装相关依赖（使用的构建版本https://github.com/huggingface/diffusers/tree/7465397f33d5de75dcccc155e3fb9a232fcbb0a0 后续版本可能无法支持本文方法）
 
-将第一行（`ldm`）编辑选择的环境名称 `SD-Optimized`，保存并关闭。
- 
-从开始菜单启动 `Anaconda Prompt` 或 `MiniConda`
+    git clone https://github.com/ShivamShrirao/diffusers
+    cd diffusers
+    pip install -e .
+    cd examples\dreambooth
+    pip install -U -r requirements.txt
+    pip install OmegaConf
+    pip install pytorch_lightning
+    pip install einops
+    pip install bitsandbytes==0.34
 
-在当前目录使用 `conda env create -f environment.yaml` 构建环境。Tip：激活环境使用 `conda activate SD-Optimized`，停用此环境，请使用 `conda deactivate` 
+完成后，在windows上需要根据 https://github.com/TimDettmers/bitsandbytes/issues/30#issuecomment-1257676341 中的方法实现bitsandbytes支持
 
+将 https://github.com/DeXtmL/bitsandbytes-win-prebuilt 中的libbitsandbytes_cuda116.dll 文件手动拷贝到工作目录下的 venv_diffusers\Lib\site-packages\bitsandbytes 中，位于 libbitsandbytes_cuda116.so 的旁边；
 
-**复制文件**
+然后更改脚本以应用，可以手动修改，为方便也可以下载以下文件替换：
 
-将 `model.ckpt` 从 `\stable-diffusion-webui\models` 复制到 `Dreambooth-SD-optimized`
- 
-!!! tip
-    在当前目录激活环境 `conda activate SD-Optimized`
+将 cextension.py: https://pastebin.com/jjgxuh8V 覆盖到venv_diffusers\Lib\site-packages\bitsandbytes目录。
 
+将 main.py: https://pastebin.com/BsEzpdpw 覆盖到venv_diffusers\Lib\site-packages\bitsandbytes\cuda_setup目录。
 
-**Regularization Images 预训练**
- 
-在 `Dreambooth-SD-optimized` 根文件夹中创建文件夹结构 `./outputs/txt2img-samples/samples/`
- 
-使用 `cd` 命令，在 Conda 环境中切换到此文件夹(可以拖入文件夹快速显示地址)。
+**安装PyTorch和Torchvision**
 
-选择数据集之一 man_euler、man_unsplash、person_not、woman_not
- 
-用您的选择替换 [DATASET](https://github.com/djbielejeski/Stable-Diffusion-Regularization-Images-DATASET.git)
+    pip install torch==1.12.1+cu116 torchvision==0.13.1+cu116 --extra-index-url https://download.pytorch.org/whl/cu116
 
-运行你的数据集克隆 `git clone https://github.com/djbielejeski/Stable-Diffusion-Regularization-Images-woman_ddim.git`
- 
+**进入python并测试调用：**
 
-打开文件夹，将 DATASET 文件夹 `woman_ddim` 复制到 samples 文件夹。
+    python
+    >>>import bitsandbytes
 
-现在应该在文件夹中有 1500 张图像`.\Dreambooth-SD-optimized\outputs\txt2img-samples\samples\woman_ddim`
+如果没有报错证明安装成功（Ctrl + Z并回车退出python）
 
+**设置accelerate**
 
-**预训练 准备训练样本**
+    accelerate config
+    
+    In which compute environment are you running? ([0] This machine, [1] AWS (Amazon SageMaker)): 0
+    Which type of machine are you using? ([0] No distributed training, [1] multi-CPU, [2] multi-GPU, [3] TPU [4] MPS): 0
+    Do you want to run your training on CPU only (even if a GPU is available)? [yes/NO]:NO
+    Do you want to use DeepSpeed? [yes/NO]:NO
+    Do you wish to use FP16 or BF16 (mixed precision)? [NO/fp16/bf16]: fp16
 
-收集至少十张您想要使用的示例图片，*图像上的集合必须是偶数*。如果目地是训练角色，请抠图！
- 
-使用 (https://www.birme.net/?target_width=512&target_height=512) 批量裁剪和调整图像大小下载压缩包。
+按照上面的设置选项，（0，0，NO，NO，fp16）
 
-然后在根文件夹 `Dreambooth-SD-optimized` 中创建一个名为 `training_samples` 的文件夹。
- 
-在训练集的 `training_samples `中创建一个文件夹命名为你想要的名字，把需要训练的已经调整好的图像复制到这个文件夹。
+**修改显存优化**
 
-在记事本等编辑器中打开 `Dreambooth-SD-optimized\ldm\data\personalized.py`，编辑第 11 行 `photo of a sks {}` 改为 `英文名字 {}`
+因为无法使用xformers，所以使用https://github.com/lucidrains/memory-efficient-attention-pytorch/blob/main/memory_efficient_attention_pytorch/flash_attention.py
+中的优化方法作为代替：
 
+将 attention.py: https://pastebin.com/nmwTrGB9 覆盖到diffusers\src\diffusers\models目录:
 
-**训练模型**
- 
-切换到 `Dreambooth-SD-optimized` 根文件夹。
+至此环境配置完成，可以开始训练了。具体使用参数请查阅ShivamShrirao的readme文件和notebook文件
 
-记下 TRAINING-SAMPLES-NAME (英文名字) 您的 REGULARIZATION-IMAGES-NAME (woman_ddim) 和 CLASS (woman)。
+**Tips：**
 
-编辑以下代码
+我使用以下参数训练，
 
-```bash
-python main.py --base configs/stable-diffusion/v1-finetune_unfrozen.yaml -t --actual_resume model.ckpt --reg_data_root outputs\txt2img-samples\samples\REGULARIZATION-IMAGES-NAME -n TRAINING-SAMPLES-NAME - -gpus 0, --data_root training_samples\TRAINING-SAMPLES-NAME --batch_size 2020 --class_word 类
-```
+    accelerate launch --num_cpu_threads_per_process 8 diffusers/examples/dreambooth/train_dreambooth.py --pretrained_model_name_or_path=models/diffusers_model --pretrained_vae_name_or_path=models/diffusers_model/vae --output_dir=models --concepts_list="concepts_list.json" --with_prior_preservation --prior_loss_weight=1.0 --seed=1337 --resolution=512 --mixed_precision="fp16" --lr_scheduler="constant" --use_8bit_adam --gradient_accumulation_steps=1 --train_batch_size=1 --max_train_steps=800 --save_interval=10000 --learning_rate=1e-6 --num_class_images=100 --lr_warmup_steps=0 --gradient_checkpointing
 
-示例为
-```bash
-python main.py --base configs/stable-diffusion/v1-finetune_unfrozen.yaml -t --actual_resume model.ckpt --reg_data_root outputs\txt2img-samples\samples\woman_ddim -n 英文名字 --gpus 0, --data_root training_samples \英文名字 --batch_size 2020 --class_word 女人
-```
+![image](https://user-images.githubusercontent.com/44570237/198906326-21b4f779-f870-4012-84c1-d5ac1dae0411.png)
 
-运行后，只要看到 `Another one beats the dust...` 出现，就算出错训练也结束了。
- 
+峰值显存占用正好为12G，如果您只有一个显卡，显存不高于12G，而且同时需要用于windows系统显示，请关闭所有占用显存的程序或网页等，减少额外显存消耗再进行训练；
 
-**修剪和转移模型**
- 
-??? info "Dreambooth-SD-optimized"
-    如果您运行的是 `Dreambooth-SD-optimized`，则需要将 `XavierXiao Dreambooth-Stable-Diffusion` 克隆库中的 `prune_ckpt.py` 添加到`Dreambooth-SD-optimized` 根文件夹中。
+这是一个临时的解决方案，期待windows官方适配的到来
 
+diffusers不能直接使用ckpt文件进行训练，需要先进行转换，示例：
 
-找到训练数据文件夹的名称 `.\Dreambooth-SD-optimized\logs\xxxx` 
+    python diffusers\scripts\convert_original_stable_diffusion_to_diffusers.py  --checkpoint_path model.ckpt  --original_config_file v1-inference.yaml  --scheduler_type ddim  --dump_path models/diffusers_model
 
-进入 `Dreambooth-SD-optimized` 根文件夹，比如 `cd .\Dreambooth-SD-optimized`。运行以下命令，替换 `TRAINED-DATA-FOLDER` 字段为输出的文件夹名字：
+训练完成同样要进行打包转换为ckpt,即可用于AUTOMATIC1111的WebUI中：
 
-```python
-python "prune_ckpt.py" --ckpt "TRAINED-DATA-FOLDER\checkpoints\last.ckpt 的路径，记得替换啊！！"
-```
+    python diffusers\scripts\convert_diffusers_to_original_stable_diffusion.py  --model_path models/resultModel  --checkpoint_path result.ckpt  --half
 
-[prune_ckpt.py](https://github.com/JoePenna/Dreambooth-Stable-Diffusion/tree/main/scripts)
-
-然后等待运行完毕后，将 `checkpoints` 内的裁剪模型 `last-pruned.ckpt` 文件重命名为(TRAINING-SAMPLES-NAME的名字)移动到 WebUi 的 `models` 目录，在界面顶栏即可切换模型。
 
 
 ### 参数分析
