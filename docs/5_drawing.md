@@ -1138,6 +1138,8 @@ Clip 跳过 0，其他一切都很好（afaik 不要使用超网络、v2、yaml�
 {an extremely delicate and beautiful}
 ```
 
+[绘画媒介全分类](https://danbooru.donmai.us/wiki_pages?commit=Search&search%5Btitle_normalize%5D=%2A_%28medium%29)
+
 [动漫人物/艺术家/风格化列表/Pt文件](https://rentry.org/anime_and_titties)
 
 [风格化：人偶教室](https://www.yuque.com/longyuye/lmgcwy)

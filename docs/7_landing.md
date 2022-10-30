@@ -19,6 +19,8 @@
 
 - [SDWebUi自动补全]( https://github.com/DominikDoom/a1111-sd-webui-tagcomplete)
 
+- [标签提词器](https://thereisnospon.github.io/NovelAiTag/)
+
 - [参数转换-M2NM2NBot](https://t.me/M2NM2NBot)
 
 - [参数转换 - Js项目](https://naisd5ch.github.io/novel-ai-5ch-wiki-js/)
@@ -86,6 +88,8 @@
 
 ### 风格化
 
+- [绘画媒介全分类](https://danbooru.donmai.us/wiki_pages?commit=Search&search%5Btitle_normalize%5D=%2A_%28medium%29)
+
 - [艺术家博物馆](https://gallerix.asia/storeroom/)
 
 - [Ai艺术家文档——深入了解](https://docs.google.com/spreadsheets/d/1SRqJ7F_6yHVSOeCi3U82aA448TqEGrUlRrLLZ51abLg/htmlview#)
@@ -128,6 +132,9 @@
 
 [list of Textual Inversion embeddings for SD](https://rentry.org/embeddings)
 
+### 模板库
+
+[元素法典](https://docs.qq.com/doc/DWHl3am5Zb05QbGVs?dver=) 来自 [元素法典制作委员会](https://space.bilibili.com/1981251194)
 
 ### 数据集
 
