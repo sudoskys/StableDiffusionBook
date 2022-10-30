@@ -658,11 +658,16 @@ CFG 越高，越符合提示词，降噪越高越偏离原图。
 如果你想了解一些差分的实例，[5CH日语Wiki](https://seesaawiki.jp/nai_ch/d/%c7%ed%a4%ae%a5%b3%a5%e9%a5%c6%a5%af) 提供了一个实例。
 
 
-### 使用 Ai 进行立绘设计
+### 使用 Ai 进行设计
+
+- 立绘
 
 <iframe src="//player.bilibili.com/player.html?aid=559362671&bvid=BV14e4y1U7r9&cid=869144379&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 >BV14e4y1U7r9
 
+- 图标
+
+[看这个](https://www.bilibili.com/video/BV1384y1B7MX)
 
 ## 魔法进阶
 
