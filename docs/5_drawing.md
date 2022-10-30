@@ -697,13 +697,21 @@ CFG 越高，越符合提示词，降噪越高越偏离原图。
 
 文档编写者试了一下，以下 prompt 可以出高质量表情包。
 
+不要对贴纸要求质量提示词。
+
 **积极词汇**
 
 ```
-masterpiece,best quality,1girl,sticker,Chibi,Q,
+1girl,sticker,Chibi,Q,
 white background,
 ```
-lowres 可加可不加
+`masterpiece,best quality` 可加可不加，质量不够就加
+
+`lowres` 可加可不加，不够复古就加
+
+`Chibi` 控制角色为 Q版(大头小身)，不够 Q 就加
+
+`sticker` 是指定风格为社交软件贴纸，必须
 
 **消极词汇**
 
