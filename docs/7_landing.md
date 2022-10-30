@@ -124,9 +124,11 @@
 
 ### embeddings
 
+不同大模型之间不能通用 embeddings
+
 [动漫人物/艺术家/风格化列表/Pt文件](https://rentry.org/anime_and_titties)
 
-[HuggingFace 的e mbeddings 库](https://cyberes.github.io/stable-diffusion-textual-inversion-models/)
+[HuggingFace 的e mbeddings 库，仅适用原版SD](https://cyberes.github.io/stable-diffusion-textual-inversion-models/) ，[stable-diffusion-conceptualizer](https://huggingface.co/spaces/sd-concepts-library/stable-diffusion-conceptualizer)
 
 [(NSFW)embeddings 风格化](https://gitlab.com/16777216c/stable-diffusion-embeddings)
 
