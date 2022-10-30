@@ -29,10 +29,10 @@ Stable diffusion本来是面向三次元的，而 NAI 是二次元特化版本�
 
 ## 访问情况
 
-- Vercel 域名(国内不可用)
+- Vercel (中国大陆不可用)
 [https://stable-diffusion-book.vercel.app/](https://stable-diffusion-book.vercel.app/) 短链为(https://b23.ink/aibook)
 
-- 别名(国内可用)
+- 别名 (中国大陆可用)
 [https://draw.dianas.cyou/](https://draw.dianas.cyou/)
 
 如果不能访问图片或外链资源，请尝试切换网络环境。如果源站地址返回状态码 404/300/302/502 ，可以提交 issue 通知我们移除此内容。
