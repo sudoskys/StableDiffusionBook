@@ -709,7 +709,7 @@ white background,lowres,
 **消极词汇**
 
 ```
-bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, jpeg artifacts, signature, watermark, username, blurry, bad feet
+bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped,low quality, worst quality, jpeg artifacts, signature, watermark, username, blurry, bad feet
 ```
 
 尺寸要求正方形。
