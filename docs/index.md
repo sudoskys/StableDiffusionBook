@@ -40,7 +40,7 @@ Stable diffusion本来是面向三次元的，而 NAI 是二次元特化版本�
 
 ## Stable Diffusion 和 NAI 关系？我该怎么办？
 
-因为泄漏事件，NAI 使用数千万 Danbooru（图站）图片训练的模型被泄漏了两次，而后来 **Stable Diffusion WebUi(一个通用的生成框架)** 对模型进行了支持，所以可以 使用 WebUi（简称 SDWebUi）装载 NAI 的模型。
+因为泄漏事件，NAI 使用数千万 Danbooru（图站）图片训练的模型被泄漏了两次。 目前社区广泛使用 **Stable Diffusion WebUi** 生成框架 （简称 SDWebUi）装载 NAI 的模型。
 
 
 !!! info "**事件报告**"
