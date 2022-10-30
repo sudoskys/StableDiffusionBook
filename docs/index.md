@@ -27,7 +27,7 @@ Copyright (C)  2022  StableDiffusionBook.
 Stable diffusion本来是面向三次元的，而 NAI 是二次元特化版本。
 
 
-## 分流地址
+## 访问情况
 
 - Vercel 域名(国内不可用)
 [https://stable-diffusion-book.vercel.app/](https://stable-diffusion-book.vercel.app/) 短链为(https://b23.ink/aibook)
@@ -35,7 +35,7 @@ Stable diffusion本来是面向三次元的，而 NAI 是二次元特化版本�
 - 别名(国内可用)
 [https://draw.dianas.cyou/](https://draw.dianas.cyou/)
 
->图片托管在Github user,如果还是不能访问图片，请切换网络环境。
+如果不能访问图片或外链资源，请尝试切换网络环境。如果源站地址返回状态码 404/300/302/502 ，可以提交 issue 通知我们移除此内容。
 
 
 ## Stable Diffusion 和 NAI 关系？我该怎么办？
@@ -55,7 +55,6 @@ Stable diffusion本来是面向三次元的，而 NAI 是二次元特化版本�
 海外
 
 <a href="https://discord.gg/vhsArSSA6K"><img src="https://img.shields.io/discord/1033769426216046622?color=blue&label=Discord_Ai%E7%BB%98%E7%94%BB%E4%B8%AD%E6%96%87%E7%BB%84" alt="Discord"></a> <a href="https://t.me/StableDiffusion_CN">
-
 <img src="https://img.shields.io/badge/Telegram-Group-blue" alt="Telegram"></a>
 
 
