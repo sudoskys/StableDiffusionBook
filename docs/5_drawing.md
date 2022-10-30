@@ -703,14 +703,17 @@ CFG 越高，越符合提示词，降噪越高越偏离原图。
 **积极词汇**
 
 ```
-masterpiece, best quality,1girl,sticker,Chibi,Q,
-white background,lowres,
+masterpiece,best quality,1girl,sticker,Chibi,Q,
+white background,
 ```
+lowres 可加可不加
+
 **消极词汇**
 
 ```
-bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped,low quality, worst quality, jpeg artifacts, signature, watermark, username, blurry, bad feet
+bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, jpeg artifacts, signature, watermark, username, blurry, bad feet
 ```
+low quality 可加可不加
 
 尺寸要求正方形。
 
