@@ -458,6 +458,19 @@
     否定提示词
   </a>
   
+    <nav class="md-nav" aria-label="否定提示词">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cfg-scaledenoising-strength" class="md-nav__link">
+    CFG Scale/Denoising strength 契合度/降噪
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -469,7 +482,7 @@
         
           <li class="md-nav__item">
   <a href="#_9" class="md-nav__link">
-    重现提示词
+    从图片重现提示词
   </a>
   
 </li>
@@ -733,13 +746,6 @@
         
           <li class="md-nav__item">
   <a href="#_31" class="md-nav__link">
-    横条参数
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_32" class="md-nav__link">
     图形参数
   </a>
   
@@ -766,7 +772,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_33" class="md-nav__link">
+  <a href="#_32" class="md-nav__link">
     重绘画技巧/去除/替换
   </a>
   
@@ -807,7 +813,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_34" class="md-nav__link">
+  <a href="#_33" class="md-nav__link">
     脚本
   </a>
   
@@ -826,14 +832,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_35" class="md-nav__link">
+  <a href="#_34" class="md-nav__link">
     图像去噪
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_36" class="md-nav__link">
+  <a href="#_35" class="md-nav__link">
     渐变提示词
   </a>
   
@@ -847,21 +853,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_37" class="md-nav__link">
+  <a href="#_36" class="md-nav__link">
     注意 尺寸
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_38" class="md-nav__link">
+  <a href="#_37" class="md-nav__link">
     提示词速查
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_39" class="md-nav__link">
+  <a href="#_38" class="md-nav__link">
     调参工程师
   </a>
   
@@ -873,7 +879,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_40" class="md-nav__link">
+  <a href="#_39" class="md-nav__link">
     市场应用情况调查
   </a>
   
@@ -881,7 +887,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_41" class="md-nav__link">
+  <a href="#_40" class="md-nav__link">
     谈论
   </a>
   
@@ -893,7 +899,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_42" class="md-nav__link">
+  <a href="#_41" class="md-nav__link">
     自定义脚本
   </a>
   
@@ -901,7 +907,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_43" class="md-nav__link">
+  <a href="#_42" class="md-nav__link">
     自动补全
   </a>
   
@@ -941,7 +947,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_44" class="md-nav__link">
+  <a href="#_43" class="md-nav__link">
     参数
   </a>
   
@@ -963,7 +969,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_45" class="md-nav__link">
+  <a href="#_44" class="md-nav__link">
     元素法典
   </a>
   
@@ -978,21 +984,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_46" class="md-nav__link">
+  <a href="#_45" class="md-nav__link">
     草图风格
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_47" class="md-nav__link">
+  <a href="#_46" class="md-nav__link">
     艺术风格
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_48" class="md-nav__link">
+  <a href="#_47" class="md-nav__link">
     杂志/设定集 风格
   </a>
   
@@ -1286,6 +1292,12 @@ mutilated, tranny, trans, trannsexual, [out of frame], (bad proportions),
 normal quality, text, censored, gown, latex, pencil
 </code></pre></div>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Negative-prompt#examples">官方Wiki</a></p>
+<h4 id="cfg-scaledenoising-strength">CFG Scale/Denoising strength 契合度/降噪</h4>
+<p><strong>CFG Scale</strong></p>
+<p><code>cfg scale</code> 就是图像与 prompt 的契合度,Scale越高，程序对提示词越忠诚，契合度越高。</p>
+<p><strong>Denoising strength 降低噪声</strong></p>
+<p><code>Denoising strength</code> 决定算法对图像内容的保留程度,可以减少对画风的变得，但也会弱化img2img能力。值越高 AI 对原图的参考程度就越低 (同时增加迭代次数)。</p>
+<p>对于以图做图来说，低 <code>denoising</code> 意味着修正原图，高 <code>denoising</code> 就和原图就没有大的相关性了。一般来讲阈值是 0.7 左右，超过 0.7 和原图基本上无关，0.3 以下就是稍微改一些。</p>
 <h3 id="_8">渐变标签</h3>
 <p>渐变标签，指示 WebUi 在训练中替换 Token，语法使用 <code>[some1:some2:num]</code></p>
 <p><code>[fantasy:cyberpunk:16]</code> 代表从第 16 step 后，使用 <code>cyberpunk</code> 标签替换 <code>fantasy</code></p>
@@ -1295,9 +1307,9 @@ normal quality, text, censored, gown, latex, pencil
 <!--
 ![sample_Gradient](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/sample_Gradient.jpg)
 -->
-<h3 id="_9">重现提示词</h3>
-<p>对于没有压缩的原图，我们可以将文件拖入 <code>PNG Info</code> 选项卡，进行提示词(Token)查看。</p>
-<p>或者使用 <a href="https://spell.novelai.dev/">网页工具</a></p>
+<h3 id="_9">从图片重现提示词</h3>
+<p>程序默认会在图片中加入提示词，参数，模型信息，对于没有压缩的原图，我们可以将文件拖入 <code>PNG Info</code> 选项卡，进行提示词(Token)查看。</p>
+<p>或者使用 <a href="https://spell.novelai.dev/">在线工具</a> 查看它。</p>
 <h3 id="_10">逆向提示词</h3>
 <p>这里有一些 <strong>Image 逆向参数服务</strong>，可以从图片中提取相关参数，不一定准确。</p>
 <p><a href="https://t.me/LenKiMo_Bot">LenKiMo_Bot</a></p>
@@ -1566,13 +1578,7 @@ git clone https://github.com/yfszzx/stable-diffusion-webui-images-browser
 <p class="admonition-title">不同之处</p>
 <p>PS 重新绘画投入 Img2Img 的话，会导致画风的变动，而 Inpaint 就不会。</p>
 </div>
-<h4 id="_31">横条参数</h4>
-<p><strong>CFG Scale</strong></p>
-<p><code>cfg scale</code> 就是符合 prompt 的程度,Scale越高，程序对提示词越忠诚，越符合。</p>
-<p><strong>Denoising strength 降低噪声</strong></p>
-<p><code>Denoising strength</code> 决定算法对图像内容的保留程度,可以减少对画风的变得，但也会弱化img2img能力。值越高 AI 对原图的参考程度就越低 (同时增加迭代次数)。</p>
-<p>对于以图做图来说，低 <code>denoising</code> 意味着修正原图，高 <code>denoising</code> 就和原图就没有大的相关性了。一般来讲阈值是 0.7 左右，超过 0.7 和原图基本上无关，0.3 以下就是稍微改一些。</p>
-<h4 id="_32">图形参数</h4>
+<h4 id="_31">图形参数</h4>
 <p>Just resize : 将图像调整为目标分辨率。除非高度和宽度完全匹配，否则图片会被挤压</p>
 <p>Crop and resize：调整图像大小，使整个目标分辨率都被图像填充。裁剪多余部分。</p>
 <p>Resize and fill：调整图像大小，使整个图像在目标分辨率内。用图像的颜色填充空白区域。</p>
@@ -1596,7 +1602,7 @@ git clone https://github.com/yfszzx/stable-diffusion-webui-images-browser
 <p>一张图片<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">2</a></sup>展现WebUI下img2img中不同参数下效果的详细对比图（prompt、steps、scale、各种seed等参数均保持一致）</p>
 </blockquote>
 <p>纵轴是Denoising strength（线上版的strength），横轴是Variation strength</p>
-<h4 id="_33">重绘画技巧/去除/替换</h4>
+<h4 id="_32">重绘画技巧/去除/替换</h4>
 <ul>
 <li>
 <p>首先要对人物描线，然后打上色块（如果有阴影，取<strong>亮色皮肤</strong>）。</p>
@@ -1677,7 +1683,7 @@ git clone https://github.com/yfszzx/stable-diffusion-webui-images-browser
 <h3 id="img2img_2">Img2Img 让低显存生成大分辨率图片</h3>
 <p>在前面提到了，如果遇到生成鬼图或者 低显存生产高分辨率图片 可以采用的 Img2Img 画质提升脚本。</p>
 <p>其实我<strong>强烈推荐</strong>你使用 Extras 的功能对低分辨率进行重放，效果不错的，且体验良好！</p>
-<h4 id="_34">脚本</h4>
+<h4 id="_33">脚本</h4>
 <p>但是如果你想使用脚本提供的分辨率增强，这里有 Img2Img 的具体流程</p>
 <ol>
 <li>
@@ -1724,13 +1730,13 @@ git clone https://github.com/yfszzx/stable-diffusion-webui-images-browser
 <p><code>SD Upscaler</code> 在注重细节的同时还提升分辨率。</p>
 <p>曾经有段时间，<code>LSDR</code> 被认为是最好的。有些人喜欢 swinir，有些喜欢<code>esrgan4x</code>，<code>ymmv</code>，推荐使用 <code>ESRGAN_4x</code></p>
 <p>如果你要搞二次元，推荐使用<a href="https://github.com/bilibili/ailab/tree/main/Real-CUGAN">realcugan</a></p>
-<h3 id="_35">图像去噪</h3>
+<h3 id="_34">图像去噪</h3>
 <p>推荐使用 <a href="https://github.com/xinntao/Real-ESRGAN">Real-ESRGAN</a> 降噪。</p>
 <p><img alt="效果" src="https://raw.githubusercontent.com/xinntao/Real-ESRGAN/master/assets/teaser.jpg" /></p>
 <blockquote>
 <p>效果图</p>
 </blockquote>
-<h3 id="_36"><strong>渐变提示词</strong></h3>
+<h3 id="_35"><strong>渐变提示词</strong></h3>
 <p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-editing</p>
 <p>允许您开始对一张图片进行采样，但在中间切换到其他图片。基本语法是：</p>
 <div class="highlight"><pre><span></span><code>[from:to:when]
@@ -1746,13 +1752,13 @@ git clone https://github.com/yfszzx/stable-diffusion-webui-images-browser
 <p>比如 [male:female:0.0], 意味着你开始时就要求画一个女性。</p>
 <h3 id="dlc">扩展模型/DLC</h3>
 <p>见下一节的详细内容。</p>
-<h3 id="_37">注意 <code>尺寸</code></h3>
+<h3 id="_36">注意 <code>尺寸</code></h3>
 <p>比如出图尺寸宽了人可能会多</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>要匹配好姿势，镜头和人物才不畸形，有时候需要限定量词，多人物时要处理空间关系和 prompt 遮挡优先级。人数-&gt;人物样貌-&gt;环境样式-&gt;人物状态</p>
 </div>
-<h3 id="_38">提示词速查</h3>
+<h3 id="_37">提示词速查</h3>
 <p><strong><a href="https://docs.google.com/spreadsheets/d/14Gg1kIGWdZGXyCC8AgYVT0lqI6IivLzZOdIT3QMWwVI/edit">手抄本法术书</a></strong></p>
 <p><strong><a href="https://gelbooru.com/index.php?page=tags&amp;s=list">Danbooru全部Tag列表</a></strong></p>
 <p><strong><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml#">参数法术全典</a></strong></p>
@@ -1760,10 +1766,10 @@ git clone https://github.com/yfszzx/stable-diffusion-webui-images-browser
 <p><strong><a href="https://github.com/scooderic/exhentai-tags-chinese-translation">NSFWTag</a></strong></p>
 <p><strong><a href="https://docs.google.com/spreadsheets/d/1SRqJ7F_6yHVSOeCi3U82aA448TqEGrUlRrLLZ51abLg/htmlview#">Ai艺术家文档</a></strong></p>
 <p><strong><a href="https://www.bilibili.com/read/cv19023021">Novelai 关键词组合器</a></strong></p>
-<h3 id="_39">调参工程师</h3>
+<h3 id="_38">调参工程师</h3>
 <p><a href="https://github.com/Maks-s/sd-akashic">https://github.com/Maks-s/sd-akashic</a></p>
 <p><a href="https://github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference">https://github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference</a></p>
-<h2 id="_40">市场应用情况调查</h2>
+<h2 id="_39">市场应用情况调查</h2>
 <p>这里是稳定扩散（非 NAI 模型）的应用情况。</p>
 <ul>
 <li>3D</li>
@@ -1802,7 +1808,7 @@ git clone https://github.com/yfszzx/stable-diffusion-webui-images-browser
 <li>NFT</li>
 </ul>
 <p>？</p>
-<h3 id="_41">谈论</h3>
+<h3 id="_40">谈论</h3>
 <p>Ai 处理不了细节，对漫画创作(包含其他需要连续情节的作品)其实很鸡肋，因为 Ai 无法保证是同一角色。</p>
 <p>同时 Ai 会添加莫名其妙的结构光影，造成你二修困难。</p>
 <p>这些特点导致 Ai 根本不能替代人工的精细需求，只能替代低端需求(细节没Ai多的那种)</p>
@@ -1811,9 +1817,9 @@ git clone https://github.com/yfszzx/stable-diffusion-webui-images-browser
 <blockquote>
 <p>他的未来中作用应该是完成预制框架中的绝大部分重复性作业</p>
 </blockquote>
-<h2 id="_42">自定义脚本</h2>
+<h2 id="_41">自定义脚本</h2>
 <p>此主题的内容可能不会即时更新到此处，<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts#prompt-interpolation">源地址</a></p>
-<h3 id="_43">自动补全</h3>
+<h3 id="_42">自动补全</h3>
 <p>这里有一个项目，可以使SD做到类似 NAI 的补全效果。</p>
 <p>https://github.com/DominikDoom/a1111-sd-webui-tagcomplete</p>
 <h3 id="advanced-prompt-matrix">Advanced prompt matrix</h3>
@@ -1829,7 +1835,7 @@ git clone https://github.com/yfszzx/stable-diffusion-webui-images-browser
 <p>https://github.com/dfaker/embedding-to-png-script</p>
 <h3 id="random-steps-and-cfg">Random Steps and CFG</h3>
 <p>https://github.com/lilly1987/AI-WEBUI-scripts-Random</p>
-<h2 id="_44">参数</h2>
+<h2 id="_43">参数</h2>
 <p>为什么不去 <a href="https://danbooru.donmai.us/wiki_pages/howto%3Atag_checklist">这里</a> 看<a href="https://danbooru.donmai.us/wiki_pages/tag_groups">原始数据站点</a>的参数呢？</p>
 <p><a href="https://github.com/EhTagTranslation">E 站标签翻译项目</a></p>
 <h3 id="nai">NAI 在使用的出图参数</h3>
@@ -1874,7 +1880,7 @@ scale 就是 CFG scale
 <p>在 NAI 和 Webui 之间转换加强参数，相关的机器人服务 <a href="https://t.me/M2NM2NBot">M2NM2NBot</a></p>
 <p>相关的 <a href="https://github.com/naisd5ch/novel-ai-5ch-wiki-js">网页JS</a></p>
 <p>权重增强标识：NAI 是 <code>{}</code> ，WebUi(SD) 是 <code>()</code></p>
-<h3 id="_45">元素法典</h3>
+<h3 id="_44">元素法典</h3>
 <p>元素法典提供了一个即查即用的模板库(类比作文大全)，里面有Tag的调试记录，方便快捷。</p>
 <p><a href="https://docs.qq.com/doc/DWHl3am5Zb05QbGVs">元素法典一卷</a></p>
 <p><a href="https://docs.qq.com/doc/DWGh4QnZBVlJYRkly">元素法典第一点五卷</a></p>
@@ -1890,7 +1896,7 @@ scale 就是 CFG scale
 <p><a href="https://rentry.org/artists_sd-v1-4">艺术家列表/SD1.4</a></p>
 <p><a href="https://www.urania.ai/top-sd-artists">艺术家列表/SD1.4/1,833 位艺术家</a></p>
 <p><a href="https://gallerix.asia/storeroom/">艺术家博物馆</a></p>
-<h4 id="_46">草图风格</h4>
+<h4 id="_45">草图风格</h4>
 <table>
 <thead>
 <tr>
@@ -1926,7 +1932,7 @@ scale 就是 CFG scale
 </tbody>
 </table>
 <p>利用sketch，pastel color，lineart的tag模拟一张图的绘画过程</p>
-<h4 id="_47">艺术风格</h4>
+<h4 id="_46">艺术风格</h4>
 <table>
 <thead>
 <tr>
@@ -1965,7 +1971,7 @@ scale 就是 CFG scale
 </tr>
 </tbody>
 </table>
-<h4 id="_48">杂志/设定集 风格</h4>
+<h4 id="_47">杂志/设定集 风格</h4>
 <table>
 <thead>
 <tr>
@@ -2416,11 +2422,11 @@ scale 就是 CFG scale
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 30, 2022 08:47:59</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 30, 2022 08:52:40</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 30, 2022 08:47:59</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 30, 2022 08:52:40</span>
       
     
   </small>
