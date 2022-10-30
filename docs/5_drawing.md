@@ -1123,13 +1123,15 @@ Clip 跳过 0，其他一切都很好（afaik 不要使用超网络、v2、yaml�
 权重增强标识：NAI 是 `{}` ，WebUi(SD) 是 `()`
 
 
-### 关于元素法典
+### 元素法典
 
-元素法典提供了一个即查即用的模板库(类比作文大全)，里面有Tag的调试记录，可以作为灵感参考。
+元素法典提供了一个即查即用的模板库(类比作文大全)，里面有Tag的调试记录，方便快捷。
 
 [元素法典一卷](https://docs.qq.com/doc/DWHl3am5Zb05QbGVs)
 
 [元素法典第一点五卷](https://docs.qq.com/doc/DWGh4QnZBVlJYRkly)
+
+[元素法典制作委员会](https://space.bilibili.com/1981251194)
 
 
 ### 良好参数(风格趋向插画)[^4]
