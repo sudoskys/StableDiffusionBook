@@ -1552,11 +1552,15 @@ git clone https://github.com/yfszzx/stable-diffusion-webui-images-browser
 </ul>
 <p>表情包效果真的很好。 <code>sticker</code> 配合 西方颜文字 完成度超高！</p>
 <p>文档编写者试了一下，以下 prompt 可以出高质量表情包。</p>
+<p>不要对贴纸要求质量提示词。</p>
 <p><strong>积极词汇</strong></p>
-<p><div class="highlight"><pre><span></span><code>masterpiece,best quality,1girl,sticker,Chibi,Q,
+<p><div class="highlight"><pre><span></span><code>1girl,sticker,Chibi,Q,
 white background,
 </code></pre></div>
-lowres 可加可不加</p>
+<code>masterpiece,best quality</code> 可加可不加，质量不够就加</p>
+<p><code>lowres</code> 可加可不加，不够复古就加</p>
+<p><code>Chibi</code> 控制角色为 Q版(大头小身)，不够 Q 就加</p>
+<p><code>sticker</code> 是指定风格为社交软件贴纸，必须</p>
 <p><strong>消极词汇</strong></p>
 <p><div class="highlight"><pre><span></span><code>bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, jpeg artifacts, signature, watermark, username, blurry, bad feet
 </code></pre></div>
@@ -2434,11 +2438,11 @@ scale 就是 CFG scale
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 30, 2022 14:07:43</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 30, 2022 14:15:39</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 30, 2022 14:07:43</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 30, 2022 14:15:39</span>
       
     
   </small>
