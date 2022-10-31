@@ -700,6 +700,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#windows_1" class="md-nav__link">
+    Windows
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1043,64 +1050,70 @@
 <p>以上笔记本来自 <a href="https://t.me/StableDiffusion_CN/196744">社区置顶</a></p>
 <p><a href="https://github.com/crosstyan/dreambooth-scripts-for-autodl">适用于Autodl的项目</a></p>
 <h4 id="windows">Windows</h4>
-<p>翻译自<sup id="fnref6:16"><a class="footnote-ref" href="#fn:16">10</a></sup></p>
-<div class="admonition danger">
-<p class="admonition-title">Danger</p>
-<p>以下内容目前并不可靠，是原版的训练过程，请勿使用。</p>
-<p>因为 此段初始撰稿人 并没有训练条件，如果您有能力完成此部分内容，欢迎贡献一个 PR.</p>
-<p>2022/10/28</p>
-</div>
+<h4 id="windows_1">Windows</h4>
+<p>Windows上的Dreambooth 可以采用ShivamShrirao的优化版本来节省显存，</p>
+<p><a href="https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth">diffusers/examples/dreambooth at main · ShivamShrirao/diffusers · GitHub</a></p>
+<p>但是，由于相关链接库的原因，用于在Linux上的部署方法无法直接在windows上使用，由于同样的原因，该优化版本在colab上最低9.9G的显存需求在windows上应该稍高，因此推荐至少使用显存12G的显卡。笔者仅在16G显存PC上测试成功，12G理论可以，待测试。</p>
+<p>修改或覆盖原始库中的文件前请备份！</p>
 <p>准备环境 <code>Git</code>，<code>Python</code>，<code>MiniConda</code> (或 <code>MiniConda</code> )。</p>
-<p><strong>安装 Dreambooth-SD-Optimized</strong></p>
-<p>在终端使用 <code>cd</code> 切换到一个新的文件夹或在目标文件夹按住 <code>Shift</code> 右键打开 <code>shell</code> 。</p>
-<p>克隆 Dreambooth-SD-optimized <code>git clone https://github.com/gammagec/Dreambooth-SD-optimized.git</code></p>
-<p>XavierXiao 的版本步骤相同，只是文件夹名称不同。<code>git clone https://github.com/XavierXiao/Dreambooth-Stable-Diffusion.git</code></p>
-<p><strong>Dreambooth-SD-Optimized 构建环境&amp;编辑文件</strong></p>
-<p>在记事本等编辑器中打开 <code>Dreambooth-SD-optimized</code> 文件夹中的 <code>environment.yaml</code> 文件。同时你可以在 <code>configs/stable-diffusion/v1-finetune_unfrozen.yaml</code> 更改训练步数</p>
-<p>将第一行（<code>ldm</code>）编辑选择的环境名称 <code>SD-Optimized</code>，保存并关闭。</p>
-<p>从开始菜单启动 <code>Anaconda Prompt</code> 或 <code>MiniConda</code></p>
-<p>在当前目录使用 <code>conda env create -f environment.yaml</code> 构建环境。Tip：激活环境使用 <code>conda activate SD-Optimized</code>，停用此环境，请使用 <code>conda deactivate</code> </p>
-<p><strong>复制文件</strong></p>
-<p>将 <code>model.ckpt</code> 从 <code>\stable-diffusion-webui\models</code> 复制到 <code>Dreambooth-SD-optimized</code></p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>在当前目录激活环境 <code>conda activate SD-Optimized</code></p>
-</div>
-<p><strong>Regularization Images 预训练</strong></p>
-<p>在 <code>Dreambooth-SD-optimized</code> 根文件夹中创建文件夹结构 <code>./outputs/txt2img-samples/samples/</code></p>
-<p>使用 <code>cd</code> 命令，在 Conda 环境中切换到此文件夹(可以拖入文件夹快速显示地址)。</p>
-<p>选择数据集之一 man_euler、man_unsplash、person_not、woman_not</p>
-<p>用您的选择替换 <a href="https://github.com/djbielejeski/Stable-Diffusion-Regularization-Images-DATASET.git">DATASET</a></p>
-<p>运行你的数据集克隆 <code>git clone https://github.com/djbielejeski/Stable-Diffusion-Regularization-Images-woman_ddim.git</code></p>
-<p>打开文件夹，将 DATASET 文件夹 <code>woman_ddim</code> 复制到 samples 文件夹。</p>
-<p>现在应该在文件夹中有 1500 张图像<code>.\Dreambooth-SD-optimized\outputs\txt2img-samples\samples\woman_ddim</code></p>
-<p><strong>预训练 准备训练样本</strong></p>
-<p>收集至少十张您想要使用的示例图片，<em>图像上的集合必须是偶数</em>。如果目地是训练角色，请抠图！</p>
-<p>使用 (https://www.birme.net/?target_width=512&amp;target_height=512) 批量裁剪和调整图像大小下载压缩包。</p>
-<p>然后在根文件夹 <code>Dreambooth-SD-optimized</code> 中创建一个名为 <code>training_samples</code> 的文件夹。</p>
-<p>在训练集的 <code>training_samples</code>中创建一个文件夹命名为你想要的名字，把需要训练的已经调整好的图像复制到这个文件夹。</p>
-<p>在记事本等编辑器中打开 <code>Dreambooth-SD-optimized\ldm\data\personalized.py</code>，编辑第 11 行 <code>photo of a sks {}</code> 改为 <code>英文名字 {}</code></p>
-<p><strong>训练模型</strong></p>
-<p>切换到 <code>Dreambooth-SD-optimized</code> 根文件夹。</p>
-<p>记下 TRAINING-SAMPLES-NAME (英文名字) 您的 REGULARIZATION-IMAGES-NAME (woman_ddim) 和 CLASS (woman)。</p>
-<p>编辑以下代码</p>
-<div class="highlight"><pre><span></span><code>python main.py --base configs/stable-diffusion/v1-finetune_unfrozen.yaml -t --actual_resume model.ckpt --reg_data_root outputs<span class="se">\t</span>xt2img-samples<span class="se">\s</span>amples<span class="se">\R</span>EGULARIZATION-IMAGES-NAME -n TRAINING-SAMPLES-NAME - -gpus <span class="m">0</span>, --data_root training_samples<span class="se">\T</span>RAINING-SAMPLES-NAME --batch_size <span class="m">2020</span> --class_word 类
-</code></pre></div>
-<p>示例为
-<div class="highlight"><pre><span></span><code>python main.py --base configs/stable-diffusion/v1-finetune_unfrozen.yaml -t --actual_resume model.ckpt --reg_data_root outputs<span class="se">\t</span>xt2img-samples<span class="se">\s</span>amples<span class="se">\w</span>oman_ddim -n 英文名字 --gpus <span class="m">0</span>, --data_root training_samples <span class="se">\英</span>文名字 --batch_size <span class="m">2020</span> --class_word 女人
-</code></pre></div></p>
-<p>运行后，只要看到 <code>Another one beats the dust...</code> 出现，就算出错训练也结束了。</p>
-<p><strong>修剪和转移模型</strong></p>
-<details class="info">
-<summary>Dreambooth-SD-optimized</summary>
-<p>如果您运行的是 <code>Dreambooth-SD-optimized</code>，则需要将 <code>XavierXiao Dreambooth-Stable-Diffusion</code> 克隆库中的 <code>prune_ckpt.py</code> 添加到<code>Dreambooth-SD-optimized</code> 根文件夹中。</p>
-</details>
-<p>找到训练数据文件夹的名称 <code>.\Dreambooth-SD-optimized\logs\xxxx</code> </p>
-<p>进入 <code>Dreambooth-SD-optimized</code> 根文件夹，比如 <code>cd .\Dreambooth-SD-optimized</code>。运行以下命令，替换 <code>TRAINED-DATA-FOLDER</code> 字段为输出的文件夹名字：</p>
-<div class="highlight"><pre><span></span><code><span class="n">python</span> <span class="s2">&quot;prune_ckpt.py&quot;</span> <span class="o">--</span><span class="n">ckpt</span> <span class="s2">&quot;TRAINED-DATA-FOLDER\checkpoints\last.ckpt 的路径，记得替换啊！！&quot;</span>
-</code></pre></div>
-<p><a href="https://github.com/JoePenna/Dreambooth-Stable-Diffusion/tree/main/scripts">prune_ckpt.py</a></p>
-<p>然后等待运行完毕后，将 <code>checkpoints</code> 内的裁剪模型 <code>last-pruned.ckpt</code> 文件重命名为(TRAINING-SAMPLES-NAME的名字)移动到 WebUi 的 <code>models</code> 目录，在界面顶栏即可切换模型。</p>
+<p>以下步骤在python3.8，windows10 22H2中操作，其他环境未测试</p>
+<p><strong>创建工作目录 ，在目录下构建python3.8的venv虚拟环境</strong></p>
+<pre><code>python -m venv --system-site-packages venv_dbwin
+venv_dbwin\Scripts\activate
+python.exe -m pip install --upgrade pip
+</code></pre>
+<p>克隆ShivamShrirao的优化版本dreambooth到工作目录中并安装相关依赖（使用的构建版本https://github.com/huggingface/diffusers/tree/7465397f33d5de75dcccc155e3fb9a232fcbb0a0 后续版本可能无法支持本文方法）</p>
+<pre><code>git clone https://github.com/ShivamShrirao/diffusers
+cd diffusers
+pip install -e .
+cd examples\dreambooth
+pip install -U -r requirements.txt
+pip install OmegaConf
+pip install pytorch_lightning
+pip install einops
+pip install bitsandbytes==0.34
+</code></pre>
+<p>完成后，在windows上需要根据 https://github.com/TimDettmers/bitsandbytes/issues/30#issuecomment-1257676341 中的方法实现bitsandbytes支持</p>
+<p>将 https://github.com/DeXtmL/bitsandbytes-win-prebuilt 中的libbitsandbytes_cuda116.dll 文件手动拷贝到工作目录下的 venv_diffusers\Lib\site-packages\bitsandbytes 中，位于 libbitsandbytes_cuda116.so 的旁边；</p>
+<p>然后更改脚本以应用，可以手动修改，为方便也可以下载以下文件替换：</p>
+<p>将 cextension.py: https://pastebin.com/jjgxuh8V 覆盖到venv_diffusers\Lib\site-packages\bitsandbytes目录。</p>
+<p>将 main.py: https://pastebin.com/BsEzpdpw 覆盖到venv_diffusers\Lib\site-packages\bitsandbytes\cuda_setup目录。</p>
+<p><strong>安装PyTorch和Torchvision</strong></p>
+<pre><code>pip install torch==1.12.1+cu116 torchvision==0.13.1+cu116 --extra-index-url https://download.pytorch.org/whl/cu116
+</code></pre>
+<p><strong>进入python并测试调用：</strong></p>
+<pre><code>python
+&gt;&gt;&gt;import bitsandbytes
+</code></pre>
+<p>如果没有报错证明安装成功（Ctrl + Z并回车退出python）</p>
+<p><strong>设置accelerate</strong></p>
+<pre><code>accelerate config
+
+In which compute environment are you running? ([0] This machine, [1] AWS (Amazon SageMaker)): 0
+Which type of machine are you using? ([0] No distributed training, [1] multi-CPU, [2] multi-GPU, [3] TPU [4] MPS): 0
+Do you want to run your training on CPU only (even if a GPU is available)? [yes/NO]:NO
+Do you want to use DeepSpeed? [yes/NO]:NO
+Do you wish to use FP16 or BF16 (mixed precision)? [NO/fp16/bf16]: fp16
+</code></pre>
+<p>按照上面的设置选项，（0，0，NO，NO，fp16）</p>
+<p><strong>修改显存优化</strong></p>
+<p>因为无法使用xformers，所以使用https://github.com/lucidrains/memory-efficient-attention-pytorch/blob/main/memory_efficient_attention_pytorch/flash_attention.py
+中的优化方法作为代替：</p>
+<p>将 attention.py: https://pastebin.com/nmwTrGB9 覆盖到diffusers\src\diffusers\models目录:</p>
+<p>至此环境配置完成，可以开始训练了。具体使用参数请查阅ShivamShrirao的readme文件和notebook文件</p>
+<p><strong>Tips：</strong></p>
+<p>我使用以下参数训练，</p>
+<pre><code>accelerate launch --num_cpu_threads_per_process 8 diffusers/examples/dreambooth/train_dreambooth.py --pretrained_model_name_or_path=models/diffusers_model --pretrained_vae_name_or_path=models/diffusers_model/vae --output_dir=models --concepts_list="concepts_list.json" --with_prior_preservation --prior_loss_weight=1.0 --seed=1337 --resolution=512 --mixed_precision="fp16" --lr_scheduler="constant" --use_8bit_adam --gradient_accumulation_steps=1 --train_batch_size=1 --max_train_steps=800 --save_interval=10000 --learning_rate=1e-6 --num_class_images=100 --lr_warmup_steps=0 --gradient_checkpointing
+</code></pre>
+<p><img alt="image" src="https://user-images.githubusercontent.com/44570237/198906326-21b4f779-f870-4012-84c1-d5ac1dae0411.png" /></p>
+<p>峰值显存占用正好为12G，如果您只有一个显卡，显存不高于12G，而且同时需要用于windows系统显示，请关闭所有占用显存的程序或网页等，减少额外显存消耗再进行训练；</p>
+<p>这是一个临时的解决方案，期待windows官方适配的到来</p>
+<p>diffusers不能直接使用ckpt文件进行训练，需要先进行转换，示例：</p>
+<pre><code>python diffusers\scripts\convert_original_stable_diffusion_to_diffusers.py  --checkpoint_path model.ckpt  --original_config_file v1-inference.yaml  --scheduler_type ddim  --dump_path models/diffusers_model
+</code></pre>
+<p>训练完成同样要进行打包转换为ckpt,即可用于AUTOMATIC1111的WebUI中：</p>
+<pre><code>python diffusers\scripts\convert_diffusers_to_original_stable_diffusion.py  --model_path models/resultModel  --checkpoint_path result.ckpt  --half
+</code></pre>
 <h3 id="_21">参数分析</h3>
 <p><a href="https://wandb.ai/psuraj/dreambooth/reports/Dreambooth-training-analysis--VmlldzoyNzk0NDc3">使用 Dreambooth 训练稳定扩散的实验的分析</a></p>
 <h3 id="_22">其他</h3>
@@ -1148,7 +1161,7 @@
 <p><a href="https://arxiv.org/abs/2208.12242">dreambooth-论文</a>&#160;<a class="footnote-backref" href="#fnref:15" title="Jump back to footnote 9 in the text">&#8617;</a></p>
 </li>
 <li id="fn:16">
-<p><a href="https://pastebin.com/xcFpp9Mr">Installing Stable Diffusion &amp; Dreambooth for Windows</a>&#160;<a class="footnote-backref" href="#fnref:16" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:16" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:16" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:16" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:16" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:16" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+<p><a href="https://pastebin.com/xcFpp9Mr">Installing Stable Diffusion &amp; Dreambooth for Windows</a>&#160;<a class="footnote-backref" href="#fnref:16" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:16" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:16" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:16" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:16" title="Jump back to footnote 10 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -1158,11 +1171,11 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 30, 2022 14:15:39</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 31, 2022 02:26:21</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 30, 2022 14:15:39</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 31, 2022 02:26:21</span>
       
     
   </small>
