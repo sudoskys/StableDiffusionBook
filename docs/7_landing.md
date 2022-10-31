@@ -122,6 +122,8 @@
 
 [韩国论坛模型共享计划](https://arca.live/b/hypernetworks/60940948)
 
+[韩国的社区放出的模型](https://mega.nz/folder/sSACBAgC#kNiPVzRwnuzs8JClovS1Tw)
+
 ### embeddings
 
 不同大模型之间不能通用 embeddings
