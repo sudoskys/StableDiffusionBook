@@ -480,7 +480,7 @@ Windows 系统至少需要 16, Linux 系统要求显存大于 8 GB
 
 #### Windows
 
-#### Windows
+来自 [^18]
 
 Windows上的Dreambooth 可以采用ShivamShrirao的优化版本来节省显存，
 
@@ -627,5 +627,6 @@ Source directory 填数据源文件夹地址。
 
 [^16]:[Hypernetwork画风训练经验分享](https://shiina-h.notion.site/shiina-h/Hypernetwork-1fc0b60645284c5e96bb41b583a4e86f)
 
-[^16]:[Installing Stable Diffusion & Dreambooth for Windows](https://pastebin.com/xcFpp9Mr)
+[^17]:[Installing Stable Diffusion & Dreambooth for Windows](https://pastebin.com/xcFpp9Mr)
 
+[^18]:[Installing Dreambooth for Windows](https://gist.github.com/Summersoff/70861d757a40c153c5802dc8c4ed68c0)
