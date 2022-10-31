@@ -1,6 +1,6 @@
 ---
 name: "Something"
-about: 空白
+about: 空模板
 title: ''
 labels: ''
 assignees: ''
