@@ -44,6 +44,8 @@ https://stable-diffusion-book.vercel.app/  短链为(https://b23.ink/aibook)
 
 ### 相关
 
+[sdupdates SD综合清单，推荐阅读的](https://github.com/questianon/sdupdates)
+
 [Stable Diffusion WebUi](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
 
 [集成Tag工具/支持超网络的Web前端](https://git.hudaye.work/MiuliKain/Kamiya-OpenUI)
