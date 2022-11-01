@@ -64,6 +64,15 @@ NAI 是一个在线**服务**。
 以下是新闻和测试内容。
 
 -------
+- 11/1
+
+disable access to extension stuff for non-local servers 
+
+https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/dc7425a56e7a014cbfa3b3d44ad2321e519fe378
+
+社区反映：共享链接可能会导致风险，攻击者可以访问系统上的所有文件。
+
+-------
 - 10/30
 
 在 [这次提交中](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/9f4f894d74b57c3d02ebccaa59f9c22fca2b6c90) ，WebUi添加了`allow skip current image in progress api ` ，跳过当前流程的 Api 方法。
