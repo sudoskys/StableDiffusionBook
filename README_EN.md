@@ -17,7 +17,7 @@
 
 Wiki about drawing with Ai, related resources. Currently the main content is StableDiffusionWebUi
 
-****Current status: need to proofread machine translation, correct errors, deal with Issue**
+**Current status: need to proofread machine translation, correct errors, deal with Issue**
 
 Wiki Here https://draw.dianas.cyou/ ～！
 
