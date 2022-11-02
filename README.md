@@ -11,21 +11,23 @@
 
 <h2 align="center">StableDiffusionBook</h2>
 
-关于使用 Ai 绘画的 Wiki ，翻译，教程，相关资源。主要内容为 StableDiffusionWebUi
+**For the English readme：[English](https://github.com/sudoskys/StableDiffusionBook/blob/main/README_EN.md)**
+
+关于使用 Ai 绘画的 Wiki ，翻译，教程，相关资源。目前主要内容为 StableDiffusionWebUi
 
 **目前状态：需要大佬校稿，审计，PR dreambooth 内容**
 
 访问主地址 https://draw.dianas.cyou/ ～！
 
 
-### Alternative links
+### 分流链接
 
 - Vercel 部署/中国大陆不可用
 
 https://stable-diffusion-book.vercel.app/  短链为(https://b23.ink/aibook)
 
 
-### Basic requirements
+### 基本要求
 
 显存(VARM) > 2GB
 
@@ -63,6 +65,6 @@ If this does not seem to flow well to you or has errors,or u would like a versio
 
 不赞成违背项目协议的行为。不赞成使用泄漏模型进行商业行为。
 
-如果本文档外链的内容中有不合适的内容，与本文档无关。
+如果本文档外链的内容中有不合适的内容，请提交 Issue 移除 。
 
->文档使用 GFDL 许可 | licensed under GFDL
+>文档使用 GFDL 许可
