@@ -18,7 +18,7 @@ WebUi has a minimum of 4GB of N-card memory available
 
 Before starting, open CMD and type `nvidia-smi` to see if your machine's Nvidia graphics card is functioning properly.
 
-! [效果.png](https://s1.ax1x.com/2022/10/10/xtdNNR.png)
+![效果.png](https://s1.ax1x.com/2022/10/10/xtdNNR.png)
 >Here is the September effect (it's a lot faster now)
 
 
