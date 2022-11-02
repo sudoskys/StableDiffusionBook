@@ -225,13 +225,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="GettingStarted/" class="md-tabs__link">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
         Start here
       </a>
     </li>
@@ -384,12 +386,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
       
       
       
@@ -408,8 +412,8 @@
       
         
         
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="GettingStarted/">Start here</a>
+        <div class="md-nav__link md-nav__link--index md-nav__link--active">
+          <a href="./">Start here</a>
           
             <label for="__nav_1">
               <span class="md-nav__icon md-icon"></span>
@@ -1090,92 +1094,30 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    项目
+  <a href="#projects" class="md-nav__link">
+    Projects
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    访问情况
+  <a href="#access-availability" class="md-nav__link">
+    Access Availability
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#stable-diffusion-nai" class="md-nav__link">
-    Stable Diffusion 和 NAI 关系？我该怎么办？
+  <a href="#stable-diffusion-and-nai-relationship-what-should-i-do" class="md-nav__link">
+    Stable Diffusion and NAI relationship? What should I do?
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    社区
+  <a href="#our-community" class="md-nav__link">
+    Our Community
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    名词
-  </a>
-  
-    <nav class="md-nav" aria-label="名词">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    损失函数
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    潜在空间
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    黑话
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ensd" class="md-nav__link">
-    ENSD
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#clip" class="md-nav__link">
-    CLIP
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cuda" class="md-nav__link">
-    CUDA
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ldm" class="md-nav__link">
-    LDM
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1193,7 +1135,7 @@
                 
                   
 
-  <a href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/index.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/index.en.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
@@ -1210,142 +1152,45 @@ Copyright (C)  2022  StableDiffusionBook.
     Free Documentation License".
 -->
 
-<p>本页交代写给新人的话和术语解释。</p>
-<h2 id="_1">项目</h2>
-<p>本文档主要涉及以下两个项目。</p>
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui">Stable Diffusion WebUi</a>简称 SDWebUi，web UI是一个基于 Gradio 库的 Stable Diffusion 浏览器界面。该项目目前还没有 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/24">许可证</a> <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2059">相关Issue</a>。</p>
-<p><a href="https://novelai.net/">NovelAI</a>简称 NAI， 是一项每月订阅服务，用于 AI 辅助创作、讲故事、虚拟陪伴，或者只是供您想象的 GPT 驱动的沙盒。</p>
-<p>Stable diffusion本来是面向三次元的，而 NAI 是二次元特化版本。</p>
-<h2 id="_2">访问情况</h2>
+<p>This page accounts for words written for newcomers and explanations of terms.</p>
+<h2 id="projects">Projects</h2>
+<p>This document mainly covers the following two projects.</p>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui">Stable Diffusion WebUi</a> Short for SDWebUi, the web UI is a Stable Diffusion browser interface based on the Gradio library. The project is currently not <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/24">licensed</a> <a href="https://github.com/AUTOMATIC1111/stable-">relatedIssue</a> diffusion-webui/issues/2059).</p>
+<p><a href="https://novelai.net/">NovelAI</a>, or NAI for short, is a monthly subscription service for AI-assisted creation, storytelling, virtual companionship, or just a GPT-driven sandbox for your imagination.</p>
+<p>While Stable diffusion was originally geared towards the tertiary sector, NAI is a secondary specialization version.</p>
+<h2 id="access-availability">Access Availability</h2>
 <ul>
 <li>
-<p>主地址 
+<p>Main address
 <a href="https://draw.dianas.cyou/">https://draw.dianas.cyou/</a></p>
 </li>
 <li>
-<p>Vercel (中国大陆不可用)
-<a href="https://stable-diffusion-book.vercel.app/">https://stable-diffusion-book.vercel.app/</a> 短链为(https://b23.ink/aibook)</p>
+<p>Vercel (not available in mainland China)
+<a href="https://stable-diffusion-book.vercel.app/">https://stable-diffusion-book.vercel.app/</a> Shortlinked to (https://b23.ink/aibook)</p>
 </li>
 </ul>
-<p>如果不能访问图片或外链资源，请尝试切换网络环境。如果源站地址返回状态码 404/300/302/502 ，可以提交 issue 通知我们移除此内容。</p>
-<h2 id="stable-diffusion-nai">Stable Diffusion 和 NAI 关系？我该怎么办？</h2>
-<p>因为泄漏事件，NAI 使用数千万 Danbooru（图站）图片训练的模型被泄漏了两次。 目前社区广泛使用 <strong>Stable Diffusion WebUi</strong> 生成框架 （简称 SDWebUi）装载 NAI 的模型。</p>
+<p>If you cannot access the image or external link resource, please try to switch the network environment. If the source address returns status code 404/300/302/502, you can submit an issue to notify us to remove this content.</p>
+<h2 id="stable-diffusion-and-nai-relationship-what-should-i-do">Stable Diffusion and NAI relationship? What should I do?</h2>
+<p>NAI's model, trained using tens of millions of Danbooru images, has been leaked twice due to leaks. The <strong>Stable Diffusion WebUi</strong> generation framework (SDWebUi for short) is now widely used by the community to load NAI's models.</p>
 <div class="admonition info">
-<p class="admonition-title"><strong>事件报告</strong></p>
-<p>泄露 Part 1 —— 包含生产模型，程序 —— 53.66 GB，其中需要下载的相关模型有 7GB 和 4GB 两种。</p>
-<p>泄露 Part 2 —— 包含历史测试代码和模型，程序 —— 124.54 GB，其中需要下载的相关模型与 Part1 相同。</p>
+<p class="admonition-title"><strong>Incident Report</strong></p>
+<p>Leak Part 1 -- contains production models, programs -- 53.66 GB, with 7 GB and 4 GB of related models to download.</p>
+<p>Leak Part 2 -- contains historical test code and models, program -- 124.54 GB, where the associated models to be downloaded are the same as in Part 1.</p>
 </div>
-<h2 id="_3">社区</h2>
-<p>海外</p>
+<h2 id="our-community">Our Community</h2>
 <p><a href="https://discord.gg/vhsArSSA6K"><img src="https://img.shields.io/discord/1033769426216046622?color=blue&label=Discord_Ai%E7%BB%98%E7%94%BB%E4%B8%AD%E6%96%87%E7%BB%84" alt="Discord"></a> <a href="https://t.me/StableDiffusion_CN">
 <img src="https://img.shields.io/badge/Telegram-Group-blue" alt="Telegram"></a></p>
-<h2 id="_4">名词</h2>
-<h3 id="_5">损失函数</h3>
-<p>关于 <a href="https://fangkaipeng.com/?p=2056#header-id-16">损失函数</a></p>
-<h3 id="_6">潜在空间</h3>
-<p>压缩数据的表示，其中相似的数据点在空间上更靠近在一起。</p>
-<h3 id="_7">黑话</h3>
-<table>
-<thead>
-<tr>
-<th>缩写</th>
-<th>解释</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>NAI</td>
-<td>(Novel AI ，一般特指Leak)</td>
-</tr>
-<tr>
-<td>咒语/念咒</td>
-<td>prompts</td>
-</tr>
-<tr>
-<td>施法/吟唱/t2i</td>
-<td>Text2Image</td>
-</tr>
-<tr>
-<td>魔杖</td>
-<td>t2i/i2i参数</td>
-</tr>
-<tr>
-<td>i2i</td>
-<td>Image2Image,一般特指全部图片生成</td>
-</tr>
-<tr>
-<td>inpaint</td>
-<td>i2i一种maskredraw，可以局部重绘</td>
-</tr>
-<tr>
-<td>ti/emb/炼丹</td>
-<td>Train中的文本反转，一般特指Embedding插件</td>
-</tr>
-<tr>
-<td>hn/hyper/冶金</td>
-<td>hypernetwork，超网络</td>
-</tr>
-<tr>
-<td>炸炉</td>
-<td>指训练过程中过度拟合，但炸炉前的日志插件可以提取二次训练</td>
-</tr>
-<tr>
-<td>废丹</td>
-<td>指完全没有训练成功</td>
-</tr>
-<tr>
-<td>美学/ext</td>
-<td>aesthetic_embeddings,emb一种，特性是训练飞快，但在生产图片时实时计算。</td>
-</tr>
-<tr>
-<td>db/梦展</td>
-<td>DreamBooth，目前一种性价比高（可以在极少步数内完成训练）的微调方式，但要求过高</td>
-</tr>
-<tr>
-<td>ds</td>
-<td>DeepSpeed，微软开发的训练方式，移动不需要的组件到内存来降低显存占用，可使db的vram需求降到8g以下。开发时未考虑win,目前在win有兼容性问题故不可用</td>
-</tr>
-<tr>
-<td>8bit/bsb</td>
-<td>一般指Bitsandbyte，一种8比特算法，能极大降低vram占用，使16g可用于训练db。由于链接库问题，目前/预计未来在win不可用</td>
-</tr>
-</tbody>
-</table>
-<h3 id="ensd">ENSD</h3>
-<p>在设置页中的 ENSD 是 eta 噪声种子增量。</p>
-<p>它改变了你的种子，执行一些 eta/sigma 的操作。</p>
-<p>NAI使用31337</p>
-<h3 id="clip">CLIP</h3>
-<div class="highlight"><pre><span></span><code>CLIP is a very advanced neural network that transforms your prompt text into a numerical representation. Neural networks work very well with this numerical representation and that&#39;s why devs of SD chose CLIP as one of 3 models involved in stable diffusion&#39;s method of producing images. As CLIP is a neural network, it means that it has a lot of layers. Your prompt is digitized in a simple way, and then fed through layers. You get numerical representation of the prompt after the 1st layer, you feed that into the second layer, you feed the result of that into third, etc, until you get to the last layer, and that&#39;s the output of CLIP that is used in stable diffusion. This is the slider value of 1. But you can stop early, and use the output of the next to last layer - that&#39;s slider value of 2. The earlier you stop, the less layers of neural network have worked on the prompt.
-
-https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-last-layers-of-clip-model
-</code></pre></div>
-<p>要让 AI 作画，先要让程序“听懂”你的指令，比如</p>
-<p>“a big cherry tree above a lake with flying petals in the sky.”</p>
-<p>对一个相对复杂场景的文本描述，AI 需要能“理解”并匹配到对应的画面，大部分项目依赖的都是一个叫 CLIP 的模型。</p>
-<p>CLIP 在生成模型的潜在空间进行搜索，从而找到与给定的文字描述相匹配的潜在图像。</p>
-<p>它非常现代且高效。</p>
-<h3 id="cuda">CUDA</h3>
-<p>配合 CUDA 技术，显卡可以模拟成一颗 PhysX 物理加速芯片。目前，全系列的 GeForce 8 显示核心都支持 CUDA。</p>
-<p>使用 CUDA 技术，GPU 可以用来进行通用处理（不仅仅是图形）；这种方法被称为 GPGPU。与 CPU 不同的是，GPU 以较慢速度并发大量线程，而非快速执行单一线程。以 GeForce 8800 GTX 为例，其核心拥有 128 个内处理器。利用 CUDA 技术，就可以将那些内处理器做为线程处理器，以解决数据密集的计算。</p>
-<h3 id="ldm">LDM</h3>
-<p>Latent Diffusion Model 潜在扩散模型。</p>
-<p><img alt="？" src="https://user-images.githubusercontent.com/75739606/198675128-c2c849d0-d024-468b-80c4-374f13e933e3.png" /></p>
-<blockquote>
-<p>下面的框</p>
-</blockquote>
-<p><a href="https://zhuanlan.zhihu.com/p/573984443">潜在扩散模型</a></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 08:15:02</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 08:16:35</span>
       
         <br>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 08:15:02</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 08:16:35</span>
       
     
   </small>
@@ -1370,6 +1215,27 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
       </main>
       
         <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+      
+        
+        <a href="GettingStarted/term/" class="md-footer__link md-footer__link--next" aria-label="Next: Terminology" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Terminology
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

@@ -57,14 +57,6 @@
          
     </url>
     <url>
-         <loc>https://stable-diffusion-book.vercel.app/GettingStarted/</loc>
-         <lastmod>2022-11-02</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/GettingStarted/"/>
-         <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/GettingStarted/"/>
-         
-    </url>
-    <url>
          <loc>https://stable-diffusion-book.vercel.app/GettingStarted/news/</loc>
          <lastmod>2022-11-02</lastmod>
          <changefreq>daily</changefreq>
@@ -86,6 +78,14 @@
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/GettingStarted/term/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/GettingStarted/term/"/>
+         
+    </url>
+    <url>
+         <loc>https://stable-diffusion-book.vercel.app/OlD/</loc>
+         <lastmod>2022-11-02</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/OlD/"/>
+         <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/OlD/"/>
          
     </url>
     <url>
