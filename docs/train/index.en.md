@@ -105,7 +105,7 @@ The model is not designed for learning drawing styles (abstract concepts). But i
 
 Put the DreamBooth trained .ckpt file into the `models\Stable-diffusion` directory of webui and switch to it in the top left corner of webui to use it.
 
-! [SAMPLE](https://dreambooth.github.io/DreamBooth_files/high_level.png)
+![SAMPLE](https://dreambooth.github.io/DreamBooth_files/high_level.png)
 
 Official website https://dreambooth.github.io/
 

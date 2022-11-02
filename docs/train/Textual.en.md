@@ -125,9 +125,9 @@ When training, you can start with a larger learning rate and then gradually redu
 
 This is usually set to 0.005, but if you want to go faster, you can use 0.01 to speed it up. However, if you set it too high, the gradient will be too large to converge and may break `embedding`, which will not work as expected. If you set it too small, you will easily fall into a local optimum. Currently TI supports setting learning rates of `0.1:500, 0.01:1000, 0.001:10000`, which will follow a schedule.
 
-! [CS231n](https://user-images.githubusercontent.com/75739606/197824268-273f074d-9622-41ad-9f1a-2980f180dbd9.png)
-<! --
-! [CS231n](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/CS231n.png)
+![CS231n](https://user-images.githubusercontent.com/75739606/197824268-273f074d-9622-41ad-9f1a-2980f180dbd9.png)
+<!--
+![CS231n](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/CS231n.png)
 -->
 
 `Log directory` is the log directory

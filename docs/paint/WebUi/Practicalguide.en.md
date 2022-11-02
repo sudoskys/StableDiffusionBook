@@ -33,9 +33,9 @@ Picture quality can be manipulated using the Super Score guide.
 
 [Recommended use of terms contained in Danbooru](https://danbooru.donmai.us/wiki_pages/tag_group%3Aimage_composition)
 
-! [shot](https://user-images.githubusercontent.com/75739606/198682933-25c1b2df-c573-44ea-aba7-2df4609299e5.png)
-<! --
-! [shot](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/shot.png)
+![shot](https://user-images.githubusercontent.com/75739606/198682933-25c1b2df-c573-44ea-aba7-2df4609299e5.png)
+<!--
+![shot](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/shot.png)
 -->
 >citing an image from the Japanese Wiki, author unknown
 

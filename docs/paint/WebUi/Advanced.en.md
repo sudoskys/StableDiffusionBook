@@ -74,9 +74,9 @@ For example, we can use PS to graft a hand to a character for Ai to touch up, or
 
 Or paint a specific part of the body with a specified shape action (such as the coverage or shape of a garment) and hit it with a colour block (to prevent shadows, **please take a bright skin**).
 
-! [test_woman](https://user-images.githubusercontent.com/75739606/197823480-5de77d69-46d5-4817-948f-4e514e1f8204.jpg)
-<! --
-! [info](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/00119_136826557_masterpiece%2C_best_quality%2C _1girl%2C_black_hair%2C_hat1.jpg)
+![test_woman](https://user-images.githubusercontent.com/75739606/197823480-5de77d69-46d5-4817-948f-4e514e1f8204.jpg)
+<!--
+![info](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/00119_136826557_masterpiece%2C_best_quality%2C _1girl%2C_black_hair%2C_hat1.jpg)
 -->
 >An image [^5] showing a detailed comparison of the effect of different parameters in img2img under WebUI (prompt, steps, scale, various seeds, etc. are kept consistent)
 
@@ -231,7 +231,7 @@ If you want to generate anime characters, [realcugan](https://github.com/bilibil
 
 We recommend using [Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) for noise reduction.
 
-! [Effect](https://raw.githubusercontent.com/xinntao/Real-ESRGAN/master/assets/teaser.jpg)
+![Effect](https://raw.githubusercontent.com/xinntao/Real-ESRGAN/master/assets/teaser.jpg)
 >Effects
 
 
