@@ -11,6 +11,8 @@
 
 <h2 align="center">StableDiffusionBook</h2>
 
+<img src="https://img.shields.io/badge/Lang-ZH-red" alt="支持中文"> <img src="https://img.shields.io/badge/Lang-EN-blue" alt="SupportEnglish">
+
 **中文 readme：[ZH](https://github.com/sudoskys/StableDiffusionBook/blob/main/README.md)**
 
 Wiki about drawing with Ai, related resources. Currently the main content is StableDiffusionWebUi
