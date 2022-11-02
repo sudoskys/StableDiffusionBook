@@ -13,6 +13,11 @@ Copyright (C)  2022  StableDiffusionBook.
 
 This page accounts for words written for newcomers and explanations of terms.
 
+!!! tip
+    The repository currently contains a machine-translated version of the guide, if this does not seem to flow well to you or has errors.
+
+    Or would like a version in another language. Then please submit Issue or Pr
+
 
 ## Projects
 
