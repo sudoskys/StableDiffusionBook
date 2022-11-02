@@ -28,7 +28,7 @@ This document mainly covers the following two projects.
 
 [NovelAI](https://novelai.net/), or NAI for short, is a monthly subscription service for AI-assisted creation, storytelling, virtual companionship, or just a GPT-driven sandbox for your imagination.
 
-While Stable diffusion was originally geared towards the tertiary sector, NAI is a secondary specialization version.
+While stable diffusion was initially geared towards real-world images, NAI introduced the generation of anime illustrations, which attracted public attention
 
 
 ## Access Availability
