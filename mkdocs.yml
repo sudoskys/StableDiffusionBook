@@ -9,7 +9,7 @@ copyright: |
 
 nav:
   - 起步于此:
-      - GettingStarted/index.md
+      - index.md
       - 术语: GettingStarted/term.md
       - 新闻: GettingStarted/news.md
       - 声明: GettingStarted/state.md
