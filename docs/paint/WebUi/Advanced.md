@@ -100,7 +100,7 @@ Outpainting, unlike normal image generation, seems to profit very much from larg
 
 对于 `Masked content` 设置，遮罩内容字段确定内容在修复之前放置到遮罩区域中。
 
-一般选 `original`，可以保持潛空间一致性。
+一般选 `original`，可以保持潜在空间一致性。
 
 它们的效果如下:
 

@@ -1,10 +1,9 @@
-
-## WebUi
+# WebUi
 
 请先在前面了解一下 WebUi(SD) 网页应用的参数。
 
 
-### 提示词语法简介
+## 提示词语法简介
 
 对于NAI用户，请阅读[官网Docs](https://docs.novelai.net/image/promptmixing.html)
 
@@ -54,7 +53,7 @@
 
 
 
-### 如何书写提示词(提示)
+## 如何书写提示词(提示)
 
 结合法术书编写它。
 
@@ -140,7 +139,7 @@ Nai 出图默认是一种风格，你可以通过 训练风格模型，指定风
 
 
 
-### 调序编译
+## 调序编译
 
 提示词放入的顺序就是优先级~
 
@@ -151,7 +150,7 @@ webui 突破 tag 75 个限制的方式是把 75 个分为一组。
 以上排序是每组tag都要遵守的，所以如果后面的tag超过 75 了就应该把前面的分一部分过来。
 
 
-### Batch count&batch size
+## Batch count&batch size
 
 `batch count` 指定训练几批次图像。
 
@@ -167,7 +166,7 @@ webui 突破 tag 75 个限制的方式是把 75 个分为一组。
     一个迭代 = 一个正向通过+一个反向通过
 
 
-### (提示词)影响因子[^6]
+## (提示词)影响因子[^6]
 
 "调参魔法" 的一个基本技能是设置权重。
 
@@ -236,7 +235,7 @@ a \(word\) - 在提示中使用文字 () 字符
     From [Here](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2905)
 
 
-### 否定提示词
+## 否定提示词
 
 WebUi(SD)网页应用会在生成时**拒绝否定提示词有关的内容**。
 
@@ -277,7 +276,7 @@ normal quality, text, censored, gown, latex, pencil
 [官方Wiki](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Negative-prompt#examples)
 
 
-#### CFG Scale/Denoising strength 契合度/降噪
+### CFG Scale/Denoising strength 契合度/降噪
 
 **CFG Scale**
 
@@ -291,7 +290,7 @@ normal quality, text, censored, gown, latex, pencil
 
 
 
-### 渐变标签
+## 渐变标签
 
 渐变标签，指示 WebUi 在训练中替换 Token，语法使用 `[some1:some2:num]`
 
@@ -305,14 +304,14 @@ normal quality, text, censored, gown, latex, pencil
 <!--
 ![sample_Gradient](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/sample_Gradient.jpg)
 -->
-### 从图片重现提示词
+## 从图片重现提示词
 
 程序默认会在图片中加入提示词，参数，模型信息，对于没有压缩的原图，我们可以将文件拖入 `PNG Info` 选项卡，进行提示词(Token)查看。
 
 或者使用 [在线工具](https://spell.novelai.dev/) 查看它。
 
 
-### 逆向提示词
+## 逆向提示词
 
 这里有一些 **Image 逆向参数服务**，可以从图片中提取相关参数，不一定准确。
 
@@ -321,7 +320,7 @@ normal quality, text, censored, gown, latex, pencil
 [DeepDanbooru](https://github.com/KichangKim/DeepDanbooru)
 
 
-### 已知提示词(Token)组合 / 搜索引擎
+## 已知提示词(Token)组合 / 搜索引擎
 
 你可以访问以下传送门获取一些优秀的参数实例！（当然，中文社区的测试群有**大量素材**，一分钟20次）
 
@@ -332,7 +331,7 @@ normal quality, text, censored, gown, latex, pencil
 [LEXICA搜索引擎](https://lexica.art/?q=Miku)
 
 
-### Prompt matrix 参数矩阵/要素混合
+## Prompt matrix 参数矩阵/要素混合
 
 使用 | 分隔多个Tag，程序将为它们的每个组合生成一个图像。 例如，如果使用 `a busy city street in a modern city|illustration|cinematic lighting` ，则可能有四种组合（始终保留提示的第一部分）：
 
@@ -346,7 +345,7 @@ normal quality, text, censored, gown, latex, pencil
 `cat :2 | dog` 也就是更像猫的狗
 
 
-### 提示词原理
+## 提示词原理
 
 咒语的科学原理。
 
@@ -372,7 +371,7 @@ CLIP 无法处理中文，中文字符会被分解。
 WebUi prompt 语法会转换为相应时间的 prompt,然后通过 embedding 交给 Ai 处理。
 
 
-### 参数冲突(提示词)
+## 参数冲突(提示词)
 
 比如 `sex` 包含较多姿势体位，在使用者想要特定姿势时，法术内单一的 `sex` tag就应该被删除。
 
@@ -380,7 +379,7 @@ WebUi prompt 语法会转换为相应时间的 prompt,然后通过 embedding 交
 
 
 
-### Step 迭代步数
+## Step 迭代步数
 
 更多的迭代步数可能会有更好的生成效果，更多细节和锐化，但是会导致生成时间变长。而在实际应用中，30 步和 50 步之间的差异几乎无法区分。
 
@@ -388,7 +387,7 @@ WebUi prompt 语法会转换为相应时间的 prompt,然后通过 embedding 交
 
 进行图生图的时候，正常情况下更弱的去噪需要更少的迭代步数(这是工作原理决定的)。你可以在设置里更改设置，让程序确切执行滑块指定的迭代步数。
 
-### Samplers 采样器
+## Samplers 采样器
 
 目前好用的有 `eular`，`eular a`，更细腻，和`Ddim`。
 
@@ -422,7 +421,7 @@ PS：调太高步数(>30)效果不会更好
 >不同 step 和 采样器 的不同效果
 
 
-### 种子调试
+## 种子调试
 
 实际的种子整数并不重要。它只是初始化一个定义扩散起点的随机数生成器，是一个随机初始值。
 
@@ -436,11 +435,11 @@ PS：调太高步数(>30)效果不会更好
 
 10xx 系列看起来与其他所有卡如此不同,见[这里](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017#discussioncomment-3873467)
 
-### 绘画插件
+## 绘画插件
 
 安装完毕重启程序。目前WebUi已经自带扩展管理器界面。
 
-#### 随机艺术家插件
+### 随机艺术家插件
 
 [项目地址](https://github.com/yfszzx/stable-diffusion-webui-inspiration)
 
@@ -450,7 +449,7 @@ git clone https://github.com/yfszzx/stable-diffusion-webui-inspiration
 ```
 
 
-#### 美学权重插件
+### 美学权重插件
 
 [项目地址](https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients)
 
@@ -459,7 +458,7 @@ git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-grad
 ```
 
 
-#### 历史记录画廊
+### 历史记录画廊
 
 [项目地址](https://github.com/yfszzx/stable-diffusion-webui-images-browser)
 
@@ -469,36 +468,36 @@ git clone https://github.com/yfszzx/stable-diffusion-webui-images-browser
 ```
 
 
-#### Wildcards 通配符
+### Wildcards 通配符
 
 [项目地址](https://github.com/AUTOMATIC1111/stable-diffusion-webui-wildcards)
 
 允许使用类似 `__name__` 提示的语法，以从名为 `name.txt` 的文件中获取随机一行。
 
 
-#### Deforum
+### Deforum
 
 [项目地址](https://github.com/deforum-art/deforum-for-automatic1111-webui)
 
 Deforum 的官方API，一个用于 2D 和 3D 动画的扩展脚本，supporting keyframable sequences, dynamic math parameters (even inside the prompts), dynamic masking, depth estimation and warping.
 
-#### Stable-Diffusion-Video2Video
+### Stable-Diffusion-Video2Video
 
 将 视频 投入 Img2Img,输出带有关键帧的视频。
 
 https://github.com/Leonm99/Stable-Diffusion-Video2Video
 
-#### Img2img Video
+### Img2img Video
 
 https://github.com/memes-forever/Stable-diffusion-webui-video
 
-#### Artists To Study
+### Artists To Study
 
 把 https://artiststostudy.pages.dev 添加到 WebUi
 
 https://github.com/camenduru/stable-diffusion-webui-artists-to-study
 
-#### 美学权重评分器
+### 美学权重评分器
 
 计算生成图像的美学分数
 

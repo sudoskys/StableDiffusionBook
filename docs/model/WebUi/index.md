@@ -72,7 +72,6 @@ ckpt 文件被加载时基本上可以执行任何内容，盲目加载有安全
 可以通过此脚本检查风险：<https://rentry.org/safeunpickle2>
 
 
------
 
 
 # 进阶

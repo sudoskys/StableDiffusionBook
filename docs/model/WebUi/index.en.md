@@ -70,8 +70,6 @@ If antivirus software intercepts it, it is possible that the creator has injecte
 You can check for risks with this script: <https://rentry.org/safeunpickle2>
 
 
------
-
 
 
 # Advanced tutorials
