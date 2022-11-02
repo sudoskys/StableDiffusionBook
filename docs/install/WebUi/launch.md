@@ -1,31 +1,38 @@
  
-### 启动
+# 启动
 
-但是必须首先下载一个4GB模型
+首先必须下载一个4GB模型。界面顶部的菜单用于选择模型。
 
 如果你运行报错，请读前面的自救提示。
 
-不提供NV模型，你可以去 关于/底部图标 页面找到 `中文社区` 的频道，里面应该有你想要的哈。
+我们不提供NAI模型，你可以去 关于/底部图标 页面找到 `中文社区` 的频道，里面应该有你想要的哈。
 
 
-**按照后面的教程装载入模型后**
+## 运行
 
-Win 运行 `webui.bat`
+**按照后面的教程载入模型后**
 
-Linux 用户采用
+
+Win 编辑并运行 `webui.bat`
+
+Linux 用户运行 `launch.py` 或 `webui.py` ，前者会自动安装(新)环境。
+```
+REQS_FILE="requirements.txt" python launch.py
+```
+
 ```
 COMMANDLINE_ARGS="--medvram --always-batch-cond-uncond" REQS_FILE="requirements.txt" python launch.py
 ```
 
-#### 令牌参数生成第一幅图片
+## 令牌参数生成第一幅图片
 
 咳咳，这里使用的是某个模型，示例仅仅适用于 `那个模型`。
 
 令牌请读后面的内容，这里给出一个实例来供你完成测试。
 
-顶上那个是选择模型，暂时用不到。
 
-- 第一个框是正向令牌
+
+- 第一个输入框里写关于期望结果的词汇
 
 可以使用 颜文字 和 emoji，使用 () 来增强权重，具体规则见后
 
@@ -33,7 +40,7 @@ COMMANDLINE_ARGS="--medvram --always-batch-cond-uncond" REQS_FILE="requirements.
 ((masterpiece)), best quality, illustration, 1 girl, beautiful,beautiful detailed sky, catgirl,beautiful detailed water, cinematic lighting, dramatic angle, Grey T-Shirt, (few clothes),(yuri),(medium breasts),white hair,cat ears,masturbation,bare shoulders ,(gold eyes),wet clothes
 ```
 
-- 第二个框是反向令牌
+- 第二个输入框书写不希望出现的结果
 
 指定需要过滤什么标签
 
@@ -41,16 +48,19 @@ COMMANDLINE_ARGS="--medvram --always-batch-cond-uncond" REQS_FILE="requirements.
 lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, bad feet
 ```
 
+
 **第一次调整参数**
 
-选定分辨率参数，越大越慢越卡。
+选定分辨率参数，越大生成耗时越长。
 
-生成后的结果结尾类似为
+生成后的结果结尾类似如下
 ```
 Steps: 28, Sampler: Euler a, CFG scale: 7, Seed: 2706937631, Size: 1024x512, Model hash: 925997e9
 ```
-通过一样的参数和 Seed(-1就是随机)，可以生产一样的图像，这用于微调！
-还有占用信息
+在没有加载风格模型的情况下，通过一样的参数和 Seed(-1就是随机)，可以生产一样的图像，可以用于微调！
+
+一起出现的还有 GPU 负载信息
+
 ```
 Time taken: 33.97s
 Torch active/reserved: 1975/2144 MiB, Sys VRAM: 7890/8134 MiB (93.61%)
@@ -58,13 +68,14 @@ Torch active/reserved: 1975/2144 MiB, Sys VRAM: 7890/8134 MiB (93.61%)
 
 **快捷设置**
 
-不想来回设置 Clip？
+不想来回设置 Clip 参数？
 
-添加`sd_hypernetwork`和`CLIP_stop_at_last_layers`到设置页面的`Quicksettings list`，保存并重新启动 webui，你就可以在Ui顶部看到一个快速切换选项啦～
+添加 `sd_hypernetwork` 和 `CLIP_stop_at_last_layers` 到设置页面的 `Quicksettings list` ，点击页面顶部的按钮保存，重新启动 webui，你就可以在Ui顶部看到一个快速切换选项啦～
 
-#### 中文/本地化
+## 中文/本地化
 
-本地化作为单个 `.json` 文件提供。 将此文件放入 `localizations` 目录并在设置中选择即可。
+语言文件作为单个 `.json` 文件提供。 将此文件放入 `localizations` 目录并在设置中选择即可。
+
 
 在 22/10/26 下午，WebUi 添加了中文的翻译。
 
@@ -72,18 +83,19 @@ Torch active/reserved: 1975/2144 MiB, Sys VRAM: 7890/8134 MiB (93.61%)
 
 转到设置并单击 `Download localization template` 底部的按钮，下载一个可以编辑的本地化模板。
 
-#### 共享链接
+## 共享链接
 
-- 使用 `--share` 选项来在线运行
+- 使用 `--share` 选项来在线运行！
 
-你会得到一个 `xxx.app.gradio` 链接，这是在协作中使用该程序的预期方式。
+你会得到一个 `xxx.app.gradio` 共享链接，另外你可以使用参数为所述 `gradio` 共享实例设置身份验证：`--gradio-auth username:password`
 
 !!! danger "RCE"
 
-    当使用 `--share` 参数时，你的实例就可以在公开互联网访问了。
+    当使用 `--share` 参数时，你的实例就可以在公开互联网被访问了。
+
     但是最近有人报告了一个可能是危险的[代码漏洞](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2571)
 
-    所以，你可以使用参数为 `gradio` 共享实例设置身份验证：`--gradio-auth username:password` (可选择提供多组用户名和密码，以逗号分隔)
+    所以，你可以使用参数为 `gradio` 共享实例设置身份验证：`--gradio-auth username:password` (可提供以逗号分隔的多组用户名和密码)
 
     例子
     `--share --gradio-auth admin:admin,user1:user_password`
@@ -97,9 +109,6 @@ Torch active/reserved: 1975/2144 MiB, Sys VRAM: 7890/8134 MiB (93.61%)
     11/1 社区反映：共享链接可能会导致风险，**攻击者可以访问系统上的所有文件。**
 
 
-你会得到一个 `xxx.app.gradio` 链接，这是在协作中使用该程序的预期方式，而且你可以使用参数为所述 `gradio` 共享实例设置身份验证：`--gradio-auth username:password`
-可选择提供多组用户名和密码，以逗号分隔。
-
 你可以通过添加 `--freeze-settings`  启动参数来锁定设置，防止他人编辑。
 
 - 端口转发
@@ -108,22 +117,23 @@ Torch active/reserved: 1975/2144 MiB, Sys VRAM: 7890/8134 MiB (93.61%)
 
 这将允许本地网络上的计算机访问 UI，如果配置端口转发，公网上的计算机也可以访问（当然你得有公网。
 
-注意，监听 `0.0.0.0` 就意味着对本地网卡所有ipv4监听，访问请使用 `localhost` 替换 `0.0.0.0`
+注意，监听 `0.0.0.0` 就意味着对本地网卡的所有ipv4监听，局域网访问请使用 `localhost` 替换 `0.0.0.0`
 
 - 监听端口
 
-参数 `--port xxxx` 使服务器监听特定端口。
+添加参数 `--port xxxx` 使服务器监听特定端口。
 
 低于 1024 的所有端口都需要 `root`权限，因此建议使用高于 1024 的端口。
 
-如果可用，则默认为端口 7860
+默认端口为 7860
+
 
 - 主题
 
-使用 `--theme` 参数，使用主题
+添加 `--theme` 参数来切换主题
 
 
-#### 自定义运行
+## 自定义运行
 
 进一步熟悉这个程序，你会发现可以修改 Bat运行脚本 添加参数！具体参数列表请读下文。
 
@@ -150,9 +160,9 @@ set COMMANDLINE_ARGS设置命令行参数webui.py运行
 
 *GPU指定*
 
-选择要使用的默认Gpu `--device-id 0`，来代替旧版本的 `CUDA_VISIBLE_DEVICES=0`，可以选择第二个 GPU 允许同时运行两个实例，从而能够以更简洁的方式简单地选择设备。
+选择要使用的默认Gpu `--device-id 0`，来代替旧版本(2022/10之前)的 `CUDA_VISIBLE_DEVICES=0`，可以选择第二个 GPU 允许同时运行两个实例，从而能够以更简洁的方式简单地选择设备。
 
-查看 GPU 序号，可以使用 `nvidia-smi`
+查看 GPU 型号和 CUDA 版本，可以使用 `nvidia-smi` 命令
 
 
 **优化命令参数**
@@ -177,7 +187,7 @@ set COMMANDLINE_ARGS设置命令行参数webui.py运行
 [讨论](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3889) 有人认为，通过在 Windows 设置上禁用硬件加速 GPU 调度，WebUi 性能提高了大约 10-50%
 
 
-#### API 文档
+## API 文档
 
 使用 `--api` 参数运行程序，在浏览器访问 `{输出的网址}/docs` 就可以查看到 WebUi 的 [Api](https://github.com/AUTOMATIC1111/stable-diffusion-webui/tree/master/modules/api) 文档。[^4]
 
@@ -228,7 +238,7 @@ Discord 机器人项目 [aiyabot](https://github.com/Kilvoctu/aiyabot/blob/main/
 
 
 
-### 错误处理 Troubleshooting
+## 错误处理 Troubleshooting
 
 翻译整理自[^3]
 
@@ -237,7 +247,7 @@ Discord 机器人项目 [aiyabot](https://github.com/Kilvoctu/aiyabot/blob/main/
 重新安装，请删除目录： `venv`, `repositories`。
 
 
-#### 网络问题/没响应
+## 网络问题/没响应
 
 - Git 报错
 
@@ -246,12 +256,14 @@ HTTP_PROXY 和 HTTPS_PROXY 环境变量，或者使用 clash 的tun模式. 或�
 其他依赖报错也需要设置代理或者使用镜像，不然特慢。
 
 
-#### 时间花销过大
+## 时间花销过大
 
-设镜像或者挂代理，**依赖项 >2GB**,请做好准备，而且对于Windows,**依赖默认安装在C盘**！
+1. 网络不好的话，设镜像或者挂代理。
+
+2. **依赖项 >2GB**,请做好准备。而且对于Windows,**依赖默认安装在C盘**
 
 
-#### 低显存显卡/CUDA out of memory
+## 低显存显卡/CUDA out of memory
 
 确保你拥有可以运行的最新CUDA 工具包和 GPU 驱动程序。
 
@@ -274,11 +286,11 @@ HTTP_PROXY 和 HTTPS_PROXY 环境变量，或者使用 clash 的tun模式. 或�
 如果还不行，建议你升级设备。
 
 
-#### 我 Python 呢？
+## 我 Python 呢？
 
 如果你的 Python 版本不在 PATH 中，则在文件夹中创建或修改 webui.settings.bat 添加行 `set PYTHON=python `来说明 Python 可执行文件的完整路径（请看参数说明表格）
 
-#### ERROR:asyncio:Accept failed on a socket
+## ERROR:asyncio:Accept failed on a socket
 
 先检查端口冲突，有没有和什么软件冲突
 
@@ -289,7 +301,7 @@ HTTP_PROXY 和 HTTPS_PROXY 环境变量，或者使用 clash 的tun模式. 或�
 如果还是不行，请切换至 Python 的 `3.10.6`，WebUi 的开发环境为此版本。
 
 
-#### 虚拟环境
+## 虚拟环境
 
 如果你使用 conda 可以不使用一键脚本，可以自己运行 launch 安装依赖。
 
@@ -299,7 +311,7 @@ HTTP_PROXY 和 HTTPS_PROXY 环境变量，或者使用 clash 的tun模式. 或�
 
 如果需要防止创建虚拟环境而使用系统 python，编辑 `webui.bat` 替换 `setVENV_DIR=venv`为`set VENV_DIR=`
 
-#### api-ms-win-core-path-l1-1-0.dll is missing[^3]
+## api-ms-win-core-path-l1-1-0.dll is missing[^3]
 
 Windows 7上运行很可能会报错: `api-ms-win-core-path-l1-1-0.dll is missing`，这是因为许多程序需要新版本的 Windows 的系统文件。
 
@@ -309,7 +321,7 @@ Windows 7上运行很可能会报错: `api-ms-win-core-path-l1-1-0.dll is missin
 
 解压缩并将 `x86.dll` 复制到 `C:\Windows\SysWOW64` ，将 `x64.dll` 复制到 `C:\Windows\System32` 并重启。
 
-#### an illegal memory access was encountered ....CUDA kernel errors...
+## an illegal memory access was encountered ....CUDA kernel errors...
 
 [相关问题Issue](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/1766)
 
