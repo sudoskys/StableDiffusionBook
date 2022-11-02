@@ -1,8 +1,12 @@
+# 说明
+
+感谢参加编辑！
+
+下面是一个简短的中文指南和英文指南
+
 ## 指南
 
-NO废话，准确明白为第一，覆盖度第二，也很重要。
-
-协作公开进度，issue 或者 pull 
+准确明白为第一，覆盖度第二。
 
 ## 大的改动
 
@@ -11,8 +15,6 @@ NO废话，准确明白为第一，覆盖度第二，也很重要。
 ## 页面 Todo
 
 ```
->此页面注释或者使用Html注释
-
 >Todo 
 >
 >
@@ -23,11 +25,13 @@ NO废话，准确明白为第一，覆盖度第二，也很重要。
 
 ## 添加内容
 
-### Commit 信息
+### Commit 信息日志
 
-能写就写
+能写详细就写详细
 
 ### 阅读友好
+
+考虑读者感受
 
 #### 取消一些不必要的问答转弯形式
 
@@ -40,15 +44,15 @@ NO废话，准确明白为第一，覆盖度第二，也很重要。
 
 #### 格式化
 
-别格式化，定位内容改动很困难。
+不要对内容格式化，合并时审视内容改动很困难。
 
 需要的话，请专门提一项进行格式优化。
 
-#### 不要夹带大量私货
+#### 共同的文档
 
 #### 黑话
 
-`炼丹`这类的别名应该被文档禁止。
+偏僻别名不应该出现。
 
 在应用章节，最好不要用术语。
 
@@ -68,6 +72,80 @@ NO废话，准确明白为第一，覆盖度第二，也很重要。
 [内容链接]()
 
 ### 下一个内容
+
+```
+
+-------
+
+
+## Guide
+
+Accuracy is understood first, coverage second.
+
+## Major changes
+
+Please start with an Issue or Pull Draft for clarification so that others know you are working on this lengthy project.
+
+## Page Todo
+
+```
+>Todo 
+>
+>
+>
+>
+>
+```
+
+## Add content
+
+### Commit message log
+
+Write as much detail as you can
+
+### Read friendly
+
+Consider the reader's feelings
+
+#### Eliminate unnecessary question and answer turns
+
+For example
+```
+Questions
+Short answers
+```
+should be changed to ``If xxx, read xxx``
+
+#### formatting
+
+Do not format the content, it is difficult to review the content changes when merging.
+
+If needed, mention a specific item for formatting optimization.
+
+#### Common documents
+
+#### Black words
+
+Offbeat aliases should not appear.
+
+In application chapters, it is best to avoid jargon.
+
+In the theoretical introduction, use standard terminology that is the norm for the document.
+
+#### Important chapters at the front
+
+The higher the frequency, the more important the information should be at the front.
+
+#### If the content is only links, please include a landing page at the end
+
+Please don't throw in content like this, but introduce the basic information.
+
+```
+
+### Added content
+[content link]()
+
+### Next content
 
 ```
 
