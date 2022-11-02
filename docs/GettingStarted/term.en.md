@@ -5,7 +5,7 @@
 
 ### Loss functions
 
-About [loss function](https://fangkaipeng.com/?p=2056#header-id-16)
+About [loss function](https://www.datarobot.com/blog/introduction-to-loss-functions/)
 
 ### Latent space
 
