@@ -26,7 +26,7 @@ This section covers: imitating style, specific shots, adding effects, fine-tunin
 
 ## Basic flow
 
-![WorkFlow](https://user-images.githubusercontent.com/75739606/197821744-99b18fbc-1ae4-4e37-b7e7-9a47adaa6ae5.svg)
+![WorkFlow](https://user-images.githubusercontent.com/75739606/199486119-d6eb3f94-72be-498b-8862-0775c45e8950.png)
 <!--
 ![WorkFlow](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/draw_workflow.svg)
 -->
