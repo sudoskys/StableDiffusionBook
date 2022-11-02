@@ -11,7 +11,7 @@ Copyright (C)  2022  StableDiffusionBook.
 -->
 
 
-This page accounts for words written for newcomers and explanations of terms.
+This page accounts for explanations of terms written for newcomers.
 
 !!! tip
     The repository currently contains a machine-translated version of the guide.
