@@ -11,7 +11,7 @@
 
 <h2 align="center">StableDiffusionBook</h2>
 
-**中文 readme：[ZN](https://github.com/sudoskys/StableDiffusionBook/blob/main/README.md)**
+**中文 readme：[ZH](https://github.com/sudoskys/StableDiffusionBook/blob/main/README.md)**
 
 Wiki about drawing with Ai, related resources. Currently the main content is StableDiffusionWebUi
 
