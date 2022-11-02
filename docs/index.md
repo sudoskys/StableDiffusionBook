@@ -50,9 +50,8 @@ Stable diffusion本来是面向三次元的，而 NAI 是二次元特化版本�
 
 
 
-## Community
+## 一些社区
 
-[Add?](https://github.com/sudoskys/StableDiffusionBook/issues/new/choose)，需要大于 500 成员 
 
 ### 中文
 

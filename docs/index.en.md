@@ -54,9 +54,7 @@ NAI's model, trained using tens of millions of Danbooru images, has been leaked 
     Leak Part 2 -- contains historical test code and models, program -- 124.54 GB, where the associated models to be downloaded are the same as in Part 1.
 
 
-## Community
-
-[Add?](https://github.com/sudoskys/StableDiffusionBook/issues/new/choose)，The number of members needs to be greater than 500
+## Some Community
 
 ### 中文
 
