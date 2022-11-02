@@ -19,7 +19,7 @@
     
     
       
-        <title>Index - AiDraw</title>
+        <title>WebUi - AiDraw</title>
       
     
     
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Index
+              WebUi
             
           </span>
         </div>
@@ -1086,6 +1086,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1094,49 +1096,41 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#webui" class="md-nav__link">
-    WebUi
-  </a>
-  
-    <nav class="md-nav" aria-label="WebUi">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     提示词语法简介
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     如何书写提示词(提示)
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     调序编译
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#batch-countbatch-size" class="md-nav__link">
     Batch count&amp;batch size
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#6" class="md-nav__link">
     (提示词)影响因子[^6]
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     否定提示词
   </a>
@@ -1155,78 +1149,78 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     渐变标签
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
     从图片重现提示词
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
     逆向提示词
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#token" class="md-nav__link">
     已知提示词(Token)组合 / 搜索引擎
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#prompt-matrix" class="md-nav__link">
     Prompt matrix 参数矩阵/要素混合
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_8" class="md-nav__link">
     提示词原理
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_9" class="md-nav__link">
     参数冲突(提示词)
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#step" class="md-nav__link">
     Step 迭代步数
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#samplers" class="md-nav__link">
     Samplers 采样器
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_10" class="md-nav__link">
     种子调试
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_11" class="md-nav__link">
     绘画插件
   </a>
@@ -1301,11 +1295,6 @@
     </nav>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
     </ul>
   
@@ -1327,11 +1316,9 @@
   </a>
 
 
-  <h1>Index</h1>
-
-<h2 id="webui">WebUi</h2>
+<h1 id="webui">WebUi</h1>
 <p>请先在前面了解一下 WebUi(SD) 网页应用的参数。</p>
-<h3 id="_1">提示词语法简介</h3>
+<h2 id="_1">提示词语法简介</h2>
 <p>对于NAI用户，请阅读<a href="https://docs.novelai.net/image/promptmixing.html">官网Docs</a></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -1363,7 +1350,7 @@ NAI的 [word] = WebUi(word:0.952)(0.952 = 1/1.05)</p>
 <p>NAI的{word} = WeUi的(word:1.05)</p>
 <p>NAI花括号权重为1.05/个，WebUi圆权重为1.1/个</p>
 </div>
-<h3 id="_2">如何书写提示词(提示)</h3>
+<h2 id="_2">如何书写提示词(提示)</h2>
 <p>结合法术书编写它。</p>
 <ul>
 <li>自然语言</li>
@@ -1418,12 +1405,12 @@ caustics, masterpiece, high resolution,
 <p><a href="https://www.yuque.com/longyuye/lmgcwy">人偶教室的测试记录</a></p>
 <p><a href="https://www.bilibili.com/video/BV1TP411N71t/">风格化: 32种</a></p>
 <p>更全面的指南在页尾。</p>
-<h3 id="_3">调序编译</h3>
+<h2 id="_3">调序编译</h2>
 <p>提示词放入的顺序就是优先级~</p>
 <p>webui 突破 tag 75 个限制的方式是把 75 个分为一组。</p>
 <p>出于提高可读性的目地，推荐主体往前放，接着描述装扮的词，画质提升词穿插在这些描述词之间，一般为了提高成品率要把动作、nsfw 词等改变构图的词往后放，或者手动调低权重。</p>
 <p>以上排序是每组tag都要遵守的，所以如果后面的tag超过 75 了就应该把前面的分一部分过来。</p>
-<h3 id="batch-countbatch-size">Batch count&amp;batch size</h3>
+<h2 id="batch-countbatch-size">Batch count&amp;batch size</h2>
 <p><code>batch count</code> 指定训练几批次图像。</p>
 <p><code>batchsize</code> 中文翻译为批次大小（批次尺寸）</p>
 <p>简单点说，批量大小将决定我们一次训练的样本数目。 batch_size将影响到模型的优化程度和速度。</p>
@@ -1434,7 +1421,7 @@ caustics, masterpiece, high resolution,
 每一次迭代得到的结果都会被作为下一次迭代的初始值。
 一个迭代 = 一个正向通过+一个反向通过</p>
 </div>
-<h3 id="6">(提示词)影响因子[^6]</h3>
+<h2 id="6">(提示词)影响因子[^6]</h2>
 <p>"调参魔法" 的一个基本技能是设置权重。</p>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#attentionemphasis">Wiki:魔导师介绍</a></p>
 <p>具体规则如下</p>
@@ -1482,7 +1469,7 @@ NAI的 [word] = WebUi(word:0.952)(0.952 = 1/1.05)</p>
 <p>如果你缩放这个向量，这个概念会变得更强或更弱。</p>
 <p>From <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2905">Here</a></p>
 </details>
-<h3 id="_4">否定提示词</h3>
+<h2 id="_4">否定提示词</h2>
 <p>WebUi(SD)网页应用会在生成时<strong>拒绝否定提示词有关的内容</strong>。</p>
 <p>否定提示是一种使用稳定扩散的方式，允许用户指定他不想看到的内容，而不对模型做额外的要求。</p>
 <p>通过指定 <code>unconditional_conditioning</code> 参数，在生成中采样器会查看去噪后符合提示的图像（城堡） 和 去噪后看起来符合负面提示的图像（颗粒状、雾状）之间的差异，并尝试将最终结果远离否定提示词。</p>
@@ -1508,13 +1495,13 @@ mutilated, tranny, trans, trannsexual, [out of frame], (bad proportions),
 normal quality, text, censored, gown, latex, pencil
 </code></pre></div>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Negative-prompt#examples">官方Wiki</a></p>
-<h4 id="cfg-scaledenoising-strength">CFG Scale/Denoising strength 契合度/降噪</h4>
+<h3 id="cfg-scaledenoising-strength">CFG Scale/Denoising strength 契合度/降噪</h3>
 <p><strong>CFG Scale</strong></p>
 <p><code>cfg scale</code> 就是图像与 prompt 的契合度,Scale越高，程序对提示词越忠诚，契合度越高。</p>
 <p><strong>Denoising strength 降低噪声</strong></p>
 <p><code>Denoising strength</code> 决定算法对图像内容的保留程度,可以减少对画风的变得，但也会弱化img2img能力。值越高 AI 对原图的参考程度就越低 (同时增加迭代次数)。</p>
 <p>对于以图做图来说，低 <code>denoising</code> 意味着修正原图，高 <code>denoising</code> 就和原图就没有大的相关性了。一般来讲阈值是 0.7 左右，超过 0.7 和原图基本上无关，0.3 以下就是稍微改一些。</p>
-<h3 id="_5">渐变标签</h3>
+<h2 id="_5">渐变标签</h2>
 <p>渐变标签，指示 WebUi 在训练中替换 Token，语法使用 <code>[some1:some2:num]</code></p>
 <p><code>[fantasy:cyberpunk:16]</code> 代表从第 16 step 后，使用 <code>cyberpunk</code> 标签替换 <code>fantasy</code></p>
 <p><code>[to:when]</code> 在固定数量的step后添加 <code>to</code> 到提示 ( when)</p>
@@ -1523,19 +1510,19 @@ normal quality, text, censored, gown, latex, pencil
 <!--
 ![sample_Gradient](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/sample_Gradient.jpg)
 -->
-<h3 id="_6">从图片重现提示词</h3>
+<h2 id="_6">从图片重现提示词</h2>
 <p>程序默认会在图片中加入提示词，参数，模型信息，对于没有压缩的原图，我们可以将文件拖入 <code>PNG Info</code> 选项卡，进行提示词(Token)查看。</p>
 <p>或者使用 <a href="https://spell.novelai.dev/">在线工具</a> 查看它。</p>
-<h3 id="_7">逆向提示词</h3>
+<h2 id="_7">逆向提示词</h2>
 <p>这里有一些 <strong>Image 逆向参数服务</strong>，可以从图片中提取相关参数，不一定准确。</p>
 <p><a href="https://t.me/LenKiMo_Bot">LenKiMo_Bot</a></p>
 <p><a href="https://github.com/KichangKim/DeepDanbooru">DeepDanbooru</a></p>
-<h3 id="token">已知提示词(Token)组合 / 搜索引擎</h3>
+<h2 id="token">已知提示词(Token)组合 / 搜索引擎</h2>
 <p>你可以访问以下传送门获取一些优秀的参数实例！（当然，中文社区的测试群有<strong>大量素材</strong>，一分钟20次）</p>
 <p><a href="https://t.me/StableDiffusion_Show">StableDiffusion_Show</a></p>
 <p><a href="https://t.me/cyan_ai_sese">cyan_ai_sese</a></p>
 <p><a href="https://lexica.art/?q=Miku">LEXICA搜索引擎</a></p>
-<h3 id="prompt-matrix">Prompt matrix 参数矩阵/要素混合</h3>
+<h2 id="prompt-matrix">Prompt matrix 参数矩阵/要素混合</h2>
 <p>使用 | 分隔多个Tag，程序将为它们的每个组合生成一个图像。 例如，如果使用 <code>a busy city street in a modern city|illustration|cinematic lighting</code> ，则可能有四种组合（始终保留提示的第一部分）：</p>
 <ul>
 <li>a busy city street in a modern city</li>
@@ -1545,7 +1532,7 @@ normal quality, text, censored, gown, latex, pencil
 </ul>
 <p>可以进一步在关键词后添加 :x 来指定单个关键词的权重，x 的取值范围是 0.1~100，默认为 1。</p>
 <p><code>cat :2 | dog</code> 也就是更像猫的狗</p>
-<h3 id="_8">提示词原理</h3>
+<h2 id="_8">提示词原理</h2>
 <p>咒语的科学原理。</p>
 <p><img alt="prompt_draw" src="https://user-images.githubusercontent.com/75739606/198675128-c2c849d0-d024-468b-80c4-374f13e933e3.png" /></p>
 <!--
@@ -1561,14 +1548,14 @@ normal quality, text, censored, gown, latex, pencil
 <p><strong>关于渐变的实现</strong>：到了指定 Step ，WebUi 程序会替换对应 提示词，达到渐变效果。</p>
 <p>其他以此类推。</p>
 <p>WebUi prompt 语法会转换为相应时间的 prompt,然后通过 embedding 交给 Ai 处理。</p>
-<h3 id="_9">参数冲突(提示词)</h3>
+<h2 id="_9">参数冲突(提示词)</h2>
 <p>比如 <code>sex</code> 包含较多姿势体位，在使用者想要特定姿势时，法术内单一的 <code>sex</code> tag就应该被删除。</p>
 <p>同样地，<code>loli</code> Tag 附带了强画风属性，会很大地影响结果！改成 <code>female child</code> 会好一点。</p>
-<h3 id="step">Step 迭代步数</h3>
+<h2 id="step">Step 迭代步数</h2>
 <p>更多的迭代步数可能会有更好的生成效果，更多细节和锐化，但是会导致生成时间变长。而在实际应用中，30 步和 50 步之间的差异几乎无法区分。</p>
 <p>太多的迭代步数也可能适得其反，几乎不会有提高。</p>
 <p>进行图生图的时候，正常情况下更弱的去噪需要更少的迭代步数(这是工作原理决定的)。你可以在设置里更改设置，让程序确切执行滑块指定的迭代步数。</p>
-<h3 id="samplers">Samplers 采样器</h3>
+<h2 id="samplers">Samplers 采样器</h2>
 <p>目前好用的有 <code>eular</code>，<code>eular a</code>，更细腻，和<code>Ddim</code>。</p>
 <p>推荐 <code>eular a</code> 和 <code>Ddim</code>，<strong>新手推荐使用 <code>eular a</code></strong></p>
 <p><code>eular a</code> 富有创造力，不同步数可以生产出不同的图片。
@@ -1600,44 +1587,44 @@ PS：调太高步数(&gt;30)效果不会更好</p>
 <blockquote>
 <p>不同 step 和 采样器 的不同效果</p>
 </blockquote>
-<h3 id="_10">种子调试</h3>
+<h2 id="_10">种子调试</h2>
 <p>实际的种子整数并不重要。它只是初始化一个定义扩散起点的随机数生成器，是一个随机初始值。</p>
 <p>一个好的种子可以在各种提示、采样器和CFG中执行成分和颜色等内容。但是它现在作用有限。</p>
 <p>在相同 Step ，cfg ，Seed,参数（prompts） 的情况下，生产的图片基本相同！</p>
 <p>在同一模型和后端实现中，保持所有参数一致的情况下，相同的种子会产生同样的图片。取决于其他参数。</p>
 <p>但是注意，<strong>不同显卡可能会造成预料之外的不同结果</strong>（比如精度这样的东西）</p>
 <p>10xx 系列看起来与其他所有卡如此不同,见<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017#discussioncomment-3873467">这里</a></p>
-<h3 id="_11">绘画插件</h3>
+<h2 id="_11">绘画插件</h2>
 <p>安装完毕重启程序。目前WebUi已经自带扩展管理器界面。</p>
-<h4 id="_12">随机艺术家插件</h4>
+<h3 id="_12">随机艺术家插件</h3>
 <p><a href="https://github.com/yfszzx/stable-diffusion-webui-inspiration">项目地址</a></p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span> extensions
 git clone https://github.com/yfszzx/stable-diffusion-webui-inspiration
 </code></pre></div>
-<h4 id="_13">美学权重插件</h4>
+<h3 id="_13">美学权重插件</h3>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients">项目地址</a></p>
 <div class="highlight"><pre><span></span><code>git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients extensions/aesthetic-gradients
 </code></pre></div>
-<h4 id="_14">历史记录画廊</h4>
+<h3 id="_14">历史记录画廊</h3>
 <p><a href="https://github.com/yfszzx/stable-diffusion-webui-images-browser">项目地址</a></p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span> extensions
 git clone https://github.com/yfszzx/stable-diffusion-webui-images-browser
 </code></pre></div>
-<h4 id="wildcards">Wildcards 通配符</h4>
+<h3 id="wildcards">Wildcards 通配符</h3>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui-wildcards">项目地址</a></p>
 <p>允许使用类似 <code>__name__</code> 提示的语法，以从名为 <code>name.txt</code> 的文件中获取随机一行。</p>
-<h4 id="deforum">Deforum</h4>
+<h3 id="deforum">Deforum</h3>
 <p><a href="https://github.com/deforum-art/deforum-for-automatic1111-webui">项目地址</a></p>
 <p>Deforum 的官方API，一个用于 2D 和 3D 动画的扩展脚本，supporting keyframable sequences, dynamic math parameters (even inside the prompts), dynamic masking, depth estimation and warping.</p>
-<h4 id="stable-diffusion-video2video">Stable-Diffusion-Video2Video</h4>
+<h3 id="stable-diffusion-video2video">Stable-Diffusion-Video2Video</h3>
 <p>将 视频 投入 Img2Img,输出带有关键帧的视频。</p>
 <p>https://github.com/Leonm99/Stable-Diffusion-Video2Video</p>
-<h4 id="img2img-video">Img2img Video</h4>
+<h3 id="img2img-video">Img2img Video</h3>
 <p>https://github.com/memes-forever/Stable-diffusion-webui-video</p>
-<h4 id="artists-to-study">Artists To Study</h4>
+<h3 id="artists-to-study">Artists To Study</h3>
 <p>把 https://artiststostudy.pages.dev 添加到 WebUi</p>
 <p>https://github.com/camenduru/stable-diffusion-webui-artists-to-study</p>
-<h4 id="_15">美学权重评分器</h4>
+<h3 id="_15">美学权重评分器</h3>
 <p>计算生成图像的美学分数</p>
 <p>https://github.com/tsngo/stable-diffusion-webui-aesthetic-image-scorer</p>
 
@@ -1646,11 +1633,11 @@ git clone https://github.com/yfszzx/stable-diffusion-webui-images-browser
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 06:30:05</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 07:44:44</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 06:30:05</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 07:44:44</span>
       
     
   </small>
