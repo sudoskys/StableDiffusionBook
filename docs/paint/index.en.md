@@ -26,9 +26,9 @@ This section covers: imitating style, specific shots, adding effects, fine-tunin
 
 ## Basic flow
 
-! [WorkFlow](https://user-images.githubusercontent.com/75739606/197821744-99b18fbc-1ae4-4e37-b7e7-9a47adaa6ae5.svg)
+![WorkFlow](https://user-images.githubusercontent.com/75739606/197821744-99b18fbc-1ae4-4e37-b7e7-9a47adaa6ae5.svg)
 <! --
-! [WorkFlow](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/draw_workflow.svg)
+![WorkFlow](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/draw_workflow.svg)
 -->
 This diagram demonstrates the flow of circular iteration
 There are two types of iterations, circular iterations and linear iterations. Linear iterations are suitable for diversity testing, while **loop iterations** are a better choice for optimization.
