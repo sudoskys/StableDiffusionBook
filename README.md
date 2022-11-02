@@ -8,10 +8,15 @@
   <a href="https://discord.gg/vhsArSSA6K"><img src="https://img.shields.io/discord/1033769426216046622?color=blue&label=Discord-Ai%E7%BB%98%E7%94%BB%E4%B8%AD%E6%96%87%E7%BB%84" alt="Discord"></a>
   <a href="https://t.me/StableDiffusion_CN"><img src="https://img.shields.io/badge/Telegram-Group-blue" alt="Telegram"></a>
 </p>
+<p align="center">
+</p>
 
 <h2 align="center">StableDiffusionBook</h2>
 
+<img src="https://img.shields.io/badge/Lang-ZH-red" alt="支持中文"> <img src="https://img.shields.io/badge/Lang-EN-blue" alt="SupportEnglish">
+
 **For the English readme：[English](https://github.com/sudoskys/StableDiffusionBook/blob/main/README_EN.md)**
+
 
 关于使用 Ai 绘画的 Wiki ，翻译，教程，相关资源。目前主要内容为 StableDiffusionWebUi
 
