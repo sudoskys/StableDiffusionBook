@@ -41,11 +41,11 @@ https://stable-diffusion-book.vercel.app/  短链为(https://b23.ink/aibook)
 贡献之前先读 [贡献指南](https://github.com/sudoskys/StableDiffusionBook/blob/main/CONTRIBUTING.md)
 
 在键盘按下 `。` 键自动克隆仓库并开始协作。
-
+```
 The repository currently contains a machine-translated version of the guide.
 
 If this does not seem to flow well to you or has errors,or u would like a version in another language. Then please submit Issue or Pr
-
+```
 ### 相关
 
 [sdupdates SD综合清单，推荐阅读的](https://github.com/questianon/sdupdates)
