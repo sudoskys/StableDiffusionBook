@@ -9,54 +9,6 @@
          
     </url>
     <url>
-         <loc>https://stable-diffusion-book.vercel.app/2_prepare/</loc>
-         <lastmod>2022-11-02</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/2_prepare/"/>
-         <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/2_prepare/"/>
-         
-    </url>
-    <url>
-         <loc>https://stable-diffusion-book.vercel.app/3_install/</loc>
-         <lastmod>2022-11-02</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/3_install/"/>
-         <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/3_install/"/>
-         
-    </url>
-    <url>
-         <loc>https://stable-diffusion-book.vercel.app/4_model/</loc>
-         <lastmod>2022-11-02</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/4_model/"/>
-         <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/4_model/"/>
-         
-    </url>
-    <url>
-         <loc>https://stable-diffusion-book.vercel.app/5_drawing/</loc>
-         <lastmod>2022-11-02</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/5_drawing/"/>
-         <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/5_drawing/"/>
-         
-    </url>
-    <url>
-         <loc>https://stable-diffusion-book.vercel.app/6_selftrain/</loc>
-         <lastmod>2022-11-02</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/6_selftrain/"/>
-         <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/6_selftrain/"/>
-         
-    </url>
-    <url>
-         <loc>https://stable-diffusion-book.vercel.app/7_landing/</loc>
-         <lastmod>2022-11-02</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/7_landing/"/>
-         <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/7_landing/"/>
-         
-    </url>
-    <url>
          <loc>https://stable-diffusion-book.vercel.app/GettingStarted/news/</loc>
          <lastmod>2022-11-02</lastmod>
          <changefreq>daily</changefreq>
@@ -86,6 +38,54 @@
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/OlD/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/OlD/"/>
+         
+    </url>
+    <url>
+         <loc>https://stable-diffusion-book.vercel.app/OlD/2_prepare/</loc>
+         <lastmod>2022-11-02</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/OlD/2_prepare/"/>
+         <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/OlD/2_prepare/"/>
+         
+    </url>
+    <url>
+         <loc>https://stable-diffusion-book.vercel.app/OlD/3_install/</loc>
+         <lastmod>2022-11-02</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/OlD/3_install/"/>
+         <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/OlD/3_install/"/>
+         
+    </url>
+    <url>
+         <loc>https://stable-diffusion-book.vercel.app/OlD/4_model/</loc>
+         <lastmod>2022-11-02</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/OlD/4_model/"/>
+         <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/OlD/4_model/"/>
+         
+    </url>
+    <url>
+         <loc>https://stable-diffusion-book.vercel.app/OlD/5_drawing/</loc>
+         <lastmod>2022-11-02</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/OlD/5_drawing/"/>
+         <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/OlD/5_drawing/"/>
+         
+    </url>
+    <url>
+         <loc>https://stable-diffusion-book.vercel.app/OlD/6_selftrain/</loc>
+         <lastmod>2022-11-02</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/OlD/6_selftrain/"/>
+         <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/OlD/6_selftrain/"/>
+         
+    </url>
+    <url>
+         <loc>https://stable-diffusion-book.vercel.app/OlD/7_landing/</loc>
+         <lastmod>2022-11-02</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/OlD/7_landing/"/>
+         <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/OlD/7_landing/"/>
          
     </url>
     <url>
