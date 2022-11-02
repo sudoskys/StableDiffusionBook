@@ -1,9 +1,9 @@
 # News
 
-!!! tip
-    目前Stable Diffusion WebUi迭代非常快，每天都会有大量更新，因此建议每天都拉取最新代码。
 
-以下是新闻和测试内容。
+!!! tip
+    The Stable Diffusion WebUi is currently iterating very quickly and there are a lot of updates every day, so it is recommended to pull the latest code every day.
+
 
 -------
 - 11/1
@@ -12,27 +12,28 @@ disable access to extension stuff for non-local servers
 
 https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/dc7425a56e7a014cbfa3b3d44ad2321e519fe378
 
-社区反映：共享链接可能会导致风险，攻击者可以访问系统上的所有文件。
+Community feedback: Shared links can lead to risks and attackers can access all files on the system.
 
 -------
 - 10/30
 
-在 [这次提交中](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/9f4f894d74b57c3d02ebccaa59f9c22fca2b6c90) ，WebUi添加了`allow skip current image in progress api ` ，跳过当前流程的 Api 方法。
+In [this commit](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/9f4f894d74b57c3d02ebccaa59f9c22fca2b6c90), WebUi has added `allow skip current image in progress api `, which skips the Api method for the current process.
 
 
-在 [这次合并](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3722) 中，WebUi 添加了原生的进度 Api
+
+In [this merge](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3722), WebUi has added a native progress Api
 
 
 -------
 - 10/29
 
-[讨论](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3889) 有人认为，通过在 Windows 设置上禁用硬件加速 GPU 调度，WebUi 性能提高了大约 10-50%
+[Discussion](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3889) It has been suggested that by disabling hardware accelerated GPU scheduling on Windows settings, WebUi performance has improved by about 10-50%
 
 
 -------
 - 10/27
 
-文档增加了 API 内容
+API content added to wiki
 
 
 -------
