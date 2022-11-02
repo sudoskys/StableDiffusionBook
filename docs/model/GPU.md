@@ -1,12 +1,15 @@
 
-## 关于显卡
+# 关于显卡
 
 !!! tip
     注意显卡温度，有报道称显卡太热炸了。
 
-先判断 CUDA 是否可用。
+**在这之前，请确定你已经配置并进入了环境。(可以使用 torch)**
 
-打开终端，输入 python 进入，分行输入
+先使用 `nvidia-smi` 判断显卡驱动是否可用。
+
+再确定 CUDA 的配置情况：打开终端，启动 `python`，分行输入如下命令
+
 
 ```python
 import torch
@@ -24,8 +27,9 @@ torch.version.cuda
 
 输入 ctrl + z 退出
 
+如果出现了任何错误，请询问他人或使用搜索引擎解决。
 
-### 多 GPU 支持
+## WebUi 多 GPU 支持
 
 最简单的模式就是实现一个多数据并行处理的方法，通过 `--device-id` 参数启动多个实例。每个 GPU 加载一个模型，然后给她们分配工作。
 
@@ -36,7 +40,7 @@ torch.version.cuda
 >Using memory from between two GPUs is not simple. I only have one so I can't research/develop this.
 
 
-### 16xx系显卡使用半精度生成图片[^3]
+## WebUi 16xx系显卡使用半精度生成图片[^3]
 
 方案来自[这个讨论](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/28#issuecomment-1241448049)
 
