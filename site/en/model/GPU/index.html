@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#about-the-graphics-card" class="md-skip">
           Skip to content
         </a>
       
@@ -721,29 +721,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    关于显卡
-  </a>
-  
-    <nav class="md-nav" aria-label="关于显卡">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#gpu" class="md-nav__link">
-    多 GPU 支持
+  <a href="#about-the-graphics-card" class="md-nav__link">
+    About the graphics card
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#16xx3" class="md-nav__link">
-    16xx系显卡使用半精度生成图片[^3]
+      
+        <li class="md-nav__item">
+  <a href="#webui-multi-gpu-support" class="md-nav__link">
+    WebUi Multi-GPU support
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#webui-16xx-gpu-use-half-precision-to-generate-images-3" class="md-nav__link">
+    WebUi 16xx GPU use half-precision to generate images [^3]
+  </a>
   
 </li>
       
@@ -1149,29 +1143,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    关于显卡
-  </a>
-  
-    <nav class="md-nav" aria-label="关于显卡">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#gpu" class="md-nav__link">
-    多 GPU 支持
+  <a href="#about-the-graphics-card" class="md-nav__link">
+    About the graphics card
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#16xx3" class="md-nav__link">
-    16xx系显卡使用半精度生成图片[^3]
+      
+        <li class="md-nav__item">
+  <a href="#webui-multi-gpu-support" class="md-nav__link">
+    WebUi Multi-GPU support
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#webui-16xx-gpu-use-half-precision-to-generate-images-3" class="md-nav__link">
+    WebUi 16xx GPU use half-precision to generate images [^3]
+  </a>
   
 </li>
       
@@ -1189,80 +1177,81 @@
                 
                   
 
-  <a href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/model/GPU.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/model/GPU.en.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-  <h1>Gpu Debuging</h1>
-
-<h2 id="_1">关于显卡</h2>
+<h2 id="about-the-graphics-card">About the graphics card</h2>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>注意显卡温度，有报道称显卡太热炸了。</p>
+<p>Pay attention to the graphics card temperature, there are reports that the graphics card is too hot and fries.</p>
 </div>
-<p>先判断 CUDA 是否可用。</p>
-<p>打开终端，输入 python 进入，分行输入</p>
+<p><strong>TIPS</strong>, make sure you have configured and are using this environment. (you can use torch)</p>
+<p>First use <code>nvidia-smi</code> to determine if the graphics driver is available.</p>
+<p>Then determine the configuration of CUDA: open a terminal, start <code>python</code>, and type the following command in the branch</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">torch</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">())</span>
 </code></pre></div>
-<p><strong>查看 torch 对应的 CUDA 版本</strong></p>
+<p><strong>Check the CUDA version</strong></p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">torch</span>
 <span class="n">torch</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">cuda</span>
 </code></pre></div>
-<p>输入 ctrl + z 退出</p>
-<h3 id="gpu">多 GPU 支持</h3>
-<p>最简单的模式就是实现一个多数据并行处理的方法，通过 <code>--device-id</code> 参数启动多个实例。每个 GPU 加载一个模型，然后给她们分配工作。</p>
-<p>考虑到这个项目所提供的功能众多，我（作者）认为可能需要一段时间才能在并行的情况下使用所有的功能。</p>
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/156#issuecomment-1241218733">作者的回应</a></p>
+<p>Type ctrl + z to exit</p>
+<p>If any errors occur, ask someone or use a search engine to resolve them.</p>
+<h2 id="webui-multi-gpu-support">WebUi Multi-GPU support</h2>
+<p>The simplest model is to implement a method for parallel processing of multiple data by starting multiple instances with the <code>--device-id</code> parameter. Each GPU loads a model and then assigns them work.</p>
+<p>Considering the multitude of features offered by this project, I (the author) think it might take a while to use all the features in parallel.</p>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/156#issuecomment-1241218733">Response from WebUi developers</a></p>
 <blockquote>
 <p>Using memory from between two GPUs is not simple. I only have one so I can't research/develop this.</p>
 </blockquote>
-<h3 id="16xx3">16xx系显卡使用半精度生成图片[^3]</h3>
-<p>方案来自<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/28#issuecomment-1241448049">这个讨论</a></p>
+<h1 id="webui-16xx-gpu-use-half-precision-to-generate-images-3">WebUi 16xx GPU use half-precision to generate images [^3]</h1>
+<p>Solution from <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/28#issuecomment-1241448049">this issue</a></p>
 <ol>
 <li>
-<p>激活 WebUI 使用的 venv,要在正确的虚拟环境里运行</p>
+<p>activate the venv used by the WebUI, to run in the correct virtual environment</p>
 </li>
 <li>
-<p>卸载掉现在所用的 torch 和 torchvision:</p>
+<p>uninstall the torch and torchvision you are using now:</p>
 </li>
 </ol>
 <div class="highlight"><pre><span></span><code>pip uninstall torch torchvision
+uninstall torch and torchvision: <span class="sb">```</span>bash pip
+
+<span class="m">3</span>. reinstall <span class="sb">``</span>CUDA <span class="m">11</span>.6<span class="sb">``</span> compiled by <span class="sb">``</span>torch<span class="sb">``</span> and <span class="sb">``</span>torchvision<span class="sb">``</span>.
+
+<span class="sb">```</span>bash
+pip install torch torchvision --extra-index-url https://download.pytorch.org/whl/cu116
 </code></pre></div>
 <ol>
-<li>重新安装 <code>CUDA 11.6</code> 编译的 <code>torch</code> 和 <code>torchvision</code>。</li>
+<li>download <code>Cudnn_8.5</code> for backup.</li>
 </ol>
-<div class="highlight"><pre><span></span><code>pip install torch torchvision --extra-index-url https://download.pytorch.org/whl/cu116
-</code></pre></div>
-<ol>
-<li>下载 <code>Cudnn_8.5</code> 备用。</li>
-</ol>
-<p>使用下载工具下载，直接下载会跳转到 Nvidia 的开发者注册界面</p>
-<p>Windows: <a href="https://developer.nvidia.com/compute/cudnn/secure/8.5.0/local_installers/11.7/cudnn-windows-x86_64-8.5.0.96_cuda11-archive.zip">https://developer.nvidia.com/compute/cudnn/secure/8.5.0/local_installers/11.7/cudnn-windows-x86_64-8.5.0.96_cuda11-archive.zip</a></p>
-<p>其他版本：<a href="https://developer.nvidia.com/rdp/cudnn-archive">https://developer.nvidia.com/rdp/cudnn-archive</a></p>
+<p>Use the download tool to download, direct download will redirect you to Nvidia s developer registration screen</p>
+<p>Windows: https://developer.nvidia.com/compute/cudnn/secure/8.5.0/local_installers/11.7/cudnn-windows-x86_64-8.5.0.96_cuda11- archive.zip</p>
+<p>Other versions: https://developer.nvidia.com/rdp/cudnn-archive</p>
 <ol>
 <li>
-<p>将 Cudnn 8.5 压缩包里的 bin 和 lib 文件夹里的所有文件复制到 <code>venv\Lib\site-packages\torch\lib</code> 里，覆盖所有文件。</p>
+<p>Copy all the files from the bin and lib folders in the Cudnn 8.5 archive to <code>venv\Lib\site-packages\torch\lib</code>, overwriting all the files.</p>
 </li>
 <li>
-<p>然后 16xx 系显卡也可以愉快地使用半精度生成图片了！大幅降低显存占用，6G 加载 Full 模型可以生成 1024x640 的图片。</p>
+<p>Then the 16xx GPU can happily use half-precision image generation! It can generate 1024x640 images with 6G load Full model, which greatly reduces video memory usage.</p>
 </li>
 </ol>
-<p>但是，依然不能使用 <code>DDIM Sampling</code> ，但可以使用 <code>Euler a</code></p>
+<p>However, you still can't use <code>DDIM Sampling</code>, but you can use <code>Euler a</code>.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 04:44:24</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 06:30:05</span>
       
         <br>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 04:44:24</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 06:30:05</span>
       
     
   </small>
@@ -1292,7 +1281,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: 架炉生火" rel="prev">
+        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Initialization" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1301,7 +1290,7 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              架炉生火
+              Initialization
             </div>
           </div>
         </a>

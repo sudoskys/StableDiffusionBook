@@ -19,7 +19,7 @@
     
     
       
-        <title>入门 - AiDraw</title>
+        <title>Getting Started Painting - AiDraw</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#getting-started-painting" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              入门
+              Getting Started Painting
             
           </span>
         </div>
@@ -1094,8 +1094,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    基本流程
+  <a href="#basic-flow" class="md-nav__link">
+    Basic flow
   </a>
   
 </li>
@@ -1114,45 +1114,43 @@
                 
                   
 
-  <a href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/paint/index.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/paint/index.en.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="_1">入门</h1>
+<h1 id="getting-started-painting">Getting Started Painting</h1>
 <blockquote>
-<p>此页面等待精修</p>
-<p>Todo
+<p>This page is awaiting refinement
+Todo
 修复混乱的逻辑</p>
 <p>Upscaler 2 的预期用途 https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3749
 </p>
 </blockquote>
-<p>这节会介绍 参数 和 相关的 WebUi(SD)  网页应用资源。如果你会画画，那么效果会更加稳定可观。</p>
-<p>标签参考应该使用 <a href="https://danbooru.donmai.us/wiki_pages/tag_groups">Danbooru wiki Tag</a> 和 <a href="https://github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference">MidJourney-Styles-and-Keywords-Reference</a> ，因为它们都比较原生。</p>
-<p>笔触/绘画工具/风格化/绘画技术标签组请看 <a href="https://danbooru.donmai.us/wiki_pages/tag_group%3Aimage_composition">Danbooru</a></p>
-<p>如果需要中文的标签参考/模板共享/信息，请看<a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml">调参魔法书</a>和 <strong><a href="https://docs.google.com/spreadsheets/d/14Gg1kIGWdZGXyCC8AgYVT0lqI6IivLzZOdIT3QMWwVI/">手抄魔法本</a></strong></p>
-<p>如果你习惯阅读日语的标签参考和技巧，可以在 <a href="https://seesaawiki.jp/nai_ch/d/%be%ec%bd%ea%a1%a6%c7%d8%b7%ca">日语Wiki</a> 中进行检索。</p>
-<p>如果你觉得查表很麻烦，可以打开 <a href="https://tags.novelai.dev/">Danbooru 标签超市</a>,<a href="https://github.com/wfjsw/danbooru-diffusion-prompt-builder">项目地址</a> 或者<a href="https://aitag.top/">AI绘画tag生成器</a>(后者不支持负面Tag)</p>
-<p>如果你不想读文字，可以打开 <a href="https://space.bilibili.com/35723238/channel/collectiondetail?sid=779851">推荐的视频教程</a>，但需要了解 <strong>通过 AI 模仿画风，特定镜头，增加特效，微修微调，PS嫁接出图，通过3D特定姿势，重画，迭代</strong> 等等操作的话，需要<strong>通读</strong>下面的内容。</p>
+<p>This section will introduce the parameters and related SDWebUi resources. If you can draw, the results will be more stable and considerable.</p>
+<p>The tag reference should use <a href="https://danbooru.donmai.us/wiki_pages/tag_groups">Danbooru wiki Tag</a> and <a href="https:// github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference">MidJourney-Styles-and-Keywords-Reference</a></p>
+<p>For brushstrokes/painting tools/styling/painting techniques tag group see <a href="https://danbooru.donmai.us/wiki_pages/tag_group%3Aimage_composition">Danbooru</a></p>
+<p>If you are used to reading Japanese tag references and techniques, you can search in <a href="https://seesaawiki.jp/nai_ch/d/%be%ec%bd%ea%a1%a6%c7%d8%b7%ca">Japanese Wiki</a>.</p>
+<p>This section covers: imitating style, specific shots, adding effects, fine-tuning and fine-tuning, PS grafting out of the picture, specific poses through 3D, redrawing, iteration</p>
 <blockquote>
-<p>提前告知：WebUi 的设置页面需要按下 <code>Apply setting</code> 才能保存设置。</p>
+<p>Note: WebUi's settings page requires pressing <code>Apply setting</code> to save the settings.</p>
 </blockquote>
-<h2 id="_2">基本流程</h2>
-<p><img alt="WorkFlow" src="https://user-images.githubusercontent.com/75739606/197821744-99b18fbc-1ae4-4e37-b7e7-9a47adaa6ae5.svg" /></p>
-<!--
-![WorkFlow](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/draw_workflow.svg)
--->
-<p>这幅图演示了循环迭代的流程
-迭代方式，有循环迭代和线性迭代两种，线性迭代适用于多样性测试，而 <strong>循环迭代</strong> 是优化的更好选择。</p>
-<p>来回改提示+固定种子并不是好选择。</p>
-<p>目前研究基本方向是</p>
+<h2 id="basic-flow">Basic flow</h2>
+<p>! <a href="https://user-images.githubusercontent.com/75739606/197821744-99b18fbc-1ae4-4e37-b7e7-9a47adaa6ae5.svg">WorkFlow</a></p>
+<!-- --
+! [WorkFlow](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/draw_workflow.svg)
+---->
+<p>This diagram demonstrates the flow of circular iteration
+There are two types of iterations, circular iterations and linear iterations. Linear iterations are suitable for diversity testing, while <strong>loop iterations</strong> are a better choice for optimization.</p>
+<p><code>Changing hints back and forth + seeds</code> is not a good choice.</p>
+<p>The basic direction of the current research is</p>
 <ul>
 <li>
-<p>提示词 + PS/Inpaint(微修/嫁接)</p>
+<p>prompt + PS/Inpaint (fine-tuning/grafting)</p>
 </li>
 <li>
-<p>提示词 + 3D 参考</p>
+<p>prompt + 3D reference</p>
 </li>
 </ul>
 
@@ -1161,11 +1159,11 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 04:44:24</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 06:30:05</span>
       
         <br>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 04:44:24</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 06:30:05</span>
       
     
   </small>
@@ -1195,7 +1193,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../model/WebUi/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Index" rel="prev">
+        <a href="../model/WebUi/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Basic" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1204,7 +1202,7 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Index
+              Basic
             </div>
           </div>
         </a>

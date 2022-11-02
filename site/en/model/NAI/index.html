@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#nai-leak" class="md-skip">
+        <a href="#nai-leak-model" class="md-skip">
           Skip to content
         </a>
       
@@ -711,6 +711,8 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           NAI leak report
@@ -727,6 +729,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -735,50 +739,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#nai-leak" class="md-nav__link">
-    NAI Leak 模型
-  </a>
-  
-    <nav class="md-nav" aria-label="NAI Leak 模型">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#part-1" class="md-nav__link">
     Part 1
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#part-2" class="md-nav__link">
     Part 2
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    全量和基线模型
+      
+        <li class="md-nav__item">
+  <a href="#full-and-baseline-models" class="md-nav__link">
+    Full and baseline models
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#latest-7g-pruned-4g" class="md-nav__link">
-    使用 latest (7G) 还是 pruned (4G) 模型
+      
+        <li class="md-nav__item">
+  <a href="#use-latest-7g-or-pruned-4g-model" class="md-nav__link">
+    Use latest (7G) or pruned (4G) model
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    风格化1
+      
+        <li class="md-nav__item">
+  <a href="#style-1" class="md-nav__link">
+    Style 1
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1162,6 +1153,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1170,50 +1163,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#nai-leak" class="md-nav__link">
-    NAI Leak 模型
-  </a>
-  
-    <nav class="md-nav" aria-label="NAI Leak 模型">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#part-1" class="md-nav__link">
     Part 1
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#part-2" class="md-nav__link">
     Part 2
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    全量和基线模型
+      
+        <li class="md-nav__item">
+  <a href="#full-and-baseline-models" class="md-nav__link">
+    Full and baseline models
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#latest-7g-pruned-4g" class="md-nav__link">
-    使用 latest (7G) 还是 pruned (4G) 模型
+      
+        <li class="md-nav__item">
+  <a href="#use-latest-7g-or-pruned-4g-model" class="md-nav__link">
+    Use latest (7G) or pruned (4G) model
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    风格化1
+      
+        <li class="md-nav__item">
+  <a href="#style-1" class="md-nav__link">
+    Style 1
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1231,17 +1211,15 @@
                 
                   
 
-  <a href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/model/NAI.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/model/NAI.en.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-  <h1>NAI leak report</h1>
-
-<h2 id="nai-leak">NAI Leak 模型</h2>
-<p>关于 NAI Leak 的事故报告。</p>
-<p>使用 NAI Leak 模型 的 models 文件夹结构应该如下。</p>
+<h1 id="nai-leak-model">NAI Leak model</h1>
+<p>Incident report about NAI Leak.</p>
+<p>The models folder structure for using the NAI Leak model should be as follows.</p>
 <div class="highlight"><pre><span></span><code>./models
 ├── Codeformer
 ├── ESRGAN
@@ -1261,62 +1239,15 @@
 │   └── pony.pt
 ├── LDSR
 ├── Stable-diffusion
-│   ├── final-pruned.ckpt -&gt; novelai 的 model.ckpt (pruned)
-│   ├── final-pruned.vae.pt -&gt; novelai 的 animevae.pt
-│   ├── final-pruned.yaml -&gt; model.ckpt 同文件夹的 config.yaml
+│   ├── final-pruned.ckpt -&gt; novelai s model.ckpt (pruned)
+│   ├── final-pruned.vae.pt -&gt; novelai s animevae.pt
+│   ├── final-pruned.yaml -&gt; model.ckpt is the same folder as config.yaml
 │   └── 其他模型文件.ckpt
 └── SwinIR
 </code></pre></div>
-<p>其中，hypernetworks 和 Stable-diffusion 是需要新建的文件夹。其他文件根据规则重命名。</p>
-<h3 id="part-1">Part 1</h3>
-<table>
-<thead>
-<tr>
-<th>文件</th>
-<th>对应 Leak 路径</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>final-pruned.ckpt</code></td>
-<td><code>stableckpt/animefull-final-pruned/model.ckpt</code> (pruned)</td>
-<td>模型主文件</td>
-</tr>
-<tr>
-<td><code>final-pruned.vae.pt</code></td>
-<td><code>stableckpt/animevae.pt</code></td>
-<td>用于稳定风格</td>
-</tr>
-<tr>
-<td><code>final-pruned.yaml</code></td>
-<td><code>stableckpt/animefull-final-pruned/config.yaml</code></td>
-<td>与记载额外的参数，内存消耗大，效果不明显</td>
-</tr>
-<tr>
-<td><code>stableckpt/vector_adjust/v2.pt</code></td>
-<td>风格化</td>
-<td>感觉不如 <code>hypernet</code></td>
-</tr>
-<tr>
-<td>个人不需要下载的</td>
-<td><code>workspace</code></td>
-<td>前后端全套，40GB仅能启动</td>
-</tr>
-</tbody>
-</table>
-<p>注意，<code>final-pruned .yaml</code> 的名称应该对应 <code>final-pruned .ckpt</code></p>
-<p><code>hypernetworks</code> 包含了 <code>stableckpt/modules/modules</code> 里的文件，是风格相关的数据集，可以作为特定人物的 <code>embedding model</code> 调用，和 model 使用可以生成特定风格。主要格式为 <code>*.pt</code>。需要在WebUi的设置标签页启用这个增强模型。</p>
-<p><code>workspace</code> 不是个人可以负载的，NAI 采用的是 GPU 集群云。</p>
-<h3 id="part-2">Part 2</h3>
-<p><code>prodmodels</code> 是 GPT 模型(语言处理)，但是实际用了 CLIP，所以不用我们管。</p>
-<p><code>random_stableckpt</code> 是一些模型，有的与 Part1 重复</p>
-<p><img alt="Part1" src="https://user-images.githubusercontent.com/75739606/197821809-7eed7776-9508-4c71-9b07-5f02e13290b2.jpg" /></p>
-<!--
-![Part1](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/models.jpg)
--->
+<p><code>hypernetworks</code> and <code>Stable-diffusion</code> are the new folders that need to be created. Other files are renamed according to the rules.</p>
 <details class="info">
-<summary>附内容</summary>
+<summary>Content</summary>
 <ul>
 <li>stableckpt/ - Stable Diffusion checkpoints</li>
 <li>animefull-latest - The model NovelAI uses in production</li>
@@ -1330,25 +1261,69 @@
 <li>sha256sum.sig Detached signature for the sums, signed by our GPG key</li>
 </ul>
 </details>
-<p>启动 cli 有提示加载就 OK, 同时可以去设置选模型那里选喜欢的 <code>hypernetwork</code></p>
-<h3 id="_1">全量和基线模型</h3>
-<p><code>animesfw-latest</code> = NAI 基线模型</p>
-<p><code>animefull-final-pruned</code> = <code>full-latest</code> = NAI 全量模型(包含成人内容)</p>
-<h3 id="latest-7g-pruned-4g">使用 latest (7G) 还是 pruned (4G) 模型</h3>
-<p>4GB 的模型由 7GB 的模型修剪而来，去除了最后一次的权重，留下了 EMA 权重。</p>
-<p>个人用户只需要使用 pruned 4GB 模型。使用 latest 会过度占用 RAM 和 VRAM。</p>
-<p>且 NAI 在线上也使用 EMA 权重，所以选择 latest 7GB 模型是没有意义的。</p>
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017#discussioncomment-3882551">结论由此贴讨论得到</a>。</p>
-<p><strong>关于 EMA</strong></p>
-<p>EMA 移动平均值对生成图像没有任何帮助。</p>
-<p>但确实可以在后续的训练中防止过拟合。</p>
-<p>不确定在 dreambooth 的训练中是否起作用。</p>
-<p><strong>详细介绍</strong></p>
+<h2 id="part-1">Part 1</h2>
+<table>
+<thead>
+<tr>
+<th>file</th>
+<th>corresponding Leak path</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>final-pruned.ckpt</code></td>
+<td><code>stableckpt/animefull-final-pruned/model.ckpt</code> (pruned)</td>
+<td>model master file</td>
+</tr>
+<tr>
+<td><code>final-pruned.vae.pt</code></td>
+<td><code>stableckpt/animevae.pt</code></td>
+<td>for stabilization styles</td>
+</tr>
+<tr>
+<td><code>final-pruned.yaml</code></td>
+<td><code>stableckpt/animefull-final-pruned/config.yaml</code></td>
+<td>with documenting extra parameters, memory consumption, and ineffective</td>
+</tr>
+<tr>
+<td><code>stableckpt/vector_adjust/v2.pt</code></td>
+<td>styled</td>
+<td>feels inferior to <code>hypernet</code></td>
+</tr>
+<tr>
+<td>personal don't need to download</td>
+<td><code>workspace</code></td>
+<td>full set of front and back ends, 40GB only to start</td>
+</tr>
+</tbody>
+</table>
+<p>Note that the name of <code>final-pruned .yaml</code> should correspond to <code>final-pruned .ckpt</code></p>
+<p><code>hypernetworks</code> contains files in <code>stableckpt/modules/modules</code>, which are style model that can be called as character-specific <code>embedding models</code>, and used with models to generate specific styles.</p>
+<p>embedding s file format is <code>*.pt</code>. This embedding model needs to be enabled in the settings tab of WebUi(<strong>Only</strong> for hypernetworks folder. BUT for Textual Inversion,Webui automatically loads the models in the embeddings folder, which is one of the differences between them)</p>
+<p>Most people cannot run <code>workspace</code>.</p>
+<h2 id="part-2">Part 2</h2>
+<p><code>prodmodels</code> are GPT models (for language processing), but the program actually uses CLIP.</p>
+<p><code>random_stableckpt</code> is a number of models, some of which are copies of the Part 1 folder files</p>
+<p><img alt="Part1" src="https://user-images.githubusercontent.com/75739606/197821809-7eed7776-9508-4c71-9b07-5f02e13290b2.jpg" /></p>
 <!--
-<iframe src="//player.bilibili.com/player.html?aid=688965561&cid=857942294&page=1&danmaku=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
+![Part1](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/models.jpg)
 -->
-<p>拆包视频可以看 <a href="https://www.bilibili.com/video/av688965561/?zw">BV1Gm4y1A7VM</a></p>
-<h3 id="1">风格化<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">1</a></sup></h3>
+
+<p>About the style model, start the cli with a prompt to load it OK, at the same time you can go to the settings to choose the model you like <code>hypernetwork</code></p>
+<h2 id="full-and-baseline-models">Full and baseline models</h2>
+<p><code>animesfw-latest</code> = NAI baseline model</p>
+<p><code>animefull-final-pruned</code> = <code>full-latest</code> = NAI full model (with adult content)</p>
+<h2 id="use-latest-7g-or-pruned-4g-model">Use latest (7G) or pruned (4G) model</h2>
+<p>The 4GB model is pruned from the 7GB model, removing the last weight and leaving the EMA weights.</p>
+<p>Individual users only need to use the pruned 4GB model. Using latest would overuse RAM and VRAM.</p>
+<p>And since NAI also uses EMA weights online, it does not make sense to choose the latest 7GB model.</p>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017#discussioncomment-3882551">Conclusion from the discussion in this post</a></p>
+<p><strong>About EMA</strong></p>
+<p>EMA moving average does not help in generating images.</p>
+<p>But it does prevent overfitting in subsequent training.</p>
+<p>Not sure if it works in dreambooth training.</p>
+<h2 id="style-1">Style <sup id="fnref:5"><a class="footnote-ref" href="#fn:5">1</a></sup></h2>
 <p><img alt="furry" src="https://user-images.githubusercontent.com/474879/194965036-4c9f70ca-a32f-4f68-a9a1-17a827e8e61e.jpg" /></p>
 <blockquote>
 <p>furry</p>
@@ -1358,9 +1333,11 @@
 Negative prompt: nsfw, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts,signature, watermark, username, blurry, artist name
 Steps: 28, Sampler: Euler, CFG scale: 12, Seed: [SEE COLUMN], Size: 512x512, Model hash: 925997e9, Hypernet: [SEE ROW]
 </code></pre></div>
-<p><code>aini</code> 有一种你可能不喜欢的强烈风格，我认为它具有最高的一致性和质量。</p>
-<p><code>anime_3</code> 是该系列中质量最高的，但它们都有些不一致. 我一般不会推荐他们。</p>
-<p>可以看到 <code>furry</code> 的超网络在添加动物特征方面更加激进，因此这里更保守的变化可能与采样器、步骤和 CFG 有关。<sup id="fnref2:5"><a class="footnote-ref" href="#fn:5">1</a></sup></p>
+<blockquote>
+<p>"aini" has a very strong style you might not care for that you have to really prompt to get out of (I like it shrug ) and going into this I would have said it has the highest consistency &amp; quality, but from these seeds and settings, I was surprised by "pony"
+I think "anime_3" is the highest quality of that set but they're all somewhat inconsistent. I generally wouldn't recommend them.</p>
+</blockquote>
+<p>It can be seen that <code>furry</code>'s hypernetwork is more aggressive in adding animal features, so the more conservative changes here may be related to the sampler, steps and CFG. <sup id="fnref2:5"><a class="footnote-ref" href="#fn:5">1</a></sup></p>
 <div class="footnote">
 <hr />
 <ol>
@@ -1375,11 +1352,11 @@ Steps: 28, Sampler: Euler, CFG scale: 12, Seed: [SEE COLUMN], Size: 512x512, Mod
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 04:44:24</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 06:30:05</span>
       
         <br>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 04:44:24</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 06:30:05</span>
       
     
   </small>
@@ -1425,13 +1402,13 @@ Steps: 28, Sampler: Euler, CFG scale: 12, Seed: [SEE COLUMN], Size: 512x512, Mod
       
       
         
-        <a href="../WebUi/" class="md-footer__link md-footer__link--next" aria-label="Next: Index" rel="next">
+        <a href="../WebUi/" class="md-footer__link md-footer__link--next" aria-label="Next: Basic" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Index
+              Basic
             </div>
           </div>
           <div class="md-footer__button md-icon">
