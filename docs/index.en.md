@@ -14,9 +14,9 @@ Copyright (C)  2022  StableDiffusionBook.
 This page accounts for words written for newcomers and explanations of terms.
 
 !!! tip
-    The repository currently contains a machine-translated version of the guide, if this does not seem to flow well to you or has errors.
+    The repository currently contains a machine-translated version of the guide.
 
-    Or would like a version in another language. Then please submit Issue or Pr
+    If this does not seem to flow well to you or has errors,or u would like a version in another language. Then please submit Issue or Pr to help us.
 
 
 ## Projects
