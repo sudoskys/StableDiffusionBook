@@ -1,5 +1,5 @@
  
-## Textual Inversion[^7]
+# Textual Inversion[^7]
 
 [官方Wiki](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion#training-embeddings)
 
@@ -9,12 +9,12 @@
     在设置内勾选 **Move VAE and CLIP to RAM when training hypernetwork. Saves VRAM.** 的效果是转移 VAE 到 RAM,而不是卸载，
 
 
-#### 准备数据集
+## 准备数据集
 
 数据集应保证风格一致，内容具有同一概念。如果算力允许，图片越多越好。数据内容可以是插画，抽象画作，也可以是表情包。
 
 
-### 要求
+## 要求
 
 显存至少 6GB，舒适使用需要 12GB 显存。根据实验数据，8GB 显存应该选择 `512x512` 分辨率；不推荐 `--lowvram` 和 `--medvram` 参数下进行训练。
 
@@ -24,7 +24,7 @@
 你可以中断和恢复训练，但是 optimizer state 不会被保存，所以不推荐这样做。
 
 
-### 设置说明
+## 设置说明
 
 准备 30 张以上的目标人设图片，每一张图片应当裁剪为同样的比例。（ webui 已经支持了长方形图片的裁剪）
 
@@ -57,7 +57,7 @@
 按下 `Apply setting` 保存设置。
 
 
-### 创建训练
+## 创建训练
 
 打开 `train` 选项卡，在 `Create embedding`选项卡新建一个 `embedding` 模型。
 
@@ -74,7 +74,7 @@
 新建，会创建一个在 `embedding` 下的 pt 文件。
 
 
-### 预处理
+## 预处理
 
 打开 `Preprocess images` 选项卡。
 
@@ -108,7 +108,7 @@ Windows 需要在 `webui-user.bat` 的 `COMMANDLINE_ARGS=` 一行添加，或者
 点击按钮，等待处理结束。
 
 
-### 训练
+## 训练
 
 训练是一个动态的过程！
 
@@ -179,7 +179,7 @@ Windows 需要在 `webui-user.bat` 的 `COMMANDLINE_ARGS=` 一行添加，或者
 训练完毕。如果卸载了 VAE ，将 VAE 权重文件重命名回去，重启程序。
 
 
-### 备注
+## 备注
 
 
 **效果评价**
@@ -207,7 +207,8 @@ Windows 需要在 `webui-user.bat` 的 `COMMANDLINE_ARGS=` 一行添加，或者
 
 **Move VAE and CLIP from VRAM when training. Saves VRAM.**
 
-训练时从 VRAM 中卸载 VAE 和 CLIP
+训练时从 VRAM 中卸载 VAE 和 CLIP,装载进 RAM
+
 设置选项卡上的此选项允许您以较慢的预览图片生成为代价节省一些内存。
 
 训练的结果是一个 .pt 或一个 .bin 文件（前者是原作者使用的格式，后者作为 diffusers library）

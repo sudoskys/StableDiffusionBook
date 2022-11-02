@@ -6,8 +6,8 @@ Create an embedding from one or few pictures and use it to apply their style to 
 
 ## WebUi
 
-Source directory 填数据源文件夹地址。
+Source directory Fill in the address of the data source folder.
 
-生成的embedding在models文件夹里面。
+The generated embedding is in the models folder.
 
-每一次使用，都会重新计算，训练速度快，生成速度慢。
+Each time it is used, it is recalculated, trained quickly and generated slowly.
