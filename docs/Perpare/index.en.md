@@ -2,6 +2,10 @@
 
 The purpose of this document is to summarize the results of the community discussion and to create a self-help guide for people who are new to drawing with Stable Diffusion, starting with WebUi and learning about Ai drawing.
 
+!!! tip
+    The repository currently contains a machine-translated version of the guide, if this does not seem to flow well to you or has errors.
+
+    Or would like a version in another language. Then please submit Issue or Pr
 
 ## Asking polite questions in the community
 
