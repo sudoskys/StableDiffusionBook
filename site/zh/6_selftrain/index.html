@@ -1,0 +1,1881 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="一个介绍 Ai 绘画的 WIKI">
+      
+      
+        <meta name="author" content="StableDiffusionBook Team">
+      
+      
+        <link rel="canonical" href="https://stable-diffusion-book.vercel.app/zh/6_selftrain/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.3">
+    
+    
+      
+        <title>炼丹 - AiDraw</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6b80c2a2.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../" title="AiDraw" class="md-header__button md-logo" aria-label="AiDraw" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AiDraw
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              炼丹
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="选择当前语言">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="../../6_selftrain/" hreflang="zh" class="md-select__link">
+                    简体中文
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../en/6_selftrain/" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/sudoskys/StableDiffusionBook" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../GettingStarted/" class="md-tabs__link">
+        起步于此
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Perpare/" class="md-tabs__link">
+        开始之前
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../install/" class="md-tabs__link">
+        安装配置
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../model/" class="md-tabs__link">
+        装置调试
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../paint/" class="md-tabs__link">
+        绘画调试
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../train/" class="md-tabs__link">
+        训练模型
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../landing/" class="md-tabs__link">
+        参考资料
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../" title="AiDraw" class="md-nav__button md-logo" aria-label="AiDraw" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    AiDraw
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/sudoskys/StableDiffusionBook" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../GettingStarted/">起步于此</a>
+          
+            <label for="__nav_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="起步于此" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          起步于此
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GettingStarted/term/" class="md-nav__link">
+        术语
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GettingStarted/news/" class="md-nav__link">
+        新闻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GettingStarted/state/" class="md-nav__link">
+        声明
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../Perpare/">开始之前</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="开始之前" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          开始之前
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../install/">安装配置</a>
+          
+            <label for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="安装配置" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          安装配置
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../install/WebUi/">WebUi安装</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="WebUi安装" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          WebUi安装
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../model/">装置调试</a>
+          
+            <label for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="装置调试" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          装置调试
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model/GPU/" class="md-nav__link">
+        GPU相关
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model/NAI/" class="md-nav__link">
+        NAI泄漏报告
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../model/WebUi/">WebUi配置模型</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="WebUi配置模型" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          WebUi配置模型
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../paint/">绘画调试</a>
+          
+            <label for="__nav_5">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="绘画调试" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          绘画调试
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../paint/WebUi/">WebUi绘画指南</a>
+          
+            <label for="__nav_5_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="WebUi绘画指南" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          WebUi绘画指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paint/WebUi/Practicalguide/" class="md-nav__link">
+        应用指南
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paint/WebUi/Advanced/" class="md-nav__link">
+        进阶指南
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paint/WebUi/info/" class="md-nav__link">
+        参数
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../train/">训练模型</a>
+          
+            <label for="__nav_6">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="训练模型" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          训练模型
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../train/Textual/" class="md-nav__link">
+        Textual 训练
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../train/Hypernetwork/" class="md-nav__link">
+        Hypernetwork 训练
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../train/DreamBooth/" class="md-nav__link">
+        DreamBooth 训练
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../train/AestheticGradients/" class="md-nav__link">
+        AestheticGradients 训练
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../landing/">参考资料</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="参考资料" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          参考资料
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    认知炼丹
+  </a>
+  
+    <nav class="md-nav" aria-label="认知炼丹">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#textual-inversion-ti" class="md-nav__link">
+    Textual Inversion (TI)
+  </a>
+  
+    <nav class="md-nav" aria-label="Textual Inversion (TI)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    特征
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    使用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    相关
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hypernetwork-hn" class="md-nav__link">
+    Hypernetwork (HN)
+  </a>
+  
+    <nav class="md-nav" aria-label="Hypernetwork (HN)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    特征
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    使用
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dreambooth-db" class="md-nav__link">
+    DreamBooth (DB)
+  </a>
+  
+    <nav class="md-nav" aria-label="DreamBooth (DB)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    特征
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    使用
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-prompt-tuning-apt" class="md-nav__link">
+    Advanced Prompt Tuning (APT)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aesthetic-gradients" class="md-nav__link">
+    Aesthetic Gradients
+  </a>
+  
+    <nav class="md-nav" aria-label="Aesthetic Gradients">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    特征
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    使用
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#textual-inversion1" class="md-nav__link">
+    Textual Inversion1
+  </a>
+  
+    <nav class="md-nav" aria-label="Textual Inversion1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    准备数据集
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    要求
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    设置说明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    创建训练
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    预处理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    训练
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    备注
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hypernetwork7" class="md-nav__link">
+    Hypernetwork7
+  </a>
+  
+    <nav class="md-nav" aria-label="Hypernetwork7">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hyper-network-layer-structure" class="md-nav__link">
+    hyper network layer structure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-layer-normalization" class="md-nav__link">
+    Add layer normalization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-dropout" class="md-nav__link">
+    USE Dropout
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activation-functions" class="md-nav__link">
+    激活函数 activation functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    额外注意10
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dreambooth" class="md-nav__link">
+    DreamBooth
+  </a>
+  
+    <nav class="md-nav" aria-label="DreamBooth">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    配置要求
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    训练
+  </a>
+  
+    <nav class="md-nav" aria-label="训练">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    Linux
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    Windows
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    参数分析
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    其他
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aesthetic-gradients_1" class="md-nav__link">
+    Aesthetic Gradients
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+  <a href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/6_selftrain.md" title="编辑此页" class="md-content__button md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+<h1 id="_1">炼丹</h1>
+<blockquote>
+<p>Todo 
+材料</p>
+<p>https://github.com/huggingface/diffusers/issues/712</p>
+<p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2002</p>
+<p>https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth</p>
+</blockquote>
+<p>这节对显卡的要求较高。</p>
+<p>在法律上，<strong>不应该</strong>无视画师约定的版权许可，采集作品数据进行训练。在道德上，<strong>不应该</strong>用训练结果贬低原画师作品价值，俗谚有 “吃水不忘挖井人”，训练数据并不能作为你的贡献。</p>
+<p>目前个人认为效果认为效果最好的是 DreamBooth，但是其训练时对显存要求较高（&gt;12GB）。</p>
+<h2 id="_2">认知炼丹</h2>
+<p>如果你在 <code>--medvram</code> 参数下开始训练，可能会出现 <code>RuntimeError: Expected all tensors to be on the same device</code> 错误，无法创建训练。
+这是优化机制导致的<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2399">问题</a>，WebUi 在 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/cbb857b675cf0f169b21515c29da492b513cc8c4">这次提交</a> 中允许了在 <code>--medvram</code> 下创建 embedding 的情况。请更新版本到这个版本之后。</p>
+<p><strong>关于 batch size</strong></p>
+<p>更大的 batch size 可能稍微加快训练并稍微提升训练效果，但也需要更大的显存。</p>
+<h3 id="textual-inversion-ti">Textual Inversion (TI)</h3>
+<p>从一些具有共同语义 [v] 的图片中，提取 [v] 的一个方法。提取出的 [v] 张量称之为 "Embedding"。将 Embedding 保存为文件，之后生成图片时就可以在 prompt 中以文件名引用。</p>
+<h4 id="_3">特征</h4>
+<p>训练产物大小较小，webui 自带训练支持。</p>
+<p>可以解决新出的角色画不出的问题，或者模仿特定的可以用语言精确描述的艺术风格。因为 TI 是在 Text Encoder 的输出做处理，所以并不能让模型学习到它不知道的概念。</p>
+<h4 id="_4">使用</h4>
+<p>使用时，将 embedding（一个 .pt 或一个 .bin 文件）放入 webui 的 <code>embeddings</code> 目录并在 prompt 中写要用的 embedding 的文件名（不包括扩展名）即可，不必重启 webui。可以同时使用多个 embedding。</p>
+<h4 id="_5">相关</h4>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion">webui 给的英文说明和效果图</a></p>
+<p><a href="https://gitlab.com/16777216c/stable-diffusion-embeddings">相关 embeddings</a>，里面有相关效果预览。</p>
+<p><a href="https://rentry.org/embeddings">list of Textual Inversion embeddings for webui(SD)</a></p>
+<p><a href="https://cyberes.github.io/stable-diffusion-textual-inversion-models/">HuggingFace 的 embedding 库</a></p>
+<h3 id="hypernetwork-hn">Hypernetwork (HN)</h3>
+<p>一类给模型生成权重的网络，在这里是给 LDM(潜在扩散模型) 生成权重。是一个较为实验性的方法，NAI 率先探索了在 LDM 上使用。</p>
+<h4 id="_6">特征</h4>
+<p>与 TI 不同，Hypernetwork 会改动 LDM 本身的权重，所以可以训练出无法用语言精确表述的细节，也更适用于画风的训练。</p>
+<p>训练产物大小中等，webui 自带训练支持。</p>
+<h4 id="_7">使用</h4>
+<p>使用时，将 Pt 放入 <code>/models/hypernetworks</code> 并在设置选项勾选启用它。</p>
+<p>NAI Leaks 的 <code>novelaileak\stableckpt\modules\modules</code> 中有 NAI 训练的一些 Hypernetwork。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><code>.pt</code>文件，一般情况下小的是 embedding 大的是 hypernetwork。</p>
+</div>
+<h3 id="dreambooth-db">DreamBooth (DB)</h3>
+<p>直接微调 LDM 和 Text Encoder 以适应用户特定的图像生成需求的一个方法。</p>
+<blockquote>
+<p>你能想象你自己的狗环游世界，或者你最喜欢的包在巴黎最独特的展厅里展示吗？你的鹦鹉成为一本插图故事书的主角呢？</p>
+</blockquote>
+<h4 id="_8">特征</h4>
+<p>与 TI 和 HN 不同，DreamBooth 可以做到出图和训练集高度相似但是却不失泛化能力，用于训练特定具象概念（比如一个角色穿着特定衣服）效果特别好。但是不像 TI 和 HN 像完整权重的 “插件” 一样即插即用，强度也不可调。</p>
+<p>这个模型并非为学习画风（抽象概念）而设计。但似乎可以一定程度上适应“画风”。具体效果交由读者你实验。</p>
+<h4 id="_9">使用</h4>
+<p>把 DreamBooth 训练出的 .ckpt 文件放进 webui 的 <code>models\Stable-diffusion</code> 目录里，在 webui 的左上角切换到即可使用。</p>
+<p><img alt="SAMPLE" src="https://dreambooth.github.io/DreamBooth_files/high_level.png" /></p>
+<p>官网 https://dreambooth.github.io/</p>
+<p>论文 https://arxiv.org/abs/2208.12242</p>
+<h3 id="advanced-prompt-tuning-apt">Advanced Prompt Tuning (APT)</h3>
+<blockquote>
+<p>"Can super dramatically improve the image quality and diversity"</p>
+</blockquote>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2945">Pull Here</a></p>
+<p>添加对否定词的即时嵌入学习，以显着提高生成图像的质量。 高质量的概念可以从单个图像中学习。 </p>
+<p>添加重建损失以提高生成图像的细节质量和丰富度。</p>
+<p>添加通过人工注释训练的鉴别器（使用 convnext 实现）允许嵌入基于模型进行学习。 </p>
+<h3 id="aesthetic-gradients">Aesthetic Gradients</h3>
+<p>微调 CLIP 以适应某个特定生成需求的方法，可以和 TI 一样起到缩短 prompt 的作用。可能略微提升出图的质量。</p>
+<p>这项技术通过在生成时计算每个图片的权重，提供了一个 <code>我不说你应该懂往哪里训练</code> 的功能。使AI更聪明地调整并增加细节。</p>
+<p>此项功能来自这个 <a href="https://github.com/vicgalle/stable-diffusion-aesthetic-gradients">存储库</a>，在 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/2b91251637078e04472c91a06a8d9c4db9c1dcf0">这次提交</a> 中，此功能被剥离为插件。</p>
+<h4 id="_10">特征</h4>
+<p>通过这项技术，你不需要通过 过多提示词 来提升图片的质量，而是保持作品原始的总体构图，并提高美观度。在少量提示词情况下也可以生成效果不错的作品。</p>
+<p>据暗影·夜光所言<sup id="fnref:11"><a class="footnote-ref" href="#fn:11">5</a></sup>，添加 25% 以内的权重，就可以稍微改善画面的美观度而不影响内容。美学 与 Hypernetworks 让 Ai 作品更接近原画师风格，但是美学权重本身效果并不好。需要配合 Hypernetworks 超网络。</p>
+<p>训练这项模型很快，但是在每一次生产时都会重新为图片计算一次，所以出图很慢。</p>
+<p>注意：当种子改变时，训练结果也会改变。</p>
+<h4 id="_11">使用</h4>
+<p>你可以使用下面的 Git 命令来安装这个东西。</p>
+<div class="highlight"><pre><span></span><code>git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients extensions/aesthetic-gradients
+</code></pre></div>
+<p>安装后，在 webui 的 <code>extensions</code> 文件夹下面创建 <code>aesthetic-gradients</code> 文件夹。</p>
+<p>使用时，把 Pt 放在 <code>models/aesthetic_embeddings/</code></p>
+<p>然后重启程序，你就可以在 Img2Img 中使用此项功能。</p>
+<p><img alt="Aesthetic_other" src="https://user-images.githubusercontent.com/75739606/197824140-50dca98e-856f-44ca-99e6-da2fee5bb23c.png" /></p>
+<!--
+![Aesthetic_other](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/Aesthetic_other.png)
+-->
+
+<hr />
+<h2 id="textual-inversion1">Textual Inversion<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">1</a></sup></h2>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion#training-embeddings">官方Wiki</a></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>VAE对HN训练并不会造成灾难性的影响。如需卸载，在启动 webui 前把 "xxx.vae.pt" 重命名为 "xxx.vae.pt.disabled" 或其他名字。</p>
+<p>在设置内勾选 <strong>Move VAE and CLIP to RAM when training hypernetwork. Saves VRAM.</strong> 的效果是转移 VAE 到 RAM,而不是卸载，</p>
+</div>
+<h4 id="_12">准备数据集</h4>
+<p>数据集应保证风格一致，内容具有同一概念。如果算力允许，图片越多越好。数据内容可以是插画，抽象画作，也可以是表情包。</p>
+<h3 id="_13">要求</h3>
+<p>显存至少 6GB，舒适使用需要 12GB 显存。根据实验数据，8GB 显存应该选择 <code>512x512</code> 分辨率；不推荐 <code>--lowvram</code> 和 <code>--medvram</code> 参数下进行训练。</p>
+<p>如果你有足够的 VRAM，那么使用 <code>--no-half --precision full</code> 可能会防止溢出带来的问题。</p>
+<p>你可以中断和恢复训练，但是 optimizer state 不会被保存，所以不推荐这样做。</p>
+<h3 id="_14">设置说明</h3>
+<p>准备 30 张以上的目标人设图片，每一张图片应当裁剪为同样的比例。（ webui 已经支持了长方形图片的裁剪）</p>
+<p>在 <code>Interrogate Options</code> 设置中，<code>Interrogate: deepbooru score threshold</code> 是 deepdanbooru (从图像提取标签的一个模型) 标签置信度阀值。建议使用 0.75，也就是保留置信度大于 0.75 的结果。</p>
+<p>比如，假定识别结果为：</p>
+<div class="highlight"><pre><span></span><code>1.000 1girl
+0.986 blush
+0.981 long_hair
+0.980 solo 
+0.918 japanese_clothes
+0.912 rating:safe 
+0.798 bangs
+0.795 wide_sleeves
+0.731 blunt_bangs 
+0.637 long_sleeves
+0.628 monochrome
+</code></pre></div>
+<p>就会丢弃 <code>wide_sleeves</code> 以下的内容。</p>
+<p><code>Interrogate: deepbooru sort alphabetically</code> 是按照字母顺序排序 Tag，因为 Tag 对结果影响很大，所以我们取消勾选此项。</p>
+<p><code>use spaces for tags in deepbooru</code> 应当开启。</p>
+<p><code>escape (\) brackets in deepbooru (so they are used as literal brackets and not for emphasis)</code> 应当开启。</p>
+<p>按下 <code>Apply setting</code> 保存设置。</p>
+<h3 id="_15">创建训练</h3>
+<p>打开 <code>train</code> 选项卡，在 <code>Create embedding</code>选项卡新建一个 <code>embedding</code> 模型。</p>
+<p><code>Number of vectors per token</code> 是 embedding 的宽度，与数据集有关，如果少于 百张，可以设置 3。</p>
+<p>宽度越大时效果越强，但是需要数万轮训练。据 <a href="https://space.bilibili.com/99162407">usim-U</a> 的视频，设置 24 至少需要三百张高质量作品。</p>
+<p><code>Name</code> 输入框输入你预想的出现此人设的 提示词。</p>
+<p><code>Initialization text</code> 可以输入 <code>one girl</code> 这种大分类，只能填一个，人物可以是1girl或者1boy，或者画风。</p>
+<p><code>Number of vectors per token</code> 是此 <code>embedding</code> 要占据的 token 位数量，越多越好，但是相应也会减少其他提示词 token 的位置。</p>
+<p>新建，会创建一个在 <code>embedding</code> 下的 pt 文件。</p>
+<h3 id="_16">预处理</h3>
+<p>打开 <code>Preprocess images</code> 选项卡。</p>
+<p><code>Source directory</code> 中填入你的训练用图片文件夹目录，里面只允许有训练图片。</p>
+<p><code>Destination directory</code> 中填入预处理完毕后图片保存路径。</p>
+<p>选择训练的图片大小，一般 8Gb 显卡使用 <code>512x512</code> ，尺寸越大不一定越好。</p>
+<p><strong>接下来有四个复选框</strong></p>
+<p><code>Create flipped copies</code> </p>
+<ul>
+<li>
+<p>勾选后会将图片镜像反转来增加数据量。</p>
+</li>
+<li>
+<p><code>Use deepbooru caption as filename</code> </p>
+</li>
+</ul>
+<p>深度学习识 Tag，勾选后可以训练适用于 NAI 的 <code>embedding</code>。 如果你没有这个选项，需要在启动项添加<code>--deepdanbooru</code></p>
+<p>Windows 需要在 <code>webui-user.bat</code> 的 <code>COMMANDLINE_ARGS=</code> 一行添加，或者直接 <code>python launch.py --deepdanbooru</code> 。（如果启动卡住是网络问题）</p>
+<ul>
+<li>
+<p><code>Use BLIP for caption</code> 使用 BLIP 模型为文件名添加标题。不太适合二次元图片。</p>
+</li>
+<li>
+<p><code>Split oversized images into two</code> 将超大图像一分为二，一般不用。</p>
+</li>
+</ul>
+<p>所以我们勾选 <code>Use deepbooru caption as filename</code> 和 <code>Create flipped copies</code> 。</p>
+<p>点击按钮，等待处理结束。</p>
+<h3 id="_17">训练</h3>
+<p>训练是一个动态的过程！</p>
+<p>在 <code>Train</code> 子选项卡中，选择你要训练的模型。</p>
+<p><code>Learning rate</code>(超参数：学习率)，学习速率代表了神经网络中随时间推移，信息累积的速度，这个参数较大地影响了影响训练的速度。</p>
+<p>通常，Learning rate越低学习越慢（花费更长的时间收敛），但是效果一般更好。</p>
+<p>训练时，可以先用较大的学习率进行测试，然后逐步调小 <code>0.1 -- 0.02 -- 0.005</code> ，每次测试都用上一次效果最好的。</p>
+<p>一般设置为 0.005，如果想快一些，可以使用 0.01 加快。但是如果设置得太高，梯度下降时候步长太大无法收敛，会且可能会破坏 <code>embedding</code> ， 效果达不到预期。如果设置的太小，容易陷入局部最优。目前 TI 支持设置 <code>0.1:500, 0.01:1000, 0.001:10000</code> 的学习率，它会按照时间表进行。</p>
+<p><img alt="CS231n" src="https://user-images.githubusercontent.com/75739606/197824268-273f074d-9622-41ad-9f1a-2980f180dbd9.png" /></p>
+<!--
+![CS231n](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/CS231n.png)
+-->
+
+<p><code>Log directory</code> 是日志目录</p>
+<p><code>Prompt template file</code>是带有提示的文本文件，每行一个，用于训练模型。</p>
+<p>目录中<code>textual_inversion_templates</code>，解释了你可以使用这些文件做什么。</p>
+<p>训练时会使用 <code>style.txt</code> 和<code>subject.txt</code></p>
+<p><strong>如果是训练画风，使用<code>style.txt</code></strong></p>
+<p><strong>如果是训练人物，使用<code>subject.txt</code></strong></p>
+<p><div class="highlight"><pre><span></span><code>[name]:  embedding 名称
+[filewords]: words from the file name of the image from the dataset. See below for more info.
+</code></pre></div>
+<code>Preview prompt</code> 预览，完成后用此提示词生成一张预览。 
+如果为空，将使用来自 prompt 的提示。</p>
+<p><code>Save a copy of embedding to log directory every N steps, 0 to disable</code>
+每 N 步将嵌入的副本保存到日志目录，0 表示禁用</p>
+<p><code>Save an image to log directory every N steps, 0 to disable</code>
+每 N 步保存一个图像到日志目录，0 表示禁用</p>
+<p><code>Max steps</code>决定完成多少 <code>step</code> 后，训练将停止。</p>
+<p>一个 step 是向模型训练一张图片（或一批图片，但目前不支持批量）并用于改进 embedding。如果你中断训练并在以后恢复训练，步数会被保留。</p>
+<p>角色形象的风格化模型，建议步数为 15000-40000</p>
+<p>画师画风的风格化模型，建议步数为 40000-80000</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>这里给出的是一个参考，实际上 5000 和 7000 也有人成功。</p>
+<p>关键在于 Loss 率，Loss 10 轮不降低就可以停止了。</p>
+<p>如果Loss大于 0.3 ，效果就不是很好</p>
+</div>
+<p>如果太多会过拟合(可以理解为Ai的死板)，请随时观察，如果过拟合，可以停止。如果效果不是很好，可以去找早些时候的模型继续训练。<strong>不断调整</strong>找到一个好的效果。</p>
+<p><code>Save images with embedding in PNG chunks</code> 是生成一个图片形式的 pt 文件。~人物卡~</p>
+<p>点击 右下角训练，等待。</p>
+<p>训练完毕。如果卸载了 VAE ，将 VAE 权重文件重命名回去，重启程序。</p>
+<h3 id="_18">备注</h3>
+<p><strong>效果评价</strong></p>
+<p>可以尝试模仿原作品。</p>
+<p><strong>[filewords]</strong></p>
+<p>这个是代表 提示词模板文件 的 Tag，可以实现把<strong>文件名插入提示词</strong>。</p>
+<p>第一，默认情况下，文件的扩展名以及-文件名开头的所有数字和破折号 ( ) 都会被删除。</p>
+<p>所以这个文件名：<code>000001-1-a man in suit.png</code>将成为提示文本：<code>a man in suit</code>。文件名中文本的格式保持不变。</p>
+<p>第二，可以使用 <code>Filename word regex</code> 和 <code>Filename join string</code> 选项更改文件名中的文本。</p>
+<p>例如，使用单词 <code>regex =\w+</code> 和 连接字符串 = <code>,</code> ，上面的文件将生成以下文本：<code>a, man, in, suit</code>。</p>
+<p>正则表达式会从文本提取提示词
+<code>['a', 'man', 'in', 'suit', ]</code></p>
+<p>并将连接字符串（'，'）放在这些单词之间以创建一个文本<code>a, man, in, suit</code></p>
+<p>也可以创建一个与图像 ( 000001-1-a man in suit.txt) 具有相同文件名的文本文件，然后将提示文本放在那里。将不使用文件名和正则表达式选项。</p>
+<p><strong>Move VAE and CLIP from VRAM when training. Saves VRAM.</strong></p>
+<p>训练时从 VRAM 中卸载 VAE 和 CLIP
+设置选项卡上的此选项允许您以较慢的预览图片生成为代价节省一些内存。</p>
+<p>训练的结果是一个 .pt 或一个 .bin 文件（前者是原作者使用的格式，后者作为 diffusers library）</p>
+<iframe src="//player.bilibili.com/player.html?aid=559085039&bvid=BV1ae4y1S7v9&cid=859894044&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
+
+<h2 id="hypernetwork7">Hypernetwork<sup id="fnref:13"><a class="footnote-ref" href="#fn:13">7</a></sup></h2>
+<p>Hypernetworks 是一种新颖的概念，用于在不触及任何权重的情况下微调模型。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>在设置内勾选 <strong>Move VAE and CLIP to RAM when training hypernetwork. Saves VRAM.</strong> 的效果是转移 VAE 到 RAM,而不是卸载，</p>
+<p>如需卸载，请重命名。</p>
+</div>
+<p>你可以在 <code>train</code> 选项卡训练 <code>Hypernetworks</code>，训练方式与  <code>Textual Inversion</code> 相同。</p>
+<p>注意,应该使用非常低的学习率，例如 0.000005 或 0.0000005.</p>
+<p>如果学习率是5e-6 ，步数大约 10000 到 20000 。<a href="https://colab.research.google.com/drive/1qzweYEMIFkG6jPa04tD1MhWWOzgSnDvP?usp=sharing">学习率计算器</a>，来自 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2670">这里</a></p>
+<p>分辨率设置为要训练的分辨率，最好使用 1:1 的纵横比。</p>
+<p>如果数据集的图片是长条或者横条，请勾选 <code>Split cversized images into two</code></p>
+<p>如果你还没有打标签，可以勾选 <code>Using deepbooru for caption</code> ，来让 deepbooru 识别标签。</p>
+<h3 id="hyper-network-layer-structure">hyper network layer structure</h3>
+<p>If write "1, 2, 1", hypernetworks are composed of 2 fully connected layers whose intermediate dim is 2x, which is same as up to now.</p>
+<p>The more you add the number, like "1, 2, 4, 2, 1", the more the structure of hypernetworks becomes deeper. Deep hypernetworks are suited for training with large datasets.</p>
+<p>层结构目前还是推荐1，2，1，如果想扩展的话，可以尝试1，2，2，1.<sup id="fnref:16"><a class="footnote-ref" href="#fn:16">10</a></sup></p>
+<p>1，2，1的pt文件大概是83.8MB，1，2，2，1大概是167MB。如果要扩展的话，一定要注意盘空间是否足够，否则很容易爆盘。<sup id="fnref2:16"><a class="footnote-ref" href="#fn:16">10</a></sup></p>
+<h3 id="add-layer-normalization">Add layer normalization</h3>
+<p>If checked, add layer normalization after every fully connected layer.</p>
+<p>防止超网络过拟合，使训练更加稳定。</p>
+<p>LN对防止过拟合使训练更加稳定是有意义的，但是根据之前的测试，linear开开启LN的情况，可能学不进去东西，出空包弹。使用激活函数后，LN现在是可使用的。<sup id="fnref3:16"><a class="footnote-ref" href="#fn:16">10</a></sup></p>
+<p>Swish似乎并不需要开启LN，因为Swish的训练速度慢，所以应该使用更高的学习率。</p>
+<h3 id="use-dropout">USE Dropout</h3>
+<p>启用Dropout可以防止超网络过拟合，目前不支持自定义dropout比率，默认为0.3</p>
+<p>在1，2，1的层结构上，dropout可能只会对小数据集有帮助。</p>
+<h3 id="activation-functions">激活函数 activation functions</h3>
+<p>关于<a href="https://www.geeksforgeeks.org/activation-functions-neural-networks/">激活函数</a>，<a href="https://en.wikipedia.org/wiki/Activation_function">维基</a></p>
+<p>激活函数是神经网络中非线性的来源。如果去掉激活函数，神经网络的权重和偏差只会进行线性变换(不管神经网络有多少层，线性运算的复合还是线性运算的)，最终的效果只相当于单层的线性模型。</p>
+<p>激活函数对输入进行非线性变换，使其能够学习和执行更复杂的任务，深层神经网络表达能力更加强大。</p>
+<p>在 10/21/22 的一个 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3199">合并请求</a> 中，这项功能被 discus0434 提出。</p>
+<p>支持 relu、leakyrelu 和 linear 。选择 linear(线性) 的效果和没有激活函数一样。</p>
+<p>Swish对比Relu和Linear要更好，Swish适合更大的网络，而Elu可能对1，2，1的超网络带来更好的结果。<sup id="fnref4:16"><a class="footnote-ref" href="#fn:16">10</a></sup></p>
+<p><a href="https://rentry.org/hypernetwork4dumdums">相关的英文指南</a></p>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2670">相关的英文讨论</a></p>
+<p><img alt="hypernet对比图" src="https://user-images.githubusercontent.com/75739606/197823893-88a3bece-9100-41d1-8f07-bc6d9b3aa92c.jpg" /></p>
+<!--
+![hypernet对比图](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/exp_hypernet.jpg)
+-->
+<blockquote>
+<p>hypernet对比图,the woman in picture is 24 years old</p>
+</blockquote>
+<h3 id="10">额外注意<sup id="fnref5:16"><a class="footnote-ref" href="#fn:16">10</a></sup></h3>
+<p>在开启LN选用激活函数并开启Dropout后，超网络没以前那么容易过拟合，但是可能需要更大的学习率进行学习。</p>
+<p><a href="https://shiina-h.notion.site/shiina-h/Hypernetwork-1fc0b60645284c5e96bb41b583a4e86f">Hypernetwork画风训练经验分享</a></p>
+<h2 id="dreambooth">DreamBooth</h2>
+<p>DreamBooth 的模型是一种新的文本到图像“个性化”（可适应用户特定的图像生成需求）扩散模型方法。</p>
+<h3 id="_19">配置要求</h3>
+<p>Windows 系统至少需要 16, Linux 系统要求显存大于 8 GB</p>
+<h3 id="_20">训练</h3>
+<h4 id="linux">Linux</h4>
+<p>直接用下面的笔记本里的代码，不过需要英文基础。</p>
+<p><a href="https://colab.research.google.com/drive/17yM4mlPVOFdJE_81oWBz5mXH9cxvhmz8">Nyanko Lepsoni 的 Colab 笔记本</a></p>
+<p><a href="https://colab.research.google.com/drive/1C1vVZ59S4kWfL7jIsczyLpmxbD4cOA-k">RcINS 的 Colab 笔记本</a></p>
+<p>以上笔记本来自 <a href="https://t.me/StableDiffusion_CN/196744">社区置顶</a></p>
+<p><a href="https://github.com/crosstyan/dreambooth-scripts-for-autodl">适用于Autodl的项目</a></p>
+<h4 id="windows">Windows</h4>
+<p>来自 <sup id="fnref:18"><a class="footnote-ref" href="#fn:18">12</a></sup></p>
+<p>Windows上的Dreambooth 可以采用ShivamShrirao的优化版本来节省显存，</p>
+<p><a href="https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth">diffusers/examples/dreambooth at main · ShivamShrirao/diffusers · GitHub</a></p>
+<p>但是，由于相关链接库的原因，用于在Linux上的部署方法无法直接在windows上使用，由于同样的原因，该优化版本在colab上最低9.9G的显存需求在windows上应该稍高，因此推荐至少使用显存12G的显卡。笔者仅在16G显存PC上测试成功，12G理论可以，待测试。</p>
+<p>修改或覆盖原始库中的文件前请备份！</p>
+<p>准备环境 <code>Git</code>，<code>Python</code>，<code>MiniConda</code> (或 <code>MiniConda</code> )。</p>
+<p>以下步骤在python3.8，windows10 22H2中操作，其他环境未测试</p>
+<p><strong>创建工作目录 ，在目录下构建python3.8的venv虚拟环境</strong></p>
+<pre><code>python -m venv --system-site-packages venv_dbwin
+venv_dbwin\Scripts\activate
+python.exe -m pip install --upgrade pip
+</code></pre>
+<p>克隆ShivamShrirao的优化版本dreambooth到工作目录中并安装相关依赖（使用的构建版本https://github.com/huggingface/diffusers/tree/7465397f33d5de75dcccc155e3fb9a232fcbb0a0 后续版本可能无法支持本文方法）</p>
+<pre><code>git clone https://github.com/ShivamShrirao/diffusers
+cd diffusers
+pip install -e .
+cd examples\dreambooth
+pip install -U -r requirements.txt
+pip install OmegaConf
+pip install pytorch_lightning
+pip install einops
+pip install bitsandbytes==0.34
+</code></pre>
+<p>完成后，在windows上需要根据 https://github.com/TimDettmers/bitsandbytes/issues/30#issuecomment-1257676341 中的方法实现bitsandbytes支持</p>
+<p>将 https://github.com/DeXtmL/bitsandbytes-win-prebuilt 中的libbitsandbytes_cuda116.dll 文件手动拷贝到工作目录下的 venv_diffusers\Lib\site-packages\bitsandbytes 中，位于 libbitsandbytes_cuda116.so 的旁边；</p>
+<p>然后更改脚本以应用，可以手动修改，为方便也可以下载以下文件替换：</p>
+<p>将 cextension.py: https://pastebin.com/jjgxuh8V 覆盖到venv_diffusers\Lib\site-packages\bitsandbytes目录。</p>
+<p>将 main.py: https://pastebin.com/BsEzpdpw 覆盖到venv_diffusers\Lib\site-packages\bitsandbytes\cuda_setup目录。</p>
+<p><strong>安装PyTorch和Torchvision</strong></p>
+<pre><code>pip install torch==1.12.1+cu116 torchvision==0.13.1+cu116 --extra-index-url https://download.pytorch.org/whl/cu116
+</code></pre>
+<p><strong>进入python并测试调用：</strong></p>
+<pre><code>python
+&gt;&gt;&gt;import bitsandbytes
+</code></pre>
+<p>如果没有报错证明安装成功（Ctrl + Z并回车退出python）</p>
+<p><strong>设置accelerate</strong></p>
+<pre><code>accelerate config
+
+In which compute environment are you running? ([0] This machine, [1] AWS (Amazon SageMaker)): 0
+Which type of machine are you using? ([0] No distributed training, [1] multi-CPU, [2] multi-GPU, [3] TPU [4] MPS): 0
+Do you want to run your training on CPU only (even if a GPU is available)? [yes/NO]:NO
+Do you want to use DeepSpeed? [yes/NO]:NO
+Do you wish to use FP16 or BF16 (mixed precision)? [NO/fp16/bf16]: fp16
+</code></pre>
+<p>按照上面的设置选项，（0，0，NO，NO，fp16）</p>
+<p><strong>修改显存优化</strong></p>
+<p>因为无法使用xformers，所以使用https://github.com/lucidrains/memory-efficient-attention-pytorch/blob/main/memory_efficient_attention_pytorch/flash_attention.py
+中的优化方法作为代替：</p>
+<p>将 attention.py: https://pastebin.com/nmwTrGB9 覆盖到diffusers\src\diffusers\models目录:</p>
+<p>至此环境配置完成，可以开始训练了。具体使用参数请查阅ShivamShrirao的readme文件和notebook文件</p>
+<p><strong>Tips：</strong></p>
+<p>我使用以下参数训练，</p>
+<pre><code>accelerate launch --num_cpu_threads_per_process 8 diffusers/examples/dreambooth/train_dreambooth.py --pretrained_model_name_or_path=models/diffusers_model --pretrained_vae_name_or_path=models/diffusers_model/vae --output_dir=models --concepts_list="concepts_list.json" --with_prior_preservation --prior_loss_weight=1.0 --seed=1337 --resolution=512 --mixed_precision="fp16" --lr_scheduler="constant" --use_8bit_adam --gradient_accumulation_steps=1 --train_batch_size=1 --max_train_steps=800 --save_interval=10000 --learning_rate=1e-6 --num_class_images=100 --lr_warmup_steps=0 --gradient_checkpointing
+</code></pre>
+<p><img alt="image" src="https://user-images.githubusercontent.com/44570237/198906326-21b4f779-f870-4012-84c1-d5ac1dae0411.png" /></p>
+<p>峰值显存占用正好为12G，如果您只有一个显卡，显存不高于12G，而且同时需要用于windows系统显示，请关闭所有占用显存的程序或网页等，减少额外显存消耗再进行训练；</p>
+<p>这是一个临时的解决方案，期待windows官方适配的到来</p>
+<p>diffusers不能直接使用ckpt文件进行训练，需要先进行转换，示例：</p>
+<pre><code>python diffusers\scripts\convert_original_stable_diffusion_to_diffusers.py  --checkpoint_path model.ckpt  --original_config_file v1-inference.yaml  --scheduler_type ddim  --dump_path models/diffusers_model
+</code></pre>
+<p>训练完成同样要进行打包转换为ckpt,即可用于AUTOMATIC1111的WebUI中：</p>
+<pre><code>python diffusers\scripts\convert_diffusers_to_original_stable_diffusion.py  --model_path models/resultModel  --checkpoint_path result.ckpt  --half
+</code></pre>
+<h3 id="_21">参数分析</h3>
+<p><a href="https://wandb.ai/psuraj/dreambooth/reports/Dreambooth-training-analysis--VmlldzoyNzk0NDc3">使用 Dreambooth 训练稳定扩散的实验的分析</a></p>
+<h3 id="_22">其他</h3>
+<p><a href="https://github.com/TheLastBen/fast-stable-diffusion">fast-stable-diffusion colabs</a></p>
+<p>相关的还有 <a href="https://colab.research.google.com/github/ShivamShrirao/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion.ipynb#scrollTo=K6xoHWSsbcS3">DreamBooth_Stable_Diffusion</a> 和 
+<a href="https://colab.research.google.com/github/TheLastBen/fast-stable-diffusion/blob/main/fast-DreamBooth.ipynb">fast-DreamBooth</a></p>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2927">Dreambooth Gui</a></p>
+<p><a href="https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth">ShivamShrirao/diffusers</a></p>
+<!--
+[飞桨dreambooth训练教程](https://docs.qq.com/doc/DUHVuZ3BNV0FkT1R6)
+-->
+
+<p>https://github.com/XavierXiao/Dreambooth-Stable-Diffusion</p>
+<h2 id="aesthetic-gradients_1">Aesthetic Gradients</h2>
+<p>Source directory 填数据源文件夹地址。</p>
+<p>生成的embedding在models文件夹里面。</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:7">
+<p><a href="https://www.bilibili.com/video/BV1ae4y1S7v9/">风格模型训练</a>&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:8">
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2473">迭代草图</a>&#160;<a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:9">
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/1733">交替单词</a>&#160;<a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:10">
+<p><a href="https://www.bilibili.com/video/BV1xt4y1F7Y2/">角色与画风tag训练十问</a>&#160;<a class="footnote-backref" href="#fnref:10" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:11">
+<p><a href="https://www.bilibili.com/read/cv19102552">WebUI即将引入重磅更新，大幅提升图像品质</a>&#160;<a class="footnote-backref" href="#fnref:11" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:12">
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2284">超网络训练</a>&#160;<a class="footnote-backref" href="#fnref:12" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:13">
+<p><a href="https://rentry.org/hypernetwork4dumdums">超网络训练指南</a>&#160;<a class="footnote-backref" href="#fnref:13" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:14">
+<p><a href="https://www.bilibili.com/read/cv18935031?from=search">dreambooth-小鬼峰</a>&#160;<a class="footnote-backref" href="#fnref:14" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:15">
+<p><a href="https://arxiv.org/abs/2208.12242">dreambooth-论文</a>&#160;<a class="footnote-backref" href="#fnref:15" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn:16">
+<p><a href="https://shiina-h.notion.site/shiina-h/Hypernetwork-1fc0b60645284c5e96bb41b583a4e86f">Hypernetwork画风训练经验分享</a>&#160;<a class="footnote-backref" href="#fnref:16" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:16" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:16" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:16" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:16" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+<li id="fn:17">
+<p><a href="https://pastebin.com/xcFpp9Mr">Installing Stable Diffusion &amp; Dreambooth for Windows</a>&#160;<a class="footnote-backref" href="#fnref:17" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+</li>
+<li id="fn:18">
+<p><a href="https://gist.github.com/Summersoff/70861d757a40c153c5802dc8c4ed68c0">Installing Dreambooth for Windows</a>&#160;<a class="footnote-backref" href="#fnref:18" title="Jump back to footnote 12 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      最后更新:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年10月31日 02:32:37</span>
+      
+        <br>
+        创建日期:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年10月24日 06:31:40</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            回到页面顶部
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 采用 GFDL 协议
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://t.me/s/StableDiffusion_CN_WIKI" target="_blank" rel="noopener" title="t.me" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M248 8C111.033 8 0 119.033 0 256s111.033 248 248 248 248-111.033 248-248S384.967 8 248 8Zm114.952 168.66c-3.732 39.215-19.881 134.378-28.1 178.3-3.476 18.584-10.322 24.816-16.948 25.425-14.4 1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25 5.342-39.5 3.652-3.793 67.107-61.51 68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608 69.142-14.845 10.194-26.894 9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7 18.45-13.7 108.446-47.248 144.628-62.3c68.872-28.647 83.183-33.623 92.511-33.789 2.052-.034 6.639.474 9.61 2.885a10.452 10.452 0 0 1 3.53 6.716 43.765 43.765 0 0 1 .417 9.769Z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://t.me/s/StableDiffusion_Show" target="_blank" rel="noopener" title="t.me" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M248 8C111.033 8 0 119.033 0 256s111.033 248 248 248 248-111.033 248-248S384.967 8 248 8Zm114.952 168.66c-3.732 39.215-19.881 134.378-28.1 178.3-3.476 18.584-10.322 24.816-16.948 25.425-14.4 1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25 5.342-39.5 3.652-3.793 67.107-61.51 68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608 69.142-14.845 10.194-26.894 9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7 18.45-13.7 108.446-47.248 144.628-62.3c68.872-28.647 83.183-33.623 92.511-33.789 2.052-.034 6.639.474 9.61 2.885a10.452 10.452 0 0 1 3.53 6.716 43.765 43.765 0 0 1 .417 9.769Z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "toc.follow", "navigation.top", "navigation.tracking", "navigation.indexes", "navigation.expand", "navigation.sections"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.2ab50757.min.js"></script>
+      
+    
+  </body>
+</html>

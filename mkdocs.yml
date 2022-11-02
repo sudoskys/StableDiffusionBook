@@ -1,31 +1,70 @@
 site_name: AiDraw
-site_url: https://stable-diffusion-book.vercel.app/
+site_description: 一个介绍 Ai 绘画的 WIKI
+site_url: 'https://stable-diffusion-book.vercel.app/'
+site_author: StableDiffusionBook Team
+repo_url: 'https://github.com/sudoskys/StableDiffusionBook'
+edit_uri: edit/main/docs/
+copyright: |
+  Copyright &copy; 采用 GFDL 协议
+
 nav:
-    - 术语解释: index.md
-    - 起步于此: 2_prepare.md
-    - 安装配置: 3_install.md
-    - 装置调试: 4_model.md
-    - 绘画调试: 5_drawing.md
-    - 训练模型: 6_selftrain.md
-    - 参考资料: 7_landing.md
+  - 起步于此:
+      - GettingStarted/index.md
+      - 术语: GettingStarted/term.md
+      - 新闻: GettingStarted/news.md
+      - 声明: GettingStarted/state.md
+  - 开始之前:
+      - Perpare/index.md
+  - 安装配置:
+      - install/index.md
+      - WebUi安装:
+          - install/WebUi/index.md
+          - 运行WebUi: install/WebUi/launch.md
+  - 装置调试:
+      - model/index.md
+      - GPU相关: model/GPU.md
+      - NAI泄漏报告: model/NAI.md
+      - WebUi配置模型:
+          - model/WebUi/index.md
+  - 绘画调试:
+      - paint/index.md
+      - WebUi绘画指南:
+          - paint/WebUi/index.md
+          - 应用指南: paint/WebUi/Practicalguide.md
+          - 进阶指南: paint/WebUi/Advanced.md
+          - 参数: paint/WebUi/info.md
+  - 训练模型:
+      - 训练介绍: train/index.md
+      - Textual 训练: train/Textual.md
+      - Hypernetwork 训练: train/Hypernetwork.md
+      - DreamBooth 训练: train/DreamBooth.md
+      - AestheticGradients 训练: train/AestheticGradients.md
+  - 参考资料:
+      - landing/index.md
 
 theme:
   name: material
   language: zh
   palette:
-    primary: teal
-    accent: teal
+    - scheme: default
+      primary: white
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: black
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
   features:
     - navigation.tabs
-    - toc.integrate
     - toc.follow
-    # - navigation.indexes
     - navigation.top
-    - navigation.instant
+    - navigation.tracking
+    - navigation.indexes
     - navigation.expand
-    
+    - navigation.sections
 
-    
 markdown_extensions:
   - tables
   - attr_list
@@ -37,21 +76,71 @@ markdown_extensions:
 extra:
   social:
     - icon: fontawesome/brands/telegram
-      link: https://t.me/s/StableDiffusion_CN_WIKI
-
+      link: 'https://t.me/s/StableDiffusion_CN_WIKI'
     - icon: fontawesome/brands/telegram
-      link: https://t.me/s/StableDiffusion_Show
-      
+      link: 'https://t.me/s/StableDiffusion_Show'
+  generator: true
+
 plugins:
-  # - git-authors
+  - search
+  - i18n:
+      material_alternate: true
+      default_language: zh
+      nav_translations:
+        en:
+            起步于此: Start here
+            术语: Terminology
+            新闻: News
+            声明: Statement
+            开始之前: Before start
+            安装配置: Installation
+            WebUi安装: Install SDWebUi
+            装置调试: Model Configuration
+            GPU相关: Gpu Debuging
+            NAI泄漏报告: NAI leak report
+            WebUi配置模型: Configrue Model for WebUi
+            绘画调试: Paint guide
+            WebUi绘画指南: Paint With WebUi
+            应用指南: Application Guide
+            进阶指南: Advanced Guide
+            参数: Prompt
+            训练模型: Train Model
+            训练介绍: Intro
+            Textual 训练: Textual Inversion
+            Hypernetwork 训练:  Hypernetwork
+            DreamBooth 训练: DreamBooth
+            AestheticGradients 训练: AestheticGradients
+            参考资料: References
+            运行WebUi: LaunchWebUi
+      languages:
+        en:
+          name: English
+        zh:
+          name: 简体中文
   - git-revision-date-localized:
       type: datetime
       enable_creation_date: true
-  - search
 
-
-repo_url: https://github.com/sudoskys/StableDiffusionBook
-edit_uri: edit/main/docs/
-
-copyright: >
-        Copyright &copy; 以GFDL协议开源,由爱好者共同构建
+# 起步于此:
+# 术语:
+# 新闻:
+# 声明:
+# 开始之前:
+# 安装配置:
+# WebUi安装:
+# 装置调试:
+# GPU相关:
+# NAI泄漏报告:
+# WebUi配置模型:
+# 绘画调试:
+# WebUi绘画指南:
+# 应用指南:
+# 进阶指南:
+# 参数:
+# 训练模型:
+# 训练介绍:
+# Textual 训练:
+# Hypernetwork 训练:
+# DreamBooth 训练:
+# AestheticGradients 训练:
+# 参考资料:
