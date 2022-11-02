@@ -15,21 +15,22 @@
         <link rel="canonical" href="https://stable-diffusion-book.vercel.app/en/Perpare/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.3">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.7">
     
     
       
-        <title>Index - AiDraw</title>
+        <title>Preparation - AiDraw</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.6b80c2a2.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.20d9efc8.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
         
       
       
+
     
     
     
@@ -46,6 +47,7 @@
     
       
 
+    
     
     
   </head>
@@ -68,6 +70,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#preparation" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -98,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Index
+              Preparation
             
           </span>
         </div>
@@ -169,7 +176,7 @@
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -579,12 +586,18 @@
             
           
         
+          
+        
       
       
         
         
         <div class="md-nav__link md-nav__link--index ">
           <a href="../install/WebUi/">Install SDWebUi</a>
+          
+            <label for="__nav_3_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
           
         </div>
       
@@ -595,6 +608,20 @@
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install/WebUi/launch/" class="md-nav__link">
+        LaunchWebUi
+      </a>
+    </li>
+  
+
             
           
         </ul>
@@ -1057,6 +1084,44 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#asking-polite-questions-in-the-community" class="md-nav__link">
+    Asking polite questions in the community
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#can-i-play-this" class="md-nav__link">
+    Can I play this?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#current-five-options" class="md-nav__link">
+    Current five options
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dont-want-to-generate-anime-pictures" class="md-nav__link">
+    Don't want to generate anime pictures?
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1064,10 +1129,11 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
+                  
 
   <a href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/Perpare/index.en.md" title="Edit this page" class="md-content__button md-icon">
     
@@ -1075,20 +1141,77 @@
   </a>
 
 
-  <h1>Index</h1>
-
-
+<h1 id="preparation">Preparation</h1>
+<p>The purpose of this document is to summarize the results of the community discussion and to create a self-help guide for people who are new to drawing with Stable Diffusion, starting with WebUi and learning about Ai drawing.</p>
+<h2 id="asking-polite-questions-in-the-community">Asking polite questions in the community</h2>
+<p>[How To Ask Questions The Smart Way] (https://github.com/selfteaching/How-To-Ask-Questions-The-Smart-Way)</p>
+<p>If you identify something wrong or something important to add, you can send <strong>Issue</strong> or submit <strong>Pr</strong> to this repository to help complete the documentation and help more people.</p>
+<p>Communication is welcome, but no nonsense is welcome. Please make sure yourself that there is no explanation in the documentation before asking a question, and you should understand that no one or community member has an obligation to answer your question without having a stake in it.</p>
+<p>If you see a section you don't recognize, chances are your version is too low.</p>
+<h2 id="can-i-play-this">Can I play this?</h2>
+<p>First, unfortunately, because it requires <code>CUDA</code> acceleration, only <strong>Nvidia graphics cards</strong> are well supported. (AMD works but is significantly slower than Nvidia graphics, ~ of course without a graphics card it can take hundreds of times longer to generate with a CPU ~)</p>
+<p><strong>Linux + AMD</strong> Please Read <a href="https://rentry.org/ayymd-stable-diffustion-v1_4-guide">AMD Guide</a> 和 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Install-and-Run-on-AMD-GPUs">AMD install WebUi Wiki</a></p>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/1046">Discussion about installing on Amd</a></p>
+<div class="admonition danger">
+<p class="admonition-title">graphics card warranty</p>
+<p>In mainland China, the warranty policy of graphics card manufacturers for deep learning cards is equivalent to that of mining cards
+Overplaying (e.g. 3 consecutive days out of the map), the graphics card will risk to break down</p>
+</div>
+<p><a href="https://docs.google.com/spreadsheets/d/1Zlv4UFiciSgmJZncCujuXKHwc4BcxbjbSBg71-SdeNk/edit#gid=0">Stable diffusion performance test reports</a></p>
+<h2 id="current-five-options">Current five options</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Requirements</th>
+<th>Effectiveness</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SdWebui(4GB Leak model)</td>
+<td>3GB video memory barely</td>
+<td>4GB video memory is eaten up by 512x512, default speed 17s</td>
+</tr>
+<tr>
+<td>SdWebui(7GB Leak model)</td>
+<td>8GB video memory</td>
+<td>Not much difference from 4GB, but the data has the last training weights, so it consumes more video memory</td>
+</tr>
+<tr>
+<td>Naifu(4GB Leak model)</td>
+<td>Minimum 8GB video memory &amp; 8GB video memory</td>
+<td>Close to official</td>
+</tr>
+<tr>
+<td>Naifu(7GB Leak model)</td>
+<td>Minimum 8GB video memory (10GB upward)</td>
+<td>Close to official</td>
+</tr>
+<tr>
+<td>Official Backend</td>
+<td>16GBfp16/24GBfp32 &amp; Server System</td>
+<td>99.9 similar to official</td>
+</tr>
+</tbody>
+</table>
+<p>The original NAI web UI + backend deployment requires a GPU server with 12GB or more of video memory on a <em>Linux system</em>. NAI officially uses the full model, but it requires a lot of video memory, so you'll need a 7W A100 graphics card from Taobao.</p>
+<p>SDWebUi is a <strong>framework</strong> that can use models to produce images.</p>
+<p>NAI is an online <strong>service</strong>.</p>
+<h2 id="dont-want-to-generate-anime-pictures">Don't want to generate anime pictures?</h2>
+<p>If you want to get models that don't generate anime girls, please see <a href="https://space.bilibili.com/250989068/channel/collectiondetail?sid=660352">here</a>.</p>
+<p>By the way post a <a href="https://huggingface.co/runwayml/stable-diffusion-v1-5">recently released 1.5 model</a> and <a href="https://huggingface.co/CompVis/stable-">stable small size 1.4 model</a> diffusion-v1-4)</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 03:38:15</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 04:44:24</span>
       
         <br>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 03:38:15</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 04:44:24</span>
       
     
   </small>
@@ -1097,10 +1220,12 @@
 
 
 
-              
-            </article>
-            
-          </div>
+
+                
+              </article>
+            </div>
+          
+          
         </div>
         
           <a href="#" class="md-top md-icon" data-md-component="top" hidden>
@@ -1132,13 +1257,13 @@
       
       
         
-        <a href="../install/" class="md-footer__link md-footer__link--next" aria-label="Next: 安装" rel="next">
+        <a href="../install/" class="md-footer__link md-footer__link--next" aria-label="Next: Install" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              安装
+              Install
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -1196,10 +1321,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "toc.follow", "navigation.top", "navigation.tracking", "navigation.indexes", "navigation.expand", "navigation.sections"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "toc.follow", "navigation.top", "navigation.tracking", "navigation.indexes", "navigation.expand", "navigation.sections"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.2ab50757.min.js"></script>
+      <script src="../../assets/javascripts/bundle.8492ddcf.min.js"></script>
       
     
   </body>

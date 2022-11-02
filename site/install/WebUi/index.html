@@ -15,21 +15,22 @@
         <link rel="canonical" href="https://stable-diffusion-book.vercel.app/install/WebUi/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.3">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.7">
     
     
       
-        <title>Index - AiDraw</title>
+        <title>安装 Stable-Diffusion-webui 开源框架 - AiDraw</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.6b80c2a2.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.20d9efc8.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
         
       
       
+
     
     
     
@@ -46,6 +47,7 @@
     
       
 
+    
     
     
   </head>
@@ -103,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Index
+              安装 Stable-Diffusion-webui 开源框架
             
           </span>
         </div>
@@ -174,7 +176,7 @@
       </label>
       <nav class="md-search__options" aria-label="查找">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="清空当前内容" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -586,12 +588,18 @@
             
           
         
+          
+        
       
       
         
         
         <div class="md-nav__link md-nav__link--index md-nav__link--active">
           <a href="./">WebUi安装</a>
+          
+            <label for="__nav_3_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
           
         </div>
       
@@ -602,6 +610,20 @@
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="launch/" class="md-nav__link">
+        运行WebUi
+      </a>
+    </li>
+  
+
             
           
         </ul>
@@ -1064,6 +1086,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1072,21 +1096,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#stable-diffusion-webui" class="md-nav__link">
-    安装 Stable-Diffusion-webui 开源框架
-  </a>
-  
-    <nav class="md-nav" aria-label="安装 Stable-Diffusion-webui 开源框架">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     硬件要求
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     安装
   </a>
@@ -1119,11 +1135,6 @@
     </nav>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
     </ul>
   
@@ -1133,10 +1144,11 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
+                  
 
   <a href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/install/WebUi/index.md" title="编辑此页" class="md-content__button md-icon">
     
@@ -1144,14 +1156,12 @@
   </a>
 
 
-  <h1>Index</h1>
-
-<h2 id="stable-diffusion-webui">安装 Stable-Diffusion-webui 开源框架</h2>
+<h1 id="stable-diffusion-webui">安装 Stable-Diffusion-webui 开源框架</h1>
 <p>此教程参考了 crosstyan<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">1</a></sup> 的 <a href="https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99#prompt-editingmixing">FAQ</a></p>
 <p>WebUi的官方代码仓库地址为 https://github.com/AUTOMATIC1111/stable-diffusion-webui</p>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui#installation-and-running">官方英文安装教程</a></p>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Dependencies">官方给定的依赖列表</a></p>
-<h3 id="_1">硬件要求</h3>
+<h2 id="_1">硬件要求</h2>
 <p>WebUi 最低能用N卡显存为 2GB</p>
 <p>WebUi 最低可用N卡显存为 4GB</p>
 <p>在开始前，打开CMD， 输入 <code>nvidia-smi</code> 看看机器的英伟达显卡是否正常运作。</p>
@@ -1159,7 +1169,7 @@
 <blockquote>
 <p>这里是9月份效果(现在快了不少)</p>
 </blockquote>
-<h3 id="_2">安装</h3>
+<h2 id="_2">安装</h2>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>推荐有能力的同学阅读一下<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki">官方Wiki</a>的内容。</p>
@@ -1168,7 +1178,7 @@
 <p>不推荐使用 整合包，会导致升级困难。</p>
 </div>
 <p>WSL 不可以迁移，如果 C 盘不够，寄！</p>
-<h4 id="windows"><strong>Windows安装</strong></h4>
+<h3 id="windows"><strong>Windows安装</strong></h3>
 <p>在Windows上的安装流程如下。</p>
 <p><strong>安装 Python</strong></p>
 <p>安装<a href="https://www.python.org/downloads/windows/">Python 3.10.6</a>，安装时选中“Add Python to PATH”</p>
@@ -1207,7 +1217,7 @@
 <p>如果你是瞄准二次元来的，请想办法搞到某个模型咯，至于模型选哪个，请看下一章节。如果你是整合包，也可以移植整合包其中的<code>models</code>文件夹。（甚至你可以直接去下载拆分整合包....？但是直接使用整合包迟早要走自己安装的流程，因为不能更新）</p>
 <p>如果对其他模型感兴趣，（没错就是艺术，大概是梵高那类的）这里提供一个模型网站 <a href="https://rentry.org/sdmodels#">Stable Diffusion Models</a>，可以通过下载 <code>2.Stable Diffusion v1.4 [4af45990] [7460a6fa] [06c50424]</code> 这一个模型来运行 <code>Stable Diffusion</code> 的原始模型</p>
 </div>
-<h4 id="windows_1">Windows 从整合包迁移</h4>
+<h3 id="windows_1">Windows 从整合包迁移</h3>
 <p>使用上面的命令拉取代码但先不运行，然后将 Bat 文件和里面指定的文件夹复制到全新环境，把 <code>models</code> 和 <code>outputs</code> 以及 <code>embeddings</code> 复制到新文件夹，自行处理冲突。</p>
 <div class="admonition tip">
 <p class="admonition-title">命令</p>
@@ -1217,7 +1227,7 @@
 </div>
 <p>然后在新代码目录下，尝试运行原来的 Bat，如果报错，就根据提示排查是不是 NotFound 什么依赖，或者根据下面的命令说明修改 Bat 文件。</p>
 <p>如果你不想迁移你的整合包，你也可以参考 <a href="https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99#%E6%87%92%E4%BA%BA%E5%8C%85%E6%94%B9-git-%E4%BB%93%E5%BA%93%E8%BF%9B%E8%A1%8C%E6%9B%B4%E6%96%B0">带图片的教程</a></p>
-<h4 id="linux">Linux 安装</h4>
+<h3 id="linux">Linux 安装</h3>
 <p>先安装依赖
 <div class="highlight"><pre><span></span><code><span class="c1"># Debian-based:</span>
 sudo apt install wget git python3 python3-venv
@@ -1254,11 +1264,11 @@ conda activate aidraw
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 03:38:14</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 04:44:24</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 03:38:14</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 04:44:24</span>
       
     
   </small>
@@ -1267,10 +1277,12 @@ conda activate aidraw
 
 
 
-              
-            </article>
-            
-          </div>
+
+                
+              </article>
+            </div>
+          
+          
         </div>
         
           <a href="#" class="md-top md-icon" data-md-component="top" hidden>
@@ -1302,13 +1314,13 @@ conda activate aidraw
       
       
         
-        <a href="../../model/" class="md-footer__link md-footer__link--next" aria-label="下一页: 架炉生火" rel="next">
+        <a href="launch/" class="md-footer__link md-footer__link--next" aria-label="下一页: 运行WebUi" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              架炉生火
+              运行WebUi
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -1366,10 +1378,10 @@ conda activate aidraw
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "toc.follow", "navigation.top", "navigation.tracking", "navigation.indexes", "navigation.expand", "navigation.sections"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "toc.follow", "navigation.top", "navigation.tracking", "navigation.indexes", "navigation.expand", "navigation.sections"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.2ab50757.min.js"></script>
+      <script src="../../assets/javascripts/bundle.8492ddcf.min.js"></script>
       
     
   </body>

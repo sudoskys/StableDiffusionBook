@@ -15,21 +15,22 @@
         <link rel="canonical" href="https://stable-diffusion-book.vercel.app/en/install/WebUi/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.3">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.7">
     
     
       
-        <title>Index - AiDraw</title>
+        <title>Installing the Stable-Diffusion-webui open source framework - AiDraw</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.6b80c2a2.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.20d9efc8.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
         
       
       
+
     
     
     
@@ -46,6 +47,7 @@
     
       
 
+    
     
     
   </head>
@@ -70,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#stable-diffusion-webui" class="md-skip">
+        <a href="#installing-the-stable-diffusion-webui-open-source-framework" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Index
+              Installing the Stable-Diffusion-webui open source framework
             
           </span>
         </div>
@@ -174,7 +176,7 @@
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -586,12 +588,18 @@
             
           
         
+          
+        
       
       
         
         
         <div class="md-nav__link md-nav__link--index md-nav__link--active">
           <a href="./">Install SDWebUi</a>
+          
+            <label for="__nav_3_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
           
         </div>
       
@@ -602,6 +610,20 @@
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="launch/" class="md-nav__link">
+        LaunchWebUi
+      </a>
+    </li>
+  
+
             
           
         </ul>
@@ -1064,6 +1086,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1072,51 +1096,31 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#stable-diffusion-webui" class="md-nav__link">
-    安装 Stable-Diffusion-webui 开源框架
+  <a href="#hardware-requirements" class="md-nav__link">
+    Hardware Requirements
   </a>
   
-    <nav class="md-nav" aria-label="安装 Stable-Diffusion-webui 开源框架">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    硬件要求
+  <a href="#windows-installation" class="md-nav__link">
+    Windows installation
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    安装
+  <a href="#linux-installation" class="md-nav__link">
+    Linux installation
   </a>
-  
-    <nav class="md-nav" aria-label="安装">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
-    Windows安装
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#windows_1" class="md-nav__link">
-    Windows 从整合包迁移
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
-    Linux 安装
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1133,106 +1137,81 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
+                  
 
-  <a href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/install/WebUi/index.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/install/WebUi/index.en.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-  <h1>Index</h1>
-
-<h2 id="stable-diffusion-webui">安装 Stable-Diffusion-webui 开源框架</h2>
-<p>此教程参考了 crosstyan<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">1</a></sup> 的 <a href="https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99#prompt-editingmixing">FAQ</a></p>
-<p>WebUi的官方代码仓库地址为 https://github.com/AUTOMATIC1111/stable-diffusion-webui</p>
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui#installation-and-running">官方英文安装教程</a></p>
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Dependencies">官方给定的依赖列表</a></p>
-<h3 id="_1">硬件要求</h3>
-<p>WebUi 最低能用N卡显存为 2GB</p>
-<p>WebUi 最低可用N卡显存为 4GB</p>
-<p>在开始前，打开CMD， 输入 <code>nvidia-smi</code> 看看机器的英伟达显卡是否正常运作。</p>
-<p><img alt="效果.png" src="https://s1.ax1x.com/2022/10/10/xtdNNR.png" /></p>
+<h1 id="installing-the-stable-diffusion-webui-open-source-framework">Installing the Stable-Diffusion-webui open source framework</h1>
+<p>This tutorial is referenced from <a href="https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99#prompt-editingmixing">FAQ</a> by crosstyan<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">1</a></sup></p>
+<p>The official code repository for WebUi is at https://github.com/AUTOMATIC1111/stable-diffusion-webui</p>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui#installation-and-running">Official English installation tutorial</a></p>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Dependencies">Official list of given dependencies</a></p>
+<h2 id="hardware-requirements">Hardware Requirements</h2>
+<p>WebUi minimum usable N-card graphics memory is 2GB</p>
+<p>WebUi has a minimum of 4GB of N-card memory available</p>
+<p>Before starting, open CMD and type <code>nvidia-smi</code> to see if your machine's Nvidia graphics card is functioning properly.</p>
+<p>! <a href="https://s1.ax1x.com/2022/10/10/xtdNNR.png">效果.png</a></p>
 <blockquote>
-<p>这里是9月份效果(现在快了不少)</p>
+<p>Here is the September effect (it's a lot faster now)</p>
 </blockquote>
-<h3 id="_2">安装</h3>
+<h2 id="installation">Installation</h2>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>推荐有能力的同学阅读一下<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki">官方Wiki</a>的内容。</p>
-<p>注意！Ai 需要的依赖大小很大，需要做好心理准备。总计依赖大小约几G，在中国环境可能很慢！</p>
-<p>而且对于Windows,<strong>依赖默认安装在C盘</strong>，请确保空间充足。</p>
-<p>不推荐使用 整合包，会导致升级困难。</p>
+<p>We recommend anyone who can afford it to read the <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki">Official Wiki</a>.</p>
+<p>Note! Ai requires a large dependency size, so be prepared for that. The total dependency size is about several gigabytes, which can be very slow in the Chinese network environment!</p>
+<p>And for Windows, <strong>dependencies are installed on C drive</strong> by default, please make sure you have enough space.</p>
+<p>It is not recommended to use the integration package, it will cause difficulties to upgrade.</p>
 </div>
-<p>WSL 不可以迁移，如果 C 盘不够，寄！</p>
-<h4 id="windows"><strong>Windows安装</strong></h4>
-<p>在Windows上的安装流程如下。</p>
-<p><strong>安装 Python</strong></p>
-<p>安装<a href="https://www.python.org/downloads/windows/">Python 3.10.6</a>，安装时选中“Add Python to PATH”</p>
 <blockquote>
-<p>为什么整合包不需要安装 Python？他们的脚本中指定了同目录下的环境，阅读之后的文档就可以知道</p>
+<p>Tips:WSL can not be migrated, if the C drive is not enough, unfortunately....</p>
 </blockquote>
-<div class="admonition tip">
-<p class="admonition-title">如果你在安装依赖时遇到了网络问题，需要按照以下步骤切换至国内镜像</p>
-<p>打开 CMD 命令行（Win+R 运行 cmd），输入<code>Python</code> 回车，如果能进入 Python 就 ctrl+z (或通过输入 <code>exit()</code> )退出。
-然后输入以下命令设置镜像。
-<div class="highlight"><pre><span></span><code>pip config <span class="nb">set</span> global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
-</code></pre></div></p>
-</div>
-<p><strong>安装 Git</strong></p>
-<p>在 <a href="https://git-scm.com/download/win">GitScm</a> 下载 Git安装包并安装，然后在开始菜单中找到 <code>git bash</code></p>
-<p>或打开想要放置的目录，右键打开快捷菜单中寻找 <code>Git Base Here</code></p>
-<p>亦或在想要运行的目录下打开 CMD</p>
-<p><strong>拉取仓库</strong></p>
-<p>在命令框中运行 <code>git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git</code> 拉取仓库，这里如果如果失败请设置代理。</p>
-<p>使用Git下载的源代码，可以直接使用 <code>git pull</code> 更新代码。推荐经常更新，并关注社区讨论。</p>
-<p>如果是整合或者其他，请向上游（谁分发的）索取。</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>如果你不会设置代理，可以使用以下命令拉取镜像</p>
-<p><code>git clone https://hub.fastgit.org/AUTOMATIC1111/stable-diffusion-webui.git</code></p>
-</div>
-<p><strong>尝试安装</strong></p>
-<p>将 4G 或 7G 或 其他模型 <code>model.ckpt</code> 放在 <code>models</code> 目录中，<code>WebUi</code> 目前支持在界面顶部选择模型。</p>
-<p>（可选）将<code>GFPGANv1.4.pth</code>放在基本目录中，旁边是 <code>webui.py</code></p>
-<p>先确认你的显卡是可用的(看上文)，然后以普通非管理员用户身份从 Windows资源管理器 运行 <code>webui-user.bat</code> 。脚本会自动下载依赖（<strong>一般需要 22 分钟，默认安装在C盘Python下，下载的资源为1.98GB，解压后大小2GB以上</strong>）并输出 启动网页界面 的地址。</p>
-<p>在此区间你可以打开资源管理器，关注网络速度。在没有完成下载之前，脚本不会继续输出任何提示。(等了两小时？可以试试挂代理)</p>
-<p>大约 30 分钟后安装完毕，程序会输出一个类似 <code>http://127.0.0.1:7860/</code> 的地址，点开即可(注意是http,且不指定端口的话可能会变动)。</p>
+<h3 id="windows-installation"><strong>Windows installation</strong></h3>
+<p>The installation process on Windows is as follows.</p>
+<p><strong>Install Python</strong></p>
+<p>Install <a href="https://www.python.org/downloads/windows/">Python 3.10.6</a>, check "Add Python to PATH" when installing</p>
+<p><strong>Install Git</strong></p>
+<p>Download the Git installer from <a href="https://git-scm.com/download/win">GitScm</a> and install it, then find <code>git bash</code> in the start menu</p>
+<p>or open the directory you want to put it in, right click on it and look for <code>Git Base Here</code> in the shortcut menu.</p>
+<p>or start CMD in the directory where you want to run it</p>
+<p><strong>pulling repository</strong></p>
+<p>Run <code>git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git</code> in cmd to pull the repository.</p>
+<p>And you can use <code>git pull</code> to update the code directly. We recommend updating frequently and following the community discussions.</p>
+<p><strong>Try to install</strong></p>
+<p>Place the 4G or 7G or other model <code>model.ckpt</code> in the <code>models</code> directory, <code>WebUi</code> currently supports model selection at the top of the interface.</p>
+<p>(Optional) Put <code>GFPGANv1.4.pth</code> in the base directory, next to <code>webui.py</code></p>
+<p>Make sure your graphics card is available first (see above), then run <code>webui-user.bat</code> as a normal non-admin user from Windows Explorer. The script will automatically download the dependencies (<strong>usually takes 22 minutes, installed by default under Python on the C drive, 1.98GB of downloaded resources, 2GB+ in size after decompression</strong>) and output the address to launch the web interface.</p>
+<p>During this interval you can open Explorer and keep an eye on the network speed. The script will not continue to output any prompts until the download is complete. (Waiting for two hours? Try hanging a proxy)</p>
+<p>After about 30 minutes of installation, the program will output an address like <code>http://127.0.0.1:7860/</code>, just click on it (note that it is http, and the port may change if you don't specify it).</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>运行需要模型！</p>
-<p>如果你是瞄准二次元来的，请想办法搞到某个模型咯，至于模型选哪个，请看下一章节。如果你是整合包，也可以移植整合包其中的<code>models</code>文件夹。（甚至你可以直接去下载拆分整合包....？但是直接使用整合包迟早要走自己安装的流程，因为不能更新）</p>
-<p>如果对其他模型感兴趣，（没错就是艺术，大概是梵高那类的）这里提供一个模型网站 <a href="https://rentry.org/sdmodels#">Stable Diffusion Models</a>，可以通过下载 <code>2.Stable Diffusion v1.4 [4af45990] [7460a6fa] [06c50424]</code> 这一个模型来运行 <code>Stable Diffusion</code> 的原始模型</p>
+<p>Models are required to run!</p>
+<p>If you wish to generate secondary girls, please find a way to get some models. As for how to choose a model, please see the next section. If you can also clone other people's <code>models</code> folders to yours.</p>
+<p>If interested in other models, (oil painting, watercolor), we recommend <a href="https://rentry.org/sdmodels#">Stable Diffusion Models</a>, which can be downloaded by <code>2.Stable Diffusion v1.4 [4af45990] [7460a6fa] [ 06c50424]</code> which is a model to run the original model of <code>Stable Diffusion</code>.</p>
 </div>
-<h4 id="windows_1">Windows 从整合包迁移</h4>
-<p>使用上面的命令拉取代码但先不运行，然后将 Bat 文件和里面指定的文件夹复制到全新环境，把 <code>models</code> 和 <code>outputs</code> 以及 <code>embeddings</code> 复制到新文件夹，自行处理冲突。</p>
-<div class="admonition tip">
-<p class="admonition-title">命令</p>
-<p>此处的命令指的是安装完Git之后的内容</p>
-<p>即为 <code>git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git</code></p>
-<p>或在无代理的情况下 <code>git clone https://hub.fastgit.org/AUTOMATIC1111/stable-diffusion-webui.git</code></p>
-</div>
-<p>然后在新代码目录下，尝试运行原来的 Bat，如果报错，就根据提示排查是不是 NotFound 什么依赖，或者根据下面的命令说明修改 Bat 文件。</p>
-<p>如果你不想迁移你的整合包，你也可以参考 <a href="https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99#%E6%87%92%E4%BA%BA%E5%8C%85%E6%94%B9-git-%E4%BB%93%E5%BA%93%E8%BF%9B%E8%A1%8C%E6%9B%B4%E6%96%B0">带图片的教程</a></p>
-<h4 id="linux">Linux 安装</h4>
-<p>先安装依赖
+<h3 id="linux-installation">Linux installation</h3>
+<p>Install the dependencies first</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Debian-based:</span>
 sudo apt install wget git python3 python3-venv
 <span class="c1"># Red Hat-based:</span>
 sudo dnf install wget git python3
 <span class="c1"># Arch-based:</span>
 sudo pacman -S wget git python3
-</code></pre></div></p>
-<p>一键脚本</p>
+</code></pre></div>
+<p>One-click script</p>
 <div class="highlight"><pre><span></span><code>bash &lt;<span class="o">(</span>wget -qO- https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusion-webui/master/webui.sh<span class="o">)</span>
 </code></pre></div>
-<p>完毕。</p>
+<p>Done.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>如果可以，尽量使用 <code>miniconda</code> （anaconda 特别巨大....），创建一个 Python 3.10.6 的虚拟环境。</p>
+<p>If you want, try to use <code>miniconda</code> (anaconda special huge ....) to create a virtual environment for Python 3.10.6.</p>
 <div class="highlight"><pre><span></span><code>conda create -n aidraw <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10.6
 
 conda activate aidraw
@@ -1254,11 +1233,11 @@ conda activate aidraw
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 03:38:15</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 04:44:24</span>
       
         <br>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 03:38:15</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 04:44:24</span>
       
     
   </small>
@@ -1267,10 +1246,12 @@ conda activate aidraw
 
 
 
-              
-            </article>
-            
-          </div>
+
+                
+              </article>
+            </div>
+          
+          
         </div>
         
           <a href="#" class="md-top md-icon" data-md-component="top" hidden>
@@ -1286,7 +1267,7 @@ conda activate aidraw
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: 安装" rel="prev">
+        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Install" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1295,20 +1276,20 @@ conda activate aidraw
               <span class="md-footer__direction">
                 Previous
               </span>
-              安装
+              Install
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../model/" class="md-footer__link md-footer__link--next" aria-label="Next: 架炉生火" rel="next">
+        <a href="launch/" class="md-footer__link md-footer__link--next" aria-label="Next: LaunchWebUi" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              架炉生火
+              LaunchWebUi
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -1366,10 +1347,10 @@ conda activate aidraw
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "toc.follow", "navigation.top", "navigation.tracking", "navigation.indexes", "navigation.expand", "navigation.sections"], "search": "../../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "toc.follow", "navigation.top", "navigation.tracking", "navigation.indexes", "navigation.expand", "navigation.sections"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.2ab50757.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.8492ddcf.min.js"></script>
       
     
   </body>

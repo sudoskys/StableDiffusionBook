@@ -15,21 +15,22 @@
         <link rel="canonical" href="https://stable-diffusion-book.vercel.app/en/install/WebUi/launch/">
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.3">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.7">
     
     
       
-        <title>Launch - AiDraw</title>
+        <title>LaunchWebUi - AiDraw</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.6b80c2a2.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.20d9efc8.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.cbb835fc.min.css">
         
       
       
+
     
     
     
@@ -46,6 +47,7 @@
     
       
 
+    
     
     
   </head>
@@ -70,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#start" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Launch
+              LaunchWebUi
             
           </span>
         </div>
@@ -174,7 +176,7 @@
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -255,13 +257,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../" class="md-tabs__link">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
         Installation
       </a>
     </li>
@@ -522,12 +526,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -564,14 +570,16 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" checked>
       
       
       
@@ -580,12 +588,18 @@
             
           
         
+          
+        
       
       
         
         
         <div class="md-nav__link md-nav__link--index ">
           <a href="../">Install SDWebUi</a>
+          
+            <label for="__nav_3_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
           
         </div>
       
@@ -596,6 +610,96 @@
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          LaunchWebUi
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        LaunchWebUi
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#run" class="md-nav__link">
+    Run
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generate-the-first-image-using-the-prompt" class="md-nav__link">
+    Generate the first image using the prompt
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multilanguagelocalization" class="md-nav__link">
+    Multilanguage/Localization
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shared-links" class="md-nav__link">
+    Shared links
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-runs" class="md-nav__link">
+    Custom Runs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-documentation" class="md-nav__link">
+    API documentation
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
             
           
         </ul>
@@ -1058,6 +1162,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1066,119 +1172,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    启动
+  <a href="#run" class="md-nav__link">
+    Run
   </a>
-  
-    <nav class="md-nav" aria-label="启动">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    令牌参数生成第一幅图片
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    中文/本地化
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    共享链接
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    自定义运行
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#api" class="md-nav__link">
-    API 文档
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
-    错误处理 Troubleshooting
-  </a>
-  
-    <nav class="md-nav" aria-label="错误处理 Troubleshooting">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    网络问题/没响应
+  <a href="#generate-the-first-image-using-the-prompt" class="md-nav__link">
+    Generate the first image using the prompt
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    时间花销过大
+      
+        <li class="md-nav__item">
+  <a href="#multilanguagelocalization" class="md-nav__link">
+    Multilanguage/Localization
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#cuda-out-of-memory" class="md-nav__link">
-    低显存显卡/CUDA out of memory
+      
+        <li class="md-nav__item">
+  <a href="#shared-links" class="md-nav__link">
+    Shared links
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#python" class="md-nav__link">
-    我 Python 呢？
+      
+        <li class="md-nav__item">
+  <a href="#custom-runs" class="md-nav__link">
+    Custom Runs
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#errorasyncioaccept-failed-on-a-socket" class="md-nav__link">
-    ERROR:asyncio:Accept failed on a socket
+      
+        <li class="md-nav__item">
+  <a href="#api-documentation" class="md-nav__link">
+    API documentation
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    虚拟环境
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#api-ms-win-core-path-l1-1-0dll-is-missing1" class="md-nav__link">
-    api-ms-win-core-path-l1-1-0.dll is missing1
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#an-illegal-memory-access-was-encountered-cuda-kernel-errors" class="md-nav__link">
-    an illegal memory access was encountered ....CUDA kernel errors...
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1190,171 +1221,169 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
+                  
 
-  <a href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/install/WebUi/launch.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/install/WebUi/launch.en.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-  <h1>Launch</h1>
-
-<h3 id="_1">启动</h3>
-<p>但是必须首先下载一个4GB模型</p>
-<p>如果你运行报错，请读前面的自救提示。</p>
-<p>不提供NV模型，你可以去 关于/底部图标 页面找到 <code>中文社区</code> 的频道，里面应该有你想要的哈。</p>
-<p><strong>按照后面的教程装载入模型后</strong></p>
-<p>Win 运行 <code>webui.bat</code></p>
-<p>Linux 用户采用
+<h1 id="start">Start</h1>
+<p>First you must have a 4GB model and the menu at the top of the interface is used to select the model.</p>
+<p>If you run it and report an error, please read the previous configuration tips.</p>
+<p>We don't provide NAI models, you can go to the About/Bottom Icons page to find the <code>Chinese Community</code> channel, or maybe the Alibaba treasure chest.</p>
+<h2 id="run">Run</h2>
+<p><strong>After loading in the model</strong></p>
+<p>Win edit and run <code>webui.bat</code></p>
+<p>Linux users run <code>launch.py</code> or <code>webui.py</code>, the former will install the environment automatically.</p>
+<div class="highlight"><pre><span></span><code>REQS_FILE=&quot;requirements.txt&quot; python launch.py
+</code></pre></div>
 <div class="highlight"><pre><span></span><code>COMMANDLINE_ARGS=&quot;--medvram --always-batch-cond-uncond&quot; REQS_FILE=&quot;requirements.txt&quot; python launch.py
-</code></pre></div></p>
-<h4 id="_2">令牌参数生成第一幅图片</h4>
-<p>咳咳，这里使用的是某个模型，示例仅仅适用于 <code>那个模型</code>。</p>
-<p>令牌请读后面的内容，这里给出一个实例来供你完成测试。</p>
-<p>顶上那个是选择模型，暂时用不到。</p>
+</code></pre></div>
+<h2 id="generate-the-first-image-using-the-prompt">Generate the first image using the prompt</h2>
+<p>Here a certain model is used, the example only applies to <code>`some model</code>''</p>
+<p>For the token, read the back, an example is given here for you to complete the test.</p>
+<p>The one at the top is a selection model.</p>
 <ul>
-<li>第一个框是正向令牌</li>
+<li>Write the words about the desired result in the first input box</li>
 </ul>
-<p>可以使用 颜文字 和 emoji，使用 () 来增强权重，具体规则见后</p>
+<p>You can use emoticons and emoji, and use () to enhance the weights, see later for the rules</p>
 <div class="highlight"><pre><span></span><code>((masterpiece)), best quality, illustration, 1 girl, beautiful,beautiful detailed sky, catgirl,beautiful detailed water, cinematic lighting, dramatic angle, Grey T-Shirt, (few clothes),(yuri),(medium breasts),white hair,cat ears,masturbation,bare shoulders ,(gold eyes),wet clothes
 </code></pre></div>
 <ul>
-<li>第二个框是反向令牌</li>
+<li>A second input box to write undesired results</li>
 </ul>
-<p>指定需要过滤什么标签</p>
+<p>That is, specify what tags need to be filtered</p>
 <div class="highlight"><pre><span></span><code>lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, bad feet
 </code></pre></div>
-<p><strong>第一次调整参数</strong></p>
-<p>选定分辨率参数，越大越慢越卡。</p>
-<p>生成后的结果结尾类似为
+<p><strong>First adjustment of parameters</strong></p>
+<p>Selected resolution parameter, the larger the generation the longer it takes.</p>
+<p>The generated result ends similarly as follows
 <div class="highlight"><pre><span></span><code>Steps: 28, Sampler: Euler a, CFG scale: 7, Seed: 2706937631, Size: 1024x512, Model hash: 925997e9
 </code></pre></div>
-通过一样的参数和 Seed(-1就是随机)，可以生产一样的图像，这用于微调！
-还有占用信息
+With the same parameters and Seed (-1 is random), the same image can be produced without loading the style model, which can be used for fine tuning!</p>
+<p>Together with the GPU load information
 <div class="highlight"><pre><span></span><code>Time taken: 33.97s
+Time taken: 33.97s
 Torch active/reserved: 1975/2144 MiB, Sys VRAM: 7890/8134 MiB (93.61%)
 </code></pre></div></p>
-<p><strong>快捷设置</strong></p>
-<p>不想来回设置 Clip？</p>
-<p>添加<code>sd_hypernetwork</code>和<code>CLIP_stop_at_last_layers</code>到设置页面的<code>Quicksettings list</code>，保存并重新启动 webui，你就可以在Ui顶部看到一个快速切换选项啦～</p>
-<h4 id="_3">中文/本地化</h4>
-<p>本地化作为单个 <code>.json</code> 文件提供。 将此文件放入 <code>localizations</code> 目录并在设置中选择即可。</p>
-<p>在 22/10/26 下午，WebUi 添加了中文的翻译。</p>
-<p><strong>创建本地化文件</strong></p>
-<p>转到设置并单击 <code>Download localization template</code> 底部的按钮，下载一个可以编辑的本地化模板。</p>
-<h4 id="_4">共享链接</h4>
+<p><strong>Quick Setup</strong></p>
+<p>Don't want to go back and forth setting Clip parameters?</p>
+<p>Add the <code>sd_hypernetwork</code> and <code>CLIP_stop_at_last_layers</code> fields to the <code>Quicksettings list</code> settings on the settings page, click the button at the top of the page to save, restart webui, and you'll see a quick switch option at the top of the Ui.</p>
+<h2 id="multilanguagelocalization">Multilanguage/Localization</h2>
+<p>The language file is provided as a single <code>.json</code> file. Simply place this file in the <code>localizations</code> directory and select it in the settings.</p>
+<p><strong>Create a localization file of your own</strong></p>
+<p>Go to Settings and click the button at the bottom of <code>Download localization template</code> to download a localization template that you can edit.</p>
+<h2 id="shared-links">Shared links</h2>
 <ul>
-<li>使用 <code>--share</code> 选项来在线运行</li>
+<li>Use the <code>--share</code> option to run online!</li>
 </ul>
-<p>你会得到一个 <code>xxx.app.gradio</code> 链接，这是在协作中使用该程序的预期方式。</p>
+<p>You'll get a <code>xxx.app.gradio</code> shared link, plus you can set authentication for said <code>gradio</code> shared instance using the parameter: <code>--gradio-auth username:password</code></p>
 <div class="admonition danger">
 <p class="admonition-title">RCE</p>
-<p>当使用 <code>--share</code> 参数时，你的实例就可以在公开互联网访问了。
-但是最近有人报告了一个可能是危险的<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2571">代码漏洞</a></p>
-<p>所以，你可以使用参数为 <code>gradio</code> 共享实例设置身份验证：<code>--gradio-auth username:password</code> (可选择提供多组用户名和密码，以逗号分隔)</p>
-<p>例子
+<p>When using the <code>--share</code> parameter, your instance is accessible on the public Internet.</p>
+<p>But recently someone reported a possibly dangerous <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2571">code vulnerability</a></p>
+<p>So, you can set authentication for <code>-gradio</code> shared instances using the parameter: <code>--gradio-auth username:password</code> (multiple comma-separated usernames and passwords can be provided)</p>
+<p>Examples
 <code>--share --gradio-auth admin:admin,user1:user_password</code></p>
-<p>使用该例子将会创建两个用户，一个是账号密码为admin的用户，另外一个是账号为user1,密码为user_password的用户</p>
-<p>如果攻击者可以访问 ui，他们可能能够远程运行 python 脚本。</p>
-<p>10/30 社区报告：有人在扫描公开的 WebUi</p>
-<p>11/1 社区反映：共享链接可能会导致风险，<strong>攻击者可以访问系统上的所有文件。</strong></p>
+<p>Using this example will create two users, one with the account password admin and the other with the account user1 and the password user_password</p>
+<p>If the attacker has access to the ui, they may be able to run the python script remotely.</p>
+<p>10/30 Community Report: Someone is scanning the publicly available WebUi</p>
+<p>11/1 Community Report: Shared links may lead to a risk that <strong>attackers can access all files on the system. </strong></p>
 </div>
-<p>你会得到一个 <code>xxx.app.gradio</code> 链接，这是在协作中使用该程序的预期方式，而且你可以使用参数为所述 <code>gradio</code> 共享实例设置身份验证：<code>--gradio-auth username:password</code>
-可选择提供多组用户名和密码，以逗号分隔。</p>
-<p>你可以通过添加 <code>--freeze-settings</code>  启动参数来锁定设置，防止他人编辑。</p>
+<p>You can lock settings from being edited by others by adding the <code>--free-ze-settings</code> startup param.</p>
 <ul>
-<li>端口转发</li>
+<li>Port forwarding</li>
 </ul>
-<p>参数 <code>--listen</code> 使服务器监听网络连接。</p>
-<p>这将允许本地网络上的计算机访问 UI，如果配置端口转发，公网上的计算机也可以访问（当然你得有公网。</p>
-<p>注意，监听 <code>0.0.0.0</code> 就意味着对本地网卡所有ipv4监听，访问请使用 <code>localhost</code> 替换 <code>0.0.0.0</code></p>
+<p>The <code>-listen</code> parameter causes the server to listen for network connections.</p>
+<p>Use <code>--listen</code> to make the server listen to network connections. This will allow computers on the local network to access the UI, and if you configure port forwarding, also computers on the internet.</p>
 <ul>
-<li>监听端口</li>
+<li>Listening port</li>
 </ul>
-<p>参数 <code>--port xxxx</code> 使服务器监听特定端口。</p>
-<p>低于 1024 的所有端口都需要 <code>root</code>权限，因此建议使用高于 1024 的端口。</p>
-<p>如果可用，则默认为端口 7860</p>
+<p>Use <code>-port xxxx</code> to make the server listen on a specific port, xxxx being the wanted port. Remember that all ports below 1024 need root/admin rights, for this reason it is advised to use a port above 1024. Defaults to port 7860 if available.</p>
 <ul>
-<li>主题</li>
+<li>Themes</li>
 </ul>
-<p>使用 <code>--theme</code> 参数，使用主题</p>
-<h4 id="_5">自定义运行</h4>
-<p>进一步熟悉这个程序，你会发现可以修改 Bat运行脚本 添加参数！具体参数列表请读下文。</p>
-<p>生成报错？请读 <code>绘画调试</code> 章节。</p>
-<p>首先，你可以运行 <code>python webui.py --help</code> 查看所有命令参数，或者在<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/modules/shared.py">源码文件</a>中读到它们。</p>
+<p>Add <code>--theme</code> parameter when startup to switch themes....</p>
+<h2 id="custom-runs">Custom Runs</h2>
+<p>To further familiarize yourself with this program, you will find that you can modify the Bat run script to add parameters.</p>
+<p>The specific list of parameters is shown below.</p>
+<p>Error generating an image? Please read the <code>Paint guide</code> section.</p>
+<p>First, you can run <code>python webui.py --help</code> to see all command arguments, or read them in the <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/modules/ shared.py">source file</a> to read them.</p>
 <p>Tip:
-自定义程序运行方式的推荐方法是编辑webui-user.bat(Windows) 和webui-user.sh(Linux)</p>
-<p><em>环境定制</em></p>
+The recommended way to customize how the program runs is to edit webui-user.bat (Windows) and webui-user.sh (Linux)</p>
+<p>*Customize the runtime environment</p>
 <p><code>set PYTHON=b:/soft/Python310/Python.exe</code></p>
-<p><code>set PYTHON</code> 允许设置自定义 Python 路径</p>
+<p><code>set PYTHON</code> allows setting custom Python paths</p>
 <p><code>set VENV_DIR=C:\run\var\run</code>
-set VENV_DIR允许您选择虚拟环境的目录。默认为<code>venv</code>。特殊值<code>-</code>在不创建虚拟环境的情况下运行脚本。</p>
+set VENV_DIR allows you to select the directory of your virtual environment. The default is <code>venv</code>. The special value <code>-</code> runs scripts without creating a virtual environment.</p>
 <p><code>set COMMANDLINE_ARGS=--ckpt a.ckpt</code>
-set COMMANDLINE_ARGS设置命令行参数webui.py运行
-示例使用模型a.ckpt而不是model.ckpt</p>
-<p><em>GPU指定</em></p>
-<p>选择要使用的默认Gpu <code>--device-id 0</code>，来代替旧版本的 <code>CUDA_VISIBLE_DEVICES=0</code>，可以选择第二个 GPU 允许同时运行两个实例，从而能够以更简洁的方式简单地选择设备。</p>
-<p>查看 GPU 序号，可以使用 <code>nvidia-smi</code></p>
-<p><strong>优化命令参数</strong></p>
-<p>来自 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Optimizations">官方Wiki</a></p>
+set COMMANDLINE_ARGS sets the command line parameter webui.py to run
+Example using <code>a.ckpt</code> instead of <code>model.ckpt</code>.</p>
+<p><em>Specify which GPU to run on</em></p>
+<p>Selecting the default GPU to use <code>--device-id 0</code> in place of <code>CUDA_VISIBLE_DEVICES=0</code> for older versions (before 2022/10) allows you to select a second GPU to allow two instances to run at the same time, enabling simple device selection in a more concise manner.</p>
+<p>To view the GPU model and CUDA version, you can use the <code>nvidia-smi</code> command for information</p>
+<p><strong>Optimize command parameters</strong></p>
+<p>see <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Optimizations">Official Wiki</a></p>
 <table>
 <thead>
 <tr>
-<th>命令行参数</th>
-<th>解释</th>
+<th>commandline argument</th>
+<th>explanation</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>--xformers</code></td>
-<td>使用<a href="https://github.com/facebookresearch/xformers">xformers</a>库。极大地改善了内存消耗和速度。Windows 版本安装由<a href="https://github.com/C43H66N12O12S2/stable-diffusion-webui/releases">C43H66N12O12S2 维护</a>的二进制文件</td>
+<td>Use<a href="https://github.com/facebookresearch/xformers">xformers</a>library. Great improvement to memory consumption and speed. Windows version installs binaries mainained by<a href="https://github.com/C43H66N12O12S2/stable-diffusion-webui/releases">C43H66N12O12S2</a>. Will only be enabled on small subset of configuration because that's what we have binaries for.<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Xformers">Documentation</a></td>
 </tr>
 <tr>
 <td><code>--force-enable-xformers</code></td>
-<td>无论程序是否认为您可以运行它，都启用 xformers。不要报告你运行它的错误。</td>
+<td>Enables xformers above regardless of whether the program thinks you can run it or not. Do not report bugs you get running this.</td>
 </tr>
 <tr>
 <td><code>--opt-split-attention</code></td>
-<td>Cross attention layer optimization 优化显着减少了内存使用，几乎没有成本（一些报告改进了性能）。黑魔法。默认情况下<code>torch.cuda</code>，包括 NVidia 和 AMD 卡。</td>
+<td>Cross attention layer optimization significantly reducing memory use for almost no cost (some report improved preformance with it).  Black magic.On by default for<code>torch.cuda</code>, which includes both NVidia and AMD cards.</td>
 </tr>
 <tr>
 <td><code>--disable-opt-split-attention</code></td>
-<td>禁用上面的优化</td>
+<td>Disables the optimization above.</td>
 </tr>
 <tr>
 <td><code>--opt-split-attention-v1</code></td>
-<td>使用上述优化的旧版本，它不会占用大量内存（它将使用更少的 VRAM，但会限制您可以制作的最大图片大小）。</td>
+<td>Uses an older version of the optimization above that is not as memory hungry (it will use less VRAM, but will be more limiting in the maximum size of pictures you can make).</td>
 </tr>
 <tr>
 <td><code>--medvram</code></td>
-<td>通过将稳定扩散模型分为三部分，使其消耗更少的VRAM，即cond（用于将文本转换为数字表示）、first_stage（用于将图片转换为潜在空间并返回）和unet（用于潜在空间的实际去噪），并使其始终只有一个在VRAM中，将其他部分发送到CPU RAM。降低性能，但只会降低一点-除非启用实时预览。</td>
+<td>Makes the Stable Diffusion model consume less VRAM by splitting it into three parts - cond (for transforming text into numerical representation), first_stage (for converting a picture into latent space and back), and unet (for actual denoising of latent space) and making it so that only one is in VRAM at all times, sending others to CPU RAM. Lowers performance, but only by a bit - except if live previews are enabled.</td>
 </tr>
 <tr>
 <td><code>--lowvram</code></td>
-<td>对上面更彻底的优化，将 unet 拆分成多个模块，VRAM 中只保留一个模块,破坏性能</td>
+<td>An even more thorough optimization of the above, splitting unet into many modules, and only one module is kept in VRAM. Devastating for performance.</td>
 </tr>
 <tr>
 <td><code>*do-not-batch-cond-uncond</code></td>
-<td>防止在采样过程中对正面和负面提示进行批处理，这基本上可以让您以 0.5 批量大小运行，从而节省大量内存。降低性能。不是命令行选项，而是使用<code>--medvram</code>or 隐式启用的优化<code>--lowvram</code>。</td>
+<td>Prevents batching of positive and negative prompts during sampling, which essentially lets you run at 0.5 batch size, saving a lot of memory. Decreases performance. Not a command line option, but an optimization implicitly enabled by using<code>--medvram</code>or<code>--lowvram</code>.</td>
 </tr>
 <tr>
 <td><code>--always-batch-cond-uncond</code></td>
-<td>禁用上述优化。只有与<code>--medvram</code>或<code>--lowvram</code>一起使用才有意义</td>
+<td>Disables the optimization above. Only makes sense together with<code>--medvram</code>or<code>--lowvram</code></td>
 </tr>
 <tr>
 <td><code>--opt-channelslast</code></td>
-<td>更改 torch 内存类型，以稳定扩散到最后一个通道,效果没有仔细研究。</td>
+<td>Changes torch memory type for stable diffusion to channels last. Effects not closely studied.</td>
 </tr>
 </tbody>
 </table>
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3889">讨论</a> 有人认为，通过在 Windows 设置上禁用硬件加速 GPU 调度，WebUi 性能提高了大约 10-50%</p>
-<h4 id="api">API 文档</h4>
-<p>使用 <code>--api</code> 参数运行程序，在浏览器访问 <code>{输出的网址}/docs</code> 就可以查看到 WebUi 的 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/tree/master/modules/api">Api</a> 文档。<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">2</a></sup></p>
-<p>下面是一个同步类实现。</p>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3889">Discussion</a> It has been suggested that by disabling hardware-accelerated GPU scheduling on Windows settings, WebUi performance has improved by about 10-50%</p>
+<h2 id="api-documentation">API documentation</h2>
+<p>Run the program with the <code>--api</code> argument and visit <code>{your main url}/docs</code> in your browser to see the <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/tree/master/modules/">Api</a> documentation for WebUi. api) documentation. <sup id="fnref:4"><a class="footnote-ref" href="#fn:4">2</a></sup></p>
+<p>Here is a synchronization class implementation.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">requests</span>
@@ -1377,7 +1406,7 @@ set COMMANDLINE_ARGS设置命令行参数webui.py运行
             <span class="n">pnginfo</span> <span class="o">=</span> <span class="n">PngImagePlugin</span><span class="o">.</span><span class="n">PngInfo</span><span class="p">()</span>
             <span class="k">if</span> <span class="n">infotie</span><span class="p">:</span>
                <span class="n">pnginfo</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="s2">&quot;parameters&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">response</span><span class="p">[</span><span class="s1">&#39;info&#39;</span><span class="p">]))</span>
-            <span class="c1"># 保存，因为本地不会自动生成文件。</span>
+            <span class="c1"># Save, as the pic is not automatically saved.</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="n">outpath</span><span class="p">:</span>
                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Random file name&quot;</span><span class="p">)</span>
                <span class="n">outpath</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span><span class="si">}</span><span class="s2">.png&quot;</span>
@@ -1387,63 +1416,70 @@ set COMMANDLINE_ARGS设置命令行参数webui.py运行
     <span class="s2">&quot;prompt&quot;</span><span class="p">:</span> <span class="s2">&quot;1girl&quot;</span><span class="p">,</span>
     <span class="s2">&quot;steps&quot;</span><span class="p">:</span> <span class="mi">20</span>
 <span class="p">}</span>
-<span class="c1"># 其他参数会使用默认值</span>
+<span class="c1"># Other parameters will use default values</span>
 <span class="n">WebUiApi</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;http://127.0.0.1:7860&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">txt2img</span><span class="p">(</span><span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">,</span><span class="n">outpath</span><span class="o">=</span><span class="s2">&quot;1145.png&quot;</span><span class="p">,</span><span class="n">infotie</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="c1"># 实际使用的时候不应该保存到本地再发送，而是直接发送，避免存储图片作品造成 版权 问题。</span>
 </code></pre></div>
 <p>跨平台多后端项目 <a href="https://github.com/koishijs/novelai-bot">novelai-bot</a></p>
 <p>Discord 机器人项目 <a href="https://github.com/Kilvoctu/aiyabot/blob/main/core/stablecog.py">aiyabot</a></p>
-<h3 id="troubleshooting">错误处理 Troubleshooting</h3>
-<p>翻译整理自<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">1</a></sup></p>
-<p>文件路径，路径不允许含有空格，确保您的程序文件夹路径中没有空格。该程序经过测试可在 Python 3.10.6 上运行，低版本 Python 可能会发生错误。</p>
-<p>重新安装，请删除目录： <code>venv</code>, <code>repositories</code>。</p>
-<h4 id="_6">网络问题/没响应</h4>
-<ul>
-<li>Git 报错</li>
-</ul>
-<p>HTTP_PROXY 和 HTTPS_PROXY 环境变量，或者使用 clash 的tun模式. 或者把 git clone 的仓库源换成 huggingface</p>
-<p>其他依赖报错也需要设置代理或者使用镜像，不然特慢。</p>
-<h4 id="_7">时间花销过大</h4>
-<p>设镜像或者挂代理，<strong>依赖项 &gt;2GB</strong>,请做好准备，而且对于Windows,<strong>依赖默认安装在C盘</strong>！</p>
-<h4 id="cuda-out-of-memory">低显存显卡/CUDA out of memory</h4>
-<p>确保你拥有可以运行的最新CUDA 工具包和 GPU 驱动程序。</p>
-<p>程序在具有少量 VRAM (&lt;=4GB) 的视频卡上运行时，可能会出现内存不足错误。</p>
+<h1 id="error-handling-troubleshooting">Error handling Troubleshooting</h1>
+<p>File paths, which do not allow spaces, make sure your program's folder path does not have spaces in it. This program has been tested to run on Python 3.10.6; errors may occur with lower versions of Python.</p>
+<p>To reinstall, remove the directories: <code>venv</code>, <code>repositories</code>.</p>
+<h2 id="install-too-slow">Install TOO SLOW！</h2>
+<p><strong>Dependencies &gt;2GB</strong>, please wait. Tips for Windows users: <strong>Dependencies are installed on C drive by default</strong></p>
+<h2 id="low-memory-graphics-cardscuda-out-of-memory">Low memory graphics cards/CUDA out of memory</h2>
+<p>Make sure you have the latest CUDA toolkit and GPU drivers that are ready to run.</p>
+<p>Programs running on video cards with a small amount of VRAM (&lt;=4GB) may experience out of memory errors.</p>
 <p><strong>牺牲速度来支持低显存显卡</strong></p>
-<p>如果你有 <code>4GB VRAM</code> 并且想要制作 512x512（或者可能高达 640x640）的图像，请使用 <code>--medvram</code></p>
-<p>如果你有 <code>4GB VRAM</code> 并且想要制作 512x512 图像，但使用 <code>--medvram</code> 遇到内存不足错误 ，请改用<code>--medvram --opt-split-attention</code></p>
-<p>如果你有 <code>4GB VRAM</code> 并想要制作 512x512 图像，但仍然出现内存不足错误，请改用 <code>--lowvram --always-batch-cond-uncond --opt-split-attention</code></p>
-<p>如果你有 <code>4GB VRAM</code> 并且想要制作比你可以使用的更大的图像<code>--medvram</code>，请使用 <code>--lowvram --opt-split-attention</code></p>
-<p>如果你有更多的 <code>VRAM</code> 并且想要制作比你通常制作的更大的图像（例如 1024x1024 而不是 512x512），请使用<code>--medvram --opt-split-attention</code>.</p>
-<p>你也可以使用 <code>--lowvram</code> ，启动这个参数后，模型被分成模块，GPU内存中只保存一个模块； 当另一个模块需要运行时，前一个从 GPU 内存中删除，这种牺牲使处理运行速度大约慢 10 倍。</p>
-<p>如果还不行，建议你升级设备。</p>
-<h4 id="python">我 Python 呢？</h4>
-<p>如果你的 Python 版本不在 PATH 中，则在文件夹中创建或修改 webui.settings.bat 添加行 <code>set PYTHON=python</code>来说明 Python 可执行文件的完整路径（请看参数说明表格）</p>
-<h4 id="errorasyncioaccept-failed-on-a-socket">ERROR:asyncio:Accept failed on a socket</h4>
-<p>先检查端口冲突，有没有和什么软件冲突</p>
-<p>这个错误有可能是 <code>Python38</code> 的 <code>asyncio</code> 库对 <code>Windows</code> 的兼容性问题。</p>
-<p>尝试用 CMD 管理员身份运行<code>netsh winsock reset</code>，不行的话，切换端口。</p>
-<p>如果还是不行，请切换至 Python 的 <code>3.10.6</code>，WebUi 的开发环境为此版本。</p>
-<h4 id="_8">虚拟环境</h4>
-<p>如果你使用 conda 可以不使用一键脚本，可以自己运行 launch 安装依赖。</p>
-<p>因为仓库给出的一键安装脚本会创建虚拟环境，然后启动 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/launch.py">launch.py</a>。</p>
-<p>在运行时，一键安装程序会创建一个 python 虚拟环境，因此如果你在安装之前安装了一个模块，那么任何已安装的模块都不会引发冲突。</p>
-<p>如果需要防止创建虚拟环境而使用系统 python，编辑 <code>webui.bat</code> 替换 <code>setVENV_DIR=venv</code>为<code>set VENV_DIR=</code></p>
-<h4 id="api-ms-win-core-path-l1-1-0dll-is-missing1">api-ms-win-core-path-l1-1-0.dll is missing<sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">1</a></sup></h4>
-<p>Windows 7上运行很可能会报错: <code>api-ms-win-core-path-l1-1-0.dll is missing</code>，这是因为许多程序需要新版本的 Windows 的系统文件。</p>
-<p>如果没有出现该错误，不需要执行下面的操作。</p>
-<p>这些文件已经被移植来与 W7 兼容，并且可以在 <a href="https://github.com/nalexandru/api-ms-win-core-path-HACK/releases/download/0.3.1/api-ms-win-core-path-blender-0.3.1.zip">这里</a> 下载。它的 <a href="https://github.com/nalexandru/api-ms-win-core-path-HACK/">Github 页面</a></p>
-<p>解压缩并将 <code>x86.dll</code> 复制到 <code>C:\Windows\SysWOW64</code> ，将 <code>x64.dll</code> 复制到 <code>C:\Windows\System32</code> 并重启。</p>
-<h4 id="an-illegal-memory-access-was-encountered-cuda-kernel-errors">an illegal memory access was encountered ....CUDA kernel errors...</h4>
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/1766">相关问题Issue</a></p>
-<p>在多数情况下，这代表显存溢出，也有可能是 GPU 硬件问题。</p>
-<p>据说使用 deepdanbooru 的话会有这个提示，可以尝试重新启动 或 安装cpu版本的deepdanbooru.</p>
-<p><strong>生成图片问题见下一章</strong></p>
+<p>When running on video cards with a low amount of VRAM (&lt;=4GB), out of memory errors may arise. Various optimizations may be enabled through command line arguments, sacrificing some/a lot of speed in favor of using less VRAM:</p>
+<ul>
+<li>
+<p>If you have 4GB VRAM and want to make 512x512 (or maybe up to 640x640) images, use --medvram.</p>
+</li>
+<li>
+<p>If you have 4GB VRAM and want to make 512x512 images, but you get an out of memory error with --medvram, use --medvram --opt-split-attention instead.</p>
+</li>
+<li>
+<p>If you have 4GB VRAM and want to make 512x512 images, and you still get an out of memory error, use --lowvram --always-batch-cond-uncond --opt-split-attention instead.</p>
+</li>
+<li>
+<p>If you have 4GB VRAM and want to make images larger than you can with --medvram, use --lowvram --opt-split-attention.</p>
+</li>
+<li>
+<p>If you have more VRAM and want to make larger images than you can usually make (for example 1024x1024 instead of 512x512), use --medvram --opt-split-attention. You can use --lowvram also but the effect will likely be barely noticeable.</p>
+</li>
+<li>
+<p>Otherwise, do not use any of those.</p>
+</li>
+</ul>
+<h2 id="where-my-python">Where my Python?</h2>
+<p>If the desired version of Python is not in PATH, modify the line set PYTHON=python in webui-user.bat with the full path to the python executable.</p>
+<h2 id="errorasyncioaccept-failed-on-a-socket">ERROR:asyncio:Accept failed on a socket</h2>
+<p>First check for port conflicts, and any software conflicts</p>
+<p>This error may be due to compatibility of <code>asyncio</code> library of <code>Python38</code> with <code>Windows</code>.</p>
+<p>Try running <code>netsh winsock reset</code> as a CMD administrator, and if that doesn't work, switch ports.</p>
+<p>If that still doesn't work, switch to Python <code>3.10.6</code>, which is the version of WebUi's development environment.</p>
+<h2 id="venv">Venv</h2>
+<p>If you are using conda you can run the launch install dependency yourself without the one-click script.</p>
+<p>This is because the one-click installer script given by the repository creates the virtual environment and then launches <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/launch.py">launch.py</a>.</p>
+<p>At runtime, the one-click installer creates a python virtual environment, so if you install a module before installing it, then any installed modules will not cause conflicts.</p>
+<p>If you need to prevent the creation of a virtual environment and use system python, edit <code>webui.bat</code> and replace <code>setVENV_DIR=venv</code> with <code>set VENV_DIR=</code></p>
+<h2 id="api-ms-win-core-path-l1-1-0dll-is-missing1">api-ms-win-core-path-l1-1-0.dll is missing<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">1</a></sup></h2>
+<p>Running on Windows 7 is likely to report the error: <code>api-ms-win-core-path-l1-1-0.dll is missing</code> because many programs require system files from newer versions of Windows.</p>
+<p>If this error does not occur, there is no need to perform the following actions.</p>
+<p>These files have been ported to be compatible with W7 and are available at <a href="https://github.com/nalexandru/api-ms-win-core-path-HACK/releases/download/0.3.1/api-ms-win-core-path- blender-0.3.1.zip">here</a> for download. Its <a href="https://github.com/nalexandru/api-ms-win-core-path-HACK/">Github page</a></p>
+<p>Unzip and copy <code>x86.dll</code> to <code>C:\Windows\SysWOW64</code>, copy <code>x64.dll</code> to <code>C:\Windows\System32</code> and reboot.</p>
+<h2 id="an-illegal-memory-access-was-encountered-cuda-kernel-errors">an illegal memory access was encountered ....CUDA kernel errors...</h2>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/1766">RelatedIssue</a></p>
+<p>In most cases, this means that the video memory is overflowing, but it could also be a GPU hardware problem.</p>
+<p>It is said that if you are using deepdanbooru, you will get this message, so try to restart or install the cpu version of deepdanbooru.</p>
+<p><strong>See the next chapter for image generation problems</strong>.</p>
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:3">
-<p><a href="https://rentry.co/voldy">Wiki2</a>&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:3" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p><a href="https://rentry.co/voldy">Wiki2</a>&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:4">
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3734">Basic Documentation and Examples for using API</a>&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 2 in the text">&#8617;</a></p>
@@ -1456,11 +1492,11 @@ set COMMANDLINE_ARGS设置命令行参数webui.py运行
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 03:38:15</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 04:44:24</span>
       
         <br>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 03:38:15</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 04:44:24</span>
       
     
   </small>
@@ -1469,10 +1505,12 @@ set COMMANDLINE_ARGS设置命令行参数webui.py运行
 
 
 
-              
-            </article>
-            
-          </div>
+
+                
+              </article>
+            </div>
+          
+          
         </div>
         
           <a href="#" class="md-top md-icon" data-md-component="top" hidden>
@@ -1483,6 +1521,42 @@ set COMMANDLINE_ARGS设置命令行参数webui.py运行
       </main>
       
         <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Installing the Stable-Diffusion-webui open source framework" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Installing the Stable-Diffusion-webui open source framework
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../../model/" class="md-footer__link md-footer__link--next" aria-label="Next: 架炉生火" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              架炉生火
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1532,10 +1606,10 @@ set COMMANDLINE_ARGS设置命令行参数webui.py运行
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "toc.follow", "navigation.top", "navigation.tracking", "navigation.indexes", "navigation.expand", "navigation.sections"], "search": "../../../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "toc.follow", "navigation.top", "navigation.tracking", "navigation.indexes", "navigation.expand", "navigation.sections"], "search": "../../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.2ab50757.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.8492ddcf.min.js"></script>
       
     
   </body>
