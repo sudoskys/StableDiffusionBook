@@ -40,9 +40,9 @@ https://stable-diffusion-book.vercel.app/  短链为(https://b23.ink/aibook)
 
 在键盘按下 `。` 键自动克隆仓库并开始协作。
 
-The repository currently contains a machine-translated version of the guide, if this does not seem to flow well to you or has errors.
+The repository currently contains a machine-translated version of the guide.
 
-Or would like a version in another language. Then please submit Issue or Pr
+If this does not seem to flow well to you or has errors,or u would like a version in another language. Then please submit Issue or Pr
 
 ### 相关
 
