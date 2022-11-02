@@ -1321,10 +1321,11 @@
 <p>Generally, the lower the learning rate, the slower the learning (takes longer to converge), but generally the better the results.</p>
 <p>When training, you can start with a larger learning rate and then gradually reduce it to <code>0.1 - 0.02 - 0.005</code>, using the last best result for each test.</p>
 <p>This is usually set to 0.005, but if you want to go faster, you can use 0.01 to speed it up. However, if you set it too high, the gradient will be too large to converge and may break <code>embedding</code>, which will not work as expected. If you set it too small, you will easily fall into a local optimum. Currently TI supports setting learning rates of <code>0.1:500, 0.01:1000, 0.001:10000</code>, which will follow a schedule.</p>
-<p>! <a href="https://user-images.githubusercontent.com/75739606/197824268-273f074d-9622-41ad-9f1a-2980f180dbd9.png">CS231n</a></p>
-<!-- --
+<p><img alt="CS231n" src="https://user-images.githubusercontent.com/75739606/197824268-273f074d-9622-41ad-9f1a-2980f180dbd9.png" /></p>
+<!--
 ![CS231n](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/CS231n.png)
----->
+-->
+
 <p><code>Log directory</code> is the log directory</p>
 <p><code>Prompt template file</code> is a text file with prompts, one per line, for training the model.</p>
 <p>The directory, <code>textual_inversion_templates</code>, explains what you can do with these files.</p>
@@ -1378,11 +1379,11 @@ Save an image to log directory every N steps, 0 to disable</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 11:44:40</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 11:47:26</span>
       
         <br>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 11:44:40</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 11:47:26</span>
       
     
   </small>
