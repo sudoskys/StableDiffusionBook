@@ -63,19 +63,21 @@ You can also use **platform names** to limit the scope of the dataset, for examp
 
 [Danbooru tag group](https://danbooru.donmai.us/wiki_pages/tag_groups)
 
-Useful film terms https://en.wikipedia.org/wiki/Category:Cinematic_techniques
+[Useful film terms ](https://en.wikipedia.org/wiki/Category:Cinematic_techniques)
 
-Types of shots https://www.bhphotovideo.com/explora/video/tips-and-solutions/filmmaking-101-camera-shot-types
+[Types of shots](https://www.bhphotovideo.com/explora/video/tips-and-solutions/filmmaking-101-camera-shot-types) 
 
-TV terms https://en.wikipedia.org/wiki/Category:Television_terminology
+[TV terms](https://en.wikipedia.org/wiki/Category:Television_terminology) 
 
-Types of photography https://en.wikipedia.org/wiki/Category:Photography_by_genre
+[Types of photography ](https://en.wikipedia.org/wiki/Category:Photography_by_genre)
 
-Photographic terms https://zh.wikipedia.org/zh-cn/%E9%AB%98%E9%80%9F%E6%91%84%E5%BD%B1
+[Photographic terms](https://zh.wikipedia.org/zh-cn/%E9%AB%98%E9%80%9F%E6%91%84%E5%BD%B1) 
 
-Extreme sports https://en.wikipedia.org/wiki/Extreme_sport https://en.wikipedia.org/wiki/Category:Sports_by_type
+[Extreme sports](https://en.wikipedia.org/wiki/Extreme_sport)
 
-Art of composition https://en.wikipedia.org/wiki/Composition_(visual_arts)
+[Sports_by_type](https://en.wikipedia.org/wiki/Category:Sports_by_type)
+
+[Art of composition](https://en.wikipedia.org/wiki/Composition_(visual_arts))
 
 
 ## Iterative sketches [^8]
@@ -143,6 +145,15 @@ If you want to reproduce it on the generation, you need the same `seed`, cue wor
 
 ~Self-deceptive reproduction: image to image, noise reduction to below 0.3... ~
 
+## Frivolous details
+
+- Emoticons
+
+emoji(💰💶💷💴💵,🎊🪅🪄🎀,👩 🚀) Emoticons are also available and **very accurate**, I have tested them many times and Ai can recognise them.
+
+- Anime style
+
+`anime colouring` will work well, like an anime screenshot. (If you encounter black and white, you need to specify the colour of the character parts)
 
 
 ## Designing with Ai

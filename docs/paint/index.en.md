@@ -29,16 +29,19 @@ The toolbox that you can see when you open the page
 
 ### Tool
 
+* [QuickShare-pastebin](https://paste.rs/web)
+
 - **[AiPhotoShop - the online tool for infinite extents of the canvas](https://www.painthua.com/)**
 
+- [NAI<=>WebUi prompt word weight conversion Telegram bot](https://github.com/sudoskys/M2NM2NBot)
+
+#### Help design
 
 * [Pic2Prompt0](https://www.latentspace.dev/)
 
 * [Pic2Prompt1](https://magicstudio.com/pic2prompt/editor)
 
 * [Pic2Prompt2](https://replicate.com/methexis-inc/img2prompt)
-
-* [QuickShare-pastebin](https://paste.rs/web)
 
 * [prompthero](https://prompthero.com/)
 
@@ -49,6 +52,14 @@ The toolbox that you can see when you open the page
 * [midjourney haha](https://www.midjourney.com/showcase/)
 
 * [Social Generative AI](https://histre.com/integrations/generative/)
+
+#### Processing
+
+- [PNGINFO online viewing tool](https://spell.novelai.dev/)
+
+- [Real-ESRGAN noise reduction and resolution enhancement tool](https://github.com/xinntao/Real-ESRGAN) 
+
+- [DeepDanbooru by image recognition hints](https://github.com/KichangKim/DeepDanbooru)
 
 ### Reference works
 

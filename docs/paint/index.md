@@ -32,7 +32,13 @@
 
 ### 工具
 
+* [快速分享-在线剪切板](https://netcut.cn/)
+
 - **[AiPhotoShop-无限外延画布的在线工具](https://www.painthua.com/)**
+
+- [NAI<=>WebUi权重转换Telegram服务](https://github.com/sudoskys/M2NM2NBot)
+
+#### 灵感
 
 * [Pic2Prompt0](https://www.latentspace.dev/)
 
@@ -41,8 +47,6 @@
 * [Pic2Prompt2](https://replicate.com/methexis-inc/img2prompt)
 
 * [Danbooru 标签超市](https://tags.novelai.dev/) [AI绘画tag生成器](https://aitag.top/)
-
-* [快速分享-在线剪切板](https://netcut.cn/)
 
 * [prompthero](https://prompthero.com/)
 
@@ -53,6 +57,14 @@
 * [midjourney haha](https://www.midjourney.com/showcase/)
 
 * [Social Generative AI](https://histre.com/integrations/generative/)
+
+#### 后期
+
+- [PNGINFO 在线查看工具](https://spell.novelai.dev/)
+
+- [Real-ESRGAN 降噪提高分辨率神器](https://github.com/xinntao/Real-ESRGAN) 
+
+- [DeepDanbooru通过图像识别提示](https://github.com/KichangKim/DeepDanbooru)
 
 ### 作品参考
 
