@@ -2,7 +2,6 @@
 
 Please find out about the parameters of the WebUi(SD) web application beforehand.
 
-
 ## Introduction to the prompting method
 
 For NAI users, please read the [official website Docs](https://docs.novelai.net/image/promptmixing.html)

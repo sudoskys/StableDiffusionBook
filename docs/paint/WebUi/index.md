@@ -3,6 +3,7 @@
 请先在前面了解一下 WebUi(SD) 网页应用的参数。
 
 
+
 ## 提示词语法简介
 
 对于NAI用户，请阅读[官网Docs](https://docs.novelai.net/image/promptmixing.html)
@@ -55,7 +56,7 @@
 
 ## 如何书写提示词(提示)
 
-结合法术书编写它。
+
 
 - 自然语言
 
@@ -83,7 +84,9 @@
 
 - 提示不要太长，超过 100 就有失败风险。
 
-根据 手抄本的Tip，由于GPT-3模型限制，prompt 并不是无限的，positive token 在 75-80 之间，negative 大概65，加太多会提示你 xxx of xxx are truncated，所以别人那边的圣经不要照抄，太长的咒语后半都没有意义了，所以用简易反咒就足够，除非你有特定想屏蔽的东西。
+由于GPT-3模型限制，prompt 并不是无限的，positive token 在 75-80 之间，75 字符后的内容会被截断。
+
+negative 大概65，加太多会提示你 xxx of xxx are truncated，所以不要堆叠Tag.
 
 当提示超过75个`token`（比如150个`token`）时，WebUi 将分组提示词，提交多组75个 `token`。标记只具有同一集合中其他内容的上下文。这意味着您可能在第一组和第二组之间的边界处有`bule hair`，标记`blue`将在第一组中，`hair`将在第二组中。这导致了结果的不准确，因为这两个词是分开的。
 

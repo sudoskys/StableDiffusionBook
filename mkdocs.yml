@@ -115,6 +115,7 @@ plugins:
             参考资料: References
             运行WebUi: LaunchWebUi
             错误处理: Troubleshoot
+            工作台: Workstations
       languages:
         en:
           name: English
