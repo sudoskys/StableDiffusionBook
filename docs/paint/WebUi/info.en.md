@@ -1,4 +1,47 @@
-# Market Adoption Survey
+# Prompt-Info-Script
+
+
+## Custom Scripts
+
+The content of this topic may not be instantly updated here, [source address](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts#prompt-interpolation)
+
+
+
+### Auto-completion
+
+Here's a project that enables SD to do a NAI-like patching effect.
+
+https://github.com/DominikDoom/a1111-sd-webui-tagcomplete
+
+
+### Advanced prompt matrix
+
+https://github.com/GRMrGecko/stable-diffusion-webui-automatic/blob/advanced_matrix/scripts/advanced_prompt_matrix.py
+
+
+```
+<cyber|cyborg|> cat <photo|image|artistic photo|oil painting> in a <car|boat|cyber city>
+```
+
+
+### XYZ Drawing Script
+
+Generate an .html file to interactively navigate through the image set. Use the scroll wheel or arrow keys to move through the Z dimensions.
+
+https://github.com/xrpgame/xyz_plot_script
+
+### Embedding to PNG
+
+
+https://github.com/dfaker/embedding-to-png-script
+
+### Random Steps and CFG
+
+https://github.com/lilly1987/AI-WEBUI-scripts-Random
+
+
+
+## Market Adoption Survey
 
 Here are the applications for stable diffusion (non-NAI models).
 
@@ -46,47 +89,7 @@ Novel illustrations, AI painting backgrounds (the original model is said to work
 
 
 
-
-## Custom Scripts
-
-The content of this topic may not be instantly updated here, [source address](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts#prompt-interpolation)
-
-
-
-### Auto-completion
-
-Here's a project that enables SD to do a NAI-like patching effect.
-
-https://github.com/DominikDoom/a1111-sd-webui-tagcomplete
-
-
-### Advanced prompt matrix
-
-https://github.com/GRMrGecko/stable-diffusion-webui-automatic/blob/advanced_matrix/scripts/advanced_prompt_matrix.py
-
-
-```
-<cyber|cyborg|> cat <photo|image|artistic photo|oil painting> in a <car|boat|cyber city>
-```
-
-
-### XYZ Drawing Script
-
-Generate an .html file to interactively navigate through the image set. Use the scroll wheel or arrow keys to move through the Z dimensions.
-
-https://github.com/xrpgame/xyz_plot_script
-
-### Embedding to PNG
-
-
-https://github.com/dfaker/embedding-to-png-script
-
-### Random Steps and CFG
-
-https://github.com/lilly1987/AI-WEBUI-scripts-Random
-
-
-## 参数
+## Prompt
 
 SEE [HERE](https://danbooru.donmai.us/wiki_pages/howto%3Atag_checklist) From[Origin wiki](https://danbooru.donmai.us/wiki_pages/tag_groups)
 

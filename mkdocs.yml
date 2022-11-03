@@ -34,7 +34,7 @@ nav:
           - paint/WebUi/index.md
           - 应用指南: paint/WebUi/Practicalguide.md
           - 进阶指南: paint/WebUi/Advanced.md
-          - 参数: paint/WebUi/info.md
+          - 参数-信息-脚本: paint/WebUi/info.md
   - 训练模型:
       - 训练介绍: train/index.md
       - Textual 训练: train/Textual.md
@@ -105,7 +105,7 @@ plugins:
             WebUi绘画指南: Paint With WebUi
             应用指南: Application Guide
             进阶指南: Advanced Guide
-            参数: Prompt
+            参数-信息-脚本: Prompt-Info-Script
             训练模型: Train Model
             训练介绍: Intro
             Textual 训练: Textual Inversion
