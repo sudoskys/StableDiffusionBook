@@ -266,7 +266,7 @@ normal quality, text, censored, gown, latex, pencil
 
 
 
-### CFG Scale/Denoising strength Fitting/noise reduction
+## CFG Scale/Denoising strength Fitting/noise reduction
 
 **CFG Scale**
 
