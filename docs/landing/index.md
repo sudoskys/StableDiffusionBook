@@ -15,6 +15,8 @@
 
 #### 服务
 
+- [WebUi：为Krita插件等添加自定义后端API](https://github.com/Interpause/auto-sd-paint-ext)
+
 - [Danbooru 标签超市](https://tags.novelai.dev/),[项目地址](https://github.com/wfjsw/danbooru-diffusion-prompt-builder)
 
 - [SDWebUi自动补全]( https://github.com/DominikDoom/a1111-sd-webui-tagcomplete)
@@ -28,6 +30,7 @@
 - [WANDB-MLOps平台](https://wandb.ai/site)
 
 - [MD设计标签选择](https://aispells.art/)
+
 
 ### 提示词相关
 

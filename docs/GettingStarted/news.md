@@ -5,6 +5,14 @@
 
 以下是新闻和测试内容。
 
+## 11/2
+
+为 Krita 插件等添加自定义后端 API
+
+https://github.com/Interpause/auto-sd-paint-ext
+
+在 [这个PR](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4142) 中，WebUi 修复了 IMG2IMG 处理后不释放 RAM 的问题
+
 
 ## 11/1
 

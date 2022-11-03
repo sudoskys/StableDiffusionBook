@@ -46,3 +46,8 @@
 
 - 提示词 + 3D 参考
 
+
+## 项目
+
+[WebUi：为Krita插件等添加自定义后端API](https://github.com/Interpause/auto-sd-paint-ext)
+

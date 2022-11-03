@@ -4,7 +4,13 @@
 !!! tip
     The Stable Diffusion WebUi is currently iterating very quickly and there are a lot of updates every day, so it is recommended to pull the latest code every day.
 
+## 11/2
 
+Adding custom backend APIs for Krita plugins and more
+
+https://github.com/Interpause/auto-sd-paint-ext
+
+In [this PR](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4142), WebUi fixes an issue with IMG2IMG not releasing RAM after processing
 
 ## 11/1
 

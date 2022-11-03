@@ -41,3 +41,6 @@ The basic direction of the current research is
 
 - prompt + 3D reference
 
+# Repo
+
+[WebUi: Adding custom backend APIs for Krita plugins and more](https://github.com/Interpause/auto-sd-paint-ext)
