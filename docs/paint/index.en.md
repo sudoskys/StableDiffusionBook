@@ -29,20 +29,33 @@ The toolbox that you can see when you open the page
 
 ### Tool
 
+* [Online retouching - link to AutoMatic's WebUi backend](https://www.painthua.com/)
+
+* [Pic2Prompt0](https://www.latentspace.dev/)
+
+* [Pic2Prompt1](https://magicstudio.com/pic2prompt/editor)
+
+* [Pic2Prompt2](https://replicate.com/methexis-inc/img2prompt)
+
 * [QuickShare-pastebin](https://paste.rs/web)
 
 * [prompthero](https://prompthero.com/)
 
 * [Prompt Search ](https://www.ptsearch.info/home/)
 
+* [Prompt Search2](https://pagebrain.ai/promptsearch/?q=girl&page=1)
+
+* [midjourney haha](https://www.midjourney.com/showcase/)
+
+* [Social Generative AI](https://histre.com/integrations/generative/)
 
 ### Reference works
 
 * [arthub](https://arthub.ai/)
 
-* [NOVELAI.IO ](https://novelai.io/)
+* [NAI-NOVELAI.IO ](https://novelai.io/)
 
-* [Pixai](https://pixai.art/)
+* [NAI-Pixai](https://pixai.art/)
 
 * [LEXICA](https://lexica.art/)
 
@@ -54,7 +67,7 @@ The toolbox that you can see when you open the page
 
 * [artiststostudy](https://artiststostudy.pages.dev/)
 
-* [Community Showcase](https://www.midjourney.com/showcase/)
+* [midjourney haha](https://www.midjourney.com/showcase/)
 
 The tag reference should use [Danbooru wiki Tag](https://danbooru.donmai.us/wiki_pages/tag_groups) and [MidJourney-Styles-and-Keywords-Reference](https:// github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference)
 

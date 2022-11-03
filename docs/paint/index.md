@@ -32,6 +32,14 @@
 
 ### 工具
 
+* [在线修图-链接AutoMatic的WebUi后端](https://www.painthua.com/)
+
+* [Pic2Prompt0](https://www.latentspace.dev/)
+
+* [Pic2Prompt1](https://magicstudio.com/pic2prompt/editor)
+
+* [Pic2Prompt2](https://replicate.com/methexis-inc/img2prompt)
+
 * [Danbooru 标签超市](https://tags.novelai.dev/) [AI绘画tag生成器](https://aitag.top/)
 
 * [快速分享-在线剪切板](https://netcut.cn/)
@@ -40,14 +48,19 @@
 
 * [Prompt Search ](https://www.ptsearch.info/home/)
 
+* [Prompt Search2](https://pagebrain.ai/promptsearch/?q=girl&page=1)
+
+* [midjourney haha](https://www.midjourney.com/showcase/)
+
+* [Social Generative AI](https://histre.com/integrations/generative/)
 
 ### 作品参考
 
 * [arthub](https://arthub.ai/)
 
-* [NOVELAI.IO ](https://novelai.io/)
+* [NAI-NOVELAI.IO ](https://novelai.io/)
 
-* [Pixai](https://pixai.art/)
+* [NAI-Pixai](https://pixai.art/)
 
 * [LEXICA](https://lexica.art/)
 
