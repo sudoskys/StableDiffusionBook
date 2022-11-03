@@ -338,10 +338,10 @@ For example, if you use `a busy city street in a modern city|illustration|cinema
 
 ## Highres. fix
 
-
 A convenience option to partially render your image at a lower resolution, upscale it, and then add details at a high resolution.
 
 By default, txt2img makes horrible images at very high resolutions, and this makes it possible to avoid using the small picture's composition. Enabled by checking the "Highres. fix" checkbox on the txt2img page.
+
 
 ## The Principle of Cue Words
 
