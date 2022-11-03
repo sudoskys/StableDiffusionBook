@@ -1212,6 +1212,19 @@
     X/Y graphs
   </a>
   
+    <nav class="md-nav" aria-label="X/Y graphs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prompt-sr" class="md-nav__link">
+    Prompt S/R
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1467,6 +1480,26 @@ If antivirus software intercepts it, it is possible that the creator has injecte
 <blockquote>
 <p>FromWebUiWiki</p>
 </blockquote>
+<h4 id="prompt-sr">Prompt S/R</h4>
+<p>Prompt S/R is one of more difficult to understand modes of operation
+for X/Y Plot. S/R stands for search/replace, and that's what it does -
+you input a list of words or phrases, it takes the first from the list
+and treats it as keyword, and replaces all instances of that keyword
+with other entries from  the list.</p>
+<p>For example, with prompt <code>a man holding an apple, 8k clean</code>, and Prompt S/R <code>an apple, a watermelon, a gun</code> you will get three prompts:</p>
+<ul>
+<li><code>a man holding an apple, 8k clean</code></li>
+<li><code>a man holding a watermelon, 8k clean</code></li>
+<li><code>a man holding a gun, 8k clean</code></li>
+</ul>
+<p>The list uses the same syntax as a line in a CSV file, so if you want
+to include commas into your entries you have to put text in quotes and
+make sure there is no space between quotes and separating commas:</p>
+<ul>
+<li><code>darkness, light, green, heat</code> - 4 items - <code>darkness</code>, <code>light</code>, <code>green</code>, <code>heat</code></li>
+<li><code>darkness, "light, green", heat</code> - WRONG - 4 items - <code>darkness</code>, <code>"light</code>, <code>green"</code>, <code>heat</code></li>
+<li><code>darkness,"light, green",heat</code> - RIGHT - 3 items - <code>darkness</code>, <code>light, green</code>, <code>heat</code></li>
+</ul>
 <h3 id="variations"><strong>Variations</strong></h3>
 <p>A Variation strength slider and Variation seed field allow you to specify how much the existing picture should be altered to look like a different one. At maximum strength, you will get pictures with the Variation seed, at minimum - pictures with the original Seed (except for when using ancestral samplers).</p>
 <h3 id="styles"><strong>Styles</strong></h3>
@@ -1671,11 +1704,11 @@ the same effect. Use the <code>--no-progressbar-hiding</code> commandline option
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 3, 2022 12:19:59</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 3, 2022 12:24:21</span>
       
         <br>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 3, 2022 12:19:59</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 3, 2022 12:24:21</span>
       
     
   </small>

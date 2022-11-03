@@ -1212,6 +1212,19 @@
     X/Y 图
   </a>
   
+    <nav class="md-nav" aria-label="X/Y 图">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prompt-sr" class="md-nav__link">
+    Prompt S/R 替换
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1436,6 +1449,23 @@
 <blockquote>
 <p>引用官方 Wiki 的设置图</p>
 </blockquote>
+<h4 id="prompt-sr">Prompt S/R 替换</h4>
+<p>提示S/R是X/Y图的的一种较难理解的操作模式。</p>
+<p>S/R是搜索/替换的意思，输入一个单词或短语的列表，它从列表中取第一个并将其视为关键词，并将该关键词的所有实例替换为列表中的其他条目的所有实例替换为列表中的其他条目。</p>
+<p>例如，提示 <code>a man holding an apple, 8k clean</code> 和 S/R提示 <code>an apple, a watermelon, a gun</code> 结合，你会得到三个提示。</p>
+<ul>
+<li><code>a man holding an apple, 8k clean</code></li>
+<li><code>a man holding a watermelon, 8k clean</code></li>
+<li><code>a man holding a gun, 8k clean</code></li>
+</ul>
+<p>列表使用的语法与CSV文件中的一行相同，所以如果你想在你的条目中加入逗号，你可以
+在你的条目中加入逗号，你必须将文本放在引号中，并确保引号之间没有空格。
+确保引号和分隔逗号之间没有空格。</p>
+<ul>
+<li><code>darkness, light, green, heat</code> - 4 items - <code>darkness</code>, <code>light</code>, <code>green</code>, <code>heat</code></li>
+<li><code>darkness, "light, green", heat</code> - WRONG - 4 items - <code>darkness</code>, <code>"light</code>, <code>green"</code>, <code>heat</code></li>
+<li><code>darkness,"light, green",heat</code> - RIGHT - 3 items - <code>darkness</code>, <code>light, green</code>, <code>heat</code></li>
+</ul>
 <h3 id="variations"><strong>Variations种子变化</strong></h3>
 <p><code>Variation strength slider</code> 和 <code>Variation seed field</code> 允许您指定现有图片应更改多少以使其看起来不同。
 在最大强度下，您将获得带有变异种子的图片，至少 - 带有原始种子的图片（使用先前采样器时除外）。</p>
@@ -1634,11 +1664,11 @@ If you add ".top3." to filename, for example, flavors.top3.txt, the three most r
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月3日 12:19:59</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月3日 12:24:21</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月3日 12:19:59</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月3日 12:24:21</span>
       
     
   </small>
