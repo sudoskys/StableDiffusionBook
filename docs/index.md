@@ -27,6 +27,8 @@ Stable diffusion本来是面向三次元的，而 NAI 是二次元特化版本�
 
 ## 导航
 
+[工作台速查传送门](https://draw.dianas.cyou/paint/)
+
 **起步于此**
 
 介绍了一些术语和新闻内容。有新动态会更新到新闻页面。
