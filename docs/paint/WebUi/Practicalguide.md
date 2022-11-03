@@ -90,7 +90,9 @@ emoji(💰💶💷💴💵,🎊🪅🪄🎀,👩‍🚀) 表情符号也是可�
 
 摄影术语 https://zh.wikipedia.org/zh-cn/%E9%AB%98%E9%80%9F%E6%91%84%E5%BD%B1
 
-极限运动 https://en.wikipedia.org/wiki/Extreme_sport https://en.wikipedia.org/wiki/Category:Sports_by_type
+极限运动 https://en.wikipedia.org/wiki/Extreme_sport 
+
+https://en.wikipedia.org/wiki/Category:Sports_by_type
 
 构图艺术 https://en.wikipedia.org/wiki/Composition_(visual_arts)
 
