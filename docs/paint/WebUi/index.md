@@ -237,13 +237,33 @@ a \(word\) - 在提示中使用文字 () 字符
     From [Here](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2905)
 
 
-## 否定提示词
+## 消极提示词
 
-WebUi(SD)网页应用会在生成时**拒绝否定提示词有关的内容**。
+WebUi(SD)网页应用会在生成时**拒绝消极提示词有关的内容**。
 
-否定提示是一种使用稳定扩散的方式，允许用户指定他不想看到的内容，而不对模型做额外的要求。
+消极提示是一种使用稳定扩散的方式，允许用户指定他不想看到的东西，而不需要对模型有任何额外的负担或要求。工作方式是在做取样时，使用用户指定的文本而不是空字符串作为`unconditional_conditioning`。
 
-通过指定 `unconditional_conditioning` 参数，在生成中采样器会查看去噪后符合提示的图像（城堡） 和 去噪后看起来符合负面提示的图像（颗粒状、雾状）之间的差异，并尝试将最终结果远离否定提示词。
+下面是来自[txt2img.py](https://github.com/CompVis/stable-diffusion/blob/main/scripts/txt2img.py)的（简化）代码。
+
+```python
+# prompts = ["a castle in a forest"]
+# batch_size = 1
+
+c = model.get_learned_conditioning(prompts)
+uc = model.get_learned_conditioning(batch_size * [""])
+
+samples_ddim, _ = sampler.sample(conditioning=c, unconditional_conditioning=uc, [...] )
+```
+
+这就启动了采样器，反复进行以下流程。
+
+    对图片进行去噪处理，使其看起来更像你的提示（条件）。
+    对图片进行去噪处理，使其看起来更像一个空的提示（无条件条件）。
+    观察这两者之间的差异，并利用它来产生一组对噪声图片的改变（不同的采样器对这一部分的处理方式不同）。
+
+然后，采样器将查看经过噪声处理的图像与经过噪声处理的图像之间的差异，使其看起来像你的提示（一座城堡），以及经过噪声处理的图像看起来像你的负面提示（颗粒状、雾状），并尝试将最终结果移向前者而远离后者。
+
+- 使用否定提示的样例
 
 ```python
 # prompts = ["a castle in a forest"]
@@ -275,7 +295,6 @@ mutilated, tranny, trans, trannsexual, [out of frame], (bad proportions),
 normal quality, text, censored, gown, latex, pencil
 ```
 
-[官方Wiki](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Negative-prompt#examples)
 
 
 ## CFG Scale/Denoising strength 契合度/降噪

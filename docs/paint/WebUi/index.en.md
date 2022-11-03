@@ -220,15 +220,39 @@ NAI uses my implementation from before 2022-09-29, except they have 1.05 as the 
 
 ## Negative prompt
 
-Allows you to use another prompt of things the model should avoid when generating the picture. This works by using the negative prompt for unconditional conditioning in the sampling process instead of an empty string.
+Negative prompt is a way to use the Stable Diffusion in a way that
+allows the user to specify what he doesn't want to see, without any
+extra load or requirements for the model. In
+addition to just being able to specify what you don't want to see, which
+sometimes is possible via usual prompt, and sometimes isn't, this
+allows you to do that without using any of your allowance of 75 tokens
+the prompt consists of.
 
-SEE [HERE](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Negative-prompt)
+The way negative prompt works is by using user-specified text instead of empty string for `unconditional_conditioning` when doing sampling.
 
-Negative prompt is a way to use the Stable Diffusion in a way that allows the user to specify what he doesn't want to see, without any extra load or requirements for the model.
+Here's the (simplified) code from [txt2img.py](https://github.com/CompVis/stable-diffusion/blob/main/scripts/txt2img.py):
+
+```python
+# prompts = ["a castle in a forest"]
+# batch_size = 1
+
+c = model.get_learned_conditioning(prompts)
+uc = model.get_learned_conditioning(batch_size * [""])
+
+samples_ddim, _ = sampler.sample(conditioning=c, unconditional_conditioning=uc, [...])
+```
+
+This launches the sampler that repeatedly:
+
+* de-noises the picture guiding it to look more like your prompt (conditioning)
+* de-noises the picture guiding it to look more like an empty prompt (unconditional_conditioning)
+* looks at difference between those and uses it to produce a set of
+  changes for the noisy picture (different samplers do that part
+  differently)
 
 To use negative prompt, all that's needed is this:
 
-```
+```python
 # prompts = ["a castle in a forest"]
 # negative_prompts = ["grainy, fog"]
 
@@ -238,30 +262,12 @@ uc = model.get_learned_conditioning(negative_prompts)
 samples_ddim, _ = sampler.sample(conditioning=c, unconditional_conditioning=uc, [...])
 ```
 
-The sampler then will look at differences between image de-noised to look like your prompt (a castle), and an image de-noised to look like your negative prompt (grainy, fog), and try to move the final results towards the former and away from latter.
+The sampler then will look at differences between image de-noised to
+look like your prompt (a castle), and an image de-noised to look like
+your negative prompt (grainy, fog), and try to move the final results
+towards the former and away from latter.
 
-
-For example, watermarks and text content are rejected using the following prompt
-
-```
-lowres, bad anatomy, bad hands, text, error, missing fingers,
-extra digit, fewer digits, cropped, worst quality, low quality,
-normal quality, jpeg artifacts, signature, watermark, username, blurry
-```
-
-and
-
-
-```
-ugly, fat, obese, chubby, (((deformed))), [blurry], bad anatomy,
-disfigured, poorly drawn face, mutation, mutated, (extra_limb),
-(ugly), (poorly drawn hands fingers), messy drawing, morbid,
-mutilated, tranny, trans, trannsexual, [out of frame], (bad proportions),
-(poorly drawn body), (poorly drawn legs), worst quality, low quality,
-normal quality, text, censored, gown, latex, pencil
-```
-
-[Wiki](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Negative-prompt#examples)
+From [Wiki](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Negative-prompt#examples)
 
 
 
