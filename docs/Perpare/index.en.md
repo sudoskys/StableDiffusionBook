@@ -25,7 +25,7 @@ First, unfortunately, because it requires `CUDA` acceleration, only **Nvidia gra
 
 [Discussion about installing on Amd](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/1046)
 
-!!! danger "graphics card warranty"
+!!! danger "GPU Warranty Policy"
     In mainland China, the warranty policy for damage caused by graphics cards used for deep learning is the same as the warranty for damage caused by mining digital cryptocurrencies.
     
     Overuse will lead to GPU damage
