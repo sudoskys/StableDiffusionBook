@@ -1319,6 +1319,7 @@
 
 <h1 id="practical-guide">Practical Guide</h1>
 <p>This short practical guide will give you a quick overview of how to adjust the parameters appropriately to achieve the desired effect.</p>
+<p>Currently, Ai does not handle details and multiple characters well, and the light and shadow structure will be messed up if handled one by one. If retouching, it is better to redraw. But it is practical to draw backgrounds and do previews.</p>
 <h2 id="scene-table">Scene table</h2>
 <p>Viewed vertically</p>
 <table>
@@ -1357,8 +1358,8 @@
 </tr>
 <tr>
 <td>state</td>
-<td>character event ground</td>
-<td></td>
+<td>character event</td>
+<td>3D/2D</td>
 <td></td>
 </tr>
 <tr>
@@ -1437,6 +1438,10 @@
 <p>~Self-deceptive reproduction: image to image, noise reduction to below 0.3... ~</p>
 <h2 id="designing-with-ai">Designing with Ai</h2>
 <ul>
+<li>Backgrounds</li>
+</ul>
+<p>Once you get a slightly more saturated photo, you can process it in AI and use it as a background.</p>
+<ul>
 <li>Icons</li>
 </ul>
 <p><a href="https://www.bilibili.com/video/BV1384y1B7MX">Look at this</a></p>
@@ -1455,9 +1460,9 @@ white background,
 <p><code>Chibi</code> controls the character to be Q (big head, small body), add if not Q enough</p>
 <p><code>sticker</code> is to specify the style as a social media sticker, required</p>
 <p><strong>negative vocabulary</strong></p>
-<p><div class="highlight"><pre><span></span><code>bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, jpeg artifacts, signature, watermark, username, blurry, bad feet
+<div class="highlight"><pre><span></span><code>bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, jpeg artifacts, signature, watermark, username, blurry, bad feet
 </code></pre></div>
-low quality may or may not be added</p>
+<p>low quality can be added or not, if you want to be more flat, please add <code>3D</code> to negative hints.</p>
 <p>Size required square.</p>
 <ul>
 <li>Character design</li>
@@ -1501,11 +1506,11 @@ low quality may or may not be added</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 3, 2022 01:19:44</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 3, 2022 01:29:23</span>
       
         <br>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 3, 2022 01:19:44</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 3, 2022 01:29:23</span>
       
     
   </small>

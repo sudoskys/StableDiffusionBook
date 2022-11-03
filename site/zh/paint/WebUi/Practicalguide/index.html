@@ -1319,6 +1319,7 @@
 
 <h1 id="_1">实战指南</h1>
 <p>这个简短的实战指南，可以让你快速了解如何合理调整参数达成目的效果。</p>
+<p>目前， Ai 处理不好细节和多人物，如果一个个处理，光影结构就会乱掉。如果修图，不如重画。但是画背景和做预览很实用。</p>
 <h2 id="_2">场景表</h2>
 <p>竖着看</p>
 <table>
@@ -1358,7 +1359,7 @@
 <tr>
 <td>状态</td>
 <td>人物事件地</td>
-<td></td>
+<td>3D/2D</td>
 <td></td>
 </tr>
 <tr>
@@ -1436,13 +1437,17 @@
 <p>~自欺欺人式复刻：图转图，降噪拉到到 0.3 以下...~</p>
 <h2 id="ai">使用 Ai 进行设计</h2>
 <ul>
+<li>背景</li>
+</ul>
+<p>拿到一张饱和度稍微高的照片后，可以用 AI 进行处理，然后当作背景使用。</p>
+<ul>
 <li>图标</li>
 </ul>
 <p><a href="https://www.bilibili.com/video/BV1384y1B7MX">看这个</a></p>
 <ul>
 <li>表情包</li>
 </ul>
-<p>表情包效果真的很好。 <code>sticker</code> 配合 西方颜文字 完成度超高！</p>
+<p>表情包效果真的一级棒。 <code>sticker</code> 配合 西方颜文字 完成度超高！</p>
 <p>文档编写者试了一下，以下 prompt 可以出高质量表情包。</p>
 <p>不要对贴纸要求质量提示词。</p>
 <p><strong>积极词汇</strong></p>
@@ -1454,9 +1459,9 @@ white background,
 <p><code>Chibi</code> 控制角色为 Q版(大头小身)，不够 Q 就加</p>
 <p><code>sticker</code> 是指定风格为社交软件贴纸，必须</p>
 <p><strong>消极词汇</strong></p>
-<p><div class="highlight"><pre><span></span><code>bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, jpeg artifacts, signature, watermark, username, blurry, bad feet
+<div class="highlight"><pre><span></span><code>bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, jpeg artifacts, signature, watermark, username, blurry, bad feet,3D
 </code></pre></div>
-low quality 可加可不加</p>
+<p>low quality 可加可不加，如果想更加平面化，请加入 3D 到负面提示。</p>
 <p>尺寸要求正方形。</p>
 <ul>
 <li>立绘</li>
@@ -1500,11 +1505,11 @@ low quality 可加可不加</p>
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月3日 01:19:44</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月3日 01:29:23</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月3日 01:19:44</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月3日 01:29:23</span>
       
     
   </small>
