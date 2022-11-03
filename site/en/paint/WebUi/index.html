@@ -1425,33 +1425,45 @@ use the old implementation.</p>
 <p>From <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2905">Here</a></p>
 </details>
 <h2 id="negative-prompt">Negative prompt</h2>
-<p>Allows you to use another prompt of things the model should avoid when generating the picture. This works by using the negative prompt for unconditional conditioning in the sampling process instead of an empty string.</p>
-<p>SEE <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Negative-prompt">HERE</a></p>
-<p>Negative prompt is a way to use the Stable Diffusion in a way that allows the user to specify what he doesn't want to see, without any extra load or requirements for the model.</p>
+<p>Negative prompt is a way to use the Stable Diffusion in a way that
+allows the user to specify what he doesn't want to see, without any
+extra load or requirements for the model. In
+addition to just being able to specify what you don't want to see, which
+sometimes is possible via usual prompt, and sometimes isn't, this
+allows you to do that without using any of your allowance of 75 tokens
+the prompt consists of.</p>
+<p>The way negative prompt works is by using user-specified text instead of empty string for <code>unconditional_conditioning</code> when doing sampling.</p>
+<p>Here's the (simplified) code from <a href="https://github.com/CompVis/stable-diffusion/blob/main/scripts/txt2img.py">txt2img.py</a>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># prompts = [&quot;a castle in a forest&quot;]</span>
+<span class="c1"># batch_size = 1</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_learned_conditioning</span><span class="p">(</span><span class="n">prompts</span><span class="p">)</span>
+<span class="n">uc</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_learned_conditioning</span><span class="p">(</span><span class="n">batch_size</span> <span class="o">*</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">])</span>
+
+<span class="n">samples_ddim</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">sampler</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">conditioning</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">unconditional_conditioning</span><span class="o">=</span><span class="n">uc</span><span class="p">,</span> <span class="p">[</span><span class="o">...</span><span class="p">])</span>
+</code></pre></div>
+<p>This launches the sampler that repeatedly:</p>
+<ul>
+<li>de-noises the picture guiding it to look more like your prompt (conditioning)</li>
+<li>de-noises the picture guiding it to look more like an empty prompt (unconditional_conditioning)</li>
+<li>looks at difference between those and uses it to produce a set of
+  changes for the noisy picture (different samplers do that part
+  differently)</li>
+</ul>
 <p>To use negative prompt, all that's needed is this:</p>
-<div class="highlight"><pre><span></span><code># prompts = [&quot;a castle in a forest&quot;]
-# negative_prompts = [&quot;grainy, fog&quot;]
+<div class="highlight"><pre><span></span><code><span class="c1"># prompts = [&quot;a castle in a forest&quot;]</span>
+<span class="c1"># negative_prompts = [&quot;grainy, fog&quot;]</span>
 
-c = model.get_learned_conditioning(prompts)
-uc = model.get_learned_conditioning(negative_prompts)
+<span class="n">c</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_learned_conditioning</span><span class="p">(</span><span class="n">prompts</span><span class="p">)</span>
+<span class="n">uc</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_learned_conditioning</span><span class="p">(</span><span class="n">negative_prompts</span><span class="p">)</span>
 
-samples_ddim, _ = sampler.sample(conditioning=c, unconditional_conditioning=uc, [...])
+<span class="n">samples_ddim</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">sampler</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">conditioning</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">unconditional_conditioning</span><span class="o">=</span><span class="n">uc</span><span class="p">,</span> <span class="p">[</span><span class="o">...</span><span class="p">])</span>
 </code></pre></div>
-<p>The sampler then will look at differences between image de-noised to look like your prompt (a castle), and an image de-noised to look like your negative prompt (grainy, fog), and try to move the final results towards the former and away from latter.</p>
-<p>For example, watermarks and text content are rejected using the following prompt</p>
-<div class="highlight"><pre><span></span><code>lowres, bad anatomy, bad hands, text, error, missing fingers,
-extra digit, fewer digits, cropped, worst quality, low quality,
-normal quality, jpeg artifacts, signature, watermark, username, blurry
-</code></pre></div>
-<p>and</p>
-<div class="highlight"><pre><span></span><code>ugly, fat, obese, chubby, (((deformed))), [blurry], bad anatomy,
-disfigured, poorly drawn face, mutation, mutated, (extra_limb),
-(ugly), (poorly drawn hands fingers), messy drawing, morbid,
-mutilated, tranny, trans, trannsexual, [out of frame], (bad proportions),
-(poorly drawn body), (poorly drawn legs), worst quality, low quality,
-normal quality, text, censored, gown, latex, pencil
-</code></pre></div>
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Negative-prompt#examples">Wiki</a></p>
+<p>The sampler then will look at differences between image de-noised to
+look like your prompt (a castle), and an image de-noised to look like
+your negative prompt (grainy, fog), and try to move the final results
+towards the former and away from latter.</p>
+<p>From <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Negative-prompt#examples">Wiki</a></p>
 <h2 id="cfg-scaledenoising-strength-fittingnoise-reduction">CFG Scale/Denoising strength Fitting/noise reduction</h2>
 <p><strong>CFG Scale</strong></p>
 <p>The higher the scale, the more faithful the program is to the prompt, and the better the fit.</p>
@@ -1570,7 +1582,7 @@ PS: too high a step count (&gt;30) will not give better results</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 3, 2022 14:05:00</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 3, 2022 14:23:57</span>
       
         <br>
         Created:
