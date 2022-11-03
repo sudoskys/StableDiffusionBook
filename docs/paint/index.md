@@ -30,6 +30,8 @@
 
 * [颜色列表](https://en.wikipedia.org/wiki/List_of_colors_by_shade)
 
+* [表情符号参考](https://unicode.org/emoji/charts/emoji-list.html)
+
 ### 工具
 
 * [快速分享-在线剪切板](https://netcut.cn/)

@@ -27,6 +27,8 @@ The toolbox that you can see when you open the page
 
 * [List_of_colors_by_shade](https://en.wikipedia.org/wiki/List_of_colors_by_shade)
 
+* [emoji-list](https://unicode.org/emoji/charts/emoji-list.html)
+
 ### Tool
 
 * [QuickShare-pastebin](https://paste.rs/web)

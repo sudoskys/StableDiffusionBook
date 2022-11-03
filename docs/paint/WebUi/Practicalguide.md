@@ -53,6 +53,8 @@
 
 emoji(💰💶💷💴💵,🎊🪅🪄🎀,👩‍🚀) 表情符号也是可以使用并且 **非常准确** 的，经过我多次测试，Ai 可以认识表情符号。
 
+* [表情符号参考](https://unicode.org/emoji/charts/emoji-list.html)
+
 - 动漫风格
 
 `anime coloring` 会有很好的效果，像动漫截图一样。(如果遇到黑白色，需要指定人物部件的色彩)

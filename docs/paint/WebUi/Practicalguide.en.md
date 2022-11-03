@@ -158,6 +158,9 @@ If you want to reproduce it on the generation, you need the same `seed`, cue wor
 
 emoji(💰💶💷💴💵,🎊🪅🪄🎀,👩 🚀) Emoticons are also available and **very accurate**, I have tested them many times and Ai can recognise them.
 
+* [emoji-list](https://unicode.org/emoji/charts/emoji-list.html)
+
+
 - Anime style
 
 `anime colouring` will work well, like an anime screenshot. (If you encounter black and white, you need to specify the colour of the character parts)
