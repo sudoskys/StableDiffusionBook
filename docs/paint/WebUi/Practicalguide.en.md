@@ -4,6 +4,9 @@ This short practical guide will give you a quick overview of how to adjust the p
 
 Currently, Ai does not handle details and multiple characters well, and the light and shadow structure will be messed up if handled one by one. If retouching, it is better to redraw. But it is practical to draw backgrounds and do previews.
 
+**The core logic is to narrow down the scope of pre-selected data.**
+
+
 ## Scene table
 
 Viewed vertically
@@ -147,7 +150,7 @@ If you want some examples of differencing, [5CH Japanese Wiki](https://seesaawik
 
 If you want to reproduce it on the generation, you need the same `seed`, cue words, and other parameters (even size). However, if the other side uses stylisation, then you can hardly reproduce it.
 
-~Self-deceptive reproduction: image to image, noise reduction to below 0.3... ~
+--Self-deceptive reproduction: image to image, noise reduction to below 0.3...--
 
 ## Frivolous details
 
