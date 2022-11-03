@@ -37,13 +37,13 @@ WebUi uses `--gradio-img2img-tool color-sketch` to start up a plugin that brings
 
 
 
-### Graphical parameters
+### Resizing
 
-Just resize : Resizes the image to the target resolution. The image will be squeezed unless the height and width exactly match
+*Just resize* - simply resizes the source image to the target resolution, resulting in an incorrect aspect ratio
 
-Crop and resize : Resizes the image so that the entire target resolution is filled by the image. Crop the excess.
+*Crop and resize* - resize source image preserving aspect ratio so that entirety of target resolution is occupied by it, and crop parts that stick out
 
-Resize and fill: Resizes the image so that the entire image is within the target resolution. Fill blank areas with the colour of the image.
+*Resize and fill* - resize source image preserving aspect ratio so that it entirely fits target resolution, and fill empty space by rows/columns from the source image
 
 
 
