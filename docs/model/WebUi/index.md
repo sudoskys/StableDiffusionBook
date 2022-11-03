@@ -1,6 +1,6 @@
-# 基础
+## 基础
 
-## 横条参数说明
+### 横条参数说明
 
 `step` 迭代多少次, 取值和 `sampling method` 有关, `DDIM` 采样方法收敛较快, 具体差别见调参魔法 `Sampler vs. Steps Comparison (low to mid step counts)` 。
 
@@ -17,10 +17,10 @@
 [一个小指南：RedditAbout](https://www.reddit.com/r/StableDiffusion/comments/xbeyw3/can_anyone_offer_a_little_guidance_on_the/)
 
 
-## 生成图片发生BUG的自救
+### 生成图片发生BUG的自救
 
 
-### 生成黑/绿图
+#### 生成黑/绿图
 
 [生成黑/绿图](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Install-and-Run-on-NVidia-GPUs)
 
@@ -29,24 +29,24 @@
 如果是其他显卡而且加载了 VAE 时出现黑图，加入 `--no-half-vae` 参数[^2]。
 
 
-### RuntimeError Sizes of tensors must match
+#### RuntimeError Sizes of tensors must match
 
 (img2img) 如果出现 `RuntimeError: Sizes of tensors must match`，请调整输入图像的分辨率
 
 
-### 彩虹混乱图
+#### 彩虹混乱图
 
 如果 AI 输出了混乱的彩虹色图片，则生成分辨率被设置得太低
 
 
-### 高分辨率出鬼图 / 低显存生成大分辨率图片
+#### 高分辨率出鬼图 / 低显存生成大分辨率图片
 
 简单说就是使用低分辨率重新生成或者超分。见钩吻
 
 你可以在下个章节看到具体操作流程。
 
 
-### RuntimeError: Unable to find a valid cuDNN algorithm to run convolution
+#### RuntimeError: Unable to find a valid cuDNN algorithm to run convolution
 
 前面那节有相关的参数建议。
 
@@ -59,12 +59,12 @@ import torch
 print(torch.cuda.is_available())
 ```
 
-### CUDA out of memory
+#### CUDA out of memory
 
 原因：显存不足。`--lowvram` 和 `--medvram` 启动参数都可以改善此问题。
 
 
-## ckpt 文件安全问题[^4]
+### ckpt 文件安全问题[^4]
 
 ckpt 文件被加载时基本上可以执行任何内容，盲目加载有安全风险。请检查来源是否可靠再加载。
 如果杀毒软件拦截，有可能创建者向文件中注入了恶意的 Python 代码。
@@ -74,9 +74,9 @@ ckpt 文件被加载时基本上可以执行任何内容，盲目加载有安全
 
 
 
-# 进阶
+## 进阶
 
-## 启动流程[^6]
+### 启动流程[^6]
 
 ![Roaming_info.png](https://user-images.githubusercontent.com/75739606/198679721-2a7b38b8-41f3-405c-9ea3-40f1b5e8cc7e.png)
 <!--
@@ -85,14 +85,14 @@ ckpt 文件被加载时基本上可以执行任何内容，盲目加载有安全
 >来自 allophane.com/index.php/2022/10/17/roaming_info_for_latent_diffusion/
 
 
-## 使用 WebUI 复现 NAI 官网
+### 使用 WebUI 复现 NAI 官网
 
 [相关讨论，应该读一读！](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017)
 
 提示:由于 torch 及其相关框架的性质，尝试完全复原在不同机器上生成的图片是不明智的。所以不要纠结一些细节不能复现。
 
 
-### 需要做的事情
+#### 需要做的事情
 
 * 加载 VAE 和模型附带的 `config.yaml` (可选，有人说此操作空耗显存)
 
@@ -101,7 +101,7 @@ ckpt 文件被加载时基本上可以执行任何内容，盲目加载有安全
 * `Eta noise seed delta` 设置为 `31337`
 
 
-### **不需要**做的事情
+#### **不需要**做的事情
 
 * hypernetwork。官网默认并不使用 hypernetwork
 
@@ -109,12 +109,12 @@ ckpt 文件被加载时基本上可以执行任何内容，盲目加载有安全
 设置 `Stop At last layers of CLIP model` 是为了匹配 NAI 的一个[优化](https://blog.novelai.net/novelai-improvements-on-stable-diffusion-e10d38db82ac)。
 
 
-## 半精度还是单精度？
+### 半精度还是单精度？
 
 如果能，尽量使用半精度，可以节省运算时间/RAM/VRAM，同时图片质量并不会和单精度差多少。~真要说差别可能和你电脑被宇宙射线打了差不多~。
 
 
-## X/Y 图
+### X/Y 图
 
 创建具有不同参数的图像网格。使用X类型和Y类型字段选择应由行和列共享的参数，并将这些参数以逗号分隔输入X值/Y值字段。支持整数、浮点数和范围。
 
@@ -144,12 +144,12 @@ ckpt 文件被加载时基本上可以执行任何内容，盲目加载有安全
 ![引用官方 Wiki 的设置图](https://raw.githubusercontent.com/wiki/AUTOMATIC1111/stable-diffusion-webui/images/xy_grid-medusa-ui.png)
 >引用官方 Wiki 的设置图
 
-## **Variations种子变化**
+### **Variations种子变化**
 
 `Variation strength slider` 和 `Variation seed field` 允许您指定现有图片应更改多少以使其看起来不同。
 在最大强度下，您将获得带有变异种子的图片，至少 - 带有原始种子的图片（使用先前采样器时除外）。
 
-## **提示词模板**
+### **提示词模板**
 
 “Save prompt as style” 按钮将当前的提示写入 `styles.csv`，该文件包含样式集合
 
@@ -158,7 +158,7 @@ ckpt 文件被加载时基本上可以执行任何内容，盲目加载有安全
 要删除样式，请从 `styles.csv` 中手动将其删除并重新启动程序。
 
 
-## xformers
+### xformers
 
 xformers 分辨率越高加速效果越好。使用 xformers 会引入一些随机性，稍微影响生成的图像。
 
@@ -169,7 +169,7 @@ xformers 分辨率越高加速效果越好。使用 xformers 会引入一些随�
     本人实测，2050 在启用 xformers 之后，速度慢了 50%
 
 
-### 在 Windows 上编译 Xformers
+#### 在 Windows 上编译 Xformers
 
 !!! info
 
@@ -264,7 +264,7 @@ pip install xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl
 >COMMANDLINE_ARGS=
 
 
-### Windows 编译错误自查
+#### Windows 编译错误自查
 
 >错误:`Filename too long` 和 `fatal error C1083: Cannot open compiler generated file: '': Invalid argument`
 
@@ -281,7 +281,7 @@ pip install xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl
 自己编译指路 [wiki/Xformers](https://rentry.org/sdg_faq#xformers-increase-your-its-more-cards-supported)， 还有[这篇文章](https://www.reddit.com/r/StableDiffusion/comments/xz26lq/automatic1111_xformers_cross_attention_with_on/)
 
 
-## 使用CPU进行绘画
+### 使用CPU进行绘画
 
 根据此 [pr](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2597)
 
@@ -289,7 +289,7 @@ pip install xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl
 
 
 
-## CLIP Interrogate
+### CLIP Interrogate
 
 CLIP 可以从图像中提取令牌。
 
@@ -312,13 +312,13 @@ Each file adds one line of text to the final description.
 If you add ".top3." to filename, for example, flavors.top3.txt, the three most relevant lines from this file will be added to the prompt (other numbers also work).
 -->
 
-## **Face restoration三次元人脸修复**
+### **Face restoration三次元人脸修复**
 
 适用于三次元。
 
 [https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#face-restoration](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#face-restoration)
 
-## 自定义.css
+### 自定义.css
 
 创建一个名为 `user.css` 的文件并放在 `webui.py` 旁，将自定义 CSS 代码放入 `user.css` 中。
 
@@ -336,11 +336,11 @@ If you add ".top3." to filename, for example, flavors.top3.txt, the three most r
 }
 ```
 
-## notification.mp3 提示音
+### notification.mp3 提示音
 
 放在 WebUI 的根目录的名为 `notification.mp3` 的音频文件将会在处理完成后播放。
 
-## 开发自定义脚本
+### 开发自定义脚本
 
 你可以在 `modules/scripts.py` 中找到 Script 类。
 
@@ -348,7 +348,7 @@ If you add ".top3." to filename, for example, flavors.top3.txt, the three most r
 
 Script 类有四个主要方法，这里通过一个简单的[示例脚本](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Developing-custom-scripts)进行更详细的描述，这个脚本可以旋转和/或翻转生成的图像。
 
-## 修剪模型[^7]
+### 修剪模型[^7]
 
 将要修剪的 `.ckpt` 文件放在 `/stable-diffusion-webui` 文件夹，把 [脚本](https://raw.githubusercontent.com/harubaru/waifu-diffusion/main/scripts/prune.py) 另存本地，删除第 6 行和 第 8 行。然后在 prune.py 中的最后一行编辑 ckpt 的名称。
 
@@ -356,9 +356,9 @@ Script 类有四个主要方法，这里通过一个简单的[示例脚本](http
 
 然后运行这个脚本，修剪过程可能需要几分钟。
 
-# 运行
+## 运行
 
-## 4GB 显卡支持
+### 4GB 显卡支持
 
 针对具有低 VRAM 的 GPU 的优化。这应该可以在具有 4GB 内存的视频卡上生成 512x512 图像。
 
@@ -371,18 +371,18 @@ Script 类有四个主要方法，这里通过一个简单的[示例脚本](http
 
 当然也可以减半精度，或者生成一张 64x64 清理 VRAM
 
-## 不间断生产
+### 不间断生产
 
 在 WebUI 的生成键右击即可出现**不间断生成**的选项。
 
-## 图片信息 Png info
+### 图片信息 Png info
 
 生成的图片自带令牌信息，拖放到查看页面即可查看 。
 
 
 
 
-## NAI 4chan简化版本
+### NAI 4chan简化版本
 
 4chan 版本魔改官后程序，会动态分配，显存不够内存来凑。
 

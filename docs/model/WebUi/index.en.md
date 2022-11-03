@@ -1,8 +1,10 @@
-# Basic
+# Configure
+
+## Basic
 
 >Most of the content in this section is from the [Wiki page](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/), so for English users, it may be better to read the original documentation.
 
-## Parameter intro
+### Parameter intro
 
 The number of iterations of `step` is related to the `sampling method`, the `DDIM` method converges faster, see `Sampler vs.
 
@@ -20,10 +22,10 @@ DDIM, Eula also works well. (with a is the meaning of ancestral, step growth out
 
 
 
-## Self-help when a bug occurs in generating images
+### Self-help when a bug occurs in generating images
 
 
-### Generate black/green image
+#### Generate black/green image
 
 [Generate black/green image](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Install-and-Run-on-NVidia-GPUs)
 
@@ -32,37 +34,37 @@ If u use GTX 16xx GPU, you need to add `-precision full --no-half` to the startu
 If it's a different card and VAE is loaded, add `--no-half-vae` parameter[^2].
 
 
-### RuntimeError Sizes of tensors must match
+#### RuntimeError Sizes of tensors must match
 
 (img2img) If `RuntimeError: Sizes of tensors must match` appears, adjust the resolution of the input image
 
 
-### Rainbow mess
+#### Rainbow mess
 
 If the AI outputs a messy rainbow-colored image, the generated resolution is set too low
 
 
-### High resolution ghost image / low memory to generate large resolution image
+#### High resolution ghost image / low memory to generate large resolution image
 
 This simply means regenerate or super-score using low resolution. See Hook and Kiss
 
 You can see the exact procedure in the next section.
 
 
-### RuntimeError: Unable to find a valid cuDNN algorithm to run convolution
+#### RuntimeError: Unable to find a valid cuDNN algorithm to run convolution
 
 
 Insufficient VRAM
 
 
-### CUDA out of memory
+#### CUDA out of memory
 
 Cause: Insufficient video memory.
 
 Please add `-lowvram` and `-medvram` parameters at startup to try to solve this problem.
 
 
-## Security issues with ckpt models [^4]
+### Security issues with ckpt models [^4]
 
 The ckpt file can execute essentially anything when loaded, and loading it blindly is a security risk. Please check if the source is reliable before loading.
 If antivirus software intercepts it, it is possible that the creator has injected malicious Python code into the file.
@@ -72,9 +74,9 @@ You can check for risks with this script: <https://rentry.org/safeunpickle2>
 
 
 
-# Advanced tutorials
+## Advanced tutorials
 
-## Start-up process [^6]
+### Start-up process [^6]
 
 
 ![Roaming_info.png](https://user-images.githubusercontent.com/75739606/198679721-2a7b38b8-41f3-405c-9ea3-40f1b5e8cc7e.png)
@@ -86,7 +88,7 @@ You can check for risks with this script: <https://rentry.org/safeunpickle2>
 
 
 
-## Replicating the NAI official website using WebUI
+### Replicating the NAI official website using WebUI
 
 [Related discussion](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017)
 
@@ -94,7 +96,7 @@ Tip:Due to the nature of torch and its associated frameworks, it is not wise to 
 
 
 
-### Things to do
+#### Things to do
 
 * Load VAE and the `config.yaml` that comes with the model (optional, some people say this operation consumes video memory)
 
@@ -103,7 +105,7 @@ Tip:Due to the nature of torch and its associated frameworks, it is not wise to 
 * `Eta noise seed delta` set to `31337`
 
 
-### **Doesn't need **to do
+#### **Doesn't need **to do
 
 * hypernetwork. the website does not use hypernetwork by default
 
@@ -113,12 +115,12 @@ TIPS:
 The `Stop At last layers of CLIP model` is set to match one of the NAI [optimizations](https://blog.novelai.net/novelai-improvements-on-stable-diffusion-e10d38db82ac).
 
 
-## Half-precision or single-precision?
+### Half-precision or single-precision?
 
 If you can, try to use half-precision, it saves computing time/RAM/VRAM, while the image quality is not much worse than single-precision. ~The difference is probably the same as if your computer was hit by cosmic rays.
 
 
-## X/Y graphs
+### X/Y graphs
 
 Creates a grid of images with varying parameters. Select which parameters should be shared by rows and columns using X type and Y type fields, and input those parameters separated by comma into X values/Y values fields. For integer, and floating point numbers, and ranges are supported.
 
@@ -149,11 +151,11 @@ Ranges with the count in square brackets
 ![pic](https://raw.githubusercontent.com/wiki/AUTOMATIC1111/stable-diffusion-webui/images/xy_grid-medusa-ui.png)
 >FromWebUiWiki
 
-## **Variations**
+### **Variations**
 
 A Variation strength slider and Variation seed field allow you to specify how much the existing picture should be altered to look like a different one. At maximum strength, you will get pictures with the Variation seed, at minimum - pictures with the original Seed (except for when using ancestral samplers).
 
-## **Styles**
+### **Styles**
 
 
 Press the "Save prompt as style" button to write your current prompt to styles.csv, the file with a collection of styles. A dropbox to the right of the prompt will allow you to choose any style out of previously saved, and automatically append it to your input. To delete a style, manually delete it from styles.csv and restart the program.
@@ -161,7 +163,7 @@ Press the "Save prompt as style" button to write your current prompt to styles.c
 if you use the special string {prompt} in your style, it will substitute anything currently in the prompt into that position, rather than appending the style to your prompt.
 
 
-## xformers
+### xformers
 
 
 xformers The higher the resolution the better the acceleration. Using xformers introduces some randomness that slightly affects the generated image.
@@ -174,7 +176,7 @@ To enable it, if you have a Pascal, Turing or Ampere architecture card (includin
 
 
 
-### Xformers
+#### Xformers
 
 If you use a Pascal, Turing, Ampere, Lovelace or Hopper card with Python 3.10, you shouldn't need to build manually anymore. Uninstall your existing xformers and launch the repo with --xformers. A compatible wheel will be installed.
 
@@ -265,7 +267,7 @@ pip install xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl
 
 
 
-### Windows compiler error self-check
+#### Windows compiler error self-check
 
 >Error:`Filename too long` and `fatal error C1083: Cannot open compiler generated file: '': Invalid argument`
 
@@ -283,13 +285,13 @@ Compile Guide [wiki/Xformers](https://rentry.org/sdg_faq#xformers-increase-your-
 
 
 
-## Painting with the CPU
+### Painting with the CPU
 
 >https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2597
 
 You can generate as much as possible using the CPU with `-use-cpu all`, although 100 times slower.
 
-## CLIP Interrogate
+### CLIP Interrogate
 
 CLIP can extract tokens from images.
 
@@ -312,14 +314,14 @@ If you add ".top3." to filename, for example, flavors.top3.txt, the three most r
 ```
 
 
-## **Face restorationThree dimensional face restoration**
+### **Face restorationThree dimensional face restoration**
 
 Only for real people's faces.
 
 
 [https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#face-restoration](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#face-restoration)
 
-## User scripts
+### User scripts
 
 If the program is launched with `--allow-code` option, an extra text input field for script code
 is available at the bottom of the page, under Scripts -> Custom code. It allows you to input python
@@ -340,7 +342,7 @@ print("Seed was: " + str(processed.seed))
 display(processed.images, processed.seed, processed.info)
 ```
 
-## Custom.css
+### Custom.css
 
 Create a file named `user.css` near `webui.py` and put custom CSS code into it. For example, this makes the gallery taller:
 
@@ -364,18 +366,18 @@ e.g. `set COMMANDLINE_ARGS=--theme=dark`
 
 
 
-## notification.mp3 提示音
+### notification.mp3 提示音
 
 If an audio file named `notification.mp3` is present in webui's root folder, it will be played when the generation process completes.
 
 
-## Custom Scripts
+### Custom Scripts
 
 To install custom scripts, place them into the scripts directory and click the Reload custom script button at the bottom in the settings tab. Custom scripts will appear in the lower-left dropdown menu on the txt2img and img2img tabs after being installed.
 
 some [notable custom scripts](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts#stylepile) created by Web UI users
 
-## Developing custom scripts
+### Developing custom scripts
 
 The Script class definition can be found in modules/scripts.py. To create your own custom script, create a python script that implements the class and drop it into the scripts folder, using the below example or other scripts already in the folder as a guide.
 
@@ -384,7 +386,7 @@ The Script class has four primary methods, described in further detail below wit
 The Script class has four main methods, described in more detail here by a simple [example script](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Developing-custom-scripts) which script can rotate and/or flip the resulting image.
 
 
-## Trimming the model [^7]
+### Trimming the model [^7]
 
 Place the `.ckpt` file to be trimmed in the `/stable-diffusion-webui` folder, save the [script](https://raw.githubusercontent.com/harubaru/waifu-diffusion/main/scripts/prune. py) locally and delete lines 6 and 8. Then edit the name of the ckpt in the last line of prune.py.
 
@@ -392,9 +394,9 @@ For example, `prune_it('wd-v1-2-full-emma.ckpt')`
 
 Then run this script, the pruning process may take a few minutes.
 
-# RUN
+## RUN
 
-## 4GB graphics card support
+### 4GB graphics card support
 
 Optimizations for GPUs with low VRAM. This should make it possible to generate 512x512 images on videocards with 4GB memory.
 
@@ -410,15 +412,15 @@ This implementation of optimization does not require any modification to the ori
 
 
 
-## Uninterrupted Production
+### Uninterrupted Production
 
 The option **Uninterrupted Production** will appear by right-clicking on the WebUI's generation key.
 
-## Saving
+### Saving
 
 Click the Save button under the output section, and generated images will be saved to a directory specified in settings; generation parameters will be appended to a csv file in the same directory.
 
-## Loading
+### Loading
 
 Gradio's loading graphic has a very negative effect on the processing speed of the neural network.
 AUTOMATIC1111 s RTX 3090 makes images about 10% faster when the tab with gradio is not active. By default, the UI
@@ -426,12 +428,12 @@ now hides loading progress animation and replaces it with static "Loading..." te
 the same effect. Use the `--no-progressbar-hiding` commandline option to revert this and show loading animations.
 
 
-## Png info
+### Png info
 
 Adds information about generation parameters to PNG as a text chunk. You can view this information later using any software that supports viewing PNG chunk info, for example: https://www.nayuki.io/page/png-file-chunk-inspector
 
 
-## NAI 4chan ver
+### NAI 4chan ver
 
 4chan's version of the post-magic program will be dynamically allocated, and the vram is not enough to make up the ram.
 
