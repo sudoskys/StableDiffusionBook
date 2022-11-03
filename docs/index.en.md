@@ -34,6 +34,8 @@ While stable diffusion was initially geared towards real-world images, NAI intro
 
 ## Guide
 
+[Workstation Portal](https://draw.dianas.cyou/paint/)
+
 **Start here**
 
 Some terms and news contents are introduced. Any new developments will be updated to the news page.
