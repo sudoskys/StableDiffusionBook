@@ -59,7 +59,7 @@ Write it in conjunction with a spell book.
 
 - Natural language
 
-Natural language can be used directly, WebUi(SD) has natural language processing capabilities (English sentences), and can also use face characters and emoji
+Natural language can be used directly, WebUi(SD) has natural language processing capabilities (English sentences), and can also use  emoji
 
 - parameter [^6]
 
@@ -83,7 +83,9 @@ The background of the picture
 
 - The Tip should not be too long, there is a risk of failure if it exceeds 100.
 
-According to tests, due to the limitations of the GPT-3 model, prompts are not infinite, positive token is between 75-80, negative is about 65, adding too much will prompt you that xxx of xxx are truncated, so don't copy someone else's phrase, the second half of a phrase that is too long doesn't make sense, so use a short negative prompt unless you have a specific object you want to block.
+You can write prompts with more than 75 words. Originally, due to GPT-3 model limitations, the prompts are not unlimited, the positive token is between 75-80, and the content after 75 words is truncated. But WebUi has grouping, so you can write many words.
+
+But not stacking prompts is a good habit.
 
 When the prompt exceeds 75 `tokens` (say 150 `tokens`), WebUi will group the prompt words and submit multiple sets of 75 `tokens`. The tokens will only have the context of the rest of the content in the same set. This means that you may have `bule hair` at the boundary between the first and second group, token `blue` will be in the first group and `hair` will be in the second group. This led to inaccurate results as the two words were separated.
 

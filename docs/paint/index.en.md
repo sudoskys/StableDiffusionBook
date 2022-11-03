@@ -64,6 +64,69 @@ From [^1]
 - Height: same as Width but for individual image height.
     
 - Seed: starting point for RNG. Keep this the same to generate the same (or almost the same) images multiple times. There are no seeds that are inherently better than others but if you vary your input parameters only slightly seeds that produced good results previously will likely still produce good results.
+## How to write prompts
+
+This is a general guide, the content is largely generic, there may be exceptions, please read the corresponding sections for the characteristics of different applications.
+
+- Length
+
+Except for WebUi, the prompt is not infinite due to GPT-3 model limitations, the possitive token is between 75-80 and the content after 75 characters is truncated.
+
+- Special cases
+
+Capitalization does not matter.
+
+Extra spaces at the beginning and end of your prompt are simply discarded. Additional spaces between words are also discarded.
+    
+Underscores ("_") are not converted to spaces.
+
+- Natural Language
+
+Natural language can be used directly, WebUi(SD) has natural language processing capabilities (English sentences), and can also use face characters and emoji, as well as Unicode characters (e.g. Japanese characters).
+
+At least some Unicode characters that are alternative versions of Latin characters get mapped to regular Latin characters. Full-width Latin characters as they're used in Japanese (e.g. ＡＢＣ) are confirmed to be converted. French accents (e.g. é and è) and German umlauts (e.g. ä and ö) are not mapped to their regular counterparts.
+
+- Punctuation
+
+Use it. Separating keywords by commas, periods, or even null characters ("\0") improves image quality. It's not yet clear which type of punctuation or which combination works best - when in doubt just do it in a way that makes the prompt more readable to you. 
+
+### Movement and Poses
+
+If possible, choose prompts that are associated with only a small number of poses. 
+
+A pose in this context means a physical configuration of something: the position and rotation of the image subject relative to the camera, the angles of the joints of humans/robots, the way a block of jello is being compressed, etc. The less variance there is in the thing that you're trying to specify the easier it is for the model to learn. 
+
+Because movement by its very definition involves a dramatic change in the pose of the subject, prompts that are associated with movement frequently result in body horror like duplicate limbs. Also because human limbs and especially human hands and feet have a lot of joints they can assume many different, complex poses. This makes their visualization particularly difficult to learn, for humans and neural networks alike.
+
+TLDR: good image of human standing/sitting is easy, good image of human jumping/running is hard. 
+
+### Specificity
+
+For the training of neural networks the quality of features is important: the stronger the connection between the inputs and the outputs is, the easier it is for a neural network to learn the connection. In other words, if a keyword has a very specific meaning it is much easier to learn how it connects to images than if a keyword has a very broad meaning. In this way, even keywords that are used very rarely like "Zettai Ryouiki" can produce very good results because it's only ever used in very specific circumstances. On the other hand, "anime" does not produce very good results even though it's a relatively common word, presumably because it is used in many different circumstances even if no literal anime is present.
+
+Choosing specific keywords is especially important if you want to control the content of your images. Also: the less abstract your wording is the better. If at all possible, avoid wording that leaves room for interpretation or that requires an "understanding" of something that is not part of the image. Even concepts like "big" or "small" are problematic because they are indistinguishable from objects being close or far from the camera. Ideally use wording that has a high likelihood to appear verbatim on a caption of the image you want.
+
+### Attention / Emphasis
+
+There is a lot of confusion around attention, meaning ways to increase or decrease the weight of specific parts of a prompt.
+Some people assert that putting a keyword in round brackets  increases its effect
+while putting a keyword in square brackets decreases its effect;
+Using more brackets supposedly results in a stronger change.
+However, others can frequently **not** reproduce this effect in their own prompts.
+
+As it turns out the reason for the discrepancy is that  *different scripts process brackets differently* .
+[This fork of webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui) for example explicitly processes brackets while
+[this fork](https://github.com/hlky/stable-diffusion-webui) would only get the effect of brackets that the model implicitly learned from the training data(a different syntax is used instead).
+
+For this reason: **make sure to check whether the syntax of a prompt that you copy from someone else matches the syntax of the script that you use.**
+
+In a [quantitative analysis](https://github.com/JohannesGaessler/stable-diffusion-tools/tree/master/emphasis) square brackets did not have a consistent effect unless explicitly processed.
+
+The repetition of a certain keyword seems to increase its effect regardless of the specific script that is being used.
+
+### Image size
+
+Image size obviously affects content, if the height of the image increases it is more likely to produce an individual or separate thing. If the image width is increased, it is more likely to produce multiple people or landscapes.
 
 # Repo
 
