@@ -26,8 +26,9 @@ First, unfortunately, because it requires `CUDA` acceleration, only **Nvidia gra
 [Discussion about installing on Amd](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/1046)
 
 !!! danger "graphics card warranty"
-    In mainland China, the warranty policy of graphics card manufacturers for deep learning cards is equivalent to that of mining cards
-    Overplaying (e.g. 3 consecutive days out of the map), the graphics card will risk to break down
+    In mainland China, the warranty policy for damage caused by graphics cards used for deep learning is the same as the warranty for damage caused by mining digital cryptocurrencies.
+    
+    Overuse will lead to GPU damage
 
 [Stable diffusion performance test reports](https://docs.google.com/spreadsheets/d/1Zlv4UFiciSgmJZncCujuXKHwc4BcxbjbSBg71-SdeNk/edit#gid=0)
 
