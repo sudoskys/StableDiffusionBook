@@ -751,22 +751,42 @@
             
           
         
+          
+        
       
       
         
         
         <div class="md-nav__link md-nav__link--index md-nav__link--active">
-          <a href="./">Configrue Model for WebUi</a>
+          <a href="./">WebUi 配置</a>
+          
+            <label for="__nav_4_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
           
         </div>
       
-      <nav class="md-nav" aria-label="Configrue Model for WebUi" data-md-level="2">
+      <nav class="md-nav" aria-label="WebUi 配置" data-md-level="2">
         <label class="md-nav__title" for="__nav_4_4">
           <span class="md-nav__icon md-icon"></span>
-          Configrue Model for WebUi
+          WebUi 配置
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Troubleshoot/" class="md-nav__link">
+        Troubleshoot
+      </a>
+    </li>
+  
+
             
           
         </ul>
@@ -1127,61 +1147,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#self-help-when-a-bug-occurs-in-generating-images" class="md-nav__link">
-    Self-help when a bug occurs in generating images
-  </a>
-  
-    <nav class="md-nav" aria-label="Self-help when a bug occurs in generating images">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#generate-blackgreen-image" class="md-nav__link">
-    Generate black/green image
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#runtimeerror-sizes-of-tensors-must-match" class="md-nav__link">
-    RuntimeError Sizes of tensors must match
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rainbow-mess" class="md-nav__link">
-    Rainbow mess
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#high-resolution-ghost-image-low-memory-to-generate-large-resolution-image" class="md-nav__link">
-    High resolution ghost image / low memory to generate large resolution image
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#runtimeerror-unable-to-find-a-valid-cudnn-algorithm-to-run-convolution" class="md-nav__link">
-    RuntimeError: Unable to find a valid cuDNN algorithm to run convolution
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cuda-out-of-memory" class="md-nav__link">
-    CUDA out of memory
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#security-issues-with-ckpt-models-3" class="md-nav__link">
     Security issues with ckpt models 3
   </a>
@@ -1448,23 +1413,6 @@
 </blockquote>
 <p><code>denoise strength</code> img2img proprietary parameter, from 0 to 1, the higher the value the lower the AI reference to the original image (while increasing the number of iterations), personally I like low CFG high denoise heavy drawing, high CFG low denoise change the details.</p>
 <p><a href="https://www.reddit.com/r/StableDiffusion/comments/xbeyw3/can_anyone_offer_a_little_guidance_on_the/">A small guide: RedditAbout</a></p>
-<h3 id="self-help-when-a-bug-occurs-in-generating-images">Self-help when a bug occurs in generating images</h3>
-<h4 id="generate-blackgreen-image">Generate black/green image</h4>
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Install-and-Run-on-NVidia-GPUs">Generate black/green image</a></p>
-<p>If u use GTX 16xx GPU, you need to add <code>-precision full --no-half</code> to the startup parameter, so if the video memory is low, add <code>-medvram</code> as well.</p>
-<p>If it's a different card and VAE is loaded, add <code>--no-half-vae</code> parameter<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">1</a></sup>.</p>
-<h4 id="runtimeerror-sizes-of-tensors-must-match">RuntimeError Sizes of tensors must match</h4>
-<p>(img2img) If <code>RuntimeError: Sizes of tensors must match</code> appears, adjust the resolution of the input image</p>
-<h4 id="rainbow-mess">Rainbow mess</h4>
-<p>If the AI outputs a messy rainbow-colored image, the generated resolution is set too low</p>
-<h4 id="high-resolution-ghost-image-low-memory-to-generate-large-resolution-image">High resolution ghost image / low memory to generate large resolution image</h4>
-<p>This simply means regenerate or super-score using low resolution. See Hook and Kiss</p>
-<p>You can see the exact procedure in the next section.</p>
-<h4 id="runtimeerror-unable-to-find-a-valid-cudnn-algorithm-to-run-convolution">RuntimeError: Unable to find a valid cuDNN algorithm to run convolution</h4>
-<p>Insufficient VRAM</p>
-<h4 id="cuda-out-of-memory">CUDA out of memory</h4>
-<p>Cause: Insufficient video memory.</p>
-<p>Please add <code>-lowvram</code> and <code>-medvram</code> parameters at startup to try to solve this problem.</p>
 <h3 id="security-issues-with-ckpt-models-3">Security issues with ckpt models <sup id="fnref:4"><a class="footnote-ref" href="#fn:4">3</a></sup></h3>
 <p>The ckpt file can execute essentially anything when loaded, and loading it blindly is a security risk. Please check if the source is reliable before loading.
 If antivirus software intercepts it, it is possible that the creator has injected malicious Python code into the file.</p>
@@ -1723,11 +1671,11 @@ the same effect. Use the <code>--no-progressbar-hiding</code> commandline option
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 3, 2022 02:10:16</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 3, 2022 02:13:49</span>
       
         <br>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 3, 2022 02:10:16</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 3, 2022 02:13:49</span>
       
     
   </small>
@@ -1773,13 +1721,13 @@ the same effect. Use the <code>--no-progressbar-hiding</code> commandline option
       
       
         
-        <a href="../../paint/" class="md-footer__link md-footer__link--next" aria-label="Next: Getting Started Painting" rel="next">
+        <a href="Troubleshoot/" class="md-footer__link md-footer__link--next" aria-label="Next: Troubleshoot" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Getting Started Painting
+              Troubleshoot
             </div>
           </div>
           <div class="md-footer__button md-icon">
