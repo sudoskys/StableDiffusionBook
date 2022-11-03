@@ -5,8 +5,8 @@
 
 以下是新闻和测试内容。
 
--------
-- 11/1
+
+## 11/1
 
 disable access to extension stuff for non-local servers
 
@@ -14,8 +14,8 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/dc7425a56e7a014cb
 
 社区反映：共享链接可能会导致风险，攻击者可以访问系统上的所有文件。
 
--------
-- 10/30
+
+## 10/30
 
 在 [这次提交中](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/9f4f894d74b57c3d02ebccaa59f9c22fca2b6c90) ，WebUi添加了`allow skip current image in progress api ` ，跳过当前流程的 Api 方法。
 
@@ -23,20 +23,20 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/dc7425a56e7a014cb
 在 [这次合并](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3722) 中，WebUi 添加了原生的进度 Api
 
 
--------
-- 10/29
+
+## 10/29
 
 [讨论](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3889) 有人认为，通过在 Windows 设置上禁用硬件加速 GPU 调度，WebUi 性能提高了大约 10-50%
 
 
--------
-- 10/27
+
+## 10/27
 
 文档增加了 API 内容
 
 
--------
-- 10/26
+
+## 10/26
 
 [中文翻译上线](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/dde8c435987dcd071c63d16f247ae832bce0101f)
 
@@ -54,8 +54,8 @@ WebUi 在 [这次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui
 
 `Hint:will send cond model to GPU if lowvram/medvram is active`
 
--------
-- 10/25
+
+## 10/25
 
 [集成Tag工具/支持超网络的Web](https://git.hudaye.work/MiuliKain/Kamiya-OpenUI)开源项目说他们缺人。
 
@@ -65,15 +65,15 @@ WebUi 在 [这次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui
 
 `#3505`之后超网络训练不稳定 ，[问题](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/3505)
 
--------
-- 10/24
+
+## 10/24
 
 Colab 称昨天的封号是 [错误的滥用判定](https://github.com/googlecolab/colabtools/issues/3181)
 
 WebUi [移除了图像浏览器](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3537)，转换为 [插件](https://github.com/yfszzx/stable-diffusion-webui-images-browser)
 
--------
-- 10/23 更新
+
+## 10/23 更新
 
 在 [这次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/070fda592bf80fb348ffe8e17b7c71cc288db729) 中，WebUi增加了日本语翻译。
 
@@ -95,23 +95,23 @@ Colab的 [协议](https://research.google.com/colaboratory/faq.html?hl=zh-CN) �
 
 有人反映 某度好像会封锁NAI的模型。
 
--------
-- 10/22 更新
+
+## 10/22 更新
 
 在 [这次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/2b91251637078e04472c91a06a8d9c4db9c1dcf0) 中，仓库移除了美学权重。
 
 这项功能已经被转为 [插件](https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients)。
 
 
--------
-- 10/21 更新
+
+## 10/21 更新
 
 Implementation of Stable Diffusion with Aesthetic Gradients 美学权重
 
 https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2585
 
--------
-- 10/20 更新
+
+## 10/20 更新
 
 激活函数
 
@@ -121,40 +121,40 @@ SD v1.5
 
 https://huggingface.co/runwayml/stable-diffusion-v1-5
 
--------
-- 10/19 更新
+
+## 10/19 更新
 
 各种模型链接正在失效，有余力可以分流备链。
 
--------
-- 10/14 更新
+
+## 10/14 更新
 
 [Rce 漏洞曝光](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2571)，但是新版本中得到修复，请为实例设置密码。
 
--------
-- 10/13 更新
+
+## 10/13 更新
 
 automatic1111 的 repo 从 r/stablediffusion 的固定指南中删除
 
--------
-- 10/12 更新
+
+## 10/12 更新
 
 StabilityAI 从现在开始只发布 SFW 模型，from [Here](https://www.reddit.com/r/StableDiffusion/comments/y2dink/qa_with_emad_mostaque_formatted_transcript_with/is32y1d/)
 
--------
-- 10/11 更新
+
+## 10/11 更新
 新版本 Webui 增加了 Eta noise seed delta ，设为 31337 后会贴近NAI官方
 
 现在可以训练 **Hypernetworks**
 
--------
-- 10/10 更新
+
+## 10/10 更新
 测试发现,新版本 WebUi 优化显存占用(20xx—>10xx)，关闭浏览器和TG的硬件加速后，即使是4GB的  RTX2050 也可以启动 --medvram 模式！而且很快.
 
 [Q & A](https://github.com/brycedrennan/imaginAIry/blob/master/docs/emad-qa-2020-10-10.md)
 
---------
-- 背景故事
+
+## 背景故事
 
 NovelAI 是一个使用 AI 生成故事文本和**通过描述文字生成图片**的服务，而 Stable Diffusion 是由 Stability AI 发布的透过文字等生成图片的模型。
 
