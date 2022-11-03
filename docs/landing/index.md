@@ -4,6 +4,16 @@
 
 这里是相关的社区资源
 
+### 图库
+
+* [AIBooru](https://aibooru.online/)
+
+* [openart.ai](https://openart.ai/)
+
+* [lexica](https://lexica.art) (SD search engine)
+
+* [PIXAI](https://pixai.art/)
+
 ### 项目
 
 

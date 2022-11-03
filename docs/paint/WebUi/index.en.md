@@ -313,6 +313,8 @@ Relevant parameters can be extracted from the images, which may not be accurate.
 
 ## Search Engines
 
+[PIXAI](https://pixai.art/)
+
 [StableDiffusion_Show](https://t.me/StableDiffusion_Show)
 
 [cyan_ai_sese](https://t.me/cyan_ai_sese)

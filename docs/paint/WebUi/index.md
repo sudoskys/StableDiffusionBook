@@ -324,11 +324,14 @@ normal quality, text, censored, gown, latex, pencil
 
 你可以访问以下传送门获取一些优秀的参数实例！（当然，中文社区的测试群有**大量素材**，一分钟20次）
 
+[PIXAI](https://pixai.art/)
+
 [StableDiffusion_Show](https://t.me/StableDiffusion_Show)
 
 [cyan_ai_sese](https://t.me/cyan_ai_sese)
 
 [LEXICA搜索引擎](https://lexica.art/?q=Miku)
+
 
 
 ## Prompt matrix 参数矩阵/要素混合
