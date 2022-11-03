@@ -2,6 +2,8 @@
 
 这个简短的实战指南，可以让你快速了解如何合理调整参数达成目的效果。
 
+目前， Ai 处理不好细节和多人物，如果一个个处理，光影结构就会乱掉。如果修图，不如重画。但是画背景和做预览很实用。
+
 ## 场景表
 
 竖着看
@@ -12,9 +14,9 @@
 |头发|广狭选择|绘画类型|缩写词|
 |眼睛|光影选择|评价限定|sfw/nsfw|
 |衣着|背景主体|联想元素||
-|状态|人物事件地|||
-|姿势位||||
-|镜头位||||
+|状态|人物事件地|  3D/2D  |    |
+|姿势位|  |  |         |
+|镜头位|  |  |         |
 
 
 ## 图转图的秘籍
@@ -132,7 +134,9 @@ CFG 越高，越符合提示词，降噪越高越偏离原图。
 
 ## 使用 Ai 进行设计
 
+- 背景
 
+拿到一张饱和度稍微高的照片后，可以用 AI 进行处理，然后当作背景使用。
 
 - 图标
 
@@ -140,7 +144,7 @@ CFG 越高，越符合提示词，降噪越高越偏离原图。
 
 - 表情包
 
-表情包效果真的很好。 `sticker` 配合 西方颜文字 完成度超高！
+表情包效果真的一级棒。 `sticker` 配合 西方颜文字 完成度超高！
 
 文档编写者试了一下，以下 prompt 可以出高质量表情包。
 
@@ -163,9 +167,10 @@ white background,
 **消极词汇**
 
 ```
-bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, jpeg artifacts, signature, watermark, username, blurry, bad feet
+bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, jpeg artifacts, signature, watermark, username, blurry, bad feet,3D
 ```
-low quality 可加可不加
+
+low quality 可加可不加，如果想更加平面化，请加入 3D 到负面提示。
 
 尺寸要求正方形。
 

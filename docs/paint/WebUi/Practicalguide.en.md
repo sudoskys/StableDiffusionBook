@@ -2,6 +2,8 @@
 
 This short practical guide will give you a quick overview of how to adjust the parameters appropriately to achieve the desired effect.
 
+Currently, Ai does not handle details and multiple characters well, and the light and shadow structure will be messed up if handled one by one. If retouching, it is better to redraw. But it is practical to draw backgrounds and do previews.
+
 ## Scene table
 
 Viewed vertically
@@ -12,7 +14,7 @@ Viewed vertically
 |Hair|Wide and Narrow Selection|Paint Type|Abbreviations|
 |eyes|lighting options|evaluation qualification|sfw/nsfw|
 |clothing|background subjects|associative elements||
-|state|character event ground|||
+|state|character event|  3D/2D  |    |
 |Pose position ||||
 |Lens position ||||
 
@@ -145,6 +147,9 @@ If you want to reproduce it on the generation, you need the same `seed`, cue wor
 
 ## Designing with Ai
 
+- Backgrounds
+
+Once you get a slightly more saturated photo, you can process it in AI and use it as a background.
 
 - Icons
 
@@ -177,7 +182,8 @@ white background,
 ```
 bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, jpeg artifacts, signature, watermark, username, blurry, bad feet
 ```
-low quality may or may not be added
+
+low quality can be added or not, if you want to be more flat, please add `3D` to negative hints.
 
 Size required square.
 
