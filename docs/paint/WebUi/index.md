@@ -350,6 +350,15 @@ normal quality, text, censored, gown, latex, pencil
 `cat :2 | dog` 也就是更像猫的狗
 
 
+## Highres. fix
+
+一个方便的选项，通过勾选txt2img页面上的 "Highres.fix "复选框来启用。
+
+默认情况下，txt2img在非常高的分辨率下做出非常混沌的图像。而此插件这使得它可以避免使用小图片的构图，在较低的分辨率下部分渲染你的图片，提高分辨率，然后在高分辨率下添加细节。
+
+
+
+
 ## 提示词原理
 
 咒语的科学原理。

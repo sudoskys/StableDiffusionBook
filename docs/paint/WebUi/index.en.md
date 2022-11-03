@@ -334,9 +334,14 @@ For example, if you use `a busy city street in a modern city|illustration|cinema
 * `a busy city street in a modern city, illustration, cinematic lighting`
 
 
-`cat :2 | dog` 也就是更像猫的狗
+`cat :2 | dog` that is, a dog that is more like a cat
+
+## Highres. fix
 
 
+A convenience option to partially render your image at a lower resolution, upscale it, and then add details at a high resolution.
+
+By default, txt2img makes horrible images at very high resolutions, and this makes it possible to avoid using the small picture's composition. Enabled by checking the "Highres. fix" checkbox on the txt2img page.
 
 ## The Principle of Cue Words
 
