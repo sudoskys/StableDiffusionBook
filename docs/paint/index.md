@@ -38,6 +38,9 @@
 
 - [NAI<=>WebUi权重转换Telegram服务](https://github.com/sudoskys/M2NM2NBot)
 
+- [NAI的分词器，用来查看你的文本被识别为哪些](https://novelai.net/tokenizer)
+
+
 #### 灵感
 
 * [Pic2Prompt0](https://www.latentspace.dev/)

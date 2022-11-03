@@ -35,6 +35,8 @@ The toolbox that you can see when you open the page
 
 - [NAI<=>WebUi prompt word weight conversion Telegram bot](https://github.com/sudoskys/M2NM2NBot)
 
+- [NAI's prompt Tokenizer](https://novelai.net/tokenizer)
+
 #### Help design
 
 * [Pic2Prompt0](https://www.latentspace.dev/)
