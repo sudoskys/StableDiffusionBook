@@ -159,7 +159,7 @@ The repetition of a certain keyword seems to increase its effect regardless of t
 
 Image size obviously affects content, if the height of the image increases it is more likely to produce an individual or separate thing. If the image width is increased, it is more likely to produce multiple people or landscapes.
 
-# Repo
+## Extension
 
 [WebUi: Adding custom backend APIs for Krita plugins and more](https://github.com/Interpause/auto-sd-paint-ext)
 
