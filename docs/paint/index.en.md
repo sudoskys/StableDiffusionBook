@@ -29,7 +29,8 @@ The toolbox that you can see when you open the page
 
 ### Tool
 
-- **[Online retouching - link to AutoMatic's WebUi backend](https://www.painthua.com/)**
+- **[AiPhotoShop - the online tool for infinite extents of the canvas](https://www.painthua.com/)**
+
 
 * [Pic2Prompt0](https://www.latentspace.dev/)
 

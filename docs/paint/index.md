@@ -32,7 +32,7 @@
 
 ### 工具
 
-- **[在线修图-链接AutoMatic的WebUi后端](https://www.painthua.com/)**
+- **[AiPhotoShop-无限外延画布的在线工具](https://www.painthua.com/)**
 
 * [Pic2Prompt0](https://www.latentspace.dev/)
 
