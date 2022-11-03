@@ -1130,8 +1130,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#workstations" class="md-nav__link">
+    Workstations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#basic-flow" class="md-nav__link">
     Basic flow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameter-introduction" class="md-nav__link">
+    Parameter Introduction
   </a>
   
 </li>
@@ -1158,13 +1172,12 @@
 
 <h1 id="getting-started-painting">Getting Started Painting</h1>
 <blockquote>
-<p>This page is awaiting refinement
-Todo
-修复混乱的逻辑</p>
-<p>Upscaler 2 的预期用途 https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3749
+<p>Todo
+Upscaler 2 的预期用途 https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3749
 </p>
 </blockquote>
 <p>This section will introduce the parameters and related SDWebUi resources. If you can draw, the results will be more stable and considerable.</p>
+<h2 id="workstations">Workstations</h2>
 <p>The tag reference should use <a href="https://danbooru.donmai.us/wiki_pages/tag_groups">Danbooru wiki Tag</a> and <a href="https:// github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference">MidJourney-Styles-and-Keywords-Reference</a></p>
 <p>For brushstrokes/painting tools/styling/painting techniques tag group see <a href="https://danbooru.donmai.us/wiki_pages/tag_group%3Aimage_composition">Danbooru</a></p>
 <p>If you are used to reading Japanese tag references and techniques, you can search in <a href="https://seesaawiki.jp/nai_ch/d/%be%ec%bd%ea%a1%a6%c7%d8%b7%ca">Japanese Wiki</a>.</p>
@@ -1189,19 +1202,64 @@ There are two types of iterations, circular iterations and linear iterations. Li
 <p>prompt + 3D reference</p>
 </li>
 </ul>
+<h2 id="parameter-introduction">Parameter Introduction</h2>
+<p>From <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+<ul>
+<li>
+<p>Prompt: textual description of what you want to generate.</p>
+</li>
+<li>
+<p>Negative prompt: textual description of things that you don't want in the image.</p>
+</li>
+<li>
+<p>Sampling Steps: diffusion models work by making small steps from random Gaussian noise towards an image that fits the prompt. This is how many such steps should be done. More steps means smaller, more precise steps from noise to image. Increasing this directly increases the time needed to generate images. Diminishing returns, depends on sampler.</p>
+</li>
+<li>
+<p>Sampling method: which sampler to use. Euler a (short for ancestral) produces great variety with a low number of steps, but it's very difficult to make small adjustments. The non-ancestral samplers all produce mostly the same images as the number of steps increases, use LMS if you're unsure.</p>
+</li>
+<li>
+<p>ddim_eta: amount of randomness when using DDIM.</p>
+</li>
+<li>
+<p>Batch count/n_iter: how often to generate a set of images.</p>
+</li>
+<li>
+<p>Batch size: how many images to generate at the same time. Increasing this value can improve performance but you also need more VRAM. Total number of images is this multiplied with batch count.</p>
+</li>
+<li>
+<p>CFG Scale (classifier-free guidance scale): how strongly the images match your prompt. Increasing this value will result in images that resemble your prompt more closely (according to the model) but it also degrades image quality after a certain point. Can be somewhat counteracted with more sampling steps.</p>
+</li>
+<li>
+<p>Width: width of individual images in pixel. To increase this value you need more VRAM. Image coherence on large scales (model was trained on 512x512) becomes worse as the resolution increases. Very small values (e.g. 256 pixels) also degrade image quality.</p>
+</li>
+<li>
+<p>Height: same as Width but for individual image height.</p>
+</li>
+<li>
+<p>Seed: starting point for RNG. Keep this the same to generate the same (or almost the same) images multiple times. There are no seeds that are inherently better than others but if you vary your input parameters only slightly seeds that produced good results previously will likely still produce good results.</p>
+</li>
+</ul>
 <h1 id="repo">Repo</h1>
 <p><a href="https://github.com/Interpause/auto-sd-paint-ext">WebUi: Adding custom backend APIs for Krita plugins and more</a></p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p><a href="https://wiki.installgentoo.com/wiki/Stable_Diffusion">installgentoo wiki</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 3, 2022 02:17:36</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 3, 2022 02:46:47</span>
       
         <br>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 3, 2022 02:17:36</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 3, 2022 02:46:47</span>
       
     
   </small>
