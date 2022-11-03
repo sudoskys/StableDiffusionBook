@@ -148,7 +148,8 @@ If `inpaint at full resolution` appears as a black block, there may be insuffici
 <iframe src="//player.bilibili.com/player.html?aid=474043788&bvid=BV1HK411Q7uk&cid=860273094&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 -->
 
-通过这种方法，我们可以更改角色衣物风格或者其他任何细节。
+In this way, we can change the style of the character's clothing or any other detail.
+
 <!--
 [如何教会Ai画手](https://www.bilibili.com/video/av559044202/?zw)
 
