@@ -4,6 +4,9 @@
 
 下面是一个简短的中文指南和英文指南
 
+先确保您的内容符合 [Github 条款](https://docs.github.com/en/site-policy/acceptable-use-policies/github-acceptable-use-policies)
+
+
 ## 指南
 
 准确明白为第一，覆盖度第二。
@@ -81,6 +84,8 @@
 ## Guide
 
 Accuracy is understood first, coverage second.
+
+Make sure your content complies with [Github terms](https://docs.github.com/en/site-policy/acceptable-use-policies/github-acceptable-use-policies) first
 
 ## Major changes
 
