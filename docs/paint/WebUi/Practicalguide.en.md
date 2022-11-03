@@ -151,6 +151,8 @@ If you want to reproduce it on the generation, you need the same `seed`, cue wor
 
 Once you get a slightly more saturated photo, you can process it in AI and use it as a background.
 
+Use `anime coloring` to enhance the anime style.
+
 - Icons
 
 [Look at this](https://www.bilibili.com/video/BV1384y1B7MX)
@@ -163,7 +165,7 @@ The documentation writer has tried the following prompt and it produces high qua
 
 Don't ask for quality prompt words for stickers.
 
-**positive vocabulary
+**positive vocabulary**
 
 ```
 1girl,sticker,Chibi,Q,

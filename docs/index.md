@@ -16,7 +16,7 @@ Copyright (C)  2022  StableDiffusionBook.
 
 ## 项目
 
-本文档主要涉及以下两个项目。
+本文档主要涉及以下两个项目。(以后可能会更多？)
 
 
 [Stable Diffusion WebUi](https://github.com/AUTOMATIC1111/stable-diffusion-webui)简称 SDWebUi，web UI是一个基于 Gradio 库的 Stable Diffusion 浏览器界面。该项目目前还没有 [许可证](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/24) [相关Issue](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2059)。
@@ -24,6 +24,38 @@ Copyright (C)  2022  StableDiffusionBook.
 [NovelAI](https://novelai.net/)简称 NAI， 是一项每月订阅服务，用于 AI 辅助创作、讲故事、虚拟陪伴，或者只是供您想象的 GPT 驱动的沙盒。
 
 Stable diffusion本来是面向三次元的，而 NAI 是二次元特化版本。
+
+## 导航
+
+**起步于此**
+
+介绍了一些术语和新闻内容。有新动态会更新到新闻页面。
+
+**开始之前**
+
+列举了入门的要求，介绍了一些基本的方案。
+
+**安装配置**
+
+介绍了WebUi 的安装和运行，还有运行时候遇到的错误处理指南。
+
+**绘画调试**
+
+解释了关于 GPU 和 NAI Leak 的内容。
+
+还介绍了如何配置应用程序，解决图片生成出现的错误，介绍了应用程序本身相关的使用技巧。
+
+**绘画指南**
+
+介绍了如何应用和相关的实践操作，指导 如何写参数 和 如何上手使用 。
+
+**训练模型**
+
+介绍了如何**使用**和 训练 风格化模型，以及基本常识和训练方法。
+
+**参考资料**
+
+这是一个用于速查的快速链接页面，备份了所有有用的链接。
 
 
 ## 访问可用性

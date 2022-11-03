@@ -31,6 +31,40 @@ This document mainly covers the following two projects.
 While stable diffusion was initially geared towards real-world images, NAI introduced the generation of anime illustrations, which attracted public attention
 
 
+
+## Guide
+
+**Start here**
+
+Some terms and news contents are introduced. Any new developments will be updated to the news page.
+
+
+
+The requirements for getting started are listed and some basic programs are introduced.
+
+**Installation**
+
+Introduces the installation and operation of WebUi, as well as a guide to handling errors encountered while running.
+
+**Configuration**
+
+Explains about GPU and NAI Leak.
+
+It also explains how to configure the application, resolve errors in image generation, and introduces tips related to the use of the application itself.
+
+**Paint guide**
+
+Describes how to apply and practice the application, guides how to write parameters and how to get started using it.
+
+
+**Train Model**
+
+Introduces **how to use** and train a stylized model, as well as basic general knowledge and training methods.
+
+**References**
+
+This is a quick links page for quick reference, backing up all the useful links.
+
 ## Access Availability
 
 - Main address

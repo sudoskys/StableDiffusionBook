@@ -20,13 +20,13 @@ nav:
       - WebUi安装:
           - install/WebUi/index.md
           - 运行WebUi: install/WebUi/launch.md
-  - 装置调试:
+  - 绘画调试:
       - model/index.md
       - GPU相关: model/GPU.md
       - NAI泄漏报告: model/NAI.md
       - WebUi配置模型:
           - model/WebUi/index.md
-  - 绘画调试:
+  - 绘画指南:
       - paint/index.md
       - WebUi绘画指南:
           - paint/WebUi/index.md
@@ -95,11 +95,11 @@ plugins:
             开始之前: Before start
             安装配置: Installation
             WebUi安装: Install SDWebUi
-            装置调试: Model Configuration
+            绘画调试: Configuration
             GPU相关: Gpu Debuging
             NAI泄漏报告: NAI leak report
             WebUi配置模型: Configrue Model for WebUi
-            绘画调试: Paint guide
+            绘画指南: Paint guide
             WebUi绘画指南: Paint With WebUi
             应用指南: Application Guide
             进阶指南: Advanced Guide
