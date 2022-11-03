@@ -590,6 +590,8 @@
         
           
         
+          
+        
       
       
         
@@ -697,6 +699,20 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Troubleshoot/" class="md-nav__link">
+        Troubleshoot
+      </a>
     </li>
   
 
@@ -1423,58 +1439,6 @@ Example using <code>a.ckpt</code> instead of <code>model.ckpt</code>.</p>
 </code></pre></div>
 <p>跨平台多后端项目 <a href="https://github.com/koishijs/novelai-bot">novelai-bot</a></p>
 <p>Discord 机器人项目 <a href="https://github.com/Kilvoctu/aiyabot/blob/main/core/stablecog.py">aiyabot</a></p>
-<h1 id="error-handling-troubleshooting">Error handling Troubleshooting</h1>
-<p>File paths, which do not allow spaces, make sure your program's folder path does not have spaces in it. This program has been tested to run on Python 3.10.6; errors may occur with lower versions of Python.</p>
-<p>To reinstall, remove the directories: <code>venv</code>, <code>repositories</code>.</p>
-<h2 id="install-too-slow">Install TOO SLOW！</h2>
-<p><strong>Dependencies &gt;2GB</strong>, please wait. Tips for Windows users: <strong>Dependencies are installed on C drive by default</strong></p>
-<h2 id="low-memory-graphics-cardscuda-out-of-memory">Low memory graphics cards/CUDA out of memory</h2>
-<p>Make sure you have the latest CUDA toolkit and GPU drivers that are ready to run.</p>
-<p>Programs running on video cards with a small amount of VRAM (&lt;=4GB) may experience out of memory errors.</p>
-<p><strong>牺牲速度来支持低显存显卡</strong></p>
-<p>When running on video cards with a low amount of VRAM (&lt;=4GB), out of memory errors may arise. Various optimizations may be enabled through command line arguments, sacrificing some/a lot of speed in favor of using less VRAM:</p>
-<ul>
-<li>
-<p>If you have 4GB VRAM and want to make 512x512 (or maybe up to 640x640) images, use --medvram.</p>
-</li>
-<li>
-<p>If you have 4GB VRAM and want to make 512x512 images, but you get an out of memory error with --medvram, use --medvram --opt-split-attention instead.</p>
-</li>
-<li>
-<p>If you have 4GB VRAM and want to make 512x512 images, and you still get an out of memory error, use --lowvram --always-batch-cond-uncond --opt-split-attention instead.</p>
-</li>
-<li>
-<p>If you have 4GB VRAM and want to make images larger than you can with --medvram, use --lowvram --opt-split-attention.</p>
-</li>
-<li>
-<p>If you have more VRAM and want to make larger images than you can usually make (for example 1024x1024 instead of 512x512), use --medvram --opt-split-attention. You can use --lowvram also but the effect will likely be barely noticeable.</p>
-</li>
-<li>
-<p>Otherwise, do not use any of those.</p>
-</li>
-</ul>
-<h2 id="where-my-python">Where my Python?</h2>
-<p>If the desired version of Python is not in PATH, modify the line set PYTHON=python in webui-user.bat with the full path to the python executable.</p>
-<h2 id="errorasyncioaccept-failed-on-a-socket">ERROR:asyncio:Accept failed on a socket</h2>
-<p>First check for port conflicts, and any software conflicts</p>
-<p>This error may be due to compatibility of <code>asyncio</code> library of <code>Python38</code> with <code>Windows</code>.</p>
-<p>Try running <code>netsh winsock reset</code> as a CMD administrator, and if that doesn't work, switch ports.</p>
-<p>If that still doesn't work, switch to Python <code>3.10.6</code>, which is the version of WebUi's development environment.</p>
-<h2 id="venv">Venv</h2>
-<p>If you are using conda you can run the launch install dependency yourself without the one-click script.</p>
-<p>This is because the one-click installer script given by the repository creates the virtual environment and then launches <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/launch.py">launch.py</a>.</p>
-<p>At runtime, the one-click installer creates a python virtual environment, so if you install a module before installing it, then any installed modules will not cause conflicts.</p>
-<p>If you need to prevent the creation of a virtual environment and use system python, edit <code>webui.bat</code> and replace <code>setVENV_DIR=venv</code> with <code>set VENV_DIR=</code></p>
-<h2 id="api-ms-win-core-path-l1-1-0dll-is-missing1">api-ms-win-core-path-l1-1-0.dll is missing<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">1</a></sup></h2>
-<p>Running on Windows 7 is likely to report the error: <code>api-ms-win-core-path-l1-1-0.dll is missing</code> because many programs require system files from newer versions of Windows.</p>
-<p>If this error does not occur, there is no need to perform the following actions.</p>
-<p>These files have been ported to be compatible with W7 and are available at <a href="https://github.com/nalexandru/api-ms-win-core-path-HACK/releases/download/0.3.1/api-ms-win-core-path- blender-0.3.1.zip">here</a> for download. Its <a href="https://github.com/nalexandru/api-ms-win-core-path-HACK/">Github page</a></p>
-<p>Unzip and copy <code>x86.dll</code> to <code>C:\Windows\SysWOW64</code>, copy <code>x64.dll</code> to <code>C:\Windows\System32</code> and reboot.</p>
-<h2 id="an-illegal-memory-access-was-encountered-cuda-kernel-errors">an illegal memory access was encountered ....CUDA kernel errors...</h2>
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/1766">RelatedIssue</a></p>
-<p>In most cases, this means that the video memory is overflowing, but it could also be a GPU hardware problem.</p>
-<p>It is said that if you are using deepdanbooru, you will get this message, so try to restart or install the cpu version of deepdanbooru.</p>
-<p><strong>See the next chapter for image generation problems</strong>.</p>
 <div class="footnote">
 <hr />
 <ol>
@@ -1492,11 +1456,11 @@ Example using <code>a.ckpt</code> instead of <code>model.ckpt</code>.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 3, 2022 02:06:44</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 3, 2022 02:10:16</span>
       
         <br>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 3, 2022 02:06:44</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 3, 2022 02:10:16</span>
       
     
   </small>
@@ -1542,13 +1506,13 @@ Example using <code>a.ckpt</code> instead of <code>model.ckpt</code>.</p>
       
       
         
-        <a href="../../../model/" class="md-footer__link md-footer__link--next" aria-label="Next: Initialization" rel="next">
+        <a href="../Troubleshoot/" class="md-footer__link md-footer__link--next" aria-label="Next: Troubleshoot" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Initialization
+              Troubleshoot
             </div>
           </div>
           <div class="md-footer__button md-icon">

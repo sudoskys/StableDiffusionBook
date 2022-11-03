@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="zh" class="no-js">
+<html lang="en" class="no-js">
   <head>
     
       <meta charset="utf-8">
@@ -12,21 +12,21 @@
         <meta name="author" content="StableDiffusionBook Team">
       
       
-        <link rel="canonical" href="https://stable-diffusion-book.vercel.app/zh/model/GPU/">
+        <link rel="canonical" href="https://stable-diffusion-book.vercel.app/en/install/WebUi/Troubleshoot/">
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.7">
     
     
       
-        <title>GPU相关 - AiDraw</title>
+        <title>Troubleshoot - AiDraw</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.20d9efc8.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.20d9efc8.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.cbb835fc.min.css">
         
       
       
@@ -43,7 +43,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -72,8 +72,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
-          跳转至
+        <a href="#error-handling-troubleshooting" class="md-skip">
+          Skip to content
         </a>
       
     </div>
@@ -85,8 +85,8 @@
       
 
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../" title="AiDraw" class="md-header__button md-logo" aria-label="AiDraw" data-md-component="logo">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../" title="AiDraw" class="md-header__button md-logo" aria-label="AiDraw" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              GPU相关
+              Troubleshoot
             
           </span>
         </div>
@@ -138,20 +138,20 @@
       <div class="md-header__option">
         <div class="md-select">
           
-          <button class="md-header__button md-icon" aria-label="选择当前语言">
+          <button class="md-header__button md-icon" aria-label="Select language">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
           </button>
           <div class="md-select__inner">
             <ul class="md-select__list">
               
                 <li class="md-select__item">
-                  <a href="../../../model/GPU/" hreflang="zh" class="md-select__link">
+                  <a href="../../../../install/WebUi/Troubleshoot/" hreflang="zh" class="md-select__link">
                     简体中文
                   </a>
                 </li>
                 
                 <li class="md-select__item">
-                  <a href="../../../en/model/GPU/" hreflang="en" class="md-select__link">
+                  <a href="./" hreflang="en" class="md-select__link">
                     English
                   </a>
                 </li>
@@ -169,14 +169,14 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="查找">
+      <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -186,7 +186,7 @@
       <div class="md-search__scrollwrap" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            正在初始化搜索引擎
+            Initializing search
           </div>
           <ol class="md-search-result__list"></ol>
         </div>
@@ -197,7 +197,7 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/sudoskys/StableDiffusionBook" title="前往仓库" class="md-source" data-md-component="source">
+        <a href="https://github.com/sudoskys/StableDiffusionBook" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
@@ -218,7 +218,7 @@
         
           
             
-<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
@@ -231,8 +231,8 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../" class="md-tabs__link">
-        起步于此
+      <a href="../../../" class="md-tabs__link">
+        Start here
       </a>
     </li>
   
@@ -247,24 +247,8 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../Perpare/" class="md-tabs__link">
-        开始之前
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../install/" class="md-tabs__link">
-        安装配置
+      <a href="../../../Perpare/" class="md-tabs__link">
+        Before start
       </a>
     </li>
   
@@ -281,8 +265,8 @@
   
   
     <li class="md-tabs__item">
-      <a href="../" class="md-tabs__link md-tabs__link--active">
-        绘画调试
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
+        Installation
       </a>
     </li>
   
@@ -297,8 +281,8 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../paint/" class="md-tabs__link">
-        绘画指南
+      <a href="../../../model/" class="md-tabs__link">
+        Configuration
       </a>
     </li>
   
@@ -313,8 +297,8 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../train/" class="md-tabs__link">
-        训练模型
+      <a href="../../../paint/" class="md-tabs__link">
+        Paint guide
       </a>
     </li>
   
@@ -329,8 +313,24 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../landing/" class="md-tabs__link">
-        参考资料
+      <a href="../../../train/" class="md-tabs__link">
+        Train Model
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../landing/" class="md-tabs__link">
+        References
       </a>
     </li>
   
@@ -355,9 +355,9 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../" title="AiDraw" class="md-nav__button md-logo" aria-label="AiDraw" data-md-component="logo">
+    <a href="../../../" title="AiDraw" class="md-nav__button md-logo" aria-label="AiDraw" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -367,7 +367,7 @@
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/sudoskys/StableDiffusionBook" title="前往仓库" class="md-source" data-md-component="source">
+      <a href="https://github.com/sudoskys/StableDiffusionBook" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
@@ -411,7 +411,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../">起步于此</a>
+          <a href="../../../">Start here</a>
           
             <label for="__nav_1">
               <span class="md-nav__icon md-icon"></span>
@@ -419,10 +419,10 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="起步于此" data-md-level="1">
+      <nav class="md-nav" aria-label="Start here" data-md-level="1">
         <label class="md-nav__title" for="__nav_1">
           <span class="md-nav__icon md-icon"></span>
-          起步于此
+          Start here
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -434,8 +434,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../GettingStarted/term/" class="md-nav__link">
-        术语
+      <a href="../../../GettingStarted/term/" class="md-nav__link">
+        Terminology
       </a>
     </li>
   
@@ -448,8 +448,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../GettingStarted/news/" class="md-nav__link">
-        新闻
+      <a href="../../../GettingStarted/news/" class="md-nav__link">
+        News
       </a>
     </li>
   
@@ -462,8 +462,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../GettingStarted/state/" class="md-nav__link">
-        声明
+      <a href="../../../GettingStarted/state/" class="md-nav__link">
+        Statement
       </a>
     </li>
   
@@ -501,148 +501,17 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../Perpare/">开始之前</a>
+          <a href="../../../Perpare/">Before start</a>
           
         </div>
       
-      <nav class="md-nav" aria-label="开始之前" data-md-level="1">
+      <nav class="md-nav" aria-label="Before start" data-md-level="1">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
-          开始之前
+          Before start
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
-      
-      
-      
-        
-          
-            
-          
-        
-          
-        
-      
-      
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="../../install/">安装配置</a>
-          
-            <label for="__nav_3">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
-          
-        </div>
-      
-      <nav class="md-nav" aria-label="安装配置" data-md-level="1">
-        <label class="md-nav__title" for="__nav_3">
-          <span class="md-nav__icon md-icon"></span>
-          安装配置
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-          
-            
-              
-  
-  
-  
-    
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" checked>
-      
-      
-      
-        
-          
-            
-          
-        
-          
-        
-          
-        
-      
-      
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="../../install/WebUi/">WebUi安装</a>
-          
-            <label for="__nav_3_2">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
-          
-        </div>
-      
-      <nav class="md-nav" aria-label="WebUi安装" data-md-level="2">
-        <label class="md-nav__title" for="__nav_3_2">
-          <span class="md-nav__icon md-icon"></span>
-          WebUi安装
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../install/WebUi/launch/" class="md-nav__link">
-        运行WebUi
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../install/WebUi/Troubleshoot/" class="md-nav__link">
-        错误处理
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
             
           
         </ul>
@@ -664,7 +533,223 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../">Installation</a>
+          
+            <label for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Installation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../">Install SDWebUi</a>
+          
+            <label for="__nav_3_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Install SDWebUi" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Install SDWebUi
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../launch/" class="md-nav__link">
+        LaunchWebUi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Troubleshoot
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Troubleshoot
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install-too-slow" class="md-nav__link">
+    Install TOO SLOW！
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#low-memory-graphics-cardscuda-out-of-memory" class="md-nav__link">
+    Low memory graphics cards/CUDA out of memory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-my-python" class="md-nav__link">
+    Where my Python?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#errorasyncioaccept-failed-on-a-socket" class="md-nav__link">
+    ERROR:asyncio:Accept failed on a socket
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#venv" class="md-nav__link">
+    Venv
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-ms-win-core-path-l1-1-0dll-is-missing3" class="md-nav__link">
+    api-ms-win-core-path-l1-1-0.dll is missing[^3]
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#an-illegal-memory-access-was-encountered-cuda-kernel-errors" class="md-nav__link">
+    an illegal memory access was encountered ....CUDA kernel errors...
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       
       
@@ -684,7 +769,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../">绘画调试</a>
+          <a href="../../../model/">Configuration</a>
           
             <label for="__nav_4">
               <span class="md-nav__icon md-icon"></span>
@@ -692,10 +777,10 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="绘画调试" data-md-level="1">
+      <nav class="md-nav" aria-label="Configuration" data-md-level="1">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
-          绘画调试
+          Configuration
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -705,59 +790,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          GPU相关
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        GPU相关
+    <li class="md-nav__item">
+      <a href="../../../model/GPU/" class="md-nav__link">
+        Gpu Debuging
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#webui-gpu" class="md-nav__link">
-    WebUi 多 GPU 支持
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#webui-16xx3" class="md-nav__link">
-    WebUi 16xx系显卡使用半精度生成图片[^3]
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -769,8 +806,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../NAI/" class="md-nav__link">
-        NAI泄漏报告
+      <a href="../../../model/NAI/" class="md-nav__link">
+        NAI leak report
       </a>
     </li>
   
@@ -802,14 +839,14 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../WebUi/">WebUi配置模型</a>
+          <a href="../../../model/WebUi/">Configrue Model for WebUi</a>
           
         </div>
       
-      <nav class="md-nav" aria-label="WebUi配置模型" data-md-level="2">
+      <nav class="md-nav" aria-label="Configrue Model for WebUi" data-md-level="2">
         <label class="md-nav__title" for="__nav_4_4">
           <span class="md-nav__icon md-icon"></span>
-          WebUi配置模型
+          Configrue Model for WebUi
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -855,7 +892,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../paint/">绘画指南</a>
+          <a href="../../../paint/">Paint guide</a>
           
             <label for="__nav_5">
               <span class="md-nav__icon md-icon"></span>
@@ -863,10 +900,10 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="绘画指南" data-md-level="1">
+      <nav class="md-nav" aria-label="Paint guide" data-md-level="1">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
-          绘画指南
+          Paint guide
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -903,7 +940,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../paint/WebUi/">WebUi绘画指南</a>
+          <a href="../../../paint/WebUi/">Paint With WebUi</a>
           
             <label for="__nav_5_2">
               <span class="md-nav__icon md-icon"></span>
@@ -911,10 +948,10 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="WebUi绘画指南" data-md-level="2">
+      <nav class="md-nav" aria-label="Paint With WebUi" data-md-level="2">
         <label class="md-nav__title" for="__nav_5_2">
           <span class="md-nav__icon md-icon"></span>
-          WebUi绘画指南
+          Paint With WebUi
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -926,8 +963,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../paint/WebUi/Practicalguide/" class="md-nav__link">
-        应用指南
+      <a href="../../../paint/WebUi/Practicalguide/" class="md-nav__link">
+        Application Guide
       </a>
     </li>
   
@@ -940,8 +977,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../paint/WebUi/Advanced/" class="md-nav__link">
-        进阶指南
+      <a href="../../../paint/WebUi/Advanced/" class="md-nav__link">
+        Advanced Guide
       </a>
     </li>
   
@@ -954,8 +991,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../paint/WebUi/info/" class="md-nav__link">
-        参数
+      <a href="../../../paint/WebUi/info/" class="md-nav__link">
+        Prompt
       </a>
     </li>
   
@@ -1008,7 +1045,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../train/">训练模型</a>
+          <a href="../../../train/">Train Model</a>
           
             <label for="__nav_6">
               <span class="md-nav__icon md-icon"></span>
@@ -1016,10 +1053,10 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="训练模型" data-md-level="1">
+      <nav class="md-nav" aria-label="Train Model" data-md-level="1">
         <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
-          训练模型
+          Train Model
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1031,8 +1068,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../train/Textual/" class="md-nav__link">
-        Textual 训练
+      <a href="../../../train/Textual/" class="md-nav__link">
+        Textual Inversion
       </a>
     </li>
   
@@ -1045,8 +1082,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../train/Hypernetwork/" class="md-nav__link">
-        Hypernetwork 训练
+      <a href="../../../train/Hypernetwork/" class="md-nav__link">
+        Hypernetwork
       </a>
     </li>
   
@@ -1059,8 +1096,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../train/DreamBooth/" class="md-nav__link">
-        DreamBooth 训练
+      <a href="../../../train/DreamBooth/" class="md-nav__link">
+        DreamBooth
       </a>
     </li>
   
@@ -1073,8 +1110,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../train/AestheticGradients/" class="md-nav__link">
-        AestheticGradients 训练
+      <a href="../../../train/AestheticGradients/" class="md-nav__link">
+        AestheticGradients
       </a>
     </li>
   
@@ -1112,14 +1149,14 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../landing/">参考资料</a>
+          <a href="../../../landing/">References</a>
           
         </div>
       
-      <nav class="md-nav" aria-label="参考资料" data-md-level="1">
+      <nav class="md-nav" aria-label="References" data-md-level="1">
         <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
-          参考资料
+          References
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1144,7 +1181,7 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="目录">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
@@ -1153,20 +1190,55 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      目录
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#webui-gpu" class="md-nav__link">
-    WebUi 多 GPU 支持
+  <a href="#install-too-slow" class="md-nav__link">
+    Install TOO SLOW！
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#webui-16xx3" class="md-nav__link">
-    WebUi 16xx系显卡使用半精度生成图片[^3]
+  <a href="#low-memory-graphics-cardscuda-out-of-memory" class="md-nav__link">
+    Low memory graphics cards/CUDA out of memory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-my-python" class="md-nav__link">
+    Where my Python?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#errorasyncioaccept-failed-on-a-socket" class="md-nav__link">
+    ERROR:asyncio:Accept failed on a socket
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#venv" class="md-nav__link">
+    Venv
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-ms-win-core-path-l1-1-0dll-is-missing3" class="md-nav__link">
+    api-ms-win-core-path-l1-1-0.dll is missing[^3]
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#an-illegal-memory-access-was-encountered-cuda-kernel-errors" class="md-nav__link">
+    an illegal memory access was encountered ....CUDA kernel errors...
   </a>
   
 </li>
@@ -1185,80 +1257,75 @@
                 
                   
 
-  <a href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/model/GPU.md" title="编辑此页" class="md-content__button md-icon">
+  <a href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/install/WebUi/Troubleshoot.en.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="_1">关于显卡</h1>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>注意显卡温度，有报道称显卡太热炸了。</p>
-</div>
-<p><strong>在这之前，请确定你已经配置并进入了环境。(可以使用 torch)</strong></p>
-<p>先使用 <code>nvidia-smi</code> 判断显卡驱动是否可用。</p>
-<p>再确定 CUDA 的配置情况：打开终端，启动 <code>python</code>，分行输入如下命令</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">torch</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">())</span>
-</code></pre></div>
-<p><strong>查看 torch 对应的 CUDA 版本</strong></p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">torch</span>
-<span class="n">torch</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">cuda</span>
-</code></pre></div>
-<p>输入 ctrl + z 退出</p>
-<p>如果出现了任何错误，请询问他人或使用搜索引擎解决。</p>
-<h2 id="webui-gpu">WebUi 多 GPU 支持</h2>
-<p>最简单的模式就是实现一个多数据并行处理的方法，通过 <code>--device-id</code> 参数启动多个实例。每个 GPU 加载一个模型，然后给她们分配工作。</p>
-<p>考虑到这个项目所提供的功能众多，我（作者）认为可能需要一段时间才能在并行的情况下使用所有的功能。</p>
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/156#issuecomment-1241218733">作者的回应</a></p>
-<blockquote>
-<p>Using memory from between two GPUs is not simple. I only have one so I can't research/develop this.</p>
-</blockquote>
-<h2 id="webui-16xx3">WebUi 16xx系显卡使用半精度生成图片[^3]</h2>
-<p>方案来自<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/28#issuecomment-1241448049">这个讨论</a></p>
-<ol>
+<h1 id="error-handling-troubleshooting">Error handling Troubleshooting</h1>
+<p>File paths, which do not allow spaces, make sure your program's folder path does not have spaces in it. This program has been tested to run on Python 3.10.6; errors may occur with lower versions of Python.</p>
+<p>To reinstall, remove the directories: <code>venv</code>, <code>repositories</code>.</p>
+<h2 id="install-too-slow">Install TOO SLOW！</h2>
+<p><strong>Dependencies &gt;2GB</strong>, please wait. Tips for Windows users: <strong>Dependencies are installed on C drive by default</strong></p>
+<h2 id="low-memory-graphics-cardscuda-out-of-memory">Low memory graphics cards/CUDA out of memory</h2>
+<p>Make sure you have the latest CUDA toolkit and GPU drivers that are ready to run.</p>
+<p>Programs running on video cards with a small amount of VRAM (&lt;=4GB) may experience out of memory errors.</p>
+<p><strong>牺牲速度来支持低显存显卡</strong></p>
+<p>When running on video cards with a low amount of VRAM (&lt;=4GB), out of memory errors may arise. Various optimizations may be enabled through command line arguments, sacrificing some/a lot of speed in favor of using less VRAM:</p>
+<ul>
 <li>
-<p>激活 WebUI 使用的 venv,要在正确的虚拟环境里运行</p>
+<p>If you have 4GB VRAM and want to make 512x512 (or maybe up to 640x640) images, use --medvram.</p>
 </li>
 <li>
-<p>卸载掉现在所用的 torch 和 torchvision:</p>
-</li>
-</ol>
-<div class="highlight"><pre><span></span><code>pip uninstall torch torchvision
-</code></pre></div>
-<ol>
-<li>重新安装 <code>CUDA 11.6</code> 编译的 <code>torch</code> 和 <code>torchvision</code>。</li>
-</ol>
-<div class="highlight"><pre><span></span><code>pip install torch torchvision --extra-index-url https://download.pytorch.org/whl/cu116
-</code></pre></div>
-<ol>
-<li>下载 <code>Cudnn_8.5</code> 备用。</li>
-</ol>
-<p>使用下载工具下载，直接下载会跳转到 Nvidia 的开发者注册界面</p>
-<p>Windows: <a href="https://developer.nvidia.com/compute/cudnn/secure/8.5.0/local_installers/11.7/cudnn-windows-x86_64-8.5.0.96_cuda11-archive.zip">https://developer.nvidia.com/compute/cudnn/secure/8.5.0/local_installers/11.7/cudnn-windows-x86_64-8.5.0.96_cuda11-archive.zip</a></p>
-<p>其他版本：<a href="https://developer.nvidia.com/rdp/cudnn-archive">https://developer.nvidia.com/rdp/cudnn-archive</a></p>
-<ol>
-<li>
-<p>将 Cudnn 8.5 压缩包里的 bin 和 lib 文件夹里的所有文件复制到 <code>venv\Lib\site-packages\torch\lib</code> 里，覆盖所有文件。</p>
+<p>If you have 4GB VRAM and want to make 512x512 images, but you get an out of memory error with --medvram, use --medvram --opt-split-attention instead.</p>
 </li>
 <li>
-<p>然后 16xx 系显卡也可以愉快地使用半精度生成图片了！大幅降低显存占用，6G 加载 Full 模型可以生成 1024x640 的图片。</p>
+<p>If you have 4GB VRAM and want to make 512x512 images, and you still get an out of memory error, use --lowvram --always-batch-cond-uncond --opt-split-attention instead.</p>
 </li>
-</ol>
-<p>但是，依然不能使用 <code>DDIM Sampling</code> ，但可以使用 <code>Euler a</code></p>
+<li>
+<p>If you have 4GB VRAM and want to make images larger than you can with --medvram, use --lowvram --opt-split-attention.</p>
+</li>
+<li>
+<p>If you have more VRAM and want to make larger images than you can usually make (for example 1024x1024 instead of 512x512), use --medvram --opt-split-attention. You can use --lowvram also but the effect will likely be barely noticeable.</p>
+</li>
+<li>
+<p>Otherwise, do not use any of those.</p>
+</li>
+</ul>
+<h2 id="where-my-python">Where my Python?</h2>
+<p>If the desired version of Python is not in PATH, modify the line set PYTHON=python in webui-user.bat with the full path to the python executable.</p>
+<h2 id="errorasyncioaccept-failed-on-a-socket">ERROR:asyncio:Accept failed on a socket</h2>
+<p>First check for port conflicts, and any software conflicts</p>
+<p>This error may be due to compatibility of <code>asyncio</code> library of <code>Python38</code> with <code>Windows</code>.</p>
+<p>Try running <code>netsh winsock reset</code> as a CMD administrator, and if that doesn't work, switch ports.</p>
+<p>If that still doesn't work, switch to Python <code>3.10.6</code>, which is the version of WebUi's development environment.</p>
+<h2 id="venv">Venv</h2>
+<p>If you are using conda you can run the launch install dependency yourself without the one-click script.</p>
+<p>This is because the one-click installer script given by the repository creates the virtual environment and then launches <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/launch.py">launch.py</a>.</p>
+<p>At runtime, the one-click installer creates a python virtual environment, so if you install a module before installing it, then any installed modules will not cause conflicts.</p>
+<p>If you need to prevent the creation of a virtual environment and use system python, edit <code>webui.bat</code> and replace <code>setVENV_DIR=venv</code> with <code>set VENV_DIR=</code></p>
+<h2 id="api-ms-win-core-path-l1-1-0dll-is-missing3">api-ms-win-core-path-l1-1-0.dll is missing[^3]</h2>
+<p>Running on Windows 7 is likely to report the error: <code>api-ms-win-core-path-l1-1-0.dll is missing</code> because many programs require system files from newer versions of Windows.</p>
+<p>If this error does not occur, there is no need to perform the following actions.</p>
+<p>These files have been ported to be compatible with W7 and are available at <a href="https://github.com/nalexandru/api-ms-win-core-path-HACK/releases/download/0.3.1/api-ms-win-core-path- blender-0.3.1.zip">here</a> for download. Its <a href="https://github.com/nalexandru/api-ms-win-core-path-HACK/">Github page</a></p>
+<p>Unzip and copy <code>x86.dll</code> to <code>C:\Windows\SysWOW64</code>, copy <code>x64.dll</code> to <code>C:\Windows\System32</code> and reboot.</p>
+<h2 id="an-illegal-memory-access-was-encountered-cuda-kernel-errors">an illegal memory access was encountered ....CUDA kernel errors...</h2>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/1766">RelatedIssue</a></p>
+<p>In most cases, this means that the video memory is overflowing, but it could also be a GPU hardware problem.</p>
+<p>It is said that if you are using deepdanbooru, you will get this message, so try to restart or install the cpu version of deepdanbooru.</p>
+<p><strong>See the next chapter for image generation problems</strong>.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
-      最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月3日 02:10:16</span>
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 3, 2022 02:10:16</span>
       
         <br>
-        创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月3日 02:10:16</span>
+        Created:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 3, 2022 02:10:16</span>
       
     
   </small>
@@ -1277,7 +1344,7 @@
         
           <a href="#" class="md-top md-icon" data-md-component="top" hidden>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
-            回到页面顶部
+            Back to top
           </a>
         
       </main>
@@ -1285,32 +1352,32 @@
         <footer class="md-footer">
   
     
-    <nav class="md-footer__inner md-grid" aria-label="页脚" >
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="上一页: 架炉生火" rel="prev">
+        <a href="../launch/" class="md-footer__link md-footer__link--prev" aria-label="Previous: LaunchWebUi" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
-                上一页
+                Previous
               </span>
-              架炉生火
+              LaunchWebUi
             </div>
           </div>
         </a>
       
       
         
-        <a href="../NAI/" class="md-footer__link md-footer__link--next" aria-label="下一页: NAI泄漏报告" rel="next">
+        <a href="../../../model/" class="md-footer__link md-footer__link--next" aria-label="Next: Initialization" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
-                下一页
+                Next
               </span>
-              NAI泄漏报告
+              Initialization
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -1368,10 +1435,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "toc.follow", "navigation.top", "navigation.tracking", "navigation.indexes", "navigation.expand", "navigation.sections"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "toc.follow", "navigation.top", "navigation.tracking", "navigation.indexes", "navigation.expand", "navigation.sections"], "search": "../../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.8492ddcf.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.8492ddcf.min.js"></script>
       
     
   </body>
