@@ -1037,6 +1037,8 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           DreamBooth
@@ -1053,6 +1055,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1061,26 +1065,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dreambooth" class="md-nav__link">
-    DreamBooth
-  </a>
-  
-    <nav class="md-nav" aria-label="DreamBooth">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    配置要求
+  <a href="#configuration-requirements" class="md-nav__link">
+    Configuration requirements
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    训练
+      
+        <li class="md-nav__item">
+  <a href="#training" class="md-nav__link">
+    Training
   </a>
   
-    <nav class="md-nav" aria-label="训练">
+    <nav class="md-nav" aria-label="Training">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1101,23 +1097,18 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    参数分析
+      
+        <li class="md-nav__item">
+  <a href="#parametric-analysis" class="md-nav__link">
+    Parametric analysis
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    其他
+      
+        <li class="md-nav__item">
+  <a href="#other" class="md-nav__link">
+    Other
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1211,6 +1202,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1219,26 +1212,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dreambooth" class="md-nav__link">
-    DreamBooth
-  </a>
-  
-    <nav class="md-nav" aria-label="DreamBooth">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    配置要求
+  <a href="#configuration-requirements" class="md-nav__link">
+    Configuration requirements
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    训练
+      
+        <li class="md-nav__item">
+  <a href="#training" class="md-nav__link">
+    Training
   </a>
   
-    <nav class="md-nav" aria-label="训练">
+    <nav class="md-nav" aria-label="Training">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1259,23 +1244,18 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    参数分析
+      
+        <li class="md-nav__item">
+  <a href="#parametric-analysis" class="md-nav__link">
+    Parametric analysis
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    其他
+      
+        <li class="md-nav__item">
+  <a href="#other" class="md-nav__link">
+    Other
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1293,95 +1273,99 @@
                 
                   
 
-  <a href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/train/DreamBooth.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/train/DreamBooth.en.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-  <h1>DreamBooth</h1>
-
-<h2 id="dreambooth">DreamBooth</h2>
-<p>DreamBooth 的模型是一种新的文本到图像“个性化”（可适应用户特定的图像生成需求）扩散模型方法。</p>
-<h3 id="_1">配置要求</h3>
-<p>Windows 系统至少需要 16, Linux 系统要求显存大于 8 GB</p>
-<h3 id="_2">训练</h3>
-<h4 id="linux">Linux</h4>
-<p>直接用下面的笔记本里的代码，不过需要英文基础。</p>
-<p><a href="https://colab.research.google.com/drive/17yM4mlPVOFdJE_81oWBz5mXH9cxvhmz8">Nyanko Lepsoni 的 Colab 笔记本</a></p>
-<p><a href="https://colab.research.google.com/drive/1C1vVZ59S4kWfL7jIsczyLpmxbD4cOA-k">RcINS 的 Colab 笔记本</a></p>
-<p>以上笔记本来自 <a href="https://t.me/StableDiffusion_CN/196744">社区置顶</a></p>
-<p><a href="https://github.com/crosstyan/dreambooth-scripts-for-autodl">适用于Autodl的项目</a></p>
-<h4 id="windows">Windows</h4>
-<p>来自 [^18]</p>
-<p>Windows上的Dreambooth 可以采用ShivamShrirao的优化版本来节省显存，</p>
-<p><a href="https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth">diffusers/examples/dreambooth at main · ShivamShrirao/diffusers · GitHub</a></p>
-<p>但是，由于相关链接库的原因，用于在Linux上的部署方法无法直接在windows上使用，由于同样的原因，该优化版本在colab上最低9.9G的显存需求在windows上应该稍高，因此推荐至少使用显存12G的显卡。笔者仅在16G显存PC上测试成功，12G理论可以，待测试。</p>
-<p>修改或覆盖原始库中的文件前请备份！</p>
-<p>准备环境 <code>Git</code>，<code>Python</code>，<code>MiniConda</code> (或 <code>MiniConda</code> )。</p>
-<p>以下步骤在python3.8，windows10 22H2中操作，其他环境未测试</p>
-<p><strong>创建工作目录 ，在目录下构建python3.8的venv虚拟环境</strong></p>
-<pre><code>python -m venv --system-site-packages venv_dbwin
-venv_dbwin\Scripts\activate
-python.exe -m pip install --upgrade pip
-</code></pre>
-<p>克隆ShivamShrirao的优化版本dreambooth到工作目录中并安装相关依赖（使用的构建版本https://github.com/huggingface/diffusers/tree/7465397f33d5de75dcccc155e3fb9a232fcbb0a0 后续版本可能无法支持本文方法）</p>
-<pre><code>git clone https://github.com/ShivamShrirao/diffusers
-cd diffusers
+<h1 id="dreambooth">DreamBooth</h1>
+<p>DreamBooth's model is a new approach to text-to-image "personalisation" (which can be adapted to the user's specific image generation needs) of diffusion models.</p>
+<h2 id="configuration-requirements">Configuration requirements</h2>
+<p>Windows systems require at least 16, Linux systems require more than 8 GB of video memory</p>
+<h2 id="training">Training</h2>
+<h3 id="linux">Linux</h3>
+<p>Use the code directly from the Colab notebook below.</p>
+<p><a href="https://colab.research.google.com/drive/17yM4mlPVOFdJE_81oWBz5mXH9cxvhmz8">Nyanko Lepsoni s Colab notebook</a></p>
+<p><a href="https://colab.research.google.com/drive/1C1vVZ59S4kWfL7jIsczyLpmxbD4cOA-k">RcINS s Colab notebook</a></p>
+<p>The above notebook is from <a href="https://t.me/StableDiffusion_CN/196744">Community Top</a></p>
+<p><a href="https://github.com/crosstyan/dreambooth-scripts-for-autodl">Project for Autodl</a></p>
+<h3 id="windows">Windows</h3>
+<p>From [^18]</p>
+<p><code>Dreambooth</code> on Windows can use an optimized version of ShivamShrirao to save video memory.</p>
+<p><a href="https://github.com/ShivamShrirao/diffusers/tree/main/examples /dreambooth">diffusers/examples/dreambooth at main - ShivamShrirao/diffusers - GitHub</a></p>
+<p>However, the deployment method used on <code>Linux</code> will not work directly on windows due to the associated link libraries, and for the same reason the minimum 9.9G video memory requirement on colab for this optimized version should be slightly higher on windows, so it is recommended to <strong>use a video card with at least 12G of video memory</strong>.</p>
+<blockquote>
+<p>I have only tested it successfully on a 16G memory PC, 12G is theoretically possible, to be tested.</p>
+</blockquote>
+<p>Please back up before modifying or overwriting files in the original library!</p>
+<p>Prepare the environment <code>Git</code>, <code>Python</code>, <code>MiniConda</code> (or <code>MiniConda</code> ).</p>
+<p>The following steps work in python 3.8, windows 10 22H2, other environments have not been tested</p>
+<p><strong>Create a working directory in which to build the venv virtual environment for python 3.8</strong></p>
+<div class="highlight"><pre><span></span><code>    python -m venv --system-site-packages venv_dbwin
+    venv_dbwin<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
+    python.exe -m pip install --upgrade pip
+</code></pre></div>
+<p>Clone the optimized version of ShivamShrirao's dreambooth into a working directory and install the relevant dependencies ,using the <a href="https://github.com/huggingface/diffusers/tree/7465397f33d5de75dcccc155e3fb9a232fcbb0a0">build-version</a>, subsequent versions may not support this method.</p>
+<div class="highlight"><pre><span></span><code>git clone https://github.com/ShivamShrirao/diffusers
+<span class="nb">cd</span> diffusers
 pip install -e .
-cd examples\dreambooth
+<span class="nb">cd</span> examples<span class="se">\d</span>reambooth
 pip install -U -r requirements.txt
 pip install OmegaConf
 pip install pytorch_lightning
 pip install einops
-pip install bitsandbytes==0.34
-</code></pre>
-<p>完成后，在windows上需要根据 https://github.com/TimDettmers/bitsandbytes/issues/30#issuecomment-1257676341 中的方法实现bitsandbytes支持</p>
-<p>将 https://github.com/DeXtmL/bitsandbytes-win-prebuilt 中的libbitsandbytes_cuda116.dll 文件手动拷贝到工作目录下的 venv_diffusers\Lib\site-packages\bitsandbytes 中，位于 libbitsandbytes_cuda116.so 的旁边；</p>
-<p>然后更改脚本以应用，可以手动修改，为方便也可以下载以下文件替换：</p>
-<p>将 cextension.py: https://pastebin.com/jjgxuh8V 覆盖到venv_diffusers\Lib\site-packages\bitsandbytes目录。</p>
-<p>将 main.py: https://pastebin.com/BsEzpdpw 覆盖到venv_diffusers\Lib\site-packages\bitsandbytes\cuda_setup目录。</p>
-<p><strong>安装PyTorch和Torchvision</strong></p>
-<pre><code>pip install torch==1.12.1+cu116 torchvision==0.13.1+cu116 --extra-index-url https://download.pytorch.org/whl/cu116
-</code></pre>
-<p><strong>进入python并测试调用：</strong></p>
-<pre><code>python
-&gt;&gt;&gt;import bitsandbytes
-</code></pre>
-<p>如果没有报错证明安装成功（Ctrl + Z并回车退出python）</p>
-<p><strong>设置accelerate</strong></p>
-<pre><code>accelerate config
+pip install <span class="nv">bitsandbytes</span><span class="o">==</span><span class="m">0</span>.34
+</code></pre></div>
+<p>Once this is done, the bitsandbytes support needs to be implemented on windows according to the method in <a href="https://github.com/TimDettmers/bitsandbytes/issues/30#issuecomment-1257676341">this Issue</a></p>
+<p>Manually copy the <code>libbitsandbytes_cuda116.dll</code> file from <a href="https://github.com/DeXtmL/bitsandbytes-win-prebuilt">this Issue</a> to the working directory in <code>venv_diffusers\Lib\site- packages\bitsandbytes</code> in the working directory, next to <code>libbitsandbytes_cuda116.so</code>.</p>
+<p>Then change the script to apply it, either manually or, for convenience, by downloading the following file to replace it.</p>
+<p>Overwrite <code>cextension.py</code> - https://pastebin.com/jjgxuh8V with the <code>venv_diffusers\Lib\site-packages\bitsandbytes</code> directory.</p>
+<p>Overwrite <code>main.py</code> - https://pastebin.com/BsEzpdpw to the <code>venv_diffusers\Lib\site-packages\bitsandbytes\cuda_setup</code> directory.</p>
+<p><strong>install PyTorch and Torchvision</strong></p>
+<p><code>pip install torch==1.12.1+cu116 torchvision==0.13.1+cu116 --extra-index-url https://download.pytorch.org/whl/cu116</code></p>
+<p><strong>Go to Python and test the call:</strong>
+<div class="highlight"><pre><span></span><code>    python
+    &gt;&gt;&gt;import bitsandbytes
+</code></pre></div>
+如果没有报错证明安装成功（ <code>Ctrl + Z</code> 并回车退出 python）</p>
+<p><strong>set accelerate</strong></p>
+<div class="highlight"><pre><span></span><code>    accelerate config
 
-In which compute environment are you running? ([0] This machine, [1] AWS (Amazon SageMaker)): 0
-Which type of machine are you using? ([0] No distributed training, [1] multi-CPU, [2] multi-GPU, [3] TPU [4] MPS): 0
-Do you want to run your training on CPU only (even if a GPU is available)? [yes/NO]:NO
-Do you want to use DeepSpeed? [yes/NO]:NO
-Do you wish to use FP16 or BF16 (mixed precision)? [NO/fp16/bf16]: fp16
-</code></pre>
-<p>按照上面的设置选项，（0，0，NO，NO，fp16）</p>
-<p><strong>修改显存优化</strong></p>
-<p>因为无法使用xformers，所以使用https://github.com/lucidrains/memory-efficient-attention-pytorch/blob/main/memory_efficient_attention_pytorch/flash_attention.py
-中的优化方法作为代替：</p>
-<p>将 attention.py: https://pastebin.com/nmwTrGB9 覆盖到diffusers\src\diffusers\models目录:</p>
-<p>至此环境配置完成，可以开始训练了。具体使用参数请查阅ShivamShrirao的readme文件和notebook文件</p>
-<p><strong>Tips：</strong></p>
-<p>我使用以下参数训练，</p>
-<pre><code>accelerate launch --num_cpu_threads_per_process 8 diffusers/examples/dreambooth/train_dreambooth.py --pretrained_model_name_or_path=models/diffusers_model --pretrained_vae_name_or_path=models/diffusers_model/vae --output_dir=models --concepts_list="concepts_list.json" --with_prior_preservation --prior_loss_weight=1.0 --seed=1337 --resolution=512 --mixed_precision="fp16" --lr_scheduler="constant" --use_8bit_adam --gradient_accumulation_steps=1 --train_batch_size=1 --max_train_steps=800 --save_interval=10000 --learning_rate=1e-6 --num_class_images=100 --lr_warmup_steps=0 --gradient_checkpointing
-</code></pre>
+    In which compute environment are you running? ([0] This machine, [1] AWS (Amazon SageMaker)): 0
+    Which type of machine are you using? ([0] No distributed training, [1] multi-CPU, [2] multi-GPU, [3] TPU [4] MPS): 0
+    Do you want to run your training on CPU only (even if a GPU is available)? [yes/NO]:NO
+    Do you want to use DeepSpeed? [yes/NO]:NO
+    Do you wish to use FP16 or BF16 (mixed precision)? [NO/fp16/bf16]: fp16
+</code></pre></div>
+<p>按照上面的设置选项，也就是（0，0，NO，NO，fp16）</p>
+<p>Follow the setting options above, which are (0, 0, NO, NO, fp16)</p>
+<p><strong>Modify video memory optimisation</strong></p>
+<p>Since xformers are not available, use <a href="https://github.com/lucidrains/memory-efficient-attention-pytorch/blob/main/memory_efficient_attention_pytorch/flash_attention.py">this file</a> as an optimization method instead.</p>
+<p>Overwrite attention.py - https://pastebin.com/nmwTrGB9 with the <code>diffusers\src\diffusers\models</code> directory.</p>
+<p>This completes the environment configuration and you are ready to start training. Please refer to ShivamShrirao's readme file and notebook file for specific parameters to use</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>I trained using the following parameters.</p>
+<div class="highlight"><pre><span></span><code>    accelerate launch --num_cpu_threads_per_process <span class="m">8</span> diffusers/examples/dreambooth/train_dreambooth.py --pretrained_model_name_or_path<span class="o">=</span>models/diffusers_model --pretrained_vae_name_or_path<span class="o">=</span>models/diffusers_model/vae --output_dir<span class="o">=</span>models --concepts_list<span class="o">=</span><span class="s2">&quot;concepts_list.json&quot;</span> --with_prior_preservation --prior_loss_weight<span class="o">=</span><span class="m">1</span>.0 --seed<span class="o">=</span><span class="m">1337</span> --resolution<span class="o">=</span><span class="m">512</span> --mixed_precision<span class="o">=</span><span class="s2">&quot;fp16&quot;</span> --lr_scheduler<span class="o">=</span><span class="s2">&quot;constant&quot;</span> --use_8bit_adam --gradient_accumulation_steps<span class="o">=</span><span class="m">1</span> --train_batch_size<span class="o">=</span><span class="m">1</span> --max_train_steps<span class="o">=</span><span class="m">800</span> --save_interval<span class="o">=</span><span class="m">10000</span> --learning_rate<span class="o">=</span>1e-6 --num_class_images<span class="o">=</span><span class="m">100</span> --lr_warmup_steps<span class="o">=</span><span class="m">0</span> --gradient_checkpointing
+</code></pre></div>
+</div>
 <p><img alt="image" src="https://user-images.githubusercontent.com/44570237/198906326-21b4f779-f870-4012-84c1-d5ac1dae0411.png" /></p>
-<p>峰值显存占用正好为12G，如果您只有一个显卡，显存不高于12G，而且同时需要用于windows系统显示，请关闭所有占用显存的程序或网页等，减少额外显存消耗再进行训练；</p>
-<p>这是一个临时的解决方案，期待windows官方适配的到来</p>
-<p>diffusers不能直接使用ckpt文件进行训练，需要先进行转换，示例：</p>
-<pre><code>python diffusers\scripts\convert_original_stable_diffusion_to_diffusers.py  --checkpoint_path model.ckpt  --original_config_file v1-inference.yaml  --scheduler_type ddim  --dump_path models/diffusers_model
-</code></pre>
-<p>训练完成同样要进行打包转换为ckpt,即可用于AUTOMATIC1111的WebUI中：</p>
-<pre><code>python diffusers\scripts\convert_diffusers_to_original_stable_diffusion.py  --model_path models/resultModel  --checkpoint_path result.ckpt  --half
-</code></pre>
-<h3 id="_3">参数分析</h3>
-<p><a href="https://wandb.ai/psuraj/dreambooth/reports/Dreambooth-training-analysis--VmlldzoyNzk0NDc3">使用 Dreambooth 训练稳定扩散的实验的分析</a></p>
-<h3 id="_4">其他</h3>
+<p>If you only have one graphics card with no more than 12G of video memory and need to use it for Windows, please close all programs or web pages that consume video memory to reduce additional memory consumption before training.</p>
+<p>diffusers cannot be trained directly using ckpt files, they need to be converted first, as shown in the example below.</p>
+<div class="highlight"><pre><span></span><code>    python diffusers<span class="se">\s</span>cripts<span class="se">\c</span>onvert_original_stable_diffusion_to_diffusers.py --checkpoint_path model.ckpt --original_config_file v1- inference.yaml --scheduler_type ddim --dump_path models/diffusers_model
+</code></pre></div>
+<p>The training is also packaged and converted to ckpt, which can be used in the WebUI of the AUTOMATIC1111.</p>
+<div class="highlight"><pre><span></span><code>    python diffusers\scripts\convert_diffusers_to_original_stable_diffusion.py --model_path models/resultModel --checkpoint_path result. ckpt --half
+</code></pre></div>
+<blockquote>
+<p>This is a temporary solution in anticipation of an official Windows adaptation.</p>
+</blockquote>
+<h2 id="parametric-analysis">Parametric analysis</h2>
+<p><a href="https://wandb.ai/psuraj/dreambooth/reports/Dreambooth-training-analysis--VmlldzoyNzk0NDc3">Analysis of experiments using Dreambooth to train stable diffusion</a></p>
+<h2 id="other">Other</h2>
 <p><a href="https://github.com/TheLastBen/fast-stable-diffusion">fast-stable-diffusion colabs</a></p>
-<p>相关的还有 <a href="https://colab.research.google.com/github/ShivamShrirao/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion.ipynb#scrollTo=K6xoHWSsbcS3">DreamBooth_Stable_Diffusion</a> 和
+<p>Related <a href="https://colab.research.google.com/github/ShivamShrirao/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion.ipynb#scrollTo=K6xoHWSsbcS3">DreamBooth_Stable_Diffusion</a> and
 <a href="https://colab.research.google.com/github/TheLastBen/fast-stable-diffusion/blob/main/fast-DreamBooth.ipynb">fast-DreamBooth</a></p>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2927">Dreambooth Gui</a></p>
 <p><a href="https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth">ShivamShrirao/diffusers</a></p>
@@ -1396,11 +1380,11 @@ Do you wish to use FP16 or BF16 (mixed precision)? [NO/fp16/bf16]: fp16
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 3, 2022 05:50:36</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 3, 2022 12:19:59</span>
       
         <br>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 3, 2022 05:50:36</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 3, 2022 12:19:59</span>
       
     
   </small>
