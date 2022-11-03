@@ -238,7 +238,7 @@ Discord 机器人项目 [aiyabot](https://github.com/Kilvoctu/aiyabot/blob/main/
 
 
 
-## 错误处理 Troubleshooting
+# 错误处理 Troubleshooting
 
 翻译整理自[^3]
 

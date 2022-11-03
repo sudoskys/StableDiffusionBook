@@ -20,6 +20,7 @@ nav:
       - WebUi安装:
           - install/WebUi/index.md
           - 运行WebUi: install/WebUi/launch.md
+          - 错误处理: install/WebUi/Troubleshoot.md
   - 绘画调试:
       - model/index.md
       - GPU相关: model/GPU.md
@@ -112,6 +113,7 @@ plugins:
             AestheticGradients 训练: AestheticGradients
             参考资料: References
             运行WebUi: LaunchWebUi
+            错误处理: Troubleshoot
       languages:
         en:
           name: English
