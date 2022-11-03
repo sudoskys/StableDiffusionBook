@@ -278,7 +278,7 @@ normal quality, text, censored, gown, latex, pencil
 [官方Wiki](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Negative-prompt#examples)
 
 
-### CFG Scale/Denoising strength 契合度/降噪
+## CFG Scale/Denoising strength 契合度/降噪
 
 **CFG Scale**
 
