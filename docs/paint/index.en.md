@@ -31,9 +31,24 @@ The toolbox that you can see when you open the page
 
 * [QuickShare-pastebin](https://paste.rs/web)
 
+* [prompthero](https://prompthero.com/)
+
+* [Prompt Search ](https://www.ptsearch.info/home/)
+
+
 ### Reference works
 
+* [arthub](https://arthub.ai/)
+
+* [NOVELAI.IO ](https://novelai.io/)
+
 * [Pixai](https://pixai.art/)
+
+* [LEXICA](https://lexica.art/)
+
+* [Krea](https://www.krea.ai/)
+
+* [largest library of AI-generated images](https://libraire.ai/)
 
 * [Top-sd-artists](https://www.urania.ai/top-sd-artists)
 

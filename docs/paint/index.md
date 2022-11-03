@@ -36,9 +36,24 @@
 
 * [快速分享-在线剪切板](https://netcut.cn/)
 
+* [prompthero](https://prompthero.com/)
+
+* [Prompt Search ](https://www.ptsearch.info/home/)
+
+
 ### 作品参考
 
+* [arthub](https://arthub.ai/)
+
+* [NOVELAI.IO ](https://novelai.io/)
+
 * [Pixai](https://pixai.art/)
+
+* [LEXICA](https://lexica.art/)
+
+* [Krea](https://www.krea.ai/)
+
+* [largest library of AI-generated images](https://libraire.ai/)
 
 * [Top-sd-artists](https://www.urania.ai/top-sd-artists)
 
