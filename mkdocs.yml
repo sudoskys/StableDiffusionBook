@@ -25,8 +25,9 @@ nav:
       - model/index.md
       - GPU相关: model/GPU.md
       - NAI泄漏报告: model/NAI.md
-      - WebUi配置模型:
+      - WebUi 配置:
           - model/WebUi/index.md
+          - 错误处理: model/WebUi/Troubleshoot.md
   - 绘画指南:
       - paint/index.md
       - WebUi绘画指南:
