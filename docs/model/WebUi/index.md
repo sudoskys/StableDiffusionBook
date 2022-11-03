@@ -99,6 +99,27 @@ ckpt 文件被加载时基本上可以执行任何内容，盲目加载有安全
 ![引用官方 Wiki 的设置图](https://raw.githubusercontent.com/wiki/AUTOMATIC1111/stable-diffusion-webui/images/xy_grid-medusa-ui.png)
 >引用官方 Wiki 的设置图
 
+#### Prompt S/R 替换
+
+提示S/R是X/Y图的的一种较难理解的操作模式。
+
+S/R是搜索/替换的意思，输入一个单词或短语的列表，它从列表中取第一个并将其视为关键词，并将该关键词的所有实例替换为列表中的其他条目的所有实例替换为列表中的其他条目。
+
+例如，提示 `a man holding an apple, 8k clean` 和 S/R提示 `an apple, a watermelon, a gun` 结合，你会得到三个提示。
+
+* `a man holding an apple, 8k clean`
+* `a man holding a watermelon, 8k clean`
+* `a man holding a gun, 8k clean`
+
+列表使用的语法与CSV文件中的一行相同，所以如果你想在你的条目中加入逗号，你可以
+在你的条目中加入逗号，你必须将文本放在引号中，并确保引号之间没有空格。
+确保引号和分隔逗号之间没有空格。
+
+* `darkness, light, green, heat` - 4 items - `darkness`, `light`, `green`, `heat`
+* `darkness, "light, green", heat` - WRONG - 4 items - `darkness`, `"light`, `green"`, `heat`
+* `darkness,"light, green",heat` - RIGHT - 3 items - `darkness`, `light, green`, `heat`
+
+
 ### **Variations种子变化**
 
 `Variation strength slider` 和 `Variation seed field` 允许您指定现有图片应更改多少以使其看起来不同。

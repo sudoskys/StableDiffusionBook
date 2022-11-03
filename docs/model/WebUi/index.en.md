@@ -109,6 +109,30 @@ Ranges with the count in square brackets
 ![pic](https://raw.githubusercontent.com/wiki/AUTOMATIC1111/stable-diffusion-webui/images/xy_grid-medusa-ui.png)
 >FromWebUiWiki
 
+#### Prompt S/R
+
+Prompt S/R is one of more difficult to understand modes of operation
+for X/Y Plot. S/R stands for search/replace, and that's what it does -
+you input a list of words or phrases, it takes the first from the list
+and treats it as keyword, and replaces all instances of that keyword
+with other entries from  the list.
+
+For example, with prompt `a man holding an apple, 8k clean`, and Prompt S/R `an apple, a watermelon, a gun` you will get three prompts:
+
+* `a man holding an apple, 8k clean`
+* `a man holding a watermelon, 8k clean`
+* `a man holding a gun, 8k clean`
+
+The list uses the same syntax as a line in a CSV file, so if you want
+to include commas into your entries you have to put text in quotes and
+make sure there is no space between quotes and separating commas:
+
+* `darkness, light, green, heat` - 4 items - `darkness`, `light`, `green`, `heat`
+* `darkness, "light, green", heat` - WRONG - 4 items - `darkness`, `"light`, `green"`, `heat`
+* `darkness,"light, green",heat` - RIGHT - 3 items - `darkness`, `light, green`, `heat`
+
+
+
 ### **Variations**
 
 A Variation strength slider and Variation seed field allow you to specify how much the existing picture should be altered to look like a different one. At maximum strength, you will get pictures with the Variation seed, at minimum - pictures with the original Seed (except for when using ancestral samplers).
