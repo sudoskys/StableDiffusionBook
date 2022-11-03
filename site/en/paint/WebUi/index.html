@@ -1322,7 +1322,7 @@ NAI's [word] = WebUi(word:0.952)(0.952 = 1/1.05)</p>
 <ul>
 <li>Natural language</li>
 </ul>
-<p>Natural language can be used directly, WebUi(SD) has natural language processing capabilities (English sentences), and can also use face characters and emoji</p>
+<p>Natural language can be used directly, WebUi(SD) has natural language processing capabilities (English sentences), and can also use  emoji</p>
 <ul>
 <li>parameter [^6]</li>
 </ul>
@@ -1341,7 +1341,8 @@ The background of the picture
 <ul>
 <li>The Tip should not be too long, there is a risk of failure if it exceeds 100.</li>
 </ul>
-<p>According to tests, due to the limitations of the GPT-3 model, prompts are not infinite, positive token is between 75-80, negative is about 65, adding too much will prompt you that xxx of xxx are truncated, so don't copy someone else's phrase, the second half of a phrase that is too long doesn't make sense, so use a short negative prompt unless you have a specific object you want to block.</p>
+<p>You can write prompts with more than 75 words. Originally, due to GPT-3 model limitations, the prompts are not unlimited, the positive token is between 75-80, and the content after 75 words is truncated. But WebUi has grouping, so you can write many words.</p>
+<p>But not stacking prompts is a good habit.</p>
 <p>When the prompt exceeds 75 <code>tokens</code> (say 150 <code>tokens</code>), WebUi will group the prompt words and submit multiple sets of 75 <code>tokens</code>. The tokens will only have the context of the rest of the content in the same set. This means that you may have <code>bule hair</code> at the boundary between the first and second group, token <code>blue</code> will be in the first group and <code>hair</code> will be in the second group. This led to inaccurate results as the two words were separated.</p>
 <p>The new version adds an option <code>Increase coherency by padding from the last comma within n tokens when using more than 75 tokens</code></p>
 <p>This setting lets the program try to alleviate this by finding if there is a last comma in the last N tokens, and if so, moving everything that passes through that comma together to the next collection.</p>
@@ -1565,11 +1566,11 @@ PS: too high a step count (&gt;30) will not give better results</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 3, 2022 02:46:47</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 3, 2022 03:14:37</span>
       
         <br>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 3, 2022 02:46:47</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 3, 2022 03:14:37</span>
       
     
   </small>

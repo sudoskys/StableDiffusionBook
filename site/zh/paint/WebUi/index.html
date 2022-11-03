@@ -1390,7 +1390,7 @@ NAI的 [word] = WebUi(word:0.952)(0.952 = 1/1.05)</p>
 <ul>
 <li>自然语言</li>
 </ul>
-<p>可以直接使用自然语言，WebUi(SD) 有自然语言处理能力(英文句子),也可以使用 颜文字 和 emoji</p>
+<p>WebUi 也可以直接使用自然语言，包括 西方颜文字，emoji ，甚至可以是一些日文？</p>
 <ul>
 <li>参数[^6]</li>
 </ul>
@@ -1409,8 +1409,8 @@ NAI的 [word] = WebUi(word:0.952)(0.952 = 1/1.05)</p>
 <ul>
 <li>提示不要太长，超过 100 就有失败风险。</li>
 </ul>
-<p>由于GPT-3模型限制，prompt 并不是无限的，positive token 在 75-80 之间，75 字符后的内容会被截断。</p>
-<p>negative 大概65，加太多会提示你 xxx of xxx are truncated，所以不要堆叠Tag.</p>
+<p>你可以写 75 个词汇以上的提示。本来由于GPT-3模型限制，prompt 并不是无限的，positive token 在 75-80 之间，75 字符后的内容会被截断。但是 WebUi 进行了分组，所以你可以写很多词。</p>
+<p>但是不堆叠 prompt 是一个好习惯。</p>
 <p>当提示超过75个<code>token</code>（比如150个<code>token</code>）时，WebUi 将分组提示词，提交多组75个 <code>token</code>。标记只具有同一集合中其他内容的上下文。这意味着您可能在第一组和第二组之间的边界处有<code>bule hair</code>，标记<code>blue</code>将在第一组中，<code>hair</code>将在第二组中。这导致了结果的不准确，因为这两个词是分开的。</p>
 <p>新版本增加了一个选项 <code>Increase coherency by padding from the last comma within n tokens when using more than 75 tokens</code></p>
 <p>这个设置让程序试图通过查找最后N个标记中是否有最后一个逗号来缓解这种情况，如果有，则将所有经过该逗号的内容一起移动到下一个集合中。</p>
@@ -1434,7 +1434,7 @@ caustics, masterpiece, high resolution,
 </code></pre></div>
 <p>第一行指定作品风格类型，第二行指定人物，第三行指定动作，第四行指定场景和着装，第五放指定其他参数</p>
 <p>以上顺序已经比较合理，但是你也可以调整提示词的顺序以产生不同的结果。 你可以手动调整，也可以 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/1607">使用 X/Y 图自动生成各种顺序</a></p>
-<p>Ai 难以解析下划线，请少用。</p>
+<p>Ai 难以解析下划线，据说。</p>
 <p><strong>风格化</strong></p>
 <p>Nai 出图默认是一种风格，你可以通过 训练风格模型，指定风格关键词等方法来创作带有特效或指定画风的图片。</p>
 <p><a href="https://space.bilibili.com/8612008/channel/collectiondetail?sid=787691">NovelAI使用教程和魔咒课堂</a></p>
@@ -1670,11 +1670,11 @@ git clone https://github.com/yfszzx/stable-diffusion-webui-images-browser
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月3日 02:46:47</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月3日 03:14:37</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月3日 02:46:47</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月3日 03:14:37</span>
       
     
   </small>
