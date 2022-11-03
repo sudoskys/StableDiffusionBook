@@ -10,6 +10,8 @@
 
 ## 考场速查
 
+这里是打开页面就可以看到的工具箱
+
 ### 标签参考
 
 * [Danbooru wiki Tag](https://danbooru.donmai.us/wiki_pages/tag_groups)

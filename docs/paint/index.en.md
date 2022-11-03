@@ -9,6 +9,8 @@ This section will introduce the parameters and related SDWebUi resources. If you
 
 ## Workstations
 
+The toolbox that you can see when you open the page
+
 ### Reference
 
 * [Danbooru wiki Tag](https://danbooru.donmai.us/wiki_pages/tag_groups)
@@ -36,7 +38,6 @@ This section will introduce the parameters and related SDWebUi resources. If you
 * [Top-sd-artists](https://www.urania.ai/top-sd-artists)
 
 * [artiststostudy](https://artiststostudy.pages.dev/)
-
 
 
 The tag reference should use [Danbooru wiki Tag](https://danbooru.donmai.us/wiki_pages/tag_groups) and [MidJourney-Styles-and-Keywords-Reference](https:// github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference)
