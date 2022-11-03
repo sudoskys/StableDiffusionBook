@@ -4,6 +4,28 @@
 !!! tip
     The Stable Diffusion WebUi is currently iterating very quickly and there are a lot of updates every day, so it is recommended to pull the latest code every day.
 
+## 11/3
+
+- Found a great and useful tool.
+
+[painting welding](https://github.com/BlinkDL/Hua)
+
+![](https://raw.githubusercontent.com/BlinkDL/Hua/main/Hua-Demo.gif)
+
+- 2
+
+After testing, I found that emoji works really well. There are always surprises for scene effects.
+
+```
+masterpiece,best quality,1girl,
+,light blue hair,solo,(anime coloring:1.1),
+(🌻☀️🌈:1.2),hug Sunflower,
+
+lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, bad feet
+```
+
+
+
 ## 11/2
 
 Adding custom backend APIs for Krita plugins and more

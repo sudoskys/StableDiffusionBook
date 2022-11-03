@@ -18,7 +18,11 @@ Viewed vertically
 |Pose position ||||
 |Lens position ||||
 
+## Painting soldering!
 
+With [AiPhotoShop - the online tool for infinite extents of canvas](https://www.painthua.com/) you can "weld" your work continuously, very conveniently. Just add the `--api` parameter to the start command and open the web page to use it.
+
+[Github](https://github.com/BlinkDL/Hua)
 
 ## The secret of diagram to diagram conversion
 

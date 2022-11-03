@@ -18,6 +18,11 @@
 |姿势位|  |  |         |
 |镜头位|  |  |         |
 
+## 画作焊接！
+
+通过 [AiPhotoShop-无限外延画布的在线工具](https://www.painthua.com/) ，你可以连续 “焊接” 作品，非常方便。只需要在启动命令加上 `--api` 参数，然后打开网页就可以使用。
+
+[Github](https://github.com/BlinkDL/Hua)
 
 ## 图转图的秘籍
 

@@ -5,6 +5,26 @@
 
 以下是新闻和测试内容。
 
+## 11/3
+
+- 发现了一个很好用，很实用的工具。
+
+[画作焊接](https://github.com/BlinkDL/Hua)
+
+![](https://raw.githubusercontent.com/BlinkDL/Hua/main/Hua-Demo.gif)
+
+- 2
+
+经过测试，我发现 emoji 真的很好用。对于场景效果总是有惊喜。
+
+```
+masterpiece,best quality,1girl,
+,light blue hair,solo,(anime coloring:1.1),
+(🌻☀️🌈:1.2),hug Sunflower,
+
+lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, bad feet
+```
+
 ## 11/2
 
 为 Krita 插件等添加自定义后端 API
