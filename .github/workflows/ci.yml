@@ -22,21 +22,6 @@ jobs:
       # build docs
       - run: mkdocs build --clean
       # - run: mkdocs gh-deploy --force
-      - name: commit
-        env:
-          TZ: 'CST-8'
-          emails: ${{ secrets.GITHUB_EMAIL }}
-        run: |
-          sudo timedatectl set-timezone Asia/Shanghai
-          git config --global user.email emails
-          git config --global user.name GithubActionBot
-          datime=$(date "+%Y/%m/%d-%H:%M")
-          echo "git commit: push something, $datime"
-          if [ -n "$(git status -s)" ];then
-              git add .
-              git commit -m "make:action push $datime" -a
-          fi
-            - uses: actions/checkout@v3
       - run: |
           date > generated.txt
           git config user.name github-actions
@@ -44,7 +29,22 @@ jobs:
           git add .
           git commit -m "generated"
           git push
-      #- name: Push changes
-      #  uses: ad-m/github-push-action@master
-      #  with:
-      #    github_token: ${{ secrets.GITHUB_TOKEN }}
+#       - name: commit
+#         env:
+#           TZ: 'CST-8'
+#           emails: ${{ secrets.GITHUB_EMAIL }}
+#         run: |
+#           sudo timedatectl set-timezone Asia/Shanghai
+#           git config --global user.email emails
+#           git config --global user.name GithubActionBot
+#           datime=$(date "+%Y/%m/%d-%H:%M")
+#           echo "git commit: push something, $datime"
+#           if [ -n "$(git status -s)" ];then
+#               git add .
+#               git commit -m "make:action push $datime" -a
+#           fi
+#             - uses: actions/checkout@v3
+#       - name: Push changes
+#        uses: ad-m/github-push-action@master
+#        with:
+#          github_token: ${{ secrets.GITHUB_TOKEN }}
