@@ -9,13 +9,43 @@ This section will introduce the parameters and related SDWebUi resources. If you
 
 ## Workstations
 
+### Reference
+
+* [Danbooru wiki Tag](https://danbooru.donmai.us/wiki_pages/tag_groups)
+
+* [MidJourney-Styles-and-Keywords-Reference](https://github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference)
+
+* [List_of_imagecomposition](https://danbooru.donmai.us/wiki_pages/tag_group%3Aimage_composition)
+
+* [ist_of_locations](https://danbooru.donmai.us/wiki_pages/tag_group%3Alocations)
+
+* [List_of_attire](https://danbooru.donmai.us/wiki_pages/tag_group%3Aattire)
+
+* [List_of_Aesthetics](https://aesthetics.fandom.com/wiki/List_of_Aesthetics)
+
+* [List_of_colors_by_shade](https://en.wikipedia.org/wiki/List_of_colors_by_shade)
+
+### Tool
+
+* [QuickShare-pastebin](https://paste.rs/web)
+
+### Reference works
+
+* [Pixai](https://pixai.art/)
+
+* [Top-sd-artists](https://www.urania.ai/top-sd-artists)
+
+* [artiststostudy](https://artiststostudy.pages.dev/)
+
+
+
 The tag reference should use [Danbooru wiki Tag](https://danbooru.donmai.us/wiki_pages/tag_groups) and [MidJourney-Styles-and-Keywords-Reference](https:// github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference)
 
 For brushstrokes/painting tools/styling/painting techniques tag group see [Danbooru](https://danbooru.donmai.us/wiki_pages/tag_group%3Aimage_composition)
 
 If you are used to reading Japanese tag references and techniques, you can search in [Japanese Wiki](https://seesaawiki.jp/nai_ch/d/%be%ec%bd%ea%a1%a6%c7%d8%b7%ca).
 
-This section covers: imitating style, specific shots, adding effects, fine-tuning and fine-tuning, PS grafting out of the picture, specific poses through 3D, redrawing, iteration
+Later chapters covers: imitating style, specific shots, adding effects, fine-tuning and fine-tuning, PS grafting out of the picture, specific poses through 3D, redrawing, iteration
 
 >Note: WebUi's settings page requires pressing `Apply setting` to save the settings.
 
