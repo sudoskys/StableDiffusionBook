@@ -1353,6 +1353,8 @@
 
 <h1 id="dreambooth">DreamBooth</h1>
 <p>DreamBooth's model is a new approach to text-to-image "personalisation" (which can be adapted to the user's specific image generation needs) of diffusion models.</p>
+<p>To use it, simply export the model as a ckpt and you can then load it into the UI you want.</p>
+<p>This section uses Shivam Shirao's <a href="https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth">version</a></p>
 <h2 id="configuration-requirements">Configuration requirements</h2>
 <p>Windows systems require at least 16, Linux systems require more than 8 GB of VRAM</p>
 <h2 id="training">Training</h2>
@@ -1434,9 +1436,8 @@ pip install <span class="nv">bitsandbytes</span><span class="o">==</span><span c
 <p>This is a temporary solution in anticipation of an official Windows adaptation.</p>
 </blockquote>
 <h2 id="simple-guide">Simple guide</h2>
-<p><a href="[testing_dreambooth_for_consistency_with_complex](https://www.reddit.com/r/StableDiffusion/comments/yhw7k8/testing_dreambooth_for_consistency_with_complex/)">1^</a></p>
 <blockquote>
-<p>The following are all unconfirmed. If you have a different opinion, please feel free to ask.</p>
+<p>The following are all unconfirmed. If you have a different opinion, please feel free to ask.following content is partly from<a href="[testing_dreambooth_for_consistency_with_complex](https://www.reddit.com/r/StableDiffusion/comments/yhw7k8/testing_dreambooth_for_consistency_with_complex/)">1^</a></p>
 </blockquote>
 <ul>
 <li>Preparing the training image</li>
@@ -1456,13 +1457,40 @@ pip install <span class="nv">bitsandbytes</span><span class="o">==</span><span c
 <p>If training a <strong>reality</strong> concept, the class prompt should be "a high resolution photo _____"</p>
 <p>We initially only had a <code>class identifier picker</code> class image picker (one word) which was also used to generate <code>class images</code>. A separate <code>class image generator picker</code> has now been added (using multiple words) which allows us to further identify and constrain what we want from the class images.</p>
 <p>This is very useful and gives us more flexibility in finding which class images improve the embedding of concepts into the latent space.</p>
+<ul>
+<li>Resume training from checkpoint</li>
+</ul>
+<p>The MODEL_NAME of the parameter is changed to the position of the last model.</p>
 <h2 id="parametric-analysis">Parametric analysis</h2>
+<p>Basically all the explanations and examples are in the Colab notebook given above.</p>
 <p><a href="https://wandb.ai/psuraj/dreambooth/reports/Dreambooth-training-analysis--VmlldzoyNzk0NDc3">Analysis of experiments using Dreambooth to train stable diffusion</a></p>
 <h3 id="subject-images-class-images">Subject images / Class images</h3>
 <p>Copy from <a href="[good_dreambooth_formula](https://www.reddit.com/r/StableDiffusion/comments/ybxv7h/good_dreambooth_formula/)">2^</a></p>
 <p>Subject images (or instance images as you'll see on the notebooks) are the images that you want to train on, so if you want to get a model of your owns looks you take 20 to 40 images of yourself and input those. The instance name is a unique identifier that will represent the trained subject in the prompt, I use the person's "namelastname", most notebooks use "sks" but it's preferred to change it.</p>
 <p>You are essentially telling the AI to introduce you to the big database, to do that you pick a class, i.e a category that best fits what you are training, for people it's common to use "person", "man"/"woman", etc.</p>
 <p>Class images are used in training to prevent the looks of the subject to "bleed" into other subjects of the same class, without class images as a reference point, the AI tends to merge your face with the other faces that are present within that class. Other people like celebrities will kinda look like you.</p>
+<ul>
+<li>concepts_list.json</li>
+</ul>
+<div class="highlight"><pre><span></span><code># You can also add multiple concepts here. Try tweaking `--max_train_steps` accordingly.
+
+concepts_list = [
+    {
+        &quot;instance_prompt&quot;:      &quot;photo of zwx dog&quot;,
+        &quot;class_prompt&quot;:         &quot;photo of a dog&quot;,
+        &quot;instance_data_dir&quot;:    &quot;/content/data/zwx&quot;,
+        &quot;class_data_dir&quot;:       &quot;/content/data/dog&quot;
+    },
+#     {
+#         &quot;instance_prompt&quot;:      &quot;photo of ukj person&quot;,
+#         &quot;class_prompt&quot;:         &quot;photo of a person&quot;,
+#         &quot;instance_data_dir&quot;:    &quot;/content/data/ukj&quot;,
+#         &quot;class_data_dir&quot;:       &quot;/content/data/person&quot;
+#     }
+]
+
+# `class_data_dir` contains regularization images
+</code></pre></div>
 <h2 id="other">Other</h2>
 <p><a href="https://github.com/TheLastBen/fast-stable-diffusion">fast-stable-diffusion colabs</a></p>
 <p>Related <a href="https://colab.research.google.com/github/ShivamShrirao/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion.ipynb#scrollTo=K6xoHWSsbcS3">DreamBooth_Stable_Diffusion</a> and
@@ -1480,7 +1508,7 @@ pip install <span class="nv">bitsandbytes</span><span class="o">==</span><span c
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 4, 2022 15:28:55</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 4, 2022 16:09:59</span>
       
         <br>
         Created:

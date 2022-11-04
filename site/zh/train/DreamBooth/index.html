@@ -1353,6 +1353,8 @@
 
 <h1 id="dreambooth">DreamBooth</h1>
 <p>DreamBooth 的模型是一种新的文本到图像“个性化”（可适应用户特定的图像生成需求）扩散模型方法。</p>
+<p>使用时，只需将模型导出为ckpt，然后您可以将其加载到您想要的UI 中。</p>
+<p>本节使用  Shivam Shirao 的 <a href="https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth">版本</a></p>
 <h2 id="_1">配置要求</h2>
 <p>Windows 系统至少需要 16, Linux 系统要求显存大于 8 GB</p>
 <h2 id="_2">训练</h2>
@@ -1455,13 +1457,40 @@ pip install <span class="nv">bitsandbytes</span><span class="o">==</span><span c
 <p>如果训练的是一个 <strong>现实</strong> 的概念，class prompt 应该是“一张高清照片_____”</p>
 <p>我们最初只有一个 <code>class identifier picker</code> 类图像选择器 (一个词)，它也用于生成 <code>class images</code> 。现在已经添加了一个单独的 <code>class image generator picker</code> (使用多个单词)，它允许我们进一步确定和约束我们想从类图像中获得的内容。</p>
 <p>这非常有用，让我们能够更灵活地找到哪些类图像能够改善概念嵌入到潜在空间中。</p>
+<ul>
+<li>从检查点恢复训练</li>
+</ul>
+<p>参数的 MODEL_NAME 改成上一次模型的位置。</p>
 <h2 id="_4">参数分析</h2>
+<p>基本上所有的解释和例子都在上面给出的Colab笔记本中。</p>
 <p><a href="https://wandb.ai/psuraj/dreambooth/reports/Dreambooth-training-analysis--VmlldzoyNzk0NDc3">使用 Dreambooth 训练稳定扩散的实验的分析</a></p>
 <h3 id="subject-images-class-images">Subject images / Class images</h3>
 <p>介绍来自 <a href="[good_dreambooth_formula](https://www.reddit.com/r/StableDiffusion/comments/ybxv7h/good_dreambooth_formula/)">2^</a></p>
 <p>Subject images (或者你在笔记本上看到的实例图像)是你想要训练的图像，所以如果你想要自己的外观的模型，你可以取20到40张自己的图像并输入这些图像。实例名是一个唯一的标识符，它将在提示符中表示受训对象，个人使用 “namelastname”，大多数笔记本使用“sks”，但最好更改它。</p>
 <p>你实际上是在告诉AI把你介绍到大数据库中，为了做到这一点，你选择一个类别，即最适合你所训练的类别，对于人们来说，通常使用 "person", "man"/"woman" 等。</p>
 <p>在训练中使用Class images是为了防止物体的特征 “渗透” 到同一Class 的其他物体。如果没有 Class images 作为参考点，人工智能倾向于将你的脸与 Class 中出现的其他脸合并。其他像名人一样的人会有点像你。</p>
+<ul>
+<li>concepts_list.json</li>
+</ul>
+<div class="highlight"><pre><span></span><code># You can also add multiple concepts here. Try tweaking `--max_train_steps` accordingly.
+
+concepts_list = [
+    {
+        &quot;instance_prompt&quot;:      &quot;photo of zwx dog&quot;,
+        &quot;class_prompt&quot;:         &quot;photo of a dog&quot;,
+        &quot;instance_data_dir&quot;:    &quot;/content/data/zwx&quot;,
+        &quot;class_data_dir&quot;:       &quot;/content/data/dog&quot;
+    },
+#     {
+#         &quot;instance_prompt&quot;:      &quot;photo of ukj person&quot;,
+#         &quot;class_prompt&quot;:         &quot;photo of a person&quot;,
+#         &quot;instance_data_dir&quot;:    &quot;/content/data/ukj&quot;,
+#         &quot;class_data_dir&quot;:       &quot;/content/data/person&quot;
+#     }
+]
+
+# `class_data_dir` contains regularization images
+</code></pre></div>
 <h2 id="_5">其他</h2>
 <p><a href="https://github.com/TheLastBen/fast-stable-diffusion">fast-stable-diffusion colabs</a></p>
 <p>相关的还有 <a href="https://colab.research.google.com/github/ShivamShrirao/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion.ipynb#scrollTo=K6xoHWSsbcS3">DreamBooth_Stable_Diffusion</a> 和
@@ -1479,7 +1508,7 @@ pip install <span class="nv">bitsandbytes</span><span class="o">==</span><span c
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月4日 15:28:55</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月4日 16:09:59</span>
       
         <br>
         创建日期:
