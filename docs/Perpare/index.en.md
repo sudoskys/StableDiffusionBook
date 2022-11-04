@@ -37,8 +37,8 @@ First, unfortunately, because it requires `CUDA` acceleration, only **Nvidia gra
 
 | Name | Requirements | Effectiveness |
 |------------------|---------------------------|-----------------------------------------------------------------------|
-| SdWebui(4GB Leak model) | 3GB video memory barely | 4GB video memory is eaten up by 512x512, default speed 17s |
-| SdWebui(7GB Leak model) | 8GB video memory | Not much difference from 4GB, but the data has the last training weights, so it consumes more video memory |
+| SdWebui(4GB Leak model) | At least 3GB video memory | 4GB video memory is eaten up by 512x512, default speed 17s |
+| SdWebui(7GB Leak model) | At least 8GB video memory | Not much difference from 4GB, but the data has the last training weights, so it consumes more video memory |
 | Naifu(4GB Leak model) | Minimum 8GB video memory & 8GB video memory | Close to official |
 | Naifu(7GB Leak model) | Minimum 8GB video memory (10GB upward) | Close to official |
 | Official Backend | 16GBfp16/24GBfp32 & Server System | 99.9 similar to official |
