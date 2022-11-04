@@ -53,7 +53,7 @@
 
 emoji(💰💶💷💴💵,🎊🪅🪄🎀,👩‍🚀) 表情符号也是可以使用并且 **非常准确** 的，经过我多次测试，Ai 可以认识表情符号。
 
-* [表情符号参考](https://unicode.org/emoji/charts/emoji-list.html)
+[表情符号参考](https://unicode.org/emoji/charts/emoji-list.html)
 
 - 动漫风格
 
