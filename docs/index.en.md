@@ -98,4 +98,6 @@ NAI's model, trained using tens of millions of Danbooru images, has been leaked 
 <img src="https://img.shields.io/badge/Telegram-Group-blue" alt="Telegram"></a>
 
 
+### En
 
+<a href="https://discord.gg/stablediffusion"><img src="https://img.shields.io/discord/1002292111942635562?color=blue&label=Discord_stablediffusion" alt="Discord"></a>
