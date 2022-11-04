@@ -980,6 +980,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#curbing-style-pollution" class="md-nav__link">
+    Curbing style pollution
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-secret-of-diagram-to-diagram-conversion" class="md-nav__link">
     The secret of diagram to diagram conversion
   </a>
@@ -1310,6 +1317,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#curbing-style-pollution" class="md-nav__link">
+    Curbing style pollution
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-secret-of-diagram-to-diagram-conversion" class="md-nav__link">
     The secret of diagram to diagram conversion
   </a>
@@ -1476,6 +1490,12 @@
 <h2 id="painting-soldering">Painting soldering!</h2>
 <p>With <a href="https://www.painthua.com/">AiPhotoShop - the online tool for infinite extents of canvas</a> you can "weld" your work continuously, very conveniently. Just add the <code>--api</code> parameter to the start command and open the web page to use it.</p>
 <p><a href="https://github.com/BlinkDL/Hua">Github</a></p>
+<h2 id="curbing-style-pollution">Curbing style pollution</h2>
+<p>Introduces how to generate images in WebUi with the subject as the focus, rather than the style of the drawing.<sup id="fnref:12"><a class="footnote-ref" href="#fn:12">9</a></sup></p>
+<p>To get the desired result, we change <code>style</code> to <code>[style:10]</code> </p>
+<p>In Automatic 1111's WebUi cue word method, [x:10] tells stable diffusion until the tenth step before rendering the cue word.</p>
+<p>By the time 10 steps are reached, a basic image has been formed, so styling pollutes the main component recklessly, instead acting like an IMG2IMG (which you can think of as a form of Img2img) over the existing image</p>
+<p>You can experiment with this number depending on how many overall steps you've done. If you change the format to [x:0.2] (i.e. a number below 1) then it becomes a percentage, [x:0.6] tells SD to wait until 60% of the total number of steps before implementing x, and so on.</p>
 <h2 id="the-secret-of-diagram-to-diagram-conversion">The secret of diagram to diagram conversion</h2>
 <p>Whether it is 3D (3D models like DAZ) or line drawings, AI only recognises <strong>colour</strong>, not lines, and colour directly determines the result of a diagram to diagram conversion.</p>
 <h2 id="size-selection">Size selection</h2>
@@ -1547,6 +1567,9 @@
 <li>Anime style</li>
 </ul>
 <p><code>anime colouring</code> will work well, like an anime screenshot. (If you encounter black and white, you need to specify the colour of the character parts)</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hGATDT-Y37g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p><a href="https://www.reddit.com/r/StableDiffusion/comments/yllj3r/some_art_styles_that_i_tried/">some_art_styles_that_i_tried</a></p>
 <h2 id="designing-with-ai">Designing with Ai</h2>
 <ul>
 <li>Backgrounds</li>
@@ -1610,6 +1633,9 @@ white background,
 <li id="fn:11">
 <p><a href="https://www.bilibili.com/read/cv19102552">WebUI即将引入重磅更新，大幅提升图像品质</a>&#160;<a class="footnote-backref" href="#fnref:11" title="Jump back to footnote 8 in the text">&#8617;</a></p>
 </li>
+<li id="fn:12">
+<p><a href="https://www.reddit.com/r/StableDiffusion/comments/ygyq2j/a_simple_method_explained_in_the_comments_to/">a_simple_method_explained_in_the_comments_to</a>&#160;<a class="footnote-backref" href="#fnref:12" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
 </ol>
 </div>
 
@@ -1618,7 +1644,7 @@ white background,
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 4, 2022 02:02:27</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 4, 2022 14:59:50</span>
       
         <br>
         Created:
