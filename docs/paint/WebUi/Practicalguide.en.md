@@ -16,8 +16,8 @@ Viewed vertically
 |expressions| | |expressions
 |Hair|Wide and Narrow Selection|Paint Type|Abbreviations|
 |eyes|lighting options|evaluation qualification|sfw/nsfw|
-|clothing|background subjects|associative elements||
-|state|character event|  3D/2D  |    |
+|clothing|background subjects|associative elements| Production Company |
+|state|character event|  3D/2D  | Artwork and Brand   |
 |Pose position ||||
 |Lens position ||||
 
