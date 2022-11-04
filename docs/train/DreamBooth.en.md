@@ -2,6 +2,10 @@
 
 DreamBooth's model is a new approach to text-to-image "personalisation" (which can be adapted to the user's specific image generation needs) of diffusion models.
 
+To use it, simply export the model as a ckpt and you can then load it into the UI you want.
+
+This section uses Shivam Shirao's [version](https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth)
+
 ## Configuration requirements
 
 Windows systems require at least 16, Linux systems require more than 8 GB of VRAM
@@ -140,9 +144,8 @@ The training is also packaged and converted to ckpt, which can be used in the We
 
 ## Simple guide
 
-[1^]
 
->The following are all unconfirmed. If you have a different opinion, please feel free to ask.
+>The following are all unconfirmed. If you have a different opinion, please feel free to ask.following content is partly from[1^]
 
 - Preparing the training image
 
@@ -173,8 +176,14 @@ We initially only had a `class identifier picker` class image picker (one word) 
 
 This is very useful and gives us more flexibility in finding which class images improve the embedding of concepts into the latent space.
 
+- Resume training from checkpoint
+
+The MODEL_NAME of the parameter is changed to the position of the last model.
+
 
 ## Parametric analysis
+
+Basically all the explanations and examples are in the Colab notebook given above.
 
 [Analysis of experiments using Dreambooth to train stable diffusion](https://wandb.ai/psuraj/dreambooth/reports/Dreambooth-training-analysis--VmlldzoyNzk0NDc3)
 
@@ -188,6 +197,29 @@ Subject images (or instance images as you'll see on the notebooks) are the image
 You are essentially telling the AI to introduce you to the big database, to do that you pick a class, i.e a category that best fits what you are training, for people it's common to use "person", "man"/"woman", etc.
 
 Class images are used in training to prevent the looks of the subject to "bleed" into other subjects of the same class, without class images as a reference point, the AI tends to merge your face with the other faces that are present within that class. Other people like celebrities will kinda look like you.
+
+- concepts_list.json
+
+```
+# You can also add multiple concepts here. Try tweaking `--max_train_steps` accordingly.
+
+concepts_list = [
+    {
+        "instance_prompt":      "photo of zwx dog",
+        "class_prompt":         "photo of a dog",
+        "instance_data_dir":    "/content/data/zwx",
+        "class_data_dir":       "/content/data/dog"
+    },
+#     {
+#         "instance_prompt":      "photo of ukj person",
+#         "class_prompt":         "photo of a person",
+#         "instance_data_dir":    "/content/data/ukj",
+#         "class_data_dir":       "/content/data/person"
+#     }
+]
+
+# `class_data_dir` contains regularization images
+```
 
 
 

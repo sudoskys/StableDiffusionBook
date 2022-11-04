@@ -2,6 +2,10 @@
 
 DreamBooth 的模型是一种新的文本到图像“个性化”（可适应用户特定的图像生成需求）扩散模型方法。
 
+使用时，只需将模型导出为ckpt，然后您可以将其加载到您想要的UI 中。
+
+本节使用  Shivam Shirao 的 [版本](https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth)
+
 ## 配置要求
 
 Windows 系统至少需要 16, Linux 系统要求显存大于 8 GB
@@ -163,9 +167,13 @@ diffusers 不能直接使用 ckpt 文件进行训练，需要先进行转换，�
 
 这非常有用，让我们能够更灵活地找到哪些类图像能够改善概念嵌入到潜在空间中。
 
+- 从检查点恢复训练
 
+参数的 MODEL_NAME 改成上一次模型的位置。
 
 ## 参数分析
+
+基本上所有的解释和例子都在上面给出的Colab笔记本中。
 
 [使用 Dreambooth 训练稳定扩散的实验的分析](https://wandb.ai/psuraj/dreambooth/reports/Dreambooth-training-analysis--VmlldzoyNzk0NDc3)
 
@@ -178,6 +186,30 @@ Subject images (或者你在笔记本上看到的实例图像)是你想要训练
 你实际上是在告诉AI把你介绍到大数据库中，为了做到这一点，你选择一个类别，即最适合你所训练的类别，对于人们来说，通常使用 "person", "man"/"woman" 等。
 
 在训练中使用Class images是为了防止物体的特征 “渗透” 到同一Class 的其他物体。如果没有 Class images 作为参考点，人工智能倾向于将你的脸与 Class 中出现的其他脸合并。其他像名人一样的人会有点像你。
+
+
+- concepts_list.json
+
+```
+# You can also add multiple concepts here. Try tweaking `--max_train_steps` accordingly.
+
+concepts_list = [
+    {
+        "instance_prompt":      "photo of zwx dog",
+        "class_prompt":         "photo of a dog",
+        "instance_data_dir":    "/content/data/zwx",
+        "class_data_dir":       "/content/data/dog"
+    },
+#     {
+#         "instance_prompt":      "photo of ukj person",
+#         "class_prompt":         "photo of a person",
+#         "instance_data_dir":    "/content/data/ukj",
+#         "class_data_dir":       "/content/data/person"
+#     }
+]
+
+# `class_data_dir` contains regularization images
+```
 
 
 ## 其他
