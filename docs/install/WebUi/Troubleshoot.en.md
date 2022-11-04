@@ -83,7 +83,7 @@ Unzip and copy `x86.dll` to `C:\Windows\SysWOW64`, copy `x64.dll` to `C:\Windows
 
 [RelatedIssue](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/1766)
 
-In most cases, this means that the video memory is overflowing, but it could also be a GPU hardware problem.
+In most cases, this means that the VRAM is overflowing, but it could also be a GPU hardware problem.
 
 It is said that if you are using deepdanbooru, you will get this message, so try to restart or install the cpu version of deepdanbooru.
 

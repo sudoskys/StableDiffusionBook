@@ -37,14 +37,14 @@ First, unfortunately, because it requires `CUDA` acceleration, only **Nvidia gra
 
 | Name | Requirements | Effectiveness |
 |------------------|---------------------------|-----------------------------------------------------------------------|
-| SdWebui(4GB Leak model) | At least 3GB video memory | 4GB video memory is eaten up by 512x512, default speed 17s |
-| SdWebui(7GB Leak model) | At least 8GB video memory | Not much difference from 4GB, but the data has the last training weights, so it consumes more video memory |
-| Naifu(4GB Leak model) | Minimum 8GB video memory & 8GB video memory | Close to official |
-| Naifu(7GB Leak model) | Minimum 8GB video memory (10GB upward) | Close to official |
+| SdWebui(4GB Leak model) | At least 3GB VRAM | 4GB VRAM generates 512x512 size image in 17s |
+| SdWebui(7GB Leak model) | At least 8GB VRAM | Not much difference from 4GB, but the data has the last training weights, so it consumes more VRAM |
+| Naifu(4GB Leak model) | Minimum 8GB VRAM & 8GB VRAM | Close to official |
+| Naifu(7GB Leak model) | Minimum 8GB VRAM (10GB upward) | Close to official |
 | Official Backend | 16GBfp16/24GBfp32 & Server System | 99.9 similar to official |
 
 
-The original NAI web UI + backend deployment requires a GPU server with 12GB or more of video memory on a *Linux system*. NAI officially uses the full model, but it requires a lot of video memory, so you'll need a 7W A100 graphics card from Taobao.
+The original NAI web UI + backend deployment requires a GPU server with 12GB or more of VRAM on a *Linux system*. NAI officially uses the full model, but it requires a lot of VRAM, so you'll need a 7W A100 graphics card from Taobao.
 
 SDWebUi is a **framework** that can use models to produce images.
 

@@ -15,7 +15,7 @@ The dataset should be consistent in style and have the same concept of content. 
 
 ## Requirements
 
-At least 6GB of video memory, 12GB of video memory is required for comfortable use. Based on experimental data, 8GB of video memory should be selected for `-512x512` resolution; training with `-lowvram` and `-medvram` parameters is not recommended.
+At least 6GB of VRAM, 12GB of VRAM is required for comfortable use. Based on experimental data, 8GB of VRAM should be selected for `-512x512` resolution; training with `-lowvram` and `-medvram` parameters is not recommended.
 
 If you have enough VRAM, then using `-no-half --precision full` may prevent problems with overflow.
 

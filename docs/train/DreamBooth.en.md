@@ -4,7 +4,7 @@ DreamBooth's model is a new approach to text-to-image "personalisation" (which c
 
 ## Configuration requirements
 
-Windows systems require at least 16, Linux systems require more than 8 GB of video memory
+Windows systems require at least 16, Linux systems require more than 8 GB of VRAM
 
 ## Training
 
@@ -28,11 +28,11 @@ The above notebook is from [Community Top](https://t.me/StableDiffusion_CN/19674
 
 From [^18]
 
-`Dreambooth` on Windows can use an optimized version of ShivamShrirao to save video memory.
+`Dreambooth` on Windows can use an optimized version of ShivamShrirao to save VRAM.
 
 [diffusers/examples/dreambooth at main - ShivamShrirao/diffusers - GitHub](https://github.com/ShivamShrirao/diffusers/tree/main/examples /dreambooth)
 
-However, the deployment method used on `Linux` will not work directly on windows due to the associated link libraries, and for the same reason the minimum 9.9G video memory requirement on colab for this optimized version should be slightly higher on windows, so it is recommended to **use a video card with at least 12G of video memory**.
+However, the deployment method used on `Linux` will not work directly on windows due to the associated link libraries, and for the same reason the minimum 9.9G VRAM requirement on colab for this optimized version should be slightly higher on windows, so it is recommended to **use a video card with at least 12G of VRAM**.
 
 >I have only tested it successfully on a 16G memory PC, 12G is theoretically possible, to be tested.
 
@@ -104,7 +104,7 @@ Overwrite `main.py` - https://pastebin.com/BsEzpdpw to the `venv_diffusers\Lib\s
 
 Follow the setting options above, which are (0, 0, NO, NO, fp16)
 
-**Modify video memory optimisation**
+**Modify VRAM optimisation**
 
 Since xformers are not available, use [this file](https://github.com/lucidrains/memory-efficient-attention-pytorch/blob/main/memory_efficient_attention_pytorch/flash_attention.py) as an optimization method instead.
 
@@ -121,7 +121,7 @@ This completes the environment configuration and you are ready to start training
 
 ![image](https://user-images.githubusercontent.com/44570237/198906326-21b4f779-f870-4012-84c1-d5ac1dae0411.png)
 
-If you only have one graphics card with no more than 12G of video memory and need to use it for Windows, please close all programs or web pages that consume video memory to reduce additional memory consumption before training.
+If you only have one graphics card with no more than 12G of VRAM and need to use it for Windows, please close all programs or web pages that consume VRAM to reduce additional memory consumption before training.
 
 diffusers cannot be trained directly using ckpt files, they need to be converted first, as shown in the example below.
 

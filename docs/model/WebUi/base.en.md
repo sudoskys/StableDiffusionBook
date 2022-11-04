@@ -8,7 +8,7 @@
 
 The number of iterations of `step` is related to the `sampling method`, the `DDIM` method converges faster, see `Sampler vs.
 
-`batch count/batch size` determines the number of generated images, if the video memory is enough, add the batch size, if not, add the batch count, the number of images obtained is the product of both (small video memory or just count is good)
+`batch count/batch size` determines the number of generated images, if the VRAM is enough, add the batch size, if not, add the batch count, the number of images obtained is the product of both (small VRAM or just count is good)
 
 DDIM, Eula also works well. (with a is the meaning of ancestral, step growth out of the map is not stable)
 
@@ -56,7 +56,7 @@ Tip:Due to the nature of torch and its associated frameworks, it is not wise to 
 
 #### Things to do
 
-* Load VAE and the `config.yaml` that comes with the model (optional, some people say this operation consumes video memory)
+* Load VAE and the `config.yaml` that comes with the model (optional, some people say this operation consumes VRAM)
 
 * `Stop At last layers of CLIP model` set to `2`
 

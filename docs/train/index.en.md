@@ -16,7 +16,7 @@ This is more demanding on the graphics card.
 
 **Should not** use the training results to devalue the original artist's work.
 
-At the moment I personally think the results are considered the best by DreamBooth, but its training requires high video memory (>8GB).
+At the moment I personally think the results are considered the best by DreamBooth, but its training requires high VRAM (>8GB).
 
 
 ## Cognitive model training
@@ -26,14 +26,14 @@ This is a [problem](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issu
 
 **About batch size**
 
-Larger batch sizes may speed up training slightly and improve it slightly, but they also require larger video memory.
+Larger batch sizes may speed up training slightly and improve it slightly, but they also require larger VRAM.
 
 
 
 
 **About batch size**
 
-A larger batch size may speed up training slightly and improve it slightly, but it also requires a larger amount of video memory.
+A larger batch size may speed up training slightly and improve it slightly, but it also requires a larger amount of VRAM.
 
 
 

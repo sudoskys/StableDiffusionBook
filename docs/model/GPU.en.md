@@ -68,6 +68,6 @@ Other versions: https://developer.nvidia.com/rdp/cudnn-archive
 
 5. Copy all the files from the bin and lib folders in the Cudnn 8.5 archive to `venv\Lib\site-packages\torch\lib`, overwriting all the files.
 
-6. Then the 16xx GPU can happily use half-precision image generation! It can generate 1024x640 images with 6G load Full model, which greatly reduces video memory usage.
+6. Then the 16xx GPU can happily use half-precision image generation! It can generate 1024x640 images with 6G load Full model, which greatly reduces VRAM usage.
 
 However, you still can't use `DDIM Sampling`, but you can use `Euler a`.

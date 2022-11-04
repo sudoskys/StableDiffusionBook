@@ -1304,7 +1304,7 @@
 <h1 id="self-help-when-a-bug-occurs-in-generating-images">Self-help when a bug occurs in generating images</h1>
 <h2 id="generate-blackgreen-image">Generate black/green image</h2>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Install-and-Run-on-NVidia-GPUs">Generate black/green image</a></p>
-<p>If u use GTX 16xx GPU, you need to add <code>-precision full --no-half</code> to the startup parameter, so if the video memory is low, add <code>-medvram</code> as well.</p>
+<p>If u use GTX 16xx GPU, you need to add <code>-precision full --no-half</code> to the startup parameter, so if the VRAM is low, add <code>-medvram</code> as well.</p>
 <p>If it's a different card and VAE is loaded, add <code>--no-half-vae</code> parameter[^2].</p>
 <h2 id="runtimeerror-sizes-of-tensors-must-match">RuntimeError Sizes of tensors must match</h2>
 <p>(img2img) If <code>RuntimeError: Sizes of tensors must match</code> appears, adjust the resolution of the input image</p>
@@ -1316,7 +1316,7 @@
 <h2 id="runtimeerror-unable-to-find-a-valid-cudnn-algorithm-to-run-convolution">RuntimeError: Unable to find a valid cuDNN algorithm to run convolution</h2>
 <p>Insufficient VRAM</p>
 <h2 id="cuda-out-of-memory">CUDA out of memory</h2>
-<p>Cause: Insufficient video memory.</p>
+<p>Cause: Insufficient VRAM.</p>
 <p>Please add <code>-lowvram</code> and <code>-medvram</code> parameters at startup to try to solve this problem.</p>
 
   <hr>

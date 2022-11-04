@@ -1744,7 +1744,7 @@
 </blockquote>
 <h3 id="parameter-intro">Parameter intro</h3>
 <p>The number of iterations of <code>step</code> is related to the <code>sampling method</code>, the <code>DDIM</code> method converges faster, see `Sampler vs.</p>
-<p><code>batch count/batch size</code> determines the number of generated images, if the video memory is enough, add the batch size, if not, add the batch count, the number of images obtained is the product of both (small video memory or just count is good)</p>
+<p><code>batch count/batch size</code> determines the number of generated images, if the VRAM is enough, add the batch size, if not, add the batch count, the number of images obtained is the product of both (small VRAM or just count is good)</p>
 <p>DDIM, Eula also works well. (with a is the meaning of ancestral, step growth out of the map is not stable)</p>
 <p><code>cfg scale</code> conforms to the degree of prompt, the higher the value will literally look prompt, low will give the model more room to play, but the actual model performance on the CFG scale low (6-8) saturation is low, biased line drawing, biased clutter, high (18-22) then saturation is high, biased CG style.</p>
 <blockquote>
@@ -1771,7 +1771,7 @@ If antivirus software intercepts it, it is possible that the creator has injecte
 <h4 id="things-to-do">Things to do</h4>
 <ul>
 <li>
-<p>Load VAE and the <code>config.yaml</code> that comes with the model (optional, some people say this operation consumes video memory)</p>
+<p>Load VAE and the <code>config.yaml</code> that comes with the model (optional, some people say this operation consumes VRAM)</p>
 </li>
 <li>
 <p><code>Stop At last layers of CLIP model</code> set to <code>2</code></p>

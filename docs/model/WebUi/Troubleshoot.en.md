@@ -6,7 +6,7 @@
 
 [Generate black/green image](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Install-and-Run-on-NVidia-GPUs)
 
-If u use GTX 16xx GPU, you need to add `-precision full --no-half` to the startup parameter, so if the video memory is low, add `-medvram` as well.
+If u use GTX 16xx GPU, you need to add `-precision full --no-half` to the startup parameter, so if the VRAM is low, add `-medvram` as well.
 
 If it's a different card and VAE is loaded, add `--no-half-vae` parameter[^2].
 
@@ -36,6 +36,6 @@ Insufficient VRAM
 
 ## CUDA out of memory
 
-Cause: Insufficient video memory.
+Cause: Insufficient VRAM.
 
 Please add `-lowvram` and `-medvram` parameters at startup to try to solve this problem.
