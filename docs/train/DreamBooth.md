@@ -169,6 +169,17 @@ diffusers 不能直接使用 ckpt 文件进行训练，需要先进行转换，�
 
 [使用 Dreambooth 训练稳定扩散的实验的分析](https://wandb.ai/psuraj/dreambooth/reports/Dreambooth-training-analysis--VmlldzoyNzk0NDc3)
 
+### Subject images / Class images
+
+介绍来自 [2^]
+
+Subject images (或者你在笔记本上看到的实例图像)是你想要训练的图像，所以如果你想要自己的外观的模型，你可以取20到40张自己的图像并输入这些图像。实例名是一个唯一的标识符，它将在提示符中表示受训对象，个人使用 “namelastname”，大多数笔记本使用“sks”，但最好更改它。
+
+你实际上是在告诉AI把你介绍到大数据库中，为了做到这一点，你选择一个类别，即最适合你所训练的类别，对于人们来说，通常使用 "person", "man"/"woman" 等。
+
+在训练中使用Class images是为了防止物体的特征 “渗透” 到同一Class 的其他物体。如果没有 Class images 作为参考点，人工智能倾向于将你的脸与 Class 中出现的其他脸合并。其他像名人一样的人会有点像你。
+
+
 ## 其他
 
 [fast-stable-diffusion colabs](https://github.com/TheLastBen/fast-stable-diffusion)
@@ -189,3 +200,5 @@ https://github.com/XavierXiao/Dreambooth-Stable-Diffusion
 
 
 [1^]:[testing_dreambooth_for_consistency_with_complex](https://www.reddit.com/r/StableDiffusion/comments/yhw7k8/testing_dreambooth_for_consistency_with_complex/)
+
+[2^]:[good_dreambooth_formula](https://www.reddit.com/r/StableDiffusion/comments/ybxv7h/good_dreambooth_formula/)

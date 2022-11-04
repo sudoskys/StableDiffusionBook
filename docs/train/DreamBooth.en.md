@@ -179,6 +179,17 @@ This is very useful and gives us more flexibility in finding which class images 
 [Analysis of experiments using Dreambooth to train stable diffusion](https://wandb.ai/psuraj/dreambooth/reports/Dreambooth-training-analysis--VmlldzoyNzk0NDc3)
 
 
+### Subject images / Class images
+
+Copy from [2^]
+
+Subject images (or instance images as you'll see on the notebooks) are the images that you want to train on, so if you want to get a model of your owns looks you take 20 to 40 images of yourself and input those. The instance name is a unique identifier that will represent the trained subject in the prompt, I use the person's "namelastname", most notebooks use "sks" but it's preferred to change it.
+
+You are essentially telling the AI to introduce you to the big database, to do that you pick a class, i.e a category that best fits what you are training, for people it's common to use "person", "man"/"woman", etc.
+
+Class images are used in training to prevent the looks of the subject to "bleed" into other subjects of the same class, without class images as a reference point, the AI tends to merge your face with the other faces that are present within that class. Other people like celebrities will kinda look like you.
+
+
 
 ## Other
 
@@ -199,3 +210,5 @@ Related [DreamBooth_Stable_Diffusion](https://colab.research.google.com/github/S
 https://github.com/XavierXiao/Dreambooth-Stable-Diffusion
 
 [1^]:[testing_dreambooth_for_consistency_with_complex](https://www.reddit.com/r/StableDiffusion/comments/yhw7k8/testing_dreambooth_for_consistency_with_complex/)
+
+[2^]:[good_dreambooth_formula](https://www.reddit.com/r/StableDiffusion/comments/ybxv7h/good_dreambooth_formula/)
