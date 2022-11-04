@@ -1493,6 +1493,16 @@ Todo</p>
 <h2 id="_10">如何书写提示</h2>
 <p>这是一个通用的指南，内容是基本通用的，可能有例外情况，请读对应的章节了解不同应用的特性。</p>
 <ul>
+<li>词汇</li>
+</ul>
+<p>单词可以由一个或多个符号组成。常用词通常被解析为具有共同含义或少量含义的单个标记。拼写错误和不常见的单词被解析为多个标记，这些标记从各种不同的单词中获得含义，并且通常是不一致的含义。</p>
+<p>元音的变化更有可能将你映射到一个不同的不相关的单词，一个更独特更强的含义和影响。</p>
+<p>所以 <code>bank, bankk bank</code> 很可能被解析为 <code>bank</code> 的近义词。但是bonk -有一个完全不同的意思。</p>
+<ul>
+<li>大小写</li>
+</ul>
+<p>Clip的标记器在标记之前将所有单词小写。其他模型，如 BERT 和T5，将大写的单词与非大写的单词区别对待。</p>
+<ul>
 <li>长度</li>
 </ul>
 <p>除了 WebUi ，由于GPT-3模型限制，prompt 并不是无限的，positive token 在 75-80 之间，75 字符后的内容会被截断。</p>
@@ -1516,7 +1526,10 @@ Todo</p>
 <ul>
 <li>词汇顺序</li>
 </ul>
-<p>解析器理解事物的方式是不透明的，所以无法确切知晓词汇顺序是否具有 “锚点” 的作用。</p>
+<p><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>
+似乎VAE使用了一种称为贝叶斯定理的统计方法。在计算标记的去向时，前几个单词似乎锚定了其余单词标记在潜在空间中的分布。</p>
+<p>早期的标记具有更一致的位置，因此神经网络更容易预测它们的相关性。在贝叶斯推理中，矩阵中的第一个标记或证据很重要，因为它设置了初始概率条件。但是后面的元素只是修改了概率条件。因此，至少在理论上，最后的令牌不应该比前面的令牌具有更大的影响。</p>
+<p>但是解析器理解事物的方式是不透明的，因此没有办法<strong>确切</strong>地知道词法顺序是否具有“锚”效应。</p>
 <h3 id="_11">运动和姿势</h3>
 <p>如果没有很大要求的话，选择只与少数姿势相关的提示。</p>
 <p>这里的姿势是指某一事物的物理配置：图像主体相对于摄像机的位置和旋转，人类/机器人关节的角度，果冻块被压缩的方式，等等。你试图指定的事物中的差异越小，模型就越容易学习。</p>
@@ -1531,6 +1544,7 @@ Todo</p>
 <p>有些人断言，把关键词放在圆括号里会增加其效果，而把关键词放在方括号里则会减少其效果；使用更多的括号据说会带来更强的变化。然而，其他人在他们自己的提示中经常不能再现这种效果。</p>
 <p>事实证明，造成这种差异的原因是，不同的脚本处理括号的方式不同。例如 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui">这个webui</a> 明确地处理了括号，而 <a href="https://github.com/hlky/stable-diffusion-webui">这个分支</a> 只会得到模型从训练数据中隐含 学到的括号的效果 （用不同的语法来代替）。出于这个原因：一定要检查你从别人那里复制的提示语的语法是否与你使用的脚本的语法一致。在定量分析中，除非明确处理，否则方括号并没有产生一致的效果。</p>
 <p>无论使用何种具体的脚本，重复某个关键词似乎都会增加其效果。</p>
+<p>值得注意的是，你的提示中存在越多的标记，任何单一标记的影响就越小。你还会注意到，由于这个原因，在增加新的标记时，风格会逐渐消失。强烈建议随着提示符长度的增加增加风格词的标记强度，以便保持一致的风格，特别是在某些模型中。<sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup></p>
 <h3 id="_14">尺寸</h3>
 <p>尺寸明显影响内容，如果图像高度增加，就更有可能生成 个体或单独的东西。如果图像宽度增加，更有可能生成多人或风景画。</p>
 <h2 id="_15">项目</h2>
@@ -1542,7 +1556,7 @@ Todo</p>
 <p><a href="https://wiki.installgentoo.com/wiki/Stable_Diffusion">installgentoo wiki</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:2">
-<p><a href="https://www.reddit.com/r/StableDiffusion/comments/yjwuls/demystifying_prompting_what_you_need_to_know/">demystifying_prompting_what_you_need_to_know/</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p><a href="https://www.reddit.com/r/StableDiffusion/comments/yjwuls/demystifying_prompting_what_you_need_to_know/">demystifying_prompting_what_you_need_to_know/</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -1552,7 +1566,7 @@ Todo</p>
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月4日 12:15:46</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月4日 13:18:42</span>
       
         <br>
         创建日期:
