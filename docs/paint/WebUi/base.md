@@ -35,7 +35,7 @@
 
 转义，WebUi 对于带括号提示词比如`a (word)`  请使用 `\` 字符转义为 `a \(word\)`，这适用于带括号的Tag,防止出现本来不想要的增强效果。
 
-降低权重，`[]` 或者 `(word:0.952)`。NAI 仅能使用 `[]`
+降低权重，单独使用 `[]` ，但不可以带数字。或者 `(word:0.952)`。NAI 仅能使用 `[]`
 
 交替（alternate prompt）[^7]，混合机。这使您可以创建动物、人或风格的混合体，每一个 step 切换一项(一步一换)，轮回渲染，`[alison brie|emma stone|elizabeth olsen|scarlett johansson|anne hathaway|emma roberts], still film` 这是WebUi 语法，在 NAI 中代表平均权重混合(前半部分和后半部分)。
 

@@ -33,7 +33,8 @@ Prompt editing, using `[some1:some2:num]`
 
 Escape, WebUi for bracketed hints such as `a (word)` use the `\` character to escape to `a \(word\)`, this applies to bracketed Tags to prevent unwanted enhancements.
 
-Reduced weight, `[]` or `(word:0.952)`. NAI can only use `[]`
+Lower weight, use `[]` alone but not with numbers or `(word:0.952)`. NAI can only use `[]`
+
 
 alternate prompt [^7], mixer. This allows you to create hybrids of animals, people or styles, switching one item per step (one step at a time), rendering in rounds, `[alison brie|emma stone|elizabeth olsen|scarlett johansson|anne hathaway|emma roberts], still film` This is the WebUi syntax, which in NAI represents the average weight mix (first half and second half).
 

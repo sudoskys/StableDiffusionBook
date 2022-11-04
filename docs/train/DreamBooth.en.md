@@ -138,6 +138,40 @@ The training is also packaged and converted to ckpt, which can be used in the We
 
 >This is a temporary solution in anticipation of an official Windows adaptation.
 
+## Simple guide
+
+[1^]
+
+>The following are all unconfirmed. If you have a different opinion, please feel free to ask.
+
+- Preparing the training image
+
+For your training images you will need:
+
+At least 20 close up portraits, at least 4 medium distance torso shots, at least 4 long distance full body shots and at least 1 seated photo.
+
+Higher quality (more detail) training images (cropped to 512x512).
+
+If you need to make your Dreambooth model more diverse, try to use different environments, lighting, hairstyles, expressions, poses, angles and distances from the subject.
+
+Avoid having hands stuck to the head in your renders by removing all images where hands are too close to or touching the head.
+
+If you need to avoid a fisheye lens effect in your renders, remove all selfie images.
+
+To avoid white borders in your renders, make sure there are no cropped borders in your images.
+
+To avoid unnatural over-blurring, make sure the image does not contain a false heavy depth of field or vignetting.
+
+- Consistent markings
+
+After extensive testing, it has been found that the class identifier `class identifier picker` clearly helps to improve the quality of embedding and rendering of concepts. I use the class identifier to evoke any trained concept word.
+
+If training a **reality** concept, the class prompt should be "a high resolution photo _____"
+
+
+We initially only had a `class identifier picker` class image picker (one word) which was also used to generate `class images`. A separate `class image generator picker` has now been added (using multiple words) which allows us to further identify and constrain what we want from the class images.
+
+This is very useful and gives us more flexibility in finding which class images improve the embedding of concepts into the latent space.
 
 
 ## Parametric analysis
@@ -163,3 +197,5 @@ Related [DreamBooth_Stable_Diffusion](https://colab.research.google.com/github/S
 -->
 
 https://github.com/XavierXiao/Dreambooth-Stable-Diffusion
+
+[1^]:[testing_dreambooth_for_consistency_with_complex](https://www.reddit.com/r/StableDiffusion/comments/yhw7k8/testing_dreambooth_for_consistency_with_complex/)

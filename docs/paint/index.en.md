@@ -140,9 +140,22 @@ From [^1]
 - Height: same as Width but for individual image height.
     
 - Seed: starting point for RNG. Keep this the same to generate the same (or almost the same) images multiple times. There are no seeds that are inherently better than others but if you vary your input parameters only slightly seeds that produced good results previously will likely still produce good results.
+
 ## How to write prompts
 
 This is a general guide, the content is largely generic, there may be exceptions, please read the corresponding sections for the characteristics of different applications.
+
+- Vocabulary
+[^2]
+Words may consist of one or more symbols. Common words are usually resolved as single marks with a common meaning or a small number of meanings. Misspellings and uncommon words are parsed into multiple tags that derive meanings from a variety of different words, and often inconsistent meanings.
+
+Vowel changes are more likely to map you to a different unrelated word, with a more unique and stronger meaning and impact.
+
+So 'bank, bankk bank' is likely to be interpreted as a close synonym of 'bank'. But bonk - has a completely different meaning.
+
+- Case of word
+
+Clip's tagger lowercase all words before tagging them. Other models such as BERT and T5 tokenize capitalized words differently from uncapitalized.
 
 - Length
 
@@ -176,7 +189,13 @@ Use it. Separating keywords by commas, periods, or even null characters ("\0") i
 
 - Word order
 
-The way the parser understands things is opaque, so there is no way of knowing exactly whether the lexical order has an "anchor" effect.
+[^2]
+It appears that VAE uses a statistical method known as Bayes' theorem. When calculating the goings-on of tokens, the first few words seem to anchor the distribution of the remaining word tokens in the potential space.
+
+The earlier tokens have more consistent positions, so the neural network is more likely to predict their relevance. In Bayesian inference, the first token or evidence in the matrix is important because it sets the initial probability condition. But later elements simply modify the probability conditions. Thus, at least in theory, the final token should not have more influence than the previous token.
+
+But the way the parser understands things is opaque, so there is no way to **exactly** know whether lexical order has an "anchor" effect.
+
 
 ### Movement and Poses
 
@@ -212,6 +231,8 @@ For this reason: **make sure to check whether the syntax of a prompt that you co
 In a [quantitative analysis](https://github.com/JohannesGaessler/stable-diffusion-tools/tree/master/emphasis) square brackets did not have a consistent effect unless explicitly processed.
 
 The repetition of a certain keyword seems to increase its effect regardless of the specific script that is being used.
+
+Worth noting, the impact of any single token will be diminished the more tokens exist in your prompt. You'll also notice, because of this, that styles will fade out when adding new tokens. I strongly suggest increasing the token strength on style words as your prompt length increases, in order to maintain a consistent style, particularly in certain models.[^2]
 
 ### Image size
 
