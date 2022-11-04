@@ -162,9 +162,21 @@ Natural language can be used directly, WebUi(SD) has natural language processing
 
 At least some Unicode characters that are alternative versions of Latin characters get mapped to regular Latin characters. Full-width Latin characters as they're used in Japanese (e.g. ＡＢＣ) are confirmed to be converted. French accents (e.g. é and è) and German umlauts (e.g. ä and ö) are not mapped to their regular counterparts.
 
+Human language is arbitrary and imprecise[^2]
+
+Human language is never evolved to describe spatial information in detail
+
+Stable Diffusion is a latent Diffusion model involving latent space. But latent, by definition, means unobservable. 
+
+Many gamblers follow their particular patterns of certain ritualistic behaviors believing that such patterns will increase the chance of a favorable outcome. Not only this type of false positive pattern doesn't work in reality, but it will also continue to reinforce and manifest itself, nudging a person further and further in the wrong direction.
+
 - Punctuation
 
 Use it. Separating keywords by commas, periods, or even null characters ("\0") improves image quality. It's not yet clear which type of punctuation or which combination works best - when in doubt just do it in a way that makes the prompt more readable to you. 
+
+- Word order
+
+The way the parser understands things is opaque, so there is no way of knowing exactly whether the lexical order has an "anchor" effect.
 
 ### Movement and Poses
 
@@ -181,6 +193,7 @@ TLDR: good image of human standing/sitting is easy, good image of human jumping/
 For the training of neural networks the quality of features is important: the stronger the connection between the inputs and the outputs is, the easier it is for a neural network to learn the connection. In other words, if a keyword has a very specific meaning it is much easier to learn how it connects to images than if a keyword has a very broad meaning. In this way, even keywords that are used very rarely like "Zettai Ryouiki" can produce very good results because it's only ever used in very specific circumstances. On the other hand, "anime" does not produce very good results even though it's a relatively common word, presumably because it is used in many different circumstances even if no literal anime is present.
 
 Choosing specific keywords is especially important if you want to control the content of your images. Also: the less abstract your wording is the better. If at all possible, avoid wording that leaves room for interpretation or that requires an "understanding" of something that is not part of the image. Even concepts like "big" or "small" are problematic because they are indistinguishable from objects being close or far from the camera. Ideally use wording that has a high likelihood to appear verbatim on a caption of the image you want.
+
 
 ### Attention / Emphasis
 
@@ -211,3 +224,5 @@ Image size obviously affects content, if the height of the image increases it is
 
 
 [^1]:[installgentoo wiki](https://wiki.installgentoo.com/wiki/Stable_Diffusion)
+
+[^2]:[demystifying_prompting_what_you_need_to_know/](https://www.reddit.com/r/StableDiffusion/comments/yjwuls/demystifying_prompting_what_you_need_to_know/)
