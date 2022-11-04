@@ -5,7 +5,7 @@ The purpose of this document is to summarize the results of the community discus
 
 ## Asking polite questions in the community
 
-[How To Ask Questions The Smart Way] (https://github.com/selfteaching/How-To-Ask-Questions-The-Smart-Way)
+[How To Ask Questions The Smart Way](https://github.com/selfteaching/How-To-Ask-Questions-The-Smart-Way)
 
 If you identify something wrong or something important to add, you can send **Issue** or submit **Pr** to this repository to help complete the documentation and help more people.
 
