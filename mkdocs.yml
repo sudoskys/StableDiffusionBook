@@ -19,7 +19,6 @@ nav:
       - install/index.md
       - WebUi安装:
           - install/WebUi/index.md
-          - 基本指南: install/WebUi/base.md
           - 运行WebUi: install/WebUi/launch.md
           - 错误处理: install/WebUi/Troubleshoot.md
   - 绘画调试:
@@ -28,6 +27,7 @@ nav:
       - NAI泄漏报告: model/NAI.md
       - WebUi 配置:
           - model/WebUi/index.md
+          - 基本指南: model/WebUi/base.md
           - 错误处理: model/WebUi/Troubleshoot.md
   - 绘画指南:
       - paint/index.md
