@@ -21,11 +21,26 @@ Viewed vertically
 |Pose position ||||
 |Lens position ||||
 
+
 ## Painting soldering!
 
 With [AiPhotoShop - the online tool for infinite extents of canvas](https://www.painthua.com/) you can "weld" your work continuously, very conveniently. Just add the `--api` parameter to the start command and open the web page to use it.
 
 [Github](https://github.com/BlinkDL/Hua)
+
+
+## Curbing style pollution
+
+Introduces how to generate images in WebUi with the subject as the focus, rather than the style of the drawing.[^12]
+
+To get the desired result, we change `style` to `[style:10]` 
+
+In Automatic 1111's WebUi cue word method, [x:10] tells stable diffusion until the tenth step before rendering the cue word.
+
+By the time 10 steps are reached, a basic image has been formed, so styling pollutes the main component recklessly, instead acting like an IMG2IMG (which you can think of as a form of Img2img) over the existing image
+
+You can experiment with this number depending on how many overall steps you've done. If you change the format to [x:0.2] (i.e. a number below 1) then it becomes a percentage, [x:0.6] tells SD to wait until 60% of the total number of steps before implementing x, and so on.
+
 
 ## The secret of diagram to diagram conversion
 
@@ -38,6 +53,7 @@ It should not be linked to picture quality; size affects the subject to some ext
 
 Picture quality can be manipulated using the Super Score guide.
 
+
 ## Perspective
 
 [Recommended use of terms contained in Danbooru](https://danbooru.donmai.us/wiki_pages/tag_group%3Aimage_composition)
@@ -47,6 +63,7 @@ Picture quality can be manipulated using the Super Score guide.
 ![shot](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/shot.png)
 -->
 >citing an image from the Japanese Wiki, author unknown
+
 
 ## Associated
 
@@ -61,8 +78,6 @@ for example, depth of field, aperture, composition, camera position, elements of
 **BUT** this effect may have the added effect of introducing data into the picture that you don't want to see in the style (e.g. live action** rather than **but secondary). Get the measurements right. Add Step and style cues as appropriate to improve.
 
 You can also use **platform names** to limit the scope of the dataset, for example, terms like pixiv.
-
-
 
 **extended reading**
 
@@ -133,7 +148,6 @@ Or just mask the hand, fix it at full resolution, greatly reduce the padding (it
 The higher the CFG, the more it matches the cue words, and the higher the noise reduction the more it deviates from the original image.
 
 
-
 ## Identical figures & differentiation
 
 Advanced Img2Img related content is required, the best way to do this is to prepare a 3D master model with colours and then this will ensure basic consistency.
@@ -145,12 +159,12 @@ If it's an expression or a background, you can use the repainting technique from
 If you want some examples of differencing, [5CH Japanese Wiki](https://seesaawiki.jp/nai_ch/d/%c7%ed%a4%ae%a5%b3%a5%e9%a5%c6%a5%af) provides an example.
 
 
-
 ## Reproduction
 
 If you want to reproduce it on the generation, you need the same `seed`, cue words, and other parameters (even size). However, if the other side uses stylisation, then you can hardly reproduce it.
 
 --Self-deceptive reproduction: image to image, noise reduction to below 0.3...--
+
 
 ## Frivolous details
 
@@ -164,6 +178,10 @@ emoji(💰💶💷💴💵,🎊🪅🪄🎀,👩 🚀) Emoticons are also availa
 - Anime style
 
 `anime colouring` will work well, like an anime screenshot. (If you encounter black and white, you need to specify the colour of the character parts)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hGATDT-Y37g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+[some_art_styles_that_i_tried](https://www.reddit.com/r/StableDiffusion/comments/yllj3r/some_art_styles_that_i_tried/)
 
 
 ## Designing with Ai
@@ -216,6 +234,7 @@ Size required square.
 >BV14e4y1U7r9
 
 
+
 [^4]:[Paper朱整理优化方法](https://pan.baidu.com/s/1VWr7OLvAbu1KIoTPEs2wwQ?pwd=y8lk)
 
 [^5]:[参数图](https://m.weibo.cn/status/4823585938735546)
@@ -232,3 +251,4 @@ Size required square.
 
 [^11]:[WebUI即将引入重磅更新，大幅提升图像品质](https://www.bilibili.com/read/cv19102552)
 
+[^12]:[a_simple_method_explained_in_the_comments_to](https://www.reddit.com/r/StableDiffusion/comments/ygyq2j/a_simple_method_explained_in_the_comments_to/)

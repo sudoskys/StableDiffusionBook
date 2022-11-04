@@ -20,11 +20,26 @@
 |姿势位|  |  |         |
 |镜头位|  |  |         |
 
+
 ## 画作焊接！
 
 通过 [AiPhotoShop-无限外延画布的在线工具](https://www.painthua.com/) ，你可以连续 “焊接” 作品，非常方便。只需要在启动命令加上 `--api` 参数，然后打开网页就可以使用。
 
 [Github](https://github.com/BlinkDL/Hua)
+
+
+## 遏制风格污染
+
+介绍如何在 WebUi 中生成图片时，将主体作为重点，而不是画风。[^12]
+
+为了得到预期结果，我们将 `style` 改为 `[style:10]` 
+
+Automatic 1111 的 WebUi 提示词语法中，[x:10] 告诉 稳定扩散 直到第十个 step 再渲染这个提示词。
+
+当达到10步的时候，一个基本的图像已经形成了，所以风格化肆意污染主体成分，而是像在现有图像上进行 IMG2IMG(你可以把它看成是Img2img的形式)
+
+你可以根据你所做的整体步骤的多少来试验这个数字。如果你把格式改为 [x:0.2]（即低于1的数字），那么它就变成了百分比，[x:0.6]告诉SD等到总步骤数的60%时再实施x，以此类推。
+
 
 ## 图转图的秘籍
 
@@ -58,6 +73,9 @@ emoji(💰💶💷💴💵,🎊🪅🪄🎀,👩‍🚀) 表情符号也是可�
 - 动漫风格
 
 `anime coloring` 会有很好的效果，像动漫截图一样。(如果遇到黑白色，需要指定人物部件的色彩)
+
+<iframe src="//player.bilibili.com/player.html?aid=304175820&bvid=BV1TP411N71t&cid=865253876&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
 
 
 ## 跨领域术语/奇门遁甲
@@ -219,3 +237,4 @@ low quality 可加可不加，如果想更加平面化，请加入 3D 到负面�
 
 [^11]:[WebUI即将引入重磅更新，大幅提升图像品质](https://www.bilibili.com/read/cv19102552)
 
+[^12]:[a_simple_method_explained_in_the_comments_to](https://www.reddit.com/r/StableDiffusion/comments/ygyq2j/a_simple_method_explained_in_the_comments_to/)
