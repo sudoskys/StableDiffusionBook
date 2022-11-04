@@ -158,7 +158,7 @@ If you want to reproduce it on the generation, you need the same `seed`, cue wor
 
 emoji(💰💶💷💴💵,🎊🪅🪄🎀,👩 🚀) Emoticons are also available and **very accurate**, I have tested them many times and Ai can recognise them.
 
-* [emoji-list](https://unicode.org/emoji/charts/emoji-list.html)
+[emoji-list](https://unicode.org/emoji/charts/emoji-list.html)
 
 
 - Anime style
