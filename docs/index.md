@@ -99,4 +99,8 @@ Stable diffusion本来是面向三次元的，而 NAI 是二次元特化版本�
 
 <a href="https://discord.gg/stablediffusion"><img src="https://img.shields.io/discord/1002292111942635562?color=blue&label=Discord_stablediffusion" alt="Discord"></a>
 
+[Reddit-DreamBooth](https://www.reddit.com/r/DreamBooth/)
 
+[Reddit-StableDiffusion](https://www.reddit.com/r/StableDiffusion/)
+
+[Reddit-NovelAi](https://www.reddit.com/r/NovelAi/)
