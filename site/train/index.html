@@ -1170,6 +1170,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#pickle" class="md-nav__link">
+    Pickle 安全提示
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#textual-inversion-ti" class="md-nav__link">
     Textual Inversion (TI)
   </a>
@@ -1332,6 +1339,19 @@
 这是优化机制导致的<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2399">问题</a>，WebUi 在 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/cbb857b675cf0f169b21515c29da492b513cc8c4">这次提交</a> 中允许了在 <code>--medvram</code> 下创建 embedding 的情况。请更新版本到这个版本之后。</p>
 <p><strong>关于 batch size</strong></p>
 <p>更大的 batch size 可能稍微加快训练并稍微提升训练效果，但也需要更大的显存。</p>
+<h3 id="pickle">Pickle 安全提示</h3>
+<p><a href="https://docs.python.org/3/library/pickle.html">Pickle的介绍</a>，Python object serialization</p>
+<p>文档说</p>
+<div class="highlight"><pre><span></span><code>pickle模块不安全。只解pickle您信任的数据。
+可以构造恶意pickle数据，在解pickle期间执行任意代码。永远不要解pickle可能来自不可信来源或可能被篡改的数据。
+</code></pre></div>
+<p><code>.ckpt</code> 和 <code>.pt</code> 文件中都可能有恶意的 pickle，AUTOMATIC1111 在这方面做了一些验证。</p>
+<p>对于不安全的文件，会提示 </p>
+<div class="highlight"><pre><span></span><code>The file may be malicious, so the program is not going to read it. 
+You can skip this check with --disable-safe-unpickle commandline argument.
+</code></pre></div>
+<p>不一定保证百分百安全，甚至也会误报一些文件，所以建议从可靠信源下载模型。</p>
+<p>另外，你可以在 <a href="https://github.com/sudoskys/StableDiffusionBook/blob/main/docs/ckpt_safe">这里</a> 看到一个简单的检查脚本。</p>
 <h3 id="textual-inversion-ti">Textual Inversion (TI)</h3>
 <p>从一些具有共同语义 [v] 的图片中，提取 [v] 的一个方法。提取出的 [v] 张量称之为 "Embedding"。将 Embedding 保存为文件，之后生成图片时就可以在 prompt 中以文件名引用。</p>
 <h4 id="_3">特征</h4>
@@ -1445,7 +1465,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 03:59:46</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月4日 16:25:38</span>
       
         <br>
         创建日期:

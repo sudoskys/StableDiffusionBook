@@ -1170,6 +1170,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#pickle" class="md-nav__link">
+    Pickle?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#textual-inversion-ti" class="md-nav__link">
     Textual Inversion (TI)
   </a>
@@ -1335,6 +1342,20 @@ This is a <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issue
 <p>Larger batch sizes may speed up training slightly and improve it slightly, but they also require larger VRAM.</p>
 <p><strong>About batch size</strong></p>
 <p>A larger batch size may speed up training slightly and improve it slightly, but it also requires a larger amount of VRAM.</p>
+<h3 id="pickle">Pickle?</h3>
+<p><a href="https://docs.python.org/3/library/pickle.html">About pickle</a>,that Python object serialization</p>
+<p>Docs says:
+<div class="highlight"><pre><span></span><code>The pickle module is not secure. Only unpickle data you trust.
+
+It is possible to construct malicious pickle data which will execute arbitrary code during unpickling. Never unpickle data that could have come from an untrusted source, or that could have been tampered with.
+</code></pre></div></p>
+<p>Both <code>.ckpt</code> and <code>.pt</code> files may have malicious pickles in them, AUTOMATIC1111 has done some verification in this regard.</p>
+<p>For insecure files, it will prompt </p>
+<div class="highlight"><pre><span></span><code>The file may be malicious, so the program is not going to read it. 
+You can skip this check with the --disable-safe-unpickle commandline argument.
+</code></pre></div>
+<p>It is not always guaranteed to be 100% secure, and some files may even be false positive, so it is recommended to download the model from a trusted source.</p>
+<p>In addition, you can see in [here] (https://github.com/sudoskys/StableDiffusionBook/blob/main/docs/ckpt_safe) is a simple check script.</p>
 <h3 id="textual-inversion-ti">Textual Inversion (TI)</h3>
 <p>A method for extracting [v] from a number of images that have a common semantic [v]. The extracted [v] tensor is called "Embedding". The Embedding is saved as a file and can then be referenced by its filename in the prompt when the image is generated.</p>
 <h4 id="features">features</h4>
@@ -1448,7 +1469,7 @@ This is a <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issue
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 4, 2022 08:39:56</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 4, 2022 16:25:57</span>
       
         <br>
         Created:
