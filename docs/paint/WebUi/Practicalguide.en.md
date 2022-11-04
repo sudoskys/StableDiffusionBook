@@ -4,7 +4,7 @@ This short practical guide will give you a quick overview of how to adjust the p
 
 Currently, Ai does not handle details and multiple characters well, and the light and shadow structure will be messed up if handled one by one. If retouching, it is better to redraw. But it is practical to draw backgrounds and do previews.
 
-**The core logic is to narrow down the scope of pre-selected data.**
+**The core logic is to narrow the range of pre-selected data, adjust the balance between negative and positive prompts, and use part of the grammar to control the intensity of the prompt word effect and the process of effect.**
 
 
 ## Scene table
