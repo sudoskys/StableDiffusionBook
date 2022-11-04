@@ -1142,6 +1142,19 @@
     参数分析
   </a>
   
+    <nav class="md-nav" aria-label="参数分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#subject-images-class-images" class="md-nav__link">
+    Subject images / Class images
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1296,6 +1309,19 @@
     参数分析
   </a>
   
+    <nav class="md-nav" aria-label="参数分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#subject-images-class-images" class="md-nav__link">
+    Subject images / Class images
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1431,6 +1457,11 @@ pip install <span class="nv">bitsandbytes</span><span class="o">==</span><span c
 <p>这非常有用，让我们能够更灵活地找到哪些类图像能够改善概念嵌入到潜在空间中。</p>
 <h2 id="_4">参数分析</h2>
 <p><a href="https://wandb.ai/psuraj/dreambooth/reports/Dreambooth-training-analysis--VmlldzoyNzk0NDc3">使用 Dreambooth 训练稳定扩散的实验的分析</a></p>
+<h3 id="subject-images-class-images">Subject images / Class images</h3>
+<p>介绍来自 <a href="[good_dreambooth_formula](https://www.reddit.com/r/StableDiffusion/comments/ybxv7h/good_dreambooth_formula/)">2^</a></p>
+<p>Subject images (或者你在笔记本上看到的实例图像)是你想要训练的图像，所以如果你想要自己的外观的模型，你可以取20到40张自己的图像并输入这些图像。实例名是一个唯一的标识符，它将在提示符中表示受训对象，个人使用 “namelastname”，大多数笔记本使用“sks”，但最好更改它。</p>
+<p>你实际上是在告诉AI把你介绍到大数据库中，为了做到这一点，你选择一个类别，即最适合你所训练的类别，对于人们来说，通常使用 "person", "man"/"woman" 等。</p>
+<p>在训练中使用Class images是为了防止物体的特征 “渗透” 到同一Class 的其他物体。如果没有 Class images 作为参考点，人工智能倾向于将你的脸与 Class 中出现的其他脸合并。其他像名人一样的人会有点像你。</p>
 <h2 id="_5">其他</h2>
 <p><a href="https://github.com/TheLastBen/fast-stable-diffusion">fast-stable-diffusion colabs</a></p>
 <p>相关的还有 <a href="https://colab.research.google.com/github/ShivamShrirao/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion.ipynb#scrollTo=K6xoHWSsbcS3">DreamBooth_Stable_Diffusion</a> 和
@@ -1448,7 +1479,7 @@ pip install <span class="nv">bitsandbytes</span><span class="o">==</span><span c
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月4日 13:42:25</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月4日 15:28:55</span>
       
         <br>
         创建日期:

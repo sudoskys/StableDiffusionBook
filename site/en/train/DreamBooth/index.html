@@ -1142,6 +1142,19 @@
     Parametric analysis
   </a>
   
+    <nav class="md-nav" aria-label="Parametric analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#subject-images-class-images" class="md-nav__link">
+    Subject images / Class images
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1296,6 +1309,19 @@
     Parametric analysis
   </a>
   
+    <nav class="md-nav" aria-label="Parametric analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#subject-images-class-images" class="md-nav__link">
+    Subject images / Class images
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1432,6 +1458,11 @@ pip install <span class="nv">bitsandbytes</span><span class="o">==</span><span c
 <p>This is very useful and gives us more flexibility in finding which class images improve the embedding of concepts into the latent space.</p>
 <h2 id="parametric-analysis">Parametric analysis</h2>
 <p><a href="https://wandb.ai/psuraj/dreambooth/reports/Dreambooth-training-analysis--VmlldzoyNzk0NDc3">Analysis of experiments using Dreambooth to train stable diffusion</a></p>
+<h3 id="subject-images-class-images">Subject images / Class images</h3>
+<p>Copy from <a href="[good_dreambooth_formula](https://www.reddit.com/r/StableDiffusion/comments/ybxv7h/good_dreambooth_formula/)">2^</a></p>
+<p>Subject images (or instance images as you'll see on the notebooks) are the images that you want to train on, so if you want to get a model of your owns looks you take 20 to 40 images of yourself and input those. The instance name is a unique identifier that will represent the trained subject in the prompt, I use the person's "namelastname", most notebooks use "sks" but it's preferred to change it.</p>
+<p>You are essentially telling the AI to introduce you to the big database, to do that you pick a class, i.e a category that best fits what you are training, for people it's common to use "person", "man"/"woman", etc.</p>
+<p>Class images are used in training to prevent the looks of the subject to "bleed" into other subjects of the same class, without class images as a reference point, the AI tends to merge your face with the other faces that are present within that class. Other people like celebrities will kinda look like you.</p>
 <h2 id="other">Other</h2>
 <p><a href="https://github.com/TheLastBen/fast-stable-diffusion">fast-stable-diffusion colabs</a></p>
 <p>Related <a href="https://colab.research.google.com/github/ShivamShrirao/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion.ipynb#scrollTo=K6xoHWSsbcS3">DreamBooth_Stable_Diffusion</a> and
@@ -1449,7 +1480,7 @@ pip install <span class="nv">bitsandbytes</span><span class="o">==</span><span c
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 4, 2022 13:42:25</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 4, 2022 15:28:55</span>
       
         <br>
         Created:
