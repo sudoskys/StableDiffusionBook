@@ -1,0 +1,1905 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="一个介绍 Ai 绘画的 WIKI/A WIKI about Ai painting">
+      
+      
+        <meta name="author" content="StableDiffusionBook Team">
+      
+      
+        <link rel="canonical" href="https://stable-diffusion-book.vercel.app/en/paint/WebUi/base/">
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.8">
+    
+    
+      
+        <title>Base guide - AiDraw</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.20d9efc8.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.815d1a91.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#webui" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../" title="AiDraw" class="md-header__button md-logo" aria-label="AiDraw" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AiDraw
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Base guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="../../../../paint/WebUi/base/" hreflang="zh" class="md-select__link">
+                    简体中文
+                  </a>
+                </li>
+              
+                <li class="md-select__item">
+                  <a href="./" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/sudoskys/StableDiffusionBook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../" class="md-tabs__link">
+        Start here
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Perpare/" class="md-tabs__link">
+        Before start
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../install/" class="md-tabs__link">
+        Installation
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../model/" class="md-tabs__link">
+        Configuration
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
+        Paint guide
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../train/" class="md-tabs__link">
+        Train Model
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../landing/" class="md-tabs__link">
+        References
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../" title="AiDraw" class="md-nav__button md-logo" aria-label="AiDraw" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    AiDraw
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/sudoskys/StableDiffusionBook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../">Start here</a>
+          
+            <label for="__nav_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Start here" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Start here
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GettingStarted/term/" class="md-nav__link">
+        Terminology
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GettingStarted/news/" class="md-nav__link">
+        News
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GettingStarted/state/" class="md-nav__link">
+        Statement
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../Perpare/">Before start</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Before start" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Before start
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../install/">Installation</a>
+          
+            <label for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Installation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../install/WebUi/">Install SDWebUi</a>
+          
+            <label for="__nav_3_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Install SDWebUi" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Install SDWebUi
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../install/WebUi/base.md" class="md-nav__link">
+        Base guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../install/WebUi/launch/" class="md-nav__link">
+        LaunchWebUi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../install/WebUi/Troubleshoot/" class="md-nav__link">
+        Troubleshoot
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../model/">Configuration</a>
+          
+            <label for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Configuration" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Configuration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../model/GPU/" class="md-nav__link">
+        Gpu Debuging
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../model/NAI/" class="md-nav__link">
+        NAI leak report
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../model/WebUi/">WebUi 配置</a>
+          
+            <label for="__nav_4_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="WebUi 配置" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          WebUi 配置
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../model/WebUi/Troubleshoot/" class="md-nav__link">
+        Troubleshoot
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../">Paint guide</a>
+          
+            <label for="__nav_5">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Paint guide" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Paint guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../">Paint With WebUi</a>
+          
+            <label for="__nav_5_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Paint With WebUi" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Paint With WebUi
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Base guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Base guide
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-the-prompting-method" class="md-nav__link">
+    Introduction to the prompting method
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-write-prompt" class="md-nav__link">
+    How to write prompt
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sequencing-compilation" class="md-nav__link">
+    Sequencing Compilation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#batch-countbatch-size" class="md-nav__link">
+    Batch count&amp;batch size
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompt-impact-factor-6" class="md-nav__link">
+    (prompt) impact factor [^6]
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#negative-prompt" class="md-nav__link">
+    Negative prompt
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cfg-scaledenoising-strength-fittingnoise-reduction" class="md-nav__link">
+    CFG Scale/Denoising strength Fitting/noise reduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompt-editing" class="md-nav__link">
+    Prompt editing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompt-from-images" class="md-nav__link">
+    Prompt from images
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inverse-prompt" class="md-nav__link">
+    Inverse prompt
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#search-engines" class="md-nav__link">
+    Search Engines
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompt-matrix" class="md-nav__link">
+    Prompt matrix
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#highres-fix" class="md-nav__link">
+    Highres. fix
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompts-working-model" class="md-nav__link">
+    Prompt's working model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompt-conflict-hint-word" class="md-nav__link">
+    Prompt conflict (hint word)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step" class="md-nav__link">
+    Step
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#samplers" class="md-nav__link">
+    Samplers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seeds" class="md-nav__link">
+    Seeds
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extensions" class="md-nav__link">
+    Extensions
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practicalguide/" class="md-nav__link">
+        Application Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Advanced/" class="md-nav__link">
+        Advanced Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../info/" class="md-nav__link">
+        Prompt-Info-Script
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../train/">Train Model</a>
+          
+            <label for="__nav_6">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Train Model" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Train Model
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../train/Textual/" class="md-nav__link">
+        Textual Inversion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../train/Hypernetwork/" class="md-nav__link">
+        Hypernetwork
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../train/DreamBooth/" class="md-nav__link">
+        DreamBooth
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../train/AestheticGradients/" class="md-nav__link">
+        AestheticGradients
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../landing/">References</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="References" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          References
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-the-prompting-method" class="md-nav__link">
+    Introduction to the prompting method
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-write-prompt" class="md-nav__link">
+    How to write prompt
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sequencing-compilation" class="md-nav__link">
+    Sequencing Compilation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#batch-countbatch-size" class="md-nav__link">
+    Batch count&amp;batch size
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompt-impact-factor-6" class="md-nav__link">
+    (prompt) impact factor [^6]
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#negative-prompt" class="md-nav__link">
+    Negative prompt
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cfg-scaledenoising-strength-fittingnoise-reduction" class="md-nav__link">
+    CFG Scale/Denoising strength Fitting/noise reduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompt-editing" class="md-nav__link">
+    Prompt editing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompt-from-images" class="md-nav__link">
+    Prompt from images
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inverse-prompt" class="md-nav__link">
+    Inverse prompt
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#search-engines" class="md-nav__link">
+    Search Engines
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompt-matrix" class="md-nav__link">
+    Prompt matrix
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#highres-fix" class="md-nav__link">
+    Highres. fix
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompts-working-model" class="md-nav__link">
+    Prompt's working model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompt-conflict-hint-word" class="md-nav__link">
+    Prompt conflict (hint word)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step" class="md-nav__link">
+    Step
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#samplers" class="md-nav__link">
+    Samplers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seeds" class="md-nav__link">
+    Seeds
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extensions" class="md-nav__link">
+    Extensions
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <a href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/paint/WebUi/base.en.md" title="Edit this page" class="md-content__button md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+<h1 id="webui">WebUi</h1>
+<p>Please find out about the parameters of the WebUi(SD) web application beforehand.</p>
+<h2 id="introduction-to-the-prompting-method">Introduction to the prompting method</h2>
+<p>For NAI users, please read the <a href="https://docs.novelai.net/image/promptmixing.html">official website Docs</a></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The two-sided tip method <strong>not common</strong>
+Use <code>()</code> for WebUi enhancements and <code>{}</code> for NAI enhancements, note that NAI does not support assigning weights to individual words</p>
+<p>If you want to convert weights easily, you can use the <a href="https://t.me/M2NM2NBot">conversion service</a></p>
+</div>
+<p><strong>Representation method</strong></p>
+<p>Separation, the English half-word <code>,</code> is used as a separator, the presence of one or several spaces before and after the English comma does not affect the actual use.</p>
+<p>Blending, WebUi uses <code>|</code> to separate multiple keywords to blend multiple elements, literally blending, and can be used in more than one way.</p>
+<p>Augmentation, using <code>(hint:weight)</code> in WebUi weight augmentation, with augmentation ranging from <code>0.1 to :100</code>, allowing decimals. Whereas NAI uses <code>{}</code></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><code>a ((((farm))), daytime</code> syntax may eat up the comma</p>
+</div>
+<p>Prompt editing, using <code>[some1:some2:num]</code></p>
+<p><code>[fantasy:cyberpunk:16]</code> for replacing <code>fantasy</code> with the <code>cyberpunk</code> tag from step 16 onwards</p>
+<p><code>[to:when]</code> adds <code>to</code> to the prompt after a fixed number of steps ( when)</p>
+<p><code>[from::when]</code> Remove <code>from</code> from the prompt after a fixed number of steps ( when)</p>
+<p>Escape, WebUi for bracketed hints such as <code>a (word)</code> use the <code>\</code> character to escape to <code>a \(word\)</code>, this applies to bracketed Tags to prevent unwanted enhancements.</p>
+<p>Reduced weight, <code>[]</code> or <code>(word:0.952)</code>. NAI can only use <code>[]</code></p>
+<p>alternate prompt [^7], mixer. This allows you to create hybrids of animals, people or styles, switching one item per step (one step at a time), rendering in rounds, <code>[alison brie|emma stone|elizabeth olsen|scarlett johansson|anne hathaway|emma roberts], still film</code> This is the WebUi syntax, which in NAI represents the average weight mix (first half and second half).</p>
+<div class="admonition tip">
+<p class="admonition-title">NAI</p>
+<p>NAI does not allow individual weights to be specified, but supports a mixed weight syntax of <code>cat:1|happy:-0.2|cute:-0:3</code>.</p>
+<p>Because NAI uses an implementation of WebUi prior to 29 September 2022, the weight enhancement syntax is the old <code>{}</code>, which the new WebUi changes to <code>()</code>.</p>
+<p><strong>commutation relations</strong>
+NAI's [word] = WebUi(word:0.952)(0.952 = 1/1.05)</p>
+<p>NAI's {word} = WeUi's (word:1.05)</p>
+<p>NAI brackets have a weight of 1.05/pc, WebUi rounds have a weight of 1.1/pc</p>
+</div>
+<h2 id="how-to-write-prompt">How to write prompt</h2>
+<p>Write it in conjunction with a spell book.</p>
+<ul>
+<li>Natural language</li>
+</ul>
+<p>Natural language can be used directly, WebUi(SD) has natural language processing capabilities (English sentences), and can also use  emoji</p>
+<ul>
+<li>parameter [^6]</li>
+</ul>
+<p>Combine similar cue phrases as you wish and put these in order from most to least important.</p>
+<p>You can use artists, studios, photographic terms, character names, styles, special effects, etc. These can be viewed in the manuals, which are available in the end pages.</p>
+<div class="highlight"><pre><span></span><code>The quality of the image
+The subject of the pictures
+Their appearance
+Their emotions
+Their clothes
+Their poses
+The background of the picture
+</code></pre></div>
+<p><a href="https://docs.google.com/document/d/ 1XUT2G9LmkZataHFzmuOtRXnuWBfhvXDAo8DkS--8tec/edit#">Guide to Writing Prompts for Text-to-image Ai: A Guide to Writing Prompts for Text-to-image AI</a></p>
+<p><strong>Writing length</strong></p>
+<ul>
+<li>The Tip should not be too long, there is a risk of failure if it exceeds 100.</li>
+</ul>
+<p>You can write prompts with more than 75 words. Originally, due to GPT-3 model limitations, the prompts are not unlimited, the positive token is between 75-80, and the content after 75 words is truncated. But WebUi has grouping, so you can write many words.</p>
+<p>But not stacking prompts is a good habit.</p>
+<p>When the prompt exceeds 75 <code>tokens</code> (say 150 <code>tokens</code>), WebUi will group the prompt words and submit multiple sets of 75 <code>tokens</code>. The tokens will only have the context of the rest of the content in the same set. This means that you may have <code>bule hair</code> at the boundary between the first and second group, token <code>blue</code> will be in the first group and <code>hair</code> will be in the second group. This led to inaccurate results as the two words were separated.</p>
+<p>The new version adds an option <code>Increase coherency by padding from the last comma within n tokens when using more than 75 tokens</code></p>
+<p>This setting lets the program try to alleviate this by finding if there is a last comma in the last N tokens, and if so, moving everything that passes through that comma together to the next collection.</p>
+<div class="admonition tip">
+<p class="admonition-title">example</p>
+<p>There are entries for the words <code>... ,comma,blue hair,PADDING,...</code></p>
+<p>The 75th word is <code>blue</code></p>
+<p><strong>before using this option</strong></p>
+<p>Set 1:{[74]=Comma, [75]=blue}, Set 2:{[76]=hair, [77]=PADDING}</p>
+<p><strong>After using this option</strong></p>
+<p>Set 1:{[074]=Comma, [75]=PADDING}, Set 2:{[76]=blue, [77]=hair}</p>
+<p>If your hint is less than or equal to 75 tokens, no grouping will occur.</p>
+</div>
+<p><strong>Writing format</strong></p>
+<p>To facilitate writing changes, the recommended format for multi-line writing is as follows</p>
+<div class="highlight"><pre><span></span><code>masterpiece,
+1girl,  hatsune miku,
+look at viewer,turning back,
+blow wind, cyan hair, two side up, cyan eyes,eardrop,dress,
+caustics, masterpiece, high resolution,
+</code></pre></div>
+<p>The first line specifies the style type, the second the character, the third the action, the fourth the scene and costume, and the fifth the other parameters.</p>
+<p>The above order makes sense, but you can also adjust the order of the cues to produce different results. You can do this manually, or <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/1607">use the X/Y diagram to automatically generate the various orders</a></p>
+<p>The difference between an underline and no underline is not significant and will be cleaned up by the program as dust.</p>
+<p><strong>Stylisation</strong></p>
+<p>Nai comes out with a boring style by default. You can create images with special effects or a specified drawing style by training a style model, specifying style keywords, etc.</p>
+<p><a href="https://www.yuque.com/longyuye/lmgcwy">人偶教室的测试记录</a></p>
+<p><a href="https://www.bilibili.com/video/BV1TP411N71t/">风格化: 32种</a></p>
+<p>A more comprehensive guide is at the end of the page.</p>
+<h2 id="sequencing-compilation">Sequencing Compilation</h2>
+<p>The order in which the prompts are placed is the priority.(MAYBE)</p>
+<p>The way webui breaks the tag limit of 75 is by dividing them into groups.</p>
+<p>For the purpose of improving readability, it is recommended that the main body be placed first, followed by the words describing the costume, with the picture quality enhancement words interspersed between these descriptors. Generally, words that change the composition, such as action and nsfw words, are placed later or manually weighted down in order to improve the finish rate.</p>
+<p>The above ordering is the same for each group of tags, so if the later tags are over 75, you should split the earlier ones.</p>
+<h2 id="batch-countbatch-size">Batch count&amp;batch size</h2>
+<p><code>batch count</code> specifies how many batches of images to train.</p>
+<p><code>batchsize</code> specifies how many to train at a time.</p>
+<p>In simpler terms, the batch size will determine the number of samples we train at a time. The batch_size will affect how well and how fast the model can be optimised.</p>
+<p>Note also that <code>batch size</code> is designed to find the best balance between <code>memory efficiency</code> and <code>memory capacity</code>, as GPU resources are not fully utilised in a single 512x512 image generation. Larger images get less benefit from it.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Iteration is the action of repetitive feedback, where we want to train the neural network many times through iterations to reach the desired goal or result.
+The result of each iteration is used as the initial value for the next iteration.
+One iteration = one forward pass + one backward pass</p>
+</div>
+<h2 id="prompt-impact-factor-6">(prompt) impact factor [^6]</h2>
+<p>Using () in the prompt increases the model's attention to enclosed words, and [] decreases it. You can combine multiple modifiers</p>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#attentionemphasis">Wiki</a></p>
+<p>Cheat sheet:</p>
+<ul>
+<li><code>a (word)</code> - increase attention to <code>word</code> by a factor of 1.1</li>
+<li><code>a ((word))</code> - increase attention to <code>word</code> by a factor of 1.21 (= 1.1 * 1.1)</li>
+<li><code>a [word]</code> - decrease attention to <code>word</code> by a factor of 1.1</li>
+<li><code>a (word:1.5)</code> - increase attention to <code>word</code> by a factor of 1.5</li>
+<li><code>a (word:0.25)</code> - decrease attention to <code>word</code> by a factor of 4 (= 1 / 0.25)</li>
+<li><code>a \(word\)</code> - use literal <code>()</code> characters in prompt</li>
+</ul>
+<p>With <code>()</code>, a weight can be specified like this: <code>(text:1.4)</code>. If the weight is not specified, it is assumed to be 1.1. Specifying weight only works with <code>()</code> not with <code>[]</code>.</p>
+<p>If you want to use any of the literal <code>()[]</code> characters in the prompt, use the backslash to escape them: <code>anime_\(character\)</code>.</p>
+<p>On 2022-09-29, a new implementation was added that supports escape
+characters and numerical weights. A downside of the new implementation
+is that the old one was not perfect and sometimes ate characters: "a
+(((farm))), daytime", for example, would become "a farm daytime" without
+the comma. This behavior is not shared by the new implementation which
+preserves all text correctly, and this means that your saved seeds may
+produce different pictures. For now, there is an option in settings to
+use the old implementation.</p>
+<p>NAI uses my implementation from before 2022-09-29, except they have 1.05 as the multiplier and use <code>{}</code> instead of <code>()</code>. So the conversion applies:</p>
+<ul>
+<li>their <code>{word}</code> = our <code>(word:1.05)</code></li>
+<li>their <code>{{word}}</code> = our <code>(word:1.1025)</code></li>
+<li>their <code>[word]</code> = our <code>(word:0.952)</code> (0.952 = 1/1.05)</li>
+<li>their <code>[[word]]</code> = our <code>(word:0.907)</code> (0.907 = 1/1.05/1.05)</li>
+</ul>
+<details class="tip">
+<summary>How It Work</summary>
+<p>Each word has an associated vector of 768 values that 'points' in the direction of the concept (in 768 dimensions).</p>
+<p>If you scale this vector, the concept will become stronger or weaker.</p>
+<p>From <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2905">Here</a></p>
+</details>
+<h2 id="negative-prompt">Negative prompt</h2>
+<p>Negative prompt is a way to use the Stable Diffusion in a way that
+allows the user to specify what he doesn't want to see, without any
+extra load or requirements for the model. In
+addition to just being able to specify what you don't want to see, which
+sometimes is possible via usual prompt, and sometimes isn't, this
+allows you to do that without using any of your allowance of 75 tokens
+the prompt consists of.</p>
+<p>The way negative prompt works is by using user-specified text instead of empty string for <code>unconditional_conditioning</code> when doing sampling.</p>
+<p>Here's the (simplified) code from <a href="https://github.com/CompVis/stable-diffusion/blob/main/scripts/txt2img.py">txt2img.py</a>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># prompts = [&quot;a castle in a forest&quot;]</span>
+<span class="c1"># batch_size = 1</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_learned_conditioning</span><span class="p">(</span><span class="n">prompts</span><span class="p">)</span>
+<span class="n">uc</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_learned_conditioning</span><span class="p">(</span><span class="n">batch_size</span> <span class="o">*</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">])</span>
+
+<span class="n">samples_ddim</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">sampler</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">conditioning</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">unconditional_conditioning</span><span class="o">=</span><span class="n">uc</span><span class="p">,</span> <span class="p">[</span><span class="o">...</span><span class="p">])</span>
+</code></pre></div>
+<p>This launches the sampler that repeatedly:</p>
+<ul>
+<li>de-noises the picture guiding it to look more like your prompt (conditioning)</li>
+<li>de-noises the picture guiding it to look more like an empty prompt (unconditional_conditioning)</li>
+<li>looks at difference between those and uses it to produce a set of
+  changes for the noisy picture (different samplers do that part
+  differently)</li>
+</ul>
+<p>To use negative prompt, all that's needed is this:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># prompts = [&quot;a castle in a forest&quot;]</span>
+<span class="c1"># negative_prompts = [&quot;grainy, fog&quot;]</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_learned_conditioning</span><span class="p">(</span><span class="n">prompts</span><span class="p">)</span>
+<span class="n">uc</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_learned_conditioning</span><span class="p">(</span><span class="n">negative_prompts</span><span class="p">)</span>
+
+<span class="n">samples_ddim</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">sampler</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">conditioning</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">unconditional_conditioning</span><span class="o">=</span><span class="n">uc</span><span class="p">,</span> <span class="p">[</span><span class="o">...</span><span class="p">])</span>
+</code></pre></div>
+<p>The sampler then will look at differences between image de-noised to
+look like your prompt (a castle), and an image de-noised to look like
+your negative prompt (grainy, fog), and try to move the final results
+towards the former and away from latter.</p>
+<p>From <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Negative-prompt#examples">Wiki</a></p>
+<h2 id="cfg-scaledenoising-strength-fittingnoise-reduction">CFG Scale/Denoising strength Fitting/noise reduction</h2>
+<p><strong>CFG Scale</strong></p>
+<p>The higher the scale, the more faithful the program is to the prompt, and the better the fit.</p>
+<p><strong>Denoising strength Reducing noise</strong></p>
+<p>Denoising strength` determines how well the algorithm retains the content of the image, reducing the effect on the image style, but also weakening the img2img capability. The higher the value, the less the AI will refer to the original image (and increase the number of iterations).</p>
+<p>A low <code>denoising</code> means that the original image is corrected, while a high <code>denoising</code> is not as relevant to the original image. Generally speaking, the threshold is around 0.7, above which it is largely irrelevant, and below 0.3 it is slightly modified.</p>
+<h2 id="prompt-editing">Prompt editing</h2>
+<p>Prompt editing allows you to start sampling one picture, but in the middle swap to something else. The base syntax for this is: <code>[some1:some2:num]</code></p>
+<p><code>[fantasy:cyberpunk:16]</code> to replace <code>fantasy</code> with the <code>cyberpunk</code> tag from step 16 onwards</p>
+<p><code>[to:when]</code> adds <code>to</code> to the prompt after a fixed number of steps ( when)</p>
+<p><code>[from::when]</code> Remove <code>from</code> from the prompt after a fixed number of steps ( when)</p>
+<p><img alt="sample_Gradient" src="https://user-images.githubusercontent.com/75739606/197822841-f7323afa-8c6a-46a2-a8e2-a1c457bb31d5.jpg" /></p>
+<!--
+![sample_Gradient](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/sample_Gradient.jpg)
+-->
+
+<h2 id="prompt-from-images">Prompt from images</h2>
+<p>By default the program will include the prompt, parameters and model information in the image. For uncompressed original images we can drag the file into the <code>PNG Info</code> tab for the prompt (Token) view.</p>
+<p>Or use the <a href="https://spell.novelai.dev/">Online Tools</a> to view it.</p>
+<h2 id="inverse-prompt">Inverse prompt</h2>
+<p>Relevant parameters can be extracted from the images, which may not be accurate.</p>
+<p><a href="https://t.me/LenKiMo_Bot">LenKiMo_Bot</a></p>
+<p><a href="https://github.com/KichangKim/DeepDanbooru">DeepDanbooru</a></p>
+<h2 id="search-engines">Search Engines</h2>
+<p><a href="https://pixai.art/">PIXAI</a></p>
+<p><a href="https://t.me/StableDiffusion_Show">StableDiffusion_Show</a></p>
+<p><a href="https://t.me/cyan_ai_sese">cyan_ai_sese</a></p>
+<p><a href="https://lexica.art/?q=Miku">LEXICA搜索引擎</a></p>
+<h2 id="prompt-matrix">Prompt matrix</h2>
+<p>Separate multiple prompts using the <code>|</code> character, and the system will produce an image for every combination of them.
+For example, if you use <code>a busy city street in a modern city|illustration|cinematic lighting</code> prompt, there are four combinations possible (first part of the prompt is always kept):</p>
+<ul>
+<li><code>a busy city street in a modern city</code></li>
+<li><code>a busy city street in a modern city, illustration</code></li>
+<li><code>a busy city street in a modern city, cinematic lighting</code></li>
+<li><code>a busy city street in a modern city, illustration, cinematic lighting</code></li>
+</ul>
+<p><code>cat :2 | dog</code> that is, a dog that is more like a cat</p>
+<h2 id="highres-fix">Highres. fix</h2>
+<p>A convenience option to partially render your image at a lower resolution, upscale it, and then add details at a high resolution.</p>
+<p>By default, txt2img makes horrible images at very high resolutions, and this makes it possible to avoid using the small picture's composition. Enabled by checking the "Highres. fix" checkbox on the txt2img page.</p>
+<h2 id="prompts-working-model">Prompt's working model</h2>
+<p>The scientific principle of incantation.</p>
+<p><img alt="prompt_draw" src="https://user-images.githubusercontent.com/75739606/198675128-c2c849d0-d024-468b-80c4-374f13e933e3.png" /></p>
+<!--
+![prompt_draw](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/prompt_draw_fix.png)
+-->
+<blockquote>
+<p>By RcINS</p>
+</blockquote>
+<p>In the program, the parsing of the prompt is handled by CLIP</p>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/modules/prompt_parser.py">prompt_parser for WebUi</a> implements Prompt editing etc.</p>
+<p>CLIP cannot handle Chinese, Chinese characters are broken up.</p>
+<p><strong>About the weighting implementation</strong>: weighting increases usually take up a prompt position.</p>
+<p><strong>About Prompt editing</strong>: At a given Step, the WebUi program will replace the corresponding prompt to achieve a Prompt editing effect.</p>
+<p>And so on.</p>
+<p>The WebUi prompt syntax is converted into a prompt of the corresponding time, which is then passed to Ai via embedding.</p>
+<h2 id="prompt-conflict-hint-word">Prompt conflict (hint word)</h2>
+<p>For example, if <code>loli</code> contains more styles, the single <code>loli</code> tag within the spell should be removed when the user wants a specific style.</p>
+<h2 id="step">Step</h2>
+<p>More iterative steps may result in better generation, more detail and sharpening, but will result in longer generation times. In practice, the difference between 30 and 50 steps is very small.</p>
+<p>Too many iterative steps may also be counterproductive, with little or no improvement.</p>
+<p>When performing img2img, weaker denoising normally requires fewer iteration steps (this is how it works).</p>
+<p>You can change the setting in the settings to allow the program to perform exactly the number of iteration steps specified by the slider.</p>
+<h2 id="samplers">Samplers</h2>
+<p>Currently good ones are <code>eular</code>, <code>eular a</code>, more subtle, and <code>Ddim</code>.</p>
+<p>Recommend <code>eular a</code> and <code>Ddim</code>, <strong>newcomers recommend <code>eular a</code></strong></p>
+<p><code>eular a</code> is creative and different steps can produce different images.
+PS: too high a step count (&gt;30) will not give better results</p>
+<p><code>DDIM</code> converges quickly, but is relatively inefficient as it requires many steps to get good results, <strong>suitable for use in redrawing</strong></p>
+<p><code>LMS</code> and <code>PLMS</code> are derivatives of <code>eular</code> and use a related but slightly different method (averaging over several steps to improve accuracy). About 30 steps gives stable results</p>
+<p><code>PLMS</code> is an effective LMS (classical method) that can better handle singularities in the structure of neural networks</p>
+<p><code>DPM2</code> is a fantastic method that aims to improve DDIM by reducing the number of steps to obtain good results. It requires two denoising runs per step and it is about twice as fast as DDIM. But if you're experimenting with debugging cue words, this sampler doesn't work very well</p>
+<p><code>Euler</code> is the simplest, and therefore one of the fastest</p>
+<p>from <a href="https://www.reddit.com/r/StableDiffusion/comments/xbeyw3/can_anyone_offer_a_little_guidance_on_the/">discussion</a></p>
+<p>and <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#attentionemphasis">wiki</a></p>
+<ul>
+<li>举个例子</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>预览一</th>
+<th>预览二</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://user-images.githubusercontent.com/22421310/187063145-3d4f16d7-7bd6-4804-be1c-acf228ed2507.jpg" width="400" alt="效果"></td>
+<td><img src="https://user-images.githubusercontent.com/75739606/197824518-f68188a3-0572-4b52-8fe7-289b6d7b640b.jpg" width="400" alt="效果"></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>不同 step 和 采样器 的不同效果</p>
+</blockquote>
+<h2 id="seeds">Seeds</h2>
+<p>The actual seed integer is not important. It simply initialises a random number generator that defines the starting point of the diffusion and is a random initial value.</p>
+<p>A good seed can perform things like composition and colour in various cues, samplers and CFGs. But it is of limited use now.</p>
+<p>With the same Step , cfg, Seed, prompts, producing essentially the same picture!</p>
+<p>The same seeds will produce the same picture in the same model and back-end implementation, keeping all parameters the same. Depends on the other parameters.</p>
+<p>But note that <strong>different graphics cards may cause unexpectedly different results</strong> (e.g. things like accuracy)</p>
+<p>The 10xx series looks so different from all other cards, see <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017#discussioncomment-3873467">here</a></p>
+<h2 id="extensions">Extensions</h2>
+<p>Extensions are a more convenient form of user scripts.</p>
+<p>Extensions all exist in their own subdirectory inside the <code>extensions</code> directory. You can use git to install an extension like this:</p>
+<div class="highlight"><pre><span></span><code>git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients extensions/aesthetic-gradients
+</code></pre></div>
+<p>This installs an extension from <code>https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients</code> into the <code>extensions/aesthetic-gradients</code> directory.</p>
+<p>Alternatively you can just copy-paste a directory into <code>extensions</code>.</p>
+<p>For developing extensions, see <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Developing-extensions">Developing extensions</a>.</p>
+<p><strong>See a list of all extensions at <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts#stylepile">here</a></strong></p>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 4, 2022 02:16:25</span>
+      
+        <br>
+        Created:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 07:44:44</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Index" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Index
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../Practicalguide/" class="md-footer__link md-footer__link--next" aria-label="Next: Application Guide" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Application Guide
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 采用 GFDL 协议
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://t.me/s/StableDiffusion_CN_WIKI" target="_blank" rel="noopener" title="t.me" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M248 8C111.033 8 0 119.033 0 256s111.033 248 248 248 248-111.033 248-248S384.967 8 248 8Zm114.952 168.66c-3.732 39.215-19.881 134.378-28.1 178.3-3.476 18.584-10.322 24.816-16.948 25.425-14.4 1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25 5.342-39.5 3.652-3.793 67.107-61.51 68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608 69.142-14.845 10.194-26.894 9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7 18.45-13.7 108.446-47.248 144.628-62.3c68.872-28.647 83.183-33.623 92.511-33.789 2.052-.034 6.639.474 9.61 2.885a10.452 10.452 0 0 1 3.53 6.716 43.765 43.765 0 0 1 .417 9.769Z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://t.me/s/StableDiffusion_Show" target="_blank" rel="noopener" title="t.me" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M248 8C111.033 8 0 119.033 0 256s111.033 248 248 248 248-111.033 248-248S384.967 8 248 8Zm114.952 168.66c-3.732 39.215-19.881 134.378-28.1 178.3-3.476 18.584-10.322 24.816-16.948 25.425-14.4 1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25 5.342-39.5 3.652-3.793 67.107-61.51 68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608 69.142-14.845 10.194-26.894 9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7 18.45-13.7 108.446-47.248 144.628-62.3c68.872-28.647 83.183-33.623 92.511-33.789 2.052-.034 6.639.474 9.61 2.885a10.452 10.452 0 0 1 3.53 6.716 43.765 43.765 0 0 1 .417 9.769Z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "toc.follow", "navigation.top", "navigation.tracking", "navigation.indexes", "navigation.expand", "navigation.sections"], "search": "../../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
+      
+    
+  </body>
+</html>
