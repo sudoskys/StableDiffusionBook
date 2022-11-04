@@ -74,6 +74,12 @@ Don't want to go back and forth setting Clip parameters?
 
 Add the `sd_hypernetwork` and `CLIP_stop_at_last_layers` fields to the `Quicksettings list` settings on the settings page, click the button at the top of the page to save, restart webui, and you'll see a quick switch option at the top of the Ui.
 
+!!! tip
+    Need more quick switches?
+
+    Provided you are able to read the Python source code, you can refer to [here](https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/modules/shared.py) for more information about the setting name defined.
+
+    They usually exist on the key of dicts whose values are instances of `OptionInfo`.
 
 ## Multilanguage/Localization
 
