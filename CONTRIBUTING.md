@@ -129,7 +129,7 @@ If needed, mention a specific item for formatting optimization.
 
 #### Common documents
 
-#### Black words
+#### Term
 
 Offbeat aliases should not appear.
 
