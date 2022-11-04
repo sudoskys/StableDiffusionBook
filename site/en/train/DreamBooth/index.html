@@ -1131,6 +1131,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#simple-guide" class="md-nav__link">
+    Simple guide
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#parametric-analysis" class="md-nav__link">
     Parametric analysis
   </a>
@@ -1278,6 +1285,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#simple-guide" class="md-nav__link">
+    Simple guide
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#parametric-analysis" class="md-nav__link">
     Parametric analysis
   </a>
@@ -1393,6 +1407,29 @@ pip install <span class="nv">bitsandbytes</span><span class="o">==</span><span c
 <blockquote>
 <p>This is a temporary solution in anticipation of an official Windows adaptation.</p>
 </blockquote>
+<h2 id="simple-guide">Simple guide</h2>
+<p><a href="[testing_dreambooth_for_consistency_with_complex](https://www.reddit.com/r/StableDiffusion/comments/yhw7k8/testing_dreambooth_for_consistency_with_complex/)">1^</a></p>
+<blockquote>
+<p>The following are all unconfirmed. If you have a different opinion, please feel free to ask.</p>
+</blockquote>
+<ul>
+<li>Preparing the training image</li>
+</ul>
+<p>For your training images you will need:</p>
+<p>At least 20 close up portraits, at least 4 medium distance torso shots, at least 4 long distance full body shots and at least 1 seated photo.</p>
+<p>Higher quality (more detail) training images (cropped to 512x512).</p>
+<p>If you need to make your Dreambooth model more diverse, try to use different environments, lighting, hairstyles, expressions, poses, angles and distances from the subject.</p>
+<p>Avoid having hands stuck to the head in your renders by removing all images where hands are too close to or touching the head.</p>
+<p>If you need to avoid a fisheye lens effect in your renders, remove all selfie images.</p>
+<p>To avoid white borders in your renders, make sure there are no cropped borders in your images.</p>
+<p>To avoid unnatural over-blurring, make sure the image does not contain a false heavy depth of field or vignetting.</p>
+<ul>
+<li>Consistent markings</li>
+</ul>
+<p>After extensive testing, it has been found that the class identifier <code>class identifier picker</code> clearly helps to improve the quality of embedding and rendering of concepts. I use the class identifier to evoke any trained concept word.</p>
+<p>If training a <strong>reality</strong> concept, the class prompt should be "a high resolution photo _____"</p>
+<p>We initially only had a <code>class identifier picker</code> class image picker (one word) which was also used to generate <code>class images</code>. A separate <code>class image generator picker</code> has now been added (using multiple words) which allows us to further identify and constrain what we want from the class images.</p>
+<p>This is very useful and gives us more flexibility in finding which class images improve the embedding of concepts into the latent space.</p>
 <h2 id="parametric-analysis">Parametric analysis</h2>
 <p><a href="https://wandb.ai/psuraj/dreambooth/reports/Dreambooth-training-analysis--VmlldzoyNzk0NDc3">Analysis of experiments using Dreambooth to train stable diffusion</a></p>
 <h2 id="other">Other</h2>
@@ -1412,7 +1449,7 @@ pip install <span class="nv">bitsandbytes</span><span class="o">==</span><span c
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 4, 2022 08:39:56</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 4, 2022 13:42:25</span>
       
         <br>
         Created:

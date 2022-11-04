@@ -1644,7 +1644,7 @@
 <p><code>[to:when]</code> 在固定数量的step后添加 <code>to</code> 到提示 ( when)</p>
 <p><code>[from::when]</code> 在固定数量的step后从提示中删除 <code>from</code>( when)</p>
 <p>转义，WebUi 对于带括号提示词比如<code>a (word)</code>  请使用 <code>\</code> 字符转义为 <code>a \(word\)</code>，这适用于带括号的Tag,防止出现本来不想要的增强效果。</p>
-<p>降低权重，<code>[]</code> 或者 <code>(word:0.952)</code>。NAI 仅能使用 <code>[]</code></p>
+<p>降低权重，单独使用 <code>[]</code> ，但不可以带数字。或者 <code>(word:0.952)</code>。NAI 仅能使用 <code>[]</code></p>
 <p>交替（alternate prompt）[^7]，混合机。这使您可以创建动物、人或风格的混合体，每一个 step 切换一项(一步一换)，轮回渲染，<code>[alison brie|emma stone|elizabeth olsen|scarlett johansson|anne hathaway|emma roberts], still film</code> 这是WebUi 语法，在 NAI 中代表平均权重混合(前半部分和后半部分)。</p>
 <div class="admonition tip">
 <p class="admonition-title">NAI</p>
@@ -1958,7 +1958,7 @@ git clone https://github.com/yfszzx/stable-diffusion-webui-images-browser
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月4日 02:16:25</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月4日 13:42:25</span>
       
         <br>
         创建日期:

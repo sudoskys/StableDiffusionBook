@@ -1132,13 +1132,20 @@
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    参数分析
+    简单指南
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
+    参数分析
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
     其他
   </a>
   
@@ -1279,13 +1286,20 @@
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    参数分析
+    简单指南
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
+    参数分析
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
     其他
   </a>
   
@@ -1392,9 +1406,32 @@ pip install <span class="nv">bitsandbytes</span><span class="o">==</span><span c
 <blockquote>
 <p>这是一个临时的解决方案，期待 Windows 官方适配的到来。</p>
 </blockquote>
-<h2 id="_3">参数分析</h2>
+<h2 id="_3">简单指南</h2>
+<p><a href="[testing_dreambooth_for_consistency_with_complex](https://www.reddit.com/r/StableDiffusion/comments/yhw7k8/testing_dreambooth_for_consistency_with_complex/)">1^</a></p>
+<blockquote>
+<p>以下皆为未证实的内容。如果你有不同意见，欢迎提出。</p>
+</blockquote>
+<ul>
+<li>准备训练图像</li>
+</ul>
+<p>对于你的训练图片，你将需要:</p>
+<p>至少20张近距离人像照片，至少4张中距离躯干照片，至少4张长距离的全身照，至少1张坐姿照片。</p>
+<p>质量较高(细节多)的训练图片（裁剪为512x512）。</p>
+<p>如果需要使你的  Dreambooth 模型更加多样化，尽量使用不同的环境、灯光、发型、表情、姿势、角度和与主体的距离。</p>
+<p>避免在你的渲染图中出现手粘在头上的情况，请删除所有手太靠近或接触头部的图片。</p>
+<p>如果需要避免渲染图中出现鱼眼镜头效果，可以删除所有自拍图片。</p>
+<p>为了避免在渲染中出现白色边框，请确保你的图像中没有裁剪边框。</p>
+<p>为了避免不自然的过度模糊，确保图像不包含假的重景深或虚化。</p>
+<ul>
+<li>一致的标识</li>
+</ul>
+<p>经过大量的测试，有人发现 类标识符<code>class identifier picker</code> 明显有助于提高概念的嵌入和渲染的质量。我使用类标识符来唤起任何训练过的概念词。</p>
+<p>如果训练的是一个 <strong>现实</strong> 的概念，class prompt 应该是“一张高清照片_____”</p>
+<p>我们最初只有一个 <code>class identifier picker</code> 类图像选择器 (一个词)，它也用于生成 <code>class images</code> 。现在已经添加了一个单独的 <code>class image generator picker</code> (使用多个单词)，它允许我们进一步确定和约束我们想从类图像中获得的内容。</p>
+<p>这非常有用，让我们能够更灵活地找到哪些类图像能够改善概念嵌入到潜在空间中。</p>
+<h2 id="_4">参数分析</h2>
 <p><a href="https://wandb.ai/psuraj/dreambooth/reports/Dreambooth-training-analysis--VmlldzoyNzk0NDc3">使用 Dreambooth 训练稳定扩散的实验的分析</a></p>
-<h2 id="_4">其他</h2>
+<h2 id="_5">其他</h2>
 <p><a href="https://github.com/TheLastBen/fast-stable-diffusion">fast-stable-diffusion colabs</a></p>
 <p>相关的还有 <a href="https://colab.research.google.com/github/ShivamShrirao/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion.ipynb#scrollTo=K6xoHWSsbcS3">DreamBooth_Stable_Diffusion</a> 和
 <a href="https://colab.research.google.com/github/TheLastBen/fast-stable-diffusion/blob/main/fast-DreamBooth.ipynb">fast-DreamBooth</a></p>
@@ -1411,7 +1448,7 @@ pip install <span class="nv">bitsandbytes</span><span class="o">==</span><span c
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月3日 12:19:59</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月4日 13:42:25</span>
       
         <br>
         创建日期:

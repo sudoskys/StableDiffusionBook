@@ -1481,6 +1481,17 @@ There are two types of iterations, circular iterations and linear iterations. Li
 <h2 id="how-to-write-prompts">How to write prompts</h2>
 <p>This is a general guide, the content is largely generic, there may be exceptions, please read the corresponding sections for the characteristics of different applications.</p>
 <ul>
+<li>Vocabulary
+<sup id="fnref4:2"><a class="footnote-ref" href="#fn:2">2</a></sup>
+Words may consist of one or more symbols. Common words are usually resolved as single marks with a common meaning or a small number of meanings. Misspellings and uncommon words are parsed into multiple tags that derive meanings from a variety of different words, and often inconsistent meanings.</li>
+</ul>
+<p>Vowel changes are more likely to map you to a different unrelated word, with a more unique and stronger meaning and impact.</p>
+<p>So 'bank, bankk bank' is likely to be interpreted as a close synonym of 'bank'. But bonk - has a completely different meaning.</p>
+<ul>
+<li>Case of word</li>
+</ul>
+<p>Clip's tagger lowercase all words before tagging them. Other models such as BERT and T5 tokenize capitalized words differently from uncapitalized.</p>
+<ul>
 <li>Length</li>
 </ul>
 <p>Except for WebUi, the prompt is not infinite due to GPT-3 model limitations, the possitive token is between 75-80 and the content after 75 characters is truncated.</p>
@@ -1506,7 +1517,10 @@ There are two types of iterations, circular iterations and linear iterations. Li
 <ul>
 <li>Word order</li>
 </ul>
-<p>The way the parser understands things is opaque, so there is no way of knowing exactly whether the lexical order has an "anchor" effect.</p>
+<p><sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup>
+It appears that VAE uses a statistical method known as Bayes' theorem. When calculating the goings-on of tokens, the first few words seem to anchor the distribution of the remaining word tokens in the potential space.</p>
+<p>The earlier tokens have more consistent positions, so the neural network is more likely to predict their relevance. In Bayesian inference, the first token or evidence in the matrix is important because it sets the initial probability condition. But later elements simply modify the probability conditions. Thus, at least in theory, the final token should not have more influence than the previous token.</p>
+<p>But the way the parser understands things is opaque, so there is no way to <strong>exactly</strong> know whether lexical order has an "anchor" effect.</p>
 <h3 id="movement-and-poses">Movement and Poses</h3>
 <p>If possible, choose prompts that are associated with only a small number of poses. </p>
 <p>A pose in this context means a physical configuration of something: the position and rotation of the image subject relative to the camera, the angles of the joints of humans/robots, the way a block of jello is being compressed, etc. The less variance there is in the thing that you're trying to specify the easier it is for the model to learn. </p>
@@ -1527,6 +1541,7 @@ However, others can frequently <strong>not</strong> reproduce this effect in the
 <p>For this reason: <strong>make sure to check whether the syntax of a prompt that you copy from someone else matches the syntax of the script that you use.</strong></p>
 <p>In a <a href="https://github.com/JohannesGaessler/stable-diffusion-tools/tree/master/emphasis">quantitative analysis</a> square brackets did not have a consistent effect unless explicitly processed.</p>
 <p>The repetition of a certain keyword seems to increase its effect regardless of the specific script that is being used.</p>
+<p>Worth noting, the impact of any single token will be diminished the more tokens exist in your prompt. You'll also notice, because of this, that styles will fade out when adding new tokens. I strongly suggest increasing the token strength on style words as your prompt length increases, in order to maintain a consistent style, particularly in certain models.<sup id="fnref3:2"><a class="footnote-ref" href="#fn:2">2</a></sup></p>
 <h3 id="image-size">Image size</h3>
 <p>Image size obviously affects content, if the height of the image increases it is more likely to produce an individual or separate thing. If the image width is increased, it is more likely to produce multiple people or landscapes.</p>
 <h2 id="extension">Extension</h2>
@@ -1538,7 +1553,7 @@ However, others can frequently <strong>not</strong> reproduce this effect in the
 <p><a href="https://wiki.installgentoo.com/wiki/Stable_Diffusion">installgentoo wiki</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:2">
-<p><a href="https://www.reddit.com/r/StableDiffusion/comments/yjwuls/demystifying_prompting_what_you_need_to_know/">demystifying_prompting_what_you_need_to_know/</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p><a href="https://www.reddit.com/r/StableDiffusion/comments/yjwuls/demystifying_prompting_what_you_need_to_know/">demystifying_prompting_what_you_need_to_know/</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -1548,7 +1563,7 @@ However, others can frequently <strong>not</strong> reproduce this effect in the
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 4, 2022 12:15:46</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 4, 2022 13:42:25</span>
       
         <br>
         Created:
