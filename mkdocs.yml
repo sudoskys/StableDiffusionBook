@@ -10,9 +10,11 @@ copyright: |
 nav:
   - 起步于此:
       - index.md
-      - 术语: GettingStarted/term.md
       - 新闻: GettingStarted/news.md
+      - 术语: GettingStarted/term.md
       - 声明: GettingStarted/state.md
+      - 贡献指南: GettingStarted/contributing.md
+      
   - 开始之前:
       - Perpare/index.md
   - 安装配置:
@@ -119,6 +121,7 @@ plugins:
             运行WebUi: LaunchWebUi
             错误处理: Troubleshoot
             工作台: Workstations
+            贡献指南: Contribution Guide
       languages:
         en:
           name: English

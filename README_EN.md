@@ -46,7 +46,7 @@ VARM larger than 2GB, normal use requires 4 GB
 
 If you find any errors or deficiencies in this article, please feel free to raise an issue and PR to the [Project Repository](https://github.com/sudoskys/StableDiffusionBook/).
 
-Read the [Contribution Guidelines](https://github.com/sudoskys/StableDiffusionBook/blob/main/CONTRIBUTING.md) before contributing
+Read the [Contribution Guidelines](https://github.com/sudoskys/StableDiffusionBook/blob/main/docs/contributing.en.md) before contributing
 
 Press `. ` key to automatically clone the repository and start collaborating.
 
