@@ -12,14 +12,14 @@
         <meta name="author" content="StableDiffusionBook Team">
       
       
-        <link rel="canonical" href="https://stable-diffusion-book.vercel.app/en/train/Textual/">
+        <link rel="canonical" href="https://stable-diffusion-book.vercel.app/en/GettingStarted/contributing/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.8">
     
     
       
-        <title>Textual Inversion - AiDraw</title>
+        <title>Contribution Guide - AiDraw</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#textual-inversion7" class="md-skip">
+        <a href="#guide" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Textual Inversion
+              Contribution Guide
             
           </span>
         </div>
@@ -145,7 +145,7 @@
             <ul class="md-select__list">
               
                 <li class="md-select__item">
-                  <a href="../../../train/Textual/" hreflang="zh" class="md-select__link">
+                  <a href="../../../GettingStarted/contributing/" hreflang="zh" class="md-select__link">
                     简体中文
                   </a>
                 </li>
@@ -225,13 +225,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../" class="md-tabs__link">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
         Start here
       </a>
     </li>
@@ -305,15 +307,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../" class="md-tabs__link md-tabs__link--active">
+      <a href="../../train/" class="md-tabs__link">
         Train Model
       </a>
     </li>
@@ -386,12 +386,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
       
       
       
@@ -436,7 +438,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../GettingStarted/news/" class="md-nav__link">
+      <a href="../news/" class="md-nav__link">
         News
       </a>
     </li>
@@ -450,7 +452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../GettingStarted/term/" class="md-nav__link">
+      <a href="../term/" class="md-nav__link">
         Terminology
       </a>
     </li>
@@ -464,7 +466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../GettingStarted/state/" class="md-nav__link">
+      <a href="../state/" class="md-nav__link">
         Statement
       </a>
     </li>
@@ -476,11 +478,120 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../GettingStarted/contributing/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Contribution Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Contribution Guide
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#formatting-requirements" class="md-nav__link">
+    Formatting requirements
+  </a>
+  
+    <nav class="md-nav" aria-label="Formatting requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#commit-specification" class="md-nav__link">
+    Commit Specification
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pull-request-specification" class="md-nav__link">
+    Pull Request specification
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#read-friendly" class="md-nav__link">
+    Read friendly
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#submitted-content" class="md-nav__link">
+    Submitted content
+  </a>
+  
+    <nav class="md-nav" aria-label="Submitted content">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notification-of-progress" class="md-nav__link">
+    Notification of progress
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#editing-individual-pages" class="md-nav__link">
+    Editing individual pages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edit-multiple-pages" class="md-nav__link">
+    Edit multiple pages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-an-index" class="md-nav__link">
+    Adding an index
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -999,14 +1110,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
       
       
       
@@ -1028,7 +1137,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../">Train Model</a>
+          <a href="../../train/">Train Model</a>
           
             <label for="__nav_6">
               <span class="md-nav__icon md-icon"></span>
@@ -1049,94 +1158,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Textual Inversion
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../train/Textual/" class="md-nav__link">
         Textual Inversion
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#prepare-the-dataset" class="md-nav__link">
-    Prepare the dataset
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#requirements" class="md-nav__link">
-    Requirements
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#setup-instructions" class="md-nav__link">
-    Setup instructions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-training" class="md-nav__link">
-    Create training
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#preprocessing" class="md-nav__link">
-    Preprocessing
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#training" class="md-nav__link">
-    Training
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#remarks" class="md-nav__link">
-    Remarks
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1148,7 +1174,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Hypernetwork/" class="md-nav__link">
+      <a href="../../train/Hypernetwork/" class="md-nav__link">
         Hypernetwork
       </a>
     </li>
@@ -1162,7 +1188,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../DreamBooth/" class="md-nav__link">
+      <a href="../../train/DreamBooth/" class="md-nav__link">
         DreamBooth
       </a>
     </li>
@@ -1176,7 +1202,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../AestheticGradients/" class="md-nav__link">
+      <a href="../../train/AestheticGradients/" class="md-nav__link">
         AestheticGradients
       </a>
     </li>
@@ -1261,51 +1287,77 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prepare-the-dataset" class="md-nav__link">
-    Prepare the dataset
+  <a href="#formatting-requirements" class="md-nav__link">
+    Formatting requirements
   </a>
+  
+    <nav class="md-nav" aria-label="Formatting requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#commit-specification" class="md-nav__link">
+    Commit Specification
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pull-request-specification" class="md-nav__link">
+    Pull Request specification
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#read-friendly" class="md-nav__link">
+    Read friendly
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#requirements" class="md-nav__link">
-    Requirements
+  <a href="#submitted-content" class="md-nav__link">
+    Submitted content
+  </a>
+  
+    <nav class="md-nav" aria-label="Submitted content">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notification-of-progress" class="md-nav__link">
+    Notification of progress
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#setup-instructions" class="md-nav__link">
-    Setup instructions
+        
+          <li class="md-nav__item">
+  <a href="#editing-individual-pages" class="md-nav__link">
+    Editing individual pages
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#create-training" class="md-nav__link">
-    Create training
+        
+          <li class="md-nav__item">
+  <a href="#edit-multiple-pages" class="md-nav__link">
+    Edit multiple pages
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#preprocessing" class="md-nav__link">
-    Preprocessing
+        
+          <li class="md-nav__item">
+  <a href="#adding-an-index" class="md-nav__link">
+    Adding an index
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#training" class="md-nav__link">
-    Training
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#remarks" class="md-nav__link">
-    Remarks
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1323,151 +1375,115 @@
                 
                   
 
-  <a href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/train/Textual.en.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/GettingStarted/contributing.en.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="textual-inversion7">Textual Inversion[^7]</h1>
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion#training-embeddings">Official Wiki</a></p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>VAE does not have a catastrophic effect on HN training. To uninstall, rename "xxx.vae.pt" to "xxx.vae.pt.disabled" or another name before starting webui.</p>
-<p>Check <strong>Move VAE and CLIP to RAM when training hypernetwork. Saves VRAM.</strong> The effect is to transfer VAE to RAM, not to uninstall it.</p>
-</div>
-<h2 id="prepare-the-dataset">Prepare the dataset</h2>
-<p>The dataset should be consistent in style and have the same concept of content. If computing power allows, the more images the better. The content of the data can be illustrations, abstract paintings, or emoticons.</p>
-<h2 id="requirements">Requirements</h2>
-<p>At least 6GB of VRAM, 12GB of VRAM is required for comfortable use. Based on experimental data, 8GB of VRAM should be selected for <code>-512x512</code> resolution; training with <code>-lowvram</code> and <code>-medvram</code> parameters is not recommended.</p>
-<p>If you have enough VRAM, then using <code>-no-half --precision full</code> may prevent problems with overflow.</p>
-<p>You can interrupt and resume training, but the optimizer state will not be saved, so this is not recommended.</p>
-<h2 id="setup-instructions">Setup instructions</h2>
-<p>Prepare 30 or more images of the target persona, each of which should be cropped to the same scale. (webui already supports cropping of rectangular images)</p>
-<p>In the <code>Interrogate Options</code> setting, the <code>Interrogate: deepbooru score threshold</code> is the deepdanbooru (a model for extracting tags from images) tag confidence threshold. It is recommended to use 0.75, i.e. to retain results with a confidence level greater than 0.75.</p>
-<p>For example, suppose the recognition result is</p>
-<div class="highlight"><pre><span></span><code>1.000 1girl
-0.986 blush
-0.981 long_hair
-0.980 solo
-0.918 japanese_clothes
-0.912 rating:safe
-0.798 bangs
-0.795 wide_sleeves
-0.731 blunt_bangs
-0.637 long_sleeves
-0.628 monochrome
+<h1 id="guide">Guide</h1>
+<p>Thanks for participating in the edit!</p>
+<p>The following will guide you on how to participate in the writing of this document; every small contribution is acknowledged and encouraged.</p>
+<p>In order to participate in the writing, you will need to sign up for a GitHub account. If you don't have one, please register at <a href="https://github.com/signup">here</a>.</p>
+<h2 id="formatting-requirements">Formatting requirements</h2>
+<p>Accuracy is understood first, coverage second.</p>
+<h3 id="commit-specification">Commit Specification</h3>
+<ul>
+<li>
+<p>The commit message should briefly describe the changes.</p>
+</li>
+<li>
+<p>The commit summary should be no more than 45 characters long. If necessary, please provide details in the body of the message.</p>
+</li>
+</ul>
+<p>For commit summaries, the following format is recommended.</p>
+<div class="highlight"><pre><span></span><code>&lt;modification type&gt;(&lt;filename&gt;): &lt;what was changed&gt;
 </code></pre></div>
-<p>The contents below <code>wide_sleeves</code> will be discarded.</p>
-<p><code>Interrogate: deepbooru sort alphabetically</code> is sorting Tag alphabetically, so we uncheck this because Tag has a big effect on the result.</p>
-<p><code>use spaces for tags in deepbooru</code> should be turned on.</p>
-<p><code>escape (\) brackets in deepbooru (so they are used as literal brackets and not for emphasis)</code> should be switched on.</p>
-<p>Press <code>Apply setting</code> to save the settings.</p>
-<h2 id="create-training">Create training</h2>
-<p>Open the <code>train</code> tab and create a new <code>embedding</code> model in the <code>Create embedding</code> tab.</p>
-<p><code>Number of vectors per token</code> is the width of the embedding, which depends on the dataset and can be set to 3 if there are less than a hundred.</p>
-<p>The larger the width, the stronger the effect, but it requires tens of thousands of training rounds. According to the video by <a href="https://space.bilibili.com/99162407">usim-U</a>, setting 24 requires at least 300 high-quality pieces.</p>
-<p><code>Name</code> input box Enter the prompt you want the persona to appear in.</p>
-<p><code>Initialization text</code> You can enter <code>one girl</code> as a broad category, only one can be entered, and the character can be 1girl or 1boy, or a drawing style.</p>
-<p><code>Number of vectors per token</code> is the number of token bits this <code>embedding</code> will occupy, the more the better, but it will also reduce the number of token positions for other prompt.</p>
-<p>New will create a pt file under <code>embedding</code>.</p>
-<h2 id="preprocessing">Preprocessing</h2>
-<p>Open the <code>Preprocess images</code> tab.</p>
-<p>Fill in the <code>Source directory</code> with your training images folder and only allow training images in it.</p>
-<p>Fill in the <code>Destination directory</code> with the path where the images will be saved after preprocessing.</p>
-<p>Select the image size for training, typically <code>512x512</code> for 8Gb graphics cards, larger is not necessarily better.</p>
-<p><strong>The next four checkboxes</strong> are</p>
-<p><code>Create flipped copies</code></p>
-<ul>
-<li>
-<p>When checked, this will invert the image image to increase the amount of data.</p>
-</li>
-<li>
-<p><code>Use deepbooru caption as filename</code></p>
-</li>
-</ul>
-<p>Check this box to train <code>embedding</code> for NAI. If you don't have this option, you need to add <code>--deepdanbooru</code> to the startup entry.</p>
-<p>Windows needs to add it to <code>COMMANDLINE_ARGS=</code> in the <code>webui-user.bat</code> line, or just <code>python launch.py --deepdanbooru</code>. (If the launch is stuck it is a network problem)</p>
-<ul>
-<li>
-<p><code>Use BLIP for caption</code> Use the BLIP model to add captions to filenames. Not really suitable for secondary images.</p>
-</li>
-<li>
-<p><code>Split oversized images into two</code> Splits oversized images into two, not normally used.</p>
-</li>
-</ul>
-<p>So we check <code>Use deepbooru caption as filename</code> and <code>Create flipped copies</code>.</p>
-<p>Click the button and wait for the process to finish.</p>
-<h2 id="training">Training</h2>
-<p>Training is a dynamic process!</p>
-<p>In the <code>Train</code> sub-tab, select the model you want to train.</p>
-<p><code>Learning rate</code> (hyperparameter: learning rate), the learning rate represents the rate at which information accumulates in the neural network over time, and this parameter has a large impact on the speed at which training is affected.</p>
-<p>Generally, the lower the learning rate, the slower the learning (takes longer to converge), but generally the better the results.</p>
-<p>When training, you can start with a larger learning rate and then gradually reduce it to <code>0.1 - 0.02 - 0.005</code>, using the last best result for each test.</p>
-<p>This is usually set to 0.005, but if you want to go faster, you can use 0.01 to speed it up. However, if you set it too high, the gradient will be too large to converge and may break <code>embedding</code>, which will not work as expected. If you set it too small, you will easily fall into a local optimum. Currently TI supports setting learning rates of <code>0.1:500, 0.01:1000, 0.001:10000</code>, which will follow a schedule.</p>
-<p><img alt="CS231n" src="https://user-images.githubusercontent.com/75739606/197824268-273f074d-9622-41ad-9f1a-2980f180dbd9.png" /></p>
-<!--
-![CS231n](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/CS231n.png)
--->
+<p>There are several types of modification.</p>
+<pre><code>feat: add content
 
-<p><code>Log directory</code> is the log directory</p>
-<p><code>Prompt template file</code> is a text file with prompts, one per line, for training the model.</p>
-<p>The directory, <code>textual_inversion_templates</code>, explains what you can do with these files.</p>
-<p>The training will use <code>style.txt</code> and <code>subject.txt</code></p>
-<p><strong>If you are training painting styles, use <code>style.txt</code></strong></p>
-<p><strong>If training characters, use <code>subject.txt</code></strong></p>
-<p><div class="highlight"><pre><span></span><code>[name]: embedding name
-[filewords]: words from the file name of the image from the dataset. See below for more info.
+fix: fixes content errors
+
+refactor: refactor a page (larger changes)
+
+revert: roll back changes
+</code></pre>
+<h3 id="pull-request-specification">Pull Request specification</h3>
+<p>The title states the purpose of the PR (what was done). The content should briefly describe what was changed.</p>
+<p>If you fixed an issue, add sovle #xxxx to the content, where xxxx is the issue number.</p>
+<p>The recommended format for the title is as follows.
+<div class="highlight"><pre><span></span><code>&lt;modification type&gt; (&lt;filename&gt;): &lt;modified content&gt; (&lt;issue number&gt;)
+</code></pre></div></p>
+<p>There are several types of modification.</p>
+<pre><code>feat: add content
+
+fix: fixes a content error
+
+refactor: refactor a page (larger changes)
+
+revert: roll back changes
+</code></pre>
+<h3 id="read-friendly">Read friendly</h3>
+<p>Consider the reader's feelings. Offbeat aliases should not appear. To use standard terminology, standardise. If new terms need to be added, add a description, or if they are more complex, add them to the glossary.</p>
+<ul>
+<li>Reject short set questions</li>
+</ul>
+<p>Eliminate some unnecessary short question and answer forms</p>
+<p>For example
+<div class="highlight"><pre><span></span><code>questions
+Short answers
 </code></pre></div>
-<code>Preview prompt</code> Preview, generate a preview with this prompt when finished.
-If it is empty, the prompt from the prompt will be used.</p>
-<p><code>`Save a copy of embedding to log directory every N steps, 0 to disable</code>
-Save a copy of embedding to log directory every N steps, 0 to disable</p>
-<p><code>Save an image to log directory every N steps, 0 to disable</code>
-Save an image to log directory every N steps, 0 to disable</p>
-<p><code>Max steps</code> determines how many <code>steps</code> are completed before training will stop.</p>
-<p>A step is a single image (or batch of images, but batches are not currently supported) that is trained to the model and used to improve embedding. if you interrupt training and resume it later, the number of steps will be kept.</p>
-<p>For stylised models of character images, the recommended number of steps is 15000-40000</p>
-<p>stylised model of the artist's drawing style, recommended number of steps is 40,000-80,000</p>
+should be changed to <code>If xxx, read xxx</code></p>
+<ul>
+<li>Formatting</li>
+</ul>
+<p>Do not format the content, it is difficult to review content changes when merging.</p>
+<p>If needed, make a special request for formatting optimisation.</p>
+<ul>
+<li>Sorting, with important sections first</li>
+</ul>
+<p>The higher the frequency, the more important information should come first.</p>
+<ul>
+<li>Responsible for</li>
+</ul>
+<p>If the content is only linked, please make a brief description or extract the main content. Please do not lose such short content.</p>
+<div class="highlight"><pre><span></span><code>### Added content
+[content link]()
+
+### Next content
+</code></pre></div>
+<h2 id="submitted-content">Submitted content</h2>
+<p>Make sure your content complies with <a href="https://docs.github.com/en/site-policy/acceptable-use-policies/github-acceptable-use-policies">Github terms</a> first, and until your changes are merged into the main repository Any changes you make will not appear on the page and can be safely edited.</p>
+<h3 id="notification-of-progress">Notification of progress</h3>
+<p>Before you start writing a piece of content, check <a href="https://github.com/sudoskys/StableDiffusionBook/issues">Issues</a> to make sure there are no conflicting jobs (if there are, you can communicate them under Issues), and then create a new issue to record the content to be written.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>This is a reference, in fact 5000 and 7000 have also been successful.</p>
-<p>The key is the Loss rate. If the Loss does not decrease in 10 rounds, you can stop.</p>
-<p>If the Loss is greater than 0.3, the results are not very good</p>
+<p>Please turn off the page translation plugin when editing.</p>
 </div>
-<p>If too much is overfitting (which can be interpreted as deadening of Ai), keep an eye on it and stop if it is overfitting. If it doesn't work very well, go to an earlier model and continue training. <strong>Keep tweaking</strong> to find a good result.</p>
-<p><code>Save images with embedding in PNG chunks</code> is to generate a pt file in image form. ~Character card~</p>
-<p>Click on Training in the bottom right corner and wait.</p>
-<p>Training is complete. If you have uninstalled VAE, rename the VAE weight file back and restart the program.</p>
-<h2 id="remarks">Remarks</h2>
-<p><strong>Effect evaluation</strong></p>
-<p>An attempt can be made to imitate the original work.</p>
-<p><strong>[filewords]</strong></p>
-<p>This is the Tag that represents the prompt template file and enables the insertion of <strong>filenames into the prompt</strong>.</p>
-<p>First, by default, the file extension and all numbers and dashes ( ) at the beginning of the - file name are removed.</p>
-<p>So this filename: <code>000001-1-a man in suit.png</code> will become the prompt text: <code>a man in suit</code>. The formatting of the text in the file name remains the same.</p>
-<p>Second, the text in the filename can be changed using the <code>Filename word regex</code> and <code>Filename join string</code> options.</p>
-<p>For example, using the word <code>regex = \w+</code> and the join string = <code>,</code>, the above file will produce the following text: <code>a, man, in, suit</code>.</p>
-<p>The regular expression will extract the hint word from the text
-<code>['a', 'man', 'in', 'suit', ]</code></p>
-<p>and places the concatenated string (',') between these words to create a text <code>a, man, in, suit</code></p>
-<p>You can also create a text file with the same filename as the image ( 000001-1-a man in suit.txt) and place the prompt text there. The filename and regular expression options will not be used.</p>
-<p><strong>Move VAE and CLIP from VRAM when training. saves VRAM.</strong></p>
-<p>Unloads VAE and CLIP from VRAM and loads them into RAM when training.</p>
-<p>This option on the Settings tab allows you to save some memory at the cost of slower preview image generation.</p>
-<p>The result of training is a .pt or a .bin file (the former is the format used by the original author, the latter is used as a diffusers library)</p>
-<iframe src="//player.bilibili.com/player.html?aid=559085039&bvid=BV1ae4y1S7v9&cid=859894044&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
+<h3 id="editing-individual-pages">Editing individual pages</h3>
+<p>You can edit individual pages directly by clicking on the edit button at the top right of the text.</p>
+<p>Write the changes you want to make in the edit box, then scroll to the bottom of the page and fill in the <code>commit</code> information according to the <code>commit</code> specification in this article, then click the green button to commit the changes. Once you click the button, GitHub will automatically clone a branch of the repository for you and then jump to the repository page.</p>
+<p>Click the green <code>Create pull request</code> button at the top of the page to jump to the Create <code>Pull Request</code> page. Check your changes again, write your commit message as described in the <code>Pull Request</code> commit specification section of this article, and then click the <code>Create pull request</code> button to create the merge request.</p>
+<p>Have a hot cup of tea! Just wait for the audit and the collaborators will merge it into the main repository when it is complete.</p>
+<h3 id="edit-multiple-pages">Edit multiple pages</h3>
+<p>Go to the code repository page and click <code>Fork</code> to clone this repository.</p>
+<p>On your repository page, click the <code>.</code> button to go to the GitHub Dev editor</p>
+<p>Use the <code>Source Control</code> tab (icon like <code>V</code>) on the left when you're done making changes, and commit according to the commit specification in this article.</p>
+<p>Then click on the Branch tab (like the <code>n</code> icon), create a pull request, and set INTO the main repository address. Fill in the edit box below with the title and description in the format, then click the <code>Create</code> button to create the request. (If you are on an unfinished branch, check <code>Create as draft</code>).</p>
+<p>To add changes, simply edit the original branch again and it will automatically be added to the request.</p>
+<h3 id="adding-an-index">Adding an index</h3>
+<p>Add an index to <code>mkdocs.yml</code> with the translation of the outline and the corresponding big title.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 4, 2022 08:39:56</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 5, 2022 05:18:34</span>
       
         <br>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 07:57:05</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 5, 2022 05:18:34</span>
       
     
   </small>
@@ -1497,7 +1513,7 @@ Save an image to log directory every N steps, 0 to disable</p>
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Intro" rel="prev">
+        <a href="../state/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Statement" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1506,20 +1522,20 @@ Save an image to log directory every N steps, 0 to disable</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Intro
+              Statement
             </div>
           </div>
         </a>
       
       
         
-        <a href="../Hypernetwork/" class="md-footer__link md-footer__link--next" aria-label="Next: Hypernetwork" rel="next">
+        <a href="../../Perpare/" class="md-footer__link md-footer__link--next" aria-label="Next: Preparation" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Hypernetwork
+              Preparation
             </div>
           </div>
           <div class="md-footer__button md-icon">

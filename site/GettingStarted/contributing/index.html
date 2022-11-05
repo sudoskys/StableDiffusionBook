@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="zh" class="no-js">
   <head>
     
       <meta charset="utf-8">
@@ -12,21 +12,21 @@
         <meta name="author" content="StableDiffusionBook Team">
       
       
-        <link rel="canonical" href="https://stable-diffusion-book.vercel.app/en/train/Textual/">
+        <link rel="canonical" href="https://stable-diffusion-book.vercel.app/GettingStarted/contributing/">
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.8">
     
     
       
-        <title>Textual Inversion - AiDraw</title>
+        <title>贡献指南 - AiDraw</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.20d9efc8.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.20d9efc8.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.815d1a91.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.815d1a91.min.css">
         
       
       
@@ -43,7 +43,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -72,8 +72,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#textual-inversion7" class="md-skip">
-          Skip to content
+        <a href="#_1" class="md-skip">
+          跳转至
         </a>
       
     </div>
@@ -85,8 +85,8 @@
       
 
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../" title="AiDraw" class="md-header__button md-logo" aria-label="AiDraw" data-md-component="logo">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="AiDraw" class="md-header__button md-logo" aria-label="AiDraw" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Textual Inversion
+              贡献指南
             
           </span>
         </div>
@@ -138,20 +138,20 @@
       <div class="md-header__option">
         <div class="md-select">
           
-          <button class="md-header__button md-icon" aria-label="Select language">
+          <button class="md-header__button md-icon" aria-label="选择当前语言">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
           </button>
           <div class="md-select__inner">
             <ul class="md-select__list">
               
                 <li class="md-select__item">
-                  <a href="../../../train/Textual/" hreflang="zh" class="md-select__link">
+                  <a href="./" hreflang="zh" class="md-select__link">
                     简体中文
                   </a>
                 </li>
               
                 <li class="md-select__item">
-                  <a href="./" hreflang="en" class="md-select__link">
+                  <a href="../../en/GettingStarted/contributing/" hreflang="en" class="md-select__link">
                     English
                   </a>
                 </li>
@@ -169,14 +169,14 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Search">
+      <nav class="md-search__options" aria-label="查找">
         
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -186,7 +186,7 @@
       <div class="md-search__scrollwrap" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Initializing search
+            正在初始化搜索引擎
           </div>
           <ol class="md-search-result__list"></ol>
         </div>
@@ -197,7 +197,7 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/sudoskys/StableDiffusionBook" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/sudoskys/StableDiffusionBook" title="前往仓库" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
@@ -218,12 +218,14 @@
         
           
             
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   
+  
+    
   
 
 
@@ -231,8 +233,8 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../" class="md-tabs__link">
-        Start here
+      <a href="../.." class="md-tabs__link md-tabs__link--active">
+        起步于此
       </a>
     </li>
   
@@ -248,7 +250,7 @@
   
     <li class="md-tabs__item">
       <a href="../../Perpare/" class="md-tabs__link">
-        Before start
+        开始之前
       </a>
     </li>
   
@@ -264,7 +266,7 @@
   
     <li class="md-tabs__item">
       <a href="../../install/" class="md-tabs__link">
-        Installation
+        安装配置
       </a>
     </li>
   
@@ -280,7 +282,7 @@
   
     <li class="md-tabs__item">
       <a href="../../model/" class="md-tabs__link">
-        Configuration
+        绘画调试
       </a>
     </li>
   
@@ -296,7 +298,7 @@
   
     <li class="md-tabs__item">
       <a href="../../paint/" class="md-tabs__link">
-        Paint guide
+        绘画指南
       </a>
     </li>
   
@@ -305,16 +307,14 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../" class="md-tabs__link md-tabs__link--active">
-        Train Model
+      <a href="../../train/" class="md-tabs__link">
+        训练模型
       </a>
     </li>
   
@@ -330,7 +330,7 @@
   
     <li class="md-tabs__item">
       <a href="../../landing/" class="md-tabs__link">
-        References
+        参考资料
       </a>
     </li>
   
@@ -355,9 +355,9 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../" title="AiDraw" class="md-nav__button md-logo" aria-label="AiDraw" data-md-component="logo">
+    <a href="../.." title="AiDraw" class="md-nav__button md-logo" aria-label="AiDraw" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -367,7 +367,7 @@
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/sudoskys/StableDiffusionBook" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/sudoskys/StableDiffusionBook" title="前往仓库" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
@@ -386,12 +386,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
       
       
       
@@ -413,7 +415,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../">Start here</a>
+          <a href="../..">起步于此</a>
           
             <label for="__nav_1">
               <span class="md-nav__icon md-icon"></span>
@@ -421,10 +423,10 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Start here" data-md-level="1">
+      <nav class="md-nav" aria-label="起步于此" data-md-level="1">
         <label class="md-nav__title" for="__nav_1">
           <span class="md-nav__icon md-icon"></span>
-          Start here
+          起步于此
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -436,8 +438,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../GettingStarted/news/" class="md-nav__link">
-        News
+      <a href="../news/" class="md-nav__link">
+        新闻
       </a>
     </li>
   
@@ -450,8 +452,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../GettingStarted/term/" class="md-nav__link">
-        Terminology
+      <a href="../term/" class="md-nav__link">
+        术语
       </a>
     </li>
   
@@ -464,8 +466,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../GettingStarted/state/" class="md-nav__link">
-        Statement
+      <a href="../state/" class="md-nav__link">
+        声明
       </a>
     </li>
   
@@ -476,11 +478,120 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../GettingStarted/contributing/" class="md-nav__link">
-        Contribution Guide
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          贡献指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        贡献指南
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    格式要求
+  </a>
+  
+    <nav class="md-nav" aria-label="格式要求">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#commit" class="md-nav__link">
+    Commit 规范
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pull-request" class="md-nav__link">
+    Pull Request 规范
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    阅读友好
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    提交内容
+  </a>
+  
+    <nav class="md-nav" aria-label="提交内容">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    通知进度
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    编辑单个页面
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    编辑多个页面
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    增加索引
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -517,14 +628,14 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../Perpare/">Before start</a>
+          <a href="../../Perpare/">开始之前</a>
           
         </div>
       
-      <nav class="md-nav" aria-label="Before start" data-md-level="1">
+      <nav class="md-nav" aria-label="开始之前" data-md-level="1">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
-          Before start
+          开始之前
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -563,7 +674,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../install/">Installation</a>
+          <a href="../../install/">安装配置</a>
           
             <label for="__nav_3">
               <span class="md-nav__icon md-icon"></span>
@@ -571,10 +682,10 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Installation" data-md-level="1">
+      <nav class="md-nav" aria-label="安装配置" data-md-level="1">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
-          Installation
+          安装配置
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -609,7 +720,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../install/WebUi/">Install SDWebUi</a>
+          <a href="../../install/WebUi/">WebUi安装</a>
           
             <label for="__nav_3_2">
               <span class="md-nav__icon md-icon"></span>
@@ -617,10 +728,10 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Install SDWebUi" data-md-level="2">
+      <nav class="md-nav" aria-label="WebUi安装" data-md-level="2">
         <label class="md-nav__title" for="__nav_3_2">
           <span class="md-nav__icon md-icon"></span>
-          Install SDWebUi
+          WebUi安装
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -633,7 +744,7 @@
   
     <li class="md-nav__item">
       <a href="../../install/WebUi/launch/" class="md-nav__link">
-        LaunchWebUi
+        运行WebUi
       </a>
     </li>
   
@@ -647,7 +758,7 @@
   
     <li class="md-nav__item">
       <a href="../../install/WebUi/Troubleshoot/" class="md-nav__link">
-        Troubleshoot
+        错误处理
       </a>
     </li>
   
@@ -698,7 +809,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../model/">Configuration</a>
+          <a href="../../model/">绘画调试</a>
           
             <label for="__nav_4">
               <span class="md-nav__icon md-icon"></span>
@@ -706,10 +817,10 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Configuration" data-md-level="1">
+      <nav class="md-nav" aria-label="绘画调试" data-md-level="1">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
-          Configuration
+          绘画调试
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -722,7 +833,7 @@
   
     <li class="md-nav__item">
       <a href="../../model/GPU/" class="md-nav__link">
-        Gpu Debuging
+        GPU相关
       </a>
     </li>
   
@@ -736,7 +847,7 @@
   
     <li class="md-nav__item">
       <a href="../../model/NAI/" class="md-nav__link">
-        NAI leak report
+        NAI泄漏报告
       </a>
     </li>
   
@@ -796,7 +907,7 @@
   
     <li class="md-nav__item">
       <a href="../../model/WebUi/base/" class="md-nav__link">
-        Base guide
+        基本指南
       </a>
     </li>
   
@@ -810,7 +921,7 @@
   
     <li class="md-nav__item">
       <a href="../../model/WebUi/Troubleshoot/" class="md-nav__link">
-        Troubleshoot
+        错误处理
       </a>
     </li>
   
@@ -857,7 +968,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../paint/">Paint guide</a>
+          <a href="../../paint/">绘画指南</a>
           
             <label for="__nav_5">
               <span class="md-nav__icon md-icon"></span>
@@ -865,10 +976,10 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Paint guide" data-md-level="1">
+      <nav class="md-nav" aria-label="绘画指南" data-md-level="1">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
-          Paint guide
+          绘画指南
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -907,7 +1018,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../paint/WebUi/">Paint With WebUi</a>
+          <a href="../../paint/WebUi/">WebUi绘画指南</a>
           
             <label for="__nav_5_2">
               <span class="md-nav__icon md-icon"></span>
@@ -915,10 +1026,10 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Paint With WebUi" data-md-level="2">
+      <nav class="md-nav" aria-label="WebUi绘画指南" data-md-level="2">
         <label class="md-nav__title" for="__nav_5_2">
           <span class="md-nav__icon md-icon"></span>
-          Paint With WebUi
+          WebUi绘画指南
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -931,7 +1042,7 @@
   
     <li class="md-nav__item">
       <a href="../../paint/WebUi/base/" class="md-nav__link">
-        Base guide
+        基本指南
       </a>
     </li>
   
@@ -945,7 +1056,7 @@
   
     <li class="md-nav__item">
       <a href="../../paint/WebUi/Practicalguide/" class="md-nav__link">
-        Application Guide
+        应用指南
       </a>
     </li>
   
@@ -959,7 +1070,7 @@
   
     <li class="md-nav__item">
       <a href="../../paint/WebUi/Advanced/" class="md-nav__link">
-        Advanced Guide
+        进阶指南
       </a>
     </li>
   
@@ -973,7 +1084,7 @@
   
     <li class="md-nav__item">
       <a href="../../paint/WebUi/info/" class="md-nav__link">
-        Prompt-Info-Script
+        参数-信息-脚本
       </a>
     </li>
   
@@ -999,14 +1110,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
       
       
       
@@ -1028,7 +1137,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../">Train Model</a>
+          <a href="../../train/">训练模型</a>
           
             <label for="__nav_6">
               <span class="md-nav__icon md-icon"></span>
@@ -1036,10 +1145,10 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Train Model" data-md-level="1">
+      <nav class="md-nav" aria-label="训练模型" data-md-level="1">
         <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
-          Train Model
+          训练模型
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1049,107 +1158,10 @@
               
   
   
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Textual Inversion
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        Textual Inversion
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#prepare-the-dataset" class="md-nav__link">
-    Prepare the dataset
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#requirements" class="md-nav__link">
-    Requirements
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#setup-instructions" class="md-nav__link">
-    Setup instructions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-training" class="md-nav__link">
-    Create training
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#preprocessing" class="md-nav__link">
-    Preprocessing
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#training" class="md-nav__link">
-    Training
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#remarks" class="md-nav__link">
-    Remarks
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
   
     <li class="md-nav__item">
-      <a href="../Hypernetwork/" class="md-nav__link">
-        Hypernetwork
+      <a href="../../train/Textual/" class="md-nav__link">
+        Textual 训练
       </a>
     </li>
   
@@ -1162,8 +1174,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../DreamBooth/" class="md-nav__link">
-        DreamBooth
+      <a href="../../train/Hypernetwork/" class="md-nav__link">
+        Hypernetwork 训练
       </a>
     </li>
   
@@ -1176,8 +1188,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../AestheticGradients/" class="md-nav__link">
-        AestheticGradients
+      <a href="../../train/DreamBooth/" class="md-nav__link">
+        DreamBooth 训练
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../train/AestheticGradients/" class="md-nav__link">
+        AestheticGradients 训练
       </a>
     </li>
   
@@ -1215,14 +1241,14 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../landing/">References</a>
+          <a href="../../landing/">参考资料</a>
           
         </div>
       
-      <nav class="md-nav" aria-label="References" data-md-level="1">
+      <nav class="md-nav" aria-label="参考资料" data-md-level="1">
         <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
-          References
+          参考资料
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1247,7 +1273,7 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
   
@@ -1256,56 +1282,82 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      目录
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prepare-the-dataset" class="md-nav__link">
-    Prepare the dataset
+  <a href="#_2" class="md-nav__link">
+    格式要求
   </a>
+  
+    <nav class="md-nav" aria-label="格式要求">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#commit" class="md-nav__link">
+    Commit 规范
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pull-request" class="md-nav__link">
+    Pull Request 规范
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    阅读友好
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#requirements" class="md-nav__link">
-    Requirements
+  <a href="#_4" class="md-nav__link">
+    提交内容
+  </a>
+  
+    <nav class="md-nav" aria-label="提交内容">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    通知进度
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#setup-instructions" class="md-nav__link">
-    Setup instructions
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    编辑单个页面
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#create-training" class="md-nav__link">
-    Create training
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    编辑多个页面
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#preprocessing" class="md-nav__link">
-    Preprocessing
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    增加索引
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#training" class="md-nav__link">
-    Training
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#remarks" class="md-nav__link">
-    Remarks
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1323,151 +1375,115 @@
                 
                   
 
-  <a href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/train/Textual.en.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/GettingStarted/contributing.md" title="编辑此页" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="textual-inversion7">Textual Inversion[^7]</h1>
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion#training-embeddings">Official Wiki</a></p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>VAE does not have a catastrophic effect on HN training. To uninstall, rename "xxx.vae.pt" to "xxx.vae.pt.disabled" or another name before starting webui.</p>
-<p>Check <strong>Move VAE and CLIP to RAM when training hypernetwork. Saves VRAM.</strong> The effect is to transfer VAE to RAM, not to uninstall it.</p>
-</div>
-<h2 id="prepare-the-dataset">Prepare the dataset</h2>
-<p>The dataset should be consistent in style and have the same concept of content. If computing power allows, the more images the better. The content of the data can be illustrations, abstract paintings, or emoticons.</p>
-<h2 id="requirements">Requirements</h2>
-<p>At least 6GB of VRAM, 12GB of VRAM is required for comfortable use. Based on experimental data, 8GB of VRAM should be selected for <code>-512x512</code> resolution; training with <code>-lowvram</code> and <code>-medvram</code> parameters is not recommended.</p>
-<p>If you have enough VRAM, then using <code>-no-half --precision full</code> may prevent problems with overflow.</p>
-<p>You can interrupt and resume training, but the optimizer state will not be saved, so this is not recommended.</p>
-<h2 id="setup-instructions">Setup instructions</h2>
-<p>Prepare 30 or more images of the target persona, each of which should be cropped to the same scale. (webui already supports cropping of rectangular images)</p>
-<p>In the <code>Interrogate Options</code> setting, the <code>Interrogate: deepbooru score threshold</code> is the deepdanbooru (a model for extracting tags from images) tag confidence threshold. It is recommended to use 0.75, i.e. to retain results with a confidence level greater than 0.75.</p>
-<p>For example, suppose the recognition result is</p>
-<div class="highlight"><pre><span></span><code>1.000 1girl
-0.986 blush
-0.981 long_hair
-0.980 solo
-0.918 japanese_clothes
-0.912 rating:safe
-0.798 bangs
-0.795 wide_sleeves
-0.731 blunt_bangs
-0.637 long_sleeves
-0.628 monochrome
+<h1 id="_1">说明</h1>
+<p>感谢参加编辑！</p>
+<p>下面的内容将指导您如何参与到本文档的写作中，每一个细小的贡献，都是值得肯定和鼓励的。</p>
+<p>为了参与编写，你需要注册一个 GitHub 账号。如果你没有，请在 <a href="https://github.com/signup">这里</a> 注册。</p>
+<h2 id="_2">格式要求</h2>
+<p>准确明白为第一，覆盖度第二。</p>
+<h3 id="commit">Commit 规范</h3>
+<ul>
+<li>
+<p>commit 信息需要简要描述改动的内容。</p>
+</li>
+<li>
+<p>commit 摘要的长度不要超过 45 字。如果需要，请在正文中详细说明。</p>
+</li>
+</ul>
+<p>commit 摘要，推荐按照下面的格式编辑：</p>
+<div class="highlight"><pre><span></span><code>&lt;修改类型&gt;(&lt;文件名&gt;): &lt;修改的内容&gt;
 </code></pre></div>
-<p>The contents below <code>wide_sleeves</code> will be discarded.</p>
-<p><code>Interrogate: deepbooru sort alphabetically</code> is sorting Tag alphabetically, so we uncheck this because Tag has a big effect on the result.</p>
-<p><code>use spaces for tags in deepbooru</code> should be turned on.</p>
-<p><code>escape (\) brackets in deepbooru (so they are used as literal brackets and not for emphasis)</code> should be switched on.</p>
-<p>Press <code>Apply setting</code> to save the settings.</p>
-<h2 id="create-training">Create training</h2>
-<p>Open the <code>train</code> tab and create a new <code>embedding</code> model in the <code>Create embedding</code> tab.</p>
-<p><code>Number of vectors per token</code> is the width of the embedding, which depends on the dataset and can be set to 3 if there are less than a hundred.</p>
-<p>The larger the width, the stronger the effect, but it requires tens of thousands of training rounds. According to the video by <a href="https://space.bilibili.com/99162407">usim-U</a>, setting 24 requires at least 300 high-quality pieces.</p>
-<p><code>Name</code> input box Enter the prompt you want the persona to appear in.</p>
-<p><code>Initialization text</code> You can enter <code>one girl</code> as a broad category, only one can be entered, and the character can be 1girl or 1boy, or a drawing style.</p>
-<p><code>Number of vectors per token</code> is the number of token bits this <code>embedding</code> will occupy, the more the better, but it will also reduce the number of token positions for other prompt.</p>
-<p>New will create a pt file under <code>embedding</code>.</p>
-<h2 id="preprocessing">Preprocessing</h2>
-<p>Open the <code>Preprocess images</code> tab.</p>
-<p>Fill in the <code>Source directory</code> with your training images folder and only allow training images in it.</p>
-<p>Fill in the <code>Destination directory</code> with the path where the images will be saved after preprocessing.</p>
-<p>Select the image size for training, typically <code>512x512</code> for 8Gb graphics cards, larger is not necessarily better.</p>
-<p><strong>The next four checkboxes</strong> are</p>
-<p><code>Create flipped copies</code></p>
-<ul>
-<li>
-<p>When checked, this will invert the image image to increase the amount of data.</p>
-</li>
-<li>
-<p><code>Use deepbooru caption as filename</code></p>
-</li>
-</ul>
-<p>Check this box to train <code>embedding</code> for NAI. If you don't have this option, you need to add <code>--deepdanbooru</code> to the startup entry.</p>
-<p>Windows needs to add it to <code>COMMANDLINE_ARGS=</code> in the <code>webui-user.bat</code> line, or just <code>python launch.py --deepdanbooru</code>. (If the launch is stuck it is a network problem)</p>
-<ul>
-<li>
-<p><code>Use BLIP for caption</code> Use the BLIP model to add captions to filenames. Not really suitable for secondary images.</p>
-</li>
-<li>
-<p><code>Split oversized images into two</code> Splits oversized images into two, not normally used.</p>
-</li>
-</ul>
-<p>So we check <code>Use deepbooru caption as filename</code> and <code>Create flipped copies</code>.</p>
-<p>Click the button and wait for the process to finish.</p>
-<h2 id="training">Training</h2>
-<p>Training is a dynamic process!</p>
-<p>In the <code>Train</code> sub-tab, select the model you want to train.</p>
-<p><code>Learning rate</code> (hyperparameter: learning rate), the learning rate represents the rate at which information accumulates in the neural network over time, and this parameter has a large impact on the speed at which training is affected.</p>
-<p>Generally, the lower the learning rate, the slower the learning (takes longer to converge), but generally the better the results.</p>
-<p>When training, you can start with a larger learning rate and then gradually reduce it to <code>0.1 - 0.02 - 0.005</code>, using the last best result for each test.</p>
-<p>This is usually set to 0.005, but if you want to go faster, you can use 0.01 to speed it up. However, if you set it too high, the gradient will be too large to converge and may break <code>embedding</code>, which will not work as expected. If you set it too small, you will easily fall into a local optimum. Currently TI supports setting learning rates of <code>0.1:500, 0.01:1000, 0.001:10000</code>, which will follow a schedule.</p>
-<p><img alt="CS231n" src="https://user-images.githubusercontent.com/75739606/197824268-273f074d-9622-41ad-9f1a-2980f180dbd9.png" /></p>
-<!--
-![CS231n](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/CS231n.png)
--->
+<p>修改类型有这几种：</p>
+<pre><code>feat：添加内容
 
-<p><code>Log directory</code> is the log directory</p>
-<p><code>Prompt template file</code> is a text file with prompts, one per line, for training the model.</p>
-<p>The directory, <code>textual_inversion_templates</code>, explains what you can do with these files.</p>
-<p>The training will use <code>style.txt</code> and <code>subject.txt</code></p>
-<p><strong>If you are training painting styles, use <code>style.txt</code></strong></p>
-<p><strong>If training characters, use <code>subject.txt</code></strong></p>
-<p><div class="highlight"><pre><span></span><code>[name]: embedding name
-[filewords]: words from the file name of the image from the dataset. See below for more info.
+fix：修正内容错误
+
+refactor：对一个页面进行重构（较大规模的更改）
+
+revert：回退更改
+</code></pre>
+<h3 id="pull-request">Pull Request 规范</h3>
+<p>标题写明 PR 的目的（做了 什么 工作）。内容请简要叙述修改的内容。</p>
+<p>如果修复了一个 issue 的问题，请在内容中添加 sovle #xxxx 字段，其中 xxxx 代表 issue 的编号。</p>
+<p>标题推荐使用如下格式书写：
+<div class="highlight"><pre><span></span><code>&lt;修改类型&gt;(&lt;文件名&gt;): &lt;修改的内容&gt; (&lt;对应 issue 的编号&gt;)
+</code></pre></div></p>
+<p>修改类型有这几种：</p>
+<pre><code>feat：添加内容
+
+fix：修正内容错误
+
+refactor：对一个页面进行重构（较大规模的更改）
+
+revert：回退更改
+</code></pre>
+<h3 id="_3">阅读友好</h3>
+<p>考虑读者感受。偏僻别名不应该出现。要使用标准术语，规范。如果需要新增术语，请添加说明，如果是比较复杂的术语，请增加到术语表中。</p>
+<ul>
+<li>拒绝短设问</li>
+</ul>
+<p>取消一些不必要的短问答形式</p>
+<p>比如
+<div class="highlight"><pre><span></span><code>问题
+短回答
 </code></pre></div>
-<code>Preview prompt</code> Preview, generate a preview with this prompt when finished.
-If it is empty, the prompt from the prompt will be used.</p>
-<p><code>`Save a copy of embedding to log directory every N steps, 0 to disable</code>
-Save a copy of embedding to log directory every N steps, 0 to disable</p>
-<p><code>Save an image to log directory every N steps, 0 to disable</code>
-Save an image to log directory every N steps, 0 to disable</p>
-<p><code>Max steps</code> determines how many <code>steps</code> are completed before training will stop.</p>
-<p>A step is a single image (or batch of images, but batches are not currently supported) that is trained to the model and used to improve embedding. if you interrupt training and resume it later, the number of steps will be kept.</p>
-<p>For stylised models of character images, the recommended number of steps is 15000-40000</p>
-<p>stylised model of the artist's drawing style, recommended number of steps is 40,000-80,000</p>
+应该改成 <code>如果xxx，读 xxx</code></p>
+<ul>
+<li>格式化</li>
+</ul>
+<p>不要对内容格式化，合并时审视内容改动很困难。</p>
+<p>需要的话，请专门提一个请求进行格式优化。</p>
+<ul>
+<li>排序，重要章节放在前面</li>
+</ul>
+<p>越高频，重要的信息应该越靠前。</p>
+<ul>
+<li>负责</li>
+</ul>
+<p>如果内容只有链接，请做简述或提取主要内容。请不要丢这样的简短内容。</p>
+<div class="highlight"><pre><span></span><code>### 增加的内容
+[内容链接]()
+
+### 下一个内容
+</code></pre></div>
+<h2 id="_4">提交内容</h2>
+<p>先确保您的内容符合 <a href="https://docs.github.com/en/site-policy/acceptable-use-policies/github-acceptable-use-policies">Github 条款</a>，在你的更改被合并到主仓库之前，你所作出的改动均不会出现在页面上，可以放心编辑。</p>
+<h3 id="_5">通知进度</h3>
+<p>在开始编写一段内容之前，请查阅 <a href="https://github.com/sudoskys/StableDiffusionBook/issues">Issues</a>，确认没有冲突的工作(如果有，可以在 Issue 下交流)，然后创建一个新 issue 记录待编写的内容。</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>This is a reference, in fact 5000 and 7000 have also been successful.</p>
-<p>The key is the Loss rate. If the Loss does not decrease in 10 rounds, you can stop.</p>
-<p>If the Loss is greater than 0.3, the results are not very good</p>
+<p>编辑时请关闭网页翻译插件。</p>
 </div>
-<p>If too much is overfitting (which can be interpreted as deadening of Ai), keep an eye on it and stop if it is overfitting. If it doesn't work very well, go to an earlier model and continue training. <strong>Keep tweaking</strong> to find a good result.</p>
-<p><code>Save images with embedding in PNG chunks</code> is to generate a pt file in image form. ~Character card~</p>
-<p>Click on Training in the bottom right corner and wait.</p>
-<p>Training is complete. If you have uninstalled VAE, rename the VAE weight file back and restart the program.</p>
-<h2 id="remarks">Remarks</h2>
-<p><strong>Effect evaluation</strong></p>
-<p>An attempt can be made to imitate the original work.</p>
-<p><strong>[filewords]</strong></p>
-<p>This is the Tag that represents the prompt template file and enables the insertion of <strong>filenames into the prompt</strong>.</p>
-<p>First, by default, the file extension and all numbers and dashes ( ) at the beginning of the - file name are removed.</p>
-<p>So this filename: <code>000001-1-a man in suit.png</code> will become the prompt text: <code>a man in suit</code>. The formatting of the text in the file name remains the same.</p>
-<p>Second, the text in the filename can be changed using the <code>Filename word regex</code> and <code>Filename join string</code> options.</p>
-<p>For example, using the word <code>regex = \w+</code> and the join string = <code>,</code>, the above file will produce the following text: <code>a, man, in, suit</code>.</p>
-<p>The regular expression will extract the hint word from the text
-<code>['a', 'man', 'in', 'suit', ]</code></p>
-<p>and places the concatenated string (',') between these words to create a text <code>a, man, in, suit</code></p>
-<p>You can also create a text file with the same filename as the image ( 000001-1-a man in suit.txt) and place the prompt text there. The filename and regular expression options will not be used.</p>
-<p><strong>Move VAE and CLIP from VRAM when training. saves VRAM.</strong></p>
-<p>Unloads VAE and CLIP from VRAM and loads them into RAM when training.</p>
-<p>This option on the Settings tab allows you to save some memory at the cost of slower preview image generation.</p>
-<p>The result of training is a .pt or a .bin file (the former is the format used by the original author, the latter is used as a diffusers library)</p>
-<iframe src="//player.bilibili.com/player.html?aid=559085039&bvid=BV1ae4y1S7v9&cid=859894044&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
+<h3 id="_6">编辑单个页面</h3>
+<p>你可以直接点击正文右上方编辑按钮。</p>
+<p>在编辑框内编写你想修改的内容，编写完成后滚动到页面下方，按照本文中 <code>commit</code> 规范 填写 <code>commit</code> 信息，之后点击绿色按钮提交修改。点击按钮后，GitHub 会自动帮你克隆一份仓库的分支然后跳转到仓库页面。</p>
+<p>点击页面上方绿色的 <code>Create pull request</code> 按钮，跳转到创建 <code>Pull Request</code> 页面。再次检查自己所作出的修改，按照本文中 <code>Pull Request</code> 提交规范 一节中的规范书写提交信息，然后点 <code>Create pull request</code> 按钮创建合并请求。</p>
+<p>喝一杯热茶！只需要等待审计，协作者会在审计完成后将它合并到主仓库中。</p>
+<h3 id="_7">编辑多个页面</h3>
+<p>进入代码仓库页面，点击 <code>Fork</code> 克隆本仓库。</p>
+<p>在你的仓库页面，点击键盘上的 <code>.</code> 按钮，进入 GitHub Dev 编辑器</p>
+<p>修改完成后使用左侧的 <code>Source Control</code> 选项卡（像 <code>V</code> 一样的图标），并按照本文中 commit 规范提交。</p>
+<p>然后点击分支选项卡（像 <code>n</code> 一样的图标），创建拉取请求，INTO 设置为主仓库地址。在下面的编辑框按照格式填写标题和描述，然后点击 <code>Create</code> 按钮创建请求。（如果你是未完成分支，请勾选 <code>Create as draft</code>）。</p>
+<p>追加更改只需要在原有分支再次编辑即可，会自动追加到请求中。</p>
+<h3 id="_8">增加索引</h3>
+<p>在 <code>mkdocs.yml</code> 中添加纲目和对应大标题的翻译。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
-      Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 4, 2022 08:39:56</span>
+      最后更新:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月5日 05:18:34</span>
       
         <br>
-        Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 07:57:05</span>
+        创建日期:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月5日 05:18:34</span>
       
     
   </small>
@@ -1486,7 +1502,7 @@ Save an image to log directory every N steps, 0 to disable</p>
         
           <a href="#" class="md-top md-icon" data-md-component="top" hidden>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
-            Back to top
+            回到页面顶部
           </a>
         
       </main>
@@ -1494,32 +1510,32 @@ Save an image to log directory every N steps, 0 to disable</p>
         <footer class="md-footer">
   
     
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+    <nav class="md-footer__inner md-grid" aria-label="页脚" >
       
         
-        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Intro" rel="prev">
+        <a href="../state/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 声明" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
-                Previous
+                上一页
               </span>
-              Intro
+              声明
             </div>
           </div>
         </a>
       
       
         
-        <a href="../Hypernetwork/" class="md-footer__link md-footer__link--next" aria-label="Next: Hypernetwork" rel="next">
+        <a href="../../Perpare/" class="md-footer__link md-footer__link--next" aria-label="下一页: 准备" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
-                Next
+                下一页
               </span>
-              Hypernetwork
+              准备
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -1577,10 +1593,10 @@ Save an image to log directory every N steps, 0 to disable</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "toc.follow", "navigation.top", "navigation.tracking", "navigation.indexes", "navigation.expand", "navigation.sections"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "toc.follow", "navigation.top", "navigation.tracking", "navigation.indexes", "navigation.expand", "navigation.sections"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
       
     
   </body>
