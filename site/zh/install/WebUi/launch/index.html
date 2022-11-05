@@ -1341,6 +1341,12 @@ Torch active/reserved: 1975/2144 MiB, Sys VRAM: 7890/8134 MiB (93.61%)
 <p><strong>快捷设置</strong></p>
 <p>不想来回设置 Clip 参数？</p>
 <p>添加 <code>sd_hypernetwork</code> 和 <code>CLIP_stop_at_last_layers</code> 到设置页面的 <code>Quicksettings list</code> ，点击页面顶部的按钮保存，重新启动 webui，你就可以在Ui顶部看到一个快速切换选项啦～</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>需要添加更多快捷设置?</p>
+<p>有Python代码阅读能力的话则可在 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/modules/shared.py">此处</a> 源码中找到各设置定义的名称。</p>
+<p>它们通常以将对象 <code>OptionInfo</code> 的实例作为值的字典的键存在。</p>
+</div>
 <h2 id="_4">中文/本地化</h2>
 <p>语言文件作为单个 <code>.json</code> 文件提供。 将此文件放入 <code>localizations</code> 目录并在设置中选择即可。</p>
 <p>在 22/10/26 下午，WebUi 添加了中文的翻译。</p>
@@ -1509,7 +1515,7 @@ set COMMANDLINE_ARGS设置命令行参数webui.py运行
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月4日 01:16:56</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月4日 18:22:39</span>
       
         <br>
         创建日期:

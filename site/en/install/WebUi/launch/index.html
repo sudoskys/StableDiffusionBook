@@ -1343,6 +1343,12 @@ Torch active/reserved: 1975/2144 MiB, Sys VRAM: 7890/8134 MiB (93.61%)
 <p><strong>Quick Setup</strong></p>
 <p>Don't want to go back and forth setting Clip parameters?</p>
 <p>Add the <code>sd_hypernetwork</code> and <code>CLIP_stop_at_last_layers</code> fields to the <code>Quicksettings list</code> settings on the settings page, click the button at the top of the page to save, restart webui, and you'll see a quick switch option at the top of the Ui.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Need more quick switches?</p>
+<p>Provided you are able to read the Python source code, you can refer to <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/modules/shared.py">here</a> for more information about the setting name defined.</p>
+<p>They usually exist on the key of dicts whose values are instances of <code>OptionInfo</code>.</p>
+</div>
 <h2 id="multilanguagelocalization">Multilanguage/Localization</h2>
 <p>The language file is provided as a single <code>.json</code> file. Simply place this file in the <code>localizations</code> directory and select it in the settings.</p>
 <p><strong>Create a localization file of your own</strong></p>
@@ -1508,7 +1514,7 @@ Example using <code>a.ckpt</code> instead of <code>model.ckpt</code>.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 3, 2022 02:10:16</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 4, 2022 18:22:39</span>
       
         <br>
         Created:
