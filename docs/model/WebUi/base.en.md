@@ -160,7 +160,8 @@ To enable it, if you have a Pascal, Turing or Ampere architecture card (includin
 
 #### Xformers
 
-If you use a Pascal, Turing, Ampere, Lovelace or Hopper card with Python 3.10, you shouldn't need to build manually anymore. Uninstall your existing xformers and launch the repo with --xformers. A compatible wheel will be installed.
+
+If you have a Pascal, Turing or Ampere architecture card (including GTX 1000, RTX 2000, 3000 series), add the `--xformers` parameter to `COMMANDLINE_ARGS` in `webui-user.bat` **without having to compile and install it again yourself.**
 
 !!! info
     You can download pre-built Xformers at the link on the right! https://rentry.org/25i6yn and remember to check out [GPU Architecture](https://developer.nvidia.com/cuda-gpus) first!

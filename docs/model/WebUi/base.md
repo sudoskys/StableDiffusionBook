@@ -138,7 +138,7 @@ S/R是搜索/替换的意思，输入一个单词或短语的列表，它从列�
 
 xformers 分辨率越高加速效果越好。使用 xformers 会引入一些随机性，稍微影响生成的图像。
 
-要启用，如果你是 Pascal、Turing 或者 Ampere 架构的卡（包括 GTX 1000，RTX 2000、3000 系列），添加 `--xformers` 参数到 `webui-user.bat` 中的 `COMMANDLINE_ARGS`。
+如果你是 Pascal、Turing 或者 Ampere 架构的卡（包括 GTX 1000，RTX 2000、3000 系列），添加 `--xformers` 参数到 `webui-user.bat` 中的 `COMMANDLINE_ARGS`，**不需要自己再次编译安装。**
 
 !!! tip
     有人说在 700 和 900 系列卡上使用 xformers 的性能明显较差，请注意这一点。
