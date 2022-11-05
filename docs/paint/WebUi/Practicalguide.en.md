@@ -54,7 +54,7 @@ It should not be linked to picture quality; size affects the subject to some ext
 Picture quality can be manipulated using the Super Score guide.
 
 
-## Perspective
+## Shot
 
 [Recommended use of terms contained in Danbooru](https://danbooru.donmai.us/wiki_pages/tag_group%3Aimage_composition)
 
@@ -63,6 +63,67 @@ Picture quality can be manipulated using the Super Score guide.
 ![shot](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/shot.png)
 -->
 >citing an image from the Japanese Wiki, author unknown
+
+
+`extreme closeup` ECU
+
+`close up` CU
+
+`medium close up` MCU
+
+`medium shot` MS
+
+`cowboy shot` CS
+
+`medium full shot` MFS
+
+`full shot`  FS
+
+
+## Reproduction
+
+If you want to reproduce it on the generation, you need the same `seed`, cue words, and other parameters (even size). However, if the other side uses stylisation, then you can hardly reproduce it.
+
+--Self-deceptive reproduction: image to image, noise reduction to below 0.3...--
+
+
+## Frivolous details
+
+- Emoticons
+
+emoji(💰💶💷💴💵,🎊🪅🪄🎀,👩 🚀) Emoticons are also available and **very accurate**, I have tested them many times and Ai can recognise them.
+
+[emoji-list](https://unicode.org/emoji/charts/emoji-list.html)
+
+
+- Anime style
+
+`anime colouring` will work well, like an anime screenshot. (If you encounter black and white, you need to specify the colour of the character parts)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hGATDT-Y37g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+[some_art_styles_that_i_tried](https://www.reddit.com/r/StableDiffusion/comments/yllj3r/some_art_styles_that_i_tried/)
+
+### Optimised artwork
+
+- Rainbow messy pictures
+
+If you are outputting chaotic rainbow coloured images, it is possible that the generation resolution has been set too low.
+
+- Wavy noisy picture
+
+Dense waves or patterns may be because the weights are set too high.
+
+- Keyed image?
+
+The rest of the background of a buttoned image will be processed as black.
+
+If you need a background, the results are generally not very good and it is recommended to fill in the colours before manipulating them.
+
+- Rough noise
+
+Not enough detail, characters look like rice cakes. Needs proper enhancement step.
+
 
 
 ## Associated
@@ -158,51 +219,6 @@ If it's an expression or a background, you can use the repainting technique from
 
 If you want some examples of differencing, [5CH Japanese Wiki](https://seesaawiki.jp/nai_ch/d/%c7%ed%a4%ae%a5%b3%a5%e9%a5%c6%a5%af) provides an example.
 
-
-## Reproduction
-
-If you want to reproduce it on the generation, you need the same `seed`, cue words, and other parameters (even size). However, if the other side uses stylisation, then you can hardly reproduce it.
-
---Self-deceptive reproduction: image to image, noise reduction to below 0.3...--
-
-
-## Frivolous details
-
-- Emoticons
-
-emoji(💰💶💷💴💵,🎊🪅🪄🎀,👩 🚀) Emoticons are also available and **very accurate**, I have tested them many times and Ai can recognise them.
-
-[emoji-list](https://unicode.org/emoji/charts/emoji-list.html)
-
-
-- Anime style
-
-`anime colouring` will work well, like an anime screenshot. (If you encounter black and white, you need to specify the colour of the character parts)
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/hGATDT-Y37g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-[some_art_styles_that_i_tried](https://www.reddit.com/r/StableDiffusion/comments/yllj3r/some_art_styles_that_i_tried/)
-
-
-### Optimised artwork
-
-- Rainbow messy pictures
-
-If you are outputting chaotic rainbow coloured images, it is possible that the generation resolution has been set too low.
-
-- Wavy noisy picture
-
-Dense waves or patterns may be because the weights are set too high.
-
-- Keyed image?
-
-The rest of the background of a buttoned image will be processed as black.
-
-If you need a background, the results are generally not very good and it is recommended to fill in the colours before manipulating them.
-
-- Rough noise
-
-Not enough detail, characters look like rice cakes. Needs proper enhancement step.
 
 
 

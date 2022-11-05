@@ -62,6 +62,21 @@ Automatic 1111 的 WebUi 提示词语法中，[x:10] 告诉 稳定扩散 直到�
 -->
 >引用来自日本 Wiki 的图片，作者不明
 
+`extreme closeup` ECU
+
+`close up` CU
+
+`medium close up` MCU
+
+`medium shot` MS
+
+`cowboy shot` CS
+
+`medium full shot` MFS
+
+`full shot`  FS
+
+
 ## 琐碎的细节
 
 - 表情符号
