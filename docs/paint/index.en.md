@@ -175,9 +175,8 @@ Natural language can be used directly, WebUi(SD) has natural language processing
 
 At least some Unicode characters that are alternative versions of Latin characters get mapped to regular Latin characters. Full-width Latin characters as they're used in Japanese (e.g. ＡＢＣ) are confirmed to be converted. French accents (e.g. é and è) and German umlauts (e.g. ä and ö) are not mapped to their regular counterparts.
 
-Human language is arbitrary and imprecise[^2]
+Human language is arbitrary and imprecise (except for emoji, which is exceptionally precise because it has only one character), and it has never evolved to the point where it can describe spatial information in detail.[^2]
 
-Human language is never evolved to describe spatial information in detail
 
 Stable Diffusion is a latent Diffusion model involving latent space. But latent, by definition, means unobservable. 
 

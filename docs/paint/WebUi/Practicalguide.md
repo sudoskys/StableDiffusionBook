@@ -83,6 +83,8 @@ Automatic 1111 的 WebUi 提示词语法中，[x:10] 告诉 稳定扩散 直到�
 
 emoji(💰💶💷💴💵,🎊🪅🪄🎀,👩‍🚀) 表情符号也是可以使用并且 **非常准确** 的，经过我多次测试，Ai 可以认识表情符号。
 
+emoji 因为只有一个字符，所以在语义准确度上表现良好。
+
 [表情符号参考](https://unicode.org/emoji/charts/emoji-list.html)
 
 - 动漫风格
