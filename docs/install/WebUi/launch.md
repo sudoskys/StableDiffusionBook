@@ -72,6 +72,13 @@ Torch active/reserved: 1975/2144 MiB, Sys VRAM: 7890/8134 MiB (93.61%)
 
 添加 `sd_hypernetwork` 和 `CLIP_stop_at_last_layers` 到设置页面的 `Quicksettings list` ，点击页面顶部的按钮保存，重新启动 webui，你就可以在Ui顶部看到一个快速切换选项啦～
 
+!!! tip
+    需要添加更多快捷设置?
+
+    有Python代码阅读能力的话则可在 [此处](https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/modules/shared.py) 源码中找到各设置定义的名称。
+    
+    它们通常以将对象 `OptionInfo` 的实例作为值的字典的键存在。
+
 ## 中文/本地化
 
 语言文件作为单个 `.json` 文件提供。 将此文件放入 `localizations` 目录并在设置中选择即可。
