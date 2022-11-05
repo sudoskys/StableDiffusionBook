@@ -77,6 +77,27 @@ emoji(💰💶💷💴💵,🎊🪅🪄🎀,👩‍🚀) 表情符号也是可�
 <iframe src="//player.bilibili.com/player.html?aid=304175820&bvid=BV1TP411N71t&cid=865253876&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 
+### 优化作品效果
+
+- 彩虹混乱图
+
+如果输出混乱的彩虹色图片，可能是生成分辨率被设置得太低。
+
+- 波浪噪点图
+
+密集的波浪或图案，可能是因为权重设置太高了。
+
+- 抠图？
+
+扣过的图，其余背景都会被处理成黑色。
+
+如果你需要背景，效果一般不是很好，建议填色后再操作。
+
+- 粗糙的噪声
+
+细节不够，人物像米糕一样。需要适当提升 step.
+
+
 
 ## 跨领域术语/奇门遁甲
 

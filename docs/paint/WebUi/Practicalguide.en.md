@@ -184,6 +184,28 @@ emoji(💰💶💷💴💵,🎊🪅🪄🎀,👩 🚀) Emoticons are also availa
 [some_art_styles_that_i_tried](https://www.reddit.com/r/StableDiffusion/comments/yllj3r/some_art_styles_that_i_tried/)
 
 
+### Optimised artwork
+
+- Rainbow messy pictures
+
+If you are outputting chaotic rainbow coloured images, it is possible that the generation resolution has been set too low.
+
+- Wavy noisy picture
+
+Dense waves or patterns may be because the weights are set too high.
+
+- Keyed image?
+
+The rest of the background of a buttoned image will be processed as black.
+
+If you need a background, the results are generally not very good and it is recommended to fill in the colours before manipulating them.
+
+- Rough noise
+
+Not enough detail, characters look like rice cakes. Needs proper enhancement step.
+
+
+
 ## Designing with Ai
 
 - Backgrounds
