@@ -966,8 +966,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sequencing-compilation" class="md-nav__link">
-    Sequencing Compilation
+  <a href="#prompt-sort" class="md-nav__link">
+    Prompt Sort
   </a>
   
 </li>
@@ -1039,6 +1039,19 @@
   <a href="#highres-fix" class="md-nav__link">
     Highres. fix
   </a>
+  
+    <nav class="md-nav" aria-label="Highres. fix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#about-size" class="md-nav__link">
+    About size
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1345,8 +1358,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sequencing-compilation" class="md-nav__link">
-    Sequencing Compilation
+  <a href="#prompt-sort" class="md-nav__link">
+    Prompt Sort
   </a>
   
 </li>
@@ -1418,6 +1431,19 @@
   <a href="#highres-fix" class="md-nav__link">
     Highres. fix
   </a>
+  
+    <nav class="md-nav" aria-label="Highres. fix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#about-size" class="md-nav__link">
+    About size
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1571,8 +1597,8 @@ caustics, masterpiece, high resolution,
 <p>Nai comes out with a boring style by default. You can create images with special effects or a specified drawing style by training a style model, specifying style keywords, etc.</p>
 <p><a href="https://www.yuque.com/longyuye/lmgcwy">人偶教室的测试记录</a></p>
 <p><a href="https://www.bilibili.com/video/BV1TP411N71t/">风格化: 32种</a></p>
-<p>A more comprehensive guide is at the end of the page.</p>
-<h2 id="sequencing-compilation">Sequencing Compilation</h2>
+<p>A more comprehensive guide is on the start page.</p>
+<h2 id="prompt-sort">Prompt Sort</h2>
 <p>The order in which the prompts are placed is the priority.(MAYBE)</p>
 <p>The way webui breaks the tag limit of 75 is by dividing them into groups.</p>
 <p>For the purpose of improving readability, it is recommended that the main body be placed first, followed by the words describing the costume, with the picture quality enhancement words interspersed between these descriptors. Generally, words that change the composition, such as action and nsfw words, are placed later or manually weighted down in order to improve the finish rate.</p>
@@ -1704,6 +1730,13 @@ For example, if you use <code>a busy city street in a modern city|illustration|c
 <h2 id="highres-fix">Highres. fix</h2>
 <p>A convenience option to partially render your image at a lower resolution, upscale it, and then add details at a high resolution.</p>
 <p>By default, txt2img makes horrible images at very high resolutions, and this makes it possible to avoid using the small picture's composition. Enabled by checking the "Highres. fix" checkbox on the txt2img page.</p>
+<h3 id="about-size">About <code>size</code></h3>
+<p>For example, there may be more people if the picture size is wide</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>It is important to match the pose so that the shot and the figure are not distorted, sometimes you need to limit the quantifiers, deal with spatial relationships and prompt masking priorities when there are multiple figures. Number of people-&gt;Personal appearance-&gt;Environmental style-&gt;Personal state</p>
+</div>
+<p>Sizes above 1024 may give undesirable results! We recommend using small size + a moderate increase in the number of Step steps + super-clear resolution of the image (see Progression).</p>
 <h2 id="prompts-working-model">Prompt's working model</h2>
 <p>The scientific principle of incantation.</p>
 <p><img alt="prompt_draw" src="https://user-images.githubusercontent.com/75739606/198675128-c2c849d0-d024-468b-80c4-374f13e933e3.png" /></p>
@@ -1781,7 +1814,7 @@ PS: too high a step count (&gt;30) will not give better results</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 4, 2022 13:42:25</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 5, 2022 02:43:42</span>
       
         <br>
         Created:
