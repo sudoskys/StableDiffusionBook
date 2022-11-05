@@ -28,6 +28,10 @@
 
 ## 添加内容
 
+### 分支
+
+因为现在基本的框架已经搭建完毕，所以需要提出合并请求来提交内容。
+
 ### Commit 信息日志
 
 能写详细就写详细
@@ -103,6 +107,10 @@ Please start with an Issue or Pull Draft for clarification so that others know y
 ```
 
 ## Add content
+
+### Branching
+
+Since the basic framework is now built, a merge request needs to be made to submit the content.
 
 ### Commit message log
 
