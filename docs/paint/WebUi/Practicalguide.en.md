@@ -93,6 +93,8 @@ If you want to reproduce it on the generation, you need the same `seed`, cue wor
 
 emoji(💰💶💷💴💵,🎊🪅🪄🎀,👩 🚀) Emoticons are also available and **very accurate**, I have tested them many times and Ai can recognise them.
 
+The emoji performs well in terms of semantic accuracy because it is only one character.
+
 [emoji-list](https://unicode.org/emoji/charts/emoji-list.html)
 
 
