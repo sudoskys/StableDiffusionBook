@@ -253,14 +253,8 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-edi
 
 ### 扩展模型/DLC
 
-见下一节的详细内容。
+见 `训练模型` 的详细内容。
 
-### 注意 `尺寸`
-
-比如出图尺寸宽了人可能会多
-
-!!! tip
-    要匹配好姿势，镜头和人物才不畸形，有时候需要限定量词，多人物时要处理空间关系和 prompt 遮挡优先级。人数->人物样貌->环境样式->人物状态
 
 
 

@@ -3,7 +3,6 @@
 请先在前面了解一下 WebUi(SD) 网页应用的参数。
 
 
-
 ## 提示词语法简介
 
 对于NAI用户，请阅读[官网Docs](https://docs.novelai.net/image/promptmixing.html)
@@ -137,8 +136,7 @@ Nai 出图默认是一种风格，你可以通过 训练风格模型，指定风
 
 [风格化: 32种](https://www.bilibili.com/video/BV1TP411N71t/)
 
-更全面的指南在页尾。
-
+更全面的指南在起始页。
 
 
 ## 调序编译
@@ -325,6 +323,8 @@ normal quality, text, censored, gown, latex, pencil
 <!--
 ![sample_Gradient](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/sample_Gradient.jpg)
 -->
+
+
 ## 从图片重现提示词
 
 程序默认会在图片中加入提示词，参数，模型信息，对于没有压缩的原图，我们可以将文件拖入 `PNG Info` 选项卡，进行提示词(Token)查看。
@@ -376,6 +376,15 @@ normal quality, text, censored, gown, latex, pencil
 默认情况下，txt2img在非常高的分辨率下做出非常混沌的图像。而此插件这使得它可以避免使用小图片的构图，在较低的分辨率下部分渲染你的图片，提高分辨率，然后在高分辨率下添加细节。
 
 
+### 注意 `尺寸`
+
+比如出图尺寸宽了人可能会多
+
+!!! tip
+    要匹配好姿势，镜头和人物才不畸形，有时候需要限定量词，多人物时要处理空间关系和 prompt 遮挡优先级。人数->人物样貌->环境样式->人物状态
+
+1024 之上的尺寸可能会出现不理想的结果！推荐使用 小尺寸 + 适量提高 Step 步数 + 图片超清分辨率(见进阶)。
+
 ## 提示词原理
 
 咒语的科学原理。
@@ -409,14 +418,14 @@ WebUi prompt 语法会转换为相应时间的 prompt,然后通过 embedding 交
 同样地，`loli` Tag 附带了强画风属性，会很大地影响结果！改成 `female child` 会好一点。
 
 
-
 ## Step 迭代步数
 
-更多的迭代步数可能会有更好的生成效果，更多细节和锐化，但是会导致生成时间变长。而在实际应用中，30 步和 50 步之间的差异几乎无法区分。
+更多的迭代步数可能会有更好的生成效果，**更多细节**和锐化，但是会导致生成时间变长。而在实际应用中，30 步和 50 步之间的差异几乎无法区分。
 
 太多的迭代步数也可能适得其反，几乎不会有提高。
 
 进行图生图的时候，正常情况下更弱的去噪需要更少的迭代步数(这是工作原理决定的)。你可以在设置里更改设置，让程序确切执行滑块指定的迭代步数。
+
 
 ## Samplers 采样器
 
@@ -465,6 +474,7 @@ PS：调太高步数(>30)效果不会更好
 但是注意，**不同显卡可能会造成预料之外的不同结果**（比如精度这样的东西）
 
 10xx 系列看起来与其他所有卡如此不同,见[这里](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017#discussioncomment-3873467)
+
 
 ## 绘画插件
 

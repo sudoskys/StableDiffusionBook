@@ -236,20 +236,9 @@ We recommend using [Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) for noi
 >Effects
 
 
-## AI with DLC
+## AI s DLC stlye models
 
-See the next section for more details.
-
-
-## Note SIZE
-
-For example, there may be more people if the picture size is wide
-
-!!! tip
-    It is important to match the pose so that the shot and the figure are not distorted, sometimes you need to limit the quantifiers, deal with spatial relations and prompt masking priorities when there are multiple figures. Number of people->Personal appearance->Environmental style->Personal state
-
-
-
+See the `train`
 
 
 ## Quick prompt search

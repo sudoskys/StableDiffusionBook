@@ -138,12 +138,10 @@ Nai comes out with a boring style by default. You can create images with special
 
 [风格化: 32种](https://www.bilibili.com/video/BV1TP411N71t/)
 
-A more comprehensive guide is at the end of the page.
+A more comprehensive guide is on the start page.
 
 
-
-
-## Sequencing Compilation
+## Prompt Sort
 
 The order in which the prompts are placed is the priority.(MAYBE)
 
@@ -348,6 +346,16 @@ For example, if you use `a busy city street in a modern city|illustration|cinema
 A convenience option to partially render your image at a lower resolution, upscale it, and then add details at a high resolution.
 
 By default, txt2img makes horrible images at very high resolutions, and this makes it possible to avoid using the small picture's composition. Enabled by checking the "Highres. fix" checkbox on the txt2img page.
+
+### About `size`
+
+For example, there may be more people if the picture size is wide
+
+!!! tip
+    It is important to match the pose so that the shot and the figure are not distorted, sometimes you need to limit the quantifiers, deal with spatial relationships and prompt masking priorities when there are multiple figures. Number of people->Personal appearance->Environmental style->Personal state
+
+Sizes above 1024 may give undesirable results! We recommend using small size + a moderate increase in the number of Step steps + super-clear resolution of the image (see Progression).
+
 
 
 ## Prompt's working model
