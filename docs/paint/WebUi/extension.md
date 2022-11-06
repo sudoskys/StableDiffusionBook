@@ -80,6 +80,12 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui-tokenizer
 
 此主题的内容可能不会即时更新到此处，[源地址](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts#prompt-interpolation)
 
+### Depth Maps for Stable Diffusion
+
+这个脚本是AUTOMATIC1111的Stable Diffusion Web UI的一个插件，可以从生成的图像中创建深度图。
+
+https://github.com/thygate/stable-diffusion-webui-depthmap-script
+
 ### sd-lexikrea
 
 Automatic1111 Stable Diffusion 的脚本，用于从 krea 和 lexica 中提取提示。 

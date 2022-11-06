@@ -32,6 +32,12 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui-tokenizer
 
 The content of this topic may not be instantly updated here, [source address](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts#prompt-interpolation)
 
+### Depth Maps for Stable Diffusion
+
+This script is an addon for AUTOMATIC1111's Stable Diffusion Web UI that creates depthmaps from the generated images. 
+
+https://github.com/thygate/stable-diffusion-webui-depthmap-script
+
 ### sd-lexikrea
 
 Script for Automatic1111 Stable Diffusion to pull prompts from krea and lexica. 
