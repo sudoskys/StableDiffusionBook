@@ -36,9 +36,11 @@ nav:
       - WebUi绘画指南:
           - paint/WebUi/index.md
           - 基本指南: paint/WebUi/base.md
-          - 应用指南: paint/WebUi/Practicalguide.md
+          
           - 进阶指南: paint/WebUi/Advanced.md
           - 安装扩展: paint/WebUi/extension.md
+      - 实战指南: 
+          - paint/Practicalguide.md
   - 训练模型:
       - 训练介绍: train/index.md
       - Textual 训练: train/Textual.md
@@ -108,7 +110,7 @@ plugins:
             绘画指南: Paint guide
             基本指南: Base guide
             WebUi绘画指南: Paint With WebUi
-            应用指南: Application Guide
+            实战指南: Application Guide
             进阶指南: Advanced Guide
             安装扩展: Extension
             训练模型: Train Model
