@@ -44,7 +44,7 @@ First, unfortunately, because it requires `CUDA` acceleration, only **Nvidia gra
 | Official Backend | 16GBfp16/24GBfp32 & Server System | 99.9 similar to official |
 
 
-The original NAI web UI + backend deployment requires a GPU server with 12GB or more of VRAM on a *Linux system*. NAI officially uses the full model, but it requires a lot of VRAM, so you'll need a 7W A100 graphics card from Taobao.
+The original NAI web UI + backend deployment requires a GPU server with 12GB or more of VRAM on a *Linux system*. NAI officially uses the full model, but it requires a lot of VRAM, so you'll need a A100 graphics card(10000$) from Amazon.
 
 SDWebUi is a **framework** that can use models to produce images.
 
