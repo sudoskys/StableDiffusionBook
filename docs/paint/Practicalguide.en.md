@@ -108,6 +108,18 @@ The emoji performs well in terms of semantic accuracy because it is only one cha
 
 ### Optimised artwork
 
+- Take a look at the target
+
+Think about what you want your work to be labelled as on the internet.
+
+A sticker would certainly not say `masterpiece, best quility,` would it?
+
+Another thing is that if the request is for pixel work, you should remove any negative hints of conflict (if any).
+
+- Semantic offset prevention
+
+To prevent semantic shifts, prioritise emoji and then use less complex syntax like `with` unnecessarily.
+
 - Rainbow messy pictures
 
 If you are outputting chaotic rainbow coloured images, it is possible that the generation resolution has been set too low.

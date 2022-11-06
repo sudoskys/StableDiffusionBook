@@ -389,6 +389,7 @@ The WebUi prompt syntax is converted into a prompt of the corresponding time, wh
 
 For example, if `loli` contains more styles, the single `loli` tag within the spell should be removed when the user wants a specific style.
 
+By default we use (someone else gives you) negative prompts in which there is a risk of words that will conflict, so please be aware of this.
 
 ## Step
 

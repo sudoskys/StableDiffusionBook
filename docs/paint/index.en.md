@@ -212,6 +212,9 @@ For the training of neural networks the quality of features is important: the st
 
 Choosing specific keywords is especially important if you want to control the content of your images. Also: the less abstract your wording is the better. If at all possible, avoid wording that leaves room for interpretation or that requires an "understanding" of something that is not part of the image. Even concepts like "big" or "small" are problematic because they are indistinguishable from objects being close or far from the camera. Ideally use wording that has a high likelihood to appear verbatim on a caption of the image you want.
 
+!!! tip
+    The prompt is a hint and not a basis for judgement. For example, when you enter a quality word, you are actually limiting the scope of the data, not "asking" the AI to produce a good image.
+
 
 ### Attention / Emphasis
 
