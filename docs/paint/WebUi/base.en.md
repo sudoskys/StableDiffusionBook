@@ -453,20 +453,4 @@ The 10xx series looks so different from all other cards, see [here](https://gith
 
 
 
-## Extensions
 
-Extensions are a more convenient form of user scripts.
-
-Extensions all exist in their own subdirectory inside the `extensions` directory. You can use git to install an extension like this:
-
-```
-git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients extensions/aesthetic-gradients
-```
-
-This installs an extension from `https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients` into the `extensions/aesthetic-gradients` directory.
-
-Alternatively you can just copy-paste a directory into `extensions`.
-
-For developing extensions, see [Developing extensions](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Developing-extensions).
-
-**See a list of all extensions at [here](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts#stylepile)**
