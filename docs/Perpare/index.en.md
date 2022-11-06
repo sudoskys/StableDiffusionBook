@@ -54,4 +54,4 @@ NAI is an online **service**.
 
 If you want to get models that don't generate anime girls, please see [here](https://space.bilibili.com/250989068/channel/collectiondetail?sid=660352).
 
-By the way post a [recently released 1.5 model](https://huggingface.co/runwayml/stable-diffusion-v1-5) and [stable small size 1.4 model](https://huggingface.co/CompVis/stable-) diffusion-v1-4)
+By the way post a [recently released 1.5 model](https://huggingface.co/runwayml/stable-diffusion-v1-5) and [stable small size 1.4 model](https://huggingface.co/CompVis/stable-diffusion-v1-4)
