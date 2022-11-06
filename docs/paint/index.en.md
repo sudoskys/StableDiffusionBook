@@ -79,6 +79,10 @@ The toolbox that you can see when you open the page
 
 * [largest library of AI-generated images](https://libraire.ai/)
 
+### Style
+
+* [Stable Diffusion Artist Style Studies](https://proximacentaurib.notion.site/e28a4f8d97724f14a784a538b8589e7d?v=42948fd8f45c4d47a0edfc4b78937474)
+
 * [Top-sd-artists](https://www.urania.ai/top-sd-artists)
 
 * [artiststostudy](https://artiststostudy.pages.dev/)
@@ -211,6 +215,9 @@ TLDR: good image of human standing/sitting is easy, good image of human jumping/
 For the training of neural networks the quality of features is important: the stronger the connection between the inputs and the outputs is, the easier it is for a neural network to learn the connection. In other words, if a keyword has a very specific meaning it is much easier to learn how it connects to images than if a keyword has a very broad meaning. In this way, even keywords that are used very rarely like "Zettai Ryouiki" can produce very good results because it's only ever used in very specific circumstances. On the other hand, "anime" does not produce very good results even though it's a relatively common word, presumably because it is used in many different circumstances even if no literal anime is present.
 
 Choosing specific keywords is especially important if you want to control the content of your images. Also: the less abstract your wording is the better. If at all possible, avoid wording that leaves room for interpretation or that requires an "understanding" of something that is not part of the image. Even concepts like "big" or "small" are problematic because they are indistinguishable from objects being close or far from the camera. Ideally use wording that has a high likelihood to appear verbatim on a caption of the image you want.
+
+!!! tip
+    The prompt is a hint and not a basis for judgement. For example, when you enter a quality word, you are actually limiting the scope of the data, not "asking" the AI to produce a good image.
 
 
 ### Attention / Emphasis

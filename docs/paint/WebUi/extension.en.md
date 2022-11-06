@@ -1,8 +1,25 @@
 # Extension
 
-## Custom Scripts
 
-The content of this topic may not be instantly updated here, [source address](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts#prompt-interpolation)
+## Extensions
+
+**WebUi now comes with its own extension manager interface.**
+
+Extensions are a more convenient form of user scripts.
+
+Extensions all exist in their own subdirectory inside the `extensions` directory. You can use git to install an extension like this:
+
+```
+git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients extensions/aesthetic-gradients
+```
+
+This installs an extension from `https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients` into the `extensions/aesthetic-gradients` directory.
+
+Alternatively you can just copy-paste a directory into `extensions`.
+
+For developing extensions, see [Developing extensions](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Developing-extensions).
+
+**See a list of all extensions at [here](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts#stylepile)**
 
 
 ### tokenizer
@@ -10,6 +27,29 @@ The content of this topic may not be instantly updated here, [source address](ht
 An extension for stable-diffusion-webui that adds a tab that lets you preview how CLIP model would tokenize your text. 
 
 https://github.com/AUTOMATIC1111/stable-diffusion-webui-tokenizer
+
+### training-picker
+
+Extension for stable-diffusion-webui that allows the user to mux through the keyframes of a video, and automatically pick and export training examples from individual keyframes. 
+
+https://github.com/Maurdekye/training-picker
+
+
+## Custom Scripts
+
+The content of this topic may not be instantly updated here, [source address](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts#prompt-interpolation)
+
+### Depth Maps for Stable Diffusion
+
+This script is an addon for AUTOMATIC1111's Stable Diffusion Web UI that creates depthmaps from the generated images. 
+
+https://github.com/thygate/stable-diffusion-webui-depthmap-script
+
+### sd-lexikrea
+
+Script for Automatic1111 Stable Diffusion to pull prompts from krea and lexica. 
+
+https://github.com/Vetchems/sd-lexikrea
 
 
 ### Auto-completion

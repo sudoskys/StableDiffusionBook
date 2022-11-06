@@ -4,6 +4,18 @@
 !!! tip
     The Stable Diffusion WebUi is currently iterating very quickly and there are a lot of updates every day, so it is recommended to pull the latest code every day.
 
+## 11/6
+
+eDiffi: Text-to-Image Diffusion Models with Ensemble of Expert Denoisers 
+
+https://deepimagination.cc/eDiffi/
+
+- From one of the original DreamBooth authors : Stop using SKS as the initializer word
+https://www.reddit.com/r/StableDiffusion/comments/yju5ks/from_one_of_the_original_dreambooth_authors_stop/
+
+
+- AI art is popular
+https://www.reddit.com/r/StableDiffusion/comments/yh8j0a/ai_art_is_popular_and_makes_money_confessions_of/
 
 ## 11/5
 

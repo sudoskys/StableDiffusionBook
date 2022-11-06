@@ -108,6 +108,18 @@ The emoji performs well in terms of semantic accuracy because it is only one cha
 
 ### Optimised artwork
 
+- Take a look at the target
+
+Think about what you want your work to be labelled as on the internet.
+
+A sticker would certainly not say `masterpiece, best quility,` would it?
+
+Another thing is that if the request is for pixel work, you should remove any negative hints of conflict (if any).
+
+- Semantic offset prevention
+
+To prevent semantic shifts, prioritise emoji and then use less complex syntax like `with` unnecessarily.
+
 - Rainbow messy pictures
 
 If you are outputting chaotic rainbow coloured images, it is possible that the generation resolution has been set too low.
@@ -369,6 +381,7 @@ The Prompt Magic Book provides a library of ready-to-use templates (analogous to
 
 [Artist Museum](https://gallerix.asia/storeroom/)
 
+[Stable Diffusion Artist Style Studies](https://proximacentaurib.notion.site/e28a4f8d97724f14a784a538b8589e7d?v=42948fd8f45c4d47a0edfc4b78937474)
 
 #### 草图风格
 
@@ -515,6 +528,8 @@ The Prompt Magic Book provides a library of ready-to-use templates (analogous to
 ## Market Adoption Survey
 
 Here are the applications for stable diffusion (non-NAI models).
+
+https://www.reddit.com/r/StableDiffusion/comments/yh8j0a/ai_art_is_popular_and_makes_money_confessions_of/
 
 - 3D
 

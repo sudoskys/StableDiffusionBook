@@ -13,3 +13,35 @@ SDWebUi是一个框架，除了 NAI 模型外还有许多[其他模型](https://
 
 
 [^2]:[关于 AUTOMATIC1111 /stable-diffusion-webui 的 FAQ:](https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99)
+
+
+
+## 模型选调
+
+模型使用的数据集和标签对于效果影响非常重要，在使用之前要先了解数据来源。
+
+TODO:
+
+https://huggingface.co/lambdalabs/sd-pokemon-diffusers
+
+https://huggingface.co/Onodofthenorth/SD_PixelArt_SpriteSheet_Generator
+
+
+### 某个模型
+
+这里以某模型简单谈论一下猜测。
+
+- 猜测
+
+对于某个著名模型，`masterpiece` 有可能是为了适应商业需求人工标记的 Tag.
+
+猜测 full 模型投入了所有的数据，未经清洗。而 sfw 模型则数据更加精确，应该受过清洗。
+
+这导致了 full 模型的不稳定。
+
+在 “事件2” 中，我们看到了很多其他的模型，比如 `wallpaper` 模型，它们应该使用了不同的数据集进行训练。
+
+经过讨论，我们认为 有些模型是根据 `rating` 进行分类的。
+
+
+但是事实上我们并不知道细节，所以以上只是猜测并且**不可信**的。

@@ -5,6 +5,19 @@
 
 以下是新闻和测试内容。
 
+## 11/6
+
+eDiffi：具有专家降噪器集合的文本到图像扩散模型 
+https://deepimagination.cc/eDiffi/
+
+
+- 来自 DreamBooth 的一位原始作者：停止使用 SKS 作为初始化词 
+https://www.reddit.com/r/StableDiffusion/comments/yju5ks/from_one_of_the_original_dreambooth_authors_stop/
+
+- AI艺术走红赚钱：一位AI艺术家的自白 
+
+https://www.reddit.com/r/StableDiffusion/comments/yh8j0a/ai_art_is_popular_and_makes_money_confessions_of/
+
 ## 11/5
 
 WebUi 发布 [tokenizer插件](https://github.com/AUTOMATIC1111/stable-diffusion-webui-tokenizer)，可以查看分词情况。
