@@ -5,6 +5,10 @@
 
 以下是新闻和测试内容。
 
+## 11/5
+
+WebUi 发布 [tokenizer插件](https://github.com/AUTOMATIC1111/stable-diffusion-webui-tokenizer)，可以查看分词情况。
+
 ## 11/3
 
 - 发现了一个很好用，很实用的工具。

@@ -5,7 +5,11 @@
 
 The content of this topic may not be instantly updated here, [source address](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts#prompt-interpolation)
 
+### tokenizer
 
+An extension for stable-diffusion-webui that adds a tab that lets you preview how CLIP model would tokenize your text. 
+
+https://github.com/AUTOMATIC1111/stable-diffusion-webui-tokenizer
 
 ### Auto-completion
 

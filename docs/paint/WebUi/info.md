@@ -5,6 +5,13 @@
 
 此主题的内容可能不会即时更新到此处，[源地址](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts#prompt-interpolation)
 
+
+### Tokenizer
+
+stable-diffusion-webui的一个扩展，增加了一个标签，让你预览CLIP模型将如何标记你的文本。
+
+https://github.com/AUTOMATIC1111/stable-diffusion-webui-tokenizer
+
 ### 自动补全
 
 这里有一个项目，可以使SD做到类似 NAI 的补全效果。
