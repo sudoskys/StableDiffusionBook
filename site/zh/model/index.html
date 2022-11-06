@@ -854,6 +854,8 @@
         
           
         
+          
+        
       
       
         
@@ -894,8 +896,6 @@
         
           
             
-          
-        
           
         
           
@@ -946,20 +946,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../paint/WebUi/Practicalguide/" class="md-nav__link">
-        应用指南
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../paint/WebUi/Advanced/" class="md-nav__link">
         进阶指南
       </a>
@@ -976,6 +962,59 @@
     <li class="md-nav__item">
       <a href="../paint/WebUi/extension/" class="md-nav__link">
         安装扩展
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" checked>
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_3">
+          实战指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="实战指南" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          实战指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paint/Practicalguide/" class="md-nav__link">
+        实战指南
       </a>
     </li>
   
@@ -1171,6 +1210,34 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    模型选调
+  </a>
+  
+    <nav class="md-nav" aria-label="模型选调">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    某个模型
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1198,6 +1265,22 @@
 可以尝试关注中文社区 t.me@StableDiffusion_CN_WIKI 或 打开整合包自行查看 <code>model</code> 目录。</p>
 </div>
 <p>SDWebUi是一个框架，除了 NAI 模型外还有许多<a href="https://rentry.org/sdmodels">其他模型</a></p>
+<h2 id="_2">模型选调</h2>
+<p>模型使用的数据集和标签对于效果影响非常重要，在使用之前要先了解数据来源。</p>
+<p>TODO:</p>
+<p>https://huggingface.co/lambdalabs/sd-pokemon-diffusers</p>
+<p>https://huggingface.co/Onodofthenorth/SD_PixelArt_SpriteSheet_Generator</p>
+<h3 id="_3">某个模型</h3>
+<p>这里以某模型简单谈论一下猜测。</p>
+<ul>
+<li>猜测</li>
+</ul>
+<p>对于某个著名模型，<code>masterpiece</code> 有可能是为了适应商业需求人工标记的 Tag.</p>
+<p>猜测 full 模型投入了所有的数据，未经清洗。而 sfw 模型则数据更加精确，应该受过清洗。</p>
+<p>这导致了 full 模型的不稳定。</p>
+<p>在 “事件2” 中，我们看到了很多其他的模型，比如 <code>wallpaper</code> 模型，它们应该使用了不同的数据集进行训练。</p>
+<p>经过讨论，我们认为 有些模型是根据 <code>rating</code> 进行分类的。</p>
+<p>但是事实上我们并不知道细节，所以以上只是猜测并且<strong>不可信</strong>的。</p>
 <div class="footnote">
 <hr />
 <ol>
@@ -1212,7 +1295,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 06:30:05</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月6日 10:36:04</span>
       
         <br>
         创建日期:

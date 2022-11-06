@@ -201,6 +201,14 @@
          
     </url>
     <url>
+         <loc>https://stable-diffusion-book.vercel.app/paint/Practicalguide/</loc>
+         <lastmod>2022-11-06</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/paint/Practicalguide/"/>
+         <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/paint/Practicalguide/"/>
+         
+    </url>
+    <url>
          <loc>https://stable-diffusion-book.vercel.app/paint/WebUi/</loc>
          <lastmod>2022-11-06</lastmod>
          <changefreq>daily</changefreq>
@@ -214,14 +222,6 @@
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/paint/WebUi/Advanced/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/paint/WebUi/Advanced/"/>
-         
-    </url>
-    <url>
-         <loc>https://stable-diffusion-book.vercel.app/paint/WebUi/Practicalguide/</loc>
-         <lastmod>2022-11-06</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/paint/WebUi/Practicalguide/"/>
-         <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/paint/WebUi/Practicalguide/"/>
          
     </url>
     <url>

@@ -854,6 +854,8 @@
         
           
         
+          
+        
       
       
         
@@ -894,8 +896,6 @@
         
           
             
-          
-        
           
         
           
@@ -946,20 +946,6 @@
   
   
     <li class="md-nav__item">
-      <a href="WebUi/Practicalguide/" class="md-nav__link">
-        Application Guide
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="WebUi/Advanced/" class="md-nav__link">
         Advanced Guide
       </a>
@@ -976,6 +962,59 @@
     <li class="md-nav__item">
       <a href="WebUi/extension/" class="md-nav__link">
         Extension
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" checked>
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_3">
+          Application Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Application Guide" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Application Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Practicalguide/" class="md-nav__link">
+        Practical Guide
       </a>
     </li>
   
@@ -1226,6 +1265,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#style" class="md-nav__link">
+    Style
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1436,6 +1482,12 @@ Upscaler 2 的预期用途 https://github.com/AUTOMATIC1111/stable-diffusion-web
 <li>
 <p><a href="https://libraire.ai/">largest library of AI-generated images</a></p>
 </li>
+</ul>
+<h3 id="style">Style</h3>
+<ul>
+<li>
+<p><a href="https://proximacentaurib.notion.site/e28a4f8d97724f14a784a538b8589e7d?v=42948fd8f45c4d47a0edfc4b78937474">Stable Diffusion Artist Style Studies</a></p>
+</li>
 <li>
 <p><a href="https://www.urania.ai/top-sd-artists">Top-sd-artists</a></p>
 </li>
@@ -1557,6 +1609,10 @@ It appears that VAE uses a statistical method known as Bayes' theorem. When calc
 <h3 id="specificity">Specificity</h3>
 <p>For the training of neural networks the quality of features is important: the stronger the connection between the inputs and the outputs is, the easier it is for a neural network to learn the connection. In other words, if a keyword has a very specific meaning it is much easier to learn how it connects to images than if a keyword has a very broad meaning. In this way, even keywords that are used very rarely like "Zettai Ryouiki" can produce very good results because it's only ever used in very specific circumstances. On the other hand, "anime" does not produce very good results even though it's a relatively common word, presumably because it is used in many different circumstances even if no literal anime is present.</p>
 <p>Choosing specific keywords is especially important if you want to control the content of your images. Also: the less abstract your wording is the better. If at all possible, avoid wording that leaves room for interpretation or that requires an "understanding" of something that is not part of the image. Even concepts like "big" or "small" are problematic because they are indistinguishable from objects being close or far from the camera. Ideally use wording that has a high likelihood to appear verbatim on a caption of the image you want.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The prompt is a hint and not a basis for judgement. For example, when you enter a quality word, you are actually limiting the scope of the data, not "asking" the AI to produce a good image.</p>
+</div>
 <h3 id="attention-emphasis">Attention / Emphasis</h3>
 <p>There is a lot of confusion around attention, meaning ways to increase or decrease the weight of specific parts of a prompt.
 Some people assert that putting a keyword in round brackets  increases its effect
@@ -1595,7 +1651,7 @@ However, others can frequently <strong>not</strong> reproduce this effect in the
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 6, 2022 06:27:03</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 6, 2022 10:36:04</span>
       
         <br>
         Created:

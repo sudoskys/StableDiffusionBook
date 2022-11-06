@@ -854,6 +854,8 @@
         
           
         
+          
+        
       
       
         
@@ -904,8 +906,6 @@
         
           
         
-          
-        
       
       
         
@@ -936,20 +936,6 @@
     <li class="md-nav__item">
       <a href="../base/" class="md-nav__link">
         Base guide
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Practicalguide/" class="md-nav__link">
-        Application Guide
       </a>
     </li>
   
@@ -1010,6 +996,33 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#extensions" class="md-nav__link">
+    Extensions
+  </a>
+  
+    <nav class="md-nav" aria-label="Extensions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tokenizer" class="md-nav__link">
+    tokenizer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#training-picker" class="md-nav__link">
+    training-picker
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#custom-scripts" class="md-nav__link">
     Custom Scripts
   </a>
@@ -1018,8 +1031,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#tokenizer" class="md-nav__link">
-    tokenizer
+  <a href="#depth-maps-for-stable-diffusion" class="md-nav__link">
+    Depth Maps for Stable Diffusion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sd-lexikrea" class="md-nav__link">
+    sd-lexikrea
   </a>
   
 </li>
@@ -1068,6 +1088,59 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" checked>
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_3">
+          Application Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Application Guide" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Application Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Practicalguide/" class="md-nav__link">
+        Practical Guide
+      </a>
     </li>
   
 
@@ -1269,6 +1342,33 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#extensions" class="md-nav__link">
+    Extensions
+  </a>
+  
+    <nav class="md-nav" aria-label="Extensions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tokenizer" class="md-nav__link">
+    tokenizer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#training-picker" class="md-nav__link">
+    training-picker
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#custom-scripts" class="md-nav__link">
     Custom Scripts
   </a>
@@ -1277,8 +1377,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#tokenizer" class="md-nav__link">
-    tokenizer
+  <a href="#depth-maps-for-stable-diffusion" class="md-nav__link">
+    Depth Maps for Stable Diffusion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sd-lexikrea" class="md-nav__link">
+    sd-lexikrea
   </a>
   
 </li>
@@ -1344,11 +1451,30 @@
 
 
 <h1 id="extension">Extension</h1>
-<h2 id="custom-scripts">Custom Scripts</h2>
-<p>The content of this topic may not be instantly updated here, <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts#prompt-interpolation">source address</a></p>
+<h2 id="extensions">Extensions</h2>
+<p><strong>WebUi now comes with its own extension manager interface.</strong></p>
+<p>Extensions are a more convenient form of user scripts.</p>
+<p>Extensions all exist in their own subdirectory inside the <code>extensions</code> directory. You can use git to install an extension like this:</p>
+<div class="highlight"><pre><span></span><code>git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients extensions/aesthetic-gradients
+</code></pre></div>
+<p>This installs an extension from <code>https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients</code> into the <code>extensions/aesthetic-gradients</code> directory.</p>
+<p>Alternatively you can just copy-paste a directory into <code>extensions</code>.</p>
+<p>For developing extensions, see <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Developing-extensions">Developing extensions</a>.</p>
+<p><strong>See a list of all extensions at <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts#stylepile">here</a></strong></p>
 <h3 id="tokenizer">tokenizer</h3>
 <p>An extension for stable-diffusion-webui that adds a tab that lets you preview how CLIP model would tokenize your text. </p>
 <p>https://github.com/AUTOMATIC1111/stable-diffusion-webui-tokenizer</p>
+<h3 id="training-picker">training-picker</h3>
+<p>Extension for stable-diffusion-webui that allows the user to mux through the keyframes of a video, and automatically pick and export training examples from individual keyframes. </p>
+<p>https://github.com/Maurdekye/training-picker</p>
+<h2 id="custom-scripts">Custom Scripts</h2>
+<p>The content of this topic may not be instantly updated here, <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts#prompt-interpolation">source address</a></p>
+<h3 id="depth-maps-for-stable-diffusion">Depth Maps for Stable Diffusion</h3>
+<p>This script is an addon for AUTOMATIC1111's Stable Diffusion Web UI that creates depthmaps from the generated images. </p>
+<p>https://github.com/thygate/stable-diffusion-webui-depthmap-script</p>
+<h3 id="sd-lexikrea">sd-lexikrea</h3>
+<p>Script for Automatic1111 Stable Diffusion to pull prompts from krea and lexica. </p>
+<p>https://github.com/Vetchems/sd-lexikrea</p>
 <h3 id="auto-completion">Auto-completion</h3>
 <p>Here's a project that enables SD to do a NAI-like patching effect.</p>
 <p>https://github.com/DominikDoom/a1111-sd-webui-tagcomplete</p>
@@ -1369,7 +1495,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 6, 2022 06:35:37</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 6, 2022 10:36:04</span>
       
         <br>
         Created:
@@ -1419,13 +1545,13 @@
       
       
         
-        <a href="../../../train/" class="md-footer__link md-footer__link--next" aria-label="Next: Intro" rel="next">
+        <a href="../../Practicalguide/" class="md-footer__link md-footer__link--next" aria-label="Next: Practical Guide" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Intro
+              Practical Guide
             </div>
           </div>
           <div class="md-footer__button md-icon">

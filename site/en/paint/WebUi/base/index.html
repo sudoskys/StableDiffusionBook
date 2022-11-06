@@ -854,6 +854,8 @@
         
           
         
+          
+        
       
       
         
@@ -896,8 +898,6 @@
         
           
             
-          
-        
           
         
           
@@ -1106,31 +1106,10 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#extensions" class="md-nav__link">
-    Extensions
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Practicalguide/" class="md-nav__link">
-        Application Guide
-      </a>
     </li>
   
 
@@ -1158,6 +1137,59 @@
     <li class="md-nav__item">
       <a href="../extension/" class="md-nav__link">
         Extension
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" checked>
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_3">
+          Application Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Application Guide" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Application Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Practicalguide/" class="md-nav__link">
+        Practical Guide
       </a>
     </li>
   
@@ -1498,13 +1530,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#extensions" class="md-nav__link">
-    Extensions
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1771,6 +1796,7 @@ For example, if you use <code>a busy city street in a modern city|illustration|c
 <p>The WebUi prompt syntax is converted into a prompt of the corresponding time, which is then passed to Ai via embedding.</p>
 <h2 id="prompt-conflict-hint-word">Prompt conflict (hint word)</h2>
 <p>For example, if <code>loli</code> contains more styles, the single <code>loli</code> tag within the spell should be removed when the user wants a specific style.</p>
+<p>By default we use (someone else gives you) negative prompts in which there is a risk of words that will conflict, so please be aware of this.</p>
 <h2 id="step">Step</h2>
 <p>More iterative steps may result in better generation, more detail and sharpening, but will result in longer generation times. In practice, the difference between 30 and 50 steps is very small.</p>
 <p>Too many iterative steps may also be counterproductive, with little or no improvement.</p>
@@ -1815,22 +1841,13 @@ PS: too high a step count (&gt;30) will not give better results</p>
 <p>The same seeds will produce the same picture in the same model and back-end implementation, keeping all parameters the same. Depends on the other parameters.</p>
 <p>But note that <strong>different graphics cards may cause unexpectedly different results</strong> (e.g. things like accuracy)</p>
 <p>The 10xx series looks so different from all other cards, see <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017#discussioncomment-3873467">here</a></p>
-<h2 id="extensions">Extensions</h2>
-<p>Extensions are a more convenient form of user scripts.</p>
-<p>Extensions all exist in their own subdirectory inside the <code>extensions</code> directory. You can use git to install an extension like this:</p>
-<div class="highlight"><pre><span></span><code>git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients extensions/aesthetic-gradients
-</code></pre></div>
-<p>This installs an extension from <code>https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients</code> into the <code>extensions/aesthetic-gradients</code> directory.</p>
-<p>Alternatively you can just copy-paste a directory into <code>extensions</code>.</p>
-<p>For developing extensions, see <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Developing-extensions">Developing extensions</a>.</p>
-<p><strong>See a list of all extensions at <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts#stylepile">here</a></strong></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 6, 2022 06:26:54</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 6, 2022 09:18:18</span>
       
         <br>
         Created:
@@ -1880,13 +1897,13 @@ PS: too high a step count (&gt;30) will not give better results</p>
       
       
         
-        <a href="../Practicalguide/" class="md-footer__link md-footer__link--next" aria-label="Next: Application Guide" rel="next">
+        <a href="../Advanced/" class="md-footer__link md-footer__link--next" aria-label="Next: Advanced Guide" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Application Guide
+              Advanced Guide
             </div>
           </div>
           <div class="md-footer__button md-icon">

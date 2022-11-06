@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="zh" class="no-js">
+<html lang="en" class="no-js">
   <head>
     
       <meta charset="utf-8">
@@ -12,14 +12,14 @@
         <meta name="author" content="StableDiffusionBook Team">
       
       
-        <link rel="canonical" href="https://stable-diffusion-book.vercel.app/paint/WebUi/Practicalguide/">
+        <link rel="canonical" href="https://stable-diffusion-book.vercel.app/en/paint/Practicalguide/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.8">
     
     
       
-        <title>应用指南 - AiDraw</title>
+        <title>Practical Guide - AiDraw</title>
       
     
     
@@ -72,8 +72,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
-          跳转至
+        <a href="#practical-guide" class="md-skip">
+          Skip to content
         </a>
       
     </div>
@@ -85,8 +85,8 @@
       
 
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../.." title="AiDraw" class="md-header__button md-logo" aria-label="AiDraw" data-md-component="logo">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../" title="AiDraw" class="md-header__button md-logo" aria-label="AiDraw" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              应用指南
+              Practical Guide
             
           </span>
         </div>
@@ -138,20 +138,20 @@
       <div class="md-header__option">
         <div class="md-select">
           
-          <button class="md-header__button md-icon" aria-label="选择当前语言">
+          <button class="md-header__button md-icon" aria-label="Select language">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
           </button>
           <div class="md-select__inner">
             <ul class="md-select__list">
               
                 <li class="md-select__item">
-                  <a href="./" hreflang="zh" class="md-select__link">
+                  <a href="../../../paint/Practicalguide/" hreflang="zh" class="md-select__link">
                     简体中文
                   </a>
                 </li>
               
                 <li class="md-select__item">
-                  <a href="../../../en/paint/WebUi/Practicalguide/" hreflang="en" class="md-select__link">
+                  <a href="./" hreflang="en" class="md-select__link">
                     English
                   </a>
                 </li>
@@ -169,14 +169,14 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="查找">
+      <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -186,7 +186,7 @@
       <div class="md-search__scrollwrap" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            正在初始化搜索引擎
+            Initializing search
           </div>
           <ol class="md-search-result__list"></ol>
         </div>
@@ -197,7 +197,7 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/sudoskys/StableDiffusionBook" title="前往仓库" class="md-source" data-md-component="source">
+        <a href="https://github.com/sudoskys/StableDiffusionBook" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
@@ -218,7 +218,7 @@
         
           
             
-<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
@@ -231,8 +231,8 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
-        起步于此
+      <a href="../../" class="md-tabs__link">
+        Start here
       </a>
     </li>
   
@@ -247,8 +247,8 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../Perpare/" class="md-tabs__link">
-        开始之前
+      <a href="../../Perpare/" class="md-tabs__link">
+        Before start
       </a>
     </li>
   
@@ -263,8 +263,8 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../install/" class="md-tabs__link">
-        安装配置
+      <a href="../../install/" class="md-tabs__link">
+        Installation
       </a>
     </li>
   
@@ -279,8 +279,8 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../model/" class="md-tabs__link">
-        绘画调试
+      <a href="../../model/" class="md-tabs__link">
+        Configuration
       </a>
     </li>
   
@@ -297,8 +297,8 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../" class="md-tabs__link md-tabs__link--active">
-        绘画指南
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        Paint guide
       </a>
     </li>
   
@@ -313,8 +313,8 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../train/" class="md-tabs__link">
-        训练模型
+      <a href="../../train/" class="md-tabs__link">
+        Train Model
       </a>
     </li>
   
@@ -329,8 +329,8 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../landing/" class="md-tabs__link">
-        参考资料
+      <a href="../../landing/" class="md-tabs__link">
+        References
       </a>
     </li>
   
@@ -355,9 +355,9 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="AiDraw" class="md-nav__button md-logo" aria-label="AiDraw" data-md-component="logo">
+    <a href="../../" title="AiDraw" class="md-nav__button md-logo" aria-label="AiDraw" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -367,7 +367,7 @@
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/sudoskys/StableDiffusionBook" title="前往仓库" class="md-source" data-md-component="source">
+      <a href="https://github.com/sudoskys/StableDiffusionBook" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
@@ -413,7 +413,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../..">起步于此</a>
+          <a href="../../">Start here</a>
           
             <label for="__nav_1">
               <span class="md-nav__icon md-icon"></span>
@@ -421,10 +421,10 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="起步于此" data-md-level="1">
+      <nav class="md-nav" aria-label="Start here" data-md-level="1">
         <label class="md-nav__title" for="__nav_1">
           <span class="md-nav__icon md-icon"></span>
-          起步于此
+          Start here
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -436,8 +436,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GettingStarted/news/" class="md-nav__link">
-        新闻
+      <a href="../../GettingStarted/news/" class="md-nav__link">
+        News
       </a>
     </li>
   
@@ -450,8 +450,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GettingStarted/term/" class="md-nav__link">
-        术语
+      <a href="../../GettingStarted/term/" class="md-nav__link">
+        Terminology
       </a>
     </li>
   
@@ -464,8 +464,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GettingStarted/state/" class="md-nav__link">
-        声明
+      <a href="../../GettingStarted/state/" class="md-nav__link">
+        Statement
       </a>
     </li>
   
@@ -478,8 +478,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GettingStarted/contributing/" class="md-nav__link">
-        贡献指南
+      <a href="../../GettingStarted/contributing/" class="md-nav__link">
+        Contribution Guide
       </a>
     </li>
   
@@ -517,14 +517,14 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../Perpare/">开始之前</a>
+          <a href="../../Perpare/">Before start</a>
           
         </div>
       
-      <nav class="md-nav" aria-label="开始之前" data-md-level="1">
+      <nav class="md-nav" aria-label="Before start" data-md-level="1">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
-          开始之前
+          Before start
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -563,7 +563,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../install/">安装配置</a>
+          <a href="../../install/">Installation</a>
           
             <label for="__nav_3">
               <span class="md-nav__icon md-icon"></span>
@@ -571,10 +571,10 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="安装配置" data-md-level="1">
+      <nav class="md-nav" aria-label="Installation" data-md-level="1">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
-          安装配置
+          Installation
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -609,7 +609,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../install/WebUi/">WebUi安装</a>
+          <a href="../../install/WebUi/">Install SDWebUi</a>
           
             <label for="__nav_3_2">
               <span class="md-nav__icon md-icon"></span>
@@ -617,10 +617,10 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="WebUi安装" data-md-level="2">
+      <nav class="md-nav" aria-label="Install SDWebUi" data-md-level="2">
         <label class="md-nav__title" for="__nav_3_2">
           <span class="md-nav__icon md-icon"></span>
-          WebUi安装
+          Install SDWebUi
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -632,8 +632,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../install/WebUi/launch/" class="md-nav__link">
-        运行WebUi
+      <a href="../../install/WebUi/launch/" class="md-nav__link">
+        LaunchWebUi
       </a>
     </li>
   
@@ -646,8 +646,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../install/WebUi/Troubleshoot/" class="md-nav__link">
-        错误处理
+      <a href="../../install/WebUi/Troubleshoot/" class="md-nav__link">
+        Troubleshoot
       </a>
     </li>
   
@@ -698,7 +698,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../model/">绘画调试</a>
+          <a href="../../model/">Configuration</a>
           
             <label for="__nav_4">
               <span class="md-nav__icon md-icon"></span>
@@ -706,10 +706,10 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="绘画调试" data-md-level="1">
+      <nav class="md-nav" aria-label="Configuration" data-md-level="1">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
-          绘画调试
+          Configuration
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -721,8 +721,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../model/GPU/" class="md-nav__link">
-        GPU相关
+      <a href="../../model/GPU/" class="md-nav__link">
+        Gpu Debuging
       </a>
     </li>
   
@@ -735,8 +735,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../model/NAI/" class="md-nav__link">
-        NAI泄漏报告
+      <a href="../../model/NAI/" class="md-nav__link">
+        NAI leak report
       </a>
     </li>
   
@@ -772,7 +772,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../model/WebUi/">WebUi 配置</a>
+          <a href="../../model/WebUi/">WebUi 配置</a>
           
             <label for="__nav_4_4">
               <span class="md-nav__icon md-icon"></span>
@@ -795,8 +795,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../model/WebUi/base/" class="md-nav__link">
-        基本指南
+      <a href="../../model/WebUi/base/" class="md-nav__link">
+        Base guide
       </a>
     </li>
   
@@ -809,8 +809,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../model/WebUi/Troubleshoot/" class="md-nav__link">
-        错误处理
+      <a href="../../model/WebUi/Troubleshoot/" class="md-nav__link">
+        Troubleshoot
       </a>
     </li>
   
@@ -854,12 +854,14 @@
         
           
         
+          
+        
       
       
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../">绘画指南</a>
+          <a href="../">Paint guide</a>
           
             <label for="__nav_5">
               <span class="md-nav__icon md-icon"></span>
@@ -867,13 +869,110 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="绘画指南" data-md-level="1">
+      <nav class="md-nav" aria-label="Paint guide" data-md-level="1">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
-          绘画指南
+          Paint guide
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../WebUi/">Paint With WebUi</a>
+          
+            <label for="__nav_5_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Paint With WebUi" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Paint With WebUi
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WebUi/base/" class="md-nav__link">
+        Base guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WebUi/Advanced/" class="md-nav__link">
+        Advanced Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WebUi/extension/" class="md-nav__link">
+        Extension
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
             
           
             
@@ -889,58 +988,26 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" checked>
       
       
       
         
           
-            
-          
-        
-          
-        
-          
-        
-          
-        
-          
         
       
       
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="../">WebUi绘画指南</a>
-          
-            <label for="__nav_5_2">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
-          
-        </div>
-      
-      <nav class="md-nav" aria-label="WebUi绘画指南" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_2">
+        <label class="md-nav__link" for="__nav_5_3">
+          Application Guide
           <span class="md-nav__icon md-icon"></span>
-          WebUi绘画指南
+        </label>
+      
+      <nav class="md-nav" aria-label="Application Guide" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Application Guide
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../base/" class="md-nav__link">
-        基本指南
-      </a>
-    </li>
-  
-
-            
           
             
               
@@ -958,17 +1025,17 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          应用指南
+          Practical Guide
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        应用指南
+        Practical Guide
       </a>
       
         
 
-<nav class="md-nav md-nav--secondary" aria-label="目录">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
@@ -977,63 +1044,70 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      目录
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    场景表
+  <a href="#scene-table" class="md-nav__link">
+    Scene table
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    画作焊接！
+  <a href="#painting-soldering" class="md-nav__link">
+    Painting soldering!
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    遏制风格污染
+  <a href="#curbing-style-pollution" class="md-nav__link">
+    Curbing style pollution
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    图转图的秘籍
+  <a href="#the-secret-of-diagram-to-diagram-conversion" class="md-nav__link">
+    The secret of diagram to diagram conversion
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    尺寸选择
+  <a href="#size-selection" class="md-nav__link">
+    Size selection
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    视角
+  <a href="#shot" class="md-nav__link">
+    Shot
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    琐碎的细节
+  <a href="#reproduction" class="md-nav__link">
+    Reproduction
   </a>
   
-    <nav class="md-nav" aria-label="琐碎的细节">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frivolous-details" class="md-nav__link">
+    Frivolous details
+  </a>
+  
+    <nav class="md-nav" aria-label="Frivolous details">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    优化作品效果
+  <a href="#optimised-artwork" class="md-nav__link">
+    Optimised artwork
   </a>
   
 </li>
@@ -1044,114 +1118,107 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    跨领域术语/奇门遁甲
+  <a href="#associated" class="md-nav__link">
+    Associated
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    迭代草图5
+  <a href="#iterative-sketches-5" class="md-nav__link">
+    Iterative sketches 5
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    表情控制
+  <a href="#facial-expressions-control" class="md-nav__link">
+    Facial expressions Control
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    多人物/单人物
+  <a href="#multi-figuresingle-figure" class="md-nav__link">
+    Multi-figure/single-figure
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
-    进行手掌修复
+  <a href="#make-a-hand-fix" class="md-nav__link">
+    Make a hand fix
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
-    同人物&amp;差分
+  <a href="#identical-figures-differentiation" class="md-nav__link">
+    Identical figures &amp; differentiation
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
-    复刻
+  <a href="#designing-with-ai" class="md-nav__link">
+    Designing with Ai
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#ai" class="md-nav__link">
-    使用 Ai 进行设计
+  <a href="#prompt" class="md-nav__link">
+    Prompt
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_16" class="md-nav__link">
-    参数
-  </a>
-  
-    <nav class="md-nav" aria-label="参数">
+    <nav class="md-nav" aria-label="Prompt">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#nai" class="md-nav__link">
-    NAI 在使用的出图参数
+  <a href="#nai-in-use-out-parameters" class="md-nav__link">
+    NAI in use out parameters
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#naiwebuisd" class="md-nav__link">
-    转换——NAI和WebUi(SD)的增强语法不同
+  <a href="#conversions-nai-and-webuisd-have-different-enhanced-syntax" class="md-nav__link">
+    Conversions - NAI and WebUi(SD) have different enhanced syntax
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_17" class="md-nav__link">
-    元素法典
+  <a href="#prompt-magic-book" class="md-nav__link">
+    Prompt Magic Book
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    良好参数(风格趋向插画)1
+  <a href="#good-parameters-style-tends-to-be-illustrative-1" class="md-nav__link">
+    Good parameters (style tends to be illustrative) 1
   </a>
   
-    <nav class="md-nav" aria-label="良好参数(风格趋向插画)1">
+    <nav class="md-nav" aria-label="Good parameters (style tends to be illustrative) 1">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_18" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     草图风格
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_19" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     艺术风格
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_20" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     杂志/设定集 风格
   </a>
   
@@ -1175,8 +1242,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_21" class="md-nav__link">
-    市场应用情况调查
+  <a href="#market-adoption-survey" class="md-nav__link">
+    Market Adoption Survey
   </a>
   
 </li>
@@ -1185,34 +1252,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Advanced/" class="md-nav__link">
-        进阶指南
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../extension/" class="md-nav__link">
-        安装扩展
-      </a>
     </li>
   
 
@@ -1264,7 +1303,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../train/">训练模型</a>
+          <a href="../../train/">Train Model</a>
           
             <label for="__nav_6">
               <span class="md-nav__icon md-icon"></span>
@@ -1272,10 +1311,10 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="训练模型" data-md-level="1">
+      <nav class="md-nav" aria-label="Train Model" data-md-level="1">
         <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
-          训练模型
+          Train Model
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1287,8 +1326,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../train/Textual/" class="md-nav__link">
-        Textual 训练
+      <a href="../../train/Textual/" class="md-nav__link">
+        Textual Inversion
       </a>
     </li>
   
@@ -1301,8 +1340,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../train/Hypernetwork/" class="md-nav__link">
-        Hypernetwork 训练
+      <a href="../../train/Hypernetwork/" class="md-nav__link">
+        Hypernetwork
       </a>
     </li>
   
@@ -1315,8 +1354,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../train/DreamBooth/" class="md-nav__link">
-        DreamBooth 训练
+      <a href="../../train/DreamBooth/" class="md-nav__link">
+        DreamBooth
       </a>
     </li>
   
@@ -1329,8 +1368,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../train/AestheticGradients/" class="md-nav__link">
-        AestheticGradients 训练
+      <a href="../../train/AestheticGradients/" class="md-nav__link">
+        AestheticGradients
       </a>
     </li>
   
@@ -1368,14 +1407,14 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../landing/">参考资料</a>
+          <a href="../../landing/">References</a>
           
         </div>
       
-      <nav class="md-nav" aria-label="参考资料" data-md-level="1">
+      <nav class="md-nav" aria-label="References" data-md-level="1">
         <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
-          参考资料
+          References
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1400,7 +1439,7 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="目录">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
@@ -1409,63 +1448,70 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      目录
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    场景表
+  <a href="#scene-table" class="md-nav__link">
+    Scene table
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    画作焊接！
+  <a href="#painting-soldering" class="md-nav__link">
+    Painting soldering!
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    遏制风格污染
+  <a href="#curbing-style-pollution" class="md-nav__link">
+    Curbing style pollution
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    图转图的秘籍
+  <a href="#the-secret-of-diagram-to-diagram-conversion" class="md-nav__link">
+    The secret of diagram to diagram conversion
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    尺寸选择
+  <a href="#size-selection" class="md-nav__link">
+    Size selection
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    视角
+  <a href="#shot" class="md-nav__link">
+    Shot
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    琐碎的细节
+  <a href="#reproduction" class="md-nav__link">
+    Reproduction
   </a>
   
-    <nav class="md-nav" aria-label="琐碎的细节">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frivolous-details" class="md-nav__link">
+    Frivolous details
+  </a>
+  
+    <nav class="md-nav" aria-label="Frivolous details">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    优化作品效果
+  <a href="#optimised-artwork" class="md-nav__link">
+    Optimised artwork
   </a>
   
 </li>
@@ -1476,114 +1522,107 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    跨领域术语/奇门遁甲
+  <a href="#associated" class="md-nav__link">
+    Associated
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    迭代草图5
+  <a href="#iterative-sketches-5" class="md-nav__link">
+    Iterative sketches 5
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    表情控制
+  <a href="#facial-expressions-control" class="md-nav__link">
+    Facial expressions Control
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    多人物/单人物
+  <a href="#multi-figuresingle-figure" class="md-nav__link">
+    Multi-figure/single-figure
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
-    进行手掌修复
+  <a href="#make-a-hand-fix" class="md-nav__link">
+    Make a hand fix
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
-    同人物&amp;差分
+  <a href="#identical-figures-differentiation" class="md-nav__link">
+    Identical figures &amp; differentiation
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
-    复刻
+  <a href="#designing-with-ai" class="md-nav__link">
+    Designing with Ai
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#ai" class="md-nav__link">
-    使用 Ai 进行设计
+  <a href="#prompt" class="md-nav__link">
+    Prompt
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_16" class="md-nav__link">
-    参数
-  </a>
-  
-    <nav class="md-nav" aria-label="参数">
+    <nav class="md-nav" aria-label="Prompt">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#nai" class="md-nav__link">
-    NAI 在使用的出图参数
+  <a href="#nai-in-use-out-parameters" class="md-nav__link">
+    NAI in use out parameters
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#naiwebuisd" class="md-nav__link">
-    转换——NAI和WebUi(SD)的增强语法不同
+  <a href="#conversions-nai-and-webuisd-have-different-enhanced-syntax" class="md-nav__link">
+    Conversions - NAI and WebUi(SD) have different enhanced syntax
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_17" class="md-nav__link">
-    元素法典
+  <a href="#prompt-magic-book" class="md-nav__link">
+    Prompt Magic Book
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    良好参数(风格趋向插画)1
+  <a href="#good-parameters-style-tends-to-be-illustrative-1" class="md-nav__link">
+    Good parameters (style tends to be illustrative) 1
   </a>
   
-    <nav class="md-nav" aria-label="良好参数(风格趋向插画)1">
+    <nav class="md-nav" aria-label="Good parameters (style tends to be illustrative) 1">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_18" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     草图风格
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_19" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     艺术风格
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_20" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     杂志/设定集 风格
   </a>
   
@@ -1607,8 +1646,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_21" class="md-nav__link">
-    市场应用情况调查
+  <a href="#market-adoption-survey" class="md-nav__link">
+    Market Adoption Survey
   </a>
   
 </li>
@@ -1627,94 +1666,94 @@
                 
                   
 
-  <a href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/paint/WebUi/Practicalguide.md" title="编辑此页" class="md-content__button md-icon">
+  <a href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/paint/Practicalguide.en.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="_1">实战指南</h1>
-<p>这个简短的实战指南，可以让你快速了解如何合理调整参数达成目的效果。</p>
-<p>目前， Ai 处理不好细节和多人物，如果一个个处理，光影结构就会乱掉。如果修图，不如重画。但是画背景和做预览很实用。</p>
-<p>核心逻辑就是缩小预选数据的范围，调节天平在消极和积极提示之间的方向，还有使用部分语法控制提示词效果的强烈程度和起效过程。</p>
-<h2 id="_2">场景表</h2>
-<p>竖着看</p>
+<h1 id="practical-guide">Practical Guide</h1>
+<p>This short practical guide will give you a quick overview of how to adjust the parameters appropriately to achieve the desired effect.</p>
+<p>Currently, Ai does not handle details and multiple characters well, and the light and shadow structure will be messed up if handled one by one. If retouching, it is better to redraw. But it is practical to draw backgrounds and do previews.</p>
+<p><strong>The core logic is to narrow the range of pre-selected data, adjust the balance between negative and positive prompts, and use part of the grammar to control the intensity of the prompt word effect and the process of effect.</strong></p>
+<h2 id="scene-table">Scene table</h2>
+<p>Viewed vertically</p>
 <table>
 <thead>
 <tr>
-<th>人物</th>
-<th>场景</th>
-<th>数据限定</th>
-<th>事件</th>
+<th>characters</th>
+<th>scenes</th>
+<th>data-limited</th>
+<th>events</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>表情</td>
+<td>expressions</td>
 <td></td>
 <td></td>
-<td></td>
+<td>expressions</td>
 </tr>
 <tr>
-<td>头发</td>
-<td>广狭选择</td>
-<td>绘画类型</td>
-<td>缩写词</td>
+<td>Hair</td>
+<td>Wide and Narrow Selection</td>
+<td>Paint Type</td>
+<td>Abbreviations</td>
 </tr>
 <tr>
-<td>眼睛</td>
-<td>光影选择</td>
-<td>评价限定</td>
+<td>eyes</td>
+<td>lighting options</td>
+<td>evaluation qualification</td>
 <td>sfw/nsfw</td>
 </tr>
 <tr>
-<td>衣着</td>
-<td>背景主体</td>
-<td>联想元素</td>
-<td>出品公司</td>
+<td>clothing</td>
+<td>background subjects</td>
+<td>associative elements</td>
+<td>Production Company</td>
 </tr>
 <tr>
-<td>状态</td>
-<td>人物事件地</td>
+<td>state</td>
+<td>character event</td>
 <td>3D/2D</td>
-<td>作品品牌</td>
+<td>Artwork and Brand</td>
 </tr>
 <tr>
-<td>姿势位</td>
+<td>Pose position</td>
 <td></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<td>镜头位</td>
+<td>Lens position</td>
 <td></td>
 <td></td>
 <td></td>
 </tr>
 </tbody>
 </table>
-<h2 id="_3">画作焊接！</h2>
-<p>通过 <a href="https://www.painthua.com/">AiPhotoShop-无限外延画布的在线工具</a> ，你可以连续 “焊接” 作品，非常方便。只需要在启动命令加上 <code>--api</code> 参数，然后打开网页就可以使用。</p>
+<h2 id="painting-soldering">Painting soldering!</h2>
+<p>With <a href="https://www.painthua.com/">AiPhotoShop - the online tool for infinite extents of canvas</a> you can "weld" your work continuously, very conveniently. Just add the <code>--api</code> parameter to the start command and open the web page to use it.</p>
 <p><a href="https://github.com/BlinkDL/Hua">Github</a></p>
-<h2 id="_4">遏制风格污染</h2>
-<p>介绍如何在 WebUi 中生成图片时，将主体作为重点，而不是画风。<sup id="fnref:12"><a class="footnote-ref" href="#fn:12">9</a></sup></p>
-<p>为了得到预期结果，我们将 <code>style</code> 改为 <code>[style:10]</code> </p>
-<p>Automatic 1111 的 WebUi 提示词语法中，[x:10] 告诉 稳定扩散 直到第十个 step 再渲染这个提示词。</p>
-<p>当达到10步的时候，一个基本的图像已经形成了，所以风格化肆意污染主体成分，而是像在现有图像上进行 IMG2IMG(你可以把它看成是Img2img的形式)</p>
-<p>你可以根据你所做的整体步骤的多少来试验这个数字。如果你把格式改为 [x:0.2]（即低于1的数字），那么它就变成了百分比，[x:0.6]告诉 SD 等到总步骤数的 60% 时再渲染 x ，以此类推。</p>
-<h2 id="_5">图转图的秘籍</h2>
-<p>无论是 3D(DAZ这样的3D模型) 还是线稿，AI只识别 <strong>色彩</strong> ，而不是线条，色彩直接决定图转图的效果。</p>
-<h2 id="_6">尺寸选择</h2>
-<p>不应该将其与画质挂钩，尺寸一定程度上影响了主题，因为它潜在代表选择的类别(比如竖屏人物，横屏风景，小分辨率表情包居多)。</p>
-<p>画质可以使用 超分指南 进行操作。</p>
-<h2 id="_7">视角</h2>
-<p><a href="https://danbooru.donmai.us/wiki_pages/tag_group%3Aimage_composition">推荐使用 Danbooru含有的术语</a></p>
+<h2 id="curbing-style-pollution">Curbing style pollution</h2>
+<p>Introduces how to generate images in WebUi with the subject as the focus, rather than the style of the drawing.<sup id="fnref:12"><a class="footnote-ref" href="#fn:12">9</a></sup></p>
+<p>To get the desired result, we change <code>style</code> to <code>[style:10]</code> </p>
+<p>In Automatic 1111's WebUi prompt method, [x:10] tells stable diffusion until the tenth step before rendering the prompt.</p>
+<p>By the time 10 steps are reached, a basic image has been formed, so styling pollutes the main component recklessly, instead acting like an IMG2IMG (which you can think of as a form of Img2img) over the existing image</p>
+<p>You can experiment with this number depending on how many overall steps you've done. If you change the format to [x:0.2] (i.e. a number below 1) then it becomes a percentage, [x:0.6] tells SD to wait until 60% of the total number of steps before implementing x, and so on.</p>
+<h2 id="the-secret-of-diagram-to-diagram-conversion">The secret of diagram to diagram conversion</h2>
+<p>Whether it is 3D (3D models like DAZ) or line drawings, AI only recognises <strong>colour</strong>, not lines, and colour directly determines the result of a diagram to diagram conversion.</p>
+<h2 id="size-selection">Size selection</h2>
+<p>It should not be linked to picture quality; size affects the subject to some extent, as it potentially represents the category chosen (e.g. vertical figures, horizontal landscapes, small resolution emojis mostly).</p>
+<p>Picture quality can be manipulated using the Super Score guide.</p>
+<h2 id="shot">Shot</h2>
+<p><a href="https://danbooru.donmai.us/wiki_pages/tag_group%3Aimage_composition">Recommended use of terms contained in Danbooru</a></p>
 <p><img alt="shot" src="https://user-images.githubusercontent.com/75739606/198682933-25c1b2df-c573-44ea-aba7-2df4609299e5.png" /></p>
 <!--
 ![shot](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/shot.png)
 -->
 <blockquote>
-<p>引用来自日本 Wiki 的图片，作者不明</p>
+<p>citing an image from the Japanese Wiki, author unknown</p>
 </blockquote>
 <p><code>extreme closeup</code> ECU</p>
 <p><code>close up</code> CU</p>
@@ -1723,186 +1762,193 @@
 <p><code>cowboy shot</code> CS</p>
 <p><code>medium full shot</code> MFS</p>
 <p><code>full shot</code>  FS</p>
-<h2 id="_8">琐碎的细节</h2>
+<h2 id="reproduction">Reproduction</h2>
+<p>If you want to reproduce it on the generation, you need the same <code>seed</code>, prompts, and other parameters (even size). However, if the other side uses stylisation, then you can hardly reproduce it.</p>
+<p>--Self-deceptive reproduction: image to image, noise reduction to below 0.3...--</p>
+<h2 id="frivolous-details">Frivolous details</h2>
 <ul>
-<li>表情符号</li>
+<li>Emoticons</li>
 </ul>
-<p>emoji(💰💶💷💴💵,🎊🪅🪄🎀,👩‍🚀) 表情符号也是可以使用并且 <strong>非常准确</strong> 的，经过我多次测试，Ai 可以认识表情符号。</p>
-<p>emoji 因为只有一个字符，所以在语义准确度上表现良好。</p>
-<p><a href="https://unicode.org/emoji/charts/emoji-list.html">表情符号参考</a></p>
+<p>emoji(💰💶💷💴💵,🎊🪅🪄🎀,👩 🚀) Emoticons are also available and <strong>very accurate</strong>, I have tested them many times and Ai can recognise them.</p>
+<p>The emoji performs well in terms of semantic accuracy because it is only one character.</p>
+<p><a href="https://unicode.org/emoji/charts/emoji-list.html">emoji-list</a></p>
 <ul>
-<li>动漫风格</li>
+<li>Anime style</li>
 </ul>
-<p><code>anime coloring</code> 会有很好的效果，像动漫截图一样。(如果遇到黑白色，需要指定人物部件的色彩)</p>
-<iframe src="//player.bilibili.com/player.html?aid=304175820&bvid=BV1TP411N71t&cid=865253876&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<p><code>anime colouring</code> will work well, like an anime screenshot. (If you encounter black and white, you need to specify the colour of the character parts)</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hGATDT-Y37g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<h3 id="_9">优化作品效果</h3>
+<p><a href="https://www.reddit.com/r/StableDiffusion/comments/yllj3r/some_art_styles_that_i_tried/">some_art_styles_that_i_tried</a></p>
+<h3 id="optimised-artwork">Optimised artwork</h3>
 <ul>
-<li>彩虹混乱图</li>
+<li>Take a look at the target</li>
 </ul>
-<p>如果输出混乱的彩虹色图片，可能是生成分辨率被设置得太低。</p>
+<p>Think about what you want your work to be labelled as on the internet.</p>
+<p>A sticker would certainly not say <code>masterpiece, best quility,</code> would it?</p>
+<p>Another thing is that if the request is for pixel work, you should remove any negative hints of conflict (if any).</p>
 <ul>
-<li>波浪噪点图</li>
+<li>Semantic offset prevention</li>
 </ul>
-<p>密集的波浪或图案，可能是因为权重设置太高了。</p>
+<p>To prevent semantic shifts, prioritise emoji and then use less complex syntax like <code>with</code> unnecessarily.</p>
 <ul>
-<li>抠图？</li>
+<li>Rainbow messy pictures</li>
 </ul>
-<p>扣过的图，其余背景都会被处理成黑色。</p>
-<p>如果你需要背景，效果一般不是很好，建议填色后再操作。</p>
+<p>If you are outputting chaotic rainbow coloured images, it is possible that the generation resolution has been set too low.</p>
 <ul>
-<li>粗糙的噪声</li>
+<li>Wavy noisy picture</li>
 </ul>
-<p>细节不够，人物像米糕一样。需要适当提升 step.</p>
+<p>Dense waves or patterns may be because the weights are set too high.</p>
 <ul>
-<li>保护图片不被分割线切割</li>
+<li>Keyed image?</li>
 </ul>
-<p>消极提示加入</p>
-<p><code>comic 2koma 3koma 4koma collage</code></p>
-<p>应该可以改善。</p>
-<h2 id="_10">跨领域术语/奇门遁甲</h2>
-<p>跨领域术语的核心逻辑就是<strong>缩小指定的数据范围</strong>，从画面内容之外的<strong>平台，领域，事件</strong>上入手来提升效果。</p>
-<p>是的！你可以在提示中使用 <a href="https://www.owlnet.rice.edu/~engl377/film.html">Film Glossary</a> <a href="http://userhome.brooklyn.cuny.edu/anthro/jbeatty/COURSES/glossary.htm">FILM GLOSSARY摄影术语</a>， <a href="https://en.wikipedia.org/wiki/Category:Cinematic_techniques">Cinematic techniques摄影技术</a>，以及绘画术语(类型) 来控制基本情况。</p>
-<p>跨领域！你甚至可以使用各种惊险运动的名词来生产一些特效....比如空降</p>
-<p>比如，景深，光圈，构图，拍摄机位，运动元素，<a href="https://gallerix.asia/pedia/photography-glossary/">艺术摄影术语表中文介绍</a></p>
-<p><strong>但是</strong>这种效果可能会带来附加作用:引入你不希望见到的风格(如实景<strong>而不是</strong>而二次元)数据进入图片。把握好量度。适当增加 Step 和 风格提示 来改善.</p>
-<p>你还可以使用<strong>平台名</strong>来限定数据集的范围，比如 pixiv 之类的词汇。</p>
-<p><strong>扩展阅读</strong></p>
-<p><a href="https://danbooru.donmai.us/wiki_pages/tag_group%3Aimage_composition">推荐使用 Danbooru含有的术语</a></p>
-<p><a href="https://danbooru.donmai.us/wiki_pages/tag_groups">Danbooru tag组</a></p>
-<p>有用的电影术语 https://en.wikipedia.org/wiki/Category:Cinematic_techniques</p>
-<p>镜头类型 https://www.bhphotovideo.com/explora/video/tips-and-solutions/filmmaking-101-camera-shot-types</p>
-<p>电视术语  https://en.wikipedia.org/wiki/Category:Television_terminology</p>
-<p>摄影类型 https://en.wikipedia.org/wiki/Category:Photography_by_genre</p>
-<p>摄影术语 https://zh.wikipedia.org/zh-cn/%E9%AB%98%E9%80%9F%E6%91%84%E5%BD%B1</p>
-<p>极限运动 https://en.wikipedia.org/wiki/Extreme_sport </p>
-<p>https://en.wikipedia.org/wiki/Category:Sports_by_type</p>
-<p>构图艺术 https://en.wikipedia.org/wiki/Composition_(visual_arts)</p>
-<h2 id="5">迭代草图<sup id="fnref:8"><a class="footnote-ref" href="#fn:8">5</a></sup></h2>
-<p>这里讨论一下如何将<strong>手绘草图</strong>通过 Ai 绘画优化，<em>注意不是二次元</em>。</p>
-<p>在第一次迭代中，不需要太多 Steps，CFG 可以非常低（以获得更好的多样化结果），如果不想完全丢失草图，Denoising 应该在 0.3-0.4 左右。</p>
-<p>在最后的迭代中，增加 Steps 和 Denoising 强度（但不超过 0.8，否则图像将被破坏，尤其是在大于 512*512 时）请参见<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2213#issuecomment-1274137775">这里</a>，同时根据需要提高 CFG 和尺寸。</p>
-<p>你可以随时修复提示（添加或删除出现的细节）并尝试不同的采样器。</p>
-<p>另外，你不应该在初次生成使用一个固定不变的种子？</p>
-<p>如果你提供一个种子（而不是随机的 -1），你的图像很快就会变得过饱和、过度锐化、过度像素化..... 当然如果想微调，可以使用固定种子。</p>
-<h2 id="_11">表情控制</h2>
-<p>我们可以使用 颜文字 来控制出图的表情！</p>
-<p>:-) 微笑 :-( 不悦 ;-) 使眼色 :-D 开心 :-P 吐舌头 :-C 很悲伤 :-O 惊讶 张大口 :-/ 怀疑</p>
-<p>仅支持西方颜文字，详细内容请见 <a href="https://danbooru.donmai.us/wiki_pages/tag_group%3Aface_tags">Danbooru颜文字部分</a> 或 <a href="https://zh.wikipedia.org/wiki/%E8%A1%A8%E6%83%85%E7%AC%A6%E8%99%9F%E5%88%97%E8%A1%A8?oldformat=true">维基百科</a></p>
-<h2 id="_12">多人物/单人物</h2>
-<p>打草图+IMG2IMG,这就秘诀～</p>
-<p>宽幅画作单人物生成最好打草图，进行色彩涂抹，确定画面主体。</p>
-<p>多人物确定人物数量，最好使用草稿/有色3d 排列 + 图生图。</p>
-<p>人数超过三个就难以控制效果，人数大于6的图像模型里估计没有...</p>
-<h2 id="_13">进行手掌修复</h2>
-<p>将图片送入 inpaint，使用大致相同的提示词，将关于 <code>手</code> 的提示放在前面，根据你希望它变动多少来设置降噪（如果只是希望手更完整，调至0.25以下)，然后保留步骤和 CFG 与 txt2img gen 相同。</p>
-<p>或者仅遮住手部，以全分辨率修复，大大降低填充（它使用周围的像素来创建上下文，但只是在重新制作手部）并仅提示手部问题（详细的手部描写等）</p>
-<p>CFG 越高，越符合提示词，降噪越高越偏离原图。</p>
-<h2 id="_14">同人物&amp;差分</h2>
-<p>需要用到进阶的 Img2Img 相关内容，最好的方法是准备一个带有色彩的 3D 母本模型，然后这样就可以保证基本一致。</p>
-<p>也可以用很多提示词来限制角色内容，出很多张，挑能用的作品。</p>
-<p>如果是表情或者是背景，可以采用进阶教程中的 重绘画 技巧。</p>
-<p>如果你想了解一些差分的实例，<a href="https://seesaawiki.jp/nai_ch/d/%c7%ed%a4%ae%a5%b3%a5%e9%a5%c6%a5%af">5CH日语Wiki</a> 提供了一个实例。</p>
-<h2 id="_15">复刻</h2>
-<p>如果想在生成上复刻，需要相同的 <code>seed</code> ，提示词，和其他参数(甚至尺寸)。不过如果对方使用了风格化，那么你就几乎无法复刻。</p>
-<p>--自欺欺人式复刻：图转图，降噪拉到到 0.3 以下...--</p>
-<h2 id="ai">使用 Ai 进行设计</h2>
+<p>The rest of the background of a buttoned image will be processed as black.</p>
+<p>If you need a background, the results are generally not very good and it is recommended to fill in the colours before manipulating them.</p>
 <ul>
-<li>背景</li>
+<li>Rough noise</li>
 </ul>
-<p>拿到一张饱和度稍微高的照片后，可以用 AI 进行处理，然后当作背景使用。使用 <code>anime coloring</code> 来增强动漫风格。</p>
+<p>Not enough detail, characters look like rice cakes. Needs proper enhancement step.</p>
+<h2 id="associated">Associated</h2>
+<p>The core logic of cross-domain terminology is to <strong>narrow the scope of the specified data</strong> and start with <strong>platforms, domains, events</strong> outside of the screen content to enhance the effect.</p>
+<p>Yes! You can use <a href="https://www.owlnet.rice.edu/~engl377/film.html">Film Glossary</a> <a href="http://userhome.brooklyn.cuny.edu/anthro">FILM GLOSSARY Photography Terminology</a> in the prompt /jbeatty/COURSES/glossary.htm), <a href="https://en.wikipedia.org/wiki/Category:Cinematic_techniques">Cinematic techniques</a>, and painting terms (types) to control the basics.</p>
+<p>Crossover! You can even use various thrill-sport terms to produce some special effects .... such as airborne</p>
+<p>for example, depth of field, aperture, composition, camera position, elements of movement, <a href="https://gallerix.asia/pedia/photography-glossary/">a Chinese introduction to the glossary of artistic photography</a></p>
+<p><strong>BUT</strong> this effect may have the added effect of introducing data into the picture that you don't want to see in the style (e.g. live action<strong> rather than </strong>but secondary). Get the measurements right. Add Step and style cues as appropriate to improve.</p>
+<p>You can also use <strong>platform names</strong> to limit the scope of the dataset, for example, terms like pixiv.</p>
+<p><strong>extended reading</strong></p>
+<p><a href="https://danbooru.donmai.us/wiki_pages/tag_group%3Aimage_composition">Recommended use of terms contained in Danbooru</a></p>
+<p><a href="https://danbooru.donmai.us/wiki_pages/tag_groups">Danbooru tag group</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Category:Cinematic_techniques">Useful film terms </a></p>
+<p><a href="https://www.bhphotovideo.com/explora/video/tips-and-solutions/filmmaking-101-camera-shot-types">Types of shots</a> </p>
+<p><a href="https://en.wikipedia.org/wiki/Category:Television_terminology">TV terms</a> </p>
+<p><a href="https://en.wikipedia.org/wiki/Category:Photography_by_genre">Types of photography </a></p>
+<p><a href="https://zh.wikipedia.org/zh-cn/%E9%AB%98%E9%80%9F%E6%91%84%E5%BD%B1">Photographic terms</a> </p>
+<p><a href="https://en.wikipedia.org/wiki/Extreme_sport">Extreme sports</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Category:Sports_by_type">Sports_by_type</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Composition_(visual_arts)">Art of composition</a></p>
+<h2 id="iterative-sketches-5">Iterative sketches <sup id="fnref:8"><a class="footnote-ref" href="#fn:8">5</a></sup></h2>
+<p>Here's a discussion on how to optimise <strong>hand sketches</strong> by Ai drawing, <em>note not anime girls</em>.</p>
+<p>In the first iteration you don't need too many Steps, the CFG can be very low (for better diversification results) and Denoising should be around 0.3-0.4 if you don't want to lose the sketch completely.</p>
+<p>In the final iteration, increase the Steps and Denoising strength (but no more than 0.8, otherwise the image will be corrupted, especially at greater than 512*512) see <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues /2213#issuecomment-1274137775">here</a>, while increasing the CFG and size as needed.</p>
+<p>You can always fix the hints (add or remove details that appear) and try a different sampler.</p>
+<p>Also, shouldn't you use a fixed and unchanging seed for the initial generation?</p>
+<p>If you provide a seed (instead of a random -1) your image will soon become oversaturated, oversharpened, overpixelated ..... Of course you can use a fixed seed if you want to fine tune it.</p>
+<h2 id="facial-expressions-control">Facial expressions Control</h2>
+<p>We can control the expressions in the picture using the Face Text!</p>
+<p>:-) smile :-( unhappy ;-) wink :-D happy :-P tongue out :-C very sad :-O surprised open mouth :-/ suspicious</p>
+<p>Only western face characters are supported, for details see <a href="https://danbooru.donmai.us/wiki_pages/tag_group%3Aface_tags">Danbooru Face Characters section</a> or <a href="https://zh.wikipedia.org/wiki/%">Wikipedia</a> E8%A1%A8%E6%83%85%E7%AC%A6%E8%99%9F%E5%88%97%E8%A1%A8?oldformat=true)</p>
+<h2 id="multi-figuresingle-figure">Multi-figure/single-figure</h2>
+<p>Answer: sketching + IMG2IMG</p>
+<p>Wide paintings of single figures are best sketched and coloured to determine the subject of the picture.</p>
+<p>Multiple figures determine the number of figures, best to use sketches/coloured 3d arrangement + figure generation.</p>
+<p>More than three figures makes it difficult to control the effect</p>
+<p>Maybe There are no models for images with more than 6 people...</p>
+<h2 id="make-a-hand-fix">Make a hand fix</h2>
+<p>Feed the image into inpaint, use roughly the same prompting, put the cue about the <code>hand</code> in front, set the noise reduction depending on how much you want it to change (if you just want the hand to be more complete, tune it to 0.25 or less), then leave the steps the same as CFG and txt2img gen.</p>
+<p>Or just mask the hand, fix it at full resolution, greatly reduce the padding (it uses the surrounding pixels to create the context, but is just re-creating the hand) and only hint at hand issues (detailed hand depiction etc)</p>
+<p>The higher the CFG, the more it matches the prompts, and the higher the noise reduction the more it deviates from the original image.</p>
+<h2 id="identical-figures-differentiation">Identical figures &amp; differentiation</h2>
+<p>Advanced Img2Img related content is required, the best way to do this is to prepare a 3D master model with colours and then this will ensure basic consistency.</p>
+<p>You can also use a lot of prompts to limit the content of the character, come up with many sheets and pick the pieces that work.</p>
+<p>If it's an expression or a background, you can use the repainting technique from the advanced tutorial.</p>
+<p>If you want some examples of differencing, <a href="https://seesaawiki.jp/nai_ch/d/%c7%ed%a4%ae%a5%b3%a5%e9%a5%c6%a5%af">5CH Japanese Wiki</a> provides an example.</p>
+<h2 id="designing-with-ai">Designing with Ai</h2>
 <ul>
-<li>图标</li>
+<li>Backgrounds</li>
 </ul>
-<p><a href="https://www.bilibili.com/video/BV1384y1B7MX">看这个</a></p>
+<p>Once you get a slightly more saturated photo, you can process it in AI and use it as a background.</p>
+<p>Use <code>anime coloring</code> to enhance the anime style.</p>
 <ul>
-<li>表情包</li>
+<li>Icons</li>
 </ul>
-<p>表情包效果真的一级棒。 <code>sticker</code> 配合 西方颜文字 完成度超高！</p>
-<p>文档编写者试了一下，以下 prompt 可以出高质量表情包。</p>
-<p>不要对贴纸要求质量提示词。</p>
-<p><strong>积极词汇</strong></p>
+<p><a href="https://www.bilibili.com/video/BV1384y1B7MX">Look at this</a></p>
+<ul>
+<li>Emotion packs</li>
+</ul>
+<p>The emojis work really well. The <code>sticker</code> with the western face script is very well done!</p>
+<p>The documentation writer has tried the following prompt and it produces high quality emojis.</p>
+<p>Don't ask for quality prompt words for stickers.</p>
+<p><strong>positive vocabulary</strong></p>
 <p><div class="highlight"><pre><span></span><code>1girl,sticker,Chibi,Q,
 white background,
 </code></pre></div>
-<code>masterpiece,best quality</code> 可加可不加，质量不够就加</p>
-<p><code>lowres</code> 可加可不加，不够复古就加</p>
-<p><code>Chibi</code> 控制角色为 Q版(大头小身)，不够 Q 就加</p>
-<p><code>sticker</code> 是指定风格为社交软件贴纸，必须</p>
-<p><strong>消极词汇</strong></p>
-<div class="highlight"><pre><span></span><code>bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, jpeg artifacts, signature, watermark, username, blurry, bad feet,3D
+<code>masterpiece,best quality</code> may or may not be added, if quality is not enough</p>
+<p><code>lowres</code> can be added or not, add if not vintage enough</p>
+<p><code>Chibi</code> controls the character to be Q (big head, small body), add if not Q enough</p>
+<p><code>sticker</code> is to specify the style as a social media sticker, required</p>
+<p><strong>negative vocabulary</strong></p>
+<div class="highlight"><pre><span></span><code>bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, jpeg artifacts, signature, watermark, username, blurry, bad feet
 </code></pre></div>
-<p>low quality 可加可不加，如果想更加平面化，请加入 3D 到负面提示。</p>
-<p>尺寸要求正方形。</p>
+<p>low quality can be added or not, if you want to be more flat, please add <code>3D</code> to negative hints.</p>
+<p>Size required square.</p>
 <ul>
-<li>立绘</li>
+<li>Character design</li>
 </ul>
 <iframe src="//player.bilibili.com/player.html?aid=559362671&bvid=BV14e4y1U7r9&cid=869144379&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 <blockquote>
 <p>BV14e4y1U7r9</p>
 </blockquote>
-<h2 id="_16">参数</h2>
-<p>为什么不去 <a href="https://danbooru.donmai.us/wiki_pages/howto%3Atag_checklist">这里</a> 看<a href="https://danbooru.donmai.us/wiki_pages/tag_groups">原始数据站点</a>的参数呢？</p>
-<p><a href="https://github.com/EhTagTranslation">E 站标签翻译项目</a></p>
-<h3 id="nai">NAI 在使用的出图参数</h3>
+<h2 id="prompt">Prompt</h2>
+<p>SEE <a href="https://danbooru.donmai.us/wiki_pages/howto%3Atag_checklist">HERE</a> From<a href="https://danbooru.donmai.us/wiki_pages/tag_groups">Origin wiki</a></p>
+<h3 id="nai-in-use-out-parameters">NAI in use out parameters</h3>
 <ul>
 <li>
-<p>使用全量模型(官方的GPU云特别强悍)</p>
+<p>Use the full model</p>
 </li>
 <li>
 <p>CLIP layer = 2</p>
 </li>
 <li>
-<p>使用 ema 权重加载，将yaml 配置其中的 <code>use_ema</code> 设置为 true</p>
+<p>Use ema weight loading, set <code>use_ema</code> to true in the yaml configuration</p>
 </li>
 <li>
-<p>将 <code>sigma noise/strength</code> 重置为默认值 1</p>
+<p>reset <code>sigma noise/strength</code> to the default value of 1</p>
 </li>
 <li>
-<p>设定 <code>eta noise seed delta</code> 为 31337（使 <code>sigma noise/strength</code> 无需使用 0.69 / 0.67）</p>
+<p>set <code>eta noise seed delta</code> to 31337 (so that <code>sigma noise/strength</code> does not need to use 0.69 / 0.67)</p>
 </li>
 <li>
-<p>如果 prompt 有权重，转换权重（ WebUi 占比 1.1 ，NAI 占比 1.05）</p>
+<p>If prompt has weights, convert the weights (WebUi to 1.1, NAI to 1.05)</p>
 </li>
 <li>
-<p>使用 <code>--no-half</code> 参数启动程序（次要）</p>
+<p>Use the <code>-no-half</code> parameter to start the program (secondary)</p>
 </li>
 </ul>
-<p><strong>NAI 默认的模型设置</strong></p>
+<p><strong>NAI default model settings</strong></p>
 <div class="highlight"><pre><span></span><code>steps&quot;: 28, &quot;sampler&quot;: &quot;[sampler]&quot;, &quot;seed&quot;: [seed], &quot;strength&quot;: 0.69, &quot;noise&quot;: 0.667, &quot;scale&quot;: 11.0,
 
 Strength ， noise 是 eta 和 sigma
 
 scale 就是 CFG scale
 </code></pre></div>
-<p><strong>NAI 默认的 <code>SFW</code> 消极提示词为</strong>
+<p><strong>NAI default <code>SFW</code> negative prompt</strong></p>
 <div class="highlight"><pre><span></span><code>lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry
-</code></pre></div></p>
-<p><strong>其他</strong></p>
-<p>将所有提示词前面加入 <code>masterpiece, best quality</code></p>
-<p>Clip 跳过 0，其他一切都很好（afaik 不要使用超网络、v2、yaml、VAE）</p>
-<h3 id="naiwebuisd">转换——NAI和WebUi(SD)的增强语法不同</h3>
-<p><strong>Prompts 参数括号转换</strong></p>
-<p>在 NAI 和 Webui 之间转换加强参数，相关的机器人服务 <a href="https://t.me/M2NM2NBot">M2NM2NBot</a></p>
-<p>相关的 <a href="https://github.com/naisd5ch/novel-ai-5ch-wiki-js">网页JS</a></p>
-<p>权重增强标识：NAI 是 <code>{}</code> ，WebUi(SD) 是 <code>()</code></p>
-<h3 id="_17">元素法典</h3>
-<p>元素法典提供了一个即查即用的模板库(类比作文大全)，里面有Tag的调试记录，方便快捷。</p>
-<p><a href="https://docs.qq.com/doc/DWHl3am5Zb05QbGVs">元素法典一卷</a></p>
-<p><a href="https://docs.qq.com/doc/DWGh4QnZBVlJYRkly">元素法典第一点五卷</a></p>
-<p><a href="https://space.bilibili.com/1981251194">元素法典制作委员会</a></p>
-<h3 id="1">良好参数(风格趋向插画)<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">1</a></sup></h3>
+</code></pre></div>
+<p><strong>other</strong></p>
+<p>Add <code>masterpiece, best quality</code> in front of all prompt words</p>
+<p>Clip skip 0, everything else is fine (afaik don't use supernet, v2, yaml, VAE)</p>
+<h3 id="conversions-nai-and-webuisd-have-different-enhanced-syntax">Conversions - NAI and WebUi(SD) have different enhanced syntax</h3>
+<p><strong>Prompts parameter bracket conversion</strong></p>
+<p>Convert enhanced parameters between NAI and Webui, related tgbot services <a href="https://t.me/M2NM2NBot">M2NM2NBot</a></p>
+<p>Related <a href="https://github.com/naisd5ch/novel-ai-5ch-wiki-js">WebJS</a></p>
+<p>Weight enhancement markers: NAI is <code>{}</code> and WebUi(SD) is <code>()</code></p>
+<h3 id="prompt-magic-book">Prompt Magic Book</h3>
+<p>The Prompt Magic Book provides a library of ready-to-use templates (analogous to the Composition Book) with a convenient debugging log for Tag.</p>
+<p><a href="https://docs.qq.com/doc/DWHl3am5Zb05QbGVs">Prompt Magic Book Volume 1</a></p>
+<p><a href="https://docs.qq.com/doc/DWGh4QnZBVlJYRkly">Prompt The Book of Magic Volume 1.5</a></p>
+<p><a href="https://space.bilibili.com/1981251194">Prompt 魔法書製作委員會</a></p>
+<h3 id="good-parameters-style-tends-to-be-illustrative-1">Good parameters (style tends to be illustrative) <sup id="fnref:4"><a class="footnote-ref" href="#fn:4">1</a></sup></h3>
 <div class="highlight"><pre><span></span><code>{an extremely delicate and beautiful}
 </code></pre></div>
-<p><a href="https://danbooru.donmai.us/wiki_pages?commit=Search&amp;search%5Btitle_normalize%5D=%2A_%28medium%29">绘画媒介全分类</a></p>
-<p><a href="https://rentry.org/anime_and_titties">动漫人物/艺术家/风格化列表/Pt文件</a></p>
-<p><a href="https://www.yuque.com/longyuye/lmgcwy">风格化：人偶教室</a></p>
-<p><a href="https://seesaawiki.jp/nai_ch/d/%b2%e8%c9%f7%a1%a6%b9%bd%bf%de">风格化，日语Wiki</a></p>
-<p><a href="https://www.bilibili.com/video/BV1TP411N71t/">风格化: 32种</a></p>
-<p><a href="https://rentry.org/artists_sd-v1-4">艺术家列表/SD1.4</a></p>
-<p><a href="https://www.urania.ai/top-sd-artists">艺术家列表/SD1.4/1,833 位艺术家</a></p>
-<p><a href="https://gallerix.asia/storeroom/">艺术家博物馆</a></p>
-<h4 id="_18">草图风格</h4>
+<p><a href="https://danbooru.donmai.us/wiki_pages?commit=Search&amp;search%5Btitle_normalize%5D=%2A_%28medium%29">Full classification of drawing mediums</a></p>
+<p><a href="https://rentry.org/anime_and_titties">List of anime characters/artists/stylizations/Pt files</a></p>
+<p><a href="https://www.yuque.com/longyuye/lmgcwy">Stylization: Doll Class</a></p>
+<p><a href="https://seesaawiki.jp/nai_ch/d/%b2%e8%c9%f7%a1%a6%b9%bd%bf%de">Stylization, Japanese Wiki</a></p>
+<p><a href="https://www.bilibili.com/video/BV1TP411N71t/">Stylization: 32 types</a></p>
+<p><a href="https://rentry.org/artists_sd-v1-4">Artist List/SD1.4</a></p>
+<p><a href="https://www.urania.ai/top-sd-artists">Artist List/SD1.4/1,833 artists</a></p>
+<p><a href="https://gallerix.asia/storeroom/">Artist Museum</a></p>
+<p><a href="https://proximacentaurib.notion.site/e28a4f8d97724f14a784a538b8589e7d?v=42948fd8f45c4d47a0edfc4b78937474">Stable Diffusion Artist Style Studies</a></p>
+<h4 id="_1">草图风格</h4>
 <table>
 <thead>
 <tr>
@@ -1938,7 +1984,7 @@ scale 就是 CFG scale
 </tbody>
 </table>
 <p>利用sketch，pastel color，lineart的tag模拟一张图的绘画过程</p>
-<h4 id="_19">艺术风格</h4>
+<h4 id="_2">艺术风格</h4>
 <table>
 <thead>
 <tr>
@@ -1977,7 +2023,7 @@ scale 就是 CFG scale
 </tr>
 </tbody>
 </table>
-<h4 id="_20">杂志/设定集 风格</h4>
+<h4 id="_3">杂志/设定集 风格</h4>
 <table>
 <thead>
 <tr>
@@ -2393,45 +2439,46 @@ scale 就是 CFG scale
 </tr>
 </tbody>
 </table>
-<h2 id="_21">市场应用情况调查</h2>
-<p>这里是稳定扩散（非 NAI 模型）的应用情况。</p>
+<h2 id="market-adoption-survey">Market Adoption Survey</h2>
+<p>Here are the applications for stable diffusion (non-NAI models).</p>
+<p>https://www.reddit.com/r/StableDiffusion/comments/yh8j0a/ai_art_is_popular_and_makes_money_confessions_of/</p>
 <ul>
 <li>3D</li>
 </ul>
-<p>在 blender 上，Ai 有 <a href="https://blendermarket.com/products/ai-render/?ref=110">渲染插件</a></p>
+<p>On blender, Ai has <a href="https://blendermarket.com/products/ai-render/?ref=110">rendering plug-in</a></p>
 <ul>
-<li>设计</li>
+<li>Design</li>
 </ul>
-<p><a href="https://www.xda-developers.com/microsoft-designer-image-creator-ai-dall-e-2/">Microsoft 365 工具套件</a></p>
-<p><a href="https://github.com/matrix4767">为 Age of Empires 3 Definitive edition 的游戏模组生成肖像</a></p>
-<p><a href="https://github.com/horribleCodes">产品和架构设计/素描</a></p>
+<p><a href="https://www.xda-developers.com/microsoft-designer-image-creator-ai-dall-e-2/">Microsoft 365 Tool Suite</a></p>
+<p><a href="https://github.com/matrix4767">Portrait generation for the Age of Empires 3 Definitive edition of the game module</a></p>
+<p><a href="https://github.com/horribleCodes">Product and architecture design/sketch</a></p>
 <ul>
-<li>专辑图</li>
+<li>Album artwork</li>
 </ul>
-<p><a href="https://github.com/Chilluminati91">用稳定扩散生成歌手的图像放入视频</a></p>
+<p><a href="https://github.com/Chilluminati91">Image generation of singer with stable diffusion into video</a></p>
 <ul>
-<li>配图</li>
+<li>Supporting images</li>
 </ul>
-<p><a href="https://github.com/ClashSAN">制作怪图作为记忆工具</a></p>
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3219">稳定扩散的真实用例</a></p>
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3572">稳定扩散的应用结合</a></p>
+<p><a href="https://github.com/ClashSAN">Making weird diagrams as a memory tool</a></p>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3219">A real-life use case for stable diffusion</a></p>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3572">A combination of applications for stable diffusion</a></p>
 <ul>
-<li>自媒体</li>
+<li>Self-Media</li>
 </ul>
-<p>哔哩哔哩已经一大堆了，抖音也不少，可以做的话题很多</p>
+<p>There's been a lot of it.</p>
 <ul>
-<li>套壳</li>
+<li>Redistribution for sale</li>
 </ul>
-<p>无良某些公司套壳开源项目，比如 某某画廊，某某版图。</p>
-<p>(题外：韭菜采收容易，可用于园艺，在世界广泛种植)</p>
+<p>Unconscionable companies re-open source projects</p>
+<p>(The Chinese version of the document here is meant to condemn people who disregard open source agreements to package and sell open source projects)</p>
 <ul>
-<li>插图/背景</li>
+<li>Illustrations/backgrounds</li>
 </ul>
-<p>小说插图，AI画背景(据说原版模型也很好用)</p>
+<p>Novel illustrations, AI painting backgrounds (the original model is said to work well too)</p>
 <ul>
 <li>NFT</li>
 </ul>
-<p>？</p>
+<p>?</p>
 <div class="footnote">
 <hr />
 <ol>
@@ -2469,12 +2516,12 @@ scale 就是 CFG scale
 <div class="md-source-file">
   <small>
     
-      最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月6日 06:35:37</span>
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 6, 2022 10:36:04</span>
       
         <br>
-        创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 03:59:46</span>
+        Created:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 07:44:44</span>
       
     
   </small>
@@ -2493,7 +2540,7 @@ scale 就是 CFG scale
         
           <a href="#" class="md-top md-icon" data-md-component="top" hidden>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
-            回到页面顶部
+            Back to top
           </a>
         
       </main>
@@ -2501,32 +2548,32 @@ scale 就是 CFG scale
         <footer class="md-footer">
   
     
-    <nav class="md-footer__inner md-grid" aria-label="页脚" >
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../base/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 基本指南" rel="prev">
+        <a href="../WebUi/extension/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Extension" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
-                上一页
+                Previous
               </span>
-              基本指南
+              Extension
             </div>
           </div>
         </a>
       
       
         
-        <a href="../Advanced/" class="md-footer__link md-footer__link--next" aria-label="下一页: 进阶指南" rel="next">
+        <a href="../../train/" class="md-footer__link md-footer__link--next" aria-label="Next: Intro" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
-                下一页
+                Next
               </span>
-              进阶指南
+              Intro
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -2584,7 +2631,7 @@ scale 就是 CFG scale
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "toc.follow", "navigation.top", "navigation.tracking", "navigation.indexes", "navigation.expand", "navigation.sections"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "toc.follow", "navigation.top", "navigation.tracking", "navigation.indexes", "navigation.expand", "navigation.sections"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
