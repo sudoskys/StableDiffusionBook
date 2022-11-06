@@ -1099,6 +1099,88 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#prompt" class="md-nav__link">
+    Prompt
+  </a>
+  
+    <nav class="md-nav" aria-label="Prompt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nai-in-use-out-parameters" class="md-nav__link">
+    NAI in use out parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conversions-nai-and-webuisd-have-different-enhanced-syntax" class="md-nav__link">
+    Conversions - NAI and WebUi(SD) have different enhanced syntax
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-magic-book" class="md-nav__link">
+    Prompt Magic Book
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#good-parameters-style-tends-to-be-illustrative-1" class="md-nav__link">
+    Good parameters (style tends to be illustrative) 1
+  </a>
+  
+    <nav class="md-nav" aria-label="Good parameters (style tends to be illustrative) 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    草图风格
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    艺术风格
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    杂志/设定集 风格
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sfw" class="md-nav__link">
+    常用参数:SFW
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#market-adoption-survey" class="md-nav__link">
+    Market Adoption Survey
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1128,8 +1210,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../info/" class="md-nav__link">
-        Prompt-Info-Script
+      <a href="../extension/" class="md-nav__link">
+        Extension
       </a>
     </li>
   
@@ -1449,6 +1531,88 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#prompt" class="md-nav__link">
+    Prompt
+  </a>
+  
+    <nav class="md-nav" aria-label="Prompt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nai-in-use-out-parameters" class="md-nav__link">
+    NAI in use out parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conversions-nai-and-webuisd-have-different-enhanced-syntax" class="md-nav__link">
+    Conversions - NAI and WebUi(SD) have different enhanced syntax
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-magic-book" class="md-nav__link">
+    Prompt Magic Book
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#good-parameters-style-tends-to-be-illustrative-1" class="md-nav__link">
+    Good parameters (style tends to be illustrative) 1
+  </a>
+  
+    <nav class="md-nav" aria-label="Good parameters (style tends to be illustrative) 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    草图风格
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    艺术风格
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    杂志/设定集 风格
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sfw" class="md-nav__link">
+    常用参数:SFW
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#market-adoption-survey" class="md-nav__link">
+    Market Adoption Survey
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1535,7 +1699,7 @@
 <h2 id="curbing-style-pollution">Curbing style pollution</h2>
 <p>Introduces how to generate images in WebUi with the subject as the focus, rather than the style of the drawing.<sup id="fnref:12"><a class="footnote-ref" href="#fn:12">9</a></sup></p>
 <p>To get the desired result, we change <code>style</code> to <code>[style:10]</code> </p>
-<p>In Automatic 1111's WebUi cue word method, [x:10] tells stable diffusion until the tenth step before rendering the cue word.</p>
+<p>In Automatic 1111's WebUi prompt method, [x:10] tells stable diffusion until the tenth step before rendering the prompt.</p>
 <p>By the time 10 steps are reached, a basic image has been formed, so styling pollutes the main component recklessly, instead acting like an IMG2IMG (which you can think of as a form of Img2img) over the existing image</p>
 <p>You can experiment with this number depending on how many overall steps you've done. If you change the format to [x:0.2] (i.e. a number below 1) then it becomes a percentage, [x:0.6] tells SD to wait until 60% of the total number of steps before implementing x, and so on.</p>
 <h2 id="the-secret-of-diagram-to-diagram-conversion">The secret of diagram to diagram conversion</h2>
@@ -1560,7 +1724,7 @@
 <p><code>medium full shot</code> MFS</p>
 <p><code>full shot</code>  FS</p>
 <h2 id="reproduction">Reproduction</h2>
-<p>If you want to reproduce it on the generation, you need the same <code>seed</code>, cue words, and other parameters (even size). However, if the other side uses stylisation, then you can hardly reproduce it.</p>
+<p>If you want to reproduce it on the generation, you need the same <code>seed</code>, prompts, and other parameters (even size). However, if the other side uses stylisation, then you can hardly reproduce it.</p>
 <p>--Self-deceptive reproduction: image to image, noise reduction to below 0.3...--</p>
 <h2 id="frivolous-details">Frivolous details</h2>
 <ul>
@@ -1630,12 +1794,12 @@
 <p>More than three figures makes it difficult to control the effect</p>
 <p>Maybe There are no models for images with more than 6 people...</p>
 <h2 id="make-a-hand-fix">Make a hand fix</h2>
-<p>Feed the image into inpaint, use roughly the same cue wording, put the cue about the <code>hand</code> in front, set the noise reduction depending on how much you want it to change (if you just want the hand to be more complete, tune it to 0.25 or less), then leave the steps the same as CFG and txt2img gen.</p>
+<p>Feed the image into inpaint, use roughly the same prompting, put the cue about the <code>hand</code> in front, set the noise reduction depending on how much you want it to change (if you just want the hand to be more complete, tune it to 0.25 or less), then leave the steps the same as CFG and txt2img gen.</p>
 <p>Or just mask the hand, fix it at full resolution, greatly reduce the padding (it uses the surrounding pixels to create the context, but is just re-creating the hand) and only hint at hand issues (detailed hand depiction etc)</p>
-<p>The higher the CFG, the more it matches the cue words, and the higher the noise reduction the more it deviates from the original image.</p>
+<p>The higher the CFG, the more it matches the prompts, and the higher the noise reduction the more it deviates from the original image.</p>
 <h2 id="identical-figures-differentiation">Identical figures &amp; differentiation</h2>
 <p>Advanced Img2Img related content is required, the best way to do this is to prepare a 3D master model with colours and then this will ensure basic consistency.</p>
-<p>You can also use a lot of cue words to limit the content of the character, come up with many sheets and pick the pieces that work.</p>
+<p>You can also use a lot of prompts to limit the content of the character, come up with many sheets and pick the pieces that work.</p>
 <p>If it's an expression or a background, you can use the repainting technique from the advanced tutorial.</p>
 <p>If you want some examples of differencing, <a href="https://seesaawiki.jp/nai_ch/d/%c7%ed%a4%ae%a5%b3%a5%e9%a5%c6%a5%af">5CH Japanese Wiki</a> provides an example.</p>
 <h2 id="designing-with-ai">Designing with Ai</h2>
@@ -1674,6 +1838,596 @@ white background,
 <blockquote>
 <p>BV14e4y1U7r9</p>
 </blockquote>
+<h2 id="prompt">Prompt</h2>
+<p>SEE <a href="https://danbooru.donmai.us/wiki_pages/howto%3Atag_checklist">HERE</a> From<a href="https://danbooru.donmai.us/wiki_pages/tag_groups">Origin wiki</a></p>
+<h3 id="nai-in-use-out-parameters">NAI in use out parameters</h3>
+<ul>
+<li>
+<p>Use the full model</p>
+</li>
+<li>
+<p>CLIP layer = 2</p>
+</li>
+<li>
+<p>Use ema weight loading, set <code>use_ema</code> to true in the yaml configuration</p>
+</li>
+<li>
+<p>reset <code>sigma noise/strength</code> to the default value of 1</p>
+</li>
+<li>
+<p>set <code>eta noise seed delta</code> to 31337 (so that <code>sigma noise/strength</code> does not need to use 0.69 / 0.67)</p>
+</li>
+<li>
+<p>If prompt has weights, convert the weights (WebUi to 1.1, NAI to 1.05)</p>
+</li>
+<li>
+<p>Use the <code>-no-half</code> parameter to start the program (secondary)</p>
+</li>
+</ul>
+<p><strong>NAI default model settings</strong></p>
+<div class="highlight"><pre><span></span><code>steps&quot;: 28, &quot;sampler&quot;: &quot;[sampler]&quot;, &quot;seed&quot;: [seed], &quot;strength&quot;: 0.69, &quot;noise&quot;: 0.667, &quot;scale&quot;: 11.0,
+
+Strength ， noise 是 eta 和 sigma
+
+scale 就是 CFG scale
+</code></pre></div>
+<p><strong>NAI default <code>SFW</code> negative prompt</strong></p>
+<div class="highlight"><pre><span></span><code>lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry
+</code></pre></div>
+<p><strong>other</strong></p>
+<p>Add <code>masterpiece, best quality</code> in front of all prompt words</p>
+<p>Clip skip 0, everything else is fine (afaik don't use supernet, v2, yaml, VAE)</p>
+<h3 id="conversions-nai-and-webuisd-have-different-enhanced-syntax">Conversions - NAI and WebUi(SD) have different enhanced syntax</h3>
+<p><strong>Prompts parameter bracket conversion</strong></p>
+<p>Convert enhanced parameters between NAI and Webui, related tgbot services <a href="https://t.me/M2NM2NBot">M2NM2NBot</a></p>
+<p>Related <a href="https://github.com/naisd5ch/novel-ai-5ch-wiki-js">WebJS</a></p>
+<p>Weight enhancement markers: NAI is <code>{}</code> and WebUi(SD) is <code>()</code></p>
+<h3 id="prompt-magic-book">Prompt Magic Book</h3>
+<p>The Prompt Magic Book provides a library of ready-to-use templates (analogous to the Composition Book) with a convenient debugging log for Tag.</p>
+<p><a href="https://docs.qq.com/doc/DWHl3am5Zb05QbGVs">Prompt Magic Book Volume 1</a></p>
+<p><a href="https://docs.qq.com/doc/DWGh4QnZBVlJYRkly">Prompt The Book of Magic Volume 1.5</a></p>
+<p><a href="https://space.bilibili.com/1981251194">Prompt 魔法書製作委員會</a></p>
+<h3 id="good-parameters-style-tends-to-be-illustrative-1">Good parameters (style tends to be illustrative) <sup id="fnref:4"><a class="footnote-ref" href="#fn:4">1</a></sup></h3>
+<div class="highlight"><pre><span></span><code>{an extremely delicate and beautiful}
+</code></pre></div>
+<p><a href="https://danbooru.donmai.us/wiki_pages?commit=Search&amp;search%5Btitle_normalize%5D=%2A_%28medium%29">Full classification of drawing mediums</a></p>
+<p><a href="https://rentry.org/anime_and_titties">List of anime characters/artists/stylizations/Pt files</a></p>
+<p><a href="https://www.yuque.com/longyuye/lmgcwy">Stylization: Doll Class</a></p>
+<p><a href="https://seesaawiki.jp/nai_ch/d/%b2%e8%c9%f7%a1%a6%b9%bd%bf%de">Stylization, Japanese Wiki</a></p>
+<p><a href="https://www.bilibili.com/video/BV1TP411N71t/">Stylization: 32 types</a></p>
+<p><a href="https://rentry.org/artists_sd-v1-4">Artist List/SD1.4</a></p>
+<p><a href="https://www.urania.ai/top-sd-artists">Artist List/SD1.4/1,833 artists</a></p>
+<p><a href="https://gallerix.asia/storeroom/">Artist Museum</a></p>
+<h4 id="_1">草图风格</h4>
+<table>
+<thead>
+<tr>
+<th>词</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sketch</td>
+<td>可以让图片看起来像随手画的草稿</td>
+</tr>
+<tr>
+<td>{{lineart}}</td>
+<td>可以让线条变得很粗</td>
+</tr>
+<tr>
+<td>{{{posing sketch}}}, {{monochrome}}</td>
+<td>黑白草图</td>
+</tr>
+<tr>
+<td>{rough sketch}</td>
+<td>上了颜色的草图</td>
+</tr>
+<tr>
+<td>monochrome+lineart</td>
+<td>情况下一般只会让眼睛上色，强调发色后头发也可以上色</td>
+</tr>
+<tr>
+<td>{{{monochrome}}}, {{{gray scale}}}, {{{pencil sketch lines}}}</td>
+<td>做出的铅笔速写的感觉</td>
+</tr>
+</tbody>
+</table>
+<p>利用sketch，pastel color，lineart的tag模拟一张图的绘画过程</p>
+<h4 id="_2">艺术风格</h4>
+<table>
+<thead>
+<tr>
+<th>词</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>chibi</td>
+<td>可以画出低头身比的效果(二头身, 三头身)</td>
+</tr>
+<tr>
+<td>{{watercolor pencil}}</td>
+<td>可以生成彩铅画</td>
+</tr>
+<tr>
+<td>{{faux traditional media}}</td>
+<td>可以做出签绘的风格</td>
+</tr>
+<tr>
+<td>anime screeshot，</td>
+<td>可以让画面变成动画风格</td>
+</tr>
+<tr>
+<td>{{{retro artstyle}}}</td>
+<td>赛璐璐风</td>
+</tr>
+<tr>
+<td oil="oil" painting="painting">{photorealistic}, {painting}, {realistic}, {sketch},</td>
+<td>厚涂</td>
+</tr>
+<tr>
+<td>pastel color和sketch</td>
+<td>搭配会有速涂的质感</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_3">杂志/设定集 风格</h4>
+<table>
+<thead>
+<tr>
+<th>词</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>official art</td>
+<td>变得更加官方一点</td>
+</tr>
+<tr>
+<td>three views from front, back and side和costume setup materials</td>
+<td>可以用来生成设定图</td>
+</tr>
+<tr>
+<td>multiple views</td>
+<td>会出现类似设定图</td>
+</tr>
+<tr>
+<td>{character sheet}</td>
+<td>会出现设定图</td>
+</tr>
+<tr>
+<td>magazine cover</td>
+<td>会把背景换成杂志封面, 配合office art更像真实杂志(虽然字没法看)</td>
+</tr>
+<tr>
+<td>magazine scan</td>
+<td>类似杂志内页的风格</td>
+</tr>
+<tr>
+<td>posing</td>
+<td>会强调有一个动作, 不至于出现混乱的动作(露出有六个手指头的手)</td>
+</tr>
+<tr>
+<td>caustics</td>
+<td>画面向主题聚焦, 类似海报</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sfw">常用参数:SFW</h3>
+<table>
+<thead>
+<tr>
+<th>人物数量</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数量</td>
+<td>, one boy , one girl , two boy ,two girl,one_boy_one_girl(这是错误的)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>人物画风</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>质量提升参数</td>
+<td>, masterpiece, best quality</td>
+</tr>
+<tr>
+<td>原神</td>
+<td>, Genshin Impact</td>
+</tr>
+<tr>
+<td>萝莉</td>
+<td>, female child , loli画风差</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>人物样貌</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>头发</td>
+<td>hair</td>
+</tr>
+<tr>
+<td>长发</td>
+<td>longhair</td>
+</tr>
+<tr>
+<td>短发</td>
+<td>shorthair</td>
+</tr>
+<tr>
+<td>眼睛</td>
+<td>eyes</td>
+</tr>
+<tr>
+<td>渐变颜色长发</td>
+<td>gradient pink longhair</td>
+</tr>
+<tr>
+<td>渐变颜色眼睛</td>
+<td>gradient pink eyes</td>
+</tr>
+<tr>
+<td>粗眉毛</td>
+<td>thick eyebrows</td>
+</tr>
+<tr>
+<td>猫尾巴</td>
+<td>cat tail</td>
+</tr>
+<tr>
+<td>猫耳朵</td>
+<td>cat ears</td>
+</tr>
+<tr>
+<td>动物耳朵</td>
+<td>animal ears</td>
+</tr>
+<tr>
+<td>毛茸茸的动物耳朵</td>
+<td>animal ear fluff</td>
+</tr>
+<tr>
+<td>刘海</td>
+<td>bangs</td>
+</tr>
+<tr>
+<td>两眼之间的头发</td>
+<td>hair between eyes</td>
+</tr>
+<tr>
+<td>眉毛后面的头发</td>
+<td>eyebrows behind hair</td>
+</tr>
+<tr>
+<td>锁骨</td>
+<td>collarbone</td>
+</tr>
+<tr>
+<td>斗篷(要在很前面才有效)</td>
+<td>cape</td>
+</tr>
+<tr>
+<td>乳房尺寸</td>
+<td>small breasts</td>
+</tr>
+<tr>
+<td>出汗</td>
+<td>sweating</td>
+</tr>
+<tr>
+<td>颜色丝袜(和长丝袜冲突)</td>
+<td>white stockings , black stockings</td>
+</tr>
+<tr>
+<td>长丝袜</td>
+<td>thighhighs</td>
+</tr>
+<tr>
+<td>女仆</td>
+<td>maid</td>
+</tr>
+<tr>
+<td>发带</td>
+<td>ribbon</td>
+</tr>
+<tr>
+<td>爱心眼</td>
+<td>heart-shaped pupils</td>
+</tr>
+<tr>
+<td>御姐/JK/辣妹?</td>
+<td>gyaru</td>
+</tr>
+<tr>
+<td>肌肉发达</td>
+<td>muscular</td>
+</tr>
+<tr>
+<td>天使翅膀(要是形容人的第一个才正常)</td>
+<td>angel wings</td>
+</tr>
+<tr>
+<td>颜色内裤(赠内衣)</td>
+<td>pink underpants</td>
+</tr>
+<tr>
+<td>肚脐</td>
+<td>navel</td>
+</tr>
+<tr>
+<td>颈部颜色项圈</td>
+<td>white collar</td>
+</tr>
+<tr>
+<td>黑色皮肤</td>
+<td>dark skin</td>
+</tr>
+<tr>
+<td>撕裂的衣服</td>
+<td>torn clothes</td>
+</tr>
+<tr>
+<td>撕裂的裤子</td>
+<td>torn legwear</td>
+</tr>
+<tr>
+<td>开襟夹克(配合叉开腿特色)</td>
+<td>open jacket</td>
+</tr>
+<tr>
+<td>异色瞳</td>
+<td>heterochromia_blue_red</td>
+</tr>
+<tr>
+<td>吊袜带(会和内衣冲突)</td>
+<td>garter straps</td>
+</tr>
+<tr>
+<td>靴子</td>
+<td>boots</td>
+</tr>
+<tr>
+<td>眼罩</td>
+<td>blindfold</td>
+</tr>
+<tr>
+<td>流泪</td>
+<td>tears</td>
+</tr>
+<tr>
+<td>项链</td>
+<td>necklace</td>
+</tr>
+<tr>
+<td>眼镜</td>
+<td>glasses</td>
+</tr>
+<tr>
+<td>比基尼</td>
+<td>bikini</td>
+</tr>
+<tr>
+<td>湿衣服</td>
+<td>wet clothes</td>
+</tr>
+<tr>
+<td>透明衣物</td>
+<td>transparent raincoat , transparent jacket , transparent tshirt</td>
+</tr>
+<tr>
+<td>唾液(自动伸舌头)</td>
+<td>saliva</td>
+</tr>
+<tr>
+<td>流口水(和唾液冲突)</td>
+<td>drooling</td>
+</tr>
+<tr>
+<td>水手服</td>
+<td>sailor dress</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>环境样式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>在床上</td>
+<td>on bed</td>
+</tr>
+<tr>
+<td>光线反射</td>
+<td>reflection light</td>
+</tr>
+<tr>
+<td>赛博朋克</td>
+<td>cyberpunk, city, kowloon, rain</td>
+</tr>
+<tr>
+<td>在地毯上</td>
+<td>on carpet</td>
+</tr>
+<tr>
+<td>在瑜伽垫上(它分不清什么是瑜伽垫，只知道色块比较大，所以要配合one girl用)</td>
+<td>on_yoga_mats</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>人物视角</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>正面视角</td>
+<td>from viewer</td>
+</tr>
+<tr>
+<td>从上到下视角</td>
+<td>from below</td>
+</tr>
+<tr>
+<td>全身</td>
+<td>full body</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>人物状态</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>叉开腿</td>
+<td>spread leg</td>
+</tr>
+<tr>
+<td>露出腋下</td>
+<td>armpits</td>
+</tr>
+<tr>
+<td>举起手</td>
+<td>hands up , arms up</td>
+</tr>
+<tr>
+<td>爪子手</td>
+<td>paw pose</td>
+</tr>
+<tr>
+<td>站立</td>
+<td>standing</td>
+</tr>
+<tr>
+<td>行走</td>
+<td>walking</td>
+</tr>
+<tr>
+<td>吐舌头</td>
+<td>tongue out</td>
+</tr>
+<tr>
+<td>抬起腿</td>
+<td>legs up</td>
+</tr>
+<tr>
+<td>手放背后</td>
+<td>arms behind back , hidden hands</td>
+</tr>
+<tr>
+<td>衬衫</td>
+<td>shirt</td>
+</tr>
+<tr>
+<td>长袖</td>
+<td>long sleeves</td>
+</tr>
+<tr>
+<td>连帽衫</td>
+<td>hoodie</td>
+</tr>
+<tr>
+<td>褶边</td>
+<td>frills</td>
+</tr>
+<tr>
+<td>喇叭裤</td>
+<td>bloomers</td>
+</tr>
+<tr>
+<td>白色连衣裙</td>
+<td>white dress</td>
+</tr>
+<tr>
+<td>捆绑</td>
+<td>bondage , bondage body , bondage foot , bondage hand</td>
+</tr>
+<tr>
+<td>蹲下</td>
+<td>crouch , squatting</td>
+</tr>
+<tr>
+<td>真画风</td>
+<td>photorealistic</td>
+</tr>
+<tr>
+<td>跪下</td>
+<td>kneel down</td>
+</tr>
+<tr>
+<td>湿身</td>
+<td>wet body</td>
+</tr>
+</tbody>
+</table>
+<h2 id="market-adoption-survey">Market Adoption Survey</h2>
+<p>Here are the applications for stable diffusion (non-NAI models).</p>
+<ul>
+<li>3D</li>
+</ul>
+<p>On blender, Ai has <a href="https://blendermarket.com/products/ai-render/?ref=110">rendering plug-in</a></p>
+<ul>
+<li>Design</li>
+</ul>
+<p><a href="https://www.xda-developers.com/microsoft-designer-image-creator-ai-dall-e-2/">Microsoft 365 Tool Suite</a></p>
+<p><a href="https://github.com/matrix4767">Portrait generation for the Age of Empires 3 Definitive edition of the game module</a></p>
+<p><a href="https://github.com/horribleCodes">Product and architecture design/sketch</a></p>
+<ul>
+<li>Album artwork</li>
+</ul>
+<p><a href="https://github.com/Chilluminati91">Image generation of singer with stable diffusion into video</a></p>
+<ul>
+<li>Supporting images</li>
+</ul>
+<p><a href="https://github.com/ClashSAN">Making weird diagrams as a memory tool</a></p>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3219">A real-life use case for stable diffusion</a></p>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3572">A combination of applications for stable diffusion</a></p>
+<ul>
+<li>Self-Media</li>
+</ul>
+<p>There's been a lot of it.</p>
+<ul>
+<li>Redistribution for sale</li>
+</ul>
+<p>Unconscionable companies re-open source projects</p>
+<p>(The Chinese version of the document here is meant to condemn people who disregard open source agreements to package and sell open source projects)</p>
+<ul>
+<li>Illustrations/backgrounds</li>
+</ul>
+<p>Novel illustrations, AI painting backgrounds (the original model is said to work well too)</p>
+<ul>
+<li>NFT</li>
+</ul>
+<p>?</p>
 <div class="footnote">
 <hr />
 <ol>
@@ -1712,7 +2466,7 @@ white background,
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 5, 2022 08:17:48</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 6, 2022 06:35:37</span>
       
         <br>
         Created:

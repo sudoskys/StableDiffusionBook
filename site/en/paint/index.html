@@ -974,8 +974,8 @@
   
   
     <li class="md-nav__item">
-      <a href="WebUi/info/" class="md-nav__link">
-        Prompt-Info-Script
+      <a href="WebUi/extension/" class="md-nav__link">
+        Extension
       </a>
     </li>
   
@@ -1272,6 +1272,19 @@
     Attention / Emphasis
   </a>
   
+    <nav class="md-nav" aria-label="Attention / Emphasis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dyes" class="md-nav__link">
+    dyes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1557,6 +1570,10 @@ However, others can frequently <strong>not</strong> reproduce this effect in the
 <p>In a <a href="https://github.com/JohannesGaessler/stable-diffusion-tools/tree/master/emphasis">quantitative analysis</a> square brackets did not have a consistent effect unless explicitly processed.</p>
 <p>The repetition of a certain keyword seems to increase its effect regardless of the specific script that is being used.</p>
 <p>Worth noting, the impact of any single token will be diminished the more tokens exist in your prompt. You'll also notice, because of this, that styles will fade out when adding new tokens. I strongly suggest increasing the token strength on style words as your prompt length increases, in order to maintain a consistent style, particularly in certain models.<sup id="fnref3:2"><a class="footnote-ref" href="#fn:2">2</a></sup></p>
+<h4 id="dyes">dyes</h4>
+<p>Each prompt is like a dye, they have different "affinities" and if the more common prompts, such as <code>loli</code> (placed alongside other prompts) have a greater impact than other prompts.</p>
+<p>For example, if you want to generate anime images and use the star <code>startrail</code> tag, there will be more star elements from real photos than the anime stars you expect to appear.</p>
+<p>Many words just don't carry the same weight in terms of benchmarks, so it's important to make reasonable adjustments to the effect.</p>
 <h3 id="image-size">Image size</h3>
 <p>Image size obviously affects content, if the height of the image increases it is more likely to produce an individual or separate thing. If the image width is increased, it is more likely to produce multiple people or landscapes.</p>
 <h2 id="extension">Extension</h2>
@@ -1578,7 +1595,7 @@ However, others can frequently <strong>not</strong> reproduce this effect in the
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 5, 2022 08:17:48</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 6, 2022 06:27:03</span>
       
         <br>
         Created:
