@@ -28,6 +28,13 @@ An extension for stable-diffusion-webui that adds a tab that lets you preview ho
 
 https://github.com/AUTOMATIC1111/stable-diffusion-webui-tokenizer
 
+### training-picker
+
+Extension for stable-diffusion-webui that allows the user to mux through the keyframes of a video, and automatically pick and export training examples from individual keyframes. 
+
+https://github.com/Maurdekye/training-picker
+
+
 ## Custom Scripts
 
 The content of this topic may not be instantly updated here, [source address](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts#prompt-interpolation)

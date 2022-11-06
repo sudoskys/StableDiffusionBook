@@ -20,6 +20,12 @@ SDWebUi是一个框架，除了 NAI 模型外还有许多[其他模型](https://
 
 模型使用的数据集和标签对于效果影响非常重要，在使用之前要先了解数据来源。
 
+TODO:
+
+https://huggingface.co/lambdalabs/sd-pokemon-diffusers
+
+https://huggingface.co/Onodofthenorth/SD_PixelArt_SpriteSheet_Generator
+
 
 ### 某个模型
 

@@ -17,6 +17,11 @@ The dataset and labels used by the model are very important for the impact of th
 
 It is important to understand the source of the data before using it.
 
+### Some note
+
+https://huggingface.co/lambdalabs/sd-pokemon-diffusers
+
+https://huggingface.co/Onodofthenorth/SD_PixelArt_SpriteSheet_Generator
 
 ### Some model
 

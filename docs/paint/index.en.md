@@ -79,6 +79,10 @@ The toolbox that you can see when you open the page
 
 * [largest library of AI-generated images](https://libraire.ai/)
 
+### Style
+
+* [Stable Diffusion Artist Style Studies](https://proximacentaurib.notion.site/e28a4f8d97724f14a784a538b8589e7d?v=42948fd8f45c4d47a0edfc4b78937474)
+
 * [Top-sd-artists](https://www.urania.ai/top-sd-artists)
 
 * [artiststostudy](https://artiststostudy.pages.dev/)

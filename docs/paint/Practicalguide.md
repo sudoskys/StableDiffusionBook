@@ -373,6 +373,8 @@ Clip 跳过 0，其他一切都很好（afaik 不要使用超网络、v2、yaml�
 
 [艺术家博物馆](https://gallerix.asia/storeroom/)
 
+[稳定扩散的艺术家风格研究](https://proximacentaurib.notion.site/e28a4f8d97724f14a784a538b8589e7d?v=42948fd8f45c4d47a0edfc4b78937474)
+
 #### 草图风格
 
 | 词                                                            | 描述                                               |
@@ -518,6 +520,9 @@ Clip 跳过 0，其他一切都很好（afaik 不要使用超网络、v2、yaml�
 ## 市场应用情况调查
 
 这里是稳定扩散（非 NAI 模型）的应用情况。
+
+https://www.reddit.com/r/StableDiffusion/comments/yh8j0a/ai_art_is_popular_and_makes_money_confessions_of/
+
 
 - 3D
 

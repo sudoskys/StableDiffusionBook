@@ -85,6 +85,10 @@
 
 * [largest library of AI-generated images](https://libraire.ai/)
 
+### 风格化
+
+* [稳定扩散的艺术家风格研究](https://proximacentaurib.notion.site/e28a4f8d97724f14a784a538b8589e7d?v=42948fd8f45c4d47a0edfc4b78937474)
+
 * [Top-sd-artists](https://www.urania.ai/top-sd-artists)
 
 * [artiststostudy](https://artiststostudy.pages.dev/)

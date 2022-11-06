@@ -5,6 +5,13 @@
 
 安装完毕重启程序。**目前WebUi已经自带扩展管理器界面。**
 
+
+### training-picker
+
+stable-diffusion-webui 的扩展，允许用户通过视频的关键帧进行复用，并自动从各个关键帧中挑选和导出训练示例。 
+
+https://github.com/Maurdekye/training-picker
+
 ### 随机艺术家插件
 
 [项目地址](https://github.com/yfszzx/stable-diffusion-webui-inspiration)

@@ -381,6 +381,7 @@ The Prompt Magic Book provides a library of ready-to-use templates (analogous to
 
 [Artist Museum](https://gallerix.asia/storeroom/)
 
+[Stable Diffusion Artist Style Studies](https://proximacentaurib.notion.site/e28a4f8d97724f14a784a538b8589e7d?v=42948fd8f45c4d47a0edfc4b78937474)
 
 #### 草图风格
 
@@ -527,6 +528,8 @@ The Prompt Magic Book provides a library of ready-to-use templates (analogous to
 ## Market Adoption Survey
 
 Here are the applications for stable diffusion (non-NAI models).
+
+https://www.reddit.com/r/StableDiffusion/comments/yh8j0a/ai_art_is_popular_and_makes_money_confessions_of/
 
 - 3D
 
