@@ -233,6 +233,16 @@ The repetition of a certain keyword seems to increase its effect regardless of t
 
 Worth noting, the impact of any single token will be diminished the more tokens exist in your prompt. You'll also notice, because of this, that styles will fade out when adding new tokens. I strongly suggest increasing the token strength on style words as your prompt length increases, in order to maintain a consistent style, particularly in certain models.[^2]
 
+#### dyes
+
+Each prompt is like a dye, they have different "affinities" and if the more common prompts, such as `loli` (placed alongside other prompts) have a greater impact than other prompts.
+
+For example, if you want to generate anime images and use the star `startrail` tag, there will be more star elements from real photos than the anime stars you expect to appear.
+
+Many words just don't carry the same weight in terms of benchmarks, so it's important to make reasonable adjustments to the effect.
+
+
+
 ### Image size
 
 Image size obviously affects content, if the height of the image increases it is more likely to produce an individual or separate thing. If the image width is increased, it is more likely to produce multiple people or landscapes.

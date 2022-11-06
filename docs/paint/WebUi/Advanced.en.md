@@ -53,7 +53,7 @@ It is easier to adjust the skeleton of a 3D model than to find a sample drawing.
 
 Pose can be combined with **3D modelling**, you can use MMD related software.
 
-If it is a real life image, you need to increase the `CFG Scale` similarity and generate it together with cue words. The higher the noise reduction `denoising`, the lower the relevance.
+If it is a real life image, you need to increase the `CFG Scale` similarity and generate it together with prompts. The higher the noise reduction `denoising`, the lower the relevance.
 
 We recommend using [DAZ](https://www.daz3d.com/get_studio) or [blender](https://www.blender.org/) or Unity. In tests on 3D models, **colour mainly affects how the AI paints**, so your model needs to be textured.
 
@@ -90,7 +90,7 @@ The vertical axis is Denoising strength (online version of strength) and the hor
 
 - Vary the intensity and choose a lower denoising of around 0.3.
 
-- Then use Img2Img Inpaint + the relevant cue word to fix it, and change it again if you're not happy with it until you are.
+- Then use Img2Img Inpaint + the relevant prompt to fix it, and change it again if you're not happy with it until you are.
 
 - The image is then hyper-scored and noise reduced (image texture removed).
 

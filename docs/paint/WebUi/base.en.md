@@ -416,7 +416,7 @@ PS: too high a step count (>30) will not give better results
 `PLMS` is an effective LMS (classical method) that can better handle singularities in the structure of neural networks
 
 
-`DPM2` is a fantastic method that aims to improve DDIM by reducing the number of steps to obtain good results. It requires two denoising runs per step and it is about twice as fast as DDIM. But if you're experimenting with debugging cue words, this sampler doesn't work very well
+`DPM2` is a fantastic method that aims to improve DDIM by reducing the number of steps to obtain good results. It requires two denoising runs per step and it is about twice as fast as DDIM. But if you're experimenting with debugging prompts, this sampler doesn't work very well
 
 `Euler` is the simplest, and therefore one of the fastest
 

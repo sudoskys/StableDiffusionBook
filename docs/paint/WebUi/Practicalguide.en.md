@@ -35,7 +35,7 @@ Introduces how to generate images in WebUi with the subject as the focus, rather
 
 To get the desired result, we change `style` to `[style:10]` 
 
-In Automatic 1111's WebUi cue word method, [x:10] tells stable diffusion until the tenth step before rendering the cue word.
+In Automatic 1111's WebUi prompt method, [x:10] tells stable diffusion until the tenth step before rendering the prompt.
 
 By the time 10 steps are reached, a basic image has been formed, so styling pollutes the main component recklessly, instead acting like an IMG2IMG (which you can think of as a form of Img2img) over the existing image
 
@@ -82,7 +82,7 @@ Picture quality can be manipulated using the Super Score guide.
 
 ## Reproduction
 
-If you want to reproduce it on the generation, you need the same `seed`, cue words, and other parameters (even size). However, if the other side uses stylisation, then you can hardly reproduce it.
+If you want to reproduce it on the generation, you need the same `seed`, prompts, and other parameters (even size). However, if the other side uses stylisation, then you can hardly reproduce it.
 
 --Self-deceptive reproduction: image to image, noise reduction to below 0.3...--
 
@@ -204,18 +204,18 @@ Maybe There are no models for images with more than 6 people...
 
 ## Make a hand fix
 
-Feed the image into inpaint, use roughly the same cue wording, put the cue about the `hand` in front, set the noise reduction depending on how much you want it to change (if you just want the hand to be more complete, tune it to 0.25 or less), then leave the steps the same as CFG and txt2img gen.
+Feed the image into inpaint, use roughly the same prompting, put the cue about the `hand` in front, set the noise reduction depending on how much you want it to change (if you just want the hand to be more complete, tune it to 0.25 or less), then leave the steps the same as CFG and txt2img gen.
 
 Or just mask the hand, fix it at full resolution, greatly reduce the padding (it uses the surrounding pixels to create the context, but is just re-creating the hand) and only hint at hand issues (detailed hand depiction etc)
 
-The higher the CFG, the more it matches the cue words, and the higher the noise reduction the more it deviates from the original image.
+The higher the CFG, the more it matches the prompts, and the higher the noise reduction the more it deviates from the original image.
 
 
 ## Identical figures & differentiation
 
 Advanced Img2Img related content is required, the best way to do this is to prepare a 3D master model with colours and then this will ensure basic consistency.
 
-You can also use a lot of cue words to limit the content of the character, come up with many sheets and pick the pieces that work.
+You can also use a lot of prompts to limit the content of the character, come up with many sheets and pick the pieces that work.
 
 If it's an expression or a background, you can use the repainting technique from the advanced tutorial.
 
