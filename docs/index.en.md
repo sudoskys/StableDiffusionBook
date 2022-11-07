@@ -90,18 +90,21 @@ NAI's model, trained using tens of millions of Danbooru images, has been leaked 
     Leak Part 2 -- contains historical test code and models, program -- 124.54 GB, where the associated models to be downloaded are the same as in Part 1.
 
 
-## Some Community
+## Some communities
 
-### 中文
+#### Community
 
-<a href="https://discord.gg/vhsArSSA6K"><img src="https://img.shields.io/discord/1033769426216046622?color=blue&label=Discord_Ai%E7%BB%98%E7%94%BB%E4%B8%AD%E6%96%87%E7%BB%84" alt="Discord"></a> <a href="https://t.me/StableDiffusion_CN">
-<img src="https://img.shields.io/badge/Telegram-Group-blue" alt="Telegram"></a>
+- [Telegram](https://t.me/StableDiffusion_CN) Ai绘画中文社群
+<img src="https://img.shields.io/badge/Telegram-Group-blue" alt="Telegram">
+
+- [Discord](https://discord.gg/vhsArSSA6K) Ai绘画中文社群
+<img src="https://img.shields.io/discord/1033769426216046622?color=blue&label=Discord_Ai%E7%BB%98%E7%94%BB%E4%B8%AD%E6%96%87%E7%BB%84" alt="Discord">
+
+- [Discord stablediffusion Community](https://discord.gg/stablediffusion) 
+<img src="https://img.shields.io/discord/1002292111942635562?color=blue&label=Discord_stablediffusion" alt="Discord">
 
 
-### En
-
-<a href="https://discord.gg/stablediffusion"><img src="https://img.shields.io/discord/1002292111942635562?color=blue&label=Discord_stablediffusion" alt="Discord"></a>
-
+#### Forum
 
 [Reddit-DreamBooth](https://www.reddit.com/r/DreamBooth/)
 
