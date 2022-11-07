@@ -1,5 +1,6 @@
 # 禁止忽略site，此为Ci构建目录
 # Prohibit `ignore site`, this is the Ci build directory
 
+.cache
 
 # site/**/*
