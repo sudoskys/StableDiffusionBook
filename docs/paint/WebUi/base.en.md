@@ -433,8 +433,10 @@ and [wiki](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features
 |--|--|
 |<img src="https://user-images.githubusercontent.com/22421310/187063145-3d4f16d7-7bd6-4804-be1c-acf228ed2507.jpg" width="400" alt="效果">|<img src="https://user-images.githubusercontent.com/75739606/197824518-f68188a3-0572-4b52-8fe7-289b6d7b640b.jpg" width="400" alt="效果">|
 
->不同 step 和 采样器 的不同效果
 
+
+![exp](https://user-images.githubusercontent.com/40903705/200149887-935a6f95-0bfa-4f8e-b6b1-0fb0bfe0b39e.jpg)
+>from https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/4363
 
 
 ## Seeds

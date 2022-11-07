@@ -463,6 +463,10 @@ PS：调太高步数(>30)效果不会更好
 >不同 step 和 采样器 的不同效果
 
 
+![exp](https://user-images.githubusercontent.com/40903705/200149887-935a6f95-0bfa-4f8e-b6b1-0fb0bfe0b39e.jpg)
+>from https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/4363
+
+
 ## 种子调试
 
 实际的种子整数并不重要。它只是初始化一个定义扩散起点的随机数生成器，是一个随机初始值。

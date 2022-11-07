@@ -7,6 +7,46 @@
 
 ## 11/6
 
+- 新的采样高阶算法
+
+DPM-Solver (and the improved version DPM-Solver++) is a fast dedicated high-order solver for diffusion ODEs with the convergence order guarantee.
+
+[Add support for the new DPM-Solver++ samplers added to k-diffusion](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4304)
+
+[dpm-solver](https://github.com/LuChengTHU/dpm-solver)
+
+论文 https://arxiv.org/abs/2211.01095
+
+=== "SD 1.5"
+
+    <div class="sample" markdown>
+
+    ![exp](https://user-images.githubusercontent.com/116967051/200134579-dc31f8d4-abd6-4ef0-9d2c-1582a53ec1b0.png){ align=left width=300 }
+
+
+    Test From [Here](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4304#issuecomment-1304602296)
+
+    DPM-Solver++ 只需 15 到 20 个步骤即可实现出色的样本质量，尤其是 2M 和 2M Karras。 从 15 开始，所有步骤都非常详细，而且速度最快。
+
+    
+
+    </div>
+
+=== "Some Model"
+
+    <div class="sample" markdown>
+
+    ![exp](https://user-images.githubusercontent.com/40903705/200149887-935a6f95-0bfa-4f8e-b6b1-0fb0bfe0b39e.jpg){ align=left}
+
+    Test From [Here](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/4363)
+
+    *生成过程中使用了本地训练的超网络*
+
+    </div>
+
+
+- 新的模型
+
 eDiffi：具有专家降噪器集合的文本到图像扩散模型 
 https://deepimagination.cc/eDiffi/
 
