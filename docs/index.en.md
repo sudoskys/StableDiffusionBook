@@ -1,3 +1,7 @@
+---
+glightbox: false
+---
+
 # AiDraw
 
 <!--
