@@ -88,16 +88,19 @@ Stable diffusion本来是面向三次元的，而 NAI 是二次元特化版本�
 ## 一些社区
 
 
-### 中文
+#### 社群
 
-- 海外
+- [Telegram](https://t.me/StableDiffusion_CN) Ai绘画中文社群
+<img src="https://img.shields.io/badge/Telegram-Group-blue" alt="Telegram">
 
-<a href="https://discord.gg/vhsArSSA6K"><img src="https://img.shields.io/discord/1033769426216046622?color=blue&label=Discord_Ai%E7%BB%98%E7%94%BB%E4%B8%AD%E6%96%87%E7%BB%84" alt="Discord"></a> <a href="https://t.me/StableDiffusion_CN">
-<img src="https://img.shields.io/badge/Telegram-Group-blue" alt="Telegram"></a>
+- [Discord](https://discord.gg/vhsArSSA6K) Ai绘画中文社群
+<img src="https://img.shields.io/discord/1033769426216046622?color=blue&label=Discord_Ai%E7%BB%98%E7%94%BB%E4%B8%AD%E6%96%87%E7%BB%84" alt="Discord">
 
-### En
+- stablediffusion [Discord 英文社群](https://discord.gg/stablediffusion) 
+<img src="https://img.shields.io/discord/1002292111942635562?color=blue&label=Discord_stablediffusion" alt="Discord">
 
-<a href="https://discord.gg/stablediffusion"><img src="https://img.shields.io/discord/1002292111942635562?color=blue&label=Discord_stablediffusion" alt="Discord"></a>
+
+#### 论坛
 
 [Reddit-DreamBooth](https://www.reddit.com/r/DreamBooth/)
 
