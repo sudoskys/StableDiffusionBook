@@ -1,6 +1,4 @@
----
-glightbox: false
----
+
 
 # AiDraw
 
