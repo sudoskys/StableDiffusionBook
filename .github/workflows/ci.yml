@@ -17,7 +17,7 @@ jobs:
       # Picture Support
       - uses: actions/cache@v2
         with:
-            key: ${{ github.ref }}
+            key: ${{ github.ref }}+20221107
             path: .cache
             
       - uses: actions/setup-python@v2
