@@ -17,30 +17,31 @@ DPM-Solver (and the improved version DPM-Solver++) is a fast dedicated high-orde
 
 论文 https://arxiv.org/abs/2211.01095
 
-=== "SD 1.5"
-
-    <div class="sample" markdown>
-
-    ![exp](https://user-images.githubusercontent.com/116967051/200134579-dc31f8d4-abd6-4ef0-9d2c-1582a53ec1b0.png){ align=left width=300 }
-
-
-    Test From [Here](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4304#issuecomment-1304602296)
-
-    DPM-Solver++ 只需 15 到 20 个步骤即可实现出色的样本质量，尤其是 2M 和 2M Karras。从 15 步开始，所有步数的结果都非常详细，而且速度很快。
-
-    </div>
-
 === "Some Model"
 
     <div class="sample" markdown>
 
-    ![exp](https://user-images.githubusercontent.com/40903705/200149887-935a6f95-0bfa-4f8e-b6b1-0fb0bfe0b39e.jpg){ align=left}
+    ![exp](https://user-images.githubusercontent.com/40903705/200149887-935a6f95-0bfa-4f8e-b6b1-0fb0bfe0b39e.jpg){ align=left loading=lazy}
 
     Test From [Here](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/4363)
 
     *生成过程中使用了本地训练的超网络*
 
     </div>
+
+=== "SD 1.5"
+
+    <div class="sample" markdown>
+
+    ![exp](https://user-images.githubusercontent.com/116967051/200134579-dc31f8d4-abd6-4ef0-9d2c-1582a53ec1b0.png){loading=lazy align=left width=300 data-title="DPM-Solver++" data-description="DPM-Solver++ 只需 15 到 20 个步骤即可实现出色的样本质量，尤其是 2M 和 2M Karras。从 15 步开始，所有步数的结果都非常详细，而且速度很快。"}
+
+    Test From [Here](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4304#issuecomment-1304602296)
+
+    DPM-Solver++ 只需 15 到 20 个步骤即可实现出色的样本质量，尤其是 2M 和 2M Karras。从 15 步开始，所有步数的结果都非常详细，而且速度很快。
+
+
+    </div>
+
 
 
 - 新的模型
