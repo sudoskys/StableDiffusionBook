@@ -221,6 +221,12 @@ NAI模型使用 Danbooru2021 的数据, 而 Danbooru2022 还未训练(个人不�
 
 引用的开源教程.
 
+- 图标提供
+
+https://fonts.google.com/icons
+
+https://fontawesome.com/icons
+
 - 编辑器
 
 图表格式化 https://mdformatter.dswwsd.net/

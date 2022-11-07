@@ -106,7 +106,7 @@ plugins:
   - social:
       cards_font: Noto Sans SC
       cards_color:
-        fill: '#FFD1D5'
+        fill: '#DA909B'
         text: '#FAFAFF'
   - i18n:
       material_alternate: true
