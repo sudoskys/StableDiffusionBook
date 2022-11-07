@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Picture Support
-      - run: apt-get install libcairo2-dev libfreetype6-dev libffi-dev libjpeg-dev libpng-dev libz-dev
+      - run: sudo apt-get install libcairo2-dev libfreetype6-dev libffi-dev libjpeg-dev libpng-dev libz-dev
 
       - uses: actions/checkout@v3
         with:
