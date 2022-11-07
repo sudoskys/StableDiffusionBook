@@ -106,8 +106,8 @@ plugins:
   - social:
       cards_font: Noto Sans SC
       cards_color:
-        fill: '#E76F73'
-        text: '#FCF7F9'
+        fill: '#D8C7B5'
+        text: '#492D22'
   - i18n:
       material_alternate: true
       default_language: zh
