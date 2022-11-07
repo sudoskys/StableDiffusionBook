@@ -14,7 +14,6 @@ nav:
       - 术语: GettingStarted/term.md
       - 声明: GettingStarted/state.md
       - 贡献指南: GettingStarted/contributing.md
-      
   - 开始之前:
       - Perpare/index.md
   - 安装配置:
@@ -90,13 +89,20 @@ extra:
   social:
     - icon: fontawesome/brands/telegram
       link: 'https://t.me/s/StableDiffusion_CN_WIKI'
+
     - icom: fontawesome/brands/discord
       link: 'https://discord.gg/vhsArSSA6K'
+      
   generator: true
 
 plugins:
   - glightbox
   - search
+  - social
+    cards_font: Noto Sans SC
+    cards_color:
+        fill: "#FFD1D5"
+        text: "#FAFAFF"
   - i18n:
       material_alternate: true
       default_language: zh
