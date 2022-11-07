@@ -27,30 +27,6 @@
 更大的 batch size 可能稍微加快训练并稍微提升训练效果，但也需要更大的显存。
 
 
-### Pickle 安全提示
-
-[Pickle的介绍](https://docs.python.org/3/library/pickle.html)，Python object serialization
-
-文档说
-
-```
-pickle模块不安全。只解pickle您信任的数据。
-可以构造恶意pickle数据，在解pickle期间执行任意代码。永远不要解pickle可能来自不可信来源或可能被篡改的数据。
-```
-
-`.ckpt` 和 `.pt` 文件中都可能有恶意的 pickle，AUTOMATIC1111 在这方面做了一些验证。
-
-对于不安全的文件，会提示 
-
-```
-The file may be malicious, so the program is not going to read it. 
-You can skip this check with --disable-safe-unpickle commandline argument.
-```
-
-不一定保证百分百安全，甚至也会误报一些文件，所以建议从可靠信源下载模型。
-
-另外，你可以在 [这里](https://github.com/sudoskys/StableDiffusionBook/blob/main/docs/ckpt_safe) 看到一个简单的检查脚本。
-
 
 ### Textual Inversion (TI)
 

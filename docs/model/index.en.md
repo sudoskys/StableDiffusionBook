@@ -11,6 +11,34 @@ It is recommended to frequently pull code from remote code repositories `git pul
 SDWebUi is a framework with many [models] like for example `some model` (https://rentry.org/sdmodels)
 
 
+## Pickle?
+
+[About pickle](https://docs.python.org/3/library/pickle.html),that Python object serialization
+
+Docs says:
+```
+The pickle module is not secure. Only unpickle data you trust.
+
+It is possible to construct malicious pickle data which will execute arbitrary code during unpickling. Never unpickle data that could have come from an untrusted source, or that could have been tampered with.
+```
+
+Both `.ckpt` and `.pt` files may have malicious pickles in them, AUTOMATIC1111 has done some verification in this regard.
+
+For insecure files, it will prompt 
+
+```
+The file may be malicious, so the program is not going to read it. 
+You can skip this check with the --disable-safe-unpickle commandline argument.
+```
+
+
+It is not always guaranteed to be 100% secure, and some files may even be false positive, so it is recommended to download the model from a trusted source.
+
+In addition, you can see in [here] (https://github.com/sudoskys/StableDiffusionBook/blob/main/docs/ckpt_safe) is a simple check script.
+
+Related Projects [pickle_inspector](https://github.com/lopho/pickle_inspector).
+
+
 ## Model selection
 
 The dataset and labels used by the model are very important for the impact of the results.

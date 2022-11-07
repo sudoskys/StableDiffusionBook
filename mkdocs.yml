@@ -80,6 +80,10 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - md_in_html
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true 
 
 extra:
   social:
@@ -90,6 +94,7 @@ extra:
   generator: true
 
 plugins:
+  - glightbox
   - search
   - i18n:
       material_alternate: true

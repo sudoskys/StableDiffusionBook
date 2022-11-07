@@ -35,32 +35,6 @@ Larger batch sizes may speed up training slightly and improve it slightly, but t
 
 A larger batch size may speed up training slightly and improve it slightly, but it also requires a larger amount of VRAM.
 
-### Pickle?
-
-[About pickle](https://docs.python.org/3/library/pickle.html),that Python object serialization
-
-Docs says:
-```
-The pickle module is not secure. Only unpickle data you trust.
-
-It is possible to construct malicious pickle data which will execute arbitrary code during unpickling. Never unpickle data that could have come from an untrusted source, or that could have been tampered with.
-```
-
-Both `.ckpt` and `.pt` files may have malicious pickles in them, AUTOMATIC1111 has done some verification in this regard.
-
-For insecure files, it will prompt 
-
-```
-The file may be malicious, so the program is not going to read it. 
-You can skip this check with the --disable-safe-unpickle commandline argument.
-```
-
-
-It is not always guaranteed to be 100% secure, and some files may even be false positive, so it is recommended to download the model from a trusted source.
-
-In addition, you can see in [here] (https://github.com/sudoskys/StableDiffusionBook/blob/main/docs/ckpt_safe) is a simple check script.
-
-
 ### Textual Inversion (TI)
 
 A method for extracting [v] from a number of images that have a common semantic [v]. The extracted [v] tensor is called "Embedding". The Embedding is saved as a file and can then be referenced by its filename in the prompt when the image is generated.
