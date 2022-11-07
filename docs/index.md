@@ -94,10 +94,10 @@ Stable diffusion本来是面向三次元的，而 NAI 是二次元特化版本�
 
 #### 社群
 
-- [Telegram](https://t.me/StableDiffusion_CN) Ai绘画中文社群
+- [Telegram Ai绘画中文社群](https://t.me/StableDiffusion_CN)
 <img src="https://img.shields.io/badge/Telegram-Group-blue" alt="Telegram">
 
-- [Discord](https://discord.gg/vhsArSSA6K) Ai绘画中文社群
+- [Discord Ai绘画中文社群](https://discord.gg/vhsArSSA6K)
 <img src="https://img.shields.io/discord/1033769426216046622?color=blue&label=Discord_Ai%E7%BB%98%E7%94%BB%E4%B8%AD%E6%96%87%E7%BB%84" alt="Discord">
 
 - stablediffusion [Discord 英文社群](https://discord.gg/stablediffusion) 
