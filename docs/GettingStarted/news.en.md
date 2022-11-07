@@ -27,6 +27,8 @@ DPM-Solver (and the improved version DPM-Solver++) is a fast dedicated high-orde
 
     DPM-Solver++ can achieve great sample quality in only 15 to 20 steps.
 
+    If you're talking about samplers themselves, yes especially the 2M and 2M Karras. Very detailed at all steps starting from 15 and fastest in it/s.
+
     paper https://arxiv.org/abs/2211.01095
 
     </div>

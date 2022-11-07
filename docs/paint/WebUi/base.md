@@ -428,12 +428,22 @@ WebUi prompt 语法会转换为相应时间的 prompt,然后通过 embedding 交
 
 进行图生图的时候，正常情况下更弱的去噪需要更少的迭代步数(这是工作原理决定的)。你可以在设置里更改设置，让程序确切执行滑块指定的迭代步数。
 
+高阶采样器如 `DPM-Solver++` 更高效，花费的步数也少。
+
 
 ## Samplers 采样器
 
-目前好用的有 `eular`，`eular a`，更细腻，和`Ddim`。
 
-推荐 `eular a` 和 `Ddim`，**新手推荐使用 `eular a`**
+`++` 为 高阶求解器，有更少的步数更多的细节，更快的实现。
+
+高阶采样器为 `DPM-Solver++`，你可以使用 `DPM++ 2S a` 来尝试。实验表明DPM-Solver++可以 只需 15 到 20 个步骤即可生成高质量的样本，用于引导采样 像素空间和潜在空间 DPM。 
+
+![exp](https://user-images.githubusercontent.com/40903705/200149887-935a6f95-0bfa-4f8e-b6b1-0fb0bfe0b39e.jpg)
+>from https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/4363
+
+一阶目前好用的有 `eular`，`eular a`，更细腻，和`Ddim`。
+
+**新手推荐使用 `eular a`**
 
 `eular a` 富有创造力，不同步数可以生产出不同的图片。
 PS：调太高步数(>30)效果不会更好
@@ -463,8 +473,6 @@ PS：调太高步数(>30)效果不会更好
 >不同 step 和 采样器 的不同效果
 
 
-![exp](https://user-images.githubusercontent.com/40903705/200149887-935a6f95-0bfa-4f8e-b6b1-0fb0bfe0b39e.jpg)
->from https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/4363
 
 
 ## 种子调试

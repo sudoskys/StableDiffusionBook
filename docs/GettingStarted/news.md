@@ -26,9 +26,7 @@ DPM-Solver (and the improved version DPM-Solver++) is a fast dedicated high-orde
 
     Test From [Here](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4304#issuecomment-1304602296)
 
-    DPM-Solver++ 只需 15 到 20 个步骤即可实现出色的样本质量，尤其是 2M 和 2M Karras。 从 15 开始，所有步骤都非常详细，而且速度最快。
-
-    
+    DPM-Solver++ 只需 15 到 20 个步骤即可实现出色的样本质量，尤其是 2M 和 2M Karras。从 15 步开始，所有步数的结果都非常详细，而且速度很快。
 
     </div>
 

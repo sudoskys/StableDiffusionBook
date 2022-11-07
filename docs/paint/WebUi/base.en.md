@@ -401,11 +401,22 @@ When performing img2img, weaker denoising normally requires fewer iteration step
 
 You can change the setting in the settings to allow the program to perform exactly the number of iteration steps specified by the slider.
 
+Higher order samplers such as `DPM-Solver++` are more efficient and take fewer steps.
+
+
 ## Samplers
 
-Currently good ones are `eular`, `eular a`, more subtle, and `Ddim`.
 
-Recommend `eular a` and `Ddim`, **newcomers recommend `eular a`**
+`++` is a higher order solver, with fewer steps more detail and faster implementation.
+
+The higher-order sampler is `DPM-Solver++`, which you can try using `DPM++ 2S a`. Experiments have shown that DPM-Solver++ can generate high quality samples in just 15 to 20 steps for bootstrapping pixel space and potential space DPM. 
+
+![exp](https://user-images.githubusercontent.com/40903705/200149887-935a6f95-0bfa-4f8e-b6b1-0fb0bfe0b39e.jpg)
+>from https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/4363
+
+First order is currently good with `eular`, `eular a`, more subtle, and `Ddim`.
+
+**Novice users are recommended to use `eular a`**
 
 `eular a` is creative and different steps can produce different images.
 PS: too high a step count (>30) will not give better results
