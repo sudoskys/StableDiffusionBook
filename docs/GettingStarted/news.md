@@ -51,6 +51,7 @@ https://deepimagination.cc/eDiffi/
 
 
 - 来自 DreamBooth 的一位原始作者：停止使用 SKS 作为初始化词 
+
 https://www.reddit.com/r/StableDiffusion/comments/yju5ks/from_one_of_the_original_dreambooth_authors_stop/
 
 - AI艺术走红赚钱：一位AI艺术家的自白 
