@@ -6,7 +6,6 @@ repo_url: 'https://github.com/sudoskys/StableDiffusionBook'
 edit_uri: edit/main/docs/
 copyright: |
   Copyright &copy; 采用 GFDL 协议
-
 nav:
   - 起步于此:
       - index.md
@@ -35,10 +34,9 @@ nav:
       - WebUi绘画指南:
           - paint/WebUi/index.md
           - 基本指南: paint/WebUi/base.md
-          
           - 进阶指南: paint/WebUi/Advanced.md
           - 安装扩展: paint/WebUi/extension.md
-      - 实战指南: 
+      - 实战指南:
           - paint/Practicalguide.md
   - 训练模型:
       - 训练介绍: train/index.md
@@ -48,7 +46,6 @@ nav:
       - AestheticGradients 训练: train/AestheticGradients.md
   - 参考资料:
       - landing/index.md
-
 theme:
   name: material
   language: zh
@@ -71,7 +68,6 @@ theme:
     - navigation.indexes
     - navigation.expand
     - navigation.sections
-
 markdown_extensions:
   - tables
   - attr_list
@@ -83,59 +79,55 @@ markdown_extensions:
   - pymdownx.superfences
   - meta
   - pymdownx.tabbed:
-      alternate_style: true 
-
+      alternate_style: true
 extra:
   social:
     - icon: fontawesome/brands/telegram
       link: 'https://t.me/s/StableDiffusion_CN_WIKI'
-
     - icom: fontawesome/brands/discord
       link: 'https://discord.gg/vhsArSSA6K'
-      
   generator: true
-
 plugins:
   - glightbox
   - search
-  - social
-    cards_font: Noto Sans SC
-    cards_color:
-        fill: "#FFD1D5"
-        text: "#FAFAFF"
+  - social:
+      cards_font: Noto Sans SC
+      cards_color:
+        fill: '#FFD1D5'
+        text: '#FAFAFF'
   - i18n:
       material_alternate: true
       default_language: zh
       nav_translations:
         en:
-            起步于此: Start here
-            术语: Terminology
-            新闻: News
-            声明: Statement
-            开始之前: Before start
-            安装配置: Installation
-            WebUi安装: Install SDWebUi
-            绘画调试: Configuration
-            GPU相关: Gpu Debuging
-            NAI泄漏报告: NAI leak report
-            WebUi配置模型: Configrue Model for WebUi
-            绘画指南: Paint guide
-            基本指南: Base guide
-            WebUi绘画指南: Paint With WebUi
-            实战指南: Application Guide
-            进阶指南: Advanced Guide
-            安装扩展: Extension
-            训练模型: Train Model
-            训练介绍: Intro
-            Textual 训练: Textual Inversion
-            Hypernetwork 训练:  Hypernetwork
-            DreamBooth 训练: DreamBooth
-            AestheticGradients 训练: AestheticGradients
-            参考资料: References
-            运行WebUi: LaunchWebUi
-            错误处理: Troubleshoot
-            工作台: Workstations
-            贡献指南: Contribution Guide
+          起步于此: Start here
+          术语: Terminology
+          新闻: News
+          声明: Statement
+          开始之前: Before start
+          安装配置: Installation
+          WebUi安装: Install SDWebUi
+          绘画调试: Configuration
+          GPU相关: Gpu Debuging
+          NAI泄漏报告: NAI leak report
+          WebUi配置模型: Configrue Model for WebUi
+          绘画指南: Paint guide
+          基本指南: Base guide
+          WebUi绘画指南: Paint With WebUi
+          实战指南: Application Guide
+          进阶指南: Advanced Guide
+          安装扩展: Extension
+          训练模型: Train Model
+          训练介绍: Intro
+          Textual 训练: Textual Inversion
+          Hypernetwork 训练: Hypernetwork
+          DreamBooth 训练: DreamBooth
+          AestheticGradients 训练: AestheticGradients
+          参考资料: References
+          运行WebUi: LaunchWebUi
+          错误处理: Troubleshoot
+          工作台: Workstations
+          贡献指南: Contribution Guide
       languages:
         en:
           name: English
@@ -144,27 +136,3 @@ plugins:
   - git-revision-date-localized:
       type: datetime
       enable_creation_date: true
-
-# 起步于此:
-# 术语:
-# 新闻:
-# 声明:
-# 开始之前:
-# 安装配置:
-# WebUi安装:
-# 装置调试:
-# GPU相关:
-# NAI泄漏报告:
-# WebUi配置模型:
-# 绘画调试:
-# WebUi绘画指南:
-# 应用指南:
-# 进阶指南:
-# 参数:
-# 训练模型:
-# 训练介绍:
-# Textual 训练:
-# Hypernetwork 训练:
-# DreamBooth 训练:
-# AestheticGradients 训练:
-# 参考资料:
