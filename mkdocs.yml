@@ -53,8 +53,8 @@ extra:
   social:
     - icon: fontawesome/brands/telegram
       link: 'https://t.me/s/StableDiffusion_CN_WIKI'
-    - icom: fontawesome/brands/discord
-      link: 'https://discord.gg/vhsArSSA6K'
+    #- icom: fontawesome/brands/discord
+    #  link: 'https://discord.gg/vhsArSSA6K'
   generator: true
 
 
