@@ -6,14 +6,18 @@
 
 3. For other statements, please read Readme
 
->This document is licensed under the GFDL.
->If you need to use material from this Wiki in your own writings/articles/websites or other publications, you must follow the GFDL
+## Protocol
 
->If you create a derivative version with modified or added content, it will inherit the following terms.
+The document is licensed under the [GFDL](https://www.gnu.org/licenses/fdl-1.3-faq.html) license.
 
->Your work must also be published as GFDL
+If you need to use material from this Wiki in your own writings/articles/websites or other publications, you must follow the GFDL
 
->You must credit the author of the article
+If you create a derivative version with modified or added content, it will inherit the following terms.
 
->You must provide a method for obtaining a "transparent version" of the material
+* your work must also be published as GFDL
 
+* you must give credit to the author of the article
+
+* You must provide a means of obtaining a "transparent version" of the material
+
+The specific protocols of the document refer to [FDL](https://www.gnu.org/licenses/fdl-1.3.html), subject to the repository copy.
