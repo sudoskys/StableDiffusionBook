@@ -6,7 +6,7 @@
 
 3. For other statements, please read Readme
 
-## Protocol
+## License
 
 The document is licensed under the [GFDL](https://www.gnu.org/licenses/fdl-1.3-faq.html) license.
 
@@ -20,4 +20,4 @@ If you create a derivative version with modified or added content, it will inher
 
 * You must provide a means of obtaining a "transparent version" of the material
 
-The specific protocols of the document refer to [FDL](https://www.gnu.org/licenses/fdl-1.3.html), subject to the repository copy.
+The specific protocols of the document refer to [FDL](https://www.gnu.org/licenses/fdl-1.3.html), subject to this repository copy.
