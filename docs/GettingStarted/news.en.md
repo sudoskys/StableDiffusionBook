@@ -4,6 +4,18 @@
 !!! tip
     The Stable Diffusion WebUi is currently iterating very quickly and there are a lot of updates every day, so it is recommended to pull the latest code every day.
 
+## 11/7
+
+
+- Dreambooth Extension for Stable-Diffusion-WebUI
+
+https://github.com/d8ahazard/sd_dreambooth_extension
+
+- ads_are_starting_to_appear_in_our_foss/
+
+https://www.reddit.com/r/StableDiffusion/comments/ynshup/ads_are_starting_to_appear_in_our_foss/
+
+
 ## 11/6
 
 - A fast dedicated high-order solver

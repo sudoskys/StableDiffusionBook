@@ -6,6 +6,12 @@
 安装完毕重启程序。**目前WebUi已经自带扩展管理器界面。**
 
 
+### DreamBooth extension
+
+Dreambooth Extension for Stable-Diffusion-WebUI
+
+https://github.com/d8ahazard/sd_dreambooth_extension
+
 ### training-picker
 
 stable-diffusion-webui 的扩展，允许用户通过视频的关键帧进行复用，并自动从各个关键帧中挑选和导出训练示例。 
@@ -86,6 +92,14 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui-tokenizer
 ## 自定义脚本
 
 此主题的内容可能不会即时更新到此处，[源地址](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts#prompt-interpolation)
+
+
+### sd-dynamic-prompts
+
+AUTOMATIC1111/stable-diffusion-webui 的自定义脚本，用于实现用于随机提示生成的微型模板语言 
+
+https://github.com/adieyal/sd-dynamic-prompts
+
 
 ### Depth Maps for Stable Diffusion
 
