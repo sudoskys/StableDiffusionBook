@@ -22,6 +22,14 @@ For developing extensions, see [Developing extensions](https://github.com/AUTOMA
 **See a list of all extensions at [here](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts#stylepile)**
 
 
+### DreamBooth extension
+
+Dreambooth Extension for Stable-Diffusion-WebUI
+
+https://github.com/d8ahazard/sd_dreambooth_extension
+
+
+
 ### tokenizer
 
 An extension for stable-diffusion-webui that adds a tab that lets you preview how CLIP model would tokenize your text. 
@@ -38,6 +46,14 @@ https://github.com/Maurdekye/training-picker
 ## Custom Scripts
 
 The content of this topic may not be instantly updated here, [source address](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts#prompt-interpolation)
+
+
+
+### sd-dynamic-prompts
+
+A custom script for AUTOMATIC1111/stable-diffusion-webui to implement a tiny template language for random prompt generation 
+
+https://github.com/adieyal/sd-dynamic-prompts
 
 ### Depth Maps for Stable Diffusion
 

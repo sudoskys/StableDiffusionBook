@@ -5,6 +5,17 @@
 
 以下是新闻和测试内容。
 
+## 11/7
+
+- DreamBooth WebUI 插件
+
+https://github.com/d8ahazard/sd_dreambooth_extension
+
+- 有插件中出现了广告
+
+https://www.reddit.com/r/StableDiffusion/comments/ynshup/ads_are_starting_to_appear_in_our_foss/
+
+
 ## 11/6
 
 - 新的采样高阶算法
