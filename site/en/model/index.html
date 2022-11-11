@@ -539,20 +539,24 @@ Try asking your friends for help.</p>
 </div>
 <p>SDWebUi is a framework with many [models] like for example <code>some model</code> (https://rentry.org/sdmodels)</p>
 <h2 id="pickle">Pickle?</h2>
-<p><a href="https://docs.python.org/3/library/pickle.html">About pickle</a>,that Python object serialization</p>
-<p>Docs says:
+<p>Both <code>.ckpt</code> and <code>.pt</code> files may have malicious pickles in them, </p>
+<p>AUTOMATIC1111 s WEBUI has done some verification in this regard,For insecure files, it will prompt </p>
+<div class="highlight"><pre><span></span><code>The file may be malicious, so the program is not going to read it. 
+You can skip this check with the --disable-safe-unpickle commandline argument.
+</code></pre></div>
+<p>In addition, you can see in [here] (https://github.com/sudoskys/StableDiffusionBook/blob/main/docs/ckpt_safe) is a simple check script.</p>
+<div class="highlight"><pre><span></span><code>    <span class="k">raise</span> <span class="n">pickle</span><span class="o">.</span><span class="n">UnpicklingError</span><span class="p">(</span><span class="s2">"global '</span><span class="si">%s</span><span class="s2">/</span><span class="si">%s</span><span class="s2">' is forbidden"</span> <span class="o">%</span>
+                                 <span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span>
+</code></pre></div>
+<p>If you run the script and get something like "global something.something is forbidden" this means that the checkpoint is trying to do something bad and could be dangerous.</p>
+<p>It is not always guaranteed to be 100% secure, and some files may even be false positive, so it is recommended to download the model from a trusted source.</p>
+<p>Related Projects <a href="https://github.com/lopho/pickle_inspector">pickle_inspector</a>.</p>
+<p><a href="https://docs.python.org/3/library/pickle.html">About pickle</a>,that Python object serialization
+Docs says:
 <div class="highlight"><pre><span></span><code>The pickle module is not secure. Only unpickle data you trust.
 
 It is possible to construct malicious pickle data which will execute arbitrary code during unpickling. Never unpickle data that could have come from an untrusted source, or that could have been tampered with.
 </code></pre></div></p>
-<p>Both <code>.ckpt</code> and <code>.pt</code> files may have malicious pickles in them, AUTOMATIC1111 has done some verification in this regard.</p>
-<p>For insecure files, it will prompt </p>
-<div class="highlight"><pre><span></span><code>The file may be malicious, so the program is not going to read it. 
-You can skip this check with the --disable-safe-unpickle commandline argument.
-</code></pre></div>
-<p>It is not always guaranteed to be 100% secure, and some files may even be false positive, so it is recommended to download the model from a trusted source.</p>
-<p>In addition, you can see in [here] (https://github.com/sudoskys/StableDiffusionBook/blob/main/docs/ckpt_safe) is a simple check script.</p>
-<p>Related Projects <a href="https://github.com/lopho/pickle_inspector">pickle_inspector</a>.</p>
 <h2 id="model-selection">Model selection</h2>
 <p>The dataset and labels used by the model are very important for the impact of the results.</p>
 <p>It is important to understand the source of the data before using it.</p>
@@ -575,7 +579,7 @@ You can skip this check with the --disable-safe-unpickle commandline argument.
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 7, 2022 01:05:48</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 11, 2022 08:32:10</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 06:30:05</span>
