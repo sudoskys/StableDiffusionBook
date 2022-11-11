@@ -5,6 +5,12 @@
 
 以下是新闻和测试内容。
 
+## 11/9 
+
+- 许可问题
+
+https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4222
+
 ## 11/8
 
 - Colossal-AI: A Unified Deep Learning System for Big Model Era 
