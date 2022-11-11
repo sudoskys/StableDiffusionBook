@@ -5,6 +5,13 @@
 
 以下是新闻和测试内容。
 
+## 11/8
+
+- Colossal-AI: A Unified Deep Learning System for Big Model Era 
+不明所以的项目
+https://github.com/hpcaitech/ColossalAI
+
+
 ## 11/7
 
 - DreamBooth WebUI 插件

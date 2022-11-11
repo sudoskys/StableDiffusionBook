@@ -87,4 +87,17 @@ In most cases, this means that the VRAM is overflowing, but it could also be a G
 
 It is said that if you are using deepdanbooru, you will get this message, so try to restart or install the cpu version of deepdanbooru.
 
+## Caused by ProxyError-Cannot connect to proxy-RemoteDisconnected-Remote end closed connection without response
+
+IF you use proxy tool as Clash ,turn TUN model on.
+
+Or check your network and Windows environment variables.
+
+Or update
+
+
+See [Issue](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/491)
+
+
+
 **See the next chapter for image generation problems**.

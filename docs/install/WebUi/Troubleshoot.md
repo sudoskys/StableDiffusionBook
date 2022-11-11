@@ -90,6 +90,16 @@ Windows 7上运行很可能会报错: `api-ms-win-core-path-l1-1-0.dll is missin
 据说使用 deepdanbooru 的话会有这个提示，可以尝试重新启动 或 安装cpu版本的deepdanbooru.
 
 
+## Caused by ProxyError-Cannot connect to proxy-RemoteDisconnected-Remote end closed connection without response
+
+
+代理设置问题，检查全局变量有无协议头（需要有），如果是 Clash ,开启 TUN 模式即可。
+
+如果没开代理，尝试更新到最新版本。
+
+
+See [Issue](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/491)
+
 
 **生成图片问题见下一章**
 
