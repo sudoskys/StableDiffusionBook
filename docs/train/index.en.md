@@ -18,6 +18,14 @@ This is more demanding on the graphics card.
 
 At the moment I personally think the results are considered the best by DreamBooth, but its training requires high VRAM (>8GB).
 
+## How to choose
+
+In summary, Textual Inversion and Hypernetwork apply to `close to sample`, with the former teaching the AI to compose a `character` from the labels in the model, and the latter **being similar**. The difference is that Hypernetwork uses the adjustment of the model weights as a means of composition, while Textual Inversion tells the AI how specific labels should be composed.
+
+DreamBooth, on the other hand, is used for `detail` imitation, where the training process `refurbishes` the model and the new model contains new sample features (adds something new point).At the beginning,the DreamBooth technique itself is used for `reproduction`, so that it can recognise **Rare characters&element**.
+
+As for the Aesthetic Gradients, this means that the AI is given a set of `good sample`. The result is something that adds detail and is easy to train, but slows down the generation of images (each generation has to be recalculated). **Not really suitable for applications**.
+
 
 ## Cognitive model training
 
