@@ -101,6 +101,14 @@ Windows 7上运行很可能会报错: `api-ms-win-core-path-l1-1-0.dll is missin
 See [Issue](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/491)
 
 
+## Failed to establish a new connection
+
+删除代理环境变量，在我的电脑，右键，属性，环境变量中。（小心操作）
+
+See [Here](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2684)
+
+
+
 **生成图片问题见下一章**
 
 [^3]:[Wiki2](https://rentry.co/voldy)

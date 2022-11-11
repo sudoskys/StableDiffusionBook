@@ -98,6 +98,16 @@ Or update
 
 See [Issue](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/491)
 
+## Failed to establish a new connection
+
+```
+deleting the proxy environment variables
+```
+
+See [Here](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2684)
+
+
+
 
 
 **See the next chapter for image generation problems**.
