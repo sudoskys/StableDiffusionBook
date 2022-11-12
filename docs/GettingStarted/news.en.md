@@ -4,6 +4,21 @@
 !!! tip
     The Stable Diffusion WebUi is currently iterating very quickly and there are a lot of updates every day, so it is recommended to pull the latest code every day.
 
+## 11/11
+
+- [Pull#4563](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4563) Add username and password in ngrok
+
+```
+Allows specifying the user of ngrok by username and password using the : --ngrok authtoken:username:password
+and keep old args for not using username and password only use authtoken : --ngrok authtoken
+```
+
+
+## 11/10
+
+- Add support for SSL/TLS (provide Gradio TLS options)
+https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4320
+
 
 ## 11/9
 

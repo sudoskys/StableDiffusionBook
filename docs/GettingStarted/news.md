@@ -5,6 +5,24 @@
 
 以下是新闻和测试内容。
 
+## 11/11
+
+- [Pull#4563](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4563) 在 ngrok 中添加用户名和密码
+
+```
+Allows specifying the user of ngrok by username and password using the : --ngrok authtoken:username:password
+and keep old args for not using username and password only use authtoken : --ngrok authtoken
+```
+
+## 11/10
+
+- Add username and password in ngrok
+https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4563
+
+- 添加对 SSL/TLS 的支持（提供 Gradio TLS 选项）
+https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4320
+
+
 ## 11/9 
 
 - 许可问题
