@@ -8,6 +8,14 @@
 
     在设置内勾选 **Move VAE and CLIP to RAM when training hypernetwork. Saves VRAM.** 的效果是转移 VAE 到 RAM,而不是卸载，
 
+## Apt/DreamArtist
+
+TI是让Ai了解 “喜欢” ，而Apt 让 Ai 了解“喜欢”和“不喜欢”。
+
+所以是一种高效的 Textual Inversion
+
+https://github.com/7eu7d7/DreamArtist-sd-webui-extension
+
 
 ## 准备数据集
 

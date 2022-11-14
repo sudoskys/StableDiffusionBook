@@ -8,6 +8,15 @@
 
     Check **Move VAE and CLIP to RAM when training hypernetwork. Saves VRAM.** The effect is to transfer VAE to RAM, not to uninstall it.
 
+
+## Apt/DreamArtist
+
+TI is for Ai to understand "likes", while Apt is for Ai to understand "likes" and "dislikes".
+
+So it's an efficient Textual Inversion
+
+https://github.com/7eu7d7/DreamArtist-sd-webui-extension
+
 ## Prepare the dataset
 
 The dataset should be consistent in style and have the same concept of content. If computing power allows, the more images the better. The content of the data can be illustrations, abstract paintings, or emoticons.
