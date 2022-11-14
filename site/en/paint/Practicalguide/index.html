@@ -440,6 +440,20 @@
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#webui-redrawing-guide">
+    WebUi Redrawing Guide
+  </a>
+<nav aria-label="WebUi Redrawing Guide" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fix-painting-tipsinpaintps-repaintinggrafting-fixeslayout-complements">
+    Fix painting tips/Inpaint/PS repainting/grafting fixes/layout complements
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#painting-soldering">
     Painting soldering!
   </a>
@@ -656,6 +670,20 @@
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#webui-redrawing-guide">
+    WebUi Redrawing Guide
+  </a>
+<nav aria-label="WebUi Redrawing Guide" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fix-painting-tipsinpaintps-repaintinggrafting-fixeslayout-complements">
+    Fix painting tips/Inpaint/PS repainting/grafting fixes/layout complements
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#painting-soldering">
     Painting soldering!
   </a>
@@ -862,8 +890,46 @@
 </tr>
 </tbody>
 </table>
+<h2 id="webui-redrawing-guide">WebUi Redrawing Guide</h2>
+<p>Want to redraw or add elements manually with WebUi? Here's a little guide.</p>
+<p>Firstly, IMG2IMG2 and Inpaint have completely different effects. If you don't want the style to change, don't choose IMG2IMG2.</p>
+<p>To avoid stretching the image, it should be sized <strong>as close as possible to the original size by choosing <code>Crop and resize</code> </strong> which means crop and resize</p>
+<ul>
+<li>Masked Content</li>
+</ul>
+<p>The <code>Masked content</code> setting determines the content placed in the masked area before the repair, it determines the initial reference content (origin is the content of the mask before blurring, and latent nosie is referenced by noise (lots of random pigment dots).</p>
+<p>The latent noise is what determines the Ai reference, while the Denoising strength can be interpreted as the degree of unreference to the reference.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://user-images.githubusercontent.com/75739606/201613751-9da2ffd6-2c1f-439b-8e9a-75b185c99912.png"><img alt="aidrawfix2" src="https://user-images.githubusercontent.com/75739606/201613751-9da2ffd6-2c1f-439b-8e9a-75b185c99912.png"/></a></p>
+<ul>
+<li>Changing elements</li>
+</ul>
+<p>If you need to change elements, key and paste them.</p>
+<p>If we need to add elements, we can use PS to graft a hand to the character and let Ai touch it up, or we can graft the lower body of another work for a bust that has no lower body and let AI touch it up.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://user-images.githubusercontent.com/75739606/201602016-e14b69e3-f250-4af7-b200-a421d163130b.png"><img alt="test1" src="https://user-images.githubusercontent.com/75739606/201602016-e14b69e3-f250-4af7-b200-a421d163130b.png"/></a></p>
+<ul>
+<li>Make changes based on the original image</li>
+</ul>
+<p>Using Inpaint, the main scene is a removal/replacement.</p>
+<p>Start by tracing thin lines around the edges of the figure, then colour block (if there are shadows, take <strong>bright colours</strong> or draw full shadows). The variable intensity is chosen to be a low 0.3 or so for denoising (the lower it is the closer it is to the input image).</p>
+<p>Then use Img2Img Inpaint + the relevant cue word to fix it, and change it again if you are not satisfied until you are. The image is then realesrgan superscored to remove the image texture.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://user-images.githubusercontent.com/75739606/201603999-1ae18fb9-5435-49f0-9adf-0789e9659a29.png"><img alt="fix_exp" src="https://user-images.githubusercontent.com/75739606/201603999-1ae18fb9-5435-49f0-9adf-0789e9659a29.png"/></a></p>
+<h3 id="fix-painting-tipsinpaintps-repaintinggrafting-fixeslayout-complements">Fix painting tips/Inpaint/PS repainting/grafting fixes/layout complements</h3>
+<p>Use PS software to add and remove elements and then re-produce them. This can solve the problem of painting hands.</p>
+<p>Ai also accepts other finished pictures for grafting (to solve the problem of lying poses without a lower body)</p>
+<p>For example</p>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://user-images.githubusercontent.com/75739606/197823480-5de77d69-46d5-4817-948f-4e514e1f8204.jpg"><img alt="test_woman" src="https://user-images.githubusercontent.com/75739606/197823480-5de77d69-46d5-4817-948f-4e514e1f8204.jpg"/></a></p>
+<!--
+![info](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/00119_136826557_masterpiece%2C_best_quality%2C _1girl%2C_black_hair%2C_hat1.jpg)
+-->
+<blockquote>
+<p>An image <sup id="fnref:5"><a class="footnote-ref" href="#fn:5">2</a></sup> showing a detailed comparison of the effect of different parameters in img2img under WebUI (prompt, steps, scale, various seeds, etc. are kept consistent)</p>
+</blockquote>
+<p>The vertical axis is Denoising strength (online version of strength) and the horizontal axis is Variation strength</p>
 <h2 id="painting-soldering">Painting soldering!</h2>
 <p>With <a href="https://www.painthua.com/">AiPhotoShop - the online tool for infinite extents of canvas</a> you can "weld" your work continuously, very conveniently. Just add the <code>--api</code> parameter to the start command and open the web page to use it.</p>
+<blockquote>
+<p>Image extents for some anime models are not supported because they are not Inpaint models (Sd has a dedicated Inpaint model.)</p>
+</blockquote>
 <p><a href="https://github.com/BlinkDL/Hua">Github</a></p>
 <h2 id="curbing-style-pollution">Curbing style pollution</h2>
 <p>Introduces how to generate images in WebUi with the subject as the focus, rather than the style of the drawing.<sup id="fnref:12"><a class="footnote-ref" href="#fn:12">9</a></sup></p>
@@ -1645,7 +1711,7 @@ scale 就是 CFG scale
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 6, 2022 10:36:04</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 14, 2022 08:42:03</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 07:44:44</span>

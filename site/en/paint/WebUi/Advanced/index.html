@@ -439,20 +439,6 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#img2img-ps-repaintgraft-repairlayout-fill">
-    Img2Img PS repaint/graft repair/layout fill
-  </a>
-<nav aria-label="Img2Img PS repaint/graft repair/layout fill" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#redrawing-techniquesremovalreplacement">
-    Redrawing techniques/removal/replacement
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#img2img-outpainting">
     Img2Img Outpainting
   </a>
@@ -635,20 +621,6 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#img2img-ps-repaintgraft-repairlayout-fill">
-    Img2Img PS repaint/graft repair/layout fill
-  </a>
-<nav aria-label="Img2Img PS repaint/graft repair/layout fill" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#redrawing-techniquesremovalreplacement">
-    Redrawing techniques/removal/replacement
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#img2img-outpainting">
     Img2Img Outpainting
   </a>
@@ -729,6 +701,9 @@
 <p>The size is 855MB</p>
 </div>
 <h2 id="img2img-introduction">Img2Img Introduction</h2>
+<blockquote>
+<p>application see practicalguide</p>
+</blockquote>
 <p>In img2img tab, draw a mask over a part of the image, and that part will be in-painted.</p>
 <p>We generally have two ways of restoring images: <strong>PS and InPaint</strong>, and there are very different ways of using them.</p>
 <p>WebUi uses <code>--gradio-img2img-tool color-sketch</code> to start up a plugin that brings in an image to be coloured (not Inpaint in this case)</p>
@@ -746,49 +721,19 @@
 <p>If it is a real life image, you need to increase the <code>CFG Scale</code> similarity and generate it together with prompts. The higher the noise reduction <code>denoising</code>, the lower the relevance.</p>
 <p>We recommend using <a href="https://www.daz3d.com/get_studio">DAZ</a> or <a href="https://www.blender.org/">blender</a> or Unity. In tests on 3D models, <strong>colour mainly affects how the AI paints</strong>, so your model needs to be textured.</p>
 <p>If you use blender, you can use <a href="https://youtu.be/MClbPwu-75o">this video</a> shared by <a href="https://www.artstation.com/marketplace/p/VOAyv/stable-diffusion-3d">model dolls</a> -posable-manekin-doll?utm_source=artstation&amp;utm_medium=referral&amp;utm_campaign=homepage&amp;utm_term=marketplace)</p>
-<h2 id="img2img-ps-repaintgraft-repairlayout-fill">Img2Img PS repaint/graft repair/layout fill</h2>
-<p><strong>Size should be as close to the original size as possible, then select <code>Crop and resize</code> aka crop and resize</strong></p>
-<p>Use PS software to add and delete elements and then re-produce them. This can solve the problem of drawing hands.</p>
-<p>Ai also accepts other finished images for grafting (to solve the problem of lying down without a lower body)</p>
-<p>For example, we can use PS to graft a hand to a character for Ai to touch up, or graft the lower body of another work for a bust without a lower body for AI to touch up.</p>
-<p>Or paint a specific part of the body with a specified shape action (such as the coverage or shape of a garment) and hit it with a colour block (to prevent shadows, <strong>please take a bright skin</strong>).</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://user-images.githubusercontent.com/75739606/197823480-5de77d69-46d5-4817-948f-4e514e1f8204.jpg"><img alt="test_woman" src="https://user-images.githubusercontent.com/75739606/197823480-5de77d69-46d5-4817-948f-4e514e1f8204.jpg"/></a></p>
-<!--
-![info](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/00119_136826557_masterpiece%2C_best_quality%2C _1girl%2C_black_hair%2C_hat1.jpg)
--->
-<blockquote>
-<p>An image <sup id="fnref:5"><a class="footnote-ref" href="#fn:5">2</a></sup> showing a detailed comparison of the effect of different parameters in img2img under WebUI (prompt, steps, scale, various seeds, etc. are kept consistent)</p>
-</blockquote>
-<p>The vertical axis is Denoising strength (online version of strength) and the horizontal axis is Variation strength</p>
-<h3 id="redrawing-techniquesremovalreplacement">Redrawing techniques/removal/replacement</h3>
-<ul>
-<li>
-<p>Start by tracing lines on the figure, then hit the colour block (if there are shadows, take <strong>bright skin</strong>).</p>
-</li>
-<li>
-<p>Vary the intensity and choose a lower denoising of around 0.3.</p>
-</li>
-<li>
-<p>Then use Img2Img Inpaint + the relevant prompt to fix it, and change it again if you're not happy with it until you are.</p>
-</li>
-<li>
-<p>The image is then hyper-scored and noise reduced (image texture removed).</p>
-</li>
-</ul>
 <h2 id="img2img-outpainting">Img2Img <strong>Outpainting</strong></h2>
 <p>Outpainting extends the original image and repairs the blank space created.
 You can find this function in the img2img tab at the bottom, under Script -&gt; Poor man's outpainting.</p>
 <div class="highlight"><pre><span></span><code>Outpainting, unlike normal image generation, seems to profit very much from large step count. A recipe for a good outpainting is a good prompt that matches the picture, sliders for denoising and CFG scale set to max, and step count of 50 to 100 with Euler ancestral or DPM2 ancestral samplers.
 </code></pre></div>
 <h2 id="img2img-inpainting">Img2Img <strong>Inpainting</strong></h2>
-<p>In the img2img tab, draws a mask over a part of the image that will be repainted.</p>
-<p>For the <code>Masked content</code> setting, the Masked content field determines the content to be placed in the masked area before it is repaired.</p>
-<p><code>original</code> is generally selected to maintain potential spatial consistency.</p>
+<p>In the Inpainting tab, draw a mask over a part of the image that will be repainted.</p>
+<p>The <code>Masked content</code> setting determines the content placed into the masked area prior to the repair. Generally select <code>original</code> to maintain potential spatial consistency, or <code>fill</code> if you don't want the repaired content to inherit the original colour distribution, to use most of the image's base colour, and <code>latent noise</code> to get a random colour dot pattern (to make the the generated content out of association).</p>
 <p>AS:</p>
 <table>
 <thead>
 <tr>
-<th>mask</th>
+<th>mask-sample</th>
 <th>fill</th>
 <th>original</th>
 <th>latent noise</th>
@@ -805,19 +750,19 @@ You can find this function in the img2img tab at the bottom, under Script -&gt; 
 </tr>
 </tbody>
 </table>
-<p><code>mask</code> determines the degree of blurring, original is <code>original</code> and fill is <code>fill base</code>.</p>
-<p>Tip: <code>fill</code> requires more steps to remove the unnatural look.</p>
-<p><strong>Inpaint at full resolution</strong>
-Normally, inpainting resizes the image to the target resolution specified in the UI. With Inpaint at full resolution enabled, only the masked region is resized, and after processing it is pasted back to the original picture. This allows you to work with large pictures and allows you to render the inpainted object at a much larger resolution.</p>
-<p>Options for inpainting:</p>
+<p>The horizontal bar <code>mask</code> determines the degree of blurring. original is <code>original</code>, fill is <code>fill base</code> and <code>fill</code> takes more steps to remove the unnatural feel.</p>
+<p><code>Inpaint at full resolution</code> is a full resolution fix. By default Inpaint resizes the resulting image <strong>as a whole</strong> to the target resolution specified in the <em>UI</em>. When <code>Inpaint at full resolution</code> is enabled, <strong>only the masked area</strong> is resized and pasted <strong>back</strong> to the original image after processing. This allows you to process large size images and allows the repair object to be rendered at a larger resolution.</p>
+<p>There are currently several ways to carry out the redraw operation.</p>
 <ul>
-<li>draw a mask yourself in the web editor</li>
-<li>erase a part of the picture in an external editor and upload a
-  transparent picture. Any even slightly transparent areas will become
-  part of the mask. Be aware that <a href="https://docs.krita.org/en/reference_manual/layers_and_masks/split_alpha.html#how-to-save-a-png-texture-and-keep-color-values-in-fully-transparent-areas">some editors</a> save completely transparent areas as black by default.</li>
-<li>change mode (to the bottom right of the picture) to "Upload mask"
-  and choose a separate black and white image for the mask
-  (white=inpaint).</li>
+<li>
+<p>Draw your own mask in a web editor (<code>Inpaint masked</code> means redrawing the painted area, <code>Inpaint not masked</code> means redrawing the area outside the painting)</p>
+</li>
+<li>
+<p>Erase part of the image in an external editor and upload a transparent image. The transparent area will become part of the mask.Tips: Some editors save fully transparent areas as black by default.</p>
+</li>
+<li>
+<p>Change the mode (bottom right of the image) to <code>Upload mask</code> and process as a separate black and white image for the mask (the white parts will be inpainted).</p>
+</li>
 </ul>
 <p>If <code>inpaint at full resolution</code> appears as a black block, there may be insufficient RAM, try unload vae.</p>
 <p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting.png"><img alt="result" src="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting.png"/></a></p>
@@ -935,7 +880,7 @@ Normally, inpainting resizes the image to the target resolution specified in the
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 6, 2022 06:26:54</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 14, 2022 08:42:03</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 07:44:44</span>

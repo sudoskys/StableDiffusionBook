@@ -440,20 +440,6 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#img2img-ps">
-    Img2Img PS重绘画/嫁接修复/躺姿补全
-  </a>
-<nav aria-label="Img2Img PS重绘画/嫁接修复/躺姿补全" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_3">
-    重绘画技巧/去除/替换
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#img2img-outpainting">
     Img2Img Outpainting 外部修补
   </a>
@@ -475,7 +461,7 @@
 <nav aria-label="Img2Img 让低显存生成大分辨率图片" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_4">
+<a class="md-nav__link" href="#_3">
     脚本
   </a>
 </li>
@@ -488,12 +474,12 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_5">
+<a class="md-nav__link" href="#_4">
     图像去噪
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_6">
+<a class="md-nav__link" href="#_5">
     渐变提示词
   </a>
 </li>
@@ -503,12 +489,12 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_7">
+<a class="md-nav__link" href="#_6">
     提示词速查
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_8">
+<a class="md-nav__link" href="#_7">
     调参工程师
   </a>
 </li>
@@ -645,20 +631,6 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#img2img-ps">
-    Img2Img PS重绘画/嫁接修复/躺姿补全
-  </a>
-<nav aria-label="Img2Img PS重绘画/嫁接修复/躺姿补全" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_3">
-    重绘画技巧/去除/替换
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#img2img-outpainting">
     Img2Img Outpainting 外部修补
   </a>
@@ -680,7 +652,7 @@
 <nav aria-label="Img2Img 让低显存生成大分辨率图片" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_4">
+<a class="md-nav__link" href="#_3">
     脚本
   </a>
 </li>
@@ -693,12 +665,12 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_5">
+<a class="md-nav__link" href="#_4">
     图像去噪
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_6">
+<a class="md-nav__link" href="#_5">
     渐变提示词
   </a>
 </li>
@@ -708,12 +680,12 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_7">
+<a class="md-nav__link" href="#_6">
     提示词速查
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_8">
+<a class="md-nav__link" href="#_7">
     调参工程师
   </a>
 </li>
@@ -738,6 +710,9 @@
 <p>请阅读前面章节的模型进阶1,了解具体的 Img2Img 和 inpaint 介绍操作。</p>
 </div>
 <h3 id="img2txt">Img2Txt</h3>
+<blockquote>
+<p>应用指南请读实战指南。</p>
+</blockquote>
 <p>生成按钮下有一个 <code>Interrogate CLIP</code>，点击后会下载 <code>CLIP</code>，用于生成当前图片框内图片的 Tag 并填充到提示词。</p>
 <p>CLIP 询问器有两个部分：一个是 BLIP 模型，它从图片中创建文本描述。另一种是 CLIP 模型，它会从列表中挑选出与图片相关的几行</p>
 <div class="admonition tip">
@@ -762,49 +737,19 @@
 <p>如果是真人图片，需要适当提高 <code>CFG Scale</code> 相似度，结合提示词一起生成。降噪 <code>denoising</code> 越高，相关性越低。</p>
 <p>推荐使用 <a href="https://www.daz3d.com/get_studio">DAZ</a> 或者 <a href="https://www.blender.org/">blender</a> 或者 Unity ，在对 3D 模型的测试中，<strong>色彩主要影响 AI 的绘画效果</strong>，所以你的模型需要有纹理。</p>
 <p>如果你使用 blender ，你可以使用 <a href="https://youtu.be/MClbPwu-75o">这个视频</a> 分享的 <a href="https://www.artstation.com/marketplace/p/VOAyv/stable-diffusion-3d-posable-manekin-doll?utm_source=artstation&amp;utm_medium=referral&amp;utm_campaign=homepage&amp;utm_term=marketplace">模型娃娃</a></p>
-<h3 id="img2img-ps">Img2Img PS重绘画/嫁接修复/躺姿补全</h3>
-<p><strong>尺寸上应该尽量靠近原图尺寸，然后选择 <code>Crop and resize</code> 也就是裁切后调整大小</strong></p>
-<p>使用PS软件增删元素，然后重新生产。这可以解决画手的问题。</p>
-<p>Ai 也接受其他成图进行嫁接(解决躺姿没有下半身的问题)</p>
-<p>比如我们可以通过 PS 给角色移植一个手让Ai来润色它，或者为没有下半身的半身像嫁接其他作品的下半身让 AI 润色它。</p>
-<p>或者涂鸦特定部位指定形状动作(比如衣料的覆盖率或者形状)，打上色块（为了防止出现阴影，<strong>请取亮色皮肤</strong>）。</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://user-images.githubusercontent.com/75739606/197823480-5de77d69-46d5-4817-948f-4e514e1f8204.jpg"><img alt="test_woman" src="https://user-images.githubusercontent.com/75739606/197823480-5de77d69-46d5-4817-948f-4e514e1f8204.jpg"/></a></p>
-<!--
-![info](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/00119_136826557_masterpiece%2C_best_quality%2C_1girl%2C_black_hair%2C_hat1.jpg)
--->
-<blockquote>
-<p>一张图片<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">2</a></sup>展现WebUI下img2img中不同参数下效果的详细对比图（prompt、steps、scale、各种seed等参数均保持一致）</p>
-</blockquote>
-<p>纵轴是Denoising strength（线上版的strength），横轴是Variation strength</p>
-<h4 id="_3">重绘画技巧/去除/替换</h4>
-<ul>
-<li>
-<p>首先要对人物描线，然后打上色块（如果有阴影，取<strong>亮色皮肤</strong>）。</p>
-</li>
-<li>
-<p>变动强度，选择较低的 0.3 左右的去噪。</p>
-</li>
-<li>
-<p>然后使用 Img2Img Inpaint + 相关提示词修复，不满意可以再改，直到满意。</p>
-</li>
-<li>
-<p>然后对图像进行超分，降噪(去除图像纹理)。</p>
-</li>
-</ul>
 <h3 id="img2img-outpainting">Img2Img <strong>Outpainting 外部修补</strong></h3>
 <p>Outpainting 扩展原始图像并修复创建的空白空间。
 您可以在底部的 img2img 选项卡中找到该功能，在 Script -&gt; Poor man's outpainting 下。</p>
 <div class="highlight"><pre><span></span><code>Outpainting, unlike normal image generation, seems to profit very much from large step count. A recipe for a good outpainting is a good prompt that matches the picture, sliders for denoising and CFG scale set to max, and step count of 50 to 100 with Euler ancestral or DPM2 ancestral samplers.
 </code></pre></div>
 <h3 id="img2img-inpainting">Img2Img <strong>Inpainting 修补</strong></h3>
-<p>在 img2img 选项卡中，在图像的一部分上绘制蒙版，该部分将被重画。</p>
-<p>对于 <code>Masked content</code> 设置，遮罩内容字段确定内容在修复之前放置到遮罩区域中。</p>
-<p>一般选 <code>original</code>，可以保持潜在空间一致性。</p>
+<p>在 Inpainting 选项卡中，在图像的一部分上绘制蒙版，该部分将被重画。</p>
+<p><code>Masked content</code> 设置确定在修复之前放置到遮罩区域中的内容，一般选 <code>original</code>，可以保持潜在空间一致性，如果你不希望修补内容继承原来的色彩分布，选<code>fill</code>就是使用图片的大部分底色，选 <code>latent noise</code> 可以获得随机色彩点阵图（使生成内容脱离关联）。</p>
 <p>它们的效果如下:</p>
 <table>
 <thead>
 <tr>
-<th>mask</th>
+<th>示意操作</th>
 <th>fill</th>
 <th>original</th>
 <th>latent noise</th>
@@ -821,20 +766,18 @@
 </tr>
 </tbody>
 </table>
-<p><code>mask</code> 横条决定了模糊程度，original 是<code>原图</code>，fill 是<code>填充底色</code></p>
-<p>Tip: <code>fill</code> 要更多 step 才能消除不自然感.</p>
-<p><code>Inpaint at full resolution</code> 即全分辨率修复。
-通常，Inpaint 会将图像大小调整为<em>UI中指定的目标分辨率</em>。启用完全分辨率的Inpaint后，仅调整遮罩区域的大小，并在处理后将其<strong>粘贴回</strong>原始图片。这允许您处理大图片，并允许您以更大的分辨率渲染修复对象。</p>
-<p>有几种方法进行重绘制:</p>
+<p><code>mask</code> 横条决定了模糊程度。original 是<code>原图</code>，fill 是<code>填充底色</code>，<code>fill</code> 要更多 step 才能消除不自然感。</p>
+<p><code>Inpaint at full resolution</code> 即全分辨率修复。默认情况下 Inpaint 会将生成的图像大小<strong>整体</strong>调整为<em>UI中指定的目标分辨率</em>。启用 <code>Inpaint at full resolution</code> 后，<strong>仅调整遮罩区域</strong> 的大小，并在处理后将其<strong>粘贴回</strong>原始图片。这允许你处理大尺寸图片，并允许以更大的分辨率渲染修复对象。</p>
+<p>目前有几种方法进行重绘制操作：</p>
 <ul>
 <li>
 <p>在网络编辑器中自己绘制蒙版（<code>Inpaint masked</code>指重画涂鸦区域，<code>Inpaint not masked</code> 指重画涂鸦之外的区域）</p>
 </li>
 <li>
-<p>在外部编辑器中擦除部分图片并上传透明图片。 任何稍微透明的区域都将成为蒙版的一部分。 请注意，某些编辑器默认将完全透明的区域保存为黑色。</p>
+<p>在外部编辑器中擦除部分图片并上传透明图片。透明区域会成为蒙版的一部分。Tips：某些编辑器默认将完全透明的区域保存为黑色。</p>
 </li>
 <li>
-<p>将模式（图片右下角）更改为"Upload mask"并为蒙版选择单独的黑白图像(white=inpaint)。</p>
+<p>将模式（图片右下角）更改为 "Upload mask" 并为蒙版处理为单独的黑白图像(白色部分会被inpaint)。</p>
 </li>
 </ul>
 <p>如果 <code>inpaint at full resolution</code> 出现黑块，可能是RAM不足，尝试卸载 vae.</p>
@@ -855,7 +798,7 @@
 <h3 id="img2img_2">Img2Img 让低显存生成大分辨率图片</h3>
 <p>在前面提到了，如果遇到生成鬼图或者 低显存生产高分辨率图片 可以采用的 Img2Img 画质提升脚本。</p>
 <p>其实我<strong>强烈推荐</strong>你使用 Extras 的功能对低分辨率进行重放，效果不错的，且体验良好！</p>
-<h4 id="_4">脚本</h4>
+<h4 id="_3">脚本</h4>
 <p>但是如果你想使用脚本提供的分辨率增强，这里有 Img2Img 的具体流程</p>
 <ol>
 <li>
@@ -902,13 +845,13 @@
 <p><code>SD Upscaler</code> 在注重细节的同时还提升分辨率。</p>
 <p>曾经有段时间，<code>LSDR</code> 被认为是最好的。有些人喜欢 swinir，有些喜欢<code>esrgan4x</code>，<code>ymmv</code>，推荐使用 <code>ESRGAN_4x</code></p>
 <p>如果你要搞二次元，推荐使用<a href="https://github.com/bilibili/ailab/tree/main/Real-CUGAN">realcugan</a></p>
-<h3 id="_5">图像去噪</h3>
+<h3 id="_4">图像去噪</h3>
 <p>推荐使用 <a href="https://github.com/xinntao/Real-ESRGAN">Real-ESRGAN</a> 降噪。</p>
 <p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://raw.githubusercontent.com/xinntao/Real-ESRGAN/master/assets/teaser.jpg"><img alt="效果" src="https://raw.githubusercontent.com/xinntao/Real-ESRGAN/master/assets/teaser.jpg"/></a></p>
 <blockquote>
 <p>效果图</p>
 </blockquote>
-<h3 id="_6"><strong>渐变提示词</strong></h3>
+<h3 id="_5"><strong>渐变提示词</strong></h3>
 <p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-editing</p>
 <p>允许您开始对一张图片进行采样，但在中间切换到其他图片。基本语法是：</p>
 <div class="highlight"><pre><span></span><code>[from:to:when]
@@ -924,7 +867,7 @@
 <p>比如 [male:female:0.0], 意味着你开始时就要求画一个女性。</p>
 <h3 id="dlc">扩展模型/DLC</h3>
 <p>见 <code>训练模型</code> 的详细内容。</p>
-<h3 id="_7">提示词速查</h3>
+<h3 id="_6">提示词速查</h3>
 <p><strong><a href="https://docs.google.com/spreadsheets/d/14Gg1kIGWdZGXyCC8AgYVT0lqI6IivLzZOdIT3QMWwVI/edit">手抄本法术书</a></strong></p>
 <p><strong><a href="https://gelbooru.com/index.php?page=tags&amp;s=list">Danbooru全部Tag列表</a></strong></p>
 <p><strong><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml#">参数法术全典</a></strong></p>
@@ -932,7 +875,7 @@
 <p><strong><a href="https://github.com/scooderic/exhentai-tags-chinese-translation">NSFWTag</a></strong></p>
 <p><strong><a href="https://docs.google.com/spreadsheets/d/1SRqJ7F_6yHVSOeCi3U82aA448TqEGrUlRrLLZ51abLg/htmlview#">Ai艺术家文档</a></strong></p>
 <p><strong><a href="https://www.bilibili.com/read/cv19023021">Novelai 关键词组合器</a></strong></p>
-<h3 id="_8">调参工程师</h3>
+<h3 id="_7">调参工程师</h3>
 <p><a href="https://github.com/Maks-s/sd-akashic">https://github.com/Maks-s/sd-akashic</a></p>
 <p><a href="https://github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference">https://github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference</a></p>
 <div class="footnote">
@@ -969,7 +912,7 @@
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月5日 02:43:42</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月14日 08:42:03</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 03:59:46</span>
