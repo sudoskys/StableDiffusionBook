@@ -173,6 +173,10 @@ A sticker would certainly not say `masterpiece, best quility,` would it?
 
 Another thing is that if the request is for pixel work, you should remove any negative hints of conflict (if any).
 
+- Sequencing
+
+The words at the front will anchor the colour distribution of the picture. What is important goes first.
+
 - Semantic offset prevention
 
 To prevent semantic shifts, prioritise emoji and then use less complex syntax like `with` unnecessarily.
