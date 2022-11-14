@@ -113,14 +113,6 @@
          
     </url>
     <url>
-         <loc>https://stable-diffusion-book.vercel.app/install/WebUi/</loc>
-         <lastmod>2022-11-14</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/install/WebUi/"/>
-         <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/install/WebUi/"/>
-         
-    </url>
-    <url>
          <loc>https://stable-diffusion-book.vercel.app/install/WebUi/Troubleshoot/</loc>
          <lastmod>2022-11-14</lastmod>
          <changefreq>daily</changefreq>
@@ -134,6 +126,14 @@
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/install/WebUi/launch/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/install/WebUi/launch/"/>
+         
+    </url>
+    <url>
+         <loc>https://stable-diffusion-book.vercel.app/install/WebUi/set/</loc>
+         <lastmod>2022-11-14</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/install/WebUi/set/"/>
+         <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/install/WebUi/set/"/>
          
     </url>
     <url>
