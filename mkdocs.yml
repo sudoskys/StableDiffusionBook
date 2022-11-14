@@ -70,7 +70,7 @@ nav:
   - 安装配置:
       - install/index.md
       - WebUi安装:
-          - install/WebUi/index.md
+          - 基本指南: install/WebUi/set.md
           - 运行WebUi: install/WebUi/launch.md
           - 错误处理: install/WebUi/Troubleshoot.md
   - 绘画调试:
