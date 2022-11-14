@@ -22,9 +22,66 @@ Viewed vertically
 |Lens position ||||
 
 
+## WebUi Redrawing Guide
+
+Want to redraw or add elements manually with WebUi? Here's a little guide.
+
+Firstly, IMG2IMG2 and Inpaint have completely different effects. If you don't want the style to change, don't choose IMG2IMG2.
+
+To avoid stretching the image, it should be sized **as close as possible to the original size by choosing `Crop and resize` ** which means crop and resize
+
+- Masked Content
+
+The `Masked content` setting determines the content placed in the masked area before the repair, it determines the initial reference content (origin is the content of the mask before blurring, and latent nosie is referenced by noise (lots of random pigment dots).
+
+The latent noise is what determines the Ai reference, while the Denoising strength can be interpreted as the degree of unreference to the reference.
+
+![aidrawfix2](https://user-images.githubusercontent.com/75739606/201613751-9da2ffd6-2c1f-439b-8e9a-75b185c99912.png)
+
+- Changing elements
+
+If you need to change elements, key and paste them.
+
+If we need to add elements, we can use PS to graft a hand to the character and let Ai touch it up, or we can graft the lower body of another work for a bust that has no lower body and let AI touch it up.
+
+
+![test1](https://user-images.githubusercontent.com/75739606/201602016-e14b69e3-f250-4af7-b200-a421d163130b.png)
+
+- Make changes based on the original image
+
+Using Inpaint, the main scene is a removal/replacement.
+
+Start by tracing thin lines around the edges of the figure, then colour block (if there are shadows, take **bright colours** or draw full shadows). The variable intensity is chosen to be a low 0.3 or so for denoising (the lower it is the closer it is to the input image).
+
+Then use Img2Img Inpaint + the relevant cue word to fix it, and change it again if you are not satisfied until you are. The image is then realesrgan superscored to remove the image texture.
+
+
+![fix_exp](https://user-images.githubusercontent.com/75739606/201603999-1ae18fb9-5435-49f0-9adf-0789e9659a29.png)
+
+
+### Fix painting tips/Inpaint/PS repainting/grafting fixes/layout complements
+
+Use PS software to add and remove elements and then re-produce them. This can solve the problem of painting hands.
+
+Ai also accepts other finished pictures for grafting (to solve the problem of lying poses without a lower body)
+
+For example
+
+![test_woman](https://user-images.githubusercontent.com/75739606/197823480-5de77d69-46d5-4817-948f-4e514e1f8204.jpg)
+
+<!--
+![info](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/00119_136826557_masterpiece%2C_best_quality%2C _1girl%2C_black_hair%2C_hat1.jpg)
+-->
+
+>An image [^5] showing a detailed comparison of the effect of different parameters in img2img under WebUI (prompt, steps, scale, various seeds, etc. are kept consistent)
+
+The vertical axis is Denoising strength (online version of strength) and the horizontal axis is Variation strength
+
 ## Painting soldering!
 
 With [AiPhotoShop - the online tool for infinite extents of canvas](https://www.painthua.com/) you can "weld" your work continuously, very conveniently. Just add the `--api` parameter to the start command and open the web page to use it.
+
+> Image extents for some anime models are not supported because they are not Inpaint models (Sd has a dedicated Inpaint model.)
 
 [Github](https://github.com/BlinkDL/Hua)
 

@@ -21,9 +21,9 @@ The CLIP interrogator has two parts: one is the BLIP model, which creates a text
     The size is 855MB
 
 
-
-
 ## Img2Img Introduction
+
+>application see practicalguide
 
 In img2img tab, draw a mask over a part of the image, and that part will be in-painted.
 
@@ -33,8 +33,6 @@ WebUi uses `--gradio-img2img-tool color-sketch` to start up a plugin that brings
 
 !!! tip "The difference"
     PS Re-painting into Img2Img will result in a change of style, whereas Inpaint will not.
-
-
 
 
 ### Resizing
@@ -61,41 +59,6 @@ If you use blender, you can use [this video](https://youtu.be/MClbPwu-75o) share
 
 
 
-
-## Img2Img PS repaint/graft repair/layout fill
-
-**Size should be as close to the original size as possible, then select `Crop and resize` aka crop and resize**
-
-Use PS software to add and delete elements and then re-produce them. This can solve the problem of drawing hands.
-
-Ai also accepts other finished images for grafting (to solve the problem of lying down without a lower body)
-
-For example, we can use PS to graft a hand to a character for Ai to touch up, or graft the lower body of another work for a bust without a lower body for AI to touch up.
-
-Or paint a specific part of the body with a specified shape action (such as the coverage or shape of a garment) and hit it with a colour block (to prevent shadows, **please take a bright skin**).
-
-![test_woman](https://user-images.githubusercontent.com/75739606/197823480-5de77d69-46d5-4817-948f-4e514e1f8204.jpg)
-<!--
-![info](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/00119_136826557_masterpiece%2C_best_quality%2C _1girl%2C_black_hair%2C_hat1.jpg)
--->
->An image [^5] showing a detailed comparison of the effect of different parameters in img2img under WebUI (prompt, steps, scale, various seeds, etc. are kept consistent)
-
-The vertical axis is Denoising strength (online version of strength) and the horizontal axis is Variation strength
-
-
-
-### Redrawing techniques/removal/replacement
-
-- Start by tracing lines on the figure, then hit the colour block (if there are shadows, take **bright skin**).
-
-- Vary the intensity and choose a lower denoising of around 0.3.
-
-- Then use Img2Img Inpaint + the relevant prompt to fix it, and change it again if you're not happy with it until you are.
-
-- The image is then hyper-scored and noise reduced (image texture removed).
-
-
-
 ## Img2Img **Outpainting**
 
 Outpainting extends the original image and repairs the blank space created.
@@ -107,34 +70,28 @@ Outpainting, unlike normal image generation, seems to profit very much from larg
 
 ## Img2Img **Inpainting**
 
-In the img2img tab, draws a mask over a part of the image that will be repainted.
+In the Inpainting tab, draw a mask over a part of the image that will be repainted.
 
-For the `Masked content` setting, the Masked content field determines the content to be placed in the masked area before it is repaired.
-
-`original` is generally selected to maintain potential spatial consistency.
+The `Masked content` setting determines the content placed into the masked area prior to the repair. Generally select `original` to maintain potential spatial consistency, or `fill` if you don't want the repaired content to inherit the original colour distribution, to use most of the image's base colour, and `latent noise` to get a random colour dot pattern (to make the the generated content out of association).
 
 AS:
 
-| mask  | fill  | original   | latent noise      | latent nothing       |
+| mask-sample  | fill  | original   | latent noise      | latent nothing       |
 |---------------------------|----------------|-----------------------|-------------------------|-----------------------|
 | ![](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting-initial-content-mask.png) | ![](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting-initial-content-fill.png) | ![](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting-initial-content-original.png) | ![](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting-initial-content-latent-noise.png) | ![](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting-initial-content-latent-nothing.png) |
 
-`mask` determines the degree of blurring, original is `original` and fill is `fill base`.
+The horizontal bar `mask` determines the degree of blurring. original is `original`, fill is `fill base` and `fill` takes more steps to remove the unnatural feel.
 
-Tip: `fill` requires more steps to remove the unnatural look.
+`Inpaint at full resolution` is a full resolution fix. By default Inpaint resizes the resulting image **as a whole** to the target resolution specified in the *UI*. When `Inpaint at full resolution` is enabled, **only the masked area** is resized and pasted **back** to the original image after processing. This allows you to process large size images and allows the repair object to be rendered at a larger resolution.
 
-**Inpaint at full resolution**
-Normally, inpainting resizes the image to the target resolution specified in the UI. With Inpaint at full resolution enabled, only the masked region is resized, and after processing it is pasted back to the original picture. This allows you to work with large pictures and allows you to render the inpainted object at a much larger resolution.
 
-Options for inpainting:
+There are currently several ways to carry out the redraw operation.
 
-* draw a mask yourself in the web editor
-* erase a part of the picture in an external editor and upload a
-  transparent picture. Any even slightly transparent areas will become
-  part of the mask. Be aware that [some editors](https://docs.krita.org/en/reference_manual/layers_and_masks/split_alpha.html#how-to-save-a-png-texture-and-keep-color-values-in-fully-transparent-areas) save completely transparent areas as black by default.
-* change mode (to the bottom right of the picture) to "Upload mask"
-  and choose a separate black and white image for the mask
-  (white=inpaint).
+- Draw your own mask in a web editor (`Inpaint masked` means redrawing the painted area, `Inpaint not masked` means redrawing the area outside the painting)
+
+- Erase part of the image in an external editor and upload a transparent image. The transparent area will become part of the mask.Tips: Some editors save fully transparent areas as black by default.
+
+- Change the mode (bottom right of the image) to `Upload mask` and process as a separate black and white image for the mask (the white parts will be inpainted).
 
 
 
