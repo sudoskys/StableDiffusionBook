@@ -5,6 +5,15 @@
 
 以下是新闻和测试内容。
 
+## 11/15
+
+关于NAI Leak 的 Colab s DMCA 通知
+
+https://lumendatabase.org/notices/29484955
+https://lumendatabase.org/notices/29484957
+
+>再次说明：Aidraw Wiki 不分发设计版权争议的Cpkt文件
+
 ## 11/11
 
 - [Pull#4563](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4563) 在 ngrok 中添加用户名和密码

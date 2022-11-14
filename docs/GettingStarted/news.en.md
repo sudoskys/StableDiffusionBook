@@ -3,6 +3,14 @@
 
 !!! tip
     The Stable Diffusion WebUi is currently iterating very quickly and there are a lot of updates every day, so it is recommended to pull the latest code every day.
+## 11/15
+
+Colab s DMCA notice on NAI Leak
+
+https://lumendatabase.org/notices/29484955
+https://lumendatabase.org/notices/29484957
+
+>Once again: Aidraw Wiki does not distribute Cpkt files
 
 ## 11/11
 
