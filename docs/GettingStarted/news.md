@@ -14,6 +14,10 @@ https://lumendatabase.org/notices/29484957
 
 >再次说明：Aidraw Wiki 不分发设计版权争议的Cpkt文件
 
+## 11/12
+
+[Stable-Diffusion 中文模型](https://huggingface.co/IDEA-CCNL/Taiyi-Stable-Diffusion-1B-Chinese-v0.1)
+
 ## 11/11
 
 - [Pull#4563](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4563) 在 ngrok 中添加用户名和密码

@@ -3,6 +3,7 @@
 
 !!! tip
     The Stable Diffusion WebUi is currently iterating very quickly and there are a lot of updates every day, so it is recommended to pull the latest code every day.
+
 ## 11/15
 
 Colab s DMCA notice on NAI Leak
@@ -11,6 +12,11 @@ https://lumendatabase.org/notices/29484955
 https://lumendatabase.org/notices/29484957
 
 >Once again: Aidraw Wiki does not distribute Cpkt files
+
+## 11/12
+
+[Stable-Diffusion-1B-Chinese](https://huggingface.co/IDEA-CCNL/Taiyi-Stable-Diffusion-1B-Chinese-v0.1)
+
 
 ## 11/11
 
@@ -31,18 +37,17 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4320
 ## 11/9
 
 - 许可问题
-
 https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4222
 
-## 11/8
 
+## 11/8
 
 - Colossal-AI: A Unified Deep Learning System for Big Model Era 
 
 https://github.com/hpcaitech/ColossalAI
 
-## 11/7
 
+## 11/7
 
 - Dreambooth Extension for Stable-Diffusion-WebUI
 
