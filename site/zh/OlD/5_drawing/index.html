@@ -1622,7 +1622,7 @@ low quality 可加可不加</p>
 <p>允许您开始对一张图片进行采样，但在中间切换到其他图片。基本语法是：</p>
 <div class="highlight"><pre><span></span><code>[from:to:when]
 </code></pre></div>
-<p>其中from和to是任意文本，并且when是一个数字，用于定义应在采样周期多长时间内进行切换。越晚，模型绘制to文本代替from文本的能力就越小。如果when是介于 0 和 1 之间的数字，则它是进行切换之后的步数的一小部分。如果它是一个大于零的整数，那么这只是进行切换的步骤。</p>
+<p>其中from和to是任意文本，并且when是一个数字，用于定义应在采样周期多长时间内进行切换。越晚，模型绘制to文本代替from文本的能力就越小。如果when是介于 0 和 1 之间的数字N，则它代表会使用总步数的N%。如果它是一个大于零的整数，那么它代表进行切换的步骤数。</p>
 <p>将一个提示编辑嵌套在另一个提示中不起作用。</p>
 <p><strong>使用方法</strong></p>
 <p>[to:when] 在固定数量的step后添加to到提示 ( when)</p>
@@ -2302,7 +2302,7 @@ scale 就是 CFG scale
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 08:19:51</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月15日 17:53:03</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年10月10日 07:33:42</span>
