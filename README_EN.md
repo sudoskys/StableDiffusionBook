@@ -58,6 +58,8 @@ Press `. ` key to automatically clone the repository and start collaborating.
 
 [sdupdates SD comprehensive list of recommended reading](https://github.com/questianon/sdupdates)
 
+[Chinese Magic Books](https://docs.qq.com/doc/DWFdSTHJtQWRzYk9k)
+
 [Stable Diffusion WebUi](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
 
 [Integrated Tag Tools / Web Front End with Hyper Web Support](https://git.hudaye.work/MiuliKain/Kamiya-OpenUI)

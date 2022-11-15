@@ -57,6 +57,8 @@ If this does not seem to flow well to you or has errors,or u would like a versio
 
 [sdupdates SD综合清单，推荐阅读的](https://github.com/questianon/sdupdates)
 
+[元素同典](https://docs.qq.com/doc/DWFdSTHJtQWRzYk9k)
+
 [Stable Diffusion WebUi](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
 
 [集成Tag工具/支持超网络的Web前端](https://git.hudaye.work/MiuliKain/Kamiya-OpenUI)
