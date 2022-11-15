@@ -6,7 +6,7 @@
 
 ## 11/15
 
-Colab s DMCA notice on NAI Leak
+Telegram Chinese community on NAI Leak's Colab notebook received a DMCA.
 
 https://lumendatabase.org/notices/29484955
 

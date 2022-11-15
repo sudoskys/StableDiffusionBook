@@ -7,7 +7,7 @@
 
 ## 11/15
 
-关于NAI Leak 的 Colab s DMCA 通知
+Telegram中文社区中，关于 NAI Leak 的 Colab 笔记本 收到了 DMCA 通知。
 
 https://lumendatabase.org/notices/29484955
 
