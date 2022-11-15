@@ -6,6 +6,22 @@ The following will guide you on how to participate in the writing of this docume
 
 In order to participate in the writing, you will need to sign up for a GitHub account. If you don't have one, please register at [here](https://github.com/signup).
 
+## Adding links
+
+If you want to add a link, you need to submit a PR. Readme links are added by the repository maintainers themselves and no PRs are accepted.
+For contributors, the following entries are required to add a link.
+
+**Content requirements**
+
+* Current
+
+* Content on a topic that is consistent with the content of the wiki and that is not obviously commercially promoted.
+
+**Access**
+
+* Material must be backable (e.g. web to PDF, etc.) or provide a transparent download of the original material.
+
+* Must be publicly viewable.
 
 ## Formatting requirements
 
