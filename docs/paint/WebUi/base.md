@@ -369,7 +369,7 @@ normal quality, text, censored, gown, latex, pencil
 `cat :2 | dog` 也就是更像猫的狗
 
 
-## Highres. fix
+## Highres. fix 修复大尺寸画面崩坏
 
 一个方便的选项，通过勾选txt2img页面上的 "Highres.fix "复选框来启用。
 

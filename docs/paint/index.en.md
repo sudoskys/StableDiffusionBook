@@ -39,6 +39,8 @@ The toolbox that you can see when you open the page
 
 - [NAI's prompt Tokenizer](https://novelai.net/tokenizer)
 
+- [Batch resize](https://www.birme.net/)
+
 #### Help design
 
 * [Pic2Prompt0](https://www.latentspace.dev/)

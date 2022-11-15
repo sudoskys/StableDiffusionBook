@@ -346,7 +346,7 @@ low quality 可加可不加，如果想更加平面化，请加入 3D 到负面�
 
 ## 参数
 
-为什么不去 [这里](https://danbooru.donmai.us/wiki_pages/howto%3Atag_checklist) 看[原始数据站点](https://danbooru.donmai.us/wiki_pages/tag_groups)的参数呢？
+为什么不去 [这里](https://danbooru.donmai.us/wiki_pages/howto%3Atag_checklist) ，看[原始数据站点](https://danbooru.donmai.us/wiki_pages/tag_groups)的参数呢？
 
 [E 站标签翻译项目](https://github.com/EhTagTranslation)
 
@@ -437,6 +437,7 @@ Clip 跳过 0，其他一切都很好（afaik 不要使用超网络、v2、yaml�
 [艺术家博物馆](https://gallerix.asia/storeroom/)
 
 [稳定扩散的艺术家风格研究](https://proximacentaurib.notion.site/e28a4f8d97724f14a784a538b8589e7d?v=42948fd8f45c4d47a0edfc4b78937474)
+
 
 #### 草图风格
 

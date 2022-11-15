@@ -42,6 +42,7 @@
 
 - [NAI的分词器，用来查看你的文本被识别为哪些](https://novelai.net/tokenizer)
 
+- [批量裁切](https://www.birme.net/)
 
 #### 灵感
 
