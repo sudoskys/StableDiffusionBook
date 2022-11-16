@@ -114,13 +114,15 @@ NAI Leaks 的 `novelaileak\stableckpt\modules\modules` 中有 NAI 训练的一�
 
 > "Can super dramatically improve the image quality and diversity"
 
-[Pull Here](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2945)
+[DreamArtist-sd-webui-extension](https://github.com/7eu7d7/DreamArtist-sd-webui-extension)
 
 添加对否定词的即时嵌入学习，以显着提高生成图像的质量。 高质量的概念可以从单个图像中学习。
 
 添加重建损失以提高生成图像的细节质量和丰富度。
 
 添加通过人工注释训练的鉴别器（使用 convnext 实现）允许嵌入基于模型进行学习。
+
+使用方法与 `Textual Inversion` 相同。
 
 
 ### Aesthetic Gradients

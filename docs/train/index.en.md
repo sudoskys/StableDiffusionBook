@@ -122,13 +122,16 @@ Papers https://arxiv.org/abs/2208.12242
 
 > "Can super dramatically improve the image quality and diversity"
 
-[Pull Here](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2945)
+[DreamArtist-sd-webui-extension](https://github.com/7eu7d7/DreamArtist-sd-webui-extension)
+
 
 Adds on-the-fly embedding learning of negatives to dramatically improve the quality of the resulting images. High quality concepts can be learned from individual images.
 
 Add reconstruction loss to improve the detail quality and richness of the generated images.
 
 Adding a discriminator trained by manual annotation (implemented using convnext) allows embedding to be learnt based on the model.
+
+Usage same as `Textual Inversion`.
 
 
 ### Aesthetic Gradients
