@@ -82,7 +82,7 @@ nav:
           - 基本指南: model/WebUi/base.md
           - 错误处理: model/WebUi/Troubleshoot.md
   - 绘画指南:
-      - paint/index.md
+      - 概论: paint/index.md
       - WebUi绘画指南:
           - paint/WebUi/index.md
           - 基本指南: paint/WebUi/base.md
@@ -141,6 +141,7 @@ plugins:
           错误处理: Troubleshoot
           工作台: Workstations
           贡献指南: Contribution Guide
+          概论: General
       languages:
         en:
           name: English
