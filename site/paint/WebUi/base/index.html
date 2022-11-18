@@ -409,16 +409,21 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_1">
-    提示词语法简介
+    速度判定
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_2">
-    如何书写提示词(提示)
+    提示词语法简介
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_3">
+    如何书写提示词(提示)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
     调序编译
   </a>
 </li>
@@ -433,7 +438,7 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_4">
+<a class="md-nav__link" href="#_5">
     消极提示词
   </a>
 </li>
@@ -443,17 +448,17 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_5">
+<a class="md-nav__link" href="#_6">
     渐变标签
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_6">
+<a class="md-nav__link" href="#_7">
     从图片重现提示词
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_7">
+<a class="md-nav__link" href="#_8">
     逆向提示词
   </a>
 </li>
@@ -474,17 +479,12 @@
 <nav aria-label="Highres. fix 修复大尺寸画面崩坏" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_8">
+<a class="md-nav__link" href="#_9">
     注意 尺寸
   </a>
 </li>
 </ul>
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_9">
-    提示词原理
-  </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_10">
@@ -612,16 +612,21 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_1">
-    提示词语法简介
+    速度判定
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_2">
-    如何书写提示词(提示)
+    提示词语法简介
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_3">
+    如何书写提示词(提示)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
     调序编译
   </a>
 </li>
@@ -636,7 +641,7 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_4">
+<a class="md-nav__link" href="#_5">
     消极提示词
   </a>
 </li>
@@ -646,17 +651,17 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_5">
+<a class="md-nav__link" href="#_6">
     渐变标签
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_6">
+<a class="md-nav__link" href="#_7">
     从图片重现提示词
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_7">
+<a class="md-nav__link" href="#_8">
     逆向提示词
   </a>
 </li>
@@ -677,17 +682,12 @@
 <nav aria-label="Highres. fix 修复大尺寸画面崩坏" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_8">
+<a class="md-nav__link" href="#_9">
     注意 尺寸
   </a>
 </li>
 </ul>
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_9">
-    提示词原理
-  </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_10">
@@ -720,8 +720,10 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="webui">WebUi</h1>
-<p>请先在前面了解一下 WebUi(SD) 网页应用的参数。</p>
-<h2 id="_1">提示词语法简介</h2>
+<p>请先在前面了解一下基本内容。</p>
+<h2 id="_1">速度判定</h2>
+<p>终端的it/s速率是大致速率，代表每次迭代秒数，而不是每秒钟迭代次数。因此，数字降低了，那就是加速了。</p>
+<h2 id="_2">提示词语法简介</h2>
 <p>对于NAI用户，请阅读<a href="https://docs.novelai.net/image/promptmixing.html">官网Docs</a></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -753,11 +755,12 @@ NAI的 [word] = WebUi(word:0.952)(0.952 = 1/1.05)</p>
 <p>NAI的{word} = WeUi的(word:1.05)</p>
 <p>NAI花括号权重为1.05/个，WebUi圆权重为1.1/个</p>
 </div>
-<h2 id="_2">如何书写提示词(提示)</h2>
+<h2 id="_3">如何书写提示词(提示)</h2>
 <ul>
 <li>自然语言</li>
 </ul>
 <p>WebUi 也可以直接使用自然语言，包括 西方颜文字，emoji ，甚至可以是一些日文？</p>
+<p>但是，追求准确就不要用自然语言。</p>
 <ul>
 <li>参数[^6]</li>
 </ul>
@@ -808,11 +811,15 @@ caustics, masterpiece, high resolution,
 <p><a href="https://www.yuque.com/longyuye/lmgcwy">人偶教室的测试记录</a></p>
 <p><a href="https://www.bilibili.com/video/BV1TP411N71t/">风格化: 32种</a></p>
 <p>更全面的指南在起始页。</p>
-<h2 id="_3">调序编译</h2>
+<h2 id="_4">调序编译</h2>
 <p>提示词放入的顺序就是优先级~</p>
 <p>webui 突破 tag 75 个限制的方式是把 75 个分为一组。</p>
 <p>出于提高可读性的目地，推荐主体往前放，接着描述装扮的词，画质提升词穿插在这些描述词之间，一般为了提高成品率要把动作、nsfw 词等改变构图的词往后放，或者手动调低权重。</p>
 <p>以上排序是每组tag都要遵守的，所以如果后面的tag超过 75 了就应该把前面的分一部分过来。</p>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://jalammar.github.io/images/stable-diffusion/stable-diffusion-image-generation.png"><img alt="图像生成的描述" src="https://jalammar.github.io/images/stable-diffusion/stable-diffusion-image-generation.png"/></a></p>
+<blockquote>
+<p>thanks https://jalammar.github.io/illustrated-stable-diffusion/</p>
+</blockquote>
 <h2 id="batch-countbatch-size">Batch count&amp;batch size</h2>
 <p><code>batch count</code> 指定训练几批次图像。</p>
 <p><code>batchsize</code> 中文翻译为批次大小（批次尺寸）</p>
@@ -872,7 +879,7 @@ NAI的 [word] = WebUi(word:0.952)(0.952 = 1/1.05)</p>
 <p>如果你缩放这个向量，这个概念会变得更强或更弱。</p>
 <p>From <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2905">Here</a></p>
 </details>
-<h2 id="_4">消极提示词</h2>
+<h2 id="_5">消极提示词</h2>
 <p>WebUi(SD)网页应用会在生成时<strong>拒绝消极提示词有关的内容</strong>。</p>
 <p>消极提示是一种使用稳定扩散的方式，允许用户指定他不想看到的东西，而不需要对模型有任何额外的负担或要求。工作方式是在做取样时，使用用户指定的文本而不是空字符串作为<code>unconditional_conditioning</code>。</p>
 <p>下面是来自<a href="https://github.com/CompVis/stable-diffusion/blob/main/scripts/txt2img.py">txt2img.py</a>的（简化）代码。</p>
@@ -920,7 +927,7 @@ normal quality, text, censored, gown, latex, pencil
 <p><strong>Denoising strength 降低噪声</strong></p>
 <p><code>Denoising strength</code> 决定算法对图像内容的保留程度,可以减少对画风的变得，但也会弱化img2img能力。值越高 AI 对原图的参考程度就越低 (同时增加迭代次数)。</p>
 <p>对于以图做图来说，低 <code>denoising</code> 意味着修正原图，高 <code>denoising</code> 就和原图就没有大的相关性了。一般来讲阈值是 0.7 左右，超过 0.7 和原图基本上无关，0.3 以下就是稍微改一些。</p>
-<h2 id="_5">渐变标签</h2>
+<h2 id="_6">渐变标签</h2>
 <p>渐变标签，指示 WebUi 在训练中替换 Token，语法使用 <code>[some1:some2:num]</code></p>
 <p><code>[fantasy:cyberpunk:16]</code> 代表从第 16 step 后，使用 <code>cyberpunk</code> 标签替换 <code>fantasy</code></p>
 <p><code>[to:when]</code> 在固定数量的step后添加 <code>to</code> 到提示 ( when)</p>
@@ -929,10 +936,10 @@ normal quality, text, censored, gown, latex, pencil
 <!--
 ![sample_Gradient](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/sample_Gradient.jpg)
 -->
-<h2 id="_6">从图片重现提示词</h2>
+<h2 id="_7">从图片重现提示词</h2>
 <p>程序默认会在图片中加入提示词，参数，模型信息，对于没有压缩的原图，我们可以将文件拖入 <code>PNG Info</code> 选项卡，进行提示词(Token)查看。</p>
 <p>或者使用 <a href="https://spell.novelai.dev/">在线工具</a> 查看它。</p>
-<h2 id="_7">逆向提示词</h2>
+<h2 id="_8">逆向提示词</h2>
 <p>这里有一些 <strong>Image 逆向参数服务</strong>，可以从图片中提取相关参数，不一定准确。</p>
 <p><a href="https://t.me/LenKiMo_Bot">LenKiMo_Bot</a></p>
 <p><a href="https://github.com/KichangKim/DeepDanbooru">DeepDanbooru</a></p>
@@ -955,29 +962,13 @@ normal quality, text, censored, gown, latex, pencil
 <h2 id="highres-fix">Highres. fix 修复大尺寸画面崩坏</h2>
 <p>一个方便的选项，通过勾选txt2img页面上的 "Highres.fix "复选框来启用。</p>
 <p>默认情况下，txt2img在非常高的分辨率下做出非常混沌的图像。而此插件这使得它可以避免使用小图片的构图，在较低的分辨率下部分渲染你的图片，提高分辨率，然后在高分辨率下添加细节。</p>
-<h3 id="_8">注意 <code>尺寸</code></h3>
+<h3 id="_9">注意 <code>尺寸</code></h3>
 <p>比如出图尺寸宽了人可能会多</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>要匹配好姿势，镜头和人物才不畸形，有时候需要限定量词，多人物时要处理空间关系和 prompt 遮挡优先级。人数-&gt;人物样貌-&gt;环境样式-&gt;人物状态</p>
 </div>
 <p>1024 之上的尺寸可能会出现不理想的结果！推荐使用 小尺寸 + 适量提高 Step 步数 + 图片超清分辨率(见进阶)。</p>
-<h2 id="_9">提示词原理</h2>
-<p>咒语的科学原理。</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://user-images.githubusercontent.com/75739606/198675128-c2c849d0-d024-468b-80c4-374f13e933e3.png"><img alt="prompt_draw" src="https://user-images.githubusercontent.com/75739606/198675128-c2c849d0-d024-468b-80c4-374f13e933e3.png"/></a></p>
-<!--
-![prompt_draw](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/prompt_draw_fix.png)
--->
-<blockquote>
-<p>By RcINS</p>
-</blockquote>
-<p>在程序中，提示词的解析由 CLIP 处理</p>
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/modules/prompt_parser.py">WebUi的prompt_parser</a> 实现了渐变等功能</p>
-<p>CLIP 无法处理中文，中文字符会被分解。</p>
-<p><strong>关于权重的实现</strong>：权重增加通常会占一个提示词位。</p>
-<p><strong>关于渐变的实现</strong>：到了指定 Step ，WebUi 程序会替换对应 提示词，达到渐变效果。</p>
-<p>其他以此类推。</p>
-<p>WebUi prompt 语法会转换为相应时间的 prompt,然后通过 embedding 交给 Ai 处理。</p>
 <h2 id="_10">参数冲突(提示词)</h2>
 <p>比如 <code>sex</code> 包含较多姿势体位，在使用者想要特定姿势时，法术内单一的 <code>sex</code> tag就应该被删除。</p>
 <p>同样地，<code>loli</code> Tag 附带了强画风属性，会很大地影响结果！改成 <code>female child</code> 会好一点。</p>
@@ -1037,7 +1028,7 @@ PS：调太高步数(&gt;30)效果不会更好</p>
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月15日 15:30:27</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月18日 19:23:51</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 03:59:46</span>

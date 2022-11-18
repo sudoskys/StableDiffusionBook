@@ -598,6 +598,11 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_13">
+    附录
+  </a>
+</li>
 </ul>
 </nav>
 </div>
@@ -632,7 +637,8 @@
 <p>从一些具有共同语义 [v] 的图片中，提取 [v] 的一个方法。提取出的 [v] 张量称之为 "Embedding"。将 Embedding 保存为文件，之后生成图片时就可以在 prompt 中以文件名引用。</p>
 <h4 id="_4">特征</h4>
 <p>训练产物大小较小，webui 自带训练支持。</p>
-<p>可以解决新出的角色画不出的问题，或者模仿特定的可以用语言精确描述的艺术风格。因为 TI 是在 Text Encoder 的输出做处理，所以并不能让模型学习到它不知道的概念。</p>
+<p>可以解决新出的角色画不出的问题，或者模仿特定的可以用语言精确描述的艺术风格。</p>
+<p>因为 TI 是在 Text Encoder 的输出做处理，所以并不能让模型学习到它不知道的概念。</p>
 <h4 id="_5">使用</h4>
 <p>使用时，将 embedding（一个 .pt 或一个 .bin 文件）放入 webui 的 <code>embeddings</code> 目录并在 prompt 中写要用的 embedding 的文件名（不包括扩展名）即可，不必重启 webui。可以同时使用多个 embedding。</p>
 <h4 id="_6">相关</h4>
@@ -694,6 +700,15 @@
 <!--
 ![Aesthetic_other](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/Aesthetic_other.png)
 -->
+<h2 id="_13">附录</h2>
+<ul>
+<li>
+<p><a href="https://github.com/toriato/stable-diffusion-webui-wd14-tagger">WD 1.4 tagger for Automatic1111's Web UI </a></p>
+</li>
+<li>
+<p><a href="https://www.birme.net/">Resize Tool</a></p>
+</li>
+</ul>
 <div class="footnote">
 <hr/>
 <ol>
@@ -740,7 +755,7 @@
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月16日 07:10:49</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月18日 17:51:42</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 03:59:46</span>

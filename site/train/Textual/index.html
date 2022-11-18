@@ -501,6 +501,15 @@
 <a class="md-nav__link" href="#_7">
     备注
   </a>
+<nav aria-label="备注" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#subject_filewordstxt">
+    subject_filewords.txt 模板
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -590,6 +599,15 @@
 <a class="md-nav__link" href="#_7">
     备注
   </a>
+<nav aria-label="备注" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#subject_filewordstxt">
+    subject_filewords.txt 模板
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -732,16 +750,26 @@ VAE 对 训练 并不会造成灾难性的影响。
 <p>并将连接字符串（'，'）放在这些单词之间以创建一个文本<code>a, man, in, suit</code></p>
 <p>也可以创建一个与图像 ( 000001-1-a man in suit.txt) 具有相同文件名的文本文件，然后将提示文本放在那里。将不使用文件名和正则表达式选项。</p>
 <p><strong>Move VAE and CLIP from VRAM when training. Saves VRAM.</strong></p>
-<p>训练时从 VRAM 中卸载 VAE 和 CLIP,装载进 RAM</p>
+<p>训练时将 VAE 和 CLIP 从 VRAM 中转移进 RAM</p>
 <p>设置选项卡上的此选项允许您以较慢的预览图片生成为代价节省一些内存。</p>
 <p>训练的结果是一个 .pt 或一个 .bin 文件（前者是原作者使用的格式，后者作为 diffusers library）</p>
+<h3 id="subject_filewordstxt">subject_filewords.txt 模板</h3>
+<p><a href="[is_textual_inversion_salvageable](https://www.reddit.com/r/sdforall/comments/ykerg2/is_textual_inversion_salvageable/)">1^</a>
+Textual Inversion 训练不能训练模型中没有的东西。它对训练照片也非常敏感。如果你没有得到好的结果（未能收敛或结果崩坏）。</p>
+<p>你需要更换训练数据或者使用Dreambooth。</p>
+<p>那么，训练是如何进行的呢？</p>
+<p>你给它提供一个提示，提示转化为一堆向量并输入模型，输出与训练图片进行比较，被训练的词向量被稍微修正。这个过程在训练中会反复进行。</p>
+<p>被送入模型的向量是训练向量+提示向量。</p>
+<p>因为训练向量的修正不会使用提示向量提供的内容进行训练。所以文件词不应该包含属于被训练内容的特性。</p>
+<p>如果你有，比如说一个在所有照片中都穿着 black t-shirt 的主体，你可以通过在这些图片的 filewords 中加入 <code>black t-shirt</code> 来有效地将其从训练集中否定掉。</p>
+<p>除非你试图修复照片，否则请将 filewords 用于 style，而不是用于 subject。</p>
 <iframe allowfullscreen="true" border="0" frameborder="no" framespacing="0" height="600" scrolling="no" src="//player.bilibili.com/player.html?aid=559085039&amp;bvid=BV1ae4y1S7v9&amp;cid=859894044&amp;page=1" width="100%"> </iframe>
 <hr/>
 <div class="md-source-file">
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月18日 14:28:46</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月18日 17:51:42</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 03:59:46</span>

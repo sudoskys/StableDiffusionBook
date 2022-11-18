@@ -408,6 +408,11 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#speed-determination">
+    Speed determination
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#introduction-to-the-prompting-method">
     Introduction to the prompting method
   </a>
@@ -480,11 +485,6 @@
 </li>
 </ul>
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#prompts-working-model">
-    Prompt's working model
-  </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#prompt-conflict-hint-word">
@@ -611,6 +611,11 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#speed-determination">
+    Speed determination
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#introduction-to-the-prompting-method">
     Introduction to the prompting method
   </a>
@@ -685,11 +690,6 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#prompts-working-model">
-    Prompt's working model
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#prompt-conflict-hint-word">
     Prompt conflict (hint word)
   </a>
@@ -721,6 +721,8 @@
 </a>
 <h1 id="webui">WebUi</h1>
 <p>Please find out about the parameters of the WebUi(SD) web application beforehand.</p>
+<h2 id="speed-determination">Speed determination</h2>
+<p>The it/s rate of the terminal is the approximate rate and represents the number of seconds per iteration, not the number of iterations per second. Therefore, if the number is reduced, then it is accelerated.</p>
 <h2 id="introduction-to-the-prompting-method">Introduction to the prompting method</h2>
 <p>For NAI users, please read the <a href="https://docs.novelai.net/image/promptmixing.html">official website Docs</a></p>
 <div class="admonition tip">
@@ -759,6 +761,7 @@ NAI's [word] = WebUi(word:0.952)(0.952 = 1/1.05)</p>
 <li>Natural language</li>
 </ul>
 <p>Natural language can be used directly, WebUi(SD) has natural language processing capabilities (English sentences), and can also use  emoji</p>
+<p>However, if you are looking for accuracy, don't use natural language.</p>
 <ul>
 <li>parameter [^6]</li>
 </ul>
@@ -813,6 +816,10 @@ caustics, masterpiece, high resolution,
 <p>The way webui breaks the tag limit of 75 is by dividing them into groups.</p>
 <p>For the purpose of improving readability, it is recommended that the main body be placed first, followed by the words describing the costume, with the picture quality enhancement words interspersed between these descriptors. Generally, words that change the composition, such as action and nsfw words, are placed later or manually weighted down in order to improve the finish rate.</p>
 <p>The above ordering is the same for each group of tags, so if the later tags are over 75, you should split the earlier ones.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://jalammar.github.io/images/stable-diffusion/stable-diffusion-image-generation.png"><img alt="图像生成的描述" src="https://jalammar.github.io/images/stable-diffusion/stable-diffusion-image-generation.png"/></a></p>
+<blockquote>
+<p>thanks https://jalammar.github.io/illustrated-stable-diffusion/</p>
+</blockquote>
 <h2 id="batch-countbatch-size">Batch count&amp;batch size</h2>
 <p><code>batch count</code> specifies how many batches of images to train.</p>
 <p><code>batchsize</code> specifies how many to train at a time.</p>
@@ -946,22 +953,6 @@ For example, if you use <code>a busy city street in a modern city|illustration|c
 <p>It is important to match the pose so that the shot and the figure are not distorted, sometimes you need to limit the quantifiers, deal with spatial relationships and prompt masking priorities when there are multiple figures. Number of people-&gt;Personal appearance-&gt;Environmental style-&gt;Personal state</p>
 </div>
 <p>Sizes above 1024 may give undesirable results! We recommend using small size + a moderate increase in the number of Step steps + super-clear resolution of the image (see Progression).</p>
-<h2 id="prompts-working-model">Prompt's working model</h2>
-<p>The scientific principle of incantation.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://user-images.githubusercontent.com/75739606/198675128-c2c849d0-d024-468b-80c4-374f13e933e3.png"><img alt="prompt_draw" src="https://user-images.githubusercontent.com/75739606/198675128-c2c849d0-d024-468b-80c4-374f13e933e3.png"/></a></p>
-<!--
-![prompt_draw](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/prompt_draw_fix.png)
--->
-<blockquote>
-<p>By RcINS</p>
-</blockquote>
-<p>In the program, the parsing of the prompt is handled by CLIP</p>
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/modules/prompt_parser.py">prompt_parser for WebUi</a> implements Prompt editing etc.</p>
-<p>CLIP cannot handle Chinese, Chinese characters are broken up.</p>
-<p><strong>About the weighting implementation</strong>: weighting increases usually take up a prompt position.</p>
-<p><strong>About Prompt editing</strong>: At a given Step, the WebUi program will replace the corresponding prompt to achieve a Prompt editing effect.</p>
-<p>And so on.</p>
-<p>The WebUi prompt syntax is converted into a prompt of the corresponding time, which is then passed to Ai via embedding.</p>
 <h2 id="prompt-conflict-hint-word">Prompt conflict (hint word)</h2>
 <p>For example, if <code>loli</code> contains more styles, the single <code>loli</code> tag within the spell should be removed when the user wants a specific style.</p>
 <p>By default we use (someone else gives you) negative prompts in which there is a risk of words that will conflict, so please be aware of this.</p>
@@ -990,13 +981,13 @@ PS: too high a step count (&gt;30) will not give better results</p>
 <p>from <a href="https://www.reddit.com/r/StableDiffusion/comments/xbeyw3/can_anyone_offer_a_little_guidance_on_the/">discussion</a></p>
 <p>and <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#attentionemphasis">wiki</a></p>
 <ul>
-<li>举个例子</li>
+<li>EXP</li>
 </ul>
 <table>
 <thead>
 <tr>
-<th>预览一</th>
-<th>预览二</th>
+<th>EXP1</th>
+<th>EXP2</th>
 </tr>
 </thead>
 <tbody>
@@ -1022,7 +1013,7 @@ PS: too high a step count (&gt;30) will not give better results</p>
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 7, 2022 01:43:42</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 18, 2022 19:23:51</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 07:44:44</span>

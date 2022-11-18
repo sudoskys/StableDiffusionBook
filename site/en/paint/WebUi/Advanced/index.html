@@ -418,6 +418,20 @@
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#how-it-work">
+    How it work
+  </a>
+<nav aria-label="How it work" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#image-generator">
+    Image generator
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#img2txt">
     Img2Txt
   </a>
@@ -600,6 +614,20 @@
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#how-it-work">
+    How it work
+  </a>
+<nav aria-label="How it work" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#image-generator">
+    Image generator
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#img2txt">
     Img2Txt
   </a>
@@ -695,6 +723,51 @@
 <p class="admonition-title">Tip</p>
 <p>Please make sure you read the first section above for the specific Img2Img and inpaint introductory operations.</p>
 </div>
+<h2 id="how-it-work">How it work</h2>
+<h3 id="image-generator">Image generator</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://jalammar.github.io/images/stable-diffusion/stable-diffusion-components-and-tensors.png"><img alt="jalammar s pic" src="https://jalammar.github.io/images/stable-diffusion/stable-diffusion-components-and-tensors.png"/></a></p>
+<p>information creator works entirely in the image information space (or latent space). This feature makes it faster than previous diffusion models that worked in pixel space. Technically, this component is composed of a UNet neural network and a scheduling algorithm.</p>
+<ul>
+<li>Text Encoder</li>
+</ul>
+<p>The parsing of cues is processed by the Text Encoder/CLIP (token embedding), which is a key step in the translation of cues to the AI.</p>
+<p>ClipText is used for text encoding.
+The input text and output is a vector of 77 token embeddings, each with 768 dimensions.</p>
+<ul>
+<li>information creator</li>
+</ul>
+<p>UNet + Scheduler processes/disperses information step by step in the information (latent) space.</p>
+<p>It inputs text embeddings and a starting multidimensional array of noise (a structured list of numbers, also called a tensor) and outputs a processed array of information.</p>
+<ul>
+<li>Image Decoder</li>
+</ul>
+<p>The Text Decoder draws a picture based on the information obtained from the information creator. It is run only once at the end of the process to produce the final image.</p>
+<p>Autoencoder Decoder uses the processed information array to draw the decoder of the final image. The input is the processed information array (dimensions: (4,64,64)) and the output is the resulting image (dimensions: (3, 512, 512), i.e. (red/green/blue, width, height).</p>
+<ul>
+<li>The work of CLIP</li>
+</ul>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://pic3.zhimg.com/80/v2-340920caff256e06c29cff7097e23e62_1440w.jpg"><img alt="training image" src="https://pic3.zhimg.com/80/v2-340920caff256e06c29cff7097e23e62_1440w.jpg"/></a></p>
+<blockquote>
+<p>CLIP training graph from https://bbs.huaweicloud.com/blogs/371319</p>
+</blockquote>
+<p>In use, the Text Encoder extracts features from the input vocabulary, combines them with Gaussian noise into the information creator and outputs a processed array of information.
+After each processing the image creator predicts a number of pixels, which are then combined with each other in a loop of generation.</p>
+<p>The processed noise array and the token set are then generated in another step.</p>
+<p>After all the steps are completed, the noise is fed into the Image Decoder and outputted as a graph.</p>
+<ul>
+<li>WebUi implementation</li>
+</ul>
+<p>The <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/modules/prompt_parser.py">prompt_parser for WebUi</a> implements fading and other functions via native WebUi. functions.</p>
+<p>The WebUi prompt syntax is converted to a prompt of the corresponding time, which is then passed on to Ai via embedding.</p>
+<p>Regarding the weighting implementation: the weighting increase usually takes up one prompt position.</p>
+<p>For the implementation of the fade: at a given Step, the WebUi program replaces the corresponding prompt to achieve the fade effect.</p>
+<p>And so on.</p>
+<p>The entire process is shown in the diagram 
+<a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://user-images.githubusercontent.com/75739606/198675128-c2c849d0-d024-468b-80c4-374f13e933e3.png"><img alt="prompt_draw" src="https://user-images.githubusercontent.com/75739606/198675128-c2c849d0-d024-468b-80c4-374f13e933e3.png"/></a></p>
+<blockquote>
+<p>By RcINS</p>
+</blockquote>
+<p>You can see a comprehensive introduction at <a href="https://jalammar.github.io/illustrated-stable-diffusion/">illustrated-stable-diffusion</a>. Parts of this section have also been translated from this.</p>
 <h2 id="img2txt">Img2Txt</h2>
 <p>Under the Generate button there is an <code>Interrogate CLIP</code> which when clicked downloads the <code>CLIP</code> which is used to generate a Tag for the image in the current image box and populate it with prompt words.</p>
 <p>The CLIP interrogator has two parts: one is the BLIP model, which creates a text description from the image. The other is the CLIP model, which picks out a few lines from the list that are relevant to the image</p>
@@ -883,7 +956,7 @@ You can find this function in the img2img tab at the bottom, under Script -&gt; 
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 14, 2022 08:42:03</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 18, 2022 19:23:51</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 07:44:44</span>
