@@ -46,7 +46,7 @@ Autoencoder Decoder使用处理过的信息阵列绘制最终图像的解码器�
 
 完成所有 step 后，噪声输入Image Decoder，输出成图。
 
-- WebUi 的实现
+### WebUi 的实现
 
 [WebUi的prompt_parser](https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/modules/prompt_parser.py) 通过本地 WebUi 实现了渐变等功能。
 
