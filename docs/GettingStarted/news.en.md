@@ -4,6 +4,11 @@
 !!! tip
     The Stable Diffusion WebUi is currently iterating very quickly and there are a lot of updates every day, so it is recommended to pull the latest code every day.
 
+## 11/18
+
+[Reverse thinking](https://twitter.com/needle/status/1593428231901700101)
+
+
 
 ## 11/16
 

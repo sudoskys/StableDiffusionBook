@@ -225,6 +225,27 @@ This option on the Settings tab allows you to save some memory at the cost of sl
 
 The result of training is a .pt or a .bin file (the former is the format used by the original author, the latter is used as a diffusers library)
 
+### subject_filewords.txt Template
+
+[1^]
+Textual Inversion training cannot train things that are not in the model. It is also very sensitive to training photos. If you don't get good results (failure to converge or crashing results).
+
+You need to replace the training data or use Dreambooth.
+
+So, how does the training work?
+
+You give it a hint, the hint is transformed into a bunch of vectors and fed into the model, the output is compared with the training images and the word vectors being trained are slightly corrected. This process is repeated during training.
+
+The vectors that are fed into the model are the training vector + the hint vector.
+
+Because the correction of the training vector does not use the content provided by the cue vector for training. So the document words should not contain features that belong to the content being trained.
+
+If you have, say, a subject wearing a black t-shirt in all photos, you can effectively negate it from the training set by adding `black t-shirt` to the filewords of those images.
+
+
+Unless you are trying to fix a photo, use filewords for style, not for subject.
+
 <iframe src="//player.bilibili.com/player.html?aid=559085039&bvid=BV1ae4y1S7v9&cid=859894044&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 
 
+[1^]:[is_textual_inversion_salvageable](https://www.reddit.com/r/sdforall/comments/ykerg2/is_textual_inversion_salvageable/)

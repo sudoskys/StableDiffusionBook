@@ -44,7 +44,9 @@
 
 训练产物大小较小，webui 自带训练支持。
 
-可以解决新出的角色画不出的问题，或者模仿特定的可以用语言精确描述的艺术风格。因为 TI 是在 Text Encoder 的输出做处理，所以并不能让模型学习到它不知道的概念。
+可以解决新出的角色画不出的问题，或者模仿特定的可以用语言精确描述的艺术风格。
+
+因为 TI 是在 Text Encoder 的输出做处理，所以并不能让模型学习到它不知道的概念。
 
 
 #### 使用
@@ -163,6 +165,14 @@ git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-grad
 <!--
 ![Aesthetic_other](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/Aesthetic_other.png)
 -->
+
+
+## 附录
+
+- [WD 1.4 tagger for Automatic1111's Web UI ](https://github.com/toriato/stable-diffusion-webui-wd14-tagger)
+
+- [Resize Tool](https://www.birme.net/)
+
 
 
 [^7]:[风格模型训练](https://www.bilibili.com/video/BV1ae4y1S7v9/)

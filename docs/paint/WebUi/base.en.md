@@ -2,6 +2,10 @@
 
 Please find out about the parameters of the WebUi(SD) web application beforehand.
 
+## Speed determination
+
+The it/s rate of the terminal is the approximate rate and represents the number of seconds per iteration, not the number of iterations per second. Therefore, if the number is reduced, then it is accelerated.
+
 ## Introduction to the prompting method
 
 For NAI users, please read the [official website Docs](https://docs.novelai.net/image/promptmixing.html)
