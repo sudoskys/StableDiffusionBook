@@ -4,6 +4,13 @@
 !!! tip
     The Stable Diffusion WebUi is currently iterating very quickly and there are a lot of updates every day, so it is recommended to pull the latest code every day.
 
+
+## 11/16
+
+Anything-V3.0.ckpt is a hybrid model fused from the ChineseMagicBook group of friends.
+
+There is also a so-called hand repair model, a regenerated DreamBooth model trained from the work of a famous painter.
+
 ## 11/15
 
 Telegram Chinese community on NAI Leak's Colab notebook received a DMCA.

@@ -96,17 +96,28 @@ NAI's model, trained using tens of millions of Danbooru images, has been leaked 
 
 #### Community
 
-- [Telegram](https://t.me/StableDiffusion_CN) Ai绘画中文社群
+- CN
+[Telegram Ai绘画中文社群](https://t.me/StableDiffusion_CN) 
 <img src="https://img.shields.io/badge/Telegram-Group-blue" alt="Telegram">
 
-- [Discord](https://discord.gg/vhsArSSA6K) Ai绘画中文社群
+[Discord Ai绘画中文社群](https://discord.gg/vhsArSSA6K) 
 <img src="https://img.shields.io/discord/1033769426216046622?color=blue&label=Discord_Ai%E7%BB%98%E7%94%BB%E4%B8%AD%E6%96%87%E7%BB%84" alt="Discord">
 
-- [Discord stablediffusion Community](https://discord.gg/stablediffusion) 
+[贴吧-并联计划组](https://docs.google.com/spreadsheets/d/1TA_xInjgS_dKdd68EL9NamCgulTBQHQpsVdCQpf3OxU/edit#gid=45042168)
+
+- EN
+
+[Discord stablediffusion Community](https://discord.gg/stablediffusion) 
 <img src="https://img.shields.io/discord/1002292111942635562?color=blue&label=Discord_stablediffusion" alt="Discord">
 
 
 #### Forum
+
+- CN
+
+[Nga](https://nga.178.com/thread.php?stid=33844263)
+
+- EN
 
 [Reddit-DreamBooth](https://www.reddit.com/r/DreamBooth/)
 
