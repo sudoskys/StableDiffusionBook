@@ -423,6 +423,11 @@
     图像生成器
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#webui">
+    WebUi 的实现
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -619,6 +624,11 @@
     图像生成器
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#webui">
+    WebUi 的实现
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -752,9 +762,7 @@
 每次处理后 图像生成器 都会预测一些像素，然后在循环的生成中，像素相互结合。</p>
 <p>处理完一次数组就是完成了一次 step.然后处理完的噪声数组和 token集合再次进行一次 step 生成.</p>
 <p>完成所有 step 后，噪声输入Image Decoder，输出成图。</p>
-<ul>
-<li>WebUi 的实现</li>
-</ul>
+<h3 id="webui">WebUi 的实现</h3>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/modules/prompt_parser.py">WebUi的prompt_parser</a> 通过本地 WebUi 实现了渐变等功能。</p>
 <p>WebUi prompt 语法会转换为相应时间的 prompt,然后通过 embedding 交给 Ai 处理。</p>
 <p>关于权重的实现：权重增加通常会占一个提示词位。</p>
@@ -968,7 +976,7 @@
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月18日 19:23:51</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月18日 19:26:22</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 03:59:46</span>
