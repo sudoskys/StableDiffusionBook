@@ -603,10 +603,14 @@
 </a>
 <h1 id="textual-inversion7">Textual Inversion[^7]</h1>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion#training-embeddings">官方Wiki</a></p>
+<!--
+VAE 对 训练 并不会造成灾难性的影响。
+-->
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>VAE对HN训练并不会造成灾难性的影响。如需卸载，在启动 webui 前把 "xxx.vae.pt" 重命名为 "xxx.vae.pt.disabled" 或其他名字。</p>
-<p>在设置内勾选 <strong>Move VAE and CLIP to RAM when training hypernetwork. Saves VRAM.</strong> 的效果是转移 VAE 到 RAM,而不是卸载，</p>
+<p>训练的时候请不要加载VAE.</p>
+<p>如果不想加载Vae，在启动 webui 前把 "xxx.vae.pt" 重命名为 "xxx.vae.pt.disabled" 或其他名字。</p>
+<p>在设置内勾选 <strong>Move VAE and CLIP to RAM when training hypernetwork. Saves VRAM.</strong> 的效果是转移 VAE 到 RAM,实际上还会加载。</p>
 </div>
 <h2 id="aptdreamartist">Apt/DreamArtist</h2>
 <p>TI是让Ai了解 “喜欢” ，而Apt 让 Ai 了解“喜欢”和“不喜欢”。</p>
@@ -737,7 +741,7 @@
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月14日 18:45:45</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月18日 14:28:46</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 03:59:46</span>
