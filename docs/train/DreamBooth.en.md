@@ -1,5 +1,7 @@
 # DreamBooth
 
+>TODO/HELP This page may contain inaccurate content
+
 DreamBooth's model is a new approach to text-to-image "personalisation" (which can be adapted to the user's specific image generation needs) of diffusion models.
 
 To use it, simply export the model as a ckpt and you can then load it into the UI you want.
@@ -11,6 +13,10 @@ This section uses Shivam Shirao's [version](https://github.com/ShivamShrirao/dif
 Windows systems require at least 16, Linux systems require more than 8 GB of VRAM
 
 ## Training
+
+### WebUi extension
+
+https://github.com/d8ahazard/sd_dreambooth_extension
 
 ### Linux
 
@@ -142,85 +148,184 @@ The training is also packaged and converted to ckpt, which can be used in the We
 
 >This is a temporary solution in anticipation of an official Windows adaptation.
 
-## Simple guide
+## Simple Guide
 
+Enable prior_preservation to start DreamBooth training. The lower the prior_loss_weight, the harder it is to fit, but also the harder it is to learn.
 
->The following are all unconfirmed. If you have a different opinion, please feel free to ask.following content is partly from[1^]
+[3^] [4^]
 
-- Preparing the training image
+### Datasets
 
-For your training images you will need:
+The creation of the dataset is the most important part of getting good, stable results in Dreambooth training.
 
-At least 20 close up portraits, at least 4 medium distance torso shots, at least 4 long distance full body shots and at least 1 seated photo.
+- Content requirements
 
-Higher quality (more detail) training images (cropped to 512x512).
+Always use high quality samples, content such as motion blur or low resolution can be trained into the model and affect the quality of the work.
+
+When training for a specific style, pick samples that have good consistency. Ideally, only pick images of the artist you are training. Avoid fan art or anything with a different style, unless your goal is something like stylistic fusion.
+
+For themes, samples with black or white backgrounds are extremely helpful.
+
+>Transparent backgrounds are fine, but sometimes they leave a white outline around the subject, so I don't recommend using transparent backgrounds at the moment.
 
 If you need to make your Dreambooth model more diverse, try to use different environments, lighting, hairstyles, expressions, poses, angles and distances from the subject.
 
-Avoid having hands stuck to the head in your renders by removing all images where hands are too close to or touching the head.
+Be sure to include images with normal backgrounds (e.g. of the object in a scene). Using only images with simple backgrounds will be less effective.
+
+Avoid having hands stuck to the head in your renders by removing all images where the hands are too close to or touching the head.
 
 If you need to avoid a fisheye lens effect in your renders, remove all selfie images.
 
-To avoid white borders in your renders, make sure there are no cropped borders in your images.
-
-To avoid unnatural over-blurring, make sure the image does not contain a false heavy depth of field or vignetting.
-
-- Consistent markings
-
-After extensive testing, it has been found that the class identifier `class identifier picker` clearly helps to improve the quality of embedding and rendering of concepts. I use the class identifier to evoke any trained concept word.
-
-If training a **reality** concept, the class prompt should be "a high resolution photo _____"
+To avoid unnatural over-blurring, make sure the image does not contain a false heavy depth of field or bokeh.
 
 
-We initially only had a `class identifier picker` class image picker (one word) which was also used to generate `class images`. A separate `class image generator picker` has now been added (using multiple words) which allows us to further identify and constrain what we want from the class images.
+- Adjustments
 
-This is very useful and gives us more flexibility in finding which class images improve the embedding of concepts into the latent space.
+Once you have collected the photos for your dataset, crop and resize all images to a 512x512 square and remove any watermarks, logos, people/limb cut off by the edges of the image, or anything else you don't want to be trained on.
 
-- Resume training from checkpoint
+Save the images in PNG format and place all images in the train folder.
+
+
+- Resuming training from a checkpoint
 
 The MODEL_NAME of the parameter is changed to the position of the last model.
 
 
-## Parametric analysis
+### Basic parameters
 
-Basically all the explanations and examples are in the Colab notebook given above.
+Basically all explanations and examples are in the Colab notebook given above.
 
 [Analysis of experiments using Dreambooth to train stable diffusion](https://wandb.ai/psuraj/dreambooth/reports/Dreambooth-training-analysis--VmlldzoyNzk0NDc3)
 
+* Instance Image 
 
-### Subject images / Class images
+The target you are training on
+    
+* Instance Prompt 
 
-Copy from [2^]
+The default implementation is to share a prompt globally, which may work for a few shots, i.e. DreamBooth (original paper method) but not when you have more targets to train, you can turn on the combine_prompt_from_txt option to have a prompt (usually txt) for each instance. The prompt (usually txt) is DreamBooth (alternative method). The Instance Prompt should contain a unique identifier [V]. See the Token section below.
+    
+* Class/Regularization 
 
-Subject images (or instance images as you'll see on the notebooks) are the images that you want to train on, so if you want to get a model of your owns looks you take 20 to 40 images of yourself and input those. The instance name is a unique identifier that will represent the trained subject in the prompt, I use the person's "namelastname", most notebooks use "sks" but it's preferred to change it.
+The Image should be an auto-generated image, used to detect the AI's prior knowledge. No non-AI generated images should be placed. If you are sure about this why not use Native Training? (Adulteration of homogeneous images in clas images was an early discovery detour and is no longer encouraged)
 
-You are essentially telling the AI to introduce you to the big database, to do that you pick a class, i.e a category that best fits what you are training, for people it's common to use "person", "man"/"woman", etc.
+* Class Prompt 
 
-Class images are used in training to prevent the looks of the subject to "bleed" into other subjects of the same class, without class images as a reference point, the AI tends to merge your face with the other faces that are present within that class. Other people like celebrities will kinda look like you.
+Feel free, it's automatically generated anyway, it's recommended to generate it separately from other inference front-ends that support CLIP SKIP 2 and drop it into the class img set, again reading from a separate txt.
+
+* learning_rate
+
+learning_rate
+
+DreamBooth itself has a very strong copy and paste effect. Use class/regularization to suppress this effect.
+
+### Native Training
+
+Unlike DreamBooth, Native Training uses your training set for training directly and does not require a class image.
+
+Turn off the `prior_preservation` option to start training natively, which is the recommended way to train a drawing style. However, you will need to prepare an Instance Prompt for each graph, just like a traditional hypernetwork with the same file name, usually txt.
+
+Native Training requires a large dataset, but the amount varies, in the range [100, 10000], more is better (but hand-picking is still recommended)
+
+### Tip
+
+#### Token and Tagging
+
+| What your training set is about | Instance prompt must contain | Class prompt should describe |
+| --------------------------------- | ------------------------------ | ------------------------------------------------ |
+| A object/person | `[V]` | The object's type and/or characteristics |
+| A artist's style | `by [V]` | The common characteristics of the training set |
+
+Suppose the character you want to train is called `[N]`, you should not use `[N]` directly as a representative feature word, but rather use a concept that exists in [the glossary](https://huggingface.co/openai/clip-vit-large-patch14/raw/main/vocab.json) but Instead, you should use the word `[V]`, which is present in [the glossary]() but has no equivalent or is not obvious. The token length can be verified at [NovelAI Tokenizer](https://novelai.net/tokenizer) to help determine this.
+
+> Note: The example word `sks` used in the original paper is the same as the real firearm [SKS](https://en.wikipedia.org/wiki/SKS), which is not a suitable word to be used. However, if you are trained enough you may be able to override its influence.
+
+We recommend using [crosstyan/blip_helper](https://github.com/crosstyan/blip_helper) to label your images. Or use [DeepDanbooru](https://github.com/KichangKim/DeepDanbooru) and [BLIP](https://github.com/salesforce/BLIP)
+
+
+
+#### Augmentation
+
+* There are many ways to manipulate data: the most common are inversion, rotation, brightness and cropping.
+
+Metaphysical fragmentation, or separate cropping of backgrounds/heads etc., may help
+
+
+#### Aspect Ratio Bucketing
+
+`aspect_ratio_bucket` is set to `enable: true`. See [Aspect Ratio Bucketing](https://github.com/NovelAI/novelai-aspect-ratio-bucketing).
+
+ARB for short, the original version can only use `1:1` images, turning on ARB makes it possible to train non-`1:1` images, but not at any scale.
+
+```
+[[256 1024], [320 1024], [384 1024], [384 960], [384 896], [448 832], [512 768], [512 704], [512 512], [576 640], [640 576], [704 512], [768 512], [832 448], [ 896 384], [ 960 384], [1024 384], [1024 320], [1024 256]]
+```
+
+Images that are not in the bucket will be cropped.
+
+ARB does not phase well with DreamBooth and is only recommended for Native Training.
+
+
+#### Train Text Encoder
+
+I would call this a bad Text Encoder, and do not recommend its use.
+
+There is a metaphysical argument that it should be turned off after a certain percentage/epoch/step of training to prevent overplaying.
+
+* Your initial instance prompt should be long, outlining your training goal (but not too long, not covering your usual words) (e.g. girl I would replace with woman, 1boy with male)
+* Firstly, the text prompt should be read in as a message. It's not effective because too many words are distracting.
+* Secondly, the instance prompt cannot be filled in with just one `[V]` or that word will be lost too.
+* Try frying at high heat
+
+If you've refined the call, add the word you've trained the instance prompt with, depending on how much flavour you want.
+
+It might also work well for character training.
+
+
+#### Multiple Concept
+
+With DreamBooth it is possible to train multiple concepts/characters/actions/objects. However, if you train two characters, you can't reason about them at the same time, the features of both will be mixed up.
+
+
+If you check the `--concept_list` parameter with other versions of the DreamBooth training method, you can read in a similar `json` file.
+
+
+- Choosing the number of training steps
+
+In general, the number of training steps = (reference image x 100)
 
 - concepts_list.json
 
 ```
-# You can also add multiple concepts here. Try tweaking `--max_train_steps` accordingly.
+# You can also add multiple concepts here. try tweaking `--max_train_steps` accordingly.
 
 concepts_list = [
     {
-        "instance_prompt":      "photo of zwx dog",
-        "class_prompt":         "photo of a dog",
-        "instance_data_dir":    "/content/data/zwx",
-        "class_data_dir":       "/content/data/dog"
+        "instance_prompt": "photo of zwx dog",
+        "class_prompt": "photo of a dog",
+        "instance_data_dir":"/content/data/zwx",
+        "class_data_dir": "/content/data/dog"
     },
-#     {
-#         "instance_prompt":      "photo of ukj person",
-#         "class_prompt":         "photo of a person",
-#         "instance_data_dir":    "/content/data/ukj",
-#         "class_data_dir":       "/content/data/person"
-#     }
+# {
+# "instance_prompt": "photo of ukj person",
+# "class_prompt": "photo of a person",
+# "instance_data_dir":"/content/data/ukj",
+# "class_data_dir":"/content/data/person"
+# }
 ]
 
-# `class_data_dir` contains regularization images
+# ``class_data_dir`` contains regularization images
 ```
 
+### Explanation of Subject images / Class images
+
+Introduction from [2^]
+
+Subject images (or instance images as you see them in your notebook) are the images you want to train on, so if you want your own looking model, you can take 20 to 40 of your own images and input these. The instance name is a unique identifier that will indicate the trained object in the prompt, personally I use "namelastname", most notebooks use "sks" but it is best to change it.
+
+You are in effect telling the AI to introduce you to the large database, to do this you choose a class, i.e. the one that best fits the class you are training, for people it is common to use "person", "man"/"woman" etc.
+
+The purpose of using Class images in training is to prevent the features of the object from "bleeding over" to other objects in the same Class. Without Class images as a reference point, the AI tends to merge your face with other faces that appear in the Class. Other people who look like celebrities will somewhat resemble you.
 
 
 ## Other
@@ -244,3 +349,9 @@ https://github.com/XavierXiao/Dreambooth-Stable-Diffusion
 [1^]:[testing_dreambooth_for_consistency_with_complex](https://www.reddit.com/r/StableDiffusion/comments/yhw7k8/testing_dreambooth_for_consistency_with_complex/)
 
 [2^]:[good_dreambooth_formula](https://www.reddit.com/r/StableDiffusion/comments/ybxv7h/good_dreambooth_formula/)
+
+
+[3^]:[dreambooth-training-guide](https://github.com/nitrosocke/dreambooth-training-guide)
+
+[4^]:[crosstyan-s-guide](https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99)
+

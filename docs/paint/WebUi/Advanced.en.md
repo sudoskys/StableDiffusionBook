@@ -8,6 +8,65 @@ The basic principle is vaguely stated: the more similar samples within a well-de
     Please make sure you read the first section above for the specific Img2Img and inpaint introductory operations.
 
 
+## How it work
+
+### Image generator
+
+![jalammar s pic](https://jalammar.github.io/images/stable-diffusion/stable-diffusion-components-and-tensors.png)
+
+information creator works entirely in the image information space (or latent space). This feature makes it faster than previous diffusion models that worked in pixel space. Technically, this component is composed of a UNet neural network and a scheduling algorithm.
+
+- Text Encoder
+
+The parsing of cues is processed by the Text Encoder/CLIP (token embedding), which is a key step in the translation of cues to the AI.
+
+ClipText is used for text encoding.
+The input text and output is a vector of 77 token embeddings, each with 768 dimensions.
+
+
+- information creator
+
+UNet + Scheduler processes/disperses information step by step in the information (latent) space.
+
+It inputs text embeddings and a starting multidimensional array of noise (a structured list of numbers, also called a tensor) and outputs a processed array of information.
+
+- Image Decoder
+
+The Text Decoder draws a picture based on the information obtained from the information creator. It is run only once at the end of the process to produce the final image.
+
+Autoencoder Decoder uses the processed information array to draw the decoder of the final image. The input is the processed information array (dimensions: (4,64,64)) and the output is the resulting image (dimensions: (3, 512, 512), i.e. (red/green/blue, width, height).
+
+- The work of CLIP
+
+![training image](https://pic3.zhimg.com/80/v2-340920caff256e06c29cff7097e23e62_1440w.jpg)
+>CLIP training graph from https://bbs.huaweicloud.com/blogs/371319
+
+In use, the Text Encoder extracts features from the input vocabulary, combines them with Gaussian noise into the information creator and outputs a processed array of information.
+After each processing the image creator predicts a number of pixels, which are then combined with each other in a loop of generation.
+
+The processed noise array and the token set are then generated in another step.
+
+After all the steps are completed, the noise is fed into the Image Decoder and outputted as a graph.
+
+- WebUi implementation
+
+The [prompt_parser for WebUi](https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/modules/prompt_parser.py) implements fading and other functions via native WebUi. functions.
+
+The WebUi prompt syntax is converted to a prompt of the corresponding time, which is then passed on to Ai via embedding.
+
+Regarding the weighting implementation: the weighting increase usually takes up one prompt position.
+
+For the implementation of the fade: at a given Step, the WebUi program replaces the corresponding prompt to achieve the fade effect.
+
+And so on.
+
+The entire process is shown in the diagram 
+![prompt_draw](https://user-images.githubusercontent.com/75739606/198675128-c2c849d0-d024-468b-80c4-374f13e933e3.png)
+>By RcINS
+
+You can see a comprehensive introduction at [illustrated-stable-diffusion](https://jalammar.github.io/illustrated-stable-diffusion/). Parts of this section have also been translated from this.
+
+
 
 ## Img2Txt
 

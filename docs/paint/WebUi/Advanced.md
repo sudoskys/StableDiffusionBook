@@ -1,6 +1,4 @@
- 
-
-## 魔法进阶
+# 魔法进阶
 
 调参基本原理模糊的说是：限定好的数据范围内相似样本越多，越稳定。
 
@@ -8,7 +6,65 @@
     请阅读前面章节的模型进阶1,了解具体的 Img2Img 和 inpaint 介绍操作。
 
 
-### Img2Txt
+## 提示词原理
+
+### 图像生成器
+
+![jalammar s pic](https://jalammar.github.io/images/stable-diffusion/stable-diffusion-components-and-tensors.png)
+
+information creator 完全在图像信息空间（或潜伏空间）中工作。这一特性使它比以前在像素空间工作的扩散模型更快。在技术上，这个组件是由一个UNet神经网络和一个调度算法组成的。
+
+- Text Encoder
+
+提示词的解析由 Text Encoder/CLIP 处理(token embedding)，这里是提示词转译给AI的关键一步。
+
+ClipText用于文本编码。
+输入文本，输出77个标记嵌入向量，每个都有768个维度。
+
+
+- information creator
+
+UNet + Scheduler在信息（潜在）空间中逐步处理/分散信息。
+
+它输入文本嵌入和一个由噪声组成的起始多维数组（结构化的数字列表，也叫张量），输出一个经过处理的信息阵列。
+
+- Image Decoder
+
+Text Decoder 根据从 information creator 那里获得的信息绘制一幅图画。 它只在过程结束时运行一次以生成最终图像。
+
+Autoencoder Decoder使用处理过的信息阵列绘制最终图像的解码器。输入处理过的信息阵列(dimensions: (4,64,64))，输出结果图像(dimensions: (3, 512, 512)，即(red/green/blue, width, height)。
+
+- CLIP 的工作
+
+![训练图](https://pic3.zhimg.com/80/v2-340920caff256e06c29cff7097e23e62_1440w.jpg)
+>CLIP 训练图 from https://bbs.huaweicloud.com/blogs/371319
+
+在使用中，Text Encoder 对输入词汇进行特征提取，与高斯噪声结合输入 information creator ，输出一个经过处理的信息阵列。
+每次处理后 图像生成器 都会预测一些像素，然后在循环的生成中，像素相互结合。
+
+处理完一次数组就是完成了一次 step.然后处理完的噪声数组和 token集合再次进行一次 step 生成.
+
+完成所有 step 后，噪声输入Image Decoder，输出成图。
+
+- WebUi 的实现
+
+[WebUi的prompt_parser](https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/modules/prompt_parser.py) 通过本地 WebUi 实现了渐变等功能。
+
+WebUi prompt 语法会转换为相应时间的 prompt,然后通过 embedding 交给 Ai 处理。
+
+关于权重的实现：权重增加通常会占一个提示词位。
+
+关于渐变的实现：到了指定 Step ，WebUi 程序会替换对应 提示词，达到渐变效果。
+
+其他以此类推。
+
+整个看下来，原理流程如图 ![prompt_draw](https://user-images.githubusercontent.com/75739606/198675128-c2c849d0-d024-468b-80c4-374f13e933e3.png)
+>By RcINS
+
+你可以在 [illustrated-stable-diffusion](https://jalammar.github.io/illustrated-stable-diffusion/) 看到全面的介绍。本节部分内容也是由此翻译。
+
+
+## Img2Txt
 
 >应用指南请读实战指南。
 
@@ -22,7 +78,7 @@ CLIP 询问器有两个部分：一个是 BLIP 模型，它从图片中创建文
     大小为855MB
 
 
-### Img2Img 介绍
+## Img2Img 介绍
 
 一般我们有两种途径对图像进行修复：**PS 和 InPaint**，使用方法也十分多样。
 
@@ -32,7 +88,7 @@ WebUi 使用 `--gradio-img2img-tool color-sketch` 启动会带入一个插件对
     PS 重新绘画投入 Img2Img 的话，会导致画风的变动，而 Inpaint 就不会。
 
 
-#### 调整大小
+### 调整大小
 
 
 *Just resize* 仅仅调整大小 - 简单地将源图像的大小调整到目标分辨率，导致不正确的长宽比。
@@ -43,7 +99,7 @@ WebUi 使用 `--gradio-img2img-tool color-sketch` 启动会带入一个插件对
 
 
 
-###  Img2Img 三渲二
+##  Img2Img 三渲二
 
 调整3D模型骨架比寻找样图更容易。
 
@@ -56,7 +112,7 @@ WebUi 使用 `--gradio-img2img-tool color-sketch` 启动会带入一个插件对
 如果你使用 blender ，你可以使用 [这个视频](https://youtu.be/MClbPwu-75o) 分享的 [模型娃娃](https://www.artstation.com/marketplace/p/VOAyv/stable-diffusion-3d-posable-manekin-doll?utm_source=artstation&utm_medium=referral&utm_campaign=homepage&utm_term=marketplace)
 
 
-### Img2Img **Outpainting 外部修补**
+## Img2Img **Outpainting 外部修补**
 
 Outpainting 扩展原始图像并修复创建的空白空间。
 您可以在底部的 img2img 选项卡中找到该功能，在 Script -> Poor man's outpainting 下。
@@ -65,7 +121,7 @@ Outpainting 扩展原始图像并修复创建的空白空间。
 Outpainting, unlike normal image generation, seems to profit very much from large step count. A recipe for a good outpainting is a good prompt that matches the picture, sliders for denoising and CFG scale set to max, and step count of 50 to 100 with Euler ancestral or DPM2 ancestral samplers.
 ```
 
-### Img2Img **Inpainting 修补**
+## Img2Img **Inpainting 修补**
 
 在 Inpainting 选项卡中，在图像的一部分上绘制蒙版，该部分将被重画。
 
@@ -105,7 +161,7 @@ Outpainting, unlike normal image generation, seems to profit very much from larg
 <iframe src="//player.bilibili.com/player.html?aid=559044202&cid=859852841&page=1&danmaku=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 -->
 
-### Img2Img Loopback 回环生成
+## Img2Img Loopback 回环生成
 
 在 img2img 中设置loopback脚本，它允许自动将输出图像作为下一批的Batch提供，相当于保存输出图像，并用它替换输入图像。
 
@@ -114,14 +170,14 @@ Batch 数设置控制获得多少次迭代
 通常，在执行此操作时，您会自己为下一次迭代选择许多图像中的一个，因此此功能的有用性可能值得怀疑，但反正我已经设法获得了一些我无法获得的非常好的输出。
 
 
-### Img2Img 让低显存生成大分辨率图片
+## Img2Img 让低显存生成大分辨率图片
 
 在前面提到了，如果遇到生成鬼图或者 低显存生产高分辨率图片 可以采用的 Img2Img 画质提升脚本。
 
 其实我**强烈推荐**你使用 Extras 的功能对低分辨率进行重放，效果不错的，且体验良好！
 
 
-#### 脚本
+### 脚本
 
 但是如果你想使用脚本提供的分辨率增强，这里有 Img2Img 的具体流程
 
@@ -148,7 +204,7 @@ SD Upscale 选项在 Img2Img 的 Script 栏目中，主要作用是提升分辨�
 
 [脚本解决方案来源于此](https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99#%E9%AB%98%E5%88%86%E8%BE%A8%E7%8E%87%E4%B8%8B%E5%87%BA%E6%80%AA%E5%9B%BE)
 
-#### 超分图像 extras
+### 超分图像 extras
 
 `webui` extras 页有一个自带的超分功能，可以使用 `ESRGAN_4x`模型
 
@@ -177,7 +233,7 @@ SD Upscale 选项在 Img2Img 的 Script 栏目中，主要作用是提升分辨�
 如果你要搞二次元，推荐使用[realcugan](https://github.com/bilibili/ailab/tree/main/Real-CUGAN)
 
 
-### 图像去噪
+## 图像去噪
 
 推荐使用 [Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) 降噪。
 
@@ -187,7 +243,7 @@ SD Upscale 选项在 Img2Img 的 Script 栏目中，主要作用是提升分辨�
 
 
 
-### **渐变提示词**
+## **渐变提示词**
 
 https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-editing
 
@@ -215,14 +271,14 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-edi
 
 比如 [male:female:0.0], 意味着你开始时就要求画一个女性。
 
-### 扩展模型/DLC
+## 扩展模型/DLC
 
 见 `训练模型` 的详细内容。
 
 
 
 
-### 提示词速查
+## 提示词速查
 
 **[手抄本法术书](https://docs.google.com/spreadsheets/d/14Gg1kIGWdZGXyCC8AgYVT0lqI6IivLzZOdIT3QMWwVI/edit)**
 
@@ -239,7 +295,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-edi
 **[Novelai 关键词组合器](https://www.bilibili.com/read/cv19023021)**
 
 
-### 调参工程师
+## 调参工程师
 
 [https://github.com/Maks-s/sd-akashic](https://github.com/Maks-s/sd-akashic)
 

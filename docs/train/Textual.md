@@ -221,12 +221,34 @@ Windows 需要在 `webui-user.bat` 的 `COMMANDLINE_ARGS=` 一行添加，或者
 
 **Move VAE and CLIP from VRAM when training. Saves VRAM.**
 
-训练时从 VRAM 中卸载 VAE 和 CLIP,装载进 RAM
+训练时将 VAE 和 CLIP 从 VRAM 中转移进 RAM
 
 设置选项卡上的此选项允许您以较慢的预览图片生成为代价节省一些内存。
 
 训练的结果是一个 .pt 或一个 .bin 文件（前者是原作者使用的格式，后者作为 diffusers library）
 
+### subject_filewords.txt 模板
+
+[1^]
+Textual Inversion 训练不能训练模型中没有的东西。它对训练照片也非常敏感。如果你没有得到好的结果（未能收敛或结果崩坏）。
+
+你需要更换训练数据或者使用Dreambooth。
+
+那么，训练是如何进行的呢？
+
+你给它提供一个提示，提示转化为一堆向量并输入模型，输出与训练图片进行比较，被训练的词向量被稍微修正。这个过程在训练中会反复进行。
+
+被送入模型的向量是训练向量+提示向量。
+
+因为训练向量的修正不会使用提示向量提供的内容进行训练。所以文件词不应该包含属于被训练内容的特性。
+
+如果你有，比如说一个在所有照片中都穿着 black t-shirt 的主体，你可以通过在这些图片的 filewords 中加入 `black t-shirt` 来有效地将其从训练集中否定掉。
+
+
+除非你试图修复照片，否则请将 filewords 用于 style，而不是用于 subject。
+
+
 <iframe src="//player.bilibili.com/player.html?aid=559085039&bvid=BV1ae4y1S7v9&cid=859894044&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 
 
+[1^]:[is_textual_inversion_salvageable](https://www.reddit.com/r/sdforall/comments/ykerg2/is_textual_inversion_salvageable/)

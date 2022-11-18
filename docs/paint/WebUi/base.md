@@ -1,6 +1,11 @@
 # WebUi
 
-请先在前面了解一下 WebUi(SD) 网页应用的参数。
+请先在前面了解一下基本内容。
+
+
+## 速度判定
+
+终端的it/s速率是大致速率，代表每次迭代秒数，而不是每秒钟迭代次数。因此，数字降低了，那就是加速了。
 
 
 ## 提示词语法简介
@@ -52,13 +57,13 @@
     NAI花括号权重为1.05/个，WebUi圆权重为1.1/个
 
 
-
 ## 如何书写提示词(提示)
-
 
 - 自然语言
 
 WebUi 也可以直接使用自然语言，包括 西方颜文字，emoji ，甚至可以是一些日文？
+
+但是，追求准确就不要用自然语言。
 
 - 参数[^6]
 
@@ -149,6 +154,8 @@ webui 突破 tag 75 个限制的方式是把 75 个分为一组。
 
 以上排序是每组tag都要遵守的，所以如果后面的tag超过 75 了就应该把前面的分一部分过来。
 
+![图像生成的描述](https://jalammar.github.io/images/stable-diffusion/stable-diffusion-image-generation.png)
+>thanks https://jalammar.github.io/illustrated-stable-diffusion/
 
 ## Batch count&batch size
 
@@ -354,7 +361,6 @@ normal quality, text, censored, gown, latex, pencil
 [LEXICA搜索引擎](https://lexica.art/?q=Miku)
 
 
-
 ## Prompt matrix 参数矩阵/要素混合
 
 使用 | 分隔多个Tag，程序将为它们的每个组合生成一个图像。 例如，如果使用 `a busy city street in a modern city|illustration|cinematic lighting` ，则可能有四种组合（始终保留提示的第一部分）：
@@ -384,31 +390,6 @@ normal quality, text, censored, gown, latex, pencil
     要匹配好姿势，镜头和人物才不畸形，有时候需要限定量词，多人物时要处理空间关系和 prompt 遮挡优先级。人数->人物样貌->环境样式->人物状态
 
 1024 之上的尺寸可能会出现不理想的结果！推荐使用 小尺寸 + 适量提高 Step 步数 + 图片超清分辨率(见进阶)。
-
-## 提示词原理
-
-咒语的科学原理。
-
-![prompt_draw](https://user-images.githubusercontent.com/75739606/198675128-c2c849d0-d024-468b-80c4-374f13e933e3.png)
-<!--
-![prompt_draw](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/prompt_draw_fix.png)
--->
->By RcINS
-
-在程序中，提示词的解析由 CLIP 处理
-
-[WebUi的prompt_parser](https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/modules/prompt_parser.py) 实现了渐变等功能
-
-CLIP 无法处理中文，中文字符会被分解。
-
-**关于权重的实现**：权重增加通常会占一个提示词位。
-
-
-**关于渐变的实现**：到了指定 Step ，WebUi 程序会替换对应 提示词，达到渐变效果。
-
-其他以此类推。
-
-WebUi prompt 语法会转换为相应时间的 prompt,然后通过 embedding 交给 Ai 处理。
 
 
 ## 参数冲突(提示词)
@@ -473,8 +454,6 @@ PS：调太高步数(>30)效果不会更好
 >不同 step 和 采样器 的不同效果
 
 
-
-
 ## 种子调试
 
 实际的种子整数并不重要。它只是初始化一个定义扩散起点的随机数生成器，是一个随机初始值。
@@ -488,5 +467,6 @@ PS：调太高步数(>30)效果不会更好
 但是注意，**不同显卡可能会造成预料之外的不同结果**（比如精度这样的东西）
 
 10xx 系列看起来与其他所有卡如此不同,见[这里](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017#discussioncomment-3873467)
+
 
 
