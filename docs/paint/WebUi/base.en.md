@@ -66,6 +66,8 @@ Write it in conjunction with a spell book.
 
 Natural language can be used directly, WebUi(SD) has natural language processing capabilities (English sentences), and can also use  emoji
 
+However, if you are looking for accuracy, don't use natural language.
+
 - parameter [^6]
 
 Combine similar cue phrases as you wish and put these in order from most to least important.
@@ -155,7 +157,8 @@ For the purpose of improving readability, it is recommended that the main body b
 
 The above ordering is the same for each group of tags, so if the later tags are over 75, you should split the earlier ones.
 
-
+![图像生成的描述](https://jalammar.github.io/images/stable-diffusion/stable-diffusion-image-generation.png)
+>thanks https://jalammar.github.io/illustrated-stable-diffusion/
 
 
 ## Batch count&batch size
@@ -361,34 +364,6 @@ For example, there may be more people if the picture size is wide
 Sizes above 1024 may give undesirable results! We recommend using small size + a moderate increase in the number of Step steps + super-clear resolution of the image (see Progression).
 
 
-
-## Prompt's working model
-
-The scientific principle of incantation.
-
-![prompt_draw](https://user-images.githubusercontent.com/75739606/198675128-c2c849d0-d024-468b-80c4-374f13e933e3.png)
-<!--
-![prompt_draw](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/prompt_draw_fix.png)
--->
->By RcINS
-
-In the program, the parsing of the prompt is handled by CLIP
-
-[prompt_parser for WebUi](https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/modules/prompt_parser.py) implements Prompt editing etc.
-
-CLIP cannot handle Chinese, Chinese characters are broken up.
-
-**About the weighting implementation**: weighting increases usually take up a prompt position.
-
-
-**About Prompt editing**: At a given Step, the WebUi program will replace the corresponding prompt to achieve a Prompt editing effect.
-
-And so on.
-
-The WebUi prompt syntax is converted into a prompt of the corresponding time, which is then passed to Ai via embedding.
-
-
-
 ## Prompt conflict (hint word)
 
 For example, if `loli` contains more styles, the single `loli` tag within the spell should be removed when the user wants a specific style.
@@ -441,10 +416,10 @@ from [discussion](https://www.reddit.com/r/StableDiffusion/comments/xbeyw3/can_a
 and [wiki](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#attentionemphasis)
 
 
-- 举个例子
+- EXP
 
 
-|预览一|预览二|
+|EXP1|EXP2|
 |--|--|
 |<img src="https://user-images.githubusercontent.com/22421310/187063145-3d4f16d7-7bd6-4804-be1c-acf228ed2507.jpg" width="400" alt="效果">|<img src="https://user-images.githubusercontent.com/75739606/197824518-f68188a3-0572-4b52-8fe7-289b6d7b640b.jpg" width="400" alt="效果">|
 
@@ -467,7 +442,6 @@ The same seeds will produce the same picture in the same model and back-end impl
 But note that **different graphics cards may cause unexpectedly different results** (e.g. things like accuracy)
 
 The 10xx series looks so different from all other cards, see [here](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017#discussioncomment-3873467)
-
 
 
 
