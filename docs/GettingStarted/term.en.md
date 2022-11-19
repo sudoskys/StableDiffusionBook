@@ -79,7 +79,9 @@ The whole process is shown in the diagram
 ![prompt_draw](https://user-images.githubusercontent.com/75739606/198675128-c2c849d0-d024-468b-80c4-374f13e933e3.png)
 >By RcINS
 
-### Ref
+### Math
+
+[diffusion_model](https://www.cs.unc.edu/~ronisen/teaching/fall_2022/pdf_lectures/lecture8_diffusion_model.pdf)
 
 [How diffusion models work: the math from scratch](https://theaisummer.com/diffusion-models/#classifier-free-guidance)
 

@@ -58,21 +58,40 @@ alternate prompt [^7], mixer. This allows you to create hybrids of animals, peop
     NAI brackets have a weight of 1.05/pc, WebUi rounds have a weight of 1.1/pc
 
 
-## How to write prompt
+## How to write a prompt (prompt)
 
-Write it in conjunction with a spell book.
+### What to use
+
+- Words
+
+Ordinary words
 
 - Natural language
 
-Natural language can be used directly, WebUi(SD) has natural language processing capabilities (English sentences), and can also use  emoji
+WebUi can also use natural language directly, even some Japanese.
 
-However, if you are looking for accuracy, don't use natural language.
+But don't use natural language if you want to be accurate.
 
-- parameter [^6]
+- emoji
 
-Combine similar cue phrases as you wish and put these in order from most to least important.
+Including the Western face characters `(^_^)` and emoji 🌻 can be used, with emoji being particularly accurate in expression.
+### How to write
 
-You can use artists, studios, photographic terms, character names, styles, special effects, etc. These can be viewed in the manuals, which are available in the end pages.
+Combine similar prompt phrases you want and put these in order from most important to least important.
+
+`(subject)(style), (action/scene), (artist), (filters)`
+
+`(subject)` serves as the subject of the screen, anchoring the content of the screen, which is an essential part of any prompt. `(style)` is the style of the screen, optional.
+
+`(action/scene)` As the action/scene, describes what the subject is doing where it is.
+
+`(artist)` is the optional artist name or the name of the production company.
+
+`(filers)` are details that add to it. Artists, studios, photographic terms, character names, styles, effects, etc. can be used.
+
+- content[^6]
+
+The content can be
 
 ```
 The quality of the image
@@ -84,38 +103,37 @@ Their poses
 The background of the picture
 ```
 
-[Guide to Writing Prompts for Text-to-image Ai: A Guide to Writing Prompts for Text-to-image AI](https://docs.google.com/document/d/ 1XUT2G9LmkZataHFzmuOtRXnuWBfhvXDAo8DkS--8tec/edit#)
+[Guide-to-Writing-Prompts-for-Text-to-image-Ai:A-Guide-to-Writing-Prompts-for-Text-to-image-AI](https://docs.google.com/document/d/ 1XUT2G9LmkZataHFzmuOtRXnuWBfhvXDAo8DkS--8tec/edit#)
+
+### Length
 
 **Writing length**
 
-- The Tip should not be too long, there is a risk of failure if it exceeds 100.
+- Hint don't be too long, over 100 is a risk of failure
 
-You can write prompts with more than 75 words. Originally, due to GPT-3 model limitations, the prompts are not unlimited, the positive token is between 75-80, and the content after 75 words is truncated. But WebUi has grouping, so you can write many words.
+You can write prompts of 75 words or more. Originally, due to GPT-3 model limitations, prompts were not infinite; the positive token was between 75 and 80, and content after 75 characters was truncated. But WebUi does grouping, so you can write a lot of words. It is a good habit not to stack prompts, but if you do have a lot of content to write, you can increase the step appropriately
 
-But not stacking prompts is a good habit.
-
-When the prompt exceeds 75 `tokens` (say 150 `tokens`), WebUi will group the prompt words and submit multiple sets of 75 `tokens`. The tokens will only have the context of the rest of the content in the same set. This means that you may have `bule hair` at the boundary between the first and second group, token `blue` will be in the first group and `hair` will be in the second group. This led to inaccurate results as the two words were separated.
+When the prompt exceeds 75 `tokens` (e.g. 150 `tokens`), WebUi groups the prompt words, submitting more than 75 `tokens`. The tokens will only have the context of the rest of the content in the same set. This means that you may have `bule hair` at the boundary between the first and second group, token `blue` will be in the first group and `hair` will be in the second group. This led to inaccurate results as the two words were separated.
 
 The new version adds an option `Increase coherency by padding from the last comma within n tokens when using more than 75 tokens`
 
 This setting lets the program try to alleviate this by finding if there is a last comma in the last N tokens, and if so, moving everything that passes through that comma together to the next collection.
 
-!!! tip "example"
+!!! tip "For example"
 
     There are entries for the words `... ,comma,blue hair,PADDING,... `
 
     The 75th word is `blue`
 
-    **before using this option**
+    Before using this option
 
     Set 1:{[74]=Comma, [75]=blue}, Set 2:{[76]=hair, [77]=PADDING}
 
-    **After using this option**
+    After using this option
 
     Set 1:{[074]=Comma, [75]=PADDING}, Set 2:{[76]=blue, [77]=hair}
 
     If your hint is less than or equal to 75 tokens, no grouping will occur.
-
 
 **Writing format**
 
