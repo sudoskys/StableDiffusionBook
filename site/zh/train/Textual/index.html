@@ -464,7 +464,7 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#aptdreamartist">
-    Apt/DreamArtist
+    Apt/DreamArtist 训练
   </a>
 </li>
 <li class="md-nav__item">
@@ -496,12 +496,31 @@
 <a class="md-nav__link" href="#_6">
     训练
   </a>
-</li>
+<nav aria-label="训练" class="md-nav">
+<ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_7">
-    备注
+    学习率
   </a>
-<nav aria-label="备注" class="md-nav">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_8">
+    参数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_9">
+    操作
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_10">
+    其他解释
+  </a>
+<nav aria-label="其他解释" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#subject_filewordstxt">
@@ -562,7 +581,7 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#aptdreamartist">
-    Apt/DreamArtist
+    Apt/DreamArtist 训练
   </a>
 </li>
 <li class="md-nav__item">
@@ -594,12 +613,31 @@
 <a class="md-nav__link" href="#_6">
     训练
   </a>
-</li>
+<nav aria-label="训练" class="md-nav">
+<ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_7">
-    备注
+    学习率
   </a>
-<nav aria-label="备注" class="md-nav">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_8">
+    参数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_9">
+    操作
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_10">
+    其他解释
+  </a>
+<nav aria-label="其他解释" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#subject_filewordstxt">
@@ -620,7 +658,6 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="textual-inversion7">Textual Inversion[^7]</h1>
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion#training-embeddings">官方Wiki</a></p>
 <!--
 VAE 对 训练 并不会造成灾难性的影响。
 -->
@@ -630,12 +667,13 @@ VAE 对 训练 并不会造成灾难性的影响。
 <p>如果不想加载Vae，在启动 webui 前把 "xxx.vae.pt" 重命名为 "xxx.vae.pt.disabled" 或其他名字。</p>
 <p>在设置内勾选 <strong>Move VAE and CLIP to RAM when training hypernetwork. Saves VRAM.</strong> 的效果是转移 VAE 到 RAM,实际上还会加载。</p>
 </div>
-<h2 id="aptdreamartist">Apt/DreamArtist</h2>
+<h2 id="aptdreamartist">Apt/DreamArtist 训练</h2>
 <p>TI是让Ai了解 “喜欢” ，而Apt 让 Ai 了解“喜欢”和“不喜欢”。</p>
 <p>所以是一种高效的 Textual Inversion</p>
 <p>https://github.com/7eu7d7/DreamArtist-sd-webui-extension</p>
 <h2 id="_1">准备数据集</h2>
 <p>数据集应保证风格一致，内容具有同一概念。如果算力允许，图片越多越好。数据内容可以是插画，抽象画作，也可以是表情包。</p>
+<p>数据集质量要求高，如果背景出现人影等物体，就会训练进去。训练程序非常敏感。</p>
 <h2 id="_2">要求</h2>
 <p>显存至少 6GB，舒适使用需要 12GB 显存。根据实验数据，8GB 显存应该选择 <code>512x512</code> 分辨率；不推荐 <code>--lowvram</code> 和 <code>--medvram</code> 参数下进行训练。</p>
 <p>如果你有足够的 VRAM，那么使用 <code>--no-half --precision full</code> 可能会防止溢出带来的问题。</p>
@@ -675,53 +713,47 @@ VAE 对 训练 并不会造成灾难性的影响。
 <p><code>Destination directory</code> 中填入预处理完毕后图片保存路径。</p>
 <p>选择训练的图片大小，一般 8Gb 显卡使用 <code>512x512</code> ，尺寸越大不一定越好。</p>
 <p><strong>接下来有四个复选框</strong></p>
-<p><code>Create flipped copies</code></p>
-<ul>
-<li>
-<p>勾选后会将图片镜像反转来增加数据量。</p>
-</li>
-<li>
-<p><code>Use deepbooru caption as filename</code></p>
-</li>
-</ul>
-<p>深度学习识 Tag，勾选后可以训练适用于 NAI 的 <code>embedding</code>。 如果你没有这个选项，需要在启动项添加<code>--deepdanbooru</code></p>
+<p>勾选 <code>Create flipped copies</code> 后会将图片镜像反转来增加数据量。</p>
+<p>勾选 <code>Use deepbooru caption as filename</code> 来使用深度学习识别 Tag，勾选后可以训练适用于 NAI 的 <code>embedding</code>。 <strong>如果你没有这个选项，需要在启动项添加<code>--deepdanbooru</code></strong></p>
+<blockquote>
 <p>Windows 需要在 <code>webui-user.bat</code> 的 <code>COMMANDLINE_ARGS=</code> 一行添加，或者直接 <code>python launch.py --deepdanbooru</code> 。（如果启动卡住是网络问题）</p>
-<ul>
-<li>
-<p><code>Use BLIP for caption</code> 使用 BLIP 模型为文件名添加标题。不太适合二次元图片。</p>
-</li>
-<li>
-<p><code>Split oversized images into two</code> 将超大图像一分为二，一般不用。</p>
-</li>
-</ul>
-<p>所以我们勾选 <code>Use deepbooru caption as filename</code> 和 <code>Create flipped copies</code> 。</p>
+</blockquote>
+<p>勾选 <code>Use BLIP for caption</code> 会使用 BLIP 模型为文件名添加标题。不太适合二次元图片。</p>
+<p>勾选 <code>Split oversized images into two</code> 将超大图像一分为二，一般不用。</p>
+<p>最终我们勾选 <code>Use deepbooru caption as filename</code> 和 <code>Create flipped copies</code> 。</p>
 <p>点击按钮，等待处理结束。</p>
 <h2 id="_6">训练</h2>
 <p>训练是一个动态的过程！</p>
 <p>在 <code>Train</code> 子选项卡中，选择你要训练的模型。</p>
-<p><code>Learning rate</code>(超参数：学习率)，学习速率代表了神经网络中随时间推移，信息累积的速度，这个参数较大地影响了影响训练的速度。</p>
-<p>通常，Learning rate越低学习越慢（花费更长的时间收敛），但是效果一般更好。</p>
+<h3 id="_7">学习率</h3>
+<p><code>Learning rate</code>(超参数：学习率)，学习速率代表了神经网络中随时间推移，信息累积的速度，这个参数较大地影响了影响训练的速度。通常，Learning rate越低学习越慢（花费更长的时间收敛），但是效果一般更好。</p>
+<p>一般我们设置为 0.005，如果想快一些，可以使用 0.01 加快。但是如果设置得太高，梯度下降时候步长太大无法收敛，会且可能会破坏 <code>embedding</code> ， 效果达不到预期。如果设置的太小，容易陷入局部最优。目前 TI 支持设置 <code>0.1:500, 0.01:1000, 0.001:10000</code> 的学习率，它会按照 <code>学习率:步数</code> 进行，如果步数为小数，则代表 <code>总步数*百分比</code>。</p>
 <p>训练时，可以先用较大的学习率进行测试，然后逐步调小 <code>0.1 -- 0.02 -- 0.005</code> ，每次测试都用上一次效果最好的。</p>
-<p>一般设置为 0.005，如果想快一些，可以使用 0.01 加快。但是如果设置得太高，梯度下降时候步长太大无法收敛，会且可能会破坏 <code>embedding</code> ， 效果达不到预期。如果设置的太小，容易陷入局部最优。目前 TI 支持设置 <code>0.1:500, 0.01:1000, 0.001:10000</code> 的学习率，它会按照时间表进行。</p>
 <p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://user-images.githubusercontent.com/75739606/197824268-273f074d-9622-41ad-9f1a-2980f180dbd9.png"><img alt="CS231n" src="https://user-images.githubusercontent.com/75739606/197824268-273f074d-9622-41ad-9f1a-2980f180dbd9.png"/></a></p>
 <!--
 ![CS231n](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/CS231n.png)
 -->
-<p><code>Log directory</code> 是日志目录</p>
-<p><code>Prompt template file</code>是带有提示的文本文件，每行一个，用于训练模型。</p>
-<p>目录中<code>textual_inversion_templates</code>，解释了你可以使用这些文件做什么。</p>
-<p>训练时会使用 <code>style.txt</code> 和<code>subject.txt</code></p>
-<p><strong>如果是训练画风，使用<code>style.txt</code></strong></p>
-<p><strong>如果是训练人物，使用<code>subject.txt</code></strong></p>
-<p><div class="highlight"><pre><span></span><code>[name]:  embedding 名称
-[filewords]: words from the file name of the image from the dataset. See below for more info.
-</code></pre></div>
-<code>Preview prompt</code> 预览，完成后用此提示词生成一张预览。
+<h3 id="_8">参数</h3>
+<p><code>Log directory</code> 是日志目录。</p>
+<ul>
+<li>提示模板</li>
+</ul>
+<p><code>Prompt template file</code> 是带有提示的文本文件，每行一个提示，用于训练模型。目录中 <code>textual_inversion_templates</code> 文件夹，解释了你可以使用这些文件做什么。</p>
+<p>训练时参考 <code>style.txt</code> 和<code>subject.txt</code>，比如训练画风，使用<code>style.txt</code>，训练人物，使用<code>subject.txt</code></p>
+<p>根据模板文件，你可以在文件名中使用下面的关键词，处理时它们会被替换。
+<div class="highlight"><pre><span></span><code>[name]:  embedding 的名称
+[filewords]: 数据集中图像文件的名字
+</code></pre></div></p>
+<h3 id="_9">操作</h3>
+<p><code>Preview prompt</code> 预览，完成后用此提示词生成一张预览。
 如果为空，将使用来自 prompt 的提示。</p>
 <p><code>Save a copy of embedding to log directory every N steps, 0 to disable</code>
 每 N 步将嵌入的副本保存到日志目录，0 表示禁用</p>
 <p><code>Save an image to log directory every N steps, 0 to disable</code>
 每 N 步保存一个图像到日志目录，0 表示禁用</p>
+<ul>
+<li>步数</li>
+</ul>
 <p><code>Max steps</code>决定完成多少 <code>step</code> 后，训练将停止。</p>
 <p>一个 step 是向模型训练一张图片（或一批图片，但目前不支持批量）并用于改进 embedding。如果你中断训练并在以后恢复训练，步数会被保留。</p>
 <p>角色形象的风格化模型，建议步数为 15000-40000</p>
@@ -733,43 +765,45 @@ VAE 对 训练 并不会造成灾难性的影响。
 <p>如果Loss大于 0.3 ，效果就不是很好</p>
 </div>
 <p>如果太多会过拟合(可以理解为Ai的死板)，请随时观察，如果过拟合，可以停止。如果效果不是很好，可以去找早些时候的模型继续训练。<strong>不断调整</strong>找到一个好的效果。</p>
-<p><code>Save images with embedding in PNG chunks</code> 是生成一个图片形式的 pt 文件。~人物卡~</p>
-<p>点击 右下角训练，等待。</p>
+<p><code>Save images with embedding in PNG chunks</code> 是生成一个图片形式的 pt 文件，很方便我们分享嵌入。</p>
+<p>一切妥当之后，点击右下角 <code>训练</code> ，等待。</p>
 <p>训练完毕。如果卸载了 VAE ，将 VAE 权重文件重命名回去，重启程序。</p>
-<h2 id="_7">备注</h2>
-<p><strong>效果评价</strong></p>
-<p>可以尝试模仿原作品。</p>
+<h2 id="_10">其他解释</h2>
 <p><strong>[filewords]</strong></p>
-<p>这个是代表 提示词模板文件 的 Tag，可以实现把<strong>文件名插入提示词</strong>。</p>
-<p>第一，默认情况下，文件的扩展名以及-文件名开头的所有数字和破折号 ( ) 都会被删除。</p>
+<p>这个是代表替换提示词模板文件的[filewords]为数据集文件的名字，可以实现把<strong>文件名插入提示词</strong></p>
+<ol>
+<li>默认情况下，文件的扩展名以及-文件名开头的所有数字和破折号都会被删除。</li>
+</ol>
 <p>所以这个文件名：<code>000001-1-a man in suit.png</code>将成为提示文本：<code>a man in suit</code>。文件名中文本的格式保持不变。</p>
-<p>第二，可以使用 <code>Filename word regex</code> 和 <code>Filename join string</code> 选项更改文件名中的文本。</p>
+<ol>
+<li>可以使用 <code>Filename word regex</code> 和 <code>Filename join string</code> 选项更改文件名中的文本。</li>
+</ol>
 <p>例如，使用单词 <code>regex =\w+</code> 和 连接字符串 = <code>,</code> ，上面的文件将生成以下文本：<code>a, man, in, suit</code>。</p>
 <p>正则表达式会从文本提取提示词
 <code>['a', 'man', 'in', 'suit', ]</code></p>
 <p>并将连接字符串（'，'）放在这些单词之间以创建一个文本<code>a, man, in, suit</code></p>
-<p>也可以创建一个与图像 ( 000001-1-a man in suit.txt) 具有相同文件名的文本文件，然后将提示文本放在那里。将不使用文件名和正则表达式选项。</p>
+<p>也可以创建一个与图像具有相同文件名的文本文件( 000001-1-a man in suit.txt)，然后将提示文本放在那里。将不使用文件名和正则表达式选项。</p>
 <p><strong>Move VAE and CLIP from VRAM when training. Saves VRAM.</strong></p>
 <p>训练时将 VAE 和 CLIP 从 VRAM 中转移进 RAM</p>
 <p>设置选项卡上的此选项允许您以较慢的预览图片生成为代价节省一些内存。</p>
 <p>训练的结果是一个 .pt 或一个 .bin 文件（前者是原作者使用的格式，后者作为 diffusers library）</p>
 <h3 id="subject_filewordstxt">subject_filewords.txt 模板</h3>
-<p><a href="[is_textual_inversion_salvageable](https://www.reddit.com/r/sdforall/comments/ykerg2/is_textual_inversion_salvageable/)">1^</a>
-Textual Inversion 训练不能训练模型中没有的东西。它对训练照片也非常敏感。如果你没有得到好的结果（未能收敛或结果崩坏）。</p>
-<p>你需要更换训练数据或者使用Dreambooth。</p>
+<p><a href="[is_textual_inversion_salvageable](https://www.reddit.com/r/sdforall/comments/ykerg2/is_textual_inversion_salvageable/)">1^</a></p>
+<p>Textual Inversion 训练不能训练模型中没有的东西。它对训练照片也非常敏感。</p>
+<p>如果你没有得到好的结果（未能收敛或结果崩坏）。你需要更换训练数据或者使用Dreambooth。</p>
 <p>那么，训练是如何进行的呢？</p>
-<p>你给它提供一个提示，提示转化为一堆向量并输入模型，输出与训练图片进行比较，被训练的词向量被稍微修正。这个过程在训练中会反复进行。</p>
-<p>被送入模型的向量是训练向量+提示向量。</p>
+<p>被送入模型的向量是训练向量+提示向量。你给它提供一个提示，提示转化为一堆向量并输入模型，输出与训练图片进行比较，被训练的词向量被稍微修正。这个过程在训练中会反复进行。</p>
 <p>因为训练向量的修正不会使用提示向量提供的内容进行训练。所以文件词不应该包含属于被训练内容的特性。</p>
-<p>如果你有，比如说一个在所有照片中都穿着 black t-shirt 的主体，你可以通过在这些图片的 filewords 中加入 <code>black t-shirt</code> 来有效地将其从训练集中否定掉。</p>
-<p>除非你试图修复照片，否则请将 filewords 用于 style，而不是用于 subject。</p>
+<p>如果你有，比如说一个在所有照片中都穿着 <code>black t-shirt</code> 的主体，你可以通过在这些图片的 <code>filewords</code> 中加入 <code>black t-shirt</code> 来有效地将其从训练集中否定掉。</p>
+<p>除非你试图修复照片，否则请将 <code>filewords</code> 用于 style，而不是用于 subject。</p>
 <iframe allowfullscreen="true" border="0" frameborder="no" framespacing="0" height="600" scrolling="no" src="//player.bilibili.com/player.html?aid=559085039&amp;bvid=BV1ae4y1S7v9&amp;cid=859894044&amp;page=1" width="100%"> </iframe>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion#training-embeddings">官方Wiki</a></p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月18日 17:51:42</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月19日 11:34:44</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 03:59:46</span>

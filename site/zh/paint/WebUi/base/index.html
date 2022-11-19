@@ -923,10 +923,11 @@ normal quality, text, censored, gown, latex, pencil
 </code></pre></div>
 <h2 id="cfg-scaledenoising-strength">CFG Scale/Denoising strength 契合度/降噪</h2>
 <p><strong>CFG Scale</strong></p>
-<p><code>cfg scale</code> 就是图像与 prompt 的契合度,Scale越高，程序对提示词越忠诚，契合度越高。</p>
+<p><code>cfg scale</code> 就是预测时对 prompt 的参考度,越高，预测时对，契合度越高。</p>
 <p><strong>Denoising strength 降低噪声</strong></p>
 <p><code>Denoising strength</code> 决定算法对图像内容的保留程度,可以减少对画风的变得，但也会弱化img2img能力。值越高 AI 对原图的参考程度就越低 (同时增加迭代次数)。</p>
 <p>对于以图做图来说，低 <code>denoising</code> 意味着修正原图，高 <code>denoising</code> 就和原图就没有大的相关性了。一般来讲阈值是 0.7 左右，超过 0.7 和原图基本上无关，0.3 以下就是稍微改一些。</p>
+<p>实际执行中，具体的执行步骤为 Denoising strength * Sampling Steps.</p>
 <h2 id="_6">渐变标签</h2>
 <p>渐变标签，指示 WebUi 在训练中替换 Token，语法使用 <code>[some1:some2:num]</code></p>
 <p><code>[fantasy:cyberpunk:16]</code> 代表从第 16 step 后，使用 <code>cyberpunk</code> 标签替换 <code>fantasy</code></p>
@@ -978,6 +979,7 @@ normal quality, text, censored, gown, latex, pencil
 <p>太多的迭代步数也可能适得其反，几乎不会有提高。</p>
 <p>进行图生图的时候，正常情况下更弱的去噪需要更少的迭代步数(这是工作原理决定的)。你可以在设置里更改设置，让程序确切执行滑块指定的迭代步数。</p>
 <p>高阶采样器如 <code>DPM-Solver++</code> 更高效，花费的步数也少。</p>
+<p>实际推理中，具体的执行步骤为 Denoising strength * Sampling Steps.</p>
 <h2 id="samplers">Samplers 采样器</h2>
 <p><code>++</code> 为 高阶求解器，有更少的步数更多的细节，更快的实现。</p>
 <p>高阶采样器为 <code>DPM-Solver++</code>，你可以使用 <code>DPM++ 2S a</code> 来尝试。实验表明DPM-Solver++可以 只需 15 到 20 个步骤即可生成高质量的样本，用于引导采样 像素空间和潜在空间 DPM。 </p>
@@ -1028,7 +1030,7 @@ PS：调太高步数(&gt;30)效果不会更好</p>
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月18日 19:23:51</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月19日 11:34:44</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 03:59:46</span>

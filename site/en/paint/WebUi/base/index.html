@@ -912,6 +912,7 @@ towards the former and away from latter.</p>
 <p><strong>Denoising strength Reducing noise</strong></p>
 <p>Denoising strength` determines how well the algorithm retains the content of the image, reducing the effect on the image style, but also weakening the img2img capability. The higher the value, the less the AI will refer to the original image (and increase the number of iterations).</p>
 <p>A low <code>denoising</code> means that the original image is corrected, while a high <code>denoising</code> is not as relevant to the original image. Generally speaking, the threshold is around 0.7, above which it is largely irrelevant, and below 0.3 it is slightly modified.</p>
+<p>In practice, the number of step = Denoising strength * Sampling Steps.</p>
 <h2 id="prompt-editing">Prompt editing</h2>
 <p>Prompt editing allows you to start sampling one picture, but in the middle swap to something else. The base syntax for this is: <code>[some1:some2:num]</code></p>
 <p><code>[fantasy:cyberpunk:16]</code> to replace <code>fantasy</code> with the <code>cyberpunk</code> tag from step 16 onwards</p>
@@ -962,6 +963,7 @@ For example, if you use <code>a busy city street in a modern city|illustration|c
 <p>When performing img2img, weaker denoising normally requires fewer iteration steps (this is how it works).</p>
 <p>You can change the setting in the settings to allow the program to perform exactly the number of iteration steps specified by the slider.</p>
 <p>Higher order samplers such as <code>DPM-Solver++</code> are more efficient and take fewer steps.</p>
+<p>In practical reasoning, the exact number of steps performed is <code>Denoising strength * Sampling Steps</code>.</p>
 <h2 id="samplers">Samplers</h2>
 <p><code>++</code> is a higher order solver, with fewer steps more detail and faster implementation.</p>
 <p>The higher-order sampler is <code>DPM-Solver++</code>, which you can try using <code>DPM++ 2S a</code>. Experiments have shown that DPM-Solver++ can generate high quality samples in just 15 to 20 steps for bootstrapping pixel space and potential space DPM. </p>
@@ -1013,7 +1015,7 @@ PS: too high a step count (&gt;30) will not give better results</p>
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 18, 2022 19:23:51</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 19, 2022 11:34:44</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 07:44:44</span>

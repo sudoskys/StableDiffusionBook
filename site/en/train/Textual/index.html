@@ -463,8 +463,8 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#aptdreamartist">
-    Apt/DreamArtist
+<a class="md-nav__link" href="#aptdreamartist-training">
+    Apt/DreamArtist Training
   </a>
 </li>
 <li class="md-nav__item">
@@ -496,16 +496,35 @@
 <a class="md-nav__link" href="#training">
     Training
   </a>
+<nav aria-label="Training" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#learning-rate">
+    Learning rate
+  </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#remarks">
-    Remarks
+<a class="md-nav__link" href="#parameters">
+    Parameters
   </a>
-<nav aria-label="Remarks" class="md-nav">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#operations">
+    Operations
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#other-explanations">
+    Other explanations
+  </a>
+<nav aria-label="Other explanations" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#subject_filewordstxt-template">
-    subject_filewords.txt Template
+    subject_filewords.txt template
   </a>
 </li>
 </ul>
@@ -561,8 +580,8 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#aptdreamartist">
-    Apt/DreamArtist
+<a class="md-nav__link" href="#aptdreamartist-training">
+    Apt/DreamArtist Training
   </a>
 </li>
 <li class="md-nav__item">
@@ -594,16 +613,35 @@
 <a class="md-nav__link" href="#training">
     Training
   </a>
+<nav aria-label="Training" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#learning-rate">
+    Learning rate
+  </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#remarks">
-    Remarks
+<a class="md-nav__link" href="#parameters">
+    Parameters
   </a>
-<nav aria-label="Remarks" class="md-nav">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#operations">
+    Operations
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#other-explanations">
+    Other explanations
+  </a>
+<nav aria-label="Other explanations" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#subject_filewordstxt-template">
-    subject_filewords.txt Template
+    subject_filewords.txt template
   </a>
 </li>
 </ul>
@@ -620,20 +658,24 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="textual-inversion7">Textual Inversion[^7]</h1>
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion#training-embeddings">Official Wiki</a></p>
+<!--
+VAE does not have a catastrophic effect on training.
+-->
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>VAE does not have a catastrophic effect on HN training. To uninstall, rename "xxx.vae.pt" to "xxx.vae.pt.disabled" or another name before starting webui.</p>
-<p>Check <strong>Move VAE and CLIP to RAM when training hypernetwork. Saves VRAM.</strong> The effect is to transfer VAE to RAM, not to uninstall it.</p>
+<p>Do not load VAE during training.</p>
+<p>If you don't want to load Vae, rename "xxx.vae.pt" to "xxx.vae.pt.disabled" or something else before starting webui.</p>
+<p>Check <strong>Move VAE and CLIP to RAM when training hypernetwork. Saves VRAM.</strong> The effect is to move VAE to RAM, but it will actually load.</p>
 </div>
-<h2 id="aptdreamartist">Apt/DreamArtist</h2>
-<p>TI is for Ai to understand "likes", while Apt is for Ai to understand "likes" and "dislikes".</p>
+<h2 id="aptdreamartist-training">Apt/DreamArtist Training</h2>
+<p>TI is for Ai to understand "likes", and Apt is for Ai to understand "likes" and "dislikes".</p>
 <p>So it's an efficient Textual Inversion</p>
 <p>https://github.com/7eu7d7/DreamArtist-sd-webui-extension</p>
 <h2 id="prepare-the-dataset">Prepare the dataset</h2>
-<p>The dataset should be consistent in style and have the same concept of content. If computing power allows, the more images the better. The content of the data can be illustrations, abstract paintings, or emoticons.</p>
+<p>The dataset should be consistent in style and have the same concept of content. The more images, the better, if computing power allows. The content of the data can be illustrations, abstract paintings or emojis.</p>
+<p>The quality of the dataset is demanding, if objects such as human figures appear in the background, they will be trained in. The training procedure is very sensitive.</p>
 <h2 id="requirements">Requirements</h2>
-<p>At least 6GB of VRAM, 12GB of VRAM is required for comfortable use. Based on experimental data, 8GB of VRAM should be selected for <code>-512x512</code> resolution; training with <code>-lowvram</code> and <code>-medvram</code> parameters is not recommended.</p>
+<p>At least 6GB of video memory, 12GB of video memory is required for comfortable use. Based on experimental data, 8GB of video memory should be selected for <code>-512x512</code> resolution; training with <code>-lowvram</code> and <code>-medvram</code> parameters is not recommended.</p>
 <p>If you have enough VRAM, then using <code>-no-half --precision full</code> may prevent problems with overflow.</p>
 <p>You can interrupt and resume training, but the optimizer state will not be saved, so this is not recommended.</p>
 <h2 id="setup-instructions">Setup instructions</h2>
@@ -670,56 +712,50 @@
 <p>Fill in the <code>Source directory</code> with your training images folder and only allow training images in it.</p>
 <p>Fill in the <code>Destination directory</code> with the path where the images will be saved after preprocessing.</p>
 <p>Select the image size for training, typically <code>512x512</code> for 8Gb graphics cards, larger is not necessarily better.</p>
-<p><strong>The next four checkboxes</strong> are</p>
-<p><code>Create flipped copies</code></p>
-<ul>
-<li>
-<p>When checked, this will invert the image image to increase the amount of data.</p>
-</li>
-<li>
-<p><code>Use deepbooru caption as filename</code></p>
-</li>
-</ul>
-<p>Check this box to train <code>embedding</code> for NAI. If you don't have this option, you need to add <code>--deepdanbooru</code> to the startup entry.</p>
-<p>Windows needs to add it to <code>COMMANDLINE_ARGS=</code> in the <code>webui-user.bat</code> line, or just <code>python launch.py --deepdanbooru</code>. (If the launch is stuck it is a network problem)</p>
-<ul>
-<li>
-<p><code>Use BLIP for caption</code> Use the BLIP model to add captions to filenames. Not really suitable for secondary images.</p>
-</li>
-<li>
-<p><code>Split oversized images into two</code> Splits oversized images into two, not normally used.</p>
-</li>
-</ul>
-<p>So we check <code>Use deepbooru caption as filename</code> and <code>Create flipped copies</code>.</p>
-<p>Click the button and wait for the process to finish.</p>
+<p><strong>Next there are four checkboxes</strong></p>
+<p>Checking <code>Create flipped copies</code> will invert the image image to increase the amount of data.</p>
+<p>Check <code>Use deepbooru caption as filename</code> to use deep learning to recognize Tag, and check to train <code>embedding</code> for NAI. <strong>If you don't have this option, you need to add <code>-deepdanbooru</code> to the startup entry</strong></p>
+<blockquote>
+<p>Windows needs to add <code>COMMANDLINE_ARGS=</code> in the <code>webui-user.bat</code> line, or just <code>python launch.py --deepdanbooru</code>. (If the launch is stuck it is a network problem)</p>
+</blockquote>
+<p>Checking <code>Use BLIP for caption</code> will add a caption to the filename using the BLIP model. Not really suitable for secondary images.</p>
+<p>Check <code>Split oversized images into two</code> to split oversized images into two, not normally used.</p>
+<p>Finally we check <code>Use deepbooru caption as filename</code> and <code>Create flipped copies</code>.</p>
+<p>Click the button and wait for the processing to finish.</p>
 <h2 id="training">Training</h2>
 <p>Training is a dynamic process!</p>
 <p>In the <code>Train</code> sub-tab, select the model you want to train.</p>
-<p><code>Learning rate</code> (hyperparameter: learning rate), the learning rate represents the rate at which information accumulates in the neural network over time, and this parameter has a large impact on the speed at which training is affected.</p>
-<p>Generally, the lower the learning rate, the slower the learning (takes longer to converge), but generally the better the results.</p>
-<p>When training, you can start with a larger learning rate and then gradually reduce it to <code>0.1 - 0.02 - 0.005</code>, using the last best result for each test.</p>
-<p>This is usually set to 0.005, but if you want to go faster, you can use 0.01 to speed it up. However, if you set it too high, the gradient will be too large to converge and may break <code>embedding</code>, which will not work as expected. If you set it too small, you will easily fall into a local optimum. Currently TI supports setting learning rates of <code>0.1:500, 0.01:1000, 0.001:10000</code>, which will follow a schedule.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://user-images.githubusercontent.com/75739606/197824268-273f074d-9622-41ad-9f1a-2980f180dbd9.png"><img alt="CS231n" src="https://user-images.githubusercontent.com/75739606/197824268-273f074d-9622-41ad-9f1a-2980f180dbd9.png"/></a></p>
-<!--
-![CS231n](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/CS231n.png)
--->
-<p><code>Log directory</code> is the log directory</p>
-<p><code>Prompt template file</code> is a text file with prompts, one per line, for training the model.</p>
-<p>The directory, <code>textual_inversion_templates</code>, explains what you can do with these files.</p>
-<p>The training will use <code>style.txt</code> and <code>subject.txt</code></p>
-<p><strong>If you are training painting styles, use <code>style.txt</code></strong></p>
-<p><strong>If training characters, use <code>subject.txt</code></strong></p>
-<p><div class="highlight"><pre><span></span><code>[name]: embedding name
-[filewords]: words from the file name of the image from the dataset. See below for more info.
-</code></pre></div>
-<code>Preview prompt</code> Preview, generate a preview with this prompt when finished.
+<h3 id="learning-rate">Learning rate</h3>
+<p><code>Learning rate</code> (hyperparameter: learning rate), the learning rate represents the rate at which information accumulates in the neural network over time, and this parameter greatly influences the speed at which training is affected. Generally, the lower the learning rate, the slower the learning (takes longer to converge), but generally the better the results.</p>
+<p>Generally we set it to 0.005, but if you want to go faster, you can use 0.01 to speed it up. However, if we set it too high, the gradient descent will be too large to converge and will probably destroy the <code>embedding</code>, which will not be as effective as expected. If you set it too small, you will easily fall into a local optimum. Currently TI supports setting learning rates of <code>0.1:500, 0.01:1000, 0.001:10,000</code>, which are based on <code>learning rate:steps</code>, or <code>total steps*percentage</code> if the number of steps is decimal.</p>
+<p>When training, you can start with a larger learning rate and then gradually reduce it by <code>0.1 - 0.02 - 0.005</code>, using the last best result for each test.</p>
+<p>! <a href="https://user-images.githubusercontent.com/75739606/197824268-273f074d-9622-41ad-9f1a-2980f180dbd9.png">CS231n</a></p>
+<!-- --
+! [CS231n](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/CS231n.png)
+---->
+<h3 id="parameters">Parameters</h3>
+<p><code>Log directory</code> is the log directory.</p>
+<ul>
+<li>Prompt template</li>
+</ul>
+<p><code>Prompt template file</code> is a text file with prompts, one per line, for training the model. The <code>textual_inversion_templates</code> folder in the directory explains what you can do with these files.</p>
+<p>Refer to <code>style.txt</code> and <code>subject.txt</code> for training, e.g. <code>style.txt</code> for painting style and <code>subject.txt</code> for character training</p>
+<p>Depending on the template file, you can use the following keywords in the file name and they will be replaced when processing.
+<div class="highlight"><pre><span></span><code>[name]: name of the embedding
+[filewords]: the name of the image file in the dataset
+</code></pre></div></p>
+<h3 id="operations">Operations</h3>
+<p><code>Preview prompt</code> Preview and generate a preview with this prompt when finished.
 If it is empty, the prompt from the prompt will be used.</p>
-<p><code>`Save a copy of embedding to log directory every N steps, 0 to disable</code>
+<p><code>Save a copy of embedding to log directory every N steps, 0 to disable</code>
 Save a copy of embedding to log directory every N steps, 0 to disable</p>
 <p><code>Save an image to log directory every N steps, 0 to disable</code>
 Save an image to log directory every N steps, 0 to disable</p>
+<ul>
+<li>Number of steps</li>
+</ul>
 <p><code>Max steps</code> determines how many <code>steps</code> are completed before training will stop.</p>
-<p>A step is a single image (or batch of images, but batches are not currently supported) that is trained to the model and used to improve embedding. if you interrupt training and resume it later, the number of steps will be kept.</p>
+<p>A step is a single image (or batch of images, but batches are not currently supported) that is trained to the model and used to improve embedding. if you disable training and resume it later, the number of steps is retained.</p>
 <p>For stylised models of character images, the recommended number of steps is 15000-40000</p>
 <p>stylised model of the artist's drawing style, recommended number of steps is 40,000-80,000</p>
 <div class="admonition tip">
@@ -728,44 +764,45 @@ Save an image to log directory every N steps, 0 to disable</p>
 <p>The key is the Loss rate. If the Loss does not decrease in 10 rounds, you can stop.</p>
 <p>If the Loss is greater than 0.3, the results are not very good</p>
 </div>
-<p>If too much is overfitting (which can be interpreted as deadening of Ai), keep an eye on it and stop if it is overfitting. If it doesn't work very well, go to an earlier model and continue training. <strong>Keep tweaking</strong> to find a good result.</p>
-<p><code>Save images with embedding in PNG chunks</code> is to generate a pt file in image form. ~Character card~</p>
-<p>Click on Training in the bottom right corner and wait.</p>
-<p>Training is complete. If you have uninstalled VAE, rename the VAE weight file back and restart the program.</p>
-<h2 id="remarks">Remarks</h2>
-<p><strong>Effect evaluation</strong></p>
-<p>An attempt can be made to imitate the original work.</p>
+<p>If too much is overfitting (which can be interpreted as the dead weight of Ai), keep an eye on it and stop if it is overfitting. If it doesn't work very well, go to an earlier model and continue training. <strong>Keep tweaking</strong> to find a good result.</p>
+<p><code>Save images with embedding in PNG chunks</code> is generating a pt file in the form of an image, which is very convenient for us to share the embedding.</p>
+<p>Once everything is in place, click <code>Training</code> in the bottom right corner and wait.</p>
+<p>The training is complete. If you have uninstalled VAE, rename the VAE weights back and restart the program.</p>
+<h2 id="other-explanations">Other explanations</h2>
 <p><strong>[filewords]</strong></p>
-<p>This is the Tag that represents the prompt template file and enables the insertion of <strong>filenames into the prompt</strong>.</p>
-<p>First, by default, the file extension and all numbers and dashes ( ) at the beginning of the - file name are removed.</p>
-<p>So this filename: <code>000001-1-a man in suit.png</code> will become the prompt text: <code>a man in suit</code>. The formatting of the text in the file name remains the same.</p>
-<p>Second, the text in the filename can be changed using the <code>Filename word regex</code> and <code>Filename join string</code> options.</p>
+<p>This represents the replacement of the [filewords] of the cue word template file as the name of the dataset file, which enables the insertion of <strong>file names into the cue words</strong></p>
+<ol>
+<li>By default, the file extension and all numbers and dashes at the beginning of the - file name are removed.</li>
+</ol>
+<p>So this filename: <code>000001-1-a man in suit.png</code> will become the prompt text: <code>a man in suit</code>. The formatting of the text in the file name remains the same. 2.</p>
+<ol>
+<li>The text in the filename can be changed using the <code>Filename word regex</code> and <code>Filename join string</code> options.</li>
+</ol>
 <p>For example, using the word <code>regex = \w+</code> and the join string = <code>,</code>, the above file will produce the following text: <code>a, man, in, suit</code>.</p>
 <p>The regular expression will extract the hint word from the text
 <code>['a', 'man', 'in', 'suit', ]</code></p>
-<p>and places the concatenated string (',') between these words to create a text <code>a, man, in, suit</code></p>
+<p>and places the concatenated string (',') between the words to create a text <code>a, man, in, suit</code></p>
 <p>You can also create a text file with the same filename as the image ( 000001-1-a man in suit.txt) and place the prompt text there. The filename and regular expression options will not be used.</p>
 <p><strong>Move VAE and CLIP from VRAM when training. saves VRAM.</strong></p>
-<p>Unloads VAE and CLIP from VRAM and loads them into RAM when training.</p>
+<p>Move VAE and CLIP from VRAM into RAM when training</p>
 <p>This option on the Settings tab allows you to save some memory at the cost of slower preview image generation.</p>
-<p>The result of training is a .pt or a .bin file (the former is the format used by the original author, the latter is used as a diffusers library)</p>
-<h3 id="subject_filewordstxt-template">subject_filewords.txt Template</h3>
-<p><a href="[is_textual_inversion_salvageable](https://www.reddit.com/r/sdforall/comments/ykerg2/is_textual_inversion_salvageable/)">1^</a>
-Textual Inversion training cannot train things that are not in the model. It is also very sensitive to training photos. If you don't get good results (failure to converge or crashing results).</p>
-<p>You need to replace the training data or use Dreambooth.</p>
-<p>So, how does the training work?</p>
-<p>You give it a hint, the hint is transformed into a bunch of vectors and fed into the model, the output is compared with the training images and the word vectors being trained are slightly corrected. This process is repeated during training.</p>
-<p>The vectors that are fed into the model are the training vector + the hint vector.</p>
-<p>Because the correction of the training vector does not use the content provided by the cue vector for training. So the document words should not contain features that belong to the content being trained.</p>
-<p>If you have, say, a subject wearing a black t-shirt in all photos, you can effectively negate it from the training set by adding <code>black t-shirt</code> to the filewords of those images.</p>
-<p>Unless you are trying to fix a photo, use filewords for style, not for subject.</p>
+<p>The result of the training is a .pt or a .bin file (the former is the format used by the original author, the latter is used as the diffusers library)</p>
+<h3 id="subject_filewordstxt-template">subject_filewords.txt template</h3>
+<p><a href="[is_textual_inversion_salvageable](https://www.reddit.com/r/sdforall/comments/ykerg2/is_textual_inversion_salvageable/)">1^</a></p>
+<p>Textual Inversion training cannot train things that are not in the model. It is also very sensitive to training photos.</p>
+<p>If you don't get good results (failure to converge or crashing results). You need to replace the training data or use Dreambooth.</p>
+<p>So how does the training work?</p>
+<p>The vector being fed into the model is the training vector + the hint vector. You give it a hint, the hint is transformed into a bunch of vectors and fed into the model, the output is compared with the training image and the trained word vector is slightly corrected. This process is repeated during training.</p>
+<p>Because the training vectors are not corrected using the content provided by the hint vector for training. So the document words should not contain features that belong to the content being trained.</p>
+<p>If you have, say, a subject wearing a <code>black t-shirt</code> in all photos, you can effectively negate it from the training set by adding <code>black t-shirt</code> to the <code>filewords</code> of those images.</p>
+<p>Unless you are trying to fix a photo, use <code>filewords</code> for style, not for subject.</p>
 <iframe allowfullscreen="true" border="0" frameborder="no" framespacing="0" height="600" scrolling="no" src="//player.bilibili.com/player.html?aid=559085039&amp;bvid=BV1ae4y1S7v9&amp;cid=859894044&amp;page=1" width="100%"> </iframe>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 18, 2022 17:51:42</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 19, 2022 11:34:44</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 07:57:05</span>

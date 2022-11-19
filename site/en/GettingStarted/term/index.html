@@ -44,7 +44,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#term">
+<a class="md-skip" href="#help">
           Skip to content
         </a>
 </div>
@@ -247,6 +247,41 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#how-sd-work">
+    How sd work
+  </a>
+<nav aria-label="How sd work" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reasoning-process">
+    Reasoning process
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#preprocessing-for-webui">
+    Preprocessing for WebUi
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ref">
+    Ref
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#term">
+    Term
+  </a>
+<nav aria-label="Term" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cfg">
+    CFG
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#loss-functions">
     Loss functions
   </a>
@@ -275,6 +310,9 @@
 <a class="md-nav__link" href="#ldm">
     LDM
   </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -542,6 +580,41 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#how-sd-work">
+    How sd work
+  </a>
+<nav aria-label="How sd work" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reasoning-process">
+    Reasoning process
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#preprocessing-for-webui">
+    Preprocessing for WebUi
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ref">
+    Ref
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#term">
+    Term
+  </a>
+<nav aria-label="Term" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cfg">
+    CFG
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#loss-functions">
     Loss functions
   </a>
@@ -573,6 +646,9 @@
 </li>
 </ul>
 </nav>
+</li>
+</ul>
+</nav>
 </div>
 </div>
 </div>
@@ -581,7 +657,71 @@
 <a class="md-content__button md-icon" href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/GettingStarted/term.en.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="term">Term</h1>
+<h1 id="help">Help</h1>
+<h2 id="how-sd-work">How sd work</h2>
+<h3 id="reasoning-process">Reasoning process</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://jalammar.github.io/images/stable-diffusion/stable-diffusion-components-and-tensors.png"><img alt="jalammar s pic" src="https://jalammar.github.io/images/stable-diffusion/stable-diffusion-components-and-tensors.png"/></a></p>
+<p>information creator works entirely in the image information space (or latent space). This feature makes it faster than previous diffusion models that worked in pixel space. Technically, this component is composed of a UNet neural network and a scheduling algorithm.</p>
+<ul>
+<li>Text Encoder</li>
+</ul>
+<p>The parsing of the cues is processed by the Text Encoder/CLIP (token embedding), which is a key step in the translation of the cues to the AI.</p>
+<p>The Text Encoder is responsible for converting the input cue into an embedding space that is understandable to the U-Net. It is usually a simple transformer-based encoder that maps a sequence of input tokens into a sequence of latent text-embeddings.</p>
+<p>Stable diffusion uses ClipText for text encoding. Input text, output 77 marker embedding vectors, each with 768 dimensions.</p>
+<ul>
+<li>information creator</li>
+</ul>
+<p>UNet + Scheduler (aka sampling algorithm) progressively processes/disperses information in latent space.</p>
+<p>It inputs text embeddings and a starting multidimensional array of noise (a structured list of numbers, also called a tensor) and outputs a processed array of information.</p>
+<ul>
+<li>Image Decoder</li>
+</ul>
+<p>The Text Decoder draws a picture based on the information obtained from the information creator. It is run only once at the end of the process to produce the final image.</p>
+<p>The autoencoder (VAE) model has two parts, an encoder and a decoder. The encoder is used to convert the image into a latent representation, which is used as input to the U-Net model. The decoder then converts the latent representation back to an image.</p>
+<p>During the inference process, a VAE decoder is used to convert the denoised latent image produced by the backward diffusion process back into an image. During the inference process, we only need the VAE decoder.</p>
+<p>The Autoencoder Decoder (VAE) draws the decoder of the final image using an array of processed information. Input the processed information array (dimensions: (4,64,64)) and output the resulting image (dimensions: (3, 512, 512), i.e. (red/green/blue, width, height).</p>
+<ul>
+<li>The work of CLIP</li>
+</ul>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://pic3.zhimg.com/80/v2-340920caff256e06c29cff7097e23e62_1440w.jpg"><img alt="training image" src="https://pic3.zhimg.com/80/v2-340920caff256e06c29cff7097e23e62_1440w.jpg"/></a></p>
+<blockquote>
+<p>CLIP training map from https://bbs.huaweicloud.com/blogs/371319</p>
+</blockquote>
+<ul>
+<li>Process</li>
+</ul>
+<p>The autoencoder used in Stable Diffusion has a reduction factor of 8. This means that an image of (4, 512, 512) is (4, 64, 64) in the potential space.</p>
+<p>In reasoning about a 512 * 512 image using stable diffusion, the model uses a seed and a text cue as input. The potential seed generates a random potential image of size 64 × 64, while the prompt goes into the Text Encoder to be transformed into a text embedding of size 77 × 768 by CLIP's text encoder.</p>
+<p>U-Net iteratively denoises the random Gaussian noise representation while conditioning on the text embedding. u-Net calculates the denoised latent image representation using the sampling algorithm and outputs the noise residuals. After this step has been repeated many times, the potential representation is decoded by the decoder of the Image Decoder's auto encoder and output.</p>
+<p>The text embedding is combined with random Gaussian noise into the information creator and a processed array of information (noise residuals) is output.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://raw.githubusercontent.com/patrickvonplaten/scientific_images/master/stable_diffusion.png"><img alt="stable-diffusion" src="https://raw.githubusercontent.com/patrickvonplaten/scientific_images/master/stable_diffusion.png"/></a></p>
+<ul>
+<li>Extensions</li>
+</ul>
+<p><a href="https://jalammar.github.io/illustrated-stable-diffusion/">illustrated-stable-diffusion</a></p>
+<p><a href="https://huggingface.co/blog/stable_diffusion">Stable Diffusion</a></p>
+<p><a href="https://pub.towardsai.net/getting-started-with-stable-diffusion-f343639e4931">Introduction to Stable Diffusion</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Stable_Diffusion">Stable Diffusion From Wikipedia</a></p>
+<h3 id="preprocessing-for-webui">Preprocessing for WebUi</h3>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/modules/prompt_parser.py">Prompt_parser for WebUi</a> Implemented with native WebUi for fading etc. functions.</p>
+<p>The WebUi prompt syntax is converted into a prompt of the corresponding time, which is then passed on to Ai for processing by embedding.</p>
+<p>Regarding the weighting implementation: the weighting increase usually takes up one prompt position.</p>
+<p>For the implementation of the fade: at a given Step, the WebUi program replaces the corresponding prompt to achieve the fade effect.</p>
+<p>And so on.</p>
+<p>The whole process is shown in the diagram </p>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://user-images.githubusercontent.com/75739606/198675128-c2c849d0-d024-468b-80c4-374f13e933e3.png"><img alt="prompt_draw" src="https://user-images.githubusercontent.com/75739606/198675128-c2c849d0-d024-468b-80c4-374f13e933e3.png"/></a></p>
+<blockquote>
+<p>By RcINS</p>
+</blockquote>
+<h3 id="ref">Ref</h3>
+<p><a href="https://theaisummer.com/diffusion-models/#classifier-free-guidance">How diffusion models work: the math from scratch</a></p>
+<h2 id="term">Term</h2>
+<h3 id="cfg">CFG</h3>
+<p>This term stands for Classifier Free Guidance Scale and is used to measure how well the expected image generated by the model matches your cues. A Cfg Scale value of 0 will generate a random image based on the seed. [1^]</p>
+<p>Imagine, for example, that your cue is a torch with a variable-width beam that you shine onto the model's potential space to highlight a specific area - your output image will be drawn from somewhere within that area, depending on the seed.</p>
+<p>Toggling the Cfg Scale to zero produces an extremely wide beam that highlights the entire potential space - your output can come from almost anywhere.</p>
+<p>Toggling the Cfg Scale to 20 produces a very narrow beam, so much so that in extreme cases it becomes a laser pointer, illuminating a single point in the potential space. </p>
+<p>https://arxiv.org/abs/2207.12598</p>
 <h3 id="loss-functions">Loss functions</h3>
 <p>About <a href="https://www.datarobot.com/blog/introduction-to-loss-functions/">loss function</a></p>
 <h3 id="latent-space">Latent space</h3>
@@ -609,12 +749,13 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
 <p>Diagram of the lower part</p>
 </blockquote>
 <p><a href="https://zhuanlan.zhihu.com/p/573984443">潜在扩散模型</a></p>
+<p>[1^]:<a href="https://www.jonstokes.com/p/getting-started-with-stable-diffusion">Getting Started With Stable Diffusion: A Guide For Creators</a></p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 11:06:53</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 19, 2022 11:34:44</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 13, 2022 10:24:49</span>

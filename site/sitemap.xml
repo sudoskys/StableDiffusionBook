@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
          <loc>https://stable-diffusion-book.vercel.app/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
          
          <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/"/>
@@ -10,7 +10,7 @@
     </url>
     <url>
          <loc>https://stable-diffusion-book.vercel.app/GettingStarted/contributing/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/GettingStarted/contributing/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/GettingStarted/contributing/"/>
@@ -18,7 +18,7 @@
     </url>
     <url>
          <loc>https://stable-diffusion-book.vercel.app/GettingStarted/news/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/GettingStarted/news/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/GettingStarted/news/"/>
@@ -26,7 +26,7 @@
     </url>
     <url>
          <loc>https://stable-diffusion-book.vercel.app/GettingStarted/state/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/GettingStarted/state/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/GettingStarted/state/"/>
@@ -34,7 +34,7 @@
     </url>
     <url>
          <loc>https://stable-diffusion-book.vercel.app/GettingStarted/term/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/GettingStarted/term/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/GettingStarted/term/"/>
@@ -42,7 +42,7 @@
     </url>
     <url>
          <loc>https://stable-diffusion-book.vercel.app/OlD/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/OlD/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/OlD/"/>
@@ -50,7 +50,7 @@
     </url>
     <url>
          <loc>https://stable-diffusion-book.vercel.app/OlD/2_prepare/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/OlD/2_prepare/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/OlD/2_prepare/"/>
@@ -58,7 +58,7 @@
     </url>
     <url>
          <loc>https://stable-diffusion-book.vercel.app/OlD/3_install/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/OlD/3_install/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/OlD/3_install/"/>
@@ -66,7 +66,7 @@
     </url>
     <url>
          <loc>https://stable-diffusion-book.vercel.app/OlD/4_model/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/OlD/4_model/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/OlD/4_model/"/>
@@ -74,7 +74,7 @@
     </url>
     <url>
          <loc>https://stable-diffusion-book.vercel.app/OlD/5_drawing/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/OlD/5_drawing/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/OlD/5_drawing/"/>
@@ -82,7 +82,7 @@
     </url>
     <url>
          <loc>https://stable-diffusion-book.vercel.app/OlD/6_selftrain/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/OlD/6_selftrain/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/OlD/6_selftrain/"/>
@@ -90,7 +90,7 @@
     </url>
     <url>
          <loc>https://stable-diffusion-book.vercel.app/OlD/7_landing/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/OlD/7_landing/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/OlD/7_landing/"/>
@@ -98,7 +98,7 @@
     </url>
     <url>
          <loc>https://stable-diffusion-book.vercel.app/Perpare/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/Perpare/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/Perpare/"/>
@@ -106,7 +106,7 @@
     </url>
     <url>
          <loc>https://stable-diffusion-book.vercel.app/install/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/install/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/install/"/>
@@ -114,7 +114,7 @@
     </url>
     <url>
          <loc>https://stable-diffusion-book.vercel.app/install/WebUi/Troubleshoot/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/install/WebUi/Troubleshoot/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/install/WebUi/Troubleshoot/"/>
@@ -122,7 +122,7 @@
     </url>
     <url>
          <loc>https://stable-diffusion-book.vercel.app/install/WebUi/launch/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/install/WebUi/launch/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/install/WebUi/launch/"/>
@@ -130,7 +130,7 @@
     </url>
     <url>
          <loc>https://stable-diffusion-book.vercel.app/install/WebUi/set/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/install/WebUi/set/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/install/WebUi/set/"/>
@@ -138,7 +138,7 @@
     </url>
     <url>
          <loc>https://stable-diffusion-book.vercel.app/landing/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/landing/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/landing/"/>
@@ -146,7 +146,7 @@
     </url>
     <url>
          <loc>https://stable-diffusion-book.vercel.app/model/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/model/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/model/"/>
@@ -154,7 +154,7 @@
     </url>
     <url>
          <loc>https://stable-diffusion-book.vercel.app/model/GPU/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/model/GPU/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/model/GPU/"/>
@@ -162,7 +162,7 @@
     </url>
     <url>
          <loc>https://stable-diffusion-book.vercel.app/model/NAI/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/model/NAI/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/model/NAI/"/>
@@ -170,7 +170,7 @@
     </url>
     <url>
          <loc>https://stable-diffusion-book.vercel.app/model/WebUi/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/model/WebUi/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/model/WebUi/"/>
@@ -178,7 +178,7 @@
     </url>
     <url>
          <loc>https://stable-diffusion-book.vercel.app/model/WebUi/Troubleshoot/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/model/WebUi/Troubleshoot/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/model/WebUi/Troubleshoot/"/>
@@ -186,7 +186,7 @@
     </url>
     <url>
          <loc>https://stable-diffusion-book.vercel.app/model/WebUi/base/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/model/WebUi/base/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/model/WebUi/base/"/>
@@ -194,7 +194,7 @@
     </url>
     <url>
          <loc>https://stable-diffusion-book.vercel.app/paint/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/paint/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/paint/"/>
@@ -202,7 +202,7 @@
     </url>
     <url>
          <loc>https://stable-diffusion-book.vercel.app/paint/Practicalguide/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/paint/Practicalguide/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/paint/Practicalguide/"/>
@@ -210,7 +210,7 @@
     </url>
     <url>
          <loc>https://stable-diffusion-book.vercel.app/paint/WebUi/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/paint/WebUi/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/paint/WebUi/"/>
@@ -218,7 +218,7 @@
     </url>
     <url>
          <loc>https://stable-diffusion-book.vercel.app/paint/WebUi/Advanced/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/paint/WebUi/Advanced/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/paint/WebUi/Advanced/"/>
@@ -226,7 +226,7 @@
     </url>
     <url>
          <loc>https://stable-diffusion-book.vercel.app/paint/WebUi/base/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/paint/WebUi/base/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/paint/WebUi/base/"/>
@@ -234,7 +234,7 @@
     </url>
     <url>
          <loc>https://stable-diffusion-book.vercel.app/paint/WebUi/extension/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/paint/WebUi/extension/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/paint/WebUi/extension/"/>
@@ -242,7 +242,7 @@
     </url>
     <url>
          <loc>https://stable-diffusion-book.vercel.app/train/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/train/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/train/"/>
@@ -250,7 +250,7 @@
     </url>
     <url>
          <loc>https://stable-diffusion-book.vercel.app/train/AestheticGradients/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/train/AestheticGradients/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/train/AestheticGradients/"/>
@@ -258,7 +258,7 @@
     </url>
     <url>
          <loc>https://stable-diffusion-book.vercel.app/train/DreamBooth/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/train/DreamBooth/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/train/DreamBooth/"/>
@@ -266,7 +266,7 @@
     </url>
     <url>
          <loc>https://stable-diffusion-book.vercel.app/train/Hypernetwork/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/train/Hypernetwork/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/train/Hypernetwork/"/>
@@ -274,7 +274,7 @@
     </url>
     <url>
          <loc>https://stable-diffusion-book.vercel.app/train/Textual/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/train/Textual/"/>
          <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/train/Textual/"/>

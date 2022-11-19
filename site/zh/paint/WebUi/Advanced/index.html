@@ -413,25 +413,6 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
-    提示词原理
-  </a>
-<nav aria-label="提示词原理" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_3">
-    图像生成器
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#webui">
-    WebUi 的实现
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#img2txt">
     Img2Txt
   </a>
@@ -443,7 +424,7 @@
 <nav aria-label="Img2Img 介绍" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_4">
+<a class="md-nav__link" href="#_2">
     调整大小
   </a>
 </li>
@@ -477,7 +458,7 @@
 <nav aria-label="Img2Img 让低显存生成大分辨率图片" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_5">
+<a class="md-nav__link" href="#_3">
     脚本
   </a>
 </li>
@@ -490,12 +471,12 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_6">
+<a class="md-nav__link" href="#_4">
     图像去噪
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_7">
+<a class="md-nav__link" href="#_5">
     渐变提示词
   </a>
 </li>
@@ -505,12 +486,12 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_8">
+<a class="md-nav__link" href="#_6">
     提示词速查
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_9">
+<a class="md-nav__link" href="#_7">
     调参工程师
   </a>
 </li>
@@ -614,25 +595,6 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
-    提示词原理
-  </a>
-<nav aria-label="提示词原理" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_3">
-    图像生成器
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#webui">
-    WebUi 的实现
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#img2txt">
     Img2Txt
   </a>
@@ -644,7 +606,7 @@
 <nav aria-label="Img2Img 介绍" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_4">
+<a class="md-nav__link" href="#_2">
     调整大小
   </a>
 </li>
@@ -678,7 +640,7 @@
 <nav aria-label="Img2Img 让低显存生成大分辨率图片" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_5">
+<a class="md-nav__link" href="#_3">
     脚本
   </a>
 </li>
@@ -691,12 +653,12 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_6">
+<a class="md-nav__link" href="#_4">
     图像去噪
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_7">
+<a class="md-nav__link" href="#_5">
     渐变提示词
   </a>
 </li>
@@ -706,12 +668,12 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_8">
+<a class="md-nav__link" href="#_6">
     提示词速查
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_9">
+<a class="md-nav__link" href="#_7">
     调参工程师
   </a>
 </li>
@@ -731,48 +693,6 @@
 <p class="admonition-title">Tip</p>
 <p>请阅读前面章节的模型进阶1,了解具体的 Img2Img 和 inpaint 介绍操作。</p>
 </div>
-<h2 id="_2">提示词原理</h2>
-<h3 id="_3">图像生成器</h3>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://jalammar.github.io/images/stable-diffusion/stable-diffusion-components-and-tensors.png"><img alt="jalammar s pic" src="https://jalammar.github.io/images/stable-diffusion/stable-diffusion-components-and-tensors.png"/></a></p>
-<p>information creator 完全在图像信息空间（或潜伏空间）中工作。这一特性使它比以前在像素空间工作的扩散模型更快。在技术上，这个组件是由一个UNet神经网络和一个调度算法组成的。</p>
-<ul>
-<li>Text Encoder</li>
-</ul>
-<p>提示词的解析由 Text Encoder/CLIP 处理(token embedding)，这里是提示词转译给AI的关键一步。</p>
-<p>ClipText用于文本编码。
-输入文本，输出77个标记嵌入向量，每个都有768个维度。</p>
-<ul>
-<li>information creator</li>
-</ul>
-<p>UNet + Scheduler在信息（潜在）空间中逐步处理/分散信息。</p>
-<p>它输入文本嵌入和一个由噪声组成的起始多维数组（结构化的数字列表，也叫张量），输出一个经过处理的信息阵列。</p>
-<ul>
-<li>Image Decoder</li>
-</ul>
-<p>Text Decoder 根据从 information creator 那里获得的信息绘制一幅图画。 它只在过程结束时运行一次以生成最终图像。</p>
-<p>Autoencoder Decoder使用处理过的信息阵列绘制最终图像的解码器。输入处理过的信息阵列(dimensions: (4,64,64))，输出结果图像(dimensions: (3, 512, 512)，即(red/green/blue, width, height)。</p>
-<ul>
-<li>CLIP 的工作</li>
-</ul>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://pic3.zhimg.com/80/v2-340920caff256e06c29cff7097e23e62_1440w.jpg"><img alt="训练图" src="https://pic3.zhimg.com/80/v2-340920caff256e06c29cff7097e23e62_1440w.jpg"/></a></p>
-<blockquote>
-<p>CLIP 训练图 from https://bbs.huaweicloud.com/blogs/371319</p>
-</blockquote>
-<p>在使用中，Text Encoder 对输入词汇进行特征提取，与高斯噪声结合输入 information creator ，输出一个经过处理的信息阵列。
-每次处理后 图像生成器 都会预测一些像素，然后在循环的生成中，像素相互结合。</p>
-<p>处理完一次数组就是完成了一次 step.然后处理完的噪声数组和 token集合再次进行一次 step 生成.</p>
-<p>完成所有 step 后，噪声输入Image Decoder，输出成图。</p>
-<h3 id="webui">WebUi 的实现</h3>
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/modules/prompt_parser.py">WebUi的prompt_parser</a> 通过本地 WebUi 实现了渐变等功能。</p>
-<p>WebUi prompt 语法会转换为相应时间的 prompt,然后通过 embedding 交给 Ai 处理。</p>
-<p>关于权重的实现：权重增加通常会占一个提示词位。</p>
-<p>关于渐变的实现：到了指定 Step ，WebUi 程序会替换对应 提示词，达到渐变效果。</p>
-<p>其他以此类推。</p>
-<p>整个看下来，原理流程如图 <a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://user-images.githubusercontent.com/75739606/198675128-c2c849d0-d024-468b-80c4-374f13e933e3.png"><img alt="prompt_draw" src="https://user-images.githubusercontent.com/75739606/198675128-c2c849d0-d024-468b-80c4-374f13e933e3.png"/></a></p>
-<blockquote>
-<p>By RcINS</p>
-</blockquote>
-<p>你可以在 <a href="https://jalammar.github.io/illustrated-stable-diffusion/">illustrated-stable-diffusion</a> 看到全面的介绍。本节部分内容也是由此翻译。</p>
 <h2 id="img2txt">Img2Txt</h2>
 <blockquote>
 <p>应用指南请读实战指南。</p>
@@ -791,7 +711,7 @@
 <p class="admonition-title">不同之处</p>
 <p>PS 重新绘画投入 Img2Img 的话，会导致画风的变动，而 Inpaint 就不会。</p>
 </div>
-<h3 id="_4">调整大小</h3>
+<h3 id="_2">调整大小</h3>
 <p><em>Just resize</em> 仅仅调整大小 - 简单地将源图像的大小调整到目标分辨率，导致不正确的长宽比。</p>
 <p><em>Crop and resize</em> 裁剪和调整大小 - 在保持长宽比的情况下调整源图像的大小，使其完全占据目标分辨率，并裁剪伸出的部分。</p>
 <p><em>Resize and fill</em> 调整大小和填充 - 调整源图像的大小，保留长宽比，使其完全适合目标分辨率，并通过源图像的行/列来填充空白空间</p>
@@ -862,7 +782,7 @@
 <h2 id="img2img_2">Img2Img 让低显存生成大分辨率图片</h2>
 <p>在前面提到了，如果遇到生成鬼图或者 低显存生产高分辨率图片 可以采用的 Img2Img 画质提升脚本。</p>
 <p>其实我<strong>强烈推荐</strong>你使用 Extras 的功能对低分辨率进行重放，效果不错的，且体验良好！</p>
-<h3 id="_5">脚本</h3>
+<h3 id="_3">脚本</h3>
 <p>但是如果你想使用脚本提供的分辨率增强，这里有 Img2Img 的具体流程</p>
 <ol>
 <li>
@@ -909,13 +829,13 @@
 <p><code>SD Upscaler</code> 在注重细节的同时还提升分辨率。</p>
 <p>曾经有段时间，<code>LSDR</code> 被认为是最好的。有些人喜欢 swinir，有些喜欢<code>esrgan4x</code>，<code>ymmv</code>，推荐使用 <code>ESRGAN_4x</code></p>
 <p>如果你要搞二次元，推荐使用<a href="https://github.com/bilibili/ailab/tree/main/Real-CUGAN">realcugan</a></p>
-<h2 id="_6">图像去噪</h2>
+<h2 id="_4">图像去噪</h2>
 <p>推荐使用 <a href="https://github.com/xinntao/Real-ESRGAN">Real-ESRGAN</a> 降噪。</p>
 <p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://raw.githubusercontent.com/xinntao/Real-ESRGAN/master/assets/teaser.jpg"><img alt="效果" src="https://raw.githubusercontent.com/xinntao/Real-ESRGAN/master/assets/teaser.jpg"/></a></p>
 <blockquote>
 <p>效果图</p>
 </blockquote>
-<h2 id="_7"><strong>渐变提示词</strong></h2>
+<h2 id="_5"><strong>渐变提示词</strong></h2>
 <p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-editing</p>
 <p>允许您开始对一张图片进行采样，但在中间切换到其他图片。基本语法是：</p>
 <div class="highlight"><pre><span></span><code>[from:to:when]
@@ -931,7 +851,7 @@
 <p>比如 [male:female:0.0], 意味着你开始时就要求画一个女性。</p>
 <h2 id="dlc">扩展模型/DLC</h2>
 <p>见 <code>训练模型</code> 的详细内容。</p>
-<h2 id="_8">提示词速查</h2>
+<h2 id="_6">提示词速查</h2>
 <p><strong><a href="https://docs.google.com/spreadsheets/d/14Gg1kIGWdZGXyCC8AgYVT0lqI6IivLzZOdIT3QMWwVI/edit">手抄本法术书</a></strong></p>
 <p><strong><a href="https://gelbooru.com/index.php?page=tags&amp;s=list">Danbooru全部Tag列表</a></strong></p>
 <p><strong><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml#">参数法术全典</a></strong></p>
@@ -939,7 +859,7 @@
 <p><strong><a href="https://github.com/scooderic/exhentai-tags-chinese-translation">NSFWTag</a></strong></p>
 <p><strong><a href="https://docs.google.com/spreadsheets/d/1SRqJ7F_6yHVSOeCi3U82aA448TqEGrUlRrLLZ51abLg/htmlview#">Ai艺术家文档</a></strong></p>
 <p><strong><a href="https://www.bilibili.com/read/cv19023021">Novelai 关键词组合器</a></strong></p>
-<h2 id="_9">调参工程师</h2>
+<h2 id="_7">调参工程师</h2>
 <p><a href="https://github.com/Maks-s/sd-akashic">https://github.com/Maks-s/sd-akashic</a></p>
 <p><a href="https://github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference">https://github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference</a></p>
 <div class="footnote">
@@ -976,7 +896,7 @@
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月18日 19:26:22</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月19日 11:34:44</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 03:59:46</span>
