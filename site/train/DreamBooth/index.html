@@ -479,11 +479,6 @@
 <nav aria-label="准备" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
-    配置要求
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#webui">
     WebUi 扩展
   </a>
@@ -500,7 +495,7 @@
 <nav aria-label="Windows" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_3">
+<a class="md-nav__link" href="#_2">
     临时指南
   </a>
 </li>
@@ -511,18 +506,18 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_4">
+<a class="md-nav__link" href="#_3">
     简单指南
   </a>
 <nav aria-label="简单指南" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_5">
+<a class="md-nav__link" href="#_4">
     数据集
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_6">
+<a class="md-nav__link" href="#_5">
     基本参数
   </a>
 </li>
@@ -574,7 +569,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_7">
+<a class="md-nav__link" href="#_6">
     其他
   </a>
 </li>
@@ -624,11 +619,6 @@
 <nav aria-label="准备" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
-    配置要求
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#webui">
     WebUi 扩展
   </a>
@@ -645,7 +635,7 @@
 <nav aria-label="Windows" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_3">
+<a class="md-nav__link" href="#_2">
     临时指南
   </a>
 </li>
@@ -656,18 +646,18 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_4">
+<a class="md-nav__link" href="#_3">
     简单指南
   </a>
 <nav aria-label="简单指南" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_5">
+<a class="md-nav__link" href="#_4">
     数据集
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_6">
+<a class="md-nav__link" href="#_5">
     基本参数
   </a>
 </li>
@@ -719,7 +709,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_7">
+<a class="md-nav__link" href="#_6">
     其他
   </a>
 </li>
@@ -742,8 +732,7 @@
 <p>本节使用  Shivam Shirao 的 <a href="https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth">版本</a></p>
 <p>配置衍生自 <a href="https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth">ShivamShrirao/diffusers</a></p>
 <h2 id="_1">准备</h2>
-<h3 id="_2">配置要求</h3>
-<p>Windows 系统至少需要 16, Linux 系统要求显存大于 8 GB</p>
+<p>Windows 系统至少需要16, Linux 系统要求显存大于 8GB</p>
 <p>然后在下面选一个训练方法。</p>
 <h3 id="webui">WebUi 扩展</h3>
 <p>https://github.com/d8ahazard/sd_dreambooth_extension</p>
@@ -792,7 +781,7 @@ pip install <span class="nv">bitsandbytes</span><span class="o">==</span><span c
     &gt;&gt;&gt;import bitsandbytes
 </code></pre></div>
 如果没有报错证明安装成功（ <code>Ctrl + Z</code> 并回车退出 python）</p>
-<h4 id="_3">临时指南</h4>
+<h4 id="_2">临时指南</h4>
 <p><strong>设置 accelerate</strong>
 <div class="highlight"><pre><span></span><code>    accelerate config
 
@@ -824,11 +813,11 @@ pip install <span class="nv">bitsandbytes</span><span class="o">==</span><span c
 <blockquote>
 <p>这是一个临时的解决方案，期待 Windows 官方适配的到来。</p>
 </blockquote>
-<h2 id="_4">简单指南</h2>
+<h2 id="_3">简单指南</h2>
 <p>启用 prior_preservation 以开始 DreamBooth 训练. prior_loss_weight 越低则越难过拟合, 但是也越难学到东西.</p>
 <p><a href="[crosstyan-s-guide](https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99)">3^</a></p>
-<h3 id="_5">数据集</h3>
-<p>数据集的创建是在Dreambooth训练中获得良好、稳定结果的最重要部分。</p>
+<h3 id="_4">数据集</h3>
+<p>数据集的创建是在 Dreambooth训练 中获得良好、稳定结果的最重要部分。</p>
 <ul>
 <li>内容要求</li>
 </ul>
@@ -846,13 +835,12 @@ pip install <span class="nv">bitsandbytes</span><span class="o">==</span><span c
 <ul>
 <li>调节</li>
 </ul>
-<p>一旦你收集了数据集的照片，将所有图片裁剪并调整为512x512的正方形，并删除任何水印、商标、被图片边缘切断的人/肢体，或其他你不希望被训练的内容。</p>
-<p>以PNG格式保存图像，并将所有图像放在 train 文件夹中。</p>
+<p>一旦你收集了数据集的照片，将所有图片裁剪并调整为512x512的正方形，并删除任何水印、商标、被图片边缘切断的人/肢体，或其他你不希望被训练的内容。以PNG格式保存图像，并将所有图像放在 train 文件夹中。</p>
 <ul>
 <li>从检查点恢复训练</li>
 </ul>
 <p>参数的 MODEL_NAME 改成上一次模型的位置。</p>
-<h3 id="_6">基本参数</h3>
+<h3 id="_5">基本参数</h3>
 <p>基本上所有的解释和例子都在上面给出的Colab笔记本中。</p>
 <p><a href="https://wandb.ai/psuraj/dreambooth/reports/Dreambooth-training-analysis--VmlldzoyNzk0NDc3">使用 Dreambooth 训练稳定扩散的实验的分析</a></p>
 <ul>
@@ -872,9 +860,8 @@ pip install <span class="nv">bitsandbytes</span><span class="o">==</span><span c
 </ul>
 <p>随意, 反正是自动生成出来的, 建议从其他支持 CLIP SKIP 2 的推理前端单独生成好之后丢到 class img 集内, 同样可以从独立的 txt 中读取内容.</p>
 <ul>
-<li>learning_rate</li>
+<li>learning_rate 学习率</li>
 </ul>
-<p>学习率</p>
 <p>DreamBooth 本身具有十分强烈的 copy and paste 效果. 使用 class/regularization 可以适当压制该效果.</p>
 <h3 id="native-training">Native Training</h3>
 <p>Native Training 为原生训练, 与 DreamBooth 不同的是, Native Training 会直接使用你的训练集进行训练, 不再需要 Class Image.</p>
@@ -914,8 +901,8 @@ pip install <span class="nv">bitsandbytes</span><span class="o">==</span><span c
 </ul>
 <p>玄学打碎, 或者对背景/大头等单独裁切, 也许会有帮助</p>
 <h4 id="aspect-ratio-bucketing">Aspect Ratio Bucketing</h4>
-<p><code>aspect_ratio_bucket</code> 调成 <code>enable: true</code>. 见 <a href="https://github.com/NovelAI/novelai-aspect-ratio-bucketing">Aspect Ratio Bucketing</a>.</p>
-<p>简称 ARB, 原版训练均只能使用 <code>1:1</code> 的图像, 开启 ARB 使得训练非 <code>1:1</code> 的图像成为可能, 但并非任意比例尺的图像.</p>
+<p><code>aspect_ratio_bucket</code> 调成 <code>enable: true</code>. 见 <a href="https://github.com/NovelAI/novelai-aspect-ratio-bucketing">Aspect Ratio Bucketing</a></p>
+<p>Aspect Ratio Bucketing 简称 ARB, 原版训练均只能使用 <code>1:1</code> 的图像, 开启 ARB 使得训练非 <code>1:1</code> 的图像成为可能, 但并非任意比例尺的图像.</p>
 <div class="highlight"><pre><span></span><code>[[ 256 1024], [ 320 1024], [ 384 1024], [ 384  960], [ 384  896], [ 448  832], [ 512  768], [ 512  704], [ 512  512], [ 576  640], [ 640  576], [ 704  512], [ 768  512], [ 832  448], [ 896  384], [ 960  384], [1024  384], [1024  320], [1024  256]]
 </code></pre></div>
 <p>不在 bucket 内的图像将会被裁切.</p>
@@ -934,10 +921,7 @@ pip install <span class="nv">bitsandbytes</span><span class="o">==</span><span c
 <h4 id="multiple-concept">Multiple Concept</h4>
 <p>用 DreamBooth 是可以训练多个概念/人物/动作/物体的. 但是若训练两个人物则推理时不能使其同时出现, 两者的特征会被混合起来.</p>
 <p>如果用其他版本的 DreamBooth 训练方法检查 <code>--concept_list</code> 参数, 可以读入一个类似的 <code>json</code> 文件.</p>
-<ul>
-<li>训练步数的选择</li>
-</ul>
-<p>一般来说是，训练步骤 =（参考图像 x 100）</p>
+<p>训练步数的选择一般来说是，训练步骤 =（参考图像 x 100）</p>
 <ul>
 <li>concepts_list.json</li>
 </ul>
@@ -965,7 +949,7 @@ concepts_list = [
 <p>Subject images (或者你在笔记本上看到的实例图像)是你想要训练的图像，所以如果你想要自己的外观的模型，你可以取20到40张自己的图像并输入这些图像。实例名是一个唯一的标识符，它将在提示符中表示受训对象，个人使用 “namelastname”，大多数笔记本使用“sks”，但最好更改它。</p>
 <p>你实际上是在告诉AI把你介绍到大数据库中，为了做到这一点，你选择一个类别，即最适合你所训练的类别，对于人们来说，通常使用 "person", "man"/"woman" 等。</p>
 <p>在训练中使用Class images是为了防止物体的特征 “渗透” 到同一Class 的其他物体。如果没有 Class images 作为参考点，人工智能倾向于将你的脸与 Class 中出现的其他脸合并。其他像名人一样的人会有点像你。</p>
-<h2 id="_7">其他</h2>
+<h2 id="_6">其他</h2>
 <p><a href="https://github.com/TheLastBen/fast-stable-diffusion">fast-stable-diffusion colabs</a></p>
 <p><a href="https://colab.research.google.com/github/ShivamShrirao/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion.ipynb#scrollTo=K6xoHWSsbcS3">DreamBooth_Stable_Diffusion</a> </p>
 <p><a href="https://colab.research.google.com/github/TheLastBen/fast-stable-diffusion/blob/main/fast-DreamBooth.ipynb">fast-DreamBooth</a></p>
@@ -979,7 +963,7 @@ concepts_list = [
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月18日 19:23:51</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月19日 12:09:12</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 03:59:46</span>
