@@ -53,6 +53,13 @@ The repository currently contains a machine-translated version of the guide.
 
 If this does not seem to flow well to you or has errors,or u would like a version in another language. Then please submit Issue or Pr
 ```
+
+#### TODO
+
+- [ ] Dreambooth训练节的核对
+- [ ] 关于稳定扩散工作原理内容的核对
+
+
 ### 相关
 
 [sdupdates SD综合清单，推荐阅读的](https://github.com/questianon/sdupdates)

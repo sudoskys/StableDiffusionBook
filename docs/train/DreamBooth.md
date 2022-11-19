@@ -13,9 +13,7 @@ DreamBooth 的模型是一种新的文本到图像“个性化”（可适应用
 
 ## 准备
 
-### 配置要求
-
-Windows 系统至少需要 16, Linux 系统要求显存大于 8 GB
+Windows 系统至少需要16, Linux 系统要求显存大于 8GB
 
 然后在下面选一个训练方法。
 
@@ -154,7 +152,7 @@ diffusers 不能直接使用 ckpt 文件进行训练，需要先进行转换，�
 
 ### 数据集
 
-数据集的创建是在Dreambooth训练中获得良好、稳定结果的最重要部分。
+数据集的创建是在 Dreambooth训练 中获得良好、稳定结果的最重要部分。
 
 - 内容要求
 
@@ -176,13 +174,9 @@ diffusers 不能直接使用 ckpt 文件进行训练，需要先进行转换，�
 
 为了避免不自然的过度模糊，确保图像不包含假的重景深或虚化。
 
-
 - 调节
 
-一旦你收集了数据集的照片，将所有图片裁剪并调整为512x512的正方形，并删除任何水印、商标、被图片边缘切断的人/肢体，或其他你不希望被训练的内容。
-
-以PNG格式保存图像，并将所有图像放在 train 文件夹中。
-
+一旦你收集了数据集的照片，将所有图片裁剪并调整为512x512的正方形，并删除任何水印、商标、被图片边缘切断的人/肢体，或其他你不希望被训练的内容。以PNG格式保存图像，并将所有图像放在 train 文件夹中。
 
 - 从检查点恢复训练
 
@@ -211,9 +205,7 @@ Image 应该为 自动生成 即 auto-generated 的图像, 用于检测 AI 的�
 
 随意, 反正是自动生成出来的, 建议从其他支持 CLIP SKIP 2 的推理前端单独生成好之后丢到 class img 集内, 同样可以从独立的 txt 中读取内容.
 
-* learning_rate
-
-学习率
+* learning_rate 学习率
 
 DreamBooth 本身具有十分强烈的 copy and paste 效果. 使用 class/regularization 可以适当压制该效果.
 
@@ -241,7 +233,6 @@ Native Training 需要较多的数据集, 但这个量众说纷纭, 大约在 [1
 推荐使用 [crosstyan/blip_helper](https://github.com/crosstyan/blip_helper) 去给你的图像打标. 或者使用 [DeepDanbooru](https://github.com/KichangKim/DeepDanbooru) 和 [BLIP](https://github.com/salesforce/BLIP)
 
 
-
 #### Augmentation
 
 * 处理数据的方式有许多: 最常见的有反转, 旋转, 亮度和裁切.
@@ -249,12 +240,12 @@ Native Training 需要较多的数据集, 但这个量众说纷纭, 大约在 [1
 玄学打碎, 或者对背景/大头等单独裁切, 也许会有帮助
 
 
-
 #### Aspect Ratio Bucketing
 
-`aspect_ratio_bucket` 调成 `enable: true`. 见 [Aspect Ratio Bucketing](https://github.com/NovelAI/novelai-aspect-ratio-bucketing).
+`aspect_ratio_bucket` 调成 `enable: true`. 见 [Aspect Ratio Bucketing](https://github.com/NovelAI/novelai-aspect-ratio-bucketing)
 
-简称 ARB, 原版训练均只能使用 `1:1` 的图像, 开启 ARB 使得训练非 `1:1` 的图像成为可能, 但并非任意比例尺的图像.
+Aspect Ratio Bucketing 简称 ARB, 原版训练均只能使用 `1:1` 的图像, 开启 ARB 使得训练非 `1:1` 的图像成为可能, 但并非任意比例尺的图像.
+
 
 ```
 [[ 256 1024], [ 320 1024], [ 384 1024], [ 384  960], [ 384  896], [ 448  832], [ 512  768], [ 512  704], [ 512  512], [ 576  640], [ 640  576], [ 704  512], [ 768  512], [ 832  448], [ 896  384], [ 960  384], [1024  384], [1024  320], [1024  256]]
@@ -285,13 +276,9 @@ ARB 与 DreamBooth 一起使用的相性不好, 仅推荐 Native Training 时使
 
 用 DreamBooth 是可以训练多个概念/人物/动作/物体的. 但是若训练两个人物则推理时不能使其同时出现, 两者的特征会被混合起来.
 
-
 如果用其他版本的 DreamBooth 训练方法检查 `--concept_list` 参数, 可以读入一个类似的 `json` 文件.
 
-
-- 训练步数的选择
-
-一般来说是，训练步骤 =（参考图像 x 100）
+训练步数的选择一般来说是，训练步骤 =（参考图像 x 100）
 
 - concepts_list.json
 
