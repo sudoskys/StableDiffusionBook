@@ -418,9 +418,28 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#how-to-write-prompt">
-    How to write prompt
+<a class="md-nav__link" href="#how-to-write-a-prompt-prompt">
+    How to write a prompt (prompt)
   </a>
+<nav aria-label="How to write a prompt (prompt)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-to-use">
+    What to use
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-to-write">
+    How to write
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#length">
+    Length
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#prompt-sort">
@@ -621,9 +640,28 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#how-to-write-prompt">
-    How to write prompt
+<a class="md-nav__link" href="#how-to-write-a-prompt-prompt">
+    How to write a prompt (prompt)
   </a>
+<nav aria-label="How to write a prompt (prompt)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-to-use">
+    What to use
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-to-write">
+    How to write
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#length">
+    Length
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#prompt-sort">
@@ -755,18 +793,32 @@ NAI's [word] = WebUi(word:0.952)(0.952 = 1/1.05)</p>
 <p>NAI's {word} = WeUi's (word:1.05)</p>
 <p>NAI brackets have a weight of 1.05/pc, WebUi rounds have a weight of 1.1/pc</p>
 </div>
-<h2 id="how-to-write-prompt">How to write prompt</h2>
-<p>Write it in conjunction with a spell book.</p>
+<h2 id="how-to-write-a-prompt-prompt">How to write a prompt (prompt)</h2>
+<h3 id="what-to-use">What to use</h3>
+<ul>
+<li>Words</li>
+</ul>
+<p>Ordinary words</p>
 <ul>
 <li>Natural language</li>
 </ul>
-<p>Natural language can be used directly, WebUi(SD) has natural language processing capabilities (English sentences), and can also use  emoji</p>
-<p>However, if you are looking for accuracy, don't use natural language.</p>
+<p>WebUi can also use natural language directly, even some Japanese.</p>
+<p>But don't use natural language if you want to be accurate.</p>
 <ul>
-<li>parameter [^6]</li>
+<li>emoji</li>
 </ul>
-<p>Combine similar cue phrases as you wish and put these in order from most to least important.</p>
-<p>You can use artists, studios, photographic terms, character names, styles, special effects, etc. These can be viewed in the manuals, which are available in the end pages.</p>
+<p>Including the Western face characters <code>(^_^)</code> and emoji 🌻 can be used, with emoji being particularly accurate in expression.</p>
+<h3 id="how-to-write">How to write</h3>
+<p>Combine similar prompt phrases you want and put these in order from most important to least important.</p>
+<p><code>(subject)(style), (action/scene), (artist), (filters)</code></p>
+<p><code>(subject)</code> serves as the subject of the screen, anchoring the content of the screen, which is an essential part of any prompt. <code>(style)</code> is the style of the screen, optional.</p>
+<p><code>(action/scene)</code> As the action/scene, describes what the subject is doing where it is.</p>
+<p><code>(artist)</code> is the optional artist name or the name of the production company.</p>
+<p><code>(filers)</code> are details that add to it. Artists, studios, photographic terms, character names, styles, effects, etc. can be used.</p>
+<ul>
+<li>content[^6]</li>
+</ul>
+<p>The content can be</p>
 <div class="highlight"><pre><span></span><code>The quality of the image
 The subject of the pictures
 Their appearance
@@ -775,23 +827,23 @@ Their clothes
 Their poses
 The background of the picture
 </code></pre></div>
-<p><a href="https://docs.google.com/document/d/ 1XUT2G9LmkZataHFzmuOtRXnuWBfhvXDAo8DkS--8tec/edit#">Guide to Writing Prompts for Text-to-image Ai: A Guide to Writing Prompts for Text-to-image AI</a></p>
+<p><a href="https://docs.google.com/document/d/ 1XUT2G9LmkZataHFzmuOtRXnuWBfhvXDAo8DkS--8tec/edit#">Guide-to-Writing-Prompts-for-Text-to-image-Ai:A-Guide-to-Writing-Prompts-for-Text-to-image-AI</a></p>
+<h3 id="length">Length</h3>
 <p><strong>Writing length</strong></p>
 <ul>
-<li>The Tip should not be too long, there is a risk of failure if it exceeds 100.</li>
+<li>Hint don't be too long, over 100 is a risk of failure</li>
 </ul>
-<p>You can write prompts with more than 75 words. Originally, due to GPT-3 model limitations, the prompts are not unlimited, the positive token is between 75-80, and the content after 75 words is truncated. But WebUi has grouping, so you can write many words.</p>
-<p>But not stacking prompts is a good habit.</p>
-<p>When the prompt exceeds 75 <code>tokens</code> (say 150 <code>tokens</code>), WebUi will group the prompt words and submit multiple sets of 75 <code>tokens</code>. The tokens will only have the context of the rest of the content in the same set. This means that you may have <code>bule hair</code> at the boundary between the first and second group, token <code>blue</code> will be in the first group and <code>hair</code> will be in the second group. This led to inaccurate results as the two words were separated.</p>
+<p>You can write prompts of 75 words or more. Originally, due to GPT-3 model limitations, prompts were not infinite; the positive token was between 75 and 80, and content after 75 characters was truncated. But WebUi does grouping, so you can write a lot of words. It is a good habit not to stack prompts, but if you do have a lot of content to write, you can increase the step appropriately</p>
+<p>When the prompt exceeds 75 <code>tokens</code> (e.g. 150 <code>tokens</code>), WebUi groups the prompt words, submitting more than 75 <code>tokens</code>. The tokens will only have the context of the rest of the content in the same set. This means that you may have <code>bule hair</code> at the boundary between the first and second group, token <code>blue</code> will be in the first group and <code>hair</code> will be in the second group. This led to inaccurate results as the two words were separated.</p>
 <p>The new version adds an option <code>Increase coherency by padding from the last comma within n tokens when using more than 75 tokens</code></p>
 <p>This setting lets the program try to alleviate this by finding if there is a last comma in the last N tokens, and if so, moving everything that passes through that comma together to the next collection.</p>
 <div class="admonition tip">
-<p class="admonition-title">example</p>
+<p class="admonition-title">For example</p>
 <p>There are entries for the words <code>... ,comma,blue hair,PADDING,...</code></p>
 <p>The 75th word is <code>blue</code></p>
-<p><strong>before using this option</strong></p>
+<p>Before using this option</p>
 <p>Set 1:{[74]=Comma, [75]=blue}, Set 2:{[76]=hair, [77]=PADDING}</p>
-<p><strong>After using this option</strong></p>
+<p>After using this option</p>
 <p>Set 1:{[074]=Comma, [75]=PADDING}, Set 2:{[76]=blue, [77]=hair}</p>
 <p>If your hint is less than or equal to 75 tokens, no grouping will occur.</p>
 </div>
@@ -1015,7 +1067,7 @@ PS: too high a step count (&gt;30) will not give better results</p>
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 19, 2022 11:34:44</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 19, 2022 11:52:42</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 07:44:44</span>
