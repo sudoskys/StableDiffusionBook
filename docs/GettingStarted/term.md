@@ -45,7 +45,6 @@ Stable Diffusion 中使用的自动编码器的缩减系数为 8。这意味着�
 
 U-Net 在以文本嵌入为条件的同时迭代地对随机高斯噪声表示进行去噪。U-Net通过 采样算法 计算去噪的潜在图像表示，输出噪声残差。这个步骤重复许多次后，潜在表示由 Image Decoder 的 auto encoder 的解码器解码输出。
 
-文本嵌入与随机高斯噪声结合输入 information creator ，输出一个经过处理的信息阵列(噪声残差)。
 
 ![流程](https://raw.githubusercontent.com/patrickvonplaten/scientific_images/master/stable_diffusion.png)
 
