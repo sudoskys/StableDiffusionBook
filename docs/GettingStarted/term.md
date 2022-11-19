@@ -1,5 +1,102 @@
-# 名词
+# 帮助
 
+## Sd如何工作
+
+### 推理过程
+
+![jalammar s pic](https://jalammar.github.io/images/stable-diffusion/stable-diffusion-components-and-tensors.png)
+
+information creator 完全在图像信息空间（或潜伏空间）中工作。这一特性使它比以前在像素空间工作的扩散模型更快。在技术上，这个组件是由一个UNet神经网络和一个调度算法组成的。
+
+- Text Encoder
+
+提示词的解析由 Text Encoder/CLIP 处理(token embedding)，这里是提示词转译给AI的关键一步。
+
+文本编码器负责将输入的提示转换为U-Net可以理解的嵌入空间。它通常是一个简单的基于变换器的编码器，将一连串的输入标记映射到一连串的 latent text-embeddings 中。
+
+稳定扩散使用 ClipText 用于文本编码。输入文本，输出77个标记嵌入向量，每个都有768个维度。
+
+- information creator
+
+UNet + Scheduler(也就是采样算法)在潜在空间中逐步处理/分散信息。
+
+它输入文本嵌入和一个由噪声组成的起始多维数组（结构化的数字列表，也叫张量），输出一个经过处理的信息阵列。
+
+- Image Decoder
+
+Text Decoder 根据从 information creator 那里获得的信息绘制一幅图画。 它只在过程结束时运行一次以生成最终图像。
+
+autoencoder(VAE)模型有两个部分，一个编码器和一个解码器。编码器用于将图像转换为 latent representation，作为U-Net模型的输入。解码器则将 latent representation 转回图像。
+
+在推理过程中，使用VAE解码器将反向扩散过程产生的去噪潜像转换回图像。在推理过程中，我们只需要VAE解码器。
+
+Autoencoder Decoder(VAE)使用处理过的信息阵列绘制最终图像的解码器。输入处理过的信息阵列(dimensions: (4,64,64))，输出结果图像(dimensions: (3, 512, 512)，即(red/green/blue, width, height)。
+
+- CLIP 的工作
+
+![训练图](https://pic3.zhimg.com/80/v2-340920caff256e06c29cff7097e23e62_1440w.jpg)
+>CLIP 训练图 from https://bbs.huaweicloud.com/blogs/371319
+
+- 流程
+
+Stable Diffusion 中使用的自动编码器的缩减系数为 8。这意味着一张 (4, 512, 512) 的图像在潜在空间中是 (4, 64, 64)。
+
+在使用稳定扩散推理一张 512 *512 的图片的过程中，模型用一个种子和一个文本提示作为输入。潜在种子生成大小 64 × 64 的随机潜在图像，而 prompt 进入 Text Encoder 通过CLIP的文本编码器转化为大小为77×768的文本嵌入。
+
+U-Net 在以文本嵌入为条件的同时迭代地对随机高斯噪声表示进行去噪。U-Net通过 采样算法 计算去噪的潜在图像表示，输出噪声残差。这个步骤重复许多次后，潜在表示由 Image Decoder 的 auto encoder 的解码器解码输出。
+
+文本嵌入与随机高斯噪声结合输入 information creator ，输出一个经过处理的信息阵列(噪声残差)。
+
+![流程](https://raw.githubusercontent.com/patrickvonplaten/scientific_images/master/stable_diffusion.png)
+
+- 扩展
+
+[illustrated-stable-diffusion](https://jalammar.github.io/illustrated-stable-diffusion/)
+
+[稳定扩散](https://huggingface.co/blog/stable_diffusion)
+
+[稳定扩散入门 ](https://pub.towardsai.net/getting-started-with-stable-diffusion-f343639e4931)
+
+[Stable Diffusion From Wikipedia](https://en.wikipedia.org/wiki/Stable_Diffusion)
+
+### WebUi 的预处理
+
+[WebUi的prompt_parser](https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/modules/prompt_parser.py) 通过本地 WebUi 实现了渐变等功能。
+
+WebUi prompt 语法会转换为相应时间的 prompt,然后通过 embedding 交给 Ai 处理。
+
+关于权重的实现：权重增加通常会占一个提示词位。
+
+关于渐变的实现：到了指定 Step ，WebUi 程序会替换对应 提示词，达到渐变效果。
+
+其他以此类推。
+
+整个看下来，原理流程如图 
+
+![prompt_draw](https://user-images.githubusercontent.com/75739606/198675128-c2c849d0-d024-468b-80c4-374f13e933e3.png)
+>By RcINS
+
+### Ref
+
+[How diffusion models work: the math from scratch](https://theaisummer.com/diffusion-models/#classifier-free-guidance)
+
+## 名词
+
+### VAE
+
+[变分自编码器](https://blog.csdn.net/a312863063/article/details/87953517)
+
+### CFG 
+
+这个词汇为 Classifier Free Guidance Scale 的缩写，用于衡量模型 生成的预期图片和你的提示保持一致的 程度。 Cfg Scale 值为 0 时，会生成一个基于种子的随机图像。[1^]
+
+打个比方，想象你的提示是一个带有可变宽度光束的手电筒，你将它照到模型的潜在空间上以突出显示特定区域——你的输出图像将从该区域内的某个地方绘制，具体取决于种子。
+
+将 Cfg Scale 拨向 零会产生极宽的光束 ，突出显示整个潜在空间——您的输出几乎可以来自任何地方。
+
+将 Cfg Scale 拨向 20 会产生非常窄的光束， 以至于在极端情况下它会变成激光指示器，照亮潜在空间中的一个点。 
+
+https://arxiv.org/abs/2207.12598
 
 ### 损失函数
 
@@ -75,3 +172,4 @@ Latent Diffusion Model 潜在扩散模型。
 
 [潜在扩散模型](https://zhuanlan.zhihu.com/p/573984443)
 
+[1^]:[Getting Started With Stable Diffusion: A Guide For Creators](https://www.jonstokes.com/p/getting-started-with-stable-diffusion)

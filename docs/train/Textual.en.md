@@ -1,33 +1,37 @@
-
 # Textual Inversion[^7]
 
-[Official Wiki](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion#training-embeddings)
+<!--
+VAE does not have a catastrophic effect on training.
+-->
 
 !!! tip
-    VAE does not have a catastrophic effect on HN training. To uninstall, rename "xxx.vae.pt" to "xxx.vae.pt.disabled" or another name before starting webui.
+    Do not load VAE during training.
+    
+    If you don't want to load Vae, rename "xxx.vae.pt" to "xxx.vae.pt.disabled" or something else before starting webui.
 
-    Check **Move VAE and CLIP to RAM when training hypernetwork. Saves VRAM.** The effect is to transfer VAE to RAM, not to uninstall it.
+    Check **Move VAE and CLIP to RAM when training hypernetwork. Saves VRAM.** The effect is to move VAE to RAM, but it will actually load.
 
 
-## Apt/DreamArtist
+## Apt/DreamArtist Training
 
-TI is for Ai to understand "likes", while Apt is for Ai to understand "likes" and "dislikes".
+TI is for Ai to understand "likes", and Apt is for Ai to understand "likes" and "dislikes".
 
 So it's an efficient Textual Inversion
 
 https://github.com/7eu7d7/DreamArtist-sd-webui-extension
 
+
 ## Prepare the dataset
 
-The dataset should be consistent in style and have the same concept of content. If computing power allows, the more images the better. The content of the data can be illustrations, abstract paintings, or emoticons.
+The dataset should be consistent in style and have the same concept of content. The more images, the better, if computing power allows. The content of the data can be illustrations, abstract paintings or emojis.
 
+The quality of the dataset is demanding, if objects such as human figures appear in the background, they will be trained in. The training procedure is very sensitive.
 
 ## Requirements
 
-At least 6GB of VRAM, 12GB of VRAM is required for comfortable use. Based on experimental data, 8GB of VRAM should be selected for `-512x512` resolution; training with `-lowvram` and `-medvram` parameters is not recommended.
+At least 6GB of video memory, 12GB of video memory is required for comfortable use. Based on experimental data, 8GB of video memory should be selected for `-512x512` resolution; training with `-lowvram` and `-medvram` parameters is not recommended.
 
 If you have enough VRAM, then using `-no-half --precision full` may prevent problems with overflow.
-
 
 You can interrupt and resume training, but the optimizer state will not be saved, so this is not recommended.
 
@@ -94,30 +98,21 @@ Fill in the `Destination directory` with the path where the images will be saved
 Select the image size for training, typically `512x512` for 8Gb graphics cards, larger is not necessarily better.
 
 
-**The next four checkboxes** are
+**Next there are four checkboxes**
 
+Checking `Create flipped copies` will invert the image image to increase the amount of data.
 
-`Create flipped copies`
+Check `Use deepbooru caption as filename` to use deep learning to recognize Tag, and check to train `embedding` for NAI. **If you don't have this option, you need to add `-deepdanbooru` to the startup entry**
 
-- When checked, this will invert the image image to increase the amount of data.
+>Windows needs to add `COMMANDLINE_ARGS=` in the `webui-user.bat` line, or just `python launch.py --deepdanbooru`. (If the launch is stuck it is a network problem)
 
-- `Use deepbooru caption as filename`
+Checking `Use BLIP for caption` will add a caption to the filename using the BLIP model. Not really suitable for secondary images.
 
-Check this box to train `embedding` for NAI. If you don't have this option, you need to add `--deepdanbooru` to the startup entry.
+Check `Split oversized images into two` to split oversized images into two, not normally used.
 
-Windows needs to add it to `COMMANDLINE_ARGS=` in the `webui-user.bat` line, or just `python launch.py --deepdanbooru`. (If the launch is stuck it is a network problem)
+Finally we check `Use deepbooru caption as filename` and `Create flipped copies`.
 
-- `Use BLIP for caption` Use the BLIP model to add captions to filenames. Not really suitable for secondary images.
-
-- `Split oversized images into two` Splits oversized images into two, not normally used.
-
-
-So we check `Use deepbooru caption as filename` and `Create flipped copies`.
-
-Click the button and wait for the process to finish.
-
-
-
+Click the button and wait for the processing to finish.
 
 
 ## Training
@@ -126,48 +121,51 @@ Training is a dynamic process!
 
 In the `Train` sub-tab, select the model you want to train.
 
-`Learning rate` (hyperparameter: learning rate), the learning rate represents the rate at which information accumulates in the neural network over time, and this parameter has a large impact on the speed at which training is affected.
+### Learning rate
 
-Generally, the lower the learning rate, the slower the learning (takes longer to converge), but generally the better the results.
+`Learning rate` (hyperparameter: learning rate), the learning rate represents the rate at which information accumulates in the neural network over time, and this parameter greatly influences the speed at which training is affected. Generally, the lower the learning rate, the slower the learning (takes longer to converge), but generally the better the results.
 
-When training, you can start with a larger learning rate and then gradually reduce it to `0.1 - 0.02 - 0.005`, using the last best result for each test.
+Generally we set it to 0.005, but if you want to go faster, you can use 0.01 to speed it up. However, if we set it too high, the gradient descent will be too large to converge and will probably destroy the `embedding`, which will not be as effective as expected. If you set it too small, you will easily fall into a local optimum. Currently TI supports setting learning rates of `0.1:500, 0.01:1000, 0.001:10,000`, which are based on `learning rate:steps`, or `total steps*percentage` if the number of steps is decimal.
 
-This is usually set to 0.005, but if you want to go faster, you can use 0.01 to speed it up. However, if you set it too high, the gradient will be too large to converge and may break `embedding`, which will not work as expected. If you set it too small, you will easily fall into a local optimum. Currently TI supports setting learning rates of `0.1:500, 0.01:1000, 0.001:10000`, which will follow a schedule.
+When training, you can start with a larger learning rate and then gradually reduce it by `0.1 - 0.02 - 0.005`, using the last best result for each test.
 
-![CS231n](https://user-images.githubusercontent.com/75739606/197824268-273f074d-9622-41ad-9f1a-2980f180dbd9.png)
-<!--
-![CS231n](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/CS231n.png)
+! [CS231n](https://user-images.githubusercontent.com/75739606/197824268-273f074d-9622-41ad-9f1a-2980f180dbd9.png)
+<! --
+! [CS231n](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/CS231n.png)
 -->
 
-`Log directory` is the log directory
+### Parameters
 
-`Prompt template file` is a text file with prompts, one per line, for training the model.
+`Log directory` is the log directory.
 
-The directory, `textual_inversion_templates`, explains what you can do with these files.
+- Prompt template
 
-The training will use `style.txt` and `subject.txt`
+`Prompt template file` is a text file with prompts, one per line, for training the model. The `textual_inversion_templates` folder in the directory explains what you can do with these files.
 
-**If you are training painting styles, use `style.txt`**
+Refer to `style.txt` and `subject.txt` for training, e.g. `style.txt` for painting style and `subject.txt` for character training
 
-**If training characters, use `subject.txt`**
-
+Depending on the template file, you can use the following keywords in the file name and they will be replaced when processing.
 ```
-[name]: embedding name
-[filewords]: words from the file name of the image from the dataset. See below for more info.
+[name]: name of the embedding
+[filewords]: the name of the image file in the dataset
 ```
-`Preview prompt` Preview, generate a preview with this prompt when finished.
+
+### Operations
+
+`Preview prompt` Preview and generate a preview with this prompt when finished.
 If it is empty, the prompt from the prompt will be used.
 
-``Save a copy of embedding to log directory every N steps, 0 to disable`
+``Save a copy of embedding to log directory every N steps, 0 to disable``
 Save a copy of embedding to log directory every N steps, 0 to disable
 
 `Save an image to log directory every N steps, 0 to disable`
 Save an image to log directory every N steps, 0 to disable
 
+- Number of steps
+
 `Max steps` determines how many `steps` are completed before training will stop.
 
-A step is a single image (or batch of images, but batches are not currently supported) that is trained to the model and used to improve embedding. if you interrupt training and resume it later, the number of steps will be kept.
-
+A step is a single image (or batch of images, but batches are not currently supported) that is trained to the model and used to improve embedding. if you disable training and resume it later, the number of steps is retained.
 
 For stylised models of character images, the recommended number of steps is 15000-40000
 
@@ -180,70 +178,64 @@ stylised model of the artist's drawing style, recommended number of steps is 40,
 
     If the Loss is greater than 0.3, the results are not very good
 
-If too much is overfitting (which can be interpreted as deadening of Ai), keep an eye on it and stop if it is overfitting. If it doesn't work very well, go to an earlier model and continue training. **Keep tweaking** to find a good result.
+If too much is overfitting (which can be interpreted as the dead weight of Ai), keep an eye on it and stop if it is overfitting. If it doesn't work very well, go to an earlier model and continue training. **Keep tweaking** to find a good result.
 
-`Save images with embedding in PNG chunks` is to generate a pt file in image form. ~Character card~
+`Save images with embedding in PNG chunks` is generating a pt file in the form of an image, which is very convenient for us to share the embedding.
 
+Once everything is in place, click `Training` in the bottom right corner and wait.
 
-
-Click on Training in the bottom right corner and wait.
-
-Training is complete. If you have uninstalled VAE, rename the VAE weight file back and restart the program.
+The training is complete. If you have uninstalled VAE, rename the VAE weights back and restart the program.
 
 
-## Remarks
+## Other explanations
 
-
-**Effect evaluation**
-
-An attempt can be made to imitate the original work.
 
 **[filewords]**
 
-This is the Tag that represents the prompt template file and enables the insertion of **filenames into the prompt**.
+This represents the replacement of the [filewords] of the cue word template file as the name of the dataset file, which enables the insertion of **file names into the cue words**
 
-First, by default, the file extension and all numbers and dashes ( ) at the beginning of the - file name are removed.
+1. By default, the file extension and all numbers and dashes at the beginning of the - file name are removed.
 
-So this filename: `000001-1-a man in suit.png` will become the prompt text: `a man in suit`. The formatting of the text in the file name remains the same.
+So this filename: `000001-1-a man in suit.png` will become the prompt text: `a man in suit`. The formatting of the text in the file name remains the same. 2.
 
-Second, the text in the filename can be changed using the `Filename word regex` and `Filename join string` options.
+2. The text in the filename can be changed using the `Filename word regex` and `Filename join string` options.
 
 For example, using the word `regex = \w+` and the join string = `,`, the above file will produce the following text: `a, man, in, suit`.
 
 The regular expression will extract the hint word from the text
 `['a', 'man', 'in', 'suit', ]`
 
-and places the concatenated string (',') between these words to create a text `a, man, in, suit`
+and places the concatenated string (',') between the words to create a text `a, man, in, suit`
 
 You can also create a text file with the same filename as the image ( 000001-1-a man in suit.txt) and place the prompt text there. The filename and regular expression options will not be used.
 
 **Move VAE and CLIP from VRAM when training. saves VRAM.**
 
-Unloads VAE and CLIP from VRAM and loads them into RAM when training.
+Move VAE and CLIP from VRAM into RAM when training
 
 This option on the Settings tab allows you to save some memory at the cost of slower preview image generation.
 
-The result of training is a .pt or a .bin file (the former is the format used by the original author, the latter is used as a diffusers library)
+The result of the training is a .pt or a .bin file (the former is the format used by the original author, the latter is used as the diffusers library)
 
-### subject_filewords.txt Template
+
+### subject_filewords.txt template
 
 [1^]
-Textual Inversion training cannot train things that are not in the model. It is also very sensitive to training photos. If you don't get good results (failure to converge or crashing results).
 
-You need to replace the training data or use Dreambooth.
+Textual Inversion training cannot train things that are not in the model. It is also very sensitive to training photos.
 
-So, how does the training work?
+If you don't get good results (failure to converge or crashing results). You need to replace the training data or use Dreambooth.
 
-You give it a hint, the hint is transformed into a bunch of vectors and fed into the model, the output is compared with the training images and the word vectors being trained are slightly corrected. This process is repeated during training.
+So how does the training work?
 
-The vectors that are fed into the model are the training vector + the hint vector.
+The vector being fed into the model is the training vector + the hint vector. You give it a hint, the hint is transformed into a bunch of vectors and fed into the model, the output is compared with the training image and the trained word vector is slightly corrected. This process is repeated during training.
 
-Because the correction of the training vector does not use the content provided by the cue vector for training. So the document words should not contain features that belong to the content being trained.
+Because the training vectors are not corrected using the content provided by the hint vector for training. So the document words should not contain features that belong to the content being trained.
 
-If you have, say, a subject wearing a black t-shirt in all photos, you can effectively negate it from the training set by adding `black t-shirt` to the filewords of those images.
+If you have, say, a subject wearing a `black t-shirt` in all photos, you can effectively negate it from the training set by adding `black t-shirt` to the `filewords` of those images.
 
+Unless you are trying to fix a photo, use `filewords` for style, not for subject.
 
-Unless you are trying to fix a photo, use filewords for style, not for subject.
 
 <iframe src="//player.bilibili.com/player.html?aid=559085039&bvid=BV1ae4y1S7v9&cid=859894044&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 

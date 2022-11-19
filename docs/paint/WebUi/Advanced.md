@@ -6,64 +6,6 @@
     请阅读前面章节的模型进阶1,了解具体的 Img2Img 和 inpaint 介绍操作。
 
 
-## 提示词原理
-
-### 图像生成器
-
-![jalammar s pic](https://jalammar.github.io/images/stable-diffusion/stable-diffusion-components-and-tensors.png)
-
-information creator 完全在图像信息空间（或潜伏空间）中工作。这一特性使它比以前在像素空间工作的扩散模型更快。在技术上，这个组件是由一个UNet神经网络和一个调度算法组成的。
-
-- Text Encoder
-
-提示词的解析由 Text Encoder/CLIP 处理(token embedding)，这里是提示词转译给AI的关键一步。
-
-ClipText用于文本编码。
-输入文本，输出77个标记嵌入向量，每个都有768个维度。
-
-
-- information creator
-
-UNet + Scheduler在信息（潜在）空间中逐步处理/分散信息。
-
-它输入文本嵌入和一个由噪声组成的起始多维数组（结构化的数字列表，也叫张量），输出一个经过处理的信息阵列。
-
-- Image Decoder
-
-Text Decoder 根据从 information creator 那里获得的信息绘制一幅图画。 它只在过程结束时运行一次以生成最终图像。
-
-Autoencoder Decoder使用处理过的信息阵列绘制最终图像的解码器。输入处理过的信息阵列(dimensions: (4,64,64))，输出结果图像(dimensions: (3, 512, 512)，即(red/green/blue, width, height)。
-
-- CLIP 的工作
-
-![训练图](https://pic3.zhimg.com/80/v2-340920caff256e06c29cff7097e23e62_1440w.jpg)
->CLIP 训练图 from https://bbs.huaweicloud.com/blogs/371319
-
-在使用中，Text Encoder 对输入词汇进行特征提取，与高斯噪声结合输入 information creator ，输出一个经过处理的信息阵列。
-每次处理后 图像生成器 都会预测一些像素，然后在循环的生成中，像素相互结合。
-
-处理完一次数组就是完成了一次 step.然后处理完的噪声数组和 token集合再次进行一次 step 生成.
-
-完成所有 step 后，噪声输入Image Decoder，输出成图。
-
-### WebUi 的实现
-
-[WebUi的prompt_parser](https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/modules/prompt_parser.py) 通过本地 WebUi 实现了渐变等功能。
-
-WebUi prompt 语法会转换为相应时间的 prompt,然后通过 embedding 交给 Ai 处理。
-
-关于权重的实现：权重增加通常会占一个提示词位。
-
-关于渐变的实现：到了指定 Step ，WebUi 程序会替换对应 提示词，达到渐变效果。
-
-其他以此类推。
-
-整个看下来，原理流程如图 ![prompt_draw](https://user-images.githubusercontent.com/75739606/198675128-c2c849d0-d024-468b-80c4-374f13e933e3.png)
->By RcINS
-
-你可以在 [illustrated-stable-diffusion](https://jalammar.github.io/illustrated-stable-diffusion/) 看到全面的介绍。本节部分内容也是由此翻译。
-
-
 ## Img2Txt
 
 >应用指南请读实战指南。
@@ -318,3 +260,4 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-edi
 [^10]:[角色与画风tag训练十问](https://www.bilibili.com/video/BV1xt4y1F7Y2/)
 
 [^11]:[WebUI即将引入重磅更新，大幅提升图像品质](https://www.bilibili.com/read/cv19102552)
+

@@ -157,6 +157,7 @@ webui 突破 tag 75 个限制的方式是把 75 个分为一组。
 ![图像生成的描述](https://jalammar.github.io/images/stable-diffusion/stable-diffusion-image-generation.png)
 >thanks https://jalammar.github.io/illustrated-stable-diffusion/
 
+
 ## Batch count&batch size
 
 `batch count` 指定训练几批次图像。
@@ -301,12 +302,11 @@ normal quality, text, censored, gown, latex, pencil
 ```
 
 
-
 ## CFG Scale/Denoising strength 契合度/降噪
 
 **CFG Scale**
 
-`cfg scale` 就是图像与 prompt 的契合度,Scale越高，程序对提示词越忠诚，契合度越高。
+`cfg scale` 就是预测时对 prompt 的参考度,越高，预测时对，契合度越高。
 
 **Denoising strength 降低噪声**
 
@@ -314,7 +314,7 @@ normal quality, text, censored, gown, latex, pencil
 
 对于以图做图来说，低 `denoising` 意味着修正原图，高 `denoising` 就和原图就没有大的相关性了。一般来讲阈值是 0.7 左右，超过 0.7 和原图基本上无关，0.3 以下就是稍微改一些。
 
-
+实际执行中，具体的执行步骤为 Denoising strength * Sampling Steps.
 
 ## 渐变标签
 
@@ -411,6 +411,7 @@ normal quality, text, censored, gown, latex, pencil
 
 高阶采样器如 `DPM-Solver++` 更高效，花费的步数也少。
 
+实际推理中，具体的执行步骤为 Denoising strength * Sampling Steps.
 
 ## Samplers 采样器
 

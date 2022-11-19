@@ -438,6 +438,7 @@ Clip 跳过 0，其他一切都很好（afaik 不要使用超网络、v2、yaml�
 
 [稳定扩散的艺术家风格研究](https://proximacentaurib.notion.site/e28a4f8d97724f14a784a538b8589e7d?v=42948fd8f45c4d47a0edfc4b78937474)
 
+![32种风格化](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/reddit-32种风格化-汉化by-Suzakiz.png)
 
 #### 草图风格
 

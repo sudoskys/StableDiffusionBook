@@ -290,7 +290,7 @@ Denoising strength` determines how well the algorithm retains the content of the
 
 A low `denoising` means that the original image is corrected, while a high `denoising` is not as relevant to the original image. Generally speaking, the threshold is around 0.7, above which it is largely irrelevant, and below 0.3 it is slightly modified.
 
-
+In practice, the number of step = Denoising strength * Sampling Steps.
 
 ## Prompt editing
 
@@ -382,6 +382,7 @@ You can change the setting in the settings to allow the program to perform exact
 
 Higher order samplers such as `DPM-Solver++` are more efficient and take fewer steps.
 
+In practical reasoning, the exact number of steps performed is `Denoising strength * Sampling Steps`.
 
 ## Samplers
 
