@@ -143,8 +143,6 @@
     
 * Sampling method：使用哪种采样器。Euler a（ancestral 的简称）以较少的步数产生很大的多样性，但很难做小的调整。随着步数的增加，非ancestral采样器都会产生基本相同的图像，如果你不确定的话，可以使用LMS。
     
-* ddim_eta：使用DDIM时的随机性数量。
-    
 * Batch count/n_iter：生成一组图像的频率。
     
 * Batch size：同时生成多少个图像。增加这个值可以提高性能，但你也需要更多的VRAM。图像总数是这个值乘以批次数。
