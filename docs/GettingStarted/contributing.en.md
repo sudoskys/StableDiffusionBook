@@ -148,3 +148,6 @@ To add changes, simply edit the original branch again and it will automatically 
 Add an index to `mkdocs.yml` with the translation of the outline and the corresponding big title.
 
 
+### Extended reading
+
+[Open Source Guide](https://opensource.guide/zh-hans/)

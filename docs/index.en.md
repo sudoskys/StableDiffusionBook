@@ -12,6 +12,7 @@ Copyright (C)  2022  StableDiffusionBook.
     Free Documentation License".
 -->
 
+StableDiffusionBook is committed to openness and community connection, with an open, collaborative approach to community documentation. Anyone can participate in the creation of this documentation.
 
 This page accounts for explanations of terms written for newcomers.
 

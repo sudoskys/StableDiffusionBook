@@ -155,4 +155,6 @@ commit 摘要，推荐按照下面的格式编辑：
 
 在 `mkdocs.yml` 中添加纲目和对应大标题的翻译。
 
+### 扩展阅读
 
+[开源指南](https://opensource.guide/zh-hans/)

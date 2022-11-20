@@ -14,6 +14,7 @@ Copyright (C)  2022  StableDiffusionBook.
     Free Documentation License".
 -->
 
+StableDiffusionBook 致力于信息公开和社区连结，秉持开放，共建的原则进行社区文档建设。任何人都可以参与到此文档的编写工作。
 
 本页交代写给新人的话和术语解释。
 
