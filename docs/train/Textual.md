@@ -11,11 +11,16 @@ VAE 对 训练 并不会造成灾难性的影响。
 
     在设置内勾选 **Move VAE and CLIP to RAM when training hypernetwork. Saves VRAM.** 的效果是转移 VAE 到 RAM, 实际上还会加载。
 
-## Apt/DreamArtist 训练
+![Textual_Inversion](https://user-images.githubusercontent.com/75739606/203366251-ae0ae585-8492-4970-ac9a-5ccf14a1897c.jpg)
+
+
+## Apt/DreamArtist 方法
 
 普通的 Textual Inversion 是让 Ai 了解 “喜欢” ，而 DA(Apt) 让 Ai 了解“喜欢”和“不喜欢”。所以 DreamArtist 是一种十分高效的 Textual Inversion.
 
 https://github.com/7eu7d7/DreamArtist-sd-webui-extension
+
+https://arxiv.org/abs/2211.11337
 
 ## 准备数据集
 

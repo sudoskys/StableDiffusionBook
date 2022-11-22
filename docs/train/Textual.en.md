@@ -11,6 +11,8 @@ VAE does not have a catastrophic effect on training.
 
     Check **Move VAE and CLIP to RAM when training hypernetwork. Saves VRAM.** The effect is to move VAE to RAM, but it will actually load.
 
+![Textual_Inversion](https://user-images.githubusercontent.com/75739606/203366251-ae0ae585-8492-4970-ac9a-5ccf14a1897c.jpg)
+
 
 ## Apt/DreamArtist Training
 
@@ -20,6 +22,7 @@ So it's an efficient Textual Inversion
 
 https://github.com/7eu7d7/DreamArtist-sd-webui-extension
 
+https://arxiv.org/abs/2211.11337
 
 ## Prepare the dataset
 

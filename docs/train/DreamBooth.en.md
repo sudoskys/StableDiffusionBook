@@ -14,6 +14,10 @@ However, neither the Imagen model nor the pre-trained weights are available. So 
 
 This section uses a version of the [diffusers](https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth) branch of Shivam Shirao, with a configuration derived from [ShivamShrirao/diffusers](https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth).
 
+
+![DreamBooth_files](https://dreambooth.github.io/DreamBooth_files/system.png)
+>by https://dreambooth.github.io/
+
 ## Select
 
 Windows systems require a minimum of 16GB of video memory, Linux systems require a minimum of 8GB of video memory

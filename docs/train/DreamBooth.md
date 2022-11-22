@@ -14,6 +14,9 @@ Dreambooth 基于 [Imagen](https://imagen.research.google/) 研发，使用时�
 
 本节使用的是 Shivam Shirao 的 [diffusers](https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth) 分支版本，配置衍生自 [ShivamShrirao/diffusers](https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth)。
 
+![DreamBooth_files](https://dreambooth.github.io/DreamBooth_files/system.png)
+>by https://dreambooth.github.io/
+
 ## 选择
 
 Windows 系统的显存至少需要 16GB, Linux 系统要求显存至少为 8GB
