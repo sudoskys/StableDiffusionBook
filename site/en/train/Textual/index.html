@@ -675,10 +675,12 @@ VAE does not have a catastrophic effect on training.
 <p>If you don't want to load Vae, rename "xxx.vae.pt" to "xxx.vae.pt.disabled" or something else before starting webui.</p>
 <p>Check <strong>Move VAE and CLIP to RAM when training hypernetwork. Saves VRAM.</strong> The effect is to move VAE to RAM, but it will actually load.</p>
 </div>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://user-images.githubusercontent.com/75739606/203366251-ae0ae585-8492-4970-ac9a-5ccf14a1897c.jpg"><img alt="Textual_Inversion" src="https://user-images.githubusercontent.com/75739606/203366251-ae0ae585-8492-4970-ac9a-5ccf14a1897c.jpg"/></a></p>
 <h2 id="aptdreamartist-training">Apt/DreamArtist Training</h2>
 <p>TI is for Ai to understand "likes", and Apt is for Ai to understand "likes" and "dislikes".</p>
 <p>So it's an efficient Textual Inversion</p>
 <p>https://github.com/7eu7d7/DreamArtist-sd-webui-extension</p>
+<p>https://arxiv.org/abs/2211.11337</p>
 <h2 id="prepare-the-dataset">Prepare the dataset</h2>
 <p>The dataset should be consistent in style and have the same concept of content. The more images, the better, if computing power allows. The content of the data can be illustrations, abstract paintings or emojis.</p>
 <p>The quality of the dataset is demanding, if objects such as human figures appear in the background, they will be trained in. The training procedure is very sensitive.</p>
@@ -810,7 +812,7 @@ Save an image to log directory every N steps, 0 to disable</p>
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 19, 2022 11:34:44</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 22, 2022 16:22:17</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 07:57:05</span>
