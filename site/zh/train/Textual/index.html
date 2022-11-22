@@ -797,7 +797,7 @@ VAE 对 训练 并不会造成灾难性的影响。
 <p>设置选项卡上的此选项允许您以较慢的预览图片生成为代价节省一些内存。</p>
 <p>训练的结果是一个 .pt 或一个 .bin 文件（前者是原作者使用的格式，后者作为 diffusers library）</p>
 <h3 id="subject_filewordstxt">subject_filewords.txt 模板</h3>
-<p><a href="[is_textual_inversion_salvageable](https://www.reddit.com/r/sdforall/comments/ykerg2/is_textual_inversion_salvageable/)">1^</a></p>
+<p><sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
 <p>Textual Inversion 训练不能训练模型中没有的东西。它对训练照片也非常敏感。</p>
 <p>如果你没有得到好的结果（未能收敛或结果崩坏）。你需要更换训练数据或者使用 Dreambooth。</p>
 <p>那么，训练是如何进行的呢？</p>
@@ -807,12 +807,20 @@ VAE 对 训练 并不会造成灾难性的影响。
 <p>除非你试图修复照片，否则请将 <code>filewords</code> 用于 style，而不是用于 subject。</p>
 <iframe allowfullscreen="true" border="0" frameborder="no" framespacing="0" height="600" scrolling="no" src="//player.bilibili.com/player.html?aid=559085039&amp;bvid=BV1ae4y1S7v9&amp;cid=859894044&amp;page=1" width="100%"> </iframe>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion#training-embeddings">官方 Wiki</a></p>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:1">
+<p><a href="https://www.reddit.com/r/sdforall/comments/ykerg2/is_textual_inversion_salvageable/">is_textual_inversion_salvageable</a> <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+</ol>
+</div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月22日 16:28:07</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月22日 16:59:55</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 03:59:46</span>

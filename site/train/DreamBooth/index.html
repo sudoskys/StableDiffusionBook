@@ -859,7 +859,7 @@
 </blockquote>
 <h2 id="_3">准备</h2>
 <p>如果你选择使用 AutoDl 的镜像，需要把 dreambooth-for- diffusion 文件夹移到 autodl-tmp（数据盘）中，且确保运行路径 (# 前面的那一串）为 dreambooth-for-diffusion，具体操作细节在 <a href="https://zhuanlan.zhihu.com/p/584736850">知乎教程</a> 中有图文说明。</p>
-<p>启用 prior_preservation 以开始 DreamBooth 训练。prior_loss_weight 越低则越难过拟合，但是也越难学到东西。<a href="[dreambooth-training-guide](https://github.com/nitrosocke/dreambooth-training-guide)">4^</a> </p>
+<p>启用 prior_preservation 以开始 DreamBooth 训练。prior_loss_weight 越低则越难过拟合，但是也越难学到东西。<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup><sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup> </p>
 <h3 id="_4">模型转换</h3>
 <p>在各个笔记本或镜像中都会有以下类型命令，作用是将 ckpt 模型转换为 diffusers 权重格式来训练。</p>
 <ul>
@@ -874,7 +874,7 @@
 <div class="highlight"><pre><span></span><code>    python diffusers<span class="se">\s</span>cripts<span class="se">\c</span>onvert_diffusers_to_original_stable_diffusion.py  --model_path models/resultModel  --checkpoint_path result.ckpt  --half
 </code></pre></div>
 <h3 id="_5">数据集</h3>
-<p>数据集的创建是在 Dreambooth 训练 中获得良好、稳定结果的最重要部分。<a href="[dreambooth-training-guide](https://github.com/nitrosocke/dreambooth-training-guide)">3^</a></p>
+<p>数据集的创建是在 Dreambooth 训练 中获得良好、稳定结果的最重要部分。<sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">3</a></sup></p>
 <p>class 和 instance 的质量决定生成的质量。</p>
 <ul>
 <li>内容要求</li>
@@ -1065,7 +1065,7 @@ accelerate launch <span class="nv">$TRAINER</span> <span class="se">\</span>
 <p>注：原论文中使用的示例词 <code>sks</code> 和现实中的枪械 <a href="https://en.wikipedia.org/wiki/SKS">SKS</a> 相同，属于不适合被使用的词汇。但是如果你的训练程度足够高的话说不定可以覆写其影响。</p>
 </blockquote>
 <h3 id="subject-images-class-images">解释 Subject images / Class images</h3>
-<p>介绍来自 <a href="[good_dreambooth_formula](https://www.reddit.com/r/StableDiffusion/comments/ybxv7h/good_dreambooth_formula/)">2^</a></p>
+<p>介绍来自 <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></p>
 <p>Subject images （或者你在笔记本上看到的实例图像）是你想要训练的图像，所以如果你想要自己的外观的模型，你可以取 20 到 40 张自己的图像并输入这些图像。实例名是一个唯一的标识符，它将在提示符中表示受训对象，个人使用 “namelastname”，大多数笔记本使用“sks”，但最好更改它。</p>
 <p>你实际上是在告诉 AI 把你介绍到数据库中，为了做到这一点，你选择一个类别，即最适合你所训练的类别，对于人们来说，通常使用 "person", "man"/"woman" 等。</p>
 <p>在训练中使用 Class images 是为了 <strong>防止物体的特征 “渗透” 到同一 Class 的其他物体中</strong>。如果没有 Class images 作为参考点，AI 会将你的脸与 Class 中出现的其他脸合并。<strong>你的脸会渗透进模型生成的其他脸中。</strong></p>
@@ -1575,13 +1575,35 @@ pip install <span class="nv">bitsandbytes</span><span class="o">==</span><span c
 <!--
 [飞桨 dreambooth 训练教程](https://docs.qq.com/doc/DUHVuZ3BNV0FkT1R6)
 -->
-<p>[6^]:<a href="https://zhuanlan.zhihu.com/p/584736850">StableDiffusion/DreamBooth 自训练全教程</a></p>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:1">
+<p><a href="https://www.reddit.com/r/StableDiffusion/comments/yhw7k8/testing_dreambooth_for_consistency_with_complex/">testing_dreambooth_for_consistency_with_complex</a> <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://www.reddit.com/r/StableDiffusion/comments/ybxv7h/good_dreambooth_formula/">good_dreambooth_formula</a> <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+<li id="fn:3">
+<p><a href="https://github.com/nitrosocke/dreambooth-training-guide">dreambooth-training-guide</a> <a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref2:3" title="Jump back to footnote 3 in the text">↩</a></p>
+</li>
+<li id="fn:4">
+<p><a href="https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99">crosstyan-s-guide</a> <a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">↩</a></p>
+</li>
+<li id="fn:5">
+<p><a href="https://github.com/XavierXiao/Dreambooth-Stable-Diffusion">XavierXiao/Dreambooth-Stable-Diffusion</a> <a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">↩</a></p>
+</li>
+<li id="fn:6">
+<p><a href="https://zhuanlan.zhihu.com/p/584736850">StableDiffusion/DreamBooth自训练全教程</a> <a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">↩</a></p>
+</li>
+</ol>
+</div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月22日 16:36:19</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月22日 16:59:55</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 03:59:46</span>

@@ -976,50 +976,50 @@
 <h3 id="convergence">收敛 (convergence)</h3>
 <p>通俗来说，收敛通常是指在训练期间达到的一种状态，即经过一定次数的迭代之后，训练损失和验证损失在每次迭代中的变化都非常小或根本没有变化。也就是说，如果采用当前数据进行额外的训练将无法改进模型，模型即达到收敛状态。在深度学习中，损失值有时会在最终下降之前的多次迭代中保持不变或几乎保持不变，暂时形成收敛的假象。</p>
 <h3 id="vae">VAE</h3>
-<p>Variational autoencoders (VAEs) 是一种用于学习潜在表示的深度学习技术。它们也被用来绘制图像，在半监督学习中取得最先进的成果，以及在句子之间进行插值。<a href="[VAE-CS228](https://ermongroup.github.io/cs228-notes/extras/vae/)">2^</a></p>
-<p>Variational autoencoders (VAEs) are a deep learning technique for learning latent representations. They have also been used to draw images, achieve state-of-the-art results in semi-supervised learning, as well as interpolate between sentences.<a href="[VAE-CS228](https://ermongroup.github.io/cs228-notes/extras/vae/)">2^</a></p>
+<p>Variational autoencoders (VAEs) 是一种用于学习潜在表示的深度学习技术。它们也被用来绘制图像，在半监督学习中取得最先进的成果，以及在句子之间进行插值。<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></p>
+<p>Variational autoencoders (VAEs) are a deep learning technique for learning latent representations. They have also been used to draw images, achieve state-of-the-art results in semi-supervised learning, as well as interpolate between sentences.<sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup></p>
 <h3 id="cfg">CFG</h3>
 <p>这个词汇为 Classifier Free Guidance Scale 的缩写，用于衡量模型 生成的预期图片和你的提示保持一致的 程度。 Cfg Scale 值为 0 时，会生成一个基于种子的随机图像。</p>
-<p>打个比方，想象你的提示是一个带有可变宽度光束的手电筒，你将它照到模型的潜在空间上以突出显示特定区域——你的输出图像将从该区域内的某个地方绘制，具体取决于种子。[1^]</p>
+<p>打个比方，想象你的提示是一个带有可变宽度光束的手电筒，你将它照到模型的潜在空间上以突出显示特定区域——你的输出图像将从该区域内的某个地方绘制，具体取决于种子。<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
 <p>将 Cfg Scale 拨向 零会产生极宽的光束 ，突出显示整个潜在空间——您的输出几乎可以来自任何地方。</p>
 <p>将 Cfg Scale 拨向 20 会产生非常窄的光束， 以至于在极端情况下它会变成激光指示器，照亮潜在空间中的一个点。 </p>
 <p><a href="https://arxiv.org/abs/2207.12598">论文地址</a></p>
 <h3 id="loss-functions">Loss functions</h3>
-<p>在优化算法的上下文中，用于评估候选解决方案（即一组权重）的函数称为目标函数。 [4^]</p>
+<p>在优化算法的上下文中，用于评估候选解决方案（即一组权重）的函数称为目标函数。 <sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup></p>
 <p>对于神经网络，我们寻求最小错误。 因此，目标函数通常被称为成本函数或损失函数，由损失函数计算的值简称为“loss”。</p>
-<p>损失函数。[3^]</p>
+<p>损失函数。<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></p>
 <p>关于 Loss Function 的中文解释请读 <a href="https://fangkaipeng.com/?p=2056#header-id-16">损失函数</a></p>
 <h3 id="_6">潜在空间</h3>
-<p>压缩数据的表示，其中相似的数据点在空间上更靠近在一起。[5^]</p>
+<p>压缩数据的表示，其中相似的数据点在空间上更靠近在一起。<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup></p>
 <p>关于潜在空间的中文解释请读 <a href="https://zhuanlan.zhihu.com/p/369946876">理解机器学习中的潜在空间</a>.</p>
 <h3 id="_7">损失</h3>
-<p>一种衡量指标，用于衡量模型的预测偏离其标签的程度。或者更悲观地说是衡量模型有多差。要确定此值，模型必须定义损失函数。例如，线性回归模型通常将均方误差用于损失函数，而逻辑回归模型则使用对数损失函数。<a href="[Loss](https://freeopen.github.io/posts/ml-glossary#loss)">6^</a></p>
+<p>一种衡量指标，用于衡量模型的预测偏离其标签的程度。或者更悲观地说是衡量模型有多差。要确定此值，模型必须定义损失函数。例如，线性回归模型通常将均方误差用于损失函数，而逻辑回归模型则使用对数损失函数。<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup></p>
 <h3 id="hyperparameter">Hyperparameter</h3>
 <p>超参数</p>
 <p>机器学习算法的参数。 示例包括在决策林中学习的树的数量，或者梯度下降算法中的步长。 在对模型进行定型之前，先设置超参数的值，并控制查找预测函数参数的过程，例如，决策树中的比较点或线性回归模型中的权重。 有关详细信息，请参阅 <a href="https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)">Wikipedia</a>.</p>
 <h3 id="pipeline">Pipeline</h3>
-<p>要将模型与数据集相匹配所需的所有操作。 管道由数据导入、转换、特征化和学习步骤组成。 对管道进行定型后，它会转变为模型。<a href="[hyperparameter](https://learn.microsoft.com/zh-cn/dotnet/machine-learning/resources/glossary#hyperparameter)">7^</a></p>
+<p>要将模型与数据集相匹配所需的所有操作。 管道由数据导入、转换、特征化和学习步骤组成。 对管道进行定型后，它会转变为模型。<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup></p>
 <h3 id="epoch">epoch</h3>
-<p>在训练时，整个数据集的一次完整遍历，以便不漏掉任何一个样本。因此，一个周期表示（N/批次规模）次训练迭代，其中 N 是样本总数。<a href="[Loss](https://freeopen.github.io/posts/ml-glossary#loss)">6^</a></p>
+<p>在训练时，整个数据集的一次完整遍历，以便不漏掉任何一个样本。因此，一个周期表示（N/批次规模）次训练迭代，其中 N 是样本总数。<sup id="fnref2:6"><a class="footnote-ref" href="#fn:6">6</a></sup></p>
 <h3 id="batch-size">batch size</h3>
-<p>一个批次中的样本数。例如，SGD 的批次规模为 1，而小批次的规模通常介于 10 到 1000 之间。批次规模在训练和推断期间通常是固定的；不过，TensorFlow 允许使用动态批次规模。<a href="[Loss](https://freeopen.github.io/posts/ml-glossary#loss)">6^</a></p>
+<p>一个批次中的样本数。例如，SGD 的批次规模为 1，而小批次的规模通常介于 10 到 1000 之间。批次规模在训练和推断期间通常是固定的；不过，TensorFlow 允许使用动态批次规模。<sup id="fnref3:6"><a class="footnote-ref" href="#fn:6">6</a></sup></p>
 <h3 id="iteration">iteration 迭代</h3>
-<p>模型的权重在训练期间的一次更新。迭代包含计算参数在单个批量数据上的梯度损失。<a href="[Loss](https://freeopen.github.io/posts/ml-glossary#loss)">6^</a></p>
+<p>模型的权重在训练期间的一次更新。迭代包含计算参数在单个批量数据上的梯度损失。<sup id="fnref4:6"><a class="footnote-ref" href="#fn:6">6</a></sup></p>
 <h3 id="tensor">Tensor</h3>
 <p>TensorFlow 程序中的主要数据结构。张量是 N 维（其中 N 可能非常大）数据结构，最常见的是标量、向量或矩阵。张量的元素可以包含整数值、浮点值或字符串值。</p>
 <h3 id="checkpoint">checkpoint</h3>
-<p>一种数据，用于捕获模型变量在特定时间的状态。借助检查点，可以导出模型权重，跨多个会话执行训练，以及使训练在发生错误之后得以继续（例如作业抢占）。请注意，图本身不包含在检查点中。<a href="[Loss](https://freeopen.github.io/posts/ml-glossary#loss)">6^</a></p>
+<p>一种数据，用于捕获模型变量在特定时间的状态。借助检查点，可以导出模型权重，跨多个会话执行训练，以及使训练在发生错误之后得以继续（例如作业抢占）。请注意，图本身不包含在检查点中。<sup id="fnref5:6"><a class="footnote-ref" href="#fn:6">6</a></sup></p>
 <h3 id="embeddings">embeddings</h3>
 <p>一种分类特征，以连续值特征表示。通常，嵌入是指将高维度向量映射到低维度的空间。例如，您可以采用以下两种方式之一来表示英文句子中的单词：</p>
 <ul>
 <li>表示成包含百万个元素（高维度）的稀疏向量，其中所有元素都是整数。向量中的每个单元格都表示一个单独的英文单词，单元格中的值表示相应单词在句子中出现的次数。由于单个英文句子包含的单词不太可能超过 50 个，因此向量中几乎每个单元格都包含 0。少数非 0 的单元格中将包含一个非常小的整数（通常为 1），该整数表示相应单词在句子中出现的次数。</li>
 <li>表示成包含数百个元素（低维度）的密集向量，其中每个元素都包含一个介于 0 到 1 之间的浮点值。这就是一种嵌套。</li>
 </ul>
-<p>在 TensorFlow 中，会按反向传播损失训练嵌套，和训练神经网络中的任何其他参数时一样。<a href="[Loss](https://freeopen.github.io/posts/ml-glossary#loss)">6^</a></p>
+<p>在 TensorFlow 中，会按反向传播损失训练嵌套，和训练神经网络中的任何其他参数时一样。<sup id="fnref6:6"><a class="footnote-ref" href="#fn:6">6</a></sup></p>
 <h3 id="_8">激活函数</h3>
-<p>一种函数（例如 ReLU 或 S 型函数），用于对上一层的所有输入求加权和，然后生成一个输出值（通常为非线性值），并将其传递给下一层。<a href="[Loss](https://freeopen.github.io/posts/ml-glossary#loss)">6^</a></p>
+<p>一种函数（例如 ReLU 或 S 型函数），用于对上一层的所有输入求加权和，然后生成一个输出值（通常为非线性值），并将其传递给下一层。<sup id="fnref7:6"><a class="footnote-ref" href="#fn:6">6</a></sup></p>
 <h3 id="weight">weight</h3>
-<p>线性模型中特征的系数，或深度网络中的边。训练线性模型的目标是确定每个特征的理想权重。如果权重为 0，则相应的特征对模型来说没有任何贡献。<a href="[Loss](https://freeopen.github.io/posts/ml-glossary#loss)">6^</a></p>
+<p>线性模型中特征的系数，或深度网络中的边。训练线性模型的目标是确定每个特征的理想权重。如果权重为 0，则相应的特征对模型来说没有任何贡献。<sup id="fnref8:6"><a class="footnote-ref" href="#fn:6">6</a></sup></p>
 <h3 id="ensd">ENSD</h3>
 <p>ENSD 是 eta 噪声种子增量，它改变了种子。</p>
 <p>NAI 使用 31337</p>
@@ -1031,16 +1031,38 @@
 <p>对一个相对复杂场景的文本描述，AI 需要能“理解”并匹配到对应的画面，大部分项目依赖的都是一个叫 CLIP 的模型。CLIP 在生成模型的潜在空间进行搜索，从而找到与给定的文字描述相匹配的潜在图像，它非常现代且高效。</p>
 <h3 id="cuda">CUDA</h3>
 <p>配合 CUDA 技术，显卡可以模拟成一颗 PhysX 物理加速芯片。目前，全系列的 GeForce 8 显示核心都支持 CUDA。</p>
-<p>[1^]:<a href="https://www.jonstokes.com/p/getting-started-with-stable-diffusion">Getting Started With Stable Diffusion: A Guide For Creators</a></p>
-<p>[3^]:<a href="https://cs231n.github.io/neural-networks-2/">LOSS FUNC-CS231</a></p>
-<p>[4^]:<a href="https://machinelearningmastery.com/loss-and-loss-functions-for-training-deep-learning-neural-networks/">What Is a Loss Function and Loss?</a></p>
-<p>[5^]:<a href="https://towardsdatascience.com/understanding-latent-space-in-machine-learning-de5a7c687d8d">Understanding Latent Space in Machine Learning</a></p>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:1">
+<p><a href="https://www.jonstokes.com/p/getting-started-with-stable-diffusion">Getting Started With Stable Diffusion: A Guide For Creators</a> <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://ermongroup.github.io/cs228-notes/extras/vae/">VAE-CS228</a> <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+<li id="fn:3">
+<p><a href="https://cs231n.github.io/neural-networks-2/">LOSS FUNC-CS231</a> <a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">↩</a></p>
+</li>
+<li id="fn:4">
+<p><a href="https://machinelearningmastery.com/loss-and-loss-functions-for-training-deep-learning-neural-networks/">What Is a Loss Function and Loss?</a> <a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">↩</a></p>
+</li>
+<li id="fn:5">
+<p><a href="https://towardsdatascience.com/understanding-latent-space-in-machine-learning-de5a7c687d8d">Understanding Latent Space in Machine Learning</a> <a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">↩</a></p>
+</li>
+<li id="fn:6">
+<p><a href="https://freeopen.github.io/posts/ml-glossary#loss">Loss</a> <a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">↩</a><a class="footnote-backref" href="#fnref2:6" title="Jump back to footnote 6 in the text">↩</a><a class="footnote-backref" href="#fnref3:6" title="Jump back to footnote 6 in the text">↩</a><a class="footnote-backref" href="#fnref4:6" title="Jump back to footnote 6 in the text">↩</a><a class="footnote-backref" href="#fnref5:6" title="Jump back to footnote 6 in the text">↩</a><a class="footnote-backref" href="#fnref6:6" title="Jump back to footnote 6 in the text">↩</a><a class="footnote-backref" href="#fnref7:6" title="Jump back to footnote 6 in the text">↩</a><a class="footnote-backref" href="#fnref8:6" title="Jump back to footnote 6 in the text">↩</a></p>
+</li>
+<li id="fn:7">
+<p><a href="https://learn.microsoft.com/zh-cn/dotnet/machine-learning/resources/glossary#hyperparameter">hyperparameter</a> <a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">↩</a></p>
+</li>
+</ol>
+</div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月22日 16:16:31</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月22日 16:59:55</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年10月13日 10:24:49</span>

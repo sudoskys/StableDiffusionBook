@@ -798,7 +798,7 @@ Save an image to log directory every N steps, 0 to disable</p>
 <p>This option on the Settings tab allows you to save some memory at the cost of slower preview image generation.</p>
 <p>The result of the training is a .pt or a .bin file (the former is the format used by the original author, the latter is used as the diffusers library)</p>
 <h3 id="subject_filewordstxt-template">subject_filewords.txt template</h3>
-<p><a href="[is_textual_inversion_salvageable](https://www.reddit.com/r/sdforall/comments/ykerg2/is_textual_inversion_salvageable/)">1^</a></p>
+<p><sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
 <p>Textual Inversion training cannot train things that are not in the model. It is also very sensitive to training photos.</p>
 <p>If you don't get good results (failure to converge or crashing results). You need to replace the training data or use Dreambooth.</p>
 <p>So how does the training work?</p>
@@ -807,12 +807,20 @@ Save an image to log directory every N steps, 0 to disable</p>
 <p>If you have, say, a subject wearing a <code>black t-shirt</code> in all photos, you can effectively negate it from the training set by adding <code>black t-shirt</code> to the <code>filewords</code> of those images.</p>
 <p>Unless you are trying to fix a photo, use <code>filewords</code> for style, not for subject.</p>
 <iframe allowfullscreen="true" border="0" frameborder="no" framespacing="0" height="600" scrolling="no" src="//player.bilibili.com/player.html?aid=559085039&amp;bvid=BV1ae4y1S7v9&amp;cid=859894044&amp;page=1" width="100%"> </iframe>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:1">
+<p><a href="https://www.reddit.com/r/sdforall/comments/ykerg2/is_textual_inversion_salvageable/">is_textual_inversion_salvageable</a> <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+</ol>
+</div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 22, 2022 16:28:07</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 22, 2022 16:59:55</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 07:57:05</span>

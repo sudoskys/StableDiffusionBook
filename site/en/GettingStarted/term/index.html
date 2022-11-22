@@ -909,10 +909,10 @@
 <h3 id="convergence">convergence</h3>
 <p>Informally, often refers to a state reached during training in which training loss and validation loss change very little or not at all with each iteration after a certain number of iterations. In other words, a model reaches convergence when additional training on the current data will not improve the model. In deep learning, loss values sometimes stay constant or nearly so for many iterations before finally descending, temporarily producing a false sense of convergence.</p>
 <h3 id="vae">VAE</h3>
-<p>Variational autoencoders (VAEs) are a deep learning technique for learning latent representations. They have also been used to draw images, achieve state-of-the-art results in semi-supervised learning, as well as interpolate between sentences.<a href="[VAE-CS228](https://ermongroup.github.io/cs228-notes/extras/vae/)">2^</a></p>
+<p>Variational autoencoders (VAEs) are a deep learning technique for learning latent representations. They have also been used to draw images, achieve state-of-the-art results in semi-supervised learning, as well as interpolate between sentences.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></p>
 <h3 id="cfg">CFG</h3>
 <blockquote>
-<p>From [1^] by Jon Stokes</p>
+<p>From <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> by Jon Stokes</p>
 </blockquote>
 <p>This term stands for Classifier-Free Guidance Scale and is a measure of how close you want the model to stick to your prompt when looking for a related image to show you. (This is called “Prompt Guidance” in PlaygroundAI.) A Cfg Scale value of 0 will give you essentially a random image based on the seed, whereas a Cfg Scale of 20 (the maximum on SD) will give you the closest match to your prompt that the model can produce.</p>
 <p>It’s worth trying to develop an intuition about this value in terms of latent space. The following analogy isn’t perfect, but it should give you a sense of what you’re doing:</p>
@@ -923,37 +923,37 @@ Dialing the Cfg Scale toward 20 produces a beam so narrow that at the extreme it
 </code></pre>
 <p><a href="https://arxiv.org/abs/2112.10741">Relate Paper</a></p>
 <h3 id="loss-functions">Loss functions</h3>
-<p>In the context of an optimization algorithm, the function used to evaluate a candidate solution (i.e. a set of weights) is referred to as the objective function.[4^]</p>
+<p>In the context of an optimization algorithm, the function used to evaluate a candidate solution (i.e. a set of weights) is referred to as the objective function.<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup></p>
 <p>Typically, with neural networks, we seek to minimize the error. As such, the objective function is often referred to as a cost function or a loss function and the value calculated by the loss function is referred to as simply “loss.”</p>
 <h3 id="_1">潜在空间</h3>
-<p>A representation of compressed data, where similar data points are spatially closer together. [5^]</p>
+<p>A representation of compressed data, where similar data points are spatially closer together. <sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup></p>
 <p>For a explanation of latent space, please read <a href="https://towardsdatascience.com/understanding-latent-space-in-machine-learning-de5a7c687d8d">Understanding latent space in machine learning</a>.</p>
 <h3 id="_2">损失</h3>
-<p>A measure of how far a model's predictions are from its label. Or, to phrase it more pessimistically, a measure of how bad the model is. To determine this value, a model must define a loss function. For example, linear regression models typically use mean squared error for a loss function, while logistic regression models use Log Loss.<a href="[Loss](https://freeopen.github.io/posts/ml-glossary#loss)">6^</a></p>
+<p>A measure of how far a model's predictions are from its label. Or, to phrase it more pessimistically, a measure of how bad the model is. To determine this value, a model must define a loss function. For example, linear regression models typically use mean squared error for a loss function, while logistic regression models use Log Loss.<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup></p>
 <h3 id="hyperparameter">Hyperparameter</h3>
 <p>A parameter of a machine learning algorithm. Examples include the number of trees to learn in a decision forest or the step size in a gradient descent algorithm. Values of Hyperparameters are set before training the model and govern the process of finding the parameters of the prediction function, for example, the comparison points in a decision tree or the weights in a linear regression model. For more information, see the Hyperparameter article on <a href="https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)">Wikipedia</a>.</p>
 <h3 id="pipeline">Pipeline</h3>
-<p>All of the operations needed to fit a model to a data set. A pipeline consists of data import, transformation, featurization, and learning steps. Once a pipeline is trained, it turns into a model.<a href="[hyperparameter](https://learn.microsoft.com/zh-cn/dotnet/machine-learning/resources/glossary#hyperparameter)">7^</a></p>
+<p>All of the operations needed to fit a model to a data set. A pipeline consists of data import, transformation, featurization, and learning steps. Once a pipeline is trained, it turns into a model.<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup></p>
 <h3 id="epoch">epoch</h3>
-<p>A full training pass over the entire data set such that each example has been seen once. Thus, an epoch represents N/batch size training iterations, where N is the total number of examples.<a href="[Loss](https://freeopen.github.io/posts/ml-glossary#loss)">6^</a></p>
+<p>A full training pass over the entire data set such that each example has been seen once. Thus, an epoch represents N/batch size training iterations, where N is the total number of examples.<sup id="fnref2:6"><a class="footnote-ref" href="#fn:6">6</a></sup></p>
 <h3 id="batch-size">batch size</h3>
-<p>The number of examples in a batch. For example, the batch size of SGD is 1, while the batch size of a mini-batch is usually between 10 and 1000. Batch size is usually fixed during training and inference; however, TensorFlow does permit dynamic batch sizes.<a href="[Loss](https://freeopen.github.io/posts/ml-glossary#loss)">6^</a></p>
+<p>The number of examples in a batch. For example, the batch size of SGD is 1, while the batch size of a mini-batch is usually between 10 and 1000. Batch size is usually fixed during training and inference; however, TensorFlow does permit dynamic batch sizes.<sup id="fnref3:6"><a class="footnote-ref" href="#fn:6">6</a></sup></p>
 <h3 id="iteration">iteration</h3>
-<p>A single update of a model's weights during training. An iteration consists of computing the gradients of the parameters with respect to the loss on a single batch of data.<a href="[Loss](https://freeopen.github.io/posts/ml-glossary#loss)">6^</a></p>
+<p>A single update of a model's weights during training. An iteration consists of computing the gradients of the parameters with respect to the loss on a single batch of data.<sup id="fnref4:6"><a class="footnote-ref" href="#fn:6">6</a></sup></p>
 <h3 id="tensor">Tensor</h3>
 <p>The primary data structure in TensorFlow programs. Tensors are N-dimensional (where N could be very large) data structures, most commonly scalars, vectors, or matrices. The elements of a Tensor can hold integer, floating-point, or string values.</p>
 <h3 id="checkpoint">checkpoint</h3>
-<p>Data that captures the state of the variables of a model at a particular time. Checkpoints enable exporting model weights, as well as performing training across multiple sessions. Checkpoints also enable training to continue past errors (for example, job preemption). Note that the graph itself is not included in a checkpoint.<a href="[Loss](https://freeopen.github.io/posts/ml-glossary#loss)">6^</a></p>
+<p>Data that captures the state of the variables of a model at a particular time. Checkpoints enable exporting model weights, as well as performing training across multiple sessions. Checkpoints also enable training to continue past errors (for example, job preemption). Note that the graph itself is not included in a checkpoint.<sup id="fnref5:6"><a class="footnote-ref" href="#fn:6">6</a></sup></p>
 <h3 id="embeddings">embeddings</h3>
 <p>A categorical feature represented as a continuous-valued feature. Typically, an embedding is a translation of a high-dimensional vector into a low-dimensional space. For example, you can represent the words in an English sentence in either of the following two ways:</p>
 <pre><code>As a million-element (high-dimensional) sparse vector in which all elements are integers. Each cell in the vector represents a separate English word; the value in a cell represents the number of times that word appears in a sentence. Since a single English sentence is unlikely to contain more than 50 words, nearly every cell in the vector will contain a 0. The few cells that aren't 0 will contain a low integer (usually 1) representing the number of times that word appeared in the sentence.
 As a several-hundred-element (low-dimensional) dense vector in which each element holds a floating-point value between 0 and 1. This is an embedding.
 </code></pre>
-<p>In TensorFlow, embeddings are trained by backpropagating loss just like any other parameter in a neural network.<a href="[Loss](https://freeopen.github.io/posts/ml-glossary#loss)">6^</a></p>
+<p>In TensorFlow, embeddings are trained by backpropagating loss just like any other parameter in a neural network.<sup id="fnref6:6"><a class="footnote-ref" href="#fn:6">6</a></sup></p>
 <h3 id="_3">激活函数</h3>
-<p>A function (for example, ReLU or sigmoid) that takes in the weighted sum of all of the inputs from the previous layer and then generates and passes an output value (typically nonlinear) to the next layer.<a href="[Loss](https://freeopen.github.io/posts/ml-glossary#loss)">6^</a></p>
+<p>A function (for example, ReLU or sigmoid) that takes in the weighted sum of all of the inputs from the previous layer and then generates and passes an output value (typically nonlinear) to the next layer.<sup id="fnref7:6"><a class="footnote-ref" href="#fn:6">6</a></sup></p>
 <h3 id="weight">weight</h3>
-<p>A coefficient for a feature in a linear model, or an edge in a deep network. The goal of training a linear model is to determine the ideal weight for each feature. If a weight is 0, then its corresponding feature does not contribute to the model.<a href="[Loss](https://freeopen.github.io/posts/ml-glossary#loss)">6^</a></p>
+<p>A coefficient for a feature in a linear model, or an edge in a deep network. The goal of training a linear model is to determine the ideal weight for each feature. If a weight is 0, then its corresponding feature does not contribute to the model.<sup id="fnref8:6"><a class="footnote-ref" href="#fn:6">6</a></sup></p>
 <h3 id="ensd">ENSD</h3>
 <p>ENSD is the eta noise seed delta, which changes the seed.</p>
 <p>NAI uses 31337</p>
@@ -964,16 +964,38 @@ As a several-hundred-element (low-dimensional) dense vector in which each elemen
 <p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-last-layers-of-clip-model</p>
 <h3 id="cuda">CUDA</h3>
 <p>With CUDA technology, the graphics card can be simulated as a PhysX physics acceleration chip. Currently, the full range of GeForce 8 graphics cores support CUDA.</p>
-<p>[1^]:<a href="https://www.jonstokes.com/p/getting-started-with-stable-diffusion">Getting Started With Stable Diffusion: A Guide For Creators</a></p>
-<p>[3^]:<a href="https://cs231n.github.io/neural-networks-2/">LOSS FUNC-CS231</a></p>
-<p>[4^]:<a href="https://machinelearningmastery.com/loss-and-loss-functions-for-training-deep-learning-neural-networks/">What Is a Loss Function and Loss?</a></p>
-<p>[5^]:<a href="https://towardsdatascience.com/understanding-latent-space-in-machine-learning-de5a7c687d8d">Understanding Latent Space in Machine Learning</a></p>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:1">
+<p><a href="https://www.jonstokes.com/p/getting-started-with-stable-diffusion">Getting Started With Stable Diffusion: A Guide For Creators</a> <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://ermongroup.github.io/cs228-notes/extras/vae/">VAE-CS228</a> <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+<li id="fn:3">
+<p><a href="https://cs231n.github.io/neural-networks-2/">LOSS FUNC-CS231</a> <a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">↩</a></p>
+</li>
+<li id="fn:4">
+<p><a href="https://machinelearningmastery.com/loss-and-loss-functions-for-training-deep-learning-neural-networks/">What Is a Loss Function and Loss?</a> <a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">↩</a></p>
+</li>
+<li id="fn:5">
+<p><a href="https://towardsdatascience.com/understanding-latent-space-in-machine-learning-de5a7c687d8d">Understanding Latent Space in Machine Learning</a> <a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">↩</a></p>
+</li>
+<li id="fn:6">
+<p><a href="https://freeopen.github.io/posts/ml-glossary#loss">Loss</a> <a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">↩</a><a class="footnote-backref" href="#fnref2:6" title="Jump back to footnote 6 in the text">↩</a><a class="footnote-backref" href="#fnref3:6" title="Jump back to footnote 6 in the text">↩</a><a class="footnote-backref" href="#fnref4:6" title="Jump back to footnote 6 in the text">↩</a><a class="footnote-backref" href="#fnref5:6" title="Jump back to footnote 6 in the text">↩</a><a class="footnote-backref" href="#fnref6:6" title="Jump back to footnote 6 in the text">↩</a><a class="footnote-backref" href="#fnref7:6" title="Jump back to footnote 6 in the text">↩</a><a class="footnote-backref" href="#fnref8:6" title="Jump back to footnote 6 in the text">↩</a></p>
+</li>
+<li id="fn:7">
+<p><a href="https://learn.microsoft.com/zh-cn/dotnet/machine-learning/resources/glossary#hyperparameter">hyperparameter</a> <a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">↩</a></p>
+</li>
+</ol>
+</div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 22, 2022 12:03:04</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 22, 2022 16:59:55</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 13, 2022 10:24:49</span>
