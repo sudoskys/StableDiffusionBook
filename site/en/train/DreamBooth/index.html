@@ -1085,8 +1085,7 @@ This is reflected in <a href="https://github.com/CrazyBoyM/dreambooth-for-diffus
 <p>The MODEL_NAME of the parameter is changed to the position of the last model.</p>
 <p>If you use <code>CLASS_DIR</code>, you don't need to clear it because the subject is the same, but vice versa.</p>
 <h4 id="train-text-encoder">Train Text Encoder</h4>
-<p>Corresponds to <code>-train_text_encoder</code> in the example, which is not recommended.</p>
-<p>With <code>--train_text_encoder</code>, Dreambooth training will additionally train the text encoder.</p>
+<p>The use of <code>-train_text_encoder</code> in the corresponding example is not recommended. With <code>--train_text_encoder</code>, Dreambooth training trains additional text encoders, making it impossible to generalize the prompt between different models.</p>
 <p>There is a metaphysical argument that this should be turned off after a certain percentage/epoch/step of training has been reached to prevent overplaying.</p>
 <ul>
 <li>The instance prompt you write at the beginning should be long and summarise your training goal (but not so long that it covers your usual words) (e.g. girl I would replace with woman, 1boy with male)</li>
@@ -1576,7 +1575,7 @@ pip install <span class="nv">bitsandbytes</span><span class="o">==</span><span c
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 22, 2022 15:51:01</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 22, 2022 16:16:31</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 3, 2022 12:19:59</span>
