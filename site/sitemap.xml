@@ -209,6 +209,14 @@
          
     </url>
     <url>
+         <loc>https://stable-diffusion-book.vercel.app/paint/identify/</loc>
+         <lastmod>2022-11-22</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/paint/identify/"/>
+         <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/paint/identify/"/>
+         
+    </url>
+    <url>
          <loc>https://stable-diffusion-book.vercel.app/paint/WebUi/</loc>
          <lastmod>2022-11-22</lastmod>
          <changefreq>daily</changefreq>

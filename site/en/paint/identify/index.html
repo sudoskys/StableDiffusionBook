@@ -7,10 +7,10 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="一个介绍 Ai 绘画的 WIKI/A WIKI about Ai painting" name="description"/>
 <meta content="StableDiffusionBook Team" name="author"/>
-<link href="https://stable-diffusion-book.vercel.app/en/GettingStarted/state/" rel="canonical"/>
+<link href="https://stable-diffusion-book.vercel.app/en/paint/identify/" rel="canonical"/>
 <link href="../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
-<title>Statement - AiDraw</title>
+<title>Ai - AiDraw</title>
 <link href="../../../assets/stylesheets/main.472b142f.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.08040f6c.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -18,17 +18,17 @@
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
 <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <meta content="website" property="og:type"/>
-<meta content="Statement - AiDraw" property="og:title"/>
+<meta content="Ai - AiDraw" property="og:title"/>
 <meta content="一个介绍 Ai 绘画的 WIKI/A WIKI about Ai painting" property="og:description"/>
-<meta content="https://stable-diffusion-book.vercel.app/assets/images/social/GettingStarted/state.en.png" property="og:image"/>
+<meta content="https://stable-diffusion-book.vercel.app/assets/images/social/paint/identify.en.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
-<meta content="https://stable-diffusion-book.vercel.app/en/GettingStarted/state/" property="og:url"/>
+<meta content="https://stable-diffusion-book.vercel.app/en/paint/identify/" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Statement - AiDraw" name="twitter:title"/>
+<meta content="Ai - AiDraw" name="twitter:title"/>
 <meta content="一个介绍 Ai 绘画的 WIKI/A WIKI about Ai painting" name="twitter:description"/>
-<meta content="https://stable-diffusion-book.vercel.app/assets/images/social/GettingStarted/state.en.png" name="twitter:image"/>
+<meta content="https://stable-diffusion-book.vercel.app/assets/images/social/paint/identify.en.png" name="twitter:image"/>
 <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
@@ -47,7 +47,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#declaration">
+<a class="md-skip" href="#ai">
           Skip to content
         </a>
 </div>
@@ -71,7 +71,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Statement
+              Ai
             
           </span>
 </div>
@@ -95,7 +95,7 @@
 <div class="md-select__inner">
 <ul class="md-select__list">
 <li class="md-select__item">
-<a class="md-select__link" href="../../../GettingStarted/state/" hreflang="zh">
+<a class="md-select__link" href="../../../paint/identify/" hreflang="zh">
                     简体中文
                   </a>
 </li>
@@ -155,7 +155,7 @@
 <div class="md-tabs__inner md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../../">
+<a class="md-tabs__link" href="../../">
         Start here
       </a>
 </li>
@@ -175,7 +175,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../paint/">
+<a class="md-tabs__link" href="../">
         Paint guide
       </a>
 </li>
@@ -215,8 +215,8 @@
 </a>
 </div>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../">Start here</a>
 <label for="__nav_1">
@@ -230,40 +230,22 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../news/">
+<a class="md-nav__link" href="../../GettingStarted/news/">
         News
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../term/">
+<a class="md-nav__link" href="../../GettingStarted/term/">
         Terminology
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          Statement
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../GettingStarted/state/">
         Statement
       </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#license">
-    License
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../contributing/">
+<a class="md-nav__link" href="../../GettingStarted/contributing/">
         Contribution Guide
       </a>
 </li>
@@ -388,7 +370,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../paint/">Paint guide</a>
+<a href="../">Paint guide</a>
 <label for="__nav_5">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -402,7 +384,7 @@
 <li class="md-nav__item md-nav__item--section md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_2" id="__nav_5_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../paint/WebUi/">Paint With WebUi</a>
+<a href="../WebUi/">Paint With WebUi</a>
 <label for="__nav_5_2">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -414,17 +396,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../paint/WebUi/base/">
+<a class="md-nav__link" href="../WebUi/base/">
         Base guide
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../paint/WebUi/Advanced/">
+<a class="md-nav__link" href="../WebUi/Advanced/">
         Advanced Guide
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../paint/WebUi/extension/">
+<a class="md-nav__link" href="../WebUi/extension/">
         Extension
       </a>
 </li>
@@ -444,7 +426,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../paint/Practicalguide/">
+<a class="md-nav__link" href="../Practicalguide/">
         Practical Guide
       </a>
 </li>
@@ -520,9 +502,78 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#license">
-    License
+<a class="md-nav__link" href="#cannot-be-based-on">
+    Cannot be based on
   </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-to-judge">
+    How to judge
+  </a>
+<nav aria-label="How to judge" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#consistency-in-the-shape-and-highlights-of-the-left-and-right-eye">
+    Consistency in the shape and highlights of the left and right eye
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#consistency-of-the-eyelashes-of-the-left-and-right-eyes">
+    Consistency of the eyelashes of the left and right eyes
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#symmetry-in-clothing">
+    Symmetry in clothing
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#repetition-of-shape-consistency">
+    Repetition of shape consistency
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#simple-geometric-shapes">
+    Simple geometric shapes
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#functional-consistency-of-artefacts">
+    Functional consistency of artefacts
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#characters">
+    Characters
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#consistency-in-the-role-of-lines">
+    Consistency in the role of lines
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dissolve-blend-and-noise">
+    Dissolve, blend and noise
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#background-colour">
+    Background colour
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#discontinuity">
+    Discontinuity
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#details">
+    Details
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -531,48 +582,67 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/GettingStarted/state.en.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/paint/identify.en.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="declaration">Declaration</h1>
-<ol>
-<li>
-<p>If there is inappropriate content in the content of this document external links, it has nothing to do with this document.</p>
-</li>
-<li>
-<p>Please indicate the link when quoting or copying the content.</p>
-</li>
-<li>
-<p>For other statements, please read Readme</p>
-</li>
-<li>
-<p>Wiki is based on published material and experience and is not responsible for the accuracy of the content.</p>
-</li>
-</ol>
-<h2 id="license">License</h2>
-<p>The document is licensed under the <a href="https://www.gnu.org/licenses/fdl-1.3-faq.html">GFDL</a> license.</p>
-<p>If you need to use material from this Wiki in your own writings/articles/websites or other publications, you must follow the GFDL</p>
-<p>If you create a derivative version with modified or added content, it will inherit the following terms.</p>
+<h1 id="ai">Ai</h1>
+<p>Discussed here are the features of the NovelAi drawn images. These differences are the ones that are currently being optimised and need to be optimised.</p>
+<p>This section assumes that the illustration is either drawn by Ai or by a human and that the illustration contains a depiction of a face. The following tips are for reference only, as there is no clear division between human and Ai drawing, and the flaws in Ai illustrations are discussed more here.</p>
+<p>The Img2Img technique is not discussed here; under Img2Img, the difference between human and Ai is no longer visible.</p>
+<p><strong>The content of this section cannot be used as a basis for you to accuse others in forum</strong></p>
+<h2 id="cannot-be-based-on">Cannot be based on</h2>
 <ul>
-<li>
-<p>your work must also be published as GFDL</p>
-</li>
-<li>
-<p>you must give credit to the author of the article</p>
-</li>
-<li>
-<p>You must provide a means of obtaining a "transparent version" of the material</p>
-</li>
+<li>Degree of completion</li>
 </ul>
-<p>The specific protocols of the document refer to <a href="https://www.gnu.org/licenses/fdl-1.3.html">FDL</a>, subject to this repository copy.</p>
-<div class="highlight"><pre><span></span><code>Copyright (C)  2022  StableDiffusionBook.
-    Permission is granted to copy, distribute and/or modify this document
-    under the terms of the GNU Free Documentation License, Version 1.3
-    or any later version published by the Free Software Foundation;
-    with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
-    A copy of the license is included in the section entitled "GNU
-    Free Documentation License".
+<p>Illustrations by NovelAi are currently approaching or even surpassing the finish of real-life artists, so a cursory look is impossible to distinguish whether they are drawn by AI or not.</p>
+<ul>
+<li>Theme/style/atmosphere</li>
+</ul>
+<p>By learning prompt editing, anyone can easily get away from NovelAi's default drawing style and get Ai to generate images that match the theme/drawing style (the more well-known the easier, e.g. Kyoto animation style). So it is no longer feasible to judge the drawing style characteristics based on the subject of the illustration.</p>
+<h2 id="how-to-judge">How to judge</h2>
+<p>Ai are not very good at keeping details consistent, whereas humans are very good at keeping details consistent.</p>
+<h3 id="consistency-in-the-shape-and-highlights-of-the-left-and-right-eye">Consistency in the shape and highlights of the left and right eye</h3>
+<p>This is the most obvious feature. With humans, the shape and amount of left and right eye and highlights are consistent unless there is a specific reason, such as the character being in a special situation or special effects being used.</p>
+<p>However, in the case of AI painting, the left and right eyes are almost certainly painted and highlighted differently. Whereas humans can understand that "the left and right eyes are physically the same shape, and in the same situation there is certainly consistency there", the AI cannot understand the principles behind the painting.</p>
+<p>The most obvious of these is that "the highlight blends with the white of the eye and the pupil breaks up". Humans know that "first the eyeball, then the pupil, on which the surrounding light reflects to form the gloss", so it is taken for granted that "the shape of the pupil itself is not broken even if part of the pupil is blocked by the highlight", but the AI does not recognise any "logical relationship between the whites of the eyes, the pupil and the highlight", it only learns the end result. The unnatural deformation of the eye is another basis for judgement. Humans know that the eye is essentially a regular circle, but the AI does not.</p>
+<p>Another feature of Ai's illustrations is that it usually changes the colour of the left and right eyes slightly. There are of course characters with different coloured left and right eyes, but in most cases these can be clearly identified as having different colours. It is one of the factors that can be used to determine whether a character appears to be the same colour at first glance, but is different on closer inspection.</p>
+<p>However, it is not an important basis for this, as such illustrations are common. Also, it is natural for the colours of the left and right eyes to look different depending on their surroundings, so make no mistake about it.</p>
+<h3 id="consistency-of-the-eyelashes-of-the-left-and-right-eyes">Consistency of the eyelashes of the left and right eyes</h3>
+<p>In illustrations drawn by humans, the eyelashes are usually symmetrical along the centre line of the face. However, in AI-generated illustrations, the number and position of eyelashes appearing on the left and right eyes are usually different.</p>
+<p>However, even in human-generated illustrations, the shape of the eyelashes on the left and right eyes can differ to some extent, so it does not matter if the shape of the eyelashes on the left and right eyes are different. On the other hand, if the shape of the lashes is consistent from left to right, along with the eyes and highlights, then it is almost certainly an illustration drawn by a human.</p>
+<h3 id="symmetry-in-clothing">Symmetry in clothing</h3>
+<p>Humans know that "most clothes are made symmetrically"; the AI does not know this, but it knows to some extent that clothing designs tend to have similar shapes on the left and the right. </p>
+<p>As a result this happens.</p>
+<div class="highlight"><pre><span></span><code>The garment has a symmetrical design, but on closer inspection the left and right sides are clearly different at the topological level.
 </code></pre></div>
+<p>It is important to note that the features should be <em>at the topological (=connection of shapes, number of pieces, ......) be different </em>at the level of topology<em>, not </em>symmetrical or asymmetrical*. Even humans cannot draw symmetrical objects perfectly symmetrically and some distortion of size and shape will occur. Asymmetrical clothing designs are also common, so make no mistake about it.</p>
+<p>This asymmetry can be applied not only to clothing but also to decorative items such as crowns and hair accessories.</p>
+<h3 id="repetition-of-shape-consistency">Repetition of shape consistency</h3>
+<p>This is also a key feature; Ai is not good at drawing the same shape in succession, even if it is a row of buttons on a garment.</p>
+<p>Of course, even when drawn by a human, it can be slightly off, and sometimes deliberately not drawn neatly, so it's hard to tell. But at the very least, it is unlikely that an AI would deliberately arrange the same shapes at equal intervals as a human would.</p>
+<h3 id="simple-geometric-shapes">Simple geometric shapes</h3>
+<p>Artificial intelligence is not very good at drawing straight lines, regular circles and clean ellipses of a certain size. This is because the AI does not know the conception of these shapes. However, Ai is very good at drawing straight lines in the background, and the edges of buildings, pipes, etc. are often drawn as straight lines.</p>
+<p>If simple, clear shapes appear in the illustration, they can be used to determine that the illustration was produced by a human.</p>
+<h3 id="functional-consistency-of-artefacts">Functional consistency of artefacts</h3>
+<p>The parts of an artefact should inherently have "the meaning it was put there for" and "the function it provides".</p>
+<p>Thus, <strong>if there is an artefact</strong> which is an aggregation of parts which are consistent in their meaning to provide a particular function, we can judge that the illustration was drawn by a human being.</p>
+<p>It is important to note that <strong>such inconsistencies should not be used to determine that an illustration was drawn by an AI</strong> This is because humans can also draw such illustrations intentionally. This only means that an AI cannot draw mechanical illustrations that are good enough.</p>
+<h3 id="characters">Characters</h3>
+<p>Artificial intelligence cannot draw real letters correctly. <strong>Most of the time, the letters it outputs</strong> look somewhat futuristic, or as if they were invented in a completely different civilisation.</p>
+<p>This is a very obvious feature, but it is important to note that <strong>this should not be considered a feature of AI drawing</strong>. It is naturally possible for humans to devise letters they have never seen before, and there are many illustrations in which mysterious letters have been devised in this way.</p>
+<p>On the other hand, <strong>if the letters are drawn in the 'right place' and in the 'proper order'</strong>, this is a strong factor in determining that the illustration was drawn by a human. This is because even outputting well-formed text is difficult, and getting it in the right place is an extremely difficult task for today's artificial intelligence.</p>
+<h3 id="consistency-in-the-role-of-lines">Consistency in the role of lines</h3>
+<p>In human drawing, a line that draws the boundary of an object cannot suddenly become the boundary of another object in the middle of the line. Nor can lines shift between the inside and outside of an object.</p>
+<p>Artificial intelligence does not know that lines should be consistent. When it encounters a similar pixel point, it easily takes the <strong>Oh, I even! </strong> the idea of connecting lines logically and rendering them as a single line.</p>
+<h3 id="dissolve-blend-and-noise">Dissolve, blend and noise</h3>
+<p>This is a very common point in AI-generated illustrations. Internal/external judgements become blurred, causing objects to dissolve, blend with other objects, or produce unnatural noise.</p>
+<p>Noise and dissolve can currently be fixed by oversampling and incremental training.</p>
+<h3 id="background-colour">Background colour</h3>
+<p>An otherwise empty space enclosed with hair or other objects (e.g. arms) has the potential for the AI to paint a background that is different from its surroundings. Often, the enclosed background is painted a slightly brighter colour than the rest of the space.</p>
+<h3 id="discontinuity">Discontinuity</h3>
+<p>Humans understand that when an object is obscured by another object, <strong>the same object persists beneath it</strong>. Artificial intelligence does not understand that even a brief interruption of a hair may result in a loss of continuity between the objects before and after it.</p>
+<h3 id="details">Details</h3>
+<p>Humans can understand that the size of an object is independent of its importance to the picture, so that even small objects, such as earrings or belts, are carefully drawn if they are an important element of the picture. The careful drawing of such small objects is a major factor in determining whether an illustration is drawn by a human being.</p>
 <hr/>
 <div class="md-source-file">
 <small>
@@ -581,7 +651,7 @@
       <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 22, 2022 01:38:52</span>
 <br/>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 03:59:46</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 22, 2022 01:38:52</span>
 </small>
 </div>
 </article>
@@ -593,34 +663,6 @@
           </a>
 </main>
 <footer class="md-footer">
-<nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: Terminology" class="md-footer__link md-footer__link--prev" href="../term/" rel="prev">
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
-</div>
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                Previous
-              </span>
-              Terminology
-            </div>
-</div>
-</a>
-<a aria-label="Next: Contribution Guide" class="md-footer__link md-footer__link--next" href="../contributing/" rel="next">
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                Next
-              </span>
-              Contribution Guide
-            </div>
-</div>
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
-</div>
-</a>
-</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">
