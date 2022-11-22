@@ -369,6 +369,8 @@ WebUi 用户将训练出的 `.ckpt` 文件复制到 webui 的 `models\Stable-dif
 
 使用时在 `prompt` 里输入你之前指定的标志符（例如 <balabala> ) 来让 ai 在生成图像中加入你期待的东西。
 
+>过拟合后，CFG 影响很大，可以试试降低 CFG.
+
 模型的效果要看测试图。
 
 ## 在 Windows 上使用
@@ -497,8 +499,6 @@ diffusers 不能直接使用 ckpt 文件进行训练，需要先进行转换，�
 
 [Dreambooth Gui](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2927)
 
-过拟合后，CFG 影响很大，可以试试降低 CFG.
-
 ## DreamBooth 参数表
 
 ```bash
@@ -548,17 +548,17 @@ usage: argmark [-h] --pretrained_model_name_or_path
 |short|long|default|help|
 | :--- | :--- | :--- | :--- |
 |`-h`|`--help`||显示此帮助信息并退出|
-||`--pretrained_model_name_or_path`|`None`|预训练模型的路径或来自huggingface.co/models的模型标识符。|
-||`--revision`|`None`|修订来自huggingface.co/models的预训练模型标识。|
-||`--tokenizer_name`|`None`|预训练的标记器名称或路径，如果与model_name不相同的话。|
+||`--pretrained_model_name_or_path`|`None`|预训练模型的路径或来自 huggingface.co/models 的模型标识符。|
+||`--revision`|`None`|修订来自 huggingface.co/models 的预训练模型标识。|
+||`--tokenizer_name`|`None`|预训练的标记器名称或路径，如果与 model_name 不相同的话。|
 ||`--instance_data_dir`|`None`|一个包含实例图像训练数据的文件夹。|
 ||`--class_data_dir`|`None`|一个包含类图像训练数据的文件夹。|
 ||`--instance_prompt`|`None`|带有指定实例的标识符的提示|
 ||`--class_prompt`|`None`|提示指定与提供的实例图像相同类别的图像。|
 ||`--with_prior_preservation`||标记，以增加先前的保存损失。|
 ||`--prior_loss_weight`|`1.0`|The weight of prior preservation loss.|
-||`--num_class_images`|`100`|用于事先保存损失的最小的类图像。如果没有足够的图像，额外的图像将用class_prompt进行采样。|
-||`--output_dir`|`text-inversion-model`|输出目录，模型预测和checkpoints将被写入该目录。|
+||`--num_class_images`|`100`|用于事先保存损失的最小的类图像。如果没有足够的图像，额外的图像将用 class_prompt 进行采样。|
+||`--output_dir`|`text-inversion-model`|输出目录，模型预测和 checkpoints 将被写入该目录。|
 ||`--seed`|`None`|可重复的培训的种子。|
 ||`--resolution`|512`|输入图像的分辨率，训练/验证数据集中的所有图像将被调整到这个分辨率。|
 ||`--center_crop`||是否在调整图像大小至分辨率前居中裁剪图像？|
