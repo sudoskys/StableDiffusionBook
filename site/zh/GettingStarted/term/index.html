@@ -855,7 +855,7 @@
 <tbody>
 <tr>
 <td>NAI</td>
-<td>(Novel AI，一般特指Leak)</td>
+<td>(Novel AI，一般特指 Leak)</td>
 </tr>
 <tr>
 <td>咒语</td>
@@ -867,7 +867,7 @@
 </tr>
 <tr>
 <td>魔杖</td>
-<td>t2i/i2i参数</td>
+<td>t2i/i2i 参数</td>
 </tr>
 <tr>
 <td>i2i</td>
@@ -875,11 +875,11 @@
 </tr>
 <tr>
 <td>inpaint</td>
-<td>i2i一种maskredraw，可以局部重绘</td>
+<td>i2i 一种 maskredraw，可以局部重绘</td>
 </tr>
 <tr>
 <td>ti/emb/炼丹</td>
-<td>Train中的文本反转，一般特指Embedding插件</td>
+<td>Train 中的文本反转，一般特指 Embedding 插件</td>
 </tr>
 <tr>
 <td>hn/hyper/冶金</td>
@@ -895,7 +895,7 @@
 </tr>
 <tr>
 <td>美学/ext</td>
-<td>aesthetic_embeddings, emb一种，特性是训练飞快，但在生产图片时实时计算。</td>
+<td>aesthetic_embeddings, emb 一种，特性是训练飞快，但在生产图片时实时计算。</td>
 </tr>
 <tr>
 <td>db/梦展</td>
@@ -903,11 +903,11 @@
 </tr>
 <tr>
 <td>ds</td>
-<td>DeepSpeed，微软开发的训练方式，移动不需要的组件到内存来降低显存占用，可使db的vram需求降到8g以下。开发时未考虑win, 目前在win有兼容性问题故不可用</td>
+<td>DeepSpeed，微软开发的训练方式，移动不需要的组件到内存来降低显存占用，可使 db 的 vram 需求降到 8g 以下。开发时未考虑 win, 目前在 win 有兼容性问题故不可用</td>
 </tr>
 <tr>
 <td>8bit/bsb</td>
-<td>一般指Bitsandbyte，一种8比特算法，能极大降低vram占用，使16g可用于训练db。由于链接库问题，目前/预计未来在win不可用</td>
+<td>一般指 Bitsandbyte，一种 8 比特算法，能极大降低 vram 占用，使 16g 可用于训练 db。由于链接库问题，目前/预计未来在 win 不可用</td>
 </tr>
 </tbody>
 </table>
@@ -915,13 +915,13 @@
 <p><a href="https://zhuanlan.zhihu.com/p/573984443">潜在扩散模型</a></p>
 <h3 id="_3">推理过程</h3>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://jalammar.github.io/images/stable-diffusion/stable-diffusion-components-and-tensors.png"><img alt="jalammar s pic" src="https://jalammar.github.io/images/stable-diffusion/stable-diffusion-components-and-tensors.png"/></a></p>
-<p>information creator 完全在图像信息空间（或潜伏空间）中工作。这一特性使它比以前在像素空间工作的扩散模型更快。在技术上，这个组件是由一个UNet神经网络和一个调度算法组成的。</p>
+<p>information creator 完全在图像信息空间（或潜伏空间）中工作。这一特性使它比以前在像素空间工作的扩散模型更快。在技术上，这个组件是由一个 UNet 神经网络和一个调度算法组成的。</p>
 <ul>
 <li>Text Encoder</li>
 </ul>
-<p>提示词的解析由 Text Encoder/CLIP 处理(token embedding)，这里是提示词转译给AI的关键一步。</p>
-<p>文本编码器负责将输入的提示转换为U-Net可以理解的嵌入空间。它通常是一个简单的基于变换器的编码器，将一连串的输入标记映射到一连串的 latent text-embeddings 中。</p>
-<p>稳定扩散使用 ClipText 用于文本编码。输入文本，输出77个标记嵌入向量，每个都有768个维度。</p>
+<p>提示词的解析由 Text Encoder/CLIP 处理(token embedding)，这里是提示词转译给 AI 的关键一步。</p>
+<p>文本编码器负责将输入的提示转换为 U-Net 可以理解的嵌入空间。它通常是一个简单的基于变换器的编码器，将一连串的输入标记映射到一连串的 latent text-embeddings 中。</p>
+<p>稳定扩散使用 ClipText 用于文本编码。输入文本，输出 77 个标记嵌入向量，每个都有 768 个维度。</p>
 <ul>
 <li>information creator</li>
 </ul>
@@ -931,8 +931,8 @@
 <li>Image Decoder</li>
 </ul>
 <p>Text Decoder 根据从 information creator 那里获得的信息绘制一幅图画。 它只在过程结束时运行一次以生成最终图像。</p>
-<p>autoencoder(VAE)模型有两个部分，一个编码器和一个解码器。编码器用于将图像转换为 latent representation，作为U-Net模型的输入。解码器则将 latent representation 转回图像。</p>
-<p>在推理过程中，使用VAE解码器将反向扩散过程产生的去噪潜像转换回图像。在推理过程中，我们只需要VAE解码器。</p>
+<p>autoencoder(VAE)模型有两个部分，一个编码器和一个解码器。编码器用于将图像转换为 latent representation，作为 U-Net 模型的输入。解码器则将 latent representation 转回图像。</p>
+<p>在推理过程中，使用 VAE 解码器将反向扩散过程产生的去噪潜像转换回图像。在推理过程中，我们只需要 VAE 解码器。</p>
 <p>Autoencoder Decoder(VAE)使用处理过的信息阵列绘制最终图像的解码器。输入处理过的信息阵列(dimensions: (4, 64, 64))，输出结果图像(dimensions: (3, 512, 512)，即(red/green/blue, width, height)。</p>
 <ul>
 <li>CLIP 的工作</li>
@@ -945,8 +945,8 @@
 <li>流程</li>
 </ul>
 <p>Stable Diffusion 中使用的自动编码器的缩减系数为 8。这意味着一张 (4, 512, 512) 的图像在潜在空间中是 (4, 64, 64)。</p>
-<p>在使用稳定扩散推理一张 512 x 512 的图片的过程中，模型用一个种子和一个文本提示作为输入。潜在种子生成大小 64 × 64 的随机潜在图像，而 prompt 进入 Text Encoder 通过CLIP的文本编码器转化为大小为77 × 768的文本嵌入。</p>
-<p>U-Net 在以文本嵌入为条件的同时迭代地对随机高斯噪声表示进行去噪。U-Net通过 采样算法 计算去噪的潜在图像表示，输出噪声残差。这个步骤重复许多次后，潜在表示由 Image Decoder 的 auto encoder 的解码器解码输出。</p>
+<p>在使用稳定扩散推理一张 512 x 512 的图片的过程中，模型用一个种子和一个文本提示作为输入。潜在种子生成大小 64 × 64 的随机潜在图像，而 prompt 进入 Text Encoder 通过 CLIP 的文本编码器转化为大小为 77 × 768 的文本嵌入。</p>
+<p>U-Net 在以文本嵌入为条件的同时迭代地对随机高斯噪声表示进行去噪。U-Net 通过 采样算法 计算去噪的潜在图像表示，输出噪声残差。这个步骤重复许多次后，潜在表示由 Image Decoder 的 auto encoder 的解码器解码输出。</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/patrickvonplaten/scientific_images/master/stable_diffusion.png"><img alt="流程" src="https://raw.githubusercontent.com/patrickvonplaten/scientific_images/master/stable_diffusion.png"/></a></p>
 <ul>
 <li>扩展</li>
@@ -956,7 +956,7 @@
 <p><a href="https://pub.towardsai.net/getting-started-with-stable-diffusion-f343639e4931">稳定扩散入门 </a></p>
 <p><a href="https://en.wikipedia.org/wiki/Stable_Diffusion">Stable Diffusion From Wikipedia</a></p>
 <h3 id="webui">WebUi 的预处理</h3>
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/modules/prompt_parser.py">WebUi的prompt_parser</a> 通过本地 WebUi 实现了渐变等功能。</p>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/modules/prompt_parser.py">WebUi 的 prompt_parser</a> 通过本地 WebUi 实现了渐变等功能。</p>
 <p>WebUi prompt 语法会转换为相应时间的 prompt, 然后通过 embedding 交给 Ai 处理。</p>
 <p>关于权重的实现：权重增加通常会占一个提示词位。</p>
 <p>关于交叉注意力控制的实现：到了指定 Step ，WebUi 程序会替换对应 提示词，达到交叉注意力控制效果。</p>
@@ -988,7 +988,7 @@
 <p>在优化算法的上下文中，用于评估候选解决方案（即一组权重）的函数称为目标函数。 [4^]</p>
 <p>对于神经网络，我们寻求最小错误。 因此，目标函数通常被称为成本函数或损失函数，由损失函数计算的值简称为“loss”。</p>
 <p>损失函数。[3^]</p>
-<p>关于Loss Function的中文解释请读 <a href="https://fangkaipeng.com/?p=2056#header-id-16">损失函数</a></p>
+<p>关于 Loss Function 的中文解释请读 <a href="https://fangkaipeng.com/?p=2056#header-id-16">损失函数</a></p>
 <h3 id="_6">潜在空间</h3>
 <p>压缩数据的表示，其中相似的数据点在空间上更靠近在一起。[5^]</p>
 <p>关于潜在空间的中文解释请读 <a href="https://zhuanlan.zhihu.com/p/369946876">理解机器学习中的潜在空间</a>.</p>
@@ -1022,7 +1022,7 @@
 <p>线性模型中特征的系数，或深度网络中的边。训练线性模型的目标是确定每个特征的理想权重。如果权重为 0，则相应的特征对模型来说没有任何贡献。<a href="[Loss](https://freeopen.github.io/posts/ml-glossary#loss)">6^</a></p>
 <h3 id="ensd">ENSD</h3>
 <p>ENSD 是 eta 噪声种子增量，它改变了种子。</p>
-<p>NAI使用31337</p>
+<p>NAI 使用 31337</p>
 <h3 id="clip">CLIP</h3>
 <p>CLIP 是一种非常先进的神经网络，可将提示文本转换为数字表示。</p>
 <p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-last-layers-of-clip-model</p>
@@ -1040,7 +1040,7 @@
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月22日 12:03:04</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月22日 15:51:01</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年10月13日 10:24:49</span>
