@@ -105,7 +105,7 @@ TODO
 
 ## 参数
 
-先让我们看一下来自 [RcINS 的 Colab 笔记本](https://colab.research.google.com/drive/1C1vVZ59S4kWfL7jIsczyLpmxbD4cOA-k) 笔记本的一段实例。
+先让我们看一下来自 [RcINS 的 Colab 笔记本](https://colab.research.google.com/drive/1C1vVZ59S4kWfL7jIsczyLpmxbD4cOA-k) 的一段实例。
 
 ### 参数设置
 
