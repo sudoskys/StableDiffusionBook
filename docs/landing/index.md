@@ -101,6 +101,12 @@
 
 - [梦想家指南](https://stablediffusionguides.carrd.co/#)
 
+- [Tags基本编写逻辑-三段式入门与解析](https://docs.qq.com/doc/DSHBGRmRUUURjVmNM)
+
+- [元素同典](https://docs.qq.com/doc/DWFdSTHJtQWRzYk9k)
+
+- [Ai绘画深度教程](https://docs.qq.com/doc/DQ3ZJSGFmeVpWc2ta)
+
 ### 风格化
 
 - [绘画媒介全分类](https://danbooru.donmai.us/wiki_pages?commit=Search&search%5Btitle_normalize%5D=%2A_%28medium%29)

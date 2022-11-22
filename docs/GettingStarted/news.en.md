@@ -4,10 +4,22 @@
 !!! tip
     The Stable Diffusion WebUi is currently iterating very quickly and there are a lot of updates every day, so it is recommended to pull the latest code every day.
 
+## 11/21
+
+The new [nijijourney](https://nijijourney.com/) starts internal testing.
+
+The official channel is divided into four sub-sections: Japanese, Chinese, 한글, and English.
+
+```
+niji journey is developed in collaboration by Spellbrush and Midjourney
+```
+
+After preliminary testing, nijijourney has a good composition ability, but the effect is still waiting to be seen.
+
+
 ## 11/18
 
 [Reverse thinking](https://twitter.com/needle/status/1593428231901700101)
-
 
 
 ## 11/16

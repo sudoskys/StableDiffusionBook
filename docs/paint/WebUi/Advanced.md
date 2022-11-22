@@ -185,7 +185,7 @@ SD Upscale 选项在 Img2Img 的 Script 栏目中，主要作用是提升分辨�
 
 
 
-## **渐变提示词**
+## **交叉注意力控制**
 
 https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-editing
 

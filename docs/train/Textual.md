@@ -5,7 +5,7 @@ VAE 对 训练 并不会造成灾难性的影响。
 -->
 
 !!! tip
-    训练的时候请不要加载VAE.
+    训练的时候最好不要加载VAE.
     
     如果不想加载Vae，在启动 webui 前把 "xxx.vae.pt" 重命名为 "xxx.vae.pt.disabled" 或其他名字。
 
@@ -14,9 +14,9 @@ VAE 对 训练 并不会造成灾难性的影响。
 
 ## Apt/DreamArtist 训练
 
-TI是让Ai了解 “喜欢” ，而Apt 让 Ai 了解“喜欢”和“不喜欢”。
+TI是让Ai了解 “喜欢” ，而DA(Apt) 让 Ai 了解“喜欢”和“不喜欢”。
 
-所以是一种高效的 Textual Inversion
+所以是一种十分高效的 Textual Inversion.
 
 https://github.com/7eu7d7/DreamArtist-sd-webui-extension
 

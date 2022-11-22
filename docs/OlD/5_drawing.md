@@ -71,7 +71,7 @@
 !!! tip
     `a ((((farm))), daytime` 的语法可能会吃掉逗号
 
-渐变，使用 `[some1:some2:num]`
+交叉注意力控制，使用 `[some1:some2:num]`
 
 `[fantasy:cyberpunk:16]` 代表从第 16 step 后，使用 `cyberpunk` 标签替换 `fantasy`
 

@@ -29,7 +29,7 @@
 !!! tip
     `a ((((farm))), daytime` 的语法可能会吃掉逗号
 
-渐变，使用 `[some1:some2:num]`
+交叉注意力控制，使用 `[some1:some2:num]`
 
 `[fantasy:cyberpunk:16]` 代表从第 16 step 后，使用 `cyberpunk` 标签替换 `fantasy`
 
@@ -337,9 +337,9 @@ normal quality, text, censored, gown, latex, pencil
 
 实际执行中，具体的执行步骤为 Denoising strength * Sampling Steps.
 
-## 渐变标签
+## 交叉注意力控制
 
-渐变标签，指示 WebUi 在训练中替换 Token，语法使用 `[some1:some2:num]`
+交叉注意力控制，指示 WebUi 在训练中替换 Token，语法使用 `[some1:some2:num]`
 
 `[fantasy:cyberpunk:16]` 代表从第 16 step 后，使用 `cyberpunk` 标签替换 `fantasy`
 
