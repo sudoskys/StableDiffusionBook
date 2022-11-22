@@ -51,7 +51,7 @@ Windows 系统的显存至少需要 16GB, Linux 系统要求显存至少为 8GB
 
 - 训练后示例
 
-训练完成同样要进行打包转换为 ckpt, 即可用于各种 UI 中。
+训练完成后，打包转换为 ckpt 即可用于各种 UI 中。
 
 ```bash
     python diffusers\scripts\convert_diffusers_to_original_stable_diffusion.py  --model_path models/resultModel  --checkpoint_path result.ckpt  --half
