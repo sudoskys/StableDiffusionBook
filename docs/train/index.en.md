@@ -1,14 +1,5 @@
 # Alchemy/Train
 
-> Todo
-> 材料
->
-> https://github.com/huggingface/diffusers/issues/712
->
-> https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2002
->
-> https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth
-
 This is more demanding on the graphics card.
 
 **Should not** disregard the copyright permission agreed by the artist to collect data on the work for training.
