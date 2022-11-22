@@ -1,8 +1,10 @@
 # 附录
 
+
 ## 社区
 
 这里是相关的社区资源
+
 
 ### 图库
 
@@ -14,14 +16,15 @@
 
 * [PIXAI](https://pixai.art/)
 
-### 项目
 
+### 项目
 
 #### 其他前端
 
 - [集成Tag工具/支持超网络的Web](https://kamiya.hudaye.work/)，[项目地址](https://git.hudaye.work/MiuliKain/Kamiya-OpenUI)
 
 - [基于 NovelAI 的画图机器人](https://github.com/koishijs/novelai-bot#token)
+
 
 #### 服务
 
@@ -66,6 +69,7 @@
 
 - [E 站标签翻译项目](https://github.com/EhTagTranslation)
 
+
 ### 文档
 
 - **[SD资源金矿](https://rentry.org/sdupdates)**
@@ -107,6 +111,7 @@
 
 - [Ai绘画深度教程](https://docs.qq.com/doc/DQ3ZJSGFmeVpWc2ta)
 
+
 ### 风格化
 
 - [绘画媒介全分类](https://danbooru.donmai.us/wiki_pages?commit=Search&search%5Btitle_normalize%5D=%2A_%28medium%29)
@@ -127,6 +132,7 @@
 
 - [艺术家列表/SD1.4/1,833 位艺术家查询](https://www.urania.ai/top-sd-artists)
 
+
 ### 社区
 
 - [StableDiffusion_Github_discussions](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions)
@@ -139,11 +145,13 @@
 
 ------
 
+
 ### 超网络
 
 [韩国论坛模型共享计划](https://arca.live/b/hypernetworks/60940948)
 
 [韩国的社区放出的模型](https://mega.nz/folder/sSACBAgC#kNiPVzRwnuzs8JClovS1Tw)
+
 
 ### embeddings
 
@@ -157,9 +165,11 @@
 
 [list of Textual Inversion embeddings for SD](https://rentry.org/embeddings)
 
+
 ### 模板库
 
 [元素法典](https://docs.qq.com/doc/DWHl3am5Zb05QbGVs?dver=) 来自 [元素法典制作委员会](https://space.bilibili.com/1981251194)
+
 
 ### 数据集
 
@@ -227,57 +237,41 @@ NAI模型使用 Danbooru2021 的数据, 而 Danbooru2022 还未训练(个人不�
 
 引用的开源教程.
 
-- 图标提供
+
+### 图标
 
 https://fonts.google.com/icons
 
 https://fontawesome.com/icons
 
-- 编辑器
 
-图表格式化 https://mdformatter.dswwsd.net/
+### 编辑
 
-网页表格转MarkDown https://markdown.lovejade.cn/
+[图表格式化](https://mdformatter.dswwsd.net/)
 
-石墨编辑器 https://editor.graphite.rs/
+[网页表格转MarkDown](https://markdown.lovejade.cn/)
 
-- 文档写作指导
+[石墨编辑器](https://editor.graphite.rs/) 
+
+[Markdown Padding](https://harttle.land/md-padding/)
+
+
+### 写作指导
+
+[如何写好一篇技术型文档](https://www.cnblogs.com/xiaozhi_5638/p/15847859.html#b4)
 
 [技术文档写作的道与术](https://juejin.cn/post/6844904025247186952)
 
 [16 怎样才能写好项目文档？](https://learn.lianglianglee.com/%E4%B8%93%E6%A0%8F/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E4%B9%8B%E7%BE%8E/16%20%E6%80%8E%E6%A0%B7%E6%89%8D%E8%83%BD%E5%86%99%E5%A5%BD%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3%EF%BC%9F.md)
 
-**由以下服务商托管运行**
-
-![Vercel](https://img.shields.io/badge/Vercel-black?style=flat&logo=Vercel&logoColor=white)
+[写文档的细节](https://segmentfault.com/a/1190000011858100?utm_source=sf-similar-article)
 
 
-## 碎言
+### 托管
+
+- Vercel ![Vercel](https://img.shields.io/badge/Vercel-black?style=flat&logo=Vercel&logoColor=white)
 
 
-<iframe src="//player.bilibili.com/player.html?aid=559362671&bvid=BV14e4y1U7r9&cid=869144379&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
+## 关于对 Danbooru 标签翻译项目
 
-
-模型中没有存储任何素材，[算法实现](https://zhuanlan.zhihu.com/p/572986232)，目前的版权还很模糊。
-
-Ai 根本不能替代人工的精细需求，只能替代低端需求(细节没Ai多的那种)
-
-Ai 作为一种 高级笔刷 ，节省了小工作室和个人的成本，但是会 ~导致低端美术市场的需求缩水~ AI在细节方面很弱，画背景倒是省事。
-
-Ai 本质上它不能替代人的创意性，让人眼前一亮的图片也无非是静物的绘制。
-
-<iframe src="//player.bilibili.com/player.html?aid=731418335&bvid=BV1YD4y1k7Cr&cid=858424971&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
-
-<iframe src="//player.bilibili.com/player.html?aid=646853859&bvid=BV1Ye4y177ns&cid=869741249&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
-
-<iframe src="//player.bilibili.com/player.html?aid=219246962&bvid=BV1N8411e766&cid=864564133&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
-
-另外，欢迎参与文档编写和文档备份。
-
-#### 关于对 Danbooru 标签翻译项目的碎碎念
-
-[在线文档](https://t.bilibili.com/720572354272428097)开展的结果是 `此文档违反XX文档社区公约，暂时无法查看，请所有者联系平台申诉`
-
-个人认为参考 [EhTagTranslation](https://github.com/EhTagTranslation) [Web页面提交翻译](https://ehtt.vercel.app/list/all)，可以提供 Json 化的数据，便于接入和展开，是一个更好的选择。
-
-
+建议参考 [EhTagTranslation](https://github.com/EhTagTranslation) [Web页面提交翻译](https://ehtt.vercel.app/list/all)，可以提供 Json 化的数据，便于接入和展开，是更好的选择。
