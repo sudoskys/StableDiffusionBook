@@ -630,14 +630,14 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="_1">错误处理</h1>
-<p>翻译整理自<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">1</a></sup></p>
+<p>翻译整理自 <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">1</a></sup></p>
 <p>文件路径，路径不允许含有空格，确保您的程序文件夹路径中没有空格。该程序经过测试可在 Python 3.10.6 上运行，低版本 Python 可能会发生错误。</p>
 <p>重新安装，请删除目录： <code>venv</code>, <code>repositories</code>。</p>
 <h2 id="_2">网络问题/没响应</h2>
 <ul>
 <li>Git 报错</li>
 </ul>
-<p>HTTP_PROXY 和 HTTPS_PROXY 环境变量，或者使用 clash 的tun模式. 或者把 git clone 的仓库源换成 huggingface</p>
+<p>HTTP_PROXY 和 HTTPS_PROXY 环境变量，或者使用 clash 的 tun 模式。或者把 git clone 的仓库源换成 huggingface</p>
 <p>其他依赖报错也需要设置代理或者使用镜像，不然特慢。</p>
 <h2 id="_3">时间花销过大</h2>
 <ol>
@@ -645,11 +645,11 @@
 <p>网络不好的话，设镜像或者挂代理。</p>
 </li>
 <li>
-<p><strong>依赖项 &gt;2GB</strong>,请做好准备。而且对于Windows,<strong>依赖默认安装在C盘</strong></p>
+<p><strong>依赖项 &gt;2GB</strong>, 请做好准备。而且对于 Windows, <strong>依赖默认安装在 C 盘</strong></p>
 </li>
 </ol>
 <h2 id="cuda-out-of-memory">低显存显卡/CUDA out of memory</h2>
-<p>确保你拥有可以运行的最新CUDA 工具包和 GPU 驱动程序。</p>
+<p>确保你拥有可以运行的最新 CUDA 工具包和 GPU 驱动程序。</p>
 <p>程序在具有少量 VRAM (&lt;=4GB) 的视频卡上运行时，可能会出现内存不足错误。</p>
 <p><strong>牺牲速度来支持低显存显卡</strong></p>
 <p>如果你有 <code>4GB VRAM</code> 并且想要制作 512x512（或者可能高达 640x640）的图像，请使用 <code>--medvram</code></p>
@@ -657,7 +657,7 @@
 <p>如果你有 <code>4GB VRAM</code> 并想要制作 512x512 图像，但仍然出现内存不足错误，请改用 <code>--lowvram --always-batch-cond-uncond --opt-split-attention</code></p>
 <p>如果你有 <code>4GB VRAM</code> 并且想要制作比你可以使用的更大的图像<code>--medvram</code>，请使用 <code>--lowvram --opt-split-attention</code></p>
 <p>如果你有更多的 <code>VRAM</code> 并且想要制作比你通常制作的更大的图像（例如 1024x1024 而不是 512x512），请使用<code>--medvram --opt-split-attention</code>.</p>
-<p>你也可以使用 <code>--lowvram</code> ，启动这个参数后，模型被分成模块，GPU内存中只保存一个模块； 当另一个模块需要运行时，前一个从 GPU 内存中删除，这种牺牲使处理运行速度大约慢 10 倍。</p>
+<p>你也可以使用 <code>--lowvram</code> ，启动这个参数后，模型被分成模块，GPU 内存中只保存一个模块； 当另一个模块需要运行时，前一个从 GPU 内存中删除，这种牺牲使处理运行速度大约慢 10 倍。</p>
 <p>如果还不行，建议你升级设备。</p>
 <h2 id="python">我 Python 呢？</h2>
 <p>如果你的 Python 版本不在 PATH 中，则在文件夹中创建或修改 webui.settings.bat 添加行 <code>set PYTHON=python</code>来说明 Python 可执行文件的完整路径（请看参数说明表格）</p>
@@ -672,16 +672,16 @@
 <p>在运行时，一键安装程序会创建一个 python 虚拟环境，因此如果你在安装之前安装了一个模块，那么任何已安装的模块都不会引发冲突。</p>
 <p>如果需要防止创建虚拟环境而使用系统 python，编辑 <code>webui.bat</code> 替换 <code>setVENV_DIR=venv</code>为<code>set VENV_DIR=</code></p>
 <h2 id="api-ms-win-core-path-l1-1-0dll-is-missing1">api-ms-win-core-path-l1-1-0.dll is missing<sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">1</a></sup></h2>
-<p>Windows 7上运行很可能会报错: <code>api-ms-win-core-path-l1-1-0.dll is missing</code>，这是因为许多程序需要新版本的 Windows 的系统文件。</p>
+<p>Windows 7 上运行很可能会报错：<code>api-ms-win-core-path-l1-1-0.dll is missing</code>，这是因为许多程序需要新版本的 Windows 的系统文件。</p>
 <p>如果没有出现该错误，不需要执行下面的操作。</p>
 <p>这些文件已经被移植来与 W7 兼容，并且可以在 <a href="https://github.com/nalexandru/api-ms-win-core-path-HACK/releases/download/0.3.1/api-ms-win-core-path-blender-0.3.1.zip">这里</a> 下载。它的 <a href="https://github.com/nalexandru/api-ms-win-core-path-HACK/">Github 页面</a></p>
 <p>解压缩并将 <code>x86.dll</code> 复制到 <code>C:\Windows\SysWOW64</code> ，将 <code>x64.dll</code> 复制到 <code>C:\Windows\System32</code> 并重启。</p>
 <h2 id="an-illegal-memory-access-was-encountered-cuda-kernel-errors">an illegal memory access was encountered ....CUDA kernel errors...</h2>
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/1766">相关问题Issue</a></p>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/1766">相关问题 Issue</a></p>
 <p>在多数情况下，这代表显存溢出，也有可能是 GPU 硬件问题。</p>
-<p>据说使用 deepdanbooru 的话会有这个提示，可以尝试重新启动 或 安装cpu版本的deepdanbooru.</p>
+<p>据说使用 deepdanbooru 的话会有这个提示，可以尝试重新启动 或 安装 cpu 版本的 deepdanbooru.</p>
 <h2 id="caused-by-proxyerror-cannot-connect-to-proxy-remotedisconnected-remote-end-closed-connection-without-response">Caused by ProxyError-Cannot connect to proxy-RemoteDisconnected-Remote end closed connection without response</h2>
-<p>代理设置问题，检查全局变量有无协议头（需要有），如果是 Clash ,开启 TUN 模式即可。</p>
+<p>代理设置问题，检查全局变量有无协议头（需要有），如果是 Clash , 开启 TUN 模式即可。</p>
 <p>如果没开代理，尝试更新到最新版本。</p>
 <p>See <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/491">Issue</a></p>
 <h2 id="failed-to-establish-a-new-connection">Failed to establish a new connection</h2>
@@ -701,7 +701,7 @@
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月11日 01:20:46</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月22日 16:28:07</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月3日 02:10:16</span>

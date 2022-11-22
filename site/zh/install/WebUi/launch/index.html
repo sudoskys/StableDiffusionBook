@@ -590,13 +590,13 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="_1">启动</h1>
-<p>首先必须下载一个4GB模型。界面顶部的菜单用于选择模型。</p>
+<p>首先必须下载一个 4GB 模型。界面顶部的菜单用于选择模型。</p>
 <p>如果你运行报错，请读前面的自救提示。</p>
-<p>我们不提供NAI模型，你可以去 关于/底部图标 页面找到 <code>中文社区</code> 的频道，里面应该有你想要的哈。</p>
+<p>我们不提供 NAI 模型，你可以去 关于/底部图标 页面找到 <code>中文社区</code> 的频道，里面应该有你想要的哈。</p>
 <h2 id="_2">运行</h2>
 <p><strong>按照后面的教程载入模型后</strong></p>
 <p>Win 编辑并运行 <code>webui.bat</code></p>
-<p>Linux 用户运行 <code>launch.py</code> 或 <code>webui.py</code> ，前者会自动安装(新)环境。
+<p>Linux 用户运行 <code>launch.py</code> 或 <code>webui.py</code> ，前者会自动安装（新）环境。
 <div class="highlight"><pre><span></span><code>REQS_FILE="requirements.txt" python launch.py
 </code></pre></div></p>
 <div class="highlight"><pre><span></span><code>COMMANDLINE_ARGS="--medvram --always-batch-cond-uncond" REQS_FILE="requirements.txt" python launch.py
@@ -621,18 +621,18 @@
 <p>生成后的结果结尾类似如下
 <div class="highlight"><pre><span></span><code>Steps: 28, Sampler: Euler a, CFG scale: 7, Seed: 2706937631, Size: 1024x512, Model hash: 925997e9
 </code></pre></div>
-在没有加载风格模型的情况下，通过一样的参数和 Seed(-1就是随机)，可以生产一样的图像，可以用于微调！</p>
+在没有加载风格模型的情况下，通过一样的参数和 Seed(-1 就是随机），可以生产一样的图像，可以用于微调！</p>
 <p>一起出现的还有 GPU 负载信息</p>
 <div class="highlight"><pre><span></span><code>Time taken: 33.97s
 Torch active/reserved: 1975/2144 MiB, Sys VRAM: 7890/8134 MiB (93.61%)
 </code></pre></div>
 <p><strong>快捷设置</strong></p>
 <p>不想来回设置 Clip 参数？</p>
-<p>添加 <code>sd_hypernetwork</code> 和 <code>CLIP_stop_at_last_layers</code> 到设置页面的 <code>Quicksettings list</code> ，点击页面顶部的按钮保存，重新启动 webui，你就可以在Ui顶部看到一个快速切换选项啦～</p>
+<p>添加 <code>sd_hypernetwork</code> 和 <code>CLIP_stop_at_last_layers</code> 到设置页面的 <code>Quicksettings list</code> ，点击页面顶部的按钮保存，重新启动 webui，你就可以在 Ui 顶部看到一个快速切换选项啦～</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>需要添加更多快捷设置?</p>
-<p>有Python代码阅读能力的话则可在 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/modules/shared.py">此处</a> 源码中找到各设置定义的名称。</p>
+<p>需要添加更多快捷设置？</p>
+<p>有 Python 代码阅读能力的话则可在 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/modules/shared.py">此处</a> 源码中找到各设置定义的名称。</p>
 <p>它们通常以将对象 <code>OptionInfo</code> 的实例作为值的字典的键存在。</p>
 </div>
 <h2 id="_4">中文/本地化</h2>
@@ -648,11 +648,11 @@ Torch active/reserved: 1975/2144 MiB, Sys VRAM: 7890/8134 MiB (93.61%)
 <div class="admonition danger">
 <p class="admonition-title">RCE</p>
 <p>当使用 <code>--share</code> 参数时，你的实例就可以在公开互联网被访问了。</p>
-<p>但是最近有人报告了一个可能是危险的<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2571">代码漏洞</a></p>
-<p>所以，你可以使用参数为 <code>gradio</code> 共享实例设置身份验证：<code>--gradio-auth username:password</code> (可提供以逗号分隔的多组用户名和密码)</p>
+<p>但是最近有人报告了一个可能是危险的 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2571">代码漏洞</a></p>
+<p>所以，你可以使用参数为 <code>gradio</code> 共享实例设置身份验证：<code>--gradio-auth username:password</code> （可提供以逗号分隔的多组用户名和密码）</p>
 <p>例子
 <code>--share --gradio-auth admin:admin,user1:user_password</code></p>
-<p>使用该例子将会创建两个用户，一个是账号密码为admin的用户，另外一个是账号为user1,密码为user_password的用户</p>
+<p>使用该例子将会创建两个用户，一个是账号密码为 admin 的用户，另外一个是账号为 user1, 密码为 user_password 的用户</p>
 <p>如果攻击者可以访问 ui，他们可能能够远程运行 python 脚本。</p>
 <p>10/30 社区报告：有人在扫描公开的 WebUi</p>
 <p>11/1 社区反映：共享链接可能会导致风险，<strong>攻击者可以访问系统上的所有文件。</strong></p>
@@ -663,7 +663,7 @@ Torch active/reserved: 1975/2144 MiB, Sys VRAM: 7890/8134 MiB (93.61%)
 </ul>
 <p>参数 <code>--listen</code> 使服务器监听网络连接。</p>
 <p>这将允许本地网络上的计算机访问 UI，如果配置端口转发，公网上的计算机也可以访问（当然你得有公网。</p>
-<p>注意，监听 <code>0.0.0.0</code> 就意味着对本地网卡的所有ipv4监听，局域网访问请使用 <code>localhost</code> 替换 <code>0.0.0.0</code></p>
+<p>注意，监听 <code>0.0.0.0</code> 就意味着对本地网卡的所有 ipv4 监听，局域网访问请使用 <code>localhost</code> 替换 <code>0.0.0.0</code></p>
 <ul>
 <li>监听端口</li>
 </ul>
@@ -675,24 +675,24 @@ Torch active/reserved: 1975/2144 MiB, Sys VRAM: 7890/8134 MiB (93.61%)
 </ul>
 <p>添加 <code>--theme</code> 参数来切换主题</p>
 <h2 id="_6">自定义运行</h2>
-<p>进一步熟悉这个程序，你会发现可以修改 Bat运行脚本 添加参数！具体参数列表请读下文。</p>
+<p>进一步熟悉这个程序，你会发现可以修改 Bat 运行脚本 添加参数！具体参数列表请读下文。</p>
 <p>生成报错？请读 <code>绘画调试</code> 章节。</p>
-<p>首先，你可以运行 <code>python webui.py --help</code> 查看所有命令参数，或者在<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/modules/shared.py">源码文件</a>中读到它们。</p>
+<p>首先，你可以运行 <code>python webui.py --help</code> 查看所有命令参数，或者在 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/modules/shared.py">源码文件</a> 中读到它们。</p>
 <p>Tip:
-自定义程序运行方式的推荐方法是编辑webui-user.bat(Windows) 和webui-user.sh(Linux)</p>
+自定义程序运行方式的推荐方法是编辑 webui-user.bat(Windows) 和 webui-user.sh(Linux)</p>
 <p><em>环境定制</em></p>
 <p><code>set PYTHON=b:/soft/Python310/Python.exe</code></p>
 <p><code>set PYTHON</code> 允许设置自定义 Python 路径</p>
 <p><code>set VENV_DIR=C:\run\var\run</code>
-set VENV_DIR允许您选择虚拟环境的目录。默认为<code>venv</code>。特殊值<code>-</code>在不创建虚拟环境的情况下运行脚本。</p>
+set VENV_DIR 允许您选择虚拟环境的目录。默认为<code>venv</code>。特殊值<code>-</code>在不创建虚拟环境的情况下运行脚本。</p>
 <p><code>set COMMANDLINE_ARGS=--ckpt a.ckpt</code>
-set COMMANDLINE_ARGS设置命令行参数webui.py运行
-示例使用模型a.ckpt而不是model.ckpt</p>
-<p><em>GPU指定</em></p>
-<p>选择要使用的默认Gpu <code>--device-id 0</code>，来代替旧版本(2022/10之前)的 <code>CUDA_VISIBLE_DEVICES=0</code>，可以选择第二个 GPU 允许同时运行两个实例，从而能够以更简洁的方式简单地选择设备。</p>
+set COMMANDLINE_ARGS 设置命令行参数 webui.py 运行
+示例使用模型 a.ckpt 而不是 model.ckpt</p>
+<p><em>GPU 指定</em></p>
+<p>选择要使用的默认 Gpu <code>--device-id 0</code>，来代替旧版本 (2022/10 之前）的 <code>CUDA_VISIBLE_DEVICES=0</code>，可以选择第二个 GPU 允许同时运行两个实例，从而能够以更简洁的方式简单地选择设备。</p>
 <p>查看 GPU 型号和 CUDA 版本，可以使用 <code>nvidia-smi</code> 命令</p>
 <p><strong>优化命令参数</strong></p>
-<p>来自 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Optimizations">官方Wiki</a></p>
+<p>来自 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Optimizations">官方 Wiki</a></p>
 <table>
 <thead>
 <tr>
@@ -703,7 +703,7 @@ set COMMANDLINE_ARGS设置命令行参数webui.py运行
 <tbody>
 <tr>
 <td><code>--xformers</code></td>
-<td>使用<a href="https://github.com/facebookresearch/xformers">xformers</a>库。极大地改善了内存消耗和速度。Windows 版本安装由<a href="https://github.com/C43H66N12O12S2/stable-diffusion-webui/releases">C43H66N12O12S2 维护</a>的二进制文件</td>
+<td>使用 <a href="https://github.com/facebookresearch/xformers">xformers</a> 库。极大地改善了内存消耗和速度。Windows 版本安装由 <a href="https://github.com/C43H66N12O12S2/stable-diffusion-webui/releases">C43H66N12O12S2 维护</a> 的二进制文件</td>
 </tr>
 <tr>
 <td><code>--force-enable-xformers</code></td>
@@ -723,11 +723,11 @@ set COMMANDLINE_ARGS设置命令行参数webui.py运行
 </tr>
 <tr>
 <td><code>--medvram</code></td>
-<td>通过将稳定扩散模型分为三部分，使其消耗更少的VRAM，即cond（用于将文本转换为数字表示）、first_stage（用于将图片转换为潜在空间并返回）和unet（用于潜在空间的实际去噪），并使其始终只有一个在VRAM中，将其他部分发送到CPU RAM。降低性能，但只会降低一点-除非启用实时预览。</td>
+<td>通过将稳定扩散模型分为三部分，使其消耗更少的 VRAM，即 cond（用于将文本转换为数字表示）、first_stage（用于将图片转换为潜在空间并返回）和 unet（用于潜在空间的实际去噪），并使其始终只有一个在 VRAM 中，将其他部分发送到 CPU RAM。降低性能，但只会降低一点-除非启用实时预览。</td>
 </tr>
 <tr>
 <td><code>--lowvram</code></td>
-<td>对上面更彻底的优化，将 unet 拆分成多个模块，VRAM 中只保留一个模块,破坏性能</td>
+<td>对上面更彻底的优化，将 unet 拆分成多个模块，VRAM 中只保留一个模块，破坏性能</td>
 </tr>
 <tr>
 <td><code>*do-not-batch-cond-uncond</code></td>
@@ -739,7 +739,7 @@ set COMMANDLINE_ARGS设置命令行参数webui.py运行
 </tr>
 <tr>
 <td><code>--opt-channelslast</code></td>
-<td>更改 torch 内存类型，以稳定扩散到最后一个通道,效果没有仔细研究。</td>
+<td>更改 torch 内存类型，以稳定扩散到最后一个通道，效果没有仔细研究。</td>
 </tr>
 </tbody>
 </table>
@@ -802,7 +802,7 @@ set COMMANDLINE_ARGS设置命令行参数webui.py运行
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月4日 18:22:39</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月22日 16:28:07</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年10月10日 07:33:42</span>

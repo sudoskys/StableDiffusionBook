@@ -630,15 +630,15 @@
 <p>https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth</p>
 </blockquote>
 <p>这节对显卡的要求较高。</p>
-<p>在法律上，<strong>不应该</strong>无视画师约定的版权许可，采集作品数据进行训练。在道德上，<strong>不应该</strong>用训练结果贬低原画师作品价值，俗谚有 “吃水不忘挖井人”，训练数据并不能作为你的贡献。</p>
-<p>目前个人认为效果认为效果最好的是 DreamBooth，但是其训练时对显存要求较高（&gt;12GB）。</p>
+<p>在法律上，<strong>不应该</strong> 无视画师约定的版权许可，采集作品数据进行训练。在道德上，<strong>不应该</strong> 用训练结果贬低原画师作品价值，俗谚有 “吃水不忘挖井人”，训练数据并不能作为你的贡献。</p>
+<p>目前个人认为效果认为效果最好的是 DreamBooth，但是其训练时对显存要求较高（&gt; 12GB）。</p>
 <h2 id="_2">如何选择</h2>
 <p>综述。Textual Inversion  和 Hypernetwork 适用于 <code>整体靠近</code>，前者教 AI 用模型中的标签组成一个 <code>人物</code>，后者也是类似的。区别在于 Hypernetwork 以调节模型权重为手段，而 Textual Inversion 告诉 AI 特定标签应该如何组成。</p>
 <p>而 DreamBooth 适用于 <code>细节</code> 的模仿，它的训练过程 “重新整改” 了模型，新模型之中含有了新的样本特征（加了新东西）， DreamBooth 技术本身用于 “复刻” ，所以可以认识冷门元素。</p>
-<p>至于 Aesthetic Gradients ，也就是给 AI 认识一组 <code>优秀的数据</code> 。结果就是这个东西会增加细节，训练很简单，但是会拖慢生成图片的速度(每次生成都要重新计算)。并不适合应用。</p>
+<p>至于 Aesthetic Gradients ，也就是给 AI 认识一组 <code>优秀的数据</code> 。结果就是这个东西会增加细节，训练很简单，但是会拖慢生成图片的速度（每次生成都要重新计算）。并不适合应用。</p>
 <h2 id="_3">认知炼丹</h2>
 <p>如果你在 <code>--medvram</code> 参数下开始训练，可能会出现 <code>RuntimeError: Expected all tensors to be on the same device</code> 错误，无法创建训练。
-这是优化机制导致的<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2399">问题</a>，WebUi 在 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/cbb857b675cf0f169b21515c29da492b513cc8c4">这次提交</a> 中允许了在 <code>--medvram</code> 下创建 embedding 的情况。请更新版本到这个版本之后。</p>
+这是优化机制导致的 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2399">问题</a>，WebUi 在 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/cbb857b675cf0f169b21515c29da492b513cc8c4">这次提交</a> 中允许了在 <code>--medvram</code> 下创建 embedding 的情况。请更新版本到这个版本之后。</p>
 <p><strong>关于 batch size</strong></p>
 <p>更大的 batch size 可能稍微加快训练并稍微提升训练效果，但也需要更大的显存。</p>
 <h3 id="textual-inversion-ti">Textual Inversion (TI)</h3>
@@ -655,7 +655,7 @@
 <p><a href="https://rentry.org/embeddings">list of Textual Inversion embeddings for webui(SD)</a></p>
 <p><a href="https://cyberes.github.io/stable-diffusion-textual-inversion-models/">HuggingFace 的 embedding 库</a></p>
 <h3 id="hypernetwork-hn">Hypernetwork (HN)</h3>
-<p>一类给模型生成权重的网络，在这里是给 LDM(潜在扩散模型) 生成权重。是一个较为实验性的方法，NAI 率先探索了在 LDM 上使用。</p>
+<p>一类给模型生成权重的网络，在这里是给 LDM（潜在扩散模型） 生成权重。是一个较为实验性的方法，NAI 率先探索了在 LDM 上使用。</p>
 <h4 id="_7">特征</h4>
 <p>与 TI 不同，Hypernetwork 会改动 LDM 本身的权重，所以可以训练出无法用语言精确表述的细节，也更适用于画风的训练。</p>
 <p>训练产物大小中等，webui 自带训练支持。</p>
@@ -664,7 +664,7 @@
 <p>NAI Leaks 的 <code>novelaileak\stableckpt\modules\modules</code> 中有 NAI 训练的一些 Hypernetwork。</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p><code>.pt</code>文件，一般情况下小的是 embedding 大的是 hypernetwork。</p>
+<p><code>.pt</code> 文件，一般情况下小的是 embedding 大的是 hypernetwork。</p>
 </div>
 <h3 id="dreambooth-db">DreamBooth (DB)</h3>
 <p>直接微调 LDM 和 Text Encoder 以适应用户特定的图像生成需求的一个方法。</p>
@@ -690,11 +690,11 @@
 <p>使用方法与 <code>Textual Inversion</code> 相同。</p>
 <h3 id="aesthetic-gradients">Aesthetic Gradients</h3>
 <p>微调 CLIP 以适应某个特定生成需求的方法，可以和 TI 一样起到缩短 prompt 的作用。可能略微提升出图的质量。</p>
-<p>这项技术通过在生成时计算每个图片的权重，提供了一个 <code>我不说你应该懂往哪里训练</code> 的功能。使AI更聪明地调整并增加细节。</p>
+<p>这项技术通过在生成时计算每个图片的权重，提供了一个 <code>我不说你应该懂往哪里训练</code> 的功能。使 AI 更聪明地调整并增加细节。</p>
 <p>此项功能来自这个 <a href="https://github.com/vicgalle/stable-diffusion-aesthetic-gradients">存储库</a>，在 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/2b91251637078e04472c91a06a8d9c4db9c1dcf0">这次提交</a> 中，此功能被剥离为插件。</p>
 <h4 id="_11">特征</h4>
 <p>通过这项技术，你不需要通过 过多提示词 来提升图片的质量，而是保持作品原始的总体构图，并提高美观度。在少量提示词情况下也可以生成效果不错的作品。</p>
-<p>据暗影·夜光所言<sup id="fnref:11"><a class="footnote-ref" href="#fn:11">5</a></sup>，添加 25% 以内的权重，就可以稍微改善画面的美观度而不影响内容。美学 与 Hypernetworks 让 Ai 作品更接近原画师风格，但是美学权重本身效果并不好。需要配合 Hypernetworks 超网络。</p>
+<p>据暗影·夜光所言 <sup id="fnref:11"><a class="footnote-ref" href="#fn:11">5</a></sup>，添加 25% 以内的权重，就可以稍微改善画面的美观度而不影响内容。美学 与 Hypernetworks 让 Ai 作品更接近原画师风格，但是美学权重本身效果并不好。需要配合 Hypernetworks 超网络。</p>
 <p>训练这项模型很快，但是在每一次生产时都会重新为图片计算一次，所以出图很慢。</p>
 <p>注意：当种子改变时，训练结果也会改变。</p>
 <h4 id="_12">使用</h4>
@@ -730,10 +730,10 @@
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/1733">交替单词</a> <a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 3 in the text">↩</a></p>
 </li>
 <li id="fn:10">
-<p><a href="https://www.bilibili.com/video/BV1xt4y1F7Y2/">角色与画风tag训练十问</a> <a class="footnote-backref" href="#fnref:10" title="Jump back to footnote 4 in the text">↩</a></p>
+<p><a href="https://www.bilibili.com/video/BV1xt4y1F7Y2/">角色与画风 tag 训练十问</a> <a class="footnote-backref" href="#fnref:10" title="Jump back to footnote 4 in the text">↩</a></p>
 </li>
 <li id="fn:11">
-<p><a href="https://www.bilibili.com/read/cv19102552">WebUI即将引入重磅更新，大幅提升图像品质</a> <a class="footnote-backref" href="#fnref:11" title="Jump back to footnote 5 in the text">↩</a></p>
+<p><a href="https://www.bilibili.com/read/cv19102552">WebUI 即将引入重磅更新，大幅提升图像品质</a> <a class="footnote-backref" href="#fnref:11" title="Jump back to footnote 5 in the text">↩</a></p>
 </li>
 <li id="fn:12">
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2284">超网络训练</a> <a class="footnote-backref" href="#fnref:12" title="Jump back to footnote 6 in the text">↩</a></p>
@@ -748,7 +748,7 @@
 <p><a href="https://arxiv.org/abs/2208.12242">dreambooth-论文</a> <a class="footnote-backref" href="#fnref:15" title="Jump back to footnote 9 in the text">↩</a></p>
 </li>
 <li id="fn:16">
-<p><a href="https://shiina-h.notion.site/shiina-h/Hypernetwork-1fc0b60645284c5e96bb41b583a4e86f">Hypernetwork画风训练经验分享</a> <a class="footnote-backref" href="#fnref:16" title="Jump back to footnote 10 in the text">↩</a></p>
+<p><a href="https://shiina-h.notion.site/shiina-h/Hypernetwork-1fc0b60645284c5e96bb41b583a4e86f">Hypernetwork 画风训练经验分享</a> <a class="footnote-backref" href="#fnref:16" title="Jump back to footnote 10 in the text">↩</a></p>
 </li>
 <li id="fn:17">
 <p><a href="https://pastebin.com/xcFpp9Mr">Installing Stable Diffusion &amp; Dreambooth for Windows</a> <a class="footnote-backref" href="#fnref:17" title="Jump back to footnote 11 in the text">↩</a></p>
@@ -763,7 +763,7 @@
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月18日 17:51:42</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月22日 16:28:07</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 03:59:46</span>

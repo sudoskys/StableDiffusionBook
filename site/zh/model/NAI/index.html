@@ -375,7 +375,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#1">
-    风格化1
+    风格化 1
   </a>
 </li>
 </ul>
@@ -581,7 +581,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#1">
-    风格化1
+    风格化 1
   </a>
 </li>
 </ul>
@@ -623,7 +623,7 @@
 │   ├── final-pruned.ckpt -&gt; novelai 的 model.ckpt (pruned)
 │   ├── final-pruned.vae.pt -&gt; novelai 的 animevae.pt
 │   ├── final-pruned.yaml -&gt; model.ckpt 同文件夹的 config.yaml
-│   └── 其他模型文件.ckpt
+│   └── 其他模型文件。ckpt
 └── SwinIR
 </code></pre></div>
 <p>其中，hypernetworks 和 Stable-diffusion 是需要新建的文件夹。其他文件根据规则重命名。</p>
@@ -660,15 +660,15 @@
 <tr>
 <td>个人不需要下载的</td>
 <td><code>workspace</code></td>
-<td>前后端全套，40GB仅能启动</td>
+<td>前后端全套，40GB 仅能启动</td>
 </tr>
 </tbody>
 </table>
 <p>注意，<code>final-pruned .yaml</code> 的名称应该对应 <code>final-pruned .ckpt</code></p>
-<p><code>hypernetworks</code> 包含了 <code>stableckpt/modules/modules</code> 里的文件，是风格相关的数据集，可以作为特定人物的 <code>embedding model</code> 调用，和 model 使用可以生成特定风格。主要格式为 <code>*.pt</code>。需要在WebUi的设置标签页启用这个增强模型。</p>
+<p><code>hypernetworks</code> 包含了 <code>stableckpt/modules/modules</code> 里的文件，是风格相关的数据集，可以作为特定人物的 <code>embedding model</code> 调用，和 model 使用可以生成特定风格。主要格式为 <code>*.pt</code>。需要在 WebUi 的设置标签页启用这个增强模型。</p>
 <p><code>workspace</code> 不是个人可以负载的，NAI 采用的是 GPU 集群云。</p>
 <h3 id="part-2">Part 2</h3>
-<p><code>prodmodels</code> 是 GPT 模型(语言处理)，但是实际用了 CLIP，所以不用我们管。</p>
+<p><code>prodmodels</code> 是 GPT 模型（语言处理），但是实际用了 CLIP，所以不用我们管。</p>
 <p><code>random_stableckpt</code> 是一些模型，有的与 Part1 重复</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://user-images.githubusercontent.com/75739606/197821809-7eed7776-9508-4c71-9b07-5f02e13290b2.jpg"><img alt="Part1" src="https://user-images.githubusercontent.com/75739606/197821809-7eed7776-9508-4c71-9b07-5f02e13290b2.jpg"/></a></p>
 <!--
@@ -692,7 +692,7 @@
 <p>关于风格模型，启动 cli 有提示加载就 OK, 同时可以去设置选模型那里选喜欢的 <code>hypernetwork</code></p>
 <h3 id="_1">全量和基线模型</h3>
 <p><code>animesfw-latest</code> = NAI 基线模型</p>
-<p><code>animefull-final-pruned</code> = <code>full-latest</code> = NAI 全量模型(包含成人内容)</p>
+<p><code>animefull-final-pruned</code> = <code>full-latest</code> = NAI 全量模型（包含成人内容）</p>
 <h3 id="latest-7g-pruned-4g">使用 latest (7G) 还是 pruned (4G) 模型</h3>
 <p>4GB 的模型由 7GB 的模型修剪而来，去除了最后一次的权重，留下了 EMA 权重。</p>
 <p>个人用户只需要使用 pruned 4GB 模型。使用 latest 会过度占用 RAM 和 VRAM。</p>
@@ -707,7 +707,7 @@
 <iframe src="//player.bilibili.com/player.html?aid=688965561&cid=857942294&page=1&danmaku=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 -->
 <p>拆包视频可以看 <a href="https://www.bilibili.com/video/av688965561/?zw">BV1Gm4y1A7VM</a></p>
-<h3 id="1">风格化<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">1</a></sup></h3>
+<h3 id="1">风格化 <sup id="fnref:5"><a class="footnote-ref" href="#fn:5">1</a></sup></h3>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://user-images.githubusercontent.com/474879/194965036-4c9f70ca-a32f-4f68-a9a1-17a827e8e61e.jpg"><img alt="furry" src="https://user-images.githubusercontent.com/474879/194965036-4c9f70ca-a32f-4f68-a9a1-17a827e8e61e.jpg"/></a></p>
 <blockquote>
 <p>furry</p>
@@ -718,7 +718,7 @@ Negative prompt: nsfw, lowres, bad anatomy, bad hands, text, error, missing fing
 Steps: 28, Sampler: Euler, CFG scale: 12, Seed: [SEE COLUMN], Size: 512x512, Model hash: 925997e9, Hypernet: [SEE ROW]
 </code></pre></div>
 <p><code>aini</code> 有一种你可能不喜欢的强烈风格，我认为它具有最高的一致性和质量。</p>
-<p><code>anime_3</code> 是该系列中质量最高的，但它们都有些不一致. 我一般不会推荐他们。</p>
+<p><code>anime_3</code> 是该系列中质量最高的，但它们都有些不一致。我一般不会推荐他们。</p>
 <p>可以看到 <code>furry</code> 的超网络在添加动物特征方面更加激进，因此这里更保守的变化可能与采样器、步骤和 CFG 有关。<sup id="fnref2:5"><a class="footnote-ref" href="#fn:5">1</a></sup></p>
 <div class="footnote">
 <hr/>
@@ -733,7 +733,7 @@ Steps: 28, Sampler: Euler, CFG scale: 12, Seed: [SEE COLUMN], Size: 512x512, Mod
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 06:30:05</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月22日 16:28:07</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 03:59:46</span>

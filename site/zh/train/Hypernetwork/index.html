@@ -47,7 +47,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#hypernetwork13">
+<a class="md-skip" href="#hypernetwork-13">
           跳转至
         </a>
 </div>
@@ -497,7 +497,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#16">
-    额外注意[^16]
+    额外注意 [^16]
   </a>
 </li>
 </ul>
@@ -566,7 +566,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#16">
-    额外注意[^16]
+    额外注意 [^16]
   </a>
 </li>
 </ul>
@@ -579,57 +579,57 @@
 <a class="md-content__button md-icon" href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/train/Hypernetwork.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="hypernetwork13">Hypernetwork[^13]</h1>
+<h1 id="hypernetwork-13">Hypernetwork [^13]</h1>
 <p>Hypernetworks 是一种新颖的概念，用于在不触及任何权重的情况下微调模型。</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>在设置内勾选 <strong>Move VAE and CLIP to RAM when training hypernetwork. Saves VRAM.</strong> 的效果是转移 VAE 到 RAM,而不是卸载，</p>
+<p>在设置内勾选 <strong>Move VAE and CLIP to RAM when training hypernetwork. Saves VRAM.</strong> 的效果是转移 VAE 到 RAM, 而不是卸载，</p>
 <p>如需卸载，请重命名。</p>
 </div>
 <p>你可以在 <code>train</code> 选项卡训练 <code>Hypernetworks</code>，训练方式与  <code>Textual Inversion</code> 相同。</p>
-<p>注意,应该使用非常低的学习率，例如 0.000005 或 0.0000005.</p>
-<p>如果学习率是5e-6 ，步数大约 10000 到 20000 。<a href="https://colab.research.google.com/drive/1qzweYEMIFkG6jPa04tD1MhWWOzgSnDvP?usp=sharing">学习率计算器</a>，来自 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2670">这里</a></p>
-<p>分辨率设置为要训练的分辨率，最好使用 1:1 的纵横比。</p>
+<p>注意，应该使用非常低的学习率，例如 0.000005 或 0.0000005.</p>
+<p>如果学习率是 5e-6 ，步数大约 10000 到 20000 。<a href="https://colab.research.google.com/drive/1qzweYEMIFkG6jPa04tD1MhWWOzgSnDvP?usp=sharing">学习率计算器</a>，来自 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2670">这里</a></p>
+<p>分辨率设置为要训练的分辨率，最好使用 1: 1 的纵横比。</p>
 <p>如果数据集的图片是长条或者横条，请勾选 <code>Split cversized images into two</code></p>
 <p>如果你还没有打标签，可以勾选 <code>Using deepbooru for caption</code> ，来让 deepbooru 识别标签。</p>
 <h2 id="hyper-network-layer-structure">hyper network layer structure</h2>
 <p>If write "1, 2, 1", hypernetworks are composed of 2 fully connected layers whose intermediate dim is 2x, which is same as up to now.</p>
 <p>The more you add the number, like "1, 2, 4, 2, 1", the more the structure of hypernetworks becomes deeper. Deep hypernetworks are suited for training with large datasets.</p>
-<p>层结构目前还是推荐1，2，1，如果想扩展的话，可以尝试1，2，2，1.[^16]</p>
-<p>1，2，1的pt文件大概是83.8MB，1，2，2，1大概是167MB。如果要扩展的话，一定要注意盘空间是否足够，否则很容易爆盘。[^16]</p>
+<p>层结构目前还是推荐 1，2，1，如果想扩展的话，可以尝试 1，2，2，1.[^16]</p>
+<p>1，2，1 的 pt 文件大概是 83.8MB，1，2，2，1 大概是 167MB。如果要扩展的话，一定要注意盘空间是否足够，否则很容易爆盘。[^16]</p>
 <h2 id="add-layer-normalization">Add layer normalization</h2>
 <p>If checked, add layer normalization after every fully connected layer.</p>
 <p>防止超网络过拟合，使训练更加稳定。</p>
-<p>LN对防止过拟合使训练更加稳定是有意义的，但是根据之前的测试，linear开开启LN的情况，可能学不进去东西，出空包弹。使用激活函数后，LN现在是可使用的。[^16]</p>
-<p>Swish似乎并不需要开启LN，因为Swish的训练速度慢，所以应该使用更高的学习率。</p>
+<p>LN 对防止过拟合使训练更加稳定是有意义的，但是根据之前的测试，linear 开开启 LN 的情况，可能学不进去东西，出空包弹。使用激活函数后，LN 现在是可使用的。[^16]</p>
+<p>Swish 似乎并不需要开启 LN，因为 Swish 的训练速度慢，所以应该使用更高的学习率。</p>
 <h2 id="use-dropout">USE Dropout</h2>
-<p>启用Dropout可以防止超网络过拟合，目前不支持自定义dropout比率，默认为0.3</p>
-<p>在1，2，1的层结构上，dropout可能只会对小数据集有帮助。</p>
+<p>启用 Dropout 可以防止超网络过拟合，目前不支持自定义 dropout 比率，默认为 0.3</p>
+<p>在 1，2，1 的层结构上，dropout 可能只会对小数据集有帮助。</p>
 <h2 id="activation-functions">激活函数 activation functions</h2>
-<p>关于<a href="https://www.geeksforgeeks.org/activation-functions-neural-networks/">激活函数</a>，<a href="https://en.wikipedia.org/wiki/Activation_function">维基</a></p>
-<p>激活函数是神经网络中非线性的来源。如果去掉激活函数，神经网络的权重和偏差只会进行线性变换(不管神经网络有多少层，线性运算的复合还是线性运算的)，最终的效果只相当于单层的线性模型。</p>
+<p>关于 <a href="https://www.geeksforgeeks.org/activation-functions-neural-networks/">激活函数</a>，<a href="https://en.wikipedia.org/wiki/Activation_function">维基</a></p>
+<p>激活函数是神经网络中非线性的来源。如果去掉激活函数，神经网络的权重和偏差只会进行线性变换（不管神经网络有多少层，线性运算的复合还是线性运算的），最终的效果只相当于单层的线性模型。</p>
 <p>激活函数对输入进行非线性变换，使其能够学习和执行更复杂的任务，深层神经网络表达能力更加强大。</p>
 <p>在 10/21/22 的一个 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3199">合并请求</a> 中，这项功能被 discus0434 提出。</p>
-<p>支持 relu、leakyrelu 和 linear 。选择 linear(线性) 的效果和没有激活函数一样。</p>
-<p>Swish对比Relu和Linear要更好，Swish适合更大的网络，而Elu可能对1，2，1的超网络带来更好的结果。[^16]</p>
+<p>支持 relu、leakyrelu 和 linear 。选择 linear（线性） 的效果和没有激活函数一样。</p>
+<p>Swish 对比 Relu 和 Linear 要更好，Swish 适合更大的网络，而 Elu 可能对 1，2，1 的超网络带来更好的结果。[^16]</p>
 <p><a href="https://rentry.org/hypernetwork4dumdums">相关的英文指南</a></p>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2670">相关的英文讨论</a></p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://user-images.githubusercontent.com/75739606/197823893-88a3bece-9100-41d1-8f07-bc6d9b3aa92c.jpg"><img alt="hypernet对比图" src="https://user-images.githubusercontent.com/75739606/197823893-88a3bece-9100-41d1-8f07-bc6d9b3aa92c.jpg"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://user-images.githubusercontent.com/75739606/197823893-88a3bece-9100-41d1-8f07-bc6d9b3aa92c.jpg"><img alt="hypernet 对比图" src="https://user-images.githubusercontent.com/75739606/197823893-88a3bece-9100-41d1-8f07-bc6d9b3aa92c.jpg"/></a></p>
 <!--
-![hypernet对比图](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/exp_hypernet.jpg)
+![hypernet 对比图](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/exp_hypernet.jpg)
 -->
 <blockquote>
-<p>hypernet对比图,the woman in picture is 24 years old</p>
+<p>hypernet 对比图，the woman in picture is 24 years old</p>
 </blockquote>
-<h2 id="16">额外注意[^16]</h2>
-<p>在开启LN选用激活函数并开启Dropout后，超网络没以前那么容易过拟合，但是可能需要更大的学习率进行学习。</p>
-<p><a href="https://shiina-h.notion.site/shiina-h/Hypernetwork-1fc0b60645284c5e96bb41b583a4e86f">Hypernetwork画风训练经验分享</a></p>
+<h2 id="16">额外注意 [^16]</h2>
+<p>在开启 LN 选用激活函数并开启 Dropout 后，超网络没以前那么容易过拟合，但是可能需要更大的学习率进行学习。</p>
+<p><a href="https://shiina-h.notion.site/shiina-h/Hypernetwork-1fc0b60645284c5e96bb41b583a4e86f">Hypernetwork 画风训练经验分享</a></p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 07:59:14</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月22日 16:28:07</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 03:59:46</span>

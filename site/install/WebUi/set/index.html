@@ -320,7 +320,7 @@
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#windows">
-    Windows安装
+    Windows 安装
   </a>
 </li>
 <li class="md-nav__item">
@@ -561,7 +561,7 @@
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#windows">
-    Windows安装
+    Windows 安装
   </a>
 </li>
 <li class="md-nav__item">
@@ -589,47 +589,47 @@
 </a>
 <h1 id="stable-diffusion-webui">安装 Stable-Diffusion-webui 开源框架</h1>
 <p>此教程参考了 crosstyan<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">1</a></sup> 的 <a href="https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99#prompt-editingmixing">FAQ</a></p>
-<p>WebUi的官方代码仓库地址为 https://github.com/AUTOMATIC1111/stable-diffusion-webui</p>
+<p>WebUi 的官方代码仓库地址为 https://github.com/AUTOMATIC1111/stable-diffusion-webui</p>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui#installation-and-running">官方英文安装教程</a></p>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Dependencies">官方给定的依赖列表</a></p>
 <h2 id="_1">硬件要求</h2>
-<p>WebUi 最低能用N卡显存为 2GB</p>
-<p>WebUi 最低可用N卡显存为 4GB</p>
-<p>在开始前，打开CMD， 输入 <code>nvidia-smi</code> 看看机器的英伟达显卡是否正常运作。</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://s1.ax1x.com/2022/10/10/xtdNNR.png"><img alt="效果.png" src="https://s1.ax1x.com/2022/10/10/xtdNNR.png"/></a></p>
+<p>WebUi 最低能用 N 卡显存为 2GB</p>
+<p>WebUi 最低可用 N 卡显存为 4GB</p>
+<p>在开始前，打开 CMD， 输入 <code>nvidia-smi</code> 看看机器的英伟达显卡是否正常运作。</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://s1.ax1x.com/2022/10/10/xtdNNR.png"><img alt="效果。png" src="https://s1.ax1x.com/2022/10/10/xtdNNR.png"/></a></p>
 <blockquote>
-<p>这里是9月份效果(现在快了不少)</p>
+<p>这里是 9 月份效果（现在快了不少）</p>
 </blockquote>
 <h2 id="_2">安装</h2>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>推荐有能力的同学阅读一下<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki">官方Wiki</a>的内容。</p>
-<p>注意！Ai 需要的依赖大小很大，需要做好心理准备。总计依赖大小约几G，在中国环境可能很慢！</p>
-<p>而且对于Windows,<strong>依赖默认安装在C盘</strong>，请确保空间充足。</p>
+<p>推荐有能力的同学阅读一下 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki">官方 Wiki</a> 的内容。</p>
+<p>注意！Ai 需要的依赖大小很大，需要做好心理准备。总计依赖大小约几 G，在中国环境可能很慢！</p>
+<p>而且对于 Windows, <strong>依赖默认安装在 C 盘</strong>，请确保空间充足。</p>
 <p>不推荐使用 整合包，会导致升级困难。</p>
 </div>
 <p>WSL 不可以迁移，如果 C 盘不够，寄！</p>
-<h3 id="windows"><strong>Windows安装</strong></h3>
-<p>在Windows上的安装流程如下。</p>
+<h3 id="windows"><strong>Windows 安装</strong></h3>
+<p>在 Windows 上的安装流程如下。</p>
 <p><strong>安装 Python</strong></p>
-<p>安装<a href="https://www.python.org/downloads/windows/">Python 3.10.6</a>，安装时选中“Add Python to PATH”</p>
+<p>安装 <a href="https://www.python.org/downloads/windows/">Python 3.10.6</a>，安装时选中“Add Python to PATH”</p>
 <blockquote>
 <p>为什么整合包不需要安装 Python？他们的脚本中指定了同目录下的环境，阅读之后的文档就可以知道</p>
 </blockquote>
 <div class="admonition tip">
 <p class="admonition-title">如果你在安装依赖时遇到了网络问题，需要按照以下步骤切换至国内镜像</p>
-<p>打开 CMD 命令行（Win+R 运行 cmd），输入<code>Python</code> 回车，如果能进入 Python 就 ctrl+z (或通过输入 <code>exit()</code> )退出。
+<p>打开 CMD 命令行（Win+R 运行 cmd），输入<code>Python</code> 回车，如果能进入 Python 就 ctrl+z （或通过输入 <code>exit()</code> ) 退出。
 然后输入以下命令设置镜像。
 <div class="highlight"><pre><span></span><code>pip config <span class="nb">set</span> global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 </code></pre></div></p>
 </div>
 <p><strong>安装 Git</strong></p>
-<p>在 <a href="https://git-scm.com/download/win">GitScm</a> 下载 Git安装包并安装，然后在开始菜单中找到 <code>git bash</code></p>
+<p>在 <a href="https://git-scm.com/download/win">GitScm</a> 下载 Git 安装包并安装，然后在开始菜单中找到 <code>git bash</code></p>
 <p>或打开想要放置的目录，右键打开快捷菜单中寻找 <code>Git Base Here</code></p>
 <p>亦或在想要运行的目录下打开 CMD</p>
 <p><strong>拉取仓库</strong></p>
 <p>在命令框中运行 <code>git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git</code> 拉取仓库，这里如果如果失败请设置代理。</p>
-<p>使用Git下载的源代码，可以直接使用 <code>git pull</code> 更新代码。推荐经常更新，并关注社区讨论。</p>
+<p>使用 Git 下载的源代码，可以直接使用 <code>git pull</code> 更新代码。推荐经常更新，并关注社区讨论。</p>
 <p>如果是整合或者其他，请向上游（谁分发的）索取。</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -639,20 +639,20 @@
 <p><strong>尝试安装</strong></p>
 <p>将 4G 或 7G 或 其他模型 <code>model.ckpt</code> 放在 <code>models</code> 目录中，<code>WebUi</code> 目前支持在界面顶部选择模型。</p>
 <p>（可选）将<code>GFPGANv1.4.pth</code>放在基本目录中，旁边是 <code>webui.py</code></p>
-<p>先确认你的显卡是可用的(看上文)，然后以普通非管理员用户身份从 Windows资源管理器 运行 <code>webui-user.bat</code> 。脚本会自动下载依赖（<strong>一般需要 22 分钟，默认安装在C盘Python下，下载的资源为1.98GB，解压后大小2GB以上</strong>）并输出 启动网页界面 的地址。</p>
-<p>在此区间你可以打开资源管理器，关注网络速度。在没有完成下载之前，脚本不会继续输出任何提示。(等了两小时？可以试试挂代理)</p>
-<p>大约 30 分钟后安装完毕，程序会输出一个类似 <code>http://127.0.0.1:7860/</code> 的地址，点开即可(注意是http,且不指定端口的话可能会变动)。</p>
+<p>先确认你的显卡是可用的（看上文），然后以普通非管理员用户身份从 Windows 资源管理器 运行 <code>webui-user.bat</code> 。脚本会自动下载依赖（<strong>一般需要 22 分钟，默认安装在 C 盘 Python 下，下载的资源为 1.98GB，解压后大小 2GB 以上</strong>）并输出 启动网页界面 的地址。</p>
+<p>在此区间你可以打开资源管理器，关注网络速度。在没有完成下载之前，脚本不会继续输出任何提示。（等了两小时？可以试试挂代理）</p>
+<p>大约 30 分钟后安装完毕，程序会输出一个类似 <code>http://127.0.0.1:7860/</code> 的地址，点开即可（注意是 http, 且不指定端口的话可能会变动）。</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>运行需要模型！</p>
-<p>如果你是瞄准二次元来的，请想办法搞到某个模型咯，至于模型选哪个，请看下一章节。如果你是整合包，也可以移植整合包其中的<code>models</code>文件夹。（甚至你可以直接去下载拆分整合包....？但是直接使用整合包迟早要走自己安装的流程，因为不能更新）</p>
+<p>如果你是瞄准二次元来的，请想办法搞到某个模型咯，至于模型选哪个，请看下一章节。如果你是整合包，也可以移植整合包其中的<code>models</code>文件夹。（甚至你可以直接去下载拆分整合包。...？但是直接使用整合包迟早要走自己安装的流程，因为不能更新）</p>
 <p>如果对其他模型感兴趣，（没错就是艺术，大概是梵高那类的）这里提供一个模型网站 <a href="https://rentry.org/sdmodels#">Stable Diffusion Models</a>，可以通过下载 <code>2.Stable Diffusion v1.4 [4af45990] [7460a6fa] [06c50424]</code> 这一个模型来运行 <code>Stable Diffusion</code> 的原始模型</p>
 </div>
 <h3 id="windows_1">Windows 从整合包迁移</h3>
 <p>使用上面的命令拉取代码但先不运行，然后将 Bat 文件和里面指定的文件夹复制到全新环境，把 <code>models</code> 和 <code>outputs</code> 以及 <code>embeddings</code> 复制到新文件夹，自行处理冲突。</p>
 <div class="admonition tip">
 <p class="admonition-title">命令</p>
-<p>此处的命令指的是安装完Git之后的内容</p>
+<p>此处的命令指的是安装完 Git 之后的内容</p>
 <p>即为 <code>git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git</code></p>
 <p>或在无代理的情况下 <code>git clone https://hub.fastgit.org/AUTOMATIC1111/stable-diffusion-webui.git</code></p>
 </div>
@@ -673,7 +673,7 @@ sudo pacman -S wget git python3
 <p>完毕。</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>如果可以，尽量使用 <code>miniconda</code> （anaconda 特别巨大....），创建一个 Python 3.10.6 的虚拟环境。</p>
+<p>如果可以，尽量使用 <code>miniconda</code> （anaconda 特别巨大。...），创建一个 Python 3.10.6 的虚拟环境。</p>
 <div class="highlight"><pre><span></span><code>conda create -n aidraw <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10.6
 
 conda activate aidraw
@@ -694,7 +694,7 @@ conda activate aidraw
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月14日 18:04:32</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月22日 16:28:07</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 03:59:46</span>

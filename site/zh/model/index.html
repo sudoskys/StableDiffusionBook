@@ -543,10 +543,10 @@
 <p>为避免涉及版权纠纷，本仓库不提供 NAI 的模型链接。
 可以尝试关注中文社区 t.me@StableDiffusion_CN_WIKI 或 打开整合包自行查看 <code>model</code> 目录。</p>
 </div>
-<p>SDWebUi是一个框架，除了 NAI 模型外还有许多<a href="https://rentry.org/sdmodels">其他模型</a></p>
+<p>SDWebUi 是一个框架，除了 NAI 模型外还有许多 <a href="https://rentry.org/sdmodels">其他模型</a></p>
 <h2 id="pickle">Pickle 安全提示</h2>
 <p><code>.ckpt</code> 和 <code>.pt</code> 文件中都可能有恶意的 pickle，</p>
-<p>WebUi <em>内置了安全检查</em>，如果你使用 Automatic1111 的WebUi, 在这方面做了一些验证。对于不安全的文件，会提示 
+<p>WebUi <em>内置了安全检查</em>，如果你使用 Automatic1111 的 WebUi, 在这方面做了一些验证。对于不安全的文件，会提示 
 <div class="highlight"><pre><span></span><code>The file may be malicious, so the program is not going to read it. 
 You can skip this check with --disable-safe-unpickle commandline argument.
 </code></pre></div></p>
@@ -557,9 +557,9 @@ You can skip this check with --disable-safe-unpickle commandline argument.
 如果你运行脚本得到了类似 "global something.something is forbidden" 这意味着检查点试图做坏事，可能有危险。</p>
 <p>不一定保证百分百安全，甚至也会误报一些文件，所以建议从可靠信源下载模型。</p>
 <p>相关项目 <a href="https://github.com/lopho/pickle_inspector">pickle_inspector</a> 。</p>
-<p><a href="https://docs.python.org/3/library/pickle.html">Pickle的介绍</a>，Python object serialization</p>
-<div class="highlight"><pre><span></span><code>pickle模块不安全。只解pickle您信任的数据。
-可以构造恶意pickle数据，在解pickle期间执行任意代码。永远不要解pickle可能来自不可信来源或可能被篡改的数据。
+<p><a href="https://docs.python.org/3/library/pickle.html">Pickle 的介绍</a>，Python object serialization</p>
+<div class="highlight"><pre><span></span><code>pickle 模块不安全。只解 pickle 您信任的数据。
+可以构造恶意 pickle 数据，在解 pickle 期间执行任意代码。永远不要解 pickle 可能来自不可信来源或可能被篡改的数据。
 </code></pre></div>
 <h2 id="_2">模型选调</h2>
 <p>模型使用的数据集和标签对于效果影响非常重要，在使用之前要先了解数据来源。</p>
@@ -574,7 +574,7 @@ You can skip this check with --disable-safe-unpickle commandline argument.
 <p>对于某个著名模型，<code>masterpiece</code> 有可能是为了适应商业需求人工标记的 Tag.</p>
 <p>猜测 full 模型投入了所有的数据，未经清洗。而 sfw 模型则数据更加精确，应该受过清洗。</p>
 <p>这导致了 full 模型的不稳定。</p>
-<p>在 “事件2” 中，我们看到了很多其他的模型，比如 <code>wallpaper</code> 模型，它们应该使用了不同的数据集进行训练。</p>
+<p>在 “事件 2” 中，我们看到了很多其他的模型，比如 <code>wallpaper</code> 模型，它们应该使用了不同的数据集进行训练。</p>
 <p>经过讨论，我们认为 有些模型是根据 <code>rating</code> 进行分类的。</p>
 <p>但是事实上我们并不知道细节，所以以上只是猜测并且<strong>不可信</strong>的。</p>
 <div class="footnote">
@@ -590,7 +590,7 @@ You can skip this check with --disable-safe-unpickle commandline argument.
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月11日 08:32:10</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月22日 16:28:07</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 03:59:46</span>

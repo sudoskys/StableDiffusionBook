@@ -1016,7 +1016,7 @@ accelerate launch <span class="nv">$TRAINER</span> <span class="se">\</span>
 <p>一般训练画风会去除 <code>--with_prior_preservation</code> 参数，但是需要为每张待训练图片都准备提示，也就是启用 <code>--use_txt_as_label</code> 来读取与图片同名的 txt 文件作为 label（也就是再放一个同名的 txt)，该选项会忽略 instance_prompt 参数传入的内容。
 这点体现在 <a href="https://github.com/CrazyBoyM/dreambooth-for-diffusion/blob/main/train_style.sh">train_style.sh</a> 中。</p>
 <p>一般训练特定物体/人物是启用 <code>--with_prior_preservation</code> 的只需要使用单一标签 <code>--instance_prompt</code>，需要使用 Ai 的先验知识，同时 启用 <code>--class_prompt</code> <code>--class_data_dir</code> 参数 ，<strong>Class dir 是自动生成的</strong>，每次重新训练要清空一次。体现在 <a href="https://github.com/CrazyBoyM/dreambooth-for-diffusion/blob/main/train_object.sh">train_object.sh</a> 中。</p>
-<p>不要使用默认的by sks(sks这个艺术家), 融合模型的时候会发生灾难。</p>
+<p>不要使用默认的 by sks(sks 这个艺术家）, 融合模型的时候会发生灾难。</p>
 <p>下面是一些零零散散的解释。</p>
 <h4 id="instance-prompt-class-prompt">解释 Instance Prompt / Class Prompt</h4>
 <ul>
@@ -1583,12 +1583,13 @@ pip install <span class="nv">bitsandbytes</span><span class="o">==</span><span c
 <!--
 [飞桨 dreambooth 训练教程](https://docs.qq.com/doc/DUHVuZ3BNV0FkT1R6)
 -->
+<p>[6^]:<a href="https://zhuanlan.zhihu.com/p/584736850">StableDiffusion/DreamBooth 自训练全教程</a></p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月22日 16:22:17</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月22日 16:28:07</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 03:59:46</span>

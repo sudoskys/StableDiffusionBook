@@ -47,7 +47,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#hypernetwork13">
+<a class="md-skip" href="#hypernetwork-13">
           Skip to content
         </a>
 </div>
@@ -579,7 +579,7 @@
 <a class="md-content__button md-icon" href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/train/Hypernetwork.en.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="hypernetwork13">Hypernetwork[^13]</h1>
+<h1 id="hypernetwork-13">Hypernetwork [^13]</h1>
 <p>Hypernetworks is a novel concept for fine-tuning models without touching any weights.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -589,7 +589,7 @@
 <p>You can train <code>Hypernetworks</code> in the <code>train</code> tab, in the same way as <code>Textual Inversion</code>.</p>
 <p>Note that you should use a very low learning rate, e.g. 0.000005 or 0.0000005.</p>
 <p>If the learning rate is 5e-6, the number of steps is about 10000 to 20000. <a href="https://colab.research.google.com/drive/1qzweYEMIFkG6jPa04tD1MhWWOzgSnDvP?usp=sharing">Learning Rate Calculator</a>, from <a href="https://github.com/">here</a> AUTOMATIC1111/stable-diffusion-webui/discussions/2670)</p>
-<p>The resolution is set to the resolution to be trained, preferably using an aspect ratio of 1:1.</p>
+<p>The resolution is set to the resolution to be trained, preferably using an aspect ratio of 1: 1.</p>
 <p>If the dataset has long or horizontal bars, check <code>Split cversized images into two</code>.</p>
 <p>If you don't already have a caption, you can check <code>Using deepbooru for caption</code> to allow deepbooru to recognise the caption.</p>
 <h2 id="hyper-network-layer-structure">hyper network layer structure</h2>
@@ -614,12 +614,12 @@ The layer structure is still recommended for 1,2,1, but if you want to expand it
 <p>Swish is better than Relu and Linear, Swish is suitable for larger networks, while Elu may give better results for 1,2,1 hypernetworks. [^16]</p>
 <p><a href="https://rentry.org/hypernetwork4dumdums">Related English guides</a></p>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2670">Related English discussion</a></p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://user-images.githubusercontent.com/75739606/197823893-88a3bece-9100-41d1-8f07-bc6d9b3aa92c.jpg"><img alt="hypernet对比图" src="https://user-images.githubusercontent.com/75739606/197823893-88a3bece-9100-41d1-8f07-bc6d9b3aa92c.jpg"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://user-images.githubusercontent.com/75739606/197823893-88a3bece-9100-41d1-8f07-bc6d9b3aa92c.jpg"><img alt="hypernet 对比图" src="https://user-images.githubusercontent.com/75739606/197823893-88a3bece-9100-41d1-8f07-bc6d9b3aa92c.jpg"/></a></p>
 <!--
-![hypernet对比图](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/exp_hypernet.jpg)
+![hypernet 对比图](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/exp_hypernet.jpg)
 -->
 <blockquote>
-<p>hypernet对比图,the woman in picture is 24 years old</p>
+<p>hypernet 对比图，the woman in picture is 24 years old</p>
 </blockquote>
 <h2 id="additional-notes-16">Additional notes [^16]</h2>
 <p>With the LN selected activation function turned on and Dropout enabled, the hypernetwork is not as easily overfitted as before, but may require a larger learning rate for learning.</p>
@@ -629,7 +629,7 @@ The layer structure is still recommended for 1,2,1, but if you want to expand it
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 07:59:14</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 22, 2022 16:28:07</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 03:59:46</span>
