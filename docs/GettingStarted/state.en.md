@@ -1,5 +1,4 @@
 # Declaration
-
 1. If there is inappropriate content in the content of this document external links, it has nothing to do with this document.
 
 2. Please indicate the link when quoting or copying the content.

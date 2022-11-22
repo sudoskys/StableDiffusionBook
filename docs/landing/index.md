@@ -204,15 +204,17 @@ NAI模型使用 Danbooru2021 的数据, 而 Danbooru2022 还未训练(个人不�
 以后就是大公司的对弈了。
 
 
-
-
 ### Ps插件
 
 不确定是否安全的 [插件](https://internationaltd.github.io/defuser/)
 
-### 入门 SD Ai艺术
+### 扩展
 
 [SD GUIDE FOR ARTISTS AND NON-ARTISTS](https://docs.google.com/document/d/1R2UZi5G-DXiz2HcCrfAFLYJoer_JPDEoZmV7wy1tEz0/edit#)
+
+[cs231n](https://cs231n.github.io/)
+
+[cs228](https://ermongroup.github.io/cs228/)
 
 ## 关于文档
 

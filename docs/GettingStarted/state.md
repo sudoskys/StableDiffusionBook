@@ -1,5 +1,4 @@
 # 声明
-
 1. 如果本文档外链的内容中有不合适的内容，与本文档无关。
 
 2. 引用或复制内容需要注明链接。
@@ -22,7 +21,7 @@
 
 * 您必须提供取得材料“透明版本”的方法
 
-文档具体协议参考[FDL](https://www.gnu.org/licenses/fdl-1.3.html),以仓库副本为准。
+文档具体协议参考[FDL](https://www.gnu.org/licenses/fdl-1.3.html), 以仓库副本为准。
 
 ```
 Copyright (C)  2022  StableDiffusionBook.
