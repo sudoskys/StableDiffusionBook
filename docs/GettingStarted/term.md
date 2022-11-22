@@ -5,8 +5,8 @@
 | 缩写/术语          | 解释        |
 |---------------|----------------------------------------------|
 | oneshot           | 一张图                                    |
-|LAION| 一个图像数据集库, https://laion.ai   |
-|aug | augmentaion, 通过裁切, 翻转获取更多数据集的方式   |
+|LAION| 一个图像数据集库，https://laion.ai   |
+|aug | augmentaion, 通过裁切，翻转获取更多数据集的方式   |
 |ucg | unconditional guidance        |
 |ML  | 机器学习                      |
 |Latent Space|潜在空间                |
@@ -41,7 +41,7 @@ information creator 完全在图像信息空间（或潜伏空间）中工作。
 
 * Text Encoder
 
-提示词的解析由 Text Encoder/CLIP 处理(token embedding)，这里是提示词转译给 AI 的关键一步。
+提示词的解析由 Text Encoder/CLIP 处理 (token embedding)，这里是提示词转译给 AI 的关键一步。
 
 文本编码器负责将输入的提示转换为 U-Net 可以理解的嵌入空间。它通常是一个简单的基于变换器的编码器，将一连串的输入标记映射到一连串的 latent text-embeddings 中。
 
@@ -49,7 +49,7 @@ information creator 完全在图像信息空间（或潜伏空间）中工作。
 
 * information creator
 
-UNet + Scheduler(也就是采样算法)在潜在空间中逐步处理/分散信息。
+UNet + Scheduler（也就是采样算法）在潜在空间中逐步处理/分散信息。
 
 它输入文本嵌入和一个由噪声组成的起始多维数组（结构化的数字列表，也叫张量），输出一个经过处理的信息阵列。
 
@@ -57,11 +57,11 @@ UNet + Scheduler(也就是采样算法)在潜在空间中逐步处理/分散信�
 
 Text Decoder 根据从 information creator 那里获得的信息绘制一幅图画。 它只在过程结束时运行一次以生成最终图像。
 
-autoencoder(VAE)模型有两个部分，一个编码器和一个解码器。编码器用于将图像转换为 latent representation，作为 U-Net 模型的输入。解码器则将 latent representation 转回图像。
+autoencoder(VAE) 模型有两个部分，一个编码器和一个解码器。编码器用于将图像转换为 latent representation，作为 U-Net 模型的输入。解码器则将 latent representation 转回图像。
 
 在推理过程中，使用 VAE 解码器将反向扩散过程产生的去噪潜像转换回图像。在推理过程中，我们只需要 VAE 解码器。
 
-Autoencoder Decoder(VAE)使用处理过的信息阵列绘制最终图像的解码器。输入处理过的信息阵列(dimensions: (4, 64, 64))，输出结果图像(dimensions: (3, 512, 512)，即(red/green/blue, width, height)。
+Autoencoder Decoder(VAE) 使用处理过的信息阵列绘制最终图像的解码器。输入处理过的信息阵列 (dimensions: (4, 64, 64))，输出结果图像 (dimensions: (3, 512, 512)，即 (red/green/blue, width, height)。
 
 * CLIP 的工作
 

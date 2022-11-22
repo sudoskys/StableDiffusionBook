@@ -56,7 +56,9 @@ Windows 系统的显存至少需要 16GB, Linux 系统要求显存至少为 8GB
 
 ### 数据集
 
-数据集的创建是在 Dreambooth 训练 中获得良好、稳定结果的最重要部分。
+数据集的创建是在 Dreambooth 训练 中获得良好、稳定结果的最重要部分。[3^]
+
+class 和 instance 的质量决定生成的质量。
 
 * 内容要求
 
@@ -213,6 +215,8 @@ DreamBooth 本身具有十分强烈的 copy and paste 效果。使用 class/regu
 
 一般训练特定物体/人物是启用 `--with_prior_preservation` 的只需要使用单一标签 `--instance_prompt`，需要使用 Ai 的先验知识，同时 启用 `--class_prompt` `--class_data_dir` 参数 ，**Class dir 是自动生成的**，每次重新训练要清空一次。体现在 [train_object.sh](https://github.com/CrazyBoyM/dreambooth-for-diffusion/blob/main/train_object.sh) 中。
 
+不要使用默认的by sks(sks这个艺术家), 融合模型的时候会发生灾难。
+
 下面是一些零零散散的解释。
 
 #### 解释 Instance Prompt / Class Prompt
@@ -299,9 +303,7 @@ Native Training 需要较多的数据集，但这个量众说纷纭，大约在 
 
 #### Train Text Encoder
 
-对应实例中的 `--train_text_encoder`，不推荐使用。
-
-使用 `--train_text_encoder` 后，Dreambooth 训练会额外训练文本编码器。
+对应实例中的 `--train_text_encoder`，不推荐使用。使用 `--train_text_encoder` 后，Dreambooth 训练会额外训练文本编码器，会让不同模型之间的 prompt 无法通用。
 
 有玄学说法是在达到训练的某个百分比/epoch/step 之后应该关闭以防止过度玩坏。
 
@@ -489,7 +491,7 @@ diffusers 不能直接使用 ckpt 文件进行训练，需要先进行转换，�
 
 > 这是一个临时的解决方案，期待 Windows 官方适配的到来。
 
-## 其他。..
+## 其他 ...
 
 [fast-stable-diffusion colabs](https://github.com/TheLastBen/fast-stable-diffusion)
 
@@ -621,4 +623,4 @@ if args.with_prior_preservation:
 
 [5^]:[XavierXiao/Dreambooth-Stable-Diffusion](https://github.com/XavierXiao/Dreambooth-Stable-Diffusion)
 
-[6^]:[StableDiffusion/DreamBooth 自训练全教程](https://zhuanlan.zhihu.com/p/584736850)
+[6^]:[StableDiffusion/DreamBooth自训练全教程](https://zhuanlan.zhihu.com/p/584736850)

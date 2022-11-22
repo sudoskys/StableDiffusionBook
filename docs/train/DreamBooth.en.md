@@ -292,9 +292,8 @@ If you use `CLASS_DIR`, you don't need to clear it because the subject is the sa
 
 #### Train Text Encoder
 
-Corresponds to `-train_text_encoder` in the example, which is not recommended.
+The use of `-train_text_encoder` in the corresponding example is not recommended. With `--train_text_encoder`, Dreambooth training trains additional text encoders, making it impossible to generalize the prompt between different models.
 
-With `--train_text_encoder`, Dreambooth training will additionally train the text encoder.
 
 There is a metaphysical argument that this should be turned off after a certain percentage/epoch/step of training has been reached to prevent overplaying.
 
