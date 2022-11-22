@@ -10,9 +10,7 @@ It is recommended to frequently pull code from remote code repositories `git pul
 
 SDWebUi is a framework with many [models] like for example `some model` (https://rentry.org/sdmodels)
 
-
 ## Pickle?
-
 
 Both `.ckpt` and `.pt` files may have malicious pickles in them, 
 
@@ -71,6 +69,5 @@ This leads to the instability of the full model.
 In "Event 2" we saw many other models, such as the `wallpaper` model, which should have been trained using different datasets.
 
 After some discussion, we believe that some models are classified according to `rating`.
-
 
 But we don't actually know the details, so the above is just a guess and **not credible**.

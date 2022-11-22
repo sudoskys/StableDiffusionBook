@@ -1,31 +1,28 @@
 # 错误处理
 
-翻译整理自[^3]
+翻译整理自 [^3]
 
 文件路径，路径不允许含有空格，确保您的程序文件夹路径中没有空格。该程序经过测试可在 Python 3.10.6 上运行，低版本 Python 可能会发生错误。
 
 重新安装，请删除目录： `venv`, `repositories`。
 
-
 ## 网络问题/没响应
 
 - Git 报错
 
-HTTP_PROXY 和 HTTPS_PROXY 环境变量，或者使用 clash 的tun模式. 或者把 git clone 的仓库源换成 huggingface
+HTTP_PROXY 和 HTTPS_PROXY 环境变量，或者使用 clash 的 tun 模式。或者把 git clone 的仓库源换成 huggingface
 
 其他依赖报错也需要设置代理或者使用镜像，不然特慢。
-
 
 ## 时间花销过大
 
 1. 网络不好的话，设镜像或者挂代理。
 
-2. **依赖项 >2GB**,请做好准备。而且对于Windows,**依赖默认安装在C盘**
-
+2. **依赖项 >2GB**, 请做好准备。而且对于 Windows, **依赖默认安装在 C 盘**
 
 ## 低显存显卡/CUDA out of memory
 
-确保你拥有可以运行的最新CUDA 工具包和 GPU 驱动程序。
+确保你拥有可以运行的最新 CUDA 工具包和 GPU 驱动程序。
 
 程序在具有少量 VRAM (<=4GB) 的视频卡上运行时，可能会出现内存不足错误。
 
@@ -41,10 +38,9 @@ HTTP_PROXY 和 HTTPS_PROXY 环境变量，或者使用 clash 的tun模式. 或�
 
 如果你有更多的 `VRAM` 并且想要制作比你通常制作的更大的图像（例如 1024x1024 而不是 512x512），请使用`--medvram --opt-split-attention`.
 
-你也可以使用 `--lowvram` ，启动这个参数后，模型被分成模块，GPU内存中只保存一个模块； 当另一个模块需要运行时，前一个从 GPU 内存中删除，这种牺牲使处理运行速度大约慢 10 倍。
+你也可以使用 `--lowvram` ，启动这个参数后，模型被分成模块，GPU 内存中只保存一个模块； 当另一个模块需要运行时，前一个从 GPU 内存中删除，这种牺牲使处理运行速度大约慢 10 倍。
 
 如果还不行，建议你升级设备。
-
 
 ## 我 Python 呢？
 
@@ -60,7 +56,6 @@ HTTP_PROXY 和 HTTPS_PROXY 环境变量，或者使用 clash 的tun模式. 或�
 
 如果还是不行，请切换至 Python 的 `3.10.6`，WebUi 的开发环境为此版本。
 
-
 ## 虚拟环境
 
 如果你使用 conda 可以不使用一键脚本，可以自己运行 launch 安装依赖。
@@ -73,7 +68,7 @@ HTTP_PROXY 和 HTTPS_PROXY 环境变量，或者使用 clash 的tun模式. 或�
 
 ## api-ms-win-core-path-l1-1-0.dll is missing[^3]
 
-Windows 7上运行很可能会报错: `api-ms-win-core-path-l1-1-0.dll is missing`，这是因为许多程序需要新版本的 Windows 的系统文件。
+Windows 7 上运行很可能会报错：`api-ms-win-core-path-l1-1-0.dll is missing`，这是因为许多程序需要新版本的 Windows 的系统文件。
 
 如果没有出现该错误，不需要执行下面的操作。
 
@@ -83,31 +78,25 @@ Windows 7上运行很可能会报错: `api-ms-win-core-path-l1-1-0.dll is missin
 
 ## an illegal memory access was encountered ....CUDA kernel errors...
 
-[相关问题Issue](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/1766)
+[相关问题 Issue](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/1766)
 
 在多数情况下，这代表显存溢出，也有可能是 GPU 硬件问题。
 
-据说使用 deepdanbooru 的话会有这个提示，可以尝试重新启动 或 安装cpu版本的deepdanbooru.
-
+据说使用 deepdanbooru 的话会有这个提示，可以尝试重新启动 或 安装 cpu 版本的 deepdanbooru.
 
 ## Caused by ProxyError-Cannot connect to proxy-RemoteDisconnected-Remote end closed connection without response
 
-
-代理设置问题，检查全局变量有无协议头（需要有），如果是 Clash ,开启 TUN 模式即可。
+代理设置问题，检查全局变量有无协议头（需要有），如果是 Clash , 开启 TUN 模式即可。
 
 如果没开代理，尝试更新到最新版本。
 
-
 See [Issue](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/491)
-
 
 ## Failed to establish a new connection
 
 删除代理环境变量，在我的电脑，右键，属性，环境变量中。（小心操作）
 
 See [Here](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2684)
-
-
 
 **生成图片问题见下一章**
 

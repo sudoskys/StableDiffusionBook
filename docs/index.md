@@ -22,7 +22,7 @@ StableDiffusionBook 致力于信息公开和社区连结，秉持开放，共建
 
 ## 项目
 
-本文档主要涉及以下两个项目。(以后可能会更多？)
+本文档主要涉及以下两个项目。（以后可能会更多？)
 
 [Stable Diffusion WebUi](https://github.com/AUTOMATIC1111/stable-diffusion-webui) 简称 SDWebUi，web UI 是一个基于 Gradio 库的 Stable Diffusion 浏览器界面。该项目目前还没有 [许可证](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/24) [相关 Issue](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2059)。
 
@@ -69,8 +69,8 @@ Stable diffusion 本来是面向三次元的，而 NAI 是二次元特化版本�
 * 主地址
 [https://draw.dianas.cyou/](https://draw.dianas.cyou/)
 
-* Vercel (中国大陆不可用)
-[https://stable-diffusion-book.vercel.app/](https://stable-diffusion-book.vercel.app/) 短链为(https://b23.ink/aibook)
+* Vercel （中国大陆不可用）
+[https://stable-diffusion-book.vercel.app/](https://stable-diffusion-book.vercel.app/) 短链为 (https://b23.ink/aibook)
 
 如果不能访问图片或外链资源，请尝试切换网络环境。如果源站地址返回状态码 404/300/302/502 ，可以提交 issue 通知我们移除此内容。
 

@@ -5,22 +5,15 @@ File paths, which do not allow spaces, make sure your program's folder path does
 
 To reinstall, remove the directories: `venv`, `repositories`.
 
-
-
 ## Install TOO SLOW！
 
 **Dependencies >2GB**, please wait. Tips for Windows users: **Dependencies are installed on C drive by default**
-
-
-
 
 ## Low memory graphics cards/CUDA out of memory
 
 Make sure you have the latest CUDA toolkit and GPU drivers that are ready to run.
 
 Programs running on video cards with a small amount of VRAM (<=4GB) may experience out of memory errors.
-
-
 
 **牺牲速度来支持低显存显卡**
 
@@ -38,14 +31,11 @@ When running on video cards with a low amount of VRAM (<=4GB), out of memory err
 
 - Otherwise, do not use any of those.
 
-
-
 ## Where my Python?
 
 If the desired version of Python is not in PATH, modify the line set PYTHON=python in webui-user.bat with the full path to the python executable.
 
 ## ERROR:asyncio:Accept failed on a socket
-
 
 First check for port conflicts, and any software conflicts
 
@@ -54,9 +44,6 @@ This error may be due to compatibility of `asyncio` library of `Python38` with `
 Try running `netsh winsock reset` as a CMD administrator, and if that doesn't work, switch ports.
 
 If that still doesn't work, switch to Python `3.10.6`, which is the version of WebUi's development environment.
-
-
-
 
 ## Venv
 
@@ -67,7 +54,6 @@ This is because the one-click installer script given by the repository creates t
 At runtime, the one-click installer creates a python virtual environment, so if you install a module before installing it, then any installed modules will not cause conflicts.
 
 If you need to prevent the creation of a virtual environment and use system python, edit `webui.bat` and replace `setVENV_DIR=venv` with `set VENV_DIR=`
-
 
 ## api-ms-win-core-path-l1-1-0.dll is missing[^3]
 
@@ -95,7 +81,6 @@ Or check your network and Windows environment variables.
 
 Or update
 
-
 See [Issue](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/491)
 
 ## Failed to establish a new connection
@@ -105,9 +90,5 @@ deleting the proxy environment variables
 ```
 
 See [Here](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2684)
-
-
-
-
 
 **See the next chapter for image generation problems**.

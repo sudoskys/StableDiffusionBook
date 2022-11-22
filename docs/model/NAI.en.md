@@ -4,7 +4,6 @@ Incident report about NAI Leak.
 
 The models folder structure for using the NAI Leak model should be as follows.
 
-
 ```
 ./models
 ├── Codeformer
@@ -28,7 +27,7 @@ The models folder structure for using the NAI Leak model should be as follows.
 │   ├── final-pruned.ckpt -> novelai s model.ckpt (pruned)
 │   ├── final-pruned.vae.pt -> novelai s animevae.pt
 │   ├── final-pruned.yaml -> model.ckpt is the same folder as config.yaml
-│   └── 其他模型文件.ckpt
+│   └── 其他模型文件。ckpt
 └── SwinIR
 ```
 
@@ -60,17 +59,15 @@ Note that the name of `final-pruned .yaml` should correspond to `final-pruned .c
 
 `hypernetworks` contains files in `stableckpt/modules/modules`, which are style model that can be called as character-specific `embedding models`, and used with models to generate specific styles.
 
-embedding s file format is `*.pt`. This embedding model needs to be enabled in the settings tab of WebUi(**Only** for hypernetworks folder. BUT for Textual Inversion,Webui automatically loads the models in the embeddings folder, which is one of the differences between them)
+embedding s file format is `*.pt`. This embedding model needs to be enabled in the settings tab of WebUi(**Only** for hypernetworks folder. BUT for Textual Inversion, Webui automatically loads the models in the embeddings folder, which is one of the differences between them)
 
 Most people cannot run `workspace`.
-
 
 ## Part 2
 
 `prodmodels` are GPT models (for language processing), but the program actually uses CLIP.
 
 `random_stableckpt` is a number of models, some of which are copies of the Part 1 folder files
-
 
 ![Part1](https://user-images.githubusercontent.com/75739606/197821809-7eed7776-9508-4c71-9b07-5f02e13290b2.jpg)
 <!--
@@ -79,16 +76,11 @@ Most people cannot run `workspace`.
 
 About the style model, start the cli with a prompt to load it OK, at the same time you can go to the settings to choose the model you like `hypernetwork`
 
-
-
 ## Full and baseline models
 
 `animesfw-latest` = NAI baseline model
 
 `animefull-final-pruned` = `full-latest` = NAI full model (with adult content)
-
-
-
 
 ## Use latest (7G) or pruned (4G) model
 
@@ -100,9 +92,6 @@ And since NAI also uses EMA weights online, it does not make sense to choose the
 
 [Conclusion from the discussion in this post](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017#discussioncomment-3882551)
 
-
-
-
 **About EMA**
 
 EMA moving average does not help in generating images.
@@ -111,13 +100,10 @@ But it does prevent overfitting in subsequent training.
 
 Not sure if it works in dreambooth training.
 
-
-
 ## Style [^5]
 
-
 ![furry](https://user-images.githubusercontent.com/474879/194965036-4c9f70ca-a32f-4f68-a9a1-17a827e8e61e.jpg)
->furry
+> furry
 
 ![test-result](https://user-images.githubusercontent.com/115398132/194805364-95e523aa-4bec-4a88-9fe1-b3d39d2f2992.jpg)
 
@@ -127,7 +113,7 @@ Negative prompt: nsfw, lowres, bad anatomy, bad hands, text, error, missing fing
 Steps: 28, Sampler: Euler, CFG scale: 12, Seed: [SEE COLUMN], Size: 512x512, Model hash: 925997e9, Hypernet: [SEE ROW]
 ```
 
->"aini" has a very strong style you might not care for that you have to really prompt to get out of (I like it shrug ) and going into this I would have said it has the highest consistency & quality, but from these seeds and settings, I was surprised by "pony"
+> "aini" has a very strong style you might not care for that you have to really prompt to get out of (I like it shrug ) and going into this I would have said it has the highest consistency & quality, but from these seeds and settings, I was surprised by "pony"
 I think "anime_3" is the highest quality of that set but they're all somewhat inconsistent. I generally wouldn't recommend them.
 
 It can be seen that `furry`'s hypernetwork is more aggressive in adding animal features, so the more conservative changes here may be related to the sampler, steps and CFG. [^5]

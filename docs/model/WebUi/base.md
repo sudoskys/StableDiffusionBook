@@ -4,34 +4,30 @@
 
 ### 横条参数说明
 
-`step` 迭代多少次, 取值和 `sampling method` 有关, `DDIM` 采样方法收敛较快, 具体差别见调参魔法 `Sampler vs. Steps Comparison (low to mid step counts)` 。
+`step` 迭代多少次，取值和 `sampling method` 有关，`DDIM` 采样方法收敛较快，具体差别见调参魔法 `Sampler vs. Steps Comparison (low to mid step counts)` 。
 
-`batch count/batch size` 决定生成的图片数量, 显存够就加 batch size, 不够就 batch count, 得到的图片数量是两者之积 (小显存还是只动 count 就好)
+`batch count/batch size` 决定生成的图片数量，显存够就加 batch size, 不够就 batch count, 得到的图片数量是两者之积 （小显存还是只动 count 就好）
 
-`sample method`  采样方法。DDIM, Eula 也挺好用。 (带 a 的是 ancestral 的意思, step 增长出图不稳定)
+`sample method`  采样方法。DDIM, Eula 也挺好用。 （带 a 的是 ancestral 的意思，step 增长出图不稳定）
 
-`cfg scale` 符合 prompt 的程度, 值越高越会字面看待 prompt, 低则给模型较大的发挥空间, 但是实际模型表现上来看 CFG scale 低 (6-8) 饱和度低, 偏线稿, 偏杂乱, 高 (18-22) 则饱和度偏高, 偏 CG 风格.
+`cfg scale` 符合 prompt 的程度，值越高越会字面看待 prompt, 低则给模型较大的发挥空间，但是实际模型表现上来看 CFG scale 低 (6-8) 饱和度低，偏线稿，偏杂乱，高 (18-22) 则饱和度偏高，偏 CG 风格。
 
 >过高的 CFG 会引起颜色失真，CFG 应该在 5-15 之间
 
-`denoise strength` img2img 专属参数, 从 0 到 1 取值, 值越高 AI 对原图的参考程度就越低 (同时增加迭代次数), 个人喜欢低 CFG 高 denoise 重绘图, 高 CFG 低 denoise 改细节.
+`denoise strength` img2img 专属参数，从 0 到 1 取值，值越高 AI 对原图的参考程度就越低 （同时增加迭代次数）, 个人喜欢低 CFG 高 denoise 重绘图，高 CFG 低 denoise 改细节。
 
 [一个小指南：RedditAbout](https://www.reddit.com/r/StableDiffusion/comments/xbeyw3/can_anyone_offer_a_little_guidance_on_the/)
 
-
-### ckpt 文件安全问题[^4]
+### ckpt 文件安全问题 [^4]
 
 ckpt 文件被加载时基本上可以执行任何内容，盲目加载有安全风险。请检查来源是否可靠再加载。
 如果杀毒软件拦截，有可能创建者向文件中注入了恶意的 Python 代码。
 
 可以通过此脚本检查风险：<https://rentry.org/safeunpickle2>
 
-
-
-
 ## 进阶
 
-### 启动流程[^6]
+### 启动流程 [^6]
 
 ![Roaming_info.png](https://user-images.githubusercontent.com/75739606/198679721-2a7b38b8-41f3-405c-9ea3-40f1b5e8cc7e.png)
 <!--
@@ -39,39 +35,33 @@ ckpt 文件被加载时基本上可以执行任何内容，盲目加载有安全
 -->
 >来自 allophane.com/index.php/2022/10/17/roaming_info_for_latent_diffusion/
 
-
 ### 使用 WebUI 复现 NAI 官网
 
 [相关讨论，应该读一读！](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017)
 
-提示:由于 torch 及其相关框架的性质，尝试完全复原在不同机器上生成的图片是不明智的。所以不要纠结一些细节不能复现。
-
+提示：由于 torch 及其相关框架的性质，尝试完全复原在不同机器上生成的图片是不明智的。所以不要纠结一些细节不能复现。
 
 #### 需要做的事情
 
-* 加载 VAE 和模型附带的 `config.yaml` (可选，有人说此操作空耗显存)
+* 加载 VAE 和模型附带的 `config.yaml` （可选，有人说此操作空耗显存）
 
 * `Stop At last layers of CLIP model` 设为 `2`
 
 * `Eta noise seed delta` 设置为 `31337`
 
-
 #### **不需要**做的事情
 
 * hypernetwork。官网默认并不使用 hypernetwork
 
-
-设置 `Stop At last layers of CLIP model` 是为了匹配 NAI 的一个[优化](https://blog.novelai.net/novelai-improvements-on-stable-diffusion-e10d38db82ac)。
-
+设置 `Stop At last layers of CLIP model` 是为了匹配 NAI 的一个 [优化](https://blog.novelai.net/novelai-improvements-on-stable-diffusion-e10d38db82ac)。
 
 ### 半精度还是单精度？
 
 如果能，尽量使用半精度，可以节省运算时间/RAM/VRAM，同时图片质量并不会和单精度差多少。~真要说差别可能和你电脑被宇宙射线打了差不多~。
 
-
 ### X/Y 图
 
-创建具有不同参数的图像网格。使用X类型和Y类型字段选择应由行和列共享的参数，并将这些参数以逗号分隔输入X值/Y值字段。支持整数、浮点数和范围。
+创建具有不同参数的图像网格。使用 X 类型和 Y 类型字段选择应由行和列共享的参数，并将这些参数以逗号分隔输入 X 值/Y 值字段。支持整数、浮点数和范围。
 
 `Simple ranges` 简单范围
 
@@ -101,17 +91,17 @@ ckpt 文件被加载时基本上可以执行任何内容，盲目加载有安全
 
 #### Prompt S/R 替换
 
-提示S/R是X/Y图的的一种较难理解的操作模式。
+提示 S/R 是 X/Y 图的的一种较难理解的操作模式。
 
-S/R是搜索/替换的意思，输入一个单词或短语的列表，它从列表中取第一个并将其视为关键词，并将该关键词的所有实例替换为列表中的其他条目的所有实例替换为列表中的其他条目。
+S/R 是搜索/替换的意思，输入一个单词或短语的列表，它从列表中取第一个并将其视为关键词，并将该关键词的所有实例替换为列表中的其他条目的所有实例替换为列表中的其他条目。
 
-例如，提示 `a man holding an apple, 8k clean` 和 S/R提示 `an apple, a watermelon, a gun` 结合，你会得到三个提示。
+例如，提示 `a man holding an apple, 8k clean` 和 S/R 提示 `an apple, a watermelon, a gun` 结合，你会得到三个提示。
 
 * `a man holding an apple, 8k clean`
 * `a man holding a watermelon, 8k clean`
 * `a man holding a gun, 8k clean`
 
-列表使用的语法与CSV文件中的一行相同，所以如果你想在你的条目中加入逗号，你可以
+列表使用的语法与 CSV 文件中的一行相同，所以如果你想在你的条目中加入逗号，你可以
 在你的条目中加入逗号，你必须将文本放在引号中，并确保引号之间没有空格。
 确保引号和分隔逗号之间没有空格。
 
@@ -119,8 +109,7 @@ S/R是搜索/替换的意思，输入一个单词或短语的列表，它从列�
 * `darkness, "light, green", heat` - WRONG - 4 items - `darkness`, `"light`, `green"`, `heat`
 * `darkness,"light, green",heat` - RIGHT - 3 items - `darkness`, `light, green`, `heat`
 
-
-### **Variations种子变化**
+### **Variations 种子变化**
 
 `Variation strength slider` 和 `Variation seed field` 允许您指定现有图片应更改多少以使其看起来不同。
 在最大强度下，您将获得带有变异种子的图片，至少 - 带有原始种子的图片（使用先前采样器时除外）。
@@ -133,7 +122,6 @@ S/R是搜索/替换的意思，输入一个单词或短语的列表，它从列�
 
 要删除样式，请从 `styles.csv` 中手动将其删除并重新启动程序。
 
-
 ### xformers
 
 xformers 分辨率越高加速效果越好。使用 xformers 会引入一些随机性，稍微影响生成的图像。
@@ -144,18 +132,17 @@ xformers 分辨率越高加速效果越好。使用 xformers 会引入一些随�
     有人说在 700 和 900 系列卡上使用 xformers 的性能明显较差，请注意这一点。
     本人实测，2050 在启用 xformers 之后，速度慢了 50%
 
-
 #### 在 Windows 上编译 Xformers
 
 !!! info
 
     你可以在右边的链接下载预构建的 Xformers！https://rentry.org/25i6yn ，记得先查看 [GPU 架构](https://developer.nvidia.com/cuda-gpus)
 
-确保 Python 版本为 3.10 或更高版本(使用 `Python --version`)，然后安装
+确保 Python 版本为 3.10 或更高版本（使用 `Python --version`)，然后安装
 
 安装 [VS Build Tools 2022](https://visualstudio.microsoft.com/zh-hans/downloads/?q=build+tools)，运行安装时只需要选择 `Desktop development with C++`
 
-安装 [CUDA 11.3](https://developer.nvidia.com/cuda-11.3.0-download-archive)，（后期版本未测试），选择`custom`，VS集成可能不需要
+安装 [CUDA 11.3](https://developer.nvidia.com/cuda-11.3.0-download-archive)，（后期版本未测试），选择`custom`，VS 集成可能不需要
 
 * 确认 nvcc 可用
 
@@ -213,7 +200,7 @@ pip install ninja
 
 * 构建 xFormers，请注意构建需要很长时间（可能要 10-20 分钟），它最开始时可能会出现一些错误，但应该仍能正确编译。
 
-* 安装在环境中(Conda)
+* 安装在环境中 (Conda)
 
 ```bash
 python setup.py build
@@ -235,14 +222,13 @@ source ./venv/Scripts/activate
 pip install xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl
 ```
 
-30 系显卡正常启动加 `--xformers` 参数, 其他显卡加 `--force-enable-xformers` 参数
+30 系显卡正常启动加 `--xformers` 参数，其他显卡加 `--force-enable-xformers` 参数
 
 >COMMANDLINE_ARGS=
 
-
 #### Windows 编译错误自查
 
->错误:`Filename too long` 和 `fatal error C1083: Cannot open compiler generated file: '': Invalid argument`
+>错误：`Filename too long` 和 `fatal error C1083: Cannot open compiler generated file: '': Invalid argument`
 
 说明你的路径太长了。
 
@@ -252,18 +238,15 @@ pip install xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl
 
 如果你移动了 Xformers，那么应该删除里面的 venv 目录
 
-[Windows](https://github.com/C43H66N12O12S2/stable-diffusion-webui/releases) (30 系之外要自己编译)
+[Windows](https://github.com/C43H66N12O12S2/stable-diffusion-webui/releases) (30 系之外要自己编译）
 
-自己编译指路 [wiki/Xformers](https://rentry.org/sdg_faq#xformers-increase-your-its-more-cards-supported)， 还有[这篇文章](https://www.reddit.com/r/StableDiffusion/comments/xz26lq/automatic1111_xformers_cross_attention_with_on/)
+自己编译指路 [wiki/Xformers](https://rentry.org/sdg_faq#xformers-increase-your-its-more-cards-supported)， 还有 [这篇文章](https://www.reddit.com/r/StableDiffusion/comments/xz26lq/automatic1111_xformers_cross_attention_with_on/)
 
-
-### 使用CPU进行绘画
+### 使用 CPU 进行绘画
 
 根据此 [pr](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2597)
 
 可以通过 `--use-cpu all` 尽可能的使用 CPU 进行生成，虽然慢 100 倍。
-
-
 
 ### CLIP Interrogate
 
@@ -275,8 +258,7 @@ CLIP 可以从图像中提取令牌。
 * interrogate 在与 WebUI 相同的位置创建目录
 * 将文本文件放入其中，每行都有相关描述
 
-
-你可以在[这里](https://github.com/pharmapsychotic/clip-interrogator/tree/main/data)查看使用哪个文本文件的例子。实际上，你可以直接用这个例子中的文件 —— 除了 `artists.txt` ，你已经有一份艺术家列表在 `artists.csv` 中了不是吗。
+你可以在 [这里](https://github.com/pharmapsychotic/clip-interrogator/tree/main/data) 查看使用哪个文本文件的例子。实际上，你可以直接用这个例子中的文件 —— 除了 `artists.txt` ，你已经有一份艺术家列表在 `artists.csv` 中了不是吗。
 
 每个文件都会使最后的描述增加一行字。如果你将 `.top3.` 放到文件名中，比如 `flavors.top3.txt` ，文件中相关度最高的三行将会被添加到提示词中（其他数量也行）。
 
@@ -288,13 +270,13 @@ Each file adds one line of text to the final description.
 If you add ".top3." to filename, for example, flavors.top3.txt, the three most relevant lines from this file will be added to the prompt (other numbers also work).
 -->
 
-### **Face restoration三次元人脸修复**
+### **Face restoration 三次元人脸修复**
 
 适用于三次元。
 
 [https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#face-restoration](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#face-restoration)
 
-### 自定义.css
+### 自定义。css
 
 创建一个名为 `user.css` 的文件并放在 `webui.py` 旁，将自定义 CSS 代码放入 `user.css` 中。
 
@@ -322,9 +304,9 @@ If you add ".top3." to filename, for example, flavors.top3.txt, the three most r
 
 如果要创建你自己的自定义脚本，请创建一个实现类的 Python 脚本，并将其放到 scripts 文件夹中，使用以下示例或文件夹中已有的其他脚本作为指导。
 
-Script 类有四个主要方法，这里通过一个简单的[示例脚本](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Developing-custom-scripts)进行更详细的描述，这个脚本可以旋转和/或翻转生成的图像。
+Script 类有四个主要方法，这里通过一个简单的 [示例脚本](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Developing-custom-scripts) 进行更详细的描述，这个脚本可以旋转和/或翻转生成的图像。
 
-### 修剪模型[^7]
+### 修剪模型 [^7]
 
 将要修剪的 `.ckpt` 文件放在 `/stable-diffusion-webui` 文件夹，把 [脚本](https://raw.githubusercontent.com/harubaru/waifu-diffusion/main/scripts/prune.py) 另存本地，删除第 6 行和 第 8 行。然后在 prune.py 中的最后一行编辑 ckpt 的名称。
 
@@ -355,16 +337,13 @@ Script 类有四个主要方法，这里通过一个简单的[示例脚本](http
 
 生成的图片自带令牌信息，拖放到查看页面即可查看 。
 
-
-
-
-### NAI 4chan简化版本
+### NAI 4chan 简化版本
 
 4chan 版本魔改官后程序，会动态分配，显存不够内存来凑。
 
 [^2]:[关于 AUTOMATIC1111 /stable-diffusion-webui 的 FAQ:](https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99)
 
-[^3]:[16xx系显卡可以使用半精度生成图片的方式](https://t.me/StableDiffusion_CN/50749)
+[^3]:[16xx 系显卡可以使用半精度生成图片的方式](https://t.me/StableDiffusion_CN/50749)
 
 [^4]:[It's not a virus it's a checkpoint file](https://huggingface.co/Deltaadams/Hentai-Diffusion/discussions/12)
 

@@ -14,7 +14,6 @@ However, neither the Imagen model nor the pre-trained weights are available. So 
 
 This section uses a version of the [diffusers](https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth) branch of Shivam Shirao, with a configuration derived from [ShivamShrirao/diffusers](https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth).
 
-
 ![DreamBooth_files](https://dreambooth.github.io/DreamBooth_files/system.png)
 >by https://dreambooth.github.io/
 
@@ -297,7 +296,6 @@ If you use `CLASS_DIR`, you don't need to clear it because the subject is the sa
 #### Train Text Encoder
 
 The use of `-train_text_encoder` in the corresponding example is not recommended. With `--train_text_encoder`, Dreambooth training trains additional text encoders, making it impossible to generalize the prompt between different models.
-
 
 There is a metaphysical argument that this should be turned off after a certain percentage/epoch/step of training has been reached to prevent overplaying.
 

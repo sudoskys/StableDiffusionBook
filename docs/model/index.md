@@ -9,17 +9,15 @@
     为避免涉及版权纠纷，本仓库不提供 NAI 的模型链接。
     可以尝试关注中文社区 t.me@StableDiffusion_CN_WIKI 或 打开整合包自行查看 `model` 目录。
 
-SDWebUi是一个框架，除了 NAI 模型外还有许多[其他模型](https://rentry.org/sdmodels)
-
+SDWebUi 是一个框架，除了 NAI 模型外还有许多 [其他模型](https://rentry.org/sdmodels)
 
 [^2]:[关于 AUTOMATIC1111 /stable-diffusion-webui 的 FAQ:](https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99)
-
 
 ## Pickle 安全提示
 
 `.ckpt` 和 `.pt` 文件中都可能有恶意的 pickle，
 
-WebUi *内置了安全检查*，如果你使用 Automatic1111 的WebUi, 在这方面做了一些验证。对于不安全的文件，会提示 
+WebUi *内置了安全检查*，如果你使用 Automatic1111 的 WebUi, 在这方面做了一些验证。对于不安全的文件，会提示 
 ```
 The file may be malicious, so the program is not going to read it. 
 You can skip this check with --disable-safe-unpickle commandline argument.
@@ -37,11 +35,11 @@ You can skip this check with --disable-safe-unpickle commandline argument.
 
 相关项目 [pickle_inspector](https://github.com/lopho/pickle_inspector) 。
 
-[Pickle的介绍](https://docs.python.org/3/library/pickle.html)，Python object serialization
+[Pickle 的介绍](https://docs.python.org/3/library/pickle.html)，Python object serialization
 
 ```
-pickle模块不安全。只解pickle您信任的数据。
-可以构造恶意pickle数据，在解pickle期间执行任意代码。永远不要解pickle可能来自不可信来源或可能被篡改的数据。
+pickle 模块不安全。只解 pickle 您信任的数据。
+可以构造恶意 pickle 数据，在解 pickle 期间执行任意代码。永远不要解 pickle 可能来自不可信来源或可能被篡改的数据。
 ```
 
 ## 模型选调
@@ -53,7 +51,6 @@ TODO:
 https://huggingface.co/lambdalabs/sd-pokemon-diffusers
 
 https://huggingface.co/Onodofthenorth/SD_PixelArt_SpriteSheet_Generator
-
 
 ### 某个模型
 
@@ -67,9 +64,8 @@ https://huggingface.co/Onodofthenorth/SD_PixelArt_SpriteSheet_Generator
 
 这导致了 full 模型的不稳定。
 
-在 “事件2” 中，我们看到了很多其他的模型，比如 `wallpaper` 模型，它们应该使用了不同的数据集进行训练。
+在 “事件 2” 中，我们看到了很多其他的模型，比如 `wallpaper` 模型，它们应该使用了不同的数据集进行训练。
 
 经过讨论，我们认为 有些模型是根据 `rating` 进行分类的。
-
 
 但是事实上我们并不知道细节，所以以上只是猜测并且**不可信**的。

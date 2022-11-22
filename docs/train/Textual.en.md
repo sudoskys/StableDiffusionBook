@@ -13,7 +13,6 @@ VAE does not have a catastrophic effect on training.
 
 ![Textual_Inversion](https://user-images.githubusercontent.com/75739606/203366251-ae0ae585-8492-4970-ac9a-5ccf14a1897c.jpg)
 
-
 ## Apt/DreamArtist Training
 
 TI is for Ai to understand "likes", and Apt is for Ai to understand "likes" and "dislikes".
@@ -37,7 +36,6 @@ At least 6GB of video memory, 12GB of video memory is required for comfortable u
 If you have enough VRAM, then using `-no-half --precision full` may prevent problems with overflow.
 
 You can interrupt and resume training, but the optimizer state will not be saved, so this is not recommended.
-
 
 ## Setup instructions
 
@@ -71,7 +69,6 @@ The contents below `wide_sleeves` will be discarded.
 
 Press `Apply setting` to save the settings.
 
-
 ## Create training
 
 Open the `train` tab and create a new `embedding` model in the `Create embedding` tab.
@@ -88,8 +85,6 @@ The larger the width, the stronger the effect, but it requires tens of thousands
 
 New will create a pt file under `embedding`.
 
-
-
 ## Preprocessing
 
 Open the `Preprocess images` tab.
@@ -99,7 +94,6 @@ Fill in the `Source directory` with your training images folder and only allow t
 Fill in the `Destination directory` with the path where the images will be saved after preprocessing.
 
 Select the image size for training, typically `512x512` for 8Gb graphics cards, larger is not necessarily better.
-
 
 **Next there are four checkboxes**
 
@@ -116,7 +110,6 @@ Check `Split oversized images into two` to split oversized images into two, not 
 Finally we check `Use deepbooru caption as filename` and `Create flipped copies`.
 
 Click the button and wait for the processing to finish.
-
 
 ## Training
 
@@ -189,9 +182,7 @@ Once everything is in place, click `Training` in the bottom right corner and wai
 
 The training is complete. If you have uninstalled VAE, rename the VAE weights back and restart the program.
 
-
 ## Other explanations
-
 
 **[filewords]**
 
@@ -220,7 +211,6 @@ This option on the Settings tab allows you to save some memory at the cost of sl
 
 The result of the training is a .pt or a .bin file (the former is the format used by the original author, the latter is used as the diffusers library)
 
-
 ### subject_filewords.txt template
 
 [1^]
@@ -239,8 +229,6 @@ If you have, say, a subject wearing a `black t-shirt` in all photos, you can eff
 
 Unless you are trying to fix a photo, use `filewords` for style, not for subject.
 
-
 <iframe src="//player.bilibili.com/player.html?aid=559085039&bvid=BV1ae4y1S7v9&cid=859894044&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
-
 
 [1^]:[is_textual_inversion_salvageable](https://www.reddit.com/r/sdforall/comments/ykerg2/is_textual_inversion_salvageable/)

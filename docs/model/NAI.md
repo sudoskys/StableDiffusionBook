@@ -29,7 +29,7 @@
 │   ├── final-pruned.ckpt -> novelai 的 model.ckpt (pruned)
 │   ├── final-pruned.vae.pt -> novelai 的 animevae.pt
 │   ├── final-pruned.yaml -> model.ckpt 同文件夹的 config.yaml
-│   └── 其他模型文件.ckpt
+│   └── 其他模型文件。ckpt
 └── SwinIR
 ```
 
@@ -43,20 +43,19 @@
 |`final-pruned.vae.pt`|`stableckpt/animevae.pt`|用于稳定风格|
 |`final-pruned.yaml`|`stableckpt/animefull-final-pruned/config.yaml`|与记载额外的参数，内存消耗大，效果不明显|
 |`stableckpt/vector_adjust/v2.pt`|风格化|感觉不如 `hypernet`|
-|个人不需要下载的|`workspace`|前后端全套，40GB仅能启动|
+|个人不需要下载的|`workspace`|前后端全套，40GB 仅能启动|
 
 注意，`final-pruned .yaml` 的名称应该对应 `final-pruned .ckpt`
 
-`hypernetworks` 包含了 `stableckpt/modules/modules` 里的文件，是风格相关的数据集，可以作为特定人物的 `embedding model` 调用，和 model 使用可以生成特定风格。主要格式为 `*.pt`。需要在WebUi的设置标签页启用这个增强模型。
+`hypernetworks` 包含了 `stableckpt/modules/modules` 里的文件，是风格相关的数据集，可以作为特定人物的 `embedding model` 调用，和 model 使用可以生成特定风格。主要格式为 `*.pt`。需要在 WebUi 的设置标签页启用这个增强模型。
 
 `workspace` 不是个人可以负载的，NAI 采用的是 GPU 集群云。
 
 ### Part 2
 
-`prodmodels` 是 GPT 模型(语言处理)，但是实际用了 CLIP，所以不用我们管。
+`prodmodels` 是 GPT 模型（语言处理），但是实际用了 CLIP，所以不用我们管。
 
 `random_stableckpt` 是一些模型，有的与 Part1 重复
-
 
 ![Part1](https://user-images.githubusercontent.com/75739606/197821809-7eed7776-9508-4c71-9b07-5f02e13290b2.jpg)
 <!--
@@ -80,7 +79,7 @@
 
 `animesfw-latest` = NAI 基线模型
 
-`animefull-final-pruned` = `full-latest` = NAI 全量模型(包含成人内容)
+`animefull-final-pruned` = `full-latest` = NAI 全量模型（包含成人内容）
 
 ### 使用 latest (7G) 还是 pruned (4G) 模型
 
@@ -107,10 +106,10 @@ EMA 移动平均值对生成图像没有任何帮助。
 -->
 拆包视频可以看 [BV1Gm4y1A7VM](https://www.bilibili.com/video/av688965561/?zw)
 
-### 风格化[^5]
+### 风格化 [^5]
 
 ![furry](https://user-images.githubusercontent.com/474879/194965036-4c9f70ca-a32f-4f68-a9a1-17a827e8e61e.jpg)
->furry
+> furry
 
 ![test-result](https://user-images.githubusercontent.com/115398132/194805364-95e523aa-4bec-4a88-9fe1-b3d39d2f2992.jpg)
 
@@ -122,7 +121,7 @@ Steps: 28, Sampler: Euler, CFG scale: 12, Seed: [SEE COLUMN], Size: 512x512, Mod
 
 `aini` 有一种你可能不喜欢的强烈风格，我认为它具有最高的一致性和质量。
 
-`anime_3` 是该系列中质量最高的，但它们都有些不一致. 我一般不会推荐他们。
+`anime_3` 是该系列中质量最高的，但它们都有些不一致。我一般不会推荐他们。
 
 可以看到 `furry` 的超网络在添加动物特征方面更加激进，因此这里更保守的变化可能与采样器、步骤和 CFG 有关。[^5]
 

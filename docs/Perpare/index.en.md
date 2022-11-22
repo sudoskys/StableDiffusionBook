@@ -2,7 +2,6 @@
 
 The purpose of this document is to summarize the results of the community discussion and to create a self-help guide for people who are new to drawing with Stable Diffusion, starting with WebUi and learning about Ai drawing.
 
-
 ## Asking polite questions in the community
 
 [How To Ask Questions The Smart Way](https://github.com/selfteaching/How-To-Ask-Questions-The-Smart-Way)
@@ -13,15 +12,11 @@ Communication is welcome, but no nonsense is welcome. Please make sure yourself 
 
 If you see a section you don't recognize, chances are your version is too low.
 
-
 ## Can I play this?
 
 First, unfortunately, because it requires `CUDA` acceleration, only **Nvidia graphics cards** are well supported. (AMD works but is significantly slower than Nvidia graphics, ~ of course without a graphics card it can take hundreds of times longer to generate with a CPU ~)
 
-
-
 **Linux + AMD** Please Read [AMD Guide](https://rentry.org/ayymd-stable-diffustion-v1_4-guide) 和 [AMD install WebUi Wiki](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Install-and-Run-on-AMD-GPUs)
-
 
 [Discussion about installing on Amd](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/1046)
 
@@ -32,7 +27,6 @@ First, unfortunately, because it requires `CUDA` acceleration, only **Nvidia gra
 
 [Stable diffusion performance test reports](https://docs.google.com/spreadsheets/d/1Zlv4UFiciSgmJZncCujuXKHwc4BcxbjbSBg71-SdeNk/edit#gid=0)
 
-
 ## Current five options
 
 | Name | Requirements | Effectiveness |
@@ -42,7 +36,6 @@ First, unfortunately, because it requires `CUDA` acceleration, only **Nvidia gra
 | Naifu(4GB Leak model) | Minimum 8GB VRAM & 8GB VRAM | Close to official |
 | Naifu(7GB Leak model) | Minimum 8GB VRAM (10GB upward) | Close to official |
 | Official Backend | 16GBfp16/24GBfp32 & Server System | 99.9 similar to official |
-
 
 The original NAI web UI + backend deployment requires a GPU server with 12GB or more of VRAM on a *Linux system*. NAI officially uses the full model, but it requires a lot of VRAM, so you'll need a A100 graphics card(10000$) from Amazon.
 

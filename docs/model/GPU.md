@@ -4,19 +4,17 @@
 !!! tip
     注意显卡温度，有报道称显卡太热炸了。
 
-**在这之前，请确定你已经配置并进入了环境。(可以使用 torch)**
+**在这之前，请确定你已经配置并进入了环境。（可以使用 torch)**
 
 先使用 `nvidia-smi` 判断显卡驱动是否可用。
 
 再确定 CUDA 的配置情况：打开终端，启动 `python`，分行输入如下命令
-
 
 ```python
 import torch
 print(torch.__version__)
 print(torch.cuda.is_available())
 ```
-
 
 **查看 torch 对应的 CUDA 版本**
 
@@ -39,12 +37,11 @@ torch.version.cuda
 
 >Using memory from between two GPUs is not simple. I only have one so I can't research/develop this.
 
+## WebUi 16xx 系显卡使用半精度生成图片 [^3]
 
-## WebUi 16xx系显卡使用半精度生成图片[^3]
+方案来自 [这个讨论](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/28#issuecomment-1241448049)
 
-方案来自[这个讨论](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/28#issuecomment-1241448049)
-
-1. 激活 WebUI 使用的 venv,要在正确的虚拟环境里运行
+1. 激活 WebUI 使用的 venv, 要在正确的虚拟环境里运行
 
 2. 卸载掉现在所用的 torch 和 torchvision:
 
@@ -71,4 +68,3 @@ Windows: <https://developer.nvidia.com/compute/cudnn/secure/8.5.0/local_installe
 6. 然后 16xx 系显卡也可以愉快地使用半精度生成图片了！大幅降低显存占用，6G 加载 Full 模型可以生成 1024x640 的图片。
 
 但是，依然不能使用 `DDIM Sampling` ，但可以使用 `Euler a`
-

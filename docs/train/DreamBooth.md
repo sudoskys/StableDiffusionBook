@@ -15,7 +15,7 @@ Dreambooth 基于 [Imagen](https://imagen.research.google/) 研发，使用时�
 本节使用的是 Shivam Shirao 的 [diffusers](https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth) 分支版本，配置衍生自 [ShivamShrirao/diffusers](https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth)。
 
 ![DreamBooth_files](https://dreambooth.github.io/DreamBooth_files/system.png)
->by https://dreambooth.github.io/
+> by https://dreambooth.github.io/
 
 ## 选择
 
@@ -218,7 +218,7 @@ DreamBooth 本身具有十分强烈的 copy and paste 效果。使用 class/regu
 
 一般训练特定物体/人物是启用 `--with_prior_preservation` 的只需要使用单一标签 `--instance_prompt`，需要使用 Ai 的先验知识，同时 启用 `--class_prompt` `--class_data_dir` 参数 ，**Class dir 是自动生成的**，每次重新训练要清空一次。体现在 [train_object.sh](https://github.com/CrazyBoyM/dreambooth-for-diffusion/blob/main/train_object.sh) 中。
 
-不要使用默认的by sks(sks这个艺术家), 融合模型的时候会发生灾难。
+不要使用默认的 by sks(sks 这个艺术家）, 融合模型的时候会发生灾难。
 
 下面是一些零零散散的解释。
 
@@ -374,7 +374,7 @@ WebUi 用户将训练出的 `.ckpt` 文件复制到 webui 的 `models\Stable-dif
 
 使用时在 `prompt` 里输入你之前指定的标志符（例如 <balabala> ) 来让 ai 在生成图像中加入你期待的东西。
 
->过拟合后，CFG 影响很大，可以试试降低 CFG.
+> 过拟合后，CFG 影响很大，可以试试降低 CFG.
 
 模型的效果要看测试图。
 
@@ -626,4 +626,4 @@ if args.with_prior_preservation:
 
 [5^]:[XavierXiao/Dreambooth-Stable-Diffusion](https://github.com/XavierXiao/Dreambooth-Stable-Diffusion)
 
-[6^]:[StableDiffusion/DreamBooth自训练全教程](https://zhuanlan.zhihu.com/p/584736850)
+[6^]:[StableDiffusion/DreamBooth 自训练全教程](https://zhuanlan.zhihu.com/p/584736850)

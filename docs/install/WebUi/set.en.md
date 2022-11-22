@@ -8,19 +8,16 @@ The official code repository for WebUi is at https://github.com/AUTOMATIC1111/st
 
 [Official list of given dependencies](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Dependencies)
 
-
 ## Hardware Requirements
 
 WebUi minimum usable N-card graphics memory is 2GB
 
 WebUi has a minimum of 4GB of N-card memory available
 
-
 Before starting, open CMD and type `nvidia-smi` to see if your machine's Nvidia graphics card is functioning properly.
 
-![效果.png](https://s1.ax1x.com/2022/10/10/xtdNNR.png)
+![效果。png](https://s1.ax1x.com/2022/10/10/xtdNNR.png)
 >Here is the September effect (it's a lot faster now)
-
 
 ## Installation
 
@@ -35,8 +32,6 @@ Before starting, open CMD and type `nvidia-smi` to see if your machine's Nvidia 
 
 >Tips:WSL can not be migrated, if the C drive is not enough, unfortunately....
 
-
-
 ### **Windows installation**
 
 The installation process on Windows is as follows.
@@ -44,7 +39,6 @@ The installation process on Windows is as follows.
 **Install Python**
 
 Install [Python 3.10.6](https://www.python.org/downloads/windows/), check "Add Python to PATH" when installing
-
 
 **Install Git**
 
@@ -54,14 +48,11 @@ or open the directory you want to put it in, right click on it and look for `Git
 
 or start CMD in the directory where you want to run it
 
-
 **pulling repository**
-
 
 Run `git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git` in cmd to pull the repository.
 
 And you can use `git pull` to update the code directly. We recommend updating frequently and following the community discussions.
-
 
 **Try to install**
 
@@ -75,16 +66,12 @@ During this interval you can open Explorer and keep an eye on the network speed.
 
 After about 30 minutes of installation, the program will output an address like `http://127.0.0.1:7860/`, just click on it (note that it is http, and the port may change if you don't specify it).
 
-
-
-
 !!! tip
     Models are required to run!
 
     If you wish to generate secondary girls, please find a way to get some models. As for how to choose a model, please see the next section. If you can also clone other people's `models` folders to yours.
 
     If interested in other models, (oil painting, watercolor), we recommend [Stable Diffusion Models](https://rentry.org/sdmodels#), which can be downloaded by `2.Stable Diffusion v1.4 [4af45990] [7460a6fa] [ 06c50424]` which is a model to run the original model of `Stable Diffusion`.
-
 
 ### Linux installation
 
@@ -107,10 +94,8 @@ bash <(wget -qO- https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusio
 
 Done.
 
-
 !!! info
     If you want, try to use `miniconda` (anaconda special huge ....) to create a virtual environment for Python 3.10.6.
-
 
     ```bash
     conda create -n aidraw python=3.10.6
@@ -120,4 +105,3 @@ Done.
     COMMANDLINE_ARGS="--medvram" REQS_FILE="requirements.txt" python launch.py
     ```
 [^2]:[关于 AUTOMATIC1111 /stable-diffusion-webui 的 FAQ:](https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99)
-

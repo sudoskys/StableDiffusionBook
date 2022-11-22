@@ -5,7 +5,6 @@
 
 **TIPS**, make sure you have configured and are using this environment. (you can use torch)
 
-
 First use `nvidia-smi` to determine if the graphics driver is available.
 
 Then determine the configuration of CUDA: open a terminal, start `python`, and type the following command in the branch
@@ -15,7 +14,6 @@ import torch
 print(torch.__version__)
 print(torch.cuda.is_available())
 ```
-
 
 **Check the CUDA version**
 
@@ -28,7 +26,6 @@ Type ctrl + z to exit
 
 If any errors occur, ask someone or use a search engine to resolve them.
 
-
 ## WebUi Multi-GPU support
 
 The simplest model is to implement a method for parallel processing of multiple data by starting multiple instances with the `--device-id` parameter. Each GPU loads a model and then assigns them work.
@@ -38,7 +35,6 @@ Considering the multitude of features offered by this project, I (the author) th
 [Response from WebUi developers](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/156#issuecomment-1241218733)
 
 >Using memory from between two GPUs is not simple. I only have one so I can't research/develop this.
-
 
 # WebUi 16xx GPU use half-precision to generate images [^3]
 

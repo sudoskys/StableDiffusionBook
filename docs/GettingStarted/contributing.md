@@ -23,7 +23,7 @@
 
 **访问**
 
-* 材料须可备份(如网页转 PDF 等)或提供透明原始材料的下载。
+* 材料须可备份（如网页转 PDF 等）或提供透明原始材料的下载。
 
 * 必须可公开查看。
 
@@ -122,7 +122,7 @@ commit 摘要，推荐按照下面的格式编辑：
 
 ### 通知进度
 
-在开始编写一段内容之前，请查阅 [Issues](https://github.com/sudoskys/StableDiffusionBook/issues)，确认没有冲突的工作(如果有，可以在 Issue 下交流)，然后创建一个新 issue 记录待编写的内容。
+在开始编写一段内容之前，请查阅 [Issues](https://github.com/sudoskys/StableDiffusionBook/issues)，确认没有冲突的工作（如果有，可以在 Issue 下交流），然后创建一个新 issue 记录待编写的内容。
 
 !!! tip
 

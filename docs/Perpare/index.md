@@ -1,7 +1,6 @@
 # 准备
 
-本文档目的是为了总结社区讨论成果，为刚入门接触使用Stable Diffusion绘画的小白编写一个自助指南，从 WebUi 入手接触 Ai绘画，并学习相关知识。
-
+本文档目的是为了总结社区讨论成果，为刚入门接触使用 Stable Diffusion 绘画的小白编写一个自助指南，从 WebUi 入手接触 Ai 绘画，并学习相关知识。
 
 ## 在社区礼貌提问
 
@@ -13,44 +12,38 @@
 
 如果看到不认识的章节，有可能是你的版本太低了。
 
-
 ## 我可以参加 Party 吗？
 
-首先，很不幸地，因为需要用到 `CUDA` 加速，所以只有**英伟达显卡**支持良好。（AMD 可以用但速度明显慢于英伟达显卡，~当然没显卡也可以用 CPU 花几百倍时间生成~）
+首先，很不幸地，因为需要用到 `CUDA` 加速，所以只有 **英伟达显卡** 支持良好。（AMD 可以用但速度明显慢于英伟达显卡，~当然没显卡也可以用 CPU 花几百倍时间生成~）
 
+**Linux + AMD 卡** 请读 [AMD 安装指南](https://rentry.org/ayymd-stable-diffustion-v1_4-guide) 和 [AMD 安装 WebUi 指北](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Install-and-Run-on-AMD-GPUs)
 
-**Linux + AMD卡** 请读 [AMD安装指南](https://rentry.org/ayymd-stable-diffustion-v1_4-guide) 和 [AMD安装WebUi指北](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Install-and-Run-on-AMD-GPUs)
-
-
-[对于支持AMD GPU方案相关讨论](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/1046)
+[对于支持 AMD GPU 方案相关讨论](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/1046)
 
 !!! danger "显卡保修"
     显卡厂家对于深度学习卡的保修政策等同于矿卡
-    过度玩耍(比如连续3天出图)，显卡会有坏掉的风险
+    过度玩耍（比如连续 3 天出图），显卡会有坏掉的风险
 
 [各种显卡的稳定扩散性能测试报告](https://docs.google.com/spreadsheets/d/1Zlv4UFiciSgmJZncCujuXKHwc4BcxbjbSBg71-SdeNk/edit#gid=0)
-
 
 ## 目前的五种方案
 
 | 名称             | 需求                      | 效果                                                                  |
 |------------------|---------------------------|-----------------------------------------------------------------------|
-| SdWebui(4GB Leak模型) | 最低3GB显存               | 4GB显存生成 512x512 尺寸图片，耗时 17s                            |
-| SdWebui(7GB Leak模型) | 最低8GB显存                   | 和4GB效果相差不大，但是数据中带有最后一次训练的权重，所以耗费较多显存 |
-| Naifu(4GB Leak模型)   | 最低8GB显存&8GB显存       | 和官方接近                                                            |
-| Naifu(7GB Leak模型)   | 最低8GB显存(向上浮动10GB) | 和官方接近                                                            |
-| 官方后端         | 16GBfp16/24GBfp32 & 服务器系统           | 和官方99.9相似                                                        |
+| SdWebui(4GB Leak 模型） | 最低 3GB 显存               | 4GB 显存生成 512x512 尺寸图片，耗时 17s                            |
+| SdWebui(7GB Leak 模型） | 最低 8GB 显存                   | 和 4GB 效果相差不大，但是数据中带有最后一次训练的权重，所以耗费较多显存 |
+| Naifu(4GB Leak 模型）   | 最低 8GB 显存&8GB 显存       | 和官方接近                                                            |
+| Naifu(7GB Leak 模型）   | 最低 8GB 显存（向上浮动 10GB) | 和官方接近                                                            |
+| 官方后端         | 16GBfp16/24GBfp32 & 服务器系统           | 和官方 99.9 相似                                                        |
 
+NAI 原版网页 UI+后端部署需要准备一台拥有 12GB 以上显存的 *Linux 系统* 的 GPU 服务器。个人使用 4GB 精简 Leak 模型更加划算。NAI 官方使用的是全量模型，但是这需要大量的显存，~你需要淘宝售价 7W 的 A100 显卡~
 
-NAI 原版网页UI+后端部署需要准备一台拥有12GB以上显存的 *Linux系统* 的GPU服务器。个人使用 4GB 精简 Leak 模型更加划算。NAI官方使用的是全量模型，但是这需要大量的显存，~你需要淘宝售价 7W 的 A100 显卡~
+SDWebUi 是一个可以使用 模型 生产图片的 **框架**。
 
-SDWebUi 是一个可以使用 模型 生产图片的**框架**。
-
-NAI 是一个在线**服务**。
+NAI 是一个在线 **服务**。
 
 ## 二次元之外
 
-如果你想知道没有 NAI模型 的 stable-diffustion，请看 [这个合集](https://space.bilibili.com/250989068/channel/collectiondetail?sid=660352)。
+如果你想知道没有 NAI 模型 的 stable-diffustion，请看 [这个合集](https://space.bilibili.com/250989068/channel/collectiondetail?sid=660352)。
 
-顺便贴一个 [最近发布的1.5模型](https://huggingface.co/runwayml/stable-diffusion-v1-5) 和 [稳定体积小的1.4模型](https://huggingface.co/CompVis/stable-diffusion-v1-4)
-
+顺便贴一个 [最近发布的 1.5 模型](https://huggingface.co/runwayml/stable-diffusion-v1-5) 和 [稳定体积小的 1.4 模型](https://huggingface.co/CompVis/stable-diffusion-v1-4)

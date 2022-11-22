@@ -7,7 +7,6 @@ If you run it and report an error, please read the previous configuration tips.
 
 We don't provide NAI models, you can go to the About/Bottom Icons page to find the `Chinese Community` channel, or maybe the Alibaba treasure chest.
 
-
 ## Run
 
 **After loading in the model**
@@ -44,16 +43,13 @@ You can use emoticons and emoji, and use () to enhance the weights, see later fo
 
 That is, specify what tags need to be filtered
 
-
 ```
 lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, bad feet
 ```
 
-
 **First adjustment of parameters**
 
 Selected resolution parameter, the larger the generation the longer it takes.
-
 
 The generated result ends similarly as follows
 ```
@@ -63,7 +59,6 @@ With the same parameters and Seed (-1 is random), the same image can be produced
 
 Together with the GPU load information
 ```
-Time taken: 33.97s
 Time taken: 33.97s
 Torch active/reserved: 1975/2144 MiB, Sys VRAM: 7890/8134 MiB (93.61%)
 ```
@@ -85,13 +80,9 @@ Add the `sd_hypernetwork` and `CLIP_stop_at_last_layers` fields to the `Quickset
 
 The language file is provided as a single `.json` file. Simply place this file in the `localizations` directory and select it in the settings.
 
-
-
 **Create a localization file of your own**
 
 Go to Settings and click the button at the bottom of `Download localization template` to download a localization template that you can edit.
-
-
 
 ## Shared links
 
@@ -118,7 +109,6 @@ You'll get a `xxx.app.gradio` shared link, plus you can set authentication for s
 
     11/1 Community Report: Shared links may lead to a risk that **attackers can access all files on the system. **
 
-
 You can lock settings from being edited by others by adding the `--free-ze-settings` startup param.
 
 - Port forwarding
@@ -127,17 +117,13 @@ The `-listen` parameter causes the server to listen for network connections.
 
 Use `--listen` to make the server listen to network connections. This will allow computers on the local network to access the UI, and if you configure port forwarding, also computers on the internet.
 
-
 - Listening port
 
 Use `-port xxxx` to make the server listen on a specific port, xxxx being the wanted port. Remember that all ports below 1024 need root/admin rights, for this reason it is advised to use a port above 1024. Defaults to port 7860 if available.
 
-
 - Themes
 
 Add `--theme` parameter when startup to switch themes....
-
-
 
 ## Custom Runs
 
@@ -152,8 +138,6 @@ First, you can run `python webui.py --help` to see all command arguments, or rea
 Tip:
 The recommended way to customize how the program runs is to edit webui-user.bat (Windows) and webui-user.sh (Linux)
 
-
-
 *Customize the runtime environment
 
 `set PYTHON=b:/soft/Python310/Python.exe`
@@ -167,15 +151,11 @@ set VENV_DIR allows you to select the directory of your virtual environment. The
 set COMMANDLINE_ARGS sets the command line parameter webui.py to run
 Example using `a.ckpt` instead of `model.ckpt`.
 
-
 *Specify which GPU to run on*
 
 Selecting the default GPU to use `--device-id 0` in place of `CUDA_VISIBLE_DEVICES=0` for older versions (before 2022/10) allows you to select a second GPU to allow two instances to run at the same time, enabling simple device selection in a more concise manner.
 
 To view the GPU model and CUDA version, you can use the `nvidia-smi` command for information
-
-
-
 
 **Optimize command parameters**
 
@@ -194,10 +174,7 @@ see [Official Wiki](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki
 | `--always-batch-cond-uncond`    | Disables the optimization above. Only makes sense together with`--medvram`or`--lowvram`                                                                                                                                                                                                                                                                                                                                                         |
 | `--opt-channelslast`            | Changes torch memory type for stable diffusion to channels last. Effects not closely studied.                                                                                                                                                                                                                                                                                                                                                   |
 
-
 [Discussion](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3889) It has been suggested that by disabling hardware-accelerated GPU scheduling on Windows settings, WebUi performance has improved by about 10-50%
-
-
 
 ## API documentation
 
@@ -247,11 +224,6 @@ WebUiApi(url="http://127.0.0.1:7860").txt2img(payload=payload,outpath="1145.png"
 跨平台多后端项目 [novelai-bot](https://github.com/koishijs/novelai-bot)
 
 Discord 机器人项目 [aiyabot](https://github.com/Kilvoctu/aiyabot/blob/main/core/stablecog.py)
-
-
-
-
-
 
 [^3]:[Wiki2](https://rentry.co/voldy)
 

@@ -1,4 +1,4 @@
-# Hypernetwork[^13]
+# Hypernetwork [^13]
 
 Hypernetworks is a novel concept for fine-tuning models without touching any weights.
 
@@ -13,12 +13,11 @@ Note that you should use a very low learning rate, e.g. 0.000005 or 0.0000005.
 
 If the learning rate is 5e-6, the number of steps is about 10000 to 20000. [Learning Rate Calculator](https://colab.research.google.com/drive/1qzweYEMIFkG6jPa04tD1MhWWOzgSnDvP?usp=sharing), from [here](https://github.com/) AUTOMATIC1111/stable-diffusion-webui/discussions/2670)
 
-The resolution is set to the resolution to be trained, preferably using an aspect ratio of 1:1.
+The resolution is set to the resolution to be trained, preferably using an aspect ratio of 1: 1.
 
 If the dataset has long or horizontal bars, check `Split cversized images into two`.
 
 If you don't already have a caption, you can check `Using deepbooru for caption` to allow deepbooru to recognise the caption.
-
 
 ## hyper network layer structure
 
@@ -45,7 +44,6 @@ Enabling Dropout prevents overfitting of the supernetwork. Custom dropout ratios
 
 On a 1,2,1 layer structure, dropout may only be useful for small data sets.
 
-
 ## Activation functions activation functions
 
 About [activation functions](https://www.geeksforgeeks.org/activation-functions-neural-networks/), [wiki](https://en.wikipedia.org/wiki/Activation_ function)
@@ -60,23 +58,18 @@ Support for relu, leakyrelu and linear. Selecting linear has the same effect as 
 
 Swish is better than Relu and Linear, Swish is suitable for larger networks, while Elu may give better results for 1,2,1 hypernetworks. [^16]
 
-
 [Related English guides](https://rentry.org/hypernetwork4dumdums)
 
 [Related English discussion](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2670)
 
-![hypernet对比图](https://user-images.githubusercontent.com/75739606/197823893-88a3bece-9100-41d1-8f07-bc6d9b3aa92c.jpg)
+![hypernet 对比图](https://user-images.githubusercontent.com/75739606/197823893-88a3bece-9100-41d1-8f07-bc6d9b3aa92c.jpg)
 <!--
-![hypernet对比图](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/exp_hypernet.jpg)
+![hypernet 对比图](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/exp_hypernet.jpg)
 -->
->hypernet对比图,the woman in picture is 24 years old
-
+> hypernet 对比图，the woman in picture is 24 years old
 
 ## Additional notes [^16]
 
 With the LN selected activation function turned on and Dropout enabled, the hypernetwork is not as easily overfitted as before, but may require a larger learning rate for learning.
 
 [Hypernetwork painting style training experience sharing](https://shiina-h.notion.site/shiina-h/Hypernetwork-1fc0b60645284c5e96bb41b583a4e86f)
-
-
-

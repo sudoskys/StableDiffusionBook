@@ -292,7 +292,7 @@ StabilityAI 从现在开始只发布 SFW 模型，from [Here](https://www.reddit
 
 ## 10/10 更新
 
-测试发现, 新版本 WebUi 优化显存占用(20xx—> 10xx)，关闭浏览器和 TG 的硬件加速后，即使是 4GB 的  RTX2050 也可以启动 --medvram 模式！而且很快.
+测试发现，新版本 WebUi 优化显存占用 (20xx—> 10xx)，关闭浏览器和 TG 的硬件加速后，即使是 4GB 的  RTX2050 也可以启动 --medvram 模式！而且很快。
 
 [Q & A](https://github.com/brycedrennan/imaginAIry/blob/master/docs/emad-qa-2020-10-10.md)
 
@@ -306,7 +306,7 @@ NovelAI 是一个使用 AI 生成故事文本和 **通过描述文字生成图�
 
 此 Reddit 贴称， Stability AI 创始人 Emad Mostaque 谴责 AUTOMATIC 此行为，并称后者窃取了代码；
 
-AUTOMATIC 则称自己没有窃取代码，并解释说他编写的代码是基于很久以前已经完成的研究和开发，并且是开源的。有问题的函数于 2021 年 12 月 21 日在 [此处](https://github.com/CompVis/latent-diffusion/commit/e66308c7f2e64cb581c6d27ab6fbeb846828253b) 发布，并称反倒是 NovelAI 使用了自己的代码(https://imgur.com/a/Z2QsOEw)。
+AUTOMATIC 则称自己没有窃取代码，并解释说他编写的代码是基于很久以前已经完成的研究和开发，并且是开源的。有问题的函数于 2021 年 12 月 21 日在 [此处](https://github.com/CompVis/latent-diffusion/commit/e66308c7f2e64cb581c6d27ab6fbeb846828253b) 发布，并称反倒是 NovelAI 使用了自己的代码 (https://imgur.com/a/Z2QsOEw)。
 
 Stable Diffusion 社群管理员后又要求 AUTOMATIC 移除项目中的 Hypernetwork 支持，称 NovelAI 核心开发者认为相关代码必然与泄露源码有联系；但被以代码原创且 Hypernetwork **并非泄露模型独创** 的理由回绝。
 

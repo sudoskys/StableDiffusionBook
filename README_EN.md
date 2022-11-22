@@ -40,7 +40,7 @@ VARM larger than 2GB, normal use requires 4 GB
 
 A small reference.
 
-![效果.png](https://s1.ax1x.com/2022/10/10/xtdNNR.png)
+![效果。png](https://s1.ax1x.com/2022/10/10/xtdNNR.png)
 
 ### Join us
 

@@ -28,19 +28,19 @@
 
 * Vercel 部署/中国大陆不可用
 
-https://stable-diffusion-book.vercel.app/  短链为(https://b23.ink/aibook)
+https://stable-diffusion-book.vercel.app/  短链为 (https://b23.ink/aibook)
 
 ### 基本要求
 
-显存(VARM) > 2GB
+显存 (VARM) > 2GB
 
 一个小参考
 
-![效果.png](https://s1.ax1x.com/2022/10/10/xtdNNR.png)
+![效果。png](https://s1.ax1x.com/2022/10/10/xtdNNR.png)
 
 ### 加入我们
 
-如果你发现了本文的的错误或不足（逻辑错误，语法病句，结构混乱，内容过时，上下冲突，错词怪词），欢迎向[项目仓库](https://github.com/sudoskys/StableDiffusionBook/)提 issue 和 PR。
+如果你发现了本文的的错误或不足（逻辑错误，语法病句，结构混乱，内容过时，上下冲突，错词怪词），欢迎向 [项目仓库](https://github.com/sudoskys/StableDiffusionBook/) 提 issue 和 PR。
 
 贡献之前先读 [贡献指南](https://github.com/sudoskys/StableDiffusionBook/blob/main/docs/contributing.md)
 
@@ -54,13 +54,13 @@ If this does not seem to flow well to you or has errors,or u would like a versio
 
 ### 相关
 
-[sdupdates SD综合清单，推荐阅读的](https://github.com/questianon/sdupdates)
+[sdupdates SD 综合清单，推荐阅读的](https://github.com/questianon/sdupdates)
 
 [元素同典](https://docs.qq.com/doc/DWFdSTHJtQWRzYk9k)
 
 [Stable Diffusion WebUi](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
 
-[集成Tag工具/支持超网络的Web前端](https://git.hudaye.work/MiuliKain/Kamiya-OpenUI)
+[集成 Tag 工具/支持超网络的 Web 前端](https://git.hudaye.work/MiuliKain/Kamiya-OpenUI)
 
 [基于 NAI 的画图机器人](https://github.com/koishijs/novelai-bot#token)
 
