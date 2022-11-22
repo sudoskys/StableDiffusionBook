@@ -2,7 +2,7 @@
 
 !!! tip
 
-    目前Stable Diffusion WebUi迭代非常快，每天都会有大量更新，因此建议每天都拉取最新代码。
+    目前 Stable Diffusion WebUi 迭代非常快，每天都会有大量更新，因此建议每天都拉取最新代码。
 
 以下是新闻和测试内容。
 
@@ -28,13 +28,13 @@ Anything-V3.0.ckpt 为来自 元素法典 群友融合出的混合模型。
 
 ## 11/15
 
-Telegram中文社区中，关于 NAI Leak 的 Colab 笔记本 收到了 DMCA 通知。
+Telegram 中文社区中，关于 NAI Leak 的 Colab 笔记本 收到了 DMCA 通知。
 
 https://lumendatabase.org/notices/29484955
 
 https://lumendatabase.org/notices/29484957
 
-> 再次说明：Aidraw Wiki 不分发设计版权争议的Cpkt文件
+> 再次说明：Aidraw Wiki 不分发设计版权争议的 Cpkt 文件
 
 ## 11/12
 
@@ -99,7 +99,7 @@ DPM-Solver (and the improved version DPM-Solver++) is a fast dedicated high-orde
 
 ![exp](https://user-images.githubusercontent.com/40903705/200149887-935a6f95-0bfa-4f8e-b6b1-0fb0bfe0b39e.jpg)
 
-{ align=left loading=lazy}
+{ align = left loading = lazy}
 
     Test From [Here](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/4363)
 
@@ -115,7 +115,7 @@ DPM-Solver (and the improved version DPM-Solver++) is a fast dedicated high-orde
 
 ![exp](https://user-images.githubusercontent.com/116967051/200134579-dc31f8d4-abd6-4ef0-9d2c-1582a53ec1b0.png)
 
-{loading=lazy align=left width=300 data-title="DPM-Solver++" data-description="DPM-Solver++ 只需 15 到 20 个步骤即可实现出色的样本质量，尤其是 2M 和 2M Karras。从 15 步开始，所有步数的结果都非常详细，而且速度很快。"}
+{loading = lazy align = left width = 300 data-title = "DPM-Solver++" data-description = "DPM-Solver++ 只需 15 到 20 个步骤即可实现出色的样本质量，尤其是 2M 和 2M Karras。从 15 步开始，所有步数的结果都非常详细，而且速度很快。"}
 
     Test From [Here](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4304#issuecomment-1304602296)
 
@@ -132,13 +132,13 @@ https://deepimagination.cc/eDiffi/
 
 https://www.reddit.com/r/StableDiffusion/comments/yju5ks/from_one_of_the_original_dreambooth_authors_stop/
 
-* AI艺术走红赚钱：一位AI艺术家的自白 
+* AI 艺术走红赚钱：一位 AI 艺术家的自白 
 
 https://www.reddit.com/r/StableDiffusion/comments/yh8j0a/ai_art_is_popular_and_makes_money_confessions_of/
 
 ## 11/5
 
-WebUi 发布 [tokenizer插件](https://github.com/AUTOMATIC1111/stable-diffusion-webui-tokenizer)，可以查看分词情况。
+WebUi 发布 [tokenizer 插件](https://github.com/AUTOMATIC1111/stable-diffusion-webui-tokenizer)，可以查看分词情况。
 
 ## 11/3
 
@@ -166,7 +166,7 @@ lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer
 
 https://github.com/Interpause/auto-sd-paint-ext
 
-在 [这个PR](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4142) 中，WebUi 修复了 IMG2IMG 处理后不释放 RAM 的问题
+在 [这个 PR](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4142) 中，WebUi 修复了 IMG2IMG 处理后不释放 RAM 的问题
 
 ## 11/1
 
@@ -178,7 +178,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/dc7425a56e7a014cb
 
 ## 10/30
 
-在 [这次提交中](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/9f4f894d74b57c3d02ebccaa59f9c22fca2b6c90) ，WebUi添加了 `allow skip current image in progress api ` ，跳过当前流程的 Api 方法。
+在 [这次提交中](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/9f4f894d74b57c3d02ebccaa59f9c22fca2b6c90) ，WebUi 添加了 `allow skip current image in progress api ` ，跳过当前流程的 Api 方法。
 
 在 [这次合并](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3722) 中，WebUi 添加了原生的进度 Api
 
@@ -210,11 +210,11 @@ WebUi 在 [这次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui
 
 ## 10/25
 
-[集成Tag工具/支持超网络的Web](https://git.hudaye.work/MiuliKain/Kamiya-OpenUI)开源项目说他们缺人。
+[集成 Tag 工具/支持超网络的 Web](https://git.hudaye.work/MiuliKain/Kamiya-OpenUI) 开源项目说他们缺人。
 
 在 [此次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3624) 中，从 `--use-cpu` 中删除了 `BSRGAN` ，将 `SwinIR` 添加到 `--use-cpu` 并修复 MPS 上的 `upscalers` 。
 
-你可以在[这里](https://upscale.wiki/wiki/Official_Research_Models) 找到 `BSRGAN` ，下载的模型放到esrgan文件夹就可以使用。
+你可以在 [这里](https://upscale.wiki/wiki/Official_Research_Models) 找到 `BSRGAN` ，下载的模型放到 esrgan 文件夹就可以使用。
 
 `#3505` 之后超网络训练不稳定 ，[问题](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/3505)
 
@@ -226,7 +226,7 @@ WebUi [移除了图像浏览器](https://github.com/AUTOMATIC1111/stable-diffusi
 
 ## 10/23 更新
 
-在 [这次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/070fda592bf80fb348ffe8e17b7c71cc288db729) 中，WebUi增加了日本语翻译。
+在 [这次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/070fda592bf80fb348ffe8e17b7c71cc288db729) 中，WebUi 增加了日本语翻译。
 
 在 [这次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/be748e8b086bd9834d08bdd9160649a5e7700af7) 中，WebUi 增加了设置锁定启动参数。
 
@@ -240,11 +240,11 @@ WebUi 增加了俄语翻译，添加了 img2img API。
 
 在 [这次请求](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2067) 中，WebUi 更新了 ESRGAN 架构和模型以支持所有 ESRGAN 模型。
 
-Colab 开始反滥用，[协议](https://research.google.com/colaboratory/faq.html#limitations-and-restrictions)禁止穿透。但是有人指出 [Colab并没有计划封禁 SD](https://github.com/googlecolab/colabtools/issues/3147)，确认误封。
+Colab 开始反滥用，[协议](https://research.google.com/colaboratory/faq.html#limitations-and-restrictions) 禁止穿透。但是有人指出 [Colab 并没有计划封禁 SD](https://github.com/googlecolab/colabtools/issues/3147)，确认误封。
 
-Colab的 [协议](https://research.google.com/colaboratory/faq.html?hl=zh-CN) 不允许利用多个帐号绕过访问权限或资源使用情况限制。
+Colab 的 [协议](https://research.google.com/colaboratory/faq.html?hl=zh-CN) 不允许利用多个帐号绕过访问权限或资源使用情况限制。
 
-有人反映 某度好像会封锁NAI的模型。
+有人反映 某度好像会封锁 NAI 的模型。
 
 ## 10/22 更新
 
@@ -286,19 +286,19 @@ StabilityAI 从现在开始只发布 SFW 模型，from [Here](https://www.reddit
 
 ## 10/11 更新
 
-新版本 Webui 增加了 Eta noise seed delta ，设为 31337 后会贴近NAI官方
+新版本 Webui 增加了 Eta noise seed delta ，设为 31337 后会贴近 NAI 官方
 
 现在可以训练 **Hypernetworks**
 
 ## 10/10 更新
 
-测试发现, 新版本 WebUi 优化显存占用(20xx—>10xx)，关闭浏览器和TG的硬件加速后，即使是4GB的  RTX2050 也可以启动 --medvram 模式！而且很快.
+测试发现, 新版本 WebUi 优化显存占用(20xx—> 10xx)，关闭浏览器和 TG 的硬件加速后，即使是 4GB 的  RTX2050 也可以启动 --medvram 模式！而且很快.
 
 [Q & A](https://github.com/brycedrennan/imaginAIry/blob/master/docs/emad-qa-2020-10-10.md)
 
 ## 背景故事
 
-NovelAI 是一个使用 AI 生成故事文本和**通过描述文字生成图片**的服务，而 Stable Diffusion 是由 Stability AI 发布的透过文字等生成图片的模型。
+NovelAI 是一个使用 AI 生成故事文本和 **通过描述文字生成图片** 的服务，而 Stable Diffusion 是由 Stability AI 发布的透过文字等生成图片的模型。
 
 开发者 [AUTOMATIC](https://github.com/AUTOMATIC1111) 是 Stable-Diffusion-Webui 的主要开发者：此项目可以用于在使用 Stable Diffusion 等模型时调整参数，极大地方便了尤其是没有计算机背景或 AI/ML 背景的模型用户。
 

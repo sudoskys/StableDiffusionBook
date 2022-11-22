@@ -1,4 +1,5 @@
 ![cover](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/cover_main.png)
+
 ------------------------------------
 
 <p align="center">
@@ -11,13 +12,11 @@
 <p align="center">
 </p>
 
-
 <h2 align="center">StableDiffusionBook</h2>
 
 <img src="https://img.shields.io/badge/Lang-ZH-red" alt="支持中文"> <img src="https://img.shields.io/badge/Lang-EN-blue" alt="SupportEnglish">
 
 **For the English readme：[English](https://github.com/sudoskys/StableDiffusionBook/blob/main/README_EN.md)**
-
 
 关于使用 Ai 绘画的 Wiki ，翻译，教程，相关资源。目前主要内容为 StableDiffusionWebUi
 
@@ -25,21 +24,19 @@
 
 访问主地址 https://draw.dianas.cyou/ ～！
 
-
 ### 分流链接
 
-- Vercel 部署/中国大陆不可用
+* Vercel 部署/中国大陆不可用
 
 https://stable-diffusion-book.vercel.app/  短链为(https://b23.ink/aibook)
-
 
 ### 基本要求
 
 显存(VARM) > 2GB
 
 一个小参考
-![效果.png](https://s1.ax1x.com/2022/10/10/xtdNNR.png)
 
+![效果.png](https://s1.ax1x.com/2022/10/10/xtdNNR.png)
 
 ### 加入我们
 
@@ -48,12 +45,12 @@ https://stable-diffusion-book.vercel.app/  短链为(https://b23.ink/aibook)
 贡献之前先读 [贡献指南](https://github.com/sudoskys/StableDiffusionBook/blob/main/docs/contributing.md)
 
 在键盘按下 `。` 键自动克隆仓库并开始协作。
+
 ```
 The repository currently contains a machine-translated version of the guide.
 
 If this does not seem to flow well to you or has errors,or u would like a version in another language. Then please submit Issue or Pr
 ```
-
 
 ### 相关
 
@@ -69,7 +66,6 @@ If this does not seem to flow well to you or has errors,or u would like a versio
 
 [Danbooru 标签超市](https://github.com/wfjsw/danbooru-diffusion-prompt-builder)
 
-
 ### 声明
 
 文档不托管任何模型及相关源代码，本网站托管方不提供模型的下载，不直接分发违法版权协议的模型文件。
@@ -78,4 +74,4 @@ If this does not seem to flow well to you or has errors,or u would like a versio
 
 如果本文档外链的内容中有不合适的内容，请提交 Issue 移除 。
 
->文档使用 GFDL 许可
+> 文档使用 GFDL 许可

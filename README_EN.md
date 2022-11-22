@@ -1,4 +1,5 @@
 ![cover](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/cover_main.png)
+
 ------------------------------------
 
 <p align="center">
@@ -29,30 +30,25 @@ If this does not seem to flow well to you or has errors,or u would like a versio
 
 ### Alternative links
 
-- Vercel
+* Vercel
 
 https://stable-diffusion-book.vercel.app/  short link https://b23.ink/aibook
-
 
 ### Basic requirements
 
 VARM larger than 2GB, normal use requires 4 GB
 
-
 A small reference.
 
 ![效果.png](https://s1.ax1x.com/2022/10/10/xtdNNR.png)
 
-
 ### Join us
-
 
 If you find any errors or deficiencies in this article, please feel free to raise an issue and PR to the [Project Repository](https://github.com/sudoskys/StableDiffusionBook/).
 
 Read the [Contribution Guidelines](https://github.com/sudoskys/StableDiffusionBook/blob/main/docs/contributing.en.md) before contributing
 
 Press `. ` key to automatically clone the repository and start collaborating.
-
 
 ### Related
 
@@ -68,7 +64,6 @@ Press `. ` key to automatically clone the repository and start collaborating.
 
 [Danbooru Tag Supermarket For CN](https://github.com/wfjsw/danbooru-diffusion-prompt-builder)
 
-
 ### NOTICE
 
 The documentation does not host any models, the host of this site does not provide downloads of models, and does not directly distribute model files that violate the copyright agreement.
@@ -77,4 +72,4 @@ We do not endorse behavior that violates the project agreement. The use of leake
 
 If there is inappropriate content in the external links of this document, please submit an issue to remove it.
 
->licensed under GFDL
+> licensed under GFDL

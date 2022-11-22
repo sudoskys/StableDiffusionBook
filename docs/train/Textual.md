@@ -1,25 +1,21 @@
-# Textual Inversion[^7]
+# Textual Inversion [^7]
 
 <!--
 VAE 对 训练 并不会造成灾难性的影响。
 -->
 
 !!! tip
-    训练的时候最好不要加载VAE.
+    训练的时候最好不要加载 VAE.
     
-    如果不想加载Vae，在启动 webui 前把 "xxx.vae.pt" 重命名为 "xxx.vae.pt.disabled" 或其他名字。
+    如果不想加载 Vae，在启动 webui 前把 "xxx.vae.pt" 重命名为 "xxx.vae.pt.disabled" 或其他名字。
 
-    在设置内勾选 **Move VAE and CLIP to RAM when training hypernetwork. Saves VRAM.** 的效果是转移 VAE 到 RAM,实际上还会加载。
-
+    在设置内勾选 **Move VAE and CLIP to RAM when training hypernetwork. Saves VRAM.** 的效果是转移 VAE 到 RAM, 实际上还会加载。
 
 ## Apt/DreamArtist 训练
 
-TI是让Ai了解 “喜欢” ，而DA(Apt) 让 Ai 了解“喜欢”和“不喜欢”。
-
-所以是一种十分高效的 Textual Inversion.
+普通的 Textual Inversion 是让 Ai 了解 “喜欢” ，而 DA(Apt) 让 Ai 了解“喜欢”和“不喜欢”。所以 DreamArtist 是一种十分高效的 Textual Inversion.
 
 https://github.com/7eu7d7/DreamArtist-sd-webui-extension
-
 
 ## 准备数据集
 
@@ -35,12 +31,11 @@ https://github.com/7eu7d7/DreamArtist-sd-webui-extension
 
 你可以中断和恢复训练，但是 optimizer state 不会被保存，所以不推荐这样做。
 
-
 ## 设置说明
 
 准备 30 张以上的目标人设图片，每一张图片应当裁剪为同样的比例。（ webui 已经支持了长方形图片的裁剪）
 
-在 `Interrogate Options` 设置中，`Interrogate: deepbooru score threshold` 是 deepdanbooru (从图像提取标签的一个模型) 标签置信度阀值。建议使用 0.75，也就是保留置信度大于 0.75 的结果。
+在 `Interrogate Options` 设置中，`Interrogate: deepbooru score threshold` 是 deepdanbooru （从图像提取标签的一个模型） 标签置信度阀值。建议使用 0.75，也就是保留置信度大于 0.75 的结果。
 
 比如，假定识别结果为：
 
@@ -68,10 +63,9 @@ https://github.com/7eu7d7/DreamArtist-sd-webui-extension
 
 按下 `Apply setting` 保存设置。
 
-
 ## 创建训练
 
-打开 `train` 选项卡，在 `Create embedding`选项卡新建一个 `embedding` 模型。
+打开 `train` 选项卡，在 `Create embedding` 选项卡新建一个 `embedding` 模型。
 
 `Number of vectors per token` 是 embedding 的宽度，与数据集有关，如果少于 百张，可以设置 3。
 
@@ -79,12 +73,11 @@ https://github.com/7eu7d7/DreamArtist-sd-webui-extension
 
 `Name` 输入框输入你预想的出现此人设的 提示词。
 
-`Initialization text` 可以输入 `one girl` 这种大分类，只能填一个，人物可以是1girl或者1boy，或者画风。
+`Initialization text` 可以输入 `one girl` 这种大分类，只能填一个，人物可以是 1girl 或者 1boy，或者画风。
 
 `Number of vectors per token` 是此 `embedding` 要占据的 token 位数量，越多越好，但是相应也会减少其他提示词 token 的位置。
 
 新建，会创建一个在 `embedding` 下的 pt 文件。
-
 
 ## 预处理
 
@@ -96,14 +89,13 @@ https://github.com/7eu7d7/DreamArtist-sd-webui-extension
 
 选择训练的图片大小，一般 8Gb 显卡使用 `512x512` ，尺寸越大不一定越好。
 
-
 **接下来有四个复选框**
 
 勾选 `Create flipped copies` 后会将图片镜像反转来增加数据量。
 
-勾选 `Use deepbooru caption as filename` 来使用深度学习识别 Tag，勾选后可以训练适用于 NAI 的 `embedding`。 **如果你没有这个选项，需要在启动项添加`--deepdanbooru`**
+勾选 `Use deepbooru caption as filename` 来使用深度学习识别 Tag，勾选后可以训练适用于 NAI 的 `embedding`。 **如果你没有这个选项，需要在启动项添加 `--deepdanbooru`**
 
->Windows 需要在 `webui-user.bat` 的 `COMMANDLINE_ARGS=` 一行添加，或者直接 `python launch.py --deepdanbooru` 。（如果启动卡住是网络问题）
+> Windows 需要在 `webui-user.bat` 的 `COMMANDLINE_ARGS=` 一行添加，或者直接 `python launch.py --deepdanbooru` 。（如果启动卡住是网络问题）
 
 勾选 `Use BLIP for caption` 会使用 BLIP 模型为文件名添加标题。不太适合二次元图片。
 
@@ -113,7 +105,6 @@ https://github.com/7eu7d7/DreamArtist-sd-webui-extension
 
 点击按钮，等待处理结束。
 
-
 ## 训练
 
 训练是一个动态的过程！
@@ -122,9 +113,9 @@ https://github.com/7eu7d7/DreamArtist-sd-webui-extension
 
 ### 学习率
 
-`Learning rate`(超参数：学习率)，学习速率代表了神经网络中随时间推移，信息累积的速度，这个参数较大地影响了影响训练的速度。通常，Learning rate越低学习越慢（花费更长的时间收敛），但是效果一般更好。
+`Learning rate`（超参数：学习率），学习速率代表了神经网络中随时间推移，信息累积的速度，这个参数较大地影响了影响训练的速度。通常，Learning rate 越低学习越慢（花费更长的时间收敛），但是效果一般更好。
 
-一般我们设置为 0.005，如果想快一些，可以使用 0.01 加快。但是如果设置得太高，梯度下降时候步长太大无法收敛，会且可能会破坏 `embedding` ， 效果达不到预期。如果设置的太小，容易陷入局部最优。目前 TI 支持设置 `0.1:500, 0.01:1000, 0.001:10000` 的学习率，它会按照 `学习率:步数` 进行，如果步数为小数，则代表 `总步数*百分比`。
+一般我们设置为 0.005，如果想快一些，可以使用 0.01 加快。但是如果设置得太高，梯度下降时候步长太大无法收敛，会且可能会破坏 `embedding` ， 效果达不到预期。如果设置的太小，容易陷入局部最优。目前 TI 支持设置 `0.1:500, 0.01:1000, 0.001:10000` 的学习率，它会按照 `学习率：步数` 进行，如果步数为小数，则代表 `总步数*百分比`。
 
 训练时，可以先用较大的学习率进行测试，然后逐步调小 `0.1 -- 0.02 -- 0.005` ，每次测试都用上一次效果最好的。
 
@@ -141,7 +132,7 @@ https://github.com/7eu7d7/DreamArtist-sd-webui-extension
 
 `Prompt template file` 是带有提示的文本文件，每行一个提示，用于训练模型。目录中 `textual_inversion_templates` 文件夹，解释了你可以使用这些文件做什么。
 
-训练时参考 `style.txt` 和`subject.txt`，比如训练画风，使用`style.txt`，训练人物，使用`subject.txt`
+训练时参考 `style.txt` 和 `subject.txt`，比如训练画风，使用 `style.txt`，训练人物，使用 `subject.txt`
 
 根据模板文件，你可以在文件名中使用下面的关键词，处理时它们会被替换。
 ```
@@ -162,7 +153,7 @@ https://github.com/7eu7d7/DreamArtist-sd-webui-extension
 
 - 步数
 
-`Max steps`决定完成多少 `step` 后，训练将停止。
+`Max steps` 决定完成多少 `step` 后，训练将停止。
 
 一个 step 是向模型训练一张图片（或一批图片，但目前不支持批量）并用于改进 embedding。如果你中断训练并在以后恢复训练，步数会被保留。
 
@@ -175,9 +166,9 @@ https://github.com/7eu7d7/DreamArtist-sd-webui-extension
 
     关键在于 Loss 率，Loss 10 轮不降低就可以停止了。
 
-    如果Loss大于 0.3 ，效果就不是很好
+    如果 Loss 大于 0.3 ，效果就不是很好
 
-如果太多会过拟合(可以理解为Ai的死板)，请随时观察，如果过拟合，可以停止。如果效果不是很好，可以去找早些时候的模型继续训练。**不断调整**找到一个好的效果。
+如果太多会过拟合（可以理解为 Ai 的死板），请随时观察，如果过拟合，可以停止。如果效果不是很好，可以去找早些时候的模型继续训练。**不断调整** 找到一个好的效果。
 
 `Save images with embedding in PNG chunks` 是生成一个图片形式的 pt 文件，很方便我们分享嵌入。
 
@@ -185,17 +176,15 @@ https://github.com/7eu7d7/DreamArtist-sd-webui-extension
 
 训练完毕。如果卸载了 VAE ，将 VAE 权重文件重命名回去，重启程序。
 
-
 ## 其他解释
-
 
 **[filewords]**
 
-这个是代表替换提示词模板文件的[filewords]为数据集文件的名字，可以实现把**文件名插入提示词**
+这个是代表替换提示词模板文件的 [filewords] 为数据集文件的名字，可以实现把 **文件名插入提示词**
 
 1. 默认情况下，文件的扩展名以及-文件名开头的所有数字和破折号都会被删除。
 
-所以这个文件名：`000001-1-a man in suit.png`将成为提示文本：`a man in suit`。文件名中文本的格式保持不变。
+所以这个文件名：`000001-1-a man in suit.png` 将成为提示文本：`a man in suit`。文件名中文本的格式保持不变。
 
 2. 可以使用 `Filename word regex` 和 `Filename join string` 选项更改文件名中的文本。
 
@@ -204,9 +193,9 @@ https://github.com/7eu7d7/DreamArtist-sd-webui-extension
 正则表达式会从文本提取提示词
 `['a', 'man', 'in', 'suit', ]`
 
-并将连接字符串（'，'）放在这些单词之间以创建一个文本`a, man, in, suit`
+并将连接字符串（'，'）放在这些单词之间以创建一个文本 `a, man, in, suit`
 
-也可以创建一个与图像具有相同文件名的文本文件( 000001-1-a man in suit.txt)，然后将提示文本放在那里。将不使用文件名和正则表达式选项。
+也可以创建一个与图像具有相同文件名的文本文件 ( 000001-1-a man in suit.txt)，然后将提示文本放在那里。将不使用文件名和正则表达式选项。
 
 **Move VAE and CLIP from VRAM when training. Saves VRAM.**
 
@@ -216,14 +205,13 @@ https://github.com/7eu7d7/DreamArtist-sd-webui-extension
 
 训练的结果是一个 .pt 或一个 .bin 文件（前者是原作者使用的格式，后者作为 diffusers library）
 
-
 ### subject_filewords.txt 模板
 
 [1^]
 
 Textual Inversion 训练不能训练模型中没有的东西。它对训练照片也非常敏感。
 
-如果你没有得到好的结果（未能收敛或结果崩坏）。你需要更换训练数据或者使用Dreambooth。
+如果你没有得到好的结果（未能收敛或结果崩坏）。你需要更换训练数据或者使用 Dreambooth。
 
 那么，训练是如何进行的呢？
 
@@ -235,10 +223,8 @@ Textual Inversion 训练不能训练模型中没有的东西。它对训练照�
 
 除非你试图修复照片，否则请将 `filewords` 用于 style，而不是用于 subject。
 
-
 <iframe src="//player.bilibili.com/player.html?aid=559085039&bvid=BV1ae4y1S7v9&cid=859894044&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 
-
-[官方Wiki](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion#training-embeddings)
+[官方 Wiki](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion#training-embeddings)
 
 [1^]:[is_textual_inversion_salvageable](https://www.reddit.com/r/sdforall/comments/ykerg2/is_textual_inversion_salvageable/)

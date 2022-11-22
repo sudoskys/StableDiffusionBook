@@ -14,20 +14,20 @@
 
 | 黑话          | 解释                                          |
 |---------------|----------------------------------------------|
-| NAI           | (Novel AI，一般特指Leak)                       |
+| NAI           | (Novel AI，一般特指 Leak)                       |
 | 咒语    | prompts                                                              |
 | 施法/吟唱/t2i | Text2Image                                                         |
-| 魔杖          | t2i/i2i参数                                                          |
+| 魔杖          | t2i/i2i 参数                                                          |
 | i2i           | Image2Image, 一般特指全部图片生成                                       |
-| inpaint       | i2i一种maskredraw，可以局部重绘                                        |
-| ti/emb/炼丹   | Train中的文本反转，一般特指Embedding插件                                        |
+| inpaint       | i2i 一种 maskredraw，可以局部重绘                                        |
+| ti/emb/炼丹   | Train 中的文本反转，一般特指 Embedding 插件                                        |
 | hn/hyper/冶金 | hypernetwork，超网络                                                                           |
 | 炸炉          | 指训练过程中过度拟合，但炸炉前的日志插件可以提取二次训练                                               |
 | 废丹          | 指完全没有训练成功                                                                               |
-| 美学/ext      | aesthetic_embeddings, emb一种，特性是训练飞快，但在生产图片时实时计算。                                |
+| 美学/ext      | aesthetic_embeddings, emb 一种，特性是训练飞快，但在生产图片时实时计算。                                |
 | db/梦展       | DreamBooth，目前一种性价比高（可以在极少步数内完成训练）的微调方式，但要求过高                            |
-| ds            | DeepSpeed，微软开发的训练方式，移动不需要的组件到内存来降低显存占用，可使db的vram需求降到8g以下。开发时未考虑win, 目前在win有兼容性问题故不可用 |
-| 8bit/bsb      | 一般指Bitsandbyte，一种8比特算法，能极大降低vram占用，使16g可用于训练db。由于链接库问题，目前/预计未来在win不可用 |
+| ds            | DeepSpeed，微软开发的训练方式，移动不需要的组件到内存来降低显存占用，可使 db 的 vram 需求降到 8g 以下。开发时未考虑 win, 目前在 win 有兼容性问题故不可用 |
+| 8bit/bsb      | 一般指 Bitsandbyte，一种 8 比特算法，能极大降低 vram 占用，使 16g 可用于训练 db。由于链接库问题，目前/预计未来在 win 不可用 |
 
 ## Stable diffusion 如何工作
 
@@ -37,15 +37,15 @@
 
 ![jalammar s pic](https://jalammar.github.io/images/stable-diffusion/stable-diffusion-components-and-tensors.png)
 
-information creator 完全在图像信息空间（或潜伏空间）中工作。这一特性使它比以前在像素空间工作的扩散模型更快。在技术上，这个组件是由一个UNet神经网络和一个调度算法组成的。
+information creator 完全在图像信息空间（或潜伏空间）中工作。这一特性使它比以前在像素空间工作的扩散模型更快。在技术上，这个组件是由一个 UNet 神经网络和一个调度算法组成的。
 
 * Text Encoder
 
-提示词的解析由 Text Encoder/CLIP 处理(token embedding)，这里是提示词转译给AI的关键一步。
+提示词的解析由 Text Encoder/CLIP 处理(token embedding)，这里是提示词转译给 AI 的关键一步。
 
-文本编码器负责将输入的提示转换为U-Net可以理解的嵌入空间。它通常是一个简单的基于变换器的编码器，将一连串的输入标记映射到一连串的 latent text-embeddings 中。
+文本编码器负责将输入的提示转换为 U-Net 可以理解的嵌入空间。它通常是一个简单的基于变换器的编码器，将一连串的输入标记映射到一连串的 latent text-embeddings 中。
 
-稳定扩散使用 ClipText 用于文本编码。输入文本，输出77个标记嵌入向量，每个都有768个维度。
+稳定扩散使用 ClipText 用于文本编码。输入文本，输出 77 个标记嵌入向量，每个都有 768 个维度。
 
 * information creator
 
@@ -57,9 +57,9 @@ UNet + Scheduler(也就是采样算法)在潜在空间中逐步处理/分散信�
 
 Text Decoder 根据从 information creator 那里获得的信息绘制一幅图画。 它只在过程结束时运行一次以生成最终图像。
 
-autoencoder(VAE)模型有两个部分，一个编码器和一个解码器。编码器用于将图像转换为 latent representation，作为U-Net模型的输入。解码器则将 latent representation 转回图像。
+autoencoder(VAE)模型有两个部分，一个编码器和一个解码器。编码器用于将图像转换为 latent representation，作为 U-Net 模型的输入。解码器则将 latent representation 转回图像。
 
-在推理过程中，使用VAE解码器将反向扩散过程产生的去噪潜像转换回图像。在推理过程中，我们只需要VAE解码器。
+在推理过程中，使用 VAE 解码器将反向扩散过程产生的去噪潜像转换回图像。在推理过程中，我们只需要 VAE 解码器。
 
 Autoencoder Decoder(VAE)使用处理过的信息阵列绘制最终图像的解码器。输入处理过的信息阵列(dimensions: (4, 64, 64))，输出结果图像(dimensions: (3, 512, 512)，即(red/green/blue, width, height)。
 
@@ -73,9 +73,9 @@ Autoencoder Decoder(VAE)使用处理过的信息阵列绘制最终图像的解�
 
 Stable Diffusion 中使用的自动编码器的缩减系数为 8。这意味着一张 (4, 512, 512) 的图像在潜在空间中是 (4, 64, 64)。
 
-在使用稳定扩散推理一张 512 x 512 的图片的过程中，模型用一个种子和一个文本提示作为输入。潜在种子生成大小 64 × 64 的随机潜在图像，而 prompt 进入 Text Encoder 通过CLIP的文本编码器转化为大小为77 × 768的文本嵌入。
+在使用稳定扩散推理一张 512 x 512 的图片的过程中，模型用一个种子和一个文本提示作为输入。潜在种子生成大小 64 × 64 的随机潜在图像，而 prompt 进入 Text Encoder 通过 CLIP 的文本编码器转化为大小为 77 × 768 的文本嵌入。
 
-U-Net 在以文本嵌入为条件的同时迭代地对随机高斯噪声表示进行去噪。U-Net通过 采样算法 计算去噪的潜在图像表示，输出噪声残差。这个步骤重复许多次后，潜在表示由 Image Decoder 的 auto encoder 的解码器解码输出。
+U-Net 在以文本嵌入为条件的同时迭代地对随机高斯噪声表示进行去噪。U-Net 通过 采样算法 计算去噪的潜在图像表示，输出噪声残差。这个步骤重复许多次后，潜在表示由 Image Decoder 的 auto encoder 的解码器解码输出。
 
 ![流程](https://raw.githubusercontent.com/patrickvonplaten/scientific_images/master/stable_diffusion.png)
 
@@ -91,7 +91,7 @@ U-Net 在以文本嵌入为条件的同时迭代地对随机高斯噪声表示�
 
 ### WebUi 的预处理
 
-[WebUi的prompt_parser](https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/modules/prompt_parser.py) 通过本地 WebUi 实现了渐变等功能。
+[WebUi 的 prompt_parser](https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/modules/prompt_parser.py) 通过本地 WebUi 实现了渐变等功能。
 
 WebUi prompt 语法会转换为相应时间的 prompt, 然后通过 embedding 交给 Ai 处理。
 
@@ -151,7 +151,7 @@ Variational autoencoders (VAEs) are a deep learning technique for learning laten
 
 损失函数。[3^]
 
-关于Loss Function的中文解释请读 [损失函数](https://fangkaipeng.com/?p=2056#header-id-16)
+关于 Loss Function 的中文解释请读 [损失函数](https://fangkaipeng.com/?p=2056#header-id-16)
 
 ### 潜在空间
 
@@ -214,7 +214,7 @@ TensorFlow 程序中的主要数据结构。张量是 N 维（其中 N 可能非
 
 ENSD 是 eta 噪声种子增量，它改变了种子。
 
-NAI使用31337
+NAI 使用 31337
 
 ### CLIP
 
