@@ -103,11 +103,11 @@ TODO
 
 > 将图片打碎，或者对背景/大头等单独裁切，也许会有帮助。
 
-### 参数
+## 参数
 
 先让我们看一下来自 [RcINS 的 Colab 笔记本](https://colab.research.google.com/drive/1C1vVZ59S4kWfL7jIsczyLpmxbD4cOA-k) 笔记本的一段实例。
 
-#### 参数设置
+### 参数设置
 
 ```bash
 INSTANCE_PROMPT = "masterpiece, best quality, sks 1girl"
@@ -126,7 +126,7 @@ SAVE_SAMPLE_PROMPT = "masterpiece, best quality, sks 1girl, looking at viewer"
 SAVE_SAMPLE_NEGATIVE_PROMPT = "lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry"
 ```
 
-#### 脚本重点参数
+### 脚本重点参数
 
 ```bash
 wandb_arg = "--wandb" if WANDB_KEY != "" else ""
@@ -211,7 +211,7 @@ DreamBooth 本身具有十分强烈的 copy and paste 效果。使用 class/regu
 
 禁用来开启 Native Training
 
-#### 关键说明
+### 关键说明
 
 一般训练画风会去除 `--with_prior_preservation` 参数，但是需要为每张待训练图片都准备提示，也就是启用 `--use_txt_as_label` 来读取与图片同名的 txt 文件作为 label（也就是再放一个同名的 txt)，该选项会忽略 instance_prompt 参数传入的内容。
 这点体现在 [train_style.sh](https://github.com/CrazyBoyM/dreambooth-for-diffusion/blob/main/train_style.sh) 中。
@@ -222,7 +222,7 @@ DreamBooth 本身具有十分强烈的 copy and paste 效果。使用 class/regu
 
 下面是一些零零散散的解释。
 
-#### 解释 Instance Prompt / Class Prompt
+### 解释 Instance Prompt / Class Prompt
 
 * Instance Prompt 
 
@@ -250,7 +250,7 @@ instance prompt 会被处理为类似 `photo of a cute person`
 * Instance prompt: `1girl, by sks`
 * Class prompt: `1girl`
 
-#### 关于这个 [V]
+### 关于这个 [V]
 
 | What your training set is about | Instance prompt must contain | Class prompt should describe                   |
 | --------------------------------- | ------------------------------ | ------------------------------------------------ |
@@ -269,7 +269,7 @@ instance prompt 会被处理为类似 `photo of a cute person`
 
 > 注：原论文中使用的示例词 `sks` 和现实中的枪械 [SKS](https://en.wikipedia.org/wiki/SKS) 相同，属于不适合被使用的词汇。但是如果你的训练程度足够高的话说不定可以覆写其影响。
 
-#### 解释 Subject images / Class images
+### 解释 Subject images / Class images
 
 介绍来自 [2^]
 
@@ -298,13 +298,13 @@ Native Training 为原生训练，与 DreamBooth 不同的是，Native Training 
 
 Native Training 需要较多的数据集，但这个量众说纷纭，大约在 [100, 10000] 这个区间，多多益善。（建议人工挑选）
 
-#### 从检查点恢复训练
+### 从检查点恢复训练
 
 参数的 MODEL_NAME 改成上一次模型的位置。
 
 如果你用到 `CLASS_DIR` ，因为主题相同，所以不必清空，反之则清空。
 
-#### Train Text Encoder
+### Train Text Encoder
 
 对应实例中的 `--train_text_encoder`，不推荐使用。使用 `--train_text_encoder` 后，Dreambooth 训练会额外训练文本编码器，会让不同模型之间的 prompt 无法通用。
 
@@ -319,7 +319,7 @@ Native Training 需要较多的数据集，但这个量众说纷纭，大约在 
 
 或许训练人物的时候也是效果拔群。
 
-#### Multiple Concept
+### Multiple Concept
 
 对应实例中的 `--concept_list` 参数，用 DreamBooth 是可以训练多个概念/人物/动作/物体的。但是若训练两个人物则推理时不能使其同时出现，两者的特征会被混合起来。
 
@@ -348,7 +348,7 @@ concepts_list = [
 # `class_data_dir` contains regularization images
 ```
 
-#### Aspect Ratio Bucketing
+### Aspect Ratio Bucketing
 
 对应上面参数中的 `--use_aspect_ratio_bucket`。需要在 Colab 中使用的话，`aspect_ratio_bucket` 调成 `enable: true`。
 
@@ -362,7 +362,7 @@ concepts_list = [
 
 更多内容请查阅 [使用 Dreambooth 训练稳定扩散的实验的分析](https://wandb.ai/psuraj/dreambooth/reports/Dreambooth-training-analysis--VmlldzoyNzk0NDc3)
 
-### 训练
+## 训练
 
 按照笔记本步骤或说明训练即可，Colab 用户注意挂载磁盘防止断线。
 

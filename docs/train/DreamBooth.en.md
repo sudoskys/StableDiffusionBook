@@ -99,11 +99,11 @@ If you use AutoDl's mirrors, you can use the built-in [label_images.py](https://
 
 > It may be useful to break up the image, or to crop the background/headers etc. separately.
 
-### Parameters
+## Parameters
 
 First let's look at an example from the [RcINS' Colab notebook](https://colab.research.google.com/drive/1C1vVZ59S4kWfL7jIsczyLpmxbD4cOA-k) notebook.
 
-#### Parameter setting
+### Parameter setting
 
 ```bash
 INSTANCE_PROMPT = "masterpiece, best quality, sks 1girl"
@@ -122,7 +122,7 @@ SAVE_SAMPLE_PROMPT = "masterpiece, best quality, sks 1girl, looking at viewer"
 SAVE_SAMPLE_NEGATIVE_PROMPT = "lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry"
 ```
 
-#### Script parameters
+### Script parameters
 
 ```bash
 wandb_arg = "--wandb" if WANDB_KEY != "" else ""
@@ -208,7 +208,7 @@ learning rate moderator, optionally `constant, linear, cosine, cosine_with_resta
 
 Disable to enable Native Training
 
-#### Key notes
+### Key notes
 
 Generally the training style removes the `-with_prior_preservation` parameter, but it is necessary to prepare prompts for each image to be trained, i.e. enable `-use_txt_as_label` to read a txt file with the same name as the image as a label (i.e. put another txt with the same name), this option ignores the content passed in by the instance_prompt parameter.
 This is reflected in [train_style.sh](https://github.com/CrazyBoyM/dreambooth-for-diffusion/blob/main/train_style.sh).
@@ -217,7 +217,7 @@ Generally training specific objects/characters is done with `-with_prior_preserv
 
 Here are some scattered explanations.
 
-#### Explanation Instance Prompt / Class Prompt
+### Explanation Instance Prompt / Class Prompt
 
 * Instance Prompt 
 
@@ -245,7 +245,7 @@ instance prompt will be processed as something like `photo of a cute person`.
 * Instance prompt: `1girl, by sks`
 * Class prompt: `1girl`
 
-#### About [V]
+### About [V]
 
 | What your training set is about | Instance prompt must contain | Class prompt should describe                   |
 | --------------------------------- | ------------------------------ | ------------------------------------------------ |
@@ -264,7 +264,7 @@ The final hint representing [V] will carry the new things learned by the model a
 
 > Note: The example word `sks` used in the original paper is the same as the real firearm [SKS](https://en.wikipedia.org/wiki/SKS) and is not a suitable word to be used. However, if you are sufficiently trained you may be able to override its effects.
 
-#### Subject images / Class images
+### Subject images / Class images
 
 Introduction from [2^]
 
@@ -287,13 +287,13 @@ There is no Instance/Class Image distinction in this training, all images will b
 !!! tip "About this Txt"
     For each image in the dataset ([X].png/[X].jpg), put a [X].txt with the corresponding hint, then set `READ_PROMPT_FROM_TXT` (`--use_txt_as_label`). The prompts read from txt [PX] will be inserted into the prompt [P] you set in the training parameters. By default, it is inserted as [PX][P]. With Variable Prompts enabled and Prior Preservation Loss (PRIOR_PRESERVATION) disabled, the training process is effectively equivalent to standard fine-tuning. Native Training requires a large dataset, but the amount varies, and is in the range [100, 10000], so more is better. (manual selection is recommended)
 
-#### Resume training from checkpoint
+### Resume training from checkpoint
 
 The MODEL_NAME of the parameter is changed to the position of the last model.
 
 If you use `CLASS_DIR`, you don't need to clear it because the subject is the same, but vice versa.
 
-#### Train Text Encoder
+### Train Text Encoder
 
 The use of `-train_text_encoder` in the corresponding example is not recommended. With `--train_text_encoder`, Dreambooth training trains additional text encoders, making it impossible to generalize the prompt between different models.
 
@@ -308,7 +308,7 @@ If you refine the call, add the word you trained for instance prompt, depending 
 
 Maybe it's also effective when training characters.
 
-#### Multiple Concept
+### Multiple Concept
 
 With DreamBooth it is possible to train multiple concepts/characters/actions/objects with the `--concept_list` argument in the example. However, if you train two characters, you cannot infer that they are both present at the same time, and their features will be mixed.
 
@@ -337,7 +337,7 @@ concepts_list = [
 # `class_data_dir` contains regularization images
 ```
 
-#### Aspect Ratio Bucketing
+### Aspect Ratio Bucketing
 
 Corresponds to `--use_aspect_ratio_bucket` in the argument above. If you need to use it in Colab, `-aspect_ratio_bucket` is set to `enable: true`.
 
@@ -351,7 +351,7 @@ Corresponds to `--use_aspect_ratio_bucket` in the argument above. If you need to
 
 For more, see [Analysis of experiments using Dreambooth to train stable diffusion](https://wandb.ai/psuraj/dreambooth/reports/Dreambooth-training-analysis--VmlldzoyNzk0NDc3)
 
-### Training
+## Training
 
 Follow the notebook steps or instructions to train, Colab users should be careful to mount the disk to prevent disconnection.
 
