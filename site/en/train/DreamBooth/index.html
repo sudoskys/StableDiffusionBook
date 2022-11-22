@@ -520,6 +520,9 @@
 </ul>
 </nav>
 </li>
+</ul>
+</nav>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#parameters">
     Parameters
@@ -556,15 +559,11 @@
     Subject images / Class images
   </a>
 </li>
-</ul>
-</nav>
-</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#native-training">
     Native Training
   </a>
-<nav aria-label="Native Training" class="md-nav">
-<ul class="md-nav__list">
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#resume-training-from-checkpoint">
     Resume training from checkpoint
@@ -592,9 +591,6 @@
 <a class="md-nav__link" href="#training">
     Training
   </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#using-on-windows">
@@ -708,6 +704,9 @@
 </ul>
 </nav>
 </li>
+</ul>
+</nav>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#parameters">
     Parameters
@@ -744,15 +743,11 @@
     Subject images / Class images
   </a>
 </li>
-</ul>
-</nav>
-</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#native-training">
     Native Training
   </a>
-<nav aria-label="Native Training" class="md-nav">
-<ul class="md-nav__list">
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#resume-training-from-checkpoint">
     Resume training from checkpoint
@@ -780,9 +775,6 @@
 <a class="md-nav__link" href="#training">
     Training
   </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#using-on-windows">
@@ -912,9 +904,9 @@
 <blockquote>
 <p>It may be useful to break up the image, or to crop the background/headers etc. separately.</p>
 </blockquote>
-<h3 id="parameters">Parameters</h3>
+<h2 id="parameters">Parameters</h2>
 <p>First let's look at an example from the <a href="https://colab.research.google.com/drive/1C1vVZ59S4kWfL7jIsczyLpmxbD4cOA-k">RcINS' Colab notebook</a> notebook.</p>
-<h4 id="parameter-setting">Parameter setting</h4>
+<h3 id="parameter-setting">Parameter setting</h3>
 <div class="highlight"><pre><span></span><code><span class="nv">INSTANCE_PROMPT</span> <span class="o">=</span> <span class="s2">"masterpiece, best quality, sks 1girl"</span>
 
 <span class="c1"># images of the subject 数据集的图像</span>
@@ -930,7 +922,7 @@
 <span class="nv">SAVE_SAMPLE_PROMPT</span> <span class="o">=</span> <span class="s2">"masterpiece, best quality, sks 1girl, looking at viewer"</span>
 <span class="nv">SAVE_SAMPLE_NEGATIVE_PROMPT</span> <span class="o">=</span> <span class="s2">"lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry"</span>
 </code></pre></div>
-<h4 id="script-parameters">Script parameters</h4>
+<h3 id="script-parameters">Script parameters</h3>
 <div class="highlight"><pre><span></span><code><span class="nv">wandb_arg</span> <span class="o">=</span> <span class="s2">"--wandb"</span> <span class="k">if</span> WANDB_KEY !<span class="o">=</span> <span class="s2">""</span> <span class="k">else</span> <span class="s2">""</span>
 <span class="nv">scale_lr_arg</span> <span class="o">=</span> <span class="s2">"--scale_lr"</span> <span class="k">if</span> SCALE_LR <span class="k">else</span> <span class="s2">""</span>
 <span class="nv">ppl_arg</span> <span class="o">=</span> f<span class="s2">"--with_prior_preservation --prior_loss_weight={PRIOR_LOSS_WEIGHT}"</span> <span class="k">if</span> PRIOR_PRESERVATION <span class="k">else</span> <span class="s2">""</span>
@@ -1012,12 +1004,12 @@ accelerate launch <span class="nv">$TRAINER</span> <span class="se">\</span>
 <li>with_prior_preservation</li>
 </ul>
 <p>Disable to enable Native Training</p>
-<h4 id="key-notes">Key notes</h4>
+<h3 id="key-notes">Key notes</h3>
 <p>Generally the training style removes the <code>-with_prior_preservation</code> parameter, but it is necessary to prepare prompts for each image to be trained, i.e. enable <code>-use_txt_as_label</code> to read a txt file with the same name as the image as a label (i.e. put another txt with the same name), this option ignores the content passed in by the instance_prompt parameter.
 This is reflected in <a href="https://github.com/CrazyBoyM/dreambooth-for-diffusion/blob/main/train_style.sh">train_style.sh</a>.</p>
 <p>Generally training specific objects/characters is done with <code>-with_prior_preservation</code> enabled using only the single label <code>-instance_prompt</code>, which requires prior knowledge of Ai, and with <code>-class_prompt</code> <code>-class_data_dir</code> parameter enabled, <strong>class dir is automatically generated</strong> and is cleared once per retraining. Embodied in <a href="https://github.com/CrazyBoyM/dreambooth-for-diffusion/blob/main/train_object.sh">train_object.sh</a>.</p>
 <p>Here are some scattered explanations.</p>
-<h4 id="explanation-instance-prompt-class-prompt">Explanation Instance Prompt / Class Prompt</h4>
+<h3 id="explanation-instance-prompt-class-prompt">Explanation Instance Prompt / Class Prompt</h3>
 <ul>
 <li>Instance Prompt </li>
 </ul>
@@ -1041,7 +1033,7 @@ This is reflected in <a href="https://github.com/CrazyBoyM/dreambooth-for-diffus
 <p><em>Example of a training style</em>
 * Instance prompt: <code>1girl, by sks</code>
 * Class prompt: <code>1girl</code></p>
-<h4 id="about-v">About [V]</h4>
+<h3 id="about-v">About [V]</h3>
 <table>
 <thead>
 <tr>
@@ -1071,7 +1063,7 @@ This is reflected in <a href="https://github.com/CrazyBoyM/dreambooth-for-diffus
 <blockquote>
 <p>Note: The example word <code>sks</code> used in the original paper is the same as the real firearm <a href="https://en.wikipedia.org/wiki/SKS">SKS</a> and is not a suitable word to be used. However, if you are sufficiently trained you may be able to override its effects.</p>
 </blockquote>
-<h4 id="subject-images-class-images">Subject images / Class images</h4>
+<h3 id="subject-images-class-images">Subject images / Class images</h3>
 <p>Introduction from <a href="[good_dreambooth_formula](https://www.reddit.com/r/StableDiffusion/comments/ybxv7h/good_dreambooth_formula/)">2^</a></p>
 <p>Subject images (or instance images as you see them in your notebook) are the images you want to train on, so if you want your own looking model, you can take 20 to 40 of your own images and enter those. The instance name is a unique identifier that will indicate the trained object in the prompt, personally I use "namelastname", most notebooks use "sks" but it is best to change it.</p>
 <p>You are in effect telling the AI to introduce you to the database, to do this you select a class, i.e. the class that best suits the person you are training, for people it is common to use "person", "man"/"woman" etc.</p>
@@ -1085,10 +1077,10 @@ This is reflected in <a href="https://github.com/CrazyBoyM/dreambooth-for-diffus
 <p class="admonition-title">About this Txt</p>
 <p>For each image in the dataset ([X].png/[X].jpg), put a [X].txt with the corresponding hint, then set <code>READ_PROMPT_FROM_TXT</code> (<code>--use_txt_as_label</code>). The prompts read from txt [PX] will be inserted into the prompt [P] you set in the training parameters. By default, it is inserted as [PX][P]. With Variable Prompts enabled and Prior Preservation Loss (PRIOR_PRESERVATION) disabled, the training process is effectively equivalent to standard fine-tuning. Native Training requires a large dataset, but the amount varies, and is in the range [100, 10000], so more is better. (manual selection is recommended)</p>
 </div>
-<h4 id="resume-training-from-checkpoint">Resume training from checkpoint</h4>
+<h3 id="resume-training-from-checkpoint">Resume training from checkpoint</h3>
 <p>The MODEL_NAME of the parameter is changed to the position of the last model.</p>
 <p>If you use <code>CLASS_DIR</code>, you don't need to clear it because the subject is the same, but vice versa.</p>
-<h4 id="train-text-encoder">Train Text Encoder</h4>
+<h3 id="train-text-encoder">Train Text Encoder</h3>
 <p>The use of <code>-train_text_encoder</code> in the corresponding example is not recommended. With <code>--train_text_encoder</code>, Dreambooth training trains additional text encoders, making it impossible to generalize the prompt between different models.</p>
 <p>There is a metaphysical argument that this should be turned off after a certain percentage/epoch/step of training has been reached to prevent overplaying.</p>
 <ul>
@@ -1099,7 +1091,7 @@ This is reflected in <a href="https://github.com/CrazyBoyM/dreambooth-for-diffus
 </ul>
 <p>If you refine the call, add the word you trained for instance prompt, depending on how much flavour you want.</p>
 <p>Maybe it's also effective when training characters.</p>
-<h4 id="multiple-concept">Multiple Concept</h4>
+<h3 id="multiple-concept">Multiple Concept</h3>
 <p>With DreamBooth it is possible to train multiple concepts/characters/actions/objects with the <code>--concept_list</code> argument in the example. However, if you train two characters, you cannot infer that they are both present at the same time, and their features will be mixed.</p>
 <p>If you check the <code>--concept_list</code> parameter with other versions of the DreamBooth training method, you can read in a similar <code>json</code> file.</p>
 <ul>
@@ -1124,7 +1116,7 @@ concepts_list = [
 
 # `class_data_dir` contains regularization images
 </code></pre></div>
-<h4 id="aspect-ratio-bucketing">Aspect Ratio Bucketing</h4>
+<h3 id="aspect-ratio-bucketing">Aspect Ratio Bucketing</h3>
 <p>Corresponds to <code>--use_aspect_ratio_bucket</code> in the argument above. If you need to use it in Colab, <code>-aspect_ratio_bucket</code> is set to <code>enable: true</code>.</p>
 <p><a href="https://github.com/NovelAI/novelai-aspect-ratio-bucketing">Aspect Ratio Bucketing</a> is known as ARB, the original training only works with <code>1:1</code> images, enabling ARB makes it possible to train non-<code>1:1</code> images, but not at any scale, and images not in the bucket will be cropped.</p>
 <div class="highlight"><pre><span></span><code>[[ 256 1024], [ 320 1024], [ 384 1024], [ 384  960], [ 384  896], [ 448  832], [ 512  768], [ 512  704], [ 512  512], [ 576  640], [ 640  576], [ 704  512], [ 768  512], [ 832  448], [ 896  384], [ 960  384], [1024  384], [1024  320], [1024  256]]
@@ -1133,7 +1125,7 @@ concepts_list = [
 <p>ARB is not compatible with DreamBooth and is only recommended for Native Training.</p>
 </blockquote>
 <p>For more, see <a href="https://wandb.ai/psuraj/dreambooth/reports/Dreambooth-training-analysis--VmlldzoyNzk0NDc3">Analysis of experiments using Dreambooth to train stable diffusion</a></p>
-<h3 id="training">Training</h3>
+<h2 id="training">Training</h2>
 <p>Follow the notebook steps or instructions to train, Colab users should be careful to mount the disk to prevent disconnection.</p>
 <p>After training, convert the diffusers weights to a ckpt file before you can use them! Use a file like <code>diffusers2ckpt.py</code>.</p>
 <blockquote>
@@ -1579,7 +1571,7 @@ pip install <span class="nv">bitsandbytes</span><span class="o">==</span><span c
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 22, 2022 16:28:07</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 22, 2022 16:36:19</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 3, 2022 12:19:59</span>

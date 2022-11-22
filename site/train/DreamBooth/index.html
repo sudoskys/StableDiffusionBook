@@ -520,6 +520,9 @@
 </ul>
 </nav>
 </li>
+</ul>
+</nav>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_7">
     参数
@@ -556,15 +559,11 @@
     解释 Subject images / Class images
   </a>
 </li>
-</ul>
-</nav>
-</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#native-training">
     Native Training
   </a>
-<nav aria-label="Native Training" class="md-nav">
-<ul class="md-nav__list">
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_11">
     从检查点恢复训练
@@ -592,9 +591,6 @@
 <a class="md-nav__link" href="#_12">
     训练
   </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#windows">
@@ -708,6 +704,9 @@
 </ul>
 </nav>
 </li>
+</ul>
+</nav>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_7">
     参数
@@ -744,15 +743,11 @@
     解释 Subject images / Class images
   </a>
 </li>
-</ul>
-</nav>
-</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#native-training">
     Native Training
   </a>
-<nav aria-label="Native Training" class="md-nav">
-<ul class="md-nav__list">
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_11">
     从检查点恢复训练
@@ -780,9 +775,6 @@
 <a class="md-nav__link" href="#_12">
     训练
   </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#windows">
@@ -914,9 +906,9 @@
 <blockquote>
 <p>将图片打碎，或者对背景/大头等单独裁切，也许会有帮助。</p>
 </blockquote>
-<h3 id="_7">参数</h3>
+<h2 id="_7">参数</h2>
 <p>先让我们看一下来自 <a href="https://colab.research.google.com/drive/1C1vVZ59S4kWfL7jIsczyLpmxbD4cOA-k">RcINS 的 Colab 笔记本</a> 笔记本的一段实例。</p>
-<h4 id="_8">参数设置</h4>
+<h3 id="_8">参数设置</h3>
 <div class="highlight"><pre><span></span><code><span class="nv">INSTANCE_PROMPT</span> <span class="o">=</span> <span class="s2">"masterpiece, best quality, sks 1girl"</span>
 
 <span class="c1"># images of the subject 数据集的图像</span>
@@ -932,7 +924,7 @@
 <span class="nv">SAVE_SAMPLE_PROMPT</span> <span class="o">=</span> <span class="s2">"masterpiece, best quality, sks 1girl, looking at viewer"</span>
 <span class="nv">SAVE_SAMPLE_NEGATIVE_PROMPT</span> <span class="o">=</span> <span class="s2">"lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry"</span>
 </code></pre></div>
-<h4 id="_9">脚本重点参数</h4>
+<h3 id="_9">脚本重点参数</h3>
 <p><div class="highlight"><pre><span></span><code><span class="nv">wandb_arg</span> <span class="o">=</span> <span class="s2">"--wandb"</span> <span class="k">if</span> WANDB_KEY !<span class="o">=</span> <span class="s2">""</span> <span class="k">else</span> <span class="s2">""</span>
 <span class="nv">scale_lr_arg</span> <span class="o">=</span> <span class="s2">"--scale_lr"</span> <span class="k">if</span> SCALE_LR <span class="k">else</span> <span class="s2">""</span>
 <span class="nv">ppl_arg</span> <span class="o">=</span> f<span class="s2">"--with_prior_preservation --prior_loss_weight={PRIOR_LOSS_WEIGHT}"</span> <span class="k">if</span> PRIOR_PRESERVATION <span class="k">else</span> <span class="s2">""</span>
@@ -1012,13 +1004,13 @@ accelerate launch <span class="nv">$TRAINER</span> <span class="se">\</span>
 <li>with_prior_preservation</li>
 </ul>
 <p>禁用来开启 Native Training</p>
-<h4 id="_10">关键说明</h4>
+<h3 id="_10">关键说明</h3>
 <p>一般训练画风会去除 <code>--with_prior_preservation</code> 参数，但是需要为每张待训练图片都准备提示，也就是启用 <code>--use_txt_as_label</code> 来读取与图片同名的 txt 文件作为 label（也就是再放一个同名的 txt)，该选项会忽略 instance_prompt 参数传入的内容。
 这点体现在 <a href="https://github.com/CrazyBoyM/dreambooth-for-diffusion/blob/main/train_style.sh">train_style.sh</a> 中。</p>
 <p>一般训练特定物体/人物是启用 <code>--with_prior_preservation</code> 的只需要使用单一标签 <code>--instance_prompt</code>，需要使用 Ai 的先验知识，同时 启用 <code>--class_prompt</code> <code>--class_data_dir</code> 参数 ，<strong>Class dir 是自动生成的</strong>，每次重新训练要清空一次。体现在 <a href="https://github.com/CrazyBoyM/dreambooth-for-diffusion/blob/main/train_object.sh">train_object.sh</a> 中。</p>
 <p>不要使用默认的 by sks(sks 这个艺术家）, 融合模型的时候会发生灾难。</p>
 <p>下面是一些零零散散的解释。</p>
-<h4 id="instance-prompt-class-prompt">解释 Instance Prompt / Class Prompt</h4>
+<h3 id="instance-prompt-class-prompt">解释 Instance Prompt / Class Prompt</h3>
 <ul>
 <li>Instance Prompt </li>
 </ul>
@@ -1042,7 +1034,7 @@ accelerate launch <span class="nv">$TRAINER</span> <span class="se">\</span>
 <p><em>训练风格的示例</em>
 * Instance prompt: <code>1girl, by sks</code>
 * Class prompt: <code>1girl</code></p>
-<h4 id="v">关于这个 [V]</h4>
+<h3 id="v">关于这个 [V]</h3>
 <table>
 <thead>
 <tr>
@@ -1072,7 +1064,7 @@ accelerate launch <span class="nv">$TRAINER</span> <span class="se">\</span>
 <blockquote>
 <p>注：原论文中使用的示例词 <code>sks</code> 和现实中的枪械 <a href="https://en.wikipedia.org/wiki/SKS">SKS</a> 相同，属于不适合被使用的词汇。但是如果你的训练程度足够高的话说不定可以覆写其影响。</p>
 </blockquote>
-<h4 id="subject-images-class-images">解释 Subject images / Class images</h4>
+<h3 id="subject-images-class-images">解释 Subject images / Class images</h3>
 <p>介绍来自 <a href="[good_dreambooth_formula](https://www.reddit.com/r/StableDiffusion/comments/ybxv7h/good_dreambooth_formula/)">2^</a></p>
 <p>Subject images （或者你在笔记本上看到的实例图像）是你想要训练的图像，所以如果你想要自己的外观的模型，你可以取 20 到 40 张自己的图像并输入这些图像。实例名是一个唯一的标识符，它将在提示符中表示受训对象，个人使用 “namelastname”，大多数笔记本使用“sks”，但最好更改它。</p>
 <p>你实际上是在告诉 AI 把你介绍到数据库中，为了做到这一点，你选择一个类别，即最适合你所训练的类别，对于人们来说，通常使用 "person", "man"/"woman" 等。</p>
@@ -1089,10 +1081,10 @@ accelerate launch <span class="nv">$TRAINER</span> <span class="se">\</span>
 <p>在启用 Variable Prompts 和禁用先前保存损失 (PRIOR_PRESERVATION) 的情况下，训练过程实际上等同于标准微调。</p>
 </div>
 <p>Native Training 需要较多的数据集，但这个量众说纷纭，大约在 [100, 10000] 这个区间，多多益善。（建议人工挑选）</p>
-<h4 id="_11">从检查点恢复训练</h4>
+<h3 id="_11">从检查点恢复训练</h3>
 <p>参数的 MODEL_NAME 改成上一次模型的位置。</p>
 <p>如果你用到 <code>CLASS_DIR</code> ，因为主题相同，所以不必清空，反之则清空。</p>
-<h4 id="train-text-encoder">Train Text Encoder</h4>
+<h3 id="train-text-encoder">Train Text Encoder</h3>
 <p>对应实例中的 <code>--train_text_encoder</code>，不推荐使用。使用 <code>--train_text_encoder</code> 后，Dreambooth 训练会额外训练文本编码器，会让不同模型之间的 prompt 无法通用。</p>
 <p>有玄学说法是在达到训练的某个百分比/epoch/step 之后应该关闭以防止过度玩坏。</p>
 <ul>
@@ -1103,7 +1095,7 @@ accelerate launch <span class="nv">$TRAINER</span> <span class="se">\</span>
 </ul>
 <p>炼出来调用的话看情况加你训练的 instance prompt 的词，看你想要多少味道。</p>
 <p>或许训练人物的时候也是效果拔群。</p>
-<h4 id="multiple-concept">Multiple Concept</h4>
+<h3 id="multiple-concept">Multiple Concept</h3>
 <p>对应实例中的 <code>--concept_list</code> 参数，用 DreamBooth 是可以训练多个概念/人物/动作/物体的。但是若训练两个人物则推理时不能使其同时出现，两者的特征会被混合起来。</p>
 <p>如果用其他版本的 DreamBooth 训练方法检查 <code>--concept_list</code> 参数，可以读入一个类似的 <code>json</code> 文件。</p>
 <ul>
@@ -1128,7 +1120,7 @@ concepts_list = [
 
 # `class_data_dir` contains regularization images
 </code></pre></div>
-<h4 id="aspect-ratio-bucketing">Aspect Ratio Bucketing</h4>
+<h3 id="aspect-ratio-bucketing">Aspect Ratio Bucketing</h3>
 <p>对应上面参数中的 <code>--use_aspect_ratio_bucket</code>。需要在 Colab 中使用的话，<code>aspect_ratio_bucket</code> 调成 <code>enable: true</code>。</p>
 <p><a href="https://github.com/NovelAI/novelai-aspect-ratio-bucketing">Aspect Ratio Bucketing</a> 简称 ARB, 原版训练均只能使用 <code>1:1</code> 的图像，开启 ARB 使得训练非 <code>1:1</code> 的图像成为可能，但并非任意比例尺的图像，不在 bucket 内的图像将会被裁切。</p>
 <div class="highlight"><pre><span></span><code>[[ 256 1024], [ 320 1024], [ 384 1024], [ 384  960], [ 384  896], [ 448  832], [ 512  768], [ 512  704], [ 512  512], [ 576  640], [ 640  576], [ 704  512], [ 768  512], [ 832  448], [ 896  384], [ 960  384], [1024  384], [1024  320], [1024  256]]
@@ -1137,7 +1129,7 @@ concepts_list = [
 <p>ARB 与 DreamBooth 一起使用的兼容性不好，仅推荐 Native Training 时使用。</p>
 </blockquote>
 <p>更多内容请查阅 <a href="https://wandb.ai/psuraj/dreambooth/reports/Dreambooth-training-analysis--VmlldzoyNzk0NDc3">使用 Dreambooth 训练稳定扩散的实验的分析</a></p>
-<h3 id="_12">训练</h3>
+<h2 id="_12">训练</h2>
 <p>按照笔记本步骤或说明训练即可，Colab 用户注意挂载磁盘防止断线。</p>
 <p>训练完毕要将 diffusers 权重转换为 ckpt 文件才能使用哦！利用类似 <code>diffusers2ckpt.py</code> 的文件即可。</p>
 <blockquote>
@@ -1589,7 +1581,7 @@ pip install <span class="nv">bitsandbytes</span><span class="o">==</span><span c
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月22日 16:28:07</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月22日 16:36:19</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 03:59:46</span>
