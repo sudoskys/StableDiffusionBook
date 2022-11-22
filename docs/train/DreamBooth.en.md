@@ -608,4 +608,4 @@ if args.with_prior_preservation:
 
 [5^]:[XavierXiao/Dreambooth-Stable-Diffusion](https://github.com/XavierXiao/Dreambooth-Stable-Diffusion)
 
-[6^]:[StableDiffusion/DreamBooth 自训练全教程](https://zhuanlan.zhihu.com/p/584736850)
+[6^]:[StableDiffusion/DreamBooth自训练全教程](https://zhuanlan.zhihu.com/p/584736850)
