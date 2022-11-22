@@ -5,17 +5,17 @@
 
 以下是新闻和测试内容。
 
+
 ## 11/21
 
-新的 [nijijourney](https://nijijourney.com/) 开始内测。
-
-官方频道分设 日本語，中文，한글，English 四个子区。
+Spellbrush 和 Midjourney 共同研发的 [nijijourney](https://nijijourney.com/) 开始内测。官方 Discord 频道分设 日本語，中文，한글，English 四个子区。
 
 ```
 niji · journey is developed in collaboration by Spellbrush and Midjourney 
 ```
 
 经过初步测试，nijijourney 有良好的构图能力，但是效果仍待观望。
+
 
 ## 11/18
 

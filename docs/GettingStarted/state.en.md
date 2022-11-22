@@ -6,6 +6,8 @@
 
 3. For other statements, please read Readme
 
+4. Wiki is based on published material and experience and is not responsible for the accuracy of the content.
+
 ## License
 
 The document is licensed under the [GFDL](https://www.gnu.org/licenses/fdl-1.3-faq.html) license.
