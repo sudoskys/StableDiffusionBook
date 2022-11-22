@@ -127,15 +127,15 @@ Creating a model that matches the training data so closely that the model fails 
 
 ### VAE
 
-Variational autoencoders (VAEs) 是一种用于学习潜在表示的深度学习技术。它们也被用来绘制图像，在半监督学习中取得最先进的成果，以及在句子之间进行插值。[2^]
+Variational autoencoders (VAEs) 是一种用于学习潜在表示的深度学习技术。它们也被用来绘制图像，在半监督学习中取得最先进的成果，以及在句子之间进行插值。[^2]
 
-Variational autoencoders (VAEs) are a deep learning technique for learning latent representations. They have also been used to draw images, achieve state-of-the-art results in semi-supervised learning, as well as interpolate between sentences.[2^]
+Variational autoencoders (VAEs) are a deep learning technique for learning latent representations. They have also been used to draw images, achieve state-of-the-art results in semi-supervised learning, as well as interpolate between sentences.[^2]
 
 ### CFG
 
 这个词汇为 Classifier Free Guidance Scale 的缩写，用于衡量模型 生成的预期图片和你的提示保持一致的 程度。 Cfg Scale 值为 0 时，会生成一个基于种子的随机图像。
 
-打个比方，想象你的提示是一个带有可变宽度光束的手电筒，你将它照到模型的潜在空间上以突出显示特定区域——你的输出图像将从该区域内的某个地方绘制，具体取决于种子。[1^]
+打个比方，想象你的提示是一个带有可变宽度光束的手电筒，你将它照到模型的潜在空间上以突出显示特定区域——你的输出图像将从该区域内的某个地方绘制，具体取决于种子。[^1]
 
 将 Cfg Scale 拨向 零会产生极宽的光束 ，突出显示整个潜在空间——您的输出几乎可以来自任何地方。
 
@@ -145,23 +145,23 @@ Variational autoencoders (VAEs) are a deep learning technique for learning laten
 
 ### Loss functions
 
-在优化算法的上下文中，用于评估候选解决方案（即一组权重）的函数称为目标函数。 [4^]
+在优化算法的上下文中，用于评估候选解决方案（即一组权重）的函数称为目标函数。 [^4]
 
 对于神经网络，我们寻求最小错误。 因此，目标函数通常被称为成本函数或损失函数，由损失函数计算的值简称为“loss”。
 
-损失函数。[3^]
+损失函数。[^3]
 
 关于 Loss Function 的中文解释请读 [损失函数](https://fangkaipeng.com/?p=2056#header-id-16)
 
 ### 潜在空间
 
-压缩数据的表示，其中相似的数据点在空间上更靠近在一起。[5^]
+压缩数据的表示，其中相似的数据点在空间上更靠近在一起。[^5]
 
 关于潜在空间的中文解释请读 [理解机器学习中的潜在空间](https://zhuanlan.zhihu.com/p/369946876).
 
 ### 损失
 
-一种衡量指标，用于衡量模型的预测偏离其标签的程度。或者更悲观地说是衡量模型有多差。要确定此值，模型必须定义损失函数。例如，线性回归模型通常将均方误差用于损失函数，而逻辑回归模型则使用对数损失函数。[6^]
+一种衡量指标，用于衡量模型的预测偏离其标签的程度。或者更悲观地说是衡量模型有多差。要确定此值，模型必须定义损失函数。例如，线性回归模型通常将均方误差用于损失函数，而逻辑回归模型则使用对数损失函数。[^6]
 
 ### Hyperparameter
 
@@ -171,19 +171,19 @@ Variational autoencoders (VAEs) are a deep learning technique for learning laten
 
 ### Pipeline
 
-要将模型与数据集相匹配所需的所有操作。 管道由数据导入、转换、特征化和学习步骤组成。 对管道进行定型后，它会转变为模型。[7^]
+要将模型与数据集相匹配所需的所有操作。 管道由数据导入、转换、特征化和学习步骤组成。 对管道进行定型后，它会转变为模型。[^7]
 
 ### epoch
 
-在训练时，整个数据集的一次完整遍历，以便不漏掉任何一个样本。因此，一个周期表示（N/批次规模）次训练迭代，其中 N 是样本总数。[6^]
+在训练时，整个数据集的一次完整遍历，以便不漏掉任何一个样本。因此，一个周期表示（N/批次规模）次训练迭代，其中 N 是样本总数。[^6]
 
 ### batch size
 
-一个批次中的样本数。例如，SGD 的批次规模为 1，而小批次的规模通常介于 10 到 1000 之间。批次规模在训练和推断期间通常是固定的；不过，TensorFlow 允许使用动态批次规模。[6^]
+一个批次中的样本数。例如，SGD 的批次规模为 1，而小批次的规模通常介于 10 到 1000 之间。批次规模在训练和推断期间通常是固定的；不过，TensorFlow 允许使用动态批次规模。[^6]
 
 ### iteration 迭代
 
-模型的权重在训练期间的一次更新。迭代包含计算参数在单个批量数据上的梯度损失。[6^]
+模型的权重在训练期间的一次更新。迭代包含计算参数在单个批量数据上的梯度损失。[^6]
 
 ### Tensor
 
@@ -191,7 +191,7 @@ TensorFlow 程序中的主要数据结构。张量是 N 维（其中 N 可能非
 
 ### checkpoint
 
-一种数据，用于捕获模型变量在特定时间的状态。借助检查点，可以导出模型权重，跨多个会话执行训练，以及使训练在发生错误之后得以继续（例如作业抢占）。请注意，图本身不包含在检查点中。[6^]
+一种数据，用于捕获模型变量在特定时间的状态。借助检查点，可以导出模型权重，跨多个会话执行训练，以及使训练在发生错误之后得以继续（例如作业抢占）。请注意，图本身不包含在检查点中。[^6]
 
 ### embeddings
 
@@ -200,15 +200,15 @@ TensorFlow 程序中的主要数据结构。张量是 N 维（其中 N 可能非
 * 表示成包含百万个元素（高维度）的稀疏向量，其中所有元素都是整数。向量中的每个单元格都表示一个单独的英文单词，单元格中的值表示相应单词在句子中出现的次数。由于单个英文句子包含的单词不太可能超过 50 个，因此向量中几乎每个单元格都包含 0。少数非 0 的单元格中将包含一个非常小的整数（通常为 1），该整数表示相应单词在句子中出现的次数。
 * 表示成包含数百个元素（低维度）的密集向量，其中每个元素都包含一个介于 0 到 1 之间的浮点值。这就是一种嵌套。
 
-在 TensorFlow 中，会按反向传播损失训练嵌套，和训练神经网络中的任何其他参数时一样。[6^]
+在 TensorFlow 中，会按反向传播损失训练嵌套，和训练神经网络中的任何其他参数时一样。[^6]
 
 ### 激活函数
 
-一种函数（例如 ReLU 或 S 型函数），用于对上一层的所有输入求加权和，然后生成一个输出值（通常为非线性值），并将其传递给下一层。[6^]
+一种函数（例如 ReLU 或 S 型函数），用于对上一层的所有输入求加权和，然后生成一个输出值（通常为非线性值），并将其传递给下一层。[^6]
 
 ### weight
 
-线性模型中特征的系数，或深度网络中的边。训练线性模型的目标是确定每个特征的理想权重。如果权重为 0，则相应的特征对模型来说没有任何贡献。[6^]
+线性模型中特征的系数，或深度网络中的边。训练线性模型的目标是确定每个特征的理想权重。如果权重为 0，则相应的特征对模型来说没有任何贡献。[^6]
 
 ### ENSD
 
@@ -232,16 +232,16 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
 
 配合 CUDA 技术，显卡可以模拟成一颗 PhysX 物理加速芯片。目前，全系列的 GeForce 8 显示核心都支持 CUDA。
 
-[1^]:[Getting Started With Stable Diffusion: A Guide For Creators](https://www.jonstokes.com/p/getting-started-with-stable-diffusion)
+[^1]:[Getting Started With Stable Diffusion: A Guide For Creators](https://www.jonstokes.com/p/getting-started-with-stable-diffusion)
 
-[2^]:[VAE-CS228](https://ermongroup.github.io/cs228-notes/extras/vae/)
+[^2]:[VAE-CS228](https://ermongroup.github.io/cs228-notes/extras/vae/)
 
-[3^]:[LOSS FUNC-CS231](https://cs231n.github.io/neural-networks-2/)
+[^3]:[LOSS FUNC-CS231](https://cs231n.github.io/neural-networks-2/)
 
-[4^]:[What Is a Loss Function and Loss?](https://machinelearningmastery.com/loss-and-loss-functions-for-training-deep-learning-neural-networks/)
+[^4]:[What Is a Loss Function and Loss?](https://machinelearningmastery.com/loss-and-loss-functions-for-training-deep-learning-neural-networks/)
 
-[5^]:[Understanding Latent Space in Machine Learning](https://towardsdatascience.com/understanding-latent-space-in-machine-learning-de5a7c687d8d)
+[^5]:[Understanding Latent Space in Machine Learning](https://towardsdatascience.com/understanding-latent-space-in-machine-learning-de5a7c687d8d)
 
-[6^]:[Loss](https://freeopen.github.io/posts/ml-glossary#loss)
+[^6]:[Loss](https://freeopen.github.io/posts/ml-glossary#loss)
 
-[7^]:[hyperparameter](https://learn.microsoft.com/zh-cn/dotnet/machine-learning/resources/glossary#hyperparameter)
+[^7]:[hyperparameter](https://learn.microsoft.com/zh-cn/dotnet/machine-learning/resources/glossary#hyperparameter)

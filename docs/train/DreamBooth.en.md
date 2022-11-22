@@ -37,7 +37,7 @@ Windows systems require a minimum of 16GB of video memory, Linux systems require
 
 If you choose to use the AutoDl image, you will need to move the dreambooth-for- diffusion folder to autodl-tmp (the data disk) and make sure that the path (the string before the #) is dreambooth-for-diffusion, as detailed in the [tutorial](https://zhuanlan.zhihu.com/p/584736850) The details are illustrated in the tutorial [].
 
-Enable prior_preservation to start DreamBooth training. the lower the prior_loss_weight the harder it is to fit, but also the harder it is to learn. [4^][3^] 
+Enable prior_preservation to start DreamBooth training. the lower the prior_loss_weight the harder it is to fit, but also the harder it is to learn. [^4][^3] 
 
 ### Model transformation
 
@@ -266,7 +266,7 @@ The final hint representing [V] will carry the new things learned by the model a
 
 ### Subject images / Class images
 
-Introduction from [2^]
+Introduction from [^2]
 
 Subject images (or instance images as you see them in your notebook) are the images you want to train on, so if you want your own looking model, you can take 20 to 40 of your own images and enter those. The instance name is a unique identifier that will indicate the trained object in the prompt, personally I use "namelastname", most notebooks use "sks" but it is best to change it.
 
@@ -598,14 +598,14 @@ if args.with_prior_preservation:
 [飞桨 dreambooth 训练教程](https://docs.qq.com/doc/DUHVuZ3BNV0FkT1R6)
 -->
 
-[1^]:[testing_dreambooth_for_consistency_with_complex](https://www.reddit.com/r/StableDiffusion/comments/yhw7k8/testing_dreambooth_for_consistency_with_complex/)
+[^1]:[testing_dreambooth_for_consistency_with_complex](https://www.reddit.com/r/StableDiffusion/comments/yhw7k8/testing_dreambooth_for_consistency_with_complex/)
 
-[2^]:[good_dreambooth_formula](https://www.reddit.com/r/StableDiffusion/comments/ybxv7h/good_dreambooth_formula/)
+[^2]:[good_dreambooth_formula](https://www.reddit.com/r/StableDiffusion/comments/ybxv7h/good_dreambooth_formula/)
 
-[3^]:[dreambooth-training-guide](https://github.com/nitrosocke/dreambooth-training-guide)
+[^3]:[dreambooth-training-guide](https://github.com/nitrosocke/dreambooth-training-guide)
 
-[4^]:[crosstyan-s-guide](https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99)
+[^4]:[crosstyan-s-guide](https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99)
 
-[5^]:[XavierXiao/Dreambooth-Stable-Diffusion](https://github.com/XavierXiao/Dreambooth-Stable-Diffusion)
+[^5]:[XavierXiao/Dreambooth-Stable-Diffusion](https://github.com/XavierXiao/Dreambooth-Stable-Diffusion)
 
-[6^]:[StableDiffusion/DreamBooth自训练全教程](https://zhuanlan.zhihu.com/p/584736850)
+[^6]:[StableDiffusion/DreamBooth自训练全教程](https://zhuanlan.zhihu.com/p/584736850)

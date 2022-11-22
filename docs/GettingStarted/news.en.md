@@ -86,34 +86,24 @@ DPM-Solver (and the improved version DPM-Solver++) is a fast dedicated high-orde
 [Add support for the new DPM-Solver++ samplers added to k-diffusion](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4304)
 
 [dpm-solver](https://github.com/LuChengTHU/dpm-solver)
-
 === "Some Model"
 
     <div class="sample" markdown>
 
-    
-
-![exp](https://user-images.githubusercontent.com/40903705/200149887-935a6f95-0bfa-4f8e-b6b1-0fb0bfe0b39e.jpg)
-
-{ align=left loading=lazy}
+    ![exp](https://user-images.githubusercontent.com/40903705/200149887-935a6f95-0bfa-4f8e-b6b1-0fb0bfe0b39e.jpg){ align=left loading=lazy}
 
     Test From [Here](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/4363)
 
     *used locally trained hypernetwork in generation*
-
     
-
     </div>
 
 === "SD 1.5"
 
     <div class="sample" markdown>
 
-    
+    ![exp](https://user-images.githubusercontent.com/116967051/200134579-dc31f8d4-abd6-4ef0-9d2c-1582a53ec1b0.png){loading=lazy align=left width=300 data-title="DPM-Solver++" data-description="DPM-Solver++ can achieve great sample quality in only 15 to 20 steps."}
 
-![exp](https://user-images.githubusercontent.com/116967051/200134579-dc31f8d4-abd6-4ef0-9d2c-1582a53ec1b0.png)
-
-{loading=lazy align=left width=300 data-title="DPM-Solver++" data-description="DPM-Solver++ can achieve great sample quality in only 15 to 20 steps."}
 
     Test From [Here](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4304#issuecomment-1304602296)
 
@@ -124,6 +114,7 @@ DPM-Solver (and the improved version DPM-Solver++) is a fast dedicated high-orde
     paper https://arxiv.org/abs/2211.01095
 
     </div>
+
 
 * New Model
 

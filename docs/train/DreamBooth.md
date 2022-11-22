@@ -37,7 +37,7 @@ Windows 系统的显存至少需要 16GB, Linux 系统要求显存至少为 8GB
 
 如果你选择使用 AutoDl 的镜像，需要把 dreambooth-for- diffusion 文件夹移到 autodl-tmp（数据盘）中，且确保运行路径 (# 前面的那一串）为 dreambooth-for-diffusion，具体操作细节在 [知乎教程](https://zhuanlan.zhihu.com/p/584736850) 中有图文说明。
 
-启用 prior_preservation 以开始 DreamBooth 训练。prior_loss_weight 越低则越难过拟合，但是也越难学到东西。[4^][3^] 
+启用 prior_preservation 以开始 DreamBooth 训练。prior_loss_weight 越低则越难过拟合，但是也越难学到东西。[^4][^3] 
 
 ### 模型转换
 
@@ -59,7 +59,7 @@ Windows 系统的显存至少需要 16GB, Linux 系统要求显存至少为 8GB
 
 ### 数据集
 
-数据集的创建是在 Dreambooth 训练 中获得良好、稳定结果的最重要部分。[3^]
+数据集的创建是在 Dreambooth 训练 中获得良好、稳定结果的最重要部分。[^3]
 
 class 和 instance 的质量决定生成的质量。
 
@@ -271,7 +271,7 @@ instance prompt 会被处理为类似 `photo of a cute person`
 
 ### 解释 Subject images / Class images
 
-介绍来自 [2^]
+介绍来自 [^2]
 
 Subject images （或者你在笔记本上看到的实例图像）是你想要训练的图像，所以如果你想要自己的外观的模型，你可以取 20 到 40 张自己的图像并输入这些图像。实例名是一个唯一的标识符，它将在提示符中表示受训对象，个人使用 “namelastname”，大多数笔记本使用“sks”，但最好更改它。
 
@@ -616,14 +616,14 @@ if args.with_prior_preservation:
 [飞桨 dreambooth 训练教程](https://docs.qq.com/doc/DUHVuZ3BNV0FkT1R6)
 -->
 
-[1^]:[testing_dreambooth_for_consistency_with_complex](https://www.reddit.com/r/StableDiffusion/comments/yhw7k8/testing_dreambooth_for_consistency_with_complex/)
+[^1]:[testing_dreambooth_for_consistency_with_complex](https://www.reddit.com/r/StableDiffusion/comments/yhw7k8/testing_dreambooth_for_consistency_with_complex/)
 
-[2^]:[good_dreambooth_formula](https://www.reddit.com/r/StableDiffusion/comments/ybxv7h/good_dreambooth_formula/)
+[^2]:[good_dreambooth_formula](https://www.reddit.com/r/StableDiffusion/comments/ybxv7h/good_dreambooth_formula/)
 
-[3^]:[dreambooth-training-guide](https://github.com/nitrosocke/dreambooth-training-guide)
+[^3]:[dreambooth-training-guide](https://github.com/nitrosocke/dreambooth-training-guide)
 
-[4^]:[crosstyan-s-guide](https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99)
+[^4]:[crosstyan-s-guide](https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99)
 
-[5^]:[XavierXiao/Dreambooth-Stable-Diffusion](https://github.com/XavierXiao/Dreambooth-Stable-Diffusion)
+[^5]:[XavierXiao/Dreambooth-Stable-Diffusion](https://github.com/XavierXiao/Dreambooth-Stable-Diffusion)
 
-[6^]:[StableDiffusion/DreamBooth自训练全教程](https://zhuanlan.zhihu.com/p/584736850)
+[^6]:[StableDiffusion/DreamBooth自训练全教程](https://zhuanlan.zhihu.com/p/584736850)

@@ -213,7 +213,7 @@ The result of the training is a .pt or a .bin file (the former is the format use
 
 ### subject_filewords.txt template
 
-[1^]
+[^1]
 
 Textual Inversion training cannot train things that are not in the model. It is also very sensitive to training photos.
 
@@ -231,4 +231,4 @@ Unless you are trying to fix a photo, use `filewords` for style, not for subject
 
 <iframe src="//player.bilibili.com/player.html?aid=559085039&bvid=BV1ae4y1S7v9&cid=859894044&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 
-[1^]:[is_textual_inversion_salvageable](https://www.reddit.com/r/sdforall/comments/ykerg2/is_textual_inversion_salvageable/)
+[^1]:[is_textual_inversion_salvageable](https://www.reddit.com/r/sdforall/comments/ykerg2/is_textual_inversion_salvageable/)

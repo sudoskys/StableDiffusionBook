@@ -211,7 +211,7 @@ https://arxiv.org/abs/2211.11337
 
 ### subject_filewords.txt 模板
 
-[1^]
+[^1]
 
 Textual Inversion 训练不能训练模型中没有的东西。它对训练照片也非常敏感。
 
@@ -231,4 +231,4 @@ Textual Inversion 训练不能训练模型中没有的东西。它对训练照�
 
 [官方 Wiki](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion#training-embeddings)
 
-[1^]:[is_textual_inversion_salvageable](https://www.reddit.com/r/sdforall/comments/ykerg2/is_textual_inversion_salvageable/)
+[^1]:[is_textual_inversion_salvageable](https://www.reddit.com/r/sdforall/comments/ykerg2/is_textual_inversion_salvageable/)

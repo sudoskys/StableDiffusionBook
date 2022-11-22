@@ -95,11 +95,7 @@ DPM-Solver (and the improved version DPM-Solver++) is a fast dedicated high-orde
 
     <div class="sample" markdown>
 
-    
-
-![exp](https://user-images.githubusercontent.com/40903705/200149887-935a6f95-0bfa-4f8e-b6b1-0fb0bfe0b39e.jpg)
-
-{ align = left loading = lazy}
+    ![exp](https://user-images.githubusercontent.com/40903705/200149887-935a6f95-0bfa-4f8e-b6b1-0fb0bfe0b39e.jpg){ align=left loading=lazy}
 
     Test From [Here](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/4363)
 
@@ -111,11 +107,7 @@ DPM-Solver (and the improved version DPM-Solver++) is a fast dedicated high-orde
 
     <div class="sample" markdown>
 
-    
-
-![exp](https://user-images.githubusercontent.com/116967051/200134579-dc31f8d4-abd6-4ef0-9d2c-1582a53ec1b0.png)
-
-{loading = lazy align = left width = 300 data-title = "DPM-Solver++" data-description = "DPM-Solver++ 只需 15 到 20 个步骤即可实现出色的样本质量，尤其是 2M 和 2M Karras。从 15 步开始，所有步数的结果都非常详细，而且速度很快。"}
+    ![exp](https://user-images.githubusercontent.com/116967051/200134579-dc31f8d4-abd6-4ef0-9d2c-1582a53ec1b0.png){loading=lazy align=left width=300 data-title="DPM-Solver++" data-description="DPM-Solver++ 只需 15 到 20 个步骤即可实现出色的样本质量，尤其是 2M 和 2M Karras。从 15 步开始，所有步数的结果都非常详细，而且速度很快。"}
 
     Test From [Here](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4304#issuecomment-1304602296)
 
@@ -306,10 +298,11 @@ NovelAI 是一个使用 AI 生成故事文本和 **通过描述文字生成图�
 
 此 Reddit 贴称， Stability AI 创始人 Emad Mostaque 谴责 AUTOMATIC 此行为，并称后者窃取了代码；
 
-AUTOMATIC 则称自己没有窃取代码，并解释说他编写的代码是基于很久以前已经完成的研究和开发，并且是开源的。有问题的函数于 2021 年 12 月 21 日在 [此处](https://github.com/CompVis/latent-diffusion/commit/e66308c7f2e64cb581c6d27ab6fbeb846828253b) 发布，并称反倒是 NovelAI 使用了自己的代码 (https://imgur.com/a/Z2QsOEw)。
+AUTOMATIC 则称自己没有窃取代码，并解释说他编写的代码是基于很久以前已经完成的研究和开发，并且是开源的。
 
-Stable Diffusion 社群管理员后又要求 AUTOMATIC 移除项目中的 Hypernetwork 支持，称 NovelAI 核心开发者认为相关代码必然与泄露源码有联系；但被以代码原创且 Hypernetwork **并非泄露模型独创** 的理由回绝。
-
+有问题的函数于 2021 年 12 月 21 日在 [此处](https://github.com/CompVis/latent-diffusion/commit/e66308c7f2e64cb581c6d27ab6fbeb846828253b) 发布，并称反倒是 NovelAI 使用了自己的代码 (https://imgur.com/a/Z2QsOEw)。
+Stable Diffusion 社群管理员后又要求 AUTOMATIC 移除项目中的 Hypernetwork 支持，称 NovelAI 核心开发者认为相关代码必然与泄露源码有联系；
+但被以代码原创且 Hypernetwork **并非泄露模型独创** 的理由回绝。
 而后， AUTOMATIC 被从 Stable Diffusion 的（Slack?）社群服务器中封禁。
 
 来自 https://rentry.org/sd-tldr

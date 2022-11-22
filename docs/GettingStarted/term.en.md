@@ -108,11 +108,11 @@ Informally, often refers to a state reached during training in which training lo
 
 ### VAE
 
-Variational autoencoders (VAEs) are a deep learning technique for learning latent representations. They have also been used to draw images, achieve state-of-the-art results in semi-supervised learning, as well as interpolate between sentences.[2^]
+Variational autoencoders (VAEs) are a deep learning technique for learning latent representations. They have also been used to draw images, achieve state-of-the-art results in semi-supervised learning, as well as interpolate between sentences.[^2]
 
 ### CFG
 
-> From [1^] by Jon Stokes
+> From [^1] by Jon Stokes
 
 This term stands for Classifier-Free Guidance Scale and is a measure of how close you want the model to stick to your prompt when looking for a related image to show you. (This is called “Prompt Guidance” in PlaygroundAI.) A Cfg Scale value of 0 will give you essentially a random image based on the seed, whereas a Cfg Scale of 20 (the maximum on SD) will give you the closest match to your prompt that the model can produce.
 
@@ -128,19 +128,19 @@ Imagine your prompt is a flashlight with a variable-width beam, and you’re shi
 
 ### Loss functions
 
-In the context of an optimization algorithm, the function used to evaluate a candidate solution (i.e. a set of weights) is referred to as the objective function.[4^]
+In the context of an optimization algorithm, the function used to evaluate a candidate solution (i.e. a set of weights) is referred to as the objective function.[^4]
 
 Typically, with neural networks, we seek to minimize the error. As such, the objective function is often referred to as a cost function or a loss function and the value calculated by the loss function is referred to as simply “loss.”
 
 ### 潜在空间
 
-A representation of compressed data, where similar data points are spatially closer together. [5^]
+A representation of compressed data, where similar data points are spatially closer together. [^5]
 
 For a explanation of latent space, please read [Understanding latent space in machine learning](https://towardsdatascience.com/understanding-latent-space-in-machine-learning-de5a7c687d8d).
 
 ### 损失
 
-A measure of how far a model's predictions are from its label. Or, to phrase it more pessimistically, a measure of how bad the model is. To determine this value, a model must define a loss function. For example, linear regression models typically use mean squared error for a loss function, while logistic regression models use Log Loss.[6^]
+A measure of how far a model's predictions are from its label. Or, to phrase it more pessimistically, a measure of how bad the model is. To determine this value, a model must define a loss function. For example, linear regression models typically use mean squared error for a loss function, while logistic regression models use Log Loss.[^6]
 
 ### Hyperparameter
 
@@ -148,19 +148,19 @@ A parameter of a machine learning algorithm. Examples include the number of tree
 
 ### Pipeline
 
-All of the operations needed to fit a model to a data set. A pipeline consists of data import, transformation, featurization, and learning steps. Once a pipeline is trained, it turns into a model.[7^]
+All of the operations needed to fit a model to a data set. A pipeline consists of data import, transformation, featurization, and learning steps. Once a pipeline is trained, it turns into a model.[^7]
 
 ### epoch
 
-A full training pass over the entire data set such that each example has been seen once. Thus, an epoch represents N/batch size training iterations, where N is the total number of examples.[6^]
+A full training pass over the entire data set such that each example has been seen once. Thus, an epoch represents N/batch size training iterations, where N is the total number of examples.[^6]
 
 ### batch size
 
-The number of examples in a batch. For example, the batch size of SGD is 1, while the batch size of a mini-batch is usually between 10 and 1000. Batch size is usually fixed during training and inference; however, TensorFlow does permit dynamic batch sizes.[6^]
+The number of examples in a batch. For example, the batch size of SGD is 1, while the batch size of a mini-batch is usually between 10 and 1000. Batch size is usually fixed during training and inference; however, TensorFlow does permit dynamic batch sizes.[^6]
 
 ### iteration
 
-A single update of a model's weights during training. An iteration consists of computing the gradients of the parameters with respect to the loss on a single batch of data.[6^]
+A single update of a model's weights during training. An iteration consists of computing the gradients of the parameters with respect to the loss on a single batch of data.[^6]
 
 ### Tensor
 
@@ -168,7 +168,7 @@ The primary data structure in TensorFlow programs. Tensors are N-dimensional (wh
 
 ### checkpoint
 
-Data that captures the state of the variables of a model at a particular time. Checkpoints enable exporting model weights, as well as performing training across multiple sessions. Checkpoints also enable training to continue past errors (for example, job preemption). Note that the graph itself is not included in a checkpoint.[6^]
+Data that captures the state of the variables of a model at a particular time. Checkpoints enable exporting model weights, as well as performing training across multiple sessions. Checkpoints also enable training to continue past errors (for example, job preemption). Note that the graph itself is not included in a checkpoint.[^6]
 
 ### embeddings
 
@@ -177,15 +177,15 @@ A categorical feature represented as a continuous-valued feature. Typically, an 
     As a million-element (high-dimensional) sparse vector in which all elements are integers. Each cell in the vector represents a separate English word; the value in a cell represents the number of times that word appears in a sentence. Since a single English sentence is unlikely to contain more than 50 words, nearly every cell in the vector will contain a 0. The few cells that aren't 0 will contain a low integer (usually 1) representing the number of times that word appeared in the sentence.
     As a several-hundred-element (low-dimensional) dense vector in which each element holds a floating-point value between 0 and 1. This is an embedding.
 
-In TensorFlow, embeddings are trained by backpropagating loss just like any other parameter in a neural network.[6^]
+In TensorFlow, embeddings are trained by backpropagating loss just like any other parameter in a neural network.[^6]
 
 ### 激活函数
 
-A function (for example, ReLU or sigmoid) that takes in the weighted sum of all of the inputs from the previous layer and then generates and passes an output value (typically nonlinear) to the next layer.[6^]
+A function (for example, ReLU or sigmoid) that takes in the weighted sum of all of the inputs from the previous layer and then generates and passes an output value (typically nonlinear) to the next layer.[^6]
 
 ### weight
 
-A coefficient for a feature in a linear model, or an edge in a deep network. The goal of training a linear model is to determine the ideal weight for each feature. If a weight is 0, then its corresponding feature does not contribute to the model.[6^]
+A coefficient for a feature in a linear model, or an edge in a deep network. The goal of training a linear model is to determine the ideal weight for each feature. If a weight is 0, then its corresponding feature does not contribute to the model.[^6]
 
 ### ENSD
 
@@ -203,16 +203,16 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
 
 With CUDA technology, the graphics card can be simulated as a PhysX physics acceleration chip. Currently, the full range of GeForce 8 graphics cores support CUDA.
 
-[1^]:[Getting Started With Stable Diffusion: A Guide For Creators](https://www.jonstokes.com/p/getting-started-with-stable-diffusion)
+[^1]:[Getting Started With Stable Diffusion: A Guide For Creators](https://www.jonstokes.com/p/getting-started-with-stable-diffusion)
 
-[2^]:[VAE-CS228](https://ermongroup.github.io/cs228-notes/extras/vae/)
+[^2]:[VAE-CS228](https://ermongroup.github.io/cs228-notes/extras/vae/)
 
-[3^]:[LOSS FUNC-CS231](https://cs231n.github.io/neural-networks-2/)
+[^3]:[LOSS FUNC-CS231](https://cs231n.github.io/neural-networks-2/)
 
-[4^]:[What Is a Loss Function and Loss?](https://machinelearningmastery.com/loss-and-loss-functions-for-training-deep-learning-neural-networks/)
+[^4]:[What Is a Loss Function and Loss?](https://machinelearningmastery.com/loss-and-loss-functions-for-training-deep-learning-neural-networks/)
 
-[5^]:[Understanding Latent Space in Machine Learning](https://towardsdatascience.com/understanding-latent-space-in-machine-learning-de5a7c687d8d)
+[^5]:[Understanding Latent Space in Machine Learning](https://towardsdatascience.com/understanding-latent-space-in-machine-learning-de5a7c687d8d)
 
-[6^]:[Loss](https://freeopen.github.io/posts/ml-glossary#loss)
+[^6]:[Loss](https://freeopen.github.io/posts/ml-glossary#loss)
 
-[7^]:[hyperparameter](https://learn.microsoft.com/zh-cn/dotnet/machine-learning/resources/glossary#hyperparameter)
+[^7]:[hyperparameter](https://learn.microsoft.com/zh-cn/dotnet/machine-learning/resources/glossary#hyperparameter)
