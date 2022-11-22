@@ -1,10 +1,5 @@
 # Getting Started Painting
 
->Todo
->Upscaler 2 的预期用途 https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3749
->
-
-
 This section will introduce the parameters and related SDWebUi resources. If you can draw, the results will be more stable and considerable.
 
 ## Workstations
