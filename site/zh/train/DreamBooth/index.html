@@ -1140,6 +1140,9 @@ concepts_list = [
 </blockquote>
 <p>WebUi 用户将训练出的 <code>.ckpt</code> 文件复制到 webui 的 <code>models\Stable-diffusion</code> 目录里，在 webui 的左上角切换模型即可使用。</p>
 <p>使用时在 <code>prompt</code> 里输入你之前指定的标志符（例如 <balabala> ) 来让 ai 在生成图像中加入你期待的东西。</balabala></p>
+<blockquote>
+<p>过拟合后，CFG 影响很大，可以试试降低 CFG.</p>
+</blockquote>
 <p>模型的效果要看测试图。</p>
 <h2 id="windows">在 Windows 上使用</h2>
 <p>这里的内容适用于想在 Windows 系统上进行训练的同学。</p>
@@ -1220,7 +1223,6 @@ pip install <span class="nv">bitsandbytes</span><span class="o">==</span><span c
 <p><a href="https://colab.research.google.com/github/ShivamShrirao/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion.ipynb#scrollTo=K6xoHWSsbcS3">DreamBooth_Stable_Diffusion</a> </p>
 <p><a href="https://colab.research.google.com/github/TheLastBen/fast-stable-diffusion/blob/main/fast-DreamBooth.ipynb">fast-DreamBooth</a></p>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2927">Dreambooth Gui</a></p>
-<p>过拟合后，CFG 影响很大，可以试试降低 CFG.</p>
 <h2 id="dreambooth_1">DreamBooth 参数表</h2>
 <div class="highlight"><pre><span></span><code>usage: argmark <span class="o">[</span>-h<span class="o">]</span> --pretrained_model_name_or_path
                PRETRAINED_MODEL_NAME_OR_PATH <span class="o">[</span>--revision REVISION<span class="o">]</span>
@@ -1282,19 +1284,19 @@ pip install <span class="nv">bitsandbytes</span><span class="o">==</span><span c
 <td align="left"></td>
 <td align="left"><code>--pretrained_model_name_or_path</code></td>
 <td align="left"><code>None</code></td>
-<td align="left">预训练模型的路径或来自huggingface.co/models的模型标识符。</td>
+<td align="left">预训练模型的路径或来自 huggingface.co/models 的模型标识符。</td>
 </tr>
 <tr>
 <td align="left"></td>
 <td align="left"><code>--revision</code></td>
 <td align="left"><code>None</code></td>
-<td align="left">修订来自huggingface.co/models的预训练模型标识。</td>
+<td align="left">修订来自 huggingface.co/models 的预训练模型标识。</td>
 </tr>
 <tr>
 <td align="left"></td>
 <td align="left"><code>--tokenizer_name</code></td>
 <td align="left"><code>None</code></td>
-<td align="left">预训练的标记器名称或路径，如果与model_name不相同的话。</td>
+<td align="left">预训练的标记器名称或路径，如果与 model_name 不相同的话。</td>
 </tr>
 <tr>
 <td align="left"></td>
@@ -1336,13 +1338,13 @@ pip install <span class="nv">bitsandbytes</span><span class="o">==</span><span c
 <td align="left"></td>
 <td align="left"><code>--num_class_images</code></td>
 <td align="left"><code>100</code></td>
-<td align="left">用于事先保存损失的最小的类图像。如果没有足够的图像，额外的图像将用class_prompt进行采样。</td>
+<td align="left">用于事先保存损失的最小的类图像。如果没有足够的图像，额外的图像将用 class_prompt 进行采样。</td>
 </tr>
 <tr>
 <td align="left"></td>
 <td align="left"><code>--output_dir</code></td>
 <td align="left"><code>text-inversion-model</code></td>
-<td align="left">输出目录，模型预测和checkpoints将被写入该目录。</td>
+<td align="left">输出目录，模型预测和 checkpoints 将被写入该目录。</td>
 </tr>
 <tr>
 <td align="left"></td>
@@ -1582,7 +1584,7 @@ pip install <span class="nv">bitsandbytes</span><span class="o">==</span><span c
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月22日 15:51:01</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月22日 15:52:47</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 03:59:46</span>
