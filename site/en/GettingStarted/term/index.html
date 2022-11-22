@@ -250,10 +250,15 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#how-sd-work">
-    How sd work
+<a class="md-nav__link" href="#explanation-of-terms">
+    Explanation of terms
   </a>
-<nav aria-label="How sd work" class="md-nav">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-stable-diffusion-work">
+    How stable diffusion work
+  </a>
+<nav aria-label="How stable diffusion work" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#reasoning-process">
@@ -280,6 +285,21 @@
 <nav aria-label="Term" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#overfitting">
+    overfitting
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#convergence">
+    convergence
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#vae">
+    VAE
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#cfg">
     CFG
   </a>
@@ -290,8 +310,63 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#latent-space">
-    Latent space
+<a class="md-nav__link" href="#_1">
+    潜在空间
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+    损失
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hyperparameter">
+    Hyperparameter
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pipeline">
+    Pipeline
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#epoch">
+    epoch
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#batch-size">
+    batch size
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#iteration">
+    iteration
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tensor">
+    Tensor
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#checkpoint">
+    checkpoint
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#embeddings">
+    embeddings
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+    激活函数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#weight">
+    weight
   </a>
 </li>
 <li class="md-nav__item">
@@ -307,11 +382,6 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#cuda">
     CUDA
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#ldm">
-    LDM
   </a>
 </li>
 </ul>
@@ -588,10 +658,15 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#how-sd-work">
-    How sd work
+<a class="md-nav__link" href="#explanation-of-terms">
+    Explanation of terms
   </a>
-<nav aria-label="How sd work" class="md-nav">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-stable-diffusion-work">
+    How stable diffusion work
+  </a>
+<nav aria-label="How stable diffusion work" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#reasoning-process">
@@ -618,6 +693,21 @@
 <nav aria-label="Term" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#overfitting">
+    overfitting
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#convergence">
+    convergence
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#vae">
+    VAE
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#cfg">
     CFG
   </a>
@@ -628,8 +718,63 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#latent-space">
-    Latent space
+<a class="md-nav__link" href="#_1">
+    潜在空间
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+    损失
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hyperparameter">
+    Hyperparameter
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pipeline">
+    Pipeline
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#epoch">
+    epoch
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#batch-size">
+    batch size
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#iteration">
+    iteration
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tensor">
+    Tensor
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#checkpoint">
+    checkpoint
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#embeddings">
+    embeddings
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+    激活函数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#weight">
+    weight
   </a>
 </li>
 <li class="md-nav__item">
@@ -647,11 +792,6 @@
     CUDA
   </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#ldm">
-    LDM
-  </a>
-</li>
 </ul>
 </nav>
 </li>
@@ -666,7 +806,46 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="help">Help</h1>
-<h2 id="how-sd-work">How sd work</h2>
+<h2 id="explanation-of-terms">Explanation of terms</h2>
+<table>
+<thead>
+<tr>
+<th>Abbreviations/terms</th>
+<th>Explanations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>onehot</td>
+<td>a picture</td>
+</tr>
+<tr>
+<td>LAION</td>
+<td>A library of image datasets, https://laion.ai</td>
+</tr>
+<tr>
+<td>aug</td>
+<td>augmentaion, a way to get more datasets by cropping, flipping</td>
+</tr>
+<tr>
+<td>ucg</td>
+<td>unconditional guidance</td>
+</tr>
+<tr>
+<td>ML</td>
+<td>Machine Learning</td>
+</tr>
+<tr>
+<td>Latent Space</td>
+<td>Latent Space</td>
+</tr>
+<tr>
+<td>LDM</td>
+<td>Latent Diffusion Model</td>
+</tr>
+</tbody>
+</table>
+<h2 id="how-stable-diffusion-work">How stable diffusion work</h2>
 <h3 id="reasoning-process">Reasoning process</h3>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://jalammar.github.io/images/stable-diffusion/stable-diffusion-components-and-tensors.png"><img alt="jalammar s pic" src="https://jalammar.github.io/images/stable-diffusion/stable-diffusion-components-and-tensors.png"/></a></p>
 <p>information creator works entirely in the image information space (or latent space). This feature makes it faster than previous diffusion models that worked in pixel space. Technically, this component is composed of a UNet neural network and a scheduling algorithm.</p>
@@ -687,7 +866,7 @@
 <p>The Text Decoder draws a picture based on the information obtained from the information creator. It is run only once at the end of the process to produce the final image.</p>
 <p>The autoencoder (VAE) model has two parts, an encoder and a decoder. The encoder is used to convert the image into a latent representation, which is used as input to the U-Net model. The decoder then converts the latent representation back to an image.</p>
 <p>During the inference process, a VAE decoder is used to convert the denoised latent image produced by the backward diffusion process back into an image. During the inference process, we only need the VAE decoder.</p>
-<p>The Autoencoder Decoder (VAE) draws the decoder of the final image using an array of processed information. Input the processed information array (dimensions: (4,64,64)) and output the resulting image (dimensions: (3, 512, 512), i.e. (red/green/blue, width, height).</p>
+<p>The Autoencoder Decoder (VAE) draws the decoder of the final image using an array of processed information. Input the processed information array (dimensions: (4, 64, 64)) and output the resulting image (dimensions: (3, 512, 512), i.e. (red/green/blue, width, height).</p>
 <ul>
 <li>The work of CLIP</li>
 </ul>
@@ -725,46 +904,76 @@
 <p><a href="https://www.cs.unc.edu/~ronisen/teaching/fall_2022/pdf_lectures/lecture8_diffusion_model.pdf">diffusion_model</a></p>
 <p><a href="https://theaisummer.com/diffusion-models/#classifier-free-guidance">How diffusion models work: the math from scratch</a></p>
 <h2 id="term">Term</h2>
+<h3 id="overfitting">overfitting</h3>
+<p>Creating a model that matches the training data so closely that the model fails to make correct predictions on new data.</p>
+<h3 id="convergence">convergence</h3>
+<p>Informally, often refers to a state reached during training in which training loss and validation loss change very little or not at all with each iteration after a certain number of iterations. In other words, a model reaches convergence when additional training on the current data will not improve the model. In deep learning, loss values sometimes stay constant or nearly so for many iterations before finally descending, temporarily producing a false sense of convergence.</p>
+<h3 id="vae">VAE</h3>
+<p>Variational autoencoders (VAEs) are a deep learning technique for learning latent representations. They have also been used to draw images, achieve state-of-the-art results in semi-supervised learning, as well as interpolate between sentences.<a href="[VAE-CS228](https://ermongroup.github.io/cs228-notes/extras/vae/)">2^</a></p>
 <h3 id="cfg">CFG</h3>
-<p>This term stands for Classifier Free Guidance Scale and is used to measure how well the expected image generated by the model matches your cues. A Cfg Scale value of 0 will generate a random image based on the seed. [1^]</p>
-<p>Imagine, for example, that your cue is a torch with a variable-width beam that you shine onto the model's potential space to highlight a specific area - your output image will be drawn from somewhere within that area, depending on the seed.</p>
-<p>Toggling the Cfg Scale to zero produces an extremely wide beam that highlights the entire potential space - your output can come from almost anywhere.</p>
-<p>Toggling the Cfg Scale to 20 produces a very narrow beam, so much so that in extreme cases it becomes a laser pointer, illuminating a single point in the potential space. </p>
-<p>https://arxiv.org/abs/2207.12598</p>
+<blockquote>
+<p>From [1^] by Jon Stokes</p>
+</blockquote>
+<p>This term stands for Classifier-Free Guidance Scale and is a measure of how close you want the model to stick to your prompt when looking for a related image to show you. (This is called “Prompt Guidance” in PlaygroundAI.) A Cfg Scale value of 0 will give you essentially a random image based on the seed, whereas a Cfg Scale of 20 (the maximum on SD) will give you the closest match to your prompt that the model can produce.</p>
+<p>It’s worth trying to develop an intuition about this value in terms of latent space. The following analogy isn’t perfect, but it should give you a sense of what you’re doing:</p>
+<p>Imagine your prompt is a flashlight with a variable-width beam, and you’re shining it onto the model’s latent space volume to highlight a particular region — your output image will be drawn from somewhere within that region, depending on the seed.</p>
+<pre><code>Dialing the Cfg Scale toward zero produces an extremely wide beam that highlights the entire latent space — your output could come from literally anywhere.
+
+Dialing the Cfg Scale toward 20 produces a beam so narrow that at the extreme it turns into a laser pointer that illuminates a single point in latent space.
+</code></pre>
+<p><a href="https://arxiv.org/abs/2112.10741">Relate Paper</a></p>
 <h3 id="loss-functions">Loss functions</h3>
-<p>About <a href="https://www.datarobot.com/blog/introduction-to-loss-functions/">loss function</a></p>
-<h3 id="latent-space">Latent space</h3>
-<p>A representation of compressed data where similar data points are spatially closer together.</p>
+<p>In the context of an optimization algorithm, the function used to evaluate a candidate solution (i.e. a set of weights) is referred to as the objective function.[4^]</p>
+<p>Typically, with neural networks, we seek to minimize the error. As such, the objective function is often referred to as a cost function or a loss function and the value calculated by the loss function is referred to as simply “loss.”</p>
+<h3 id="_1">潜在空间</h3>
+<p>A representation of compressed data, where similar data points are spatially closer together. [5^]</p>
+<p>For a explanation of latent space, please read <a href="https://towardsdatascience.com/understanding-latent-space-in-machine-learning-de5a7c687d8d">Understanding latent space in machine learning</a>.</p>
+<h3 id="_2">损失</h3>
+<p>A measure of how far a model's predictions are from its label. Or, to phrase it more pessimistically, a measure of how bad the model is. To determine this value, a model must define a loss function. For example, linear regression models typically use mean squared error for a loss function, while logistic regression models use Log Loss.<a href="[Loss](https://freeopen.github.io/posts/ml-glossary#loss)">6^</a></p>
+<h3 id="hyperparameter">Hyperparameter</h3>
+<p>A parameter of a machine learning algorithm. Examples include the number of trees to learn in a decision forest or the step size in a gradient descent algorithm. Values of Hyperparameters are set before training the model and govern the process of finding the parameters of the prediction function, for example, the comparison points in a decision tree or the weights in a linear regression model. For more information, see the Hyperparameter article on <a href="https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)">Wikipedia</a>.</p>
+<h3 id="pipeline">Pipeline</h3>
+<p>All of the operations needed to fit a model to a data set. A pipeline consists of data import, transformation, featurization, and learning steps. Once a pipeline is trained, it turns into a model.<a href="[hyperparameter](https://learn.microsoft.com/zh-cn/dotnet/machine-learning/resources/glossary#hyperparameter)">7^</a></p>
+<h3 id="epoch">epoch</h3>
+<p>A full training pass over the entire data set such that each example has been seen once. Thus, an epoch represents N/batch size training iterations, where N is the total number of examples.<a href="[Loss](https://freeopen.github.io/posts/ml-glossary#loss)">6^</a></p>
+<h3 id="batch-size">batch size</h3>
+<p>The number of examples in a batch. For example, the batch size of SGD is 1, while the batch size of a mini-batch is usually between 10 and 1000. Batch size is usually fixed during training and inference; however, TensorFlow does permit dynamic batch sizes.<a href="[Loss](https://freeopen.github.io/posts/ml-glossary#loss)">6^</a></p>
+<h3 id="iteration">iteration</h3>
+<p>A single update of a model's weights during training. An iteration consists of computing the gradients of the parameters with respect to the loss on a single batch of data.<a href="[Loss](https://freeopen.github.io/posts/ml-glossary#loss)">6^</a></p>
+<h3 id="tensor">Tensor</h3>
+<p>The primary data structure in TensorFlow programs. Tensors are N-dimensional (where N could be very large) data structures, most commonly scalars, vectors, or matrices. The elements of a Tensor can hold integer, floating-point, or string values.</p>
+<h3 id="checkpoint">checkpoint</h3>
+<p>Data that captures the state of the variables of a model at a particular time. Checkpoints enable exporting model weights, as well as performing training across multiple sessions. Checkpoints also enable training to continue past errors (for example, job preemption). Note that the graph itself is not included in a checkpoint.<a href="[Loss](https://freeopen.github.io/posts/ml-glossary#loss)">6^</a></p>
+<h3 id="embeddings">embeddings</h3>
+<p>A categorical feature represented as a continuous-valued feature. Typically, an embedding is a translation of a high-dimensional vector into a low-dimensional space. For example, you can represent the words in an English sentence in either of the following two ways:</p>
+<pre><code>As a million-element (high-dimensional) sparse vector in which all elements are integers. Each cell in the vector represents a separate English word; the value in a cell represents the number of times that word appears in a sentence. Since a single English sentence is unlikely to contain more than 50 words, nearly every cell in the vector will contain a 0. The few cells that aren't 0 will contain a low integer (usually 1) representing the number of times that word appeared in the sentence.
+As a several-hundred-element (low-dimensional) dense vector in which each element holds a floating-point value between 0 and 1. This is an embedding.
+</code></pre>
+<p>In TensorFlow, embeddings are trained by backpropagating loss just like any other parameter in a neural network.<a href="[Loss](https://freeopen.github.io/posts/ml-glossary#loss)">6^</a></p>
+<h3 id="_3">激活函数</h3>
+<p>A function (for example, ReLU or sigmoid) that takes in the weighted sum of all of the inputs from the previous layer and then generates and passes an output value (typically nonlinear) to the next layer.<a href="[Loss](https://freeopen.github.io/posts/ml-glossary#loss)">6^</a></p>
+<h3 id="weight">weight</h3>
+<p>A coefficient for a feature in a linear model, or an edge in a deep network. The goal of training a linear model is to determine the ideal weight for each feature. If a weight is 0, then its corresponding feature does not contribute to the model.<a href="[Loss](https://freeopen.github.io/posts/ml-glossary#loss)">6^</a></p>
 <h3 id="ensd">ENSD</h3>
-<p>ENSD in the settings page is the eta noise seed increment.</p>
-<p>It changes your seed to perform some eta/sigma operations.</p>
+<p>ENSD is the eta noise seed delta, which changes the seed.</p>
 <p>NAI uses 31337</p>
 <h3 id="clip">CLIP</h3>
-<div class="highlight"><pre><span></span><code>CLIP is a very advanced neural network that transforms your prompt text into a numerical representation. Neural networks work very well with this numerical representation and that's why devs of SD chose CLIP as one of 3 models involved in stable diffusion's method of producing images. As CLIP is a neural network, it means that it has a lot of layers. Your prompt is digitized in a simple way, and then fed through layers. You get numerical representation of the prompt after the 1st layer, you feed that into the second layer, you feed the result of that into third, etc, until you get to the last layer, and that's the output of CLIP that is used in stable diffusion. This is the slider value of 1. But you can stop early, and use the output of the next to last layer - that's slider value of 2. The earlier you stop, the less layers of neural network have worked on the prompt.
-
-https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-last-layers-of-clip-model
-</code></pre></div>
-<p>To get the AI to draw, you first need to get the program to "understand" your instructions, such as</p>
-<p>"a big cherry tree above a lake with flying petals in the sky."</p>
-<p>For a textual description of a relatively complex scene, the AI needs to be able to "understand" and match the corresponding picture, and most projects rely on a model called CLIP.</p>
-<p>CLIP searches the potential space of the generated model to find a potential image that matches a given text description.</p>
-<p>It is very modern and efficient.</p>
-<h3 id="cuda">CUDA</h3>
-<p>With CUDA technology, the GPU can be used for general purpose processing (not just graphics); this approach is called GPGPU, and unlike CPUs, GPUs concurrently execute a large number of threads at a slower rate rather than a single thread at a faster rate. The GeForce 8800 GTX, for example, has 128 internal processors in its core. Using CUDA technology, it is possible to use those internal processors as thread processors to solve data-intensive calculations.</p>
-<h3 id="ldm">LDM</h3>
-<p>Latent Diffusion Model</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://user-images.githubusercontent.com/75739606/198675128-c2c849d0-d024-468b-80c4-374f13e933e3.png"><img alt="？" src="https://user-images.githubusercontent.com/75739606/198675128-c2c849d0-d024-468b-80c4-374f13e933e3.png"/></a></p>
 <blockquote>
-<p>Diagram of the lower part</p>
+<p>CLIP is a very advanced neural network that transforms your prompt text into a numerical representation. Neural networks work very well with this numerical representation and that's why devs of SD chose CLIP as one of 3 models involved in stable diffusion's method of producing images. As CLIP is a neural network, it means that it has a lot of layers. Your prompt is digitized in a simple way, and then fed through layers. You get numerical representation of the prompt after the 1st layer, you feed that into the second layer, you feed the result of that into third, etc, until you get to the last layer, and that's the output of CLIP that is used in stable diffusion. This is the slider value of 1. But you can stop early, and use the output of the next to last layer - that's slider value of 2. The earlier you stop, the less layers of neural network have worked on the prompt.</p>
 </blockquote>
-<p><a href="https://zhuanlan.zhihu.com/p/573984443">潜在扩散模型</a></p>
+<p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-last-layers-of-clip-model</p>
+<h3 id="cuda">CUDA</h3>
+<p>With CUDA technology, the graphics card can be simulated as a PhysX physics acceleration chip. Currently, the full range of GeForce 8 graphics cores support CUDA.</p>
 <p>[1^]:<a href="https://www.jonstokes.com/p/getting-started-with-stable-diffusion">Getting Started With Stable Diffusion: A Guide For Creators</a></p>
+<p>[3^]:<a href="https://cs231n.github.io/neural-networks-2/">LOSS FUNC-CS231</a></p>
+<p>[4^]:<a href="https://machinelearningmastery.com/loss-and-loss-functions-for-training-deep-learning-neural-networks/">What Is a Loss Function and Loss?</a></p>
+<p>[5^]:<a href="https://towardsdatascience.com/understanding-latent-space-in-machine-learning-de5a7c687d8d">Understanding Latent Space in Machine Learning</a></p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 19, 2022 11:52:42</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 22, 2022 12:03:04</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 13, 2022 10:24:49</span>
