@@ -90,6 +90,7 @@ nav:
           - 安装扩展: paint/WebUi/extension.md
       - 实战指南:
           - paint/Practicalguide.md
+          - 鉴别: paint/identify.md
   - 训练模型:
       - 训练介绍: train/index.md
       - Textual 训练: train/Textual.md
@@ -142,6 +143,7 @@ plugins:
           工作台: Workstations
           贡献指南: Contribution Guide
           概论: General
+          鉴别: Identify
       languages:
         en:
           name: English
