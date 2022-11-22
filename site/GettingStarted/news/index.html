@@ -31,12 +31,15 @@
 <meta content="https://stable-diffusion-book.vercel.app/assets/images/social/GettingStarted/news.png" name="twitter:image"/>
 <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
-            .gdesc-inner { font-size: 0.75rem; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
             .gslide-image img { background: white; }
             
                 .gscrollbar-fixer { padding-right: 15px; }
+                .gdesc-inner { font-size: 0.75rem; }
+                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
                 </style><script src="../../assets/javascripts/glightbox.min.js"></script></head>
 <body data-md-color-accent="" data-md-color-primary="white" data-md-color-scheme="default" dir="ltr">
 <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
@@ -241,6 +244,11 @@
       目录
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1121">
+    11/21
+  </a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#1118">
     11/18
@@ -667,6 +675,11 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#1121">
+    11/21
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#1118">
     11/18
   </a>
@@ -837,6 +850,12 @@
 <p>目前Stable Diffusion WebUi迭代非常快，每天都会有大量更新，因此建议每天都拉取最新代码。</p>
 </div>
 <p>以下是新闻和测试内容。</p>
+<h2 id="1121">11/21</h2>
+<p>新的 <a href="https://nijijourney.com/">nijijourney</a> 开始内测。</p>
+<p>官方频道分设 日本語，中文，한글，English 四个子区。</p>
+<div class="highlight"><pre><span></span><code>niji · journey is developed in collaboration by Spellbrush and Midjourney 
+</code></pre></div>
+<p>经过初步测试，nijijourney 有良好的构图能力，但是效果仍待观望。</p>
 <h2 id="1118">11/18</h2>
 <p><a href="https://twitter.com/needle/status/1593428231901700101">逆向思维修复手</a></p>
 <h2 id="1116">11/16</h2>
@@ -901,7 +920,7 @@ https://github.com/hpcaitech/ColossalAI</li>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="sample" markdown="">
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://user-images.githubusercontent.com/40903705/200149887-935a6f95-0bfa-4f8e-b6b1-0fb0bfe0b39e.jpg"><img align="left" alt="exp" loading="lazy" src="https://user-images.githubusercontent.com/40903705/200149887-935a6f95-0bfa-4f8e-b6b1-0fb0bfe0b39e.jpg"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://user-images.githubusercontent.com/40903705/200149887-935a6f95-0bfa-4f8e-b6b1-0fb0bfe0b39e.jpg"><img align="left" alt="exp" loading="lazy" src="https://user-images.githubusercontent.com/40903705/200149887-935a6f95-0bfa-4f8e-b6b1-0fb0bfe0b39e.jpg"/></a></p>
 <p>Test From <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/4363">Here</a></p>
 <p><em>生成过程中使用了本地训练的超网络</em></p>
 </div>
@@ -935,7 +954,7 @@ https://deepimagination.cc/eDiffi/</p>
 <li>发现了一个很好用，很实用的工具。</li>
 </ul>
 <p><a href="https://github.com/BlinkDL/Hua">画作焊接</a></p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://raw.githubusercontent.com/BlinkDL/Hua/main/Hua-Demo.gif"><img alt="" src="https://raw.githubusercontent.com/BlinkDL/Hua/main/Hua-Demo.gif"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/BlinkDL/Hua/main/Hua-Demo.gif"><img alt="" src="https://raw.githubusercontent.com/BlinkDL/Hua/main/Hua-Demo.gif"/></a></p>
 <ul>
 <li>2</li>
 </ul>
@@ -1028,7 +1047,7 @@ lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月18日 17:51:42</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月22日 00:00:39</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年10月13日 10:24:49</span>
@@ -1099,5 +1118,5 @@ lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer
 </div>
 <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "toc.follow", "navigation.top", "navigation.tracking", "navigation.indexes", "navigation.expand", "navigation.sections"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
 <script src="../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
-<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

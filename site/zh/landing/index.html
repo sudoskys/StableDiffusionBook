@@ -31,12 +31,15 @@
 <meta content="https://stable-diffusion-book.vercel.app/assets/images/social/landing/index.png" name="twitter:image"/>
 <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
-            .gdesc-inner { font-size: 0.75rem; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
             .gslide-image img { background: white; }
             
                 .gscrollbar-fixer { padding-right: 15px; }
+                .gdesc-inner { font-size: 0.75rem; }
+                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
                 </style><script src="../../assets/javascripts/glightbox.min.js"></script></head>
 <body data-md-color-accent="" data-md-color-primary="white" data-md-color-scheme="default" dir="ltr">
 <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
@@ -779,6 +782,15 @@
 <li>
 <p><a href="https://stablediffusionguides.carrd.co/#">梦想家指南</a></p>
 </li>
+<li>
+<p><a href="https://docs.qq.com/doc/DSHBGRmRUUURjVmNM">Tags基本编写逻辑-三段式入门与解析</a></p>
+</li>
+<li>
+<p><a href="https://docs.qq.com/doc/DWFdSTHJtQWRzYk9k">元素同典</a></p>
+</li>
+<li>
+<p><a href="https://docs.qq.com/doc/DQ3ZJSGFmeVpWc2ta">Ai绘画深度教程</a></p>
+</li>
 </ul>
 <h3 id="_9">风格化</h3>
 <ul>
@@ -892,7 +904,7 @@
 <p><a href="https://juejin.cn/post/6844904025247186952">技术文档写作的道与术</a></p>
 <p><a href="https://learn.lianglianglee.com/%E4%B8%93%E6%A0%8F/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E4%B9%8B%E7%BE%8E/16%20%E6%80%8E%E6%A0%B7%E6%89%8D%E8%83%BD%E5%86%99%E5%A5%BD%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3%EF%BC%9F.md">16 怎样才能写好项目文档？</a></p>
 <p><strong>由以下服务商托管运行</strong></p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://img.shields.io/badge/Vercel-black?style=flat&amp;logo=Vercel&amp;logoColor=white"><img alt="Vercel" src="https://img.shields.io/badge/Vercel-black?style=flat&amp;logo=Vercel&amp;logoColor=white"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://img.shields.io/badge/Vercel-black?style=flat&amp;logo=Vercel&amp;logoColor=white"><img alt="Vercel" src="https://img.shields.io/badge/Vercel-black?style=flat&amp;logo=Vercel&amp;logoColor=white"/></a></p>
 <h2 id="_18">碎言</h2>
 <iframe allowfullscreen="true" border="0" frameborder="no" framespacing="0" height="600" scrolling="no" src="//player.bilibili.com/player.html?aid=559362671&amp;bvid=BV14e4y1U7r9&amp;cid=869144379&amp;page=1" width="100%"> </iframe>
 <p>模型中没有存储任何素材，<a href="https://zhuanlan.zhihu.com/p/572986232">算法实现</a>，目前的版权还很模糊。</p>
@@ -911,7 +923,7 @@
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月7日 04:00:10</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月22日 00:00:39</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年10月10日 07:33:42</span>
@@ -969,5 +981,5 @@
 </div>
 <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "toc.follow", "navigation.top", "navigation.tracking", "navigation.indexes", "navigation.expand", "navigation.sections"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
 <script src="../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
-<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>
