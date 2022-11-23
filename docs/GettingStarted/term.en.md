@@ -64,6 +64,8 @@ The text embedding is combined with random Gaussian noise into the information c
 
 * Extensions
 
+[What are Diffusion Models? ](https://lilianweng.github.io/posts/2021-07-11-diffusion-models/)
+
 [illustrated-stable-diffusion](https://jalammar.github.io/illustrated-stable-diffusion/)
 
 [Stable Diffusion](https://huggingface.co/blog/stable_diffusion)
