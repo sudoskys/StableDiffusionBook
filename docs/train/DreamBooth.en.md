@@ -559,17 +559,6 @@ usage: argmark [-h] --pretrained_model_name_or_path
 ||`--test_seed`|`42`|The seed to use for testing the model.|
 ||`--test_num_per_prompt`|`1`|The number of images to generate per prompt.|
 
-- 细节
-
-```python
-if args.instance_data_dir is None:
-        raise ValueError("You must specify a train data directory.")
-if args.with_prior_preservation:
-    if args.class_data_dir is None:
-        raise ValueError("You must specify a data directory for class images.")
-    if args.class_prompt is None:
-        raise ValueError("You must specify prompt for class images.")
-```
 <!--
 [飞桨 dreambooth 训练教程](https://docs.qq.com/doc/DUHVuZ3BNV0FkT1R6)
 -->
