@@ -72,7 +72,7 @@ Windows 7 上运行很可能会报错：`api-ms-win-core-path-l1-1-0.dll is miss
 
 如果没有出现该错误，不需要执行下面的操作。
 
-这些文件已经被移植来与 W7 兼容，并且可以在 [这里](https://github.com/nalexandru/api-ms-win-core-path-HACK/releases/download/0.3.1/api-ms-win-core-path-blender-0.3.1.zip) 下载。它的 [Github 页面](https://github.com/nalexandru/api-ms-win-core-path-HACK/)
+这些文件已经被移植来与 W7 兼容，并且可以在 [这里](https://github.com/nalexandru/api-ms-win-core-path-HACK/releases/download/0.3.1/api-ms-win-core-path-blender-0.3.1.zip) 下载。它的 [GitHub 页面](https://github.com/nalexandru/api-ms-win-core-path-HACK/)
 
 解压缩并将 `x86.dll` 复制到 `C:\Windows\SysWOW64` ，将 `x64.dll` 复制到 `C:\Windows\System32` 并重启。
 

@@ -83,7 +83,7 @@ With [AiPhotoShop - the online tool for infinite extents of canvas](https://www.
 
 > Image extents for some anime models are not supported because they are not Inpaint models (Sd has a dedicated Inpaint model.)
 
-[Github](https://github.com/BlinkDL/Hua)
+[GitHub](https://github.com/BlinkDL/Hua)
 
 
 ## Curbing style pollution

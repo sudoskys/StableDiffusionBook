@@ -61,7 +61,7 @@ Running on Windows 7 is likely to report the error: `api-ms-win-core-path-l1-1-0
 
 If this error does not occur, there is no need to perform the following actions.
 
-These files have been ported to be compatible with W7 and are available at [here](https://github.com/nalexandru/api-ms-win-core-path-HACK/releases/download/0.3.1/api-ms-win-core-path- blender-0.3.1.zip) for download. Its [Github page](https://github.com/nalexandru/api-ms-win-core-path-HACK/)
+These files have been ported to be compatible with W7 and are available at [here](https://github.com/nalexandru/api-ms-win-core-path-HACK/releases/download/0.3.1/api-ms-win-core-path- blender-0.3.1.zip) for download. Its [GitHub page](https://github.com/nalexandru/api-ms-win-core-path-HACK/)
 
 Unzip and copy `x86.dll` to `C:\Windows\SysWOW64`, copy `x64.dll` to `C:\Windows\System32` and reboot.
 

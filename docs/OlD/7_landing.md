@@ -108,7 +108,7 @@
 
 ### 社区
 
-- [StableDiffusion_Github_discussions](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions)
+- [StableDiffusion_GitHub_discussions](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions)
 
 - [AIBooru](https://aibooru.online/)
 

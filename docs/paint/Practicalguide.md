@@ -83,7 +83,7 @@ Ai 也接受其他成图进行嫁接(解决躺姿没有下半身的问题)
 
 >不支持某些动漫模型的图像外延，因为它们不是Inpaint模型(Sd有专门的Inpaint模型。)
 
-[Github](https://github.com/BlinkDL/Hua)
+[GitHub](https://github.com/BlinkDL/Hua)
 
 
 ## 遏制风格污染

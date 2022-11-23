@@ -118,7 +118,7 @@ If the content is only linked, please make a brief description or extract the ma
 
 ## Submitted content
 
-Make sure your content complies with [Github terms](https://docs.github.com/en/site-policy/acceptable-use-policies/github-acceptable-use-policies) first, and until your changes are merged into the main repository Any changes you make will not appear on the page and can be safely edited.
+Make sure your content complies with [GitHub terms](https://docs.github.com/en/site-policy/acceptable-use-policies/github-acceptable-use-policies) first, and until your changes are merged into the main repository Any changes you make will not appear on the page and can be safely edited.
 
 ### Notification of progress
 

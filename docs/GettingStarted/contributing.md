@@ -118,7 +118,7 @@ commit 摘要，推荐按照下面的格式编辑：
 
 ## 提交内容
 
-先确保您的内容符合 [Github 条款](https://docs.github.com/en/site-policy/acceptable-use-policies/github-acceptable-use-policies)，在你的更改被合并到主仓库之前，你所作出的改动均不会出现在页面上，可以放心编辑。
+先确保您的内容符合 [GitHub 条款](https://docs.github.com/en/site-policy/acceptable-use-policies/github-acceptable-use-policies)，在你的更改被合并到主仓库之前，你所作出的改动均不会出现在页面上，可以放心编辑。
 
 ### 通知进度
 
