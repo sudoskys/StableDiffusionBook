@@ -21,7 +21,23 @@ So it's an efficient Textual Inversion
 
 https://github.com/7eu7d7/DreamArtist-sd-webui-extension
 
-https://arxiv.org/abs/2211.11337
+[paper](https://arxiv.org/abs/2211.11337)
+
+### A simple little guide
+**DL (APT) preparation**
+1. turn off --xformers
+2. set Clip skip to 1
+**Parameters**
+1. forward, reverse word element tocken contrast value setting (from low to high due to character complexity `(3,6)(4,6)(5,7)(3,10)`)
+2. learning rate `LR(0.0025,0.003)` Author's example uses `0.003`
+3. `CGF = 3` 4.
+4. aspect ratio `512:512` 5.
+5. iteration steps `step = 8000 (LR = 0.003)`
+6. updated experimental function EMA (positive)/EMA (negative) set to `0.97`
+**Hint**
+If generating anime images, the model uses the `animefull-latest 7g` model and the generation can be done with `anything`
+
+>by DreamArtist s author
 
 ## Prepare the dataset
 

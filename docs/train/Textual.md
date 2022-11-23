@@ -19,7 +19,23 @@ VAE 对 训练 并不会造成灾难性的影响。
 
 https://github.com/7eu7d7/DreamArtist-sd-webui-extension
 
-https://arxiv.org/abs/2211.11337
+[论文地址](https://arxiv.org/abs/2211.11337)
+
+### 简单的小指南
+**DL（APT）准备**
+1. 关闭--xformers
+2. 设置 Clip skip 调为 1
+**参数**
+1. 正向，反向词元 tocken 对比值设定（因人物复杂度由低到高 `(3,6)(4,6)(5,7)(3,10)`)
+2. 学习率 `LR(0.0025,0.003)` 作者范例使用 `0.003`
+3. `CGF = 3`
+4. 宽高比 `512：512`
+5. 迭代步数 `step = 8000 (LR = 0.003)`
+6. 更新后的实验性功能 EMA（正）/EMA（负） 设为 `0.97`
+**提示**
+如果生成动漫图片，模型使用 `animefull-latest 7g` 模型，生成可以用 `anything`
+
+>by DreamArtist s author
 
 ## 准备数据集
 

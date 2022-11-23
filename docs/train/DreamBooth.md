@@ -37,8 +37,6 @@ Windows 系统的显存至少需要 16GB, Linux 系统要求显存至少为 8GB
 
 如果你选择使用 AutoDl 的镜像，需要把 dreambooth-for- diffusion 文件夹移到 autodl-tmp（数据盘）中，且确保运行路径 (# 前面的那一串）为 dreambooth-for-diffusion，具体操作细节在 [知乎教程](https://zhuanlan.zhihu.com/p/584736850) 中有图文说明。
 
-启用 prior_preservation 以开始 DreamBooth 训练。prior_loss_weight 越低则越难过拟合，但是也越难学到东西。[^4][^3] 
-
 ### 模型转换
 
 在各个笔记本或镜像中都会有以下类型命令，作用是将 ckpt 模型转换为 diffusers 权重格式来训练。
@@ -209,7 +207,11 @@ DreamBooth 本身具有十分强烈的 copy and paste 效果。使用 class/regu
 
 - with_prior_preservation
 
-禁用来开启 Native Training
+启用 prior_preservation 以开始 DreamBooth 训练，禁用来开启 Native Training。
+
+- prior_loss_weight 
+
+越低则越难过拟合，但是也越难学到东西。[^4][^3] 
 
 ### 关键说明
 

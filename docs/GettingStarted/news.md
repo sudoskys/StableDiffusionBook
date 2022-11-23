@@ -6,6 +6,10 @@
 
 以下是新闻和测试内容。
 
+## 11/22
+
+[梯度累积、autocast 修复、新的潜在采样方法等](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4886)
+
 ## 11/21
 
 Spellbrush 和 Midjourney 共同研发的 [nijijourney](https://nijijourney.com/) 开始内测。官方 Discord 频道分设 日本語，中文，한글，English 四个子区。

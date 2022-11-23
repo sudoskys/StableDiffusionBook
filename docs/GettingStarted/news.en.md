@@ -3,6 +3,9 @@
 !!! tip
 
     The Stable Diffusion WebUi is currently iterating very quickly and there are a lot of updates every day, so it is recommended to pull the latest code every day.
+## 11/22
+
+WebUi [Gradient accumulation, autocast fix, new latent sampling method, etc](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4886)
 
 ## 11/21
 

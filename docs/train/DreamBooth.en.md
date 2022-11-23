@@ -37,8 +37,6 @@ Windows systems require a minimum of 16GB of video memory, Linux systems require
 
 If you choose to use the AutoDl image, you will need to move the dreambooth-for- diffusion folder to autodl-tmp (the data disk) and make sure that the path (the string before the #) is dreambooth-for-diffusion, as detailed in the [tutorial](https://zhuanlan.zhihu.com/p/584736850) The details are illustrated in the tutorial [].
 
-Enable prior_preservation to start DreamBooth training. the lower the prior_loss_weight the harder it is to fit, but also the harder it is to learn. [^4][^3] 
-
 ### Model transformation
 
 The following type of command is available in each notebook or mirror and serves to convert the ckpt model to diffusers weight format for training.
@@ -206,7 +204,11 @@ learning rate moderator, optionally `constant, linear, cosine, cosine_with_resta
 
 - with_prior_preservation
 
-Disable to enable Native Training
+Enable prior_preservation to start DreamBooth training.Disable to enable Native Training
+
+- prior_loss_weight
+
+the lower prior_loss_weight the harder it is to fit, but also the harder it is to learn. [^4][^3] 
 
 ### Key notes
 
