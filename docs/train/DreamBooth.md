@@ -192,22 +192,22 @@ class prompt 会用来生成一类图片，被处理为类似 `photo of a person
 
 instance prompt 会被处理为类似 `photo of a cute person`
 
-- 示例
-
 *训练人物的示例*
+
 * Instance prompt: `masterpiece, best quality, sks 1girl, aqua eyes, aqua hair`
 * Class prompt: `masterpiece, best quality, 1girl, aqua eyes, aqua hair`
 
 *训练风格的示例*
+
 * Instance prompt: `1girl, by sks`
 * Class prompt: `1girl`
 
-### 关于这个 [V]
+### 关于 [V]
 
-| What your training set is about | Instance prompt must contain | Class prompt should describe                   |
+| 训练集类型 | Instance prompt 必须包含的 | Class prompt 应该描述的                   |
 | --------------------------------- | ------------------------------ | ------------------------------------------------ |
-| A object/person                 | `[V]` | The object's type and/or characteristics       |
-| A artist's style                | `by [V]` | The common characteristics of the training set |
+| 物体/人                 | `[V]` | 物体的类型和/或特征 characteristics       |
+| 艺术家风格                | `by [V]` | 训练集的共同特点 |
 
 [V] 只用在 Instance prompt 中，是 CLIP 词汇表中的标记，对模型没有意义。**这是由你自己设定的短语，类比方程未知量 x，不是一个叫 `[V]` 的确切值。**
 

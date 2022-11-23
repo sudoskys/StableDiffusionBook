@@ -8,7 +8,7 @@
 
 Dreambooth is based on [Imagen](https://imagen.research.google/) and can be used by simply exporting the model as a ckpt, which can then be loaded into various UIs.
 
-However, neither the Imagen model nor the pre-trained weights are available. So the original Dreambooth was not suitable for stable diffusion. However, [diffusers](https://github.com/ShivamShrirao/diffusers) later implements [Dreambooth](https://github.com/huggingface/diffusers/tree/main/examples/dreambooth) and is fully adapted to Stable Diffusion.
+However, neither the Imagen model nor the pre-trained weights are available. So the original Dreambooth was not suitable for Stable Diffusion. However, [diffusers](https://github.com/ShivamShrirao/diffusers) later implements [Dreambooth](https://github.com/huggingface/diffusers/tree/main/examples/dreambooth) and is fully adapted to Stable Diffusion.
 
 > Diffusers provides pre-trained diffusion models across multiple modalities (e.g. visual and audio) and is supported as a modular toolbox for diffusion model inference and training.
 
@@ -213,7 +213,7 @@ instance prompt will be processed as something like `photo of a cute person`
 * Instance prompt: `1girl, by sks`
 * Class prompt: `1girl`
 
-### About this [V]
+### About [V]
 
 | What your training set is about | Instance prompt must contain | Class prompt should describe |
 | --------------------------------- | ------------------------------ | ------------------------------------------------ |
