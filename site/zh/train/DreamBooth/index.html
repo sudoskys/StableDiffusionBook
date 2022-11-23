@@ -912,12 +912,7 @@
 </ul>
 <p>一旦你收集了数据集的照片，将所有图片裁剪并调整为 512x512 的正方形（你可以利用 <a href="https://www.onlinephotosoft.com/birme/">BIRME</a> 在线工具批量裁剪），并删除任何水印、商标、被图片边缘切断的人/肢体，或其他你不希望被训练的内容。以 PNG 格式保存图像，并将所有图像放在 train 文件夹中。</p>
 <h4 id="augmentation">Augmentation</h4>
-<ul>
-<li>处理数据的方式有许多：最常见的有反转，旋转，亮度和裁切。</li>
-</ul>
-<blockquote>
-<p>将图片打碎，或者对背景/大头等单独裁切，也许会有帮助。</p>
-</blockquote>
+<p>处理图片的方式有许多，常见的有反转，旋转，亮度和裁切。将图片打碎或者对背景/大头等单独裁切，也许有助于提高训练效果。</p>
 <h2 id="_6">参数</h2>
 <p>先让我们看一下来自 <a href="https://github.com/CCRcmcpe/diffusers/blob/748f64e47cd6fe3ebe5e6fe7011ee90c5a672fd3/examples/dreambooth/configs/dreambooth.yaml#L10">CCRcmcpe diffusers 版本</a> 的 Yaml 配置文件。</p>
 <p>DreamBooth 本身不能训练所谓的画风。而 Native Training 对模型进行微调会带来画风的改变，作为所谓的画风训练方法。</p>
@@ -926,7 +921,7 @@
 Dreambooth + class prompt/instance prompt - 训练物体
 </code></pre></div></p>
 <p>但还有很多分类，差异如：是否给每张图片配对 Prompt, 是否 启用 prior_preservation loss(PPL), 是否使用 train text encoder (TTL)<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup></p>
-<p>DreamBooth = instance + class with <code>prior preservation loss</code> （其中分给图片单独标签，和使用统一一个标签的区别）。</p>
+<p>DreamBooth = instance + class with <code>prior preservation loss</code> （其中分给图片单独标签，和使用同一个标签的区别）。</p>
 <h3 id="dreambooth_1">DreamBooth</h3>
 <p>专业训练特定物体/人物。使用 <code>--with_prior_preservation</code> 来启用 DreamBooth ，<strong>只有 DreamBooth 训练会用到 <code>[V]</code> 的概念和 <code>--instance_prompt</code> 相关的参数。</strong></p>
 <ul>
@@ -943,7 +938,7 @@ Dreambooth + class prompt/instance prompt - 训练物体
 <p>Class Prompt 对应  <code>--class_prompt</code> 参数，由程序自动生成，可以从其他支持 CLIP SKIP 2 的推理前端生成好之后放进 class img 内。程序同样可以从独立的 txt 中读取内容。<sup id="fnref5:4"><a class="footnote-ref" href="#fn:4">4</a></sup></p>
 </li>
 </ul>
-<p>DreamBooth 本身具有十分强烈的 copy and paste 效果，使用 class/regularization 可以适当压制该效果。<sup id="fnref2:4"><a class="footnote-ref" href="#fn:4">4</a></sup></p>
+<p>DreamBooth 本身具有十分强烈的 copy and paste 效果，使用 class/regularization 可以适当抑制该效果。<sup id="fnref2:4"><a class="footnote-ref" href="#fn:4">4</a></sup></p>
 <p>训练多个物体请读 <em>Multiple Concept</em> 节。</p>
 <ul>
 <li>示例 <a href="https://github.com/CrazyBoyM/dreambooth-for-diffusion/blob/main/train_object.sh">train_object.sh</a></li>
@@ -961,15 +956,15 @@ Dreambooth + class prompt/instance prompt - 训练物体
 <ul>
 <li>with_prior_preservation</li>
 </ul>
-<p><strong>启用 prior_preservation 以开始 DreamBooth 训练，禁用来开启 Native Training。</strong></p>
+<p><strong>启用 prior_preservation 以开始 DreamBooth 训练，禁用此参数来开启 Native Training。</strong></p>
 <ul>
 <li>prior_loss_weight </li>
 </ul>
 <p>越低则越难过拟合，但是也越难学到东西。<sup id="fnref3:4"><a class="footnote-ref" href="#fn:4">4</a></sup><sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">3</a></sup> </p>
 <ul>
-<li>learning_rate 学习率</li>
+<li>learning_rate </li>
 </ul>
-<p>DreamBooth 本身具有十分强烈的 copy and paste 效果。使用 class/regularization 可以适当压制该效果。</p>
+<p>学习率</p>
 <ul>
 <li>use_txt_as_label</li>
 </ul>
@@ -1033,7 +1028,7 @@ Dreambooth + class prompt/instance prompt - 训练物体
 <p>[V] 只用在 Instance prompt 中，是 CLIP 词汇表中的标记，对模型没有意义。<strong>这是由你自己设定的短语，类比方程未知量 x，不是一个叫 <code>[V]</code> 的确切值。</strong></p>
 <p>假设你想训练的人物叫做 <code>[N]</code>（比如 <code>balabalabala 先生</code>) , 你不应该直接使用 <code>[N]</code>(<code>balabalabala 先生</code>) 作为代表特征词。<sup id="fnref4:4"><a class="footnote-ref" href="#fn:4">4</a></sup></p>
 <p>推荐使用在 <a href="https://huggingface.co/openai/clip-vit-large-patch14/raw/main/vocab.json">该词汇表</a> 中存在但是没有对应概念或者说对应概念不明显的词 <code>[V]</code>（比如 <code>bala</code>)。</p>
-<p>长长的名称很可能被分离为多个标记，会得不到预期效果。标记的分离情况具体可在 <a href="https://novelai.net/tokenizer">NovelAI Tokenizer</a> 验证。</p>
+<p>非常长的名称很可能被分离为多个标记，会得不到预期效果。标记的分离情况具体可在 <a href="https://novelai.net/tokenizer">NovelAI Tokenizer</a> 验证。</p>
 <p>最后代表 [V] 的提示将携带模型学到的新东西，你就可以在生成时使用你设定的 [V] 了。</p>
 <blockquote>
 <p>注：原论文中使用的示例词 <code>sks</code> 和现实中的枪械 <a href="https://en.wikipedia.org/wiki/SKS">SKS</a> 相同，属于不适合被使用的词汇。但是如果你的训练程度足够高的话说不定可以覆写其影响。</p>
@@ -1072,7 +1067,7 @@ Dreambooth + class prompt/instance prompt - 训练物体
 <li>一开始写的 instance prompt 要长一些，概括你的训练目标 （但是又不要太长，不要覆盖你常用的词） （像是 girl 我会换成 woman, 1boy 换成 male)</li>
 <li>text prompt 词数太多了影响分散，效果不明显。</li>
 <li>instance prompt 不能只填一个 <code>[V]</code>（比如 <code>balabala</code>，应该是 <code>a photo of balabala</code>) ，否则那个词也废掉了。</li>
-<li>尝试拉高学习率</li>
+<li>尝试提高学习率</li>
 </ul>
 <p>炼出来调用的话看情况加你训练的 instance prompt 的词，看你想要多少味道。</p>
 <p>或许训练人物的时候也是效果拔群。</p>
@@ -1573,7 +1568,7 @@ pip install <span class="nv">bitsandbytes</span><span class="o">==</span><span c
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月23日 11:19:14</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月23日 11:30:19</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 03:59:46</span>
