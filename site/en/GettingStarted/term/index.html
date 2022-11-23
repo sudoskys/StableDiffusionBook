@@ -310,13 +310,13 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_1">
-    潜在空间
+<a class="md-nav__link" href="#latent-space">
+    latent space
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
-    损失
+<a class="md-nav__link" href="#loss">
+    loss
   </a>
 </li>
 <li class="md-nav__item">
@@ -360,8 +360,8 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_3">
-    激活函数
+<a class="md-nav__link" href="#active-function">
+    Active Function
   </a>
 </li>
 <li class="md-nav__item">
@@ -718,13 +718,13 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_1">
-    潜在空间
+<a class="md-nav__link" href="#latent-space">
+    latent space
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
-    损失
+<a class="md-nav__link" href="#loss">
+    loss
   </a>
 </li>
 <li class="md-nav__item">
@@ -768,8 +768,8 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_3">
-    激活函数
+<a class="md-nav__link" href="#active-function">
+    Active Function
   </a>
 </li>
 <li class="md-nav__item">
@@ -926,10 +926,10 @@ Dialing the Cfg Scale toward 20 produces a beam so narrow that at the extreme it
 <h3 id="loss-functions">Loss functions</h3>
 <p>In the context of an optimization algorithm, the function used to evaluate a candidate solution (i.e. a set of weights) is referred to as the objective function.<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup></p>
 <p>Typically, with neural networks, we seek to minimize the error. As such, the objective function is often referred to as a cost function or a loss function and the value calculated by the loss function is referred to as simply “loss.”</p>
-<h3 id="_1">潜在空间</h3>
+<h3 id="latent-space">latent space</h3>
 <p>A representation of compressed data, where similar data points are spatially closer together. <sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup></p>
 <p>For a explanation of latent space, please read <a href="https://towardsdatascience.com/understanding-latent-space-in-machine-learning-de5a7c687d8d">Understanding latent space in machine learning</a>.</p>
-<h3 id="_2">损失</h3>
+<h3 id="loss">loss</h3>
 <p>A measure of how far a model's predictions are from its label. Or, to phrase it more pessimistically, a measure of how bad the model is. To determine this value, a model must define a loss function. For example, linear regression models typically use mean squared error for a loss function, while logistic regression models use Log Loss.<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup></p>
 <h3 id="hyperparameter">Hyperparameter</h3>
 <p>A parameter of a machine learning algorithm. Examples include the number of trees to learn in a decision forest or the step size in a gradient descent algorithm. Values of Hyperparameters are set before training the model and govern the process of finding the parameters of the prediction function, for example, the comparison points in a decision tree or the weights in a linear regression model. For more information, see the Hyperparameter article on <a href="https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)">Wikipedia</a>.</p>
@@ -951,7 +951,7 @@ Dialing the Cfg Scale toward 20 produces a beam so narrow that at the extreme it
 As a several-hundred-element (low-dimensional) dense vector in which each element holds a floating-point value between 0 and 1. This is an embedding.
 </code></pre>
 <p>In TensorFlow, embeddings are trained by backpropagating loss just like any other parameter in a neural network.<sup id="fnref6:6"><a class="footnote-ref" href="#fn:6">6</a></sup></p>
-<h3 id="_3">激活函数</h3>
+<h3 id="active-function">Active Function</h3>
 <p>A function (for example, ReLU or sigmoid) that takes in the weighted sum of all of the inputs from the previous layer and then generates and passes an output value (typically nonlinear) to the next layer.<sup id="fnref7:6"><a class="footnote-ref" href="#fn:6">6</a></sup></p>
 <h3 id="weight">weight</h3>
 <p>A coefficient for a feature in a linear model, or an edge in a deep network. The goal of training a linear model is to determine the ideal weight for each feature. If a weight is 0, then its corresponding feature does not contribute to the model.<sup id="fnref8:6"><a class="footnote-ref" href="#fn:6">6</a></sup></p>
@@ -964,7 +964,7 @@ As a several-hundred-element (low-dimensional) dense vector in which each elemen
 </blockquote>
 <p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-last-layers-of-clip-model</p>
 <h3 id="cuda">CUDA</h3>
-<p>With CUDA technology, the graphics card can be simulated as a PhysX physics acceleration chip. Currently, the full range of GeForce 8 graphics cores support CUDA.</p>
+<p>With CUDA technology, the graphics card can be simulated as a PhysX physics acceleration chip.</p>
 <div class="footnote">
 <hr/>
 <ol>
@@ -996,7 +996,7 @@ As a several-hundred-element (low-dimensional) dense vector in which each elemen
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 23, 2022 07:44:08</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 23, 2022 13:24:03</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 13, 2022 10:24:49</span>
