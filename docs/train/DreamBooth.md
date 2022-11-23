@@ -124,7 +124,7 @@ DreamBooth = instance + class with `prior preservation loss` （其中分给图�
 
 - Class/Regularization Image 对应 `--class_data_dir`，应该为 **自动生成** 即 auto-generated 的图像，用于检测 AI 的先验知识。不应该放任何非 AI 生成的图像。（如果你确定这么做为什么不去使用 Native Training 呢？）掺杂同风格图在 clas image 已经不再鼓励。每次重新训练不同主题要清空一次。
 
-- Class Prompt 对应  `--class_prompt`，随意，是自动生成出来的，建议从其他支持 CLIP SKIP 2 的推理前端单独生成好之后丢到 class img 集内。程序同样可以从独立的 txt 中读取内容。[^4]
+- Class Prompt 对应  `--class_prompt` 参数，由程序自动生成，可以从其他支持 CLIP SKIP 2 的推理前端生成好之后放进 class img 内。程序同样可以从独立的 txt 中读取内容。[^4]
 
 DreamBooth 本身具有十分强烈的 copy and paste 效果，使用 class/regularization 可以适当压制该效果。[^4]
 
