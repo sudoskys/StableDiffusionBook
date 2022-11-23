@@ -6,6 +6,11 @@
 
 以下是新闻和测试内容。
 
+## 11/23
+
+How to train Stable Diffusion (SD) "efficiently" and how to use SCAL-SDT itself (WIP).
+[SCAL-SDT](https://github.com/CCRcmcpe/scal-sdt/wiki)
+
 ## 11/22
 
 [梯度累积、autocast 修复、新的潜在采样方法等](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4886)

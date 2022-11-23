@@ -16,6 +16,12 @@ DreamBooth, on the other hand, is used for `detail` imitation, where the trainin
 
 As for the Aesthetic Gradients, this means that the AI is given a set of `good sample`. The result is something that adds detail and is easy to train, but slows down the generation of images (each generation has to be recalculated). **Not really suitable for applications**.
 
+### SCAL-SDT
+
+How to train Stable Diffusion (SD) "efficiently" and how to use SCAL-SDT itself (WIP).
+
+[SCAL-SDT](https://github.com/CCRcmcpe/scal-sdt/wiki)
+
 ## Cognitive model training
 
 If you start training with the `--medvram` argument, you may get a `RuntimeError: Expected all tensors to be on the same device` error and be unable to create training.

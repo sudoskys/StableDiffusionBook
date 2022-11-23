@@ -19,6 +19,12 @@ fine tune directly = DB/native training
 
 至于 Aesthetic Gradients ，也就是给 AI 认识一组 `优秀的数据` 。结果就是这个东西会增加细节，训练很简单，但是会拖慢生成图片的速度（每次生成都要重新计算）。并不适合应用。
 
+### SCAL-SDT
+
+How to train Stable Diffusion (SD) "efficiently" and how to use SCAL-SDT itself (WIP).
+
+[SCAL-SDT](https://github.com/CCRcmcpe/scal-sdt/wiki)
+
 ## 认知炼丹
 
 如果你在 `--medvram` 参数下开始训练，可能会出现 `RuntimeError: Expected all tensors to be on the same device` 错误，无法创建训练。
