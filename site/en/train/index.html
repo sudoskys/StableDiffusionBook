@@ -634,6 +634,9 @@ This is a <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issue
 <p>A larger batch size may speed up training slightly and improve it slightly, but it also requires a larger amount of VRAM.</p>
 <h3 id="textual-inversion-ti">Textual Inversion (TI)</h3>
 <p>A method for extracting [v] from a number of images that have a common semantic [v]. The extracted [v] tensor is called "Embedding". The Embedding is saved as a file and can then be referenced by its filename in the prompt when the image is generated.</p>
+<div class="highlight"><pre><span></span><code>fine tune = hn/TI/DreamArtist (APT)/DB/native training etc.
+fine tune directly = DB/native training
+</code></pre></div>
 <h4 id="features">features</h4>
 <p>Smaller training product size, webui comes with training support.</p>
 <p>Can be used to solve problems with newly created characters that cannot be drawn, or to imitate a specific art style that can be described precisely in words. Because TI is doing the processing on the output of the Text Encoder, it does not allow the model to learn concepts it does not know.</p>
@@ -745,7 +748,7 @@ This is a <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issue
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 23, 2022 03:38:32</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 23, 2022 10:53:51</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 07:57:05</span>

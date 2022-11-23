@@ -625,6 +625,9 @@
 <p>这节对显卡的要求较高。</p>
 <p>在法律上，<strong>不应该</strong> 无视画师约定的版权许可，采集作品数据进行训练。在道德上，<strong>不应该</strong> 用训练结果贬低原画师作品价值，俗谚有 “吃水不忘挖井人”，训练数据并不能作为你的贡献。</p>
 <p>目前个人认为效果认为效果最好的是 DreamBooth，但是其训练时对显存要求较高（&gt; 12GB）。</p>
+<div class="highlight"><pre><span></span><code>fine tune = hn/TI/DreamArtist (APT)/DB/native training etc.
+fine tune directly = DB/native training
+</code></pre></div>
 <h2 id="_2">如何选择</h2>
 <p>综述。Textual Inversion  和 Hypernetwork 适用于 <code>整体靠近</code>，前者教 AI 用模型中的标签组成一个 <code>人物</code>，后者也是类似的。区别在于 Hypernetwork 以调节模型权重为手段，而 Textual Inversion 告诉 AI 特定标签应该如何组成。</p>
 <p>而 DreamBooth 适用于 <code>细节</code> 的模仿，它的训练过程 “重新整改” 了模型，新模型之中含有了新的样本特征（加了新东西）， DreamBooth 技术本身用于 “复刻” ，所以可以认识冷门元素。</p>
@@ -705,6 +708,9 @@
 <h2 id="_13">附录</h2>
 <ul>
 <li>
+<p>很好的 <a href="https://github.com/Mikubill/naifu-diffusion">naifu-diffusion</a></p>
+</li>
+<li>
 <p><a href="https://github.com/toriato/stable-diffusion-webui-wd14-tagger">WD 1.4 tagger for Automatic1111's Web UI </a></p>
 </li>
 <li>
@@ -757,7 +763,7 @@
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月23日 03:38:32</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月23日 10:53:51</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 03:59:46</span>

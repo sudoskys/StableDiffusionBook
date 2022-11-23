@@ -530,39 +530,48 @@
 <nav aria-label="Parameters" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#parameter-setting">
-    Parameter setting
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#script-parameters">
-    Script parameters
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#key-notes">
-    Key notes
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#explanation-instance-prompt-class-prompt">
-    Explanation Instance Prompt / Class Prompt
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#about-v">
-    About [V]
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#subject-images-class-images">
-    Subject images / Class images
+<a class="md-nav__link" href="#dreambooth_1">
+    DreamBooth
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#native-training">
     Native Training
   </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#parameters_1">
+    Parameters
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#explanation-of-instance-prompt-class-prompt">
+    Explanation of Instance Prompt / Class Prompt
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#about-this-v">
+    About this [V]
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#explanation-of-subject-images-class-images">
+    Explanation of Subject images / Class images
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#native-training_1">
+    Native Training
+  </a>
+<nav aria-label="Native Training" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#labeled-method">
+    labeled method
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#resume-training-from-checkpoint">
@@ -714,39 +723,48 @@
 <nav aria-label="Parameters" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#parameter-setting">
-    Parameter setting
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#script-parameters">
-    Script parameters
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#key-notes">
-    Key notes
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#explanation-instance-prompt-class-prompt">
-    Explanation Instance Prompt / Class Prompt
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#about-v">
-    About [V]
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#subject-images-class-images">
-    Subject images / Class images
+<a class="md-nav__link" href="#dreambooth_1">
+    DreamBooth
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#native-training">
     Native Training
   </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#parameters_1">
+    Parameters
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#explanation-of-instance-prompt-class-prompt">
+    Explanation of Instance Prompt / Class Prompt
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#about-this-v">
+    About this [V]
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#explanation-of-subject-images-class-images">
+    Explanation of Subject images / Class images
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#native-training_1">
+    Native Training
+  </a>
+<nav aria-label="Native Training" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#labeled-method">
+    labeled method
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#resume-training-from-checkpoint">
@@ -824,29 +842,32 @@
 <p>TODO/HELP Audit</p>
 </blockquote>
 <h2 id="introduction">Introduction</h2>
-<p><a href="https://dreambooth.github.io/">DreamBooth</a> is a method for customising a personalised TextToImage diffusion model. Excellent results can be obtained with only a small amount of training data.</p>
+<p><a href="https://dreambooth.github.io/">DreamBooth</a> is a way to customize a personalized TextToImage diffusion model. Excellent results can be obtained with only a small amount of training data.</p>
 <p>Dreambooth is based on <a href="https://imagen.research.google/">Imagen</a> and can be used by simply exporting the model as a ckpt, which can then be loaded into various UIs.</p>
-<p>However, neither the Imagen model nor the pre-trained weights are available. So the original Dreambooth was not suitable for Stable Diffusion. But later <a href="https://github.com/ShivamShrirao/diffusers">diffusers</a> implements <a href="https://github.com/huggingface/diffusers/tree/main/examples/dreambooth">Dreambooth</a> and is fully adapted to Stable Diffusion.</p>
+<p>However, neither the Imagen model nor the pre-trained weights are available. So the original Dreambooth was not suitable for stable diffusion. However, <a href="https://github.com/ShivamShrirao/diffusers">diffusers</a> later implements <a href="https://github.com/huggingface/diffusers/tree/main/examples/dreambooth">Dreambooth</a> and is fully adapted to Stable Diffusion.</p>
 <blockquote>
 <p>Diffusers provides pre-trained diffusion models across multiple modalities (e.g. visual and audio) and is supported as a modular toolbox for diffusion model inference and training.</p>
 </blockquote>
-<p>This section uses a version of the <a href="https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth">diffusers</a> branch of Shivam Shirao, with a configuration derived from <a href="https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth">ShivamShrirao/diffusers</a>.</p>
-<p>An optimised branch of <a href="https://github.com/CCRcmcpe/diffusers/tree/yaml-config">CCRcmcpe</a> for Stable Diffusion is also recommended.</p>
+<p>This section uses the <a href="https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth">diffusers</a> branch version of Shivam Shirao to explain the parameters, with a configuration derived from <a href="https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth">ShivamShrirao/diffusers</a>.</p>
+<p>We recommend using CCRcmcpe's <a href="https://github.com/CCRcmcpe/diffusers/tree/yaml-config">optimized branch</a> for Stable Diffusion, which can be used with Yaml files.</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://dreambooth.github.io/DreamBooth_files/system.png"><img alt="DreamBooth_files" src="https://dreambooth.github.io/DreamBooth_files/system.png"/></a></p>
 <blockquote>
 <p>by https://dreambooth.github.io/</p>
 </blockquote>
 <h2 id="select">Select</h2>
-<p>Windows systems require a minimum of 16GB of video memory, Linux systems require a minimum of 8GB of video memory</p>
+<p>Windows systems require a minimum of 16GB of video memory, Linux systems require a minimum of 8GB of video memory.</p>
 <ul>
 <li>
-<p><a href="https://github.com/crosstyan/dreambooth-scripts-for-autodl">DreamBooth version</a> for AutoDl</p>
+<p>For <a href="https://github.com/CCRcmcpe/diffusers/">CCRcmcpe/diffusers/</a> branch that likes Yaml file configuration.</p>
 </li>
 <li>
-<p>Package image](https://github.com/CrazyBoyM/dreambooth-for-diffusion) for AutoDl with the name <code>dreambooth-for-diffusion</code></p>
+<p>For <a href="https://github.com/crosstyan/dreambooth-scripts-for-autodl">DreamBooth version</a> for AutoDl/local</p>
 </li>
 <li>
-<p><a href="https://github.com/d8ahazard/sd_dreambooth_extension">Plugin</a> for WebUi</p>
+<p>Wrapper image](https://github.com/CrazyBoyM/dreambooth-for-diffusion) for AutoDl/local with the name <code>dreambooth-for-diffusion</code></p>
+</li>
+<li>
+<p><a href="https://github.com/d8ahazard/sd_dreambooth_extension">Plugin</a> for WebUi, but still needs to be enhanced.</p>
 </li>
 <li>
 <p>For Colab <a href="https://colab.research.google.com/drive/17yM4mlPVOFdJE_81oWBz5mXH9cxvhmz8">Nyanko Lepsoni's Colab notebook</a></p>
@@ -905,80 +926,61 @@
 <p>It may be useful to break up the image, or to crop the background/headers etc. separately.</p>
 </blockquote>
 <h2 id="parameters">Parameters</h2>
-<p>First let's look at an example from the <a href="https://colab.research.google.com/drive/1C1vVZ59S4kWfL7jIsczyLpmxbD4cOA-k">RcINS' Colab notebook</a> notebook.</p>
-<h3 id="parameter-setting">Parameter setting</h3>
-<div class="highlight"><pre><span></span><code><span class="nv">INSTANCE_PROMPT</span> <span class="o">=</span> <span class="s2">"masterpiece, best quality, sks 1girl"</span>
-
-<span class="c1"># images of the subject 数据集的图像</span>
-<span class="nv">INSTANCE_DIR</span> <span class="o">=</span> <span class="s2">"/content/instance-images"</span>
-
-<span class="c1"># Class set </span>
-<span class="nv">CLASS_PROMPT</span> <span class="o">=</span> <span class="s2">"masterpiece, best quality, 1girl"</span> 
-<span class="nv">CLASS_NEGATIVE_PROMPT</span> <span class="o">=</span> <span class="s2">"lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry"</span> 
-<span class="nv">CLASS_DIR</span> <span class="o">=</span> <span class="s2">"/content/class-images"</span> 
-<span class="nv">NUM_CLASS_IMAGES</span> <span class="o">=</span> <span class="m">100</span> 
-
-<span class="c1"># markdown Prompt for saving samples.</span>
-<span class="nv">SAVE_SAMPLE_PROMPT</span> <span class="o">=</span> <span class="s2">"masterpiece, best quality, sks 1girl, looking at viewer"</span>
-<span class="nv">SAVE_SAMPLE_NEGATIVE_PROMPT</span> <span class="o">=</span> <span class="s2">"lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry"</span>
-</code></pre></div>
-<h3 id="script-parameters">Script parameters</h3>
-<div class="highlight"><pre><span></span><code><span class="nv">wandb_arg</span> <span class="o">=</span> <span class="s2">"--wandb"</span> <span class="k">if</span> WANDB_KEY !<span class="o">=</span> <span class="s2">""</span> <span class="k">else</span> <span class="s2">""</span>
-<span class="nv">scale_lr_arg</span> <span class="o">=</span> <span class="s2">"--scale_lr"</span> <span class="k">if</span> SCALE_LR <span class="k">else</span> <span class="s2">""</span>
-<span class="nv">ppl_arg</span> <span class="o">=</span> f<span class="s2">"--with_prior_preservation --prior_loss_weight={PRIOR_LOSS_WEIGHT}"</span> <span class="k">if</span> PRIOR_PRESERVATION <span class="k">else</span> <span class="s2">""</span>
-<span class="nv">read_prompt_arg</span> <span class="o">=</span> f<span class="s2">"--read_prompt_from_txt {READ_PROMPT_FROM_TXT}"</span> <span class="k">if</span> READ_PROMPT_FROM_TXT !<span class="o">=</span> <span class="s2">"no"</span> <span class="k">else</span> <span class="s2">""</span>
-<span class="nv">arb_arg</span> <span class="o">=</span> <span class="s2">"--use_aspect_ratio_bucket --debug_arb"</span> <span class="k">if</span> ASPECT_RATIO_BUCKETING <span class="k">else</span> <span class="s2">""</span>
-
-accelerate launch <span class="nv">$TRAINER</span> <span class="se">\</span>
-  --instance_data_dir <span class="s2">"{INSTANCE_DIR}"</span> <span class="se">\</span>
-  --instance_prompt <span class="s2">"{INSTANCE_PROMPT}"</span> <span class="se">\</span>
-  --pretrained_model_name_or_path <span class="s2">"{MODEL_NAME}"</span> <span class="se">\</span>
-  --pretrained_vae_name_or_path <span class="s2">"{MODEL_NAME}/vae"</span> <span class="se">\</span>
-  --output_dir <span class="s2">"{OUTPUT_DIR}"</span> <span class="se">\</span>
-  --seed<span class="o">=</span><span class="nv">$SEED</span> <span class="se">\</span>
-  --resolution<span class="o">=</span><span class="nv">$RESOLUTION</span> <span class="se">\</span>
-  --optimizer <span class="s2">"{OPTIMIZER}"</span> <span class="se">\</span>
-  --train_batch_size<span class="o">=</span><span class="nv">$TRAIN_BATCH_SIZE</span> <span class="se">\</span>
-  --learning_rate<span class="o">=</span><span class="nv">$LEARNING_RATE</span> <span class="se">\</span>
-  --lr_scheduler<span class="o">=</span><span class="nv">$LR_SCHEDULER</span> <span class="se">\</span>
-  --lr_warmup_steps<span class="o">=</span><span class="nv">$LR_WARMUP_STEPS</span> <span class="se">\</span>
-  --lr_cycles<span class="o">=</span><span class="nv">$LR_CYCLES</span> <span class="se">\</span>
-  --last_epoch<span class="o">=</span><span class="nv">$LAST_EPOCH</span> <span class="se">\</span>
-  --max_train_steps<span class="o">=</span><span class="nv">$MAX_TRAIN_STEPS</span> <span class="se">\</span>
-  --save_interval<span class="o">=</span><span class="nv">$SAVE_INTERVAL</span> <span class="se">\</span>
-  --class_data_dir <span class="s2">"{CLASS_DIR}"</span> <span class="se">\</span>
-  --class_prompt <span class="s2">"{CLASS_PROMPT}"</span> --class_negative_prompt <span class="s2">"{CLASS_NEGATIVE_PROMPT}"</span> <span class="se">\</span>
-  --num_class_images<span class="o">=</span><span class="nv">$NUM_CLASS_IMAGES</span> <span class="se">\</span>
-  --save_sample_prompt <span class="s2">"{SAVE_SAMPLE_PROMPT}"</span> --save_sample_negative_prompt <span class="s2">"{SAVE_SAMPLE_NEGATIVE_PROMPT}"</span> <span class="se">\</span>
-  --n_save_sample<span class="o">=</span><span class="nv">$SAMPLE_N</span> <span class="se">\</span>
-  --infer_batch_size<span class="o">=</span><span class="nv">$INFER_BATCH_SIZE</span> <span class="se">\</span>
-  --infer_steps<span class="o">=</span><span class="nv">$INFER_STEPS</span> <span class="se">\</span>
-  --guidance_scale<span class="o">=</span><span class="nv">$GUIDANCE_SCALE</span> <span class="se">\</span>
-  --gradient_accumulation_steps<span class="o">=</span><span class="nv">$GRADIENT_ACCUMULATION_STEPS</span> <span class="se">\</span>
-  --gradient_checkpointing <span class="se">\</span>
-  --save_unet_half <span class="se">\</span>
-  --mixed_precision <span class="s2">"{MIXED_PRECISION}"</span> <span class="se">\</span>
-  --clip_skip<span class="o">=</span><span class="nv">$CLIP_SKIP</span> <span class="se">\</span>
-  <span class="nv">$wandb_arg</span> <span class="nv">$scale_lr_arg</span> <span class="nv">$ppl_arg</span> <span class="nv">$read_prompt_arg</span> <span class="nv">$arb_arg</span>
-
-<span class="c1"># disabled: --not_cache_latents </span>
-</code></pre></div>
+<p>First let's look at the Yaml configuration file from <a href="https://github.com/CCRcmcpe/diffusers/blob/748f64e47cd6fe3ebe5e6fe7011ee90c5a672fd3/examples/dreambooth/configs/ dreambooth.yaml#L10">CCRcmcpe diffusers version</a> of the Yaml configuration file.</p>
+<p>DreamBooth itself cannot train the so-called painting style. Instead, Native Training fine-tunes the model to bring about a change in the painting style as a so-called painting style training method.</p>
+<p>The classical idea is.
+<div class="highlight"><pre><span></span><code>Native + deepdanbooru-&gt;prompt txt - "training style"
+Dreambooth + class prompt/instance prompt - training objects
+</code></pre></div></p>
+<p>But there are many more categories, with differences such as: whether to pair Prompt to each image, whether to enable prior_preservation loss (PPL), whether to use train text encoder (TTL) <sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup></p>
+<p>DreamBooth = instance + class with <code>prior preservation loss</code> (where the difference is between giving images separate tags, and using a single tag).</p>
+<h3 id="dreambooth_1">DreamBooth</h3>
+<p>Specialises in training specific objects/people. Use <code>-with_prior_preservation</code> to enable DreamBooth, <strong>Only DreamBooth training uses the concept of <code>[V]</code> and the parameters associated with <code>-instance_prompt</code>. </strong></p>
 <ul>
-<li>Instance Image </li>
+<li>
+<p>Instance Image the object you are training on</p>
+</li>
+<li>
+<p>The default implementation of Instance Prompt is to share a prompt globally, which may work for a few shots, i.e. DreamBooth (original paper method). However, when you have more targets to train you can turn on the <code>combine_prompt_from_txt</code> option and have a prompt (usually a txt) for each instance, i.e. DreamBooth (alternative method). The Instance Prompt should contain a unique identifier [V]. See below for a detailed explanation. <sup id="fnref7:4"><a class="footnote-ref" href="#fn:4">4</a></sup></p>
+</li>
+<li>
+<p>Class/Regularization Image corresponds to <code>--class_data_dir</code> and should be <strong>autogenerated</strong> i.e. an auto-generated image, used to detect AI prior knowledge. You should not put any non-AI generated images. (Why not use Native Training if you are sure about this?) Adulteration of same-style images in clas images is no longer encouraged. Each time you retrain a different subject, you have to clear it once.</p>
+</li>
+<li>
+<p>Class Prompt corresponds to <code>--class_prompt</code>, which is arbitrary, and is generated automatically; it is recommended that it be generated separately from other inference front-ends that support CLIP SKIP 2 and then dropped into the class img set. The program can also read the contents from a separate txt. <sup id="fnref6:4"><a class="footnote-ref" href="#fn:4">4</a></sup></p>
+</li>
 </ul>
-<p>The target dataset you are training on.</p>
+<p>DreamBooth itself has a very strong copy and paste effect, which can be suppressed by using class/regularization. <sup id="fnref2:4"><a class="footnote-ref" href="#fn:4">4</a></sup></p>
+<p>For training multiple objects read the <em>Multiple Concept</em> section.</p>
 <ul>
-<li>Class/Regularization </li>
+<li>Example <a href="https://github.com/CrazyBoyM/dreambooth-for-diffusion/blob/main/train_object.sh">train_object.sh</a></li>
 </ul>
-<p>Don't be overly concerned, the Image should be an auto-generated image that is used to detect the AI's a priori knowledge. You should not put any non-AI generated images. If you are sure about this you should go for Native Training. (Adulteration of same-style images in clas image was an early discovery detour and is no longer encouraged)</p>
+<h3 id="native-training">Native Training</h3>
+<p>Unlike DreamBooth, Native Training uses your training set to train directly and does not require a Class Image.</p>
+<p>Turning off the <code>prior_preservation</code> option to start training natively is the recommended way to "train in style".</p>
+<p>There is no Instance/Class Image distinction in this training, all graphs are used for training. However, you need to prepare an Instance Prompt for each image, in a text file with the same name as the image, usually a txt, for example <a href="https://github.com/chavinlo/stable-diffusion-scripts/tree/main/dataset-examples">dataset exp</a></p>
+<p>This txt file with the same name as the image is subsequently read as a label by enabling <code>--use_txt_as_label</code> (this option ignores the content of the instance_prompt argument passed in).</p>
+<p>Native Training requires <strong>more</strong> datasets, but the amount varies, in the range [100, 10000], more is better (but manual selection is still recommended)</p>
 <ul>
-<li>learning_rate</li>
+<li>Example <a href="https://github.com/CrazyBoyM/dreambooth-for-diffusion/blob/main/train_style.sh">train_style.sh</a></li>
 </ul>
-<p>DreamBooth itself has a very strong copy and paste effect. Use class/regularization to suppress this effect.</p>
+<h3 id="parameters_1">Parameters</h3>
+<ul>
+<li>with_prior_preservation</li>
+</ul>
+<p><strong>Enable prior_preservation to start DreamBooth training, disable to enable Native Training.</strong></p>
+<ul>
+<li>prior_loss_weight </li>
+</ul>
+<p>The lower it is, the harder it is to fit, but also the harder it is to learn something. <sup id="fnref3:4"><a class="footnote-ref" href="#fn:4">4</a></sup><sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup> </p>
+<ul>
+<li>learning_rate learning_rate</li>
+</ul>
+<p>DreamBooth itself has a very strong copy and paste effect. Use class/regularization to suppress the effect appropriately.</p>
 <ul>
 <li>use_txt_as_label</li>
 </ul>
-<p>Whether or not to read a txt file with the same name as the image as a label; this option ignores the <code>instance_prompt</code> argument. Usually used in style training.</p>
+<p>Typically used when training a fine-tuned model in Native. Enabling this option turns off DreamBooth, which ignores the <code>instance_prompt</code> argument and reads the label from the txt file instead.</p>
 <ul>
 <li>center_crop </li>
 </ul>
@@ -1007,37 +1009,28 @@ accelerate launch <span class="nv">$TRAINER</span> <span class="se">\</span>
 <ul>
 <li>prior_loss_weight</li>
 </ul>
-<p>the lower prior_loss_weight the harder it is to fit, but also the harder it is to learn. <sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup><sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup> </p>
-<h3 id="key-notes">Key notes</h3>
-<p>Generally the training style removes the <code>-with_prior_preservation</code> parameter, but it is necessary to prepare prompts for each image to be trained, i.e. enable <code>-use_txt_as_label</code> to read a txt file with the same name as the image as a label (i.e. put another txt with the same name), this option ignores the content passed in by the instance_prompt parameter.
-This is reflected in <a href="https://github.com/CrazyBoyM/dreambooth-for-diffusion/blob/main/train_style.sh">train_style.sh</a>.</p>
-<p>Generally training specific objects/characters is done with <code>-with_prior_preservation</code> enabled using only the single label <code>-instance_prompt</code>, which requires prior knowledge of Ai, and with <code>-class_prompt</code> <code>-class_data_dir</code> parameter enabled, <strong>class dir is automatically generated</strong> and is cleared once per retraining. Embodied in <a href="https://github.com/CrazyBoyM/dreambooth-for-diffusion/blob/main/train_object.sh">train_object.sh</a>.</p>
-<p>Here are some scattered explanations.</p>
-<h3 id="explanation-instance-prompt-class-prompt">Explanation Instance Prompt / Class Prompt</h3>
+<p>the lower prior_loss_weight the harder it is to fit, but also the harder it is to learn. <sup id="fnref4:4"><a class="footnote-ref" href="#fn:4">4</a></sup><sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">3</a></sup> </p>
+<h3 id="explanation-of-instance-prompt-class-prompt">Explanation of Instance Prompt / Class Prompt</h3>
+<p>class prompt will be used to generate a class of images that will be treated as something like <code>photo of a person</code></p>
+<p>instance prompt will be processed as something like <code>photo of a cute person</code></p>
 <ul>
-<li>Instance Prompt </li>
+<li>
+<p>Examples</p>
+</li>
+<li>
+<p>Example of a training character</p>
+</li>
+<li>Instance prompt: <code>masterpiece, best quality, sks 1girl, aqua eyes, aqua hair</code></li>
+<li>
+<p>Class prompt: <code>masterpiece, best quality, 1girl, aqua eyes, aqua hair</code></p>
+</li>
+<li>
+<p>Examples of training styles *</p>
+</li>
+<li>Instance prompt: <code>1girl, by sks</code></li>
+<li>Class prompt: <code>1girl</code></li>
 </ul>
-<p>The default implementation is a globally shared prompt, which may work for a few shots, i.e. DreamBooth (original paper method).</p>
-<p>However, when you have more training targets, this parameter no longer applies and you can turn on the <code>combine_prompt_from_txt</code> option to have a prompt (usually a txt) for each instance, i.e. DreamBooth (alternative method). The Instance Prompt should contain a unique identifier [V]</p>
-<ul>
-<li>Class Prompt</li>
-</ul>
-<p>Don't worry too much about it, it's automatically generated, it's recommended to generate it separately from other reasoning front-ends that support CLIP SKIP 2 and drop it into the class img set, which can also be read from a separate txt.</p>
-<ul>
-<li>Note</li>
-</ul>
-<p>class prompt will be used to generate a class of images, treated as something like <code>photo of a person</code></p>
-<p>instance prompt will be processed as something like <code>photo of a cute person</code>.</p>
-<ul>
-<li>Examples</li>
-</ul>
-<p><em>Example of a training character</em>
-* Instance prompt: <code>masterpiece, best quality, sks 1girl, aqua eyes, aqua hair</code>
-* Class prompt: <code>masterpiece, best quality, 1girl, aqua eyes, aqua hair</code></p>
-<p><em>Example of a training style</em>
-* Instance prompt: <code>1girl, by sks</code>
-* Class prompt: <code>1girl</code></p>
-<h3 id="about-v">About [V]</h3>
+<h3 id="about-this-v">About this [V]</h3>
 <table>
 <thead>
 <tr>
@@ -1059,28 +1052,32 @@ This is reflected in <a href="https://github.com/CrazyBoyM/dreambooth-for-diffus
 </tr>
 </tbody>
 </table>
-<p>[V] is a token in the CLIP vocabulary and has no meaning for the model.</p>
-<p>Suppose the character you want to train is called <code>[N]</code> (e.g. <code>Mr. Balabalabala</code>) , you should not use <code>[N]</code> (<code>Mr. Balabalabala</code>) directly as a representative feature word.</p>
-<p>It is recommended to use the word <code>[V]</code> (e.g. <code>bala</code>) that is present in <a href="https://huggingface.co/openai/clip-vit-large-patch14/raw/main/vocab.json">this glossary</a> but has no corresponding concept or where the corresponding concept is not obvious.</p>
+<p>[V] is only used in the Instance prompt and is a token in the CLIP vocabulary that has no meaning for the model. <strong>This is a phrase set by you, analogous to the unknown quantity x of the equation, not an exact value called <code>[V]</code>. </strong></p>
+<p>Suppose the character you want to train is called <code>[N]</code> (e.g. <code>Mr. Balabalabala</code>) , you should not use <code>[N]</code> (<code>Mr. Balabalabala</code>) directly as a representative feature word. <sup id="fnref5:4"><a class="footnote-ref" href="#fn:4">4</a></sup></p>
+<p>It is recommended to use the word <code>[V]</code> (e.g. <code>bala</code>) that exists in <a href="https://huggingface.co/openai/clip-vit-large-patch14/raw/main/vocab.json">this glossary</a> but has no corresponding concept or where the corresponding concept is not obvious.</p>
 <p>Long names are likely to be separated into multiple tokens and will not have the desired effect. The separation of tokens can be verified at <a href="https://novelai.net/tokenizer">NovelAI Tokenizer</a>.</p>
 <p>The final hint representing [V] will carry the new things learned by the model and you will be able to use the [V] you set when generating it.</p>
 <blockquote>
-<p>Note: The example word <code>sks</code> used in the original paper is the same as the real firearm <a href="https://en.wikipedia.org/wiki/SKS">SKS</a> and is not a suitable word to be used. However, if you are sufficiently trained you may be able to override its effects.</p>
+<p>Note: The example word <code>sks</code> used in the original paper is the same as the real firearm <a href="https://en.wikipedia.org/wiki/SKS">SKS</a> and is not a suitable word to be used. However, if you are sufficiently trained you may be able to override its impact.</p>
 </blockquote>
-<h3 id="subject-images-class-images">Subject images / Class images</h3>
+<p>TIPS: Don't use the default by sks (the artist sks), fusion models can be a disaster.</p>
+<h3 id="explanation-of-subject-images-class-images">Explanation of Subject images / Class images</h3>
 <p>Introduction from <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></p>
-<p>Subject images (or instance images as you see them in your notebook) are the images you want to train on, so if you want your own looking model, you can take 20 to 40 of your own images and enter those. The instance name is a unique identifier that will indicate the trained object in the prompt, personally I use "namelastname", most notebooks use "sks" but it is best to change it.</p>
-<p>You are in effect telling the AI to introduce you to the database, to do this you select a class, i.e. the class that best suits the person you are training, for people it is common to use "person", "man"/"woman" etc.</p>
-<p>The purpose of using Class images in training is to <strong>prevent features of objects from "bleeding over" into other objects of the same Class</strong>. Without Class images as a reference point, the AI will merge your face with other faces that appear in the Class. <strong>Your face will infiltrate the other faces generated by the model. </strong></p>
+<p>Subject images (or instance images as you see them in your notebook) are the images you want to train on, so if you want your own looking model, you can take 20 to 40 of your own images and input those. The instance name is a unique identifier that will indicate the trained object in the prompt, personally I use "namelastname", most notebooks use "sks" but it is best to change it.</p>
+<p>You are in effect telling the AI to introduce you to the database, to do this you choose a class, i.e. the one that best fits the class you are training, for people it is common to use "person", "man"/"woman" etc.</p>
+<p>The purpose of using Class images in training is to <strong>prevent features of objects from "bleeding over" into other objects of the same Class</strong>. Without Class images as reference points, the AI will merge your face with other faces that appear in the Class. <strong>Your face will infiltrate the other faces generated by the model. </strong></p>
 <p>DreamBooth can start training without Class images, just disable <code>-with_prior_preservation</code> to enable Native Training.</p>
-<h3 id="native-training">Native Training</h3>
-<p>Unlike DreamBooth, Native Training uses your training set to train directly and does not require a Class Image.</p>
-<p>Turning off the <code>-prior_preservation</code> option (i.e. the <code>-with_prior_preservation</code> parameter) to start training natively is the recommended way to train images.</p>
-<p>There is no Instance/Class Image distinction in this training, all images will be used for training. However, you will need to prepare an Instance Prompt for each image, with the same file name as the traditional hypernetwork, usually txt.</p>
+<h3 id="native-training_1">Native Training</h3>
+<p>Native Training is native training. Unlike DreamBooth, Native Training uses your training set for training directly and does not require Class images.</p>
+<p>Turning off the <code>-prior_preservation</code> option (aka the <code>-with_prior_preservation</code> parameter) to start training natively is the recommended way to train in the style.</p>
+<p>There is no Instance/Class Image distinction in this training, all images will be used for training. However, you need to prepare an Instance Prompt for each image, with the same file name as the traditional hypernetwork, usually txt.</p>
 <div class="admonition tip">
 <p class="admonition-title">About this Txt</p>
-<p>For each image in the dataset ([X].png/[X].jpg), put a [X].txt with the corresponding hint, then set <code>READ_PROMPT_FROM_TXT</code> (<code>--use_txt_as_label</code>). The prompts read from txt [PX] will be inserted into the prompt [P] you set in the training parameters. By default, it is inserted as [PX][P]. With Variable Prompts enabled and Prior Preservation Loss (PRIOR_PRESERVATION) disabled, the training process is effectively equivalent to standard fine-tuning. Native Training requires a large dataset, but the amount varies, and is in the range [100, 10000], so more is better. (manual selection is recommended)</p>
+<p>For each image in the dataset ([X].png/[X].jpg), put a [X].txt with the corresponding hint, then set <code>READ_PROMPT_FROM_TXT</code> (<code>--use_txt_as_label</code>). The prompts read from txt [PX] will be inserted into the prompt [P] you set in the training parameters. By default, it is inserted as [PX][P]. </p>
+<p>With Variable Prompts enabled and Prior Preservation Loss (PRIOR_PRESERVATION) disabled, the training process is effectively equivalent to standard fine-tuning. Native Training requires a large dataset, but the amount varies, and is in the range [100, 10000], so more is better. (manual selection is recommended) </p>
 </div>
+<h4 id="labeled-method">labeled method</h4>
+<p>You can annotate manually or use clip or deepdanbooru for automatic annotation. We recommend using <a href="https://github.com/crosstyan/blip_helper">crosstyan/blip_helper</a> to label your images. or use <a href="https://github.com/KichangKim/DeepDanbooru">DeepDanbooru</a> and <a href="https://github.com/salesforce/BLIP">BLIP</a> If you use AutoDl's mirrors, you can use the built-in <a href="https://github.com/CrazyBoyM/dreambooth-for-diffusion/blob/main/tools/label_images.py">label_images.py</a> for labelling.</p>
 <h3 id="resume-training-from-checkpoint">Resume training from checkpoint</h3>
 <p>The MODEL_NAME of the parameter is changed to the position of the last model.</p>
 <p>If you use <code>CLASS_DIR</code>, you don't need to clear it because the subject is the same, but vice versa.</p>
@@ -1579,10 +1576,10 @@ pip install <span class="nv">bitsandbytes</span><span class="o">==</span><span c
 <p><a href="https://www.reddit.com/r/StableDiffusion/comments/ybxv7h/good_dreambooth_formula/">good_dreambooth_formula</a> <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a></p>
 </li>
 <li id="fn:3">
-<p><a href="https://github.com/nitrosocke/dreambooth-training-guide">dreambooth-training-guide</a> <a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">↩</a></p>
+<p><a href="https://github.com/nitrosocke/dreambooth-training-guide">dreambooth-training-guide</a> <a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref2:3" title="Jump back to footnote 3 in the text">↩</a></p>
 </li>
 <li id="fn:4">
-<p><a href="https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99">crosstyan-s-guide</a> <a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">↩</a></p>
+<p><a href="https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99">crosstyan-s-guide</a> <a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref2:4" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref3:4" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref4:4" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref5:4" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref6:4" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref7:4" title="Jump back to footnote 4 in the text">↩</a></p>
 </li>
 <li id="fn:5">
 <p><a href="https://github.com/XavierXiao/Dreambooth-Stable-Diffusion">XavierXiao/Dreambooth-Stable-Diffusion</a> <a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">↩</a></p>
@@ -1597,7 +1594,7 @@ pip install <span class="nv">bitsandbytes</span><span class="o">==</span><span c
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 23, 2022 06:55:55</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 23, 2022 10:53:51</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 3, 2022 12:19:59</span>
