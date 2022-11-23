@@ -859,7 +859,6 @@
 </blockquote>
 <h2 id="preparation">Preparation</h2>
 <p>If you choose to use the AutoDl image, you will need to move the dreambooth-for- diffusion folder to autodl-tmp (the data disk) and make sure that the path (the string before the #) is dreambooth-for-diffusion, as detailed in the <a href="https://zhuanlan.zhihu.com/p/584736850">tutorial</a> The details are illustrated in the tutorial [].</p>
-<p>Enable prior_preservation to start DreamBooth training. the lower the prior_loss_weight the harder it is to fit, but also the harder it is to learn. <sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup><sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup> </p>
 <h3 id="model-transformation">Model transformation</h3>
 <p>The following type of command is available in each notebook or mirror and serves to convert the ckpt model to diffusers weight format for training.</p>
 <ul>
@@ -1003,7 +1002,11 @@ accelerate launch <span class="nv">$TRAINER</span> <span class="se">\</span>
 <ul>
 <li>with_prior_preservation</li>
 </ul>
-<p>Disable to enable Native Training</p>
+<p>Enable prior_preservation to start DreamBooth training.Disable to enable Native Training</p>
+<ul>
+<li>prior_loss_weight</li>
+</ul>
+<p>the lower prior_loss_weight the harder it is to fit, but also the harder it is to learn. <sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup><sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup> </p>
 <h3 id="key-notes">Key notes</h3>
 <p>Generally the training style removes the <code>-with_prior_preservation</code> parameter, but it is necessary to prepare prompts for each image to be trained, i.e. enable <code>-use_txt_as_label</code> to read a txt file with the same name as the image as a label (i.e. put another txt with the same name), this option ignores the content passed in by the instance_prompt parameter.
 This is reflected in <a href="https://github.com/CrazyBoyM/dreambooth-for-diffusion/blob/main/train_style.sh">train_style.sh</a>.</p>
@@ -1593,7 +1596,7 @@ pip install <span class="nv">bitsandbytes</span><span class="o">==</span><span c
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 22, 2022 16:59:55</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 23, 2022 03:22:21</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 3, 2022 12:19:59</span>

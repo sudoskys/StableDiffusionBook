@@ -859,7 +859,6 @@
 </blockquote>
 <h2 id="_3">准备</h2>
 <p>如果你选择使用 AutoDl 的镜像，需要把 dreambooth-for- diffusion 文件夹移到 autodl-tmp（数据盘）中，且确保运行路径 (# 前面的那一串）为 dreambooth-for-diffusion，具体操作细节在 <a href="https://zhuanlan.zhihu.com/p/584736850">知乎教程</a> 中有图文说明。</p>
-<p>启用 prior_preservation 以开始 DreamBooth 训练。prior_loss_weight 越低则越难过拟合，但是也越难学到东西。<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup><sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup> </p>
 <h3 id="_4">模型转换</h3>
 <p>在各个笔记本或镜像中都会有以下类型命令，作用是将 ckpt 模型转换为 diffusers 权重格式来训练。</p>
 <ul>
@@ -874,7 +873,7 @@
 <div class="highlight"><pre><span></span><code>    python diffusers<span class="se">\s</span>cripts<span class="se">\c</span>onvert_diffusers_to_original_stable_diffusion.py  --model_path models/resultModel  --checkpoint_path result.ckpt  --half
 </code></pre></div>
 <h3 id="_5">数据集</h3>
-<p>数据集的创建是在 Dreambooth 训练 中获得良好、稳定结果的最重要部分。<sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">3</a></sup></p>
+<p>数据集的创建是在 Dreambooth 训练 中获得良好、稳定结果的最重要部分。<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></p>
 <p>class 和 instance 的质量决定生成的质量。</p>
 <ul>
 <li>内容要求</li>
@@ -1003,7 +1002,11 @@ accelerate launch <span class="nv">$TRAINER</span> <span class="se">\</span>
 <ul>
 <li>with_prior_preservation</li>
 </ul>
-<p>禁用来开启 Native Training</p>
+<p>启用 prior_preservation 以开始 DreamBooth 训练，禁用来开启 Native Training。</p>
+<ul>
+<li>prior_loss_weight </li>
+</ul>
+<p>越低则越难过拟合，但是也越难学到东西。<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup><sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">3</a></sup> </p>
 <h3 id="_10">关键说明</h3>
 <p>一般训练画风会去除 <code>--with_prior_preservation</code> 参数，但是需要为每张待训练图片都准备提示，也就是启用 <code>--use_txt_as_label</code> 来读取与图片同名的 txt 文件作为 label（也就是再放一个同名的 txt)，该选项会忽略 instance_prompt 参数传入的内容。
 这点体现在 <a href="https://github.com/CrazyBoyM/dreambooth-for-diffusion/blob/main/train_style.sh">train_style.sh</a> 中。</p>
@@ -1603,7 +1606,7 @@ pip install <span class="nv">bitsandbytes</span><span class="o">==</span><span c
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月22日 17:05:17</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月23日 03:22:21</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 03:59:46</span>

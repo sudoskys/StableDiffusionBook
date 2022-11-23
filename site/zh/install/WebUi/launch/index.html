@@ -746,6 +746,7 @@ set COMMANDLINE_ARGS 设置命令行参数 webui.py 运行
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3889">讨论</a> 有人认为，通过在 Windows 设置上禁用硬件加速 GPU 调度，WebUi 性能提高了大约 10-50%</p>
 <h2 id="api">API 文档</h2>
 <p>使用 <code>--api</code> 参数运行程序，在浏览器访问 <code>{输出的网址}/docs</code> 就可以查看到 WebUi 的 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/tree/master/modules/api">Api</a> 文档。<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">2</a></sup></p>
+<p>如果你想让其他应用调用 Api, 追加<code>--enable-insecure-extension-access</code>。</p>
 <p>下面是一个同步类实现。</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">json</span>
@@ -802,7 +803,7 @@ set COMMANDLINE_ARGS 设置命令行参数 webui.py 运行
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月22日 16:28:07</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月23日 03:26:27</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年10月10日 07:33:42</span>
