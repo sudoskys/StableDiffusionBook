@@ -510,6 +510,15 @@
 <a class="md-nav__link" href="#how-to-choose">
     How to choose
   </a>
+<nav aria-label="How to choose" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scal-sdt">
+    SCAL-SDT
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#cognitive-model-training">
@@ -625,6 +634,9 @@
 <p>In summary, Textual Inversion and Hypernetwork apply to <code>close to sample</code>, with the former teaching the AI to compose a <code>character</code> from the labels in the model, and the latter <strong>being similar</strong>. The difference is that Hypernetwork uses the adjustment of the model weights as a means of composition, while Textual Inversion tells the AI how specific labels should be composed.</p>
 <p>DreamBooth, on the other hand, is used for <code>detail</code> imitation, where the training process <code>refurbishes</code> the model and the new model contains new sample features (adds something new point).At the beginning, the DreamBooth technique itself is used for <code>reproduction</code>, so that it can recognise <strong>Rare characters&amp;element</strong>.</p>
 <p>As for the Aesthetic Gradients, this means that the AI is given a set of <code>good sample</code>. The result is something that adds detail and is easy to train, but slows down the generation of images (each generation has to be recalculated). <strong>Not really suitable for applications</strong>.</p>
+<h3 id="scal-sdt">SCAL-SDT</h3>
+<p>How to train Stable Diffusion (SD) "efficiently" and how to use SCAL-SDT itself (WIP).</p>
+<p><a href="https://github.com/CCRcmcpe/scal-sdt/wiki">SCAL-SDT</a></p>
 <h2 id="cognitive-model-training">Cognitive model training</h2>
 <p>If you start training with the <code>--medvram</code> argument, you may get a <code>RuntimeError: Expected all tensors to be on the same device</code> error and be unable to create training.
 This is a <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2399">problem</a> caused by the optimization mechanism, WebUi in <a href="https://github.com/AUTOMATIC1111/">this commit</a> stable-diffusion-webui/commit/cbb857b675cf0f169b21515c29da492b513cc8c4) allows for the creation of embedding under <code>--medvram</code>. Please update your version beyond this one.</p>
@@ -748,7 +760,7 @@ fine tune directly = DB/native training
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 23, 2022 10:53:51</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 23, 2022 14:09:44</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 07:57:05</span>

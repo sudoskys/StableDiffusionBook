@@ -510,6 +510,15 @@
 <a class="md-nav__link" href="#_2">
     如何选择
   </a>
+<nav aria-label="如何选择" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scal-sdt">
+    SCAL-SDT
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_3">
@@ -632,6 +641,9 @@ fine tune directly = DB/native training
 <p>综述。Textual Inversion  和 Hypernetwork 适用于 <code>整体靠近</code>，前者教 AI 用模型中的标签组成一个 <code>人物</code>，后者也是类似的。区别在于 Hypernetwork 以调节模型权重为手段，而 Textual Inversion 告诉 AI 特定标签应该如何组成。</p>
 <p>而 DreamBooth 适用于 <code>细节</code> 的模仿，它的训练过程 “重新整改” 了模型，新模型之中含有了新的样本特征（加了新东西）， DreamBooth 技术本身用于 “复刻” ，所以可以认识冷门元素。</p>
 <p>至于 Aesthetic Gradients ，也就是给 AI 认识一组 <code>优秀的数据</code> 。结果就是这个东西会增加细节，训练很简单，但是会拖慢生成图片的速度（每次生成都要重新计算）。并不适合应用。</p>
+<h3 id="scal-sdt">SCAL-SDT</h3>
+<p>How to train Stable Diffusion (SD) "efficiently" and how to use SCAL-SDT itself (WIP).</p>
+<p><a href="https://github.com/CCRcmcpe/scal-sdt/wiki">SCAL-SDT</a></p>
 <h2 id="_3">认知炼丹</h2>
 <p>如果你在 <code>--medvram</code> 参数下开始训练，可能会出现 <code>RuntimeError: Expected all tensors to be on the same device</code> 错误，无法创建训练。
 这是优化机制导致的 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2399">问题</a>，WebUi 在 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/cbb857b675cf0f169b21515c29da492b513cc8c4">这次提交</a> 中允许了在 <code>--medvram</code> 下创建 embedding 的情况。请更新版本到这个版本之后。</p>
@@ -763,7 +775,7 @@ fine tune directly = DB/native training
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月23日 10:53:51</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月23日 14:09:44</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 03:59:46</span>
