@@ -141,9 +141,9 @@ Generally we set it to 0.005, but if you want to go faster, you can use 0.01 to 
 
 When training, you can start with a larger learning rate and then gradually reduce it by `0.1 - 0.02 - 0.005`, using the last best result for each test.
 
-! [CS231n](https://user-images.githubusercontent.com/75739606/197824268-273f074d-9622-41ad-9f1a-2980f180dbd9.png)
+![CS231n](https://user-images.githubusercontent.com/75739606/197824268-273f074d-9622-41ad-9f1a-2980f180dbd9.png)
 <! --
-! [CS231n](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/CS231n.png)
+![CS231n](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/CS231n.png)
 -->
 
 ### Parameters
