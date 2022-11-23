@@ -6,6 +6,11 @@
 
 目前个人认为效果认为效果最好的是 DreamBooth，但是其训练时对显存要求较高（> 12GB）。
 
+```
+fine tune = hn/TI/DreamArtist (APT)/DB/native training etc.
+fine tune directly = DB/native training
+```
+
 ## 如何选择
 
 综述。Textual Inversion  和 Hypernetwork 适用于 `整体靠近`，前者教 AI 用模型中的标签组成一个 `人物`，后者也是类似的。区别在于 Hypernetwork 以调节模型权重为手段，而 Textual Inversion 告诉 AI 特定标签应该如何组成。
@@ -144,6 +149,8 @@ git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-grad
 -->
 
 ## 附录
+
+- 很好的 [naifu-diffusion](https://github.com/Mikubill/naifu-diffusion)
 
 - [WD 1.4 tagger for Automatic1111's Web UI ](https://github.com/toriato/stable-diffusion-webui-wd14-tagger)
 

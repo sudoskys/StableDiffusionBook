@@ -4,30 +4,32 @@
 
 ## Introduction
 
-[DreamBooth](https://dreambooth.github.io/) is a method for customising a personalised TextToImage diffusion model. Excellent results can be obtained with only a small amount of training data.
+[DreamBooth](https://dreambooth.github.io/) is a way to customize a personalized TextToImage diffusion model. Excellent results can be obtained with only a small amount of training data.
 
 Dreambooth is based on [Imagen](https://imagen.research.google/) and can be used by simply exporting the model as a ckpt, which can then be loaded into various UIs.
 
-However, neither the Imagen model nor the pre-trained weights are available. So the original Dreambooth was not suitable for Stable Diffusion. But later [diffusers](https://github.com/ShivamShrirao/diffusers) implements [Dreambooth](https://github.com/huggingface/diffusers/tree/main/examples/dreambooth) and is fully adapted to Stable Diffusion.
+However, neither the Imagen model nor the pre-trained weights are available. So the original Dreambooth was not suitable for stable diffusion. However, [diffusers](https://github.com/ShivamShrirao/diffusers) later implements [Dreambooth](https://github.com/huggingface/diffusers/tree/main/examples/dreambooth) and is fully adapted to Stable Diffusion.
 
 > Diffusers provides pre-trained diffusion models across multiple modalities (e.g. visual and audio) and is supported as a modular toolbox for diffusion model inference and training.
 
-This section uses a version of the [diffusers](https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth) branch of Shivam Shirao, with a configuration derived from [ShivamShrirao/diffusers](https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth).
+This section uses the [diffusers](https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth) branch version of Shivam Shirao to explain the parameters, with a configuration derived from [ShivamShrirao/diffusers](https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth).
 
-An optimised branch of [CCRcmcpe](https://github.com/CCRcmcpe/diffusers/tree/yaml-config) for Stable Diffusion is also recommended.
+We recommend using CCRcmcpe's [optimized branch](https://github.com/CCRcmcpe/diffusers/tree/yaml-config) for Stable Diffusion, which can be used with Yaml files.
 
 ![DreamBooth_files](https://dreambooth.github.io/DreamBooth_files/system.png)
 > by https://dreambooth.github.io/
 
 ## Select
 
-Windows systems require a minimum of 16GB of video memory, Linux systems require a minimum of 8GB of video memory
+Windows systems require a minimum of 16GB of video memory, Linux systems require a minimum of 8GB of video memory.
 
-- [DreamBooth version](https://github.com/crosstyan/dreambooth-scripts-for-autodl) for AutoDl
+- For [CCRcmcpe/diffusers/](https://github.com/CCRcmcpe/diffusers/) branch that likes Yaml file configuration.
 
-- Package image](https://github.com/CrazyBoyM/dreambooth-for-diffusion) for AutoDl with the name `dreambooth-for-diffusion`
+- For [DreamBooth version](https://github.com/crosstyan/dreambooth-scripts-for-autodl) for AutoDl/local
 
-- [Plugin](https://github.com/d8ahazard/sd_dreambooth_extension) for WebUi
+- Wrapper image](https://github.com/CrazyBoyM/dreambooth-for-diffusion) for AutoDl/local with the name `dreambooth-for-diffusion`
+
+- [Plugin](https://github.com/d8ahazard/sd_dreambooth_extension) for WebUi, but still needs to be enhanced.
 
 - For Colab [Nyanko Lepsoni's Colab notebook](https://colab.research.google.com/drive/17yM4mlPVOFdJE_81oWBz5mXH9cxvhmz8)
 
@@ -101,86 +103,69 @@ If you use AutoDl's mirrors, you can use the built-in [label_images.py](https://
 
 ## Parameters
 
-First let's look at an example from the [RcINS' Colab notebook](https://colab.research.google.com/drive/1C1vVZ59S4kWfL7jIsczyLpmxbD4cOA-k) notebook.
+First let's look at the Yaml configuration file from [CCRcmcpe diffusers version](https://github.com/CCRcmcpe/diffusers/blob/748f64e47cd6fe3ebe5e6fe7011ee90c5a672fd3/examples/dreambooth/configs/ dreambooth.yaml#L10) of the Yaml configuration file.
 
-### Parameter setting
+DreamBooth itself cannot train the so-called painting style. Instead, Native Training fine-tunes the model to bring about a change in the painting style as a so-called painting style training method.
 
-```bash
-INSTANCE_PROMPT = "masterpiece, best quality, sks 1girl"
-
-# images of the subject 数据集的图像
-INSTANCE_DIR = "/content/instance-images"
-
-# Class set 
-CLASS_PROMPT = "masterpiece, best quality, 1girl" 
-CLASS_NEGATIVE_PROMPT = "lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry" 
-CLASS_DIR = "/content/class-images" 
-NUM_CLASS_IMAGES = 100 
-
-# markdown Prompt for saving samples.
-SAVE_SAMPLE_PROMPT = "masterpiece, best quality, sks 1girl, looking at viewer"
-SAVE_SAMPLE_NEGATIVE_PROMPT = "lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry"
+The classical idea is.
+```
+Native + deepdanbooru->prompt txt - "training style"
+Dreambooth + class prompt/instance prompt - training objects
 ```
 
-### Script parameters
+But there are many more categories, with differences such as: whether to pair Prompt to each image, whether to enable prior_preservation loss (PPL), whether to use train text encoder (TTL) [^4]
 
-```bash
-wandb_arg = "--wandb" if WANDB_KEY != "" else ""
-scale_lr_arg = "--scale_lr" if SCALE_LR else ""
-ppl_arg = f"--with_prior_preservation --prior_loss_weight={PRIOR_LOSS_WEIGHT}" if PRIOR_PRESERVATION else ""
-read_prompt_arg = f"--read_prompt_from_txt {READ_PROMPT_FROM_TXT}" if READ_PROMPT_FROM_TXT != "no" else ""
-arb_arg = "--use_aspect_ratio_bucket --debug_arb" if ASPECT_RATIO_BUCKETING else ""
+DreamBooth = instance + class with `prior preservation loss` (where the difference is between giving images separate tags, and using a single tag).
 
-accelerate launch $TRAINER \
-  --instance_data_dir "{INSTANCE_DIR}" \
-  --instance_prompt "{INSTANCE_PROMPT}" \
-  --pretrained_model_name_or_path "{MODEL_NAME}" \
-  --pretrained_vae_name_or_path "{MODEL_NAME}/vae" \
-  --output_dir "{OUTPUT_DIR}" \
-  --seed=$SEED \
-  --resolution=$RESOLUTION \
-  --optimizer "{OPTIMIZER}" \
-  --train_batch_size=$TRAIN_BATCH_SIZE \
-  --learning_rate=$LEARNING_RATE \
-  --lr_scheduler=$LR_SCHEDULER \
-  --lr_warmup_steps=$LR_WARMUP_STEPS \
-  --lr_cycles=$LR_CYCLES \
-  --last_epoch=$LAST_EPOCH \
-  --max_train_steps=$MAX_TRAIN_STEPS \
-  --save_interval=$SAVE_INTERVAL \
-  --class_data_dir "{CLASS_DIR}" \
-  --class_prompt "{CLASS_PROMPT}" --class_negative_prompt "{CLASS_NEGATIVE_PROMPT}" \
-  --num_class_images=$NUM_CLASS_IMAGES \
-  --save_sample_prompt "{SAVE_SAMPLE_PROMPT}" --save_sample_negative_prompt "{SAVE_SAMPLE_NEGATIVE_PROMPT}" \
-  --n_save_sample=$SAMPLE_N \
-  --infer_batch_size=$INFER_BATCH_SIZE \
-  --infer_steps=$INFER_STEPS \
-  --guidance_scale=$GUIDANCE_SCALE \
-  --gradient_accumulation_steps=$GRADIENT_ACCUMULATION_STEPS \
-  --gradient_checkpointing \
-  --save_unet_half \
-  --mixed_precision "{MIXED_PRECISION}" \
-  --clip_skip=$CLIP_SKIP \
-  $wandb_arg $scale_lr_arg $ppl_arg $read_prompt_arg $arb_arg
+### DreamBooth
 
-# disabled: --not_cache_latents 
-```
+Specialises in training specific objects/people. Use `-with_prior_preservation` to enable DreamBooth, **Only DreamBooth training uses the concept of `[V]` and the parameters associated with `-instance_prompt`. **
 
-* Instance Image 
+- Instance Image the object you are training on
 
-The target dataset you are training on.
+- The default implementation of Instance Prompt is to share a prompt globally, which may work for a few shots, i.e. DreamBooth (original paper method). However, when you have more targets to train you can turn on the `combine_prompt_from_txt` option and have a prompt (usually a txt) for each instance, i.e. DreamBooth (alternative method). The Instance Prompt should contain a unique identifier [V]. See below for a detailed explanation. [^4]
 
-* Class/Regularization 
+- Class/Regularization Image corresponds to `--class_data_dir` and should be **autogenerated** i.e. an auto-generated image, used to detect AI prior knowledge. You should not put any non-AI generated images. (Why not use Native Training if you are sure about this?) Adulteration of same-style images in clas images is no longer encouraged. Each time you retrain a different subject, you have to clear it once.
 
-Don't be overly concerned, the Image should be an auto-generated image that is used to detect the AI's a priori knowledge. You should not put any non-AI generated images. If you are sure about this you should go for Native Training. (Adulteration of same-style images in clas image was an early discovery detour and is no longer encouraged)
+- Class Prompt corresponds to `--class_prompt`, which is arbitrary, and is generated automatically; it is recommended that it be generated separately from other inference front-ends that support CLIP SKIP 2 and then dropped into the class img set. The program can also read the contents from a separate txt. [^4]
 
-* learning_rate
+DreamBooth itself has a very strong copy and paste effect, which can be suppressed by using class/regularization. [^4]
 
-DreamBooth itself has a very strong copy and paste effect. Use class/regularization to suppress this effect.
+For training multiple objects read the *Multiple Concept* section.
+
+- Example [train_object.sh](https://github.com/CrazyBoyM/dreambooth-for-diffusion/blob/main/train_object.sh)
+
+### Native Training
+
+Unlike DreamBooth, Native Training uses your training set to train directly and does not require a Class Image.
+
+Turning off the `prior_preservation` option to start training natively is the recommended way to "train in style".
+
+There is no Instance/Class Image distinction in this training, all graphs are used for training. However, you need to prepare an Instance Prompt for each image, in a text file with the same name as the image, usually a txt, for example [dataset exp](https://github.com/chavinlo/stable-diffusion-scripts/tree/main/dataset-examples)
+
+This txt file with the same name as the image is subsequently read as a label by enabling `--use_txt_as_label` (this option ignores the content of the instance_prompt argument passed in).
+
+Native Training requires **more** datasets, but the amount varies, in the range [100, 10000], more is better (but manual selection is still recommended)
+
+- Example [train_style.sh](https://github.com/CrazyBoyM/dreambooth-for-diffusion/blob/main/train_style.sh)
+
+### Parameters
+
+- with_prior_preservation
+
+**Enable prior_preservation to start DreamBooth training, disable to enable Native Training.**
+
+- prior_loss_weight 
+
+The lower it is, the harder it is to fit, but also the harder it is to learn something. [^4][^3] 
+
+* learning_rate learning_rate
+
+DreamBooth itself has a very strong copy and paste effect. Use class/regularization to suppress the effect appropriately.
 
 * use_txt_as_label
 
-Whether or not to read a txt file with the same name as the image as a label; this option ignores the `instance_prompt` argument. Usually used in style training.
+Typically used when training a fine-tuned model in Native. Enabling this option turns off DreamBooth, which ignores the `instance_prompt` argument and reads the label from the txt file instead.
 
 - center_crop 
 
@@ -212,84 +197,71 @@ Enable prior_preservation to start DreamBooth training.Disable to enable Native 
 
 the lower prior_loss_weight the harder it is to fit, but also the harder it is to learn. [^4][^3] 
 
-### Key notes
+### Explanation of Instance Prompt / Class Prompt
 
-Generally the training style removes the `-with_prior_preservation` parameter, but it is necessary to prepare prompts for each image to be trained, i.e. enable `-use_txt_as_label` to read a txt file with the same name as the image as a label (i.e. put another txt with the same name), this option ignores the content passed in by the instance_prompt parameter.
-This is reflected in [train_style.sh](https://github.com/CrazyBoyM/dreambooth-for-diffusion/blob/main/train_style.sh).
+class prompt will be used to generate a class of images that will be treated as something like `photo of a person`
 
-Generally training specific objects/characters is done with `-with_prior_preservation` enabled using only the single label `-instance_prompt`, which requires prior knowledge of Ai, and with `-class_prompt` `-class_data_dir` parameter enabled, **class dir is automatically generated** and is cleared once per retraining. Embodied in [train_object.sh](https://github.com/CrazyBoyM/dreambooth-for-diffusion/blob/main/train_object.sh).
-
-Here are some scattered explanations.
-
-### Explanation Instance Prompt / Class Prompt
-
-* Instance Prompt 
-
-The default implementation is a globally shared prompt, which may work for a few shots, i.e. DreamBooth (original paper method).
-
-However, when you have more training targets, this parameter no longer applies and you can turn on the `combine_prompt_from_txt` option to have a prompt (usually a txt) for each instance, i.e. DreamBooth (alternative method). The Instance Prompt should contain a unique identifier [V]
-
-* Class Prompt
-
-Don't worry too much about it, it's automatically generated, it's recommended to generate it separately from other reasoning front-ends that support CLIP SKIP 2 and drop it into the class img set, which can also be read from a separate txt.
-
-- Note
-
-class prompt will be used to generate a class of images, treated as something like `photo of a person`
-
-instance prompt will be processed as something like `photo of a cute person`.
+instance prompt will be processed as something like `photo of a cute person`
 
 - Examples
 
-*Example of a training character*
+* Example of a training character
 * Instance prompt: `masterpiece, best quality, sks 1girl, aqua eyes, aqua hair`
 * Class prompt: `masterpiece, best quality, 1girl, aqua eyes, aqua hair`
 
-*Example of a training style*
+* Examples of training styles *
 * Instance prompt: `1girl, by sks`
 * Class prompt: `1girl`
 
-### About [V]
+### About this [V]
 
-| What your training set is about | Instance prompt must contain | Class prompt should describe                   |
+| What your training set is about | Instance prompt must contain | Class prompt should describe |
 | --------------------------------- | ------------------------------ | ------------------------------------------------ |
-| A object/person                 | `[V]` | The object's type and/or characteristics       |
-| A artist's style                | `by [V]` | The common characteristics of the training set |
+| A object/person | `[V]` | The object's type and/or characteristics |
+| A artist's style | `by [V]` | The common characteristics of the training set |
 
-[V] is a token in the CLIP vocabulary and has no meaning for the model.
+[V] is only used in the Instance prompt and is a token in the CLIP vocabulary that has no meaning for the model. **This is a phrase set by you, analogous to the unknown quantity x of the equation, not an exact value called `[V]`. **
 
-Suppose the character you want to train is called `[N]` (e.g. `Mr. Balabalabala`) , you should not use `[N]` (`Mr. Balabalabala`) directly as a representative feature word.
+Suppose the character you want to train is called `[N]` (e.g. `Mr. Balabalabala`) , you should not use `[N]` (`Mr. Balabalabala`) directly as a representative feature word. [^4]
 
-It is recommended to use the word `[V]` (e.g. `bala`) that is present in [this glossary](https://huggingface.co/openai/clip-vit-large-patch14/raw/main/vocab.json) but has no corresponding concept or where the corresponding concept is not obvious.
+It is recommended to use the word `[V]` (e.g. `bala`) that exists in [this glossary](https://huggingface.co/openai/clip-vit-large-patch14/raw/main/vocab.json) but has no corresponding concept or where the corresponding concept is not obvious.
 
 Long names are likely to be separated into multiple tokens and will not have the desired effect. The separation of tokens can be verified at [NovelAI Tokenizer](https://novelai.net/tokenizer).
 
 The final hint representing [V] will carry the new things learned by the model and you will be able to use the [V] you set when generating it.
 
-> Note: The example word `sks` used in the original paper is the same as the real firearm [SKS](https://en.wikipedia.org/wiki/SKS) and is not a suitable word to be used. However, if you are sufficiently trained you may be able to override its effects.
+> Note: The example word `sks` used in the original paper is the same as the real firearm [SKS](https://en.wikipedia.org/wiki/SKS) and is not a suitable word to be used. However, if you are sufficiently trained you may be able to override its impact.
 
-### Subject images / Class images
+TIPS: Don't use the default by sks (the artist sks), fusion models can be a disaster.
+
+### Explanation of Subject images / Class images
 
 Introduction from [^2]
 
-Subject images (or instance images as you see them in your notebook) are the images you want to train on, so if you want your own looking model, you can take 20 to 40 of your own images and enter those. The instance name is a unique identifier that will indicate the trained object in the prompt, personally I use "namelastname", most notebooks use "sks" but it is best to change it.
+Subject images (or instance images as you see them in your notebook) are the images you want to train on, so if you want your own looking model, you can take 20 to 40 of your own images and input those. The instance name is a unique identifier that will indicate the trained object in the prompt, personally I use "namelastname", most notebooks use "sks" but it is best to change it.
 
-You are in effect telling the AI to introduce you to the database, to do this you select a class, i.e. the class that best suits the person you are training, for people it is common to use "person", "man"/"woman" etc.
+You are in effect telling the AI to introduce you to the database, to do this you choose a class, i.e. the one that best fits the class you are training, for people it is common to use "person", "man"/"woman" etc.
 
-The purpose of using Class images in training is to **prevent features of objects from "bleeding over" into other objects of the same Class**. Without Class images as a reference point, the AI will merge your face with other faces that appear in the Class. **Your face will infiltrate the other faces generated by the model. **
+The purpose of using Class images in training is to **prevent features of objects from "bleeding over" into other objects of the same Class**. Without Class images as reference points, the AI will merge your face with other faces that appear in the Class. **Your face will infiltrate the other faces generated by the model. **
 
 DreamBooth can start training without Class images, just disable `-with_prior_preservation` to enable Native Training.
 
 ### Native Training
 
-Unlike DreamBooth, Native Training uses your training set to train directly and does not require a Class Image.
+Native Training is native training. Unlike DreamBooth, Native Training uses your training set for training directly and does not require Class images.
 
-Turning off the `-prior_preservation` option (i.e. the `-with_prior_preservation` parameter) to start training natively is the recommended way to train images.
+Turning off the `-prior_preservation` option (aka the `-with_prior_preservation` parameter) to start training natively is the recommended way to train in the style.
 
-There is no Instance/Class Image distinction in this training, all images will be used for training. However, you will need to prepare an Instance Prompt for each image, with the same file name as the traditional hypernetwork, usually txt.
+There is no Instance/Class Image distinction in this training, all images will be used for training. However, you need to prepare an Instance Prompt for each image, with the same file name as the traditional hypernetwork, usually txt.
 
 !!! tip "About this Txt"
-    For each image in the dataset ([X].png/[X].jpg), put a [X].txt with the corresponding hint, then set `READ_PROMPT_FROM_TXT` (`--use_txt_as_label`). The prompts read from txt [PX] will be inserted into the prompt [P] you set in the training parameters. By default, it is inserted as [PX][P]. With Variable Prompts enabled and Prior Preservation Loss (PRIOR_PRESERVATION) disabled, the training process is effectively equivalent to standard fine-tuning. Native Training requires a large dataset, but the amount varies, and is in the range [100, 10000], so more is better. (manual selection is recommended)
+    For each image in the dataset ([X].png/[X].jpg), put a [X].txt with the corresponding hint, then set `READ_PROMPT_FROM_TXT` (`--use_txt_as_label`). The prompts read from txt [PX] will be inserted into the prompt [P] you set in the training parameters. By default, it is inserted as [PX][P]. 
+    
+    With Variable Prompts enabled and Prior Preservation Loss (PRIOR_PRESERVATION) disabled, the training process is effectively equivalent to standard fine-tuning. Native Training requires a large dataset, but the amount varies, and is in the range [100, 10000], so more is better. (manual selection is recommended) 
+
+#### labeled method 
+
+You can annotate manually or use clip or deepdanbooru for automatic annotation. We recommend using [crosstyan/blip_helper](https://github.com/crosstyan/blip_helper) to label your images. or use [DeepDanbooru](https://github.com/KichangKim/DeepDanbooru) and [BLIP](https://github.com/salesforce/BLIP) If you use AutoDl's mirrors, you can use the built-in [label_images.py](https://github.com/CrazyBoyM/dreambooth-for-diffusion/blob/main/tools/label_images.py) for labelling.
 
 ### Resume training from checkpoint
 

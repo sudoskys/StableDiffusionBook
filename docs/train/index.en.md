@@ -33,6 +33,11 @@ A larger batch size may speed up training slightly and improve it slightly, but 
 
 A method for extracting [v] from a number of images that have a common semantic [v]. The extracted [v] tensor is called "Embedding". The Embedding is saved as a file and can then be referenced by its filename in the prompt when the image is generated.
 
+```
+fine tune = hn/TI/DreamArtist (APT)/DB/native training etc.
+fine tune directly = DB/native training
+```
+
 #### features
 
 Smaller training product size, webui comes with training support.
