@@ -1552,17 +1552,6 @@ pip install <span class="nv">bitsandbytes</span><span class="o">==</span><span c
 </tr>
 </tbody>
 </table>
-<ul>
-<li>细节</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">instance_data_dir</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"You must specify a train data directory."</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">with_prior_preservation</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">class_data_dir</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"You must specify a data directory for class images."</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">class_prompt</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"You must specify prompt for class images."</span><span class="p">)</span>
-</code></pre></div>
 <!--
 [飞桨 dreambooth 训练教程](https://docs.qq.com/doc/DUHVuZ3BNV0FkT1R6)
 -->
@@ -1594,7 +1583,7 @@ pip install <span class="nv">bitsandbytes</span><span class="o">==</span><span c
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 23, 2022 11:15:41</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 23, 2022 11:19:14</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 3, 2022 12:19:59</span>
