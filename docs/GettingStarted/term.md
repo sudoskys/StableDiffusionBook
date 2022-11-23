@@ -233,7 +233,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
 
 ### CUDA
 
-配合 CUDA 技术，显卡可以模拟成一颗 PhysX 物理加速芯片。目前，全系列的 GeForce 8 显示核心都支持 CUDA。
+配合 CUDA 技术，显卡可以模拟成一颗 PhysX 物理加速芯片。
 
 [^1]:[Getting Started With Stable Diffusion: A Guide For Creators](https://www.jonstokes.com/p/getting-started-with-stable-diffusion)
 

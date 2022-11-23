@@ -134,13 +134,13 @@ In the context of an optimization algorithm, the function used to evaluate a can
 
 Typically, with neural networks, we seek to minimize the error. As such, the objective function is often referred to as a cost function or a loss function and the value calculated by the loss function is referred to as simply “loss.”
 
-### 潜在空间
+### latent space
 
 A representation of compressed data, where similar data points are spatially closer together. [^5]
 
 For a explanation of latent space, please read [Understanding latent space in machine learning](https://towardsdatascience.com/understanding-latent-space-in-machine-learning-de5a7c687d8d).
 
-### 损失
+### loss
 
 A measure of how far a model's predictions are from its label. Or, to phrase it more pessimistically, a measure of how bad the model is. To determine this value, a model must define a loss function. For example, linear regression models typically use mean squared error for a loss function, while logistic regression models use Log Loss.[^6]
 
@@ -181,7 +181,7 @@ A categorical feature represented as a continuous-valued feature. Typically, an 
 
 In TensorFlow, embeddings are trained by backpropagating loss just like any other parameter in a neural network.[^6]
 
-### 激活函数
+### Active Function
 
 A function (for example, ReLU or sigmoid) that takes in the weighted sum of all of the inputs from the previous layer and then generates and passes an output value (typically nonlinear) to the next layer.[^6]
 
@@ -203,7 +203,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
 
 ### CUDA
 
-With CUDA technology, the graphics card can be simulated as a PhysX physics acceleration chip. Currently, the full range of GeForce 8 graphics cores support CUDA.
+With CUDA technology, the graphics card can be simulated as a PhysX physics acceleration chip.
 
 [^1]:[Getting Started With Stable Diffusion: A Guide For Creators](https://www.jonstokes.com/p/getting-started-with-stable-diffusion)
 
