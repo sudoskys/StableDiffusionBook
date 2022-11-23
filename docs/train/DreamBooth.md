@@ -94,9 +94,7 @@ class 和 instance 的质量决定生成的质量。
 
 #### Augmentation
 
-* 处理数据的方式有许多：最常见的有反转，旋转，亮度和裁切。
-
-> 将图片打碎，或者对背景/大头等单独裁切，也许会有帮助。
+处理图片的方式有许多，常见的有反转，旋转，亮度和裁切。将图片打碎或者对背景/大头等单独裁切，也许有助于提高训练效果。
 
 ## 参数
 
@@ -112,7 +110,7 @@ Dreambooth + class prompt/instance prompt - 训练物体
 
 但还有很多分类，差异如：是否给每张图片配对 Prompt, 是否 启用 prior_preservation loss(PPL), 是否使用 train text encoder (TTL)[^4]
 
-DreamBooth = instance + class with `prior preservation loss` （其中分给图片单独标签，和使用统一一个标签的区别）。
+DreamBooth = instance + class with `prior preservation loss` （其中分给图片单独标签，和使用同一个标签的区别）。
 
 ### DreamBooth
 
@@ -126,7 +124,7 @@ DreamBooth = instance + class with `prior preservation loss` （其中分给图�
 
 - Class Prompt 对应  `--class_prompt` 参数，由程序自动生成，可以从其他支持 CLIP SKIP 2 的推理前端生成好之后放进 class img 内。程序同样可以从独立的 txt 中读取内容。[^4]
 
-DreamBooth 本身具有十分强烈的 copy and paste 效果，使用 class/regularization 可以适当压制该效果。[^4]
+DreamBooth 本身具有十分强烈的 copy and paste 效果，使用 class/regularization 可以适当抑制该效果。[^4]
 
 训练多个物体请读 *Multiple Concept* 节。
 
@@ -150,15 +148,16 @@ Native Training 需要 **较多** 的数据集，但这个量众说纷纭，大�
 
 - with_prior_preservation
 
-**启用 prior_preservation 以开始 DreamBooth 训练，禁用来开启 Native Training。**
+**启用 prior_preservation 以开始 DreamBooth 训练，禁用此参数来开启 Native Training。**
 
 - prior_loss_weight 
 
 越低则越难过拟合，但是也越难学到东西。[^4][^3] 
 
-* learning_rate 学习率
+* learning_rate 
 
-DreamBooth 本身具有十分强烈的 copy and paste 效果。使用 class/regularization 可以适当压制该效果。
+学习率
+
 
 * use_txt_as_label
 
@@ -215,7 +214,7 @@ instance prompt 会被处理为类似 `photo of a cute person`
 
 推荐使用在 [该词汇表](https://huggingface.co/openai/clip-vit-large-patch14/raw/main/vocab.json) 中存在但是没有对应概念或者说对应概念不明显的词 `[V]`（比如 `bala`)。
 
-长长的名称很可能被分离为多个标记，会得不到预期效果。标记的分离情况具体可在 [NovelAI Tokenizer](https://novelai.net/tokenizer) 验证。
+非常长的名称很可能被分离为多个标记，会得不到预期效果。标记的分离情况具体可在 [NovelAI Tokenizer](https://novelai.net/tokenizer) 验证。
 
 最后代表 [V] 的提示将携带模型学到的新东西，你就可以在生成时使用你设定的 [V] 了。
 
@@ -275,7 +274,7 @@ Native Training 需要较多的数据集，但这个量众说纷纭，大约在 
 * 一开始写的 instance prompt 要长一些，概括你的训练目标 （但是又不要太长，不要覆盖你常用的词） （像是 girl 我会换成 woman, 1boy 换成 male)
 * text prompt 词数太多了影响分散，效果不明显。
 * instance prompt 不能只填一个 `[V]`（比如 `balabala`，应该是 `a photo of balabala`) ，否则那个词也废掉了。
-* 尝试拉高学习率
+* 尝试提高学习率
 
 炼出来调用的话看情况加你训练的 instance prompt 的词，看你想要多少味道。
 
