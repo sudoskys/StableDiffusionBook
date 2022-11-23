@@ -92,7 +92,7 @@ Introduces how to generate images in WebUi with the subject as the focus, rather
 
 To get the desired result, we change `style` to `[style:10]` 
 
-In Automatic 1111's WebUi prompt method, [x:10] tells stable diffusion until the tenth step before rendering the prompt.
+In Automatic 1111's WebUi prompt method, [x:10] tells Stable Diffusion until the tenth step before rendering the prompt.
 
 By the time 10 steps are reached, a basic image has been formed, so styling pollutes the main component recklessly, instead acting like an IMG2IMG (which you can think of as a form of Img2img) over the existing image
 
@@ -588,7 +588,7 @@ The Prompt Magic Book provides a library of ready-to-use templates (analogous to
 
 ## Market Adoption Survey
 
-Here are the applications for stable diffusion (non-NAI models).
+Here are the applications for Stable Diffusion (non-NAI models).
 
 https://www.reddit.com/r/StableDiffusion/comments/yh8j0a/ai_art_is_popular_and_makes_money_confessions_of/
 
@@ -606,15 +606,15 @@ On blender, Ai has [rendering plug-in](https://blendermarket.com/products/ai-ren
 
 - Album artwork
 
-[Image generation of singer with stable diffusion into video](https://github.com/Chilluminati91)
+[Image generation of singer with Stable Diffusion into video](https://github.com/Chilluminati91)
 
 - Supporting images
 
 [Making weird diagrams as a memory tool](https://github.com/ClashSAN)
 
-[A real-life use case for stable diffusion](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3219)
+[A real-life use case for Stable Diffusion](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3219)
 
-[A combination of applications for stable diffusion](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3572)
+[A combination of applications for Stable Diffusion](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3572)
 
 - Self-Media
 

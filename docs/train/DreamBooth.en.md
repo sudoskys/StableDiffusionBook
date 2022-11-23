@@ -8,14 +8,16 @@
 
 Dreambooth is based on [Imagen](https://imagen.research.google/) and can be used by simply exporting the model as a ckpt, which can then be loaded into various UIs.
 
-However, neither the Imagen model nor the pre-trained weights are available. So the original Dreambooth was not suitable for stable diffusion. But later [diffusers](https://github.com/ShivamShrirao/diffusers) implements [Dreambooth](https://github.com/huggingface/diffusers/tree/main/examples/dreambooth) and is fully adapted to stable diffusion.
+However, neither the Imagen model nor the pre-trained weights are available. So the original Dreambooth was not suitable for Stable Diffusion. But later [diffusers](https://github.com/ShivamShrirao/diffusers) implements [Dreambooth](https://github.com/huggingface/diffusers/tree/main/examples/dreambooth) and is fully adapted to Stable Diffusion.
 
 > Diffusers provides pre-trained diffusion models across multiple modalities (e.g. visual and audio) and is supported as a modular toolbox for diffusion model inference and training.
 
 This section uses a version of the [diffusers](https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth) branch of Shivam Shirao, with a configuration derived from [ShivamShrirao/diffusers](https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth).
 
+An optimised branch of [CCRcmcpe](https://github.com/CCRcmcpe/diffusers/tree/yaml-config) for Stable Diffusion is also recommended.
+
 ![DreamBooth_files](https://dreambooth.github.io/DreamBooth_files/system.png)
->by https://dreambooth.github.io/
+> by https://dreambooth.github.io/
 
 ## Select
 
@@ -351,7 +353,7 @@ Corresponds to `--use_aspect_ratio_bucket` in the argument above. If you need to
 
 > ARB is not compatible with DreamBooth and is only recommended for Native Training.
 
-For more, see [Analysis of experiments using Dreambooth to train stable diffusion](https://wandb.ai/psuraj/dreambooth/reports/Dreambooth-training-analysis--VmlldzoyNzk0NDc3)
+For more, see [Analysis of experiments using Dreambooth to train Stable Diffusion](https://wandb.ai/psuraj/dreambooth/reports/Dreambooth-training-analysis--VmlldzoyNzk0NDc3)
 
 ## Training
 
@@ -610,4 +612,4 @@ if args.with_prior_preservation:
 
 [^5]:[XavierXiao/Dreambooth-Stable-Diffusion](https://github.com/XavierXiao/Dreambooth-Stable-Diffusion)
 
-[^6]:[StableDiffusion/DreamBooth自训练全教程](https://zhuanlan.zhihu.com/p/584736850)
+[^6]:[StableDiffusion/DreamBooth 自训练全教程](https://zhuanlan.zhihu.com/p/584736850)

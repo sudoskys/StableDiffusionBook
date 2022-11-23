@@ -12,7 +12,7 @@
 |Latent Space|Latent Space|
 |LDM | Latent Diffusion Model |
 
-## How stable diffusion work
+## How Stable Diffusion work
 
 ### Reasoning process
 
@@ -26,7 +26,7 @@ The parsing of the cues is processed by the Text Encoder/CLIP (token embedding),
 
 The Text Encoder is responsible for converting the input cue into an embedding space that is understandable to the U-Net. It is usually a simple transformer-based encoder that maps a sequence of input tokens into a sequence of latent text-embeddings.
 
-Stable diffusion uses ClipText for text encoding. Input text, output 77 marker embedding vectors, each with 768 dimensions.
+Stable Diffusion uses ClipText for text encoding. Input text, output 77 marker embedding vectors, each with 768 dimensions.
 
 * information creator
 
@@ -54,7 +54,7 @@ The Autoencoder Decoder (VAE) draws the decoder of the final image using an arra
 
 The autoencoder used in Stable Diffusion has a reduction factor of 8. This means that an image of (4, 512, 512) is (4, 64, 64) in the potential space.
 
-In reasoning about a 512 * 512 image using stable diffusion, the model uses a seed and a text cue as input. The potential seed generates a random potential image of size 64 × 64, while the prompt goes into the Text Encoder to be transformed into a text embedding of size 77 × 768 by CLIP's text encoder.
+In reasoning about a 512 * 512 image using Stable Diffusion, the model uses a seed and a text cue as input. The potential seed generates a random potential image of size 64 × 64, while the prompt goes into the Text Encoder to be transformed into a text embedding of size 77 × 768 by CLIP's text encoder.
 
 U-Net iteratively denoises the random Gaussian noise representation while conditioning on the text embedding. u-Net calculates the denoised latent image representation using the sampling algorithm and outputs the noise residuals. After this step has been repeated many times, the potential representation is decoded by the decoder of the Image Decoder's auto encoder and output.
 
@@ -195,7 +195,7 @@ NAI uses 31337
 
 ### CLIP
 
-> CLIP is a very advanced neural network that transforms your prompt text into a numerical representation. Neural networks work very well with this numerical representation and that's why devs of SD chose CLIP as one of 3 models involved in stable diffusion's method of producing images. As CLIP is a neural network, it means that it has a lot of layers. Your prompt is digitized in a simple way, and then fed through layers. You get numerical representation of the prompt after the 1st layer, you feed that into the second layer, you feed the result of that into third, etc, until you get to the last layer, and that's the output of CLIP that is used in stable diffusion. This is the slider value of 1. But you can stop early, and use the output of the next to last layer - that's slider value of 2. The earlier you stop, the less layers of neural network have worked on the prompt.
+> CLIP is a very advanced neural network that transforms your prompt text into a numerical representation. Neural networks work very well with this numerical representation and that's why devs of SD chose CLIP as one of 3 models involved in Stable Diffusion's method of producing images. As CLIP is a neural network, it means that it has a lot of layers. Your prompt is digitized in a simple way, and then fed through layers. You get numerical representation of the prompt after the 1st layer, you feed that into the second layer, you feed the result of that into third, etc, until you get to the last layer, and that's the output of CLIP that is used in Stable Diffusion. This is the slider value of 1. But you can stop early, and use the output of the next to last layer - that's slider value of 2. The earlier you stop, the less layers of neural network have worked on the prompt.
 
 https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-last-layers-of-clip-model
 

@@ -25,7 +25,7 @@ First, unfortunately, because it requires `CUDA` acceleration, only **Nvidia gra
     
     Overuse will lead to GPU damage
 
-[Stable diffusion performance test reports](https://docs.google.com/spreadsheets/d/1Zlv4UFiciSgmJZncCujuXKHwc4BcxbjbSBg71-SdeNk/edit#gid=0)
+[Stable Diffusion performance test reports](https://docs.google.com/spreadsheets/d/1Zlv4UFiciSgmJZncCujuXKHwc4BcxbjbSBg71-SdeNk/edit#gid=0)
 
 ## Current five options
 

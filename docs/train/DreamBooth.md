@@ -8,11 +8,13 @@
 
 Dreambooth 基于 [Imagen](https://imagen.research.google/) 研发，使用时只需将模型导出为 ckpt，然后就可以被加载到各种 UI 中。
 
-然而，Imagen 的模型和预训练的权重都不可用。所以最初的 Dreambooth 并不适用于稳定扩散。但后面 [diffusers](https://github.com/ShivamShrirao/diffusers) 实现了 [Dreambooth](https://github.com/huggingface/diffusers/tree/main/examples/dreambooth) 这一功能，并且完全适配了 stable diffusion。
+然而，Imagen 的模型和预训练的权重都不可用。所以最初的 Dreambooth 并不适用于稳定扩散。但后面 [diffusers](https://github.com/ShivamShrirao/diffusers) 实现了 [Dreambooth](https://github.com/huggingface/diffusers/tree/main/examples/dreambooth) 这一功能，并且完全适配了 Stable Diffusion。
 
 > Diffusers 提供跨多种模态（例如视觉和音频）的预训练扩散模型，作为扩散模型推理和训练的模块化工具箱提供支持。
 
 本节使用的是 Shivam Shirao 的 [diffusers](https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth) 分支版本，配置衍生自 [ShivamShrirao/diffusers](https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth)。
+
+同时推荐 CCRcmcpe 的针对 Stable Diffusion 的 [优化分支](https://github.com/CCRcmcpe/diffusers/tree/yaml-config)。
 
 ![DreamBooth_files](https://dreambooth.github.io/DreamBooth_files/system.png)
 > by https://dreambooth.github.io/
@@ -628,4 +630,4 @@ if args.with_prior_preservation:
 
 [^5]:[XavierXiao/Dreambooth-Stable-Diffusion](https://github.com/XavierXiao/Dreambooth-Stable-Diffusion)
 
-[^6]:[StableDiffusion/DreamBooth自训练全教程](https://zhuanlan.zhihu.com/p/584736850)
+[^6]:[StableDiffusion/DreamBooth 自训练全教程](https://zhuanlan.zhihu.com/p/584736850)
