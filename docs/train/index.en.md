@@ -43,6 +43,8 @@ Can be used to solve problems with newly created characters that cannot be drawn
 
 To use, put the embedding (a .pt or a .bin file) into webui's `embeddings` directory and write the name of the embedding to be used (without the extension) in prompt, without restarting webui.
 
+If you use DreamArtist, put `*-neg.pt` together with the `embeddings` directory and just use them in both positive and negative prompt words.
+
 #### is related
 
 [English description and effects given by webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion)
