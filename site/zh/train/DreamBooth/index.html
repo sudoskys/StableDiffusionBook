@@ -826,11 +826,12 @@
 <h2 id="_1">简介</h2>
 <p><a href="https://dreambooth.github.io/">DreamBooth</a> 是一种定制个性化的 TextToImage 扩散模型的方法。仅需少量训练数据就可以获得极佳的效果。</p>
 <p>Dreambooth 基于 <a href="https://imagen.research.google/">Imagen</a> 研发，使用时只需将模型导出为 ckpt，然后就可以被加载到各种 UI 中。</p>
-<p>然而，Imagen 的模型和预训练的权重都不可用。所以最初的 Dreambooth 并不适用于稳定扩散。但后面 <a href="https://github.com/ShivamShrirao/diffusers">diffusers</a> 实现了 <a href="https://github.com/huggingface/diffusers/tree/main/examples/dreambooth">Dreambooth</a> 这一功能，并且完全适配了 stable diffusion。</p>
+<p>然而，Imagen 的模型和预训练的权重都不可用。所以最初的 Dreambooth 并不适用于稳定扩散。但后面 <a href="https://github.com/ShivamShrirao/diffusers">diffusers</a> 实现了 <a href="https://github.com/huggingface/diffusers/tree/main/examples/dreambooth">Dreambooth</a> 这一功能，并且完全适配了 Stable Diffusion。</p>
 <blockquote>
 <p>Diffusers 提供跨多种模态（例如视觉和音频）的预训练扩散模型，作为扩散模型推理和训练的模块化工具箱提供支持。</p>
 </blockquote>
 <p>本节使用的是 Shivam Shirao 的 <a href="https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth">diffusers</a> 分支版本，配置衍生自 <a href="https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth">ShivamShrirao/diffusers</a>。</p>
+<p>同时推荐 CCRcmcpe 的针对 Stable Diffusion 的 <a href="https://github.com/CCRcmcpe/diffusers/tree/yaml-config">优化分支</a>。</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://dreambooth.github.io/DreamBooth_files/system.png"><img alt="DreamBooth_files" src="https://dreambooth.github.io/DreamBooth_files/system.png"/></a></p>
 <blockquote>
 <p>by https://dreambooth.github.io/</p>
@@ -1597,7 +1598,7 @@ pip install <span class="nv">bitsandbytes</span><span class="o">==</span><span c
 <p><a href="https://github.com/XavierXiao/Dreambooth-Stable-Diffusion">XavierXiao/Dreambooth-Stable-Diffusion</a> <a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">↩</a></p>
 </li>
 <li id="fn:6">
-<p><a href="https://zhuanlan.zhihu.com/p/584736850">StableDiffusion/DreamBooth自训练全教程</a> <a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">↩</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/584736850">StableDiffusion/DreamBooth 自训练全教程</a> <a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">↩</a></p>
 </li>
 </ol>
 </div>
@@ -1606,7 +1607,7 @@ pip install <span class="nv">bitsandbytes</span><span class="o">==</span><span c
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月23日 03:22:21</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月23日 06:55:55</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 03:59:46</span>

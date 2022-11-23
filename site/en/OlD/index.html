@@ -595,7 +595,7 @@ Copyright (C)  2022  StableDiffusionBook.
 <p>本文档主要涉及以下两个项目。</p>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui">Stable Diffusion WebUi</a>简称 SDWebUi，web UI是一个基于 Gradio 库的 Stable Diffusion 浏览器界面。该项目目前还没有 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/24">许可证</a> <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2059">相关Issue</a>。</p>
 <p><a href="https://novelai.net/">NovelAI</a>简称 NAI， 是一项每月订阅服务，用于 AI 辅助创作、讲故事、虚拟陪伴，或者只是供您想象的 GPT 驱动的沙盒。</p>
-<p>Stable diffusion本来是面向三次元的，而 NAI 是二次元特化版本。</p>
+<p>Stable Diffusion本来是面向三次元的，而 NAI 是二次元特化版本。</p>
 <h2 id="_2">访问情况</h2>
 <ul>
 <li>
@@ -696,7 +696,7 @@ Copyright (C)  2022  StableDiffusionBook.
 <p>它改变了你的种子，执行一些 eta/sigma 的操作。</p>
 <p>NAI使用31337</p>
 <h3 id="clip">CLIP</h3>
-<div class="highlight"><pre><span></span><code>CLIP is a very advanced neural network that transforms your prompt text into a numerical representation. Neural networks work very well with this numerical representation and that's why devs of SD chose CLIP as one of 3 models involved in stable diffusion's method of producing images. As CLIP is a neural network, it means that it has a lot of layers. Your prompt is digitized in a simple way, and then fed through layers. You get numerical representation of the prompt after the 1st layer, you feed that into the second layer, you feed the result of that into third, etc, until you get to the last layer, and that's the output of CLIP that is used in stable diffusion. This is the slider value of 1. But you can stop early, and use the output of the next to last layer - that's slider value of 2. The earlier you stop, the less layers of neural network have worked on the prompt.
+<div class="highlight"><pre><span></span><code>CLIP is a very advanced neural network that transforms your prompt text into a numerical representation. Neural networks work very well with this numerical representation and that's why devs of SD chose CLIP as one of 3 models involved in Stable Diffusion's method of producing images. As CLIP is a neural network, it means that it has a lot of layers. Your prompt is digitized in a simple way, and then fed through layers. You get numerical representation of the prompt after the 1st layer, you feed that into the second layer, you feed the result of that into third, etc, until you get to the last layer, and that's the output of CLIP that is used in Stable Diffusion. This is the slider value of 1. But you can stop early, and use the output of the next to last layer - that's slider value of 2. The earlier you stop, the less layers of neural network have worked on the prompt.
 
 https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-last-layers-of-clip-model
 </code></pre></div>
@@ -720,7 +720,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-las
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 08:16:35</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 23, 2022 06:55:55</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 13, 2022 10:24:49</span>
