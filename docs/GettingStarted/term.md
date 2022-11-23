@@ -2,16 +2,15 @@
 
 ## 术语解释
 
-| 缩写/术语          | 解释        |
+| 缩写/写作术语表          | 解释        |
 |---------------|----------------------------------------------|
-| oneshot           | 一张图                                    |
+| oneshot      | 一张图                                    |
 |LAION| 一个图像数据集库，https://laion.ai   |
 |aug | augmentaion, 通过裁切，翻转获取更多数据集的方式   |
 |ucg | unconditional guidance        |
 |ML  | 机器学习                      |
-|Latent Space|潜在空间                |
+|LatentSpace|潜在空间                |
 |LDM    |   Latent Diffusion Model 潜在扩散模型    |
-
 
 | 黑话          | 解释                                          |
 |---------------|----------------------------------------------|
@@ -223,7 +222,7 @@ CLIP 是一种非常先进的神经网络，可将提示文本转换为数字表
 
 https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-last-layers-of-clip-model
 
-要让 AI 作画，先要让程序“听懂”你的指令，比如
+要让 AI 作画，先要让程序“听懂”你的指令，比如：
 
 “a big cherry tree above a lake with flying petals in the sky.”
 

@@ -157,3 +157,8 @@ commit 摘要，推荐按照下面的格式编辑：
 ### 扩展阅读
 
 [开源指南](https://opensource.guide/zh-hans/)
+
+### 写作参考
+
+- https://www.cnblogs.com/xiaozhi_5638/p/15847859.html#b4
+- https://segmentfault.com/a/1190000011858100?utm_source=sf-similar-article
