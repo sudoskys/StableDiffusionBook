@@ -773,9 +773,9 @@ If generating anime images, the model uses the <code>animefull-latest 7g</code> 
 <p><code>Learning rate</code> (hyperparameter: learning rate), the learning rate represents the rate at which information accumulates in the neural network over time, and this parameter greatly influences the speed at which training is affected. Generally, the lower the learning rate, the slower the learning (takes longer to converge), but generally the better the results.</p>
 <p>Generally we set it to 0.005, but if you want to go faster, you can use 0.01 to speed it up. However, if we set it too high, the gradient descent will be too large to converge and will probably destroy the <code>embedding</code>, which will not be as effective as expected. If you set it too small, you will easily fall into a local optimum. Currently TI supports setting learning rates of <code>0.1:500, 0.01:1000, 0.001:10,000</code>, which are based on <code>learning rate:steps</code>, or <code>total steps*percentage</code> if the number of steps is decimal.</p>
 <p>When training, you can start with a larger learning rate and then gradually reduce it by <code>0.1 - 0.02 - 0.005</code>, using the last best result for each test.</p>
-<p>! <a href="https://user-images.githubusercontent.com/75739606/197824268-273f074d-9622-41ad-9f1a-2980f180dbd9.png">CS231n</a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://user-images.githubusercontent.com/75739606/197824268-273f074d-9622-41ad-9f1a-2980f180dbd9.png"><img alt="CS231n" src="https://user-images.githubusercontent.com/75739606/197824268-273f074d-9622-41ad-9f1a-2980f180dbd9.png"/></a></p>
 <!-- --
-! [CS231n](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/CS231n.png)
+![CS231n](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/CS231n.png)
 ---->
 <h3 id="parameters">Parameters</h3>
 <p><code>Log directory</code> is the log directory.</p>
@@ -854,7 +854,7 @@ Save an image to log directory every N steps, 0 to disable</p>
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 23, 2022 03:22:21</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 23, 2022 10:55:07</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 07:57:05</span>
