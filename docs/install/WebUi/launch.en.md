@@ -180,6 +180,8 @@ see [Official Wiki](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki
 
 Run the program with the `--api` argument and visit `{your main url}/docs` in your browser to see the [Api](https://github.com/AUTOMATIC1111/stable-diffusion-webui/tree/master/modules/) documentation for WebUi. api) documentation. [^4]
 
+If you want other applications to call Api, add `-enable-insecure-extension-access`.
+
 Here is a synchronization class implementation.
 
 ```python

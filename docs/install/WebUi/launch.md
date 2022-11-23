@@ -184,6 +184,8 @@ set COMMANDLINE_ARGS 设置命令行参数 webui.py 运行
 
 使用 `--api` 参数运行程序，在浏览器访问 `{输出的网址}/docs` 就可以查看到 WebUi 的 [Api](https://github.com/AUTOMATIC1111/stable-diffusion-webui/tree/master/modules/api) 文档。[^4]
 
+如果你想让其他应用调用 Api, 追加`--enable-insecure-extension-access`。
+
 下面是一个同步类实现。
 
 ```python

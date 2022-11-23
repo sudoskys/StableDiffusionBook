@@ -38,3 +38,7 @@ print(torch.cuda.is_available())
 ## CUDA out of memory
 
 原因：显存不足。`--lowvram` 和 `--medvram` 启动参数都可以改善此问题。
+
+## Api
+
+如果需要启用 Api，启动参数加入`--api`。如果你想让其他应用调用 Api, 追加`--enable-insecure-extension-access`。

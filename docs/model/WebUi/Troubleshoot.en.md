@@ -32,3 +32,7 @@ Insufficient VRAM
 Cause: Insufficient VRAM.
 
 Please add `-lowvram` and `-medvram` parameters at startup to try to solve this problem.
+
+## Api
+
+If you need to enable Api, add `--api` to the startup parameters. If you want other applications to call Api, add `-enable-insecure-extension-access`.
