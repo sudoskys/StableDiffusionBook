@@ -14,6 +14,8 @@ The toolbox that you can see when you open the page
 
 * [List_of_imagecomposition](https://danbooru.donmai.us/wiki_pages/tag_group%3Aimage_composition)
 
+* [nai-anime-pure-negative-prompt docs](https://github.com/6DammK9/nai-anime-pure-negative-prompt)
+
 * [ist_of_locations](https://danbooru.donmai.us/wiki_pages/tag_group%3Alocations)
 
 * [List_of_attire](https://danbooru.donmai.us/wiki_pages/tag_group%3Aattire)

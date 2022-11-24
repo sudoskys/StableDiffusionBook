@@ -14,6 +14,8 @@
 
 * [手抄魔法本](https://docs.google.com/spreadsheets/d/14Gg1kIGWdZGXyCC8AgYVT0lqI6IivLzZOdIT3QMWwVI/)
 
+* [nai-anime-pure-negative-prompt docs](https://github.com/6DammK9/nai-anime-pure-negative-prompt)
+
 * [绘画技术分类](https://danbooru.donmai.us/wiki_pages/tag_group%3Aimage_composition)
 
 * [地点分类](https://danbooru.donmai.us/wiki_pages/tag_group%3Alocations)

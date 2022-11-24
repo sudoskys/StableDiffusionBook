@@ -6,6 +6,12 @@
 
 以下是新闻和测试内容。
 
+## 11/24
+
+Stable Diffusion 2.0 Release
+
+https://stability.ai/blog/stable-diffusion-v2-release
+
 ## 11/23
 
 How to train Stable Diffusion (SD) "efficiently" and how to use SCAL-SDT itself (WIP).
