@@ -52,7 +52,7 @@
 
 * [prompthero](https://prompthero.com/)
 
-* [Prompt Search ](https://www.ptsearch.info/home/)
+* [Prompt Search Anime](https://www.ptsearch.info/home/)
 
 * [Prompt Search2](https://pagebrain.ai/promptsearch/?q=girl&page=1)
 

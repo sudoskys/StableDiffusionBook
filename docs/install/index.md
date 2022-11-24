@@ -8,3 +8,8 @@ WebUi 的安装教程在下一页。
 
 移动云没有公网地址，yum 也没有，劝退。
 
+## 关于 Colab
+
+### 使用本地运行时
+
+https://research.google.com/colaboratory/local-runtimes.html

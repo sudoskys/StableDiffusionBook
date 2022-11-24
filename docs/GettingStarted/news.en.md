@@ -23,6 +23,9 @@ How to train Stable Diffusion (SD) "efficiently" and how to use SCAL-SDT itself 
 
 WebUi [Gradient accumulation, autocast fix, new latent sampling method, etc](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4886)
 
+[Nerfgun3/bad_prompt](https://huggingface.co/datasets/Nerfgun3/bad_prompt)
+>The idea behind this embedding was to somehow train the negative prompt as an embedding, thus unifying the basis of the negative prompt into one word or embedding. 
+
 ## 11/21
 
 The new [nijijourney](https://nijijourney.com/) starts internal testing.
