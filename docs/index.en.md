@@ -86,7 +86,7 @@ NAI's model, trained using tens of millions of Danbooru images, has been leaked 
 
 ## Some communities
 
-#### Community
+### Community
 
 * CN
 [Telegram Ai 绘画中文社群](https://t.me/StableDiffusion_CN) 
@@ -102,7 +102,7 @@ NAI's model, trained using tens of millions of Danbooru images, has been leaked 
 [Discord stablediffusion Community](https://discord.gg/stablediffusion) 
 <img src="https://img.shields.io/discord/1002292111942635562?color=blue&label=Discord_stablediffusion" alt="Discord">
 
-#### Forum
+### Forum
 
 * CN
 

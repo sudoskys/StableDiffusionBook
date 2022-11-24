@@ -86,7 +86,7 @@ Stable Diffusion 本来是面向三次元的，而 NAI 是二次元特化版本�
 
 ## 一些社区
 
-#### 社群
+### 社群
 
 * CN
 
@@ -103,7 +103,7 @@ Stable Diffusion 本来是面向三次元的，而 NAI 是二次元特化版本�
  stablediffusion [Discord 英文社群](https://discord.gg/stablediffusion) 
 <img src="https://img.shields.io/discord/1002292111942635562?color=blue&label=Discord_stablediffusion" alt="Discord">
 
-#### 论坛
+### 论坛
 
 * CN
 
