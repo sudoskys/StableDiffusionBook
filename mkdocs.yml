@@ -82,7 +82,7 @@ nav:
           - 错误处理: model/WebUi/Troubleshoot.md
   - 绘画指南:
       - 概论: paint/index.md
-          - 提示工程: /paint/PromptsEngineering.md
+          - 提示工程: paint/PromptsEngineering.md
       - WebUi绘画指南:
           - paint/WebUi/index.md
           - Txt2指南: paint/WebUi/base.md
