@@ -18,7 +18,7 @@
 
 ## 高分辨率出鬼图 / 低显存生成大分辨率图片
 
-简单说就是使用低分辨率重新生成或者超分。见钩吻
+使用 `Highres fix` 或 低分辨率 + 超分。
 
 你可以在下个章节看到具体操作流程。
 
@@ -41,4 +41,4 @@ print(torch.cuda.is_available())
 
 ## Api
 
-如果需要启用 Api，启动参数加入`--api`。如果你想让其他应用调用 Api, 追加`--enable-insecure-extension-access`。
+如果需要启用 Api，启动参数加入 `--api`。如果你想让其他应用调用 Api, 追加 `--enable-insecure-extension-access`。

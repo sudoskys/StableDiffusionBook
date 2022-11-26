@@ -7,7 +7,7 @@
 
 If u use GTX 16xx GPU, you need to add `-precision full --no-half` to the startup parameter, so if the VRAM is low, add `-medvram` as well.
 
-If it's a different card and VAE is loaded, add `--no-half-vae` parameter[^2].
+If it's a different card and VAE is loaded, add `--no-half-vae` parameter [^2].
 
 ## RuntimeError Sizes of tensors must match
 
@@ -19,7 +19,7 @@ If the AI outputs a messy rainbow-colored image, the generated resolution is set
 
 ## High resolution ghost image / low memory to generate large resolution image
 
-This simply means regenerate or super-score using low resolution. See Hook and Kiss
+Use `Highres fix` or low resolution + superscoring.
 
 You can see the exact procedure in the next section.
 
