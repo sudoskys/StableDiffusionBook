@@ -397,18 +397,38 @@
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../paint/">Paint guide</a>
-<label for="__nav_5">
-<span class="md-nav__icon md-icon"></span>
+<label class="md-nav__link" for="__nav_5">
+          Paint guide
+          <span class="md-nav__icon md-icon"></span>
 </label>
-</div>
 <nav aria-label="Paint guide" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_5">
 <span class="md-nav__icon md-icon"></span>
           Paint guide
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_1" id="__nav_5_1" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../paint/">General</a>
+<label for="__nav_5_1">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="General" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_1">
+<span class="md-nav__icon md-icon"></span>
+          General
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../paint/PromptsEngineering/">
+        Prompts Engineer
+      </a>
+</li>
+</ul>
+</nav>
+</li>
 <li class="md-nav__item md-nav__item--section md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_2" id="__nav_5_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
@@ -425,12 +445,12 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../paint/WebUi/base/">
-        Base guide
+        Txt2Guide
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../paint/WebUi/Advanced/">
-        Advanced Guide
+        Img2Guide
       </a>
 </li>
 <li class="md-nav__item">
@@ -595,20 +615,19 @@
 </li>
 </ol>
 <div class="highlight"><pre><span></span><code>pip uninstall torch torchvision
-uninstall torch and torchvision: <span class="sb">```</span>bash pip
-
-<span class="m">3</span>. reinstall <span class="sb">``</span>CUDA <span class="m">11</span>.6<span class="sb">``</span> compiled by <span class="sb">``</span>torch<span class="sb">``</span> and <span class="sb">``</span>torchvision<span class="sb">``</span>.
-
-<span class="sb">```</span>bash
-pip install torch torchvision --extra-index-url https://download.pytorch.org/whl/cu116
 </code></pre></div>
 <ol>
-<li>download <code>Cudnn_8.5</code> for backup.</li>
+<li>reinstall <code>CUDA 11.6</code> compiled by <code>torch</code> and <code>torchvision</code>.</li>
 </ol>
+<div class="highlight"><pre><span></span><code>pip install torch torchvision --extra-index-url https://download.pytorch.org/whl/cu116
+</code></pre></div>
+<ol>
+<li>
+<p>download <code>Cudnn_8.5</code> for backup.</p>
 <p>Use the download tool to download, direct download will redirect you to Nvidia s developer registration screen</p>
 <p>Windows: https://developer.nvidia.com/compute/cudnn/secure/8.5.0/local_installers/11.7/cudnn-windows-x86_64-8.5.0.96_cuda11- archive.zip</p>
 <p>Other versions: https://developer.nvidia.com/rdp/cudnn-archive</p>
-<ol>
+</li>
 <li>
 <p>Copy all the files from the bin and lib folders in the Cudnn 8.5 archive to <code>venv\Lib\site-packages\torch\lib</code>, overwriting all the files.</p>
 </li>
@@ -622,7 +641,7 @@ pip install torch torchvision --extra-index-url https://download.pytorch.org/whl
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 22, 2022 16:28:07</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 26, 2022 18:40:03</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 06:30:05</span>

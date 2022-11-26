@@ -520,18 +520,38 @@
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../paint/">Paint guide</a>
-<label for="__nav_5">
-<span class="md-nav__icon md-icon"></span>
+<label class="md-nav__link" for="__nav_5">
+          Paint guide
+          <span class="md-nav__icon md-icon"></span>
 </label>
-</div>
 <nav aria-label="Paint guide" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_5">
 <span class="md-nav__icon md-icon"></span>
           Paint guide
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_1" id="__nav_5_1" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../paint/">General</a>
+<label for="__nav_5_1">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="General" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_1">
+<span class="md-nav__icon md-icon"></span>
+          General
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../paint/PromptsEngineering/">
+        Prompts Engineer
+      </a>
+</li>
+</ul>
+</nav>
+</li>
 <li class="md-nav__item md-nav__item--section md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_2" id="__nav_5_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
@@ -548,12 +568,12 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../paint/WebUi/base/">
-        Base guide
+        Txt2Guide
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../paint/WebUi/Advanced/">
-        Advanced Guide
+        Img2Guide
       </a>
 </li>
 <li class="md-nav__item">
@@ -849,42 +869,29 @@
 <h3 id="reasoning-process">Reasoning process</h3>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://jalammar.github.io/images/stable-diffusion/stable-diffusion-components-and-tensors.png"><img alt="jalammar s pic" src="https://jalammar.github.io/images/stable-diffusion/stable-diffusion-components-and-tensors.png"/></a></p>
 <p>information creator works entirely in the image information space (or latent space). This feature makes it faster than previous diffusion models that worked in pixel space. Technically, this component is composed of a UNet neural network and a scheduling algorithm.</p>
-<ul>
-<li>Text Encoder</li>
-</ul>
+<p><strong>Text Encoder</strong></p>
 <p>The parsing of the cues is processed by the Text Encoder/CLIP (token embedding), which is a key step in the translation of the cues to the AI.</p>
-<p>The Text Encoder is responsible for converting the input cue into an embedding space that is understandable to the U-Net. It is usually a simple transformer-based encoder that maps a sequence of input tokens into a sequence of latent text-embeddings.</p>
-<p>Stable Diffusion uses ClipText for text encoding. Input text, output 77 marker embedding vectors, each with 768 dimensions.</p>
-<ul>
-<li>information creator</li>
-</ul>
-<p>UNet + Scheduler (aka sampling algorithm) progressively processes/disperses information in latent space.</p>
+<p>The Text Encoder is responsible for converting the input hint into an embedding space that is understandable by U-Net. It is typically a simple transformer-based encoder that maps a sequence of input tokens into a sequence of latent text-embeddings.</p>
+<p>Stable diffusion uses ClipText for text encoding. Input text, output 77 marker embedding vectors, each with 768 dimensions.</p>
+<p><strong>information creator</strong></p>
+<p>UNet + Scheduler (aka sampling algorithm) processes/disperses information step by step in the latent space.</p>
 <p>It inputs text embeddings and a starting multidimensional array of noise (a structured list of numbers, also called a tensor) and outputs a processed array of information.</p>
-<ul>
-<li>Image Decoder</li>
-</ul>
-<p>The Text Decoder draws a picture based on the information obtained from the information creator. It is run only once at the end of the process to produce the final image.</p>
-<p>The autoencoder (VAE) model has two parts, an encoder and a decoder. The encoder is used to convert the image into a latent representation, which is used as input to the U-Net model. The decoder then converts the latent representation back to an image.</p>
-<p>During the inference process, a VAE decoder is used to convert the denoised latent image produced by the backward diffusion process back into an image. During the inference process, we only need the VAE decoder.</p>
-<p>The Autoencoder Decoder (VAE) draws the decoder of the final image using an array of processed information. Input the processed information array (dimensions: (4, 64, 64)) and output the resulting image (dimensions: (3, 512, 512), i.e. (red/green/blue, width, height).</p>
-<ul>
-<li>The work of CLIP</li>
-</ul>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://pic3.zhimg.com/80/v2-340920caff256e06c29cff7097e23e62_1440w.jpg"><img alt="training image" src="https://pic3.zhimg.com/80/v2-340920caff256e06c29cff7097e23e62_1440w.jpg"/></a></p>
+<p><strong>Image Decoder</strong></p>
+<p>Text Decoder draws a picture based on the information obtained from the information creator. It is run only once at the end of the process to generate the final image.</p>
+<p>The autoencoder (VAE) model has two parts, an encoder and a decoder. The encoder is used to convert the image into a latent representation, which is used as input to the U-Net model. The decoder converts the latent representation back to an image.</p>
+<p>In the inference process, the denoised latent image generated by the backward diffusion process is converted back to an image using the VAE decoder. In the inference process, we only need the VAE decoder.</p>
+<p>Autoencoder Decoder (VAE) uses the processed information array to draw the decoder of the final image. Input processed information array (dimensions: (4, 64, 64)), output result image (dimensions: (3, 512, 512), i.e. (red/green/blue, width, height).</p>
+<p><strong>CLIP's work</strong></p>
+<p>! <a href="https://pic3.zhimg.com/80/v2-340920caff256e06c29cff7097e23e62_1440w.jpg">training map</a></p>
 <blockquote>
-<p>CLIP training map from https://bbs.huaweicloud.com/blogs/371319</p>
+<p>CLIP training graph from https://bbs.huaweicloud.com/blogs/371319</p>
 </blockquote>
-<ul>
-<li>Process</li>
-</ul>
+<p><strong>Process</strong></p>
 <p>The autoencoder used in Stable Diffusion has a reduction factor of 8. This means that an image of (4, 512, 512) is (4, 64, 64) in the potential space.</p>
-<p>In reasoning about a 512 * 512 image using Stable Diffusion, the model uses a seed and a text cue as input. The potential seed generates a random potential image of size 64 × 64, while the prompt goes into the Text Encoder to be transformed into a text embedding of size 77 × 768 by CLIP's text encoder.</p>
-<p>U-Net iteratively denoises the random Gaussian noise representation while conditioning on the text embedding. u-Net calculates the denoised latent image representation using the sampling algorithm and outputs the noise residuals. After this step has been repeated many times, the potential representation is decoded by the decoder of the Image Decoder's auto encoder and output.</p>
-<p>The text embedding is combined with random Gaussian noise into the information creator and a processed array of information (noise residuals) is output.</p>
+<p>In the inference of a 512 x 512 image using stable diffusion, the model uses a seed and a text cue as input. The potential seed generates a random potential image of size 64 × 64, while the prompt enters the Text Encoder to be transformed into a text embedding of size 77 × 768 by CLIP's text encoder.</p>
+<p>U-Net iteratively denoises the random Gaussian noise representation while conditioning on the text embedding. u-Net computes the denoised latent image representation through the sampling algorithm and outputs the noise residuals. After this step is repeated many times, the potential representation is decoded and output by the decoder of the Image Decoder's auto encoder.</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/patrickvonplaten/scientific_images/master/stable_diffusion.png"><img alt="stable-diffusion" src="https://raw.githubusercontent.com/patrickvonplaten/scientific_images/master/stable_diffusion.png"/></a></p>
-<ul>
-<li>Extensions</li>
-</ul>
+<p><strong>Extensions</strong></p>
 <p><a href="https://lilianweng.github.io/posts/2021-07-11-diffusion-models/">What are Diffusion Models? </a></p>
 <p><a href="https://jalammar.github.io/illustrated-stable-diffusion/">illustrated-stable-diffusion</a></p>
 <p><a href="https://huggingface.co/blog/stable_diffusion">Stable Diffusion</a></p>
@@ -996,7 +1003,7 @@ As a several-hundred-element (low-dimensional) dense vector in which each elemen
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 23, 2022 13:24:03</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 26, 2022 18:39:55</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 13, 2022 10:24:49</span>

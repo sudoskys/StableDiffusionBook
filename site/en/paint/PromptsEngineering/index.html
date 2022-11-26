@@ -7,10 +7,10 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="一个介绍 Ai 绘画的 WIKI/A WIKI about Ai painting" name="description"/>
 <meta content="StableDiffusionBook Team" name="author"/>
-<link href="https://stable-diffusion-book.vercel.app/en/GettingStarted/state/" rel="canonical"/>
+<link href="https://stable-diffusion-book.vercel.app/en/paint/PromptsEngineering/" rel="canonical"/>
 <link href="../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
-<title>Statement - AiDraw</title>
+<title>Prompts Engineer - AiDraw</title>
 <link href="../../../assets/stylesheets/main.472b142f.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.08040f6c.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -18,17 +18,17 @@
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
 <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <meta content="website" property="og:type"/>
-<meta content="Statement - AiDraw" property="og:title"/>
+<meta content="Prompts Engineer - AiDraw" property="og:title"/>
 <meta content="一个介绍 Ai 绘画的 WIKI/A WIKI about Ai painting" property="og:description"/>
-<meta content="https://stable-diffusion-book.vercel.app/assets/images/social/GettingStarted/state.en.png" property="og:image"/>
+<meta content="https://stable-diffusion-book.vercel.app/assets/images/social/paint/PromptsEngineering.en.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
-<meta content="https://stable-diffusion-book.vercel.app/en/GettingStarted/state/" property="og:url"/>
+<meta content="https://stable-diffusion-book.vercel.app/en/paint/PromptsEngineering/" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Statement - AiDraw" name="twitter:title"/>
+<meta content="Prompts Engineer - AiDraw" name="twitter:title"/>
 <meta content="一个介绍 Ai 绘画的 WIKI/A WIKI about Ai painting" name="twitter:description"/>
-<meta content="https://stable-diffusion-book.vercel.app/assets/images/social/GettingStarted/state.en.png" name="twitter:image"/>
+<meta content="https://stable-diffusion-book.vercel.app/assets/images/social/paint/PromptsEngineering.en.png" name="twitter:image"/>
 <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
@@ -47,7 +47,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#declaration">
+<a class="md-skip" href="#prompts-engineering">
           Skip to content
         </a>
 </div>
@@ -71,7 +71,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Statement
+              Prompts Engineer
             
           </span>
 </div>
@@ -95,7 +95,7 @@
 <div class="md-select__inner">
 <ul class="md-select__list">
 <li class="md-select__item">
-<a class="md-select__link" href="../../../GettingStarted/state/" hreflang="zh">
+<a class="md-select__link" href="../../../paint/PromptsEngineering/" hreflang="zh">
                     简体中文
                   </a>
 </li>
@@ -155,7 +155,7 @@
 <div class="md-tabs__inner md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../../">
+<a class="md-tabs__link" href="../../">
         Start here
       </a>
 </li>
@@ -175,7 +175,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../paint/">
+<a class="md-tabs__link md-tabs__link--active" href="../">
         Paint guide
       </a>
 </li>
@@ -215,8 +215,8 @@
 </a>
 </div>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../">Start here</a>
 <label for="__nav_1">
@@ -230,40 +230,22 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../news/">
+<a class="md-nav__link" href="../../GettingStarted/news/">
         News
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../term/">
+<a class="md-nav__link" href="../../GettingStarted/term/">
         Terminology
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          Statement
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../GettingStarted/state/">
         Statement
       </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#license">
-    License
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../contributing/">
+<a class="md-nav__link" href="../../GettingStarted/contributing/">
         Contribution Guide
       </a>
 </li>
@@ -385,8 +367,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
 <label class="md-nav__link" for="__nav_5">
           Paint guide
           <span class="md-nav__icon md-icon"></span>
@@ -397,10 +379,10 @@
           Paint guide
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_1" id="__nav_5_1" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_1" id="__nav_5_1" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../paint/">General</a>
+<a href="../">General</a>
 <label for="__nav_5_1">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -411,10 +393,96 @@
           General
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../paint/PromptsEngineering/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Prompts Engineer
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         Prompts Engineer
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#getting-started">
+    Getting Started
+  </a>
+<nav aria-label="Getting Started" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#write-what">
+    Write what?
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-do-you-write-it">
+    How do you write it?
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-long-to-write">
+    How long to write?
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#order">
+    Order
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prompt-conflicts">
+    Prompt conflicts
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prompt-editing">
+    Prompt Editing
+  </a>
+<nav aria-label="Prompt Editing" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#manual-segmentation">
+    Manual Segmentation
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#attention-control">
+    Attention Control
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prompt-word-alternation">
+    Prompt word alternation
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prompt-matrix-matrix">
+    Prompt matrix Matrix
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prompt-schedule">
+    Prompt Schedule
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#become-an-assistant-engineer">
+    Become an assistant engineer
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -422,7 +490,7 @@
 <li class="md-nav__item md-nav__item--section md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_2" id="__nav_5_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../paint/WebUi/">Paint With WebUi</a>
+<a href="../WebUi/">Paint With WebUi</a>
 <label for="__nav_5_2">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -434,17 +502,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../paint/WebUi/base/">
+<a class="md-nav__link" href="../WebUi/base/">
         Txt2Guide
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../paint/WebUi/Advanced/">
+<a class="md-nav__link" href="../WebUi/Advanced/">
         Img2Guide
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../paint/WebUi/extension/">
+<a class="md-nav__link" href="../WebUi/extension/">
         Extension
       </a>
 </li>
@@ -464,12 +532,12 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../paint/Practicalguide/">
+<a class="md-nav__link" href="../Practicalguide/">
         Practical Guide
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../paint/identify/">
+<a class="md-nav__link" href="../identify/">
         Identify
       </a>
 </li>
@@ -545,8 +613,76 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#license">
-    License
+<a class="md-nav__link" href="#getting-started">
+    Getting Started
+  </a>
+<nav aria-label="Getting Started" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#write-what">
+    Write what?
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-do-you-write-it">
+    How do you write it?
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-long-to-write">
+    How long to write?
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#order">
+    Order
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prompt-conflicts">
+    Prompt conflicts
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prompt-editing">
+    Prompt Editing
+  </a>
+<nav aria-label="Prompt Editing" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#manual-segmentation">
+    Manual Segmentation
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#attention-control">
+    Attention Control
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prompt-word-alternation">
+    Prompt word alternation
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prompt-matrix-matrix">
+    Prompt matrix Matrix
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prompt-schedule">
+    Prompt Schedule
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#become-an-assistant-engineer">
+    Become an assistant engineer
   </a>
 </li>
 </ul>
@@ -556,57 +692,305 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/GettingStarted/state.en.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/paint/PromptsEngineering.en.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="declaration">Declaration</h1>
-<ol>
-<li>
-<p>If there is inappropriate content in the content of this document external links, it has nothing to do with this document.</p>
-</li>
-<li>
-<p>Please indicate the link when quoting or copying the content.</p>
-</li>
-<li>
-<p>For other statements, please read Readme</p>
-</li>
-<li>
-<p>Wiki is based on published material and experience and is not responsible for the accuracy of the content.</p>
-</li>
-</ol>
-<h2 id="license">License</h2>
-<p>The document is licensed under the <a href="https://www.gnu.org/licenses/fdl-1.3-faq.html">GFDL</a> license.</p>
-<p>If you need to use material from this Wiki in your own writings/articles/websites or other publications, you must follow the GFDL</p>
-<p>If you create a derivative version with modified or added content, it will inherit the following terms.</p>
+<h1 id="prompts-engineering">Prompts Engineering</h1>
+<p>This is a small guide to further explain the theory of index pages.</p>
+<p>This article is based on WebUi, so if you use another Ui, please be aware of compatibility.</p>
+<p>If you are an NAI user, please read the <a href="https://docs.novelai.net/image/promptmixing.html">Official Docs</a> in addition.</p>
+<h2 id="getting-started">Getting Started</h2>
+<p>The perception of writing a Prompt is that the more samples that fit the expectation within the bounded data range, the more the result will fit the expectation.</p>
+<h3 id="write-what">Write what?</h3>
+<p>The understanding of Ai is input by code and defined by Tokenizer. You can test the relevant code of the UI to obtain the actual word segmentation input.</p>
+<ul>
+<li><a href="https://novelai.net/tokenizer">NAI's prompt Tokenizer</a></li>
+<li><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui-tokenizer">WebUiTokenizer</a></li>
+</ul>
+<p><strong>word</strong></p>
+<p>Commonly seen words, preferably well-known tags (such as Danbooru) that can be found at the source site of the dataset. The style of the word should match the style of the image (for example, the word "Leshan Giant Buddha" should not be added to the prompt word when inferring animation illustrations), otherwise there will be mixed styles or noise.</p>
+<blockquote>
+<p>For some animation models trained on Stable Diffusion, it is better to use the labels that can be found in Danbooru.</p>
+</blockquote>
+<p><strong>natural language</strong></p>
+<p>Prompt can also use natural language directly. The language can be English, Japanese, special symbols or some Chinese, which is determined by the data set.</p>
+<p>The accuracy of natural language depends on the word segmentation of Clip. If you are pursuing accurate results, please do not use it.</p>
+<p>Avoid conjunctions like <code>with</code> or complex syntax when using natural language, they are redundant.</p>
+<p><strong>emoji</strong></p>
+<p>You can use Western Emoji <code>(^_^)</code>, emoji 🌻. Emojis work precisely as one-character "words".</p>
+<ul>
+<li>Emoji has influence on composition, such as <code>💐☺️💐</code>.</li>
+<li>Emoji performs well in terms of semantic accuracy because it has only one character.</li>
+<li><a href="https://unicode.org/emoji/charts/emoji-list.html">Emoji Reference</a></li>
+</ul>
+<p><strong>Kaomoji</strong></p>
+<p>For <strong>models using Danbooru data</strong>, we can use kaomoji to control expressions!
+<div class="highlight"><pre><span></span><code>:-) Smile :-( Displeased ;-) Wink :-D Happy :-P Tongue out :-C Sad :-O Surprised Open mouth :-/ Doubtful
+</code></pre></div></p>
 <ul>
 <li>
-<p>your work must also be published as GFDL</p>
+<p>Kaomoji has an effect on composition.</p>
 </li>
 <li>
-<p>you must give credit to the author of the article</p>
-</li>
-<li>
-<p>You must provide a means of obtaining a "transparent version" of the material</p>
+<p>Only Western Emoji is supported. For details, please refer to <a href="https://danbooru.donmai.us/wiki_pages/tag_group%3Aface_tags">Danbooru Emoji Section</a> or <a href="https://zh.wikipedia.org/ wiki/%E8%A1%A8%E6%83%85%E7%AC%A6%E8%99%9F%E5%88%97%E8%A1%A8?oldformat=true">Wikipedia</a></p>
 </li>
 </ul>
-<p>The specific protocols of the document refer to <a href="https://www.gnu.org/licenses/fdl-1.3.html">FDL</a>, subject to this repository copy.</p>
-<div class="highlight"><pre><span></span><code>Copyright (C)  2022  StableDiffusionBook.
-    Permission is granted to copy, distribute and/or modify this document
-    under the terms of the GNU Free Documentation License, Version 1.3
-    or any later version published by the Free Software Foundation;
-    with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
-    A copy of the license is included in the section entitled "GNU
-    Free Documentation License".
+<p><strong>Space</strong></p>
+<ul>
+<li>A small amount of spaces before and after the comma does not affect the actual effect.</li>
+</ul>
+<h3 id="how-do-you-write-it">How do you write it?</h3>
+<p>First think about what you want to draw, e.g. theme, appearance, mood, clothes, pose, background A category, then refer to a dataset tag list (if available, e.g. Danbooru, Pixiv etc.).</p>
+<p>Then combine the similar cue phrases you want, using the English half-word <code>,</code> as a separator, and put these in order from most important to least important.</p>
+<p><div class="highlight"><pre><span></span><code>(quality), (subject)(style), (action/scene), (artist), (filters)
 </code></pre></div>
+<code>(quality)</code> represents the quality of the image, e.g. <code>low res</code> is used in combination with <code>sticker</code> to "exploit" more data sets, <code>1girl</code> is used in combination with <code>high quality</code> to get a high quality image.</p>
+<p><code>(subject)</code> represents the subject of the image and anchors the content of the image, which is an essential part of any cue. <code>(style)</code> is the style of the screen, which is optional.</p>
+<p><code>(action/scene)</code> represents the action/scene and describes what the subject is doing where.</p>
+<p><code>(artist)</code> is the artist's name or the name of the company that produced it.</p>
+<p><code>(filters)</code> stands for details, additions. Artists, studios, photographic terms, character names, styles, effects, etc. can be used.</p>
+<p><strong>artistic style</strong></p>
+<p>You can create images with special effects or a specified painting style by specifying style keywords.</p>
+<p><a href="https://space.bilibili.com/8612008/channel/collectiondetail?sid=787691">NovelAI Tutorial and Spell Classroom</a></p>
+<p><a href="https://www.yuque.com/longyuye/lmgcwy">Test notes from the Mannequin Classroom</a></p>
+<p><a href="https://www.bilibili.com/video/BV1TP411N71t/">Stylisation: 32 types</a></p>
+<p>In addition to this, you can also train style models to train your ideal style, see the <code>Model Training</code> section for more details. For more information you can read <a href="https://docs.google.com/document/d/1XUT2G9LmkZataHFzmuOtRXnuWBfhvXDAo8DkS--8tec/edit#">为文字转图像 Ai 提示编写指南：A Guide to Writing Prompts for Text-to-image AI</a></p>
+<h3 id="how-long-to-write">How long to write?</h3>
+<p><strong>writing length</strong></p>
+<p>Due to the limitations of the GPT-3 model, the prompt is not infinite and the positive token is usually between 75 and 80, with the content truncated after 75 characters. So don't make the prompts too long, there is a risk of failure if they are longer than 100.</p>
+<ul>
+<li>WebUi</li>
+</ul>
+<p>In WebUi, you <strong>can</strong> write prompts with more than 75 words. webUi overcomes this limitation by grouping prompt words. When the prompt exceeds 75 <code>tokens</code> (e.g. 150 <code>tokens</code>), WebUi will group the prompt words and submit multiple groups of 75 <code>tokens</code>. Tokens only have context for other content in the same collection.</p>
+<p>But this leads to a problem: there may be <code>bule hair</code> at the border between the first and second group, the token <code>blue</code> will be in the first group and <code>hair</code> will be in the second group. This leads to inaccurate results, because <code>bule hair</code> is split up unreasonably!</p>
+<p>To solve this problem, the new version adds an option <code>Increase coherency by padding from the last comma within n tokens when using more than 75 tokens</code>. This setting lets the program try to mitigate this by finding out if there is a last comma in the last N tokens, and if so, moving everything that passes through that comma together to the next collection.</p>
+<div class="highlight"><pre><span></span><code>    There are entries for `... ,Comma,blue hair,PADDING,... `
+
+    The 75th word is `blue`
+
+    Use this option before
+
+    Set 1:{[74]=Comma, [75]=blue}, Set 2:{[76]=hair, [77]=PADDING}
+
+    After using this option
+
+    Set 1:{[074]=Comma, [75]=PADDING}, Set 2:{[76]=blue, [77]=hair}
+
+    If your hint is less than or equal to 75 tokens, no grouping will occur.
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>It is a good habit not to stack prompts, but if you do have a lot to write, you can increase the number of <code>steps</code> appropriately.</p>
+</div>
+<h3 id="order">Order</h3>
+<p>According to the image inference process, the order in which the prompts are placed can be considered a priority, with the preceding Prompt anchoring the main content of the screen. This explains why I emphasized the order of the Prompt above.</p>
+<p>! <a href="https://jalammar.github.io/images/stable-diffusion/stable-diffusion-image-generation.png">Description of image generation</a></p>
+<blockquote>
+<p>thanks https://jalammar.github.io/illustrated-stable-diffusion/</p>
+</blockquote>
+<p>If you use WebUi, WebUi renders long strings of prompts in groups of 75 Tokens.</p>
+<h3 id="prompt-conflicts">Prompt conflicts</h3>
+<p><strong>classification conflicts</strong></p>
+<pre><code>If you want a sticker, the sticker will certainly not be labelled `masterpiece, best quility,` but rather `normal quality` in the dataset.
+
+Similarly there is pixel work, when writing prompt words you should remove some of the conflicting prompts.
+</code></pre>
+<p><strong>Style Conflict</strong></p>
+<pre><code>Let's say you want a `flatcolor` style illustration of a child playing on the beach.
+
+Then using `loli` is not a good idea, as it comes with a standard uniform drawing style attribute that can greatly affect the result.
+
+Solution: lower the weight, replace the prompt.
+</code></pre>
+<p><strong>dimensional conflicts</strong></p>
+<pre><code>Some anime models are based on the original Stable Diffusion and should be avoided as much as possible.
+</code></pre>
+<p>Please be careful.</p>
+<h2 id="prompt-editing">Prompt Editing</h2>
+<p>Through prompt word editing, we can clearly tell the model "how much salt should be put in the dish I ordered".</p>
+<p><a href="https://github.com/bloc97/CrossAttentionControl">Original implementation</a></p>
+<h3 id="manual-segmentation">Manual Segmentation</h3>
+<p>Use <code>/</code> or <code>+</code> to force splitting of prompt words. <sup id="fnref:13"><a class="footnote-ref" href="#fn:13">2</a></sup></p>
+<p>It should be noted that adjacent repeated symbols will be filtered. The effect of <code>+++</code> is equivalent to <code>+</code>. The correct way is to type + and / separately.</p>
+<p>For example, it is also necessary to achieve the separation of 9 token lengths: <sup id="fnref2:13"><a class="footnote-ref" href="#fn:13">2</a></sup></p>
+<div class="highlight"><pre><span></span><code><span class="gh"># The following three items have similar effects, and do not interfere with subsequent words very much. Influence around 7%:</span>
+red eyes,/,/,/,/, blue dress (separated by 9 grids, the keys are also close together, recommended)
+red eyes, /+/+/+/, blue dress (9 grid separation, minimum interference)
+red eyes, , , , , , , , ,blue dress (separated by 9 spaces, there must be spaces between commas or the effect will be halved)
+
+<span class="gh"># The following are not recommended methods, which still have a 25% impact on subsequent words and will interfere with the style of painting:</span>
+red eyes++++++++++++++++++++ blue dress (also 9 grids, three + signs are judged as a token)
+red eyes/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​ /​/​/​/​/​/​/​/​/​/​blue dress (same as plus sign)
+
+<span class="k">*</span> Tip-From [^13]
+</code></pre></div>
+<h3 id="attention-control">Attention Control</h3>
+<p>Reading the theoretical basis, we know that the basic weight of each word is different, and our expectations for the weight values ​​of different prompts are also different. At this time, we need to use attention control to adjust the relationship between them.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Ui</th>
+<th align="center">Syntax</th>
+<th align="center">Example</th>
+<th align="center">Weight Variations</th>
+<th align="center">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">WebUi</td>
+<td align="center"><code>(prompt:num)</code></td>
+<td align="center">Emphasis: <code>((cat))</code> <code>(cat:1.4)</code>, Weaken: <code>(cat:0.2)</code> <code>[cat]</code></td>
+<td align="center">()-&gt; 1.1</td>
+<td align="center"><code>The range of num</code> is <code>0.1 ~:100</code>, if it is a decimal, take the proportion of the number of steps</td>
+</tr>
+<tr>
+<td align="center">Nai</td>
+<td align="center"><code>{}</code></td>
+<td align="center"><code>{{{cat}}}</code> <code>[cat]</code></td>
+<td align="center">{}-&gt; 1.05</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">original implementation</td>
+<td align="center">+/-</td>
+<td align="center"><code>+cat</code> <code>-cat</code></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>
+<p>WebUi weight syntax is <code>(prompt:num)</code> or <code>((prompt))</code>, the enhanced weight is , and the enhanced range is <code>0.1 ~ 100</code>, if it is a decimal, it will take the proportion of steps. For example, emphasis: <code>((cat))</code> <code>(cat:1.4)</code>, weakening: <code>(cat:0.2)</code> <code>[cat]</code></p>
+<div class="highlight"><pre><span></span><code>a (word) - increase the weight by a factor of 1.1
+
+a ((word)) - Increases the weight by a factor of 1.21 (= 1.1 * 1.1), a multiplicative relationship.
+
+a [word] - reduce the weight by a factor of 1.1
+
+a (word:1.5) - increase the weight by a factor of 1.5
+
+a (word:0.25) - reduces the weight by a factor of 4 (= 1 / 0.25)
+
+a \(word\) - use literal () characters in the prompt
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The weight increase usually takes up one token bit. There is no need to add too many parentheses when the token bit is tight.</p>
+<p>Too many parentheses will cause characters to be eaten by the program, <code>a ((((farm))), daytime</code> will become <code>a farm daytime</code> without commas.</p>
+<p>WebUi For prompt words with brackets such as <code>a (word)</code> <strong>Please use <code>\</code> characters to escape to <code>a \(word\)</code></strong>, this is suitable for Tags with brackets, to prevent unwanted enhancements Effect.</p>
+</div>
+</li>
+<li>
+<p>NAI uses <code>{}</code> for enhancement, and weight cannot be specified. For example <code>{{{cat}}}</code> <code>[cat]</code></p>
+</li>
+</ol>
+<p>NAI does not allow weights to be specified individually, but supports mixed weights such as <code>cat:1|happy:-0.2|cute:-0:3</code>, <code>(cat :2 | dog)</code> is a dog that is more like a cat.</p>
+<p><strong>Conversion relationship</strong></p>
+<p>[word] of NAI = WebUi(word: 0.952)(0.952 = 1/1.05)</p>
+<p>{word} of NAI = (word: 1.05) of WeUi</p>
+<p>NAI curly braces weight 1.05/piece, WebUi circle weight 1.1/piece</p>
+<ol>
+<li>Reduce the weight, use <code>[]</code> or <code>(word:0.952)</code> alone. NAI can only use <code>[]</code></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Do not confuse</p>
+<p>Prompt syntax for NAI and WebUi <strong>not universal</strong></p>
+<p>Because NAI is using a pre-September 2022 implementation of WebUi, the weight augmentation syntax is the old <code>{}</code> and the new WebUi changed to <code>()</code>.</p>
+<p>NAI does not support specifying weights for prompt words.</p>
+<p>If you want to convert the weight conveniently, you can use <a href="https://t.me/M2NM2NBot">conversion service</a></p>
+</div>
+<details class="tip">
+<summary>How It Works</summary>
+<p>Each word has an associated vector of 768 values ​​that "points" in the direction of the concept (in a 768-dimensional space).</p>
+<p>If you scale this vector, the concept becomes stronger or weaker.</p>
+<p>SEE <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2905">Here</a></p>
+</details>
+<p>! [example image missing]</p>
+<h3 id="prompt-word-alternation">Prompt word alternation</h3>
+<p>Alternate prompt [^7], Prompt Mixer. This technology is implemented by the UI. <sup id="fnref:9"><a class="footnote-ref" href="#fn:9">1</a></sup></p>
+<div class="highlight"><pre><span></span><code>[alison brie|emma stone|elizabeth olsen|scarlett johansson|anne hathaway|emma roberts], still film
+</code></pre></div>
+<p>It can create hybrids of animals, people or styles, switching a hint every <code>step</code> (step-by-step ring rendering).</p>
+<p>! [example image missing]</p>
+<h3 id="prompt-matrix-matrix">Prompt matrix Matrix</h3>
+<p>WebUi uses <code>|</code> to separate multiple keywords to mix multiple elements, and the program will generate an image for each combination of them. This technology is implemented by the UI.</p>
+<p>For example, if you use <code>a busy city street in a modern city|illustration|cinematic lighting</code>, there are four possible combinations (always keep the first part of the hint):</p>
+<ul>
+<li>a busy city street in a modern city</li>
+<li>a busy city street in a modern city, illustration</li>
+<li>a busy city street in a modern city, cinematic lighting</li>
+<li>a busy city street in a modern city, illustration, cinematic lighting</li>
+</ul>
+<p>! [example image missing]</p>
+<p>You can further add : x after the keyword to specify the weight of a single keyword.</p>
+<p>-NAI</p>
+<p>In NAI stands for average weight mix (first half and second half).</p>
+<p><code>cat :2 | dog</code> is a dog more like a cat</p>
+<p>! [example image missing]</p>
+<h3 id="prompt-schedule">Prompt Schedule</h3>
+<p>Prompt Schedule can change prompts in the process of reasoning about images, this technology is implemented by UI.</p>
+<p>The syntax is <code>[from:to:when]</code></p>
+<p>where <code>from</code> and <code>to</code> are prompts, and when is a number defining how long in the sampling period the switch should occur.</p>
+<ul>
+<li>
+<p><code>[fantasy:cyberpunk:16]</code> means from the 16th step onwards, replace <code>fantasy</code> with <code>cyberpunk</code> tag</p>
+</li>
+<li>
+<p><code>[to:when]</code> adds <code>to</code> to the prompt (when) after a fixed number of steps</p>
+</li>
+<li>
+<p><code>[from::when]</code> removes <code>from</code> from the prompt after a fixed number of steps (when)</p>
+</li>
+</ul>
+<p>for example:</p>
+<ul>
+<li>
+<p><code>[fantasy:cyberpunk:16]</code> means from the 16th step onwards, replace <code>fantasy</code> with <code>cyberpunk</code> tag</p>
+</li>
+<li>
+<p><code>[male: female: 0.0]</code>, means you asked to draw a female from the start.</p>
+</li>
+</ul>
+<p>Effect:</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://user-images.githubusercontent.com/75739606/197822841-f7323afa-8c6a-46a2-a8e2-a1c457bb31d5.jpg"><img alt="sample_Gradient" src="https://user-images.githubusercontent.com/75739606/197822841-f7323afa-8c6a-46a2-a8e2-a1c457bb31d5.jpg"/></a></p>
+<!--
+![sample_Gradient](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/sample_Gradient.jpg)
+-->
+<h2 id="become-an-assistant-engineer">Become an assistant engineer</h2>
+<p>These guides can take you a step further.</p>
+<ul>
+<li>
+<p><a href="https://github.com/6DammK9/nai-anime-pure-negative-prompt">Test for NAI</a></p>
+</li>
+<li>
+<p><a href="https://github.com/Maks-s/sd-akashic">https://github.com/Maks-s/sd-akashic</a></p>
+</li>
+<li>
+<p><a href="https://github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference">https://github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference</a></p>
+</li>
+</ul>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:9">
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/1733">alternate prompt</a> <a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:13">
+<p><a href="https://nga.178.com/read.php?pid=654605407&amp;opt=128">Nga's experience</a> <a class="footnote-backref" href="#fnref:13" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref2:13" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+</ol>
+</div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 22, 2022 12:03:04</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 26, 2022 18:40:46</span>
 <br/>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 03:59:46</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 26, 2022 18:40:46</span>
 </small>
 </div>
 </article>
@@ -619,7 +1003,7 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: Terminology" class="md-footer__link md-footer__link--prev" href="../term/" rel="prev">
+<a aria-label="Previous: Getting Started Painting" class="md-footer__link md-footer__link--prev" href="../" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -628,17 +1012,17 @@
 <span class="md-footer__direction">
                 Previous
               </span>
-              Terminology
+              Getting Started Painting
             </div>
 </div>
 </a>
-<a aria-label="Next: Contribution Guide" class="md-footer__link md-footer__link--next" href="../contributing/" rel="next">
+<a aria-label="Next: WebUi" class="md-footer__link md-footer__link--next" href="../WebUi/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Next
               </span>
-              Contribution Guide
+              WebUi
             </div>
 </div>
 <div class="md-footer__button md-icon">

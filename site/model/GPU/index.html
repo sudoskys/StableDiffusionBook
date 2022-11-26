@@ -392,18 +392,38 @@
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../paint/">绘画指南</a>
-<label for="__nav_5">
-<span class="md-nav__icon md-icon"></span>
+<label class="md-nav__link" for="__nav_5">
+          绘画指南
+          <span class="md-nav__icon md-icon"></span>
 </label>
-</div>
 <nav aria-label="绘画指南" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_5">
 <span class="md-nav__icon md-icon"></span>
           绘画指南
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_1" id="__nav_5_1" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../paint/">概论</a>
+<label for="__nav_5_1">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="概论" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_1">
+<span class="md-nav__icon md-icon"></span>
+          概论
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../paint/PromptsEngineering/">
+        提示工程
+      </a>
+</li>
+</ul>
+</nav>
+</li>
 <li class="md-nav__item md-nav__item--section md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_2" id="__nav_5_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
@@ -420,12 +440,12 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../paint/WebUi/base/">
-        基本指南
+        Txt2指南
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../paint/WebUi/Advanced/">
-        进阶指南
+        Img2指南
       </a>
 </li>
 <li class="md-nav__item">
@@ -592,12 +612,12 @@
 <div class="highlight"><pre><span></span><code>pip install torch torchvision --extra-index-url https://download.pytorch.org/whl/cu116
 </code></pre></div>
 <ol>
-<li>下载 <code>Cudnn_8.5</code> 备用。</li>
-</ol>
+<li>
+<p>下载 <code>Cudnn_8.5</code> 备用。</p>
 <p>使用下载工具下载，直接下载会跳转到 Nvidia 的开发者注册界面</p>
 <p>Windows: <a href="https://developer.nvidia.com/compute/cudnn/secure/8.5.0/local_installers/11.7/cudnn-windows-x86_64-8.5.0.96_cuda11-archive.zip">https://developer.nvidia.com/compute/cudnn/secure/8.5.0/local_installers/11.7/cudnn-windows-x86_64-8.5.0.96_cuda11-archive.zip</a></p>
 <p>其他版本：<a href="https://developer.nvidia.com/rdp/cudnn-archive">https://developer.nvidia.com/rdp/cudnn-archive</a></p>
-<ol>
+</li>
 <li>
 <p>将 Cudnn 8.5 压缩包里的 bin 和 lib 文件夹里的所有文件复制到 <code>venv\Lib\site-packages\torch\lib</code> 里，覆盖所有文件。</p>
 </li>
@@ -611,7 +631,7 @@
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月22日 16:28:07</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月26日 18:40:03</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 03:59:46</span>

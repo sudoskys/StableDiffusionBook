@@ -7,10 +7,10 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="一个介绍 Ai 绘画的 WIKI/A WIKI about Ai painting" name="description"/>
 <meta content="StableDiffusionBook Team" name="author"/>
-<link href="https://stable-diffusion-book.vercel.app/GettingStarted/news/" rel="canonical"/>
+<link href="https://stable-diffusion-book.vercel.app/paint/PromptsEngineering/" rel="canonical"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
-<title>新闻 - AiDraw</title>
+<title>提示工程 - AiDraw</title>
 <link href="../../assets/stylesheets/main.472b142f.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.08040f6c.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -18,17 +18,17 @@
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
 <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <meta content="website" property="og:type"/>
-<meta content="新闻 - AiDraw" property="og:title"/>
+<meta content="提示工程 - AiDraw" property="og:title"/>
 <meta content="一个介绍 Ai 绘画的 WIKI/A WIKI about Ai painting" property="og:description"/>
-<meta content="https://stable-diffusion-book.vercel.app/assets/images/social/GettingStarted/news.png" property="og:image"/>
+<meta content="https://stable-diffusion-book.vercel.app/assets/images/social/paint/PromptsEngineering.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
-<meta content="https://stable-diffusion-book.vercel.app/GettingStarted/news/" property="og:url"/>
+<meta content="https://stable-diffusion-book.vercel.app/paint/PromptsEngineering/" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="新闻 - AiDraw" name="twitter:title"/>
+<meta content="提示工程 - AiDraw" name="twitter:title"/>
 <meta content="一个介绍 Ai 绘画的 WIKI/A WIKI about Ai painting" name="twitter:description"/>
-<meta content="https://stable-diffusion-book.vercel.app/assets/images/social/GettingStarted/news.png" name="twitter:image"/>
+<meta content="https://stable-diffusion-book.vercel.app/assets/images/social/paint/PromptsEngineering.png" name="twitter:image"/>
 <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
@@ -47,7 +47,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#_1">
+<a class="md-skip" href="#prompts-engineering">
           跳转至
         </a>
 </div>
@@ -71,7 +71,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              新闻
+              提示工程
             
           </span>
 </div>
@@ -100,7 +100,7 @@
                   </a>
 </li>
 <li class="md-select__item">
-<a class="md-select__link" href="../../en/GettingStarted/news/" hreflang="en">
+<a class="md-select__link" href="../../en/paint/PromptsEngineering/" hreflang="en">
                     English
                   </a>
 </li>
@@ -155,7 +155,7 @@
 <div class="md-tabs__inner md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../..">
+<a class="md-tabs__link" href="../..">
         起步于此
       </a>
 </li>
@@ -175,7 +175,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../paint/">
+<a class="md-tabs__link md-tabs__link--active" href="../">
         绘画指南
       </a>
 </li>
@@ -215,8 +215,8 @@
 </a>
 </div>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../..">起步于此</a>
 <label for="__nav_1">
@@ -229,211 +229,23 @@
           起步于此
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          新闻
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../GettingStarted/news/">
         新闻
       </a>
-<nav aria-label="目录" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1124">
-    11/24
-  </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#1123">
-    11/23
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1122">
-    11/22
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1121">
-    11/21
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1118">
-    11/18
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1116">
-    11/16
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1115">
-    11/15
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1112">
-    11/12
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1111">
-    11/11
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1110">
-    11/10
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#119">
-    11/9
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#118">
-    11/8
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#117">
-    11/7
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#116">
-    11/6
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#115">
-    11/5
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#113">
-    11/3
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#112">
-    11/2
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#111">
-    11/1
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1030">
-    10/30
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1029">
-    10/29
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1027">
-    10/27
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1026">
-    10/26
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1025">
-    10/25
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1024">
-    10/24
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1023">
-    10/23 更新
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1022">
-    10/22 更新
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1021">
-    10/21 更新
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1020">
-    10/20 更新
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1019">
-    10/19 更新
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1014">
-    10/14 更新
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1013">
-    10/13 更新
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1012">
-    10/12 更新
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1011">
-    10/11 更新
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1010">
-    10/10 更新
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
-    背景故事
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../term/">
+<a class="md-nav__link" href="../../GettingStarted/term/">
         术语
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../state/">
+<a class="md-nav__link" href="../../GettingStarted/state/">
         声明
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../contributing/">
+<a class="md-nav__link" href="../../GettingStarted/contributing/">
         贡献指南
       </a>
 </li>
@@ -555,8 +367,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
 <label class="md-nav__link" for="__nav_5">
           绘画指南
           <span class="md-nav__icon md-icon"></span>
@@ -567,10 +379,10 @@
           绘画指南
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_1" id="__nav_5_1" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_1" id="__nav_5_1" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../paint/">概论</a>
+<a href="../">概论</a>
 <label for="__nav_5_1">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -581,10 +393,96 @@
           概论
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../paint/PromptsEngineering/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          提示工程
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         提示工程
       </a>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+    入门
+  </a>
+<nav aria-label="入门" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+    写什么？
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+    如何写？
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+    写多长？
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+    顺序
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prompt">
+    Prompt 冲突
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+    提示词编辑
+  </a>
+<nav aria-label="提示词编辑" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
+    人工分割
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_8">
+    注意力控制
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_9">
+    提示词交替
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prompt-matrix">
+    Prompt matrix 矩阵
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prompt-schedule">
+    Prompt Schedule
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_10">
+    成为调参工程师
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -592,7 +490,7 @@
 <li class="md-nav__item md-nav__item--section md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_2" id="__nav_5_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../paint/WebUi/">WebUi绘画指南</a>
+<a href="../WebUi/">WebUi绘画指南</a>
 <label for="__nav_5_2">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -604,17 +502,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../paint/WebUi/base/">
+<a class="md-nav__link" href="../WebUi/base/">
         Txt2指南
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../paint/WebUi/Advanced/">
+<a class="md-nav__link" href="../WebUi/Advanced/">
         Img2指南
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../paint/WebUi/extension/">
+<a class="md-nav__link" href="../WebUi/extension/">
         安装扩展
       </a>
 </li>
@@ -634,12 +532,12 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../paint/Practicalguide/">
+<a class="md-nav__link" href="../Practicalguide/">
         实战指南
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../paint/identify/">
+<a class="md-nav__link" href="../identify/">
         鉴别
       </a>
 </li>
@@ -715,178 +613,76 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#1124">
-    11/24
+<a class="md-nav__link" href="#_1">
+    入门
   </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1123">
-    11/23
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1122">
-    11/22
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1121">
-    11/21
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1118">
-    11/18
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1116">
-    11/16
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1115">
-    11/15
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1112">
-    11/12
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1111">
-    11/11
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1110">
-    11/10
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#119">
-    11/9
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#118">
-    11/8
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#117">
-    11/7
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#116">
-    11/6
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#115">
-    11/5
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#113">
-    11/3
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#112">
-    11/2
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#111">
-    11/1
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1030">
-    10/30
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1029">
-    10/29
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1027">
-    10/27
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1026">
-    10/26
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1025">
-    10/25
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1024">
-    10/24
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1023">
-    10/23 更新
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1022">
-    10/22 更新
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1021">
-    10/21 更新
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1020">
-    10/20 更新
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1019">
-    10/19 更新
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1014">
-    10/14 更新
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1013">
-    10/13 更新
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1012">
-    10/12 更新
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1011">
-    10/11 更新
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1010">
-    10/10 更新
-  </a>
-</li>
+<nav aria-label="入门" class="md-nav">
+<ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_2">
-    背景故事
+    写什么？
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+    如何写？
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+    写多长？
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+    顺序
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prompt">
+    Prompt 冲突
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+    提示词编辑
+  </a>
+<nav aria-label="提示词编辑" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
+    人工分割
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_8">
+    注意力控制
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_9">
+    提示词交替
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prompt-matrix">
+    Prompt matrix 矩阵
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prompt-schedule">
+    Prompt Schedule
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_10">
+    成为调参工程师
   </a>
 </li>
 </ul>
@@ -896,231 +692,308 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/GettingStarted/news.md" title="编辑此页">
+<a class="md-content__button md-icon" href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/paint/PromptsEngineering.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="_1">新闻</h1>
+<h1 id="prompts-engineering">Prompts Engineering</h1>
+<p>这里是为进一步阐释 index 页理论所写的一个小指南。</p>
+<p>本文章基于 WebUi, 如果你使用其他 Ui, 请注意兼容性。</p>
+<p>如果你是 NAI 用户，请额外阅读 <a href="https://docs.novelai.net/image/promptmixing.html">官网 Docs</a>。</p>
+<h2 id="_1">入门</h2>
+<p>书写 Prompt 的感性感受为：限定数据范围内符合期望的样本越多，结果越符合预期。</p>
+<h3 id="_2">写什么？</h3>
+<p>Ai 的理解由代码输入，由 Tokenizer 定义，你可以测试 UI 的相关代码获取实际的分词输入。</p>
+<ul>
+<li><a href="https://novelai.net/tokenizer">NAI's prompt Tokenizer</a></li>
+<li><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui-tokenizer">WebUiTokenizer</a></li>
+</ul>
+<p><strong>单词</strong></p>
+<p>普通常见的单词，最好是可以在数据集来源站点找到的著名标签（比如 Danbooru)。单词的风格要和图像的风格搭配（比如在推理动漫插画时不应该在提示词加入 <code>乐山大佛</code> 的词汇），否则会出现混杂的风格或噪点。</p>
+<blockquote>
+<p>对于某些基于 Stable Diffusion 训练的动漫模型来说，最好使用 Danbooru 中可以找到的标签。</p>
+</blockquote>
+<p><strong>自然语言</strong></p>
+<p>Prompt 也可以直接使用自然语言，语种可以是英文，日文，特殊符号或一些中文，这由数据集决定。</p>
+<p>自然语言的准确度取决于 Clip 的分词情况，如果你追求精确的结果，请勿使用。</p>
+<p>使用自然语言的时候要避免 <code>with</code> 之类的连接词或复杂的语法，它们很多余。</p>
+<p><strong>emoji</strong></p>
+<p>你可以使用 西方颜文字 <code>(^_^)</code>，emoji 🌻。emoji 作为只有一个字符的“词语”效果很精确。</p>
+<ul>
+<li>Emoji 在构图上有影响，比如 <code>💐☺️💐</code>。</li>
+<li>Emoji 因为只有一个字符，所以在语义准确度上表现良好。</li>
+<li><a href="https://unicode.org/emoji/charts/emoji-list.html">表情符号参考</a></li>
+</ul>
+<p><strong>颜文字</strong></p>
+<p>对于<strong>使用 Danbooru 数据的模型</strong>来说，我们可以使用 颜文字 来控制表情！
+<div class="highlight"><pre><span></span><code>:-) 微笑 :-( 不悦 ;-) 使眼色 :-D 开心 :-P 吐舌头 :-C 很悲伤 :-O 惊讶 张大口 :-/ 怀疑
+</code></pre></div></p>
+<ul>
+<li>
+<p>颜文字在构图上有影响。</p>
+</li>
+<li>
+<p>仅支持西方颜文字，详细内容请见 <a href="https://danbooru.donmai.us/wiki_pages/tag_group%3Aface_tags">Danbooru 颜文字部分</a> 或 <a href="https://zh.wikipedia.org/wiki/%E8%A1%A8%E6%83%85%E7%AC%A6%E8%99%9F%E5%88%97%E8%A1%A8?oldformat=true">维基百科</a></p>
+</li>
+</ul>
+<p><strong>空格</strong></p>
+<ul>
+<li>逗号前后的少量空格并不影响实际效果。</li>
+</ul>
+<h3 id="_3">如何写？</h3>
+<p>先想一下你要画什么，例如 主题，外表，情绪，衣服，姿势，背景 一类，然后参考数据集标签表（如果有的话，比如 Danbooru, Pixiv 等）。</p>
+<p>然后将你想要的相似的提示词组合在一起，请使用英文半角 <code>,</code> 做分隔符，并将这些按从最重要到最不重要的顺序排列。</p>
+<p><div class="highlight"><pre><span></span><code>(quality), (subject)(style), (action/scene), (artist), (filters)
+</code></pre></div>
+<code>(quality)</code> 代表画面的品质，比如 <code>low res</code> 结合 <code>sticker</code> 使用来 “利用” 更多数据集， <code>1girl</code> 结合 <code>high quality</code> 使用来获得高质量图像。</p>
+<p><code>(subject)</code> 代表画面的主题，锚定画面内容，这是任何提示的基本组成部分。<code>(style)</code> 是画面风格，可选。</p>
+<p><code>(action/scene)</code> 代表动作/场景，描述了主体在哪里做了什么。</p>
+<p><code>(artist)</code> 代表艺术家名字或者出品公司名字。</p>
+<p><code>(filters)</code> 代表一些细节，补充。可以使用 艺术家，工作室，摄影术语，角色名字，风格，特效等等。</p>
+<p><strong>艺术风格</strong></p>
+<p>你可以通过指定风格关键词来创作带有特效或指定画风的图片。</p>
+<p><a href="https://space.bilibili.com/8612008/channel/collectiondetail?sid=787691">NovelAI 使用教程和魔咒课堂</a></p>
+<p><a href="https://www.yuque.com/longyuye/lmgcwy">人偶教室的测试记录</a></p>
+<p><a href="https://www.bilibili.com/video/BV1TP411N71t/">风格化：32 种</a></p>
+<p>除此之外，你还可以训练风格模型来训练自己的理想风格，详见 <code>模型训练</code> 章节。</p>
+<p>更多参考可以读 <a href="https://docs.google.com/document/d/1XUT2G9LmkZataHFzmuOtRXnuWBfhvXDAo8DkS--8tec/edit#">为文字转图像 Ai 提示编写指南：A Guide to Writing Prompts for Text-to-image AI</a></p>
+<h3 id="_4">写多长？</h3>
+<p><strong>书写长度</strong></p>
+<p>由于 GPT-3 模型限制，prompt 并不是无限的，一般 positive token 在 75-80 之间，75 字符后的内容会被截断。所以提示不要太长，超过 100 就有失败风险。</p>
+<ul>
+<li>WebUi</li>
+</ul>
+<p>在 WebUi 中，你 <strong>可以</strong> 写 75 个词汇以上的提示。WebUi 通过对提示词进行分组克服了这种限制。当提示超过 75 个 <code>token</code>（比如 150 个 <code>token</code>）时，WebUi 将分组提示词，提交多组 75 个 <code>token</code>。标记只具有同一集合中其他内容的上下文。</p>
+<p>但这导致了一个问题：可能在第一组和第二组之间的边界处有 <code>bule hair</code>，标记 <code>blue</code> 将在第一组中，<code>hair</code> 将在第二组中。这导致结果不准确，因为 <code>bule hair</code> 被不合理地分割了！</p>
+<p>为了解决这个问题，新版本增加了一个选项 <code>Increase coherency by padding from the last comma within n tokens when using more than 75 tokens</code>，这个设置让程序试图通过查找最后 N 个标记中是否有最后一个逗号来缓解这种情况，如果有，则将所有经过该逗号的内容一起移动到下一个集合中。</p>
+<div class="highlight"><pre><span></span><code>    有词条为 `...,Comma,blue hair,PADDING,...`
+
+    第 75 个词为 `blue`
+
+    使用该选项前
+
+    集合 1:{[74]=Comma，[75]=blue}，集合 2:{[76]=hair, [77]=PADDING}
+
+    使用该选项后
+
+    集合 1:{[074]=Comma，[75]=PADDING}，集合 2:{[76]=blue，[77]=hair}
+
+    如果您的提示小于等于 75 个标记，不会发生分组。
+</code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>目前 Stable Diffusion WebUi 迭代非常快，每天都会有大量更新，因此建议每天都拉取最新代码。</p>
+<p>不堆叠 prompt 是一个好习惯，但是如果你确实有很多内容要写，可以适当提高 <code>step</code> 数量。</p>
 </div>
-<p>以下是新闻和测试内容。</p>
-<h2 id="1124">11/24</h2>
-<p>Stable Diffusion 2.0 Release</p>
-<p>https://stability.ai/blog/stable-diffusion-v2-release</p>
-<p>DiffusionDet: Diffusion Model for Object Detection</p>
-<p>https://arxiv.org/abs/2211.09788</p>
-<h2 id="1123">11/23</h2>
-<p>How to train Stable Diffusion (SD) "efficiently" and how to use SCAL-SDT itself (WIP).
-<a href="https://github.com/CCRcmcpe/scal-sdt/wiki">SCAL-SDT</a></p>
-<h2 id="1122">11/22</h2>
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4886">梯度累积、autocast 修复、新的潜在采样方法等</a></p>
-<p><a href="https://huggingface.co/datasets/Nerfgun3/bad_prompt">Nerfgun3/bad_prompt</a></p>
+<h3 id="_5">顺序</h3>
+<p>根据图像推理过程，提示词放入的顺序可以视为优先级，在前面的 Prompt 锚定了画面的主体内容。这解释了为什么我会在上文中强调 Prompt 的顺序。</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://jalammar.github.io/images/stable-diffusion/stable-diffusion-image-generation.png"><img alt="图像生成的描述" src="https://jalammar.github.io/images/stable-diffusion/stable-diffusion-image-generation.png"/></a></p>
 <blockquote>
-<p>The idea behind this embedding was to somehow train the negative prompt as an embedding, thus unifying the basis of the negative prompt into one word or embedding. </p>
+<p>thanks https://jalammar.github.io/illustrated-stable-diffusion/</p>
 </blockquote>
-<h2 id="1121">11/21</h2>
-<p>Spellbrush 和 Midjourney 共同研发的 <a href="https://nijijourney.com/">nijijourney</a> 开始内测。官方 Discord 频道分设 日本語，中文，한글，English 四个子区。</p>
-<div class="highlight"><pre><span></span><code>niji · journey is developed in collaboration by Spellbrush and Midjourney 
-</code></pre></div>
-<p>经过初步测试，nijijourney 有良好的构图能力，但是效果仍待观望。</p>
-<h2 id="1118">11/18</h2>
-<p><a href="https://twitter.com/needle/status/1593428231901700101">逆向思维修复手</a></p>
-<h2 id="1116">11/16</h2>
-<p>Anything-V3.0.ckpt 为来自 元素法典 群友融合出的混合模型。</p>
-<p>还有一个所谓手部修复模型，是根据一名著名画师的作品训练的再生 DreamBooth 模型。</p>
-<h2 id="1115">11/15</h2>
-<p>Telegram 中文社区中，关于 NAI Leak 的 Colab 笔记本 收到了 DMCA 通知。</p>
-<p>https://lumendatabase.org/notices/29484955</p>
-<p>https://lumendatabase.org/notices/29484957</p>
-<blockquote>
-<p>再次说明：Aidraw Wiki 不分发设计版权争议的 Cpkt 文件</p>
-</blockquote>
-<h2 id="1112">11/12</h2>
-<p><a href="https://huggingface.co/IDEA-CCNL/Taiyi-Stable-Diffusion-1B-Chinese-v0.1">Stable-Diffusion 中文模型</a></p>
-<h2 id="1111">11/11</h2>
-<ul>
-<li><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4563">Pull#4563</a> 在 ngrok 中添加用户名和密码</li>
-</ul>
-<div class="highlight"><pre><span></span><code>Allows specifying the user of ngrok by username and password using the : --ngrok authtoken:username:password
-and keep old args for not using username and password only use authtoken : --ngrok authtoken
-</code></pre></div>
-<h2 id="1110">11/10</h2>
-<ul>
-<li>
-<p>Add username and password in ngrok
-https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4563</p>
-</li>
-<li>
-<p>添加对 SSL/TLS 的支持（提供 Gradio TLS 选项）
-https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4320</p>
-</li>
-</ul>
-<h2 id="119">11/9</h2>
-<ul>
-<li>许可问题</li>
-</ul>
-<p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4222</p>
-<h2 id="118">11/8</h2>
-<ul>
-<li>Colossal-AI: A Unified Deep Learning System for Big Model Era 
-不明所以的项目
-https://github.com/hpcaitech/ColossalAI</li>
-</ul>
-<h2 id="117">11/7</h2>
-<ul>
-<li>DreamBooth WebUI 插件</li>
-</ul>
-<p>https://github.com/d8ahazard/sd_dreambooth_extension</p>
-<ul>
-<li>有插件中出现了广告</li>
-</ul>
-<p>https://www.reddit.com/r/StableDiffusion/comments/ynshup/ads_are_starting_to_appear_in_our_foss/</p>
-<h2 id="116">11/6</h2>
-<ul>
-<li>新的采样高阶算法</li>
-</ul>
-<p>DPM-Solver (and the improved version DPM-Solver++) is a fast dedicated high-order solver for diffusion ODEs with the convergence order guarantee.</p>
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4304">Add support for the new DPM-Solver++ samplers added to k-diffusion</a></p>
-<p><a href="https://github.com/LuChengTHU/dpm-solver">dpm-solver</a></p>
-<p>论文 https://arxiv.org/abs/2211.01095</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Some Model</label><label for="__tabbed_1_2">SD 1.5</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="sample" markdown="">
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://user-images.githubusercontent.com/40903705/200149887-935a6f95-0bfa-4f8e-b6b1-0fb0bfe0b39e.jpg"><img align="left" alt="exp" loading="lazy" src="https://user-images.githubusercontent.com/40903705/200149887-935a6f95-0bfa-4f8e-b6b1-0fb0bfe0b39e.jpg"/></a></p>
-<p>Test From <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/4363">Here</a></p>
-<p><em>生成过程中使用了本地训练的超网络</em></p>
-</div>
-</div>
-<div class="tabbed-block">
-<div class="sample" markdown="">
-<p><a class="glightbox" data-desc-position="bottom" data-description="DPM-Solver++ 只需 15 到 20 个步骤即可实现出色的样本质量，尤其是 2M 和 2M Karras。从 15 步开始，所有步数的结果都非常详细，而且速度很快。" data-height="auto" data-title="DPM-Solver++" data-width="100%" href="https://user-images.githubusercontent.com/116967051/200134579-dc31f8d4-abd6-4ef0-9d2c-1582a53ec1b0.png"><img align="left" alt="exp" data-description="DPM-Solver++ 只需 15 到 20 个步骤即可实现出色的样本质量，尤其是 2M 和 2M Karras。从 15 步开始，所有步数的结果都非常详细，而且速度很快。" data-title="DPM-Solver++" loading="lazy" src="https://user-images.githubusercontent.com/116967051/200134579-dc31f8d4-abd6-4ef0-9d2c-1582a53ec1b0.png" width="300"/></a></p>
-<p>Test From <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4304#issuecomment-1304602296">Here</a></p>
-<p>DPM-Solver++ 只需 15 到 20 个步骤即可实现出色的样本质量，尤其是 2M 和 2M Karras。从 15 步开始，所有步数的结果都非常详细，而且速度很快。</p>
-</div>
-</div>
-</div>
-</input></input></div>
-<ul>
-<li>新的模型</li>
-</ul>
-<p>eDiffi：具有专家降噪器集合的文本到图像扩散模型 
-https://deepimagination.cc/eDiffi/</p>
-<ul>
-<li>来自 DreamBooth 的一位原始作者：停止使用 SKS 作为初始化词 </li>
-</ul>
-<p>https://www.reddit.com/r/StableDiffusion/comments/yju5ks/from_one_of_the_original_dreambooth_authors_stop/</p>
-<ul>
-<li>AI 艺术走红赚钱：一位 AI 艺术家的自白 </li>
-</ul>
-<p>https://www.reddit.com/r/StableDiffusion/comments/yh8j0a/ai_art_is_popular_and_makes_money_confessions_of/</p>
-<h2 id="115">11/5</h2>
-<p>WebUi 发布 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui-tokenizer">tokenizer 插件</a>，可以查看分词情况。</p>
-<h2 id="113">11/3</h2>
-<ul>
-<li>发现了一个很好用，很实用的工具。</li>
-</ul>
-<p><a href="https://github.com/BlinkDL/Hua">画作焊接</a></p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/BlinkDL/Hua/main/Hua-Demo.gif"><img alt="" src="https://raw.githubusercontent.com/BlinkDL/Hua/main/Hua-Demo.gif"/></a></p>
-<ul>
-<li>2</li>
-</ul>
-<p>经过测试，我发现 emoji 真的很好用。对于场景效果总是有惊喜。</p>
-<div class="highlight"><pre><span></span><code>masterpiece,best quality,1girl,
-,light blue hair,solo,(anime coloring:1.1),
-(🌻☀️🌈:1.2),hug Sunflower,
+<p>如果你使用 WebUi，WebUi 会对长串的 Prompt 以 75 个 Token 一组分开渲染。</p>
+<h3 id="prompt">Prompt 冲突</h3>
+<p><strong>分类冲突</strong></p>
+<pre><code>如果你想要一张 sticker 的话，贴纸在数据集内肯定不会打上 `masterpiece, best quility,` 标签，而是 `normal quality` 这样的标签。
 
-lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, bad feet
+类似还有像素作品，书写提示词的时候，你应该移除一些冲突的提示。
+</code></pre>
+<p><strong>风格冲突</strong></p>
+<pre><code>比如你想得到一张儿童在沙滩玩耍的 `flatcolor` 风格的插画。
+
+那么使用 `loli` 不是一个好主意，因为它附带了标准统一的画风属性，会很大地影响结果。
+
+解决办法：降低权重，更换 prompt.
+</code></pre>
+<p><strong>次元冲突</strong></p>
+<pre><code>某些动漫模型是基于原始 Stable Diffusion 训练的应该尽量避免出现原始模型的内容。
+</code></pre>
+<p>请务必注意。</p>
+<h2 id="_6">提示词编辑</h2>
+<p>通过提示词编辑，我们可以清楚地告诉模型 “我点的菜需要放多少盐”。</p>
+<p><a href="https://github.com/bloc97/CrossAttentionControl">原始实现</a></p>
+<h3 id="_7">人工分割</h3>
+<p>使用 <code>/</code> 或 <code>+</code> 来强制分割提示词。<sup id="fnref:13"><a class="footnote-ref" href="#fn:13">2</a></sup></p>
+<p>需要注意的是，相邻重复的符号会被过滤，<code>+++</code> 的效果等同于 <code>+</code>，正确的方法是+和/分开来打。</p>
+<p>比如同样要达到 9 个 token 长度的分隔：<sup id="fnref2:13"><a class="footnote-ref" href="#fn:13">2</a></sup>
+<div class="highlight"><pre><span></span><code><span class="gh"># 以下三条效果类似，且不怎么干扰后续词语。影响度 7%左右：</span>
+red eyes,/,/,/,/, blue dress     (9 格分隔，按键也接近，推荐）
+red eyes, /+/+/+/, blue dress (9 格分隔，干扰最低）
+red eyes, , , , , , , , ,blue dress (9 格分隔，逗号之间要有空格不然效果减半）
+
+<span class="gh"># 以下是不推荐的办法，对后续词语仍然有 25%影响，会干扰画风：</span>
+red eyes++++++++++++++++++++blue dress  （同样是 9 格，三个+号判断为一个 token)
+red eyes/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​blue dress （同加号）
+
+<span class="k">*</span> Tip-From [^13]
+</code></pre></div></p>
+<h3 id="_8">注意力控制</h3>
+<p>阅读理论基础我们知道，每个词的基础权重是不同的，我们对不同提示的权重值的期望也不同，这时候就需要使用注意力控制来调节它们之间的关系了。</p>
+<table>
+<thead>
+<tr>
+<th align="center">Ui</th>
+<th align="center">语法</th>
+<th align="center">示例</th>
+<th align="center">权重变化</th>
+<th align="center">注意</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">WebUi</td>
+<td align="center"><code>(prompt:num)</code></td>
+<td align="center">强调：<code>((cat))</code> <code>(cat:1.4)</code>，减弱：<code>(cat:0.2)</code> <code>[cat]</code></td>
+<td align="center">()-&gt; 1.1</td>
+<td align="center"><code>num</code> 的范围是 <code>0.1 ~:100</code>，如果为小数则取步数比例</td>
+</tr>
+<tr>
+<td align="center">Nai</td>
+<td align="center"><code>{}</code></td>
+<td align="center"><code>{{{cat}}}</code> <code>[cat]</code></td>
+<td align="center">{}-&gt; 1.05</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">原始实现</td>
+<td align="center">+/-</td>
+<td align="center"><code>+cat</code> <code>-cat</code></td>
+<td align="center"></td>
+<td align="center">单元格</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>
+<p>WebUi 权重语法为 <code>(prompt:num)</code> 或 <code>((prompt))</code>，增强的权重为，增强的范围是 <code>0.1 ~ 100</code>，如果为小数则取步数比例。比如 强调：<code>((cat))</code> <code>(cat:1.4)</code>，减弱：<code>(cat:0.2)</code> <code>[cat]</code></p>
+<div class="highlight"><pre><span></span><code>a (word) - 将权重提高 1.1 倍
+
+a ((word)) - 将权重提高 1.21 倍（= 1.1 * 1.1），乘法的关系。
+
+a [word] - 将权重减少 1.1 倍
+
+a (word:1.5) - 将权重提高 1.5 倍
+
+a (word:0.25) - 将权重减少 4 倍 (= 1 / 0.25)
+
+a \(word\) - 在提示中使用文字 () 字符
 </code></pre></div>
-<h2 id="112">11/2</h2>
-<p>为 Krita 插件等添加自定义后端 API</p>
-<p>https://github.com/Interpause/auto-sd-paint-ext</p>
-<p>在 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4142">这个 PR</a> 中，WebUi 修复了 IMG2IMG 处理后不释放 RAM 的问题</p>
-<h2 id="111">11/1</h2>
-<p>disable access to extension stuff for non-local servers</p>
-<p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/dc7425a56e7a014cbfa3b3d44ad2321e519fe378</p>
-<p>社区反映：共享链接可能会导致风险，攻击者可以访问系统上的所有文件。</p>
-<h2 id="1030">10/30</h2>
-<p>在 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/9f4f894d74b57c3d02ebccaa59f9c22fca2b6c90">这次提交中</a> ，WebUi 添加了 <code>allow skip current image in progress api</code> ，跳过当前流程的 Api 方法。</p>
-<p>在 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3722">这次合并</a> 中，WebUi 添加了原生的进度 Api</p>
-<h2 id="1029">10/29</h2>
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3889">讨论</a> 有人认为，通过在 Windows 设置上禁用硬件加速 GPU 调度，WebUi 性能提高了大约 10-50%</p>
-<h2 id="1027">10/27</h2>
-<p>文档增加了 API 内容</p>
-<h2 id="1026">10/26</h2>
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/dde8c435987dcd071c63d16f247ae832bce0101f">中文翻译上线</a></p>
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3653">法语翻译上线</a></p>
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3631">土耳其翻译上线</a></p>
-<p>WebUi 在 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/1e428238db4e399b7a06ad5251cb16eef23a014d">这次提交</a> 中将 override_settings 添加到 API</p>
-<p>在 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/cb49800c08a9f6619733250401952e5571dc12f8">这次提交</a> 后，img2img 使用了手机照片的 EXIF 方向。</p>
-<p>WebUi 在 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/de096d0ce752c96e45508dcc7b9e84f7dbe10cca">这次提交</a> 中添加了权重初始化和更多激活函数。</p>
-<p>WebUi 在 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/cbb857b675cf0f169b21515c29da492b513cc8c4">这次提交</a> 中允许了在 <code>--medvram</code> 下创建 embedding 的情况。</p>
-<p><code>Hint:will send cond model to GPU if lowvram/medvram is active</code></p>
-<h2 id="1025">10/25</h2>
-<p><a href="https://git.hudaye.work/MiuliKain/Kamiya-OpenUI">集成 Tag 工具/支持超网络的 Web</a> 开源项目说他们缺人。</p>
-<p>在 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3624">此次提交</a> 中，从 <code>--use-cpu</code> 中删除了 <code>BSRGAN</code> ，将 <code>SwinIR</code> 添加到 <code>--use-cpu</code> 并修复 MPS 上的 <code>upscalers</code> 。</p>
-<p>你可以在 <a href="https://upscale.wiki/wiki/Official_Research_Models">这里</a> 找到 <code>BSRGAN</code> ，下载的模型放到 esrgan 文件夹就可以使用。</p>
-<p><code>#3505</code> 之后超网络训练不稳定 ，<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/3505">问题</a></p>
-<h2 id="1024">10/24</h2>
-<p>Colab 称昨天的封号是 <a href="https://github.com/googlecolab/colabtools/issues/3181">错误的滥用判定</a></p>
-<p>WebUi <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3537">移除了图像浏览器</a>，转换为 <a href="https://github.com/yfszzx/stable-diffusion-webui-images-browser">插件</a></p>
-<h2 id="1023">10/23 更新</h2>
-<p>在 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/070fda592bf80fb348ffe8e17b7c71cc288db729">这次提交</a> 中，WebUi 增加了日本语翻译。</p>
-<p>在 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/be748e8b086bd9834d08bdd9160649a5e7700af7">这次提交</a> 中，WebUi 增加了设置锁定启动参数。</p>
-<div class="highlight"><pre><span></span><code>parser.add_argument("--freeze-settings", action='store_true', help="disable editing settings", default=False)
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>权重增加通常会占一个 token 位。在 token 位紧张的情况下没有必要加特别多括号。</p>
+<p>过多圆括号会导致 字符 被程序吃掉，<code>a ((((farm))), daytime</code> 会变成 <code>a farm daytime</code> 而没有逗号。</p>
+<p>WebUi 对于带括号提示词比如 <code>a (word)</code> <strong>请使用 <code>\</code> 字符转义为 <code>a \(word\)</code></strong>，这适用于带括号的 Tag, 防止出现本来不想要的增强效果。</p>
+</div>
+</li>
+<li>
+<p>NAI 则使用 <code>{}</code> 来做增强，不可以指定权重。比如 <code>{{{cat}}}</code> <code>[cat]</code></p>
+</li>
+</ol>
+<p>NAI 中不允许单独指定权重，但支持混合权重 <code>cat:1|happy:-0.2|cute:-0:3</code> 这样的语法，<code>(cat :2 | dog)</code> 也就是更像猫的狗。</p>
+<p><strong>换算关系</strong></p>
+<p>NAI 的 [word] = WebUi(word: 0.952)(0.952 = 1/1.05)</p>
+<p>NAI 的{word} = WeUi 的 (word: 1.05)</p>
+<p>NAI 花括号权重为 1.05/个，WebUi 圆权重为 1.1/个</p>
+<ol>
+<li>降低权重，单独使用 <code>[]</code> 或者 <code>(word:0.952)</code>。NAI 仅能使用 <code>[]</code></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">请勿混淆</p>
+<p>NAI 与 WebUi 的提示词语法 <strong>不通用</strong></p>
+<p>因为 NAI 使用的是 WebUi 2022 年 9 月之前的实现，所以权重增强语法是旧的 <code>{}</code> ，新的 WebUi 更改为 <code>()</code>。</p>
+<p>NAI 不支持指定提示词的权重。</p>
+<p>如果你想便捷转换权重，可以使用 <a href="https://t.me/M2NM2NBot">转换服务</a></p>
+</div>
+<details class="tip">
+<summary>How It Work</summary>
+<p>每个单词都有一个 768 个值的相关向量，该向量“指向”概念的方向（在 768 维空间中）。</p>
+<p>如果你缩放这个向量，这个概念会变得更强或更弱。</p>
+<p>SEE <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2905">Here</a></p>
+</details>
+<p>! [缺少示例图片]</p>
+<h3 id="_9">提示词交替</h3>
+<p>提示词交替（alternate prompt）[^7]，即 Prompt 混合机。这项技术由 UI 实现。<sup id="fnref:9"><a class="footnote-ref" href="#fn:9">1</a></sup></p>
+<div class="highlight"><pre><span></span><code>[alison brie|emma stone|elizabeth olsen|scarlett johansson|anne hathaway|emma roberts], still film
 </code></pre></div>
-<p>有网友称，最近发布的的 Stable Diffusion 1.5 偏向 <code>三次元</code> 一些。</p>
-<p>WebUi 增加了俄语翻译，添加了 img2img API。</p>
-<p>在 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2067">这次请求</a> 中，WebUi 更新了 ESRGAN 架构和模型以支持所有 ESRGAN 模型。</p>
-<p>Colab 开始反滥用，<a href="https://research.google.com/colaboratory/faq.html#limitations-and-restrictions">协议</a> 禁止穿透。但是有人指出 <a href="https://github.com/googlecolab/colabtools/issues/3147">Colab 并没有计划封禁 SD</a>，确认误封。</p>
-<p>Colab 的 <a href="https://research.google.com/colaboratory/faq.html?hl=zh-CN">协议</a> 不允许利用多个帐号绕过访问权限或资源使用情况限制。</p>
-<p>有人反映 某度好像会封锁 NAI 的模型。</p>
-<h2 id="1022">10/22 更新</h2>
-<p>在 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/2b91251637078e04472c91a06a8d9c4db9c1dcf0">这次提交</a> 中，仓库移除了美学权重。</p>
-<p>这项功能已经被转为 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients">插件</a>。</p>
-<h2 id="1021">10/21 更新</h2>
-<p>Implementation of Stable Diffusion with Aesthetic Gradients 美学权重</p>
-<p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2585</p>
-<h2 id="1020">10/20 更新</h2>
-<p>激活函数</p>
-<p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3199</p>
-<p>SD v1.5</p>
-<p>https://huggingface.co/runwayml/stable-diffusion-v1-5</p>
-<h2 id="1019">10/19 更新</h2>
-<p>各种模型链接正在失效，有余力可以分流备链。</p>
-<h2 id="1014">10/14 更新</h2>
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2571">Rce 漏洞曝光</a>，但是新版本中得到修复，请为实例设置密码。</p>
-<h2 id="1013">10/13 更新</h2>
-<p>automatic1111 的 repo 从 r/stablediffusion 的固定指南中删除</p>
-<h2 id="1012">10/12 更新</h2>
-<p>StabilityAI 从现在开始只发布 SFW 模型，from <a href="https://www.reddit.com/r/StableDiffusion/comments/y2dink/qa_with_emad_mostaque_formatted_transcript_with/is32y1d/">Here</a></p>
-<h2 id="1011">10/11 更新</h2>
-<p>新版本 Webui 增加了 Eta noise seed delta ，设为 31337 后会贴近 NAI 官方</p>
-<p>现在可以训练 <strong>Hypernetworks</strong></p>
-<h2 id="1010">10/10 更新</h2>
-<p>测试发现，新版本 WebUi 优化显存占用 (20xx—&gt; 10xx)，关闭浏览器和 TG 的硬件加速后，即使是 4GB 的  RTX2050 也可以启动 --medvram 模式！而且很快。</p>
-<p><a href="https://github.com/brycedrennan/imaginAIry/blob/master/docs/emad-qa-2020-10-10.md">Q &amp; A</a></p>
-<h2 id="_2">背景故事</h2>
-<p>NovelAI 是一个使用 AI 生成故事文本和 <strong>通过描述文字生成图片</strong> 的服务，而 Stable Diffusion 是由 Stability AI 发布的透过文字等生成图片的模型。</p>
-<p>开发者 <a href="https://github.com/AUTOMATIC1111">AUTOMATIC</a> 是 Stable-Diffusion-Webui 的主要开发者：此项目可以用于在使用 Stable Diffusion 等模型时调整参数，极大地方便了尤其是没有计算机背景或 AI/ML 背景的模型用户。</p>
-<p>前几日 NovelAI <a href="https://old.reddit.com/r/NovelAi/comments/xydjc6/">称其部分软件和源码泄露</a>。在模型泄露后， AUTOMATIC 在 Webui 项目中添加了对 <strong>Hypernetwork</strong> 模型的支持，使得此项目可以和泄露模型共用。</p>
-<p>此 Reddit 贴称， Stability AI 创始人 Emad Mostaque 谴责 AUTOMATIC 此行为，并称后者窃取了代码；</p>
-<p>AUTOMATIC 则称自己没有窃取代码，并解释说他编写的代码是基于很久以前已经完成的研究和开发，并且是开源的。</p>
-<p>有问题的函数于 2021 年 12 月 21 日在 <a href="https://github.com/CompVis/latent-diffusion/commit/e66308c7f2e64cb581c6d27ab6fbeb846828253b">此处</a> 发布，并称反倒是 NovelAI 使用了自己的代码 (https://imgur.com/a/Z2QsOEw)。
-Stable Diffusion 社群管理员后又要求 AUTOMATIC 移除项目中的 Hypernetwork 支持，称 NovelAI 核心开发者认为相关代码必然与泄露源码有联系；
-但被以代码原创且 Hypernetwork <strong>并非泄露模型独创</strong> 的理由回绝。
-而后， AUTOMATIC 被从 Stable Diffusion 的（Slack?）社群服务器中封禁。</p>
-<p>来自 https://rentry.org/sd-tldr</p>
+<p>它可以创建动物、人或风格的混合体，每一个 <code>step</code> 切换一个提示（一步一换轮环渲染）。</p>
+<p>! [缺少示例图片]</p>
+<h3 id="prompt-matrix">Prompt matrix 矩阵</h3>
+<p>WebUi 使用 <code>|</code> 分隔多个关键词以混合多个要素，程序将为它们的每个组合生成一个图像。这项技术由 UI 实现。</p>
+<p>例如，如果使用 <code>a busy city street in a modern city|illustration|cinematic lighting</code> ，则可能有四种组合（始终保留提示的第一部分）：</p>
+<ul>
+<li>a busy city street in a modern city</li>
+<li>a busy city street in a modern city, illustration</li>
+<li>a busy city street in a modern city, cinematic lighting</li>
+<li>a busy city street in a modern city, illustration, cinematic lighting</li>
+</ul>
+<p>! [缺少示例图片]</p>
+<p>可以进一步在关键词后添加 : x 来指定单个关键词的权重。</p>
+<ul>
+<li>NAI </li>
+</ul>
+<p>在 NAI 中代表平均权重混合（前半部分和后半部分）。</p>
+<p><code>cat :2 | dog</code> 也就是更像猫的狗</p>
+<p>! [缺少示例图片]</p>
+<h3 id="prompt-schedule">Prompt Schedule</h3>
+<p>Prompt Schedule 可以在推理图像的过程中更改 Prompt，这项技术由 UI 实现。</p>
+<p>语法为 <code>[from:to:when]</code></p>
+<p>其中 <code>from</code> 和 <code>to</code> 为 prompt， when 是一个数字，用于定义应在采样周期多长时间内进行切换。</p>
+<ul>
+<li>
+<p><code>[fantasy:cyberpunk:16]</code> 代表从第 16 step 后，使用 <code>cyberpunk</code> 标签替换 <code>fantasy</code></p>
+</li>
+<li>
+<p><code>[to:when]</code> 在固定数量的 step 后添加 <code>to</code> 到提示 ( when)</p>
+</li>
+<li>
+<p><code>[from::when]</code> 在固定数量的 step 后从提示中删除 <code>from</code>( when)</p>
+</li>
+</ul>
+<p>比如：</p>
+<ul>
+<li>
+<p><code>[fantasy:cyberpunk:16]</code> 代表从第 16 step 后，使用 <code>cyberpunk</code> 标签替换 <code>fantasy</code></p>
+</li>
+<li>
+<p><code>[male: female: 0.0]</code>, 意味着你开始时就要求画一个女性。</p>
+</li>
+</ul>
+<p>效果：</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://user-images.githubusercontent.com/75739606/197822841-f7323afa-8c6a-46a2-a8e2-a1c457bb31d5.jpg"><img alt="sample_Gradient" src="https://user-images.githubusercontent.com/75739606/197822841-f7323afa-8c6a-46a2-a8e2-a1c457bb31d5.jpg"/></a></p>
+<!--
+![sample_Gradient](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/sample_Gradient.jpg)
+-->
+<h2 id="_10">成为调参工程师</h2>
+<p>这些指南可以让你更进一步。</p>
+<ul>
+<li>
+<p><a href="https://github.com/6DammK9/nai-anime-pure-negative-prompt">面向 NAI 的测试</a></p>
+</li>
+<li>
+<p><a href="https://github.com/Maks-s/sd-akashic">https://github.com/Maks-s/sd-akashic</a></p>
+</li>
+<li>
+<p><a href="https://github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference">https://github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference</a></p>
+</li>
+</ul>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:9">
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/1733">alternate prompt</a> <a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:13">
+<p><a href="https://nga.178.com/read.php?pid=654605407&amp;opt=128">Nga 我流心得</a> <a class="footnote-backref" href="#fnref:13" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref2:13" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+</ol>
+</div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月24日 09:46:23</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月26日 18:40:46</span>
 <br/>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年10月13日 10:24:49</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月26日 18:40:46</span>
 </small>
 </div>
 </article>
@@ -1133,7 +1006,7 @@ Stable Diffusion 社群管理员后又要求 AUTOMATIC 移除项目中的 Hypern
 </main>
 <footer class="md-footer">
 <nav aria-label="页脚" class="md-footer__inner md-grid">
-<a aria-label="上一页: AiDraw" class="md-footer__link md-footer__link--prev" href="../.." rel="prev">
+<a aria-label="上一页: 工作台" class="md-footer__link md-footer__link--prev" href="../" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -1142,17 +1015,17 @@ Stable Diffusion 社群管理员后又要求 AUTOMATIC 移除项目中的 Hypern
 <span class="md-footer__direction">
                 上一页
               </span>
-              AiDraw
+              工作台
             </div>
 </div>
 </a>
-<a aria-label="下一页: 术语" class="md-footer__link md-footer__link--next" href="../term/" rel="next">
+<a aria-label="下一页: WebUi" class="md-footer__link md-footer__link--next" href="../WebUi/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 下一页
               </span>
-              术语
+              WebUi
             </div>
 </div>
 <div class="md-footer__button md-icon">

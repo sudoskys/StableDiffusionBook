@@ -409,7 +409,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_6">
-    不需要做的事情
+    不需要 做的事情
   </a>
 </li>
 </ul>
@@ -475,7 +475,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#face-restoration">
-    Face restoration 三次元人脸修复
+    Face restoration 真人人脸修复
   </a>
 </li>
 <li class="md-nav__item">
@@ -546,18 +546,38 @@
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../../paint/">绘画指南</a>
-<label for="__nav_5">
-<span class="md-nav__icon md-icon"></span>
+<label class="md-nav__link" for="__nav_5">
+          绘画指南
+          <span class="md-nav__icon md-icon"></span>
 </label>
-</div>
 <nav aria-label="绘画指南" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_5">
 <span class="md-nav__icon md-icon"></span>
           绘画指南
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_1" id="__nav_5_1" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../../paint/">概论</a>
+<label for="__nav_5_1">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="概论" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_1">
+<span class="md-nav__icon md-icon"></span>
+          概论
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../paint/PromptsEngineering/">
+        提示工程
+      </a>
+</li>
+</ul>
+</nav>
+</li>
 <li class="md-nav__item md-nav__item--section md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_2" id="__nav_5_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
@@ -574,12 +594,12 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../paint/WebUi/base/">
-        基本指南
+        Txt2指南
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../paint/WebUi/Advanced/">
-        进阶指南
+        Img2指南
       </a>
 </li>
 <li class="md-nav__item">
@@ -726,7 +746,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_6">
-    不需要做的事情
+    不需要 做的事情
   </a>
 </li>
 </ul>
@@ -792,7 +812,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#face-restoration">
-    Face restoration 三次元人脸修复
+    Face restoration 真人人脸修复
   </a>
 </li>
 <li class="md-nav__item">
@@ -858,7 +878,9 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="_1">配置</h1>
+<p>本页面讨论 WebUi 的界面参数和功能。</p>
 <h2 id="_2">基础</h2>
+<p>一些基础参数说明。</p>
 <h3 id="_3">横条参数说明</h3>
 <p><code>step</code> 迭代多少次，取值和 <code>sampling method</code> 有关，<code>DDIM</code> 采样方法收敛较快，具体差别见调参魔法 <code>Sampler vs. Steps Comparison (low to mid step counts)</code> 。</p>
 <p><code>batch count/batch size</code> 决定生成的图片数量，显存够就加 batch size, 不够就 batch count, 得到的图片数量是两者之积 （小显存还是只动 count 就好）</p>
@@ -897,7 +919,7 @@
 <p><code>Eta noise seed delta</code> 设置为 <code>31337</code></p>
 </li>
 </ul>
-<h4 id="_6"><strong>不需要</strong>做的事情</h4>
+<h4 id="_6"><strong>不需要</strong> 做的事情</h4>
 <ul>
 <li>hypernetwork。官网默认并不使用 hypernetwork</li>
 </ul>
@@ -924,7 +946,7 @@
 <p>引用官方 Wiki 的设置图</p>
 </blockquote>
 <h4 id="prompt-sr">Prompt S/R 替换</h4>
-<p>提示 S/R 是 X/Y 图的的一种较难理解的操作模式。</p>
+<p>提示 S/R 是 X/Y 图的的一种操作模式。</p>
 <p>S/R 是搜索/替换的意思，输入一个单词或短语的列表，它从列表中取第一个并将其视为关键词，并将该关键词的所有实例替换为列表中的其他条目的所有实例替换为列表中的其他条目。</p>
 <p>例如，提示 <code>a man holding an apple, 8k clean</code> 和 S/R 提示 <code>an apple, a watermelon, a gun</code> 结合，你会得到三个提示。</p>
 <ul>
@@ -941,11 +963,12 @@
 <li><code>darkness,"light, green",heat</code> - RIGHT - 3 items - <code>darkness</code>, <code>light, green</code>, <code>heat</code></li>
 </ul>
 <h3 id="variations"><strong>Variations 种子变化</strong></h3>
+<p>这个参数用于种子合并操作。</p>
 <p><code>Variation strength slider</code> 和 <code>Variation seed field</code> 允许您指定现有图片应更改多少以使其看起来不同。
 在最大强度下，您将获得带有变异种子的图片，至少 - 带有原始种子的图片（使用先前采样器时除外）。</p>
 <h3 id="_8"><strong>提示词模板</strong></h3>
 <p>“Save prompt as style” 按钮将当前的提示写入 <code>styles.csv</code>，该文件包含样式集合</p>
-<p>提示右侧的下拉框将允许您从以前保存的样式中选择任何样式，并自动将其<strong>附加</strong>到输入中</p>
+<p>提示右侧的下拉框将允许您从以前保存的样式中选择任何样式，并自动将其 <strong>附加</strong> 到输入中</p>
 <p>要删除样式，请从 <code>styles.csv</code> 中手动将其删除并重新启动程序。</p>
 <h3 id="xformers">xformers</h3>
 <p>xformers 分辨率越高加速效果越好。使用 xformers 会引入一些随机性，稍微影响生成的图像。</p>
@@ -962,13 +985,13 @@
 </div>
 <p>确保 Python 版本为 3.10 或更高版本（使用 <code>Python --version</code>)，然后安装</p>
 <p>安装 <a href="https://visualstudio.microsoft.com/zh-hans/downloads/?q=build+tools">VS Build Tools 2022</a>，运行安装时只需要选择 <code>Desktop development with C++</code></p>
-<p>安装 <a href="https://developer.nvidia.com/cuda-11.3.0-download-archive">CUDA 11.3</a>，（后期版本未测试），选择<code>custom</code>，VS 集成可能不需要</p>
+<p>安装 <a href="https://developer.nvidia.com/cuda-11.3.0-download-archive">CUDA 11.3</a>，（后期版本未测试），选择 <code>custom</code>，VS 集成可能不需要</p>
 <ul>
 <li>确认 nvcc 可用</li>
 </ul>
 <p><code>nvcc --version</code></p>
 <ul>
-<li>克隆<code>xFormers</code> 存储库，在环境中激活它</li>
+<li>克隆 <code>xFormers</code> 存储库，在环境中激活它</li>
 </ul>
 <div class="highlight"><pre><span></span><code>git clone https://github.com/facebookresearch/xformers.git
 <span class="nb">cd</span> xformers
@@ -999,10 +1022,10 @@ pip install wheel
 pip install ninja
 </code></pre></div>
 <ul>
-<li>由于 CUDA 11.3 很旧，需要<strong>强制启用</strong>它以在 MS Build Tools 2022 上构建。</li>
+<li>由于 CUDA 11.3 很旧，需要 <strong>强制启用</strong> 它以在 MS Build Tools 2022 上构建。</li>
 </ul>
 <p>在 CMD 设置 <code>set NVCC_FLAGS=-allow-unsupported-compiler"</code></p>
-<p>或在 Bash 设置<code>export NVCC_FLAGS=-allow-unsupported-compiler</code></p>
+<p>或在 Bash 设置 <code>export NVCC_FLAGS=-allow-unsupported-compiler</code></p>
 <ul>
 <li>查看你自己的 GPU 架构</li>
 </ul>
@@ -1024,7 +1047,7 @@ python setup.py bdist_wheel
 <p>找到 dist 文件夹并将文件 <code>*.whl</code> 复制到 <code>stable-diffusion-webui</code>
 在 <code>stable-diffusion-webui</code> 目录中安装 <code>.whl</code>。</p>
 <p>如果构建的 whl 名称不同，请在下面的安装命令中更改文件名</p>
-<div class="highlight"><pre><span></span><code><span class="c1">#CMD</span>
+<div class="highlight"><pre><span></span><code>MD
 ./venv/scripts/activate
 <span class="c1">#Bash</span>
 <span class="nb">source</span> ./venv/bin/activate
@@ -1034,7 +1057,7 @@ pip install xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl
 </code></pre></div>
 <p>30 系显卡正常启动加 <code>--xformers</code> 参数，其他显卡加 <code>--force-enable-xformers</code> 参数</p>
 <blockquote>
-<p>COMMANDLINE_ARGS=</p>
+<p>COMMANDLINE_ARGS =</p>
 </blockquote>
 <h4 id="windows">Windows 编译错误自查</h4>
 <blockquote>
@@ -1066,8 +1089,8 @@ In fact, you can just take files from there and use them - just skip artists.txt
 Each file adds one line of text to the final description.
 If you add ".top3." to filename, for example, flavors.top3.txt, the three most relevant lines from this file will be added to the prompt (other numbers also work).
 -->
-<h3 id="face-restoration"><strong>Face restoration 三次元人脸修复</strong></h3>
-<p>适用于三次元。</p>
+<h3 id="face-restoration"><strong>Face restoration 真人人脸修复</strong></h3>
+<p>适用于真人。</p>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#face-restoration">https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#face-restoration</a></p>
 <h3 id="css">自定义。css</h3>
 <p>创建一个名为 <code>user.css</code> 的文件并放在 <code>webui.py</code> 旁，将自定义 CSS 代码放入 <code>user.css</code> 中。</p>
@@ -1102,9 +1125,9 @@ If you add ".top3." to filename, for example, flavors.top3.txt, the three most r
 </div>
 <p>当然也可以减半精度，或者生成一张 64x64 清理 VRAM</p>
 <h3 id="_11">不间断生产</h3>
-<p>在 WebUI 的生成键右击即可出现<strong>不间断生成</strong>的选项。</p>
+<p>在 WebUI 的生成键右击即可出现 <strong>不间断生成</strong> 的选项。</p>
 <h3 id="png-info">图片信息 Png info</h3>
-<p>生成的图片自带令牌信息，拖放到查看页面即可查看 。</p>
+<p>生成的图片自带令牌信息，拖放到 <code>Png Info</code> 页面即可查看 。</p>
 <h3 id="nai-4chan">NAI 4chan 简化版本</h3>
 <p>4chan 版本魔改官后程序，会动态分配，显存不够内存来凑。</p>
 <div class="footnote">
@@ -1135,7 +1158,7 @@ If you add ".top3." to filename, for example, flavors.top3.txt, the three most r
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月22日 16:28:07</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月26日 18:40:13</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年10月10日 07:33:42</span>

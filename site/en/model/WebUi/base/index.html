@@ -367,10 +367,10 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#basic">
-    Basic
+<a class="md-nav__link" href="#basics">
+    Basics
   </a>
-<nav aria-label="Basic" class="md-nav">
+<nav aria-label="Basics" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#parameter-intro">
@@ -409,7 +409,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#doesnt-need-to-do">
-    Doesn't need to do
+    Doesn't need  to do
   </a>
 </li>
 </ul>
@@ -566,18 +566,38 @@
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../../paint/">Paint guide</a>
-<label for="__nav_5">
-<span class="md-nav__icon md-icon"></span>
+<label class="md-nav__link" for="__nav_5">
+          Paint guide
+          <span class="md-nav__icon md-icon"></span>
 </label>
-</div>
 <nav aria-label="Paint guide" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_5">
 <span class="md-nav__icon md-icon"></span>
           Paint guide
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_1" id="__nav_5_1" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../../paint/">General</a>
+<label for="__nav_5_1">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="General" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_1">
+<span class="md-nav__icon md-icon"></span>
+          General
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../paint/PromptsEngineering/">
+        Prompts Engineer
+      </a>
+</li>
+</ul>
+</nav>
+</li>
 <li class="md-nav__item md-nav__item--section md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_2" id="__nav_5_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
@@ -594,12 +614,12 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../paint/WebUi/base/">
-        Base guide
+        Txt2Guide
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../paint/WebUi/Advanced/">
-        Advanced Guide
+        Img2Guide
       </a>
 </li>
 <li class="md-nav__item">
@@ -704,10 +724,10 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#basic">
-    Basic
+<a class="md-nav__link" href="#basics">
+    Basics
   </a>
-<nav aria-label="Basic" class="md-nav">
+<nav aria-label="Basics" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#parameter-intro">
@@ -746,7 +766,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#doesnt-need-to-do">
-    Doesn't need to do
+    Doesn't need  to do
   </a>
 </li>
 </ul>
@@ -898,7 +918,9 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="configure">Configure</h1>
-<h2 id="basic">Basic</h2>
+<p>This page discusses the interface parameters and features of WebUi.</p>
+<h2 id="basics">Basics</h2>
+<p>Some basic parameters are described.</p>
 <blockquote>
 <p>Most of the content in this section is from the <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/">Wiki page</a>, so for English users, it may be better to read the original documentation.</p>
 </blockquote>
@@ -927,7 +949,7 @@ If antivirus software intercepts it, it is possible that the creator has injecte
 </blockquote>
 <h3 id="replicating-the-nai-official-website-using-webui">Replicating the NAI official website using WebUI</h3>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017">Related discussion</a></p>
-<p>Tip:Due to the nature of torch and its associated frameworks, it is not wise to try to fully recover images generated on a different machine. So don't get hung up on details that can't be reproduced.</p>
+<p>Tip: Due to the nature of torch and its associated frameworks, it is not wise to try to fully recover images generated on a different machine. So don't get hung up on details that can't be reproduced.</p>
 <h4 id="things-to-do">Things to do</h4>
 <ul>
 <li>
@@ -940,7 +962,7 @@ If antivirus software intercepts it, it is possible that the creator has injecte
 <p><code>Eta noise seed delta</code> set to <code>31337</code></p>
 </li>
 </ul>
-<h4 id="doesnt-need-to-do"><strong>Doesn't need </strong>to do</h4>
+<h4 id="doesnt-need-to-do"><strong>Doesn't need </strong> to do</h4>
 <ul>
 <li>hypernetwork. the website does not use hypernetwork by default</li>
 </ul>
@@ -987,6 +1009,7 @@ make sure there is no space between quotes and separating commas:</p>
 <li><code>darkness,"light, green",heat</code> - RIGHT - 3 items - <code>darkness</code>, <code>light, green</code>, <code>heat</code></li>
 </ul>
 <h3 id="variations"><strong>Variations</strong></h3>
+<p>This parameter is used for the seed merge operation.</p>
 <p>A Variation strength slider and Variation seed field allow you to specify how much the existing picture should be altered to look like a different one. At maximum strength, you will get pictures with the Variation seed, at minimum - pictures with the original Seed (except for when using ancestral samplers).</p>
 <h3 id="styles"><strong>Styles</strong></h3>
 <p>Press the "Save prompt as style" button to write your current prompt to styles.csv, the file with a collection of styles. A dropbox to the right of the prompt will allow you to choose any style out of previously saved, and automatically append it to your input. To delete a style, manually delete it from styles.csv and restart the program.</p>
@@ -1055,7 +1078,7 @@ python setup.py bdist_wheel
 </code></pre></div>
 <p>In <code>xformers</code> directory, navigate to the <code>dist</code> folder and copy the <code>.whl</code> file to the base directory of <code>stable-diffusion-webui</code></p>
 <p>In <code>stable-diffusion-webui</code> directory, install the <code>.whl</code>, change the name of the file in the command below if the name is different:</p>
-<div class="highlight"><pre><span></span><code><span class="c1">#CMD</span>
+<div class="highlight"><pre><span></span><code>MD
 ./venv/scripts/activate
 <span class="c1">#Bash</span>
 <span class="nb">source</span> ./venv/bin/activate
@@ -1068,7 +1091,7 @@ pip install xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl
 </ul>
 <h4 id="windows-compiler-error-self-check">Windows compiler error self-check</h4>
 <blockquote>
-<p>Error:<code>Filename too long</code> and <code>fatal error C1083: Cannot open compiler generated file: '': Invalid argument</code></p>
+<p>Error: <code>Filename too long</code> and <code>fatal error C1083: Cannot open compiler generated file: '': Invalid argument</code></p>
 </blockquote>
 <p>It means your path is too long.</p>
 <blockquote>
@@ -1189,7 +1212,7 @@ the same effect. Use the <code>--no-progressbar-hiding</code> commandline option
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 22, 2022 16:28:07</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 26, 2022 18:40:13</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 06:30:05</span>

@@ -7,10 +7,10 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="一个介绍 Ai 绘画的 WIKI/A WIKI about Ai painting" name="description"/>
 <meta content="StableDiffusionBook Team" name="author"/>
-<link href="https://stable-diffusion-book.vercel.app/model/WebUi/Troubleshoot/" rel="canonical"/>
+<link href="https://stable-diffusion-book.vercel.app/zh/paint/PromptsEngineering/" rel="canonical"/>
 <link href="../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
-<title>错误处理 - AiDraw</title>
+<title>提示工程 - AiDraw</title>
 <link href="../../../assets/stylesheets/main.472b142f.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.08040f6c.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -18,17 +18,17 @@
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
 <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <meta content="website" property="og:type"/>
-<meta content="错误处理 - AiDraw" property="og:title"/>
+<meta content="提示工程 - AiDraw" property="og:title"/>
 <meta content="一个介绍 Ai 绘画的 WIKI/A WIKI about Ai painting" property="og:description"/>
-<meta content="https://stable-diffusion-book.vercel.app/assets/images/social/model/WebUi/Troubleshoot.png" property="og:image"/>
+<meta content="https://stable-diffusion-book.vercel.app/assets/images/social/paint/PromptsEngineering.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
-<meta content="https://stable-diffusion-book.vercel.app/model/WebUi/Troubleshoot/" property="og:url"/>
+<meta content="https://stable-diffusion-book.vercel.app/zh/paint/PromptsEngineering/" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="错误处理 - AiDraw" name="twitter:title"/>
+<meta content="提示工程 - AiDraw" name="twitter:title"/>
 <meta content="一个介绍 Ai 绘画的 WIKI/A WIKI about Ai painting" name="twitter:description"/>
-<meta content="https://stable-diffusion-book.vercel.app/assets/images/social/model/WebUi/Troubleshoot.png" name="twitter:image"/>
+<meta content="https://stable-diffusion-book.vercel.app/assets/images/social/paint/PromptsEngineering.png" name="twitter:image"/>
 <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
@@ -47,7 +47,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#bug">
+<a class="md-skip" href="#prompts-engineering">
           跳转至
         </a>
 </div>
@@ -55,7 +55,7 @@
 </div>
 <header class="md-header" data-md-component="header">
 <nav aria-label="页眉" class="md-header__inner md-grid">
-<a aria-label="AiDraw" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="AiDraw">
+<a aria-label="AiDraw" class="md-header__button md-logo" data-md-component="logo" href="../../" title="AiDraw">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m20.71 4.63-1.34-1.34c-.37-.39-1.02-.39-1.41 0L9 12.25 11.75 15l8.96-8.96c.39-.39.39-1.04 0-1.41M7 14a3 3 0 0 0-3 3c0 1.31-1.16 2-2 2 .92 1.22 2.5 2 4 2a4 4 0 0 0 4-4 3 3 0 0 0-3-3Z"></path></svg>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
@@ -71,7 +71,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              错误处理
+              提示工程
             
           </span>
 </div>
@@ -95,12 +95,12 @@
 <div class="md-select__inner">
 <ul class="md-select__list">
 <li class="md-select__item">
-<a class="md-select__link" href="./" hreflang="zh">
+<a class="md-select__link" href="../../../paint/PromptsEngineering/" hreflang="zh">
                     简体中文
                   </a>
 </li>
 <li class="md-select__item">
-<a class="md-select__link" href="../../../en/model/WebUi/Troubleshoot/" hreflang="en">
+<a class="md-select__link" href="../../../en/paint/PromptsEngineering/" hreflang="en">
                     English
                   </a>
 </li>
@@ -155,37 +155,37 @@
 <div class="md-tabs__inner md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../..">
+<a class="md-tabs__link" href="../../">
         起步于此
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../Perpare/">
+<a class="md-tabs__link" href="../../Perpare/">
         开始之前
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../install/">
+<a class="md-tabs__link" href="../../install/">
         安装配置
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../../">
+<a class="md-tabs__link" href="../../model/">
         绘画调试
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../paint/">
+<a class="md-tabs__link md-tabs__link--active" href="../">
         绘画指南
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../train/">
+<a class="md-tabs__link" href="../../train/">
         训练模型
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../landing/">
+<a class="md-tabs__link" href="../../landing/">
         参考资料
       </a>
 </li>
@@ -199,7 +199,7 @@
 <div class="md-sidebar__inner">
 <nav aria-label="导航栏" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="AiDraw" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="AiDraw">
+<a aria-label="AiDraw" class="md-nav__button md-logo" data-md-component="logo" href="../../" title="AiDraw">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m20.71 4.63-1.34-1.34c-.37-.39-1.02-.39-1.41 0L9 12.25 11.75 15l8.96-8.96c.39-.39.39-1.04 0-1.41M7 14a3 3 0 0 0-3 3c0 1.31-1.16 2-2 2 .92 1.22 2.5 2 4 2a4 4 0 0 0 4-4 3 3 0 0 0-3-3Z"></path></svg>
 </a>
     AiDraw
@@ -218,7 +218,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../..">起步于此</a>
+<a href="../../">起步于此</a>
 <label for="__nav_1">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -230,22 +230,22 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../GettingStarted/news/">
+<a class="md-nav__link" href="../../GettingStarted/news/">
         新闻
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../GettingStarted/term/">
+<a class="md-nav__link" href="../../GettingStarted/term/">
         术语
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../GettingStarted/state/">
+<a class="md-nav__link" href="../../GettingStarted/state/">
         声明
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../GettingStarted/contributing/">
+<a class="md-nav__link" href="../../GettingStarted/contributing/">
         贡献指南
       </a>
 </li>
@@ -255,7 +255,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../Perpare/">开始之前</a>
+<a href="../../Perpare/">开始之前</a>
 </div>
 <nav aria-label="开始之前" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
@@ -269,7 +269,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../install/">安装配置</a>
+<a href="../../install/">安装配置</a>
 <label for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -293,17 +293,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../install/WebUi/set/">
+<a class="md-nav__link" href="../../install/WebUi/set/">
         基本指南
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../install/WebUi/launch/">
+<a class="md-nav__link" href="../../install/WebUi/launch/">
         运行WebUi
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../install/WebUi/Troubleshoot/">
+<a class="md-nav__link" href="../../install/WebUi/Troubleshoot/">
         错误处理
       </a>
 </li>
@@ -313,10 +313,10 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../">绘画调试</a>
+<a href="../../model/">绘画调试</a>
 <label for="__nav_4">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -328,19 +328,19 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../GPU/">
+<a class="md-nav__link" href="../../model/GPU/">
         GPU相关
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../NAI/">
+<a class="md-nav__link" href="../../model/NAI/">
         NAI泄漏报告
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" id="__nav_4_4" type="checkbox"/>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4_4" id="__nav_4_4" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../">WebUi 配置</a>
+<a href="../../model/WebUi/">WebUi 配置</a>
 <label for="__nav_4_4">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -352,59 +352,14 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../base/">
+<a class="md-nav__link" href="../../model/WebUi/base/">
         基本指南
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          错误处理
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../model/WebUi/Troubleshoot/">
         错误处理
       </a>
-<nav aria-label="目录" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_1">
-    生成黑/绿图
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#runtimeerror-sizes-of-tensors-must-match">
-    RuntimeError Sizes of tensors must match
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
-    彩虹混乱图
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_3">
-    高分辨率出鬼图 / 低显存生成大分辨率图片
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#runtimeerror-unable-to-find-a-valid-cudnn-algorithm-to-run-convolution">
-    RuntimeError: Unable to find a valid cuDNN algorithm to run convolution
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#cuda-out-of-memory">
-    CUDA out of memory
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#api">
-    Api
-  </a>
 </li>
 </ul>
 </nav>
@@ -412,11 +367,8 @@
 </ul>
 </nav>
 </li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
 <label class="md-nav__link" for="__nav_5">
           绘画指南
           <span class="md-nav__icon md-icon"></span>
@@ -427,10 +379,10 @@
           绘画指南
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_1" id="__nav_5_1" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_1" id="__nav_5_1" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../paint/">概论</a>
+<a href="../">概论</a>
 <label for="__nav_5_1">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -441,10 +393,96 @@
           概论
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../paint/PromptsEngineering/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          提示工程
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         提示工程
       </a>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+    入门
+  </a>
+<nav aria-label="入门" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+    写什么？
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+    如何写？
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+    写多长？
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+    顺序
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prompt">
+    Prompt 冲突
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+    提示词编辑
+  </a>
+<nav aria-label="提示词编辑" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
+    人工分割
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_8">
+    注意力控制
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_9">
+    提示词交替
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prompt-matrix">
+    Prompt matrix 矩阵
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prompt-schedule">
+    Prompt Schedule
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_10">
+    成为调参工程师
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -452,7 +490,7 @@
 <li class="md-nav__item md-nav__item--section md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_2" id="__nav_5_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../paint/WebUi/">WebUi绘画指南</a>
+<a href="../WebUi/">WebUi绘画指南</a>
 <label for="__nav_5_2">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -464,17 +502,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../paint/WebUi/base/">
+<a class="md-nav__link" href="../WebUi/base/">
         Txt2指南
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../paint/WebUi/Advanced/">
+<a class="md-nav__link" href="../WebUi/Advanced/">
         Img2指南
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../paint/WebUi/extension/">
+<a class="md-nav__link" href="../WebUi/extension/">
         安装扩展
       </a>
 </li>
@@ -494,12 +532,12 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../paint/Practicalguide/">
+<a class="md-nav__link" href="../Practicalguide/">
         实战指南
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../paint/identify/">
+<a class="md-nav__link" href="../identify/">
         鉴别
       </a>
 </li>
@@ -512,7 +550,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../train/">训练模型</a>
+<a href="../../train/">训练模型</a>
 <label for="__nav_6">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -524,22 +562,22 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../train/Textual/">
+<a class="md-nav__link" href="../../train/Textual/">
         Textual 训练
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../train/Hypernetwork/">
+<a class="md-nav__link" href="../../train/Hypernetwork/">
         Hypernetwork 训练
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../train/DreamBooth/">
+<a class="md-nav__link" href="../../train/DreamBooth/">
         DreamBooth 训练
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../train/AestheticGradients/">
+<a class="md-nav__link" href="../../train/AestheticGradients/">
         AestheticGradients 训练
       </a>
 </li>
@@ -549,7 +587,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../landing/">参考资料</a>
+<a href="../../landing/">参考资料</a>
 </div>
 <nav aria-label="参考资料" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_7">
@@ -576,37 +614,75 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_1">
-    生成黑/绿图
+    入门
   </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#runtimeerror-sizes-of-tensors-must-match">
-    RuntimeError Sizes of tensors must match
-  </a>
-</li>
+<nav aria-label="入门" class="md-nav">
+<ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_2">
-    彩虹混乱图
+    写什么？
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_3">
-    高分辨率出鬼图 / 低显存生成大分辨率图片
+    如何写？
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#runtimeerror-unable-to-find-a-valid-cudnn-algorithm-to-run-convolution">
-    RuntimeError: Unable to find a valid cuDNN algorithm to run convolution
+<a class="md-nav__link" href="#_4">
+    写多长？
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#cuda-out-of-memory">
-    CUDA out of memory
+<a class="md-nav__link" href="#_5">
+    顺序
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#api">
-    Api
+<a class="md-nav__link" href="#prompt">
+    Prompt 冲突
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+    提示词编辑
+  </a>
+<nav aria-label="提示词编辑" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
+    人工分割
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_8">
+    注意力控制
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_9">
+    提示词交替
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prompt-matrix">
+    Prompt matrix 矩阵
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prompt-schedule">
+    Prompt Schedule
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_10">
+    成为调参工程师
   </a>
 </li>
 </ul>
@@ -616,41 +692,308 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/model/WebUi/Troubleshoot.md" title="编辑此页">
+<a class="md-content__button md-icon" href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/paint/PromptsEngineering.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="bug">生成图片发生 BUG 的自救</h1>
-<h2 id="_1">生成黑/绿图</h2>
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Install-and-Run-on-NVidia-GPUs">生成黑/绿图</a></p>
-<p>如果是 GTX 16xx 系列，启动参数需要加 <code>--precision full --no-half</code>, 因此如果显存不足还要加 <code>--medvram</code>。</p>
-<p>如果是其他显卡而且加载了 VAE 时出现黑图，加入 <code>--no-half-vae</code> 参数 [^2]。</p>
-<h2 id="runtimeerror-sizes-of-tensors-must-match">RuntimeError Sizes of tensors must match</h2>
-<p>(img2img) 如果出现 <code>RuntimeError: Sizes of tensors must match</code>，请调整输入图像的分辨率</p>
-<h2 id="_2">彩虹混乱图</h2>
-<p>如果 AI 输出了混乱的彩虹色图片，则可能是生成分辨率被设置得太低。</p>
-<h2 id="_3">高分辨率出鬼图 / 低显存生成大分辨率图片</h2>
-<p>使用 <code>Highres fix</code> 或 低分辨率 + 超分。</p>
-<p>你可以在下个章节看到具体操作流程。</p>
-<h2 id="runtimeerror-unable-to-find-a-valid-cudnn-algorithm-to-run-convolution">RuntimeError: Unable to find a valid cuDNN algorithm to run convolution</h2>
-<p>前面那节有相关的参数建议。</p>
-<p>生成报错解释：显存不足</p>
-<p>先检查 CUDA 是否可用，打开命令窗，输入 python 并分行输入</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">torch</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">())</span>
+<h1 id="prompts-engineering">Prompts Engineering</h1>
+<p>这里是为进一步阐释 index 页理论所写的一个小指南。</p>
+<p>本文章基于 WebUi, 如果你使用其他 Ui, 请注意兼容性。</p>
+<p>如果你是 NAI 用户，请额外阅读 <a href="https://docs.novelai.net/image/promptmixing.html">官网 Docs</a>。</p>
+<h2 id="_1">入门</h2>
+<p>书写 Prompt 的感性感受为：限定数据范围内符合期望的样本越多，结果越符合预期。</p>
+<h3 id="_2">写什么？</h3>
+<p>Ai 的理解由代码输入，由 Tokenizer 定义，你可以测试 UI 的相关代码获取实际的分词输入。</p>
+<ul>
+<li><a href="https://novelai.net/tokenizer">NAI's prompt Tokenizer</a></li>
+<li><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui-tokenizer">WebUiTokenizer</a></li>
+</ul>
+<p><strong>单词</strong></p>
+<p>普通常见的单词，最好是可以在数据集来源站点找到的著名标签（比如 Danbooru)。单词的风格要和图像的风格搭配（比如在推理动漫插画时不应该在提示词加入 <code>乐山大佛</code> 的词汇），否则会出现混杂的风格或噪点。</p>
+<blockquote>
+<p>对于某些基于 Stable Diffusion 训练的动漫模型来说，最好使用 Danbooru 中可以找到的标签。</p>
+</blockquote>
+<p><strong>自然语言</strong></p>
+<p>Prompt 也可以直接使用自然语言，语种可以是英文，日文，特殊符号或一些中文，这由数据集决定。</p>
+<p>自然语言的准确度取决于 Clip 的分词情况，如果你追求精确的结果，请勿使用。</p>
+<p>使用自然语言的时候要避免 <code>with</code> 之类的连接词或复杂的语法，它们很多余。</p>
+<p><strong>emoji</strong></p>
+<p>你可以使用 西方颜文字 <code>(^_^)</code>，emoji 🌻。emoji 作为只有一个字符的“词语”效果很精确。</p>
+<ul>
+<li>Emoji 在构图上有影响，比如 <code>💐☺️💐</code>。</li>
+<li>Emoji 因为只有一个字符，所以在语义准确度上表现良好。</li>
+<li><a href="https://unicode.org/emoji/charts/emoji-list.html">表情符号参考</a></li>
+</ul>
+<p><strong>颜文字</strong></p>
+<p>对于<strong>使用 Danbooru 数据的模型</strong>来说，我们可以使用 颜文字 来控制表情！
+<div class="highlight"><pre><span></span><code>:-) 微笑 :-( 不悦 ;-) 使眼色 :-D 开心 :-P 吐舌头 :-C 很悲伤 :-O 惊讶 张大口 :-/ 怀疑
+</code></pre></div></p>
+<ul>
+<li>
+<p>颜文字在构图上有影响。</p>
+</li>
+<li>
+<p>仅支持西方颜文字，详细内容请见 <a href="https://danbooru.donmai.us/wiki_pages/tag_group%3Aface_tags">Danbooru 颜文字部分</a> 或 <a href="https://zh.wikipedia.org/wiki/%E8%A1%A8%E6%83%85%E7%AC%A6%E8%99%9F%E5%88%97%E8%A1%A8?oldformat=true">维基百科</a></p>
+</li>
+</ul>
+<p><strong>空格</strong></p>
+<ul>
+<li>逗号前后的少量空格并不影响实际效果。</li>
+</ul>
+<h3 id="_3">如何写？</h3>
+<p>先想一下你要画什么，例如 主题，外表，情绪，衣服，姿势，背景 一类，然后参考数据集标签表（如果有的话，比如 Danbooru, Pixiv 等）。</p>
+<p>然后将你想要的相似的提示词组合在一起，请使用英文半角 <code>,</code> 做分隔符，并将这些按从最重要到最不重要的顺序排列。</p>
+<p><div class="highlight"><pre><span></span><code>(quality), (subject)(style), (action/scene), (artist), (filters)
 </code></pre></div>
-<h2 id="cuda-out-of-memory">CUDA out of memory</h2>
-<p>原因：显存不足。<code>--lowvram</code> 和 <code>--medvram</code> 启动参数都可以改善此问题。</p>
-<h2 id="api">Api</h2>
-<p>如果需要启用 Api，启动参数加入 <code>--api</code>。如果你想让其他应用调用 Api, 追加 <code>--enable-insecure-extension-access</code>。</p>
+<code>(quality)</code> 代表画面的品质，比如 <code>low res</code> 结合 <code>sticker</code> 使用来 “利用” 更多数据集， <code>1girl</code> 结合 <code>high quality</code> 使用来获得高质量图像。</p>
+<p><code>(subject)</code> 代表画面的主题，锚定画面内容，这是任何提示的基本组成部分。<code>(style)</code> 是画面风格，可选。</p>
+<p><code>(action/scene)</code> 代表动作/场景，描述了主体在哪里做了什么。</p>
+<p><code>(artist)</code> 代表艺术家名字或者出品公司名字。</p>
+<p><code>(filters)</code> 代表一些细节，补充。可以使用 艺术家，工作室，摄影术语，角色名字，风格，特效等等。</p>
+<p><strong>艺术风格</strong></p>
+<p>你可以通过指定风格关键词来创作带有特效或指定画风的图片。</p>
+<p><a href="https://space.bilibili.com/8612008/channel/collectiondetail?sid=787691">NovelAI 使用教程和魔咒课堂</a></p>
+<p><a href="https://www.yuque.com/longyuye/lmgcwy">人偶教室的测试记录</a></p>
+<p><a href="https://www.bilibili.com/video/BV1TP411N71t/">风格化：32 种</a></p>
+<p>除此之外，你还可以训练风格模型来训练自己的理想风格，详见 <code>模型训练</code> 章节。</p>
+<p>更多参考可以读 <a href="https://docs.google.com/document/d/1XUT2G9LmkZataHFzmuOtRXnuWBfhvXDAo8DkS--8tec/edit#">为文字转图像 Ai 提示编写指南：A Guide to Writing Prompts for Text-to-image AI</a></p>
+<h3 id="_4">写多长？</h3>
+<p><strong>书写长度</strong></p>
+<p>由于 GPT-3 模型限制，prompt 并不是无限的，一般 positive token 在 75-80 之间，75 字符后的内容会被截断。所以提示不要太长，超过 100 就有失败风险。</p>
+<ul>
+<li>WebUi</li>
+</ul>
+<p>在 WebUi 中，你 <strong>可以</strong> 写 75 个词汇以上的提示。WebUi 通过对提示词进行分组克服了这种限制。当提示超过 75 个 <code>token</code>（比如 150 个 <code>token</code>）时，WebUi 将分组提示词，提交多组 75 个 <code>token</code>。标记只具有同一集合中其他内容的上下文。</p>
+<p>但这导致了一个问题：可能在第一组和第二组之间的边界处有 <code>bule hair</code>，标记 <code>blue</code> 将在第一组中，<code>hair</code> 将在第二组中。这导致结果不准确，因为 <code>bule hair</code> 被不合理地分割了！</p>
+<p>为了解决这个问题，新版本增加了一个选项 <code>Increase coherency by padding from the last comma within n tokens when using more than 75 tokens</code>，这个设置让程序试图通过查找最后 N 个标记中是否有最后一个逗号来缓解这种情况，如果有，则将所有经过该逗号的内容一起移动到下一个集合中。</p>
+<div class="highlight"><pre><span></span><code>    有词条为 `...,Comma,blue hair,PADDING,...`
+
+    第 75 个词为 `blue`
+
+    使用该选项前
+
+    集合 1:{[74]=Comma，[75]=blue}，集合 2:{[76]=hair, [77]=PADDING}
+
+    使用该选项后
+
+    集合 1:{[074]=Comma，[75]=PADDING}，集合 2:{[76]=blue，[77]=hair}
+
+    如果您的提示小于等于 75 个标记，不会发生分组。
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>不堆叠 prompt 是一个好习惯，但是如果你确实有很多内容要写，可以适当提高 <code>step</code> 数量。</p>
+</div>
+<h3 id="_5">顺序</h3>
+<p>根据图像推理过程，提示词放入的顺序可以视为优先级，在前面的 Prompt 锚定了画面的主体内容。这解释了为什么我会在上文中强调 Prompt 的顺序。</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://jalammar.github.io/images/stable-diffusion/stable-diffusion-image-generation.png"><img alt="图像生成的描述" src="https://jalammar.github.io/images/stable-diffusion/stable-diffusion-image-generation.png"/></a></p>
+<blockquote>
+<p>thanks https://jalammar.github.io/illustrated-stable-diffusion/</p>
+</blockquote>
+<p>如果你使用 WebUi，WebUi 会对长串的 Prompt 以 75 个 Token 一组分开渲染。</p>
+<h3 id="prompt">Prompt 冲突</h3>
+<p><strong>分类冲突</strong></p>
+<pre><code>如果你想要一张 sticker 的话，贴纸在数据集内肯定不会打上 `masterpiece, best quility,` 标签，而是 `normal quality` 这样的标签。
+
+类似还有像素作品，书写提示词的时候，你应该移除一些冲突的提示。
+</code></pre>
+<p><strong>风格冲突</strong></p>
+<pre><code>比如你想得到一张儿童在沙滩玩耍的 `flatcolor` 风格的插画。
+
+那么使用 `loli` 不是一个好主意，因为它附带了标准统一的画风属性，会很大地影响结果。
+
+解决办法：降低权重，更换 prompt.
+</code></pre>
+<p><strong>次元冲突</strong></p>
+<pre><code>某些动漫模型是基于原始 Stable Diffusion 训练的应该尽量避免出现原始模型的内容。
+</code></pre>
+<p>请务必注意。</p>
+<h2 id="_6">提示词编辑</h2>
+<p>通过提示词编辑，我们可以清楚地告诉模型 “我点的菜需要放多少盐”。</p>
+<p><a href="https://github.com/bloc97/CrossAttentionControl">原始实现</a></p>
+<h3 id="_7">人工分割</h3>
+<p>使用 <code>/</code> 或 <code>+</code> 来强制分割提示词。<sup id="fnref:13"><a class="footnote-ref" href="#fn:13">2</a></sup></p>
+<p>需要注意的是，相邻重复的符号会被过滤，<code>+++</code> 的效果等同于 <code>+</code>，正确的方法是+和/分开来打。</p>
+<p>比如同样要达到 9 个 token 长度的分隔：<sup id="fnref2:13"><a class="footnote-ref" href="#fn:13">2</a></sup>
+<div class="highlight"><pre><span></span><code><span class="gh"># 以下三条效果类似，且不怎么干扰后续词语。影响度 7%左右：</span>
+red eyes,/,/,/,/, blue dress     (9 格分隔，按键也接近，推荐）
+red eyes, /+/+/+/, blue dress (9 格分隔，干扰最低）
+red eyes, , , , , , , , ,blue dress (9 格分隔，逗号之间要有空格不然效果减半）
+
+<span class="gh"># 以下是不推荐的办法，对后续词语仍然有 25%影响，会干扰画风：</span>
+red eyes++++++++++++++++++++blue dress  （同样是 9 格，三个+号判断为一个 token)
+red eyes/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​blue dress （同加号）
+
+<span class="k">*</span> Tip-From [^13]
+</code></pre></div></p>
+<h3 id="_8">注意力控制</h3>
+<p>阅读理论基础我们知道，每个词的基础权重是不同的，我们对不同提示的权重值的期望也不同，这时候就需要使用注意力控制来调节它们之间的关系了。</p>
+<table>
+<thead>
+<tr>
+<th align="center">Ui</th>
+<th align="center">语法</th>
+<th align="center">示例</th>
+<th align="center">权重变化</th>
+<th align="center">注意</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">WebUi</td>
+<td align="center"><code>(prompt:num)</code></td>
+<td align="center">强调：<code>((cat))</code> <code>(cat:1.4)</code>，减弱：<code>(cat:0.2)</code> <code>[cat]</code></td>
+<td align="center">()-&gt; 1.1</td>
+<td align="center"><code>num</code> 的范围是 <code>0.1 ~:100</code>，如果为小数则取步数比例</td>
+</tr>
+<tr>
+<td align="center">Nai</td>
+<td align="center"><code>{}</code></td>
+<td align="center"><code>{{{cat}}}</code> <code>[cat]</code></td>
+<td align="center">{}-&gt; 1.05</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">原始实现</td>
+<td align="center">+/-</td>
+<td align="center"><code>+cat</code> <code>-cat</code></td>
+<td align="center"></td>
+<td align="center">单元格</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>
+<p>WebUi 权重语法为 <code>(prompt:num)</code> 或 <code>((prompt))</code>，增强的权重为，增强的范围是 <code>0.1 ~ 100</code>，如果为小数则取步数比例。比如 强调：<code>((cat))</code> <code>(cat:1.4)</code>，减弱：<code>(cat:0.2)</code> <code>[cat]</code></p>
+<div class="highlight"><pre><span></span><code>a (word) - 将权重提高 1.1 倍
+
+a ((word)) - 将权重提高 1.21 倍（= 1.1 * 1.1），乘法的关系。
+
+a [word] - 将权重减少 1.1 倍
+
+a (word:1.5) - 将权重提高 1.5 倍
+
+a (word:0.25) - 将权重减少 4 倍 (= 1 / 0.25)
+
+a \(word\) - 在提示中使用文字 () 字符
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>权重增加通常会占一个 token 位。在 token 位紧张的情况下没有必要加特别多括号。</p>
+<p>过多圆括号会导致 字符 被程序吃掉，<code>a ((((farm))), daytime</code> 会变成 <code>a farm daytime</code> 而没有逗号。</p>
+<p>WebUi 对于带括号提示词比如 <code>a (word)</code> <strong>请使用 <code>\</code> 字符转义为 <code>a \(word\)</code></strong>，这适用于带括号的 Tag, 防止出现本来不想要的增强效果。</p>
+</div>
+</li>
+<li>
+<p>NAI 则使用 <code>{}</code> 来做增强，不可以指定权重。比如 <code>{{{cat}}}</code> <code>[cat]</code></p>
+</li>
+</ol>
+<p>NAI 中不允许单独指定权重，但支持混合权重 <code>cat:1|happy:-0.2|cute:-0:3</code> 这样的语法，<code>(cat :2 | dog)</code> 也就是更像猫的狗。</p>
+<p><strong>换算关系</strong></p>
+<p>NAI 的 [word] = WebUi(word: 0.952)(0.952 = 1/1.05)</p>
+<p>NAI 的{word} = WeUi 的 (word: 1.05)</p>
+<p>NAI 花括号权重为 1.05/个，WebUi 圆权重为 1.1/个</p>
+<ol>
+<li>降低权重，单独使用 <code>[]</code> 或者 <code>(word:0.952)</code>。NAI 仅能使用 <code>[]</code></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">请勿混淆</p>
+<p>NAI 与 WebUi 的提示词语法 <strong>不通用</strong></p>
+<p>因为 NAI 使用的是 WebUi 2022 年 9 月之前的实现，所以权重增强语法是旧的 <code>{}</code> ，新的 WebUi 更改为 <code>()</code>。</p>
+<p>NAI 不支持指定提示词的权重。</p>
+<p>如果你想便捷转换权重，可以使用 <a href="https://t.me/M2NM2NBot">转换服务</a></p>
+</div>
+<details class="tip">
+<summary>How It Work</summary>
+<p>每个单词都有一个 768 个值的相关向量，该向量“指向”概念的方向（在 768 维空间中）。</p>
+<p>如果你缩放这个向量，这个概念会变得更强或更弱。</p>
+<p>SEE <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2905">Here</a></p>
+</details>
+<p>! [缺少示例图片]</p>
+<h3 id="_9">提示词交替</h3>
+<p>提示词交替（alternate prompt）[^7]，即 Prompt 混合机。这项技术由 UI 实现。<sup id="fnref:9"><a class="footnote-ref" href="#fn:9">1</a></sup></p>
+<div class="highlight"><pre><span></span><code>[alison brie|emma stone|elizabeth olsen|scarlett johansson|anne hathaway|emma roberts], still film
+</code></pre></div>
+<p>它可以创建动物、人或风格的混合体，每一个 <code>step</code> 切换一个提示（一步一换轮环渲染）。</p>
+<p>! [缺少示例图片]</p>
+<h3 id="prompt-matrix">Prompt matrix 矩阵</h3>
+<p>WebUi 使用 <code>|</code> 分隔多个关键词以混合多个要素，程序将为它们的每个组合生成一个图像。这项技术由 UI 实现。</p>
+<p>例如，如果使用 <code>a busy city street in a modern city|illustration|cinematic lighting</code> ，则可能有四种组合（始终保留提示的第一部分）：</p>
+<ul>
+<li>a busy city street in a modern city</li>
+<li>a busy city street in a modern city, illustration</li>
+<li>a busy city street in a modern city, cinematic lighting</li>
+<li>a busy city street in a modern city, illustration, cinematic lighting</li>
+</ul>
+<p>! [缺少示例图片]</p>
+<p>可以进一步在关键词后添加 : x 来指定单个关键词的权重。</p>
+<ul>
+<li>NAI </li>
+</ul>
+<p>在 NAI 中代表平均权重混合（前半部分和后半部分）。</p>
+<p><code>cat :2 | dog</code> 也就是更像猫的狗</p>
+<p>! [缺少示例图片]</p>
+<h3 id="prompt-schedule">Prompt Schedule</h3>
+<p>Prompt Schedule 可以在推理图像的过程中更改 Prompt，这项技术由 UI 实现。</p>
+<p>语法为 <code>[from:to:when]</code></p>
+<p>其中 <code>from</code> 和 <code>to</code> 为 prompt， when 是一个数字，用于定义应在采样周期多长时间内进行切换。</p>
+<ul>
+<li>
+<p><code>[fantasy:cyberpunk:16]</code> 代表从第 16 step 后，使用 <code>cyberpunk</code> 标签替换 <code>fantasy</code></p>
+</li>
+<li>
+<p><code>[to:when]</code> 在固定数量的 step 后添加 <code>to</code> 到提示 ( when)</p>
+</li>
+<li>
+<p><code>[from::when]</code> 在固定数量的 step 后从提示中删除 <code>from</code>( when)</p>
+</li>
+</ul>
+<p>比如：</p>
+<ul>
+<li>
+<p><code>[fantasy:cyberpunk:16]</code> 代表从第 16 step 后，使用 <code>cyberpunk</code> 标签替换 <code>fantasy</code></p>
+</li>
+<li>
+<p><code>[male: female: 0.0]</code>, 意味着你开始时就要求画一个女性。</p>
+</li>
+</ul>
+<p>效果：</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://user-images.githubusercontent.com/75739606/197822841-f7323afa-8c6a-46a2-a8e2-a1c457bb31d5.jpg"><img alt="sample_Gradient" src="https://user-images.githubusercontent.com/75739606/197822841-f7323afa-8c6a-46a2-a8e2-a1c457bb31d5.jpg"/></a></p>
+<!--
+![sample_Gradient](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/sample_Gradient.jpg)
+-->
+<h2 id="_10">成为调参工程师</h2>
+<p>这些指南可以让你更进一步。</p>
+<ul>
+<li>
+<p><a href="https://github.com/6DammK9/nai-anime-pure-negative-prompt">面向 NAI 的测试</a></p>
+</li>
+<li>
+<p><a href="https://github.com/Maks-s/sd-akashic">https://github.com/Maks-s/sd-akashic</a></p>
+</li>
+<li>
+<p><a href="https://github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference">https://github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference</a></p>
+</li>
+</ul>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:9">
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/1733">alternate prompt</a> <a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:13">
+<p><a href="https://nga.178.com/read.php?pid=654605407&amp;opt=128">Nga 我流心得</a> <a class="footnote-backref" href="#fnref:13" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref2:13" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+</ol>
+</div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月26日 18:40:25</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月26日 18:40:46</span>
 <br/>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月3日 02:13:49</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月26日 18:40:46</span>
 </small>
 </div>
 </article>
@@ -663,7 +1006,7 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="页脚" class="md-footer__inner md-grid">
-<a aria-label="上一页: 基本指南" class="md-footer__link md-footer__link--prev" href="../base/" rel="prev">
+<a aria-label="上一页: 工作台" class="md-footer__link md-footer__link--prev" href="../" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -672,17 +1015,17 @@
 <span class="md-footer__direction">
                 上一页
               </span>
-              基本指南
+              工作台
             </div>
 </div>
 </a>
-<a aria-label="下一页: 工作台" class="md-footer__link md-footer__link--next" href="../../../paint/" rel="next">
+<a aria-label="下一页: WebUi" class="md-footer__link md-footer__link--next" href="../WebUi/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 下一页
               </span>
-              工作台
+              WebUi
             </div>
 </div>
 <div class="md-footer__button md-icon">

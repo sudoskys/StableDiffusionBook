@@ -520,18 +520,38 @@
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../paint/">绘画指南</a>
-<label for="__nav_5">
-<span class="md-nav__icon md-icon"></span>
+<label class="md-nav__link" for="__nav_5">
+          绘画指南
+          <span class="md-nav__icon md-icon"></span>
 </label>
-</div>
 <nav aria-label="绘画指南" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_5">
 <span class="md-nav__icon md-icon"></span>
           绘画指南
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_1" id="__nav_5_1" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../paint/">概论</a>
+<label for="__nav_5_1">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="概论" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_1">
+<span class="md-nav__icon md-icon"></span>
+          概论
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../paint/PromptsEngineering/">
+        提示工程
+      </a>
+</li>
+</ul>
+</nav>
+</li>
 <li class="md-nav__item md-nav__item--section md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_2" id="__nav_5_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
@@ -548,12 +568,12 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../paint/WebUi/base/">
-        基本指南
+        Txt2指南
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../paint/WebUi/Advanced/">
-        进阶指南
+        Img2指南
       </a>
 </li>
 <li class="md-nav__item">
@@ -810,108 +830,112 @@
 <table>
 <thead>
 <tr>
-<th>缩写/写作术语表</th>
-<th>解释</th>
+<th align="left">缩写/写作术语表</th>
+<th align="left">解释</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>oneshot</td>
-<td>一张图</td>
+<td align="left">oneshot</td>
+<td align="left">一张图</td>
 </tr>
 <tr>
-<td>LAION</td>
-<td>一个图像数据集库，https://laion.ai</td>
+<td align="left">LAION</td>
+<td align="left">一个图像数据集库，https://laion.ai</td>
 </tr>
 <tr>
-<td>aug</td>
-<td>augmentaion, 通过裁切，翻转获取更多数据集的方式</td>
+<td align="left">aug</td>
+<td align="left">augmentaion, 通过裁切，翻转获取更多数据集的方式</td>
 </tr>
 <tr>
-<td>ucg</td>
-<td>unconditional guidance</td>
+<td align="left">ucg</td>
+<td align="left">unconditional guidance</td>
 </tr>
 <tr>
-<td>ML</td>
-<td>机器学习</td>
+<td align="left">ML</td>
+<td align="left">机器学习</td>
 </tr>
 <tr>
-<td>LatentSpace</td>
-<td>潜在空间</td>
+<td align="left">LatentSpace</td>
+<td align="left">潜在空间</td>
 </tr>
 <tr>
-<td>LDM</td>
-<td>Latent Diffusion Model 潜在扩散模型</td>
+<td align="left">LDM</td>
+<td align="left">Latent Diffusion Model 潜在扩散模型</td>
 </tr>
 <tr>
-<td>Stable Diffusion</td>
-<td>稳定扩散</td>
+<td align="left">Stable Diffusion</td>
+<td align="left">稳定扩散</td>
+</tr>
+<tr>
+<td align="left">超分</td>
+<td align="left">一般指使用Ai技术提升图片分辨率，提高清晰度</td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr>
-<th>黑话</th>
-<th>解释</th>
+<th align="left">黑话</th>
+<th align="left">解释</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>NAI</td>
-<td>(Novel AI，一般特指 Leak)</td>
+<td align="left">NAI</td>
+<td align="left">(Novel AI，一般特指 Leak)</td>
 </tr>
 <tr>
-<td>咒语</td>
-<td>prompts</td>
+<td align="left">咒语</td>
+<td align="left">prompts</td>
 </tr>
 <tr>
-<td>施法/吟唱/t2i</td>
-<td>Text2Image</td>
+<td align="left">施法/吟唱/t2i</td>
+<td align="left">Text2Image</td>
 </tr>
 <tr>
-<td>魔杖</td>
-<td>t2i/i2i 参数</td>
+<td align="left">魔杖</td>
+<td align="left">t2i/i2i 参数</td>
 </tr>
 <tr>
-<td>i2i</td>
-<td>Image2Image, 一般特指全部图片生成</td>
+<td align="left">i2i</td>
+<td align="left">Image2Image, 一般特指全部图片生成</td>
 </tr>
 <tr>
-<td>inpaint</td>
-<td>i2i 一种 maskredraw，可以局部重绘</td>
+<td align="left">inpaint</td>
+<td align="left">i2i 一种 maskredraw，可以局部重绘</td>
 </tr>
 <tr>
-<td>ti/emb/炼丹</td>
-<td>Train 中的文本反转，一般特指 Embedding 插件</td>
+<td align="left">ti/emb/炼丹</td>
+<td align="left">Train 中的文本反转，一般特指 Embedding 插件</td>
 </tr>
 <tr>
-<td>hn/hyper/冶金</td>
-<td>hypernetwork，超网络</td>
+<td align="left">hn/hyper/冶金</td>
+<td align="left">hypernetwork，超网络</td>
 </tr>
 <tr>
-<td>炸炉</td>
-<td>指训练过程中过度拟合，但炸炉前的日志插件可以提取二次训练</td>
+<td align="left">炸炉</td>
+<td align="left">指训练过程中过度拟合，但炸炉前的日志插件可以提取二次训练</td>
 </tr>
 <tr>
-<td>废丹</td>
-<td>指完全没有训练成功</td>
+<td align="left">废丹</td>
+<td align="left">指完全没有训练成功</td>
 </tr>
 <tr>
-<td>美学/ext</td>
-<td>aesthetic_embeddings, emb 一种，特性是训练飞快，但在生产图片时实时计算。</td>
+<td align="left">美学/ext</td>
+<td align="left">aesthetic_embeddings, emb 一种，特性是训练飞快，但在生产图片时实时计算。</td>
 </tr>
 <tr>
-<td>db/梦展</td>
-<td>DreamBooth，目前一种性价比高（可以在极少步数内完成训练）的微调方式，但要求过高</td>
+<td align="left">db/梦展</td>
+<td align="left">DreamBooth，目前一种性价比高（可以在极少步数内完成训练）的微调方式，但要求过高</td>
 </tr>
 <tr>
-<td>ds</td>
-<td>DeepSpeed，微软开发的训练方式，移动不需要的组件到内存来降低显存占用，可使 db 的 vram 需求降到 8g 以下。开发时未考虑 win, 目前在 win 有兼容性问题故不可用</td>
+<td align="left">ds</td>
+<td align="left">DeepSpeed，微软开发的训练方式，移动不需要的组件到内存来降低显存占用，可使 db 的 vram 需求降到 8g 以下。开发时未考虑 win, 目前在 win 有兼容性问题故不可用</td>
 </tr>
 <tr>
-<td>8bit/bsb</td>
-<td>一般指 Bitsandbyte，一种 8 比特算法，能极大降低 vram 占用，使 16g 可用于训练 db。由于链接库问题，目前/预计未来在 win 不可用</td>
+<td align="left">8bit/bsb</td>
+<td align="left">一般指 Bitsandbyte，一种 8 比特算法，能极大降低 vram 占用，使 16g 可用于训练 db。由于链接库问题，目前/预计未来在 win 不可用</td>
 </tr>
 </tbody>
 </table>
@@ -920,51 +944,57 @@
 <h3 id="_3">推理过程</h3>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://jalammar.github.io/images/stable-diffusion/stable-diffusion-components-and-tensors.png"><img alt="jalammar s pic" src="https://jalammar.github.io/images/stable-diffusion/stable-diffusion-components-and-tensors.png"/></a></p>
 <p>information creator 完全在图像信息空间（或潜伏空间）中工作。这一特性使它比以前在像素空间工作的扩散模型更快。在技术上，这个组件是由一个 UNet 神经网络和一个调度算法组成的。</p>
-<ul>
-<li>Text Encoder</li>
-</ul>
+<p><strong>Text Encoder</strong></p>
 <p>提示词的解析由 Text Encoder/CLIP 处理 (token embedding)，这里是提示词转译给 AI 的关键一步。</p>
 <p>文本编码器负责将输入的提示转换为 U-Net 可以理解的嵌入空间。它通常是一个简单的基于变换器的编码器，将一连串的输入标记映射到一连串的 latent text-embeddings 中。</p>
 <p>稳定扩散使用 ClipText 用于文本编码。输入文本，输出 77 个标记嵌入向量，每个都有 768 个维度。</p>
-<ul>
-<li>information creator</li>
-</ul>
+<p><strong>information creator</strong></p>
 <p>UNet + Scheduler（也就是采样算法）在潜在空间中逐步处理/分散信息。</p>
 <p>它输入文本嵌入和一个由噪声组成的起始多维数组（结构化的数字列表，也叫张量），输出一个经过处理的信息阵列。</p>
-<ul>
-<li>Image Decoder</li>
-</ul>
+<p><strong>Image Decoder</strong></p>
 <p>Text Decoder 根据从 information creator 那里获得的信息绘制一幅图画。 它只在过程结束时运行一次以生成最终图像。</p>
 <p>autoencoder(VAE) 模型有两个部分，一个编码器和一个解码器。编码器用于将图像转换为 latent representation，作为 U-Net 模型的输入。解码器则将 latent representation 转回图像。</p>
 <p>在推理过程中，使用 VAE 解码器将反向扩散过程产生的去噪潜像转换回图像。在推理过程中，我们只需要 VAE 解码器。</p>
 <p>Autoencoder Decoder(VAE) 使用处理过的信息阵列绘制最终图像的解码器。输入处理过的信息阵列 (dimensions: (4, 64, 64))，输出结果图像 (dimensions: (3, 512, 512)，即 (red/green/blue, width, height)。</p>
-<ul>
-<li>CLIP 的工作</li>
-</ul>
+<p><strong>CLIP 的工作</strong></p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://pic3.zhimg.com/80/v2-340920caff256e06c29cff7097e23e62_1440w.jpg"><img alt="训练图" src="https://pic3.zhimg.com/80/v2-340920caff256e06c29cff7097e23e62_1440w.jpg"/></a></p>
 <blockquote>
 <p>CLIP 训练图 from https://bbs.huaweicloud.com/blogs/371319</p>
 </blockquote>
-<ul>
-<li>流程</li>
-</ul>
+<p><strong>流程</strong></p>
 <p>Stable Diffusion 中使用的自动编码器的缩减系数为 8。这意味着一张 (4, 512, 512) 的图像在潜在空间中是 (4, 64, 64)。</p>
 <p>在使用稳定扩散推理一张 512 x 512 的图片的过程中，模型用一个种子和一个文本提示作为输入。潜在种子生成大小 64 × 64 的随机潜在图像，而 prompt 进入 Text Encoder 通过 CLIP 的文本编码器转化为大小为 77 × 768 的文本嵌入。</p>
 <p>U-Net 在以文本嵌入为条件的同时迭代地对随机高斯噪声表示进行去噪。U-Net 通过 采样算法 计算去噪的潜在图像表示，输出噪声残差。这个步骤重复许多次后，潜在表示由 Image Decoder 的 auto encoder 的解码器解码输出。</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/patrickvonplaten/scientific_images/master/stable_diffusion.png"><img alt="流程" src="https://raw.githubusercontent.com/patrickvonplaten/scientific_images/master/stable_diffusion.png"/></a></p>
+<p><strong>扩展</strong></p>
 <ul>
-<li>扩展</li>
-</ul>
+<li>
 <p><a href="https://lilianweng.github.io/posts/2021-07-11-diffusion-models/">什么是扩散模型？ </a></p>
+</li>
+<li>
 <p><a href="https://jalammar.github.io/illustrated-stable-diffusion/">illustrated-stable-diffusion</a></p>
+</li>
+<li>
 <p><a href="https://huggingface.co/blog/stable_diffusion">稳定扩散</a></p>
+</li>
+<li>
 <p><a href="https://pub.towardsai.net/getting-started-with-stable-diffusion-f343639e4931">稳定扩散入门 </a></p>
+</li>
+<li>
 <p><a href="https://en.wikipedia.org/wiki/Stable_Diffusion">Stable Diffusion From Wikipedia</a></p>
+</li>
+</ul>
 <h3 id="webui">WebUi 的预处理</h3>
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/modules/prompt_parser.py">WebUi 的 prompt_parser</a> 通过本地 WebUi 实现了渐变等功能。</p>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/modules/prompt_parser.py">WebUi 的 prompt_parser</a> 通过本地 WebUi 实现了Prompt editing等功能。</p>
 <p>WebUi prompt 语法会转换为相应时间的 prompt, 然后通过 embedding 交给 Ai 处理。</p>
-<p>关于权重的实现：权重增加通常会占一个提示词位。</p>
-<p>关于交叉注意力控制的实现：到了指定 Step ，WebUi 程序会替换对应 提示词，达到交叉注意力控制效果。</p>
+<p><strong>关于权重的实现</strong></p>
+<ul>
+<li>权重增加通常会占一个提示词位。</li>
+</ul>
+<p><strong>关于交叉注意力控制的实现</strong></p>
+<ul>
+<li>到了指定 Step ，WebUi 程序会替换对应 提示词，达到交叉注意力控制效果。</li>
+</ul>
 <p>其他以此类推。</p>
 <p>整个看下来，原理流程如图 </p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://user-images.githubusercontent.com/75739606/198675128-c2c849d0-d024-468b-80c4-374f13e933e3.png"><img alt="prompt_draw" src="https://user-images.githubusercontent.com/75739606/198675128-c2c849d0-d024-468b-80c4-374f13e933e3.png"/></a></p>
@@ -982,7 +1012,6 @@
 <p>通俗来说，收敛通常是指在训练期间达到的一种状态，即经过一定次数的迭代之后，训练损失和验证损失在每次迭代中的变化都非常小或根本没有变化。也就是说，如果采用当前数据进行额外的训练将无法改进模型，模型即达到收敛状态。在深度学习中，损失值有时会在最终下降之前的多次迭代中保持不变或几乎保持不变，暂时形成收敛的假象。</p>
 <h3 id="vae">VAE</h3>
 <p>Variational autoencoders (VAEs) 是一种用于学习潜在表示的深度学习技术。它们也被用来绘制图像，在半监督学习中取得最先进的成果，以及在句子之间进行插值。<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></p>
-<p>Variational autoencoders (VAEs) are a deep learning technique for learning latent representations. They have also been used to draw images, achieve state-of-the-art results in semi-supervised learning, as well as interpolate between sentences.<sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup></p>
 <h3 id="cfg">CFG</h3>
 <p>这个词汇为 Classifier Free Guidance Scale 的缩写，用于衡量模型 生成的预期图片和你的提示保持一致的 程度。 Cfg Scale 值为 0 时，会生成一个基于种子的随机图像。</p>
 <p>打个比方，想象你的提示是一个带有可变宽度光束的手电筒，你将它照到模型的潜在空间上以突出显示特定区域——你的输出图像将从该区域内的某个地方绘制，具体取决于种子。<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
@@ -1029,11 +1058,9 @@
 <p>ENSD 是 eta 噪声种子增量，它改变了种子。</p>
 <p>NAI 使用 31337</p>
 <h3 id="clip">CLIP</h3>
-<p>CLIP 是一种非常先进的神经网络，可将提示文本转换为数字表示。</p>
-<p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-last-layers-of-clip-model</p>
-<p>要让 AI 作画，先要让程序“听懂”你的指令，比如：</p>
-<p>“a big cherry tree above a lake with flying petals in the sky.”</p>
-<p>对一个相对复杂场景的文本描述，AI 需要能“理解”并匹配到对应的画面，大部分项目依赖的都是一个叫 CLIP 的模型。CLIP 在生成模型的潜在空间进行搜索，从而找到与给定的文字描述相匹配的潜在图像，它非常现代且高效。</p>
+<p>CLIP 是一种非常先进的神经网络，可将提示文本转换为数字表示。对一个相对复杂场景的文本描述，AI 需要能“理解”并匹配到对应的画面，大部分项目依赖的都是一个叫 CLIP 的模型。</p>
+<p>CLIP 在生成模型的潜在空间进行搜索，从而找到与给定的文字描述相匹配的潜在图像，它非常现代且高效。</p>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-last-layers-of-clip-model">ignore-last-layers-of-clip-model</a></p>
 <h3 id="cuda">CUDA</h3>
 <p>配合 CUDA 技术，显卡可以模拟成一颗 PhysX 物理加速芯片。</p>
 <div class="footnote">
@@ -1043,7 +1070,7 @@
 <p><a href="https://www.jonstokes.com/p/getting-started-with-stable-diffusion">Getting Started With Stable Diffusion: A Guide For Creators</a> <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
 </li>
 <li id="fn:2">
-<p><a href="https://ermongroup.github.io/cs228-notes/extras/vae/">VAE-CS228</a> <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">↩</a></p>
+<p><a href="https://ermongroup.github.io/cs228-notes/extras/vae/">VAE-CS228</a> <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a></p>
 </li>
 <li id="fn:3">
 <p><a href="https://cs231n.github.io/neural-networks-2/">LOSS FUNC-CS231</a> <a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">↩</a></p>
@@ -1067,7 +1094,7 @@
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月23日 13:24:03</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月26日 18:39:55</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年10月13日 10:24:49</span>

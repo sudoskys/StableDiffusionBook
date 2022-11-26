@@ -10,7 +10,7 @@
 <link href="https://stable-diffusion-book.vercel.app/en/paint/WebUi/Advanced/" rel="canonical"/>
 <link href="../../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
-<title>Advanced Guide - AiDraw</title>
+<title>Img2Guide - AiDraw</title>
 <link href="../../../../assets/stylesheets/main.472b142f.min.css" rel="stylesheet"/>
 <link href="../../../../assets/stylesheets/palette.08040f6c.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -18,7 +18,7 @@
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
 <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <meta content="website" property="og:type"/>
-<meta content="Advanced Guide - AiDraw" property="og:title"/>
+<meta content="Img2Guide - AiDraw" property="og:title"/>
 <meta content="一个介绍 Ai 绘画的 WIKI/A WIKI about Ai painting" property="og:description"/>
 <meta content="https://stable-diffusion-book.vercel.app/assets/images/social/paint/WebUi/Advanced.en.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
@@ -26,7 +26,7 @@
 <meta content="630" property="og:image:height"/>
 <meta content="https://stable-diffusion-book.vercel.app/en/paint/WebUi/Advanced/" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Advanced Guide - AiDraw" name="twitter:title"/>
+<meta content="Img2Guide - AiDraw" name="twitter:title"/>
 <meta content="一个介绍 Ai 绘画的 WIKI/A WIKI about Ai painting" name="twitter:description"/>
 <meta content="https://stable-diffusion-book.vercel.app/assets/images/social/paint/WebUi/Advanced.en.png" name="twitter:image"/>
 <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
@@ -47,7 +47,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#magic-advanced-guide">
+<a class="md-skip" href="#img2">
           Skip to content
         </a>
 </div>
@@ -71,7 +71,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Advanced Guide
+              Img2Guide
             
           </span>
 </div>
@@ -369,18 +369,38 @@
 </li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../">Paint guide</a>
-<label for="__nav_5">
-<span class="md-nav__icon md-icon"></span>
+<label class="md-nav__link" for="__nav_5">
+          Paint guide
+          <span class="md-nav__icon md-icon"></span>
 </label>
-</div>
 <nav aria-label="Paint guide" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_5">
 <span class="md-nav__icon md-icon"></span>
           Paint guide
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_1" id="__nav_5_1" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../">General</a>
+<label for="__nav_5_1">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="General" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_1">
+<span class="md-nav__icon md-icon"></span>
+          General
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../PromptsEngineering/">
+        Prompts Engineer
+      </a>
+</li>
+</ul>
+</nav>
+</li>
 <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" id="__nav_5_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
@@ -397,17 +417,17 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../base/">
-        Base guide
+        Txt2Guide
       </a>
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-          Advanced Guide
+          Img2Guide
           <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        Advanced Guide
+        Img2Guide
       </a>
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
@@ -416,8 +436,8 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#magic-advanced-guide">
-    Magic Advanced Guide
+<a class="md-nav__link" href="#basic-parameters">
+    Basic parameters
   </a>
 </li>
 <li class="md-nav__item">
@@ -426,18 +446,15 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#img2img-introduction">
-    Img2Img Introduction
+<a class="md-nav__link" href="#img2img">
+    Img2Img
   </a>
-<nav aria-label="Img2Img Introduction" class="md-nav">
+<nav aria-label="Img2Img" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#resizing">
     Resizing
   </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#img2img-3d-rendering-2d">
@@ -463,40 +480,14 @@
 <a class="md-nav__link" href="#img2img-with-low-vram">
     Img2Img with low vram
   </a>
-<nav aria-label="Img2Img with low vram" class="md-nav">
-<ul class="md-nav__list">
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#scripts">
     Scripts
   </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#resolution-boost-with-extras">
-    Resolution boost with extras
-  </a>
-</li>
 </ul>
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#image-denoising">
-    Image denoising
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#ai-s-dlc-stlye-models">
-    AI s DLC stlye models
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#quick-prompt-search">
-    Quick prompt search
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#others">
-    Others
-  </a>
 </li>
 </ul>
 </nav>
@@ -603,8 +594,8 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#magic-advanced-guide">
-    Magic Advanced Guide
+<a class="md-nav__link" href="#basic-parameters">
+    Basic parameters
   </a>
 </li>
 <li class="md-nav__item">
@@ -613,18 +604,15 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#img2img-introduction">
-    Img2Img Introduction
+<a class="md-nav__link" href="#img2img">
+    Img2Img
   </a>
-<nav aria-label="Img2Img Introduction" class="md-nav">
+<nav aria-label="Img2Img" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#resizing">
     Resizing
   </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#img2img-3d-rendering-2d">
@@ -650,40 +638,14 @@
 <a class="md-nav__link" href="#img2img-with-low-vram">
     Img2Img with low vram
   </a>
-<nav aria-label="Img2Img with low vram" class="md-nav">
-<ul class="md-nav__list">
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#scripts">
     Scripts
   </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#resolution-boost-with-extras">
-    Resolution boost with extras
-  </a>
-</li>
 </ul>
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#image-denoising">
-    Image denoising
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#ai-s-dlc-stlye-models">
-    AI s DLC stlye models
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#quick-prompt-search">
-    Quick prompt search
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#others">
-    Others
-  </a>
 </li>
 </ul>
 </nav>
@@ -695,23 +657,28 @@
 <a class="md-content__button md-icon" href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/paint/WebUi/Advanced.en.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1>Advanced Guide</h1>
-<h2 id="magic-advanced-guide">Magic Advanced Guide</h2>
-<p>Much of the content is taken from the repo s <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#attentionemphasis">Wiki</a></p>
-<p>The basic principle is vaguely stated: the more similar samples within a well-defined range of data, the more accurate it is.</p>
+<h1 id="img2">Img2*</h1>
+<p>This page describes the basic operation of Img2Img. If you are confused about the parameters, please see the WebUi parameters on the Model Debugging page.</p>
+<p>If you are looking for some application examples, you should see the "Practical Guide" page.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Please make sure you read the first section above for the specific Img2Img and inpaint introductory operations.</p>
+<p>Please read the previous section, Model Advance 1, for specific Img2Img and inpaint introduction operations.</p>
 </div>
+<h2 id="basic-parameters">Basic parameters</h2>
+<p><code>cfg scale</code> corresponds to the degree of prompt, the higher the value the more literal the prompt will be, the lower it will give the model more room to play, but the actual model performance in terms of CFG scale low (6-8) is low saturation, on the cluttered side, high (18-22) is high saturation, more intense style.</p>
+<blockquote>
+<p>High CFG will cause color distortion, CFG should be between 5-15</p>
+</blockquote>
+<p><code>denoise strength</code> img2img proprietary parameter, from 0 to 1 value, the higher the value the lower the AI reference to the original image (while increasing the number of iterations), personally I like low CFG high denoise heavy drawing, high CFG low denoise change the details.</p>
+<p>If you have doubts about other parameters (e.g. <code>seed</code>), please check the WebUi parameters on the model debugging page.</p>
 <h2 id="img2txt">Img2Txt</h2>
-<p>Under the Generate button there is an <code>Interrogate CLIP</code> which when clicked downloads the <code>CLIP</code> which is used to generate a Tag for the image in the current image box and populate it with prompt words.</p>
-<p>The CLIP interrogator has two parts: one is the BLIP model, which creates a text description from the image. The other is the CLIP model, which picks out a few lines from the list that are relevant to the image</p>
+<p>Under the Generate button there is an <code>Interrogate CLIP</code> which when clicked will download the <code>CLIP</code> for reasoning about the Prompt of the image in the current image box and filling it to the prompt.</p>
+<p>The CLIP interrogator has two parts: one is the BLIP model, which takes on the function of decoding and reasoning about the text description from the image. The other is the CLIP model, which transforms the text into vectors (during the inference of the model).</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>This file is <a href="https://storage.googleapis.com/sfr-vision-language-research/BLIP/models/model_base_ caption_capfilt_large.pth">model_base_caption_capfilt_large.pth</a></p>
-<p>The size is 855MB</p>
+<p>The model used by Img2Txt is size <code>855MB</code></p>
 </div>
-<h2 id="img2img-introduction">Img2Img Introduction</h2>
+<h2 id="img2img">Img2Img</h2>
 <blockquote>
 <p>application see practicalguide</p>
 </blockquote>
@@ -726,18 +693,18 @@
 <p><em>Just resize</em> - simply resizes the source image to the target resolution, resulting in an incorrect aspect ratio</p>
 <p><em>Crop and resize</em> - resize source image preserving aspect ratio so that entirety of target resolution is occupied by it, and crop parts that stick out</p>
 <p><em>Resize and fill</em> - resize source image preserving aspect ratio so that it entirely fits target resolution, and fill empty space by rows/columns from the source image</p>
-<h2 id="img2img-3d-rendering-2d">Img2Img 3D rendering 2D</h2>
+<h3 id="img2img-3d-rendering-2d">Img2Img 3D rendering 2D</h3>
 <p>It is easier to adjust the skeleton of a 3D model than to find a sample drawing.</p>
 <p>Pose can be combined with <strong>3D modelling</strong>, you can use MMD related software.</p>
 <p>If it is a real life image, you need to increase the <code>CFG Scale</code> similarity and generate it together with prompts. The higher the noise reduction <code>denoising</code>, the lower the relevance.</p>
 <p>We recommend using <a href="https://www.daz3d.com/get_studio">DAZ</a> or <a href="https://www.blender.org/">blender</a> or Unity. In tests on 3D models, <strong>colour mainly affects how the AI paints</strong>, so your model needs to be textured.</p>
 <p>If you use blender, you can use <a href="https://youtu.be/MClbPwu-75o">this video</a> shared by <a href="https://www.artstation.com/marketplace/p/VOAyv/stable-diffusion-3d">model dolls</a> -posable-manekin-doll?utm_source=artstation&amp;utm_medium=referral&amp;utm_campaign=homepage&amp;utm_term=marketplace)</p>
-<h2 id="img2img-outpainting">Img2Img <strong>Outpainting</strong></h2>
+<h3 id="img2img-outpainting">Img2Img <strong>Outpainting</strong></h3>
 <p>Outpainting extends the original image and repairs the blank space created.
 You can find this function in the img2img tab at the bottom, under Script -&gt; Poor man's outpainting.</p>
 <div class="highlight"><pre><span></span><code>Outpainting, unlike normal image generation, seems to profit very much from large step count. A recipe for a good outpainting is a good prompt that matches the picture, sliders for denoising and CFG scale set to max, and step count of 50 to 100 with Euler ancestral or DPM2 ancestral samplers.
 </code></pre></div>
-<h2 id="img2img-inpainting">Img2Img <strong>Inpainting</strong></h2>
+<h3 id="img2img-inpainting">Img2Img <strong>Inpainting</strong></h3>
 <p>In the Inpainting tab, draw a mask over a part of the image that will be repainted.</p>
 <p>The <code>Masked content</code> setting determines the content placed into the masked area prior to the repair. Generally select <code>original</code> to maintain potential spatial consistency, or <code>fill</code> if you don't want the repaired content to inherit the original colour distribution, to use most of the image's base colour, and <code>latent noise</code> to get a random colour dot pattern (to make the the generated content out of association).</p>
 <p>AS:</p>
@@ -778,20 +745,20 @@ You can find this function in the img2img tab at the bottom, under Script -&gt; 
 <p>If <code>inpaint at full resolution</code> appears as a black block, there may be insufficient RAM, try unload vae.</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting.png"><img alt="result" src="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting.png"/></a></p>
 <!--
-[开源调研-AI绘画全参数讲解-002img2img图像到图像](https://www.bilibili.com/video/BV1HK411Q7uk/?zw)
+[开源调研-AI 绘画全参数讲解-002img2img 图像到图像](https://www.bilibili.com/video/BV1HK411Q7uk/?zw)
 
 <iframe src="//player.bilibili.com/player.html?aid=474043788&bvid=BV1HK411Q7uk&cid=860273094&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 -->
 <p>In this way, we can change the style of the character's clothing or any other detail.</p>
 <!--
-[如何教会Ai画手](https://www.bilibili.com/video/av559044202/?zw)
+[如何教会 Ai 画手](https://www.bilibili.com/video/av559044202/?zw)
 
 <iframe src="//player.bilibili.com/player.html?aid=559044202&cid=859852841&page=1&danmaku=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 -->
-<h2 id="img2img-loopback">Img2Img Loopback</h2>
+<h3 id="img2img-loopback">Img2Img Loopback</h3>
 <p>Selecting the loopback script in img2img allows you to automatically feed output image as input for the next batch. Equivalent to saving output image, and replacing the input image with it. Batch count setting controls how many iterations of this you get.</p>
 <p>Usually, when doing this, you would choose one of many images for the next iteration yourself, so the usefulness of this feature may be questionable, but I've managed to get some very nice outputs with it that I wasn't able to get otherwise.</p>
-<h2 id="img2img-with-low-vram">Img2Img with low vram</h2>
+<h3 id="img2img-with-low-vram">Img2Img with low vram</h3>
 <p>As mentioned earlier, the Img2Img image quality enhancement script can be used if you encounter confusing patterns or need to produce high resolution images with low vram.</p>
 <p>In fact I <strong>highly recommend</strong> that you use the Extras feature to replay low resolution images, it works well and is a great experience!</p>
 <h3 id="scripts">Scripts</h3>
@@ -825,49 +792,17 @@ You can find this function in the img2img tab at the bottom, under Script -&gt; 
 <p>The Width and Height here are the sizes of the img2img images when overscaled, if they are not equal they will cause overlap problems</p>
 <p>The SD Upscale option is in the Script section of Img2Img and is mainly used to increase the resolution.</p>
 <p><a href="https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99#%E9%AB%98%E5%88%86%E8%BE%A8%E7%8E%87%E4%B8%8B%E5%87%BA%E6%80%AA%E5%9B%BE">FROM Here</a></p>
-<h3 id="resolution-boost-with-extras">Resolution boost with extras</h3>
-<p>The <code>webui</code> extras page has a self-contained extras function, which can be used with the <code>ESRGAN_4x</code> model</p>
-<p>Of course <code>realesrgan</code> or <code>realcugan</code> will also work.</p>
-<div class="admonition tip">
-<p class="admonition-title">Related models</p>
-<p>Download the files to the <code>SDwebUI folder \models</code></p>
-<p><a href="https://heibox.uni-heidelberg.de/f/578df07c8fc04ffbadf3/?dl=1">LDSR</a>, file size 1.9GB</p>
-<p><a href="https://github.com/cszn/KAIR/releases/download/v1.0/BSRGAN.pth">BSGRAN 4x</a> with a file size of 63.9M</p>
-<p><a href="https://github.com/cszn/KAIR/releases/download/v1.0/ESRGAN.pth">ESRGAN_4x</a> with a file size of 63.8MB</p>
-<p><a href='https://github.com/cszn/KAIR/releases/download/v1.0/scunet_color_real_gan.pth" to D:\stable-diffusio\models\ScuNET ScuNET.pth'>ScuNET GAN/PSNR</a>, with a file size of 68.6MB</p>
-<p><a href="https://github.com/JingyunLiang/SwinIR/releases/download/v0.0/003_realSR_BSRGAN_DFOWMFC_s64w8_SwinIR-L_x4_GAN.pth">SwinIR 4x</a>, file size is 136MB</p>
-</div>
-<p>**Highres Fix/ What Upscaler should I use for overscoring?</p>
-<p>The <code>SD Upscaler</code> improves resolution while paying attention to detail.</p>
-<p>There was a time when <code>LSDR</code> was considered to be the best. Some people like swinir, some like <code>esrgan4x</code>, <code>ymmv</code>, <code>ESRGAN_4x</code> is recommended</p>
-<p>If you want to generate anime characters, <a href="https://github.com/bilibili/ailab/tree/main/Real-CUGAN">realcugan</a> is recommended</p>
-<h2 id="image-denoising">Image denoising</h2>
-<p>We recommend using <a href="https://github.com/xinntao/Real-ESRGAN">Real-ESRGAN</a> for noise reduction.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/xinntao/Real-ESRGAN/master/assets/teaser.jpg"><img alt="Effect" src="https://raw.githubusercontent.com/xinntao/Real-ESRGAN/master/assets/teaser.jpg"/></a></p>
-<blockquote>
-<p>Effects</p>
-</blockquote>
-<h2 id="ai-s-dlc-stlye-models">AI s DLC stlye models</h2>
-<p>See the <code>train</code></p>
-<h2 id="quick-prompt-search">Quick prompt search</h2>
-<p><strong><a href="https://docs.google.com/spreadsheets/d/14Gg1kIGWdZGXyCC8AgYVT0lqI6IivLzZOdIT3QMWwVI/edit">手抄本法术书</a></strong></p>
-<p><strong><a href="https://gelbooru.com/index.php?page=tags&amp;s=list">Danbooru</a></strong></p>
-<p><strong><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml#">参数法术全典</a></strong></p>
-<p><strong><a href="https://docs.google.com/spreadsheets/d/1SRqJ7F_6yHVSOeCi3U82aA448TqEGrUlRrLLZ51abLg/htmlview#">Ai Artists</a></strong></p>
-<h2 id="others">Others</h2>
-<p><a href="https://github.com/Maks-s/sd-akashic">https://github.com/Maks-s/sd-akashic</a></p>
-<p><a href="https://github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference">https://github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference</a></p>
 <div class="footnote">
 <hr/>
 <ol>
 <li id="fn:4">
-<p><a href="https://pan.baidu.com/s/1VWr7OLvAbu1KIoTPEs2wwQ?pwd=y8lk">Paper朱整理优化方法</a> <a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 1 in the text">↩</a></p>
+<p><a href="https://pan.baidu.com/s/1VWr7OLvAbu1KIoTPEs2wwQ?pwd=y8lk">Paper 朱整理优化方法</a> <a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 1 in the text">↩</a></p>
 </li>
 <li id="fn:5">
 <p><a href="https://m.weibo.cn/status/4823585938735546">参数图</a> <a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 2 in the text">↩</a></p>
 </li>
 <li id="fn:6">
-<p><a href="https://rentry.org/sdupdates#hall-of-fame">SD金矿</a> <a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 3 in the text">↩</a></p>
+<p><a href="https://rentry.org/sdupdates#hall-of-fame">SD 金矿</a> <a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 3 in the text">↩</a></p>
 </li>
 <li id="fn:7">
 <p><a href="https://www.bilibili.com/video/BV1ae4y1S7v9/">风格模型训练</a> <a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 4 in the text">↩</a></p>
@@ -879,10 +814,10 @@ You can find this function in the img2img tab at the bottom, under Script -&gt; 
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/1733">交替单词</a> <a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 6 in the text">↩</a></p>
 </li>
 <li id="fn:10">
-<p><a href="https://www.bilibili.com/video/BV1xt4y1F7Y2/">角色与画风tag训练十问</a> <a class="footnote-backref" href="#fnref:10" title="Jump back to footnote 7 in the text">↩</a></p>
+<p><a href="https://www.bilibili.com/video/BV1xt4y1F7Y2/">角色与画风 tag 训练十问</a> <a class="footnote-backref" href="#fnref:10" title="Jump back to footnote 7 in the text">↩</a></p>
 </li>
 <li id="fn:11">
-<p><a href="https://www.bilibili.com/read/cv19102552">WebUI即将引入重磅更新，大幅提升图像品质</a> <a class="footnote-backref" href="#fnref:11" title="Jump back to footnote 8 in the text">↩</a></p>
+<p><a href="https://www.bilibili.com/read/cv19102552">WebUI 即将引入重磅更新，大幅提升图像品质</a> <a class="footnote-backref" href="#fnref:11" title="Jump back to footnote 8 in the text">↩</a></p>
 </li>
 </ol>
 </div>
@@ -891,7 +826,7 @@ You can find this function in the img2img tab at the bottom, under Script -&gt; 
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 19, 2022 11:34:44</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 26, 2022 18:41:01</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 07:44:44</span>
@@ -907,7 +842,7 @@ You can find this function in the img2img tab at the bottom, under Script -&gt; 
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: Base guide" class="md-footer__link md-footer__link--prev" href="../base/" rel="prev">
+<a aria-label="Previous: Txt2Guide" class="md-footer__link md-footer__link--prev" href="../base/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -916,7 +851,7 @@ You can find this function in the img2img tab at the bottom, under Script -&gt; 
 <span class="md-footer__direction">
                 Previous
               </span>
-              Base guide
+              Txt2Guide
             </div>
 </div>
 </a>

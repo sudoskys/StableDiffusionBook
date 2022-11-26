@@ -10,7 +10,7 @@
 <link href="https://stable-diffusion-book.vercel.app/en/paint/WebUi/base/" rel="canonical"/>
 <link href="../../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
-<title>Base guide - AiDraw</title>
+<title>Txt2Guide - AiDraw</title>
 <link href="../../../../assets/stylesheets/main.472b142f.min.css" rel="stylesheet"/>
 <link href="../../../../assets/stylesheets/palette.08040f6c.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -18,7 +18,7 @@
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
 <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <meta content="website" property="og:type"/>
-<meta content="Base guide - AiDraw" property="og:title"/>
+<meta content="Txt2Guide - AiDraw" property="og:title"/>
 <meta content="一个介绍 Ai 绘画的 WIKI/A WIKI about Ai painting" property="og:description"/>
 <meta content="https://stable-diffusion-book.vercel.app/assets/images/social/paint/WebUi/base.en.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
@@ -26,7 +26,7 @@
 <meta content="630" property="og:image:height"/>
 <meta content="https://stable-diffusion-book.vercel.app/en/paint/WebUi/base/" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Base guide - AiDraw" name="twitter:title"/>
+<meta content="Txt2Guide - AiDraw" name="twitter:title"/>
 <meta content="一个介绍 Ai 绘画的 WIKI/A WIKI about Ai painting" name="twitter:description"/>
 <meta content="https://stable-diffusion-book.vercel.app/assets/images/social/paint/WebUi/base.en.png" name="twitter:image"/>
 <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
@@ -47,7 +47,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#webui">
+<a class="md-skip" href="#txt2img">
           Skip to content
         </a>
 </div>
@@ -71,7 +71,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Base guide
+              Txt2Guide
             
           </span>
 </div>
@@ -369,18 +369,38 @@
 </li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../">Paint guide</a>
-<label for="__nav_5">
-<span class="md-nav__icon md-icon"></span>
+<label class="md-nav__link" for="__nav_5">
+          Paint guide
+          <span class="md-nav__icon md-icon"></span>
 </label>
-</div>
 <nav aria-label="Paint guide" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_5">
 <span class="md-nav__icon md-icon"></span>
           Paint guide
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_1" id="__nav_5_1" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../">General</a>
+<label for="__nav_5_1">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="General" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_1">
+<span class="md-nav__icon md-icon"></span>
+          General
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../PromptsEngineering/">
+        Prompts Engineer
+      </a>
+</li>
+</ul>
+</nav>
+</li>
 <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" id="__nav_5_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
@@ -398,11 +418,11 @@
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-          Base guide
+          Txt2Guide
           <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        Base guide
+        Txt2Guide
       </a>
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
@@ -411,42 +431,33 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#speed-determination">
-    Speed determination
+<a class="md-nav__link" href="#basic-parameters">
+    Basic parameters
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#introduction-to-the-prompting-method">
-    Introduction to the prompting method
+<a class="md-nav__link" href="#negative-cue-words">
+    Negative cue words
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#how-to-write-a-prompt-prompt">
-    How to write a prompt (prompt)
-  </a>
-<nav aria-label="How to write a prompt (prompt)" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#what-to-use">
-    What to use
+<a class="md-nav__link" href="#cfg-scaledenoising-strength-fitnoise-reduction">
+    CFG Scale/Denoising strength fit/noise reduction
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#how-to-write">
-    How to write
+<a class="md-nav__link" href="#image-prompt">
+    Image Prompt
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#length">
-    Length
+<a class="md-nav__link" href="#reverse-tokens">
+    Reverse Tokens
   </a>
 </li>
-</ul>
-</nav>
-</li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#prompt-sort">
-    Prompt Sort
+<a class="md-nav__link" href="#prompt-search-engine">
+    Prompt Search Engine
   </a>
 </li>
 <li class="md-nav__item">
@@ -455,85 +466,49 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#prompt-impact-factor-6">
-    (prompt) impact factor [^6]
+<a class="md-nav__link" href="#fix-large-size-screen-crash">
+    Fix large size screen crash
   </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#negative-prompt">
-    Negative prompt
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#cfg-scaledenoising-strength-fittingnoise-reduction">
-    CFG Scale/Denoising strength Fitting/noise reduction
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#prompt-editing">
-    Prompt editing
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#prompt-from-images">
-    Prompt from images
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#inverse-prompt">
-    Inverse prompt
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#search-engines">
-    Search Engines
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#prompt-matrix">
-    Prompt matrix
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#highres-fix">
-    Highres. fix
-  </a>
-<nav aria-label="Highres. fix" class="md-nav">
+<nav aria-label="Fix large size screen crash" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#about-size">
-    About size
+<a class="md-nav__link" href="#note-size">
+    Note size
   </a>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#prompt-conflict-hint-word">
-    Prompt conflict (hint word)
+<a class="md-nav__link" href="#step-iteration-steps">
+    Step iteration steps
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#step">
-    Step
+<a class="md-nav__link" href="#samplers-samplers">
+    Samplers Samplers
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#samplers">
-    Samplers
+<a class="md-nav__link" href="#seed-debugging">
+    Seed debugging
+  </a>
+<nav aria-label="Seed debugging" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#merging-seeds">
+    Merging Seeds
   </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#seeds">
-    Seeds
-  </a>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../Advanced/">
-        Advanced Guide
+        Img2Guide
       </a>
 </li>
 <li class="md-nav__item">
@@ -638,42 +613,33 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#speed-determination">
-    Speed determination
+<a class="md-nav__link" href="#basic-parameters">
+    Basic parameters
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#introduction-to-the-prompting-method">
-    Introduction to the prompting method
+<a class="md-nav__link" href="#negative-cue-words">
+    Negative cue words
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#how-to-write-a-prompt-prompt">
-    How to write a prompt (prompt)
-  </a>
-<nav aria-label="How to write a prompt (prompt)" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#what-to-use">
-    What to use
+<a class="md-nav__link" href="#cfg-scaledenoising-strength-fitnoise-reduction">
+    CFG Scale/Denoising strength fit/noise reduction
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#how-to-write">
-    How to write
+<a class="md-nav__link" href="#image-prompt">
+    Image Prompt
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#length">
-    Length
+<a class="md-nav__link" href="#reverse-tokens">
+    Reverse Tokens
   </a>
 </li>
-</ul>
-</nav>
-</li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#prompt-sort">
-    Prompt Sort
+<a class="md-nav__link" href="#prompt-search-engine">
+    Prompt Search Engine
   </a>
 </li>
 <li class="md-nav__item">
@@ -682,78 +648,42 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#prompt-impact-factor-6">
-    (prompt) impact factor [^6]
+<a class="md-nav__link" href="#fix-large-size-screen-crash">
+    Fix large size screen crash
   </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#negative-prompt">
-    Negative prompt
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#cfg-scaledenoising-strength-fittingnoise-reduction">
-    CFG Scale/Denoising strength Fitting/noise reduction
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#prompt-editing">
-    Prompt editing
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#prompt-from-images">
-    Prompt from images
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#inverse-prompt">
-    Inverse prompt
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#search-engines">
-    Search Engines
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#prompt-matrix">
-    Prompt matrix
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#highres-fix">
-    Highres. fix
-  </a>
-<nav aria-label="Highres. fix" class="md-nav">
+<nav aria-label="Fix large size screen crash" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#about-size">
-    About size
+<a class="md-nav__link" href="#note-size">
+    Note size
   </a>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#prompt-conflict-hint-word">
-    Prompt conflict (hint word)
+<a class="md-nav__link" href="#step-iteration-steps">
+    Step iteration steps
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#step">
-    Step
+<a class="md-nav__link" href="#samplers-samplers">
+    Samplers Samplers
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#samplers">
-    Samplers
+<a class="md-nav__link" href="#seed-debugging">
+    Seed debugging
+  </a>
+<nav aria-label="Seed debugging" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#merging-seeds">
+    Merging Seeds
   </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#seeds">
-    Seeds
-  </a>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -765,195 +695,38 @@
 <a class="md-content__button md-icon" href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/paint/WebUi/base.en.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="webui">WebUi</h1>
-<p>Please find out about the parameters of the WebUi(SD) web application beforehand.</p>
-<h2 id="speed-determination">Speed determination</h2>
-<p>The it/s rate of the terminal is the approximate rate and represents the number of seconds per iteration, not the number of iterations per second. Therefore, if the number is reduced, then it is accelerated.</p>
-<h2 id="introduction-to-the-prompting-method">Introduction to the prompting method</h2>
-<p>For NAI users, please read the <a href="https://docs.novelai.net/image/promptmixing.html">official website Docs</a></p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>The two-sided tip method <strong>not common</strong>
-Use <code>()</code> for WebUi enhancements and <code>{}</code> for NAI enhancements, note that NAI does not support assigning weights to individual words</p>
-<p>If you want to convert weights easily, you can use the <a href="https://t.me/M2NM2NBot">conversion service</a></p>
-</div>
-<p><strong>Representation method</strong></p>
-<p>Separation, the English half-word <code>,</code> is used as a separator, the presence of one or several spaces before and after the English comma does not affect the actual use.</p>
-<p>Blending, WebUi uses <code>|</code> to separate multiple keywords to blend multiple elements, literally blending, and can be used in more than one way.</p>
-<p>Augmentation, using <code>(hint:weight)</code> in WebUi weight augmentation, with augmentation ranging from <code>0.1 to :100</code>, allowing decimals. Whereas NAI uses <code>{}</code></p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p><code>a ((((farm))), daytime</code> syntax may eat up the comma</p>
-</div>
-<p>Prompt editing, using <code>[some1:some2:num]</code></p>
-<p><code>[fantasy:cyberpunk:16]</code> for replacing <code>fantasy</code> with the <code>cyberpunk</code> tag from step 16 onwards</p>
-<p><code>[to:when]</code> adds <code>to</code> to the prompt after a fixed number of steps ( when)</p>
-<p><code>[from::when]</code> Remove <code>from</code> from the prompt after a fixed number of steps ( when)</p>
-<p>Escape, WebUi for bracketed hints such as <code>a (word)</code> use the <code>\</code> character to escape to <code>a \(word\)</code>, this applies to bracketed Tags to prevent unwanted enhancements.</p>
-<p>Lower weight, use <code>[]</code> alone but not with numbers or <code>(word:0.952)</code>. NAI can only use <code>[]</code></p>
-<p>alternate prompt [^7], mixer. This allows you to create hybrids of animals, people or styles, switching one item per step (one step at a time), rendering in rounds, <code>[alison brie|emma stone|elizabeth olsen|scarlett johansson|anne hathaway|emma roberts], still film</code> This is the WebUi syntax, which in NAI represents the average weight mix (first half and second half).</p>
-<div class="admonition tip">
-<p class="admonition-title">NAI</p>
-<p>NAI does not allow individual weights to be specified, but supports a mixed weight syntax of <code>cat:1|happy:-0.2|cute:-0:3</code>.</p>
-<p>Because NAI uses an implementation of WebUi prior to 29 September 2022, the weight enhancement syntax is the old <code>{}</code>, which the new WebUi changes to <code>()</code>.</p>
-<p><strong>commutation relations</strong>
-NAI's [word] = WebUi(word:0.952)(0.952 = 1/1.05)</p>
-<p>NAI's {word} = WeUi's (word:1.05)</p>
-<p>NAI brackets have a weight of 1.05/pc, WebUi rounds have a weight of 1.1/pc</p>
-</div>
-<h2 id="how-to-write-a-prompt-prompt">How to write a prompt (prompt)</h2>
-<h3 id="what-to-use">What to use</h3>
-<ul>
-<li>Words</li>
-</ul>
-<p>Ordinary words</p>
-<ul>
-<li>Natural language</li>
-</ul>
-<p>WebUi can also use natural language directly, even some Japanese.</p>
-<p>But don't use natural language if you want to be accurate.</p>
-<ul>
-<li>emoji</li>
-</ul>
-<p>Including the Western face characters <code>(^_^)</code> and emoji 🌻 can be used, with emoji being particularly accurate in expression.</p>
-<h3 id="how-to-write">How to write</h3>
-<p>Combine similar prompt phrases you want and put these in order from most important to least important.</p>
-<p><code>(subject)(style), (action/scene), (artist), (filters)</code></p>
-<p><code>(subject)</code> serves as the subject of the screen, anchoring the content of the screen, which is an essential part of any prompt. <code>(style)</code> is the style of the screen, optional.</p>
-<p><code>(action/scene)</code> As the action/scene, describes what the subject is doing where it is.</p>
-<p><code>(artist)</code> is the optional artist name or the name of the production company.</p>
-<p><code>(filers)</code> are details that add to it. Artists, studios, photographic terms, character names, styles, effects, etc. can be used.</p>
-<ul>
-<li>content[^6]</li>
-</ul>
-<p>The content can be</p>
-<div class="highlight"><pre><span></span><code>The quality of the image
-The subject of the pictures
-Their appearance
-Their emotions
-Their clothes
-Their poses
-The background of the picture
-</code></pre></div>
-<p><a href="https://docs.google.com/document/d/ 1XUT2G9LmkZataHFzmuOtRXnuWBfhvXDAo8DkS--8tec/edit#">Guide-to-Writing-Prompts-for-Text-to-image-Ai:A-Guide-to-Writing-Prompts-for-Text-to-image-AI</a></p>
-<h3 id="length">Length</h3>
-<p><strong>Writing length</strong></p>
-<ul>
-<li>Hint don't be too long, over 100 is a risk of failure</li>
-</ul>
-<p>You can write prompts of 75 words or more. Originally, due to GPT-3 model limitations, prompts were not infinite; the positive token was between 75 and 80, and content after 75 characters was truncated. But WebUi does grouping, so you can write a lot of words. It is a good habit not to stack prompts, but if you do have a lot of content to write, you can increase the step appropriately</p>
-<p>When the prompt exceeds 75 <code>tokens</code> (e.g. 150 <code>tokens</code>), WebUi groups the prompt words, submitting more than 75 <code>tokens</code>. The tokens will only have the context of the rest of the content in the same set. This means that you may have <code>bule hair</code> at the boundary between the first and second group, token <code>blue</code> will be in the first group and <code>hair</code> will be in the second group. This led to inaccurate results as the two words were separated.</p>
-<p>The new version adds an option <code>Increase coherency by padding from the last comma within n tokens when using more than 75 tokens</code></p>
-<p>This setting lets the program try to alleviate this by finding if there is a last comma in the last N tokens, and if so, moving everything that passes through that comma together to the next collection.</p>
-<div class="admonition tip">
-<p class="admonition-title">For example</p>
-<p>There are entries for the words <code>... ,comma,blue hair,PADDING,...</code></p>
-<p>The 75th word is <code>blue</code></p>
-<p>Before using this option</p>
-<p>Set 1:{[74]=Comma, [75]=blue}, Set 2:{[76]=hair, [77]=PADDING}</p>
-<p>After using this option</p>
-<p>Set 1:{[074]=Comma, [75]=PADDING}, Set 2:{[76]=blue, [77]=hair}</p>
-<p>If your hint is less than or equal to 75 tokens, no grouping will occur.</p>
-</div>
-<p><strong>Writing format</strong></p>
-<p>To facilitate writing changes, the recommended format for multi-line writing is as follows</p>
-<div class="highlight"><pre><span></span><code>masterpiece,
-1girl,  hatsune miku,
-look at viewer,turning back,
-blow wind, cyan hair, two side up, cyan eyes,eardrop,dress,
-caustics, masterpiece, high resolution,
-</code></pre></div>
-<p>The first line specifies the style type, the second the character, the third the action, the fourth the scene and costume, and the fifth the other parameters.</p>
-<p>The above order makes sense, but you can also adjust the order of the cues to produce different results. You can do this manually, or <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/1607">use the X/Y diagram to automatically generate the various orders</a></p>
-<p>The difference between an underline and no underline is not significant and will be cleaned up by the program as dust.</p>
-<p><strong>Stylisation</strong></p>
-<p>Nai comes out with a boring style by default. You can create images with special effects or a specified drawing style by training a style model, specifying style keywords, etc.</p>
-<p><a href="https://www.yuque.com/longyuye/lmgcwy">人偶教室的测试记录</a></p>
-<p><a href="https://www.bilibili.com/video/BV1TP411N71t/">风格化: 32种</a></p>
-<p>A more comprehensive guide is on the start page.</p>
-<h2 id="prompt-sort">Prompt Sort</h2>
-<p>The order in which the prompts are placed is the priority.(MAYBE)</p>
-<p>The way webui breaks the tag limit of 75 is by dividing them into groups.</p>
-<p>For the purpose of improving readability, it is recommended that the main body be placed first, followed by the words describing the costume, with the picture quality enhancement words interspersed between these descriptors. Generally, words that change the composition, such as action and nsfw words, are placed later or manually weighted down in order to improve the finish rate.</p>
-<p>The above ordering is the same for each group of tags, so if the later tags are over 75, you should split the earlier ones.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://jalammar.github.io/images/stable-diffusion/stable-diffusion-image-generation.png"><img alt="图像生成的描述" src="https://jalammar.github.io/images/stable-diffusion/stable-diffusion-image-generation.png"/></a></p>
+<h1 id="txt2img">Txt2Img</h1>
+<p>This page is a basic guide to Txt2Img for WebUi, if you want to learn how to write prompts, please read <code>Prompt Editing</code> related content.</p>
+<p>If you are looking for some application examples, you should see the "Practical Guide" page.</p>
+<h2 id="basic-parameters">Basic parameters</h2>
+<p><code>cfg scale</code> corresponds to the degree of prompt, the higher the value the more literal the prompt will be, the lower it will give the model more room to play, but the actual model performance in terms of CFG scale low (6-8) is low saturation, biased line drawing, biased clutter, high (18-22) is high saturation, biased CG style.</p>
 <blockquote>
-<p>thanks https://jalammar.github.io/illustrated-stable-diffusion/</p>
+<p>High CFG will cause color distortion, CFG should be between 5-15</p>
 </blockquote>
-<h2 id="batch-countbatch-size">Batch count&amp;batch size</h2>
-<p><code>batch count</code> specifies how many batches of images to train.</p>
-<p><code>batchsize</code> specifies how many to train at a time.</p>
-<p>In simpler terms, the batch size will determine the number of samples we train at a time. The batch_size will affect how well and how fast the model can be optimised.</p>
-<p>Note also that <code>batch size</code> is designed to find the best balance between <code>memory efficiency</code> and <code>memory capacity</code>, as GPU resources are not fully utilised in a single 512x512 image generation. Larger images get less benefit from it.</p>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>Iteration is the action of repetitive feedback, where we want to train the neural network many times through iterations to reach the desired goal or result.
-The result of each iteration is used as the initial value for the next iteration.
-One iteration = one forward pass + one backward pass</p>
-</div>
-<h2 id="prompt-impact-factor-6">(prompt) impact factor [^6]</h2>
-<p>Using () in the prompt increases the model's attention to enclosed words, and [] decreases it. You can combine multiple modifiers</p>
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#attentionemphasis">Wiki</a></p>
-<p>Cheat sheet:</p>
-<ul>
-<li><code>a (word)</code> - increase attention to <code>word</code> by a factor of 1.1</li>
-<li><code>a ((word))</code> - increase attention to <code>word</code> by a factor of 1.21 (= 1.1 * 1.1)</li>
-<li><code>a [word]</code> - decrease attention to <code>word</code> by a factor of 1.1</li>
-<li><code>a (word:1.5)</code> - increase attention to <code>word</code> by a factor of 1.5</li>
-<li><code>a (word:0.25)</code> - decrease attention to <code>word</code> by a factor of 4 (= 1 / 0.25)</li>
-<li><code>a \(word\)</code> - use literal <code>()</code> characters in prompt</li>
-</ul>
-<p>With <code>()</code>, a weight can be specified like this: <code>(text:1.4)</code>. If the weight is not specified, it is assumed to be 1.1. Specifying weight only works with <code>()</code> not with <code>[]</code>.</p>
-<p>If you want to use any of the literal <code>()[]</code> characters in the prompt, use the backslash to escape them: <code>anime_\(character\)</code>.</p>
-<p>On 2022-09-29, a new implementation was added that supports escape
-characters and numerical weights. A downside of the new implementation
-is that the old one was not perfect and sometimes ate characters: "a
-(((farm))), daytime", for example, would become "a farm daytime" without
-the comma. This behavior is not shared by the new implementation which
-preserves all text correctly, and this means that your saved seeds may
-produce different pictures. For now, there is an option in settings to
-use the old implementation.</p>
-<p>NAI uses my implementation from before 2022-09-29, except they have 1.05 as the multiplier and use <code>{}</code> instead of <code>()</code>. So the conversion applies:</p>
-<ul>
-<li>their <code>{word}</code> = our <code>(word:1.05)</code></li>
-<li>their <code>{{word}}</code> = our <code>(word:1.1025)</code></li>
-<li>their <code>[word]</code> = our <code>(word:0.952)</code> (0.952 = 1/1.05)</li>
-<li>their <code>[[word]]</code> = our <code>(word:0.907)</code> (0.907 = 1/1.05/1.05)</li>
-</ul>
-<details class="tip">
-<summary>How It Work</summary>
-<p>Each word has an associated vector of 768 values that 'points' in the direction of the concept (in 768 dimensions).</p>
-<p>If you scale this vector, the concept will become stronger or weaker.</p>
-<p>From <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2905">Here</a></p>
-</details>
-<h2 id="negative-prompt">Negative prompt</h2>
-<p>Negative prompt is a way to use the Stable Diffusion in a way that
-allows the user to specify what he doesn't want to see, without any
-extra load or requirements for the model. In
-addition to just being able to specify what you don't want to see, which
-sometimes is possible via usual prompt, and sometimes isn't, this
-allows you to do that without using any of your allowance of 75 tokens
-the prompt consists of.</p>
-<p>The way negative prompt works is by using user-specified text instead of empty string for <code>unconditional_conditioning</code> when doing sampling.</p>
-<p>Here's the (simplified) code from <a href="https://github.com/CompVis/stable-diffusion/blob/main/scripts/txt2img.py">txt2img.py</a>:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># prompts = ["a castle in a forest"]</span>
+<p><code>denoise strength</code> img2img proprietary parameter, from 0 to 1, the higher the value the lower the AI reference to the original image (while increasing the number of iterations), personally I like low CFG high denoise heavy drawing, high CFG low denoise change the details.</p>
+<p>If you have doubts about other parameters (e.g. <code>seed</code>), please check the WebUi parameters on the model debugging page.</p>
+<h2 id="negative-cue-words">Negative cue words</h2>
+<p>The WebUi(SD) web application will <strong>reject content related to negative prompt words</strong> at generation time.</p>
+<p>Negative cues are a way to use stable diffusion, allowing the user to specify what he does not want to see, without any additional burden or requirement on the model. The way it works is to use the user-specified text instead of the empty string as <code>unconditional_conditioning</code> when doing the sampling.</p>
+<p>Here is the (simplified) code from <a href="https://github.com/CompVis/stable-diffusion/blob/main/scripts/txt2img.py">txt2img.py</a>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">prompts</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"a castle in a forest"</span><span class="p">]</span>
 <span class="c1"># batch_size = 1</span>
 
 <span class="n">c</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_learned_conditioning</span><span class="p">(</span><span class="n">prompts</span><span class="p">)</span>
 <span class="n">uc</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_learned_conditioning</span><span class="p">(</span><span class="n">batch_size</span> <span class="o">*</span> <span class="p">[</span><span class="s2">""</span><span class="p">])</span>
 
-<span class="n">samples_ddim</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">sampler</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">conditioning</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">unconditional_conditioning</span><span class="o">=</span><span class="n">uc</span><span class="p">,</span> <span class="p">[</span><span class="o">...</span><span class="p">])</span>
+<span class="n">samples_ddim</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">sampler</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">conditioning</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">unconditional_conditioning</span><span class="o">=</span><span class="n">uc</span><span class="p">,</span> <span class="p">[</span><span class="o">...</span><span class="p">])</span> <span class="p">)</span>
 </code></pre></div>
-<p>This launches the sampler that repeatedly:</p>
+<p>This starts the sampler and iterates the following process.
+<div class="highlight"><pre><span></span><code>    Denoise the image to make it look more like your cue (condition).
+    Denoise the image to make it look more like an empty cue (unconditional condition).
+    Observe the difference between the two and use it to produce a set of changes to the noisy picture (different samplers handle this part differently).
+</code></pre></div>
+The sampler will then look at the difference between the noisy image that looks like your cue (a castle) and the noisy image that looks like your negative cue (grainy, foggy) and try to move the final result towards the former and away from the latter.</p>
 <ul>
-<li>de-noises the picture guiding it to look more like your prompt (conditioning)</li>
-<li>de-noises the picture guiding it to look more like an empty prompt (unconditional_conditioning)</li>
-<li>looks at difference between those and uses it to produce a set of
-  changes for the noisy picture (different samplers do that part
-  differently)</li>
+<li>A sample using negative hints</li>
 </ul>
-<p>To use negative prompt, all that's needed is this:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># prompts = ["a castle in a forest"]</span>
+<div class="highlight"><pre><span></span><code><span class="n">prompts</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"a castle in a forest"</span><span class="p">]</span>
 <span class="c1"># negative_prompts = ["grainy, fog"]</span>
 
 <span class="n">c</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_learned_conditioning</span><span class="p">(</span><span class="n">prompts</span><span class="p">)</span>
@@ -961,95 +734,95 @@ the prompt consists of.</p>
 
 <span class="n">samples_ddim</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">sampler</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">conditioning</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">unconditional_conditioning</span><span class="o">=</span><span class="n">uc</span><span class="p">,</span> <span class="p">[</span><span class="o">...</span><span class="p">])</span>
 </code></pre></div>
-<p>The sampler then will look at differences between image de-noised to
-look like your prompt (a castle), and an image de-noised to look like
-your negative prompt (grainy, fog), and try to move the final results
-towards the former and away from latter.</p>
-<p>From <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Negative-prompt#examples">Wiki</a></p>
-<h2 id="cfg-scaledenoising-strength-fittingnoise-reduction">CFG Scale/Denoising strength Fitting/noise reduction</h2>
+<p>For example, watermarks and textual content are rejected using the following prompt</p>
+<div class="highlight"><pre><span></span><code>lowres, bad anatomy, bad hands, text, error, missing fingers,
+extra digit, fewer digits, cropped, worst quality, low quality,
+normal quality, jpeg artifacts, signature, watermark, username, blurry
+</code></pre></div>
+<p>Also see this example</p>
+<div class="highlight"><pre><span></span><code>ugly, fat, obese, chubby, (((deformed))), [blurry], bad anatomy,
+disfigured, poorly drawn face, mutation, mutated, (extra_limb),
+(ugly), (poorly drawn hands fingers), messy drawing, morbid,
+mutilated, tranny, trans, trannsexual, [out of frame], (bad proportions),
+(poorly drawn body), (poorly drawn legs), worst quality, low quality,
+normal quality, text, censored, gown, latex, pencil
+</code></pre></div>
+<h2 id="cfg-scaledenoising-strength-fitnoise-reduction">CFG Scale/Denoising strength fit/noise reduction</h2>
 <p><strong>CFG Scale</strong></p>
-<p>The higher the scale, the more faithful the program is to the prompt, and the better the fit.</p>
+<p><code>cfg scale</code> is the reference to the prompt when predicting, the higher it is, the better the fit when predicting.</p>
 <p><strong>Denoising strength Reducing noise</strong></p>
-<p>Denoising strength` determines how well the algorithm retains the content of the image, reducing the effect on the image style, but also weakening the img2img capability. The higher the value, the less the AI will refer to the original image (and increase the number of iterations).</p>
-<p>A low <code>denoising</code> means that the original image is corrected, while a high <code>denoising</code> is not as relevant to the original image. Generally speaking, the threshold is around 0.7, above which it is largely irrelevant, and below 0.3 it is slightly modified.</p>
-<p>In practice, the number of step = Denoising strength * Sampling Steps.</p>
-<h2 id="prompt-editing">Prompt editing</h2>
-<p>Prompt editing allows you to start sampling one picture, but in the middle swap to something else. The base syntax for this is: <code>[some1:some2:num]</code></p>
-<p><code>[fantasy:cyberpunk:16]</code> to replace <code>fantasy</code> with the <code>cyberpunk</code> tag from step 16 onwards</p>
-<p><code>[to:when]</code> adds <code>to</code> to the prompt after a fixed number of steps ( when)</p>
-<p><code>[from::when]</code> Remove <code>from</code> from the prompt after a fixed number of steps ( when)</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://user-images.githubusercontent.com/75739606/197822841-f7323afa-8c6a-46a2-a8e2-a1c457bb31d5.jpg"><img alt="sample_Gradient" src="https://user-images.githubusercontent.com/75739606/197822841-f7323afa-8c6a-46a2-a8e2-a1c457bb31d5.jpg"/></a></p>
-<!--
-![sample_Gradient](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/sample_Gradient.jpg)
--->
-<h2 id="prompt-from-images">Prompt from images</h2>
-<p>By default the program will include the prompt, parameters and model information in the image. For uncompressed original images we can drag the file into the <code>PNG Info</code> tab for the prompt (Token) view.</p>
+<p><code>Denoising strength</code> determines how much the algorithm retains the content of the image, which can reduce the becoming of the drawing style, but also weakens the img2img capability. The higher the value, the less the AI references the original image (and increases the number of iterations).</p>
+<p>For the image as a picture, a low <code>denoising</code> means correcting the original image, while a high <code>denoising</code> has no great relevance to the original image. Generally speaking, the threshold value is about 0.7, more than 0.7 and the original figure is basically irrelevant, 0.3 below is a slight change some.</p>
+<p>The actual implementation, the specific implementation steps are Denoising strength * Sampling Steps.</p>
+<h2 id="image-prompt">Image Prompt</h2>
+<p>By default, the program will add Prompt, Parameters, and Model Metadata information to the image. For the original image without compression, we can drag the file into the <code>PNG Info</code> tab to view the Prompt (Token).</p>
 <p>Or use the <a href="https://spell.novelai.dev/">Online Tools</a> to view it.</p>
-<h2 id="inverse-prompt">Inverse prompt</h2>
-<p>Relevant parameters can be extracted from the images, which may not be accurate.</p>
+<h2 id="reverse-tokens">Reverse Tokens</h2>
+<p>Here are some <strong>Image Reverse Parameter Services</strong> that can extract relevant parameters from images, not necessarily accurate.</p>
 <p><a href="https://t.me/LenKiMo_Bot">LenKiMo_Bot</a></p>
 <p><a href="https://github.com/KichangKim/DeepDanbooru">DeepDanbooru</a></p>
-<h2 id="search-engines">Search Engines</h2>
-<p><a href="https://pixai.art/">PIXAI</a></p>
-<p><a href="https://t.me/StableDiffusion_Show">StableDiffusion_Show</a></p>
-<p><a href="https://t.me/cyan_ai_sese">cyan_ai_sese</a></p>
-<p><a href="https://lexica.art/?q=Miku">LEXICA搜索引擎</a></p>
-<h2 id="prompt-matrix">Prompt matrix</h2>
-<p>Separate multiple prompts using the <code>|</code> character, and the system will produce an image for every combination of them.
-For example, if you use <code>a busy city street in a modern city|illustration|cinematic lighting</code> prompt, there are four combinations possible (first part of the prompt is always kept):</p>
+<h2 id="prompt-search-engine">Prompt Search Engine</h2>
+<p>You can visit the following links for some excellent examples of parameters.</p>
 <ul>
-<li><code>a busy city street in a modern city</code></li>
-<li><code>a busy city street in a modern city, illustration</code></li>
-<li><code>a busy city street in a modern city, cinematic lighting</code></li>
-<li><code>a busy city street in a modern city, illustration, cinematic lighting</code></li>
+<li>
+<p><a href="https://pixai.art/">PIXAI</a></p>
+</li>
+<li>
+<p><a href="https://t.me/StableDiffusion_Show">StableDiffusion_Show</a></p>
+</li>
+<li>
+<p><a href="https://t.me/cyan_ai_sese">cyan_ai_sese</a></p>
+</li>
+<li>
+<p><a href="https://lexica.art/?q=Miku">LEXICA Search Engine</a></p>
+</li>
 </ul>
-<p><code>cat :2 | dog</code> that is, a dog that is more like a cat</p>
-<h2 id="highres-fix">Highres. fix</h2>
-<p>A convenience option to partially render your image at a lower resolution, upscale it, and then add details at a high resolution.</p>
-<p>By default, txt2img makes horrible images at very high resolutions, and this makes it possible to avoid using the small picture's composition. Enabled by checking the "Highres. fix" checkbox on the txt2img page.</p>
-<h3 id="about-size">About <code>size</code></h3>
-<p>For example, there may be more people if the picture size is wide</p>
+<h2 id="batch-countbatch-size">Batch count&amp;batch size</h2>
+<p><code>batch count</code> Specifies how many batches of images to train.</p>
+<p><code>batchsize</code> translates to batch size in Chinese (batch size)</p>
+<p>To put it simply, batch size will determine the number of samples we train at a time. The batch_size will affect how well and how fast the model is optimized.</p>
+<p>Note also that <code>batch size</code> is designed to find the best balance between <code>memory efficiency</code> and <code>memory capacity</code>, since GPU resources are not fully utilized in a single 512x512 image generation. Larger images get less benefit from it.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Iteration is the action of repetitive feedback, where we want to train the neural network several times through iterations to reach the desired goal or result.
+The result of each iteration is used as the initial value for the next iteration.
+One iteration = one forward pass + one reverse pass</p>
+</div>
+<h2 id="fix-large-size-screen-crash">Fix large size screen crash</h2>
+<p><code>Highres.fix</code> is a convenient option to enable by checking this checkbox on the <code>txt2img</code> page.</p>
+<p>By default, <code>txt2img</code> produces very chaotic images at very high resolutions. Whereas this plugin this makes it possible to avoid using small image compositions, partially render your image at lower resolutions, increase the resolution, and then add details at higher resolutions.</p>
+<h3 id="note-size">Note <code>size</code></h3>
+<p>For example, out of the picture size wide people may be more</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>It is important to match the pose so that the shot and the figure are not distorted, sometimes you need to limit the quantifiers, deal with spatial relationships and prompt masking priorities when there are multiple figures. Number of people-&gt;Personal appearance-&gt;Environmental style-&gt;Personal state</p>
+<p>To match the pose, the lens and the character is not deformed, sometimes you need to limit the amount of words, when multiple characters to deal with spatial relationships and prompt masking priority. Number of people -&gt; Character appearance -&gt; Environment style -&gt; Character state</p>
 </div>
-<p>Sizes above 1024 may give undesirable results! We recommend using small size + a moderate increase in the number of Step steps + super-clear resolution of the image (see Progression).</p>
-<h2 id="prompt-conflict-hint-word">Prompt conflict (hint word)</h2>
-<p>For example, if <code>loli</code> contains more styles, the single <code>loli</code> tag within the spell should be removed when the user wants a specific style.</p>
-<p>By default we use (someone else gives you) negative prompts in which there is a risk of words that will conflict, so please be aware of this.</p>
-<h2 id="step">Step</h2>
-<p>More iterative steps may result in better generation, more detail and sharpening, but will result in longer generation times. In practice, the difference between 30 and 50 steps is very small.</p>
-<p>Too many iterative steps may also be counterproductive, with little or no improvement.</p>
-<p>When performing img2img, weaker denoising normally requires fewer iteration steps (this is how it works).</p>
-<p>You can change the setting in the settings to allow the program to perform exactly the number of iteration steps specified by the slider.</p>
-<p>Higher order samplers such as <code>DPM-Solver++</code> are more efficient and take fewer steps.</p>
-<p>In practical reasoning, the exact number of steps performed is <code>Denoising strength * Sampling Steps</code>.</p>
-<h2 id="samplers">Samplers</h2>
-<p><code>++</code> is a higher order solver, with fewer steps more detail and faster implementation.</p>
-<p>The higher-order sampler is <code>DPM-Solver++</code>, which you can try using <code>DPM++ 2S a</code>. Experiments have shown that DPM-Solver++ can generate high quality samples in just 15 to 20 steps for bootstrapping pixel space and potential space DPM. </p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://user-images.githubusercontent.com/40903705/200149887-935a6f95-0bfa-4f8e-b6b1-0fb0bfe0b39e.jpg"><img alt="exp" src="https://user-images.githubusercontent.com/40903705/200149887-935a6f95-0bfa-4f8e-b6b1-0fb0bfe0b39e.jpg"/></a></p>
-<blockquote>
-<p>from https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/4363</p>
-</blockquote>
-<p>First order is currently good with <code>eular</code>, <code>eular a</code>, more subtle, and <code>Ddim</code>.</p>
-<p><strong>Novice users are recommended to use <code>eular a</code></strong></p>
-<p><code>eular a</code> is creative and different steps can produce different images.
-PS: too high a step count (&gt;30) will not give better results</p>
-<p><code>DDIM</code> converges quickly, but is relatively inefficient as it requires many steps to get good results, <strong>suitable for use in redrawing</strong></p>
-<p><code>LMS</code> and <code>PLMS</code> are derivatives of <code>eular</code> and use a related but slightly different method (averaging over several steps to improve accuracy). About 30 steps gives stable results</p>
-<p><code>PLMS</code> is an effective LMS (classical method) that can better handle singularities in the structure of neural networks</p>
-<p><code>DPM2</code> is a fantastic method that aims to improve DDIM by reducing the number of steps to obtain good results. It requires two denoising runs per step and it is about twice as fast as DDIM. But if you're experimenting with debugging prompts, this sampler doesn't work very well</p>
+<p>Sizes above 1024 may give undesirable results! We recommend using small size + moderately high Step count + super-clear image resolution (see Advanced).</p>
+<h2 id="step-iteration-steps">Step iteration steps</h2>
+<p>More iterative steps may result in better generation, <strong>more detail</strong> and sharpening, but will result in longer generation times. In practice, the difference between 30 and 50 steps is almost indistinguishable.</p>
+<p>Too many iterative steps may also be counterproductive, with little to no improvement.</p>
+<p>When generating graphs, weaker denoising normally requires fewer iterative steps (this is how it works). You can change the setting in the settings to let the program perform exactly the number of iteration steps specified by the slider.</p>
+<p>Higher-order samplers such as <code>DPM-Solver++</code> are more efficient and take fewer steps.</p>
+<p>The exact execution steps in practical reasoning are Denoising strength * Sampling Steps.</p>
+<h2 id="samplers-samplers">Samplers Samplers</h2>
+<p>First order currently good to use are <code>eular</code>, <code>eular a</code>, more detailed, and <code>Ddim</code>, labeled <code>++</code> samplers for higher order solvers, with fewer steps more detail and faster implementation.</p>
+<p><strong>Newbies are recommended to use <code>eular a</code></strong></p>
+<p><code>eular a</code> is creative, different steps can produce different pictures.
+PS: adjust too high step (&gt; 30) will not work better</p>
+<p><code>DDIM</code> converges fast, but relatively inefficient, because it takes many steps to get good results, <strong>suitable for use in redrawing</strong></p>
+<p><code>LMS</code> and <code>PLMS</code> are derivatives of <code>eular</code>, which use a related but slightly different method (averaging over several steps to improve accuracy). Stable results can be obtained in about 30 steps</p>
+<p><code>PLMS</code> is an effective LMS (classical method) that can better handle the singularities in the neural network structure</p>
+<p><code>DPM2</code> is a fantastic method that aims to improve DDIM by reducing the number of steps to get good results. It requires two denoising runs per step and it is about twice as fast as DDIM. But if you are experimenting with debugging cue words, this sampler doesn't work very well</p>
 <p><code>Euler</code> is the simplest, and therefore one of the fastest</p>
-<p>from <a href="https://www.reddit.com/r/StableDiffusion/comments/xbeyw3/can_anyone_offer_a_little_guidance_on_the/">discussion</a></p>
-<p>and <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#attentionemphasis">wiki</a></p>
+<p>The higher-order sampler is <code>DPM-Solver++</code>, which you can try with <code>DPM++ 2S a</code>. Experiments have shown that DPM-Solver++ can generate high quality samples in only 15 to 20 steps for bootstrapping pixel space and potential space DPM. </p>
 <ul>
-<li>EXP</li>
+<li>Different results for different steps and samplers</li>
 </ul>
 <table>
 <thead>
 <tr>
-<th>EXP1</th>
-<th>EXP2</th>
+<th>预览一</th>
+<th>预览二</th>
 </tr>
 </thead>
 <tbody>
@@ -1063,19 +836,25 @@ PS: too high a step count (&gt;30) will not give better results</p>
 <blockquote>
 <p>from https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/4363</p>
 </blockquote>
-<h2 id="seeds">Seeds</h2>
-<p>The actual seed integer is not important. It simply initialises a random number generator that defines the starting point of the diffusion and is a random initial value.</p>
-<p>A good seed can perform things like composition and colour in various cues, samplers and CFGs. But it is of limited use now.</p>
-<p>With the same Step , cfg, Seed, prompts, producing essentially the same picture!</p>
-<p>The same seeds will produce the same picture in the same model and back-end implementation, keeping all parameters the same. Depends on the other parameters.</p>
-<p>But note that <strong>different graphics cards may cause unexpectedly different results</strong> (e.g. things like accuracy)</p>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#attentionemphasis">英文 Wiki 介绍</a></p>
+<p><a href="https://www.reddit.com/r/StableDiffusion/comments/xbeyw3/can_anyone_offer_a_little_guidance_on_the/">英文论坛介绍</a></p>
+<h2 id="seed-debugging">Seed debugging</h2>
+<p>The actual seed integer is not important. It just initializes a random number generator that defines the starting point of the diffusion and is a random initial value.</p>
+<p>A good seed can perform things like composition and color in various cues, samplers, and CFGs. But it is now of limited use.</p>
+<p>With the same Step, cfg, Seed, parameters (prompts), produces essentially the same picture!</p>
+<p>The same seed will produce the same image for the same model and back-end implementation, keeping all parameters the same. depending on the other parameters.</p>
+<p>Note, however, that <strong>different graphics cards may cause unexpectedly different results</strong> (e.g. parameters like precision)</p>
 <p>The 10xx series looks so different from all other cards, see <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017#discussioncomment-3873467">here</a></p>
+<h3 id="merging-seeds">Merging Seeds</h3>
+<p>This technique is implemented by the UI. It is a way to merge different seeds from the same cue.</p>
+<p>Click the <code>Extra</code> button next to the seed input to enable this feature.</p>
+<p>Make changes to the initial noise to try to merge different features.</p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 19, 2022 11:52:42</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 26, 2022 18:41:05</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 07:44:44</span>
@@ -1104,13 +883,13 @@ PS: too high a step count (&gt;30) will not give better results</p>
             </div>
 </div>
 </a>
-<a aria-label="Next: Advanced Guide" class="md-footer__link md-footer__link--next" href="../Advanced/" rel="next">
+<a aria-label="Next: Img2Guide" class="md-footer__link md-footer__link--next" href="../Advanced/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Next
               </span>
-              Advanced Guide
+              Img2Guide
             </div>
 </div>
 <div class="md-footer__button md-icon">
