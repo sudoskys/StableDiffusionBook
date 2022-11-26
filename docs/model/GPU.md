@@ -35,7 +35,7 @@ torch.version.cuda
 
 [作者的回应](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/156#issuecomment-1241218733)
 
->Using memory from between two GPUs is not simple. I only have one so I can't research/develop this.
+> Using memory from between two GPUs is not simple. I only have one so I can't research/develop this.
 
 ## WebUi 16xx 系显卡使用半精度生成图片 [^3]
 
@@ -57,11 +57,11 @@ pip install torch torchvision --extra-index-url https://download.pytorch.org/whl
 
 4. 下载 `Cudnn_8.5` 备用。
 
-使用下载工具下载，直接下载会跳转到 Nvidia 的开发者注册界面
+    使用下载工具下载，直接下载会跳转到 Nvidia 的开发者注册界面
 
-Windows: <https://developer.nvidia.com/compute/cudnn/secure/8.5.0/local_installers/11.7/cudnn-windows-x86_64-8.5.0.96_cuda11-archive.zip>
+    Windows: <https://developer.nvidia.com/compute/cudnn/secure/8.5.0/local_installers/11.7/cudnn-windows-x86_64-8.5.0.96_cuda11-archive.zip>
 
-其他版本：<https://developer.nvidia.com/rdp/cudnn-archive>
+    其他版本：<https://developer.nvidia.com/rdp/cudnn-archive>
 
 5. 将 Cudnn 8.5 压缩包里的 bin 和 lib 文件夹里的所有文件复制到 `venv\Lib\site-packages\torch\lib` 里，覆盖所有文件。
 

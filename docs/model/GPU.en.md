@@ -46,7 +46,7 @@ Solution from [this issue](https://github.com/AUTOMATIC1111/stable-diffusion-web
 
 ```bash
 pip uninstall torch torchvision
-uninstall torch and torchvision: ```bash pip
+```
 
 3. reinstall ``CUDA 11.6`` compiled by ``torch`` and ``torchvision``.
 
@@ -55,12 +55,12 @@ pip install torch torchvision --extra-index-url https://download.pytorch.org/whl
 ```
 
 4. download `Cudnn_8.5` for backup.
+    
+    Use the download tool to download, direct download will redirect you to Nvidia s developer registration screen
 
-Use the download tool to download, direct download will redirect you to Nvidia s developer registration screen
+    Windows: https://developer.nvidia.com/compute/cudnn/secure/8.5.0/local_installers/11.7/cudnn-windows-x86_64-8.5.0.96_cuda11- archive.zip
 
-Windows: https://developer.nvidia.com/compute/cudnn/secure/8.5.0/local_installers/11.7/cudnn-windows-x86_64-8.5.0.96_cuda11- archive.zip
-
-Other versions: https://developer.nvidia.com/rdp/cudnn-archive
+    Other versions: https://developer.nvidia.com/rdp/cudnn-archive
 
 5. Copy all the files from the bin and lib folders in the Cudnn 8.5 archive to `venv\Lib\site-packages\torch\lib`, overwriting all the files.
 
