@@ -1,6 +1,10 @@
 # 配置
 
+本页面讨论 WebUi 的界面参数和功能。
+
 ## 基础
+
+一些基础参数说明。
 
 ### 横条参数说明
 
@@ -12,11 +16,12 @@
 
 `cfg scale` 符合 prompt 的程度，值越高越会字面看待 prompt, 低则给模型较大的发挥空间，但是实际模型表现上来看 CFG scale 低 (6-8) 饱和度低，偏线稿，偏杂乱，高 (18-22) 则饱和度偏高，偏 CG 风格。
 
->过高的 CFG 会引起颜色失真，CFG 应该在 5-15 之间
+> 过高的 CFG 会引起颜色失真，CFG 应该在 5-15 之间
 
 `denoise strength` img2img 专属参数，从 0 到 1 取值，值越高 AI 对原图的参考程度就越低 （同时增加迭代次数）, 个人喜欢低 CFG 高 denoise 重绘图，高 CFG 低 denoise 改细节。
 
 [一个小指南：RedditAbout](https://www.reddit.com/r/StableDiffusion/comments/xbeyw3/can_anyone_offer_a_little_guidance_on_the/)
+
 
 ### ckpt 文件安全问题 [^4]
 
@@ -33,7 +38,7 @@ ckpt 文件被加载时基本上可以执行任何内容，盲目加载有安全
 <!--
 ![Roaming_info.png](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/infofrom_bili_uid_87077691.png)
 -->
->来自 allophane.com/index.php/2022/10/17/roaming_info_for_latent_diffusion/
+> 来自 allophane.com/index.php/2022/10/17/roaming_info_for_latent_diffusion/
 
 ### 使用 WebUI 复现 NAI 官网
 
@@ -49,7 +54,7 @@ ckpt 文件被加载时基本上可以执行任何内容，盲目加载有安全
 
 * `Eta noise seed delta` 设置为 `31337`
 
-#### **不需要**做的事情
+#### **不需要** 做的事情
 
 * hypernetwork。官网默认并不使用 hypernetwork
 
@@ -87,11 +92,11 @@ ckpt 文件被加载时基本上可以执行任何内容，盲目加载有安全
 设置截图
 
 ![引用官方 Wiki 的设置图](https://raw.githubusercontent.com/wiki/AUTOMATIC1111/stable-diffusion-webui/images/xy_grid-medusa-ui.png)
->引用官方 Wiki 的设置图
+> 引用官方 Wiki 的设置图
 
 #### Prompt S/R 替换
 
-提示 S/R 是 X/Y 图的的一种较难理解的操作模式。
+提示 S/R 是 X/Y 图的的一种操作模式。
 
 S/R 是搜索/替换的意思，输入一个单词或短语的列表，它从列表中取第一个并将其视为关键词，并将该关键词的所有实例替换为列表中的其他条目的所有实例替换为列表中的其他条目。
 
@@ -111,6 +116,8 @@ S/R 是搜索/替换的意思，输入一个单词或短语的列表，它从列
 
 ### **Variations 种子变化**
 
+这个参数用于种子合并操作。
+
 `Variation strength slider` 和 `Variation seed field` 允许您指定现有图片应更改多少以使其看起来不同。
 在最大强度下，您将获得带有变异种子的图片，至少 - 带有原始种子的图片（使用先前采样器时除外）。
 
@@ -118,7 +125,7 @@ S/R 是搜索/替换的意思，输入一个单词或短语的列表，它从列
 
 “Save prompt as style” 按钮将当前的提示写入 `styles.csv`，该文件包含样式集合
 
-提示右侧的下拉框将允许您从以前保存的样式中选择任何样式，并自动将其**附加**到输入中
+提示右侧的下拉框将允许您从以前保存的样式中选择任何样式，并自动将其 **附加** 到输入中
 
 要删除样式，请从 `styles.csv` 中手动将其删除并重新启动程序。
 
@@ -142,13 +149,13 @@ xformers 分辨率越高加速效果越好。使用 xformers 会引入一些随�
 
 安装 [VS Build Tools 2022](https://visualstudio.microsoft.com/zh-hans/downloads/?q=build+tools)，运行安装时只需要选择 `Desktop development with C++`
 
-安装 [CUDA 11.3](https://developer.nvidia.com/cuda-11.3.0-download-archive)，（后期版本未测试），选择`custom`，VS 集成可能不需要
+安装 [CUDA 11.3](https://developer.nvidia.com/cuda-11.3.0-download-archive)，（后期版本未测试），选择 `custom`，VS 集成可能不需要
 
 * 确认 nvcc 可用
 
 `nvcc --version`
 
-* 克隆`xFormers` 存储库，在环境中激活它
+* 克隆 `xFormers` 存储库，在环境中激活它
 
 ```bash
 git clone https://github.com/facebookresearch/xformers.git
@@ -183,11 +190,11 @@ pip install wheel
 pip install ninja
 ```
 
-* 由于 CUDA 11.3 很旧，需要**强制启用**它以在 MS Build Tools 2022 上构建。
+* 由于 CUDA 11.3 很旧，需要 **强制启用** 它以在 MS Build Tools 2022 上构建。
 
 在 CMD 设置 `set NVCC_FLAGS=-allow-unsupported-compiler"`
 
-或在 Bash 设置`export NVCC_FLAGS=-allow-unsupported-compiler`
+或在 Bash 设置 `export NVCC_FLAGS=-allow-unsupported-compiler`
 
 * 查看你自己的 GPU 架构
 
@@ -213,7 +220,7 @@ python setup.py bdist_wheel
 如果构建的 whl 名称不同，请在下面的安装命令中更改文件名
 
 ```bash
-#CMD
+MD
 ./venv/scripts/activate
 #Bash
 source ./venv/bin/activate
@@ -224,15 +231,15 @@ pip install xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl
 
 30 系显卡正常启动加 `--xformers` 参数，其他显卡加 `--force-enable-xformers` 参数
 
->COMMANDLINE_ARGS=
+> COMMANDLINE_ARGS =
 
 #### Windows 编译错误自查
 
->错误：`Filename too long` 和 `fatal error C1083: Cannot open compiler generated file: '': Invalid argument`
+> 错误：`Filename too long` 和 `fatal error C1083: Cannot open compiler generated file: '': Invalid argument`
 
 说明你的路径太长了。
 
->RuntimeError: CUDA error: no kernel image is available for execution on the device
+> RuntimeError: CUDA error: no kernel image is available for execution on the device
 
 现在更多 GPU 架构是自动支持的，尝试重新安装并使用 --xformers 参数。
 
@@ -270,9 +277,9 @@ Each file adds one line of text to the final description.
 If you add ".top3." to filename, for example, flavors.top3.txt, the three most relevant lines from this file will be added to the prompt (other numbers also work).
 -->
 
-### **Face restoration 三次元人脸修复**
+### **Face restoration 真人人脸修复**
 
-适用于三次元。
+适用于真人。
 
 [https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#face-restoration](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#face-restoration)
 
@@ -331,11 +338,11 @@ Script 类有四个主要方法，这里通过一个简单的 [示例脚本](htt
 
 ### 不间断生产
 
-在 WebUI 的生成键右击即可出现**不间断生成**的选项。
+在 WebUI 的生成键右击即可出现 **不间断生成** 的选项。
 
 ### 图片信息 Png info
 
-生成的图片自带令牌信息，拖放到查看页面即可查看 。
+生成的图片自带令牌信息，拖放到 `Png Info` 页面即可查看 。
 
 ### NAI 4chan 简化版本
 

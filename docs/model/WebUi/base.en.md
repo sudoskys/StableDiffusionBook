@@ -1,8 +1,12 @@
 # Configure
 
-## Basic
+This page discusses the interface parameters and features of WebUi.
 
->Most of the content in this section is from the [Wiki page](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/), so for English users, it may be better to read the original documentation.
+## Basics
+
+Some basic parameters are described.
+
+> Most of the content in this section is from the [Wiki page](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/), so for English users, it may be better to read the original documentation.
 
 ### Parameter intro
 
@@ -14,7 +18,7 @@ DDIM, Eula also works well. (with a is the meaning of ancestral, step growth out
 
 `cfg scale` conforms to the degree of prompt, the higher the value will literally look prompt, low will give the model more room to play, but the actual model performance on the CFG scale low (6-8) saturation is low, biased line drawing, biased clutter, high (18-22) then saturation is high, biased CG style.
 
->Too high CFG will cause color distortion, CFG should be between 5-15
+> Too high CFG will cause color distortion, CFG should be between 5-15
 
 `denoise strength` img2img proprietary parameter, from 0 to 1, the higher the value the lower the AI reference to the original image (while increasing the number of iterations), personally I like low CFG high denoise heavy drawing, high CFG low denoise change the details.
 
@@ -35,13 +39,13 @@ You can check for risks with this script: <https://rentry.org/safeunpickle2>
 <!--
 ![Roaming_info.png](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/infofrom_bili_uid_87077691.png)
 -->
->From allophane.com/index.php/2022/10/17/roaming_info_for_latent_diffusion/
+> From allophane.com/index.php/2022/10/17/roaming_info_for_latent_diffusion/
 
 ### Replicating the NAI official website using WebUI
 
 [Related discussion](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017)
 
-Tip:Due to the nature of torch and its associated frameworks, it is not wise to try to fully recover images generated on a different machine. So don't get hung up on details that can't be reproduced.
+Tip: Due to the nature of torch and its associated frameworks, it is not wise to try to fully recover images generated on a different machine. So don't get hung up on details that can't be reproduced.
 
 #### Things to do
 
@@ -51,7 +55,7 @@ Tip:Due to the nature of torch and its associated frameworks, it is not wise to 
 
 * `Eta noise seed delta` set to `31337`
 
-#### **Doesn't need **to do
+#### **Doesn't need ** to do
 
 * hypernetwork. the website does not use hypernetwork by default
 
@@ -89,7 +93,7 @@ Ranges with the count in square brackets
 ```
 
 ![pic](https://raw.githubusercontent.com/wiki/AUTOMATIC1111/stable-diffusion-webui/images/xy_grid-medusa-ui.png)
->FromWebUiWiki
+> FromWebUiWiki
 
 #### Prompt S/R
 
@@ -114,6 +118,8 @@ make sure there is no space between quotes and separating commas:
 * `darkness,"light, green",heat` - RIGHT - 3 items - `darkness`, `light, green`, `heat`
 
 ### **Variations**
+
+This parameter is used for the seed merge operation.
 
 A Variation strength slider and Variation seed field allow you to specify how much the existing picture should be altered to look like a different one. At maximum strength, you will get pictures with the Variation seed, at minimum - pictures with the original Seed (except for when using ancestral samplers).
 
@@ -205,7 +211,7 @@ In `xformers` directory, navigate to the `dist` folder and copy the `.whl` file 
 In `stable-diffusion-webui` directory, install the `.whl`, change the name of the file in the command below if the name is different:
 
 ```bash
-#CMD
+MD
 ./venv/scripts/activate
 #Bash
 source ./venv/bin/activate
@@ -218,11 +224,11 @@ pip install xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl
 
 #### Windows compiler error self-check
 
->Error:`Filename too long` and `fatal error C1083: Cannot open compiler generated file: '': Invalid argument`
+> Error: `Filename too long` and `fatal error C1083: Cannot open compiler generated file: '': Invalid argument`
 
 It means your path is too long.
 
->RuntimeError: CUDA error: no kernel image is available for execution on the device
+> RuntimeError: CUDA error: no kernel image is available for execution on the device
 
 Now that more GPU architectures are automatically supported, try reinstalling and using the --xformers argument.
 
@@ -234,7 +240,7 @@ Compile Guide [wiki/Xformers](https://rentry.org/sdg_faq#xformers-increase-your-
 
 ### Painting with the CPU
 
->https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2597
+> https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2597
 
 You can generate as much as possible using the CPU with `-use-cpu all`, although 100 times slower.
 
