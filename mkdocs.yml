@@ -82,10 +82,11 @@ nav:
           - 错误处理: model/WebUi/Troubleshoot.md
   - 绘画指南:
       - 概论: paint/index.md
+          - 提示工程: /paint/PromptsEngineering.md
       - WebUi绘画指南:
           - paint/WebUi/index.md
-          - 基本指南: paint/WebUi/base.md
-          - 进阶指南: paint/WebUi/Advanced.md
+          - Txt2指南: paint/WebUi/base.md
+          - Img2指南: paint/WebUi/Advanced.md
           - 安装扩展: paint/WebUi/extension.md
       - 实战指南:
           - paint/Practicalguide.md
@@ -125,6 +126,8 @@ plugins:
           NAI泄漏报告: NAI leak report
           WebUi配置模型: Configrue Model for WebUi
           绘画指南: Paint guide
+          Txt2指南: Txt2Guide
+          Img2指南: Img2Guide
           基本指南: Base guide
           WebUi绘画指南: Paint With WebUi
           实战指南: Application Guide
@@ -143,6 +146,7 @@ plugins:
           贡献指南: Contribution Guide
           概论: General
           鉴别: Identify
+          提示工程: Prompts Engineer
       languages:
         en:
           name: English
