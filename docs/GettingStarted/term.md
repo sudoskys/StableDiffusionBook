@@ -3,7 +3,7 @@
 ## 术语
 
 | 缩写/写作术语表          | 解释        |
-|---------------|----------------------------------------------|
+|:---------------|:----------------------------------------------|
 | oneshot      | 一张图                                    |
 |LAION| 一个图像数据集库，https://laion.ai   |
 |aug | augmentaion, 通过裁切，翻转获取更多数据集的方式   |
@@ -12,9 +12,10 @@
 |LatentSpace|潜在空间                |
 |LDM    |   Latent Diffusion Model 潜在扩散模型    |
 |Stable Diffusion    |   稳定扩散    |
+|超分    |   一般指使用Ai技术提升图片分辨率，提高清晰度    |
 
 | 黑话          | 解释                                          |
-|---------------|----------------------------------------------|
+|:----------|:------------------|
 | NAI           | (Novel AI，一般特指 Leak)                       |
 | 咒语    | prompts                                                              |
 | 施法/吟唱/t2i | Text2Image                                                         |
@@ -40,7 +41,7 @@
 
 information creator 完全在图像信息空间（或潜伏空间）中工作。这一特性使它比以前在像素空间工作的扩散模型更快。在技术上，这个组件是由一个 UNet 神经网络和一个调度算法组成的。
 
-* Text Encoder
+**Text Encoder**
 
 提示词的解析由 Text Encoder/CLIP 处理 (token embedding)，这里是提示词转译给 AI 的关键一步。
 
@@ -48,13 +49,13 @@ information creator 完全在图像信息空间（或潜伏空间）中工作。
 
 稳定扩散使用 ClipText 用于文本编码。输入文本，输出 77 个标记嵌入向量，每个都有 768 个维度。
 
-* information creator
+**information creator**
 
 UNet + Scheduler（也就是采样算法）在潜在空间中逐步处理/分散信息。
 
 它输入文本嵌入和一个由噪声组成的起始多维数组（结构化的数字列表，也叫张量），输出一个经过处理的信息阵列。
 
-* Image Decoder
+**Image Decoder**
 
 Text Decoder 根据从 information creator 那里获得的信息绘制一幅图画。 它只在过程结束时运行一次以生成最终图像。
 
@@ -64,13 +65,13 @@ autoencoder(VAE) 模型有两个部分，一个编码器和一个解码器。编
 
 Autoencoder Decoder(VAE) 使用处理过的信息阵列绘制最终图像的解码器。输入处理过的信息阵列 (dimensions: (4, 64, 64))，输出结果图像 (dimensions: (3, 512, 512)，即 (red/green/blue, width, height)。
 
-* CLIP 的工作
+**CLIP 的工作**
 
 ![训练图](https://pic3.zhimg.com/80/v2-340920caff256e06c29cff7097e23e62_1440w.jpg)
 
 > CLIP 训练图 from https://bbs.huaweicloud.com/blogs/371319
 
-* 流程
+**流程**
 
 Stable Diffusion 中使用的自动编码器的缩减系数为 8。这意味着一张 (4, 512, 512) 的图像在潜在空间中是 (4, 64, 64)。
 
@@ -80,34 +81,37 @@ U-Net 在以文本嵌入为条件的同时迭代地对随机高斯噪声表示�
 
 ![流程](https://raw.githubusercontent.com/patrickvonplaten/scientific_images/master/stable_diffusion.png)
 
-* 扩展
+**扩展**
 
-[什么是扩散模型？ ](https://lilianweng.github.io/posts/2021-07-11-diffusion-models/)
+- [什么是扩散模型？ ](https://lilianweng.github.io/posts/2021-07-11-diffusion-models/)
 
-[illustrated-stable-diffusion](https://jalammar.github.io/illustrated-stable-diffusion/)
+- [illustrated-stable-diffusion](https://jalammar.github.io/illustrated-stable-diffusion/)
 
-[稳定扩散](https://huggingface.co/blog/stable_diffusion)
+- [稳定扩散](https://huggingface.co/blog/stable_diffusion)
 
-[稳定扩散入门 ](https://pub.towardsai.net/getting-started-with-stable-diffusion-f343639e4931)
+- [稳定扩散入门 ](https://pub.towardsai.net/getting-started-with-stable-diffusion-f343639e4931)
 
-[Stable Diffusion From Wikipedia](https://en.wikipedia.org/wiki/Stable_Diffusion)
+- [Stable Diffusion From Wikipedia](https://en.wikipedia.org/wiki/Stable_Diffusion)
 
 ### WebUi 的预处理
 
-[WebUi 的 prompt_parser](https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/modules/prompt_parser.py) 通过本地 WebUi 实现了渐变等功能。
+[WebUi 的 prompt_parser](https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/modules/prompt_parser.py) 通过本地 WebUi 实现了Prompt editing等功能。
 
 WebUi prompt 语法会转换为相应时间的 prompt, 然后通过 embedding 交给 Ai 处理。
 
-关于权重的实现：权重增加通常会占一个提示词位。
+**关于权重的实现**
 
-关于交叉注意力控制的实现：到了指定 Step ，WebUi 程序会替换对应 提示词，达到交叉注意力控制效果。
+- 权重增加通常会占一个提示词位。
+
+**关于交叉注意力控制的实现**
+
+- 到了指定 Step ，WebUi 程序会替换对应 提示词，达到交叉注意力控制效果。
 
 其他以此类推。
 
 整个看下来，原理流程如图 
 
 ![prompt_draw](https://user-images.githubusercontent.com/75739606/198675128-c2c849d0-d024-468b-80c4-374f13e933e3.png)
-
 > By RcINS
 
 ### 数学知识
@@ -132,7 +136,6 @@ Creating a model that matches the training data so closely that the model fails 
 
 Variational autoencoders (VAEs) 是一种用于学习潜在表示的深度学习技术。它们也被用来绘制图像，在半监督学习中取得最先进的成果，以及在句子之间进行插值。[^2]
 
-Variational autoencoders (VAEs) are a deep learning technique for learning latent representations. They have also been used to draw images, achieve state-of-the-art results in semi-supervised learning, as well as interpolate between sentences.[^2]
 
 ### CFG
 
@@ -221,15 +224,11 @@ NAI 使用 31337
 
 ### CLIP
 
-CLIP 是一种非常先进的神经网络，可将提示文本转换为数字表示。
+CLIP 是一种非常先进的神经网络，可将提示文本转换为数字表示。对一个相对复杂场景的文本描述，AI 需要能“理解”并匹配到对应的画面，大部分项目依赖的都是一个叫 CLIP 的模型。
 
-https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-last-layers-of-clip-model
+CLIP 在生成模型的潜在空间进行搜索，从而找到与给定的文字描述相匹配的潜在图像，它非常现代且高效。
 
-要让 AI 作画，先要让程序“听懂”你的指令，比如：
-
-“a big cherry tree above a lake with flying petals in the sky.”
-
-对一个相对复杂场景的文本描述，AI 需要能“理解”并匹配到对应的画面，大部分项目依赖的都是一个叫 CLIP 的模型。CLIP 在生成模型的潜在空间进行搜索，从而找到与给定的文字描述相匹配的潜在图像，它非常现代且高效。
+[ignore-last-layers-of-clip-model](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-last-layers-of-clip-model)
 
 ### CUDA
 
