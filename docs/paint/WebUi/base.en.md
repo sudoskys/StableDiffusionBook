@@ -1,283 +1,49 @@
-# WebUi
+# Txt2Img 
 
-Please find out about the parameters of the WebUi(SD) web application beforehand.
+This page is a basic guide to Txt2Img for WebUi, if you want to learn how to write prompts, please read `Prompt Editing` related content.
 
-## Speed determination
+If you are looking for some application examples, you should see the "Practical Guide" page.
 
-The it/s rate of the terminal is the approximate rate and represents the number of seconds per iteration, not the number of iterations per second. Therefore, if the number is reduced, then it is accelerated.
+## Basic parameters
 
-## Introduction to the prompting method
+`cfg scale` corresponds to the degree of prompt, the higher the value the more literal the prompt will be, the lower it will give the model more room to play, but the actual model performance in terms of CFG scale low (6-8) is low saturation, biased line drawing, biased clutter, high (18-22) is high saturation, biased CG style.
 
-For NAI users, please read the [official website Docs](https://docs.novelai.net/image/promptmixing.html)
+> High CFG will cause color distortion, CFG should be between 5-15
 
-!!! tip
-    The two-sided tip method **not common**
-    Use `()` for WebUi enhancements and `{}` for NAI enhancements, note that NAI does not support assigning weights to individual words
+`denoise strength` img2img proprietary parameter, from 0 to 1, the higher the value the lower the AI reference to the original image (while increasing the number of iterations), personally I like low CFG high denoise heavy drawing, high CFG low denoise change the details.
 
-    If you want to convert weights easily, you can use the [conversion service](https://t.me/M2NM2NBot)
+If you have doubts about other parameters (e.g. `seed`), please check the WebUi parameters on the model debugging page.
 
-**Representation method**
+## Negative cue words
 
-Separation, the English half-word `,` is used as a separator, the presence of one or several spaces before and after the English comma does not affect the actual use.
+The WebUi(SD) web application will **reject content related to negative prompt words** at generation time.
 
-Blending, WebUi uses `|` to separate multiple keywords to blend multiple elements, literally blending, and can be used in more than one way.
+Negative cues are a way to use stable diffusion, allowing the user to specify what he does not want to see, without any additional burden or requirement on the model. The way it works is to use the user-specified text instead of the empty string as `unconditional_conditioning` when doing the sampling.
 
-Augmentation, using `(hint:weight)` in WebUi weight augmentation, with augmentation ranging from `0.1 to :100`, allowing decimals. Whereas NAI uses `{}`
-
-!!! tip
-    `a ((((farm))), daytime` syntax may eat up the comma
-
-Prompt editing, using `[some1:some2:num]`
-
-`[fantasy:cyberpunk:16]` for replacing `fantasy` with the `cyberpunk` tag from step 16 onwards
-
-`[to:when]` adds `to` to the prompt after a fixed number of steps ( when)
-
-`[from::when]` Remove `from` from the prompt after a fixed number of steps ( when)
-
-Escape, WebUi for bracketed hints such as `a (word)` use the `\` character to escape to `a \(word\)`, this applies to bracketed Tags to prevent unwanted enhancements.
-
-Lower weight, use `[]` alone but not with numbers or `(word:0.952)`. NAI can only use `[]`
-
-
-alternate prompt [^7], mixer. This allows you to create hybrids of animals, people or styles, switching one item per step (one step at a time), rendering in rounds, `[alison brie|emma stone|elizabeth olsen|scarlett johansson|anne hathaway|emma roberts], still film` This is the WebUi syntax, which in NAI represents the average weight mix (first half and second half).
-
-
-
-!!! tip "NAI"
-
-    NAI does not allow individual weights to be specified, but supports a mixed weight syntax of `cat:1|happy:-0.2|cute:-0:3`.
-
-    Because NAI uses an implementation of WebUi prior to 29 September 2022, the weight enhancement syntax is the old `{}`, which the new WebUi changes to `()`.
-
-    **commutation relations**
-    NAI's [word] = WebUi(word:0.952)(0.952 = 1/1.05)
-
-    NAI's {word} = WeUi's (word:1.05)
-
-    NAI brackets have a weight of 1.05/pc, WebUi rounds have a weight of 1.1/pc
-
-
-## How to write a prompt (prompt)
-
-### What to use
-
-- Words
-
-Ordinary words
-
-- Natural language
-
-WebUi can also use natural language directly, even some Japanese.
-
-But don't use natural language if you want to be accurate.
-
-- emoji
-
-Including the Western face characters `(^_^)` and emoji 🌻 can be used, with emoji being particularly accurate in expression.
-### How to write
-
-Combine similar prompt phrases you want and put these in order from most important to least important.
-
-`(subject)(style), (action/scene), (artist), (filters)`
-
-`(subject)` serves as the subject of the screen, anchoring the content of the screen, which is an essential part of any prompt. `(style)` is the style of the screen, optional.
-
-`(action/scene)` As the action/scene, describes what the subject is doing where it is.
-
-`(artist)` is the optional artist name or the name of the production company.
-
-`(filers)` are details that add to it. Artists, studios, photographic terms, character names, styles, effects, etc. can be used.
-
-- content[^6]
-
-The content can be
-
-```
-The quality of the image
-The subject of the pictures
-Their appearance
-Their emotions
-Their clothes
-Their poses
-The background of the picture
-```
-
-[Guide-to-Writing-Prompts-for-Text-to-image-Ai:A-Guide-to-Writing-Prompts-for-Text-to-image-AI](https://docs.google.com/document/d/ 1XUT2G9LmkZataHFzmuOtRXnuWBfhvXDAo8DkS--8tec/edit#)
-
-### Length
-
-**Writing length**
-
-- Hint don't be too long, over 100 is a risk of failure
-
-You can write prompts of 75 words or more. Originally, due to GPT-3 model limitations, prompts were not infinite; the positive token was between 75 and 80, and content after 75 characters was truncated. But WebUi does grouping, so you can write a lot of words. It is a good habit not to stack prompts, but if you do have a lot of content to write, you can increase the step appropriately
-
-When the prompt exceeds 75 `tokens` (e.g. 150 `tokens`), WebUi groups the prompt words, submitting more than 75 `tokens`. The tokens will only have the context of the rest of the content in the same set. This means that you may have `bule hair` at the boundary between the first and second group, token `blue` will be in the first group and `hair` will be in the second group. This led to inaccurate results as the two words were separated.
-
-The new version adds an option `Increase coherency by padding from the last comma within n tokens when using more than 75 tokens`
-
-This setting lets the program try to alleviate this by finding if there is a last comma in the last N tokens, and if so, moving everything that passes through that comma together to the next collection.
-
-!!! tip "For example"
-
-    There are entries for the words `... ,comma,blue hair,PADDING,... `
-
-    The 75th word is `blue`
-
-    Before using this option
-
-    Set 1:{[74]=Comma, [75]=blue}, Set 2:{[76]=hair, [77]=PADDING}
-
-    After using this option
-
-    Set 1:{[074]=Comma, [75]=PADDING}, Set 2:{[76]=blue, [77]=hair}
-
-    If your hint is less than or equal to 75 tokens, no grouping will occur.
-
-**Writing format**
-
-To facilitate writing changes, the recommended format for multi-line writing is as follows
-
-```
-masterpiece,
-1girl,  hatsune miku,
-look at viewer,turning back,
-blow wind, cyan hair, two side up, cyan eyes,eardrop,dress,
-caustics, masterpiece, high resolution,
-```
-
-The first line specifies the style type, the second the character, the third the action, the fourth the scene and costume, and the fifth the other parameters.
-
-The above order makes sense, but you can also adjust the order of the cues to produce different results. You can do this manually, or [use the X/Y diagram to automatically generate the various orders](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/1607)
-
-The difference between an underline and no underline is not significant and will be cleaned up by the program as dust.
-
-
-**Stylisation**
-
-Nai comes out with a boring style by default. You can create images with special effects or a specified drawing style by training a style model, specifying style keywords, etc.
-
-[人偶教室的测试记录](https://www.yuque.com/longyuye/lmgcwy)
-
-[风格化: 32种](https://www.bilibili.com/video/BV1TP411N71t/)
-
-A more comprehensive guide is on the start page.
-
-
-## Prompt Sort
-
-The order in which the prompts are placed is the priority.(MAYBE)
-
-The way webui breaks the tag limit of 75 is by dividing them into groups.
-
-For the purpose of improving readability, it is recommended that the main body be placed first, followed by the words describing the costume, with the picture quality enhancement words interspersed between these descriptors. Generally, words that change the composition, such as action and nsfw words, are placed later or manually weighted down in order to improve the finish rate.
-
-The above ordering is the same for each group of tags, so if the later tags are over 75, you should split the earlier ones.
-
-![图像生成的描述](https://jalammar.github.io/images/stable-diffusion/stable-diffusion-image-generation.png)
->thanks https://jalammar.github.io/illustrated-stable-diffusion/
-
-
-## Batch count&batch size
-
-`batch count` specifies how many batches of images to train.
-
-`batchsize` specifies how many to train at a time.
-
-In simpler terms, the batch size will determine the number of samples we train at a time. The batch_size will affect how well and how fast the model can be optimised.
-
-Note also that `batch size` is designed to find the best balance between `memory efficiency` and `memory capacity`, as GPU resources are not fully utilised in a single 512x512 image generation. Larger images get less benefit from it.
-
-!!! info
-    Iteration is the action of repetitive feedback, where we want to train the neural network many times through iterations to reach the desired goal or result.
-    The result of each iteration is used as the initial value for the next iteration.
-    One iteration = one forward pass + one backward pass
-
-
-
-## (prompt) impact factor [^6]
-
-Using () in the prompt increases the model's attention to enclosed words, and [] decreases it. You can combine multiple modifiers
-
-[Wiki](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#attentionemphasis)
-
-Cheat sheet:
-
-* `a (word)` - increase attention to `word` by a factor of 1.1
-* `a ((word))` - increase attention to `word` by a factor of 1.21 (= 1.1 * 1.1)
-* `a [word]` - decrease attention to `word` by a factor of 1.1
-* `a (word:1.5)` - increase attention to `word` by a factor of 1.5
-* `a (word:0.25)` - decrease attention to `word` by a factor of 4 (= 1 / 0.25)
-* `a \(word\)` - use literal `()` characters in prompt
-
-With `()`, a weight can be specified like this: `(text:1.4)`. If the weight is not specified, it is assumed to be 1.1. Specifying weight only works with `()` not with `[]`.
-
-If you want to use any of the literal `()[]` characters in the prompt, use the backslash to escape them: `anime_\(character\)`.
-
-On 2022-09-29, a new implementation was added that supports escape
-characters and numerical weights. A downside of the new implementation
-is that the old one was not perfect and sometimes ate characters: "a
-(((farm))), daytime", for example, would become "a farm daytime" without
-the comma. This behavior is not shared by the new implementation which
-preserves all text correctly, and this means that your saved seeds may
-produce different pictures. For now, there is an option in settings to
-use the old implementation.
-
-NAI uses my implementation from before 2022-09-29, except they have 1.05 as the multiplier and use `{}` instead of `()`. So the conversion applies:
-
-* their `{word}` = our `(word:1.05)`
-* their `{{word}}` = our `(word:1.1025)`
-* their `[word]` = our `(word:0.952)` (0.952 = 1/1.05)
-* their `[[word]]` = our `(word:0.907)` (0.907 = 1/1.05/1.05)
-
-
-
-??? tip "How It Work"
-    Each word has an associated vector of 768 values that 'points' in the direction of the concept (in 768 dimensions).
-
-    If you scale this vector, the concept will become stronger or weaker.
-
-    From [Here](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2905)
-
-
-
-## Negative prompt
-
-Negative prompt is a way to use the Stable Diffusion in a way that
-allows the user to specify what he doesn't want to see, without any
-extra load or requirements for the model. In
-addition to just being able to specify what you don't want to see, which
-sometimes is possible via usual prompt, and sometimes isn't, this
-allows you to do that without using any of your allowance of 75 tokens
-the prompt consists of.
-
-The way negative prompt works is by using user-specified text instead of empty string for `unconditional_conditioning` when doing sampling.
-
-Here's the (simplified) code from [txt2img.py](https://github.com/CompVis/stable-diffusion/blob/main/scripts/txt2img.py):
+Here is the (simplified) code from [txt2img.py](https://github.com/CompVis/stable-diffusion/blob/main/scripts/txt2img.py).
 
 ```python
-# prompts = ["a castle in a forest"]
+prompts = ["a castle in a forest"]
 # batch_size = 1
 
 c = model.get_learned_conditioning(prompts)
 uc = model.get_learned_conditioning(batch_size * [""])
 
-samples_ddim, _ = sampler.sample(conditioning=c, unconditional_conditioning=uc, [...])
+samples_ddim, _ = sampler.sample(conditioning=c, unconditional_conditioning=uc, [...]) )
 ```
 
-This launches the sampler that repeatedly:
+This starts the sampler and iterates the following process.
+```
+    Denoise the image to make it look more like your cue (condition).
+    Denoise the image to make it look more like an empty cue (unconditional condition).
+    Observe the difference between the two and use it to produce a set of changes to the noisy picture (different samplers handle this part differently).
+```
+The sampler will then look at the difference between the noisy image that looks like your cue (a castle) and the noisy image that looks like your negative cue (grainy, foggy) and try to move the final result towards the former and away from the latter.
 
-* de-noises the picture guiding it to look more like your prompt (conditioning)
-* de-noises the picture guiding it to look more like an empty prompt (unconditional_conditioning)
-* looks at difference between those and uses it to produce a set of
-  changes for the noisy picture (different samplers do that part
-  differently)
-
-To use negative prompt, all that's needed is this:
+- A sample using negative hints
 
 ```python
-# prompts = ["a castle in a forest"]
+prompts = ["a castle in a forest"]
 # negative_prompts = ["grainy, fog"]
 
 c = model.get_learned_conditioning(prompts)
@@ -286,181 +52,160 @@ uc = model.get_learned_conditioning(negative_prompts)
 samples_ddim, _ = sampler.sample(conditioning=c, unconditional_conditioning=uc, [...])
 ```
 
-The sampler then will look at differences between image de-noised to
-look like your prompt (a castle), and an image de-noised to look like
-your negative prompt (grainy, fog), and try to move the final results
-towards the former and away from latter.
+For example, watermarks and textual content are rejected using the following prompt
 
-From [Wiki](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Negative-prompt#examples)
+```
+lowres, bad anatomy, bad hands, text, error, missing fingers,
+extra digit, fewer digits, cropped, worst quality, low quality,
+normal quality, jpeg artifacts, signature, watermark, username, blurry
+```
 
+Also see this example
 
+```
+ugly, fat, obese, chubby, (((deformed))), [blurry], bad anatomy,
+disfigured, poorly drawn face, mutation, mutated, (extra_limb),
+(ugly), (poorly drawn hands fingers), messy drawing, morbid,
+mutilated, tranny, trans, trannsexual, [out of frame], (bad proportions),
+(poorly drawn body), (poorly drawn legs), worst quality, low quality,
+normal quality, text, censored, gown, latex, pencil
+```
 
-
-## CFG Scale/Denoising strength Fitting/noise reduction
+## CFG Scale/Denoising strength fit/noise reduction
 
 **CFG Scale**
 
-The higher the scale, the more faithful the program is to the prompt, and the better the fit.
+``cfg scale`` is the reference to the prompt when predicting, the higher it is, the better the fit when predicting.
 
 **Denoising strength Reducing noise**
 
-Denoising strength` determines how well the algorithm retains the content of the image, reducing the effect on the image style, but also weakening the img2img capability. The higher the value, the less the AI will refer to the original image (and increase the number of iterations).
+`Denoising strength` determines how much the algorithm retains the content of the image, which can reduce the becoming of the drawing style, but also weakens the img2img capability. The higher the value, the less the AI references the original image (and increases the number of iterations).
 
-A low `denoising` means that the original image is corrected, while a high `denoising` is not as relevant to the original image. Generally speaking, the threshold is around 0.7, above which it is largely irrelevant, and below 0.3 it is slightly modified.
+For the image as a picture, a low `denoising` means correcting the original image, while a high `denoising` has no great relevance to the original image. Generally speaking, the threshold value is about 0.7, more than 0.7 and the original figure is basically irrelevant, 0.3 below is a slight change some.
 
-In practice, the number of step = Denoising strength * Sampling Steps.
+The actual implementation, the specific implementation steps are Denoising strength * Sampling Steps.
 
-## Prompt editing
+## Image Prompt
 
-Prompt editing allows you to start sampling one picture, but in the middle swap to something else. The base syntax for this is: `[some1:some2:num]`
-
-`[fantasy:cyberpunk:16]` to replace `fantasy` with the `cyberpunk` tag from step 16 onwards
-
-`[to:when]` adds `to` to the prompt after a fixed number of steps ( when)
-
-`[from::when]` Remove `from` from the prompt after a fixed number of steps ( when)
-
-![sample_Gradient](https://user-images.githubusercontent.com/75739606/197822841-f7323afa-8c6a-46a2-a8e2-a1c457bb31d5.jpg)
-<!--
-![sample_Gradient](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/sample_Gradient.jpg)
--->
-
-
-## Prompt from images
-
-By default the program will include the prompt, parameters and model information in the image. For uncompressed original images we can drag the file into the `PNG Info` tab for the prompt (Token) view.
+By default, the program will add Prompt, Parameters, and Model Metadata information to the image. For the original image without compression, we can drag the file into the `PNG Info` tab to view the Prompt (Token).
 
 Or use the [Online Tools](https://spell.novelai.dev/) to view it.
 
+## Reverse Tokens
 
-## Inverse prompt
-
-Relevant parameters can be extracted from the images, which may not be accurate.
+Here are some **Image Reverse Parameter Services** that can extract relevant parameters from images, not necessarily accurate.
 
 [LenKiMo_Bot](https://t.me/LenKiMo_Bot)
 
 [DeepDanbooru](https://github.com/KichangKim/DeepDanbooru)
 
+## Prompt Search Engine
 
-## Search Engines
+You can visit the following links for some excellent examples of parameters.
 
-[PIXAI](https://pixai.art/)
+- [PIXAI](https://pixai.art/)
 
-[StableDiffusion_Show](https://t.me/StableDiffusion_Show)
+- [StableDiffusion_Show](https://t.me/StableDiffusion_Show)
 
-[cyan_ai_sese](https://t.me/cyan_ai_sese)
+- [cyan_ai_sese](https://t.me/cyan_ai_sese)
 
-[LEXICA搜索引擎](https://lexica.art/?q=Miku)
+- [LEXICA Search Engine](https://lexica.art/?q=Miku)
 
+## Batch count&batch size
 
-## Prompt matrix
+`batch count` Specifies how many batches of images to train.
 
-Separate multiple prompts using the `|` character, and the system will produce an image for every combination of them.
-For example, if you use `a busy city street in a modern city|illustration|cinematic lighting` prompt, there are four combinations possible (first part of the prompt is always kept):
+`batchsize` translates to batch size in Chinese (batch size)
 
-* `a busy city street in a modern city`
-* `a busy city street in a modern city, illustration`
-* `a busy city street in a modern city, cinematic lighting`
-* `a busy city street in a modern city, illustration, cinematic lighting`
+To put it simply, batch size will determine the number of samples we train at a time. The batch_size will affect how well and how fast the model is optimized.
 
+Note also that `batch size` is designed to find the best balance between `memory efficiency` and `memory capacity`, since GPU resources are not fully utilized in a single 512x512 image generation. Larger images get less benefit from it.
 
-`cat :2 | dog` that is, a dog that is more like a cat
+!!! info
+    Iteration is the action of repetitive feedback, where we want to train the neural network several times through iterations to reach the desired goal or result.
+    The result of each iteration is used as the initial value for the next iteration.
+    One iteration = one forward pass + one reverse pass
 
-## Highres. fix
+## Fix large size screen crash
 
-A convenience option to partially render your image at a lower resolution, upscale it, and then add details at a high resolution.
+`Highres.fix` is a convenient option to enable by checking this checkbox on the `txt2img` page.
 
-By default, txt2img makes horrible images at very high resolutions, and this makes it possible to avoid using the small picture's composition. Enabled by checking the "Highres. fix" checkbox on the txt2img page.
+By default, `txt2img` produces very chaotic images at very high resolutions. Whereas this plugin this makes it possible to avoid using small image compositions, partially render your image at lower resolutions, increase the resolution, and then add details at higher resolutions.
 
-### About `size`
+### Note `size`
 
-For example, there may be more people if the picture size is wide
+For example, out of the picture size wide people may be more
 
 !!! tip
-    It is important to match the pose so that the shot and the figure are not distorted, sometimes you need to limit the quantifiers, deal with spatial relationships and prompt masking priorities when there are multiple figures. Number of people->Personal appearance->Environmental style->Personal state
+    To match the pose, the lens and the character is not deformed, sometimes you need to limit the amount of words, when multiple characters to deal with spatial relationships and prompt masking priority. Number of people -> Character appearance -> Environment style -> Character state
 
-Sizes above 1024 may give undesirable results! We recommend using small size + a moderate increase in the number of Step steps + super-clear resolution of the image (see Progression).
+Sizes above 1024 may give undesirable results! We recommend using small size + moderately high Step count + super-clear image resolution (see Advanced).
 
+## Step iteration steps
 
-## Prompt conflict (hint word)
+More iterative steps may result in better generation, **more detail** and sharpening, but will result in longer generation times. In practice, the difference between 30 and 50 steps is almost indistinguishable.
 
-For example, if `loli` contains more styles, the single `loli` tag within the spell should be removed when the user wants a specific style.
+Too many iterative steps may also be counterproductive, with little to no improvement.
 
-By default we use (someone else gives you) negative prompts in which there is a risk of words that will conflict, so please be aware of this.
+When generating graphs, weaker denoising normally requires fewer iterative steps (this is how it works). You can change the setting in the settings to let the program perform exactly the number of iteration steps specified by the slider.
 
-## Step
+Higher-order samplers such as `DPM-Solver++` are more efficient and take fewer steps.
 
-More iterative steps may result in better generation, more detail and sharpening, but will result in longer generation times. In practice, the difference between 30 and 50 steps is very small.
+The exact execution steps in practical reasoning are Denoising strength * Sampling Steps.
 
-Too many iterative steps may also be counterproductive, with little or no improvement.
+## Samplers Samplers
 
-When performing img2img, weaker denoising normally requires fewer iteration steps (this is how it works).
+First order currently good to use are `eular`, `eular a`, more detailed, and `Ddim`, labeled `++` samplers for higher order solvers, with fewer steps more detail and faster implementation.
 
-You can change the setting in the settings to allow the program to perform exactly the number of iteration steps specified by the slider.
+**Newbies are recommended to use `eular a`**
 
-Higher order samplers such as `DPM-Solver++` are more efficient and take fewer steps.
+`eular a` is creative, different steps can produce different pictures.
+PS: adjust too high step (> 30) will not work better
 
-In practical reasoning, the exact number of steps performed is `Denoising strength * Sampling Steps`.
+`DDIM` converges fast, but relatively inefficient, because it takes many steps to get good results, **suitable for use in redrawing**
 
-## Samplers
+`LMS` and `PLMS` are derivatives of `eular`, which use a related but slightly different method (averaging over several steps to improve accuracy). Stable results can be obtained in about 30 steps
 
+`PLMS` is an effective LMS (classical method) that can better handle the singularities in the neural network structure
 
-`++` is a higher order solver, with fewer steps more detail and faster implementation.
-
-The higher-order sampler is `DPM-Solver++`, which you can try using `DPM++ 2S a`. Experiments have shown that DPM-Solver++ can generate high quality samples in just 15 to 20 steps for bootstrapping pixel space and potential space DPM. 
-
-![exp](https://user-images.githubusercontent.com/40903705/200149887-935a6f95-0bfa-4f8e-b6b1-0fb0bfe0b39e.jpg)
->from https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/4363
-
-First order is currently good with `eular`, `eular a`, more subtle, and `Ddim`.
-
-**Novice users are recommended to use `eular a`**
-
-`eular a` is creative and different steps can produce different images.
-PS: too high a step count (>30) will not give better results
-
-`DDIM` converges quickly, but is relatively inefficient as it requires many steps to get good results, **suitable for use in redrawing**
-
-`LMS` and `PLMS` are derivatives of `eular` and use a related but slightly different method (averaging over several steps to improve accuracy). About 30 steps gives stable results
-
-`PLMS` is an effective LMS (classical method) that can better handle singularities in the structure of neural networks
-
-
-`DPM2` is a fantastic method that aims to improve DDIM by reducing the number of steps to obtain good results. It requires two denoising runs per step and it is about twice as fast as DDIM. But if you're experimenting with debugging prompts, this sampler doesn't work very well
+`DPM2` is a fantastic method that aims to improve DDIM by reducing the number of steps to get good results. It requires two denoising runs per step and it is about twice as fast as DDIM. But if you are experimenting with debugging cue words, this sampler doesn't work very well
 
 `Euler` is the simplest, and therefore one of the fastest
 
-from [discussion](https://www.reddit.com/r/StableDiffusion/comments/xbeyw3/can_anyone_offer_a_little_guidance_on_the/)
+The higher-order sampler is `DPM-Solver++`, which you can try with `DPM++ 2S a`. Experiments have shown that DPM-Solver++ can generate high quality samples in only 15 to 20 steps for bootstrapping pixel space and potential space DPM. 
 
-and [wiki](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#attentionemphasis)
+- Different results for different steps and samplers
 
-
-- EXP
-
-
-|EXP1|EXP2|
-|--|--|
-|<img src="https://user-images.githubusercontent.com/22421310/187063145-3d4f16d7-7bd6-4804-be1c-acf228ed2507.jpg" width="400" alt="效果">|<img src="https://user-images.githubusercontent.com/75739606/197824518-f68188a3-0572-4b52-8fe7-289b6d7b640b.jpg" width="400" alt="效果">|
-
-
+| 预览一    | 预览二  |
+| ----------------- | -------------- |
+| <img src="https://user-images.githubusercontent.com/22421310/187063145-3d4f16d7-7bd6-4804-be1c-acf228ed2507.jpg" width="400" alt="效果"> | <img src="https://user-images.githubusercontent.com/75739606/197824518-f68188a3-0572-4b52-8fe7-289b6d7b640b.jpg" width="400" alt="效果"> |
 
 ![exp](https://user-images.githubusercontent.com/40903705/200149887-935a6f95-0bfa-4f8e-b6b1-0fb0bfe0b39e.jpg)
->from https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/4363
 
+> from https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/4363
 
-## Seeds
+[英文 Wiki 介绍](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#attentionemphasis)
 
-The actual seed integer is not important. It simply initialises a random number generator that defines the starting point of the diffusion and is a random initial value.
+[英文论坛介绍](https://www.reddit.com/r/StableDiffusion/comments/xbeyw3/can_anyone_offer_a_little_guidance_on_the/)
 
-A good seed can perform things like composition and colour in various cues, samplers and CFGs. But it is of limited use now.
+## Seed debugging
 
-With the same Step , cfg, Seed, prompts, producing essentially the same picture!
+The actual seed integer is not important. It just initializes a random number generator that defines the starting point of the diffusion and is a random initial value.
 
-The same seeds will produce the same picture in the same model and back-end implementation, keeping all parameters the same. Depends on the other parameters.
+A good seed can perform things like composition and color in various cues, samplers, and CFGs. But it is now of limited use.
 
-But note that **different graphics cards may cause unexpectedly different results** (e.g. things like accuracy)
+With the same Step, cfg, Seed, parameters (prompts), produces essentially the same picture!
+
+The same seed will produce the same image for the same model and back-end implementation, keeping all parameters the same. depending on the other parameters.
+
+Note, however, that **different graphics cards may cause unexpectedly different results** (e.g. parameters like precision)
 
 The 10xx series looks so different from all other cards, see [here](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017#discussioncomment-3873467)
 
+### Merging Seeds
 
+This technique is implemented by the UI. It is a way to merge different seeds from the same cue.
 
+Click the `Extra` button next to the seed input to enable this feature.
+
+Make changes to the initial noise to try to merge different features.
