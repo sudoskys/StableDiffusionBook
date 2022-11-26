@@ -6,84 +6,157 @@ Currently, Ai does not handle details and multiple characters well, and the ligh
 
 **The core logic is to narrow the range of pre-selected data, adjust the balance between negative and positive prompts, and use part of the grammar to control the intensity of the prompt word effect and the process of effect.**
 
+## Inspiration Table
 
-## Scene table
+| Angle | | | | | | | | | | | | | |
+|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|
+| Character | Expression | Hair | Eyes | Clothes | Status | Pose | Camera Position |
+|Scene |Width |Lighting |Background |Subject |Character Event | ||
+| Data Qualification | Painting Type | Evaluation Qualification | Associative Elements | 3D/2D | | ||
+| Event | Acronym | SFW/NSFW | Production Company | Work Brand | | ||
 
-Viewed vertically
+### Perspective
 
-|characters|scenes|data-limited|events|
-|----|------|-----|-----|
-|expressions| | |expressions
-|Hair|Wide and Narrow Selection|Paint Type|Abbreviations|
-|eyes|lighting options|evaluation qualification|sfw/nsfw|
-|clothing|background subjects|associative elements| Production Company |
-|state|character event|  3D/2D  | Artwork and Brand   |
-|Pose position ||||
-|Lens position ||||
+[Recommended use of terms contained in Danbooru](https://danbooru.donmai.us/wiki_pages/tag_group%3Aimage_composition)
 
-
-## WebUi Redrawing Guide
-
-Want to redraw or add elements manually with WebUi? Here's a little guide.
-
-Firstly, IMG2IMG2 and Inpaint have completely different effects. If you don't want the style to change, don't choose IMG2IMG2.
-
-To avoid stretching the image, it should be sized **as close as possible to the original size by choosing `Crop and resize` ** which means crop and resize
-
-- Masked Content
-
-The `Masked content` setting determines the content placed in the masked area before the repair, it determines the initial reference content (origin is the content of the mask before blurring, and latent nosie is referenced by noise (lots of random pigment dots).
-
-The latent noise is what determines the Ai reference, while the Denoising strength can be interpreted as the degree of unreference to the reference.
-
-![aidrawfix2](https://user-images.githubusercontent.com/75739606/201613751-9da2ffd6-2c1f-439b-8e9a-75b185c99912.png)
-
-- Changing elements
-
-If you need to change elements, key and paste them.
-
-If we need to add elements, we can use PS to graft a hand to the character and let Ai touch it up, or we can graft the lower body of another work for a bust that has no lower body and let AI touch it up.
-
-
-![test1](https://user-images.githubusercontent.com/75739606/201602016-e14b69e3-f250-4af7-b200-a421d163130b.png)
-
-- Make changes based on the original image
-
-Using Inpaint, the main scene is a removal/replacement.
-
-Start by tracing thin lines around the edges of the figure, then colour block (if there are shadows, take **bright colours** or draw full shadows). The variable intensity is chosen to be a low 0.3 or so for denoising (the lower it is the closer it is to the input image).
-
-Then use Img2Img Inpaint + the relevant cue word to fix it, and change it again if you are not satisfied until you are. The image is then realesrgan superscored to remove the image texture.
-
-
-![fix_exp](https://user-images.githubusercontent.com/75739606/201603999-1ae18fb9-5435-49f0-9adf-0789e9659a29.png)
-
-
-### Fix painting tips/Inpaint/PS repainting/grafting fixes/layout complements
-
-Use PS software to add and remove elements and then re-produce them. This can solve the problem of painting hands.
-
-Ai also accepts other finished pictures for grafting (to solve the problem of lying poses without a lower body)
-
-For example
-
-![test_woman](https://user-images.githubusercontent.com/75739606/197823480-5de77d69-46d5-4817-948f-4e514e1f8204.jpg)
-
-<!--
-![info](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/00119_136826557_masterpiece%2C_best_quality%2C _1girl%2C_black_hair%2C_hat1.jpg)
+! [shot](https://user-images.githubusercontent.com/75739606/198682933-25c1b2df-c573-44ea-aba7-2df4609299e5.png)
+<! --
+! [shot](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/shot.png)
 -->
+>citing an image from the Japanese Wiki, author unknown
 
->An image [^5] showing a detailed comparison of the effect of different parameters in img2img under WebUI (prompt, steps, scale, various seeds, etc. are kept consistent)
+|parameters|explanation|
+|--|----|
+|`extreme closeup`|face closeup|
+|close up` |Headshot|
+|`medium close up` |ID photo|
+|`medium shot` |half body|
+|`cowboy shot` |no legs|
+|`medium full shot` |no legs|
+|`full shot` |full body|
 
-The vertical axis is Denoising strength (online version of strength) and the horizontal axis is Variation strength
+## Noise
 
-## Painting soldering!
+|category|description|examples|processing|
+|:----:|:----:|:----:|:----:|:----:|
+|rough|not enough details, characters look like rice cakes|! [Lack of sample images]|needs to be properly enhanced step|
+|waves|dense waves or patterns|! [missing example image]|vectors are not "uniform", maybe the weights are set too high|
+|model|The training process is very abstract|! [missing image]|Vector is not "uniform", maybe the alchemy is fried|!
+|Conflict|Flat anime paper in real world|! [missing example image]|may be a mix of cue words from different subgenres or themes|!
+|Rainbow|output of confusing rainbow-colored images|! [Missing example image]|may be the generation resolution is set too low. |!
+|Size|outputs distorted images at large sizes|! [Missing example image]|Turn on the `Highres Fix` option or use the `Small Resolution + SuperScore` method|
 
-With [AiPhotoShop - the online tool for infinite extents of canvas](https://www.painthua.com/) you can "weld" your work continuously, very conveniently. Just add the `--api` parameter to the start command and open the web page to use it.
+### Noise Reduction
 
-> Image extents for some anime models are not supported because they are not Inpaint models (Sd has a dedicated Inpaint model.)
+Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) is recommended for noise reduction for anime illustrations.
 
-[GitHub](https://github.com/BlinkDL/Hua)
+! [Effect](https://raw.githubusercontent.com/xinntao/Real-ESRGAN/master/assets/teaser.jpg)
+> rendering
+
+### Extras for hypersegmented images
+
+WebUi's `extras` page has its own extras function, which can be used to enhance the image quality using models like `ESRGAN_4x`.
+
+If you want to extrascape Anime style illustrations, please use the `realesrgan` or [realcugan](https://github.com/bilibili/ailab/tree/main/Real-CUGAN) tools directly for extrascape.
+
+???? tip "Direct link to related models"
+
+    The files are downloaded to the `SDwebUI folder, models`.
+
+    [LDSR](https://heibox.uni-heidelberg.de/f/578df07c8fc04ffbadf3/?dl=1), file size is 1.9GB
+
+    [BSGRAN 4x](https://github.com/cszn/KAIR/releases/download/v1.0/BSRGAN.pth), file size 63.9M
+
+    [ESRGAN_4x](https://github.com/cszn/KAIR/releases/download/v1.0/ESRGAN.pth) with a file size of 63.8MB
+
+    [ScuNET GAN/PSNR](https://github.com/cszn/KAIR/releases/download/v1.0/scunet_color_real_gan.pth" to D:\stable-diffusio\models\ScuNET\ScuNET.pth), file size [SwinIR 4x](https://github.com/JingyunLiang/SwinIR/releases/download/v0.0/003_realSR_BSRGAN_DFOWMFC_s64w8_SwinIR-L_x4_GAN.pth), file size **Highres fix What Upscaler should be used?** We recommend using `ESRGAN_4x`, for detail-oriented use `SD Upscaler`.
+
+## WebUi Guide to Assisted Drawing
+
+Want to re-draw or add elements manually with WebUi? Here's a little guide.
+
+First of all, the effect of IMG2IMG2 and Inpaint is completely different. If you don't want the style to change, don't choose IMG2IMG2.
+
+To avoid image stretching, the sizes should all be **as close to the original size as possible, choose `Crop and resize` which means crop and resize**
+
+**Masked Content**
+
+The `Masked content` related setting determines the content placed into the masked area before the repair, it determines the initial reference content (origin is the content of the mask before blurring, and latent nosie is referenced by noise (many random pigment dots).
+
+! [aidrawfix2](https://user-images.githubusercontent.com/75739606/201613751-9da2ffd6-2c1f-439b-8e9a-75b185c99912.png)
+
+latent noise is what determines the Ai reference, while Denoising strength can be interpreted as the degree of unreference to the reference.
+
+**Changing elements**
+
+If we need to change the elements, we can key and paste them.
+
+If we need to add elements, we can use PS to graft a hand to the character and let Ai touch it up, or we can graft the lower body of another work for a bust without a lower body and let AI touch it up.
+
+! [test1](https://user-images.githubusercontent.com/75739606/201602016-e14b69e3-f250-4af7-b200-a421d163130b.png)
+
+**Make changes based on the original image**
+
+Using Inpaint, the main scene is removal/replacement.
+
+Start by tracing thin lines around the edges of the figure, then hitting the color block (if there are shadows, take **bright colors** or draw full shadows). Change the intensity to choose a lower denoising of around 0.3 (the lower the closer to the input image).
+
+Then use Img2Img Inpaint + relevant cue words to fix, not satisfied can be changed again until satisfied. Then the image is realesrgan superscored to remove the image texture.
+
+! [fix_exp](https://user-images.githubusercontent.com/75739606/201603999-1ae18fb9-5435-49f0-9adf-0789e9659a29.png)
+
+**Grafted image**
+
+Use PS software to add and remove elements and then re-produce them. This can solve the problem of drawing hands.
+
+Ai also accepts other finished images for grafting (example of application: solving the problem of lying down without lower body)
+
+### Multi-figure/single-figure
+
+sketching + IMG2IMG, this is the secret ~
+
+Wide painting single figure generation is best to play the sketch, for color painting, to determine the main body of the picture.
+
+Multi-figure to determine the number of characters, it is best to use the draft / colored 3d arrangement + figure generation.
+
+More than three people will be difficult to control the effect, the number of people greater than 6 in the image model is not estimated...
+
+### Perform palm restoration
+
+Feed the image into inpaint, use roughly the same cue words, put the cue about the `hand` in front, set the noise reduction depending on how much you want it to change (to 0.25 or less if you just want the hand to be more intact), then keep the steps the same as CFG and txt2img gen.
+
+Or just mask the hand, fix it at full resolution, greatly reduce the padding (it uses the surrounding pixels to create the context, but is only re-creating the hand) and only hint at hand issues (detailed hand depiction, etc.)
+
+The higher the CFG, the more it matches the cue words, and the higher the noise reduction the more it deviates from the original image.
+
+### Same character & differential
+
+Advanced Img2Img related content is needed, the best way to do this is to prepare a 3D master model with color and then this will ensure basic consistency.
+
+You can also use a lot of cue words to limit the character content, come up with many sheets and pick the pieces that work.
+
+If it's an expression or a background, you can use the repainting technique from the advanced tutorial.
+
+If you want some examples of differencing, the [5CH Japanese Wiki](https://seesaawiki.jp/nai_ch/d/%c7%ed%a4%ae%a5%b3%a5%e9%a5%c6%a5%af) provides an example.
+### Iterative sketching [^8]
+
+Here is a discussion of how to optimize **hand sketches** by Ai drawing, *note not quadratic*.
+
+In the first iteration, not too many Steps are needed, CFG can be very low (for better diversification results), and Denoising should be around 0.3-0.4 if you don't want to lose the sketch completely.
+
+In the final iteration, increase Steps and Denoising intensity (but not more than 0.8, otherwise the image will be corrupted, especially at greater than 512*512) see [here](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2213#issuecomment- 1274137775), while increasing the CFG and size as needed.
+
+You can always fix the hints (add or remove details that appear) and try a different sampler.
+
+Also, shouldn't you use a fixed constant seed for initial generation?
+
+If you provide a seed (instead of a random -1), your image will soon become oversaturated, oversharpened, and overpixelated. .... Of course you can use a fixed seed if you want to fine tune it.
+
+### The secret to figure to figure conversion
+
+Whether it's 3D (3D models like DAZ) or line art, AI only recognizes **color**, not lines, and color directly determines the effect of figure to figure conversion.
+
+If you want to fix the lines, then the noise reduction should be reduced to 0.2.
 
 
 ## Curbing style pollution
@@ -98,107 +171,75 @@ By the time 10 steps are reached, a basic image has been formed, so styling poll
 
 You can experiment with this number depending on how many overall steps you've done. If you change the format to [x:0.2] (i.e. a number below 1) then it becomes a percentage, [x:0.6] tells SD to wait until 60% of the total number of steps before implementing x, and so on.
 
-
-## The secret of diagram to diagram conversion
-
-Whether it is 3D (3D models like DAZ) or line drawings, AI only recognises **colour**, not lines, and colour directly determines the result of a diagram to diagram conversion.
-
-
 ## Size selection
 
 It should not be linked to picture quality; size affects the subject to some extent, as it potentially represents the category chosen (e.g. vertical figures, horizontal landscapes, small resolution emojis mostly).
 
 Picture quality can be manipulated using the Super Score guide.
 
+## Painting soldering!
 
-## Shot
+With [AiPhotoShop - the online tool for infinite extents of canvas](https://www.painthua.com/) you can "weld" your work continuously, very conveniently. Just add the `--api` parameter to the start command and open the web page to use it.
 
-[Recommended use of terms contained in Danbooru](https://danbooru.donmai.us/wiki_pages/tag_group%3Aimage_composition)
+> Image extents for some anime models are not supported because they are not Inpaint models (Sd has a dedicated Inpaint model.)
 
-![shot](https://user-images.githubusercontent.com/75739606/198682933-25c1b2df-c573-44ea-aba7-2df4609299e5.png)
-<!--
-![shot](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/shot.png)
--->
->citing an image from the Japanese Wiki, author unknown
+[GitHub](https://github.com/BlinkDL/Hua)
 
-
-`extreme closeup` ECU
-
-`close up` CU
-
-`medium close up` MCU
-
-`medium shot` MS
-
-`cowboy shot` CS
-
-`medium full shot` MFS
-
-`full shot`  FS
-
-
-## Reproduction
-
-If you want to reproduce it on the generation, you need the same `seed`, prompts, and other parameters (even size). However, if the other side uses stylisation, then you can hardly reproduce it.
-
---Self-deceptive reproduction: image to image, noise reduction to below 0.3...--
-
-
-## Frivolous details
+## Trivial details
 
 - Emoticons
 
-emoji(💰💶💷💴💵,🎊🪅🪄🎀,👩 🚀) Emoticons are also available and **very accurate**, I have tested them many times and Ai can recognise them.
+emoji(💰💶💷💴💵,🎊🪅🪄🎀,👩🚀) Emoticons are also available and **very accurate**, and Ai can recognize emoji after I tested it many times.
 
-The emoji performs well in terms of semantic accuracy because it is only one character.
+emoji performs well in terms of semantic accuracy because it has only one character.
 
-[emoji-list](https://unicode.org/emoji/charts/emoji-list.html)
-
+[emoji reference](https://unicode.org/emoji/charts/emoji-list.html)
 
 - Anime style
 
-`anime colouring` will work well, like an anime screenshot. (If you encounter black and white, you need to specify the colour of the character parts)
+`anime coloring` will have a good effect, like anime screenshots. (If you encounter black and white, you need to specify the color of the character parts)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/hGATDT-Y37g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 [some_art_styles_that_i_tried](https://www.reddit.com/r/StableDiffusion/comments/yllj3r/some_art_styles_that_i_tried/)
 
-### Optimised artwork
+### Optimize the effect of your work
 
-- Take a look at the target
+- Take a look at the goal
 
-Think about what you want your work to be labelled as on the internet.
+Think about what you want your work to be tagged with on the internet.
 
-A sticker would certainly not say `masterpiece, best quility,` would it?
+A sticker wouldn't say `masterpiece, best quility,` would it?
 
-Another thing is that if the request is for pixel work, you should remove any negative hints of conflict (if any).
+Another thing is that if the request is for a pixel work, you should remove some negative hints of conflict (if any).
 
-- Sequencing
+- Adjustment of order
 
-The words at the front will anchor the colour distribution of the picture. What is important goes first.
+The words in front anchor the color distribution of the image. What is important what goes first.
 
 - Semantic offset prevention
 
-To prevent semantic shifts, prioritise emoji and then use less complex syntax like `with` unnecessarily.
+To prevent semantic shifts, prioritize emoji, and then use less complex syntax like `with` unnecessarily.
 
-- Rainbow messy pictures
+- Keying?
 
-If you are outputting chaotic rainbow coloured images, it is possible that the generation resolution has been set too low.
+The rest of the background of a buttoned image will be treated as black.
 
-- Wavy noisy picture
+If you need a background, the effect is generally not very good, and it is recommended to fill in the color before operating.
 
-Dense waves or patterns may be because the weights are set too high.
+- Protect images from being cut by split lines
 
-- Keyed image?
+Negative tips to join
 
-The rest of the background of a buttoned image will be processed as black.
+``comic 2koma 3koma 4koma collage``
 
-If you need a background, the results are generally not very good and it is recommended to fill in the colours before manipulating them.
+It should improve.
 
-- Rough noise
+## Reproduction
 
-Not enough detail, characters look like rice cakes. Needs proper enhancement step.
+If you want to reproduce on generation, you need the same `seed`, cue words, and other parameters (even size). But if the other side uses stylization, then you can hardly reproduce it.
 
+-- Self-deceptive reproduction: figure to figure, noise reduction pulled to below 0.3... --
 
 ## Associated
 
@@ -235,66 +276,6 @@ You can also use **platform names** to limit the scope of the dataset, for examp
 [Sports_by_type](https://en.wikipedia.org/wiki/Category:Sports_by_type)
 
 [Art of composition](https://en.wikipedia.org/wiki/Composition_(visual_arts))
-
-
-## Iterative sketches [^8]
-
-Here's a discussion on how to optimise **hand sketches** by Ai drawing, *note not anime girls*.
-
-In the first iteration you don't need too many Steps, the CFG can be very low (for better diversification results) and Denoising should be around 0.3-0.4 if you don't want to lose the sketch completely.
-
-In the final iteration, increase the Steps and Denoising strength (but no more than 0.8, otherwise the image will be corrupted, especially at greater than 512*512) see [here](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues /2213#issuecomment-1274137775), while increasing the CFG and size as needed.
-
-You can always fix the hints (add or remove details that appear) and try a different sampler.
-
-Also, shouldn't you use a fixed and unchanging seed for the initial generation?
-
-If you provide a seed (instead of a random -1) your image will soon become oversaturated, oversharpened, overpixelated ..... Of course you can use a fixed seed if you want to fine tune it.
-
-
-## Facial expressions Control
-
-We can control the expressions in the picture using the Face Text!
-
-:-) smile :-( unhappy ;-) wink :-D happy :-P tongue out :-C very sad :-O surprised open mouth :-/ suspicious
-
-Only western face characters are supported, for details see [Danbooru Face Characters section](https://danbooru.donmai.us/wiki_pages/tag_group%3Aface_tags) or [Wikipedia](https://zh.wikipedia.org/wiki/%) E8%A1%A8%E6%83%85%E7%AC%A6%E8%99%9F%E5%88%97%E8%A1%A8?oldformat=true)
-
-
-## Multi-figure/single-figure
-
-Answer: sketching + IMG2IMG
-
-Wide paintings of single figures are best sketched and coloured to determine the subject of the picture.
-
-Multiple figures determine the number of figures, best to use sketches/coloured 3d arrangement + figure generation.
-
-More than three figures makes it difficult to control the effect
-
-Maybe There are no models for images with more than 6 people...
-
-
-## Make a hand fix
-
-Feed the image into inpaint, use roughly the same prompting, put the cue about the `hand` in front, set the noise reduction depending on how much you want it to change (if you just want the hand to be more complete, tune it to 0.25 or less), then leave the steps the same as CFG and txt2img gen.
-
-Or just mask the hand, fix it at full resolution, greatly reduce the padding (it uses the surrounding pixels to create the context, but is just re-creating the hand) and only hint at hand issues (detailed hand depiction etc)
-
-The higher the CFG, the more it matches the prompts, and the higher the noise reduction the more it deviates from the original image.
-
-
-## Identical figures & differentiation
-
-Advanced Img2Img related content is required, the best way to do this is to prepare a 3D master model with colours and then this will ensure basic consistency.
-
-You can also use a lot of prompts to limit the content of the character, come up with many sheets and pick the pieces that work.
-
-If it's an expression or a background, you can use the repainting technique from the advanced tutorial.
-
-If you want some examples of differencing, [5CH Japanese Wiki](https://seesaawiki.jp/nai_ch/d/%c7%ed%a4%ae%a5%b3%a5%e9%a5%c6%a5%af) provides an example.
-
-
-
 
 ## Designing with Ai
 
@@ -345,11 +326,9 @@ Size required square.
 <iframe src="//player.bilibili.com/player.html?aid=559362671&bvid=BV14e4y1U7r9&cid=869144379&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 >BV14e4y1U7r9
 
-
 ## Prompt
 
 SEE [HERE](https://danbooru.donmai.us/wiki_pages/howto%3Atag_checklist) From[Origin wiki](https://danbooru.donmai.us/wiki_pages/tag_groups)
-
 
 ### NAI in use out parameters
 
@@ -367,11 +346,7 @@ SEE [HERE](https://danbooru.donmai.us/wiki_pages/howto%3Atag_checklist) From[Ori
 
 - Use the `-no-half` parameter to start the program (secondary)
 
-
-
-
 **NAI default model settings**
-
 
 ```
 steps": 28, "sampler": "[sampler]", "seed": [seed], "strength": 0.69, "noise": 0.667, "scale": 11.0,
@@ -391,11 +366,7 @@ lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer
 
 Add `masterpiece, best quality` in front of all prompt words
 
-
 Clip skip 0, everything else is fine (afaik don't use supernet, v2, yaml, VAE)
-
-
-
 
 ### Conversions - NAI and WebUi(SD) have different enhanced syntax
 
@@ -407,7 +378,6 @@ Related [WebJS](https://github.com/naisd5ch/novel-ai-5ch-wiki-js)
 
 Weight enhancement markers: NAI is `{}` and WebUi(SD) is `()`
 
-
 ### Prompt Magic Book
 
 The Prompt Magic Book provides a library of ready-to-use templates (analogous to the Composition Book) with a convenient debugging log for Tag.
@@ -417,8 +387,6 @@ The Prompt Magic Book provides a library of ready-to-use templates (analogous to
 [Prompt The Book of Magic Volume 1.5](https://docs.qq.com/doc/DWGh4QnZBVlJYRkly)
 
 [Prompt 魔法書製作委員會](https://space.bilibili.com/1981251194)
-
-
 
 ### Good parameters (style tends to be illustrative) [^4]
 
@@ -455,49 +423,44 @@ The Prompt Magic Book provides a library of ready-to-use templates (analogous to
 | monochrome+lineart                                            | 情况下一般只会让眼睛上色，强调发色后头发也可以上色 |
 | {{{monochrome}}}, {{{gray scale}}}, {{{pencil sketch lines}}} | 做出的铅笔速写的感觉                               |
 
-
-利用sketch，pastel color，lineart的tag模拟一张图的绘画过程
-
+利用 sketch，pastel color，lineart 的 tag 模拟一张图的绘画过程
 
 #### 艺术风格
 
 | 词                                                                  | 描述                                   |
 |---------------------------------------------------------------------|----------------------------------------|
-| chibi                                                               | 可以画出低头身比的效果(二头身, 三头身) |
+| chibi                                                               | 可以画出低头身比的效果（二头身，三头身） |
 | {{watercolor pencil}}                                               | 可以生成彩铅画                         |
 | {{faux traditional media}}                                          | 可以做出签绘的风格                     |
 | anime screeshot，                                                   | 可以让画面变成动画风格                 |
 | {{{retro artstyle}}}                                                | 赛璐璐风                               |
 | {photorealistic}, {painting}, {realistic}, {sketch}, {oil painting} | 厚涂                                   |
-| pastel color和sketch                                                | 搭配会有速涂的质感                     |
-
+| pastel color 和 sketch                                                | 搭配会有速涂的质感                     |
 
 #### 杂志/设定集 风格
 
 | 词                                                             | 描述                                                           |
 |----------------------------------------------------------------|----------------------------------------------------------------|
 | official art                                                   | 变得更加官方一点                                               |
-| three views from front, back and side和costume setup materials | 可以用来生成设定图                                             |
+| three views from front, back and side 和 costume setup materials | 可以用来生成设定图                                             |
 | multiple views                                                 | 会出现类似设定图                                               |
 | {character sheet}                                              | 会出现设定图                                                   |
-| magazine cover                                                 | 会把背景换成杂志封面, 配合office art更像真实杂志(虽然字没法看) |
+| magazine cover                                                 | 会把背景换成杂志封面，配合 office art 更像真实杂志（虽然字没法看） |
 | magazine scan                                                  | 类似杂志内页的风格                                             |
-| posing                                                         | 会强调有一个动作, 不至于出现混乱的动作(露出有六个手指头的手)   |
-| caustics                                                       | 画面向主题聚焦, 类似海报                                       |
+| posing                                                         | 会强调有一个动作，不至于出现混乱的动作（露出有六个手指头的手）   |
+| caustics                                                       | 画面向主题聚焦，类似海报                                       |
 
-
-### 常用参数:SFW
+### 常用参数：SFW
 
 | 人物数量 | 描述                                                                  |
 | ----------- | ----------------------------------------------------------------------- |
-| 数量      | , one boy , one girl , two boy ,two girl,one_boy_one_girl(这是错误的) |
-
+| 数量      | , one boy , one girl , two boy ,two girl,one_boy_one_girl（这是错误的） |
 
 | 人物画风                                         | 描述 |
 | -------------------------------------------------- | ------ |
 | 质量提升参数 |   , masterpiece, best quality   |
 | 原神                             |   , Genshin Impact   |
-| 萝莉                  |    , female child , loli画风差  |
+| 萝莉                  |    , female child , loli 画风差  |
 
 | 人物样貌                           | 描述                                                           |
 | ------------------------------------ | ---------------------------------------------------------------- |
@@ -516,26 +479,26 @@ The Prompt Magic Book provides a library of ready-to-use templates (analogous to
 | 两眼之间的头发                     | hair between eyes                                              |
 | 眉毛后面的头发                     | eyebrows behind hair                                           |
 | 锁骨                               | collarbone                                                     |
-| 斗篷(要在很前面才有效)             | cape                                                           |
+| 斗篷（要在很前面才有效）             | cape                                                           |
 | 乳房尺寸                           | small breasts                                                  |
 | 出汗                               | sweating                                                       |
-| 颜色丝袜(和长丝袜冲突)             | white stockings , black stockings                              |
+| 颜色丝袜（和长丝袜冲突）             | white stockings , black stockings                              |
 | 长丝袜                             | thighhighs                                                     |
 | 女仆                               | maid                                                           |
 | 发带                               | ribbon                                                         |
 | 爱心眼                             | heart-shaped pupils                                            |
-| 御姐/JK/辣妹?                      | gyaru                                                          |
+| 御姐/JK/辣妹？| gyaru                                                          |
 | 肌肉发达                           | muscular                                                       |
-| 天使翅膀(要是形容人的第一个才正常) | angel wings                                                    |
-| 颜色内裤(赠内衣)                   | pink underpants                                                |
+| 天使翅膀（要是形容人的第一个才正常） | angel wings                                                    |
+| 颜色内裤（赠内衣）                   | pink underpants                                                |
 | 肚脐                               | navel                                                          |
 | 颈部颜色项圈                       | white collar                                                   |
 | 黑色皮肤                           | dark skin                                                      |
 | 撕裂的衣服                         | torn clothes                                                   |
 | 撕裂的裤子                         | torn legwear                                                   |
-| 开襟夹克(配合叉开腿特色)           | open jacket                                                    |
+| 开襟夹克（配合叉开腿特色）           | open jacket                                                    |
 | 异色瞳                             | heterochromia_blue_red                                         |
-| 吊袜带(会和内衣冲突)               | garter straps                                                  |
+| 吊袜带（会和内衣冲突）               | garter straps                                                  |
 | 靴子                               | boots                                                          |
 | 眼罩                               | blindfold                                                      |
 | 流泪                               | tears                                                          |
@@ -544,8 +507,8 @@ The Prompt Magic Book provides a library of ready-to-use templates (analogous to
 | 比基尼                             | bikini                                                         |
 | 湿衣服                             | wet clothes                                                    |
 | 透明衣物                           | transparent raincoat , transparent jacket , transparent tshirt |
-| 唾液(自动伸舌头)                   | saliva                                                         |
-| 流口水(和唾液冲突)                 | drooling                                                       |
+| 唾液（自动伸舌头）                   | saliva                                                         |
+| 流口水（和唾液冲突）                 | drooling                                                       |
 | 水手服                             | sailor dress                                                   |
 
 | 环境样式                                                                 | 描述                           |
@@ -554,7 +517,7 @@ The Prompt Magic Book provides a library of ready-to-use templates (analogous to
 | 光线反射                                                                 | reflection light               |
 | 赛博朋克                                                                 | cyberpunk, city, kowloon, rain |
 | 在地毯上                                                                 | on carpet                      |
-| 在瑜伽垫上(它分不清什么是瑜伽垫，只知道色块比较大，所以要配合one girl用) | on_yoga_mats                   |
+| 在瑜伽垫上（它分不清什么是瑜伽垫，只知道色块比较大，所以要配合 one girl 用） | on_yoga_mats                   |
 
 | 人物视角     | 描述        |
 | -------------- | ------------- |
@@ -585,61 +548,59 @@ The Prompt Magic Book provides a library of ready-to-use templates (analogous to
 | 跪下               | kneel down                                           |
 | 湿身               | wet body                                             |
 
-
 ## Market Adoption Survey
 
-Here are the applications for Stable Diffusion (non-NAI models).
+Here is the application of the stable diffusion (non-NAI model). Check out [related discussions](https://www.reddit.com/r/StableDiffusion/comments/yh8j0a/ai_art_is_popular_and_makes_money_confessions_of/).
 
-https://www.reddit.com/r/StableDiffusion/comments/yh8j0a/ai_art_is_popular_and_makes_money_confessions_of/
+**3D**
 
-- 3D
+- On blender, Ai has [rendering plugin](https://blendermarket.com/products/ai-render/?ref=110)
 
-On blender, Ai has [rendering plug-in](https://blendermarket.com/products/ai-render/?ref=110)
+**Design**
 
-- Design
+- [Microsoft 365 Tool Suite](https://www.xda-developers.com/microsoft-designer-image-creator-ai-dall-e-2/)
 
-[Microsoft 365 Tool Suite](https://www.xda-developers.com/microsoft-designer-image-creator-ai-dall-e-2/)
+- [Generate portraits for the Age of Empires 3 Definitive edition of the game module](https://github.com/matrix4767)
 
-[Portrait generation for the Age of Empires 3 Definitive edition of the game module](https://github.com/matrix4767)
+- [Product and architecture design/sketch](https://github.com/horribleCodes)
 
-[Product and architecture design/sketch](https://github.com/horribleCodes)
+- Painter cut and paste highlights
 
-- Album artwork
+- Comic creation @852
 
-[Image generation of singer with Stable Diffusion into video](https://github.com/Chilluminati91)
+- Novel illustration, AI painting background (I'm told the original model works well too)
 
-- Supporting images
+**Album artwork**
 
-[Making weird diagrams as a memory tool](https://github.com/ClashSAN)
+[Generate image of singer with stable diffusion to put into video](https://github.com/Chilluminati91)
 
-[A real-life use case for Stable Diffusion](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3219)
+**Allotment chart**
 
-[A combination of applications for Stable Diffusion](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3572)
+- [Making weird diagrams as a memory tool](https://github.com/ClashSAN)
 
-- Self-Media
+- [Real use case of stable diffusion](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3219)
 
-There's been a lot of it.
+- [Application combination of stable diffusion](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3572)
 
-- Redistribution for sale
+**Self-Publishing**
 
-Unconscionable companies re-open source projects
+- There are many video platforms
 
-(The Chinese version of the document here is meant to condemn people who disregard open source agreements to package and sell open source projects)
+**Services**
 
-- Illustrations/backgrounds
+- Certain companies repackage open source projects as creator communities and charge users a subscription fee. For example, XX Gallery, XX Edition. There are more small programs.
 
-Novel illustrations, AI painting backgrounds (the original model is said to work well too)
+- Tencent QQ Small World allows users to use Ai for painting
 
-- NFT
+**NFT**
+- ... ...
 
-?
 
-
-[^4]:[Paper朱整理优化方法](https://pan.baidu.com/s/1VWr7OLvAbu1KIoTPEs2wwQ?pwd=y8lk)
+[^4]:[Paper 朱整理优化方法](https://pan.baidu.com/s/1VWr7OLvAbu1KIoTPEs2wwQ?pwd=y8lk)
 
 [^5]:[参数图](https://m.weibo.cn/status/4823585938735546)
 
-[^6]:[SD金矿](https://rentry.org/sdupdates#hall-of-fame)
+[^6]:[SD 金矿](https://rentry.org/sdupdates#hall-of-fame)
 
 [^7]:[风格模型训练](https://www.bilibili.com/video/BV1ae4y1S7v9/)
 
@@ -647,8 +608,8 @@ Novel illustrations, AI painting backgrounds (the original model is said to work
 
 [^9]:[交替单词](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/1733)
 
-[^10]:[角色与画风tag训练十问](https://www.bilibili.com/video/BV1xt4y1F7Y2/)
+[^10]:[角色与画风 tag 训练十问](https://www.bilibili.com/video/BV1xt4y1F7Y2/)
 
-[^11]:[WebUI即将引入重磅更新，大幅提升图像品质](https://www.bilibili.com/read/cv19102552)
+[^11]:[WebUI 即将引入重磅更新，大幅提升图像品质](https://www.bilibili.com/read/cv19102552)
 
 [^12]:[a_simple_method_explained_in_the_comments_to](https://www.reddit.com/r/StableDiffusion/comments/ygyq2j/a_simple_method_explained_in_the_comments_to/)
