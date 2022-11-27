@@ -2,109 +2,111 @@
 
 This is a small guide to further explain the theory of index pages.
 
-This article is based on WebUi, so if you use another Ui, please be aware of compatibility.
+This article is based on WebUi, if you use other Ui, please be aware of compatibility.
 
-If you are an NAI user, please read the [Official Docs](https://docs.novelai.net/image/promptmixing.html) in addition.
+If you are a user of NAI, please read the [Official Docs](https://docs.novelai.net/image/promptmixing.html) additionally.
 
 ## Getting Started
 
-The perception of writing a Prompt is that the more samples that fit the expectation within the bounded data range, the more the result will fit the expectation.
+The perception of writing Prompt is that the more samples that meet the expectation within a limited data range, the more the result meets the expectation.
 
-### Write what?
+### What to write?
 
-The understanding of Ai is input by code and defined by Tokenizer. You can test the relevant code of the UI to obtain the actual word segmentation input.
+Ai is understood by code input, defined by the Tokenizer, and you can test the relevant code of the UI to get the actual subword input.
 
 - [NAI's prompt Tokenizer](https://novelai.net/tokenizer)
 - [WebUiTokenizer](https://github.com/AUTOMATIC1111/stable-diffusion-webui-tokenizer)
 
-**word**
+**Word**
 
-Commonly seen words, preferably well-known tags (such as Danbooru) that can be found at the source site of the dataset. The style of the word should match the style of the image (for example, the word "Leshan Giant Buddha" should not be added to the prompt word when inferring animation illustrations), otherwise there will be mixed styles or noise.
+Common common words, preferably with well-known tags that can be found at the dataset source site (e.g. Danbooru). The style of the word should match the style of the image (e.g., you should not include the word `Leshanda Buddha` in the cue when reasoning about anime illustrations), otherwise confusing styles or noise will occur.
 
-> For some animation models trained on Stable Diffusion, it is better to use the labels that can be found in Danbooru.
+> For some anime models trained based on Stable Diffusion, it is better to use the tags that can be found in Danbooru.
 
-**natural language**
+**Natural Language**
 
-Prompt can also use natural language directly. The language can be English, Japanese, special symbols or some Chinese, which is determined by the data set.
+Prompt can also use natural language directly, the language can be English, Japanese, special symbols or some Chinese, as determined by the dataset.
 
-The accuracy of natural language depends on the word segmentation of Clip. If you are pursuing accurate results, please do not use it.
+The accuracy of natural language depends on Clip's word separation, so do not use it if you are looking for precise results.
 
 Avoid conjunctions like `with` or complex syntax when using natural language, they are redundant.
 
 **emoji**
 
-You can use Western Emoji `(^_^)`, emoji 🌻. Emojis work precisely as one-character "words".
+You can use the western face character `(^_^)`, emoji 🌻. emoji works very precisely as a one-character "word".
 
-- Emoji has influence on composition, such as `💐☺️💐`.
-- Emoji performs well in terms of semantic accuracy because it has only one character.
-- [Emoji Reference](https://unicode.org/emoji/charts/emoji-list.html)
+- Emoji has an impact on composition, for example `💐☺️💐`.
+- Emoji performs well in terms of semantic accuracy because it is only one character.
+- [Emoji reference](https://unicode.org/emoji/charts/emoji-list.html)
 
-**Kaomoji**
+**Emoji**
 
-For **models using Danbooru data**, we can use kaomoji to control expressions!
+For **models using Danbooru data**, we can use face characters to control emojis!
 ```
-:-) Smile :-( Displeased ;-) Wink :-D Happy :-P Tongue out :-C Sad :-O Surprised Open mouth :-/ Doubtful
+:-) smile :-( upset ;-) make eyes :-D happy :-P stick out tongue :-C very sad :-O surprised open mouth :-/ suspicious
 ```
 
-- Kaomoji has an effect on composition.
+- Face characters have influence in composition.
 
-- Only Western Emoji is supported. For details, please refer to [Danbooru Emoji Section](https://danbooru.donmai.us/wiki_pages/tag_group%3Aface_tags) or [Wikipedia](https://zh.wikipedia.org/ wiki/%E8%A1%A8%E6%83%85%E7%AC%A6%E8%99%9F%E5%88%97%E8%A1%A8?oldformat=true)
+- Only western face characters are supported, see [Danbooru Face Characters section](https://danbooru.donmai.us/wiki_pages/tag_group%3Aface_tags) or [Wikipedia](https://zh.wikipedia.org/wiki/%E8%A1%A8%) for details E6%83%85%E7%AC%A6%E8%99%9F%E5%88%97%E8%A1%A8?oldformat=true)
 
-**Space**
+**spaces**
 
-- A small amount of spaces before and after the comma does not affect the actual effect.
+- The small number of spaces before and after the comma does not affect the actual effect.
 
-### How do you write it?
+### How do I write it?
 
-First think about what you want to draw, e.g. theme, appearance, mood, clothes, pose, background A category, then refer to a dataset tag list (if available, e.g. Danbooru, Pixiv etc.).
+First think about what you want to draw, e.g. theme, appearance, mood, clothes, pose, background A category, then refer to the dataset tagging table (if available, e.g. Danbooru, Pixiv, etc.).
 
-Then combine the similar cue phrases you want, using the English half-word `,` as a separator, and put these in order from most important to least important.
+Then combine the similar cue phrases you want, using the English semi-colon `,` as a separator, and put these in order from most important to least important.
 
 ```
 (quality), (subject)(style), (action/scene), (artist), (filters)
 ```
-`(quality)` represents the quality of the image, e.g. `low res` is used in combination with `sticker` to "exploit" more data sets, `1girl` is used in combination with `high quality` to get a high quality image.
+`(quality)` represents the quality of the image, e.g. `low res` is used in combination with `sticker` to "leverage" more datasets, `1girl` is used in combination with `high quality` to get high quality images.
 
-`(subject)` represents the subject of the image and anchors the content of the image, which is an essential part of any cue. `(style)` is the style of the screen, which is optional.
+`(subject)` represents the subject of the image and anchors the content of the image, which is an essential part of any cue. `(style)` is the screen style, optional.
 
-`(action/scene)` represents the action/scene and describes what the subject is doing where.
+`(action/scene)` represents the action/scene, which describes what the subject did where.
 
-`(artist)` is the artist's name or the name of the company that produced it.
+`(artist)` represents the artist's name or the name of the company that produced it.
 
-`(filters)` stands for details, additions. Artists, studios, photographic terms, character names, styles, effects, etc. can be used.
+`(filers)` represents some details, additions. You can use artist, studio, photography terms, character names, styles, effects, etc.
 
-**artistic style**
+**Artistic style**
 
-You can create images with special effects or a specified painting style by specifying style keywords.
+You can create images with special effects or specified painting styles by specifying style keywords.
 
-[NovelAI Tutorial and Spell Classroom](https://space.bilibili.com/8612008/channel/collectiondetail?sid=787691)
+[NovelAI usage tutorial and spell classroom](https://space.bilibili.com/8612008/channel/collectiondetail?sid=787691)
 
-[Test notes from the Mannequin Classroom](https://www.yuque.com/longyuye/lmgcwy)
+[Test records of the Mannequin Classroom](https://www.yuque.com/longyuye/lmgcwy)
 
-[Stylisation: 32 types](https://www.bilibili.com/video/BV1TP411N71t/)
+[Stylization: 32 kinds](https://www.bilibili.com/video/BV1TP411N71t/)
 
-In addition to this, you can also train style models to train your ideal style, see the `Model Training` section for more details. For more information you can read [为文字转图像 Ai 提示编写指南：A Guide to Writing Prompts for Text-to-image AI](https://docs.google.com/document/d/1XUT2G9LmkZataHFzmuOtRXnuWBfhvXDAo8DkS--8tec/edit#)
+In addition, you can also train style models to train your ideal style, see the `Model Training` chapter for more details.
+
+More:[为文字转图像 Ai 提示编写指南：A Guide to Writing Prompts for Text-to-image AI](https://docs.google.com/document/d/1XUT2G9LmkZataHFzmuOtRXnuWBfhvXDAo8DkS--8tec/edit#)
 
 ### How long to write?
 
-**writing length**
+**Writing Length**
 
-Due to the limitations of the GPT-3 model, the prompt is not infinite and the positive token is usually between 75 and 80, with the content truncated after 75 characters. So don't make the prompts too long, there is a risk of failure if they are longer than 100.
+Due to the limitations of the GPT-3 model, the prompt is not infinite, and the positive token is usually between 75 and 80, with the content truncated after 75 characters. So the prompts should not be too long, more than 100 is a risk of failure.
 
-- WebUi
+**WebUi**
 
-In WebUi, you **can** write prompts with more than 75 words. webUi overcomes this limitation by grouping prompt words. When the prompt exceeds 75 `tokens` (e.g. 150 `tokens`), WebUi will group the prompt words and submit multiple groups of 75 `tokens`. Tokens only have context for other content in the same collection.
+In WebUi, you **can** write prompts with more than 75 words. webUi overcomes this limitation by grouping prompt words. When the prompt exceeds 75 `tokens` (e.g. 150 `tokens`), WebUi will group the prompt words and submit multiple groups of 75 `tokens`. The token only has context for other content in the same collection.
 
 But this leads to a problem: there may be `bule hair` at the border between the first and second group, the token `blue` will be in the first group and `hair` will be in the second group. This leads to inaccurate results, because `bule hair` is split up unreasonably!
 
-To solve this problem, the new version adds an option `Increase coherency by padding from the last comma within n tokens when using more than 75 tokens`. This setting lets the program try to mitigate this by finding out if there is a last comma in the last N tokens, and if so, moving everything that passes through that comma together to the next collection.
+To solve this problem, the new version adds an option `Increase coherency by padding from the last comma within n tokens when using more than 75 tokens`. This setting lets the program try to mitigate this situation by finding if there is a last comma in the last N tokens, and if so, moving everything that passes through that comma together to the next collection.
 
 ```
-    There are entries for `... ,Comma,blue hair,PADDING,... `
+    There are entries for `... , Comma,blue hair,PADDING,... `
     
     The 75th word is `blue`
     
-    Use this option before
+    Before using this option
     
     Set 1:{[74]=Comma, [75]=blue}, Set 2:{[76]=hair, [77]=PADDING}
     
@@ -116,29 +118,29 @@ To solve this problem, the new version adds an option `Increase coherency by pad
 ```
 
 !!! tip
-    It is a good habit not to stack prompts, but if you do have a lot to write, you can increase the number of `steps` appropriately.
+    It is a good habit not to stack prompts, but if you do have a lot of content to write, you can increase the number of `steps` appropriately.
 
 ### Order
 
-According to the image inference process, the order in which the prompts are placed can be considered a priority, with the preceding Prompt anchoring the main content of the screen. This explains why I emphasized the order of the Prompt above.
+According to the image inference process, the order in which the prompts are placed can be considered a priority, with the preceding Prompt anchoring the main content of the screen. This explains why I emphasized the order of Prompt in the above.
 
-! [Description of image generation](https://jalammar.github.io/images/stable-diffusion/stable-diffusion-image-generation.png)
+![Description of image generation](https://jalammar.github.io/images/stable-diffusion/stable-diffusion-image-generation.png)
 
 > thanks https://jalammar.github.io/illustrated-stable-diffusion/
 
-If you use WebUi, WebUi renders long strings of prompts in groups of 75 Tokens.
+If you use WebUi, WebUi renders long strings of Prompt in groups of 75 Tokens.
 
 ### Prompt conflicts
 
 **classification conflicts**
 
-    If you want a sticker, the sticker will certainly not be labelled `masterpiece, best quility,` but rather `normal quality` in the dataset.
+    If you want a sticker, the sticker will definitely not be labeled `masterpiece, best quility,` but `normal quality` in the dataset.
 
-    Similarly there is pixel work, when writing prompt words you should remove some of the conflicting prompts.
+    Similarly there is also pixel work, when writing prompt words, you should remove some conflicting hints.
 
 **Style Conflict**
 
-    Let's say you want a `flatcolor` style illustration of a child playing on the beach.
+    Let's say you want to get a `flatcolor` style illustration of children playing on the beach.
 
     Then using `loli` is not a good idea, as it comes with a standard uniform drawing style attribute that can greatly affect the result.
 
@@ -146,7 +148,7 @@ If you use WebUi, WebUi renders long strings of prompts in groups of 75 Tokens.
 
 **dimensional conflicts**
 
-    Some anime models are based on the original Stable Diffusion and should be avoided as much as possible.
+    Some anime models are trained based on the original Stable Diffusion and should be avoided as much as possible.
 
 Please be careful.
 
@@ -270,7 +272,7 @@ For example, if you use `a busy city street in a modern city|illustration|cinema
 
 You can further add : x after the keyword to specify the weight of a single keyword.
 
--NAI
+**NAI**
 
 In NAI stands for average weight mix (first half and second half).
 
