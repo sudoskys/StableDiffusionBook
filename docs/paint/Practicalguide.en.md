@@ -572,7 +572,7 @@ Here is the application of the stable diffusion (non-NAI model). Check out [rela
 
 **Album artwork**
 
-[Generate image of singer with stable diffusion to put into video](https://github.com/Chilluminati91)
+- [Generate image of singer with stable diffusion to put into video](https://github.com/Chilluminati91)
 
 **Allotment chart**
 
