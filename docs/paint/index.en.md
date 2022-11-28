@@ -98,10 +98,7 @@ Later chapters covers: imitating style, specific shots, adding effects, fine-tun
 
 >Note: WebUi's settings page requires pressing `Apply setting` to save the settings.
 
-
-
 ## Basic flow
-
 
 ![WorkFlow](https://user-images.githubusercontent.com/75739606/199486119-d6eb3f94-72be-498b-8862-0775c45e8950.png)
 <!--
@@ -180,7 +177,6 @@ At least some Unicode characters that are alternative versions of Latin characte
 
 Human language is arbitrary and imprecise (except for emoji, which is exceptionally precise because it has only one character), and it has never evolved to the point where it can describe spatial information in detail.[^2]
 
-
 Stable Diffusion is a latent Diffusion model involving latent space. But latent, by definition, means unobservable. 
 
 Many gamblers follow their particular patterns of certain ritualistic behaviors believing that such patterns will increase the chance of a favorable outcome. Not only this type of false positive pattern doesn't work in reality, but it will also continue to reinforce and manifest itself, nudging a person further and further in the wrong direction.
@@ -197,7 +193,6 @@ It appears that VAE uses a statistical method known as Bayes' theorem. When calc
 The earlier tokens have more consistent positions, so the neural network is more likely to predict their relevance. In Bayesian inference, the first token or evidence in the matrix is important because it sets the initial probability condition. But later elements simply modify the probability conditions. Thus, at least in theory, the final token should not have more influence than the previous token.
 
 But the way the parser understands things is opaque, so there is no way to **exactly** know whether lexical order has an "anchor" effect.
-
 
 ### Movement and Poses
 
@@ -217,7 +212,6 @@ Choosing specific keywords is especially important if you want to control the co
 
 !!! tip
     The prompt is a hint and not a basis for judgement. For example, when you enter a quality word, you are actually limiting the scope of the data, not "asking" the AI to produce a good image.
-
 
 ### Attention / Emphasis
 
@@ -239,7 +233,6 @@ The repetition of a certain keyword seems to increase its effect regardless of t
 
 Worth noting, the impact of any single token will be diminished the more tokens exist in your prompt. You'll also notice, because of this, that styles will fade out when adding new tokens. I strongly suggest increasing the token strength on style words as your prompt length increases, in order to maintain a consistent style, particularly in certain models.[^2]
 
-
 #### dyes
 
 Each prompt is like a dye, they have different "affinities" and if the more common prompts, such as `loli` (placed alongside other prompts) have a greater impact than other prompts.
@@ -247,7 +240,6 @@ Each prompt is like a dye, they have different "affinities" and if the more comm
 For example, if you want to generate anime images and use the star `startrail` tag, there will be more star elements from real photos than the anime stars you expect to appear.
 
 Many words just don't carry the same weight in terms of benchmarks, so it's important to make reasonable adjustments to the effect.
-
 
 ### Image size
 
@@ -260,7 +252,6 @@ Image size obviously affects content, if the height of the image increases it is
 ## Sampler
 
 ![xy_sampler_hatsune_miku](https://user-images.githubusercontent.com/75739606/204205724-8acf735a-1068-4a5b-900e-2ea169fe875f.jpg){loading=lazy}
-
 
 [^1]:[installgentoo wiki](https://wiki.installgentoo.com/wiki/Stable_Diffusion)
 
