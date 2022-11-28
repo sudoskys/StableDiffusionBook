@@ -1,5 +1,6 @@
+# Exception troubleshooting
 
-# Self-help when a bug occurs in generating images
+Here are some exceptions for improper settings. A guide to troubleshooting because of improperly written hints is in the practice guide.
 
 ## Generate black/green image
 
