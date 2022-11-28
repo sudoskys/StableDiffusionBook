@@ -254,6 +254,9 @@ Clip的标记器在标记之前将所有单词小写。其他模型，如 BERT �
 
 [WebUi：为Krita插件等添加自定义后端API](https://github.com/Interpause/auto-sd-paint-ext)
 
+## 采样器
+
+![xy_sampler_hatsune_miku](https://user-images.githubusercontent.com/75739606/204205724-8acf735a-1068-4a5b-900e-2ea169fe875f.jpg){loading=lazy}
 
 
 [^1]:[installgentoo wiki](https://wiki.installgentoo.com/wiki/Stable_Diffusion)

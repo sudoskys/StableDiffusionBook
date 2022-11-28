@@ -257,6 +257,9 @@ Image size obviously affects content, if the height of the image increases it is
 
 [WebUi: Adding custom backend APIs for Krita plugins and more](https://github.com/Interpause/auto-sd-paint-ext)
 
+## Sampler
+
+![xy_sampler_hatsune_miku](https://user-images.githubusercontent.com/75739606/204205724-8acf735a-1068-4a5b-900e-2ea169fe875f.jpg){loading=lazy}
 
 
 [^1]:[installgentoo wiki](https://wiki.installgentoo.com/wiki/Stable_Diffusion)
