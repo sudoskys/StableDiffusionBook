@@ -77,9 +77,7 @@ Torch active/reserved: 1975/2144 MiB, Sys VRAM: 7890/8134 MiB (93.61%)
 
 ## 中文/本地化
 
-语言文件作为单个 `.json` 文件提供。 将此文件放入 `localizations` 目录并在设置中选择即可。
-
-在 22/10/26 下午，WebUi 添加了中文的翻译。
+本地化插件已经集成进插件管理器中。本地化文件是在 `localizations` 文件夹下的Json文件。
 
 **创建本地化文件**
 

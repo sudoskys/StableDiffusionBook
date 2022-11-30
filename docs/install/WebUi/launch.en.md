@@ -78,9 +78,9 @@ Add the `sd_hypernetwork` and `CLIP_stop_at_last_layers` fields to the `Quickset
 
 ## Multilanguage/Localization
 
-The language file is provided as a single `.json` file. Simply place this file in the `localizations` directory and select it in the settings.
+**Localisation plug-ins have been integrated into the Plugin Manager.**
 
-**Create a localization file of your own**
+The language file is provided as a single `.json` file. Simply place this file in the `localizations` directory and select it in the settings.
 
 Go to Settings and click the button at the bottom of `Download localization template` to download a localization template that you can edit.
 
