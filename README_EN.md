@@ -46,7 +46,7 @@ A small reference.
 
 If you find any errors or deficiencies in this article, please feel free to raise an issue and PR to the [Project Repository](https://github.com/sudoskys/StableDiffusionBook/).
 
-Read the [Contribution Guidelines](https://github.com/sudoskys/StableDiffusionBook/blob/main/docs/contributing.en.md) before contributing
+Read the [Contribution Guidelines](https://draw.dianas.cyou/en/GettingStarted/contributing/) before contributing
 
 Press `. ` key to automatically clone the repository and start collaborating.
 
