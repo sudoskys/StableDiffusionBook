@@ -11,8 +11,8 @@
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
 <title>Hypernetwork 训练 - AiDraw</title>
-<link href="../../assets/stylesheets/main.472b142f.min.css" rel="stylesheet"/>
-<link href="../../assets/stylesheets/palette.08040f6c.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
@@ -47,7 +47,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#hypernetwork-13">
+<a class="md-skip" href="#hypernetwork">
           跳转至
         </a>
 </div>
@@ -141,7 +141,7 @@
 <div class="md-header__source">
 <a class="md-source" data-md-component="source" href="https://github.com/sudoskys/StableDiffusionBook" title="前往仓库">
 <div class="md-source__icon md-icon">
-<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
 </div>
 <div class="md-source__repository">
     GitHub
@@ -207,7 +207,7 @@
 <div class="md-nav__source">
 <a class="md-source" data-md-component="source" href="https://github.com/sudoskys/StableDiffusionBook" title="前往仓库">
 <div class="md-source__icon md-icon">
-<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
 </div>
 <div class="md-source__repository">
     GitHub
@@ -496,18 +496,18 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#hyper-network-layer-structure">
-    hyper network layer structure
+<a class="md-nav__link" href="#_1">
+    预处理训练集
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#add-layer-normalization">
-    Add layer normalization
+<a class="md-nav__link" href="#_2">
+    参数
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#use-dropout">
-    USE Dropout
+<a class="md-nav__link" href="#_3">
+    超网层数
   </a>
 </li>
 <li class="md-nav__item">
@@ -516,8 +516,8 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#16">
-    额外注意 [^16]
+<a class="md-nav__link" href="#3">
+    额外注意 3
   </a>
 </li>
 </ul>
@@ -565,18 +565,18 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#hyper-network-layer-structure">
-    hyper network layer structure
+<a class="md-nav__link" href="#_1">
+    预处理训练集
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#add-layer-normalization">
-    Add layer normalization
+<a class="md-nav__link" href="#_2">
+    参数
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#use-dropout">
-    USE Dropout
+<a class="md-nav__link" href="#_3">
+    超网层数
   </a>
 </li>
 <li class="md-nav__item">
@@ -585,8 +585,8 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#16">
-    额外注意 [^16]
+<a class="md-nav__link" href="#3">
+    额外注意 3
   </a>
 </li>
 </ul>
@@ -599,60 +599,90 @@
 <a class="md-content__button md-icon" href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/train/Hypernetwork.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="hypernetwork-13">Hypernetwork [^13]</h1>
-<blockquote>
-<p>TODO Rewrite</p>
-</blockquote>
-<p>Hypernetworks 是一种新颖的概念，用于在不触及任何权重的情况下微调模型。</p>
+<h1 id="hypernetwork">Hypernetwork</h1>
+<p>Hypernetworks<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> 是一种新颖的概念，用于在不触及任何权重的情况下微调模型。</p>
+<p>此项技术被广泛用于画风模仿中，和 Textual Inversion 相比，泛化效果更好。</p>
+<p>这个页面主要是为你实际操作提供一份指南。</p>
+<p>如果你在寻找一些更加详细深入的 Hypernetwork 说明，请看 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2670">这篇社区贴文</a>.</p>
 <div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>在设置内勾选 <strong>Move VAE and CLIP to RAM when training hypernetwork. Saves VRAM.</strong> 的效果是转移 VAE 到 RAM, 而不是卸载，</p>
+<p class="admonition-title">关于 VAE</p>
+<p>据说 VAE 会破坏训练结果。</p>
+<p>这里指出：在设置内勾选 <strong>Move VAE and CLIP to RAM when training hypernetwork. Saves VRAM.</strong> 的效果是转移 VAE 到 RAM, 而不是卸载，</p>
 <p>如需卸载，请重命名。</p>
 </div>
 <p>你可以在 <code>train</code> 选项卡训练 <code>Hypernetworks</code>，训练方式与  <code>Textual Inversion</code> 相同。</p>
+<h2 id="_1">预处理训练集</h2>
+<p>与训练人物不同 <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>, 训练超网并不需要在意背景是否干净或者主体是否突出，虽然训练素材越多效果越好，但是请注意以下信息</p>
+<ul>
+<li>画风固定，譬如抛弃画师早期作品</li>
+<li>去除文字或水印</li>
+<li>分辨率不要过小</li>
+</ul>
+<p><strong>裁切处理</strong></p>
+<p>目前 WebUI 已经集成了图像预处理功能，可以自动裁切缩放图片。</p>
+<p>如果你需要确保画面主体明确，推荐自己手动裁切来保证主体在画面中心。<a href="https://www.birme.net">批量裁切工具</a></p>
+<p>因为是风格训练，并不用担心训练主体是否非对称等问题，所以推荐打开图像翻转来倍增数据集，提升训练效果。<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+<p><strong>贴标签</strong></p>
+<p>如果你还没有打标签，可以勾选 <code>Using deepbooru for caption</code> ，来让 deepbooru 自动生成标签。<sup id="fnref3:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+<p>如果你想手动打标签，推荐 <a href="https://github.com/arenatemp/sd-tagging-helper">GUI 贴标签工具</a></p>
+<h2 id="_2">参数</h2>
 <p>注意，应该使用非常低的学习率，例如 0.000005 或 0.0000005.</p>
 <p>如果学习率是 5e-6 ，步数大约 10000 到 20000 。<a href="https://colab.research.google.com/drive/1qzweYEMIFkG6jPa04tD1MhWWOzgSnDvP?usp=sharing">学习率计算器</a>，来自 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2670">这里</a></p>
 <p>分辨率设置为要训练的分辨率，最好使用 1: 1 的纵横比。</p>
 <p>如果数据集的图片是长条或者横条，请勾选 <code>Split cversized images into two</code></p>
-<p>如果你还没有打标签，可以勾选 <code>Using deepbooru for caption</code> ，来让 deepbooru 识别标签。</p>
-<h2 id="hyper-network-layer-structure">hyper network layer structure</h2>
-<p>If write "1, 2, 1", hypernetworks are composed of 2 fully connected layers whose intermediate dim is 2x, which is same as up to now.</p>
-<p>The more you add the number, like "1, 2, 4, 2, 1", the more the structure of hypernetworks becomes deeper. Deep hypernetworks are suited for training with large datasets.</p>
-<p>层结构目前还是推荐 1，2，1，如果想扩展的话，可以尝试 1，2，2，1.[^16]</p>
-<p>1，2，1 的 pt 文件大概是 83.8MB，1，2，2，1 大概是 167MB。如果要扩展的话，一定要注意盘空间是否足够，否则很容易爆盘。[^16]</p>
-<h2 id="add-layer-normalization">Add layer normalization</h2>
+<h2 id="_3">超网层数</h2>
+<p>关于超网层结构，你可以简单理解成一个微型神经网络，譬如这个默认结构<code>1,2,1</code>左右两个 <code>1</code> 分别是输入&amp;输出，<code>2</code> 是中间层。</p>
+<p>超网结构有两种设计方向，分别是更宽或是更深</p>
+<p>更宽的超网更加开朗，适合用于认识一些新事物，譬如<code>1,4,1</code>这种就属于宽超网。</p>
+<p>更深的超网更加社恐，更加适合归纳总结数据，简单讲就是对画风之类的学习效果更加好，譬如<code>1,1.5,1.5,1.5,1</code>就是深超网。</p>
+<p>另外，请注意，将超网数字加总就是这个超网的数据量，量越大，训练出来的超网文件就越大。</p>
+<pre><code>`1，2，1` 的 pt 文件大概是 83.8MB，`1，2，2，1` 大概是 `167MB`。如果要扩展的话，一定要注意盘空间是否足够，否则很容易爆盘。[^16]
+</code></pre>
+<p>在超网结构设计里需要注意的另一点就是，请让你的设计看起来更像是沙漏而不是水桶，一个<code>1,2,3,2,1</code>的超网可能最终效果还不如一个<code>1,2,2,2,1</code>的超网。</p>
+<p>另外一点就是，和<code>1,3,1</code>相比，<code>1,1.5,1.5,1</code>虽然它们总量是一样的，但是后者有着更深的网络层级，在画风训练上可能更具优势</p>
+<p>如果你期望选用更加激进的方案可以试试<code>1, 0.75, 0.5, 0.5, 0.5, 0.75, 1</code>这样的结构，虽然它和<code>1,3,1</code>总量是一样的，但是它更加深</p>
+<p>层结构目前还是推荐 1，2，1，如果想扩展的话，可以尝试 1，2，2，1.<sup id="fnref:16"><a class="footnote-ref" href="#fn:16">3</a></sup></p>
+<p><strong>Add layer normalization 选项</strong></p>
 <p>If checked, add layer normalization after every fully connected layer.</p>
-<p>防止超网络过拟合，使训练更加稳定。</p>
-<p>LN 对防止过拟合使训练更加稳定是有意义的，但是根据之前的测试，linear 开开启 LN 的情况，可能学不进去东西，出空包弹。使用激活函数后，LN 现在是可使用的。[^16]</p>
+<p>它的作用防止超网络过拟合，使训练更加稳定。</p>
+<p>LN 对防止过拟合使训练更加稳定是有意义的，但是根据之前的测试，linear 开开启 LN 的情况，可能学不进去东西，出空包弹。使用激活函数后，LN 现在是可使用的。<sup id="fnref2:16"><a class="footnote-ref" href="#fn:16">3</a></sup></p>
 <p>Swish 似乎并不需要开启 LN，因为 Swish 的训练速度慢，所以应该使用更高的学习率。</p>
-<h2 id="use-dropout">USE Dropout</h2>
+<p><strong>USE Dropout</strong></p>
 <p>启用 Dropout 可以防止超网络过拟合，目前不支持自定义 dropout 比率，默认为 0.3</p>
 <p>在 1，2，1 的层结构上，dropout 可能只会对小数据集有帮助。</p>
 <h2 id="activation-functions">激活函数 activation functions</h2>
-<p>关于 <a href="https://www.geeksforgeeks.org/activation-functions-neural-networks/">激活函数</a>，<a href="https://en.wikipedia.org/wiki/Activation_function">维基</a></p>
-<p>激活函数是神经网络中非线性的来源。如果去掉激活函数，神经网络的权重和偏差只会进行线性变换（不管神经网络有多少层，线性运算的复合还是线性运算的），最终的效果只相当于单层的线性模型。</p>
 <p>激活函数对输入进行非线性变换，使其能够学习和执行更复杂的任务，深层神经网络表达能力更加强大。</p>
-<p>在 10/21/22 的一个 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3199">合并请求</a> 中，这项功能被 discus0434 提出。</p>
-<p>支持 relu、leakyrelu 和 linear 。选择 linear（线性） 的效果和没有激活函数一样。</p>
-<p>Swish 对比 Relu 和 Linear 要更好，Swish 适合更大的网络，而 Elu 可能对 1，2，1 的超网络带来更好的结果。[^16]</p>
-<p><a href="https://rentry.org/hypernetwork4dumdums">相关的英文指南</a></p>
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2670">相关的英文讨论</a></p>
+<p>支持 relu、leakyrelu 和 linear 。选择 linear（线性） 的效果和<strong>没有激活函数</strong>一样。</p>
+<p>Swish 对比 Relu 和 Linear 要更好，Swish 适合更大的网络，而 Elu 可能对 1，2，1 的超网络带来更好的结果。<sup id="fnref3:16"><a class="footnote-ref" href="#fn:16">3</a></sup></p>
+<div class="highlight"><pre><span></span><code>激活函数是神经网络中非线性的来源。如果去掉激活函数，神经网络的权重和偏差只会进行线性变换（不管神经网络有多少层，线性运算的复合还是线性运算的），最终的效果只相当于单层的线性模型。
+</code></pre></div>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://user-images.githubusercontent.com/75739606/197823893-88a3bece-9100-41d1-8f07-bc6d9b3aa92c.jpg"><img alt="hypernet 对比图" src="https://user-images.githubusercontent.com/75739606/197823893-88a3bece-9100-41d1-8f07-bc6d9b3aa92c.jpg"/></a></p>
-<!--
-![hypernet 对比图](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/exp_hypernet.jpg)
--->
 <blockquote>
 <p>hypernet 对比图，the woman in picture is 24 years old</p>
 </blockquote>
-<h2 id="16">额外注意 [^16]</h2>
+<p>关于 <a href="https://www.geeksforgeeks.org/activation-functions-neural-networks/">激活函数</a>，<a href="https://en.wikipedia.org/wiki/Activation_function">维基</a></p>
+<h2 id="3">额外注意 <sup id="fnref4:16"><a class="footnote-ref" href="#fn:16">3</a></sup></h2>
 <p>在开启 LN 选用激活函数并开启 Dropout 后，超网络没以前那么容易过拟合，但是可能需要更大的学习率进行学习。</p>
-<p><a href="https://shiina-h.notion.site/shiina-h/Hypernetwork-1fc0b60645284c5e96bb41b583a4e86f">Hypernetwork 画风训练经验分享</a></p>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:1">
+<p><a href="https://t.me/StableDiffusion_CN/444535">Water miner 的关于超网的 md 笔记</a> <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref3:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://rentry.org/hypernetwork4dumdums">相关的英文指南</a> <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+<li id="fn:16">
+<p><a href="https://shiina-h.notion.site/shiina-h/Hypernetwork-1fc0b60645284c5e96bb41b583a4e86f">Hypernetwork 画风训练经验分享</a> <a class="footnote-backref" href="#fnref:16" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref2:16" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref3:16" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref4:16" title="Jump back to footnote 3 in the text">↩</a></p>
+</li>
+</ol>
+</div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月27日 09:53:14</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年12月1日 03:43:18</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 03:59:46</span>
@@ -711,7 +741,7 @@
 </div>
 <div class="md-social">
 <a class="md-social__link" href="https://t.me/s/StableDiffusion_CN_WIKI" rel="noopener" target="_blank" title="t.me">
-<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M248 8C111.033 8 0 119.033 0 256s111.033 248 248 248 248-111.033 248-248S384.967 8 248 8Zm114.952 168.66c-3.732 39.215-19.881 134.378-28.1 178.3-3.476 18.584-10.322 24.816-16.948 25.425-14.4 1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25 5.342-39.5 3.652-3.793 67.107-61.51 68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608 69.142-14.845 10.194-26.894 9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7 18.45-13.7 108.446-47.248 144.628-62.3c68.872-28.647 83.183-33.623 92.511-33.789 2.052-.034 6.639.474 9.61 2.885a10.452 10.452 0 0 1 3.53 6.716 43.765 43.765 0 0 1 .417 9.769Z"></path></svg>
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M248 8C111.033 8 0 119.033 0 256s111.033 248 248 248 248-111.033 248-248S384.967 8 248 8Zm114.952 168.66c-3.732 39.215-19.881 134.378-28.1 178.3-3.476 18.584-10.322 24.816-16.948 25.425-14.4 1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25 5.342-39.5 3.652-3.793 67.107-61.51 68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608 69.142-14.845 10.194-26.894 9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7 18.45-13.7 108.446-47.248 144.628-62.3c68.872-28.647 83.183-33.623 92.511-33.789 2.052-.034 6.639.474 9.61 2.885a10.452 10.452 0 0 1 3.53 6.716 43.765 43.765 0 0 1 .417 9.769Z"></path></svg>
 </a>
 </div>
 </div>
@@ -722,6 +752,6 @@
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "toc.follow", "navigation.top", "navigation.tracking", "navigation.indexes", "navigation.expand", "navigation.sections"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
-<script src="../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
+<script src="../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>
