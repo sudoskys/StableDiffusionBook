@@ -8,12 +8,12 @@ Currently, Ai does not handle details and multiple characters well, and the ligh
 
 ## Inspiration Table
 
-| Angle | | | | | | | | | | | | | |
-|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|
-| Character | Expression | Hair | Eyes | Clothes | Status | Pose | Camera Position |
-|Scene |Width |Lighting |Background |Subject |Character Event | ||
-| Data Qualification | Painting Type | Evaluation Qualification | Associative Elements | 3D/2D | | ||
-| Event | Acronym | SFW/NSFW | Production Company | Work Brand | | ||
+|   角度   |    |      |          |      |       |     |     |
+|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|
+| **Character** | Expression | Hair | Eyes | Clothes | State | Posture | Camera |
+| **Scene** | Wide selection | Light and shadow selection | Background subject | Character event place | | | |
+| **Restriction** | Painting Type | Evaluation Restriction | Associative Elements | 3D/2D | | | |
+| **Events** | Acronyms | SFW/NSFW | Producers | Brands | | | |
 
 ### Perspective
 
