@@ -6,6 +6,20 @@
 
 以下是新闻和测试内容。
 
+## 12/1
+
+WebUi:[Newly created embeddings considered malicious](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/3878)
+
+## 11/30
+
+**DreamArtist**
+DA 更新了动态 cfg，可以根据时间步自动调整 cfg，支持非线性。动态 cfg 可以加快收敛，可能提高学习质量，对多图大数据集更好使。
+
+## 11/28
+
+**DreamArtist**
+DA 更新了局部学习增强，可以强调更多学习某一部分特征了。增强图是一个灰度图，图像值的范围 0-255.0-127 表示降低注意力从 1-0.01 等分，127-255 表示加强注意力，从 1-5 等分。
+
 ## 11/24
 
 Stable Diffusion 2.0 Release

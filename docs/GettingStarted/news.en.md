@@ -4,6 +4,21 @@
 
     The Stable Diffusion WebUi is currently iterating very quickly and there are a lot of updates every day, so it is recommended to pull the latest code every day.
     
+
+## 12/1
+
+WebUi:[Newly created embeddings considered malicious](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/3878)
+
+## 11/30
+
+**DreamArtist**
+DA updated dynamic cfg to automatically adjust cfg based on time step, supports nonlinearity. Dynamic cfg can speed up convergence, possibly improve learning quality, and is better for large multi-graph datasets.
+
+## 11/28
+
+**DreamArtist**
+DA updated local learning enhancement, can emphasize more on learning a certain part of features now. The augmented graph is a grayscale graph with image values ranging from 0-255.0-127 means reduced attention from 1-0.01 equal points, 127-255 means enhanced attention from 1-5 equal points.
+
 ## 11/24
 
 Stable Diffusion 2.0 Release
@@ -126,7 +141,6 @@ DPM-Solver (and the improved version DPM-Solver++) is a fast dedicated high-orde
 
     ![exp](https://user-images.githubusercontent.com/116967051/200134579-dc31f8d4-abd6-4ef0-9d2c-1582a53ec1b0.png){loading=lazy align=left width=300 data-title="DPM-Solver++" data-description="DPM-Solver++ can achieve great sample quality in only 15 to 20 steps."}
 
-
     Test From [Here](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4304#issuecomment-1304602296)
 
     DPM-Solver++ can achieve great sample quality in only 15 to 20 steps.
@@ -136,7 +150,6 @@ DPM-Solver (and the improved version DPM-Solver++) is a fast dedicated high-orde
     paper https://arxiv.org/abs/2211.01095
 
     </div>
-
 
 * New Model
 
