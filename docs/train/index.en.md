@@ -176,7 +176,6 @@ Then restart the application and you can use this feature in Img2Img.
 
 [^15]:[dreambooth-论文](https://arxiv.org/abs/2208.12242)
 
-[^16]:[Hypernetwork 画风训练经验分享](https://shiina-h.notion.site/shiina-h/Hypernetwork-1fc0b60645284c5e96bb41b583a4e86f)
 
 [^17]:[Installing Stable Diffusion & Dreambooth for Windows](https://pastebin.com/xcFpp9Mr)
 

@@ -174,13 +174,9 @@ git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-grad
 
 [^12]:[超网络训练](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2284)
 
-[^13]:[超网络训练指南](https://rentry.org/hypernetwork4dumdums)
-
 [^14]:[dreambooth-小鬼峰](https://www.bilibili.com/read/cv18935031?from=search)
 
 [^15]:[dreambooth-论文](https://arxiv.org/abs/2208.12242)
-
-[^16]:[Hypernetwork 画风训练经验分享](https://shiina-h.notion.site/shiina-h/Hypernetwork-1fc0b60645284c5e96bb41b583a4e86f)
 
 [^17]:[Installing Stable Diffusion & Dreambooth for Windows](https://pastebin.com/xcFpp9Mr)
 
