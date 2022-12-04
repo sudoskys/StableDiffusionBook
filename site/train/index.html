@@ -502,6 +502,9 @@
 <input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../landing/">参考资料</a>
+<label for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+</label>
 </div>
 <nav aria-label="参考资料" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_7">
@@ -509,6 +512,11 @@
           参考资料
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../landing/link/">
+        资料表
+      </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -675,6 +683,7 @@ fine tune directly = DB/native training
 <p>训练产物大小较小，webui 自带训练支持。</p>
 <p>可以解决新出的角色画不出的问题，或者模仿特定的可以用语言精确描述的艺术风格。</p>
 <p>因为 TI 是在 Text Encoder 的输出做处理，所以并不能让模型学习到它不知道的概念。</p>
+<p><strong>不同模型的 embeddings 不通用</strong></p>
 <h4 id="_5">使用</h4>
 <p>使用时，将 embedding（一个 .pt 或一个 .bin 文件）放入 webui 的 <code>embeddings</code> 目录并在 prompt 中写要用的 embedding 的文件名（不包括扩展名）即可，不必重启 webui。可以同时使用多个 embedding。</p>
 <p>如果你使用 DreamArtist ，则将 <code>*-neg.pt</code> 一并放入 <code>embeddings</code> 目录，在积极和消极提示词中同时使用它们即可。</p>
@@ -789,7 +798,7 @@ fine tune directly = DB/native training
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年12月1日 03:43:18</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年12月4日 04:39:29</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 03:59:46</span>

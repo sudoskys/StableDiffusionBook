@@ -7,29 +7,29 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="一个介绍 Ai 绘画的 WIKI/A WIKI about Ai painting" name="description"/>
 <meta content="StableDiffusionBook Team" name="author"/>
-<link href="https://stable-diffusion-book.vercel.app/paint/WebUi/Advanced/" rel="canonical"/>
-<link href="../../../assets/images/favicon.png" rel="icon"/>
+<link href="https://stable-diffusion-book.vercel.app/landing/link/" rel="canonical"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
-<title>Img2指南 - AiDraw</title>
-<link href="../../../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
-<link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
+<title>资料表 - AiDraw</title>
+<link href="../../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <meta content="website" property="og:type"/>
-<meta content="Img2指南 - AiDraw" property="og:title"/>
+<meta content="资料表 - AiDraw" property="og:title"/>
 <meta content="一个介绍 Ai 绘画的 WIKI/A WIKI about Ai painting" property="og:description"/>
-<meta content="https://stable-diffusion-book.vercel.app/assets/images/social/paint/WebUi/Advanced.png" property="og:image"/>
+<meta content="https://stable-diffusion-book.vercel.app/assets/images/social/landing/link.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
-<meta content="https://stable-diffusion-book.vercel.app/paint/WebUi/Advanced/" property="og:url"/>
+<meta content="https://stable-diffusion-book.vercel.app/landing/link/" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Img2指南 - AiDraw" name="twitter:title"/>
+<meta content="资料表 - AiDraw" name="twitter:title"/>
 <meta content="一个介绍 Ai 绘画的 WIKI/A WIKI about Ai painting" name="twitter:description"/>
-<meta content="https://stable-diffusion-book.vercel.app/assets/images/social/paint/WebUi/Advanced.png" name="twitter:image"/>
-<link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+<meta content="https://stable-diffusion-book.vercel.app/assets/images/social/landing/link.png" name="twitter:image"/>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -40,14 +40,14 @@
                 body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
                 body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
                 body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
-                </style><script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+                </style><script src="../../assets/javascripts/glightbox.min.js"></script></head>
 <body data-md-color-accent="" data-md-color-primary="white" data-md-color-scheme="default" dir="ltr">
 <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#img2">
+<a class="md-skip" href="#_1">
           跳转至
         </a>
 </div>
@@ -55,7 +55,7 @@
 </div>
 <header class="md-header" data-md-component="header">
 <nav aria-label="页眉" class="md-header__inner md-grid">
-<a aria-label="AiDraw" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="AiDraw">
+<a aria-label="AiDraw" class="md-header__button md-logo" data-md-component="logo" href="../.." title="AiDraw">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m20.71 4.63-1.34-1.34c-.37-.39-1.02-.39-1.41 0L9 12.25 11.75 15l8.96-8.96c.39-.39.39-1.04 0-1.41M7 14a3 3 0 0 0-3 3c0 1.31-1.16 2-2 2 .92 1.22 2.5 2 4 2a4 4 0 0 0 4-4 3 3 0 0 0-3-3Z"></path></svg>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
@@ -71,7 +71,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Img2指南
+              资料表
             
           </span>
 </div>
@@ -100,7 +100,7 @@
                   </a>
 </li>
 <li class="md-select__item">
-<a class="md-select__link" href="../../../en/paint/WebUi/Advanced/" hreflang="en">
+<a class="md-select__link" href="../../en/landing/link/" hreflang="en">
                     English
                   </a>
 </li>
@@ -155,37 +155,37 @@
 <div class="md-tabs__inner md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../..">
+<a class="md-tabs__link" href="../..">
         起步于此
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../Perpare/">
+<a class="md-tabs__link" href="../../Perpare/">
         开始之前
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../install/">
+<a class="md-tabs__link" href="../../install/">
         安装配置
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../model/">
+<a class="md-tabs__link" href="../../model/">
         绘画调试
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../../">
+<a class="md-tabs__link" href="../../paint/">
         绘画指南
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../train/">
+<a class="md-tabs__link" href="../../train/">
         训练模型
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../landing/">
+<a class="md-tabs__link md-tabs__link--active" href="../">
         参考资料
       </a>
 </li>
@@ -199,7 +199,7 @@
 <div class="md-sidebar__inner">
 <nav aria-label="导航栏" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="AiDraw" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="AiDraw">
+<a aria-label="AiDraw" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="AiDraw">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m20.71 4.63-1.34-1.34c-.37-.39-1.02-.39-1.41 0L9 12.25 11.75 15l8.96-8.96c.39-.39.39-1.04 0-1.41M7 14a3 3 0 0 0-3 3c0 1.31-1.16 2-2 2 .92 1.22 2.5 2 4 2a4 4 0 0 0 4-4 3 3 0 0 0-3-3Z"></path></svg>
 </a>
     AiDraw
@@ -218,7 +218,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../..">起步于此</a>
+<a href="../..">起步于此</a>
 <label for="__nav_1">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -230,22 +230,22 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../GettingStarted/news/">
+<a class="md-nav__link" href="../../GettingStarted/news/">
         新闻
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../GettingStarted/term/">
+<a class="md-nav__link" href="../../GettingStarted/term/">
         术语
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../GettingStarted/state/">
+<a class="md-nav__link" href="../../GettingStarted/state/">
         声明
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../GettingStarted/contributing/">
+<a class="md-nav__link" href="../../GettingStarted/contributing/">
         贡献指南
       </a>
 </li>
@@ -255,7 +255,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../Perpare/">开始之前</a>
+<a href="../../Perpare/">开始之前</a>
 </div>
 <nav aria-label="开始之前" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
@@ -269,7 +269,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../install/">安装配置</a>
+<a href="../../install/">安装配置</a>
 <label for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -293,17 +293,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../install/WebUi/set/">
+<a class="md-nav__link" href="../../install/WebUi/set/">
         基本指南
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../install/WebUi/launch/">
+<a class="md-nav__link" href="../../install/WebUi/launch/">
         运行WebUi
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../install/WebUi/Troubleshoot/">
+<a class="md-nav__link" href="../../install/WebUi/Troubleshoot/">
         错误处理
       </a>
 </li>
@@ -316,7 +316,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../model/">绘画调试</a>
+<a href="../../model/">绘画调试</a>
 <label for="__nav_4">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -328,19 +328,19 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../model/GPU/">
+<a class="md-nav__link" href="../../model/GPU/">
         GPU相关
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../model/NAI/">
+<a class="md-nav__link" href="../../model/NAI/">
         NAI泄漏报告
       </a>
 </li>
 <li class="md-nav__item md-nav__item--section md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4_4" id="__nav_4_4" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../model/WebUi/">WebUi 配置</a>
+<a href="../../model/WebUi/">WebUi 配置</a>
 <label for="__nav_4_4">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -352,12 +352,12 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../model/WebUi/base/">
+<a class="md-nav__link" href="../../model/WebUi/base/">
         基本指南
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../model/WebUi/Troubleshoot/">
+<a class="md-nav__link" href="../../model/WebUi/Troubleshoot/">
         错误处理
       </a>
 </li>
@@ -367,8 +367,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
 <label class="md-nav__link" for="__nav_5">
           绘画指南
           <span class="md-nav__icon md-icon"></span>
@@ -382,7 +382,7 @@
 <li class="md-nav__item md-nav__item--section md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_1" id="__nav_5_1" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../">概论</a>
+<a href="../../paint/">概论</a>
 <label for="__nav_5_1">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -394,17 +394,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../PromptsEngineering/">
+<a class="md-nav__link" href="../../paint/PromptsEngineering/">
         提示工程
       </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" id="__nav_5_2" type="checkbox"/>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_2" id="__nav_5_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../">WebUi绘画指南</a>
+<a href="../../paint/WebUi/">WebUi绘画指南</a>
 <label for="__nav_5_2">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -416,88 +416,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../base/">
+<a class="md-nav__link" href="../../paint/WebUi/base/">
         Txt2指南
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          Img2指南
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../paint/WebUi/Advanced/">
         Img2指南
       </a>
-<nav aria-label="目录" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_1">
-    基本参数
-  </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#img2txt">
-    Img2Txt
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#img2img">
-    Img2Img
-  </a>
-<nav aria-label="Img2Img" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
-    调整大小
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#img2img_1">
-    Img2Img 三渲二
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#img2img-outpainting">
-    Img2Img Outpainting 外部修补
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#img2img-inpainting">
-    Img2Img Inpainting 修补
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#img2img-loopback">
-    Img2Img Loopback 回环生成
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#img2img_2">
-    Img2Img 让低显存生成大分辨率图片
-  </a>
-<nav aria-label="Img2Img 让低显存生成大分辨率图片" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_3">
-    脚本
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../extension/">
+<a class="md-nav__link" href="../../paint/WebUi/extension/">
         安装扩展
       </a>
 </li>
@@ -517,12 +446,12 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../Practicalguide/">
+<a class="md-nav__link" href="../../paint/Practicalguide/">
         实战指南
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../identify/">
+<a class="md-nav__link" href="../../paint/identify/">
         鉴别
       </a>
 </li>
@@ -535,7 +464,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../train/">训练模型</a>
+<a href="../../train/">训练模型</a>
 <label for="__nav_6">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -547,32 +476,32 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../train/Textual/">
+<a class="md-nav__link" href="../../train/Textual/">
         Textual 训练
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../train/Hypernetwork/">
+<a class="md-nav__link" href="../../train/Hypernetwork/">
         Hypernetwork 训练
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../train/DreamBooth/">
+<a class="md-nav__link" href="../../train/DreamBooth/">
         DreamBooth 训练
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../train/AestheticGradients/">
+<a class="md-nav__link" href="../../train/AestheticGradients/">
         AestheticGradients 训练
       </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../landing/">参考资料</a>
+<a href="../">参考资料</a>
 <label for="__nav_7">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -583,10 +512,115 @@
           参考资料
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../landing/link/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          资料表
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         资料表
       </a>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+    训练
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+    资料
+  </a>
+<nav aria-label="资料" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+    提示词相关
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+    文档
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+    风格化
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
+    超网络
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#embeddings">
+    embeddings
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_8">
+    模板库
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_9">
+    图库
+  </a>
+<nav aria-label="图库" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ai">
+    Ai 作品库
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ai_1">
+    Ai 数据来源
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_10">
+    平台/服务
+  </a>
+<nav aria-label="平台/服务" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_11">
+    前端
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_12">
+    服务平台
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_13">
+    服务
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_14">
+    杂项
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -606,62 +640,96 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_1">
-    基本参数
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#img2txt">
-    Img2Txt
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#img2img">
-    Img2Img
-  </a>
-<nav aria-label="Img2Img" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
 <a class="md-nav__link" href="#_2">
-    调整大小
+    训练
   </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#img2img_1">
-    Img2Img 三渲二
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#img2img-outpainting">
-    Img2Img Outpainting 外部修补
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#img2img-inpainting">
-    Img2Img Inpainting 修补
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#img2img-loopback">
-    Img2Img Loopback 回环生成
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#img2img_2">
-    Img2Img 让低显存生成大分辨率图片
-  </a>
-<nav aria-label="Img2Img 让低显存生成大分辨率图片" class="md-nav">
-<ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_3">
-    脚本
+    资料
+  </a>
+<nav aria-label="资料" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+    提示词相关
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+    文档
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+    风格化
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
+    超网络
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#embeddings">
+    embeddings
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_8">
+    模板库
   </a>
 </li>
 </ul>
 </nav>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_9">
+    图库
+  </a>
+<nav aria-label="图库" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ai">
+    Ai 作品库
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ai_1">
+    Ai 数据来源
+  </a>
+</li>
 </ul>
 </nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_10">
+    平台/服务
+  </a>
+<nav aria-label="平台/服务" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_11">
+    前端
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_12">
+    服务平台
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_13">
+    服务
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_14">
+    杂项
+  </a>
 </li>
 </ul>
 </nav>
@@ -670,175 +738,286 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/paint/WebUi/Advanced.md" title="编辑此页">
+<a class="md-content__button md-icon" href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/landing/link.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="img2">Img2*</h1>
-<p>此页面介绍 Img2Img 的基本操作。如果对参数有疑惑请查看“模型调试”页面的 WebUi 参数介绍。</p>
-<p>如果你在寻找一些应用例子，你应该看 “实战指南”页面。</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>请阅读前面章节的模型进阶 1, 了解具体的 Img2Img 和 inpaint 介绍操作。</p>
-</div>
-<h2 id="_1">基本参数</h2>
-<p><code>cfg scale</code> 符合 prompt 的程度，值越高越会字面看待 prompt, 低则给模型较大的发挥空间，但是实际模型表现上来看 CFG scale 低 (6-8) 饱和度低，偏杂乱，高 (18-22) 则饱和度偏高，风格更强烈。</p>
-<blockquote>
-<p>过高的 CFG 会引起颜色失真，CFG 应该在 5-15 之间</p>
-</blockquote>
-<p><code>denoise strength</code> img2img 专属参数，从 0 到 1 取值，值越高 AI 对原图的参考程度就越低 （同时增加迭代次数）, 个人喜欢低 CFG 高 denoise 重绘图，高 CFG 低 denoise 改细节。</p>
-<p>如果对其他参数有疑惑(如 <code>seed</code> )请查看模型调试页面的 WebUi 参数介绍。</p>
-<h2 id="img2txt">Img2Txt</h2>
-<p>生成按钮下有一个 <code>Interrogate CLIP</code>，点击后会下载 <code>CLIP</code>，用于推理当前图片框内图片的 Prompt 并填充到提示词。</p>
-<p>CLIP 询问器有两个部分：一个是 BLIP 模型，它承担解码的功能，从图片中推理文本描述。另一种是 CLIP 模型，它会把文本转化成向量（在模型的推理过程中）。</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Img2Txt 使用到的模型为 <a href="https://storage.googleapis.com/sfr-vision-language-research/BLIP/models/model_base_caption_capfilt_large.pth">model_base_caption_capfilt_large.pth</a></p>
-<p>大小为 <code>855MB</code></p>
-</div>
-<h2 id="img2img">Img2Img</h2>
-<p>一般我们有两种途径对图像进行修复：<strong>PS 和 InPaint</strong>，使用方法也十分多样。</p>
-<p>WebUi 使用 <code>--gradio-img2img-tool color-sketch</code> 启动会带入一个插件，可以对图片进行颜色涂抹（不是 Inpaint 涂蒙版用的，是修改上传图片用的）</p>
-<div class="admonition tip">
-<p class="admonition-title">不同之处</p>
-<p>PS 重新绘画投入 Img2Img 的话，会导致画风的变动，而 Inpaint 就不会。</p>
-</div>
-<h3 id="_2">调整大小</h3>
-<p><em>Just resize</em> 仅仅调整大小 - 简单地将源图像的大小调整到目标分辨率，导致不正确的长宽比。</p>
-<p><em>Crop and resize</em> 裁剪和调整大小 - 在保持长宽比的情况下调整源图像的大小，使其完全占据目标分辨率，并裁剪伸出的部分。</p>
-<p><em>Resize and fill</em> 调整大小和填充 - 调整源图像的大小，保留长宽比，使其完全适合目标分辨率，并通过源图像的行/列来填充空白空间</p>
-<h3 id="img2img_1">Img2Img 三渲二</h3>
-<p>调整 3D 模型骨架比寻找样图更容易。</p>
-<p>可以结合 <strong>3D 建模</strong> 摆 Pose, 可以使用 MMD 相关软件。</p>
-<p>如果是真人图片，需要适当提高 <code>CFG Scale</code> 相似度，结合提示词一起生成。降噪 <code>denoising</code> 越高，相关性越低。</p>
-<p>推荐使用 <a href="https://www.daz3d.com/get_studio">DAZ</a> 或者 <a href="https://www.blender.org/">blender</a> 或者 Unity ，在对 3D 模型的测试中，<strong>色彩主要影响 AI 的绘画效果</strong>，所以你的模型需要有纹理。</p>
-<p>如果你使用 blender ，你可以使用 <a href="https://youtu.be/MClbPwu-75o">这个视频</a> 分享的 <a href="https://www.artstation.com/marketplace/p/VOAyv/stable-diffusion-3d-posable-manekin-doll?utm_source=artstation&amp;utm_medium=referral&amp;utm_campaign=homepage&amp;utm_term=marketplace">模型娃娃</a></p>
-<h3 id="img2img-outpainting">Img2Img <strong>Outpainting 外部修补</strong></h3>
-<p>Outpainting 扩展原始图像并修复创建的空白空间。
-您可以在底部的 img2img 选项卡中找到该功能，在 Script -&gt; Poor man's outpainting 下。</p>
-<div class="highlight"><pre><span></span><code>Outpainting, unlike normal image generation, seems to profit very much from large step count. A recipe for a good outpainting is a good prompt that matches the picture, sliders for denoising and CFG scale set to max, and step count of 50 to 100 with Euler ancestral or DPM2 ancestral samplers.
-</code></pre></div>
-<h3 id="img2img-inpainting">Img2Img <strong>Inpainting 修补</strong></h3>
-<p>在 Inpainting 选项卡中，在图像的一部分上绘制蒙版，该部分将被重画。</p>
-<p><code>Masked content</code> 设置确定在修复之前放置到遮罩区域中的内容，一般选 <code>original</code>，可以保持潜在空间一致性，如果你不希望修补内容继承原来的色彩分布，选 <code>fill</code> 就是使用图片的大部分底色，选 <code>latent noise</code> 可以获得随机色彩点阵图（使生成内容脱离关联）。</p>
-<p>它们的效果如下：</p>
-<table>
-<thead>
-<tr>
-<th>示意操作</th>
-<th>fill</th>
-<th>original</th>
-<th>latent noise</th>
-<th>latent nothing</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting-initial-content-mask.png"><img alt="" src="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting-initial-content-mask.png"/></a></td>
-<td><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting-initial-content-fill.png"><img alt="" src="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting-initial-content-fill.png"/></a></td>
-<td><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting-initial-content-original.png"><img alt="" src="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting-initial-content-original.png"/></a></td>
-<td><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting-initial-content-latent-noise.png"><img alt="" src="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting-initial-content-latent-noise.png"/></a></td>
-<td><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting-initial-content-latent-nothing.png"><img alt="" src="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting-initial-content-latent-nothing.png"/></a></td>
-</tr>
-</tbody>
-</table>
-<p><code>mask</code> 横条决定了模糊程度。original 是 <code>原图</code>，fill 是 <code>填充底色</code>，<code>fill</code> 要更多 step 才能消除不自然感。</p>
-<p><code>Inpaint at full resolution</code> 即全分辨率修复。默认情况下 Inpaint 会将生成的图像大小 <strong>整体</strong> 调整为 <em>UI 中指定的目标分辨率</em>。启用 <code>Inpaint at full resolution</code> 后，<strong>仅调整遮罩区域</strong> 的大小，并在处理后将其 <strong>粘贴回</strong> 原始图片。这允许你处理大尺寸图片，并允许以更大的分辨率渲染修复对象。</p>
-<p>目前有几种方法进行重绘制操作：</p>
+<h1 id="_1">外链</h1>
+<p>链接到社区经常谈论的东西。</p>
+<p>No English page because of frequent editing for now.</p>
+<h2 id="_2">训练</h2>
+<p><strong>预处理</strong></p>
 <ul>
 <li>
-<p>在网络编辑器中自己绘制蒙版（<code>Inpaint masked</code> 指重画涂鸦区域，<code>Inpaint not masked</code> 指重画涂鸦之外的区域）</p>
+<p><a href="https://github.com/livelifebythecode/birme-sd-variant">Birme Variant for Stable Diffusion</a></p>
 </li>
 <li>
-<p>在外部编辑器中擦除部分图片并上传透明图片。透明区域会成为蒙版的一部分。Tips：某些编辑器默认将完全透明的区域保存为黑色。</p>
+<p><a href="https://github.com/JohannesBuchner/imagehash">imagehash</a></p>
 </li>
 <li>
-<p>将模式（图片右下角）更改为 "Upload mask" 并为蒙版处理为单独的黑白图像（白色部分会被 inpaint)。</p>
+<p><a href="https://github.com/CCRcmcpe/pinterest-crawler">Downloads all images suitable for search</a></p>
+</li>
+<li>
+<p><a href="https://github.com/hysts/anime-face-detector">Anime-face-detector</a></p>
 </li>
 </ul>
-<p>如果 <code>inpaint at full resolution</code> 出现黑块，可能是 RAM 不足，尝试卸载 vae.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting.png"><img alt="result" src="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting.png"/></a></p>
-<p><a href="https://www.bilibili.com/video/BV1HK411Q7uk/?zw">开源调研-AI 绘画全参数讲解-002img2img 图像到图像</a></p>
-<!--
-<iframe src="//player.bilibili.com/player.html?aid=474043788&bvid=BV1HK411Q7uk&cid=860273094&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
--->
-<p>通过这种方法，我们可以更改角色衣物风格或者其他任何细节。</p>
-<p><a href="https://www.bilibili.com/video/av559044202/?zw">如何教会 Ai 画手</a></p>
-<!--
-<iframe src="//player.bilibili.com/player.html?aid=559044202&cid=859852841&page=1&danmaku=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
--->
-<h3 id="img2img-loopback">Img2Img Loopback 回环生成</h3>
-<p>在 img2img 中设置 loopback 脚本，它允许自动将输出图像作为下一批的 Batch 提供，相当于保存输出图像，并用它替换输入图像。</p>
-<p>Batch 数设置控制获得多少次迭代</p>
-<p>通常，在执行此操作时，您会自己为下一次迭代选择许多图像中的一个，因此此功能的有用性可能值得怀疑，但反正我已经设法获得了一些我无法获得的非常好的输出。</p>
-<h3 id="img2img_2">Img2Img 让低显存生成大分辨率图片</h3>
-<p>在前面提到了，如果遇到生成鬼图或者 低显存生产高分辨率图片 可以采用的 Img2Img 画质提升脚本。</p>
-<p>其实我 <strong>强烈推荐</strong> 你使用 Extras 的功能对低分辨率进行重放，效果不错且体验良好！</p>
-<h4 id="_3">脚本</h4>
-<p>但是如果你想使用脚本提供的分辨率增强，这里有 Img2Img 的具体流程</p>
-<ol>
+<p><strong>训练</strong></p>
+<ul>
 <li>
-<p>使用 <code>--medvram</code> 或者 <code>--lowvram</code> 参数启动 webui</p>
+<p><a href="https://t.me/StableDiffusion_CN/505385">kaggle</a></p>
 </li>
 <li>
-<p>选择较小分辨率生成图片。记住你生成图片的分辨率。生成完毕之后，复制图片的 <code>Seed</code></p>
+<p><a href="https://github.com/CCRcmcpe/diffusers/">CCRcmcpe/diffusers/</a>，可以使用 Yaml 文件进行配置。</p>
 </li>
 <li>
-<p>生成完毕后，先查看图片效果是否满意。如果满意，直接将图片送进 Img2img。（点击 <code>Send to img2img</code>）</p>
+<p><a href="https://github.com/CCRcmcpe/scal-sdt">Stable Diffusion trainer/scal-sdt</a></p>
+</li>
+</ul>
+<h2 id="_3">资料</h2>
+<h3 id="_4">提示词相关</h3>
+<ul>
+<li>
+<p><a href="https://artiststostudy.pages.dev/">测试组</a></p>
 </li>
 <li>
-<p>在 img2img 界面底部，有一个 <code>Script</code> 选项。将 <code>Script</code> 选为 <code>SD Upscale</code>，里面的 Tile overlap 尽量调小</p>
+<p><a href="https://danbooru.donmai.us/wiki_pages/tag_groups">Danbooru tag 组</a></p>
 </li>
 <li>
-<p>一般送入 Img2img 的图，输入框自动填充原提示词。如果你发现 prompt 有变动，请手动填充</p>
+<p><a href="https://www.yuque.com/longyuye/lmgcwy">人偶教室：风格化教学</a></p>
 </li>
 <li>
-<p>选择合适的 <code>Sampling Steps</code> 和 <code>Sampling method</code></p>
+<p><a href="https://pharmapsychotic.com/tools.html">人工智能艺术的工具和资源</a></p>
 </li>
 <li>
-<p>确认你的 <code>Width</code> 和 <code>Height</code> 与 <strong>原图</strong> 一致</p>
+<p><a href="https://docs.google.com/spreadsheets/d/14Gg1kIGWdZGXyCC8AgYVT0lqI6IivLzZOdIT3QMWwVI/edit">手抄本法术书</a></p>
 </li>
 <li>
-<p>将第 2 步复制的 Seed 填入 img2img 的 Seed 里并生成</p>
+<p><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRa2HjzocajlsPLH1e5QsJumnEShfooDdeHqcAuxjPKBIVVTHbOYWASAQyfmrQhUtoZAKPri2s_tGxx/pubhtml#">参数法术全典</a></p>
 </li>
-</ol>
-<p>这里的 Width 和 Height 是超分时 img2img 的图片大小，如果不等会导致出现重叠问题</p>
-<p>SD Upscale 选项在 Img2Img 的 Script 栏目中，主要作用是提升分辨率。</p>
-<p><a href="https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99#%E9%AB%98%E5%88%86%E8%BE%A8%E7%8E%87%E4%B8%8B%E5%87%BA%E6%80%AA%E5%9B%BE">脚本解决方案来源于此</a></p>
-<div class="footnote">
-<hr/>
-<ol>
-<li id="fn:4">
-<p><a href="https://pan.baidu.com/s/1VWr7OLvAbu1KIoTPEs2wwQ?pwd=y8lk">Paper 朱整理优化方法</a> <a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 1 in the text">↩</a></p>
+<li>
+<p><a href="https://docs.google.com/spreadsheets/d/1zij5OzCZIaQuhAbiSayhFznjgJ3rwbaNwnUnaUMxyTQ/edit?usp=drivesdk">Tag 在线协作</a></p>
 </li>
-<li id="fn:5">
-<p><a href="https://m.weibo.cn/status/4823585938735546">参数图</a> <a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 2 in the text">↩</a></p>
+<li>
+<p><a href="https://docs.qq.com/doc/DWHl3am5Zb05QbGVs">元素法典</a></p>
 </li>
-<li id="fn:6">
-<p><a href="https://rentry.org/sdupdates#hall-of-fame">SD 金矿</a> <a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 3 in the text">↩</a></p>
+<li>
+<p><a href="https://docs.google.com/spreadsheets/d/14xTqtuV3BuKDNhLotB_d1aFlBGnDJOY0BRXJ8-86GpA/edit#gid=0">图像合成风格研究数据库</a></p>
 </li>
-<li id="fn:7">
-<p><a href="https://www.bilibili.com/video/BV1ae4y1S7v9/">Style train</a> <a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 4 in the text">↩</a></p>
+<li>
+<p><a href="https://t.me/StableDiffusion_Show">StableDiffusion Show</a></p>
 </li>
-<li id="fn:8">
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2473">迭代草图</a> <a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 5 in the text">↩</a></p>
+<li>
+<p><a href="https://github.com/EhTagTranslation">E 站标签翻译项目</a></p>
 </li>
-<li id="fn:10">
-<p><a href="https://www.bilibili.com/video/BV1xt4y1F7Y2/">角色与画风 tag 训练十问</a> <a class="footnote-backref" href="#fnref:10" title="Jump back to footnote 6 in the text">↩</a></p>
+</ul>
+<h3 id="_5">文档</h3>
+<ul>
+<li>
+<p><strong><a href="https://rentry.org/sdupdates">SD 资源金矿</a></strong></p>
 </li>
-<li id="fn:11">
-<p><a href="https://www.bilibili.com/read/cv19102552">WebUI 美学权重</a> <a class="footnote-backref" href="#fnref:11" title="Jump back to footnote 7 in the text">↩</a></p>
+<li>
+<p><a href="https://proximacentaurib.notion.site/proximacentaurib/parrot-zone-74a5c04d4feb4f12b52a41fc8750b205">Notion：关于人工智能艺术</a></p>
 </li>
-</ol>
-</div>
+<li>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features">WebUi 使用手册</a></p>
+</li>
+<li>
+<p><a href="https://seesaawiki.jp/nai_ch/">NovelAI 5ch Wiki</a></p>
+</li>
+<li>
+<p><a href="https://rentry.co/voldy">PasteBinWiki</a></p>
+</li>
+<li>
+<p><a href="https://www.reddit.com/r/StableDiffusion/comments/xbeyw3/can_anyone_offer_a_little_guidance_on_the/">一个小指南：RedditAbout</a></p>
+</li>
+<li>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts">WebUi 自定义脚本</a></p>
+</li>
+<li>
+<p><a href="https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99">SD 相关的 Faq</a></p>
+</li>
+<li>
+<p><a href="https://docs.google.com/document/d/1XUT2G9LmkZataHFzmuOtRXnuWBfhvXDAo8DkS--8tec/edit#">为文字转图像 Ai 提示编写指南：A Guide to Writing Prompts for Text-to-image AI</a></p>
+</li>
+<li>
+<p><a href="https://mashonoid.notion.site/AI-Art-Learning-Hub-b6bb69fc249847438602ee11d3a89fa0">AI Art Learning Hub</a></p>
+</li>
+<li>
+<p><a href="https://rentry.co/zk4u5">日本社区？那边出的教程</a></p>
+</li>
+<li>
+<p><a href="https://blog.novelai.net/novelai-improvements-on-stable-diffusion-e10d38db82ac">novelai 对 Sd 的优化日志</a></p>
+</li>
+<li>
+<p><a href="https://rentry.org/stablediffgpubuy">火药教程</a></p>
+</li>
+<li>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/javascript/hints.js">WebUi 的鼠标悬浮提示</a></p>
+</li>
+<li>
+<p><a href="https://rentry.org/inpainting-guide-SD">匿名者的绘画技巧/nsfw</a></p>
+</li>
+<li>
+<p><a href="https://stablediffusionguides.carrd.co/#">梦想家指南</a></p>
+</li>
+<li>
+<p><a href="https://docs.qq.com/doc/DSHBGRmRUUURjVmNM">Tags 基本编写逻辑-三段式入门与解析</a></p>
+</li>
+<li>
+<p><a href="https://docs.qq.com/doc/DWFdSTHJtQWRzYk9k">元素同典</a></p>
+</li>
+<li>
+<p><a href="https://docs.qq.com/doc/DQ3ZJSGFmeVpWc2ta">Ai 绘画深度教程</a></p>
+</li>
+</ul>
+<h3 id="_6">风格化</h3>
+<ul>
+<li>
+<p><a href="https://danbooru.donmai.us/wiki_pages?commit=Search&amp;search%5Btitle_normalize%5D=%2A_%28medium%29">绘画媒介全分类</a></p>
+</li>
+<li>
+<p><a href="https://gallerix.asia/storeroom/">艺术家博物馆</a></p>
+</li>
+<li>
+<p><a href="https://docs.google.com/spreadsheets/d/1SRqJ7F_6yHVSOeCi3U82aA448TqEGrUlRrLLZ51abLg/htmlview#">Ai 艺术家文档——深入了解</a></p>
+</li>
+<li>
+<p><a href="https://rentry.org/anime_and_titties">动漫人物/艺术家/风格化列表/Pt 文件</a></p>
+</li>
+<li>
+<p><a href="https://www.yuque.com/longyuye/lmgcwy">风格化：人偶教室</a></p>
+</li>
+<li>
+<p><a href="https://seesaawiki.jp/nai_ch/d/%b2%e8%c9%f7%a1%a6%b9%bd%bf%de">风格化，日语 Wiki</a></p>
+</li>
+<li>
+<p><a href="https://www.bilibili.com/video/BV1TP411N71t/">风格化：32 种</a></p>
+</li>
+<li>
+<p><a href="https://rentry.org/artists_sd-v1-4">艺术家列表/SD1.4</a></p>
+</li>
+<li>
+<p><a href="https://www.urania.ai/top-sd-artists">艺术家列表/SD1.4/1,833 位艺术家查询</a></p>
+</li>
+</ul>
+<h3 id="_7">超网络</h3>
+<p><a href="https://arca.live/b/hypernetworks/60940948">韩国论坛模型共享计划</a></p>
+<p><a href="https://mega.nz/folder/sSACBAgC#kNiPVzRwnuzs8JClovS1Tw">韩国的社区放出的模型</a></p>
+<h3 id="embeddings">embeddings</h3>
+<p><strong>不同大模型之间不能通用 embeddings</strong></p>
+<p><a href="https://rentry.org/anime_and_titties">动漫人物/艺术家/风格化列表/Pt 文件</a></p>
+<p><a href="https://cyberes.github.io/stable-diffusion-textual-inversion-models/">HuggingFace 的 e mbeddings 库，仅适用原版 SD</a> ，<a href="https://huggingface.co/spaces/sd-concepts-library/stable-diffusion-conceptualizer">stable-diffusion-conceptualizer</a></p>
+<p><a href="https://gitlab.com/16777216c/stable-diffusion-embeddings">(NSFW)embeddings 风格化</a></p>
+<p><a href="https://rentry.org/embeddings">list of Textual Inversion embeddings for SD</a></p>
+<h3 id="_8">模板库</h3>
+<p><a href="https://docs.qq.com/doc/DWHl3am5Zb05QbGVs?dver=">元素法典</a> 来自 <a href="https://space.bilibili.com/1981251194">元素法典制作委员会</a></p>
+<h2 id="_9">图库</h2>
+<h3 id="ai">Ai 作品库</h3>
+<ul>
+<li>
+<p><a href="https://aibooru.online/">AIBooru</a></p>
+</li>
+<li>
+<p><a href="https://openart.ai/">openart.ai</a></p>
+</li>
+<li>
+<p><a href="https://lexica.art">lexica</a> (SD search engine)</p>
+</li>
+<li>
+<p><a href="https://pixai.art/">PIXAI</a></p>
+</li>
+</ul>
+<h3 id="ai_1">Ai 数据来源</h3>
+<p><strong>训练源</strong></p>
+<ul>
+<li>
+<p><a href="https://laion.ai/">LAION</a></p>
+</li>
+<li>
+<p><a href="danbooru.donmai.us/">Danbooru</a></p>
+</li>
+</ul>
+<p><strong>数据源</strong></p>
+<ul>
+<li><a href="https://scatbooru.co.uk/">Shit-scatbooru</a></li>
+</ul>
+<h2 id="_10">平台/服务</h2>
+<h3 id="_11">前端</h3>
+<ul>
+<li>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui">stable-diffusion-webui</a></p>
+</li>
+<li>
+<p><a href="https://kamiya.hudaye.work/">集成 Tag 工具/支持超网络的 Web</a>，<a href="https://git.hudaye.work/MiuliKain/Kamiya-OpenUI">项目地址</a></p>
+</li>
+<li>
+<p><a href="https://github.com/koishijs/novelai-bot#token">基于 NovelAI 的画图机器人</a></p>
+</li>
+</ul>
+<h3 id="_12">服务平台</h3>
+<ul>
+<li>
+<p><a href="https://novelai.net/">novelai</a></p>
+</li>
+<li>
+<p><a href="https://im.qq.com">QQ 画世界</a></p>
+</li>
+<li>
+<p>[其他balabala的公司]</p>
+</li>
+</ul>
+<h3 id="_13">服务</h3>
+<ul>
+<li>
+<p><a href="https://github.com/Interpause/auto-sd-paint-ext">WebUi：为 Krita 插件等添加自定义后端 API</a></p>
+</li>
+<li>
+<p><a href="https://tags.novelai.dev/">Danbooru 标签超市</a>, <a href="https://github.com/wfjsw/danbooru-diffusion-prompt-builder">项目地址</a></p>
+</li>
+<li>
+<p><a href="https://github.com/DominikDoom/a1111-sd-webui-tagcomplete">SDWebUi 自动补全</a></p>
+</li>
+<li>
+<p><a href="https://thereisnospon.github.io/NovelAiTag/">标签提词器</a></p>
+</li>
+<li>
+<p><a href="https://t.me/M2NM2NBot">参数转换-M2NM2NBot</a></p>
+</li>
+<li>
+<p><a href="https://naisd5ch.github.io/novel-ai-5ch-wiki-js/">参数转换 - Js 项目</a></p>
+</li>
+<li>
+<p><a href="https://wandb.ai/site">WANDB-MLOps 平台</a></p>
+</li>
+<li>
+<p><a href="https://aispells.art/">MD 设计标签选择</a></p>
+</li>
+</ul>
+<h2 id="_14">杂项</h2>
+<ul>
+<li>通配符列表</li>
+</ul>
+<p>https://rentry.org/sdWildcardLists</p>
+<ul>
+<li>飞浆数据集</li>
+</ul>
+<p>https://aistudio.baidu.com/aistudio/datasetdetail/171442/0</p>
+<ul>
+<li>数据集</li>
+</ul>
+<p>https://pan.t-satoru.top/ode5/Share/</p>
+<ul>
+<li>Hentai-Diffusion</li>
+</ul>
+<p>https://huggingface.co/Deltaadams/Hentai-Diffusion</p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月26日 18:41:01</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年12月4日 04:39:29</span>
 <br/>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 03:59:46</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年10月10日 07:33:42</span>
 </small>
 </div>
 </article>
@@ -851,7 +1030,7 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="页脚" class="md-footer__inner md-grid">
-<a aria-label="上一页: Txt2指南" class="md-footer__link md-footer__link--prev" href="../base/" rel="prev">
+<a aria-label="上一页: 附录" class="md-footer__link md-footer__link--prev" href="../" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -860,21 +1039,8 @@
 <span class="md-footer__direction">
                 上一页
               </span>
-              Txt2指南
+              附录
             </div>
-</div>
-</a>
-<a aria-label="下一页: 安装扩展" class="md-footer__link md-footer__link--next" href="../extension/" rel="next">
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                下一页
-              </span>
-              安装扩展
-            </div>
-</div>
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
 </div>
 </a>
 </nav>
@@ -904,7 +1070,7 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "toc.follow", "navigation.top", "navigation.tracking", "navigation.indexes", "navigation.expand", "navigation.sections"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
-<script src="../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "toc.follow", "navigation.top", "navigation.tracking", "navigation.indexes", "navigation.expand", "navigation.sections"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script src="../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

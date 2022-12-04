@@ -669,6 +669,9 @@
 <input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../landing/">References</a>
+<label for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+</label>
 </div>
 <nav aria-label="References" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_7">
@@ -676,6 +679,11 @@
           References
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../landing/link/">
+        Resource List
+      </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -878,26 +886,29 @@
 <p>Windows systems require a minimum of 16GB of video memory, Linux systems require a minimum of 8GB of video memory.</p>
 <ul>
 <li>
-<p>For <a href="https://github.com/CCRcmcpe/diffusers/">CCRcmcpe/diffusers/</a> branch that likes Yaml file configuration.</p>
+<p><a href="https://github.com/CCRcmcpe/diffusers/">CCRcmcpe/diffusers/</a> that prefers <strong>Yaml</strong> file configuration, which can be configured using Yaml files.</p>
 </li>
 <li>
-<p>For <a href="https://github.com/crosstyan/dreambooth-scripts-for-autodl">DreamBooth version</a> for AutoDl/local</p>
+<p><a href="https://github.com/crosstyan/dreambooth-scripts-for-autodl">DreamBooth version</a> for <strong>AutoDl/native</strong> by <a href="https://t.me/StableDiffusion_CN/224331">Kurosu Chan</a></p>
 </li>
 <li>
-<p>Wrapper image](https://github.com/CrazyBoyM/dreambooth-for-diffusion) for AutoDl/local with the name <code>dreambooth-for-diffusion</code></p>
+<p><a href="https://www.codewithgpu.com/i/CrazyBoyM/dreambooth-for-diffusion/dreambooth-for-diffusion">Notebook</a> for <strong>AutoDl/native</strong>, by <a href="https://t.me/ StableDiffusion_CN/328385">Bai cai</a> provided.</p>
 </li>
 <li>
-<p><a href="https://github.com/d8ahazard/sd_dreambooth_extension">Plugin</a> for WebUi, but still needs to be enhanced.</p>
+<p><a href="https://github.com/CrazyBoyM/dreambooth-for-diffusion">Package Mirror</a> for <strong>AutoDl/native</strong>, called <code>dreambooth-for-diffusion</code>, but <strong>poorly maintained.</strong></p>
 </li>
 <li>
-<p>For Colab <a href="https://colab.research.google.com/drive/17yM4mlPVOFdJE_81oWBz5mXH9cxvhmz8">Nyanko Lepsoni's Colab notebook</a></p>
+<p><a href="https://github.com/d8ahazard/sd_dreambooth_extension">Plugin</a> for <strong>WebUi</strong>, but <strong>still to be enhanced.</strong></p>
 </li>
 <li>
-<p>Colab notebook from <a href="https://colab.research.google.com/drive/1C1vVZ59S4kWfL7jIsczyLpmxbD4cOA-k">RcINS</a> for Colab</p>
+<p><a href="https://colab.research.google.com/drive/17yM4mlPVOFdJE_81oWBz5mXH9cxvhmz8">Nyanko Lepsoni's Colab Notebook</a> for <strong>Colab</strong> by Nyanko Lepsoni.</p>
+</li>
+<li>
+<p><a href="https://colab.research.google.com/drive/1C1vVZ59S4kWfL7jIsczyLpmxbD4cOA-k">Colab Notebook for RcINS</a> for <strong>Colab</strong> provided by RcINS (https://t.me/StableDiffusion_CN/196744).</p>
 </li>
 </ul>
 <blockquote>
-<p>Colab notebooks from <a href="https://t.me/StableDiffusion_CN/196744">Community Top</a></p>
+<p>Colab notebooks from <a href="https://t.me/StableDiffusion_CN/196744">Community</a></p>
 </blockquote>
 <h2 id="preparation">Preparation</h2>
 <p>If you choose to use the AutoDl image, you will need to move the dreambooth-for- diffusion folder to autodl-tmp (the data disk) and make sure that the path (the string before the #) is dreambooth-for-diffusion, as detailed in the <a href="https://zhuanlan.zhihu.com/p/584736850">tutorial</a> The details are illustrated in the tutorial [].</p>
@@ -942,6 +953,7 @@
 <ul>
 <li>There are many ways to manipulate data: the most common are inversion, rotation, brightness and cropping.</li>
 </ul>
+<p>Related examples for reference <a href="https://note.com/kohya_ss/n/nad3bce9a3622">Further improve the accuracy of Diffusers-based DreamBooth: augmentation edition</a>.</p>
 <blockquote>
 <p>It may be useful to break up the image, or to crop the background/headers etc. separately.</p>
 </blockquote>
@@ -1603,7 +1615,7 @@ pip install <span class="nv">bitsandbytes</span><span class="o">==</span><span c
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 23, 2022 11:19:14</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">December 4, 2022 04:39:29</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 3, 2022 12:19:59</span>

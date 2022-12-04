@@ -145,6 +145,14 @@
          
     </url>
     <url>
+         <loc>https://stable-diffusion-book.vercel.app/landing/link/</loc>
+         <lastmod>2022-12-04</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/landing/link/"/>
+         <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/landing/link/"/>
+         
+    </url>
+    <url>
          <loc>https://stable-diffusion-book.vercel.app/model/</loc>
          <lastmod>2022-12-04</lastmod>
          <changefreq>daily</changefreq>

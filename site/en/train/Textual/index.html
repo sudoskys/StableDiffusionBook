@@ -567,6 +567,25 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dreamartist-mini-guide">
+    DreamArtist mini-guide
+  </a>
+<nav aria-label="DreamArtist mini-guide" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#preparation">
+    Preparation
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#training_1">
+    Training
+  </a>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </li>
@@ -592,6 +611,9 @@
 <input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../landing/">References</a>
+<label for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+</label>
 </div>
 <nav aria-label="References" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_7">
@@ -599,6 +621,11 @@
           References
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../landing/link/">
+        Resource List
+      </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -688,6 +715,25 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#subject_filewordstxt-template">
     subject_filewords.txt template
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dreamartist-mini-guide">
+    DreamArtist mini-guide
+  </a>
+<nav aria-label="DreamArtist mini-guide" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#preparation">
+    Preparation
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#training_1">
+    Training
   </a>
 </li>
 </ul>
@@ -861,6 +907,84 @@ Save an image to log directory every N steps, 0 to disable</p>
 <p>If you have, say, a subject wearing a <code>black t-shirt</code> in all photos, you can effectively negate it from the training set by adding <code>black t-shirt</code> to the <code>filewords</code> of those images.</p>
 <p>Unless you are trying to fix a photo, use <code>filewords</code> for style, not for subject.</p>
 <iframe allowfullscreen="true" border="0" frameborder="no" framespacing="0" height="600" scrolling="no" src="//player.bilibili.com/player.html?aid=559085039&amp;bvid=BV1ae4y1S7v9&amp;cid=859894044&amp;page=1" width="100%"> </iframe>
+<h2 id="dreamartist-mini-guide">DreamArtist mini-guide</h2>
+<p>This content was written by konbaku yomu in <a href="https://t.me/StableDiffusion_CN/471273">Chinese Community</a>.</p>
+<h3 id="preparation">Preparation</h3>
+<p><strong>training set</strong> is <strong>the most important</strong>, because the DA characteristics of the least one shot can be refined, so I tested all the <em>original image + mirror image</em>. All the following tuning methods are not as important as the training set itself. <strong> training set is not selected well how to adjust the reference is useless </strong> .</p>
+<p>The training set criteria are: frontal character (full body 0r half body) + high resolution + as simple as possible background + no special movements of the character itself (images containing yoga-like movements or elements of holding objects are not allowed, which will seriously affect the generalization and the formation of the image)</p>
+<p>The basic parameters are set as follows:</p>
+<ul>
+<li>
+<p>Close <code>--xformers</code></p>
+</li>
+<li>
+<p>restart sd and set CLIP to 1 (default is 2)</p>
+</li>
+<li>
+<p>Use the original 7g anime model.</p>
+</li>
+</ul>
+<p>You can also do <a href="https://t.me/StableDiffusion_CN/474128">local learning enhancement</a> by adding a grayscale map of the training set.</p>
+<h3 id="training_1">Training</h3>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>direction</strong></th>
+<th align="center"><strong>reconstruction</strong></th>
+<th align="center"><strong>learning rate</strong></th>
+<th align="center"><strong>CFG</strong></th>
+<th align="center"><strong>filewords read</strong></th>
+<th align="center"><strong>cue word template</strong></th>
+<th align="center"><strong>training set parameters</strong></th>
+<th align="center"><strong>step range</strong></th>
+<th align="center"><strong>EMA</strong></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">character</td>
+<td align="center">on</td>
+<td align="center">3e-3 (unstable can be changed to 2.5e-3)</td>
+<td align="center">3</td>
+<td align="center">not recommended</td>
+<td align="center"><code>subject.txt</code></td>
+<td align="center">default 512 can be</td>
+<td align="center">3000~6500 (depends on sample quality)</td>
+<td align="center">0.97 (recommended by plugin)/0.95 (recommended by author)</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">style</td>
+<td align="center">on</td>
+<td align="center">5e-3</td>
+<td align="center">5</td>
+<td align="center">recommended</td>
+<td align="center"><code>style.txt</code></td>
+<td align="center">default 512 can be</td>
+<td align="center">1500~2000</td>
+<td align="center">0.97 (plugin recommended)/0.95 (author recommended)</td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p><strong>About batch size and Accumulation steps</strong></p>
+<p>Accumulation steps is equivalent to increasing the batchsize, but how much this setting, the training time will be several times more, the overall bs = (batch size * Accumulation steps), depending on their own graphics card to open, the default is 1 1</p>
+<p><strong>Other</strong></p>
+<ol>
+<li>
+<p>the default word tocken is (3,6), according to the complexity of the role can be increased to (4,7) (5,8), the author even recommended (10,10)</p>
+</li>
+<li>
+<p>when training characters loss &gt; 0.2 basically direct failure, the probability of ghost map, stable loss should be less than 0.15, you can reduce the training loss by cropping the original background, the best way to improve the quality of the training set.</p>
+</li>
+<li>
+<p>can try to increase the training stability by adding grayscale map (experimental).</p>
+</li>
+<li>
+<p>plugin author's recommendation: you can change the cue word template file to style_filewords when training the painting style, the effect is good (experimental)</p>
+</li>
+</ol>
 <div class="footnote">
 <hr/>
 <ol>
@@ -874,7 +998,7 @@ Save an image to log directory every N steps, 0 to disable</p>
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 23, 2022 10:55:07</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">December 4, 2022 04:39:29</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 07:57:05</span>

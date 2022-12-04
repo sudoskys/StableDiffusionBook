@@ -502,6 +502,9 @@
 <input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../landing/">References</a>
+<label for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+</label>
 </div>
 <nav aria-label="References" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_7">
@@ -509,6 +512,11 @@
           References
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../landing/link/">
+        Resource List
+      </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -537,13 +545,22 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#current-five-options">
-    Current five options
+<a class="md-nav__link" href="#model-selection">
+    Model selection
+  </a>
+<nav aria-label="Model selection" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#data-set-accounting">
+    Data set accounting
   </a>
 </li>
+</ul>
+</nav>
+</li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#dont-want-to-generate-anime-pictures">
-    Don't want to generate anime pictures?
+<a class="md-nav__link" href="#options">
+    Options
   </a>
 </li>
 </ul>
@@ -573,55 +590,79 @@
 <p>Overuse will lead to GPU damage</p>
 </div>
 <p><a href="https://docs.google.com/spreadsheets/d/1Zlv4UFiciSgmJZncCujuXKHwc4BcxbjbSBg71-SdeNk/edit#gid=0">Stable Diffusion performance test reports</a></p>
-<h2 id="current-five-options">Current five options</h2>
+<h2 id="model-selection">Model selection</h2>
+<p>To generate images you need a model + UI, you need to download a model first before you can use it. The tutorial test uses a third party model from China, not a real model.</p>
+<p><strong>Anime carving</strong></p>
+<ul>
+<li>Copyright Avoidance</li>
+</ul>
+<p><strong>Realistic portrayal</strong></p>
+<ul>
+<li>
+<p><a href="https://stability.ai/blog/stable-diffusion-v2-release">Stable Diffusion 2.0 model</a></p>
+</li>
+<li>
+<p><a href="https://huggingface.co/runwayml/stable-diffusion-v1-5">Stable Diffusion 1.5 model</a></p>
+</li>
+<li>
+<p><a href="https://huggingface.co/CompVis/stable-diffusion-v1-4">Stable Diffusion 1.4 model with small stable volume</a></p>
+</li>
+</ul>
+<h3 id="data-set-accounting">Data set accounting</h3>
+<p>Stable Diffusion based on <a href="https://laion.ai/">LAION</a>.</p>
+<p>NAI based on <a href="danbooru.donmai.us/">Danbooru</a>.</p>
+<h2 id="options">Options</h2>
 <table>
 <thead>
 <tr>
 <th>Name</th>
 <th>Requirements</th>
-<th>Effectiveness</th>
+<th>Effects</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>SdWebui(4GB Leak model)</td>
-<td>At least 3GB VRAM</td>
-<td>4GB VRAM generates 512x512 size image in 17s</td>
+<td>SdWebui(4GB Anime model)</td>
+<td>Minimum 3GB video memory</td>
+<td>4GB video memory generates 512x512 size images in 17s</td>
 </tr>
 <tr>
-<td>SdWebui(7GB Leak model)</td>
-<td>At least 8GB VRAM</td>
-<td>Not much difference from 4GB, but the data has the last training weights, so it consumes more VRAM</td>
+<td>SdWebui(7GB Anime model)</td>
+<td>8GB minimum</td>
+<td>Not much different from 4GB, but the data has the last training weights, so it consumes more memory</td>
 </tr>
 <tr>
-<td>Naifu(4GB Leak model)</td>
-<td>Minimum 8GB VRAM &amp; 8GB VRAM</td>
-<td>Close to official</td>
+<td>Naifu(4GB Anime model)</td>
+<td>Minimum 8GB video memory &amp; 8GB video memory</td>
+<td>Similar results</td>
 </tr>
 <tr>
-<td>Naifu(7GB Leak model)</td>
-<td>Minimum 8GB VRAM (10GB upward)</td>
-<td>Close to official</td>
+<td>Naifu(7GB Anime model)</td>
+<td>Minimum 8GB video memory (10GB floating up)</td>
+<td>Similar results</td>
 </tr>
 <tr>
-<td>Official Backend</td>
+<td>Naifu Original Backend</td>
 <td>16GBfp16/24GBfp32 &amp; Server System</td>
-<td>99.9 similar to official</td>
+<td>Similar results 99.9%</td>
+</tr>
+<tr>
+<td><a href="https://novelai.net/">NovelAi</a></td>
+<td>No requirement, as long as you can open a browser</td>
+<td>Save your breath</td>
 </tr>
 </tbody>
 </table>
-<p>The original NAI web UI + backend deployment requires a GPU server with 12GB or more of VRAM on a <em>Linux system</em>. NAI officially uses the full model, but it requires a lot of VRAM, so you'll need a A100 graphics card(10000$) from Amazon.</p>
+<p>Naifu deployments require a GPU server with 12GB or more of video memory on a <em>Linux system</em>.</p>
+<p>The official model used by Novel is the full model, but it requires a lot of video memory, so you need a 7W A100 graphics card from Taobao.</p>
 <p>SDWebUi is a <strong>framework</strong> that can use models to produce images.</p>
 <p>NAI is an online <strong>service</strong>.</p>
-<h2 id="dont-want-to-generate-anime-pictures">Don't want to generate anime pictures?</h2>
-<p>If you want to get models that don't generate anime girls, please see <a href="https://space.bilibili.com/250989068/channel/collectiondetail?sid=660352">here</a>.</p>
-<p>By the way post a <a href="https://huggingface.co/runwayml/stable-diffusion-v1-5">recently released 1.5 model</a> and <a href="https://huggingface.co/CompVis/stable-diffusion-v1-4">stable small size 1.4 model</a></p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 23, 2022 06:55:55</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">December 4, 2022 04:39:29</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 03:59:46</span>

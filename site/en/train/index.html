@@ -502,6 +502,9 @@
 <input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../landing/">References</a>
+<label for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+</label>
 </div>
 <nav aria-label="References" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_7">
@@ -509,6 +512,11 @@
           References
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../landing/link/">
+        Resource List
+      </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -672,6 +680,7 @@ fine tune directly = DB/native training
 <h4 id="features">features</h4>
 <p>Smaller training product size, webui comes with training support.</p>
 <p>Can be used to solve problems with newly created characters that cannot be drawn, or to imitate a specific art style that can be described precisely in words. Because TI is doing the processing on the output of the Text Encoder, it does not allow the model to learn concepts it does not know.</p>
+<p><strong>embeddings for different models are not common</strong></p>
 <h4 id="usage">Usage</h4>
 <p>To use, put the embedding (a .pt or a .bin file) into webui's <code>embeddings</code> directory and write the name of the embedding to be used (without the extension) in prompt, without restarting webui.</p>
 <p>If you use DreamArtist, put <code>*-neg.pt</code> together with the <code>embeddings</code> directory and just use them in both positive and negative prompt words.</p>
@@ -777,7 +786,7 @@ fine tune directly = DB/native training
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">December 1, 2022 03:43:18</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">December 4, 2022 04:39:29</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 07:57:05</span>
