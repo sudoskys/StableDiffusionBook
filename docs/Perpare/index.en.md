@@ -27,24 +27,44 @@ First, unfortunately, because it requires `CUDA` acceleration, only **Nvidia gra
 
 [Stable Diffusion performance test reports](https://docs.google.com/spreadsheets/d/1Zlv4UFiciSgmJZncCujuXKHwc4BcxbjbSBg71-SdeNk/edit#gid=0)
 
-## Current five options
+## Model selection
 
-| Name | Requirements | Effectiveness |
+To generate images you need a model + UI, you need to download a model first before you can use it. The tutorial test uses a third party model from China, not a real model.
+
+**Anime carving**
+
+- Copyright Avoidance
+
+**Realistic portrayal**
+
+- [Stable Diffusion 2.0 model](https://stability.ai/blog/stable-diffusion-v2-release)
+
+- [Stable Diffusion 1.5 model](https://huggingface.co/runwayml/stable-diffusion-v1-5)
+
+- [Stable Diffusion 1.4 model with small stable volume](https://huggingface.co/CompVis/stable-diffusion-v1-4)
+
+### Data set accounting
+
+Stable Diffusion based on [LAION](https://laion.ai/).
+
+NAI based on [Danbooru](danbooru.donmai.us/).
+
+## Options
+
+| Name | Requirements | Effects |
 |------------------|---------------------------|-----------------------------------------------------------------------|
-| SdWebui(4GB Leak model) | At least 3GB VRAM | 4GB VRAM generates 512x512 size image in 17s |
-| SdWebui(7GB Leak model) | At least 8GB VRAM | Not much difference from 4GB, but the data has the last training weights, so it consumes more VRAM |
-| Naifu(4GB Leak model) | Minimum 8GB VRAM & 8GB VRAM | Close to official |
-| Naifu(7GB Leak model) | Minimum 8GB VRAM (10GB upward) | Close to official |
-| Official Backend | 16GBfp16/24GBfp32 & Server System | 99.9 similar to official |
+| SdWebui(4GB Anime model) | Minimum 3GB video memory | 4GB video memory generates 512x512 size images in 17s |
+| SdWebui(7GB Anime model) | 8GB minimum | Not much different from 4GB, but the data has the last training weights, so it consumes more memory |
+| Naifu(4GB Anime model) | Minimum 8GB video memory & 8GB video memory | Similar results |
+| Naifu(7GB Anime model) | Minimum 8GB video memory (10GB floating up) | Similar results|
+| Naifu Original Backend | 16GBfp16/24GBfp32 & Server System | Similar results 99.9% |
+| [NovelAi](https://novelai.net/) | No requirement, as long as you can open a browser | Save your breath|
 
-The original NAI web UI + backend deployment requires a GPU server with 12GB or more of VRAM on a *Linux system*. NAI officially uses the full model, but it requires a lot of VRAM, so you'll need a A100 graphics card(10000$) from Amazon.
+
+Naifu deployments require a GPU server with 12GB or more of video memory on a *Linux system*.
+
+The official model used by Novel is the full model, but it requires a lot of video memory, so you need a 7W A100 graphics card from Taobao.
 
 SDWebUi is a **framework** that can use models to produce images.
 
 NAI is an online **service**.
-
-## Don't want to generate anime pictures?
-
-If you want to get models that don't generate anime girls, please see [here](https://space.bilibili.com/250989068/channel/collectiondetail?sid=660352).
-
-By the way post a [recently released 1.5 model](https://huggingface.co/runwayml/stable-diffusion-v1-5) and [stable small size 1.4 model](https://huggingface.co/CompVis/stable-diffusion-v1-4)

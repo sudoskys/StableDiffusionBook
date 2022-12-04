@@ -46,6 +46,8 @@ How to train Stable Diffusion (SD) "efficiently" and how to use SCAL-SDT itself 
 
 因为 TI 是在 Text Encoder 的输出做处理，所以并不能让模型学习到它不知道的概念。
 
+**不同模型的 embeddings 不通用**
+
 #### 使用
 
 使用时，将 embedding（一个 .pt 或一个 .bin 文件）放入 webui 的 `embeddings` 目录并在 prompt 中写要用的 embedding 的文件名（不包括扩展名）即可，不必重启 webui。可以同时使用多个 embedding。

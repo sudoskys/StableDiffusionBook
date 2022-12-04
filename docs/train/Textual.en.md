@@ -247,4 +247,45 @@ Unless you are trying to fix a photo, use `filewords` for style, not for subject
 
 <iframe src="//player.bilibili.com/player.html?aid=559085039&bvid=BV1ae4y1S7v9&cid=859894044&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 
+## DreamArtist mini-guide
+
+This content was written by konbaku yomu in [Chinese Community](https://t.me/StableDiffusion_CN/471273).
+
+### Preparation
+
+**training set** is **the most important**, because the DA characteristics of the least one shot can be refined, so I tested all the *original image + mirror image*. All the following tuning methods are not as important as the training set itself. ** training set is not selected well how to adjust the reference is useless ** .
+
+The training set criteria are: frontal character (full body 0r half body) + high resolution + as simple as possible background + no special movements of the character itself (images containing yoga-like movements or elements of holding objects are not allowed, which will seriously affect the generalization and the formation of the image)
+
+The basic parameters are set as follows:
+
+- Close `--xformers`
+
+- restart sd and set CLIP to 1 (default is 2)
+
+- Use the original 7g anime model.
+
+You can also do [local learning enhancement](https://t.me/StableDiffusion_CN/474128) by adding a grayscale map of the training set.
+
+### Training
+
+| **direction** | **reconstruction** | **learning rate**                        | **CFG** | **filewords read** | **cue word template** | **training set parameters** | **step range**                        | **EMA**                                                   |  |
+|:-------------:|:------------------:|:----------------------------------------:|:-------:|:------------------:|:---------------------:|:---------------------------:|:-------------------------------------:|:---------------------------------------------------------:|:----:|
+| character     | on                 | 3e-3 (unstable can be changed to 2.5e-3) | 3       | not recommended    | `subject.txt`         | default 512 can be          | 3000~6500 (depends on sample quality) | 0.97 (recommended by plugin)/0.95 (recommended by author) |      |
+| style         | on                 | 5e-3                                     | 5       | recommended        | `style.txt`           | default 512 can be          | 1500~2000                             | 0.97 (plugin recommended)/0.95 (author recommended)       |      |
+
+**About batch size and Accumulation steps**
+
+Accumulation steps is equivalent to increasing the batchsize, but how much this setting, the training time will be several times more, the overall bs = (batch size * Accumulation steps), depending on their own graphics card to open, the default is 1 1
+
+**Other**
+
+1. the default word tocken is (3,6), according to the complexity of the role can be increased to (4,7) (5,8), the author even recommended (10,10)
+
+2. when training characters loss > 0.2 basically direct failure, the probability of ghost map, stable loss should be less than 0.15, you can reduce the training loss by cropping the original background, the best way to improve the quality of the training set.
+
+3. can try to increase the training stability by adding grayscale map (experimental).
+
+4. plugin author's recommendation: you can change the cue word template file to style_filewords when training the painting style, the effect is good (experimental)
+
 [^1]:[is_textual_inversion_salvageable](https://www.reddit.com/r/sdforall/comments/ykerg2/is_textual_inversion_salvageable/)

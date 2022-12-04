@@ -23,19 +23,21 @@ We recommend using CCRcmcpe's [optimized branch](https://github.com/CCRcmcpe/dif
 
 Windows systems require a minimum of 16GB of video memory, Linux systems require a minimum of 8GB of video memory.
 
-- For [CCRcmcpe/diffusers/](https://github.com/CCRcmcpe/diffusers/) branch that likes Yaml file configuration.
+- [CCRcmcpe/diffusers/](https://github.com/CCRcmcpe/diffusers/) that prefers **Yaml** file configuration, which can be configured using Yaml files.
 
-- For [DreamBooth version](https://github.com/crosstyan/dreambooth-scripts-for-autodl) for AutoDl/local
+- [DreamBooth version](https://github.com/crosstyan/dreambooth-scripts-for-autodl) for **AutoDl/native** by [Kurosu Chan](https://t.me/StableDiffusion_CN/224331)
 
-- Wrapper image](https://github.com/CrazyBoyM/dreambooth-for-diffusion) for AutoDl/local with the name `dreambooth-for-diffusion`
+- [Notebook](https://www.codewithgpu.com/i/CrazyBoyM/dreambooth-for-diffusion/dreambooth-for-diffusion) for **AutoDl/native**, by [Bai cai](https://t.me/ StableDiffusion_CN/328385) provided.
 
-- [Plugin](https://github.com/d8ahazard/sd_dreambooth_extension) for WebUi, but still needs to be enhanced.
+- [Package Mirror](https://github.com/CrazyBoyM/dreambooth-for-diffusion) for **AutoDl/native**, called `dreambooth-for-diffusion`, but **poorly maintained.**
 
-- For Colab [Nyanko Lepsoni's Colab notebook](https://colab.research.google.com/drive/17yM4mlPVOFdJE_81oWBz5mXH9cxvhmz8)
+- [Plugin](https://github.com/d8ahazard/sd_dreambooth_extension) for **WebUi**, but **still to be enhanced.**
 
-- Colab notebook from [RcINS](https://colab.research.google.com/drive/1C1vVZ59S4kWfL7jIsczyLpmxbD4cOA-k) for Colab
+- [Nyanko Lepsoni's Colab Notebook](https://colab.research.google.com/drive/17yM4mlPVOFdJE_81oWBz5mXH9cxvhmz8) for **Colab** by Nyanko Lepsoni.
 
-> Colab notebooks from [Community Top](https://t.me/StableDiffusion_CN/196744)
+- [Colab Notebook for RcINS](https://colab.research.google.com/drive/1C1vVZ59S4kWfL7jIsczyLpmxbD4cOA-k) for **Colab** provided by RcINS (https://t.me/StableDiffusion_CN/196744).
+
+> Colab notebooks from [Community](https://t.me/StableDiffusion_CN/196744)
 
 ## Preparation
 
@@ -98,6 +100,8 @@ If you use AutoDl's mirrors, you can use the built-in [label_images.py](https://
 #### Augmentation
 
 * There are many ways to manipulate data: the most common are inversion, rotation, brightness and cropping.
+
+Related examples for reference [Further improve the accuracy of Diffusers-based DreamBooth: augmentation edition](https://note.com/kohya_ss/n/nad3bce9a3622).
 
 > It may be useful to break up the image, or to crop the background/headers etc. separately.
 

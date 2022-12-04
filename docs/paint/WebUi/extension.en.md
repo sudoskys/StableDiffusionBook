@@ -47,6 +47,12 @@ https://github.com/Maurdekye/training-picker
 
 The content of this topic may not be instantly updated here, [source address](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts#prompt-interpolation)
 
+### multi-subject-render
+
+Generate multiple complex subjects all at once.
+
+https://github.com/Extraltodeus/multi-subject-render
+
 ### sd-dynamic-prompts
 
 A custom script for AUTOMATIC1111/stable-diffusion-webui to implement a tiny template language for random prompt generation 

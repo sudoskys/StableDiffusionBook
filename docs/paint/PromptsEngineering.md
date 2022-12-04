@@ -311,6 +311,8 @@ Prompt Schedule 可以在推理图像的过程中更改 Prompt，这项技术由
 
 这些指南可以让你更进一步。
 
+- [emphasis 测试](https://github.com/JohannesGaessler/stable-diffusion-tools/tree/master/emphasis)
+
 - [面向 NAI 的测试](https://github.com/6DammK9/nai-anime-pure-negative-prompt)
 
 - [https://github.com/Maks-s/sd-akashic](https://github.com/Maks-s/sd-akashic)

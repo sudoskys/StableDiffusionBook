@@ -8,6 +8,8 @@ The toolbox that you can see when you open the page
 
 ### Reference
 
+* [Danbooru icebergcharts](https://icebergcharts.com/i/Danbooru_Tags)
+
 * [Danbooru wiki Tag](https://danbooru.donmai.us/wiki_pages/tag_groups)
 
 * [MidJourney-Styles-and-Keywords-Reference](https://github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference)
@@ -239,7 +241,7 @@ Each prompt is like a dye, they have different "affinities" and if the more comm
 
 For example, if you want to generate anime images and use the star `startrail` tag, there will be more star elements from real photos than the anime stars you expect to appear.
 
-Many words just don't carry the same weight in terms of benchmarks, so it's important to make reasonable adjustments to the effect.
+Many words just don't carry the same weight in terms of benchmarks, so it's important to make reasonable adjustments to the effect.[Danbooru icebergcharts](https://icebergcharts.com/i/Danbooru_Tags).
 
 ### Image size
 

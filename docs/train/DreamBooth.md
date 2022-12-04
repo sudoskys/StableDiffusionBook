@@ -19,7 +19,7 @@ Dreambooth 基于 [Imagen](https://imagen.research.google/) 研发，使用时�
 ![DreamBooth_files](https://dreambooth.github.io/DreamBooth_files/system.png)
 > by https://dreambooth.github.io/
 
-- [你用移动云？看这个](https://rentry.org/yidongyun)
+- 你用移动云？看 [这个](https://rentry.org/yidongyun) 和 [这个](https://www.notion.so/fd4747a969344594aca26d24aecab402)（由 [eij x](https://t.me/StableDiffusion_CN/398884) 佬提供的 ）
 
 ## 选择
 
@@ -27,15 +27,17 @@ Windows 系统的显存至少需要 16GB, Linux 系统要求显存至少为 8GB�
 
 - 适用于 喜欢 Yaml 文件配置 的 [CCRcmcpe/diffusers/](https://github.com/CCRcmcpe/diffusers/) 分支，可以使用 Yaml 文件进行配置。
 
-- 适用于 AutoDl/本地 的 [DreamBooth 版本](https://github.com/crosstyan/dreambooth-scripts-for-autodl)
+- 适用于 AutoDl/本地 的 [DreamBooth 版本](https://github.com/crosstyan/dreambooth-scripts-for-autodl)，由 [Kurosu Chan](https://t.me/StableDiffusion_CN/224331) 提供
 
-- 适用于 AutoDl/本地 的 [封装镜像](https://github.com/CrazyBoyM/dreambooth-for-diffusion)，名称为 `dreambooth-for-diffusion`
+- 适用于 AutoDl 版 [Notebook](https://www.codewithgpu.com/i/CrazyBoyM/dreambooth-for-diffusion/dreambooth-for-diffusion), 由 [Bai cai](https://t.me/StableDiffusion_CN/328385) 提供。
+
+- 适用于 AutoDl/本地 的 [封装镜像](https://github.com/CrazyBoyM/dreambooth-for-diffusion)，名称为 `dreambooth-for-diffusion`，但是缺乏维护。
 
 - 适用于 WebUi 的 [插件](https://github.com/d8ahazard/sd_dreambooth_extension)，但是仍待加强。
 
-- 适用于 Colab 的 [Nyanko Lepsoni 的 Colab 笔记本](https://colab.research.google.com/drive/17yM4mlPVOFdJE_81oWBz5mXH9cxvhmz8)
+- 适用于 Colab 的 [Nyanko Lepsoni 的 Colab 笔记本](https://colab.research.google.com/drive/17yM4mlPVOFdJE_81oWBz5mXH9cxvhmz8), 由 Nyanko Lepsoni 提供。
 
-- 适用于 Colab 的 [RcINS 的 Colab 笔记本](https://colab.research.google.com/drive/1C1vVZ59S4kWfL7jIsczyLpmxbD4cOA-k)
+- 适用于 Colab 的 [RcINS 的 Colab 笔记本](https://colab.research.google.com/drive/1C1vVZ59S4kWfL7jIsczyLpmxbD4cOA-k) 由 RcINS (https://t.me/StableDiffusion_CN/196744) 提供。
 
 > Colab 笔记本来自 [社区置顶](https://t.me/StableDiffusion_CN/196744)
 
@@ -95,6 +97,10 @@ class 和 instance 的质量决定生成的质量。
 #### Augmentation
 
 处理图片的方式有许多，常见的有反转，旋转，亮度和裁切。将图片打碎或者对背景/大头等单独裁切，也许有助于提高训练效果。
+
+相关实例请参考 [Diffusers ベースの DreamBooth の精度をさらに上げる・ augmentation 編 ](https://note.com/kohya_ss/n/nad3bce9a3622).
+
+> It may be useful to break up the image, or to crop the background/headers etc. separately.
 
 ## 参数
 
@@ -157,7 +163,6 @@ Native Training 需要 **较多** 的数据集，但这个量众说纷纭，大�
 * learning_rate 
 
 学习率
-
 
 * use_txt_as_label
 

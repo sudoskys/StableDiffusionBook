@@ -86,32 +86,39 @@ NAI's model, trained using tens of millions of Danbooru images, has been leaked 
 
 ## Some communities
 
-### Community
+### Chat
 
-* CN
-[Telegram Ai 绘画中文社群](https://t.me/StableDiffusion_CN) 
+**CN**
+
+- [Telegram Ai 绘画中文社群](https://t.me/StableDiffusion_CN)
 <img src="https://img.shields.io/badge/Telegram-Group-blue" alt="Telegram">
 
-[Discord Ai 绘画中文社群](https://discord.gg/vhsArSSA6K) 
+- [Discord Ai 绘画中文社群](https://discord.gg/vhsArSSA6K)
 <img src="https://img.shields.io/discord/1033769426216046622?color=blue&label=Discord_Ai%E7%BB%98%E7%94%BB%E4%B8%AD%E6%96%87%E7%BB%84" alt="Discord">
 
-[贴吧-并联计划组](https://docs.google.com/spreadsheets/d/1TA_xInjgS_dKdd68EL9NamCgulTBQHQpsVdCQpf3OxU/edit#gid=45042168)
+- [并联计划组](https://docs.google.com/spreadsheets/d/1TA_xInjgS_dKdd68EL9NamCgulTBQHQpsVdCQpf3OxU/edit#gid=45042168)
 
-* EN
+**EN**
 
-[Discord stablediffusion Community](https://discord.gg/stablediffusion) 
+- stablediffusion [Discord English](https://discord.gg/stablediffusion) 
 <img src="https://img.shields.io/discord/1002292111942635562?color=blue&label=Discord_stablediffusion" alt="Discord">
 
 ### Forum
 
-* CN
+- [StableDiffusionWebui_GitHub_discussions](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions)
 
-[Nga](https://nga.178.com/thread.php?stid=33844263)
+**CN**
 
-* EN
+- [Nga](https://nga.178.com/thread.php?stid=33844263)
 
-[Reddit-DreamBooth](https://www.reddit.com/r/DreamBooth/)
+**EN**
 
-[Reddit-StableDiffusion](https://www.reddit.com/r/StableDiffusion/)
+- [Reddit-DreamBooth](https://www.reddit.com/r/DreamBooth/)
 
-[Reddit-NovelAi](https://www.reddit.com/r/NovelAi/)
+- [Reddit-StableDiffusion](https://www.reddit.com/r/StableDiffusion/)
+
+- [Reddit-NovelAi](https://www.reddit.com/r/NovelAi/)
+
+- [AIBooru](https://aibooru.online/)
+
+- [Reddit](https://www.reddit.com/r/StableDiffusion/)

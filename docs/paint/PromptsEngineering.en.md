@@ -312,6 +312,8 @@ Effect:
 
 These guides can take you a step further.
 
+- [emphasis](https://github.com/JohannesGaessler/stable-diffusion-tools/tree/master/emphasis)
+
 - [Test for NAI](https://github.com/6DammK9/nai-anime-pure-negative-prompt)
 
 - [https://github.com/Maks-s/sd-akashic](https://github.com/Maks-s/sd-akashic)

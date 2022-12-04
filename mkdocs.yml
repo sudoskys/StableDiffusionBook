@@ -100,6 +100,7 @@ nav:
       - AestheticGradients 训练: train/AestheticGradients.md
   - 参考资料:
       - landing/index.md
+      - 资料表: landing/link.md
 
 
 plugins:
@@ -148,6 +149,7 @@ plugins:
           概论: General
           鉴别: Identify
           提示工程: Prompts Engineer
+          资料表: Resource List
       languages:
         en:
           name: English

@@ -8,6 +8,8 @@
 
 ### 标签参考
 
+* [Danbooru 标签比例冰山图](https://icebergcharts.com/i/Danbooru_Tags)
+
 * [Danbooru wiki Tag](https://danbooru.donmai.us/wiki_pages/tag_groups)
 
 * [MidJourney-Styles-and-Keywords-Reference](https://github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference)
@@ -239,7 +241,8 @@ Clip 的标记器在标记之前将所有单词小写。其他模型，如 BERT 
 
 比如，如果你想生成动漫图片，使用了 星空 `startrail` 标签，相比你期望出现的动漫星空，会有更多来自真实照片的星空元素。
 
-许多词汇在基准上的权重就不一样，所以要根据效果进行合理调节。
+许多词汇在基准上的权重就不一样，所以要根据效果进行合理调节。[Danbooru icebergcharts](https://icebergcharts.com/i/Danbooru_Tags)
+
 
 ### 尺寸
 

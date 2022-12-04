@@ -12,20 +12,21 @@
 
 ### txt2mask 
 
-使用自然语言为 Stable Diffusion 修复自动创建遮罩。 
 https://github.com/ThereforeGames/txt2mask
+
+使用自然语言为 Stable Diffusion 修复自动创建遮罩。 
 
 ### DreamBooth extension
 
-Dreambooth Extension for Stable-Diffusion-WebUI
-
 https://github.com/d8ahazard/sd_dreambooth_extension
+
+Dreambooth Extension for Stable-Diffusion-WebUI
 
 ### training-picker
 
-stable-diffusion-webui 的扩展，允许用户通过视频的关键帧进行复用，并自动从各个关键帧中挑选和导出训练示例。 
-
 https://github.com/Maurdekye/training-picker
+
+stable-diffusion-webui 的扩展，允许用户通过视频的关键帧进行复用，并自动从各个关键帧中挑选和导出训练示例。 
 
 ### 随机艺术家扩展
 
@@ -96,6 +97,12 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui-tokenizer
 ## 自定义脚本
 
 此主题的内容可能不会即时更新到此处，[源地址](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts#prompt-interpolation)
+
+### multi-subject-render
+
+生成多个复杂的物体。
+
+https://github.com/Extraltodeus/multi-subject-render
 
 ### sd-dynamic-prompts
 

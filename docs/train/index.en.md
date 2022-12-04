@@ -50,6 +50,8 @@ Smaller training product size, webui comes with training support.
 
 Can be used to solve problems with newly created characters that cannot be drawn, or to imitate a specific art style that can be described precisely in words. Because TI is doing the processing on the output of the Text Encoder, it does not allow the model to learn concepts it does not know.
 
+**embeddings for different models are not common**
+
 #### Usage
 
 To use, put the embedding (a .pt or a .bin file) into webui's `embeddings` directory and write the name of the embedding to be used (without the extension) in prompt, without restarting webui.
