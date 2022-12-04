@@ -952,7 +952,7 @@
 <p><a href="https://danbooru.donmai.us/wiki_pages/tag_group%3Aimage_composition">Recommended use of terms contained in Danbooru</a></p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://user-images.githubusercontent.com/75739606/198682933-25c1b2df-c573-44ea-aba7-2df4609299e5.png"><img alt="shot" src="https://user-images.githubusercontent.com/75739606/198682933-25c1b2df-c573-44ea-aba7-2df4609299e5.png"/></a></p>
 <!-- --
-! [shot](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/shot.png)
+![shot](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/shot.png)
 ---->
 <blockquote>
 <p>citing an image from the Japanese Wiki, author unknown</p>
@@ -998,15 +998,15 @@
 <h2 id="noise">Noise</h2>
 <p>|category|description|examples|processing|
 |:----:|:----:|:----:|:----:|:----:|
-|rough|not enough details, characters look like rice cakes|! [Lack of sample images]|needs to be properly enhanced step|
-|waves|dense waves or patterns|! [missing example image]|vectors are not "uniform", maybe the weights are set too high|
-|model|The training process is very abstract|! [missing image]|Vector is not "uniform", maybe the alchemy is fried|!
-|Conflict|Flat anime paper in real world|! [missing example image]|may be a mix of cue words from different subgenres or themes|!
-|Rainbow|output of confusing rainbow-colored images|! [Missing example image]|may be the generation resolution is set too low. |!
-|Size|outputs distorted images at large sizes|! [Missing example image]|Turn on the <code>Highres Fix</code> option or use the <code>Small Resolution + SuperScore</code> method|</p>
+|rough|not enough details, characters look like rice cakes|![Lack of sample images]|needs to be properly enhanced step|
+|waves|dense waves or patterns|![missing example image]|vectors are not "uniform", maybe the weights are set too high|
+|model|The training process is very abstract|![missing image]|Vector is not "uniform", maybe the alchemy is fried|!
+|Conflict|Flat anime paper in real world|![missing example image]|may be a mix of cue words from different subgenres or themes|!
+|Rainbow|output of confusing rainbow-colored images|![Missing example image]|may be the generation resolution is set too low. |!
+|Size|outputs distorted images at large sizes|![Missing example image]|Turn on the <code>Highres Fix</code> option or use the <code>Small Resolution + SuperScore</code> method|</p>
 <h3 id="noise-reduction">Noise Reduction</h3>
 <p>Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) is recommended for noise reduction for anime illustrations.</p>
-<p>! <a href="https://raw.githubusercontent.com/xinntao/Real-ESRGAN/master/assets/teaser.jpg">Effect</a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/xinntao/Real-ESRGAN/master/assets/teaser.jpg"><img alt="Effect" src="https://raw.githubusercontent.com/xinntao/Real-ESRGAN/master/assets/teaser.jpg"/></a></p>
 <blockquote>
 <p>rendering</p>
 </blockquote>
@@ -1030,17 +1030,17 @@
 <p>To avoid image stretching, the sizes should all be <strong>as close to the original size as possible, choose <code>Crop and resize</code> which means crop and resize</strong></p>
 <p><strong>Masked Content</strong></p>
 <p>The <code>Masked content</code> related setting determines the content placed into the masked area before the repair, it determines the initial reference content (origin is the content of the mask before blurring, and latent nosie is referenced by noise (many random pigment dots).</p>
-<p>! <a href="https://user-images.githubusercontent.com/75739606/201613751-9da2ffd6-2c1f-439b-8e9a-75b185c99912.png">aidrawfix2</a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://user-images.githubusercontent.com/75739606/201613751-9da2ffd6-2c1f-439b-8e9a-75b185c99912.png"><img alt="aidrawfix2" src="https://user-images.githubusercontent.com/75739606/201613751-9da2ffd6-2c1f-439b-8e9a-75b185c99912.png"/></a></p>
 <p>latent noise is what determines the Ai reference, while Denoising strength can be interpreted as the degree of unreference to the reference.</p>
 <p><strong>Changing elements</strong></p>
 <p>If we need to change the elements, we can key and paste them.</p>
 <p>If we need to add elements, we can use PS to graft a hand to the character and let Ai touch it up, or we can graft the lower body of another work for a bust without a lower body and let AI touch it up.</p>
-<p>! <a href="https://user-images.githubusercontent.com/75739606/201602016-e14b69e3-f250-4af7-b200-a421d163130b.png">test1</a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://user-images.githubusercontent.com/75739606/201602016-e14b69e3-f250-4af7-b200-a421d163130b.png"><img alt="test1" src="https://user-images.githubusercontent.com/75739606/201602016-e14b69e3-f250-4af7-b200-a421d163130b.png"/></a></p>
 <p><strong>Make changes based on the original image</strong></p>
 <p>Using Inpaint, the main scene is removal/replacement.</p>
 <p>Start by tracing thin lines around the edges of the figure, then hitting the color block (if there are shadows, take <strong>bright colors</strong> or draw full shadows). Change the intensity to choose a lower denoising of around 0.3 (the lower the closer to the input image).</p>
 <p>Then use Img2Img Inpaint + relevant cue words to fix, not satisfied can be changed again until satisfied. Then the image is realesrgan superscored to remove the image texture.</p>
-<p>! <a href="https://user-images.githubusercontent.com/75739606/201603999-1ae18fb9-5435-49f0-9adf-0789e9659a29.png">fix_exp</a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://user-images.githubusercontent.com/75739606/201603999-1ae18fb9-5435-49f0-9adf-0789e9659a29.png"><img alt="fix_exp" src="https://user-images.githubusercontent.com/75739606/201603999-1ae18fb9-5435-49f0-9adf-0789e9659a29.png"/></a></p>
 <p><strong>Grafted image</strong></p>
 <p>Use PS software to add and remove elements and then re-produce them. This can solve the problem of drawing hands.</p>
 <p>Ai also accepts other finished images for grafting (example of application: solving the problem of lying down without lower body)</p>
@@ -1826,7 +1826,7 @@ scale 就是 CFG scale
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">December 1, 2022 04:25:20</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">December 4, 2022 02:28:21</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 07:44:44</span>
