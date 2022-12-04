@@ -12,11 +12,11 @@ Content translated from[human-or-ai-walkthrough](https://blog.oimo.io/2022/10/21
 
 ## Cannot be based on
 
-- Degree of completion
+**Degree of completion**
 
 Illustrations by NovelAi are currently approaching or even surpassing the finish of real-life artists, so a cursory look is impossible to distinguish whether they are drawn by AI or not.
 
-- Theme/style/atmosphere
+**Theme/style/atmosphere**
 
 By learning prompt editing, anyone can easily get away from NovelAi's default drawing style and get Ai to generate images that match the theme/drawing style (the more well-known the easier, e.g. Kyoto animation style). So it is no longer feasible to judge the drawing style characteristics based on the subject of the illustration.
 
