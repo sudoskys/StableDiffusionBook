@@ -242,7 +242,7 @@ red eyes/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​
     
     SEE [Here](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2905)
 
-! [缺少示例图片]
+![缺少示例图片]
 
 ### 提示词交替
 
@@ -254,7 +254,7 @@ red eyes/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​/​
 
 它可以创建动物、人或风格的混合体，每一个 `step` 切换一个提示（一步一换轮环渲染）。
 
-! [缺少示例图片]
+![缺少示例图片]
 
 ### Prompt matrix 矩阵
 
@@ -267,7 +267,7 @@ WebUi 使用 `|` 分隔多个关键词以混合多个要素，程序将为它们
 - a busy city street in a modern city, cinematic lighting
 - a busy city street in a modern city, illustration, cinematic lighting
 
-! [缺少示例图片]
+![缺少示例图片]
 
 可以进一步在关键词后添加 : x 来指定单个关键词的权重。
 
@@ -277,7 +277,7 @@ WebUi 使用 `|` 分隔多个关键词以混合多个要素，程序将为它们
 
 `cat :2 | dog` 也就是更像猫的狗
 
-! [缺少示例图片]
+![缺少示例图片]
 
 ### Prompt Schedule
 

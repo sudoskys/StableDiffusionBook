@@ -21,7 +21,7 @@ Currently, Ai does not handle details and multiple characters well, and the ligh
 
 ![shot](https://user-images.githubusercontent.com/75739606/198682933-25c1b2df-c573-44ea-aba7-2df4609299e5.png)
 <! --
-! [shot](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/shot.png)
+![shot](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/shot.png)
 -->
 >citing an image from the Japanese Wiki, author unknown
 
@@ -39,18 +39,18 @@ Currently, Ai does not handle details and multiple characters well, and the ligh
 
 |category|description|examples|processing|
 |:----:|:----:|:----:|:----:|:----:|
-|rough|not enough details, characters look like rice cakes|! [Lack of sample images]|needs to be properly enhanced step|
-|waves|dense waves or patterns|! [missing example image]|vectors are not "uniform", maybe the weights are set too high|
-|model|The training process is very abstract|! [missing image]|Vector is not "uniform", maybe the alchemy is fried|!
-|Conflict|Flat anime paper in real world|! [missing example image]|may be a mix of cue words from different subgenres or themes|!
-|Rainbow|output of confusing rainbow-colored images|! [Missing example image]|may be the generation resolution is set too low. |!
-|Size|outputs distorted images at large sizes|! [Missing example image]|Turn on the `Highres Fix` option or use the `Small Resolution + SuperScore` method|
+|rough|not enough details, characters look like rice cakes|![Lack of sample images]|needs to be properly enhanced step|
+|waves|dense waves or patterns|![missing example image]|vectors are not "uniform", maybe the weights are set too high|
+|model|The training process is very abstract|![missing image]|Vector is not "uniform", maybe the alchemy is fried|!
+|Conflict|Flat anime paper in real world|![missing example image]|may be a mix of cue words from different subgenres or themes|!
+|Rainbow|output of confusing rainbow-colored images|![Missing example image]|may be the generation resolution is set too low. |!
+|Size|outputs distorted images at large sizes|![Missing example image]|Turn on the `Highres Fix` option or use the `Small Resolution + SuperScore` method|
 
 ### Noise Reduction
 
 Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) is recommended for noise reduction for anime illustrations.
 
-! [Effect](https://raw.githubusercontent.com/xinntao/Real-ESRGAN/master/assets/teaser.jpg)
+![Effect](https://raw.githubusercontent.com/xinntao/Real-ESRGAN/master/assets/teaser.jpg)
 > rendering
 
 ### Extras for hypersegmented images
@@ -83,7 +83,7 @@ To avoid image stretching, the sizes should all be **as close to the original si
 
 The `Masked content` related setting determines the content placed into the masked area before the repair, it determines the initial reference content (origin is the content of the mask before blurring, and latent nosie is referenced by noise (many random pigment dots).
 
-! [aidrawfix2](https://user-images.githubusercontent.com/75739606/201613751-9da2ffd6-2c1f-439b-8e9a-75b185c99912.png)
+![aidrawfix2](https://user-images.githubusercontent.com/75739606/201613751-9da2ffd6-2c1f-439b-8e9a-75b185c99912.png)
 
 latent noise is what determines the Ai reference, while Denoising strength can be interpreted as the degree of unreference to the reference.
 
@@ -93,7 +93,7 @@ If we need to change the elements, we can key and paste them.
 
 If we need to add elements, we can use PS to graft a hand to the character and let Ai touch it up, or we can graft the lower body of another work for a bust without a lower body and let AI touch it up.
 
-! [test1](https://user-images.githubusercontent.com/75739606/201602016-e14b69e3-f250-4af7-b200-a421d163130b.png)
+![test1](https://user-images.githubusercontent.com/75739606/201602016-e14b69e3-f250-4af7-b200-a421d163130b.png)
 
 **Make changes based on the original image**
 
@@ -103,7 +103,7 @@ Start by tracing thin lines around the edges of the figure, then hitting the col
 
 Then use Img2Img Inpaint + relevant cue words to fix, not satisfied can be changed again until satisfied. Then the image is realesrgan superscored to remove the image texture.
 
-! [fix_exp](https://user-images.githubusercontent.com/75739606/201603999-1ae18fb9-5435-49f0-9adf-0789e9659a29.png)
+![fix_exp](https://user-images.githubusercontent.com/75739606/201603999-1ae18fb9-5435-49f0-9adf-0789e9659a29.png)
 
 **Grafted image**
 

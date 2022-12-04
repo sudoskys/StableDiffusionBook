@@ -243,7 +243,7 @@ Reading the theoretical basis, we know that the basic weight of each word is dif
     
     SEE [Here](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2905)
 
-! [example image missing]
+![example image missing]
 
 ### Prompt word alternation
 
@@ -255,7 +255,7 @@ Alternate prompt [^7], Prompt Mixer. This technology is implemented by the UI. [
 
 It can create hybrids of animals, people or styles, switching a hint every `step` (step-by-step ring rendering).
 
-! [example image missing]
+![example image missing]
 
 ### Prompt matrix Matrix
 
@@ -268,7 +268,7 @@ For example, if you use `a busy city street in a modern city|illustration|cinema
 - a busy city street in a modern city, cinematic lighting
 - a busy city street in a modern city, illustration, cinematic lighting
 
-! [example image missing]
+![example image missing]
 
 You can further add : x after the keyword to specify the weight of a single keyword.
 
@@ -278,7 +278,7 @@ In NAI stands for average weight mix (first half and second half).
 
 `cat :2 | dog` is a dog more like a cat
 
-! [example image missing]
+![example image missing]
 
 ### Prompt Schedule
 

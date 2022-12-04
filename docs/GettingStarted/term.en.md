@@ -47,7 +47,7 @@ Autoencoder Decoder (VAE) uses the processed information array to draw the decod
 
 **CLIP's work**
 
-! [training map](https://pic3.zhimg.com/80/v2-340920caff256e06c29cff7097e23e62_1440w.jpg)
+![training map](https://pic3.zhimg.com/80/v2-340920caff256e06c29cff7097e23e62_1440w.jpg)
 
 > CLIP training graph from https://bbs.huaweicloud.com/blogs/371319
 
