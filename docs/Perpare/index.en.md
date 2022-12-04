@@ -45,9 +45,9 @@ To generate images you need a model + UI, you need to download a model first bef
 
 ### Data set accounting
 
-Stable Diffusion based on [LAION](https://laion.ai/).
+Stable Diffusion Model based on [LAION](https://laion.ai/).
 
-NAI based on [Danbooru](danbooru.donmai.us/).
+NAI based on [Danbooru](danbooru.donmai.us/) and Stable Diffusion Model.
 
 ## Options
 

@@ -44,9 +44,9 @@
 
 ### 数据集交代
 
-Stable Diffusion 基于 [LAION](https://laion.ai/).
+Stable Diffusion Model 基于 [LAION](https://laion.ai/).
 
-NAI 基于 [Danbooru](danbooru.donmai.us/).
+NAI 基于 [Danbooru](danbooru.donmai.us/) 和 Stable Diffusion Model.
 
 ## 方案
 
