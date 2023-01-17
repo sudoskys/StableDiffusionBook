@@ -8,6 +8,11 @@
 
 ## 1/17
 
+GPU 性能分析图
+
+https://twitter.com/umiyuki_ai/status/1615153720333078528/photo/1
+
+
 Lora 
 
 https://github.com/microsoft/LoRA
