@@ -4,6 +4,12 @@
 
     The Stable Diffusion WebUi is currently iterating very quickly and there are a lot of updates every day, so it is recommended to pull the latest code every day.
     
+## 1/17
+
+Lora 
+
+https://github.com/microsoft/LoRA
+https://github.com/CCRcmcpe/scal-sdt/blob/main/modules/lora.py
 
 ## 12/1
 

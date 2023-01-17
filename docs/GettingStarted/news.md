@@ -6,6 +6,13 @@
 
 以下是新闻和测试内容。
 
+## 1/17
+
+Lora 
+
+https://github.com/microsoft/LoRA
+https://github.com/CCRcmcpe/scal-sdt/blob/main/modules/lora.py
+
 ## 12/1
 
 WebUi:[Newly created embeddings considered malicious](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/3878)
