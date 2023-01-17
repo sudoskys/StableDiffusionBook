@@ -8,10 +8,12 @@
 <meta content="一个介绍 Ai 绘画的 WIKI/A WIKI about Ai painting" name="description"/>
 <meta content="StableDiffusionBook Team" name="author"/>
 <link href="https://stable-diffusion-book.vercel.app/en/train/DreamBooth/" rel="canonical"/>
+<link href="../Hypernetwork/" rel="prev"/>
+<link href="../AestheticGradients/" rel="next"/>
 <link href="../../../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.0.5" name="generator"/>
 <title>DreamBooth - AiDraw</title>
-<link href="../../../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/main.558e4712.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -132,7 +134,7 @@
 <div class="md-search-result__meta">
             Initializing search
           </div>
-<ol class="md-search-result__list"></ol>
+<ol class="md-search-result__list" role="presentation"></ol>
 </div>
 </div>
 </div>
@@ -216,7 +218,7 @@
 </div>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../">Start here</a>
 <label for="__nav_1">
@@ -253,7 +255,7 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../Perpare/">Before start</a>
 </div>
@@ -267,7 +269,7 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../install/">Installation</a>
 <label for="__nav_3">
@@ -281,8 +283,8 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3_2" id="__nav_3_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3_2">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3_2" id="__nav_3_2" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_3_2" tabindex="0">
           Install SDWebUi
           <span class="md-nav__icon md-icon"></span>
 </label>
@@ -314,7 +316,7 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../model/">Configuration</a>
 <label for="__nav_4">
@@ -338,7 +340,7 @@
       </a>
 </li>
 <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4_4" id="__nav_4_4" type="checkbox"/>
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4_4" id="__nav_4_4" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../model/WebUi/">WebUi 配置</a>
 <label for="__nav_4_4">
@@ -368,8 +370,8 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
-<label class="md-nav__link" for="__nav_5">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_5" tabindex="0">
           Paint guide
           <span class="md-nav__icon md-icon"></span>
 </label>
@@ -380,7 +382,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_1" id="__nav_5_1" type="checkbox"/>
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_1" id="__nav_5_1" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../paint/">General</a>
 <label for="__nav_5_1">
@@ -402,7 +404,7 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_2" id="__nav_5_2" type="checkbox"/>
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_2" id="__nav_5_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../paint/WebUi/">Paint With WebUi</a>
 <label for="__nav_5_2">
@@ -434,8 +436,8 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_3" id="__nav_5_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_5_3">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_3" id="__nav_5_3" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_5_3" tabindex="0">
           Application Guide
           <span class="md-nav__icon md-icon"></span>
 </label>
@@ -666,7 +668,7 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../landing/">References</a>
 <label for="__nav_7">
@@ -862,9 +864,6 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/sudoskys/StableDiffusionBook/edit/main/docs/train/DreamBooth.en.md" title="Edit this page">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
-</a>
 <h1 id="dreambooth">DreamBooth</h1>
 <blockquote>
 <p>TODO/HELP Audit</p>
@@ -917,13 +916,13 @@
 <ul>
 <li>Pre-training example</li>
 </ul>
-<div class="highlight"><pre><span></span><code>    python diffusers<span class="se">\s</span>cripts<span class="se">\c</span>onvert_original_stable_diffusion_to_diffusers.py --checkpoint_path model.ckpt --original_config_file v1-inference.yaml --scheduler_type ddim --dump_path models/diffusers_model
+<div class="highlight"><pre><span></span><code><span class="w">    </span>python<span class="w"> </span>diffusers<span class="se">\s</span>cripts<span class="se">\c</span>onvert_original_stable_diffusion_to_diffusers.py<span class="w"> </span>--checkpoint_path<span class="w"> </span>model.ckpt<span class="w"> </span>--original_config_file<span class="w"> </span>v1-inference.yaml<span class="w"> </span>--scheduler_type<span class="w"> </span>ddim<span class="w"> </span>--dump_path<span class="w"> </span>models/diffusers_model
 </code></pre></div>
 <ul>
 <li>Post-training example</li>
 </ul>
 <p>The training is also packaged and converted to ckpt, which can be used in various UI's.</p>
-<div class="highlight"><pre><span></span><code>    python diffusers<span class="se">\s</span>cripts<span class="se">\c</span>onvert_diffusers_to_original_stable_diffusion.py --model_path models/resultModel --checkpoint_path result.ckpt --half
+<div class="highlight"><pre><span></span><code><span class="w">    </span>python<span class="w"> </span>diffusers<span class="se">\s</span>cripts<span class="se">\c</span>onvert_diffusers_to_original_stable_diffusion.py<span class="w"> </span>--model_path<span class="w"> </span>models/resultModel<span class="w"> </span>--checkpoint_path<span class="w"> </span>result.ckpt<span class="w"> </span>--half
 </code></pre></div>
 <h3 id="datasets">Datasets</h3>
 <p>The creation of the dataset is the most important part of getting good, consistent results in Dreambooth training.</p>
@@ -1182,20 +1181,20 @@ concepts_list = [
 <p>Prepare your environment with <code>Git</code>, <code>Python</code>, <code>MiniConda</code> (or <code>MiniConda</code>).</p>
 <p>The following steps work in python 3.8, windows 10 22H2, other environments have not been tested</p>
 <p><strong>Create a working directory in which to build the venv virtual environment for python 3.8</strong></p>
-<div class="highlight"><pre><span></span><code>    python -m venv --system-site-packages venv_dbwin
-    venv_dbwin<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
-    python.exe -m pip install --upgrade pip
+<div class="highlight"><pre><span></span><code><span class="w">    </span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>--system-site-packages<span class="w"> </span>venv_dbwin
+<span class="w">    </span>venv_dbwin<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
+<span class="w">    </span>python.exe<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
 </code></pre></div>
 <p>Clone the optimized version of dreambooth for ShivamShrirao into the working directory and install the relevant dependencies (using <a href="https://github.com/huggingface/diffusers/tree/7465397f33d5de75dcccc155e3fb9a232fcbb0a0">build version</a>, which may not be supported in subsequent versions) method)</p>
-<div class="highlight"><pre><span></span><code>git clone https://github.com/ShivamShrirao/diffusers
-<span class="nb">cd</span> diffusers
-pip install -e .
-<span class="nb">cd</span> examples<span class="se">\d</span>reambooth
-pip install -U -r requirements.txt
-pip install OmegaConf
-pip install pytorch_lightning
-pip install einops
-pip install <span class="nv">bitsandbytes</span><span class="o">==</span><span class="m">0</span>.34
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ShivamShrirao/diffusers
+<span class="nb">cd</span><span class="w"> </span>diffusers
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
+<span class="nb">cd</span><span class="w"> </span>examples<span class="se">\d</span>reambooth
+pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+pip<span class="w"> </span>install<span class="w"> </span>OmegaConf
+pip<span class="w"> </span>install<span class="w"> </span>pytorch_lightning
+pip<span class="w"> </span>install<span class="w"> </span>einops
+pip<span class="w"> </span>install<span class="w"> </span><span class="nv">bitsandbytes</span><span class="o">==</span><span class="m">0</span>.34
 </code></pre></div>
 <p>Once this is done, you will need to implement bitsandbytes support on windows according to the methods in <a href="https://github.com/TimDettmers/bitsandbytes/issues/30#issuecomment-1257676341">this issue</a></p>
 <p>Manually copy the <code>libbitsandbytes_cuda116.dll</code> file from <a href="https://github.com/DeXtmL/bitsandbytes-win-prebuilt">this repository</a> to the <code>venv_diffusers\Lib\site-packages\bitsandbytes</code> in the working directory next to <code>libbitsandbytes_cuda116.so</code>.</p>
@@ -1225,12 +1224,12 @@ pip install <span class="nv">bitsandbytes</span><span class="o">==</span><span c
  <a href="https://github.com/lucidrains/memory-efficient-attention-pytorch/blob/main/memory_efficient_attention_pytorch/flash_attention.py">file</a> instead.</p>
 <p>将 attention.py - https://pastebin.com/nmwTrGB9 覆盖到 <code>diffusers\src\diffusers\models</code> 目录。</p>
 <p><strong>The environment is now configured and ready for training.</strong></p>
-<div class="highlight"><pre><span></span><code>        accelerate launch --num_cpu_threads_per_process <span class="m">8</span> diffusers/examples/dreambooth/train_dreambooth.py --pretrained_model_name_or_path<span class="o">=</span>models/diffusers_model --pretrained_vae_name_or_path<span class="o">=</span>models/diffusers_model/vae --output_dir<span class="o">=</span>models --concepts_list<span class="o">=</span><span class="s2">"concepts_list.json"</span> --with_prior_preservation --prior_loss_weight<span class="o">=</span><span class="m">1</span>.0 --seed<span class="o">=</span><span class="m">1337</span> --resolution<span class="o">=</span><span class="m">512</span> --mixed_precision<span class="o">=</span><span class="s2">"fp16"</span> --lr_scheduler<span class="o">=</span><span class="s2">"constant"</span> --use_8bit_adam --gradient_accumulation_steps<span class="o">=</span><span class="m">1</span> --train_batch_size<span class="o">=</span><span class="m">1</span> --max_train_steps<span class="o">=</span><span class="m">800</span> --save_interval<span class="o">=</span><span class="m">10000</span> --learning_rate<span class="o">=</span>1e-6 --num_class_images<span class="o">=</span><span class="m">100</span> --lr_warmup_steps<span class="o">=</span><span class="m">0</span> --gradient_checkpointing
+<div class="highlight"><pre><span></span><code><span class="w">        </span>accelerate<span class="w"> </span>launch<span class="w"> </span>--num_cpu_threads_per_process<span class="w"> </span><span class="m">8</span><span class="w"> </span>diffusers/examples/dreambooth/train_dreambooth.py<span class="w"> </span>--pretrained_model_name_or_path<span class="o">=</span>models/diffusers_model<span class="w"> </span>--pretrained_vae_name_or_path<span class="o">=</span>models/diffusers_model/vae<span class="w"> </span>--output_dir<span class="o">=</span>models<span class="w"> </span>--concepts_list<span class="o">=</span><span class="s2">"concepts_list.json"</span><span class="w"> </span>--with_prior_preservation<span class="w"> </span>--prior_loss_weight<span class="o">=</span><span class="m">1</span>.0<span class="w"> </span>--seed<span class="o">=</span><span class="m">1337</span><span class="w"> </span>--resolution<span class="o">=</span><span class="m">512</span><span class="w"> </span>--mixed_precision<span class="o">=</span><span class="s2">"fp16"</span><span class="w"> </span>--lr_scheduler<span class="o">=</span><span class="s2">"constant"</span><span class="w"> </span>--use_8bit_adam<span class="w"> </span>--gradient_accumulation_steps<span class="o">=</span><span class="m">1</span><span class="w"> </span>--train_batch_size<span class="o">=</span><span class="m">1</span><span class="w"> </span>--max_train_steps<span class="o">=</span><span class="m">800</span><span class="w"> </span>--save_interval<span class="o">=</span><span class="m">10000</span><span class="w"> </span>--learning_rate<span class="o">=</span>1e-6<span class="w"> </span>--num_class_images<span class="o">=</span><span class="m">100</span><span class="w"> </span>--lr_warmup_steps<span class="o">=</span><span class="m">0</span><span class="w"> </span>--gradient_checkpointing
 </code></pre></div>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://user-images.githubusercontent.com/44570237/198906326-21b4f779-f870-4012-84c1-d5ac1dae0411.png"><img alt="image" src="https://user-images.githubusercontent.com/44570237/198906326-21b4f779-f870-4012-84c1-d5ac1dae0411.png"/></a></p>
 <p>If you only have one graphics card with no more than 12G of video memory and need to use it for Windows, please close all programs or web pages that consume video memory to reduce additional memory consumption before training.</p>
 <p>diffusers cannot be trained directly using ckpt files, they need to be converted first, as shown in the example below.</p>
-<div class="highlight"><pre><span></span><code>    python diffusers<span class="se">\s</span>cripts<span class="se">\c</span>onvert_original_stable_diffusion_to_diffusers.py  --checkpoint_path model.ckpt  --original_config_file v1-inference.yaml  --scheduler_type ddim  --dump_path models/diffusers_model
+<div class="highlight"><pre><span></span><code><span class="w">    </span>python<span class="w"> </span>diffusers<span class="se">\s</span>cripts<span class="se">\c</span>onvert_original_stable_diffusion_to_diffusers.py<span class="w">  </span>--checkpoint_path<span class="w"> </span>model.ckpt<span class="w">  </span>--original_config_file<span class="w"> </span>v1-inference.yaml<span class="w">  </span>--scheduler_type<span class="w"> </span>ddim<span class="w">  </span>--dump_path<span class="w"> </span>models/diffusers_model
 </code></pre></div>
 <p>The training is also packaged and converted to ckpt for use in the WebUI of AUTOMATIC1111.</p>
 <div class="highlight"><pre><span></span><code>    python diffusers\scripts\convert_diffusers_to_original_stable_diffusion.py  --model_path models/resultModel  --checkpoint_path result.ckpt  --half
@@ -1245,43 +1244,43 @@ pip install <span class="nv">bitsandbytes</span><span class="o">==</span><span c
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2927">Dreambooth Gui</a></p>
 <p>When the training model is overfitted, the CFG is very influential, so try low the CFG.</p>
 <h2 id="dreambooth-parameter-table">DreamBooth Parameter table</h2>
-<div class="highlight"><pre><span></span><code>usage: argmark <span class="o">[</span>-h<span class="o">]</span> --pretrained_model_name_or_path
-               PRETRAINED_MODEL_NAME_OR_PATH <span class="o">[</span>--revision REVISION<span class="o">]</span>
-               <span class="o">[</span>--tokenizer_name TOKENIZER_NAME<span class="o">]</span> --instance_data_dir
-               INSTANCE_DATA_DIR <span class="o">[</span>--class_data_dir CLASS_DATA_DIR<span class="o">]</span>
-               <span class="o">[</span>--instance_prompt INSTANCE_PROMPT<span class="o">]</span>
-               <span class="o">[</span>--class_prompt CLASS_PROMPT<span class="o">]</span>
-               <span class="o">[</span>--with_prior_preservation<span class="o">]</span>
-               <span class="o">[</span>--prior_loss_weight PRIOR_LOSS_WEIGHT<span class="o">]</span>
-               <span class="o">[</span>--num_class_images NUM_CLASS_IMAGES<span class="o">]</span>
-               <span class="o">[</span>--output_dir OUTPUT_DIR<span class="o">]</span> <span class="o">[</span>--seed SEED<span class="o">]</span>
-               <span class="o">[</span>--resolution RESOLUTION<span class="o">]</span> <span class="o">[</span>--center_crop<span class="o">]</span>
-               <span class="o">[</span>--use_filename_as_label<span class="o">]</span> <span class="o">[</span>--use_txt_as_label<span class="o">]</span>
-               <span class="o">[</span>--train_text_encoder<span class="o">]</span>
-               <span class="o">[</span>--train_batch_size TRAIN_BATCH_SIZE<span class="o">]</span>
-               <span class="o">[</span>--sample_batch_size SAMPLE_BATCH_SIZE<span class="o">]</span>
-               <span class="o">[</span>--num_train_epochs NUM_TRAIN_EPOCHS<span class="o">]</span>
-               <span class="o">[</span>--max_train_steps MAX_TRAIN_STEPS<span class="o">]</span>
-               <span class="o">[</span>--gradient_accumulation_steps GRADIENT_ACCUMULATION_STEPS<span class="o">]</span>
-               <span class="o">[</span>--gradient_checkpointing<span class="o">]</span>
-               <span class="o">[</span>--learning_rate LEARNING_RATE<span class="o">]</span> <span class="o">[</span>--scale_lr<span class="o">]</span>
-               <span class="o">[</span>--lr_scheduler LR_SCHEDULER<span class="o">]</span>
-               <span class="o">[</span>--lr_warmup_steps LR_WARMUP_STEPS<span class="o">]</span> <span class="o">[</span>--use_8bit_adam<span class="o">]</span>
-               <span class="o">[</span>--adam_beta1 ADAM_BETA1<span class="o">]</span> <span class="o">[</span>--adam_beta2 ADAM_BETA2<span class="o">]</span>
-               <span class="o">[</span>--adam_weight_decay ADAM_WEIGHT_DECAY<span class="o">]</span>
-               <span class="o">[</span>--adam_epsilon ADAM_EPSILON<span class="o">]</span>
-               <span class="o">[</span>--max_grad_norm MAX_GRAD_NORM<span class="o">]</span> <span class="o">[</span>--push_to_hub<span class="o">]</span>
-               <span class="o">[</span>--hub_token HUB_TOKEN<span class="o">]</span> <span class="o">[</span>--hub_model_id HUB_MODEL_ID<span class="o">]</span>
-               <span class="o">[</span>--logging_dir LOGGING_DIR<span class="o">]</span>
-               <span class="o">[</span>--log_with <span class="o">{</span>tensorboard,wandb<span class="o">}]</span>
-               <span class="o">[</span>--mixed_precision <span class="o">{</span>no,fp16,bf16<span class="o">}]</span>
-               <span class="o">[</span>--local_rank LOCAL_RANK<span class="o">]</span>
-               <span class="o">[</span>--save_model_every_n_steps SAVE_MODEL_EVERY_N_STEPS<span class="o">]</span>
-               <span class="o">[</span>--auto_test_model<span class="o">]</span> <span class="o">[</span>--test_prompt TEST_PROMPT<span class="o">]</span>
-               <span class="o">[</span>--test_prompts_file TEST_PROMPTS_FILE<span class="o">]</span>
-               <span class="o">[</span>--test_negative_prompt TEST_NEGATIVE_PROMPT<span class="o">]</span>
-               <span class="o">[</span>--test_seed TEST_SEED<span class="o">]</span>
-               <span class="o">[</span>--test_num_per_prompt TEST_NUM_PER_PROMPT<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>usage:<span class="w"> </span>argmark<span class="w"> </span><span class="o">[</span>-h<span class="o">]</span><span class="w"> </span>--pretrained_model_name_or_path
+<span class="w">               </span>PRETRAINED_MODEL_NAME_OR_PATH<span class="w"> </span><span class="o">[</span>--revision<span class="w"> </span>REVISION<span class="o">]</span>
+<span class="w">               </span><span class="o">[</span>--tokenizer_name<span class="w"> </span>TOKENIZER_NAME<span class="o">]</span><span class="w"> </span>--instance_data_dir
+<span class="w">               </span>INSTANCE_DATA_DIR<span class="w"> </span><span class="o">[</span>--class_data_dir<span class="w"> </span>CLASS_DATA_DIR<span class="o">]</span>
+<span class="w">               </span><span class="o">[</span>--instance_prompt<span class="w"> </span>INSTANCE_PROMPT<span class="o">]</span>
+<span class="w">               </span><span class="o">[</span>--class_prompt<span class="w"> </span>CLASS_PROMPT<span class="o">]</span>
+<span class="w">               </span><span class="o">[</span>--with_prior_preservation<span class="o">]</span>
+<span class="w">               </span><span class="o">[</span>--prior_loss_weight<span class="w"> </span>PRIOR_LOSS_WEIGHT<span class="o">]</span>
+<span class="w">               </span><span class="o">[</span>--num_class_images<span class="w"> </span>NUM_CLASS_IMAGES<span class="o">]</span>
+<span class="w">               </span><span class="o">[</span>--output_dir<span class="w"> </span>OUTPUT_DIR<span class="o">]</span><span class="w"> </span><span class="o">[</span>--seed<span class="w"> </span>SEED<span class="o">]</span>
+<span class="w">               </span><span class="o">[</span>--resolution<span class="w"> </span>RESOLUTION<span class="o">]</span><span class="w"> </span><span class="o">[</span>--center_crop<span class="o">]</span>
+<span class="w">               </span><span class="o">[</span>--use_filename_as_label<span class="o">]</span><span class="w"> </span><span class="o">[</span>--use_txt_as_label<span class="o">]</span>
+<span class="w">               </span><span class="o">[</span>--train_text_encoder<span class="o">]</span>
+<span class="w">               </span><span class="o">[</span>--train_batch_size<span class="w"> </span>TRAIN_BATCH_SIZE<span class="o">]</span>
+<span class="w">               </span><span class="o">[</span>--sample_batch_size<span class="w"> </span>SAMPLE_BATCH_SIZE<span class="o">]</span>
+<span class="w">               </span><span class="o">[</span>--num_train_epochs<span class="w"> </span>NUM_TRAIN_EPOCHS<span class="o">]</span>
+<span class="w">               </span><span class="o">[</span>--max_train_steps<span class="w"> </span>MAX_TRAIN_STEPS<span class="o">]</span>
+<span class="w">               </span><span class="o">[</span>--gradient_accumulation_steps<span class="w"> </span>GRADIENT_ACCUMULATION_STEPS<span class="o">]</span>
+<span class="w">               </span><span class="o">[</span>--gradient_checkpointing<span class="o">]</span>
+<span class="w">               </span><span class="o">[</span>--learning_rate<span class="w"> </span>LEARNING_RATE<span class="o">]</span><span class="w"> </span><span class="o">[</span>--scale_lr<span class="o">]</span>
+<span class="w">               </span><span class="o">[</span>--lr_scheduler<span class="w"> </span>LR_SCHEDULER<span class="o">]</span>
+<span class="w">               </span><span class="o">[</span>--lr_warmup_steps<span class="w"> </span>LR_WARMUP_STEPS<span class="o">]</span><span class="w"> </span><span class="o">[</span>--use_8bit_adam<span class="o">]</span>
+<span class="w">               </span><span class="o">[</span>--adam_beta1<span class="w"> </span>ADAM_BETA1<span class="o">]</span><span class="w"> </span><span class="o">[</span>--adam_beta2<span class="w"> </span>ADAM_BETA2<span class="o">]</span>
+<span class="w">               </span><span class="o">[</span>--adam_weight_decay<span class="w"> </span>ADAM_WEIGHT_DECAY<span class="o">]</span>
+<span class="w">               </span><span class="o">[</span>--adam_epsilon<span class="w"> </span>ADAM_EPSILON<span class="o">]</span>
+<span class="w">               </span><span class="o">[</span>--max_grad_norm<span class="w"> </span>MAX_GRAD_NORM<span class="o">]</span><span class="w"> </span><span class="o">[</span>--push_to_hub<span class="o">]</span>
+<span class="w">               </span><span class="o">[</span>--hub_token<span class="w"> </span>HUB_TOKEN<span class="o">]</span><span class="w"> </span><span class="o">[</span>--hub_model_id<span class="w"> </span>HUB_MODEL_ID<span class="o">]</span>
+<span class="w">               </span><span class="o">[</span>--logging_dir<span class="w"> </span>LOGGING_DIR<span class="o">]</span>
+<span class="w">               </span><span class="o">[</span>--log_with<span class="w"> </span><span class="o">{</span>tensorboard,wandb<span class="o">}]</span>
+<span class="w">               </span><span class="o">[</span>--mixed_precision<span class="w"> </span><span class="o">{</span>no,fp16,bf16<span class="o">}]</span>
+<span class="w">               </span><span class="o">[</span>--local_rank<span class="w"> </span>LOCAL_RANK<span class="o">]</span>
+<span class="w">               </span><span class="o">[</span>--save_model_every_n_steps<span class="w"> </span>SAVE_MODEL_EVERY_N_STEPS<span class="o">]</span>
+<span class="w">               </span><span class="o">[</span>--auto_test_model<span class="o">]</span><span class="w"> </span><span class="o">[</span>--test_prompt<span class="w"> </span>TEST_PROMPT<span class="o">]</span>
+<span class="w">               </span><span class="o">[</span>--test_prompts_file<span class="w"> </span>TEST_PROMPTS_FILE<span class="o">]</span>
+<span class="w">               </span><span class="o">[</span>--test_negative_prompt<span class="w"> </span>TEST_NEGATIVE_PROMPT<span class="o">]</span>
+<span class="w">               </span><span class="o">[</span>--test_seed<span class="w"> </span>TEST_SEED<span class="o">]</span>
+<span class="w">               </span><span class="o">[</span>--test_num_per_prompt<span class="w"> </span>TEST_NUM_PER_PROMPT<span class="o">]</span>
 </code></pre></div>
 <h3 id="arguments">Arguments</h3>
 <table>
@@ -1630,34 +1629,6 @@ pip install <span class="nv">bitsandbytes</span><span class="o">==</span><span c
           </a>
 </main>
 <footer class="md-footer">
-<nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: Hypernetwork" class="md-footer__link md-footer__link--prev" href="../Hypernetwork/" rel="prev">
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
-</div>
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                Previous
-              </span>
-              Hypernetwork
-            </div>
-</div>
-</a>
-<a aria-label="Next: AestheticGradients" class="md-footer__link md-footer__link--next" href="../AestheticGradients/" rel="next">
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                Next
-              </span>
-              AestheticGradients
-            </div>
-</div>
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
-</div>
-</a>
-</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">
@@ -1684,7 +1655,7 @@ pip install <span class="nv">bitsandbytes</span><span class="o">==</span><span c
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "toc.follow", "navigation.top", "navigation.tracking", "navigation.indexes", "navigation.expand", "navigation.sections"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
-<script src="../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "toc.follow", "navigation.top", "navigation.tracking", "navigation.indexes", "navigation.expand", "navigation.sections"], "search": "../../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../../assets/javascripts/bundle.51d95adb.min.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>
