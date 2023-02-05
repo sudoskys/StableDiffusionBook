@@ -230,6 +230,8 @@ CLIP 在生成模型的潜在空间进行搜索，从而找到与给定的文字
 
 [ignore-last-layers-of-clip-model](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-last-layers-of-clip-model)
 
+WebUi 使用的是 clip-interrogator 项目，它结合了 blip 和 clip 项目，很大地优化 图像到文本 的过程。blip 负责从原图片中解读文本，由 clip 负责解读适合创作的新图像的描述。
+
 ### CUDA
 
 配合 CUDA 技术，显卡可以模拟成一颗 PhysX 物理加速芯片。

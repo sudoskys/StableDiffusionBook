@@ -200,6 +200,8 @@ NAI uses 31337
 
 https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-last-layers-of-clip-model
 
+WebUi uses the *clip-interrogator* project, which combines the blip and clip projects to greatly optimise the image to text process. blip is responsible for interpreting the text from the original image, while clip is responsible for interpreting the description of the new image suitable for creation.
+
 ### CUDA
 
 With CUDA technology, the graphics card can be simulated as a PhysX physics acceleration chip.
