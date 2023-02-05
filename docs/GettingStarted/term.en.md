@@ -1,5 +1,7 @@
 # Help
 
+https://www.bilibili.com/video/BV1A8411775m/
+
 ## Explanation of terms
 
 | Abbreviations/terms | Explanations |

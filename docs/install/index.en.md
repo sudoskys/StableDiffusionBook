@@ -2,6 +2,12 @@
 
 See next page
 
+## OneClick Install
+
+https://www.bilibili.com/video/BV1ne4y1V7QU
+
+https://www.bilibili.com/video/BV17d4y1C73R
+
 ## About Running on Colab
 
 ### Use Local Runtimes

@@ -1,5 +1,7 @@
 # 帮助
 
+https://www.bilibili.com/video/BV1A8411775m/
+
 ## 术语
 
 | 缩写/写作术语表          | 解释        |

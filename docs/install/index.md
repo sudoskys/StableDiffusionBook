@@ -4,6 +4,12 @@
 
 WebUi 的安装教程在下一页。
 
+## 一键包
+
+https://www.bilibili.com/video/BV1ne4y1V7QU
+
+https://www.bilibili.com/video/BV17d4y1C73R
+
 ## 关于云服务商的说明
 
 移动云没有公网地址，yum 也没有，劝退。

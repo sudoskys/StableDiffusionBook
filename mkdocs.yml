@@ -97,6 +97,7 @@ nav:
       - Textual 训练: train/Textual.md
       - Hypernetwork 训练: train/Hypernetwork.md
       - DreamBooth 训练: train/DreamBooth.md
+      - Lora 训练: train/Lora.md
       - AestheticGradients 训练: train/AestheticGradients.md
   - 参考资料:
       - landing/index.md
@@ -140,6 +141,7 @@ plugins:
           Textual 训练: Textual Inversion
           Hypernetwork 训练: Hypernetwork
           DreamBooth 训练: DreamBooth
+          Lora 训练: Lora
           AestheticGradients 训练: AestheticGradients
           参考资料: References
           运行WebUi: LaunchWebUi
