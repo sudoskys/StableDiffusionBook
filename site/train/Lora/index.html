@@ -8,9 +8,11 @@
 <meta content="一个介绍 Ai 绘画的 WIKI/A WIKI about Ai painting" name="description"/>
 <meta content="StableDiffusionBook Team" name="author"/>
 <link href="https://stable-diffusion-book.vercel.app/train/Lora/" rel="canonical"/>
+<link href="../DreamBooth/" rel="prev"/>
+<link href="../AestheticGradients/" rel="next"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.11" name="generator"/>
-<title>Lora - AiDraw</title>
+<title>Lora 训练 - AiDraw</title>
 <link href="../../assets/stylesheets/main.0d440cfe.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -18,7 +20,7 @@
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
 <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <meta content="website" property="og:type"/>
-<meta content="Lora - AiDraw" property="og:title"/>
+<meta content="Lora 训练 - AiDraw" property="og:title"/>
 <meta content="一个介绍 Ai 绘画的 WIKI/A WIKI about Ai painting" property="og:description"/>
 <meta content="https://stable-diffusion-book.vercel.app/assets/images/social/train/Lora.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
@@ -26,7 +28,7 @@
 <meta content="630" property="og:image:height"/>
 <meta content="https://stable-diffusion-book.vercel.app/train/Lora/" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Lora - AiDraw" name="twitter:title"/>
+<meta content="Lora 训练 - AiDraw" name="twitter:title"/>
 <meta content="一个介绍 Ai 绘画的 WIKI/A WIKI about Ai painting" name="twitter:description"/>
 <meta content="https://stable-diffusion-book.vercel.app/assets/images/social/train/Lora.png" name="twitter:image"/>
 <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
@@ -71,7 +73,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Lora
+              Lora 训练
             
           </span>
 </div>
@@ -180,7 +182,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../">
+<a class="md-tabs__link md-tabs__link--active" href="../">
         训练模型
       </a>
 </li>
@@ -461,15 +463,15 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_6" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../">训练模型</a>
 <label for="__nav_6">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<nav aria-expanded="true" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_6">
 <span class="md-nav__icon md-icon"></span>
           训练模型
@@ -489,6 +491,29 @@
 <a class="md-nav__link" href="../DreamBooth/">
         DreamBooth 训练
       </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Lora 训练
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Lora 训练
+      </a>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#autodl">
+    AutoDL
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../AestheticGradients/">
@@ -529,6 +554,17 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#autodl">
+    AutoDL
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -536,16 +572,18 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="lora">Lora</h1>
-<blockquote>
-<p>TODO/HELP ?</p>
-</blockquote>
-<p>没写呢，别急。</p>
+<p>请跟随 Akegarasu 的指南</p>
+<p>https://www.bilibili.com/video/BV1fs4y1x7p2</p>
+<p>Github：https://github.com/Akegarasu/lora-scripts</p>
+<h2 id="autodl">AutoDL</h2>
+<p>AutoDL在线训练镜像：https://www.bilibili.com/read/cv21450198</p>
+<p>LoRA 在线云端训练教程 AutoDL  https://www.bilibili.com/read/cv21450198</p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年1月17日 04:35:23</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年2月5日 09:49:14</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年1月17日 04:35:23</span>
