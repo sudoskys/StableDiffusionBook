@@ -977,6 +977,7 @@ As a several-hundred-element (low-dimensional) dense vector in which each elemen
 <p>CLIP is a very advanced neural network that transforms your prompt text into a numerical representation. Neural networks work very well with this numerical representation and that's why devs of SD chose CLIP as one of 3 models involved in Stable Diffusion's method of producing images. As CLIP is a neural network, it means that it has a lot of layers. Your prompt is digitized in a simple way, and then fed through layers. You get numerical representation of the prompt after the 1st layer, you feed that into the second layer, you feed the result of that into third, etc, until you get to the last layer, and that's the output of CLIP that is used in Stable Diffusion. This is the slider value of 1. But you can stop early, and use the output of the next to last layer - that's slider value of 2. The earlier you stop, the less layers of neural network have worked on the prompt.</p>
 </blockquote>
 <p>https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-last-layers-of-clip-model</p>
+<p>WebUi uses the <em>clip-interrogator</em> project, which combines the blip and clip projects to greatly optimise the image to text process. blip is responsible for interpreting the text from the original image, while clip is responsible for interpreting the description of the new image suitable for creation.</p>
 <h3 id="cuda">CUDA</h3>
 <p>With CUDA technology, the graphics card can be simulated as a PhysX physics acceleration chip.</p>
 <div class="footnote">
@@ -1010,7 +1011,7 @@ As a several-hundred-element (low-dimensional) dense vector in which each elemen
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">December 4, 2022 02:28:21</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">February 5, 2023 09:39:25</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 13, 2022 10:24:49</span>

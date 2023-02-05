@@ -1068,6 +1068,7 @@
 <p>CLIP 是一种非常先进的神经网络，可将提示文本转换为数字表示。对一个相对复杂场景的文本描述，AI 需要能“理解”并匹配到对应的画面，大部分项目依赖的都是一个叫 CLIP 的模型。</p>
 <p>CLIP 在生成模型的潜在空间进行搜索，从而找到与给定的文字描述相匹配的潜在图像，它非常现代且高效。</p>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#ignore-last-layers-of-clip-model">ignore-last-layers-of-clip-model</a></p>
+<p>WebUi 使用的是 clip-interrogator 项目，它结合了 blip 和 clip 项目，很大地优化 图像到文本 的过程。blip 负责从原图片中解读文本，由 clip 负责解读适合创作的新图像的描述。</p>
 <h3 id="cuda">CUDA</h3>
 <p>配合 CUDA 技术，显卡可以模拟成一颗 PhysX 物理加速芯片。</p>
 <div class="footnote">
@@ -1101,7 +1102,7 @@
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月26日 18:39:55</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年2月5日 09:39:25</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年10月13日 10:24:49</span>
