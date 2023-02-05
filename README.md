@@ -20,7 +20,9 @@
 
 关于使用 Ai 绘画的 Wiki ，翻译，教程，相关资源。目前主要内容为 StableDiffusionWebUi
 
-**目前状态：欢迎维护，我没 Issue 不更新**  
+**目前状态：欢迎维护，新内容见 https://github.com/wfjsw/VP-StableDiffusionBook**  
+
+
 
 访问主地址 https://draw.dianas.cyou/ ～！
 
