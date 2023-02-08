@@ -548,6 +548,11 @@
 <nav aria-label="如何选择" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#tagger-relate">
+    Tagger Relate
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#scal-sdt">
     SCAL-SDT
   </a>
@@ -673,6 +678,59 @@ fine tune directly = DB/native training
 <p>综述。Textual Inversion  和 Hypernetwork 适用于 <code>整体靠近</code>，前者教 AI 用模型中的标签组成一个 <code>人物</code>，后者也是类似的。区别在于 Hypernetwork 以调节模型权重为手段，而 Textual Inversion 告诉 AI 特定标签应该如何组成。</p>
 <p>而 DreamBooth 适用于 <code>细节</code> 的模仿，它的训练过程 “重新整改” 了模型，新模型之中含有了新的样本特征（加了新东西）， DreamBooth 技术本身用于 “复刻” ，所以可以认识冷门元素。</p>
 <p>至于 Aesthetic Gradients ，也就是给 AI 认识一组 <code>优秀的数据</code> 。结果就是这个东西会增加细节，训练很简单，但是会拖慢生成图片的速度（每次生成都要重新计算）。并不适合应用。</p>
+<h3 id="tagger-relate">Tagger Relate</h3>
+<ul>
+<li>
+<p>Multi-backend (WD taggers, deepdanbooru) fast automatic tagging utility 
+https://github.com/AdjointOperator/Augmented-DDTagger</p>
+</li>
+<li>
+<p>some helper script to tagging with DeepDanbooru and BLIP
+https://github.com/crosstyan/blip_helper</p>
+</li>
+<li>
+<p>Labeling extension for Automatic1111's Web UI 
+https://github.com/toriato/stable-diffusion-webui-wd14-tagger</p>
+</li>
+<li>
+<p>Face Detection
+https://github.com/HRNet/HRNet-Facial-Landmark-Detection</p>
+</li>
+<li>
+<p>Tag your waifu dataset with one enter 
+https://github.com/AdjointOperator/End2End-Tagger</p>
+</li>
+<li>
+<p>DeepDanbooru
+https://github.com/KichangKim/DeepDanbooru
+https://github.com/AUTOMATIC1111/TorchDeepDanbooru</p>
+</li>
+<li>
+<p>clip+blip
+https://github.com/pharmapsychotic/clip-interrogator</p>
+</li>
+<li>
+<p>FaceDetector
+https://github.com/hysts/anime-face-detector
+https://github.com/deepinsight/insightface</p>
+</li>
+<li>
+<p>Search
+https://github.com/kitUIN/PicImageSearch</p>
+</li>
+<li>
+<p>Remove text from AI-generated images 
+https://github.com/iuliaturc/detextify</p>
+</li>
+<li>
+<p>WatermarkDetection
+https://github.com/LAION-AI/LAION-5B-WatermarkDetection</p>
+</li>
+<li>
+<p>sd-tagging-helper
+https://github.com/arenatemp/sd-tagging-helper</p>
+</li>
+</ul>
 <h3 id="scal-sdt">SCAL-SDT</h3>
 <p>How to train Stable Diffusion (SD) "efficiently" and how to use SCAL-SDT itself (WIP).</p>
 <p><a href="https://github.com/CCRcmcpe/scal-sdt/wiki">SCAL-SDT</a></p>
@@ -802,7 +860,7 @@ fine tune directly = DB/native training
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年12月4日 04:39:29</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年2月8日 05:20:19</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 03:59:46</span>
