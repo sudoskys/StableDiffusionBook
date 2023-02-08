@@ -6,6 +6,12 @@
 
 以下是新闻和测试内容。
 
+## 2/6
+
+StableDiffusionWebUI accelerated using TensorRT 
+
+https://github.com/ddPn08/Lsmith
+
 ## 1/17
 
 GPU 性能分析图

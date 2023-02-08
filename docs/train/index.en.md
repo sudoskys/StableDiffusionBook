@@ -16,6 +16,46 @@ DreamBooth, on the other hand, is used for `detail` imitation, where the trainin
 
 As for the Aesthetic Gradients, this means that the AI is given a set of `good sample`. The result is something that adds detail and is easy to train, but slows down the generation of images (each generation has to be recalculated). **Not really suitable for applications**.
 
+### Tagger Relate
+
+- Multi-backend (WD taggers, deepdanbooru) fast automatic tagging utility 
+https://github.com/AdjointOperator/Augmented-DDTagger
+
+- some helper script to tagging with DeepDanbooru and BLIP
+https://github.com/crosstyan/blip_helper
+
+- Labeling extension for Automatic1111's Web UI 
+https://github.com/toriato/stable-diffusion-webui-wd14-tagger
+
+- Face Detection
+https://github.com/HRNet/HRNet-Facial-Landmark-Detection
+
+- Tag your waifu dataset with one enter 
+https://github.com/AdjointOperator/End2End-Tagger
+
+- DeepDanbooru
+https://github.com/KichangKim/DeepDanbooru
+https://github.com/AUTOMATIC1111/TorchDeepDanbooru
+
+- clip+blip
+https://github.com/pharmapsychotic/clip-interrogator
+
+- FaceDetector
+https://github.com/hysts/anime-face-detector
+https://github.com/deepinsight/insightface
+
+- Search
+https://github.com/kitUIN/PicImageSearch
+
+- Remove text from AI-generated images 
+https://github.com/iuliaturc/detextify
+
+- WatermarkDetection
+https://github.com/LAION-AI/LAION-5B-WatermarkDetection
+
+- sd-tagging-helper
+https://github.com/arenatemp/sd-tagging-helper
+
 ### SCAL-SDT
 
 How to train Stable Diffusion (SD) "efficiently" and how to use SCAL-SDT itself (WIP).

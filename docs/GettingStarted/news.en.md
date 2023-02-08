@@ -4,6 +4,12 @@
 
     The Stable Diffusion WebUi is currently iterating very quickly and there are a lot of updates every day, so it is recommended to pull the latest code every day.
     
+## 2/6
+
+StableDiffusionWebUI accelerated using TensorRT 
+
+https://github.com/ddPn08/Lsmith
+
 ## 1/17
 
 Ai 学习 GPU 性能分析图

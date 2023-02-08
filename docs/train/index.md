@@ -19,6 +19,47 @@ fine tune directly = DB/native training
 
 至于 Aesthetic Gradients ，也就是给 AI 认识一组 `优秀的数据` 。结果就是这个东西会增加细节，训练很简单，但是会拖慢生成图片的速度（每次生成都要重新计算）。并不适合应用。
 
+### Tagger Relate
+
+- Multi-backend (WD taggers, deepdanbooru) fast automatic tagging utility 
+https://github.com/AdjointOperator/Augmented-DDTagger
+
+- some helper script to tagging with DeepDanbooru and BLIP
+https://github.com/crosstyan/blip_helper
+
+- Labeling extension for Automatic1111's Web UI 
+https://github.com/toriato/stable-diffusion-webui-wd14-tagger
+
+- Face Detection
+https://github.com/HRNet/HRNet-Facial-Landmark-Detection
+
+- Tag your waifu dataset with one enter 
+https://github.com/AdjointOperator/End2End-Tagger
+
+- DeepDanbooru
+https://github.com/KichangKim/DeepDanbooru
+https://github.com/AUTOMATIC1111/TorchDeepDanbooru
+
+- clip+blip
+https://github.com/pharmapsychotic/clip-interrogator
+
+- FaceDetector
+https://github.com/hysts/anime-face-detector
+https://github.com/deepinsight/insightface
+
+- Search
+https://github.com/kitUIN/PicImageSearch
+
+- Remove text from AI-generated images 
+https://github.com/iuliaturc/detextify
+
+- WatermarkDetection
+https://github.com/LAION-AI/LAION-5B-WatermarkDetection
+
+- sd-tagging-helper
+https://github.com/arenatemp/sd-tagging-helper
+
+
 ### SCAL-SDT
 
 How to train Stable Diffusion (SD) "efficiently" and how to use SCAL-SDT itself (WIP).
