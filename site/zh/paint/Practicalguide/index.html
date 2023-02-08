@@ -523,7 +523,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_9">
-    图转图的秘籍
+    色彩而不是线条
   </a>
 </li>
 </ul>
@@ -784,7 +784,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_9">
-    图转图的秘籍
+    色彩而不是线条
   </a>
 </li>
 </ul>
@@ -1106,10 +1106,8 @@
 <p>或者仅遮住手部，以全分辨率修复，大大降低填充（它使用周围的像素来创建上下文，但只是在重新制作手部）并仅提示手部问题（详细的手部描写等）</p>
 <p>CFG 越高，越符合提示词，降噪越高越偏离原图。</p>
 <h3 id="_8">同人物&amp;差分</h3>
-<p>需要用到进阶的 Img2Img 相关内容，最好的方法是准备一个带有色彩的 3D 母本模型，然后这样就可以保证基本一致。</p>
-<p>也可以用很多提示词来限制角色内容，出很多张，挑能用的作品。</p>
-<p>如果是表情或者是背景，可以采用进阶教程中的 重绘画 技巧。</p>
-<p>如果你想了解一些差分的实例，<a href="https://seesaawiki.jp/nai_ch/d/%c7%ed%a4%ae%a5%b3%a5%e9%a5%c6%a5%af">5CH 日语 Wiki</a> 提供了一个实例。</p>
+<p>我们可以使用 LoRA 训练出相似角色的风格模型，然后使用 VRoid 粗略的再现角色并导出为 VRM 格式，接着利用 UE5 的 Control Rig 功能来调整它们的动作，最后利用 Img2Img 方式生成这些拥有相同外表的人物。<sup id="fnref:13"><a class="footnote-ref" href="#fn:13">10</a></sup></p>
+<p>如果是表情或者是背景，可以采用进阶教程中的 重绘画（部分 Img2Img) 技巧。</p>
 <h3 id="5">迭代草图 <sup id="fnref:8"><a class="footnote-ref" href="#fn:8">5</a></sup></h3>
 <p>这里讨论一下如何将<strong>手绘草图</strong>通过 Ai 绘画优化，<em>注意不是二次元</em>。</p>
 <p>在第一次迭代中，不需要太多 Steps，CFG 可以非常低（以获得更好的多样化结果），如果不想完全丢失草图，Denoising 应该在 0.3-0.4 左右。</p>
@@ -1117,7 +1115,7 @@
 <p>你可以随时修复提示（添加或删除出现的细节）并尝试不同的采样器。</p>
 <p>另外，你不应该在初次生成使用一个固定不变的种子？</p>
 <p>如果你提供一个种子（而不是随机的 -1），你的图像很快就会变得过饱和、过度锐化、过度像素化。.... 当然如果想微调，可以使用固定种子。</p>
-<h3 id="_9">图转图的秘籍</h3>
+<h3 id="_9">色彩而不是线条</h3>
 <p>无论是 3D(DAZ 这样的 3D 模型） 还是线稿，AI 只识别 <strong>色彩</strong> ，而不是线条，色彩直接决定图转图的效果。</p>
 <p>如果你要修复线稿，那么降噪应该降低到 0.2.</p>
 <h2 id="_10">遏制风格污染</h2>
@@ -1870,6 +1868,9 @@ scale 就是 CFG scale
 <li id="fn:12">
 <p><a href="https://www.reddit.com/r/StableDiffusion/comments/ygyq2j/a_simple_method_explained_in_the_comments_to/">a_simple_method_explained_in_the_comments_to</a> <a class="footnote-backref" href="#fnref:12" title="Jump back to footnote 9 in the text">↩</a></p>
 </li>
+<li id="fn:13">
+<p><a href="https://vxtwitter.com/umiyuki_ai/status/1622125585215660032">details writed by umiyuki_ai</a> <a class="footnote-backref" href="#fnref:13" title="Jump back to footnote 10 in the text">↩</a></p>
+</li>
 </ol>
 </div>
 <hr/>
@@ -1877,7 +1878,7 @@ scale 就是 CFG scale
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年12月4日 02:28:21</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年2月8日 05:32:17</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 03:59:46</span>

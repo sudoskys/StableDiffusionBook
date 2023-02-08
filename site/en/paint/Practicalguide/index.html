@@ -512,8 +512,8 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#same-character-differential">
-    Same character &amp; differential
+<a class="md-nav__link" href="#identical-characters-differences">
+    Identical Characters &amp; Differences
   </a>
 </li>
 <li class="md-nav__item">
@@ -522,8 +522,8 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#the-secret-to-figure-to-figure-conversion">
-    The secret to figure to figure conversion
+<a class="md-nav__link" href="#colour-rather-than-lines">
+    Colour rather than lines
   </a>
 </li>
 </ul>
@@ -773,8 +773,8 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#same-character-differential">
-    Same character &amp; differential
+<a class="md-nav__link" href="#identical-characters-differences">
+    Identical Characters &amp; Differences
   </a>
 </li>
 <li class="md-nav__item">
@@ -783,8 +783,8 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#the-secret-to-figure-to-figure-conversion">
-    The secret to figure to figure conversion
+<a class="md-nav__link" href="#colour-rather-than-lines">
+    Colour rather than lines
   </a>
 </li>
 </ul>
@@ -1065,11 +1065,9 @@
 <p>Feed the image into inpaint, use roughly the same cue words, put the cue about the <code>hand</code> in front, set the noise reduction depending on how much you want it to change (to 0.25 or less if you just want the hand to be more intact), then keep the steps the same as CFG and txt2img gen.</p>
 <p>Or just mask the hand, fix it at full resolution, greatly reduce the padding (it uses the surrounding pixels to create the context, but is only re-creating the hand) and only hint at hand issues (detailed hand depiction, etc.)</p>
 <p>The higher the CFG, the more it matches the cue words, and the higher the noise reduction the more it deviates from the original image.</p>
-<h3 id="same-character-differential">Same character &amp; differential</h3>
-<p>Advanced Img2Img related content is needed, the best way to do this is to prepare a 3D master model with color and then this will ensure basic consistency.</p>
-<p>You can also use a lot of cue words to limit the character content, come up with many sheets and pick the pieces that work.</p>
-<p>If it's an expression or a background, you can use the repainting technique from the advanced tutorial.</p>
-<p>If you want some examples of differencing, the <a href="https://seesaawiki.jp/nai_ch/d/%c7%ed%a4%ae%a5%b3%a5%e9%a5%c6%a5%af">5CH Japanese Wiki</a> provides an example.</p>
+<h3 id="identical-characters-differences">Identical Characters &amp; Differences</h3>
+<p>We can use LoRA to train a style model of similar characters, then use VRoid to roughly reproduce the characters and export them to VRM format, then use UE5's Control Rig function to adjust their movements, and finally use the Img2Img method to generate these characters with the same appearance. <sup id="fnref:13"><a class="footnote-ref" href="#fn:13">10</a></sup></p>
+<p>For expressions or backgrounds, the Redraw (part of Img2Img) technique from the advanced tutorial can be used.</p>
 <h3 id="iterative-sketching-5">Iterative sketching <sup id="fnref:8"><a class="footnote-ref" href="#fn:8">5</a></sup></h3>
 <p>Here is a discussion of how to optimize <strong>hand sketches</strong> by Ai drawing, <em>note not quadratic</em>.</p>
 <p>In the first iteration, not too many Steps are needed, CFG can be very low (for better diversification results), and Denoising should be around 0.3-0.4 if you don't want to lose the sketch completely.</p>
@@ -1077,7 +1075,7 @@
 <p>You can always fix the hints (add or remove details that appear) and try a different sampler.</p>
 <p>Also, shouldn't you use a fixed constant seed for initial generation?</p>
 <p>If you provide a seed (instead of a random -1), your image will soon become oversaturated, oversharpened, and overpixelated. .... Of course you can use a fixed seed if you want to fine tune it.</p>
-<h3 id="the-secret-to-figure-to-figure-conversion">The secret to figure to figure conversion</h3>
+<h3 id="colour-rather-than-lines">Colour rather than lines</h3>
 <p>Whether it's 3D (3D models like DAZ) or line art, AI only recognizes <strong>color</strong>, not lines, and color directly determines the effect of figure to figure conversion.</p>
 <p>If you want to fix the lines, then the noise reduction should be reduced to 0.2.</p>
 <h2 id="curbing-style-pollution">Curbing style pollution</h2>
@@ -1831,6 +1829,9 @@ scale 就是 CFG scale
 <li id="fn:12">
 <p><a href="https://www.reddit.com/r/StableDiffusion/comments/ygyq2j/a_simple_method_explained_in_the_comments_to/">a_simple_method_explained_in_the_comments_to</a> <a class="footnote-backref" href="#fnref:12" title="Jump back to footnote 9 in the text">↩</a></p>
 </li>
+<li id="fn:13">
+<p><a href="https://vxtwitter.com/umiyuki_ai/status/1622125585215660032">details writed by umiyuki_ai</a> <a class="footnote-backref" href="#fnref:13" title="Jump back to footnote 10 in the text">↩</a></p>
+</li>
 </ol>
 </div>
 <hr/>
@@ -1838,7 +1839,7 @@ scale 就是 CFG scale
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">December 4, 2022 02:28:21</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">February 8, 2023 05:32:17</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 07:44:44</span>
