@@ -129,15 +129,12 @@ Or just mask the hand, fix it at full resolution, greatly reduce the padding (it
 
 The higher the CFG, the more it matches the cue words, and the higher the noise reduction the more it deviates from the original image.
 
-### Same character & differential
+### Identical Characters & Differences
 
-Advanced Img2Img related content is needed, the best way to do this is to prepare a 3D master model with color and then this will ensure basic consistency.
+We can use LoRA to train a style model of similar characters, then use VRoid to roughly reproduce the characters and export them to VRM format, then use UE5's Control Rig function to adjust their movements, and finally use the Img2Img method to generate these characters with the same appearance. [^13]
 
-You can also use a lot of cue words to limit the character content, come up with many sheets and pick the pieces that work.
+For expressions or backgrounds, the Redraw (part of Img2Img) technique from the advanced tutorial can be used.
 
-If it's an expression or a background, you can use the repainting technique from the advanced tutorial.
-
-If you want some examples of differencing, the [5CH Japanese Wiki](https://seesaawiki.jp/nai_ch/d/%c7%ed%a4%ae%a5%b3%a5%e9%a5%c6%a5%af) provides an example.
 ### Iterative sketching [^8]
 
 Here is a discussion of how to optimize **hand sketches** by Ai drawing, *note not quadratic*.
@@ -152,12 +149,11 @@ Also, shouldn't you use a fixed constant seed for initial generation?
 
 If you provide a seed (instead of a random -1), your image will soon become oversaturated, oversharpened, and overpixelated. .... Of course you can use a fixed seed if you want to fine tune it.
 
-### The secret to figure to figure conversion
+### Colour rather than lines
 
 Whether it's 3D (3D models like DAZ) or line art, AI only recognizes **color**, not lines, and color directly determines the effect of figure to figure conversion.
 
 If you want to fix the lines, then the noise reduction should be reduced to 0.2.
-
 
 ## Curbing style pollution
 
@@ -595,7 +591,6 @@ Here is the application of the stable diffusion (non-NAI model). Check out [rela
 **NFT**
 - ... ...
 
-
 [^4]:[Paper 朱整理优化方法](https://pan.baidu.com/s/1VWr7OLvAbu1KIoTPEs2wwQ?pwd=y8lk)
 
 [^5]:[参数图](https://m.weibo.cn/status/4823585938735546)
@@ -613,3 +608,5 @@ Here is the application of the stable diffusion (non-NAI model). Check out [rela
 [^11]:[WebUI 即将引入重磅更新，大幅提升图像品质](https://www.bilibili.com/read/cv19102552)
 
 [^12]:[a_simple_method_explained_in_the_comments_to](https://www.reddit.com/r/StableDiffusion/comments/ygyq2j/a_simple_method_explained_in_the_comments_to/)
+
+[^13]:[details writed by umiyuki_ai](https://vxtwitter.com/umiyuki_ai/status/1622125585215660032)

@@ -137,13 +137,10 @@ CFG 越高，越符合提示词，降噪越高越偏离原图。
 
 ### 同人物&差分
 
-需要用到进阶的 Img2Img 相关内容，最好的方法是准备一个带有色彩的 3D 母本模型，然后这样就可以保证基本一致。
+我们可以使用 LoRA 训练出相似角色的风格模型，然后使用 VRoid 粗略的再现角色并导出为 VRM 格式，接着利用 UE5 的 Control Rig 功能来调整它们的动作，最后利用 Img2Img 方式生成这些拥有相同外表的人物。[^13]
 
-也可以用很多提示词来限制角色内容，出很多张，挑能用的作品。
+如果是表情或者是背景，可以采用进阶教程中的 重绘画（部分 Img2Img) 技巧。
 
-如果是表情或者是背景，可以采用进阶教程中的 重绘画 技巧。
-
-如果你想了解一些差分的实例，[5CH 日语 Wiki](https://seesaawiki.jp/nai_ch/d/%c7%ed%a4%ae%a5%b3%a5%e9%a5%c6%a5%af) 提供了一个实例。
 ### 迭代草图 [^8]
 
 这里讨论一下如何将**手绘草图**通过 Ai 绘画优化，*注意不是二次元*。
@@ -158,7 +155,7 @@ CFG 越高，越符合提示词，降噪越高越偏离原图。
 
 如果你提供一个种子（而不是随机的 -1），你的图像很快就会变得过饱和、过度锐化、过度像素化。.... 当然如果想微调，可以使用固定种子。
 
-### 图转图的秘籍
+### 色彩而不是线条
 
 无论是 3D(DAZ 这样的 3D 模型） 还是线稿，AI 只识别 **色彩** ，而不是线条，色彩直接决定图转图的效果。
 
@@ -273,7 +270,6 @@ emoji 因为只有一个字符，所以在语义准确度上表现良好。
 https://en.wikipedia.org/wiki/Category:Sports_by_type
 
 构图艺术 https://en.wikipedia.org/wiki/Composition_(visual_arts)
-
 
 ## 复刻
 
@@ -615,3 +611,5 @@ Clip 跳过 0，其他一切都很好（afaik 不要使用超网络、v2、yaml�
 [^11]:[WebUI 即将引入重磅更新，大幅提升图像品质](https://www.bilibili.com/read/cv19102552)
 
 [^12]:[a_simple_method_explained_in_the_comments_to](https://www.reddit.com/r/StableDiffusion/comments/ygyq2j/a_simple_method_explained_in_the_comments_to/)
+
+[^13]:[details writed by umiyuki_ai](https://vxtwitter.com/umiyuki_ai/status/1622125585215660032)
