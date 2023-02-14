@@ -6,6 +6,12 @@
 
 以下是新闻和测试内容。
 
+## 2/13
+
+ControlNet is a neural network structure to control diffusion models by adding extra conditions.
+
+https://github.com/Mikubill/sd-webui-controlnet
+
 ## 2/6
 
 StableDiffusionWebUI accelerated using TensorRT 

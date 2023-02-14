@@ -135,6 +135,12 @@ We can use LoRA to train a style model of similar characters, then use VRoid to 
 
 For expressions or backgrounds, the Redraw (part of Img2Img) technique from the advanced tutorial can be used.
 
+- ControlNet
+
+ControlNet is a neural network structure to control diffusion models by adding extra conditions.
+
+https://github.com/Mikubill/sd-webui-controlnet
+
 ### Iterative sketching [^8]
 
 Here is a discussion of how to optimize **hand sketches** by Ai drawing, *note not quadratic*.

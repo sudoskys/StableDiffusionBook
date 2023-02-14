@@ -141,6 +141,12 @@ CFG 越高，越符合提示词，降噪越高越偏离原图。
 
 如果是表情或者是背景，可以采用进阶教程中的 重绘画（部分 Img2Img) 技巧。
 
+- ControlNet
+
+ControlNet is a neural network structure to control diffusion models by adding extra conditions.
+
+https://github.com/Mikubill/sd-webui-controlnet
+
 ### 迭代草图 [^8]
 
 这里讨论一下如何将**手绘草图**通过 Ai 绘画优化，*注意不是二次元*。
