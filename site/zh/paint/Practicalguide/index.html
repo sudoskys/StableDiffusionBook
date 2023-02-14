@@ -11,7 +11,7 @@
 <link href="../WebUi/extension/" rel="prev"/>
 <link href="../identify/" rel="next"/>
 <link href="../../../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.0.11" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.0.12" name="generator"/>
 <title>实战指南 - AiDraw</title>
 <link href="../../../assets/stylesheets/main.0d440cfe.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -1108,6 +1108,11 @@
 <h3 id="_8">同人物&amp;差分</h3>
 <p>我们可以使用 LoRA 训练出相似角色的风格模型，然后使用 VRoid 粗略的再现角色并导出为 VRM 格式，接着利用 UE5 的 Control Rig 功能来调整它们的动作，最后利用 Img2Img 方式生成这些拥有相同外表的人物。<sup id="fnref:13"><a class="footnote-ref" href="#fn:13">10</a></sup></p>
 <p>如果是表情或者是背景，可以采用进阶教程中的 重绘画（部分 Img2Img) 技巧。</p>
+<ul>
+<li>ControlNet</li>
+</ul>
+<p>ControlNet is a neural network structure to control diffusion models by adding extra conditions.</p>
+<p>https://github.com/Mikubill/sd-webui-controlnet</p>
 <h3 id="5">迭代草图 <sup id="fnref:8"><a class="footnote-ref" href="#fn:8">5</a></sup></h3>
 <p>这里讨论一下如何将<strong>手绘草图</strong>通过 Ai 绘画优化，<em>注意不是二次元</em>。</p>
 <p>在第一次迭代中，不需要太多 Steps，CFG 可以非常低（以获得更好的多样化结果），如果不想完全丢失草图，Denoising 应该在 0.3-0.4 左右。</p>
@@ -1878,7 +1883,7 @@ scale 就是 CFG scale
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年2月8日 05:32:17</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年2月14日 15:46:49</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 03:59:46</span>
@@ -1920,6 +1925,6 @@ scale 就是 CFG scale
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "toc.follow", "navigation.top", "navigation.tracking", "navigation.indexes", "navigation.expand", "navigation.sections"], "search": "../../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
-<script src="../../../assets/javascripts/bundle.6df46069.min.js"></script>
+<script src="../../../assets/javascripts/bundle.4b2c34cd.min.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

@@ -11,7 +11,7 @@
 <link href="../WebUi/extension/" rel="prev"/>
 <link href="../identify/" rel="next"/>
 <link href="../../../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.0.11" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.0.12" name="generator"/>
 <title>Practical Guide - AiDraw</title>
 <link href="../../../assets/stylesheets/main.0d440cfe.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -1068,6 +1068,11 @@
 <h3 id="identical-characters-differences">Identical Characters &amp; Differences</h3>
 <p>We can use LoRA to train a style model of similar characters, then use VRoid to roughly reproduce the characters and export them to VRM format, then use UE5's Control Rig function to adjust their movements, and finally use the Img2Img method to generate these characters with the same appearance. <sup id="fnref:13"><a class="footnote-ref" href="#fn:13">10</a></sup></p>
 <p>For expressions or backgrounds, the Redraw (part of Img2Img) technique from the advanced tutorial can be used.</p>
+<ul>
+<li>ControlNet</li>
+</ul>
+<p>ControlNet is a neural network structure to control diffusion models by adding extra conditions.</p>
+<p>https://github.com/Mikubill/sd-webui-controlnet</p>
 <h3 id="iterative-sketching-5">Iterative sketching <sup id="fnref:8"><a class="footnote-ref" href="#fn:8">5</a></sup></h3>
 <p>Here is a discussion of how to optimize <strong>hand sketches</strong> by Ai drawing, <em>note not quadratic</em>.</p>
 <p>In the first iteration, not too many Steps are needed, CFG can be very low (for better diversification results), and Denoising should be around 0.3-0.4 if you don't want to lose the sketch completely.</p>
@@ -1839,7 +1844,7 @@ scale 就是 CFG scale
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">February 8, 2023 05:32:17</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">February 14, 2023 15:46:49</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 07:44:44</span>
@@ -1881,6 +1886,6 @@ scale 就是 CFG scale
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "toc.follow", "navigation.top", "navigation.tracking", "navigation.indexes", "navigation.expand", "navigation.sections"], "search": "../../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../../assets/javascripts/bundle.6df46069.min.js"></script>
+<script src="../../../assets/javascripts/bundle.4b2c34cd.min.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>
