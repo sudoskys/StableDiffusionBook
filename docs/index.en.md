@@ -122,3 +122,7 @@ NAI's model, trained using tens of millions of Danbooru images, has been leaked 
 - [AIBooru](https://aibooru.online/)
 
 - [Reddit](https://www.reddit.com/r/StableDiffusion/)
+
+### Models
+
+https://civitai.com/

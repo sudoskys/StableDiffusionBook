@@ -122,3 +122,7 @@ Stable Diffusion 本来是面向三次元的，而 NAI 是二次元特化版本�
 - [AIBooru](https://aibooru.online/)
 
 - [Reddit](https://www.reddit.com/r/StableDiffusion/)
+
+### Models
+
+https://civitai.com/

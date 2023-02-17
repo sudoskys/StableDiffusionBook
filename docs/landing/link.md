@@ -24,6 +24,9 @@ No English page because of frequent editing for now.
 
 - [Stable Diffusion trainer/scal-sdt](https://github.com/CCRcmcpe/scal-sdt)
 
+**？**
+
+https://civitai.com/
 
 ## 资料
 
