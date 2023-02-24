@@ -38,9 +38,10 @@ https://stable-diffusion-book.vercel.app/  短链为 (https://b23.ink/aibook)
 
 显存 (VARM) > 2GB
 
-一个小参考
-
-![效果。png](https://s1.ax1x.com/2022/10/10/xtdNNR.png)
+<details> 
+<summary>GPU</summary>
+<img src="https://user-images.githubusercontent.com/75739606/221080723-9cfd1da6-f75a-45a6-acf1-df91315fc862.png" alt="GPU">
+</details> 
 
 ### 加入我们
 
