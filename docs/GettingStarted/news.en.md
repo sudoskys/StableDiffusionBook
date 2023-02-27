@@ -3,7 +3,13 @@
 !!! tip
 
     The Stable Diffusion WebUi is currently iterating very quickly and there are a lot of updates every day, so it is recommended to pull the latest code every day.
-    
+
+## 2/27
+
+LoRA for convolution network 
+
+https://github.com/KohakuBlueleaf/LoCon
+
 ## 2/13
 
 ControlNet is a neural network structure to control diffusion models by adding extra conditions.
