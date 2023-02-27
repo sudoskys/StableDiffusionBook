@@ -1,7 +1,7 @@
 
 # Start
 
-First you must have a 4GB model and the menu at the top of the interface is used to select the model.
+First you must have a model and the menu at the top of the interface is used to select the model.
 
 If you run it and report an error, please read the previous configuration tips.
 

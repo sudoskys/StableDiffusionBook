@@ -2,36 +2,26 @@
 
 >TODO Rewrite
 
-首先必须下载一个 4GB 模型。界面顶部的菜单用于选择模型。
+首先必须下载一个模型（比如 [Any3](https://huggingface.co/andite/anything-v4.0/tree/main)），你可以在 [civitai](https://civitai.com/) 选择一个。界面顶部的菜单用于选择模型。
 
-如果你运行报错，请读前面的自救提示。
 
-我们不提供 NAI 模型，你可以去 关于/底部图标 页面找到 `中文社区` 的频道，里面应该有你想要的哈。
+你可以在 `stable-diffusion-webui/models/Stable-diffusion/` 中放置你的大模型。
 
-## 运行
+在 `/stable-diffusion-webui/models/Lora/` 中放入你的 Lora 人物卡模型.
 
-**按照后面的教程载入模型后**
+## 运行并安装程序
 
 Win 编辑并运行 `webui.bat`
 
 Linux 用户运行 `launch.py` 或 `webui.py` ，前者会自动安装（新）环境。
-```
-REQS_FILE="requirements.txt" python launch.py
-```
 
-```
-COMMANDLINE_ARGS="--medvram --always-batch-cond-uncond" REQS_FILE="requirements.txt" python launch.py
-```
+## 尝试生成你的第一幅图片
 
-## 令牌参数生成第一幅图片
-
-咳咳，这里使用的是某个模型，示例仅仅适用于 `那个模型`。
-
-令牌请读后面的内容，这里给出一个实例来供你完成测试。
+这里给出一个实例来供你完成测试。
 
 - 第一个输入框里写关于期望结果的词汇
 
-可以使用 颜文字 和 emoji，使用 () 来增强权重，具体规则见后
+可以使用 颜文字 和 emoji，使用 () 来增强权重，比如
 
 ```
 ((masterpiece)), best quality, illustration, 1 girl, beautiful,beautiful detailed sky, catgirl,beautiful detailed water, cinematic lighting, dramatic angle, Grey T-Shirt, (few clothes),(yuri),(medium breasts),white hair,cat ears,masturbation,bare shoulders ,(gold eyes),wet clothes
@@ -39,7 +29,7 @@ COMMANDLINE_ARGS="--medvram --always-batch-cond-uncond" REQS_FILE="requirements.
 
 - 第二个输入框书写不希望出现的结果
 
-指定需要过滤什么标签
+指定需要过滤什么标签，比如
 
 ```
 lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, bad feet

@@ -16,7 +16,7 @@ https://www.bilibili.com/video/BV17d4y1C73R
 
 ## 关于 Colab
 
-### 使用本地运行时
+### 如果使用本地运行时
 
 https://research.google.com/colaboratory/local-runtimes.html
 

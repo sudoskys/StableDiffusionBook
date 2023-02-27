@@ -48,22 +48,7 @@ Stable Diffusion Model 基于 [LAION](https://laion.ai/).
 
 NAI 基于 [Danbooru](danbooru.donmai.us/) 和 Stable Diffusion Model.
 
-## 方案
-
-| 名称             | 需求                      | 效果                                                                  |
-|------------------|---------------------------|-----------------------------------------------------------------------|
-| SdWebui(4GB Anime 模型） | 最低 3GB 显存               | 4GB 显存生成 512x512 尺寸图片，耗时 17s                            |
-| SdWebui(7GB Anime 模型） | 最低 8GB 显存                   | 和 4GB 效果相差不大，但是数据中带有最后一次训练的权重，所以耗费较多显存 |
-| Naifu(4GB Anime 模型）   | 最低 8GB 显存&8GB 显存       | 效果相似                                                            |
-| Naifu(7GB Anime 模型）   | 最低 8GB 显存（向上浮动 10GB) | 效果相似                                                            |
-| Naifu 原后端         | 16GBfp16/24GBfp32 & 服务器系统           | 效果 99.9 相似                                                     |
-| [NovelAi](https://novelai.net/)         | 无要求，能打开浏览器就行           | 省心                                                        |
-
-
-Naifu 部署需要准备一台拥有 12GB 以上显存的 *Linux 系统* 的 GPU 服务器。
 
 个人使用 4GB 精简模型 + WebUi更加划算。Novel 官方使用的是全量模型，但是这需要大量的显存，~你需要淘宝售价 7W 的 A100 显卡~
 
 SDWebUi 是一个可以使用 模型 生产图片的 **框架**。
-
-NAI 是一个在线 **服务**。
