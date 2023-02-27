@@ -12,6 +12,10 @@ LoRA for convolution network
 
 https://github.com/KohakuBlueleaf/LoCon
 
+Using ControlNet right in Blender. 
+
+https://github.com/coolzilj/Blender-ControlNet
+
 ## 2/13
 
 ControlNet is a neural network structure to control diffusion models by adding extra conditions.
