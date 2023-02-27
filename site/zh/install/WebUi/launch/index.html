@@ -316,12 +316,12 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_2">
-    运行
+    运行并安装程序
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_3">
-    令牌参数生成第一幅图片
+    尝试生成你的第一幅图片
   </a>
 </li>
 <li class="md-nav__item">
@@ -586,12 +586,12 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_2">
-    运行
+    运行并安装程序
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_3">
-    令牌参数生成第一幅图片
+    尝试生成你的第一幅图片
   </a>
 </li>
 <li class="md-nav__item">
@@ -625,30 +625,24 @@
 <blockquote>
 <p>TODO Rewrite</p>
 </blockquote>
-<p>首先必须下载一个 4GB 模型。界面顶部的菜单用于选择模型。</p>
-<p>如果你运行报错，请读前面的自救提示。</p>
-<p>我们不提供 NAI 模型，你可以去 关于/底部图标 页面找到 <code>中文社区</code> 的频道，里面应该有你想要的哈。</p>
-<h2 id="_2">运行</h2>
-<p><strong>按照后面的教程载入模型后</strong></p>
+<p>首先必须下载一个模型（比如 <a href="https://huggingface.co/andite/anything-v4.0/tree/main">Any3</a>），你可以在 <a href="https://civitai.com/">civitai</a> 选择一个。界面顶部的菜单用于选择模型。</p>
+<p>你可以在 <code>stable-diffusion-webui/models/Stable-diffusion/</code> 中放置你的大模型。</p>
+<p>在 <code>/stable-diffusion-webui/models/Lora/</code> 中放入你的 Lora 人物卡模型.</p>
+<h2 id="_2">运行并安装程序</h2>
 <p>Win 编辑并运行 <code>webui.bat</code></p>
-<p>Linux 用户运行 <code>launch.py</code> 或 <code>webui.py</code> ，前者会自动安装（新）环境。
-<div class="highlight"><pre><span></span><code>REQS_FILE="requirements.txt" python launch.py
-</code></pre></div></p>
-<div class="highlight"><pre><span></span><code>COMMANDLINE_ARGS="--medvram --always-batch-cond-uncond" REQS_FILE="requirements.txt" python launch.py
-</code></pre></div>
-<h2 id="_3">令牌参数生成第一幅图片</h2>
-<p>咳咳，这里使用的是某个模型，示例仅仅适用于 <code>那个模型</code>。</p>
-<p>令牌请读后面的内容，这里给出一个实例来供你完成测试。</p>
+<p>Linux 用户运行 <code>launch.py</code> 或 <code>webui.py</code> ，前者会自动安装（新）环境。</p>
+<h2 id="_3">尝试生成你的第一幅图片</h2>
+<p>这里给出一个实例来供你完成测试。</p>
 <ul>
 <li>第一个输入框里写关于期望结果的词汇</li>
 </ul>
-<p>可以使用 颜文字 和 emoji，使用 () 来增强权重，具体规则见后</p>
+<p>可以使用 颜文字 和 emoji，使用 () 来增强权重，比如</p>
 <div class="highlight"><pre><span></span><code>((masterpiece)), best quality, illustration, 1 girl, beautiful,beautiful detailed sky, catgirl,beautiful detailed water, cinematic lighting, dramatic angle, Grey T-Shirt, (few clothes),(yuri),(medium breasts),white hair,cat ears,masturbation,bare shoulders ,(gold eyes),wet clothes
 </code></pre></div>
 <ul>
 <li>第二个输入框书写不希望出现的结果</li>
 </ul>
-<p>指定需要过滤什么标签</p>
+<p>指定需要过滤什么标签，比如</p>
 <div class="highlight"><pre><span></span><code>lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, bad feet
 </code></pre></div>
 <p><strong>第一次调整参数</strong></p>
@@ -837,7 +831,7 @@ set COMMANDLINE_ARGS 设置命令行参数 webui.py 运行
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月30日 01:31:48</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年2月27日 15:31:03</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年10月10日 07:33:42</span>
