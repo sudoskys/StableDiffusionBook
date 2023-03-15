@@ -8,12 +8,12 @@
 <meta content="一个介绍 Ai 绘画的 WIKI/A WIKI about Ai painting" name="description"/>
 <meta content="StableDiffusionBook Team" name="author"/>
 <link href="https://stable-diffusion-book.vercel.app/install/WebUi/launch/" rel="canonical"/>
-<link href="../set/" rel="prev"/>
+<link href="../../" rel="prev"/>
 <link href="../Troubleshoot/" rel="next"/>
 <link href="../../../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.0.15" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.3" name="generator"/>
 <title>运行WebUi - AiDraw</title>
-<link href="../../../assets/stylesheets/main.113286f1.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/main.c4a75a56.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -295,7 +295,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../set/">
+<a class="md-nav__link" href="../set.md">
         基本指南
       </a>
 </li>
@@ -316,32 +316,85 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_2">
-    运行并安装程序
+    准备环境
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_3">
-    尝试生成你的第一幅图片
+    准备程序
+  </a>
+<nav aria-label="准备程序" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+    一键包下载地址及介绍
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#webui">
+    WebUi 原生安装
+  </a>
+<nav aria-label="WebUi 原生安装" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#linux">
+    Linux 平台
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_4">
-    中文/本地化
+<a class="md-nav__link" href="#windows">
+    Windows 平台
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mac">
+    Mac 平台
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_5">
+    中国大陆的网络问题
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+    配置大模型
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#webui_1">
+    尝试启动 WebUi
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
+    尝试生成你的第一幅图片
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_8">
     共享链接
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_6">
+<a class="md-nav__link" href="#_9">
     自定义运行
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#api">
-    API 文档
+    API 的基本使用实例
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_10">
+    其他
   </a>
 </li>
 </ul>
@@ -586,32 +639,85 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_2">
-    运行并安装程序
+    准备环境
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_3">
-    尝试生成你的第一幅图片
+    准备程序
+  </a>
+<nav aria-label="准备程序" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+    一键包下载地址及介绍
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#webui">
+    WebUi 原生安装
+  </a>
+<nav aria-label="WebUi 原生安装" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#linux">
+    Linux 平台
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_4">
-    中文/本地化
+<a class="md-nav__link" href="#windows">
+    Windows 平台
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mac">
+    Mac 平台
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_5">
+    中国大陆的网络问题
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+    配置大模型
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#webui_1">
+    尝试启动 WebUi
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
+    尝试生成你的第一幅图片
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_8">
     共享链接
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_6">
+<a class="md-nav__link" href="#_9">
     自定义运行
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#api">
-    API 文档
+    API 的基本使用实例
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_10">
+    其他
   </a>
 </li>
 </ul>
@@ -621,20 +727,129 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="_1">启动</h1>
-<blockquote>
-<p>TODO Rewrite</p>
-</blockquote>
-<p>首先必须下载一个模型（比如 <a href="https://huggingface.co/andite/anything-v4.0/tree/main">Any3</a>），你可以在 <a href="https://civitai.com/">civitai</a> 选择一个。界面顶部的菜单用于选择模型。</p>
-<p>你可以在 <code>stable-diffusion-webui/models/Stable-diffusion/</code> 中放置你的大模型。</p>
-<p>在 <code>/stable-diffusion-webui/models/Lora/</code> 中放入你的 Lora 人物卡模型.</p>
-<h2 id="_2">运行并安装程序</h2>
-<p>Win 编辑并运行 <code>webui.bat</code></p>
-<p>Linux 用户运行 <code>launch.py</code> 或 <code>webui.py</code> ，前者会自动安装（新）环境。</p>
-<h2 id="_3">尝试生成你的第一幅图片</h2>
-<p>这里给出一个实例来供你完成测试。</p>
+<h1 id="_1">准备资源文件</h1>
+<p>我们安装 WebUi 有两个途径，一是哔哩哔哩 Up 主秋叶的一键包，二是原生从仓库拉取安装。前者较适合中国大陆用户。</p>
+<h2 id="_2">准备环境</h2>
+<p>在开始之前，你需要以下条件。</p>
 <ul>
-<li>第一个输入框里写关于期望结果的词汇</li>
+<li>
+<p>一个 Windows、Linux 或 MacOS 的操作系统</p>
+</li>
+<li>
+<p>一个安装了 Git、Python 和 Wget 的环境</p>
+</li>
+<li>
+<p>一个有足够空间（至少 30~40GB）的磁盘或目录</p>
+</li>
+<li>
+<p>一张至少 4GB 显存的显卡</p>
+</li>
+<li>
+<p>剩余足够 10GB 的内存（WebUi 使用过程中会逐步增加内存占用）</p>
+</li>
+</ul>
+<p>对于 Linux 系统，您可能已经预装了 git 和 wget 工具。您可以在终端中运行以下命令来检查它们的版本：</p>
+<div class="highlight"><pre><span></span><code>git --version
+wget --version
+</code></pre></div>
+<p>如果没有预装它，可以使用 apt 或 yum 等包管理器来安装它们。例如，对于 Ubuntu 系统，可以运行以下命令：
+<div class="highlight"><pre><span></span><code>sudo apt update
+sudo apt install git wget
+</code></pre></div></p>
+<p>对于 Windows 系统，您可能需要下载并安装 git 和 wget 的可执行文件。可以从这些链接下载它们：
+<div class="highlight"><pre><span></span><code>https://git-scm.com/download/win
+http://gnuwin32.sourceforge.net/packages/wget.htm
+</code></pre></div></p>
+<h2 id="_3">准备程序</h2>
+<h3 id="_4">一键包下载地址及介绍</h3>
+<p>https://www.bilibili.com/video/BV1ne4y1V7QU</p>
+<p>https://www.bilibili.com/video/BV17d4y1C73R</p>
+<p>下载两样东西：资源包，启动器。</p>
+<p>然后解压资源包到一个文件夹，将启动器放入启动。</p>
+<p>如果整合包里面没有大模型的话（<code>models</code> 文件夹），可以翻查下面的链接下载一个，放入 <code>sd-webui 启动器、数据整合包、models\Stable-diffusion</code> 即可，如果有 vae 模型一并放入，否则生成的图片会灰蒙蒙的。</p>
+<h2 id="webui">WebUi 原生安装</h2>
+<p><strong>如果你是 Windows 用户，请做好 C 盘暴涨 15GB 的准备。</strong></p>
+<h3 id="linux">Linux 平台</h3>
+<p>先安装依赖
+<div class="highlight"><pre><span></span><code><span class="c1"># Debian-based:</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>wget<span class="w"> </span>git<span class="w"> </span>python3<span class="w"> </span>python3-venv
+<span class="c1"># Red Hat-based:</span>
+sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>wget<span class="w"> </span>git<span class="w"> </span>python3
+<span class="c1"># Arch-based:</span>
+sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>wget<span class="w"> </span>git<span class="w"> </span>python3
+</code></pre></div></p>
+<p>??？ info '使用 MiniConda 控制环境'
+    如果可以，尽量使用 <code>miniconda</code> （anaconda 特别巨大。...），创建一个 Python 3.10.6 的虚拟环境。</p>
+<pre><code>```bash
+conda create -n aidraw python=3.10.6
+
+conda activate aidraw
+
+COMMANDLINE_ARGS="--medvram" REQS_FILE="requirements.txt" python launch.py
+```
+</code></pre>
+<p>你可以运行一键脚本 <code>bash &lt;(wget -qO- https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusion-webui/master/webui.sh)</code> 或者手动克隆 https://github.com/AUTOMATIC1111/stable-diffusion-webui 的仓库：</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/AUTOMATIC1111/stable-diffusion-webui
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>cd stable-diffusion-webui
+</code></pre></div>
+<p>运行 <code>launch.py</code> 或 <code>webui.py</code> ，前者会自动安装（新）环境。
+这个过程可能需要一些时间，请耐心等待。</p>
+<h3 id="windows">Windows 平台</h3>
+<p>首先，您需要下载安装 <a href="https://www.python.org/downloads/windows/">Python-3.10.6</a>，使用管理员身份安装，安装务必勾选 <code>Add Python to PATH</code> 。</p>
+<p>然后安装 <a href="https://git-scm.com/download/win">git</a> 下载 stable-diffusion-webui 仓库，例如运行 <code>git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git</code> 在 Windows 资源管理器中以普通用户（非管理员）身份运行 <code>webui-user.bat</code></p>
+<p>然后，您需要进入这个文件夹，并运行 webui-user.bat（Windows）</p>
+<p>这个过程可能需要一些时间，请耐心等待。</p>
+<h3 id="mac">Mac 平台</h3>
+<p>如果你是 Mac 系统，请查看 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Installation-on-Apple-Silicon">此教程</a> 进行安装。</p>
+<p>具体使用和输出我会在下面解释，现在该配置大模型了。</p>
+<h3 id="_5">中国大陆的网络问题</h3>
+<p>如果你在大陆内采用了原生安装的形式安装 WebUi，那么势必会遇到网络问题。（表现为网卡没有流量经过）</p>
+<p>如果你知道 Clash 工具，那么在首页开启 TUN 模式即可解决问题。如果你不了解此工具，请继续往下看。</p>
+<p>如果因为链接 Github 失败导致拉取失败。请将：</p>
+<p><code>git clone https://github.com</code> 改为 <code>git clone https://hub.fastgit.org/</code></p>
+<p>使用以下内容配置 Python 镜像地址。</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span><span class="w"> </span>global.index-url<span class="w"> </span>https://mirrors.aliyun.com/pypi/simple/
+</code></pre></div>
+<p>也可以通过修改 pip 的配置文件来设置镜像源地址，配置文件的位置和名称根据不同的操作系统而不同，例如：</p>
+<p>Linux: <code>~/.config/pip/pip.conf</code>：</p>
+<div class="highlight"><pre><span></span><code><span class="k">[global]</span>
+<span class="na">index-url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">http://mirrors.aliyun.com/pypi/simple/</span>
+<span class="k">[install]</span>
+<span class="na">trusted-host</span><span class="o">=</span><span class="s">mirrors.aliyun.com</span>
+</code></pre></div>
+<p>Windows 需要在 User 目录中创建一个 pip 目录，并新建一个文件 pip.ini，也就是 <code>%HOMEPATH%\pip\pip.ini</code>。 在 pip.ini 文件中添加以下内容：</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">[global]</span>
+<span class="na">index-url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">http://mirrors.aliyun.com/pypi/simple/</span>
+<span class="k">[install]</span>
+<span class="na">trusted-host</span><span class="o">=</span><span class="s">mirrors.aliyun.com</span>
+</code></pre></div>
+这样就可以让 pip 使用清华大学的镜像源来下载和安装 Python 包了。</p>
+<h2 id="_6">配置大模型</h2>
+<p>让 Ai 绘画必须下载一个模型（比如 <a href="https://huggingface.co/andite/anything-v4.0/tree/main">Any3</a>），你可以在 <a href="https://civitai.com/">civitai</a> 选择一个。WebUi 界面顶部的菜单用于选择模型。</p>
+<p>你可以在 <code>stable-diffusion-webui/models/Stable-diffusion/</code> 中放置你的大模型。</p>
+<p>在 <code>stable-diffusion-webui/models/Lora/</code> 中放入你的 Lora 人物模型。</p>
+<h2 id="webui_1">尝试启动 WebUi</h2>
+<p>如果你不使用一键启动运行。那么你可以使用以下命令启动 Webui</p>
+<p><code>python3 launch.py --autolaunch</code></p>
+<p>如果你的显卡显存小于 8GB ，那么请附加 <code>--lowvram</code> 参数。</p>
+<p>经过稍微的等待后，会输出如下类似的界面。</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/launch.png"><img alt="界面图" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/launch.png"/></a></p>
+<p><div class="highlight"><pre><span></span><code>Model loaded.
+Loaded a total of 0 textual inversion embeddings.
+Embeddings: 
+Running on local URL:  http://127.0.0.1:7860
+
+To create a public link, set `share=True` in `launch()`
+</code></pre></div>
+其中，<code>http://127.0.0.1:7860</code> 就是本地机器的链接（运行在本地机器上面），剩下的信息是大模型和嵌入模型的加载情况。</p>
+<p>打开此地址，你会看到下面的界面：</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/webui.png"><img alt="界面图" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/webui.png"/></a></p>
+<p>在这个界面中，打开 extensions 选项卡。点击<code>Avaliable</code>二级选项卡点击 LoadFrom，然后在扩展列表中找到中文扩展并安装即可汉化界面。如果你是一键包版本，那么应该会自带中文扩展。</p>
+<h2 id="_7">尝试生成你的第一幅图片</h2>
+<p>打开文生图选项卡，这里给出一个实例来供你完成测试。</p>
+<ul>
+<li>第一个输入框中书写期望的结果的描述词汇</li>
 </ul>
 <p>可以使用 颜文字 和 emoji，使用 () 来增强权重，比如</p>
 <div class="highlight"><pre><span></span><code>((masterpiece)), best quality, illustration, 1 girl, beautiful,beautiful detailed sky, catgirl,beautiful detailed water, cinematic lighting, dramatic angle, Grey T-Shirt, (few clothes),(yuri),(medium breasts),white hair,cat ears,masturbation,bare shoulders ,(gold eyes),wet clothes
@@ -643,14 +858,21 @@
 <li>第二个输入框书写不希望出现的结果</li>
 </ul>
 <p>指定需要过滤什么标签，比如</p>
-<div class="highlight"><pre><span></span><code>lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, bad feet
+<div class="highlight"><pre><span></span><code>lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, bad feet,nsfw,nude
 </code></pre></div>
-<p><strong>第一次调整参数</strong></p>
+<p>点击生成按钮即可生成，在终端中会显示进度：</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/process.png"><img alt="界面图" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/process.png"/></a></p>
+<p>生成报错请读 <code>绘画调试</code> 章节。</p>
+<p>生成效果和大模型有关。</p>
+<p><strong>第一次认识参数</strong></p>
 <p>选定分辨率参数，越大生成耗时越长。</p>
-<p>生成后的结果结尾类似如下
-<div class="highlight"><pre><span></span><code>Steps: 28, Sampler: Euler a, CFG scale: 7, Seed: 2706937631, Size: 1024x512, Model hash: 925997e9
+<p>生成后的结果结尾类似如下</p>
+<div class="highlight"><pre><span></span><code>Steps: 28, Sampler: Euler a, CFG scale: 7, Seed: 2053144181, Size: 512x512, Model hash: 925997e9, Clip skip: 2, ENSD: 31337
 </code></pre></div>
-在没有加载风格模型的情况下，通过一样的参数和 Seed(-1 就是随机），可以生产一样的图像，可以用于微调！</p>
+<p>其中 <code>step</code> 代表迭代（渲染）步数。</p>
+<p><code>sample method</code>  采样方法（不同的采样方法有不同的效果和速度）。</p>
+<p><code>cfg scale</code> 符合 prompt 的程度，降低此参数可以提升模型的抽象创造力。</p>
+<p><code>Seed</code> 代表一个随机噪声，相同的种子和程序环境可以生成相近的图片。</p>
 <p>一起出现的还有 GPU 负载信息</p>
 <div class="highlight"><pre><span></span><code>Time taken: 33.97s
 Torch active/reserved: 1975/2144 MiB, Sys VRAM: 7890/8134 MiB (93.61%)
@@ -664,11 +886,7 @@ Torch active/reserved: 1975/2144 MiB, Sys VRAM: 7890/8134 MiB (93.61%)
 <p>有 Python 代码阅读能力的话则可在 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/modules/shared.py">此处</a> 源码中找到各设置定义的名称。</p>
 <p>它们通常以将对象 <code>OptionInfo</code> 的实例作为值的字典的键存在。</p>
 </div>
-<h2 id="_4">中文/本地化</h2>
-<p>本地化插件已经集成进插件管理器中。本地化文件是在 <code>localizations</code> 文件夹下的Json文件。</p>
-<p><strong>创建本地化文件</strong></p>
-<p>转到设置并单击 <code>Download localization template</code> 底部的按钮，下载一个可以编辑的本地化模板。</p>
-<h2 id="_5">共享链接</h2>
+<h2 id="_8">共享链接</h2>
 <ul>
 <li>使用 <code>--share</code> 选项来在线运行！</li>
 </ul>
@@ -696,31 +914,16 @@ Torch active/reserved: 1975/2144 MiB, Sys VRAM: 7890/8134 MiB (93.61%)
 <li>监听端口</li>
 </ul>
 <p>添加参数 <code>--port xxxx</code> 使服务器监听特定端口。</p>
-<p>低于 1024 的所有端口都需要 <code>root</code>权限，因此建议使用高于 1024 的端口。</p>
+<p>低于 1024 的所有端口都需要 <code>root</code> 权限，因此建议使用高于 1024 的端口。</p>
 <p>默认端口为 7860</p>
 <ul>
 <li>主题</li>
 </ul>
 <p>添加 <code>--theme</code> 参数来切换主题</p>
-<h2 id="_6">自定义运行</h2>
-<p>进一步熟悉这个程序，你会发现可以修改 Bat 运行脚本 添加参数！具体参数列表请读下文。</p>
-<p>生成报错？请读 <code>绘画调试</code> 章节。</p>
-<p>首先，你可以运行 <code>python webui.py --help</code> 查看所有命令参数，或者在 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/modules/shared.py">源码文件</a> 中读到它们。</p>
-<p>Tip:
-自定义程序运行方式的推荐方法是编辑 webui-user.bat(Windows) 和 webui-user.sh(Linux)</p>
-<p><em>环境定制</em></p>
-<p><code>set PYTHON=b:/soft/Python310/Python.exe</code></p>
-<p><code>set PYTHON</code> 允许设置自定义 Python 路径</p>
-<p><code>set VENV_DIR=C:\run\var\run</code>
-set VENV_DIR 允许您选择虚拟环境的目录。默认为<code>venv</code>。特殊值<code>-</code>在不创建虚拟环境的情况下运行脚本。</p>
-<p><code>set COMMANDLINE_ARGS=--ckpt a.ckpt</code>
-set COMMANDLINE_ARGS 设置命令行参数 webui.py 运行
-示例使用模型 a.ckpt 而不是 model.ckpt</p>
-<p><em>GPU 指定</em></p>
-<p>选择要使用的默认 Gpu <code>--device-id 0</code>，来代替旧版本 (2022/10 之前）的 <code>CUDA_VISIBLE_DEVICES=0</code>，可以选择第二个 GPU 允许同时运行两个实例，从而能够以更简洁的方式简单地选择设备。</p>
-<p>查看 GPU 型号和 CUDA 版本，可以使用 <code>nvidia-smi</code> 命令</p>
-<p><strong>优化命令参数</strong></p>
-<p>来自 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Optimizations">官方 Wiki</a></p>
+<h2 id="_9">自定义运行</h2>
+<p>自定义程序运行方式的推荐方法是编辑 webui-user.bat(Windows) 和 webui-user.sh(Linux)</p>
+<p>你可以运行 <code>python webui.py --help</code> 查看所有命令参数，或者在 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/modules/shared.py">源码文件</a> 中读到它们。</p>
+<p><strong>一些启动参数说明</strong></p>
 <table>
 <thead>
 <tr>
@@ -771,9 +974,19 @@ set COMMANDLINE_ARGS 设置命令行参数 webui.py 运行
 </tr>
 </tbody>
 </table>
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3889">讨论</a> 有人认为，通过在 Windows 设置上禁用硬件加速 GPU 调度，WebUi 性能提高了大约 10-50%</p>
-<h2 id="api">API 文档</h2>
-<p>使用 <code>--api</code> 参数运行程序，在浏览器访问 <code>{输出的网址}/docs</code> 就可以查看到 WebUi 的 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/tree/master/modules/api">Api</a> 文档。<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">2</a></sup></p>
+<p><em>环境定制</em></p>
+<p><code>set PYTHON=b:/soft/Python310/Python.exe</code></p>
+<p><code>set PYTHON</code> 允许设置自定义 Python 路径</p>
+<p><code>set VENV_DIR=C:\run\var\run</code>
+set VENV_DIR 允许您选择虚拟环境的目录。默认为<code>venv</code>。特殊值<code>-</code>在不创建虚拟环境的情况下运行脚本。</p>
+<p><code>set COMMANDLINE_ARGS=--ckpt a.ckpt</code>
+set COMMANDLINE_ARGS 设置命令行参数 webui.py 运行
+示例使用模型 a.ckpt 而不是 model.ckpt</p>
+<p><em>GPU 指定</em></p>
+<p>选择要使用的默认 Gpu <code>--device-id 0</code>，来代替旧版本 (2022/10 之前）的 <code>CUDA_VISIBLE_DEVICES=0</code>，可以选择第二个 GPU 允许同时运行两个实例，从而能够以更简洁的方式简单地选择设备。</p>
+<p>查看 GPU 型号和 CUDA 版本，可以使用 <code>nvidia-smi</code> 命令</p>
+<h2 id="api">API 的基本使用实例</h2>
+<p>使用 <code>--api</code> 参数运行程序，在浏览器访问 <code>{输出的网址}/docs</code> 就可以查看到 WebUi 的 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/tree/master/modules/api">Api</a> 文档。<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">1</a></sup></p>
 <p>如果你想让其他应用调用 Api, 追加<code>--enable-insecure-extension-access</code>。</p>
 <p>下面是一个同步类实现。</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span>
@@ -805,7 +1018,7 @@ set COMMANDLINE_ARGS 设置命令行参数 webui.py 运行
             <span class="n">image</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">outpath</span><span class="p">,</span> <span class="n">pnginfo</span><span class="o">=</span><span class="n">pnginfo</span><span class="p">)</span>
 
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">"prompt"</span><span class="p">:</span> <span class="s2">"1girl"</span><span class="p">,</span>
+    <span class="s2">"prompt"</span><span class="p">:</span> <span class="s2">"1girl,star"</span><span class="p">,</span>
     <span class="s2">"steps"</span><span class="p">:</span> <span class="mi">20</span>
 <span class="p">}</span>
 <span class="c1"># 其他参数会使用默认值</span>
@@ -813,16 +1026,15 @@ set COMMANDLINE_ARGS 设置命令行参数 webui.py 运行
 
 <span class="c1"># 实际使用的时候不应该保存到本地再发送，而是直接发送，避免存储图片作品造成 版权 问题。</span>
 </code></pre></div>
-<p>跨平台多后端项目 <a href="https://github.com/koishijs/novelai-bot">novelai-bot</a></p>
-<p>Discord 机器人项目 <a href="https://github.com/Kilvoctu/aiyabot/blob/main/core/stablecog.py">aiyabot</a></p>
+<h2 id="_10">其他</h2>
+<p>WebUi 的官方代码仓库地址为 https://github.com/AUTOMATIC1111/stable-diffusion-webui</p>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui#installation-and-running">官方英文安装教程</a></p>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Dependencies">官方给定的依赖列表</a></p>
 <div class="footnote">
 <hr/>
 <ol>
-<li id="fn:3">
-<p><a href="https://rentry.co/voldy">Wiki2</a> <a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 1 in the text">↩</a></p>
-</li>
 <li id="fn:4">
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3734">Basic Documentation and Examples for using API</a> <a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 2 in the text">↩</a></p>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3734">Basic Documentation and Examples for using API</a> <a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 1 in the text">↩</a></p>
 </li>
 </ol>
 </div>
@@ -831,7 +1043,7 @@ set COMMANDLINE_ARGS 设置命令行参数 webui.py 运行
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年2月27日 15:31:03</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年3月15日 14:23:58</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年10月10日 07:33:42</span>
@@ -840,10 +1052,10 @@ set COMMANDLINE_ARGS 设置命令行参数 webui.py 运行
 </article>
 </div>
 </div>
-<a class="md-top md-icon" data-md-component="top" hidden="" href="#">
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
             回到页面顶部
-          </a>
+          </button>
 </main>
 <footer class="md-footer">
 <div class="md-footer-meta md-typeset">
@@ -873,6 +1085,6 @@ set COMMANDLINE_ARGS 设置命令行参数 webui.py 运行
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "toc.follow", "navigation.top", "navigation.tracking", "navigation.indexes", "navigation.expand", "navigation.sections"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
-<script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
+<script src="../../../assets/javascripts/bundle.efa0ade1.min.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>
