@@ -14,7 +14,7 @@ https://www.bilibili.com/video/BV1A8411775m/
 |LatentSpace|潜在空间                |
 |LDM    |   Latent Diffusion Model 潜在扩散模型    |
 |Stable Diffusion    |   稳定扩散    |
-|超分    |   一般指使用Ai技术提升图片分辨率，提高清晰度    |
+|超分    |   一般指使用 Ai 技术提升图片分辨率，提高清晰度    |
 
 | 黑话          | 解释                                          |
 |:----------|:------------------|
@@ -97,7 +97,7 @@ U-Net 在以文本嵌入为条件的同时迭代地对随机高斯噪声表示�
 
 ### WebUi 的预处理
 
-[WebUi 的 prompt_parser](https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/modules/prompt_parser.py) 通过本地 WebUi 实现了Prompt editing等功能。
+[WebUi 的 prompt_parser](https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/modules/prompt_parser.py) 通过本地 WebUi 实现了 Prompt editing 等功能。
 
 WebUi prompt 语法会转换为相应时间的 prompt, 然后通过 embedding 交给 Ai 处理。
 
@@ -137,7 +137,6 @@ Creating a model that matches the training data so closely that the model fails 
 ### VAE
 
 Variational autoencoders (VAEs) 是一种用于学习潜在表示的深度学习技术。它们也被用来绘制图像，在半监督学习中取得最先进的成果，以及在句子之间进行插值。[^2]
-
 
 ### CFG
 

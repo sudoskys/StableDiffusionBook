@@ -10,7 +10,7 @@
 
 LoRA for convolution network 
 
-https://github.com/KohakuBlueleaf/LoCon
+https://github.com/KohakuBlueleaf/LyCORIS
 
 Using ControlNet right in Blender. 
 
