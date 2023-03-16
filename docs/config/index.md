@@ -1,34 +1,46 @@
 # 配置
 
-本页面讨论 WebUi 的界面参数和功能。
+本页面讨论 WebUi 的界面参数和功能特性。具体的绘画参数调节和指导，请看下一章节。
 
 ## 基础
 
-一些基础参数说明。
+以下是一些基础参数的说明：
 
 ### 横条参数说明
 
-`step` 迭代多少次，取值和 `sampling method` 有关，`DDIM` 采样方法收敛较快，具体差别见调参魔法 `Sampler vs. Steps Comparison (low to mid step counts)` 。
+- `Step`：迭代次数，取值与采样方法有关。采用 DDIM 采样方法收敛较快。具体差别请参考调参魔法 "Sampler vs. Steps Comparison (low to mid step counts)"。
 
-`batch count/batch size` 决定生成的图片数量，显存够就加 batch size, 不够就 batch count, 得到的图片数量是两者之积 （小显存还是只动 count 就好）
+- `Batch count/Batch size`：决定生成的图片数量。如果显存足够，则可以增加 Batch Size；否则，只能增加 Batch Count，得到的图片数量是两者之积（对于显存较小的情况，建议只修改 Batch Count）。
 
-`sample method`  采样方法。DDIM, Eula 也挺好用。 （带 a 的是 ancestral 的意思，step 增长出图不稳定）
+- `Sample method`：采样方法。DDIM、Eula 也非常好用。（带 a 的是 ancestral 的意思，step 增长出图不稳定）
 
-`cfg scale` 符合 prompt 的程度，值越高越会字面看待 prompt, 低则给模型较大的发挥空间，但是实际模型表现上来看 CFG scale 低 (6-8) 饱和度低，偏线稿，偏杂乱，高 (18-22) 则饱和度偏高，偏 CG 风格。
+- `CFG scale`：符合 prompt 的程度，值越低模型越有创意力。实际模型表现上来看，CFG Scale 低（6-8）时，效果偏杂乱；而高（18-22）时，饱和度偏高。
 
-> 过高的 CFG 会引起颜色失真，CFG 应该在 5-15 之间
+- `Denoise strength`：img2img 专属参数，取值范围为 0 到 1。值越高，AI 对原图的参考程度就越低（同时增加迭代次数）。你可以在 CFG 较低时调高 Denoise 来重新绘图，在 CFG 较高时调整到低 Denoise 改变画面细节。
 
-`denoise strength` img2img 专属参数，从 0 到 1 取值，值越高 AI 对原图的参考程度就越低 （同时增加迭代次数）, 个人喜欢低 CFG 高 denoise 重绘图，高 CFG 低 denoise 改细节。
+### 图片信息 Png info
 
-[一个小指南：RedditAbout](https://www.reddit.com/r/StableDiffusion/comments/xbeyw3/can_anyone_offer_a_little_guidance_on_the/)
+生成的图片文件自动内嵌提示词信息，拖放到 `Png Info` 页面即可查看。
 
+### 4GB 显卡支持
 
+针对具有低 VRAM 的 GPU 的优化。这应该可以在具有 4GB 内存的视频卡上生成 512x512 图像。
+
+`--lowvram` 是 basujindal 对优化思想的重新实现。模型被分成模块，GPU 内存中只保存一个模块；当另一个模块需要运行时，前一个模块将从 GPU 内存中删除。这种优化的性质使处理速度变慢——与我的 RTX 3090 上的正常操作相比，速度慢了大约 10 倍。
+
+`--medvram` 是另一个优化，通过不在同一批次中处理条件和无条件去噪，可以显着减少 VRAM 的使用。这种优化的实现不需要对原始的稳定扩散代码进行任何修改。
+
+!!! info
+    经过 10/10 的优化，RTX2050 的 4GB 显卡也可以使用 `--medvram` 。
+
+当然也可以减半精度，或者生成一张 64x64 清理 VRAM
 ### ckpt 文件安全问题 [^4]
 
-ckpt 文件被加载时基本上可以执行任何内容，盲目加载有安全风险。请检查来源是否可靠再加载。
-如果杀毒软件拦截，有可能创建者向文件中注入了恶意的 Python 代码。
+当加载 ckpt 文件时，需要谨慎对待，因为它可能包含恶意代码。因此，在加载前应该仔细检查其来源的可靠性。
 
-可以通过此脚本检查风险：<https://rentry.org/safeunpickle2>
+为了避免这种情况的发生，WebUi 自带有安全检查器，您可以通过添加`--disable-safe-unpickle`参数来禁用此检查。您使用以下脚本来自主检查模型的风险：<https://rentry.org/safeunpickle2>
+
+[Pickle 的介绍](https://docs.python.org/3/library/pickle.html)，Python object serialization，相关项目 [pickle_inspector](https://github.com/lopho/pickle_inspector) 。
 
 ## 进阶
 
@@ -39,26 +51,6 @@ ckpt 文件被加载时基本上可以执行任何内容，盲目加载有安全
 ![Roaming_info.png](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/infofrom_bili_uid_87077691.png)
 -->
 > 来自 allophane.com/index.php/2022/10/17/roaming_info_for_latent_diffusion/
-
-### 使用 WebUI 复现 NAI 官网
-
-[相关讨论，应该读一读！](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017)
-
-提示：由于 torch 及其相关框架的性质，尝试完全复原在不同机器上生成的图片是不明智的。所以不要纠结一些细节不能复现。
-
-#### 需要做的事情
-
-* 加载 VAE 和模型附带的 `config.yaml` （可选，有人说此操作空耗显存）
-
-* `Stop At last layers of CLIP model` 设为 `2`
-
-* `Eta noise seed delta` 设置为 `31337`
-
-#### **不需要** 做的事情
-
-* hypernetwork。官网默认并不使用 hypernetwork
-
-设置 `Stop At last layers of CLIP model` 是为了匹配 NAI 的一个 [优化](https://blog.novelai.net/novelai-improvements-on-stable-diffusion-e10d38db82ac)。
 
 ### 半精度还是单精度？
 
@@ -247,7 +239,7 @@ pip install xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl
 
 [Windows](https://github.com/C43H66N12O12S2/stable-diffusion-webui/releases) (30 系之外要自己编译）
 
-自己编译指路 [wiki/Xformers](https://rentry.org/sdg_faq#xformers-increase-your-its-more-cards-supported)， 还有 [这篇文章](https://www.reddit.com/r/StableDiffusion/comments/xz26lq/automatic1111_xformers_cross_attention_with_on/)
+自己编译-> [wiki/Xformers](https://rentry.org/sdg_faq#xformers-increase-your-its-more-cards-supported)， 还有 [这篇文章](https://www.reddit.com/r/StableDiffusion/comments/xz26lq/automatic1111_xformers_cross_attention_with_on/)
 
 ### 使用 CPU 进行绘画
 
@@ -283,7 +275,7 @@ If you add ".top3." to filename, for example, flavors.top3.txt, the three most r
 
 [https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#face-restoration](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#face-restoration)
 
-### 自定义。css
+### 自定义 css 样式
 
 创建一个名为 `user.css` 的文件并放在 `webui.py` 旁，将自定义 CSS 代码放入 `user.css` 中。
 
@@ -321,32 +313,9 @@ Script 类有四个主要方法，这里通过一个简单的 [示例脚本](htt
 
 然后运行这个脚本，修剪过程可能需要几分钟。
 
-## 运行
-
-### 4GB 显卡支持
-
-针对具有低 VRAM 的 GPU 的优化。这应该可以在具有 4GB 内存的视频卡上生成 512x512 图像。
-
-`--lowvram` 是 basujindal 对优化思想的重新实现。模型被分成模块，GPU 内存中只保存一个模块；当另一个模块需要运行时，前一个模块将从 GPU 内存中删除。这种优化的性质使处理速度变慢——与我的 RTX 3090 上的正常操作相比，速度慢了大约 10 倍。
-
-`--medvram` 是另一个优化，通过不在同一批次中处理条件和无条件去噪，可以显着减少 VRAM 的使用。这种优化的实现不需要对原始的稳定扩散代码进行任何修改。
-
-!!! info
-    经过 10/10 的优化，RTX2050 的 4GB 显卡也可以使用 `--medvram` 。
-
-当然也可以减半精度，或者生成一张 64x64 清理 VRAM
-
 ### 不间断生产
 
 在 WebUI 的生成键右击即可出现 **不间断生成** 的选项。
-
-### 图片信息 Png info
-
-生成的图片自带令牌信息，拖放到 `Png Info` 页面即可查看 。
-
-### NAI 4chan 简化版本
-
-4chan 版本魔改官后程序，会动态分配，显存不够内存来凑。
 
 [^2]:[关于 AUTOMATIC1111 /stable-diffusion-webui 的 FAQ:](https://gist.github.com/crosstyan/f912612f4c26e298feec4a2924c41d99)
 

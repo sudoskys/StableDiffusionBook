@@ -1,10 +1,8 @@
 # Prompts Engineering
 
-这里是为进一步阐释 index 页理论所写的一个小指南。
+这里是为进一步教学如何书写提示词所写的一个小指南，让你掌握初步调整画面的能力。
 
-本文章基于 WebUi, 如果你使用其他 Ui, 请注意兼容性。
-
-如果你是 NAI 用户，请额外阅读 [官网 Docs](https://docs.novelai.net/image/promptmixing.html)。
+此页内容属于 WebUi 的程序特性。如果你是 NAI 用户，请去阅读 [官网 Docs](https://docs.novelai.net/image/promptmixing.html)。
 
 ## 入门
 

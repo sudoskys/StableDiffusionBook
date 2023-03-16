@@ -77,7 +77,7 @@ sudo pacman -S wget git python3
 
 你可以运行一键脚本 `bash <(wget -qO- https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusion-webui/master/webui.sh)` 或者手动克隆 https://github.com/AUTOMATIC1111/stable-diffusion-webui 的仓库：
 
-```sh
+```shell
 git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui
 ```
 
@@ -116,7 +116,7 @@ cd stable-diffusion-webui
 
 使用以下内容配置 Python 镜像地址。
 
-```sh
+```shell
 pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/
 ```
 

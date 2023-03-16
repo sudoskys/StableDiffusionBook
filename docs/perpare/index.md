@@ -8,9 +8,9 @@
 
 如果你确认有错误的内容或者需要补充的重要内容，可以发 **Issue** 或 提交 **Pr** 到此仓库，帮助完成文档，帮到更多人。
 
-欢迎交流，问问题请附上Log全部记录文件。问问题前请先自己确认文档内没有解释，且你应该明白任何人或社区成员在没有利益关系的情况下，没有义务为你解答问题。
+欢迎交流，问问题请附上 Log 全部记录文件。问问题前请先自己确认文档内没有解释，且你应该明白任何人或社区成员在没有利益关系的情况下，没有义务为你解答问题。
 
-如果看到不认识的章节，有可能是你的UI版本太低了或不支持此功能。
+如果看到不认识的章节，有可能是你的 UI 版本太低了或不支持此功能。
 
 ## 我可以参加 Party 吗？
 
@@ -28,27 +28,26 @@
 
 ## 模型选择
 
-生成图片需要模型+UI,你需要先下载一个模型才能使用。教程测试采用来自中国的第三方模型，而不是实景模型。
+生成图片需要模型+UI, 你需要先下载一个模型才能使用。教程测试采用来自中国的第三方模型，而不是实景模型。
 
-**动漫刻画**
+**动漫风格**
 
-- 版权规避
+比如 [Any3](https://huggingface.co/andite/anything-v4.0/tree/main)），你可以在 [civitai](https://civitai.com/) 选择一个
 
-**现实刻画**
+**现实风格**
 
 - [Stable Diffusion 2.0 模型](https://stability.ai/blog/stable-diffusion-v2-release)
 
 - [Stable Diffusion 1.5 模型](https://huggingface.co/runwayml/stable-diffusion-v1-5)
 
-- [稳定体积小的Stable Diffusion 1.4 模型](https://huggingface.co/CompVis/stable-diffusion-v1-4)
+- [稳定体积小的 Stable Diffusion 1.4 模型](https://huggingface.co/CompVis/stable-diffusion-v1-4)
 
-### 数据集交代
+- [chilloutmix](https://civitai.com/models/6424/chilloutmix)
 
-Stable Diffusion Model 基于 [LAION](https://laion.ai/).
+### 数据集来源交代
 
-NAI 基于 [Danbooru](danbooru.donmai.us/) 和 Stable Diffusion Model.
+Stable Diffusion Model 系列模型基于 [LAION](https://laion.ai/).
 
+NAI 系列模型基于 [Danbooru](danbooru.donmai.us/) 和 Stable Diffusion Model.
 
-个人使用 4GB 精简模型 + WebUi更加划算。Novel 官方使用的是全量模型，但是这需要大量的显存，~你需要淘宝售价 7W 的 A100 显卡~
-
-SDWebUi 是一个可以使用 模型 生产图片的 **框架**。
+Any 系列模型基于 Merge.
