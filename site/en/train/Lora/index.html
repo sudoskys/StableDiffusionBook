@@ -8,8 +8,8 @@
 <meta content="一个介绍 Ai 绘画的 WIKI/A WIKI about Ai painting" name="description"/>
 <meta content="StableDiffusionBook Team" name="author"/>
 <link href="https://stable-diffusion-book.vercel.app/en/train/Lora/" rel="canonical"/>
-<link href="../DreamBooth/" rel="prev"/>
-<link href="../AestheticGradients/" rel="next"/>
+<link href="../Hypernetwork/" rel="prev"/>
+<link href="../DreamBooth/" rel="next"/>
 <link href="../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.1.3" name="generator"/>
 <title>Lora - AiDraw</title>
@@ -162,7 +162,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../Perpare/">
+<a class="md-tabs__link" href="../../perpare/">
         Before start
       </a>
 </li>
@@ -172,8 +172,8 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../model/">
-        Configuration
+<a class="md-tabs__link" href="../../config/">
+        调试程序
       </a>
 </li>
 <li class="md-tabs__item">
@@ -257,7 +257,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../Perpare/">Before start</a>
+<a href="../../perpare/">Before start</a>
 </div>
 <nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
@@ -295,11 +295,6 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../install/WebUi/set.md">
-        Base guide
-      </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="../../install/WebUi/launch/">
         LaunchWebUi
       </a>
@@ -318,7 +313,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_4" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../model/">Configuration</a>
+<a href="../../config/">调试程序</a>
 <label for="__nav_4">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -326,45 +321,13 @@
 <nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_4">
 <span class="md-nav__icon md-icon"></span>
-          Configuration
+          调试程序
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../model/GPU/">
+<a class="md-nav__link" href="../../config/GPU/">
         Gpu Debuging
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../model/NAI/">
-        NAI leak report
-      </a>
-</li>
-<li class="md-nav__item md-nav__item--section md-nav__item--nested">
-<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_4_4" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../model/WebUi/">WebUi 配置</a>
-<label for="__nav_4_4">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_4_4_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_4_4">
-<span class="md-nav__icon md-icon"></span>
-          WebUi 配置
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../model/WebUi/base/">
-        Base guide
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../model/WebUi/Troubleshoot/">
-        Troubleshoot
-      </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -406,7 +369,7 @@
 <li class="md-nav__item md-nav__item--section md-nav__item--nested">
 <input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../paint/WebUi/">Paint With WebUi</a>
+<a href="../../paint/WebUi/">工作流</a>
 <label for="__nav_5_2">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -414,22 +377,22 @@
 <nav aria-expanded="false" aria-labelledby="__nav_5_2_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_5_2">
 <span class="md-nav__icon md-icon"></span>
-          Paint With WebUi
+          工作流
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../paint/WebUi/base/">
-        Txt2Guide
+        Txt2模式
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../paint/WebUi/Advanced/">
-        Img2Guide
+        Img2模式
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../paint/WebUi/extension/">
-        Extension
+<a class="md-nav__link" href="../../paint/WebUi/Control/">
+        姿态骨架
       </a>
 </li>
 </ul>
@@ -454,7 +417,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../paint/identify/">
-        Identify
+        评估
       </a>
 </li>
 </ul>
@@ -487,11 +450,6 @@
         Hypernetwork
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../DreamBooth/">
-        DreamBooth
-      </a>
-</li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
@@ -508,12 +466,84 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#autodl">
-    AutoDL
+<a class="md-nav__link" href="#lora_1">
+    使用 Lora 模型
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lora_2">
+    训练 Lora 模型
+  </a>
+<nav aria-label="训练 Lora 模型" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+    准备
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+    安装训练程序
+  </a>
+<nav aria-label="安装训练程序" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cudnn-86">
+    （可选）安装 CUDNN 8.6
   </a>
 </li>
 </ul>
 </nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gui">
+    启动 GUI
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+    数据集准备
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+    训练
+  </a>
+<nav aria-label="训练" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gui_1">
+    Gui
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scripts">
+    Scripts
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#autodl">
+    AutoDL
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+    其他
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../DreamBooth/">
+        DreamBooth
+      </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../AestheticGradients/">
@@ -560,8 +590,75 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#lora_1">
+    使用 Lora 模型
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lora_2">
+    训练 Lora 模型
+  </a>
+<nav aria-label="训练 Lora 模型" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+    准备
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+    安装训练程序
+  </a>
+<nav aria-label="安装训练程序" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cudnn-86">
+    （可选）安装 CUDNN 8.6
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gui">
+    启动 GUI
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+    数据集准备
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+    训练
+  </a>
+<nav aria-label="训练" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gui_1">
+    Gui
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scripts">
+    Scripts
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#autodl">
     AutoDL
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+    其他
   </a>
 </li>
 </ul>
@@ -572,18 +669,141 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="lora">Lora</h1>
-<p>请跟随 Akegarasu 的指南</p>
-<p>https://www.bilibili.com/video/BV1fs4y1x7p2</p>
-<p>Github：https://github.com/Akegarasu/lora-scripts</p>
+<p>Lora 模型是一种轻量级的微调方法，可以通过少量的图片训练出一个小模型，然后和大模型结合使用，干涉大模型产生的结果。</p>
+<p>Lora 模型可以在 t2i 和 i2i 模式下使用，可以和任何主模型一起使用。</p>
+<p>Lora 的模型文件后缀一般是 <code>.pt</code> 或者 <code>.safetensors</code>.</p>
+<h2 id="lora_1">使用 Lora 模型</h2>
+<p>在扩展标签页安装 <a href="https://github.com/kohya-ss/sd-webui-additional-networks">Lora 模型加载插件</a>，然后将你的 Lora 模型放到 stable-diffusion-webui/models/lora 路径下。比如 <a href="https://civitai.com/models/11177">幻星集塔罗牌 LoRA</a>.</p>
+<p>重启 WebUi，然后在 SD（Sketch Design）的文生图或图生图界面内，点击生成按钮下的粉色图标，即“additional networks”选项卡。在弹出的面板中选择“Lora”选项卡。</p>
+<p>然后点击想要应用的 Lora 模型，它将被添加到提示语中，其格式为 <code>&lt;lora: 数字&gt;</code>，数字代表 Lora 模型的权重，默认为 1。</p>
+<p>接下来点击“生成”按钮开始生成图片。</p>
+<p>当生成完成后，将鼠标移动到 Lora 卡片的左下角或标题上方，会出现“替换预览”的红色文字。点击此处即可将刚生成的图片设置为此 Lora 模型的预览图。</p>
+<h2 id="lora_2">训练 Lora 模型</h2>
+<p>训练的流程主要分为 预处理图片，标注图片，训练模型 三个步骤。其中预处理图片就是挑选高质量图片的过程，而标注图片就是给每个图片配发对应文字。</p>
+<p>这里我们以流行的 Kohya’s GUI 作为参考展开讲解：</p>
+<h3 id="_1">准备</h3>
+<p>首先，为了训练自己的 Lora 模型，我们需要准备以下工具和素材：</p>
+<ol>
+<li>一台拥有足够显存（至少 8GB）的电脑；</li>
+<li>至少 100 张你想要的风格图片放在同一个文件夹中；</li>
+<li>一个基础模型，如 stable-diffusion-v1-5 或 ChilloutMix；</li>
+</ol>
+<p>接下来，按照以下步骤进行操作：</p>
+<ol>
+<li>安装 Python 3.10，并将其添加到 PATH 环境变量中。</li>
+<li>安装 <a href="https://git-scm.com/download/win">Git</a> 和 <a href="https://aka.ms/vs/17/release/vc_redist.x64.exe">Visual Studio 2015、2017、2019 和 2022 redistributable</a>。</li>
+<li>运行 PowerShell 以管理员身份运行，并执行 <code>Set-ExecutionPolicy Unrestricted</code> 命令以激活脚本运行权限。</li>
+</ol>
+<h3 id="_2">安装训练程序</h3>
+<p>首先下载 kohya_ss </p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/bmaltais/kohya_ss.git
+<span class="nb">cd</span><span class="w"> </span>kohya_ss
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+.<span class="se">\v</span>env<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
+
+pip<span class="w"> </span>install<span class="w"> </span><span class="nv">torch</span><span class="o">==</span><span class="m">1</span>.12.1+cu116<span class="w"> </span><span class="nv">torchvision</span><span class="o">==</span><span class="m">0</span>.13.1+cu116<span class="w"> </span>--extra-index-url<span class="w"> </span>https://download.pytorch.org/whl/cu116
+pip<span class="w"> </span>install<span class="w"> </span>--use-pep517<span class="w"> </span>--upgrade<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>-I<span class="w"> </span>--no-deps<span class="w"> </span>https://github.com/C43H66N12O12S2/stable-diffusion-webui/releases/download/f/xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl
+
+cp<span class="w"> </span>.<span class="se">\b</span>itsandbytes_windows<span class="se">\*</span>.dll<span class="w"> </span>.<span class="se">\v</span>env<span class="se">\L</span>ib<span class="se">\s</span>ite-packages<span class="se">\b</span>itsandbytes<span class="se">\</span>
+cp<span class="w"> </span>.<span class="se">\b</span>itsandbytes_windows<span class="se">\c</span>extension.py<span class="w"> </span>.<span class="se">\v</span>env<span class="se">\L</span>ib<span class="se">\s</span>ite-packages<span class="se">\b</span>itsandbytes<span class="se">\c</span>extension.py
+cp<span class="w"> </span>.<span class="se">\b</span>itsandbytes_windows<span class="se">\m</span>ain.py<span class="w"> </span>.<span class="se">\v</span>env<span class="se">\L</span>ib<span class="se">\s</span>ite-packages<span class="se">\b</span>itsandbytes<span class="se">\c</span>uda_setup<span class="se">\m</span>ain.py
+
+accelerate<span class="w"> </span>config
+</code></pre></div>
+<h4 id="cudnn-86">（可选）安装 CUDNN 8.6</h4>
+<p>可提高 NVIDIA 30X0/40X0 的训练速度。如果您需要安装它，请下载 <a href="https://b1.thefileditch.ch/mwxKTEtelILoIbMbruuM.zip">cudnn_windows</a> 文件并解压缩到该存储库的根目录下。然后运行以下命令：</p>
+<div class="highlight"><pre><span></span><code>.<span class="se">\v</span>env<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
+python<span class="w"> </span>.<span class="se">\t</span>ools<span class="se">\c</span>udann_1.8_install.py
+</code></pre></div>
+<h3 id="gui">启动 GUI</h3>
+<p>针对 kohya_ss，这里有两种方法启动 GUI，一种是通过 bat 脚本，一种是通过 Python 程序。
+<div class="highlight"><pre><span></span><code>gui.bat<span class="w"> </span>--listen<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>--server_port<span class="w"> </span><span class="m">7860</span><span class="w"> </span>--inbrowser<span class="w"> </span>--share
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code>.<span class="se">\v</span>env<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
+python.exe<span class="w"> </span>.<span class="se">\k</span>ohya_gui.py
+</code></pre></div>
+<p>运行后应该会出现下面的界面：</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/kohya_ui.png"><img alt="UI" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/kohya_ui.png"/></a></p>
+<h3 id="_3">数据集准备</h3>
+<ul>
+<li>准备照片</li>
+</ul>
+<p>准备合适的照片。训练角色 lora，图片可以不多但是质量要高，并且每张图做好尺寸调整，你可以通过 <a href="https://www.birme.net/?target_width=512&amp;target_height=768">Brime</a> 或者 WebUi 自带的图片处理选项卡处理图片，<strong>尺寸必须是 64 的倍数</strong> 。如果你的显卡性能不足，推荐仅裁切为 <code>512x512</code> 尺寸的。<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></p>
+<ul>
+<li>标注图片</li>
+</ul>
+<p>标注图片即将图片和同名 txt 文件放在一起，txt 文件中写上图片对应的提示词。</p>
+<div class="highlight"><pre><span></span><code>train01.jpg
+train01.txt -&gt; 里面是图片的描述
+</code></pre></div>
+<p>我们可以利用 WebUi 的 <code>训练</code> 选项卡中 <code>图像预处理</code> 标签页为每个图片自动生成标签。（记得勾选使用 Deepbooru）。</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/preprocess.png"><img alt="Preprocess" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/preprocess.png"/></a></p>
+<p>如果你使用 kohya-ss 的话，也可以在在 <code>Utilities</code> 标签页中使用 Captioning 功能。</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/kohya_blip.png"><img alt="UI" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/kohya_blip.png"/></a></p>
+<p>如果你需要训练新概念，比如新的人物，请在图片的标注信息中去掉和它很相近的名字。比如训练 <code>LoveEyes</code>，那么请在标注中去掉 <code>Eyes</code>。</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/preprocess.png"><img alt="Preprocess" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/preprocess.png"/></a></p>
+<p>现在你应该有了数据集。如果你没有，可能是 Danbooru 模型下载失败，请更换网络重试。</p>
+<p>对于 Kohya GUI 用户，放置数据集请新建一个 Lora 文件夹，然后创建 <code>image</code> <code>log</code> <code>model</code> 三个文件夹。然后在 <code>image</code> 文件夹中新建一个文件夹 100，也就是训练 100 次。放入你处理好的照片。</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/kohya_data.png"><img alt="Preprocess" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/kohya_data.png"/></a></p>
+<p>对于使用 lora-scripts 的用户，你的数据集应该这样放置：</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/lora_data_set.png"><img alt="Preprocess" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/lora_data_set.png"/></a></p>
+<p>然后你的文件夹结构应该是下面这样的：
+<div class="highlight"><pre><span></span><code>lora_dataset
+|
+|--num_Concept
+      |--train01.jpg
+      |--train01.txt -&gt; 里面是图片的描述
+</code></pre></div></p>
+<p>num_Concept 代表 <code>{重复次数}_{概念名字}</code>，{} 代表未知量。</p>
+<h3 id="_4">训练</h3>
+<p>先关闭占用显存高的程序，准备训练。</p>
+<h4 id="gui_1">Gui</h4>
+<p>在 GUI 中，你可以指定要使用的基础模型和风格图片文件夹，配置相关参数，如 source model（基础模型），batch size（并行数量），network dim（网络大小），learning rate（学习率）等。等待训练完成，您可以在输出文件夹中找到生成的 Lora 模型文件（以。safetensors 为后缀）。如果失败的话，可以先取消勾选 Use 8bit adam 再试一次。</p>
+<h4 id="scripts">Scripts</h4>
+<p><a href="https://github.com/Akegarasu/lora-scripts">Akegarasu lora-scripts</a></p>
+<p><a href="https://www.bilibili.com/video/BV1fs4y1x7p2">Akegarasu 的视频指南</a></p>
+<p>对于使用 lora-scripts 的用户，请修改 train.sh 的参数来调整训练：</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/lora_scripts.png"><img alt="UI" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/lora_scripts.png"/></a></p>
+<blockquote>
+<p>https://github.com/Akegarasu/lora-scripts/blob/main/train.sh</p>
+</blockquote>
+<p>底模路径就是大模型的路径地址，训练数据集路径就是
+<div class="highlight"><pre><span></span><code>lora_dataset/num_Concept
+             num_Concept2
+</code></pre></div>
+中的 lora_dataset 的完整路径。<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+<p><code>max_train_epoches</code> 参数一般 20 即可，<code>resolution</code> 参数就填写你裁切图片时候使用的尺寸参数即可。学习率默认即可。
+<code>batch_size</code> 就是单批次并行处理的图片数量。<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></p>
+<p>点击开始训练，然后在结果文件夹就可以找到模型就好了。</p>
+<p>在扩展标签页安装 <a href="https://github.com/kohya-ss/sd-webui-additional-networks">Lora 模型加载插件</a>，然后将 Lora 模型文件放到 <code>stable-diffusion-webui/models/lora</code> 路径下，并重新启动 SD WebUi。然后就可以按照之前的步骤，在 SD WebUi 中使用您的 Lora 模型生成图片。</p>
 <h2 id="autodl">AutoDL</h2>
-<p>AutoDL在线训练镜像：https://www.bilibili.com/read/cv21450198</p>
+<p>AutoDL 在线训练镜像：https://www.bilibili.com/read/cv21450198</p>
 <p>LoRA 在线云端训练教程 AutoDL  https://www.bilibili.com/read/cv21450198</p>
+<h2 id="_5">其他</h2>
+<p><a href="https://huggingface.co/datasets/HuggingFace-CN-community/translation/blob/main/lora_cn.md">关于 Lora 的更多说明</a></p>
+<p><a href="https://finisky.github.io/lora/">LoRA: Low-Rank Adaptation of Large Language Models 简读</a></p>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:1">
+<p><a href="https://www.bilibili.com/video/BV1fs4y1x7p2">Akegarasu Lora Guide</a> <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://github.com/Akegarasu/lora-scripts/blob/main/train.sh">Akegarasu/lora-scripts</a> <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+<li id="fn:3">
+<p><a href="https://zhuanlan.zhihu.com/p/610299220">LORA 的训练与使用</a> <a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">↩</a></p>
+</li>
+</ol>
+</div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">February 5, 2023 09:49:14</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">March 16, 2023 06:38:33</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">January 17, 2023 04:35:23</span>

@@ -8,8 +8,8 @@
 <meta content="一个介绍 Ai 绘画的 WIKI/A WIKI about Ai painting" name="description"/>
 <meta content="StableDiffusionBook Team" name="author"/>
 <link href="https://stable-diffusion-book.vercel.app/en/train/DreamBooth/" rel="canonical"/>
-<link href="../Hypernetwork/" rel="prev"/>
-<link href="../Lora/" rel="next"/>
+<link href="../Lora/" rel="prev"/>
+<link href="../AestheticGradients/" rel="next"/>
 <link href="../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.1.3" name="generator"/>
 <title>DreamBooth - AiDraw</title>
@@ -162,7 +162,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../Perpare/">
+<a class="md-tabs__link" href="../../perpare/">
         Before start
       </a>
 </li>
@@ -172,8 +172,8 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../model/">
-        Configuration
+<a class="md-tabs__link" href="../../config/">
+        调试程序
       </a>
 </li>
 <li class="md-tabs__item">
@@ -257,7 +257,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../Perpare/">Before start</a>
+<a href="../../perpare/">Before start</a>
 </div>
 <nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
@@ -295,11 +295,6 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../install/WebUi/set.md">
-        Base guide
-      </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="../../install/WebUi/launch/">
         LaunchWebUi
       </a>
@@ -318,7 +313,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_4" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../model/">Configuration</a>
+<a href="../../config/">调试程序</a>
 <label for="__nav_4">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -326,45 +321,13 @@
 <nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_4">
 <span class="md-nav__icon md-icon"></span>
-          Configuration
+          调试程序
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../model/GPU/">
+<a class="md-nav__link" href="../../config/GPU/">
         Gpu Debuging
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../model/NAI/">
-        NAI leak report
-      </a>
-</li>
-<li class="md-nav__item md-nav__item--section md-nav__item--nested">
-<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_4_4" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../model/WebUi/">WebUi 配置</a>
-<label for="__nav_4_4">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_4_4_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_4_4">
-<span class="md-nav__icon md-icon"></span>
-          WebUi 配置
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../model/WebUi/base/">
-        Base guide
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../model/WebUi/Troubleshoot/">
-        Troubleshoot
-      </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -406,7 +369,7 @@
 <li class="md-nav__item md-nav__item--section md-nav__item--nested">
 <input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../paint/WebUi/">Paint With WebUi</a>
+<a href="../../paint/WebUi/">工作流</a>
 <label for="__nav_5_2">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -414,22 +377,22 @@
 <nav aria-expanded="false" aria-labelledby="__nav_5_2_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_5_2">
 <span class="md-nav__icon md-icon"></span>
-          Paint With WebUi
+          工作流
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../paint/WebUi/base/">
-        Txt2Guide
+        Txt2模式
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../paint/WebUi/Advanced/">
-        Img2Guide
+        Img2模式
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../paint/WebUi/extension/">
-        Extension
+<a class="md-nav__link" href="../../paint/WebUi/Control/">
+        姿态骨架
       </a>
 </li>
 </ul>
@@ -454,7 +417,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../paint/identify/">
-        Identify
+        评估
       </a>
 </li>
 </ul>
@@ -485,6 +448,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../Hypernetwork/">
         Hypernetwork
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Lora/">
+        Lora
       </a>
 </li>
 <li class="md-nav__item md-nav__item--active">
@@ -658,11 +626,6 @@
 </li>
 </ul>
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../Lora/">
-        Lora
-      </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../AestheticGradients/">

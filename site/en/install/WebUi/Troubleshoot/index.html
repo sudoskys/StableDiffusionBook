@@ -9,7 +9,7 @@
 <meta content="StableDiffusionBook Team" name="author"/>
 <link href="https://stable-diffusion-book.vercel.app/en/install/WebUi/Troubleshoot/" rel="canonical"/>
 <link href="../launch/" rel="prev"/>
-<link href="../../../model/" rel="next"/>
+<link href="../../../config/" rel="next"/>
 <link href="../../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.1.3" name="generator"/>
 <title>Troubleshoot - AiDraw</title>
@@ -22,7 +22,7 @@
 <meta content="website" property="og:type"/>
 <meta content="Troubleshoot - AiDraw" property="og:title"/>
 <meta content="一个介绍 Ai 绘画的 WIKI/A WIKI about Ai painting" property="og:description"/>
-<meta content="https://stable-diffusion-book.vercel.app/assets/images/social/install/WebUi/Troubleshoot.en.png" property="og:image"/>
+<meta content="https://stable-diffusion-book.vercel.app/assets/images/social/install/WebUi/Troubleshoot.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
@@ -30,7 +30,7 @@
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="Troubleshoot - AiDraw" name="twitter:title"/>
 <meta content="一个介绍 Ai 绘画的 WIKI/A WIKI about Ai painting" name="twitter:description"/>
-<meta content="https://stable-diffusion-book.vercel.app/assets/images/social/install/WebUi/Troubleshoot.en.png" name="twitter:image"/>
+<meta content="https://stable-diffusion-book.vercel.app/assets/images/social/install/WebUi/Troubleshoot.png" name="twitter:image"/>
 <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
@@ -49,7 +49,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#error-handling-troubleshooting">
+<a class="md-skip" href="#_1">
           Skip to content
         </a>
 </div>
@@ -162,7 +162,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../Perpare/">
+<a class="md-tabs__link" href="../../../perpare/">
         Before start
       </a>
 </li>
@@ -172,8 +172,8 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../model/">
-        Configuration
+<a class="md-tabs__link" href="../../../config/">
+        调试程序
       </a>
 </li>
 <li class="md-tabs__item">
@@ -257,7 +257,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../Perpare/">Before start</a>
+<a href="../../../perpare/">Before start</a>
 </div>
 <nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
@@ -295,11 +295,6 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../install/WebUi/set.md">
-        Base guide
-      </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="../launch/">
         LaunchWebUi
       </a>
@@ -320,18 +315,23 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#install-too-slow">
-    Install TOO SLOW！
+<a class="md-nav__link" href="#_2">
+    安装网络问题/没响应
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#low-memory-graphics-cardscuda-out-of-memory">
-    Low memory graphics cards/CUDA out of memory
+<a class="md-nav__link" href="#_3">
+    安装时间花销过大
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#where-my-python">
-    Where my Python?
+<a class="md-nav__link" href="#cuda-out-of-memory">
+    低显存显卡/CUDA out of memory
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#python">
+    我 Python 呢？
   </a>
 </li>
 <li class="md-nav__item">
@@ -340,13 +340,13 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#venv">
-    Venv
+<a class="md-nav__link" href="#_4">
+    虚拟环境
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#api-ms-win-core-path-l1-1-0dll-is-missing3">
-    api-ms-win-core-path-l1-1-0.dll is missing[^3]
+<a class="md-nav__link" href="#api-ms-win-core-path-l1-1-0dll-is-missing1">
+    api-ms-win-core-path-l1-1-0.dll is missing1
   </a>
 </li>
 <li class="md-nav__item">
@@ -376,7 +376,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_4" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../model/">Configuration</a>
+<a href="../../../config/">调试程序</a>
 <label for="__nav_4">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -384,45 +384,13 @@
 <nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_4">
 <span class="md-nav__icon md-icon"></span>
-          Configuration
+          调试程序
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../model/GPU/">
+<a class="md-nav__link" href="../../../config/GPU/">
         Gpu Debuging
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../model/NAI/">
-        NAI leak report
-      </a>
-</li>
-<li class="md-nav__item md-nav__item--section md-nav__item--nested">
-<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_4_4" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../../model/WebUi/">WebUi 配置</a>
-<label for="__nav_4_4">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_4_4_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_4_4">
-<span class="md-nav__icon md-icon"></span>
-          WebUi 配置
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../model/WebUi/base/">
-        Base guide
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../model/WebUi/Troubleshoot/">
-        Troubleshoot
-      </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -464,7 +432,7 @@
 <li class="md-nav__item md-nav__item--section md-nav__item--nested">
 <input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../paint/WebUi/">Paint With WebUi</a>
+<a href="../../../paint/WebUi/">工作流</a>
 <label for="__nav_5_2">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -472,22 +440,22 @@
 <nav aria-expanded="false" aria-labelledby="__nav_5_2_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_5_2">
 <span class="md-nav__icon md-icon"></span>
-          Paint With WebUi
+          工作流
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../paint/WebUi/base/">
-        Txt2Guide
+        Txt2模式
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../paint/WebUi/Advanced/">
-        Img2Guide
+        Img2模式
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../paint/WebUi/extension/">
-        Extension
+<a class="md-nav__link" href="../../../paint/WebUi/Control/">
+        姿态骨架
       </a>
 </li>
 </ul>
@@ -512,7 +480,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../paint/identify/">
-        Identify
+        评估
       </a>
 </li>
 </ul>
@@ -546,13 +514,13 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../train/DreamBooth/">
-        DreamBooth
+<a class="md-nav__link" href="../../../train/Lora/">
+        Lora
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../train/Lora/">
-        Lora
+<a class="md-nav__link" href="../../../train/DreamBooth/">
+        DreamBooth
       </a>
 </li>
 <li class="md-nav__item">
@@ -600,18 +568,23 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#install-too-slow">
-    Install TOO SLOW！
+<a class="md-nav__link" href="#_2">
+    安装网络问题/没响应
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#low-memory-graphics-cardscuda-out-of-memory">
-    Low memory graphics cards/CUDA out of memory
+<a class="md-nav__link" href="#_3">
+    安装时间花销过大
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#where-my-python">
-    Where my Python?
+<a class="md-nav__link" href="#cuda-out-of-memory">
+    低显存显卡/CUDA out of memory
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#python">
+    我 Python 呢？
   </a>
 </li>
 <li class="md-nav__item">
@@ -620,13 +593,13 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#venv">
-    Venv
+<a class="md-nav__link" href="#_4">
+    虚拟环境
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#api-ms-win-core-path-l1-1-0dll-is-missing3">
-    api-ms-win-core-path-l1-1-0.dll is missing[^3]
+<a class="md-nav__link" href="#api-ms-win-core-path-l1-1-0dll-is-missing1">
+    api-ms-win-core-path-l1-1-0.dll is missing1
   </a>
 </li>
 <li class="md-nav__item">
@@ -651,73 +624,79 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="error-handling-troubleshooting">Error handling Troubleshooting</h1>
-<p>File paths, which do not allow spaces, make sure your program's folder path does not have spaces in it. This program has been tested to run on Python 3.10.6; errors may occur with lower versions of Python.</p>
-<p>To reinstall, remove the directories: <code>venv</code>, <code>repositories</code>.</p>
-<h2 id="install-too-slow">Install TOO SLOW！</h2>
-<p><strong>Dependencies &gt;2GB</strong>, please wait. Tips for Windows users: <strong>Dependencies are installed on C drive by default</strong></p>
-<h2 id="low-memory-graphics-cardscuda-out-of-memory">Low memory graphics cards/CUDA out of memory</h2>
-<p>Make sure you have the latest CUDA toolkit and GPU drivers that are ready to run.</p>
-<p>Programs running on video cards with a small amount of VRAM (&lt;=4GB) may experience out of memory errors.</p>
-<p><strong>牺牲速度来支持低显存显卡</strong></p>
-<p>When running on video cards with a low amount of VRAM (&lt;=4GB), out of memory errors may arise. Various optimizations may be enabled through command line arguments, sacrificing some/a lot of speed in favor of using less VRAM:</p>
+<h1 id="_1">错误处理</h1>
+<p>翻译整理自 <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">1</a></sup></p>
+<p>文件路径，路径不允许含有空格，确保您的程序文件夹路径中没有空格。该程序经过测试可在 Python 3.10.6 上运行，低版本 Python 可能会发生错误。</p>
+<p>重新安装，请删除目录： <code>venv</code>, <code>repositories</code>。</p>
+<h2 id="_2">安装网络问题/没响应</h2>
 <ul>
-<li>
-<p>If you have 4GB VRAM and want to make 512x512 (or maybe up to 640x640) images, use --medvram.</p>
-</li>
-<li>
-<p>If you have 4GB VRAM and want to make 512x512 images, but you get an out of memory error with --medvram, use --medvram --opt-split-attention instead.</p>
-</li>
-<li>
-<p>If you have 4GB VRAM and want to make 512x512 images, and you still get an out of memory error, use --lowvram --always-batch-cond-uncond --opt-split-attention instead.</p>
-</li>
-<li>
-<p>If you have 4GB VRAM and want to make images larger than you can with --medvram, use --lowvram --opt-split-attention.</p>
-</li>
-<li>
-<p>If you have more VRAM and want to make larger images than you can usually make (for example 1024x1024 instead of 512x512), use --medvram --opt-split-attention. You can use --lowvram also but the effect will likely be barely noticeable.</p>
-</li>
-<li>
-<p>Otherwise, do not use any of those.</p>
-</li>
+<li>Git 报错</li>
 </ul>
-<h2 id="where-my-python">Where my Python?</h2>
-<p>If the desired version of Python is not in PATH, modify the line set PYTHON=python in webui-user.bat with the full path to the python executable.</p>
+<p>HTTP_PROXY 和 HTTPS_PROXY 环境变量，或者使用 clash 的 tun 模式。或者把 git clone 的仓库源换成 huggingface</p>
+<p>其他依赖报错也需要设置代理或者使用镜像，不然特慢。</p>
+<h2 id="_3">安装时间花销过大</h2>
+<ol>
+<li>
+<p>网络不好的话，设镜像或者挂代理。</p>
+</li>
+<li>
+<p><strong>依赖项 &gt;2GB</strong>, 请做好准备。而且对于 Windows, <strong>依赖默认安装在 C 盘</strong></p>
+</li>
+</ol>
+<h2 id="cuda-out-of-memory">低显存显卡/CUDA out of memory</h2>
+<p>确保你拥有可以运行的最新 CUDA 工具包和 GPU 驱动程序。</p>
+<p>程序在具有少量 VRAM (&lt;=4GB) 的视频卡上运行时，可能会出现内存不足错误。</p>
+<p><strong>牺牲速度来支持低显存显卡</strong></p>
+<p>如果你有 <code>4GB VRAM</code> 并且想要制作 512x512（或者可能高达 640x640）的图像，请使用 <code>--medvram</code></p>
+<p>如果你有 <code>4GB VRAM</code> 并且想要制作 512x512 图像，但使用 <code>--medvram</code> 遇到内存不足错误 ，请改用<code>--medvram --opt-split-attention</code></p>
+<p>如果你有 <code>4GB VRAM</code> 并想要制作 512x512 图像，但仍然出现内存不足错误，请改用 <code>--lowvram --always-batch-cond-uncond --opt-split-attention</code></p>
+<p>如果你有 <code>4GB VRAM</code> 并且想要制作比你可以使用的更大的图像<code>--medvram</code>，请使用 <code>--lowvram --opt-split-attention</code></p>
+<p>如果你有更多的 <code>VRAM</code> 并且想要制作比你通常制作的更大的图像（例如 1024x1024 而不是 512x512），请使用<code>--medvram --opt-split-attention</code>.</p>
+<p>你也可以使用 <code>--lowvram</code> ，启动这个参数后，模型被分成模块，GPU 内存中只保存一个模块； 当另一个模块需要运行时，前一个从 GPU 内存中删除，这种牺牲使处理运行速度大约慢 10 倍。</p>
+<p>如果还不行，建议你升级设备。</p>
+<h2 id="python">我 Python 呢？</h2>
+<p>如果你的 Python 版本不在 PATH 中，则在文件夹中创建或修改 webui.settings.bat 添加行 <code>set PYTHON=python</code>来说明 Python 可执行文件的完整路径（请看参数说明表格）</p>
 <h2 id="errorasyncioaccept-failed-on-a-socket">ERROR:asyncio:Accept failed on a socket</h2>
-<p>First check for port conflicts, and any software conflicts</p>
-<p>This error may be due to compatibility of <code>asyncio</code> library of <code>Python38</code> with <code>Windows</code>.</p>
-<p>Try running <code>netsh winsock reset</code> as a CMD administrator, and if that doesn't work, switch ports.</p>
-<p>If that still doesn't work, switch to Python <code>3.10.6</code>, which is the version of WebUi's development environment.</p>
-<h2 id="venv">Venv</h2>
-<p>If you are using conda you can run the launch install dependency yourself without the one-click script.</p>
-<p>This is because the one-click installer script given by the repository creates the virtual environment and then launches <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/launch.py">launch.py</a>.</p>
-<p>At runtime, the one-click installer creates a python virtual environment, so if you install a module before installing it, then any installed modules will not cause conflicts.</p>
-<p>If you need to prevent the creation of a virtual environment and use system python, edit <code>webui.bat</code> and replace <code>setVENV_DIR=venv</code> with <code>set VENV_DIR=</code></p>
-<h2 id="api-ms-win-core-path-l1-1-0dll-is-missing3">api-ms-win-core-path-l1-1-0.dll is missing[^3]</h2>
-<p>Running on Windows 7 is likely to report the error: <code>api-ms-win-core-path-l1-1-0.dll is missing</code> because many programs require system files from newer versions of Windows.</p>
-<p>If this error does not occur, there is no need to perform the following actions.</p>
-<p>These files have been ported to be compatible with W7 and are available at <a href="https://github.com/nalexandru/api-ms-win-core-path-HACK/releases/download/0.3.1/api-ms-win-core-path- blender-0.3.1.zip">here</a> for download. Its <a href="https://github.com/nalexandru/api-ms-win-core-path-HACK/">GitHub page</a></p>
-<p>Unzip and copy <code>x86.dll</code> to <code>C:\Windows\SysWOW64</code>, copy <code>x64.dll</code> to <code>C:\Windows\System32</code> and reboot.</p>
+<p>先检查端口冲突，有没有和什么软件冲突</p>
+<p>这个错误有可能是 <code>Python38</code> 的 <code>asyncio</code> 库对 <code>Windows</code> 的兼容性问题。</p>
+<p>尝试用 CMD 管理员身份运行<code>netsh winsock reset</code>，不行的话，切换端口。</p>
+<p>如果还是不行，请切换至 Python 的 <code>3.10.6</code>，WebUi 的开发环境为此版本。</p>
+<h2 id="_4">虚拟环境</h2>
+<p>如果你使用 conda 可以不使用一键脚本，可以自己运行 launch 安装依赖。</p>
+<p>因为仓库给出的一键安装脚本会创建虚拟环境，然后启动 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/launch.py">launch.py</a>。</p>
+<p>在运行时，一键安装程序会创建一个 python 虚拟环境，因此如果你在安装之前安装了一个模块，那么任何已安装的模块都不会引发冲突。</p>
+<p>如果需要防止创建虚拟环境而使用系统 python，编辑 <code>webui.bat</code> 替换 <code>setVENV_DIR=venv</code>为<code>set VENV_DIR=</code></p>
+<h2 id="api-ms-win-core-path-l1-1-0dll-is-missing1">api-ms-win-core-path-l1-1-0.dll is missing<sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">1</a></sup></h2>
+<p>Windows 7 上运行很可能会报错：<code>api-ms-win-core-path-l1-1-0.dll is missing</code>，这是因为许多程序需要新版本的 Windows 的系统文件。</p>
+<p>如果没有出现该错误，不需要执行下面的操作。</p>
+<p>这些文件已经被移植来与 W7 兼容，并且可以在 <a href="https://github.com/nalexandru/api-ms-win-core-path-HACK/releases/download/0.3.1/api-ms-win-core-path-blender-0.3.1.zip">这里</a> 下载。它的 <a href="https://github.com/nalexandru/api-ms-win-core-path-HACK/">GitHub 页面</a></p>
+<p>解压缩并将 <code>x86.dll</code> 复制到 <code>C:\Windows\SysWOW64</code> ，将 <code>x64.dll</code> 复制到 <code>C:\Windows\System32</code> 并重启。</p>
 <h2 id="an-illegal-memory-access-was-encountered-cuda-kernel-errors">an illegal memory access was encountered ....CUDA kernel errors...</h2>
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/1766">RelatedIssue</a></p>
-<p>In most cases, this means that the VRAM is overflowing, but it could also be a GPU hardware problem.</p>
-<p>It is said that if you are using deepdanbooru, you will get this message, so try to restart or install the cpu version of deepdanbooru.</p>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/1766">相关问题 Issue</a></p>
+<p>在多数情况下，这代表显存溢出，也有可能是 GPU 硬件问题。</p>
+<p>据说使用 deepdanbooru 的话会有这个提示，可以尝试重新启动 或 安装 cpu 版本的 deepdanbooru.</p>
 <h2 id="caused-by-proxyerror-cannot-connect-to-proxy-remotedisconnected-remote-end-closed-connection-without-response">Caused by ProxyError-Cannot connect to proxy-RemoteDisconnected-Remote end closed connection without response</h2>
-<p>IF you use proxy tool as Clash ,turn TUN model on.</p>
-<p>Or check your network and Windows environment variables.</p>
-<p>Or update</p>
+<p>代理设置问题，检查全局变量有无协议头（需要有），如果是 Clash , 开启 TUN 模式即可。</p>
+<p>如果没开代理，尝试更新到最新版本。</p>
 <p>See <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/491">Issue</a></p>
 <h2 id="failed-to-establish-a-new-connection">Failed to establish a new connection</h2>
-<div class="highlight"><pre><span></span><code>deleting the proxy environment variables
-</code></pre></div>
+<p>删除代理环境变量，在我的电脑，右键，属性，环境变量中。（小心操作）</p>
 <p>See <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2684">Here</a></p>
-<p><strong>See the next chapter for image generation problems</strong>.</p>
+<p><strong>生成图片问题见下一章</strong></p>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:3">
+<p><a href="https://rentry.co/voldy">Wiki2</a> <a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:3" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+</ol>
+</div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 23, 2022 06:18:27</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">March 15, 2023 14:23:58</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 3, 2022 02:10:16</span>

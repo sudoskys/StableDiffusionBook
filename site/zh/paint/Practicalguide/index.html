@@ -8,7 +8,7 @@
 <meta content="一个介绍 Ai 绘画的 WIKI/A WIKI about Ai painting" name="description"/>
 <meta content="StableDiffusionBook Team" name="author"/>
 <link href="https://stable-diffusion-book.vercel.app/zh/paint/Practicalguide/" rel="canonical"/>
-<link href="../WebUi/extension/" rel="prev"/>
+<link href="../WebUi/Control/" rel="prev"/>
 <link href="../identify/" rel="next"/>
 <link href="../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.1.3" name="generator"/>
@@ -162,7 +162,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../Perpare/">
+<a class="md-tabs__link" href="../../perpare/">
         开始之前
       </a>
 </li>
@@ -172,8 +172,8 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../model/">
-        绘画调试
+<a class="md-tabs__link" href="../../config/">
+        调试程序
       </a>
 </li>
 <li class="md-tabs__item">
@@ -257,7 +257,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../Perpare/">开始之前</a>
+<a href="../../perpare/">开始之前</a>
 </div>
 <nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
@@ -295,11 +295,6 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../install/WebUi/set.md">
-        基本指南
-      </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="../../install/WebUi/launch/">
         运行WebUi
       </a>
@@ -318,7 +313,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_4" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../model/">绘画调试</a>
+<a href="../../config/">调试程序</a>
 <label for="__nav_4">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -326,45 +321,13 @@
 <nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_4">
 <span class="md-nav__icon md-icon"></span>
-          绘画调试
+          调试程序
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../model/GPU/">
+<a class="md-nav__link" href="../../config/GPU/">
         GPU相关
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../model/NAI/">
-        NAI泄漏报告
-      </a>
-</li>
-<li class="md-nav__item md-nav__item--section md-nav__item--nested">
-<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_4_4" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../model/WebUi/">WebUi 配置</a>
-<label for="__nav_4_4">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_4_4_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_4_4">
-<span class="md-nav__icon md-icon"></span>
-          WebUi 配置
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../model/WebUi/base/">
-        基本指南
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../model/WebUi/Troubleshoot/">
-        错误处理
-      </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -406,7 +369,7 @@
 <li class="md-nav__item md-nav__item--section md-nav__item--nested">
 <input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../WebUi/">WebUi绘画指南</a>
+<a href="../WebUi/">工作流</a>
 <label for="__nav_5_2">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -414,22 +377,22 @@
 <nav aria-expanded="false" aria-labelledby="__nav_5_2_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_5_2">
 <span class="md-nav__icon md-icon"></span>
-          WebUi绘画指南
+          工作流
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../WebUi/base/">
-        Txt2指南
+        Txt2模式
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../WebUi/Advanced/">
-        Img2指南
+        Img2模式
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../WebUi/extension/">
-        安装扩展
+<a class="md-nav__link" href="../WebUi/Control/">
+        姿态骨架
       </a>
 </li>
 </ul>
@@ -636,7 +599,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../identify/">
-        鉴别
+        评估
       </a>
 </li>
 </ul>
@@ -670,13 +633,13 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../train/DreamBooth/">
-        DreamBooth 训练
+<a class="md-nav__link" href="../../train/Lora/">
+        Lora 训练
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../train/Lora/">
-        Lora 训练
+<a class="md-nav__link" href="../../train/DreamBooth/">
+        DreamBooth 训练
       </a>
 </li>
 <li class="md-nav__item">
@@ -900,8 +863,7 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="_1">实战指南</h1>
-<p>这个简短的实战指南，可以让你快速了解如何合理调整参数达成目的效果。</p>
-<p>目前， Ai 处理不好细节和多人物，如果一个个处理，光影结构就会乱掉。如果修图，不如重画。但是画背景和做预览很实用。</p>
+<p>这个简短的实战指南，可以让你快速了解如何才能更好地调整参数。</p>
 <p>核心逻辑就是缩小预选数据的范围，调节天平在消极和积极提示之间的方向，还有使用部分语法控制提示词效果的强烈程度和起效过程。</p>
 <h2 id="_2">灵感表</h2>
 <table>
@@ -1883,7 +1845,7 @@ scale 就是 CFG scale
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年2月14日 15:46:49</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年3月16日 01:14:29</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 03:59:46</span>
