@@ -1,16 +1,14 @@
 # Lora
 
-[Akegarasu 的视频指南](https://www.bilibili.com/video/BV1fs4y1x7p2)
-
-[Github](https://github.com/Akegarasu/lora-scripts)
-
 Lora 模型可以在 t2i 和 i2i 模式下使用，并且 Lora 模型可以和任何主模型一起使用。
+
+Lora 的模型文件后缀一般是 `.pt` 或者 `.safetensors`.
 
 ## 使用 Lora 模型
 
 在扩展标签页安装 [Lora 模型加载插件](https://github.com/kohya-ss/sd-webui-additional-networks)，然后将你的 Lora 模型放到 stable-diffusion-webui/models/lora 路径下。比如 [幻星集塔罗牌 LoRA](https://civitai.com/models/11177).
 
-在 SD（Sketch Design）的文生图或图生图界面内，点击生成按钮下的粉色图标，即“显示额外网络”选项卡。在弹出的面板中选择“Lora”选项卡。
+重启 WebUi，然后在 SD（Sketch Design）的文生图或图生图界面内，点击生成按钮下的粉色图标，即“additional networks”选项卡。在弹出的面板中选择“Lora”选项卡。
 
 然后点击想要应用的 Lora 模型，它将被添加到提示语中，其格式为 `<lora: 数字>`，数字代表 Lora 模型的权重，默认为 1。
 
@@ -19,6 +17,8 @@ Lora 模型可以在 t2i 和 i2i 模式下使用，并且 Lora 模型可以和�
 当生成完成后，将鼠标移动到 Lora 卡片的左下角或标题上方，会出现“替换预览”的红色文字。点击此处即可将刚生成的图片设置为此 Lora 模型的预览图。
 
 ## 训练 Lora 模型
+
+训练的流程主要分为 预处理图片，标注图片，训练模型 三个步骤。其中预处理图片就是挑选高质量图片的过程，而标注图片就是给每个图片配发对应文字。
 
 这里我们以流行的 Kohya’s GUI 作为参考展开讲解：
 
@@ -33,9 +33,7 @@ Lora 模型可以在 t2i 和 i2i 模式下使用，并且 Lora 模型可以和�
 
 1. 安装 Python 3.10，并将其添加到 PATH 环境变量中。
 2. 安装 [Git](https://git-scm.com/download/win) 和 [Visual Studio 2015、2017、2019 和 2022 redistributable](https://aka.ms/vs/17/release/vc_redist.x64.exe)。
-3. 运行 PowerShell 以管理员身份运行，并执行 Set-ExecutionPolicy Unrestricted 命令。
-4. 关闭 PowerShell。
-5. 打开一个普通用户的 PowerShell 终端，运行以下命令：
+3. 运行 PowerShell 以管理员身份运行，并执行 `Set-ExecutionPolicy Unrestricted` 命令以激活脚本运行权限。
 
 ### 安装训练程序
 
@@ -72,7 +70,7 @@ python .\tools\cudann_1.8_install.py
 
 ### 启动 GUI
 
-这里有两种方法启动 GUI，一种是通过 bat 脚本，一种是通过 Python 程序。
+针对 kohya_ss，这里有两种方法启动 GUI，一种是通过 bat 脚本，一种是通过 Python 程序。
 ```shell
 gui.bat --listen 127.0.0.1 --server_port 7860 --inbrowser --share
 ```
@@ -82,20 +80,90 @@ gui.bat --listen 127.0.0.1 --server_port 7860 --inbrowser --share
 python.exe .\kohya_gui.py
 ```
 
+运行后应该会出现下面的界面：
+
+![UI](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/kohya_ui.png)
+
 ### 数据集准备
 
+- 准备照片
 
+准备合适的照片。训练角色 lora，图片可以不多但是质量要高，并且每张图做好尺寸调整，你可以通过 [Brime](https://www.birme.net/?target_width=512&target_height=768) 或者 WebUi 自带的图片处理选项卡处理图片，**尺寸必须是 64 的倍数** 。如果你的显卡性能不足，推荐仅裁切为 `512x512` 尺寸的。
 
+- 标注图片
+
+标注图片即将图片和同名 txt 文件放在一起，txt 文件中写上图片对应的提示词。
+
+```
+train01.jpg
+train01.txt -> 里面是图片的描述
+```
+
+我们可以利用 WebUi 的 `训练` 选项卡中 `图像预处理` 标签页为每个图片自动生成标签。（记得勾选使用 Deepbooru）。
+
+![Preprocess](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/preprocess.png)
+
+如果你使用 kohya-ss 的话，也可以在在 `Utilities` 标签页中使用 Captioning 功能。
+
+![UI](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/kohya_blip.png)
+
+如果你需要训练新概念，比如新的人物，请在图片的标注信息中去掉和它很相近的名字。比如训练 `LoveEyes`，那么请在标注中去掉 `Eyes`。
+
+![Preprocess](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/preprocess.png)
+
+现在你应该有了数据集。如果你没有，可能是 Danbooru 模型下载失败，请更换网络重试。
+
+对于 Kohya GUI 用户，放置数据集请新建一个 Lora 文件夹，然后创建 `image` `log` `model` 三个文件夹。然后在 `image` 文件夹中新建一个文件夹 100，也就是训练 100 次。放入你处理好的照片。
+
+![Preprocess](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/kohya_data.png)
+
+对于使用 lora-scripts 的用户，你的数据集应该这样放置：
+
+![Preprocess](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/lora_data_set.png)
+
+然后你的文件夹结构应该是下面这样的：
+```
+lora_dataset
+|
+|--num_Concept
+      |--train01.jpg
+      |--train01.txt -> 里面是图片的描述
+```
+
+num_Concept 代表 `{重复次数}_{概念名字}`，{} 代表未知量。
 
 ### 训练
 
-在 GUI 中，你可以指定要使用的基础模型和风格图片文件夹，配置相关参数，如 source model（基础模型），batch size（并行数量），network dim（网络大小），learning rate（学习率）等。等待训练完成，您可以在输出文件夹中找到生成的 Lora 模型文件（以。safetensors 为后缀）。
+先关闭占用显存高的程序，准备训练。
+
+#### Gui
+
+在 GUI 中，你可以指定要使用的基础模型和风格图片文件夹，配置相关参数，如 source model（基础模型），batch size（并行数量），network dim（网络大小），learning rate（学习率）等。等待训练完成，您可以在输出文件夹中找到生成的 Lora 模型文件（以。safetensors 为后缀）。如果失败的话，可以先取消勾选 Use 8bit adam 再试一次。
+
+#### Scripts
+
+[Akegarasu lora-scripts](https://github.com/Akegarasu/lora-scripts)
+
+[Akegarasu 的视频指南](https://www.bilibili.com/video/BV1fs4y1x7p2)
+
+对于使用 lora-scripts 的用户，请修改 train.sh 的参数来调整训练：
+
+![UI](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/lora_scripts.png)
+>https://github.com/Akegarasu/lora-scripts/blob/main/train.sh
+
+底模路径就是大模型的路径地址，训练数据集路径就是
+```
+lora_dataset/num_Concept
+             num_Concept2
+```
+中的 lora_dataset 的完整路径。
+
+`max_train_epoches` 参数一般 20 即可，`resolution` 参数就填写你裁切图片时候使用的尺寸参数即可。学习率默认即可。
+`batch_size` 就是单批次并行处理的图片数量。
+
+点击开始训练，然后在结果文件夹就可以找到模型就好了。
 
 在扩展标签页安装 [Lora 模型加载插件](https://github.com/kohya-ss/sd-webui-additional-networks)，然后将 Lora 模型文件放到 `stable-diffusion-webui/models/lora` 路径下，并重新启动 SD WebUi。然后就可以按照之前的步骤，在 SD WebUi 中使用您的 Lora 模型生成图片。
-
-## 无 GUI 训练
-
-https://github.com/kohya-ss/sd-scripts
 
 ## AutoDL
 

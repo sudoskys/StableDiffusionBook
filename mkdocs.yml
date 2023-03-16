@@ -65,39 +65,33 @@ nav:
       - 声明: GettingStarted/state.md
       - 贡献指南: GettingStarted/contributing.md
   - 开始之前:
-      - Perpare/index.md
+      - perpare/index.md
   - 安装配置:
       - install/index.md
       - WebUi安装:
-          - 基本指南: install/WebUi/set.md
           - 运行WebUi: install/WebUi/launch.md
           - 错误处理: install/WebUi/Troubleshoot.md
-  - 绘画调试:
-      - model/index.md
-      - GPU相关: model/GPU.md
-      - NAI泄漏报告: model/NAI.md
-      - WebUi 配置:
-          - model/WebUi/index.md
-          - 基本指南: model/WebUi/base.md
-          - 错误处理: model/WebUi/Troubleshoot.md
+  - 调试程序:
+      - config/index.md
+      - GPU相关: config/GPU.md
   - 绘画指南:
       - 概论: 
           - paint/index.md
           - 提示工程: paint/PromptsEngineering.md
-      - WebUi绘画指南:
+      - 工作流:
           - paint/WebUi/index.md
-          - Txt2指南: paint/WebUi/base.md
-          - Img2指南: paint/WebUi/Advanced.md
-          - 安装扩展: paint/WebUi/extension.md
+          - Txt2模式: paint/WebUi/base.md
+          - Img2模式: paint/WebUi/Advanced.md
+          - 姿态骨架: paint/WebUi/Control.md
       - 实战指南:
           - paint/Practicalguide.md
-          - 鉴别: paint/identify.md
+          - 评估: paint/identify.md
   - 训练模型:
       - 训练介绍: train/index.md
       - Textual 训练: train/Textual.md
       - Hypernetwork 训练: train/Hypernetwork.md
-      - DreamBooth 训练: train/DreamBooth.md
       - Lora 训练: train/Lora.md
+      - DreamBooth 训练: train/DreamBooth.md
       - AestheticGradients 训练: train/AestheticGradients.md
   - 参考资料:
       - landing/index.md
