@@ -6,9 +6,12 @@ No English page because of frequent editing for now.
 
 ## FAQ
 
-### Ps 插件
+### Ps/Kira 插件
 
-不确定是否安全的 [插件](https://internationaltd.github.io/defuser/)
+the Stable Diffusion Plugin for Photoshop and Krita
+[插件](https://internationaltd.github.io/defuser/)
+
+https://github.com/internationalTD/defuser
 
 ### 课程进阶
 
@@ -69,7 +72,3 @@ https://fontawesome.com/icons
 ### 托管
 
 - Vercel ![Vercel](https://img.shields.io/badge/Vercel-black?style=flat&logo=Vercel&logoColor=white)
-
-## 关于对 Danbooru 标签翻译项目
-
-建议参考 [EhTagTranslation](https://github.com/EhTagTranslation) [Web 页面提交翻译](https://ehtt.vercel.app/list/all)，可以提供 Json 化的数据，便于接入和展开，是更好的选择。

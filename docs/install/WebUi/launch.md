@@ -2,6 +2,8 @@
 
 我们安装 WebUi 有两个途径，一是哔哩哔哩 Up 主秋叶的一键包，二是原生从仓库拉取安装。前者较适合中国大陆用户。
 
+**请保证你的文件夹/路径里面没有中文，否则涉及 Git 的更新/安装操作会失败。**
+
 ## 准备环境
 
 在开始之前，你需要以下条件。
@@ -77,7 +79,7 @@ sudo pacman -S wget git python3
 
 你可以运行一键脚本 `bash <(wget -qO- https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusion-webui/master/webui.sh)` 或者手动克隆 https://github.com/AUTOMATIC1111/stable-diffusion-webui 的仓库：
 
-```sh
+```shell
 git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui
 ```
 
@@ -116,7 +118,7 @@ cd stable-diffusion-webui
 
 使用以下内容配置 Python 镜像地址。
 
-```sh
+```shell
 pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/
 ```
 
