@@ -1,20 +1,21 @@
-name: ci
+name: Deploy
+permissions:
+  contents: write
 on:
   push:
     branches:
       - main
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      # Picture Support
-      - run: sudo apt-get install libcairo2-dev libfreetype6-dev libffi-dev libjpeg-dev libpng-dev libz-dev
-
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-
       # Picture Support
+      - run: sudo apt-get install libcairo2-dev libfreetype6-dev libffi-dev libjpeg-dev libpng-dev libz-dev
+
       - uses: actions/cache@v2
         with:
             key: ${{ github.ref }}+20221107
@@ -34,34 +35,13 @@ jobs:
       # Picture Support
       - run: pip install pillow cairosvg
       
-      # build docs
-      - run: mkdocs build --clean
+      - name: Build
+        run: mkdocs build --clean
       # - run: mkdocs gh-deploy --force
 
-      - run: |
-          date > generated.txt
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add .
-          git commit -m "generated"
-          git push
-          
-#       - name: commit
-#         env:
-#           TZ: 'CST-8'
-#           emails: ${{ secrets.GITHUB_EMAIL }}
-#         run: |
-#           sudo timedatectl set-timezone Asia/Shanghai
-#           git config --global user.email emails
-#           git config --global user.name GithubActionBot
-#           datime=$(date "+%Y/%m/%d-%H:%M")
-#           echo "git commit: push something, $datime"
-#           if [ -n "$(git status -s)" ];then
-#               git add .
-#               git commit -m "make:action push $datime" -a
-#           fi
-#             - uses: actions/checkout@v3
-#       - name: Push changes
-#        uses: ad-m/github-push-action@master
-#        with:
-#          github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docs/.vitepress/dist
+          # cname: example.com # if wanna deploy to custom domain
