@@ -1,6 +1,8 @@
 # Lora
 
-Lora 模型可以在 t2i 和 i2i 模式下使用，并且 Lora 模型可以和任何主模型一起使用。
+Lora 模型是一种轻量级的微调方法，可以通过少量的图片训练出一个小模型，然后和大模型结合使用，干涉大模型产生的结果。
+
+Lora 模型可以在 t2i 和 i2i 模式下使用，可以和任何主模型一起使用。
 
 Lora 的模型文件后缀一般是 `.pt` 或者 `.safetensors`.
 
@@ -88,7 +90,7 @@ python.exe .\kohya_gui.py
 
 - 准备照片
 
-准备合适的照片。训练角色 lora，图片可以不多但是质量要高，并且每张图做好尺寸调整，你可以通过 [Brime](https://www.birme.net/?target_width=512&target_height=768) 或者 WebUi 自带的图片处理选项卡处理图片，**尺寸必须是 64 的倍数** 。如果你的显卡性能不足，推荐仅裁切为 `512x512` 尺寸的。
+准备合适的照片。训练角色 lora，图片可以不多但是质量要高，并且每张图做好尺寸调整，你可以通过 [Brime](https://www.birme.net/?target_width=512&target_height=768) 或者 WebUi 自带的图片处理选项卡处理图片，**尺寸必须是 64 的倍数** 。如果你的显卡性能不足，推荐仅裁切为 `512x512` 尺寸的。[^3]
 
 - 标注图片
 
@@ -156,10 +158,10 @@ num_Concept 代表 `{重复次数}_{概念名字}`，{} 代表未知量。
 lora_dataset/num_Concept
              num_Concept2
 ```
-中的 lora_dataset 的完整路径。
+中的 lora_dataset 的完整路径。[^1]
 
 `max_train_epoches` 参数一般 20 即可，`resolution` 参数就填写你裁切图片时候使用的尺寸参数即可。学习率默认即可。
-`batch_size` 就是单批次并行处理的图片数量。
+`batch_size` 就是单批次并行处理的图片数量。[^2]
 
 点击开始训练，然后在结果文件夹就可以找到模型就好了。
 
@@ -174,3 +176,11 @@ LoRA 在线云端训练教程 AutoDL  https://www.bilibili.com/read/cv21450198
 ## 其他
 
 [关于 Lora 的更多说明](https://huggingface.co/datasets/HuggingFace-CN-community/translation/blob/main/lora_cn.md)
+
+[LoRA: Low-Rank Adaptation of Large Language Models 简读](https://finisky.github.io/lora/)
+
+[^1]:[Akegarasu Lora Guide](https://www.bilibili.com/video/BV1fs4y1x7p2)
+
+[^2]:[Akegarasu/lora-scripts](https://github.com/Akegarasu/lora-scripts/blob/main/train.sh)
+
+[^3]:[LORA 的训练与使用](https://zhuanlan.zhihu.com/p/610299220)
