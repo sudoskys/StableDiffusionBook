@@ -49,7 +49,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#lora">
+<a class="md-skip" href="#loralocon">
           Skip to content
         </a>
 </div>
@@ -466,12 +466,12 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#lora_1">
-    使用 Lora 模型
+<a class="md-nav__link" href="#lohalocon">
+    LoHa/LoCon
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#lora_2">
+<a class="md-nav__link" href="#lora">
     训练 Lora 模型
   </a>
 <nav aria-label="训练 Lora 模型" class="md-nav">
@@ -590,12 +590,12 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#lora_1">
-    使用 Lora 模型
+<a class="md-nav__link" href="#lohalocon">
+    LoHa/LoCon
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#lora_2">
+<a class="md-nav__link" href="#lora">
     训练 Lora 模型
   </a>
 <nav aria-label="训练 Lora 模型" class="md-nav">
@@ -668,17 +668,17 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="lora">Lora</h1>
+<h1 id="loralocon">Lora/LoCon</h1>
 <p>Lora 模型是一种轻量级的微调方法，可以通过少量的图片训练出一个小模型，然后和大模型结合使用，干涉大模型产生的结果。</p>
 <p>Lora 模型可以在 t2i 和 i2i 模式下使用，可以和任何主模型一起使用。</p>
 <p>Lora 的模型文件后缀一般是 <code>.pt</code> 或者 <code>.safetensors</code>.</p>
-<h2 id="lora_1">使用 Lora 模型</h2>
-<p>在扩展标签页安装 <a href="https://github.com/kohya-ss/sd-webui-additional-networks">Lora 模型加载插件</a>，然后将你的 Lora 模型放到 stable-diffusion-webui/models/lora 路径下。比如 <a href="https://civitai.com/models/11177">幻星集塔罗牌 LoRA</a>.</p>
-<p>重启 WebUi，然后在 SD（Sketch Design）的文生图或图生图界面内，点击生成按钮下的粉色图标，即“additional networks”选项卡。在弹出的面板中选择“Lora”选项卡。</p>
-<p>然后点击想要应用的 Lora 模型，它将被添加到提示语中，其格式为 <code>&lt;lora: 数字&gt;</code>，数字代表 Lora 模型的权重，默认为 1。</p>
-<p>接下来点击“生成”按钮开始生成图片。</p>
-<p>当生成完成后，将鼠标移动到 Lora 卡片的左下角或标题上方，会出现“替换预览”的红色文字。点击此处即可将刚生成的图片设置为此 Lora 模型的预览图。</p>
-<h2 id="lora_2">训练 Lora 模型</h2>
+<h2 id="lohalocon">LoHa/LoCon</h2>
+<p>LoHa和LoCon是一种用于大型语言模型微调的方法，相较于传统的LoRa方法，它们具有更多的优势。
+首先，LoHa和LoCon模型能够更好地结合角色和风格，使得生成的文本更加准确和生动。
+其次，这些模型使用了Hadamard乘积来增加模型的容量，从而提高了模型的性能。这些模型的文件大小也非常小。</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://user-images.githubusercontent.com/59680068/222424002-5ce2572c-9102-4e2d-83f2-100bc41ec272.png"><img alt="locon" src="https://user-images.githubusercontent.com/59680068/222424002-5ce2572c-9102-4e2d-83f2-100bc41ec272.png"/></a></p>
+<p>此算法在 <a href="https://github.com/KohakuBlueleaf/LyCORIS">这里</a> 被实现，用于WebUi 的插件仓库在 <a href="https://github.com/KohakuBlueleaf/a1111-sd-webui-locon">这里</a>。</p>
+<h2 id="lora">训练 Lora 模型</h2>
 <p>训练的流程主要分为 预处理图片，标注图片，训练模型 三个步骤。其中预处理图片就是挑选高质量图片的过程，而标注图片就是给每个图片配发对应文字。</p>
 <p>这里我们以流行的 Kohya’s GUI 作为参考展开讲解：</p>
 <h3 id="_1">准备</h3>
@@ -691,11 +691,12 @@
 <p>接下来，按照以下步骤进行操作：</p>
 <ol>
 <li>安装 Python 3.10，并将其添加到 PATH 环境变量中。</li>
-<li>安装 <a href="https://git-scm.com/download/win">Git</a> 和 <a href="https://aka.ms/vs/17/release/vc_redist.x64.exe">Visual Studio 2015、2017、2019 和 2022 redistributable</a>。</li>
+<li>安装 <a href="https://git-scm.com/download/win">Git</a>
+   和 <a href="https://aka.ms/vs/17/release/vc_redist.x64.exe">Visual Studio 2015、2017、2019 和 2022 redistributable</a>。</li>
 <li>运行 PowerShell 以管理员身份运行，并执行 <code>Set-ExecutionPolicy Unrestricted</code> 命令以激活脚本运行权限。</li>
 </ol>
 <h3 id="_2">安装训练程序</h3>
-<p>首先下载 kohya_ss </p>
+<p>首先下载 kohya_ss</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/bmaltais/kohya_ss.git
 <span class="nb">cd</span><span class="w"> </span>kohya_ss
 </code></pre></div>
@@ -713,14 +714,16 @@ cp<span class="w"> </span>.<span class="se">\b</span>itsandbytes_windows<span cl
 accelerate<span class="w"> </span>config
 </code></pre></div>
 <h4 id="cudnn-86">（可选）安装 CUDNN 8.6</h4>
-<p>可提高 NVIDIA 30X0/40X0 的训练速度。如果您需要安装它，请下载 <a href="https://b1.thefileditch.ch/mwxKTEtelILoIbMbruuM.zip">cudnn_windows</a> 文件并解压缩到该存储库的根目录下。然后运行以下命令：</p>
+<p>可提高 NVIDIA 30X0/40X0
+的训练速度。如果您需要安装它，请下载 <a href="https://b1.thefileditch.ch/mwxKTEtelILoIbMbruuM.zip">cudnn_windows</a>
+文件并解压缩到该存储库的根目录下。然后运行以下命令：</p>
 <div class="highlight"><pre><span></span><code>.<span class="se">\v</span>env<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
 python<span class="w"> </span>.<span class="se">\t</span>ools<span class="se">\c</span>udann_1.8_install.py
 </code></pre></div>
 <h3 id="gui">启动 GUI</h3>
-<p>针对 kohya_ss，这里有两种方法启动 GUI，一种是通过 bat 脚本，一种是通过 Python 程序。
+<p>针对 kohya_ss，这里有两种方法启动 GUI，一种是通过 bat 脚本，一种是通过 Python 程序。</p>
 <div class="highlight"><pre><span></span><code>gui.bat<span class="w"> </span>--listen<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>--server_port<span class="w"> </span><span class="m">7860</span><span class="w"> </span>--inbrowser<span class="w"> </span>--share
-</code></pre></div></p>
+</code></pre></div>
 <div class="highlight"><pre><span></span><code>.<span class="se">\v</span>env<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
 python.exe<span class="w"> </span>.<span class="se">\k</span>ohya_gui.py
 </code></pre></div>
@@ -730,7 +733,10 @@ python.exe<span class="w"> </span>.<span class="se">\k</span>ohya_gui.py
 <ul>
 <li>准备照片</li>
 </ul>
-<p>准备合适的照片。训练角色 lora，图片可以不多但是质量要高，并且每张图做好尺寸调整，你可以通过 <a href="https://www.birme.net/?target_width=512&amp;target_height=768">Brime</a> 或者 WebUi 自带的图片处理选项卡处理图片，<strong>尺寸必须是 64 的倍数</strong> 。如果你的显卡性能不足，推荐仅裁切为 <code>512x512</code> 尺寸的。<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></p>
+<p>准备合适的照片。训练角色
+lora，图片可以不多但是质量要高，并且每张图做好尺寸调整，你可以通过 <a href="https://www.birme.net/?target_width=512&amp;target_height=768">Brime</a>
+或者 WebUi 自带的图片处理选项卡处理图片，<strong>尺寸必须是 64 的倍数</strong> 。如果你的显卡性能不足，推荐仅裁切为 <code>512x512</code>
+尺寸的。<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></p>
 <ul>
 <li>标注图片</li>
 </ul>
@@ -742,25 +748,29 @@ train01.txt -&gt; 里面是图片的描述
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/preprocess.png"><img alt="Preprocess" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/preprocess.png"/></a></p>
 <p>如果你使用 kohya-ss 的话，也可以在在 <code>Utilities</code> 标签页中使用 Captioning 功能。</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/kohya_blip.png"><img alt="UI" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/kohya_blip.png"/></a></p>
-<p>如果你需要训练新概念，比如新的人物，请在图片的标注信息中去掉和它很相近的名字。比如训练 <code>LoveEyes</code>，那么请在标注中去掉 <code>Eyes</code>。</p>
+<p>如果你需要训练新概念，比如新的人物，请在图片的标注信息中去掉和它很相近的名字。比如训练 <code>LoveEyes</code>
+，那么请在标注中去掉 <code>Eyes</code>。</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/preprocess.png"><img alt="Preprocess" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/preprocess.png"/></a></p>
 <p>现在你应该有了数据集。如果你没有，可能是 Danbooru 模型下载失败，请更换网络重试。</p>
-<p>对于 Kohya GUI 用户，放置数据集请新建一个 Lora 文件夹，然后创建 <code>image</code> <code>log</code> <code>model</code> 三个文件夹。然后在 <code>image</code> 文件夹中新建一个文件夹 100，也就是训练 100 次。放入你处理好的照片。</p>
+<p>对于 Kohya GUI 用户，放置数据集请新建一个 Lora 文件夹，然后创建 <code>image</code> <code>log</code> <code>model</code> 三个文件夹。然后在 <code>image</code>
+文件夹中新建一个文件夹 100，也就是训练 100 次。放入你处理好的照片。</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/kohya_data.png"><img alt="Preprocess" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/kohya_data.png"/></a></p>
 <p>对于使用 lora-scripts 的用户，你的数据集应该这样放置：</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/lora_data_set.png"><img alt="Preprocess" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/lora_data_set.png"/></a></p>
-<p>然后你的文件夹结构应该是下面这样的：
+<p>然后你的文件夹结构应该是下面这样的：</p>
 <div class="highlight"><pre><span></span><code>lora_dataset
 |
 |--num_Concept
       |--train01.jpg
       |--train01.txt -&gt; 里面是图片的描述
-</code></pre></div></p>
+</code></pre></div>
 <p>num_Concept 代表 <code>{重复次数}_{概念名字}</code>，{} 代表未知量。</p>
 <h3 id="_4">训练</h3>
 <p>先关闭占用显存高的程序，准备训练。</p>
 <h4 id="gui_1">Gui</h4>
-<p>在 GUI 中，你可以指定要使用的基础模型和风格图片文件夹，配置相关参数，如 source model（基础模型），batch size（并行数量），network dim（网络大小），learning rate（学习率）等。等待训练完成，您可以在输出文件夹中找到生成的 Lora 模型文件（以。safetensors 为后缀）。如果失败的话，可以先取消勾选 Use 8bit adam 再试一次。</p>
+<p>在 GUI 中，你可以指定要使用的基础模型和风格图片文件夹，配置相关参数，如 source model（基础模型），batch size（并行数量），network
+dim（网络大小），learning rate（学习率）等。等待训练完成，您可以在输出文件夹中找到生成的 Lora 模型文件（以。safetensors
+为后缀）。如果失败的话，可以先取消勾选 Use 8bit adam 再试一次。</p>
 <h4 id="scripts">Scripts</h4>
 <p><a href="https://github.com/Akegarasu/lora-scripts">Akegarasu lora-scripts</a></p>
 <p><a href="https://www.bilibili.com/video/BV1fs4y1x7p2">Akegarasu 的视频指南</a></p>
@@ -769,15 +779,17 @@ train01.txt -&gt; 里面是图片的描述
 <blockquote>
 <p>https://github.com/Akegarasu/lora-scripts/blob/main/train.sh</p>
 </blockquote>
-<p>底模路径就是大模型的路径地址，训练数据集路径就是
+<p>底模路径就是大模型的路径地址，训练数据集路径就是</p>
 <div class="highlight"><pre><span></span><code>lora_dataset/num_Concept
              num_Concept2
 </code></pre></div>
-中的 lora_dataset 的完整路径。<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+<p>中的 lora_dataset 的完整路径。<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
 <p><code>max_train_epoches</code> 参数一般 20 即可，<code>resolution</code> 参数就填写你裁切图片时候使用的尺寸参数即可。学习率默认即可。
 <code>batch_size</code> 就是单批次并行处理的图片数量。<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></p>
 <p>点击开始训练，然后在结果文件夹就可以找到模型就好了。</p>
-<p>在扩展标签页安装 <a href="https://github.com/kohya-ss/sd-webui-additional-networks">Lora 模型加载插件</a>，然后将 Lora 模型文件放到 <code>stable-diffusion-webui/models/lora</code> 路径下，并重新启动 SD WebUi。然后就可以按照之前的步骤，在 SD WebUi 中使用您的 Lora 模型生成图片。</p>
+<p>在扩展标签页安装 <a href="https://github.com/kohya-ss/sd-webui-additional-networks">Lora 模型加载插件</a>，然后将 Lora
+模型文件放到 <code>stable-diffusion-webui/models/lora</code> 路径下，并重新启动 SD WebUi。然后就可以按照之前的步骤，在 SD WebUi 中使用您的
+Lora 模型生成图片。</p>
 <h2 id="autodl">AutoDL</h2>
 <p>AutoDL 在线训练镜像：https://www.bilibili.com/read/cv21450198</p>
 <p>LoRA 在线云端训练教程 AutoDL  https://www.bilibili.com/read/cv21450198</p>
@@ -803,7 +815,7 @@ train01.txt -&gt; 里面是图片的描述
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">March 16, 2023 06:38:33</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">March 18, 2023 15:04:31</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">January 17, 2023 04:35:23</span>
