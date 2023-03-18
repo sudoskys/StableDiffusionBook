@@ -65,7 +65,7 @@ nav:
       - 声明: GettingStarted/state.md
       - 贡献指南: GettingStarted/contributing.md
   - 开始之前:
-      - perpare/index.md
+      - prepare/index.md
   - 安装配置:
       - install/index.md
       - WebUi安装:
