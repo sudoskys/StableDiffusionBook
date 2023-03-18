@@ -25,7 +25,7 @@
 
 ### 加入编辑
 
-我们欢迎任何人参与文档 添加/翻译/校正 工作。如果你发现了本文的的错误或不足（逻辑错误，语法病句，结构混乱，内容过时，上下冲突，错词怪词），欢迎向 [项目仓库](https://github.com/sudoskys/StableDiffusionBook/) 提 issue 和 PR。
+我们欢迎任何人参与文档添加/翻译/校正工作。如果你发现了本文的的错误或不足（逻辑错误，语法病句，结构混乱，内容过时，上下冲突，错词怪词），欢迎向[项目仓库](https://github.com/sudoskys/StableDiffusionBook/)提 issue 和 PR。
 
 贡献之前先读 [贡献指南](https://draw.dianas.cyou/GettingStarted/contributing/)，也可以不读。
 
@@ -39,4 +39,4 @@
 
 ### 许可分发
 
-> 文档使用 GFDL 许可，引用需要向本项目仓库公开原始材料，且标明来源。
+我们的文档使用 GFDL 自由文档许可，引用需要公开原始材料，且标明来源。
