@@ -30,7 +30,7 @@ Tagger 是我们训练时使用的工具，它可以帮助你快速的为数据�
 “这是什么？” “这是谁？” “这是什么颜色？” “这是什么动物？” 等等。
 
 目前为图片生成 Prompt 的方案有 WD taggers, deepdanbooru 还有 blip+clip，根据数据集来源，二次元推荐使用 deepdanbooru 和 wd
-tagger 进行标注。
+tagger 进行标注，推荐后者。
 
 WebUi 在预处理标签页已经内置了 deepdanbooru 标注器。
 
