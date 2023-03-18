@@ -14,7 +14,7 @@ fine tune directly = DB/native training
 
 ## 如何选择
 
-LoCon/Lora 是目前最好的 ` 概念 ` 训练方法，但是训练时对显存要求较高（> 8GB）。如果你的显存不足，可以尝试租用云服务。
+LoCon/Lora 是目前最好的 ` 概念 ` 训练方法，它训练少量的图片就可以很好地微调大模型的训练效果，但是训练时对显存要求较高（> 8GB）。如果你的显存不足，可以尝试租用云服务。
 
 Textual Inversion 和 Hypernetwork 适用于 ` 整体靠近 `，前者教 AI 用模型中的标签组成一个 ` 人物 `，后者也是类似的。区别在于
 Hypernetwork 以调节模型权重为手段，而 Textual Inversion 告诉 AI 特定标签应该如何组成。
@@ -22,7 +22,7 @@ Hypernetwork 以调节模型权重为手段，而 Textual Inversion 告诉 AI �
 而 DreamBooth 适用于 ` 细节 ` 的模仿，它的训练过程 “重新整改” 了模型，新模型之中含有了新的样本特征（加了新东西）， DreamBooth
 技术本身用于 “复刻” ，所以可以认识冷门元素。
 
-至于 Aesthetic Gradients ，也就是给 AI 认识一组 ` 优秀的数据 ` 。结果就是这个东西会增加细节，训练很简单，但是会拖慢生成图片的速度（每次生成都要重新计算）。并不适合应用。
+至于 Aesthetic Gradients ，也就是给 AI 认识一组 ` 优秀的数据 ` 。结果就是这个东西会增加细节，训练很简单，但是会拖慢生成图片的速度（每次生成都要重新计算），并不适合应用，效果也不准确。
 
 ## Tagger 工具
 
