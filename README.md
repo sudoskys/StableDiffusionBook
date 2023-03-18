@@ -1,4 +1,4 @@
-![cover](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/site_cover.png)
+![cover](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/site_cover.jpg)
 ------------------------------------
 
 <p align="center">
