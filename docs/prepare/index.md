@@ -10,7 +10,7 @@
 
 欢迎交流，问问题请附上 Log 全部记录文件。问问题前请先自己确认文档内没有解释，且你应该明白任何人或社区成员在没有利益关系的情况下，没有义务为你解答问题。
 
-如果看到不认识的章节，有可能是你的 UI 版本太低了或不支持此功能。
+如果看到不认识的章节，有可能是你的 WebUi 版本太低了或不支持此功能。
 
 ## 我可以参加 Party 吗？
 
@@ -28,7 +28,7 @@
 
 ## 模型选择
 
-生成图片需要模型+UI, 你需要先下载一个模型才能使用。教程测试采用来自中国的第三方模型，而不是实景模型。
+生成图片需要模型 + WebUi, 因此，你需要先下载一个模型才能使用。教程测试采用来自中国的第三方模型，而不是实景模型。
 
 工欲善其事，必先利其器。市面上常见的模型往往会上传到这两个模型站：
 
@@ -60,6 +60,6 @@ Stable Diffusion Model 系列模型基于 [LAION](https://laion.ai/).
 
 NAI 系列模型基于 [Danbooru](danbooru.donmai.us/) 和 Stable Diffusion Model.
 
-Any 系列模型基于 Merge.
+Anything 系列模型基于 Merge.
 
 OrangeMixs 系列模型基于 [Merge block weighted](https://github.com/bbc-mc/sdweb-merge-block-weighted-gui).
