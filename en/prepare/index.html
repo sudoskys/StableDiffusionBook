@@ -12,7 +12,7 @@
 <link href="../install/" rel="next"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.1.3" name="generator"/>
-<title>准备 - AiDraw</title>
+<title>PREPARATION - AiDraw</title>
 <link href="../../assets/stylesheets/main.c4a75a56.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -20,17 +20,17 @@
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
 <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <meta content="website" property="og:type"/>
-<meta content="准备 - AiDraw" property="og:title"/>
+<meta content="PREPARATION - AiDraw" property="og:title"/>
 <meta content="一个介绍 Ai 绘画的 WIKI/A WIKI about Ai painting" property="og:description"/>
-<meta content="https://stable-diffusion-book.vercel.app/assets/images/social/prepare/index.png" property="og:image"/>
+<meta content="https://stable-diffusion-book.vercel.app/assets/images/social/prepare/index.en.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
 <meta content="https://stable-diffusion-book.vercel.app/en/prepare/" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="准备 - AiDraw" name="twitter:title"/>
+<meta content="PREPARATION - AiDraw" name="twitter:title"/>
 <meta content="一个介绍 Ai 绘画的 WIKI/A WIKI about Ai painting" name="twitter:description"/>
-<meta content="https://stable-diffusion-book.vercel.app/assets/images/social/prepare/index.png" name="twitter:image"/>
+<meta content="https://stable-diffusion-book.vercel.app/assets/images/social/prepare/index.en.png" name="twitter:image"/>
 <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
@@ -49,7 +49,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#_1">
+<a class="md-skip" href="#preparation">
           Skip to content
         </a>
 </div>
@@ -73,7 +73,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              准备
+              PREPARATION
             
           </span>
 </div>
@@ -505,24 +505,24 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
-    在社区礼貌提问
+<a class="md-nav__link" href="#how-to-ask-a-polite-question-in-the-community">
+    How to ask a polite question in the community?
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#party">
-    我可以参加 Party 吗？
+<a class="md-nav__link" href="#can-i-join-the-party">
+    Can I join the party?
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_3">
-    模型选择
+<a class="md-nav__link" href="#the-choice-of-models">
+    The choice of models
   </a>
-<nav aria-label="模型选择" class="md-nav">
+<nav aria-label="The choice of models" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_4">
-    数据集来源交代
+<a class="md-nav__link" href="#dataset-sources">
+    Dataset Sources
   </a>
 </li>
 </ul>
@@ -535,55 +535,73 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="_1">准备</h1>
-<p>本文档目的是为了总结中文社区讨论成果，为刚入门接触使用 Stable Diffusion 绘画的小白编写一个自助指南，从 WebUi 入手接触 Ai 绘画，并学习相关知识。</p>
-<h2 id="_2">在社区礼貌提问</h2>
-<p><a href="https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md">如何提问才是正确的？</a></p>
-<p>如果你确认有错误的内容或者需要补充的重要内容，可以发 <strong>Issue</strong> 或 提交 <strong>Pr</strong> 到此仓库，帮助完成文档，帮到更多人。</p>
-<p>欢迎交流，问问题请附上 Log 全部记录文件。问问题前请先自己确认文档内没有解释，且你应该明白任何人或社区成员在没有利益关系的情况下，没有义务为你解答问题。</p>
-<p>如果看到不认识的章节，有可能是你的 UI 版本太低了或不支持此功能。</p>
-<h2 id="party">我可以参加 Party 吗？</h2>
-<p>首先，很不幸地，因为需要用到 <code>CUDA</code> 加速，所以只有 <strong>英伟达显卡</strong> 支持良好。（AMD 可以用但速度明显慢于英伟达显卡，~当然没显卡也可以用 CPU 花几百倍时间生成~）</p>
-<p><strong>Linux + AMD 卡</strong> 请读 <a href="https://rentry.org/ayymd-stable-diffustion-v1_4-guide">AMD 安装指南</a> 和 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Install-and-Run-on-AMD-GPUs">AMD 安装 WebUi 指北</a></p>
-<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/1046">对于支持 AMD GPU 方案相关讨论</a></p>
+<h1 id="preparation">PREPARATION</h1>
+<p>The purpose of this document is to summarize the results of the Chinese community's discussion and to create a self-help guide for people who are just starting with Stable Diffusion painting, beginning with WebUi and learning about Ai painting.</p>
+<h2 id="how-to-ask-a-polite-question-in-the-community">How to ask a polite question in the community?</h2>
+<p><a href="http://www.catb.org/~esr/faqs/smart-questions.html">How to ask questions the smart way?</a></p>
+<p>Suppose you identify any errors or important content that needs to be added - In that case, you can send <strong>Issue</strong> or submit <strong>Pr</strong> to this repository to help complete the document and help more people.</p>
+<p>Feel free to share any questions you may have. Before asking any questions, please ensure no relevant answers are in the documentation. If you need to ask a community member, please include all logs. However, please remember that no one - including community members - is obligated to answer any questions for you without having any stake in the process.</p>
+<p>If you see a section you do not recognize, it is possible that your version of WebUi needs to be higher or support this feature.</p>
+<h2 id="can-i-join-the-party">Can I join the party?</h2>
+<p>Before we start - unfortunately, because of the need to use <code>CUDA</code> acceleration, only <strong>Nvidia graphics cards</strong> support it well. (AMD can be used but is significantly slower than Nvidia graphics, ~~of course, without a graphics card, you can also use the CPU to spend hundreds of times the time to generate~~)</p>
+<p><strong>Linux + AMD graphics card</strong> Please read <a href="https://rentry.org/ayymd-stable-diffustion-v1_4-guide">AMD Installation Guide</a> and <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Install-and-Run-on-AMD-GPUs">AMD Installation WebUi Guide</a></p>
+<p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/1046">For discussions related to supporting AMD Gpu solutions</a></p>
 <div class="admonition danger">
-<p class="admonition-title">显卡保修</p>
-<p>显卡厂家对于深度学习卡的保修政策等同于矿卡。
-过度玩耍（比如连续 3 天出图），显卡会有坏掉的风险。</p>
+<p class="admonition-title">About graphics card warranty</p>
+<p>The warranty policy of graphics card manufacturers for deep learning cards is equivalent to mining cards.
+The card will risk breaking if you play too much (e.g. three days in a row of graphics).</p>
 </div>
-<p><a href="https://docs.google.com/spreadsheets/d/1Zlv4UFiciSgmJZncCujuXKHwc4BcxbjbSBg71-SdeNk/edit#gid=0">各种显卡的稳定扩散性能测试报告</a></p>
-<h2 id="_3">模型选择</h2>
-<p>生成图片需要模型+UI, 你需要先下载一个模型才能使用。教程测试采用来自中国的第三方模型，而不是实景模型。</p>
-<p><strong>动漫风格</strong></p>
-<p>比如 <a href="https://huggingface.co/andite/anything-v4.0/tree/main">Any3</a>），你可以在 <a href="https://civitai.com/">civitai</a> 选择一个</p>
-<p><strong>现实风格</strong></p>
+<p><a href="https://docs.google.com/spreadsheets/d/1Zlv4UFiciSgmJZncCujuXKHwc4BcxbjbSBg71-SdeNk/edit#gid=0">Stable diffusion performance test reports for various graphics cards</a></p>
+<h2 id="the-choice-of-models">The choice of models</h2>
+<p>Generating images requires a model and the WebUi. You need to download a model first to use it. The tutorial test uses a third-party model from China, not a live model.</p>
+<p>Sharpen the knife before cutting the wood. Common models are often uploaded to these two model stations:</p>
 <ul>
 <li>
-<p><a href="https://stability.ai/blog/stable-diffusion-v2-release">Stable Diffusion 2.0 模型</a></p>
+<p><a href="https://civitai.com/">civitai</a></p>
 </li>
 <li>
-<p><a href="https://huggingface.co/runwayml/stable-diffusion-v1-5">Stable Diffusion 1.5 模型</a></p>
+<p><a href="https://huggingface.co/">huggingface</a></p>
+</li>
+</ul>
+<p><strong>Anime style</strong></p>
+<p>It is worth mentioning that as of March 2023, the rise of Lora makes the traditional DreamBooth and other Merge model scenery no longer. Lora and Hypernet with hot-plugging capability make the painting style much more flexible. Nevertheless, a good base model is still an important thing. The following are some of the best models worthy of reference.</p>
+<ul>
+<li>
+<p><a href="https://huggingface.co/andite/anything-v4.0/tree/main">Anything V3.0</a>. This is a merged model, probably a hodgepodge, but the results are pretty good.</p>
 </li>
 <li>
-<p><a href="https://huggingface.co/CompVis/stable-diffusion-v1-4">稳定体积小的 Stable Diffusion 1.4 模型</a></p>
+<p><a href="https://huggingface.co/WarriorMama777/OrangeMixs">OrangeMixs</a>。This is also a merged model, which merged through <a href="https://github.com/bbc-mc/sdweb-merge-block-weighted-gui">Merge block weighted</a> with excellent results. The authors provide several versions, among which the more famous Abyssal Orange (<a href="https://huggingface.co/WarriorMama777/OrangeMixs/tree/main/Models/AbyssOrangeMix2">AOM2</a>/<a href="https://huggingface.co/WarriorMama777/OrangeMixs/tree/main/Models/AbyssOrangeMix3">AOM3</a>) is the product of a merge of realistic and anime styles.</p>
+</li>
+</ul>
+<p><strong>Realistic style</strong></p>
+<ul>
+<li>
+<p><a href="https://stability.ai/blog/stable-diffusion-v2-release">Stable Diffusion 2.0</a></p>
+</li>
+<li>
+<p><a href="https://huggingface.co/runwayml/stable-diffusion-v1-5">Stable Diffusion 1.5</a></p>
+</li>
+<li>
+<p><a href="https://huggingface.co/CompVis/stable-diffusion-v1-4">Stable Diffusion 1.4</a></p>
 </li>
 <li>
 <p><a href="https://civitai.com/models/6424/chilloutmix">chilloutmix</a></p>
 </li>
 </ul>
-<h3 id="_4">数据集来源交代</h3>
-<p>Stable Diffusion Model 系列模型基于 <a href="https://laion.ai/">LAION</a>.</p>
-<p>NAI 系列模型基于 <a href="danbooru.donmai.us/">Danbooru</a> 和 Stable Diffusion Model.</p>
-<p>Any 系列模型基于 Merge.</p>
+<h3 id="dataset-sources">Dataset Sources</h3>
+<p>The Stable Diffusion Model series is based on <a href="https://laion.ai/">LAION</a>.</p>
+<p>NAI series models are based on <a href="danbooru.donmai.us/">Danbooru</a>  and Stable Diffusion Model.</p>
+<p>Anything series model is based on Merge.</p>
+<p>The OrangeMixs series model is based on <a href="https://github.com/bbc-mc/sdweb-merge-block-weighted-gui">Merge block weighted</a>.</p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">March 18, 2023 12:44:31</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">March 19, 2023 06:33:22</span>
 <br/>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 03:59:46</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">March 19, 2023 06:26:48</span>
 </small>
 </div>
 </article>
