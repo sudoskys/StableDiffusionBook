@@ -30,9 +30,19 @@
 
 生成图片需要模型+UI, 你需要先下载一个模型才能使用。教程测试采用来自中国的第三方模型，而不是实景模型。
 
+工欲善其事，必先利其器。市面上常见的模型往往会上传到这两个模型站：
+
+- [civitai](https://civitai.com/)
+
+- [huggingface](https://huggingface.co/)
+
 **动漫风格**
 
-比如 [Any3](https://huggingface.co/andite/anything-v4.0/tree/main)），你可以在 [civitai](https://civitai.com/) 选择一个
+值得一提的是，截至2023年3月，Lora 的兴起使得传统 DreamBooth 等 Merge （融合）模型风光不再，具有热插拔能力的 Lora 和 Hypernet 使得 画风 的灵活性大大上升了。尽管如此，一个优秀的底模仍是一件重要的事。下面是一些值得参考的优秀模型：
+
+- [Anything V3.0](https://huggingface.co/andite/anything-v4.0/tree/main)。这是一个融合模型，大概是大杂烩，但效果还是蛮不错的。
+
+- [OrangeMixs](https://huggingface.co/WarriorMama777/OrangeMixs)。这也是一个融合模型，通过 [Merge block weighted](https://github.com/bbc-mc/sdweb-merge-block-weighted-gui) 进行了融合，效果非常不错。作者提供了多种版本，其中比较著名的 深渊橘（[AOM2](https://huggingface.co/WarriorMama777/OrangeMixs/tree/main/Models/AbyssOrangeMix2)/[AOM3](https://huggingface.co/WarriorMama777/OrangeMixs/tree/main/Models/AbyssOrangeMix3)）是将 现实风格 和 动漫风格 融合的产物。
 
 **现实风格**
 
@@ -51,3 +61,5 @@ Stable Diffusion Model 系列模型基于 [LAION](https://laion.ai/).
 NAI 系列模型基于 [Danbooru](danbooru.donmai.us/) 和 Stable Diffusion Model.
 
 Any 系列模型基于 Merge.
+
+OrangeMixs 系列模型基于 [Merge block weighted](https://github.com/bbc-mc/sdweb-merge-block-weighted-gui).
