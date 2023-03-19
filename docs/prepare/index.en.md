@@ -14,7 +14,7 @@ If you see a section you do not recognize, it is possible that your version of W
 
 ## Can I join the party?
 
-Before we start - unfortunately, because of the need to use `CUDA` acceleration, only **Nvidia graphics cards** support it well. (AMD can be used but is significantly slower than Nvidia graphics, ~ of course, without a graphics card, you can also use the CPU to spend hundreds of times the time to generate ~)
+Before we start - unfortunately, because of the need to use `CUDA` acceleration, only **Nvidia graphics cards** support it well. (AMD can be used but is significantly slower than Nvidia graphics, ~~of course, without a graphics card, you can also use the CPU to spend hundreds of times the time to generate~~)
 
 **Linux + AMD graphics card** Please read [AMD Installation Guide](https://rentry.org/ayymd-stable-diffustion-v1_4-guide) and [AMD Installation WebUi Guide](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Install-and-Run-on-AMD-GPUs)
 
