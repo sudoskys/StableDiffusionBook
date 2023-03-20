@@ -91,13 +91,13 @@ Stable Diffusion 本来是面向三次元的，而 NAI 是二次元特化版本�
 
 ### 即时讨论
 
-| 群组名称                                   | 链接                                                                                                                                                                        | 平台       |
-|----------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| Telegram Ai 海外绘画中文社群                   | [Telegram](https://t.me/StableDiffusion_CN)                                                                                                                               | Telegram |
-| Discord Ai 海外绘画中文社群                    | [Discord](https://discord.gg/vhsArSSA6K)                                                                                                                                  | Discord  |
-| Discord Ai 绘画繁体中文社群                    | [Discord](https://discord.gg/AghgzqYUMA)                                                                                                                                  | Discord  |
-| 并联计划组                                  | [GoogleDocs](https://docs.google.com/spreadsheets/d/1TA_xInjgS_dKdd68EL9NamCgulTBQHQpsVdCQpf3OxU/edit#gid=45042168)                                                       | -        |
-| StableDiffusion Discord English forums | [Discord 英文社群](https://discord.gg/stablediffusion)  <img src="https://img.shields.io/discord/1002292111942635562?color=blue&label=Discord_stablediffusion" alt="Discord"> |
+| 群组名称                                   | 链接                                                                                                                                                                                             | 平台       |
+|----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
+| Telegram  海外Ai绘画中文社群                   | [Telegram](https://t.me/StableDiffusion_CN) <img src="https://img.shields.io/badge/Telegram-Group-blue" alt="Telegram">                                                                        | Telegram |
+| Discord 海外Ai绘画中文社群                     | [Discord](https://discord.gg/vhsArSSA6K) <img src="https://img.shields.io/discord/1033769426216046622?color=blue&label=Discord_Ai%E7%BB%98%E7%94%BB%E4%B8%AD%E6%96%87%E7%BB%84" alt="Discord"> | Discord  |
+| Discord Ai 绘画繁体中文社群                    | [Discord](https://discord.gg/AghgzqYUMA)                                                                                                                                                       | Discord  |
+| 并联计划组                                  | [GoogleDocs](https://docs.google.com/spreadsheets/d/1TA_xInjgS_dKdd68EL9NamCgulTBQHQpsVdCQpf3OxU/edit#gid=45042168)                                                                            | -        |
+| StableDiffusion Discord English forums | [Discord 英文社群](https://discord.gg/stablediffusion) <img src="https://img.shields.io/discord/1002292111942635562?color=blue&label=Discord_stablediffusion" alt="Discord">                       |
 
 ### 论坛链接
 
