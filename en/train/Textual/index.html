@@ -726,7 +726,7 @@ VAE does not have a catastrophic effect on training.
 <p>If you don't want to load Vae, rename "xxx.vae.pt" to "xxx.vae.pt.disabled" or something else before starting webui.</p>
 <p>Check <strong>Move VAE and CLIP to RAM when training hypernetwork. Saves VRAM.</strong> The effect is to move VAE to RAM, but it will actually load.</p>
 </div>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://user-images.githubusercontent.com/75739606/203366251-ae0ae585-8492-4970-ac9a-5ccf14a1897c.jpg"><img alt="Textual_Inversion" src="https://user-images.githubusercontent.com/75739606/203366251-ae0ae585-8492-4970-ac9a-5ccf14a1897c.jpg"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://user-images.githubusercontent.com/75739606/203366251-ae0ae585-8492-4970-ac9a-5ccf14a1897c.jpg"><img alt="Textual_Inversion" src="https://user-images.githubusercontent.com/75739606/203366251-ae0ae585-8492-4970-ac9a-5ccf14a1897c.jpg"/></a></p>
 <h2 id="aptdreamartist-training">Apt/DreamArtist Training</h2>
 <p>TI is for Ai to understand "likes", and Apt is for Ai to understand "likes" and "dislikes".</p>
 <p>So it's an efficient Textual Inversion</p>
@@ -806,7 +806,7 @@ If generating anime images, the model uses the <code>animefull-latest 7g</code> 
 <p><code>Learning rate</code> (hyperparameter: learning rate), the learning rate represents the rate at which information accumulates in the neural network over time, and this parameter greatly influences the speed at which training is affected. Generally, the lower the learning rate, the slower the learning (takes longer to converge), but generally the better the results.</p>
 <p>Generally we set it to 0.005, but if you want to go faster, you can use 0.01 to speed it up. However, if we set it too high, the gradient descent will be too large to converge and will probably destroy the <code>embedding</code>, which will not be as effective as expected. If you set it too small, you will easily fall into a local optimum. Currently TI supports setting learning rates of <code>0.1:500, 0.01:1000, 0.001:10,000</code>, which are based on <code>learning rate:steps</code>, or <code>total steps*percentage</code> if the number of steps is decimal.</p>
 <p>When training, you can start with a larger learning rate and then gradually reduce it by <code>0.1 - 0.02 - 0.005</code>, using the last best result for each test.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://user-images.githubusercontent.com/75739606/197824268-273f074d-9622-41ad-9f1a-2980f180dbd9.png"><img alt="CS231n" src="https://user-images.githubusercontent.com/75739606/197824268-273f074d-9622-41ad-9f1a-2980f180dbd9.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://user-images.githubusercontent.com/75739606/197824268-273f074d-9622-41ad-9f1a-2980f180dbd9.png"><img alt="CS231n" src="https://user-images.githubusercontent.com/75739606/197824268-273f074d-9622-41ad-9f1a-2980f180dbd9.png"/></a></p>
 <!-- --
 ![CS231n](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/CS231n.png)
 ---->

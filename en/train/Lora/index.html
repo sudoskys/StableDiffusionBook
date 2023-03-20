@@ -676,7 +676,7 @@
 <p>LoHa和LoCon是一种用于大型语言模型微调的方法，相较于传统的LoRa方法，它们具有更多的优势。
 首先，LoHa和LoCon模型能够更好地结合角色和风格，使得生成的文本更加准确和生动。
 其次，这些模型使用了Hadamard乘积来增加模型的容量，从而提高了模型的性能。这些模型的文件大小也非常小。</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://user-images.githubusercontent.com/59680068/222424002-5ce2572c-9102-4e2d-83f2-100bc41ec272.png"><img alt="locon" src="https://user-images.githubusercontent.com/59680068/222424002-5ce2572c-9102-4e2d-83f2-100bc41ec272.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://user-images.githubusercontent.com/59680068/222424002-5ce2572c-9102-4e2d-83f2-100bc41ec272.png"><img alt="locon" src="https://user-images.githubusercontent.com/59680068/222424002-5ce2572c-9102-4e2d-83f2-100bc41ec272.png"/></a></p>
 <p>此算法在 <a href="https://github.com/KohakuBlueleaf/LyCORIS">这里</a> 被实现，用于WebUi 的插件仓库在 <a href="https://github.com/KohakuBlueleaf/a1111-sd-webui-locon">这里</a>。</p>
 <h2 id="lora">训练 Lora 模型</h2>
 <p>训练的流程主要分为 预处理图片，标注图片，训练模型 三个步骤。其中预处理图片就是挑选高质量图片的过程，而标注图片就是给每个图片配发对应文字。</p>
@@ -728,7 +728,7 @@ python<span class="w"> </span>.<span class="se">\t</span>ools<span class="se">\c
 python.exe<span class="w"> </span>.<span class="se">\k</span>ohya_gui.py
 </code></pre></div>
 <p>运行后应该会出现下面的界面：</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/kohya_ui.png"><img alt="UI" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/kohya_ui.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/kohya_ui.png"><img alt="UI" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/kohya_ui.png"/></a></p>
 <h3 id="_3">数据集准备</h3>
 <ul>
 <li>准备照片</li>
@@ -745,18 +745,18 @@ lora，图片可以不多但是质量要高，并且每张图做好尺寸调整�
 train01.txt -&gt; 里面是图片的描述
 </code></pre></div>
 <p>我们可以利用 WebUi 的 <code>训练</code> 选项卡中 <code>图像预处理</code> 标签页为每个图片自动生成标签。（记得勾选使用 Deepbooru）。</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/preprocess.png"><img alt="Preprocess" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/preprocess.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/preprocess.png"><img alt="Preprocess" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/preprocess.png"/></a></p>
 <p>如果你使用 kohya-ss 的话，也可以在在 <code>Utilities</code> 标签页中使用 Captioning 功能。</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/kohya_blip.png"><img alt="UI" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/kohya_blip.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/kohya_blip.png"><img alt="UI" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/kohya_blip.png"/></a></p>
 <p>如果你需要训练新概念，比如新的人物，请在图片的标注信息中去掉和它很相近的名字。比如训练 <code>LoveEyes</code>
 ，那么请在标注中去掉 <code>Eyes</code>。</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/preprocess.png"><img alt="Preprocess" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/preprocess.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/preprocess.png"><img alt="Preprocess" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/preprocess.png"/></a></p>
 <p>现在你应该有了数据集。如果你没有，可能是 Danbooru 模型下载失败，请更换网络重试。</p>
 <p>对于 Kohya GUI 用户，放置数据集请新建一个 Lora 文件夹，然后创建 <code>image</code> <code>log</code> <code>model</code> 三个文件夹。然后在 <code>image</code>
 文件夹中新建一个文件夹 100，也就是训练 100 次。放入你处理好的照片。</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/kohya_data.png"><img alt="Preprocess" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/kohya_data.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/kohya_data.png"><img alt="Preprocess" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/kohya_data.png"/></a></p>
 <p>对于使用 lora-scripts 的用户，你的数据集应该这样放置：</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/lora_data_set.png"><img alt="Preprocess" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/lora_data_set.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/lora_data_set.png"><img alt="Preprocess" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/lora_data_set.png"/></a></p>
 <p>然后你的文件夹结构应该是下面这样的：</p>
 <div class="highlight"><pre><span></span><code>lora_dataset
 |
@@ -775,7 +775,7 @@ dim（网络大小），learning rate（学习率）等。等待训练完成，�
 <p><a href="https://github.com/Akegarasu/lora-scripts">Akegarasu lora-scripts</a></p>
 <p><a href="https://www.bilibili.com/video/BV1fs4y1x7p2">Akegarasu 的视频指南</a></p>
 <p>对于使用 lora-scripts 的用户，请修改 train.sh 的参数来调整训练：</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/lora_scripts.png"><img alt="UI" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/lora_scripts.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/lora_scripts.png"><img alt="UI" src="https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/patch-230316/resource/lora_scripts.png"/></a></p>
 <blockquote>
 <p>https://github.com/Akegarasu/lora-scripts/blob/main/train.sh</p>
 </blockquote>
