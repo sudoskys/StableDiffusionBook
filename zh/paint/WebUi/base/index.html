@@ -401,77 +401,14 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#lora">
-    Lora 风格模型
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#_2">
     消极提示词
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#cfg-scaledenoising-strength">
-    CFG Scale/Denoising strength 契合度/降噪
+<a class="md-nav__link" href="#hi-res">
+    Hi-Res
   </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#prompt">
-    图片 Prompt
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_3">
-    逆向提示词
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#prompt_1">
-    Prompt 搜索引擎
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#batch-countbatch-size">
-    Batch count&amp;batch size
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_4">
-    修复大尺寸画面崩坏
-  </a>
-<nav aria-label="修复大尺寸画面崩坏" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_5">
-    注意 尺寸
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#step">
-    Step 迭代步数
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#samplers">
-    Samplers 采样器
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_6">
-    种子调试
-  </a>
-<nav aria-label="种子调试" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#merging-seeds">
-    Merging Seeds
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -601,77 +538,14 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#lora">
-    Lora 风格模型
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#_2">
     消极提示词
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#cfg-scaledenoising-strength">
-    CFG Scale/Denoising strength 契合度/降噪
+<a class="md-nav__link" href="#hi-res">
+    Hi-Res
   </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#prompt">
-    图片 Prompt
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_3">
-    逆向提示词
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#prompt_1">
-    Prompt 搜索引擎
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#batch-countbatch-size">
-    Batch count&amp;batch size
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_4">
-    修复大尺寸画面崩坏
-  </a>
-<nav aria-label="修复大尺寸画面崩坏" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_5">
-    注意 尺寸
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#step">
-    Step 迭代步数
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#samplers">
-    Samplers 采样器
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_6">
-    种子调试
-  </a>
-<nav aria-label="种子调试" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#merging-seeds">
-    Merging Seeds
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -684,13 +558,14 @@
 <p>此页面为 WebUi 的 Txt2Img 的基本指南，如果你想学习如何书写提示词，请读 <code>Prompt Editing</code> 相关的内容。</p>
 <p>如果你在寻找一些应用例子，你应该看 “实战指南”页面。</p>
 <h2 id="_1">基本参数</h2>
-<p><code>cfg scale</code> 符合 prompt 的程度，值越高越会字面看待 prompt, 低则给模型较大的发挥空间，但是实际模型表现上来看 CFG scale 低 (6-8) 饱和度低，偏线稿，偏杂乱，高 (18-22) 则饱和度偏高，偏 CG 风格。</p>
+<p><code>cfg scale</code> 符合 prompt 的程度，值越高越会字面看待 prompt, 低则给模型较大的发挥空间，但是实际模型表现上来看 CFG scale 低 (
+6-8) 饱和度低，偏线稿，偏杂乱，高 (18-22) 则饱和度偏高，偏 CG 风格。</p>
 <blockquote>
 <p>过高的 CFG 会引起颜色失真，CFG 应该在 5-15 之间</p>
 </blockquote>
-<p><code>denoise strength</code> img2img 专属参数，从 0 到 1 取值，值越高 AI 对原图的参考程度就越低 （同时增加迭代次数）, 个人喜欢低 CFG 高 denoise 重绘图，高 CFG 低 denoise 改细节。</p>
+<p><code>denoise strength</code> img2img 专属参数，从 0 到 1 取值，值越高 AI 对原图的参考程度就越低 （同时增加迭代次数）, 个人喜欢低 CFG 高
+denoise 重绘图，高 CFG 低 denoise 改细节。</p>
 <p>如果对其他参数有疑惑（如 <code>seed</code> ) 请查看模型调试页面的 WebUi 参数介绍。</p>
-<h2 id="lora">Lora 风格模型</h2>
 <h2 id="_2">消极提示词</h2>
 <p>WebUi(SD) 网页应用会在生成时 <strong>避免生成消极提示词有关的内容</strong>。</p>
 <p>消极提示是一种使用稳定扩散的方式，允许用户指定他不想看到的东西，而不需要对模型有任何额外的负担或要求。工作方式是在做取样时，使用用户指定的文本而不是空字符串作为 <code>unconditional_conditioning</code>。</p>
@@ -701,14 +576,14 @@
 <span class="n">c</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_learned_conditioning</span><span class="p">(</span><span class="n">prompts</span><span class="p">)</span>
 <span class="n">uc</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_learned_conditioning</span><span class="p">(</span><span class="n">batch_size</span> <span class="o">*</span> <span class="p">[</span><span class="s2">""</span><span class="p">])</span>
 
-<span class="n">samples_ddim</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">sampler</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">conditioning</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">unconditional_conditioning</span><span class="o">=</span><span class="n">uc</span><span class="p">,</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span> <span class="p">)</span>
+<span class="n">samples_ddim</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">sampler</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">conditioning</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">unconditional_conditioning</span><span class="o">=</span><span class="n">uc</span><span class="p">,</span> <span class="p">[</span><span class="o">...</span><span class="p">])</span>
 </code></pre></div>
-<p>这就启动了采样器，反复进行以下流程。
+<p>这就启动了采样器，反复进行以下流程。</p>
 <div class="highlight"><pre><span></span><code>    对图片进行去噪处理，使其看起来更像你的提示（条件）。
     对图片进行去噪处理，使其看起来更像一个空的提示（无条件条件）。
     观察这两者之间的差异，并利用它来产生一组对噪声图片的改变（不同的采样器对这一部分的处理方式不同）。
 </code></pre></div>
-然后，采样器将查看经过噪声处理的图像与经过噪声处理的图像之间的差异，使其看起来像你的提示（一座城堡），以及经过噪声处理的图像看起来像你的负面提示（颗粒状、雾状），并尝试将最终结果移向前者而远离后者。</p>
+<p>然后，采样器将查看经过噪声处理的图像与经过噪声处理的图像之间的差异，使其看起来像你的提示（一座城堡），以及经过噪声处理的图像看起来像你的负面提示（颗粒状、雾状），并尝试将最终结果移向前者而远离后者。</p>
 <ul>
 <li>使用否定提示的样例</li>
 </ul>
@@ -733,15 +608,20 @@ mutilated, tranny, trans, trannsexual, [out of frame], (bad proportions),
 (poorly drawn body), (poorly drawn legs), worst quality, low quality,
 normal quality, text, censored, gown, latex, pencil
 </code></pre></div>
+<h2 id="hi-res">Hi-Res</h2>
+<h1 id="todo">TODO</h1>
 <h2 id="cfg-scaledenoising-strength">CFG Scale/Denoising strength 契合度/降噪</h2>
 <p><strong>CFG Scale</strong></p>
 <p><code>cfg scale</code> 就是预测时对 prompt 的参考度，越高，预测时对，契合度越高。</p>
 <p><strong>Denoising strength 降低噪声</strong></p>
-<p><code>Denoising strength</code> 决定算法对图像内容的保留程度，可以减少对画风的变得，但也会弱化 img2img 能力。值越高 AI 对原图的参考程度就越低 （同时增加迭代次数）。</p>
-<p>对于以图做图来说，低 <code>denoising</code> 意味着修正原图，高 <code>denoising</code> 就和原图就没有大的相关性了。一般来讲阈值是 0.7 左右，超过 0.7 和原图基本上无关，0.3 以下就是稍微改一些。</p>
+<p><code>Denoising strength</code> 决定算法对图像内容的保留程度，可以减少对画风的变得，但也会弱化 img2img 能力。值越高 AI 对原图的参考程度就越低
+（同时增加迭代次数）。</p>
+<p>对于以图做图来说，低 <code>denoising</code> 意味着修正原图，高 <code>denoising</code> 就和原图就没有大的相关性了。一般来讲阈值是 0.7 左右，超过
+0.7 和原图基本上无关，0.3 以下就是稍微改一些。</p>
 <p>实际执行中，具体的执行步骤为 Denoising strength * Sampling Steps.</p>
 <h2 id="prompt">图片 Prompt</h2>
-<p>程序默认会在图片中加入提示词，参数，模型 元数据信息，对于没有压缩的原图，我们可以将文件拖入 <code>PNG Info</code> 选项卡，进行提示词 (Token) 查看。</p>
+<p>程序默认会在图片中加入提示词，参数，模型 元数据信息，对于没有压缩的原图，我们可以将文件拖入 <code>PNG Info</code> 选项卡，进行提示词 (
+Token) 查看。</p>
 <p>或者使用 <a href="https://spell.novelai.dev/">在线工具</a> 查看它。</p>
 <h2 id="_3">逆向提示词</h2>
 <p>这里有一些 <strong>Image 逆向参数服务</strong>，可以从图片中提取相关参数，不一定准确。</p>
@@ -767,13 +647,14 @@ normal quality, text, censored, gown, latex, pencil
 <p><code>batch count</code> 指定训练几批次图像。</p>
 <p><code>batchsize</code> 中文翻译为批次大小（批次尺寸）</p>
 <p>简单点说，批量大小将决定我们一次训练的样本数目。 batch_size 将影响到模型的优化程度和速度。</p>
-<p>还要注意 <code>batch size</code> 是为了在 <code>内存效率</code> 和 <code>内存容量</code> 之间寻找最佳平衡，因为单个 512x512 图像生成中，GPU 资源没有被充分利用。更大的图像从中获得的收益更少。</p>
+<p>还要注意 <code>batch size</code> 是为了在 <code>内存效率</code> 和 <code>内存容量</code> 之间寻找最佳平衡，因为单个 512x512 图像生成中，GPU
+资源没有被充分利用。更大的图像从中获得的收益更少。</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
+</div>
 <p>迭代是重复反馈的动作，神经网络中我们希望通过迭代进行多次的训练以到达所需的目标或结果。
 每一次迭代得到的结果都会被作为下一次迭代的初始值。
 一个迭代 = 一个正向通过+一个反向通过</p>
-</div>
 <h2 id="_4">修复大尺寸画面崩坏</h2>
 <p><code>Highres.fix</code> 是一个方便的选项，在 <code>txt2img</code> 页面勾选此复选框来启用。</p>
 <p>默认情况下，<code>txt2img</code> 在非常高的分辨率下生成非常混沌的图像。而此插件这使得它可以避免使用小图片的构图，在较低的分辨率下部分渲染你的图片，提高分辨率，然后在高分辨率下添加细节。</p>
@@ -781,8 +662,9 @@ normal quality, text, censored, gown, latex, pencil
 <p>比如出图尺寸宽了人可能会多</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>要匹配好姿势，镜头和人物才不畸形，有时候需要限定量词，多人物时要处理空间关系和 prompt 遮挡优先级。人数-&gt; 人物样貌-&gt; 环境样式-&gt; 人物状态</p>
 </div>
+<p>要匹配好姿势，镜头和人物才不畸形，有时候需要限定量词，多人物时要处理空间关系和 prompt 遮挡优先级。人数-&gt; 人物样貌-&gt;
+环境样式-&gt; 人物状态</p>
 <p>1024 之上的尺寸可能会出现不理想的结果！推荐使用 小尺寸 + 适量提高 Step 步数 + 图片超清分辨率（见进阶）。</p>
 <h2 id="step">Step 迭代步数</h2>
 <p>更多的迭代步数可能会有更好的生成效果，<strong>更多细节</strong> 和锐化，但是会导致生成时间变长。而在实际应用中，30 步和 50 步之间的差异几乎无法区分。</p>
@@ -798,9 +680,11 @@ PS：调太高步数 (&gt; 30) 效果不会更好</p>
 <p><code>DDIM</code> 收敛快，但效率相对较低，因为需要很多 step 才能获得好的结果，<strong>适合在重绘时候使用</strong></p>
 <p><code>LMS</code> 和 <code>PLMS</code> 是 <code>eular</code> 的衍生，它们使用一种相关但稍有不同的方法（平均过去的几个步骤以提高准确性）。大概 30 step 可以得到稳定结果</p>
 <p><code>PLMS</code> 是一种有效的 LMS（经典方法），可以更好地处理神经网络结构中的奇异性</p>
-<p><code>DPM2</code> 是一种神奇的方法，它旨在改进 DDIM，减少步骤以获得良好的结果。它需要每一步运行两次去噪，它的速度大约是 DDIM 的两倍。但是如果你在进行调试提示词的实验，这个采样器效果不怎么样</p>
+<p><code>DPM2</code> 是一种神奇的方法，它旨在改进 DDIM，减少步骤以获得良好的结果。它需要每一步运行两次去噪，它的速度大约是 DDIM
+的两倍。但是如果你在进行调试提示词的实验，这个采样器效果不怎么样</p>
 <p><code>Euler</code> 是最简单的，因此也是最快的之一</p>
-<p>高阶采样器为 <code>DPM-Solver++</code>，你可以使用 <code>DPM++ 2S a</code> 来尝试。实验表明 DPM-Solver++可以 只需 15 到 20 个步骤即可生成高质量的样本，用于引导采样 像素空间和潜在空间 DPM。 </p>
+<p>高阶采样器为 <code>DPM-Solver++</code>，你可以使用 <code>DPM++ 2S a</code> 来尝试。实验表明 DPM-Solver++可以 只需 15 到 20 个步骤即可生成高质量的样本，用于引导采样
+像素空间和潜在空间 DPM。</p>
 <ul>
 <li>不同 step 和 采样器 的不同效果</li>
 </ul>
@@ -830,7 +714,8 @@ PS：调太高步数 (&gt; 30) 效果不会更好</p>
 <p>在相同 Step ，cfg ，Seed, 参数（prompts） 的情况下，生产的图片基本相同！</p>
 <p>在同一模型和后端实现中，保持所有参数一致的情况下，相同的种子会产生同样的图片。取决于其他参数。</p>
 <p>但是注意，<strong>不同显卡可能会造成预料之外的不同结果</strong>（比如精度这样的参数）</p>
-<p>10xx 系列看起来与其他所有卡如此不同，见 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017#discussioncomment-3873467">这里</a></p>
+<p>10xx
+系列看起来与其他所有卡如此不同，见 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017#discussioncomment-3873467">这里</a></p>
 <h3 id="merging-seeds">Merging Seeds</h3>
 <p>这项技术由 UI 实现。它是一种从同一提示合并不同种子的方法。</p>
 <p>单击种子输入旁边的 <code>Extra</code> 按钮开启这项功能。</p>
@@ -840,7 +725,7 @@ PS：调太高步数 (&gt; 30) 效果不会更好</p>
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年3月16日 01:14:29</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年3月20日 03:50:28</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 03:59:46</span>
