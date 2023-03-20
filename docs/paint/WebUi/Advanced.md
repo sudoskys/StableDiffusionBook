@@ -74,8 +74,8 @@ Outpainting, unlike normal image generation, seems to profit very much from larg
 
 它们的效果如下：
 
-| 示意操作  | fill  | original   | latent noise      | latent nothing       |
-|---------------------------|----------------|-----------------------|-------------------------|-----------------------|
+| 示意操作                                                                                                         | fill                                                                                                         | original                                                                                                         | latent noise                                                                                                         | latent nothing                                                                                                         |
+|--------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|
 | ![](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting-initial-content-mask.png) | ![](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting-initial-content-fill.png) | ![](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting-initial-content-original.png) | ![](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting-initial-content-latent-noise.png) | ![](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/images/inpainting-initial-content-latent-nothing.png) |
 
 `mask` 横条决定了模糊程度。original 是 `原图`，fill 是 `填充底色`，`fill` 要更多 step 才能消除不自然感。

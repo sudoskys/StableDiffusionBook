@@ -1,4 +1,4 @@
-# Txt2Img 
+# Txt2Img
 
 此页面为 WebUi 的 Txt2Img 的基本指南，如果你想学习如何书写提示词，请读 `Prompt Editing` 相关的内容。
 
@@ -6,17 +6,15 @@
 
 ## 基本参数
 
-`cfg scale` 符合 prompt 的程度，值越高越会字面看待 prompt, 低则给模型较大的发挥空间，但是实际模型表现上来看 CFG scale 低 (6-8) 饱和度低，偏线稿，偏杂乱，高 (18-22) 则饱和度偏高，偏 CG 风格。
+`cfg scale` 符合 prompt 的程度，值越高越会字面看待 prompt, 低则给模型较大的发挥空间，但是实际模型表现上来看 CFG scale 低 (
+6-8) 饱和度低，偏线稿，偏杂乱，高 (18-22) 则饱和度偏高，偏 CG 风格。
 
 > 过高的 CFG 会引起颜色失真，CFG 应该在 5-15 之间
 
-`denoise strength` img2img 专属参数，从 0 到 1 取值，值越高 AI 对原图的参考程度就越低 （同时增加迭代次数）, 个人喜欢低 CFG 高 denoise 重绘图，高 CFG 低 denoise 改细节。
+`denoise strength` img2img 专属参数，从 0 到 1 取值，值越高 AI 对原图的参考程度就越低 （同时增加迭代次数）, 个人喜欢低 CFG 高
+denoise 重绘图，高 CFG 低 denoise 改细节。
 
 如果对其他参数有疑惑（如 `seed` ) 请查看模型调试页面的 WebUi 参数介绍。
-
-## Lora 风格模型
-
-
 
 ## 消极提示词
 
@@ -26,22 +24,24 @@ WebUi(SD) 网页应用会在生成时 **避免生成消极提示词有关的内�
 
 下面是来自 [txt2img.py](https://github.com/CompVis/stable-diffusion/blob/main/scripts/txt2img.py) 的（简化）代码。
 
-```python
+```python3
 prompts = ["a castle in a forest"]
 # batch_size = 1
 
 c = model.get_learned_conditioning(prompts)
 uc = model.get_learned_conditioning(batch_size * [""])
 
-samples_ddim, _ = sampler.sample(conditioning=c, unconditional_conditioning=uc, [...] )
+samples_ddim, _ = sampler.sample(conditioning=c, unconditional_conditioning=uc, [...])
 ```
 
 这就启动了采样器，反复进行以下流程。
+
 ```
     对图片进行去噪处理，使其看起来更像你的提示（条件）。
     对图片进行去噪处理，使其看起来更像一个空的提示（无条件条件）。
     观察这两者之间的差异，并利用它来产生一组对噪声图片的改变（不同的采样器对这一部分的处理方式不同）。
 ```
+
 然后，采样器将查看经过噪声处理的图像与经过噪声处理的图像之间的差异，使其看起来像你的提示（一座城堡），以及经过噪声处理的图像看起来像你的负面提示（颗粒状、雾状），并尝试将最终结果移向前者而远离后者。
 
 - 使用否定提示的样例
@@ -75,6 +75,10 @@ mutilated, tranny, trans, trannsexual, [out of frame], (bad proportions),
 normal quality, text, censored, gown, latex, pencil
 ```
 
+## Hi-Res
+
+#TODO
+
 ## CFG Scale/Denoising strength 契合度/降噪
 
 **CFG Scale**
@@ -83,15 +87,18 @@ normal quality, text, censored, gown, latex, pencil
 
 **Denoising strength 降低噪声**
 
-`Denoising strength` 决定算法对图像内容的保留程度，可以减少对画风的变得，但也会弱化 img2img 能力。值越高 AI 对原图的参考程度就越低 （同时增加迭代次数）。
+`Denoising strength` 决定算法对图像内容的保留程度，可以减少对画风的变得，但也会弱化 img2img 能力。值越高 AI 对原图的参考程度就越低
+（同时增加迭代次数）。
 
-对于以图做图来说，低 `denoising` 意味着修正原图，高 `denoising` 就和原图就没有大的相关性了。一般来讲阈值是 0.7 左右，超过 0.7 和原图基本上无关，0.3 以下就是稍微改一些。
+对于以图做图来说，低 `denoising` 意味着修正原图，高 `denoising` 就和原图就没有大的相关性了。一般来讲阈值是 0.7 左右，超过
+0.7 和原图基本上无关，0.3 以下就是稍微改一些。
 
 实际执行中，具体的执行步骤为 Denoising strength * Sampling Steps.
 
 ## 图片 Prompt
 
-程序默认会在图片中加入提示词，参数，模型 元数据信息，对于没有压缩的原图，我们可以将文件拖入 `PNG Info` 选项卡，进行提示词 (Token) 查看。
+程序默认会在图片中加入提示词，参数，模型 元数据信息，对于没有压缩的原图，我们可以将文件拖入 `PNG Info` 选项卡，进行提示词 (
+Token) 查看。
 
 或者使用 [在线工具](https://spell.novelai.dev/) 查看它。
 
@@ -123,12 +130,13 @@ normal quality, text, censored, gown, latex, pencil
 
 简单点说，批量大小将决定我们一次训练的样本数目。 batch_size 将影响到模型的优化程度和速度。
 
-还要注意 `batch size` 是为了在 `内存效率` 和 `内存容量` 之间寻找最佳平衡，因为单个 512x512 图像生成中，GPU 资源没有被充分利用。更大的图像从中获得的收益更少。
+还要注意 `batch size` 是为了在 `内存效率` 和 `内存容量` 之间寻找最佳平衡，因为单个 512x512 图像生成中，GPU
+资源没有被充分利用。更大的图像从中获得的收益更少。
 
 !!! info
-    迭代是重复反馈的动作，神经网络中我们希望通过迭代进行多次的训练以到达所需的目标或结果。
-    每一次迭代得到的结果都会被作为下一次迭代的初始值。
-    一个迭代 = 一个正向通过+一个反向通过
+迭代是重复反馈的动作，神经网络中我们希望通过迭代进行多次的训练以到达所需的目标或结果。
+每一次迭代得到的结果都会被作为下一次迭代的初始值。
+一个迭代 = 一个正向通过+一个反向通过
 
 ## 修复大尺寸画面崩坏
 
@@ -141,7 +149,8 @@ normal quality, text, censored, gown, latex, pencil
 比如出图尺寸宽了人可能会多
 
 !!! tip
-    要匹配好姿势，镜头和人物才不畸形，有时候需要限定量词，多人物时要处理空间关系和 prompt 遮挡优先级。人数-> 人物样貌-> 环境样式-> 人物状态
+要匹配好姿势，镜头和人物才不畸形，有时候需要限定量词，多人物时要处理空间关系和 prompt 遮挡优先级。人数-> 人物样貌->
+环境样式-> 人物状态
 
 1024 之上的尺寸可能会出现不理想的结果！推荐使用 小尺寸 + 适量提高 Step 步数 + 图片超清分辨率（见进阶）。
 
@@ -172,16 +181,18 @@ PS：调太高步数 (> 30) 效果不会更好
 
 `PLMS` 是一种有效的 LMS（经典方法），可以更好地处理神经网络结构中的奇异性
 
-`DPM2` 是一种神奇的方法，它旨在改进 DDIM，减少步骤以获得良好的结果。它需要每一步运行两次去噪，它的速度大约是 DDIM 的两倍。但是如果你在进行调试提示词的实验，这个采样器效果不怎么样
+`DPM2` 是一种神奇的方法，它旨在改进 DDIM，减少步骤以获得良好的结果。它需要每一步运行两次去噪，它的速度大约是 DDIM
+的两倍。但是如果你在进行调试提示词的实验，这个采样器效果不怎么样
 
 `Euler` 是最简单的，因此也是最快的之一
 
-高阶采样器为 `DPM-Solver++`，你可以使用 `DPM++ 2S a` 来尝试。实验表明 DPM-Solver++可以 只需 15 到 20 个步骤即可生成高质量的样本，用于引导采样 像素空间和潜在空间 DPM。 
+高阶采样器为 `DPM-Solver++`，你可以使用 `DPM++ 2S a` 来尝试。实验表明 DPM-Solver++可以 只需 15 到 20 个步骤即可生成高质量的样本，用于引导采样
+像素空间和潜在空间 DPM。
 
 - 不同 step 和 采样器 的不同效果
 
-| 预览一    | 预览二  |
-| ----------------- | -------------- |
+| 预览一                                                                                                                                    | 预览二                                                                                                                                    |
+|----------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
 | <img src="https://user-images.githubusercontent.com/22421310/187063145-3d4f16d7-7bd6-4804-be1c-acf228ed2507.jpg" width="400" alt="效果"> | <img src="https://user-images.githubusercontent.com/75739606/197824518-f68188a3-0572-4b52-8fe7-289b6d7b640b.jpg" width="400" alt="效果"> |
 
 ![exp](https://user-images.githubusercontent.com/40903705/200149887-935a6f95-0bfa-4f8e-b6b1-0fb0bfe0b39e.jpg)
@@ -204,7 +215,8 @@ PS：调太高步数 (> 30) 效果不会更好
 
 但是注意，**不同显卡可能会造成预料之外的不同结果**（比如精度这样的参数）
 
-10xx 系列看起来与其他所有卡如此不同，见 [这里](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017#discussioncomment-3873467)
+10xx
+系列看起来与其他所有卡如此不同，见 [这里](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017#discussioncomment-3873467)
 
 ### Merging Seeds
 
