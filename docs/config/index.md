@@ -137,6 +137,11 @@ xformers 分辨率越高加速效果越好。使用 xformers 会引入一些随�
 
     你可以在右边的链接下载预构建的 Xformers！https://rentry.org/25i6yn ，记得先查看 [GPU 架构](https://developer.nvidia.com/cuda-gpus)
 
+!!! info
+    
+    截止 2023.01.23，已经不再需要手动编译 Xformers。见 [wiki](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Xformers#xformers)
+    Note: Both Windows and linux should no longer need to build. On 1/23/23 webui shifted from a user-built wheel to an [official wheel](https://pypi.org/project/xformers/0.0.16rc425/#history) along with other package upgrades, shown in [this PR](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/5939/commits/c091cf1b4acd2047644d3571bcbfd81c81b4c3af)
+
 确保 Python 版本为 3.10 或更高版本（使用 `Python --version`)，然后安装
 
 安装 [VS Build Tools 2022](https://visualstudio.microsoft.com/zh-hans/downloads/?q=build+tools)，运行安装时只需要选择 `Desktop development with C++`
