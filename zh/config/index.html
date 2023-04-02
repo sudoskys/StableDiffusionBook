@@ -11,9 +11,9 @@
 <link href="../install/WebUi/Troubleshoot/" rel="prev"/>
 <link href="GPU/" rel="next"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.1.3" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.5" name="generator"/>
 <title>配置 - AiDraw</title>
-<link href="../../assets/stylesheets/main.c4a75a56.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/main.7a7fce14.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -747,6 +747,11 @@
 <p class="admonition-title">Info</p>
 <p>你可以在右边的链接下载预构建的 Xformers！https://rentry.org/25i6yn ，记得先查看 <a href="https://developer.nvidia.com/cuda-gpus">GPU 架构</a></p>
 </div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>截止 2023.01.23，已经不再需要手动编译 Xformers。见 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Xformers#xformers">wiki</a>
+Note: Both Windows and linux should no longer need to build. On 1/23/23 webui shifted from a user-built wheel to an <a href="https://pypi.org/project/xformers/0.0.16rc425/#history">official wheel</a> along with other package upgrades, shown in <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/5939/commits/c091cf1b4acd2047644d3571bcbfd81c81b4c3af">this PR</a></p>
+</div>
 <p>确保 Python 版本为 3.10 或更高版本（使用 <code>Python --version</code>)，然后安装</p>
 <p>安装 <a href="https://visualstudio.microsoft.com/zh-hans/downloads/?q=build+tools">VS Build Tools 2022</a>，运行安装时只需要选择 <code>Desktop development with C++</code></p>
 <p>安装 <a href="https://developer.nvidia.com/cuda-11.3.0-download-archive">CUDA 11.3</a>，（后期版本未测试），选择 <code>custom</code>，VS 集成可能不需要</p>
@@ -908,7 +913,7 @@ If you add ".top3." to filename, for example, flavors.top3.txt, the three most r
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年3月16日 01:14:29</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年4月1日 09:44:52</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年10月10日 07:33:42</span>
@@ -950,6 +955,6 @@ If you add ".top3." to filename, for example, flavors.top3.txt, the three most r
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "toc.follow", "navigation.top", "navigation.tracking", "navigation.indexes", "navigation.expand", "navigation.sections"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
-<script src="../../assets/javascripts/bundle.efa0ade1.min.js"></script>
+<script src="../../assets/javascripts/bundle.407015b8.min.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>
