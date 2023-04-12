@@ -4,6 +4,13 @@
 
 核心逻辑就是缩小预选数据的范围，调节天平在消极和积极提示之间的方向，还有使用部分语法控制提示词效果的强烈程度和起效过程。
 
+## 工作流实例教材
+
+[使用SD当做渲染器，大大节省了人工手绘渲染的时间，减少了20小时的工作量](https://www.bilibili.com/video/BV1ao4y1H7X5/)
+
+https://space.bilibili.com/11620/channel/collectiondetail?sid=1234588
+
+
 ## 灵感表
 
 |    角度    |      |          |      |       |     |     |     |
