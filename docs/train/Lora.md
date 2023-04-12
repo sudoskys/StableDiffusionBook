@@ -16,6 +16,9 @@ LoHa和LoCon是一种用于大型语言模型微调的方法，相较于传统�
 
 此算法在 [这里](https://github.com/KohakuBlueleaf/LyCORIS) 被实现，用于WebUi 的插件仓库在 [这里](https://github.com/KohakuBlueleaf/a1111-sd-webui-locon)。
 
+<iframe src="//player.bilibili.com/player.html?aid=439526626&bvid=BV1cj411A73a&cid=1082365470&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+>Loha 模型使用演示视频和教程
+
 ## 训练 Lora 模型
 
 训练的流程主要分为 预处理图片，标注图片，训练模型 三个步骤。其中预处理图片就是挑选高质量图片的过程，而标注图片就是给每个图片配发对应文字。

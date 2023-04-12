@@ -6,7 +6,8 @@
 
 ## 工作流实例教材
 
-[使用SD当做渲染器，大大节省了人工手绘渲染的时间，减少了20小时的工作量](https://www.bilibili.com/video/BV1ao4y1H7X5/)
+<iframe src="//player.bilibili.com/player.html?aid=396981963&bvid=BV1ao4y1H7X5&cid=1078398250&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+>[使用SD当做渲染器，大大节省了人工手绘渲染的时间，减少了20小时的工作量](https://www.bilibili.com/video/BV1ao4y1H7X5/)
 
 https://space.bilibili.com/11620/channel/collectiondetail?sid=1234588
 
