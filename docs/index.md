@@ -119,9 +119,21 @@ Stable Diffusion 本来是面向三次元的，而 NAI 是二次元特化版本�
 | AIBooru                                 | https://aibooru.online/                                             |
 | Reddit                                  | https://www.reddit.com/r/StableDiffusion/                           |
 
+### 创作者
+
+| Name                          | Link                                                                |
+|-----------------------------------------|---------------------------------------------------------------------|
+| Bilibili@秋葉aaaki | 系统性 [教材](https://space.bilibili.com/12566101) |
+| Bilibili@大江户战士                  |  [教程合集](https://space.bilibili.com/55123/channel/collectiondetail?sid=1162295)                           |
+| Bilibili@十岁中单林美丽                       | 适合实战工作流的 [教材](https://space.bilibili.com/11620/channel/collectiondetail?sid=1234588)                                |
+
+
 ### 模型
 
 | 社区名称         | 链接                     |
 |--------------|------------------------|
 | Hugging Face | https://huggingface.co |
 | Civitai      | https://civitai.com/   |
+
+
+欢迎补充！

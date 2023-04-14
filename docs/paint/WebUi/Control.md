@@ -43,3 +43,5 @@ openpose 是指人体姿势的标注，depth 是指图像的深度信息，scrib
 然后在启用条件下就可以直接生成。
 
 骨骼图可以自己制作！
+
+<iframe style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;" src="//player.bilibili.com/player.html?aid=568208936&bvid=BV1pv4y18793&cid=1046275718&page=1" frameborder="no" scrolling="no"></iframe>
