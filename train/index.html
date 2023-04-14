@@ -518,6 +518,134 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tagger">
+    Tagger 工具
+  </a>
+<nav aria-label="Tagger 工具" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scal-sdt">
+    SCAL-SDT 训练套件
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+    认知炼丹
+  </a>
+<nav aria-label="认知炼丹" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#loconlora">
+    LoCon/Lora 训练
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lora">
+    使用 Lora 模型
+  </a>
+<nav aria-label="使用 Lora 模型" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#textual-inversion-ti">
+    Textual Inversion (TI)
+  </a>
+<nav aria-label="Textual Inversion (TI)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+    特征
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+    使用
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
+    相关
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hypernetwork-hn">
+    Hypernetwork (HN)
+  </a>
+<nav aria-label="Hypernetwork (HN)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_8">
+    特征
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_9">
+    使用
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dreambooth-db">
+    DreamBooth (DB)
+  </a>
+<nav aria-label="DreamBooth (DB)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_10">
+    特征
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_11">
+    使用
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#advanced-prompt-tuning-apt">
+    Advanced Prompt Tuning (APT)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aesthetic-gradients">
+    Aesthetic Gradients
+  </a>
+<nav aria-label="Aesthetic Gradients" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_12">
+    特征
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_13">
+    使用
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_14">
+    附录
+  </a>
+</li>
 </ul>
 </nav>
 </div>
@@ -542,8 +670,11 @@ Hypernetwork 以调节模型权重为手段，而 Textual Inversion 告诉 AI �
 技术本身用于 “复刻” ，所以可以认识冷门元素。</p>
 <p>至于 Aesthetic Gradients ，也就是给 AI 认识一组 <code>优秀的数据</code>
 。结果就是这个东西会增加细节，训练很简单，但是会拖慢生成图片的速度（每次生成都要重新计算），并不适合应用，效果也不准确。</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://i.redd.it/vl01e5grs6ca1.png"><img alt="PIC" src="https://i.redd.it/vl01e5grs6ca1.png"/></a></p>
 <h3 id="_3">关于模型格式的解释</h3>
-<h1 id="todo">TODO</h1>
+<p>请看科普:</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://zhuanlan.zhihu.com/p/597504900"><img alt="StableDiffusion模型资源探索食用指南" src="https://zhuanlan.zhihu.com/p/597504900"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://www.bilibili.com/read/cv21362202?from=articleDetail"><img alt="AI绘画全部模型种类总结" src="https://www.bilibili.com/read/cv21362202?from=articleDetail"/></a></p>
 <h2 id="tagger">Tagger 工具</h2>
 <p>Tagger 是我们训练时使用的工具，它可以帮助你快速的为数据集打标签。 它的实质就是一个 VQA 模型，它可以根据图片来回答问题，比如
 “这是什么？” “这是谁？” “这是什么颜色？” “这是什么动物？” 等等。</p>
@@ -617,6 +748,7 @@ networks”选项卡。在弹出的面板中选择“Lora”选项卡。</p>
 <p>接下来点击“生成”按钮开始生成图片。</p>
 <p>当生成完成后，将鼠标移动到 Lora 卡片的左下角或标题上方，会出现“替换预览”的红色文字。点击此处即可将刚生成的图片设置为此 Lora
 模型的预览图。</p>
+<iframe allowfullscreen="true" border="0" frameborder="no" framespacing="0" height="600" scrolling="no" src="//player.bilibili.com/player.html?aid=778156358&amp;bvid=BV1Py4y1d7eJ&amp;cid=974311936&amp;page=1" width="100%"> </iframe>
 <h3 id="textual-inversion-ti">Textual Inversion (TI)</h3>
 <p>从一些具有共同语义 [v] 的图片中，提取 [v] 的一个方法。提取出的 [v] 张量称之为 "Embedding"。将 Embedding 保存为文件，之后生成图片时就可以在
 prompt 中以文件名引用。</p>
@@ -744,7 +876,7 @@ TI 和 HN 像完整权重的 “插件” 一样即插即用，强度也不可�
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年3月20日 03:51:20</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年4月14日 10:42:44</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 03:59:46</span>
