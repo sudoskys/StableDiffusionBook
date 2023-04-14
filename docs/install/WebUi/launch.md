@@ -196,7 +196,7 @@ To create a public link, set `share=True` in `launch()`
 指定需要过滤什么标签，比如
 
 ```
-lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, bad feet,nsfw,nude
+(bad:0.98), (blur:0.81), (normal:0.98), (comic:0.81), (cropped:0.81), (error:0.81), (extra:0.81), (low:0.81), (lowres:1), (speech:0.81), (worst:0.81), 2koma, 3koma, 4koma, collage, lipstick
 ```
 
 点击生成按钮即可生成，在终端中会显示进度：
