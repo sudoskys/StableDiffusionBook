@@ -137,14 +137,6 @@
          
     </url>
     <url>
-         <loc>https://stable-diffusion-book.vercel.app/paint/WebUi/</loc>
-         <lastmod>2023-04-14</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://stable-diffusion-book.vercel.app/en/paint/WebUi/"/>
-         <xhtml:link rel="alternate" hreflang="zh" href="https://stable-diffusion-book.vercel.app/zh/paint/WebUi/"/>
-         
-    </url>
-    <url>
          <loc>https://stable-diffusion-book.vercel.app/paint/WebUi/Advanced/</loc>
          <lastmod>2023-04-14</lastmod>
          <changefreq>daily</changefreq>
