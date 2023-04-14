@@ -6,6 +6,11 @@
 
 以下是新闻和测试内容。
 
+## 3/23
+
+Encoder-based Domain Tuning for Fast Personalization of Text-to-Image Models
+https://tuning-encoder.github.io/
+
 ## 2/27
 
 LoRA for convolution network 
