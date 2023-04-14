@@ -6,7 +6,7 @@
 
 ## 工作流实例教材
 
-<iframe src="//player.bilibili.com/player.html?aid=396981963&bvid=BV1ao4y1H7X5&cid=1078398250&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe src="//player.bilibili.com/player.html?aid=396981963&bvid=BV1ao4y1H7X5&cid=1078398250&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 >[使用SD当做渲染器，大大节省了人工手绘渲染的时间，减少了20小时的工作量](https://www.bilibili.com/video/BV1ao4y1H7X5/)
 
 https://space.bilibili.com/11620/channel/collectiondetail?sid=1234588
@@ -213,7 +213,7 @@ emoji 因为只有一个字符，所以在语义准确度上表现良好。
 
 `anime coloring` 会有很好的效果，像动漫截图一样。（如果遇到黑白色，需要指定人物部件的色彩）
 
-<iframe src="//player.bilibili.com/player.html?aid=304175820&bvid=BV1TP411N71t&cid=865253876&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe src="//player.bilibili.com/player.html?aid=304175820&bvid=BV1TP411N71t&cid=865253876&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 
 ### 优化作品效果
 

@@ -26,9 +26,16 @@ Hypernetwork 以调节模型权重为手段，而 Textual Inversion 告诉 AI �
 至于 Aesthetic Gradients ，也就是给 AI 认识一组 ` 优秀的数据 `
 。结果就是这个东西会增加细节，训练很简单，但是会拖慢生成图片的速度（每次生成都要重新计算），并不适合应用，效果也不准确。
 
+
+![PIC](https://i.redd.it/vl01e5grs6ca1.png)
+
 ### 关于模型格式的解释
 
-#TODO
+请看科普:
+
+![StableDiffusion模型资源探索食用指南](https://zhuanlan.zhihu.com/p/597504900)
+
+![AI绘画全部模型种类总结](https://www.bilibili.com/read/cv21362202?from=articleDetail)
 
 ## Tagger 工具
 
@@ -100,6 +107,9 @@ networks”选项卡。在弹出的面板中选择“Lora”选项卡。
 
 当生成完成后，将鼠标移动到 Lora 卡片的左下角或标题上方，会出现“替换预览”的红色文字。点击此处即可将刚生成的图片设置为此 Lora
 模型的预览图。
+
+<iframe src="//player.bilibili.com/player.html?aid=778156358&bvid=BV1Py4y1d7eJ&cid=974311936&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
+
 
 ### Textual Inversion (TI)
 

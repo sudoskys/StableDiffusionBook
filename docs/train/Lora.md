@@ -16,14 +16,18 @@ LoHa和LoCon是一种用于大型语言模型微调的方法，相较于传统�
 
 此算法在 [这里](https://github.com/KohakuBlueleaf/LyCORIS) 被实现，用于WebUi 的插件仓库在 [这里](https://github.com/KohakuBlueleaf/a1111-sd-webui-locon)。
 
-<iframe src="//player.bilibili.com/player.html?aid=439526626&bvid=BV1cj411A73a&cid=1082365470&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe src="//player.bilibili.com/player.html?aid=439526626&bvid=BV1cj411A73a&cid=1082365470&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 >Loha 模型使用演示视频和教程
 
 ## 训练 Lora 模型
 
 训练的流程主要分为 预处理图片，标注图片，训练模型 三个步骤。其中预处理图片就是挑选高质量图片的过程，而标注图片就是给每个图片配发对应文字。
 
-这里我们以流行的 Kohya’s GUI 作为参考展开讲解：
+这里我们以流行的 Kohya’s GUI 作为参考展开讲解。
+
+如果你不想看文字教程，可以看Bilibili@秋葉aaaki 的视频：
+
+<iframe src="//player.bilibili.com/player.html?aid=948252718&bvid=BV1fs4y1x7p2&cid=977557682&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 
 ### 准备
 
