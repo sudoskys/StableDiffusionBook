@@ -11,6 +11,9 @@
 Encoder-based Domain Tuning for Fast Personalization of Text-to-Image Models
 https://tuning-encoder.github.io/
 
+A powerful and modular stable diffusion GUI with a graph/nodes interface. 
+https://github.com/comfyanonymous/ComfyUI
+
 ## 2/27
 
 LoRA for convolution network 

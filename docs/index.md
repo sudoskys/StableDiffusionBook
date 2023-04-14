@@ -21,16 +21,13 @@ StableDiffusionBook 致力于信息公开和社区连结，秉持开放，共建
 
 ## 项目
 
-本文档主要涉及以下两个项目。（以后可能会更多？)
+本文档主要涉及以下两个项目。（以后可能会更多？）
 
 [Stable Diffusion WebUi](https://github.com/AUTOMATIC1111/stable-diffusion-webui) 简称 SDWebUi，web UI 是一个基于 Gradio
 库的 Stable Diffusion
-浏览器界面。该项目目前还没有 [许可证](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/24) [相关 Issue](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2059)。
 
-[NovelAI](https://novelai.net/) 简称 NAI， 是一项每月订阅服务，用于 AI 辅助创作、讲故事、虚拟陪伴，或者只是供您想象的 GPT
-驱动的沙盒。
+[流程图/模块化设计的 Stable Diffusion GUI](https://github.com/comfyanonymous/ComfyUI)
 
-Stable Diffusion 本来是面向三次元的，而 NAI 是二次元特化版本。
 
 ## 导航
 
@@ -79,7 +76,7 @@ Stable Diffusion 本来是面向三次元的，而 NAI 是二次元特化版本�
 ## Stable Diffusion 和 NAI 关系？我该怎么办？
 
 因为泄漏事件，NAI 使用数千万 Danbooru（图站）图片训练的模型被泄漏了两次。 目前社区广泛使用 **Stable Diffusion WebUi** 生成框架
-（简称 SDWebUi）装载 NAI 的模型。
+（简称 SDWebUi）~~装载 NAI 的模型~~ 已经是 Any3 的天下了。
 
 !!! info "**事件报告**"
 
@@ -134,6 +131,3 @@ Stable Diffusion 本来是面向三次元的，而 NAI 是二次元特化版本�
 |--------------|------------------------|
 | Hugging Face | https://huggingface.co |
 | Civitai      | https://civitai.com/   |
-
-
-欢迎补充！
