@@ -82,7 +82,7 @@ nav:
           - paint/WebUi/index.md
           - Txt2模式: paint/WebUi/base.md
           - Img2模式: paint/WebUi/Advanced.md
-          - 姿态骨架: paint/WebUi/Control.md
+          - ControlNet: paint/WebUi/Control.md
       - 实战指南:
           - paint/Practicalguide.md
           - 评估: paint/identify.md

@@ -8,7 +8,7 @@ ControlNet 可以指定生成图像的姿势、深度信息、轮廓等信息，
 
 ![pose](https://github.com/sudoskys/StableDiffusionBook/blob/main/resource/controlnet_pose.png?raw=true)
 
-操作中有两个流程：从样例图片生成 深度图/骨架/轮廓 控制网，和 以控制网为基准的再生成。
+操作中有两个流程：**从样例图片生成 深度图/骨架/轮廓 控制网**，和 **以控制网为基准的再生成。**
 
 下面我们来配置这个插件
 
@@ -31,6 +31,12 @@ openpose 是指人体姿势的标注，depth 是指图像的深度信息，scrib
 ||<img width="256" alt="" src="https://github.com/Mikubill/sd-webui-controlnet/blob/main/samples/nm-src.png?raw=true">  |  <img width="256" alt="" src="https://github.com/Mikubill/sd-webui-controlnet/blob/main/samples/nm-gen.png?raw=true"> | <img width="256" alt="" src="https://github.com/Mikubill/sd-webui-controlnet/blob/main/samples/nm-out.png?raw=true"> |
 
 除此之外还有 MLSD 线段图还有 Scribble 手绘图。
+
+### openpose keypoints
+
+关于 openpose 预制图上面的标注点，下面这幅图可以很好解释：
+
+![exp-535](https://user-images.githubusercontent.com/75739606/232018385-843c584e-a3a1-4aaa-adfa-9741a59ef907.jpg)
 
 ## 使用 ControlNet
 
@@ -71,6 +77,15 @@ ControlNet是一种经过优化的模型，它类似于inpainting、depth2depth�
 ControlNet执行img2img非常出色，它并不仅仅是简单地叠加像素。它还会从文本提示中学习概念，并以一种合理的方式混合两个图像条件，从而生成高质量的图像。
 
 ![shot](https://user-images.githubusercontent.com/75739606/232014352-6d768824-ffbf-411f-ae63-06b58314f2c3.png)
+
+## 与 Blander 结合使用
+
+[Blender+SD设计辅助插件Seg管理器.zip](https://github.com/sudoskys/StableDiffusionBook/files/11231765/SegManager.zip)
+>By S1AI群(280531552) @叶月葵
+
+<video controls>
+      <source id="mp4" src="https://user-images.githubusercontent.com/75739606/232020476-c0c1d5c4-78c0-4a13-8926-ba3fbc8d16a9.mp4" type="video/mp4">
+</videos>
 
 
 [^1]:[ControlNet在Img2Img中的惊人效果](https://www.reddit.com/r/StableDiffusion/comments/1152ius/mindblowing_controlnet_trick_mixed_composition/)
