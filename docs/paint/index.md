@@ -128,10 +128,8 @@
 <!--
 ![WorkFlow](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/draw_workflow.svg)
 -->
-这幅图演示了循环迭代的流程
-迭代方式，有循环迭代和线性迭代两种，线性迭代适用于多样性测试，而 **循环迭代** 是优化的更好选择。
 
-来回改提示+固定种子并不是好选择。
+这幅图演示了当前我们可以使用哪些工具，有哪些普遍的处理环节。
 
 目前主流方向是
 
