@@ -36,12 +36,42 @@ openpose 是指人体姿势的标注，depth 是指图像的深度信息，scrib
 
 ![Use](https://github.com/sudoskys/StableDiffusionBook/blob/main/resource/controlnet_usage.png?raw=true)
 
-在 T2I/I2I 面板底部打开选项卡，然后勾选启用（如果显存不够需要额外勾选 LowVram）。
+打开 T2I/I2I 面板底部的选项卡，然后勾选“启用”（如果显存不足，需要额外勾选“LowVram”）。接下来，选择相应的预处理器和控制网模型，并上传样例图（推荐上传真人图片或 3D 模型），以生成控制网。如果你已经有了骨骼图或其他控制网，则预处理器请选择“None”，直接上传控制网即可。
 
-然后选择对应的预处理器和控制网模型，然后上传样例图（推荐上传真人图片或 3D 模型）生成控制网。如果你已经有了骨骼图或者其他控制网，预处理器请选择 None 直接上传控制网。
+完成以上步骤后，在启用条件下就可以直接生成所需内容。
 
-然后在启用条件下就可以直接生成。
+骨骼图可以自己制作！也可以使用 [avatarposemaker](https://avatarposemaker.deezein.com/) 来摆弄。
 
-骨骼图可以自己制作！也可以使用 [avatarposemaker](https://avatarposemaker.deezein.com/)
+## 使用 ControlNet 操作线稿
+
+### 上色任务
+
+我们主要利用 canny 边缘检测上色完成这项任务。
+
+下面是 Blilbili@大江户战士 的视频教材
 
 <iframe src="//player.bilibili.com/player.html?aid=568208936&bvid=BV1pv4y18793&cid=1046275718&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
+
+### 提取线稿
+
+要使用 Controlnet 提取线稿，确保安装 Additional Networks 插件加载线稿风格 Lora 模型。在进行线稿提取前，请确保图像的底模风格没有特别固定。
+
+[(线稿/線画/マンガ風/漫画风) Style 线稿模型](https://civitai.com/models/16014)
+
+如果效果不佳，可以尝试使用低分辨率输入图像或高清修复工具进行后期处理。
+
+下面是 Blilbili@大江户战士 的视频教材
+
+<iframe src="//player.bilibili.com/player.html?aid=568016537&bvid=BV1Nv4y1a7ts&cid=1041074740&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
+
+## 使用 ControlNet 混合图像
+
+ControlNet是一种经过优化的模型，它类似于inpainting、depth2depth、pix2pix等模型，但是有一个额外的条件输入。在训练模型时，会使用不同的条件控制来区分不同的模型，例如canny、normal、hed等等。因此，当你提供自己的草图和提示时，经过优化的ControlNet模型能够为你展示与之相应的sd1.5等效图像或者你定制的模型。这使得使用自定义模型变得更加简单。[^1]
+
+ControlNet执行img2img非常出色，它并不仅仅是简单地叠加像素。它还会从文本提示中学习概念，并以一种合理的方式混合两个图像条件，从而生成高质量的图像。
+
+![shot](https://user-images.githubusercontent.com/75739606/232014352-6d768824-ffbf-411f-ae63-06b58314f2c3.png)
+
+
+[^1]:[ControlNet在Img2Img中的惊人效果](https://www.reddit.com/r/StableDiffusion/comments/1152ius/mindblowing_controlnet_trick_mixed_composition/)
+
