@@ -112,7 +112,19 @@
 
 ## 基本流程
 
+
+### 布局
+
+![ai](https://user-images.githubusercontent.com/75739606/232009899-d592de59-8429-4cfd-9086-936f7704146a.svg)
+
+### 工具图鉴
+
+![photo_2023-04-14_17-38-35](https://user-images.githubusercontent.com/75739606/232008290-33d28848-a9a9-4945-9e85-63e1a4d5bdf9.jpg)
+
+<!--
 ![WorkFlow](https://user-images.githubusercontent.com/75739606/197821744-99b18fbc-1ae4-4e37-b7e7-9a47adaa6ae5.svg)
+-->
+
 <!--
 ![WorkFlow](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/draw_workflow.svg)
 -->
@@ -121,11 +133,13 @@
 
 来回改提示+固定种子并不是好选择。
 
-目前研究基本方向是
+目前主流方向是
 
-- 提示词 + PS/Inpaint（微修/嫁接）
+- 提示词 + Controlnet
 
-- 提示词 + 3D 参考
+- 提示词 + Blender
+
+- Lora 模型特化
 
 ## 参数介绍
 
