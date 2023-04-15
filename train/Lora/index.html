@@ -671,14 +671,13 @@
 <p>Lora 模型可以在 t2i 和 i2i 模式下使用，可以和任何主模型一起使用。</p>
 <p>Lora 的模型文件后缀一般是 <code>.pt</code> 或者 <code>.safetensors</code>.</p>
 <h2 id="lohalocon">LoHa/LoCon</h2>
-<p>LoHa和LoCon是一种用于大型语言模型微调的方法，相较于传统的LoRa方法，它们具有更多的优势。
-首先，LoHa和LoCon模型能够更好地结合角色和风格，使得生成的文本更加准确和生动。
-其次，这些模型使用了Hadamard乘积来增加模型的容量，从而提高了模型的性能。这些模型的文件大小也非常小。</p>
+<p>LoHa/LoCon 是一种用于大型语言模型微调的方法，相较于传统的LoRa方法，它们具有更多的优势。</p>
+<p>LoHa/LoCon 模型能够更好地结合角色和风格，在风格化逐渐增强的情况下仍表现良好。</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://user-images.githubusercontent.com/59680068/222424002-5ce2572c-9102-4e2d-83f2-100bc41ec272.png"><img alt="locon" src="https://user-images.githubusercontent.com/59680068/222424002-5ce2572c-9102-4e2d-83f2-100bc41ec272.png"/></a></p>
 <p>此算法在 <a href="https://github.com/KohakuBlueleaf/LyCORIS">这里</a> 被实现，用于WebUi 的插件仓库在 <a href="https://github.com/KohakuBlueleaf/a1111-sd-webui-locon">这里</a>。</p>
 <iframe allowfullscreen="true" border="0" frameborder="no" framespacing="0" height="600" scrolling="no" src="//player.bilibili.com/player.html?aid=439526626&amp;bvid=BV1cj411A73a&amp;cid=1082365470&amp;page=1" width="100%"> </iframe>
 <blockquote>
-<p>Loha 模型使用演示视频和教程</p>
+<p>基于LyCoRIS的LoRA模型：LoHa</p>
 </blockquote>
 <h2 id="lora">训练 Lora 模型</h2>
 <p>训练的流程主要分为 预处理图片，标注图片，训练模型 三个步骤。其中预处理图片就是挑选高质量图片的过程，而标注图片就是给每个图片配发对应文字。</p>
@@ -819,7 +818,7 @@ Lora 模型生成图片。</p>
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年4月14日 10:42:44</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年4月15日 05:03:32</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年1月17日 04:35:23</span>
