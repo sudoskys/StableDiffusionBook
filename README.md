@@ -22,8 +22,10 @@ Wiki。
 
 本文档正在持续更新中，欢迎您参与贡献本项目！
 
-There is a great lack of translators to maintain our documentation in English. If you are willing, you are welcome to
-promote the internationalisation of this document.
+```shell
+echo "There is a great lack of translators to maintain our documentation in English. If you are willing, you are welcome to
+promote the internationalisation of this document."
+```
 
 ### 基本要求
 

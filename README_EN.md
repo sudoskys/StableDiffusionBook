@@ -14,62 +14,34 @@
 
 <img src="https://img.shields.io/badge/Lang-ZH-red" alt="支持中文"> <img src="https://img.shields.io/badge/Lang-EN-blue" alt="SupportEnglish">
 
-**中文 readme：[ZH](https://github.com/sudoskys/StableDiffusionBook/blob/main/README.md)**
 
-Wiki about drawing with Ai, related resources. Currently the main content is StableDiffusionWebUi
-
-**Current status: maintenance welcome, I have no Issue not updated**  
-
-Wiki Here https://draw.dianas.cyou/ ～！
-
-```
-The repository currently contains a machine-translated version of the guide.
-
-If this does not seem to flow well to you or has errors,or u would like a version in another language. Then please submit Issue or Pr to help us.
+```shell
+echo "There is a great lack of translators to maintain our documentation in English. If you are willing, you are welcome to
+promote the internationalisation of this document."
 ```
 
-### Alternative links
+This is an application-oriented Wiki about the usage and relevant technologies around Stable Diffusion WebUi.
 
-* Vercel
+The documentation can be found at https://draw.dianas.cyou/ or https://stable-diffusion-book.vercel.app/.
 
-https://stable-diffusion-book.vercel.app/  short link https://b23.ink/aibook
+This document is continuously updated, and we welcome your contribution to this project!
 
-### Basic requirements
+🔍 Basic Requirements
 
-VARM larger than 2GB, normal use requires 4 GB
+A GPU with at least 4GB of VRAM is required for basic usage. For more information on inference speed, please refer to the Wiki.
 
-A small reference.
+💻 Join the Editing Team
 
-![效果。png](https://s1.ax1x.com/2022/10/10/xtdNNR.png)
+We welcome anyone to participate in adding/translating/editing this documentation. If you find errors or deficiencies in this document (logical errors, grammar mistakes, structural disorder, outdated content, conflicts, incorrect words), please create an issue or PR in the project repository.
 
-### Join us
+Before contributing, please read the contribution guidelines (although it's optional).
 
-If you find any errors or deficiencies in this article, please feel free to raise an issue and PR to the [Project Repository](https://github.com/sudoskys/StableDiffusionBook/).
+You can clone the repository by pressing the . key on your keyboard and start collaborating right away.
 
-Read the [Contribution Guidelines](https://draw.dianas.cyou/en/GettingStarted/contributing/) before contributing
+🤝 Join the Community
 
-Press `. ` key to automatically clone the repository and start collaborating.
+Join the overseas Chinese painting community at <a href="https://t.me/StableDiffusion_CN"><img src="https://img.shields.io/badge/Telegram-Group-blue" alt="Telegram"></a>
 
-### Related
+📜 License
 
-[sdupdates SD comprehensive list of recommended reading](https://github.com/questianon/sdupdates)
-
-[Chinese Magic Books](https://docs.qq.com/doc/DWFdSTHJtQWRzYk9k)
-
-[Stable Diffusion WebUi](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
-
-[Integrated Tag Tools / Web Front End with Hyper Web Support](https://git.hudaye.work/MiuliKain/Kamiya-OpenUI)
-
-[NAI-based drawing bot](https://github.com/koishijs/novelai-bot#token)
-
-[Danbooru Tag Supermarket For CN](https://github.com/wfjsw/danbooru-diffusion-prompt-builder)
-
-### NOTICE
-
-The documentation does not host any models, the host of this site does not provide downloads of models, and does not directly distribute model files that violate the copyright agreement.
-
-We do not endorse behavior that violates the project agreement. The use of leaked models for commercial purposes is discouraged.
-
-If there is inappropriate content in the external links of this document, please submit an issue to remove it.
-
-> licensed under GFDL
+Our documentation is licensed under the GFDL Free Documentation License. When quoting, the original materials must be made public and the source must be indicated.
