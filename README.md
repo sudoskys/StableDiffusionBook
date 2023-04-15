@@ -15,6 +15,8 @@
 
 <img src="https://img.shields.io/badge/Lang-ZH-red" alt="支持中文"> <img src="https://img.shields.io/badge/Lang-EN-blue" alt="SupportEnglish">
 
+[English_Readme](README_EN.md)
+
 本指南是关于 [Stable Diffusion WebUi](https://github.com/AUTOMATIC1111/stable-diffusion-webui) 的使用及围绕相关技术展开的应用指导型
 Wiki。
 
