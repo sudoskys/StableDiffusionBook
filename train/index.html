@@ -523,18 +523,18 @@
 <nav aria-label="Tagger 工具" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#scal-sdt">
-    SCAL-SDT 训练套件
+<a class="md-nav__link" href="#_4">
+    训练套件
   </a>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_4">
-    认知炼丹
+<a class="md-nav__link" href="#_5">
+    认识模型训练
   </a>
-<nav aria-label="认知炼丹" class="md-nav">
+<nav aria-label="认识模型训练" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#loconlora">
@@ -557,17 +557,17 @@
 <nav aria-label="Textual Inversion (TI)" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_5">
+<a class="md-nav__link" href="#_6">
     特征
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_6">
+<a class="md-nav__link" href="#_7">
     使用
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_7">
+<a class="md-nav__link" href="#_8">
     相关
   </a>
 </li>
@@ -581,12 +581,12 @@
 <nav aria-label="Hypernetwork (HN)" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_8">
+<a class="md-nav__link" href="#_9">
     特征
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_9">
+<a class="md-nav__link" href="#_10">
     使用
   </a>
 </li>
@@ -600,12 +600,12 @@
 <nav aria-label="DreamBooth (DB)" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_10">
+<a class="md-nav__link" href="#_11">
     特征
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_11">
+<a class="md-nav__link" href="#_12">
     使用
   </a>
 </li>
@@ -624,12 +624,12 @@
 <nav aria-label="Aesthetic Gradients" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_12">
+<a class="md-nav__link" href="#_13">
     特征
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_13">
+<a class="md-nav__link" href="#_14">
     使用
   </a>
 </li>
@@ -640,7 +640,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_14">
+<a class="md-nav__link" href="#_15">
     附录
   </a>
 </li>
@@ -670,13 +670,80 @@ Hypernetwork 以调节模型权重为手段，而 Textual Inversion 告诉 AI �
 。结果就是这个东西会增加细节，训练很简单，但是会拖慢生成图片的速度（每次生成都要重新计算），并不适合应用，效果也不准确。</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://i.redd.it/vl01e5grs6ca1.png"><img alt="PIC" src="https://i.redd.it/vl01e5grs6ca1.png"/></a></p>
 <h3 id="_3">关于模型格式的解释</h3>
-<p>请看科普:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://zhuanlan.zhihu.com/p/597504900"><img alt="StableDiffusion模型资源探索食用指南" src="https://zhuanlan.zhihu.com/p/597504900"/></a></p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://www.bilibili.com/read/cv21362202?from=articleDetail"><img alt="AI绘画全部模型种类总结" src="https://www.bilibili.com/read/cv21362202?from=articleDetail"/></a></p>
+<p>以下是各种模型的特点总结表格：</p>
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>后缀名</th>
+<th>保存内容</th>
+<th>安全性</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.ckpt</td>
+<td>.ckpt</td>
+<td>包含大量Python代码的压缩文件</td>
+<td>可能存在安全风险，不建议从未知或不信任的来源加载</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/huggingface/safetensors">.safetensors</a></td>
+<td>.safetensors</td>
+<td>只包含生成所需的数据，没有任何代码</td>
+<td>更安全和快速</td>
+<td>格式通用，安全性高，提升加载速度</td>
+</tr>
+<tr>
+<td>embeddings模型</td>
+<td>-</td>
+<td>用于生成图片的语言理解组件</td>
+<td>-</td>
+<td>可以与编码器和解码器配合使用，在隐空间中控制图像的风格和特征</td>
+</tr>
+<tr>
+<td>.vae.pt</td>
+<td>.vae.pt</td>
+<td>变分自编码器（VAE）的权重和参数</td>
+<td>-</td>
+<td>用来对图像进行编码和解码</td>
+</tr>
+<tr>
+<td>hypernetworks模型</td>
+<td>.pt</td>
+<td>超网络的权重和参数</td>
+<td>-</td>
+<td>可以用来对Stable-diffusion模型进行文本反演和风格迁移</td>
+</tr>
+<tr>
+<td>LoRA模型</td>
+<td>.pt</td>
+<td>低秩逼近技术，用于交叉关注层（cross-attention layers）</td>
+<td>-</td>
+<td>可以减少参数量和计算量，提高训练效率和生成质量，训练时占用的显存非常小</td>
+</tr>
+</tbody>
+</table>
+<p><code>.ckpt</code> 和 <code>.safetensors</code> 都是常见的机器学习模型文件格式，用于保存训练好的模型。然而，它们有着不同的特点。</p>
+<ul>
+<li>
+<p><code>.ckpt</code> 文件实际上是一个压缩文件，其中包含大量的 Python 代码和模型参数。由于这个文件格式最初只是研究人员在受控实验室中使用的技术，并没有打算广泛分发，因此其安全性并没有得到足够的重视。因此，不建议从未知或不信任的来源加载该文件，因为它存在潜在的安全风险。</p>
+</li>
+<li>
+<p>与之相反，<code>.safetensors</code> 文件格式仅包含用于生成模型所需的数据，而没有任何代码。这使得它们更难受到攻击，因为攻击者无法通过操纵代码来引入恶意操作。因此，<code>.safetensors</code> 文件格式被认为是更加通用和安全的机器学习模型分发格式。</p>
+</li>
+</ul>
+<p>不同的模型可以采用不同的文件格式。例如，嵌入模型、变分自编码器（VAE）和 LoRA 模型都可以使用<code>.safetensors</code> 格式进行保存。另外，<code>.vae.pt</code> 和 <code>.pt</code> 文件分别用于保存 VAE 和超网络的权重和参数。此外，LoRA 模型可以用于交叉关注层（cross-attention layers），可以减少参数量和计算量，提高训练效率和生成质量，训练时占用的显存非常小。</p>
+<p>如果需要将不同的模型转换为<code>.safetensors</code> 格式，可以使用 Akegarasu 编写的转换插件，支持多种模型格式的转换，包括 Ckpt，LoRA, embeddings, hypernetworks, VAE，Pix2Pix, inpainting 和 ControlNet 等。</p>
+<p>有些用户可能会发现，相比于<code>.ckpt</code> 文件，加载<code>.safetensors</code> 文件的速度较慢。如果你也遇到了这个问题，可以通过在 <code>webui-user.bat</code> 文件中添加 <code>set SAFETENSORS_FAST_GPU=1</code> 来解决。请在 <code>set COMMANDLINE_ARGS=</code> 下面添加该代码即可。</p>
+<p>如果仍然发现<code>.safetensors</code> 文件加载速度明显较慢，你还可以将 <code>--lowram</code> 添加至 <code>COMMANDLINE_ARGS=</code> 中，强制所有模型使用 GPU 加载，这也能够使它们的加载速度更快，不应该对其他操作产生影响。</p>
+<p>如果你对合并/修剪 <code>.safetensor</code> 模型有兴趣，请阅读 <a href="https://rentry.org/safetensorsguide">safetensors-guide</a>。</p>
 <h2 id="tagger">Tagger 工具</h2>
 <p>Tagger 是我们训练时使用的工具，它可以帮助你快速的为数据集打标签。 它的实质就是一个 VQA 模型，它可以根据图片来回答问题，比如
 “这是什么？” “这是谁？” “这是什么颜色？” “这是什么动物？” 等等。</p>
-<p>目前为图片生成 Prompt 的方案有 WD taggers, deepdanbooru 还有 blip+clip，根据数据集来源，二次元推荐使用 deepdanbooru 和 wd
+<p>目前为图片生成 Prompt 的方案有 <code>WD taggers</code>, deepdanbooru 还有 <code>blip+clip</code>，根据数据集来源，二次元推荐使用 deepdanbooru 和 wd
 tagger 进行标注，推荐后者。</p>
 <p>WebUi 在预处理标签页已经内置了 deepdanbooru 标注器。</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://github.com/sudoskys/StableDiffusionBook/blob/723e4638bfa0f39235463928e8f441d5ebe35b4c/resource/preprocess.png?raw=true"><img alt="preprocess.png" src="https://github.com/sudoskys/StableDiffusionBook/blob/723e4638bfa0f39235463928e8f441d5ebe35b4c/resource/preprocess.png?raw=true"/></a></p>
@@ -723,10 +790,15 @@ tagger 进行标注，推荐后者。</p>
 </tr>
 </tbody>
 </table>
-<h3 id="scal-sdt">SCAL-SDT 训练套件</h3>
+<h3 id="_4">训练套件</h3>
 <p><a href="https://github.com/CCRcmcpe/scal-sdt/wiki">SCAL-SDT</a></p>
 <p>此工具套件包含了训练 Stable Diffusion (SD) 相关模型的各种方案，是海外中文社区通用的训练套件工作包，是一种高级的训练方法，可以让你在不同的训练方案中自由切换。</p>
-<h2 id="_4">认知炼丹</h2>
+<p><a href="https://github.com/7eu7d7/HCP-Diffusion">HCP-Diffusion</a></p>
+<p>HCP-Diffusion是一个基于diffusers的stable diffusion模型训练工具箱。 相比于webui和sd-scripts有更加清晰的代码结构，更方便的实验配置和管理方法，更多的训练组件支持。</p>
+<p>框架支持colossal-AI，可以大幅减少显存消耗。</p>
+<p>HCP-Diffusion可以通过一个.yaml配置文件统一现有大多数训练方法和模型结构，包括， Prompt-tuning (textual inversion), DreamArtist, Fine-tuning, DreamBooth, lora, controlnet等绝大多数方法。 也可以实现各个方法直接的组合使用。</p>
+<p>框架实现了基于lora升级版的DreamArtist++，只用一张图像就可以训练得到高泛化性，高可控性的lora。 相比DreamArtist更加稳定，图像质量和可控性更高，训练速度更快。</p>
+<h2 id="_5">认识模型训练</h2>
 <p>如果你在 <code>--medvram</code> 参数下开始训练，可能会出现 <code>RuntimeError: Expected all tensors to be on the same device</code> 错误，无法创建训练。
 这是优化机制导致的 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2399">问题</a>，WebUi
 在 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/cbb857b675cf0f169b21515c29da492b513cc8c4">这次提交</a>
@@ -750,26 +822,26 @@ networks”选项卡。在弹出的面板中选择“Lora”选项卡。</p>
 <h3 id="textual-inversion-ti">Textual Inversion (TI)</h3>
 <p>从一些具有共同语义 [v] 的图片中，提取 [v] 的一个方法。提取出的 [v] 张量称之为 "Embedding"。将 Embedding 保存为文件，之后生成图片时就可以在
 prompt 中以文件名引用。</p>
-<h4 id="_5">特征</h4>
+<h4 id="_6">特征</h4>
 <p>训练产物大小较小，webui 自带训练支持。</p>
 <p>可以解决新出的角色画不出的问题，或者模仿特定的可以用语言精确描述的艺术风格。</p>
 <p>因为 TI 是在 Text Encoder 的输出做处理，所以并不能让模型学习到它不知道的概念。</p>
 <p><strong> 不同模型的 embeddings 不通用 </strong></p>
-<h4 id="_6">使用</h4>
+<h4 id="_7">使用</h4>
 <p>使用时，将 embedding（一个 .pt 或一个 .bin 文件）放入 webui 的 <code>embeddings</code> 目录并在 prompt 中写要用的 embedding
 的文件名（不包括扩展名）即可，不必重启 webui。可以同时使用多个 embedding。</p>
 <p>如果你使用 DreamArtist ，则将 <code>*-neg.pt</code> 一并放入 <code>embeddings</code> 目录，在积极和消极提示词中同时使用它们即可。</p>
-<h4 id="_7">相关</h4>
+<h4 id="_8">相关</h4>
 <p><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion">webui 给的英文说明和效果图</a></p>
 <p><a href="https://gitlab.com/16777216c/stable-diffusion-embeddings">相关 embeddings</a>，里面有相关效果预览。</p>
 <p><a href="https://rentry.org/embeddings">list of Textual Inversion embeddings for webui(SD)</a></p>
 <p><a href="https://cyberes.github.io/stable-diffusion-textual-inversion-models/">HuggingFace 的 embedding 库</a></p>
 <h3 id="hypernetwork-hn">Hypernetwork (HN)</h3>
 <p>一类给模型生成权重的网络，在这里是给 LDM（潜在扩散模型） 生成权重。是一个较为实验性的方法，NAI 率先探索了在 LDM 上使用。</p>
-<h4 id="_8">特征</h4>
+<h4 id="_9">特征</h4>
 <p>与 TI 不同，Hypernetwork 会改动 LDM 本身的权重，所以可以训练出无法用语言精确表述的细节，也更适用于画风的训练。</p>
 <p>训练产物大小中等，webui 自带训练支持。</p>
-<h4 id="_9">使用</h4>
+<h4 id="_10">使用</h4>
 <p>使用时，将 Pt 放入 <code>/models/hypernetworks</code> 并在设置选项勾选启用它。</p>
 <p>NAI Leaks 的 <code>novelaileak\stableckpt\modules\modules</code> 中有 NAI 训练的一些 Hypernetwork。</p>
 <div class="admonition tip">
@@ -781,11 +853,11 @@ prompt 中以文件名引用。</p>
 <blockquote>
 <p>你能想象你自己的狗环游世界，或者你最喜欢的包在巴黎最独特的展厅里展示吗？你的鹦鹉成为一本插图故事书的主角呢？</p>
 </blockquote>
-<h4 id="_10">特征</h4>
+<h4 id="_11">特征</h4>
 <p>与 TI 和 HN 不同，DreamBooth 可以做到出图和训练集高度相似但是却不失泛化能力，用于训练特定具象概念（比如一个角色穿着特定衣服）效果特别好。但是不像
 TI 和 HN 像完整权重的 “插件” 一样即插即用，强度也不可调。</p>
 <p>这个模型并非为学习画风（抽象概念）而设计。但似乎可以一定程度上适应“画风”。具体效果交由读者你实验。</p>
-<h4 id="_11">使用</h4>
+<h4 id="_12">使用</h4>
 <p>把 DreamBooth 训练出的 .ckpt 文件放进 webui 的 <code>models\Stable-diffusion</code> 目录里，在 webui 的左上角切换到即可使用。</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://dreambooth.github.io/DreamBooth_files/high_level.png"><img alt="SAMPLE" src="https://dreambooth.github.io/DreamBooth_files/high_level.png"/></a></p>
 <p>官网 https://dreambooth.github.io/</p>
@@ -805,13 +877,13 @@ TI 和 HN 像完整权重的 “插件” 一样即插即用，强度也不可�
 <p>此项功能来自这个 <a href="https://github.com/vicgalle/stable-diffusion-aesthetic-gradients">存储库</a>
 ，在 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/2b91251637078e04472c91a06a8d9c4db9c1dcf0">这次提交</a>
 中，此功能被剥离为插件。</p>
-<h4 id="_12">特征</h4>
+<h4 id="_13">特征</h4>
 <p>通过这项技术，你不需要通过 过多提示词 来提升图片的质量，而是保持作品原始的总体构图，并提高美观度。在少量提示词情况下也可以生成效果不错的作品。</p>
 <p>据暗影·夜光所言 <sup id="fnref:11"><a class="footnote-ref" href="#fn:11">5</a></sup>，添加 25% 以内的权重，就可以稍微改善画面的美观度而不影响内容。美学 与 Hypernetworks 让 Ai
 作品更接近原画师风格，但是美学权重本身效果并不好。需要配合 Hypernetworks 超网络。</p>
 <p>训练这项模型很快，但是在每一次生产时都会重新为图片计算一次，所以出图很慢。</p>
 <p>注意：当种子改变时，训练结果也会改变。</p>
-<h4 id="_13">使用</h4>
+<h4 id="_14">使用</h4>
 <p>你可以使用下面的 Git 命令来安装这个东西。</p>
 <div class="highlight"><pre><span></span><code>git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients extensions/aesthetic-gradients
 </code></pre></div>
@@ -822,7 +894,7 @@ TI 和 HN 像完整权重的 “插件” 一样即插即用，强度也不可�
 <!--
 ![Aesthetic_other](https://raw.githubusercontent.com/sudoskys/StableDiffusionBook/main/resource/Aesthetic_other.png)
 -->
-<h2 id="_14">附录</h2>
+<h2 id="_15">附录</h2>
 <ul>
 <li>
 <p>很好的 <a href="https://github.com/Mikubill/naifu-diffusion">naifu-diffusion</a></p>
@@ -874,7 +946,7 @@ TI 和 HN 像完整权重的 “插件” 一样即插即用，强度也不可�
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年4月14日 10:42:44</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年4月15日 04:42:07</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 03:59:46</span>
