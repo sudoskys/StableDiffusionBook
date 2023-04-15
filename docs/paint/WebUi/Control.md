@@ -83,9 +83,7 @@ ControlNet执行img2img非常出色，它并不仅仅是简单地叠加像素。
 [Blender+SD设计辅助插件Seg管理器.zip](https://github.com/sudoskys/StableDiffusionBook/files/11231765/SegManager.zip)
 >By S1AI群(280531552) @叶月葵
 
-<video controls>
-      <source id="mp4" src="https://user-images.githubusercontent.com/75739606/232020476-c0c1d5c4-78c0-4a13-8926-ba3fbc8d16a9.mp4" type="video/mp4">
-</videos>
+[教程演示视频](https://user-images.githubusercontent.com/75739606/232020476-c0c1d5c4-78c0-4a13-8926-ba3fbc8d16a9.mp4)
 
 
 [^1]:[ControlNet在Img2Img中的惊人效果](https://www.reddit.com/r/StableDiffusion/comments/1152ius/mindblowing_controlnet_trick_mixed_composition/)
