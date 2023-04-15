@@ -41,6 +41,9 @@ http://gnuwin32.sourceforge.net/packages/wget.htm
 
 ### 一键包下载地址及介绍
 
+<iframe src="//player.bilibili.com/player.html?aid=649704464&bvid=BV1ne4y1V7QU&cid=948233751&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
+
+
 https://www.bilibili.com/video/BV1ne4y1V7QU
 
 https://www.bilibili.com/video/BV17d4y1C73R
@@ -142,6 +145,57 @@ index-url = http://mirrors.aliyun.com/pypi/simple/
 trusted-host=mirrors.aliyun.com
 ```
 这样就可以让 pip 使用清华大学的镜像源来下载和安装 Python 包了。
+
+
+## 了解目录
+
+
+```
+📁 .
+├── 📄 config.json
+├── 📄 environment-wsl2.yaml
+├── 📁 extensions
+│   ├── 📄 put extensions here.txt
+│   └── 📁 stable-diffusion-webui-localization-zh_CN
+├── 📄 launch.py
+├── 📄 LICENSE.txt
+├── 📁 models # 存储各类模型的目录
+│   ├── 📁 aesthetic_embeddings # 美学嵌入模型
+│   ├── 📁 Codeformer
+│   ├── 📁 deepbooru # 深度图库标签分类模型
+│   ├── 📁 ESRGAN # 增强超分辨率生成对抗网络模型
+│   ├── 📁 GFPGAN # 基于 GAN 的人脸修复模型
+│   ├── 📁 hypernetworks # 超网络模型
+│   ├── 📁 LDSR # 轻量残差网络模型
+│   ├── 📁 Lora # Lora 模型
+│   ├── 📁 ScuNET
+│   ├── 📁 Stable-diffusion # 稳定扩散模型
+│   ├── 📁 SwinIR # 轻量级基于 Swin Transformer 的增强超分辨率模型
+│   ├── 📁 VAE # 变分自编码器模型
+│   └── 📁 VAE-approx # 变分自编码器的近似计算模型
+├── 📁 outputs # 存储各类输出结果的目录
+│   ├── 📁 img2img-grids # 由图生图模型生成的网格图（2x2）
+│   ├── 📁 img2img-images # 由图生图模型生成的图像
+│   ├── 📁 extras-images # 额外的生成图像
+│   ├── 📁 txt2img-grids # 由文本生图模型生成的网格图（2x2）
+│   ├── 📁 txt2img-images # 由文本生图模型生成的图像
+│   └── ... # 其他目录
+├── 📁 repositories # 目录缓存
+├── 📄 requirements.txt
+├── 📄 style.css  
+├── 📄 styles.csv
+├── 📄 styles.csv.bak
+├── 📄 ui-config.json
+├── 📄 webui.bat
+├── 📄 webui-macos-env.sh
+├── 📄 webui-user.bat # Windows 启动用户脚本配置
+├── 📄 webui-user.sh # Linux，Mac 启动用户脚本配置
+├── 📄 webui.py # Win
+└── 📄 webui.sh # Linux & Mac运行脚本
+```
+对于 Windows 用户，要启动项目，只需要执行 `webui.bat`。若需要配置环境变量或追加启动参数，则可编辑 `webui-user.bat`。
+
+对于 Mac 或 Linux 用户，启动项目的方法是执行 `webui.sh`。同样地，若需要配置环境变量或追加启动参数，则可编辑 `webui-user.sh`。
 
 ## 配置大模型
 
