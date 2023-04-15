@@ -108,9 +108,15 @@ HCP-Diffusion 可以通过一个 `.yaml` 配置文件统一现有大多数训练
 
 关于 batch size：更大的 batch size 可能稍微加快训练并稍微提升训练效果，但也需要更大的显存。
 
-### LoCon/Lora 训练
+### LoCon/Lora
 
 Lora 是一种轻量级的微调方法，可以通过少量的图片训练出一个小模型，然后和大模型结合使用，干涉大模型产生的结果。Lora 模型可以在 t2i 和 i2i 模式下使用，可以和任何主模型一起使用。Lora 的模型文件后缀一般是 `.pt` 或者 `.safetensors`。
+
+[LoHa/LoCon 模型](https://github.com/KohakuBlueleaf/LyCORIS/blob/main/Demo.md) 能够更好地结合角色和风格，在风格化逐渐增强的情况下仍表现良好。
+
+```
+We introduced LoRA finetuning with Hadamard Product representation from FedPara. And based on this experiments, LoHa with same size (and dim>2, or rank>4) can get better result in some situation.
+```
 
 #### 使用 Lora 模型
 

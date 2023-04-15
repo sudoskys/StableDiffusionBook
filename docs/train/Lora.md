@@ -8,16 +8,16 @@ Lora 的模型文件后缀一般是 `.pt` 或者 `.safetensors`.
 
 ## LoHa/LoCon
 
-LoHa和LoCon是一种用于大型语言模型微调的方法，相较于传统的LoRa方法，它们具有更多的优势。
-首先，LoHa和LoCon模型能够更好地结合角色和风格，使得生成的文本更加准确和生动。
-其次，这些模型使用了Hadamard乘积来增加模型的容量，从而提高了模型的性能。这些模型的文件大小也非常小。
+LoHa/LoCon 是一种用于大型语言模型微调的方法，相较于传统的LoRa方法，它们具有更多的优势。
+
+LoHa/LoCon 模型能够更好地结合角色和风格，在风格化逐渐增强的情况下仍表现良好。
 
 ![locon](https://user-images.githubusercontent.com/59680068/222424002-5ce2572c-9102-4e2d-83f2-100bc41ec272.png)
 
 此算法在 [这里](https://github.com/KohakuBlueleaf/LyCORIS) 被实现，用于WebUi 的插件仓库在 [这里](https://github.com/KohakuBlueleaf/a1111-sd-webui-locon)。
 
 <iframe src="//player.bilibili.com/player.html?aid=439526626&bvid=BV1cj411A73a&cid=1082365470&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
->Loha 模型使用演示视频和教程
+>基于LyCoRIS的LoRA模型：LoHa
 
 ## 训练 Lora 模型
 
