@@ -118,6 +118,9 @@ Lora 是一种轻量级的微调方法，可以通过少量的图片训练出一
 We introduced LoRA finetuning with Hadamard Product representation from FedPara. And based on this experiments, LoHa with same size (and dim>2, or rank>4) can get better result in some situation.
 ```
 
+![Screenshot_2023](https://user-images.githubusercontent.com/75739606/232184151-633a5f95-fa11-4e50-8d29-c4728b9b054c.png)
+>[基于LyCoRIS的LoRA模型：LoHa](https://www.bilibili.com/video/BV1cj411A73a/)
+
 #### 使用 Lora 模型
 
 在扩展标签页安装 [Lora 模型加载插件](https://github.com/kohya-ss/sd-webui-additional-networks)，然后将你的 Lora 模型放到 `stable-diffusion-webui/models/lora` 路径下。例如：[幻星集塔罗牌 LoRA](https://civitai.com/models/11177)。
