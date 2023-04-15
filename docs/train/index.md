@@ -91,19 +91,15 @@ WebUi 在预处理标签页已经内置了 deepdanbooru 标注器。
 
 ### 训练套件
 
+[HCP-Diffusion](https://github.com/7eu7d7/HCP-Diffusion) 是一个基于 diffusers 的 stable diffusion 模型训练工具箱，相比于 webui 和 sd-scripts，它有着更加清晰的代码结构、更方便的实验配置和管理方法以及更多的训练组件支持。同时，该框架支持 colossal-AI，可以大幅减少显存消耗。
+
+HCP-Diffusion 可以通过一个 `.yaml` 配置文件统一现有大多数训练方法和模型结构，包括 Prompt-tuning (textual inversion)、DreamArtist、Fine-tuning、DreamBooth、lora、controlnet 等绝大多数方法，并且可以实现各个方法直接的组合使用。
+
+此外，该框架还实现了基于 lora 升级版的 DreamArtist++，能够仅用一张图像就可以训练得到高泛化性、高可控性的 lora。相比于 DreamArtist，该方法更加稳定，图像质量和可控性更高，训练速度也更快。
+
 [SCAL-SDT](https://github.com/CCRcmcpe/scal-sdt/wiki)
 
-此工具套件包含了训练 Stable Diffusion (SD) 相关模型的各种方案，是海外中文社区通用的训练套件工作包，是一种高级的训练方法，可以让你在不同的训练方案中自由切换。
-
-[HCP-Diffusion](https://github.com/7eu7d7/HCP-Diffusion)
-
-HCP-Diffusion是一个基于diffusers的stable diffusion模型训练工具箱。 相比于webui和sd-scripts有更加清晰的代码结构，更方便的实验配置和管理方法，更多的训练组件支持。
-
-框架支持colossal-AI，可以大幅减少显存消耗。
-
-HCP-Diffusion可以通过一个.yaml配置文件统一现有大多数训练方法和模型结构，包括， Prompt-tuning (textual inversion), DreamArtist, Fine-tuning, DreamBooth, lora, controlnet等绝大多数方法。 也可以实现各个方法直接的组合使用。
-
-框架实现了基于lora升级版的DreamArtist++，只用一张图像就可以训练得到高泛化性，高可控性的lora。 相比DreamArtist更加稳定，图像质量和可控性更高，训练速度更快。
+此工具套件包含了训练 Stable Diffusion (SD) 相关模型的各种方案，是(本)社区常用的训练套件工作包，可以让你在不同的训练方案中自由切换。
 
 ## 认识模型训练
 
