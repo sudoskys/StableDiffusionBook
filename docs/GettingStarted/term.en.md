@@ -1,6 +1,6 @@
 # Help
 
-https://www.bilibili.com/video/BV1A8411775m/
+<iframe src="//player.bilibili.com/player.html?aid=220280805&bvid=BV1A8411775m&cid=897350707&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 
 ## Explanation of terms
 
