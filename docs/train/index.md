@@ -48,9 +48,9 @@ Hypernetwork 以调节模型权重为手段，而 Textual Inversion 告诉 AI �
 
 - 与之相反，`.safetensors` 文件格式仅包含用于生成模型所需的数据，而没有任何代码。这使得它们更难受到攻击，因为攻击者无法通过操纵代码来引入恶意操作。因此，`.safetensors` 文件格式被认为是更加通用和安全的机器学习模型分发格式。
 
-不同的模型可以采用不同的文件格式。例如，嵌入模型、变分自编码器（VAE）和 LoRA 模型都可以使用`.safetensors` 格式进行保存。另外，`.vae.pt` 和 `.pt` 文件分别用于保存 VAE 和超网络的权重和参数。此外，LoRA 模型可以用于交叉关注层（cross-attention layers），可以减少参数量和计算量，提高训练效率和生成质量，训练时占用的显存非常小。
+不同的模型可以采用不同的文件格式。例如，嵌入模型、变分自编码器（VAE）和 LoRA 模型都可以使用`.safetensors` 格式进行保存。另外，`.vae.pt` 和 `.pt` 文件分别用于保存 VAE 和超网络的权重和参数。
 
-如果需要将不同的模型转换为`.safetensors` 格式，可以使用 Akegarasu 编写的转换插件，支持多种模型格式的转换，包括 Ckpt，LoRA, embeddings, hypernetworks, VAE，Pix2Pix, inpainting 和 ControlNet 等。
+如果需要将不同的模型转换为`.safetensors` 格式，可以使用 Akegarasu 编写的 [转换插件](https://github.com/Akegarasu/sd-webui-model-converter)，支持多种模型格式的转换，包括 Ckpt，LoRA, embeddings, hypernetworks, VAE，Pix2Pix, inpainting 和 ControlNet 等。
 
 有些用户可能会发现，相比于`.ckpt` 文件，加载`.safetensors` 文件的速度较慢。如果你也遇到了这个问题，可以通过在 `webui-user.bat` 文件中添加 `set SAFETENSORS_FAST_GPU=1` 来解决。请在 `set COMMANDLINE_ARGS=` 下面添加该代码即可。
 
