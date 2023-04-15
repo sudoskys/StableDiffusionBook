@@ -31,18 +31,39 @@ Hypernetwork 以调节模型权重为手段，而 Textual Inversion 告诉 AI �
 
 ### 关于模型格式的解释
 
-请看科普:
+以下是各种模型的特点总结表格：
 
-![StableDiffusion模型资源探索食用指南](https://zhuanlan.zhihu.com/p/597504900)
+| 模型 | 后缀名 | 保存内容 | 安全性 | 特点 |
+| --- | --- | --- | --- | --- |
+| .ckpt | .ckpt | 包含大量Python代码的压缩文件 | 可能存在安全风险，不建议从未知或不信任的来源加载 |  |
+| [.safetensors](https://github.com/huggingface/safetensors) | .safetensors | 只包含生成所需的数据，没有任何代码 | 更安全和快速 | 格式通用，安全性高，提升加载速度 |
+| embeddings模型 | - | 用于生成图片的语言理解组件 | - | 可以与编码器和解码器配合使用，在隐空间中控制图像的风格和特征 |
+| .vae.pt | .vae.pt | 变分自编码器（VAE）的权重和参数 | - | 用来对图像进行编码和解码 |
+| hypernetworks模型 | .pt | 超网络的权重和参数 | - | 可以用来对Stable-diffusion模型进行文本反演和风格迁移 |
+| LoRA模型 | .pt | 低秩逼近技术，用于交叉关注层（cross-attention layers） | - | 可以减少参数量和计算量，提高训练效率和生成质量，训练时占用的显存非常小 |
 
-![AI绘画全部模型种类总结](https://www.bilibili.com/read/cv21362202?from=articleDetail)
+`.ckpt` 和 `.safetensors` 都是常见的机器学习模型文件格式，用于保存训练好的模型。然而，它们有着不同的特点。
+
+- `.ckpt` 文件实际上是一个压缩文件，其中包含大量的 Python 代码和模型参数。由于这个文件格式最初只是研究人员在受控实验室中使用的技术，并没有打算广泛分发，因此其安全性并没有得到足够的重视。因此，不建议从未知或不信任的来源加载该文件，因为它存在潜在的安全风险。
+
+- 与之相反，`.safetensors` 文件格式仅包含用于生成模型所需的数据，而没有任何代码。这使得它们更难受到攻击，因为攻击者无法通过操纵代码来引入恶意操作。因此，`.safetensors` 文件格式被认为是更加通用和安全的机器学习模型分发格式。
+
+不同的模型可以采用不同的文件格式。例如，嵌入模型、变分自编码器（VAE）和 LoRA 模型都可以使用`.safetensors` 格式进行保存。另外，`.vae.pt` 和 `.pt` 文件分别用于保存 VAE 和超网络的权重和参数。此外，LoRA 模型可以用于交叉关注层（cross-attention layers），可以减少参数量和计算量，提高训练效率和生成质量，训练时占用的显存非常小。
+
+如果需要将不同的模型转换为`.safetensors` 格式，可以使用 Akegarasu 编写的转换插件，支持多种模型格式的转换，包括 Ckpt，LoRA, embeddings, hypernetworks, VAE，Pix2Pix, inpainting 和 ControlNet 等。
+
+有些用户可能会发现，相比于`.ckpt` 文件，加载`.safetensors` 文件的速度较慢。如果你也遇到了这个问题，可以通过在 `webui-user.bat` 文件中添加 `set SAFETENSORS_FAST_GPU=1` 来解决。请在 `set COMMANDLINE_ARGS=` 下面添加该代码即可。
+
+如果仍然发现`.safetensors` 文件加载速度明显较慢，你还可以将 `--lowram` 添加至 `COMMANDLINE_ARGS=` 中，强制所有模型使用 GPU 加载，这也能够使它们的加载速度更快，不应该对其他操作产生影响。
+
+如果你对合并/修剪 `.safetensor` 模型有兴趣，请阅读 [safetensors-guide](https://rentry.org/safetensorsguide)。
 
 ## Tagger 工具
 
 Tagger 是我们训练时使用的工具，它可以帮助你快速的为数据集打标签。 它的实质就是一个 VQA 模型，它可以根据图片来回答问题，比如
 “这是什么？” “这是谁？” “这是什么颜色？” “这是什么动物？” 等等。
 
-目前为图片生成 Prompt 的方案有 WD taggers, deepdanbooru 还有 blip+clip，根据数据集来源，二次元推荐使用 deepdanbooru 和 wd
+目前为图片生成 Prompt 的方案有 `WD taggers`, deepdanbooru 还有 `blip+clip`，根据数据集来源，二次元推荐使用 deepdanbooru 和 wd
 tagger 进行标注，推荐后者。
 
 WebUi 在预处理标签页已经内置了 deepdanbooru 标注器。
@@ -68,13 +89,23 @@ WebUi 在预处理标签页已经内置了 deepdanbooru 标注器。
 | WatermarkDetection                   | https://github.com/LAION-AI/LAION-5B-WatermarkDetection                                                                                                    |
 | sd-tagging-helper                    | https://github.com/arenatemp/sd-tagging-helper                                                                                                             |
 
-### SCAL-SDT 训练套件
+### 训练套件
 
 [SCAL-SDT](https://github.com/CCRcmcpe/scal-sdt/wiki)
 
 此工具套件包含了训练 Stable Diffusion (SD) 相关模型的各种方案，是海外中文社区通用的训练套件工作包，是一种高级的训练方法，可以让你在不同的训练方案中自由切换。
 
-## 认知炼丹
+[HCP-Diffusion](https://github.com/7eu7d7/HCP-Diffusion)
+
+HCP-Diffusion是一个基于diffusers的stable diffusion模型训练工具箱。 相比于webui和sd-scripts有更加清晰的代码结构，更方便的实验配置和管理方法，更多的训练组件支持。
+
+框架支持colossal-AI，可以大幅减少显存消耗。
+
+HCP-Diffusion可以通过一个.yaml配置文件统一现有大多数训练方法和模型结构，包括， Prompt-tuning (textual inversion), DreamArtist, Fine-tuning, DreamBooth, lora, controlnet等绝大多数方法。 也可以实现各个方法直接的组合使用。
+
+框架实现了基于lora升级版的DreamArtist++，只用一张图像就可以训练得到高泛化性，高可控性的lora。 相比DreamArtist更加稳定，图像质量和可控性更高，训练速度更快。
+
+## 认识模型训练
 
 如果你在 `--medvram` 参数下开始训练，可能会出现 `RuntimeError: Expected all tensors to be on the same device` 错误，无法创建训练。
 这是优化机制导致的 [问题](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2399)，WebUi
