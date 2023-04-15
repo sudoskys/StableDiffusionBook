@@ -79,7 +79,6 @@ nav:
           - paint/index.md
           - 提示工程: paint/PromptsEngineering.md
       - 工作流:
-          - paint/WebUi/index.md
           - Txt2模式: paint/WebUi/base.md
           - Img2模式: paint/WebUi/Advanced.md
           - ControlNet: paint/WebUi/Control.md
