@@ -735,8 +735,8 @@ Hypernetwork 以调节模型权重为手段，而 Textual Inversion 告诉 AI �
 <p>与之相反，<code>.safetensors</code> 文件格式仅包含用于生成模型所需的数据，而没有任何代码。这使得它们更难受到攻击，因为攻击者无法通过操纵代码来引入恶意操作。因此，<code>.safetensors</code> 文件格式被认为是更加通用和安全的机器学习模型分发格式。</p>
 </li>
 </ul>
-<p>不同的模型可以采用不同的文件格式。例如，嵌入模型、变分自编码器（VAE）和 LoRA 模型都可以使用<code>.safetensors</code> 格式进行保存。另外，<code>.vae.pt</code> 和 <code>.pt</code> 文件分别用于保存 VAE 和超网络的权重和参数。此外，LoRA 模型可以用于交叉关注层（cross-attention layers），可以减少参数量和计算量，提高训练效率和生成质量，训练时占用的显存非常小。</p>
-<p>如果需要将不同的模型转换为<code>.safetensors</code> 格式，可以使用 Akegarasu 编写的转换插件，支持多种模型格式的转换，包括 Ckpt，LoRA, embeddings, hypernetworks, VAE，Pix2Pix, inpainting 和 ControlNet 等。</p>
+<p>不同的模型可以采用不同的文件格式。例如，嵌入模型、变分自编码器（VAE）和 LoRA 模型都可以使用<code>.safetensors</code> 格式进行保存。另外，<code>.vae.pt</code> 和 <code>.pt</code> 文件分别用于保存 VAE 和超网络的权重和参数。</p>
+<p>如果需要将不同的模型转换为<code>.safetensors</code> 格式，可以使用 Akegarasu 编写的 <a href="https://github.com/Akegarasu/sd-webui-model-converter">转换插件</a>，支持多种模型格式的转换，包括 Ckpt，LoRA, embeddings, hypernetworks, VAE，Pix2Pix, inpainting 和 ControlNet 等。</p>
 <p>有些用户可能会发现，相比于<code>.ckpt</code> 文件，加载<code>.safetensors</code> 文件的速度较慢。如果你也遇到了这个问题，可以通过在 <code>webui-user.bat</code> 文件中添加 <code>set SAFETENSORS_FAST_GPU=1</code> 来解决。请在 <code>set COMMANDLINE_ARGS=</code> 下面添加该代码即可。</p>
 <p>如果仍然发现<code>.safetensors</code> 文件加载速度明显较慢，你还可以将 <code>--lowram</code> 添加至 <code>COMMANDLINE_ARGS=</code> 中，强制所有模型使用 GPU 加载，这也能够使它们的加载速度更快，不应该对其他操作产生影响。</p>
 <p>如果你对合并/修剪 <code>.safetensor</code> 模型有兴趣，请阅读 <a href="https://rentry.org/safetensorsguide">safetensors-guide</a>。</p>
@@ -946,7 +946,7 @@ TI 和 HN 像完整权重的 “插件” 一样即插即用，强度也不可�
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年4月15日 04:42:07</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年4月15日 04:45:19</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2022年11月2日 03:59:46</span>
