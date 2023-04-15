@@ -87,9 +87,9 @@ nav:
           - 评估: paint/identify.md
   - 训练模型:
       - 训练介绍: train/index.md
+      - Lora 训练: train/Lora.md
       - Textual 训练: train/Textual.md
       - Hypernetwork 训练: train/Hypernetwork.md
-      - Lora 训练: train/Lora.md
       - DreamBooth 训练: train/DreamBooth.md
       - AestheticGradients 训练: train/AestheticGradients.md
   - 参考资料:
