@@ -1,6 +1,4 @@
-# Textual Inversion [^7]
-
->TODO Rewrite
+# Textual Inversion 
 
 <!--
 VAE 对 训练 并不会造成灾难性的影响。

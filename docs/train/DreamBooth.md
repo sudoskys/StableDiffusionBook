@@ -1,7 +1,5 @@
 # DreamBooth
 
-> TODO/HELP 审计
-
 ## 简介
 
 [DreamBooth](https://dreambooth.github.io/) 是一种定制个性化的 TextToImage 扩散模型的方法。仅需少量训练数据就可以获得极佳的效果。

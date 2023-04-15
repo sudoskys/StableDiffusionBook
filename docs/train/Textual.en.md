@@ -1,4 +1,4 @@
-# Textual Inversion[^7]
+# Textual Inversion
 
 <!--
 VAE does not have a catastrophic effect on training.

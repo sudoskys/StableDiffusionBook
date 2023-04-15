@@ -1,7 +1,5 @@
 # DreamBooth
 
-> TODO/HELP Audit
-
 ## Introduction
 
 [DreamBooth](https://dreambooth.github.io/) is a way to customize a personalized TextToImage diffusion model. Excellent results can be obtained with only a small amount of training data.
