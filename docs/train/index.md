@@ -101,42 +101,29 @@ HCP-Diffusion 可以通过一个 `.yaml` 配置文件统一现有大多数训练
 
 此工具套件包含了训练 Stable Diffusion (SD) 相关模型的各种方案，是(本)社区常用的训练套件工作包，可以让你在不同的训练方案中自由切换。
 
+
 ## 认识模型训练
 
-如果你在 `--medvram` 参数下开始训练，可能会出现 `RuntimeError: Expected all tensors to be on the same device` 错误，无法创建训练。
-这是优化机制导致的 [问题](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2399)，WebUi
-在 [这次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/cbb857b675cf0f169b21515c29da492b513cc8c4)
-中允许了在 `--medvram` 下创建 embedding 的情况。请更新版本到这个版本之后。
+如果你在 `--medvram` 参数下开始训练，可能会出现 `RuntimeError: Expected all tensors to be on the same device` 错误，无法创建训练。这是优化机制导致的问题（详见 [此链接](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2399)），WebUi 在 [这次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/cbb857b675cf0f169b21515c29da492b513cc8c4) 中允许了在 `--medvram` 下创建 embedding 的情况。请更新版本到这个版本之后。
 
-**关于 batch size**
-
-更大的 batch size 可能稍微加快训练并稍微提升训练效果，但也需要更大的显存。
+关于 batch size：更大的 batch size 可能稍微加快训练并稍微提升训练效果，但也需要更大的显存。
 
 ### LoCon/Lora 训练
 
-Lora 是一种轻量级的微调方法，可以通过少量的图片训练出一个小模型，然后和大模型结合使用，干涉大模型产生的结果。
+Lora 是一种轻量级的微调方法，可以通过少量的图片训练出一个小模型，然后和大模型结合使用，干涉大模型产生的结果。Lora 模型可以在 t2i 和 i2i 模式下使用，可以和任何主模型一起使用。Lora 的模型文件后缀一般是 `.pt` 或者 `.safetensors`。
 
-Lora 模型可以在 t2i 和 i2i 模式下使用，可以和任何主模型一起使用。
+#### 使用 Lora 模型
 
-Lora 的模型文件后缀一般是 `.pt` 或者 `.safetensors`.
+在扩展标签页安装 [Lora 模型加载插件](https://github.com/kohya-ss/sd-webui-additional-networks)，然后将你的 Lora 模型放到 `stable-diffusion-webui/models/lora` 路径下。例如：[幻星集塔罗牌 LoRA](https://civitai.com/models/11177)。
 
-## 使用 Lora 模型
+重启 WebUi，然后在 SD（Sketch Design）的文生图或图生图界面内，点击生成按钮下的粉色图标，即“additional networks”选项卡。在弹出的面板中选择“Lora”选项卡。
 
-在扩展标签页安装 [Lora 模型加载插件](https://github.com/kohya-ss/sd-webui-additional-networks)，然后将你的 Lora 模型放到
-stable-diffusion-webui/models/lora 路径下。比如 [幻星集塔罗牌 LoRA](https://civitai.com/models/11177).
+接下来点击想要应用的 Lora 模型，它将被添加到提示语中，其格式为 `<lora: 数字 >`，数字代表 Lora 模型的权重，默认为 1。
+再点击“生成”按钮开始生成图片。
 
-重启 WebUi，然后在 SD（Sketch Design）的文生图或图生图界面内，点击生成按钮下的粉色图标，即“additional
-networks”选项卡。在弹出的面板中选择“Lora”选项卡。
-
-然后点击想要应用的 Lora 模型，它将被添加到提示语中，其格式为 `<lora: 数字 >`，数字代表 Lora 模型的权重，默认为 1。
-
-接下来点击“生成”按钮开始生成图片。
-
-当生成完成后，将鼠标移动到 Lora 卡片的左下角或标题上方，会出现“替换预览”的红色文字。点击此处即可将刚生成的图片设置为此 Lora
-模型的预览图。
+当生成完成后，将鼠标移动到 Lora 卡片的左下角或标题上方，会出现“替换预览”的红色文字。点击此处即可将刚生成的图片设置为此 Lora 模型的预览图。
 
 <iframe src="//player.bilibili.com/player.html?aid=778156358&bvid=BV1Py4y1d7eJ&cid=974311936&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
-
 
 ### Textual Inversion (TI)
 
