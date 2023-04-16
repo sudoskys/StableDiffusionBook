@@ -14,6 +14,8 @@ ControlNet 可以指定生成图像的姿势、深度信息、轮廓等信息，
 
 首先你需要从 https://huggingface.co/lllyasviel/ControlNet/tree/main/models 下载深度预测模型和骨架预测模型，用于从样例图片中提取控制网。对应模型放入 `extensions\sd-webui-controlnet\annotator` 的相应文件夹中以支持从样例生成对应产物的功能。
 
+[ControlNet-diff-modules](https://huggingface.co/kohya-ss/ControlNet-diff-modules)
+
 然后在 https://huggingface.co/webui/ControlNet-modules-safetensors/tree/main 中下载控制网模型，将 ControlNet 模型（`.pt`，`.pth`，`.ckpt`，`.safetensors`）放在 `models/ControlNet` 文件夹中，重启 webui。
 
 ## 关于控制图的注解
@@ -70,6 +72,10 @@ openpose 是指人体姿势的标注，depth 是指图像的深度信息，scrib
 
 <iframe src="//player.bilibili.com/player.html?aid=568016537&bvid=BV1Nv4y1a7ts&cid=1041074740&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 
+还有控制面部表情的：
+
+<iframe src="//player.bilibili.com/player.html?aid=994809628&bvid=BV1ds4y1m7tc&cid=1091762930&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
 ## 使用 ControlNet 混合图像
 
 ControlNet是一种经过优化的模型，它类似于inpainting、depth2depth、pix2pix等模型，但是有一个额外的条件输入。在训练模型时，会使用不同的条件控制来区分不同的模型，例如canny、normal、hed等等。因此，当你提供自己的草图和提示时，经过优化的ControlNet模型能够为你展示与之相应的sd1.5等效图像或者你定制的模型。这使得使用自定义模型变得更加简单。[^1]
@@ -78,7 +84,7 @@ ControlNet执行img2img非常出色，它并不仅仅是简单地叠加像素。
 
 ![shot](https://user-images.githubusercontent.com/75739606/232014352-6d768824-ffbf-411f-ae63-06b58314f2c3.png)
 
-## 与 Blander 结合使用
+## 与 Blender 结合使用
 
 [Blender+SD设计辅助插件Seg管理器.zip](https://github.com/sudoskys/StableDiffusionBook/files/11231765/SegManager.zip)
 >By S1AI群(280531552) @叶月葵
