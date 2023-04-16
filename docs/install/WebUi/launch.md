@@ -50,11 +50,11 @@ http://gnuwin32.sourceforge.net/packages/wget.htm
 
 如果整合包里面没有大模型的话（`models` 文件夹），可以翻查下面的链接下载一个，放入 `sd-webui 启动器、数据整合包、models\Stable-diffusion` 即可，如果有 vae 模型一并放入，否则生成的图片会灰蒙蒙的。
 
-## WebUi 原生安装
+### WebUi 原生安装
 
 **如果你是 Windows 用户，请做好 C 盘暴涨 15GB 的准备。**
 
-### Linux 平台
+#### Linux 平台
 先安装依赖
 ```bash
 # Debian-based:
@@ -89,7 +89,7 @@ cd stable-diffusion-webui
 运行 `launch.py` 或 `webui.py` ，前者会自动安装（新）环境。
 这个过程可能需要一些时间，请耐心等待。
 
-### Windows 平台
+#### Windows 平台
 
 首先，您需要下载安装 [Python-3.10.6](https://www.python.org/downloads/windows/)，使用管理员身份安装，安装务必勾选 `Add Python to PATH` 。
 
@@ -99,7 +99,7 @@ cd stable-diffusion-webui
 
 这个过程可能需要一些时间，请耐心等待。
 
-### Mac 平台
+#### Mac 平台
 
 如果你是 Mac 系统，请查看 [此教程](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Installation-on-Apple-Silicon) 进行安装。
 
