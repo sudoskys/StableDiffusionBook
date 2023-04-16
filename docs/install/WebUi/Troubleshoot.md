@@ -1,100 +1,123 @@
 # 错误处理
 
-翻译整理自 [^3]
+以下是关于错误处理和自检的使用文档：
 
-文件路径，路径不允许含有空格，确保您的程序文件夹路径中没有空格。该程序经过测试可在 Python 3.10.6 上运行，低版本 Python 可能会发生错误。
+如果您在使用过程中遇到任何错误，请按照以下步骤操作：
 
-重新安装，请删除目录： `venv`, `repositories`。
+1. 保留最后几行的错误信息，然后截图。
+2. 记录系统信息，包括操作系统、显卡型号、程序版本/来源以及是否为整合包。
+3. 打开 bing.com 搜索错误信息，初步确定问题范围：是系统问题/环境问题/程序问题/配置问题。
+4. 如果仍无解决方案，请打开 https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues 搜索关键词，查看是否有相同错误。
+5. 如果求助他人后仍未解决，请恢复备份或重新配置。
 
-## 安装网络问题/没响应
+## 自检
 
-- Git 报错
+在使用本程序之前，请确保您已经完成了以下自检工作：
 
-HTTP_PROXY 和 HTTPS_PROXY 环境变量，或者使用 clash 的 tun 模式。或者把 git clone 的仓库源换成 huggingface
+- 确认文件路径中不包含空格。
+- Python 版本需大于等于 3.10.6。请注意低版本 Python 可能会出现错误。
+- 如果需要重新安装，请删除目录 `venv` 和 `repositories`。
 
-其他依赖报错也需要设置代理或者使用镜像，不然特慢。
+## 安装网络问题/没有响应
 
-## 安装时间花销过大
+如果您在安装时遇到网络问题或没有响应，请尝试以下解决方案：
 
-1. 网络不好的话，设镜像或者挂代理。
+- 如果 Git 报错，请设置 HTTP_PROXY 和 HTTPS_PROXY 环境变量，或者使用 clash 的 tun 模式。另外，您也可以将 git clone 的仓库源换成 huggingface。
+- 如果依赖报错，请设置代理或使用镜像，否则速度会特别慢。
 
-2. **依赖项 >2GB**, 请做好准备。而且对于 Windows, **依赖默认安装在 C 盘**
+## 安装时间过长
 
-## 低显存显卡/CUDA out of memory
+如果您安装时花费的时间过长，请尝试以下解决方案：
 
-确保你拥有可以运行的最新 CUDA 工具包和 GPU 驱动程序。
+1. 如果网络不好，可以设置镜像或挂代理。
+2. 请注意，依赖项可能大于 2GB。另外，对于 Windows 操作系统，依赖默认安装在 C 盘上。
 
-程序在具有少量 VRAM (<=4GB) 的视频卡上运行时，可能会出现内存不足错误。
+## 低显存显卡/CUDA 内存不足
 
-**牺牲速度来支持低显存显卡**
+如果您拥有少量 VRAM（<=4GB）的显卡，在运行程序时可能会出现内存不足的错误。为了支持低显存显卡，您可以牺牲一定的处理速度。
 
-如果你有 `4GB VRAM` 并且想要制作 512x512（或者可能高达 640x640）的图像，请使用 `--medvram`
+以下是解决方案：
 
-如果你有 `4GB VRAM` 并且想要制作 512x512 图像，但使用 `--medvram` 遇到内存不足错误 ，请改用`--medvram --opt-split-attention`
+- 确保您拥有可以运行的最新 CUDA 工具包和 GPU 驱动程序。
+- 如果您想制作 512x512（或者可能高达 640x640）的图像，并且拥有 4GB VRAM，请使用 `--medvram`。
+- 如果您想制作 512x512 的图像，但使用 `--medvram` 时遇到内存不足错误，请改用 `--medvram --opt-split-attention`。
+- 如果您想制作 512x512 的图像，并且仍然出现内存不足错误，请改用 `--lowvram --always-batch-cond-uncond --opt-split-attention`。
+- 如果您想制作比您可以使用的更大的图像（例如，`--medvram`），请使用 `--lowvram --opt-split-attention`。
+- 如果您想制作比您通常制作的更大的图像（例如 1024x1024 而不是 512x512），请使用 `--medvram --opt-split-attention`。
+- 您也可以使用 `--lowvram`，但请注意这会使处理运行速度慢约 10 倍。
 
-如果你有 `4GB VRAM` 并想要制作 512x512 图像，但仍然出现内存不足错误，请改用 `--lowvram --always-batch-cond-uncond --opt-split-attention`
+如果上述解决方案仍不能解决问题，请考虑升级您的设备。
 
-如果你有 `4GB VRAM` 并且想要制作比你可以使用的更大的图像`--medvram`，请使用 `--lowvram --opt-split-attention`
+## Python 版本
 
-如果你有更多的 `VRAM` 并且想要制作比你通常制作的更大的图像（例如 1024x1024 而不是 512x512），请使用`--medvram --opt-split-attention`.
+如果您的 Python 版本未在 PATH 中，请在文件夹中创建或修改 `webui.settings.bat` 并添加以下内容：
 
-你也可以使用 `--lowvram` ，启动这个参数后，模型被分成模块，GPU 内存中只保存一个模块； 当另一个模块需要运行时，前一个从 GPU 内存中删除，这种牺牲使处理运行速度大约慢 10 倍。
+```
+set PYTHON=python
+```
 
-如果还不行，建议你升级设备。
+请将 `python` 替换为您的 Python 可执行文件的完整路径。
 
-## 我 Python 呢？
-
-如果你的 Python 版本不在 PATH 中，则在文件夹中创建或修改 webui.settings.bat 添加行 `set PYTHON=python `来说明 Python 可执行文件的完整路径（请看参数说明表格）
 
 ## ERROR:asyncio:Accept failed on a socket
 
-先检查端口冲突，有没有和什么软件冲突
+如果出现这个错误，可能是端口冲突或者与其他软件发生了冲突。
 
-这个错误有可能是 `Python38` 的 `asyncio` 库对 `Windows` 的兼容性问题。
+此外，也可能是 `Python38` 的 `asyncio` 库在 `Windows` 上的兼容性问题。解决方式可以尝试以下几种：
 
-尝试用 CMD 管理员身份运行`netsh winsock reset`，不行的话，切换端口。
+1. 使用管理员身份运行 CMD，并执行命令 `netsh winsock reset`
 
-如果还是不行，请切换至 Python 的 `3.10.6`，WebUi 的开发环境为此版本。
+2. 切换端口
+
+3. 切换至 Python 的 `3.10.6` 版本，因为 WebUi 的开发环境为此版本
 
 ## 虚拟环境
 
-如果你使用 conda 可以不使用一键脚本，可以自己运行 launch 安装依赖。
+如果使用 conda 可以不使用仓库提供的一键安装脚本，可以自己运行 launch.py 安装依赖。
 
-因为仓库给出的一键安装脚本会创建虚拟环境，然后启动 [launch.py](https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/launch.py)。
+注意，仓库给出的一键安装脚本会创建虚拟环境，然后启动 [launch.py](https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/launch.py)。
 
-在运行时，一键安装程序会创建一个 python 虚拟环境，因此如果你在安装之前安装了一个模块，那么任何已安装的模块都不会引发冲突。
+在运行时，一键安装程序会创建一个 Python 虚拟环境，因此如果在安装之前已经安装了某些模块，那么任何已安装的模块都不会引发冲突。
 
-如果需要防止创建虚拟环境而使用系统 python，编辑 `webui.bat` 替换 `setVENV_DIR=venv`为`set VENV_DIR=`
+如果需要防止创建虚拟环境而使用系统 python，请编辑 `webui.bat` 替换 `setVENV_DIR=venv` 为 `set VENV_DIR=`。
 
-## api-ms-win-core-path-l1-1-0.dll is missing[^3]
+## api-ms-win-core-path-l1-1-0.dll is missing
 
-Windows 7 上运行很可能会报错：`api-ms-win-core-path-l1-1-0.dll is missing`，这是因为许多程序需要新版本的 Windows 的系统文件。
+在 Windows 7 上运行时，可能会出现 `api-ms-win-core-path-l1-1-0.dll` 缺失的错误。这是因为许多程序需要新版本的 Windows 的系统文件。
 
-如果没有出现该错误，不需要执行下面的操作。
+以下是解决方法：
 
-这些文件已经被移植来与 W7 兼容，并且可以在 [这里](https://github.com/nalexandru/api-ms-win-core-path-HACK/releases/download/0.3.1/api-ms-win-core-path-blender-0.3.1.zip) 下载。它的 [GitHub 页面](https://github.com/nalexandru/api-ms-win-core-path-HACK/)
+1. 下载 [api-ms-win-core-path-blender-0.3.1.zip](https://github.com/nalexandru/api-ms-win-core-path-HACK/releases/download/0.3.1/api-ms-win-core-path-blender-0.3.1.zip)
 
-解压缩并将 `x86.dll` 复制到 `C:\Windows\SysWOW64` ，将 `x64.dll` 复制到 `C:\Windows\System32` 并重启。
+2. 解压缩，并将 `x86.dll` 复制到 `C:\Windows\SysWOW64`，将 `x64.dll` 复制到 `C:\Windows\System32`
+
+3. 重启电脑
 
 ## an illegal memory access was encountered ....CUDA kernel errors...
 
-[相关问题 Issue](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/1766)
+通常情况下，这个错误表示显存溢出或者 GPU 硬件问题。
 
-在多数情况下，这代表显存溢出，也有可能是 GPU 硬件问题。
+如果使用 deepdanbooru 时出现这个问题，可以尝试重新启动或安装 CPU 版本的 deepdanbooru。
 
-据说使用 deepdanbooru 的话会有这个提示，可以尝试重新启动 或 安装 cpu 版本的 deepdanbooru.
+有关此问题的更多信息请参见 [Issue](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/1766)。
 
 ## Caused by ProxyError-Cannot connect to proxy-RemoteDisconnected-Remote end closed connection without response
 
-代理设置问题，检查全局变量有无协议头（需要有），如果是 Clash , 开启 TUN 模式即可。
+如果出现此错误，可能是代理设置问题。解决方法如下：
 
-如果没开代理，尝试更新到最新版本。
+1. 检查全局变量是否有协议头（需要有）
 
-See [Issue](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/491)
+2. 如果使用的是 Clash，请开启 TUN 模式
+
+3. 如果没有开启代理，请尝试更新到最新版本
+
+有关此问题的更多信息请参见 [Issue](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/491)。
 
 ## Failed to establish a new connection
 
-删除代理环境变量，在我的电脑，右键，属性，环境变量中。（小心操作）
+如果出现这个错误，可能是代理环境变量设置有误。解决方法如下：
+
+可以在“我的电脑”中右键点击属性，进入环境变量，删除代理环境变量。但注意操作要小心。
 
 See [Here](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2684)
 
