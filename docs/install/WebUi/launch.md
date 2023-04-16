@@ -44,10 +44,9 @@ http://gnuwin32.sourceforge.net/packages/wget.htm
 <!--
 <iframe src="//player.bilibili.com/player.html?aid=389684668&bvid=BV17d4y1C73R&cid=879308929&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 -->
+<iframe src="//player.bilibili.com/player.html?aid=910124070&bvid=BV1iM4y1y7oA&cid=1097137119&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 
-<iframe src="//player.bilibili.com/player.html?aid=649704464&bvid=BV1ne4y1V7QU&cid=948233751&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
-
-[启动器正式发布！一键启动/修复/更新/模型下载管理全支持](https://www.bilibili.com/video/BV1ne4y1V7QU)
+[启动器正式发布！一键启动/修复/更新/模型下载管理全支持](https://www.bilibili.com/video/BV1iM4y1y7oA)
 
 如果整合包里面没有大模型的话（`models` 文件夹），可以翻查下面的链接下载一个，放入 `sd-webui 启动器、数据整合包、models\Stable-diffusion` 即可，如果有 vae 模型一并放入，否则生成的图片会灰蒙蒙的。
 
