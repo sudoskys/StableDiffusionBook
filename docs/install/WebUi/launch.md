@@ -55,6 +55,7 @@ http://gnuwin32.sourceforge.net/packages/wget.htm
 **如果你是 Windows 用户，请做好 C 盘暴涨 15GB 的准备。**
 
 #### Linux 平台
+
 先安装依赖
 ```bash
 # Debian-based:
@@ -65,7 +66,7 @@ sudo dnf install wget git python3
 sudo pacman -S wget git python3
 ```
 
-??？ info '使用 MiniConda 控制环境'
+??? info '使用 MiniConda 控制环境'
     如果可以，尽量使用 `miniconda` （anaconda 特别巨大。...），创建一个 Python 3.10.6 的虚拟环境。
 
     ```bash
