@@ -96,6 +96,7 @@ StableDiffusionBook 致力于信息公开和社区连结，秉持开放，共建
 | Discord 海外 Ai 绘画中文社群                     | [Discord](https://discord.gg/vhsArSSA6K) <img src="https://img.shields.io/discord/1033769426216046622?color=blue&label=Discord_Ai%E7%BB%98%E7%94%BB%E4%B8%AD%E6%96%87%E7%BB%84" alt="Discord"> | Discord  |
 | Discord Ai 场外绘画社区                    | [Discord](https://discord.gg/AghgzqYUMA)                                                                                                                                                      | Discord  |
 | 秋葉的甜品店 @ QQ 频道                                 | [QQ 频道](https://pd.qq.com/s/9d8ffanis)                                                                            | QQ 频道       |
+| 秋葉的 Discord 频道                                 | [Discord 频道](https://www.bilibili.com/opus/791435921645895680)                                                                            | Discord       |
 | 并联计划组                                  | [GoogleDocs](https://docs.google.com/spreadsheets/d/1TA_xInjgS_dKdd68EL9NamCgulTBQHQpsVdCQpf3OxU/edit#gid=45042168)                                                                            | -        |
 | StableDiffusion Discord English forums | [Discord 英文社群](https://discord.gg/stablediffusion) <img src="https://img.shields.io/discord/1002292111942635562?color=blue&label=Discord_stablediffusion" alt="Discord">                       | Discord  |
 
