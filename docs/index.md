@@ -123,6 +123,8 @@ StableDiffusionBook 致力于信息公开和社区连结，秉持开放，共建
 | Bilibili@秋葉aaaki | 系统性 [教材](https://space.bilibili.com/12566101) |
 | Bilibili@大江户战士                  |  [教程合集](https://space.bilibili.com/55123/channel/collectiondetail?sid=1162295)                           |
 | Bilibili@十岁中单林美丽                       | 适合实战工作流的 [教材](https://space.bilibili.com/11620/channel/collectiondetail?sid=1234588)                                |
+| Bilibili@六天K                       | Lora  [训练图标素材](https://space.bilibili.com/44572877/channel/collectiondetail?sid=1317059)                                |
+
 
 
 ### 模型
