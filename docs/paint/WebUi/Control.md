@@ -1,4 +1,4 @@
-# 姿态骨骼控制
+# ControlNet
 
 ControlNet 可以指定生成图像的姿势、深度信息、轮廓等信息，从而提高生成图像的质量。要使用 ControlNet，需要安装 Stable Diffusion 插件，并在插件中输入您想要生成的图像的描述和条件。
 
@@ -33,6 +33,8 @@ openpose 是指人体姿势的标注，depth 是指图像的深度信息，scrib
 ||<img width="256" alt="" src="https://github.com/Mikubill/sd-webui-controlnet/blob/main/samples/nm-src.png?raw=true">  |  <img width="256" alt="" src="https://github.com/Mikubill/sd-webui-controlnet/blob/main/samples/nm-gen.png?raw=true"> | <img width="256" alt="" src="https://github.com/Mikubill/sd-webui-controlnet/blob/main/samples/nm-out.png?raw=true"> |
 
 除此之外还有 MLSD 线段图还有 Scribble 手绘图。
+
+<iframe src="//player.bilibili.com/player.html?aid=655869336&bvid=BV1fa4y1G71W&cid=1121240354&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="600"> </iframe>
 
 ### openpose keypoints
 
