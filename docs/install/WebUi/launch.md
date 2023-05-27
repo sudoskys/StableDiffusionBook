@@ -66,18 +66,20 @@ sudo dnf install wget git python3
 sudo pacman -S wget git python3
 ```
 
-??? info '使用 MiniConda 控制环境'
-    如果可以，尽量使用 `miniconda` （anaconda 特别巨大。...），创建一个 Python 3.10.6 的虚拟环境。
+或者使用 MiniConda 控制环境
+> 如果可以，尽量使用 `Miniconda` （ `Anaconda` 占用较大的系统空间，而 `Miniconda` 是 `Anaconda` 的轻量化版本，它只包含最基本的 `Python` 与 `Conda` ）
+> 
+> 创建一个 Python 3.10.6 的虚拟环境。
+> 
+> ```bash
+> conda create -n aidraw python=3.10.6
+> 
+> conda activate aidraw
+>
+> COMMANDLINE_ARGS="--medvram" REQS_FILE="requirements.txt" python launch.py
+> ```
 
-    ```bash
-    conda create -n aidraw python=3.10.6
-
-    conda activate aidraw
-
-    COMMANDLINE_ARGS="--medvram" REQS_FILE="requirements.txt" python launch.py
-    ```
-
-你可以运行一键脚本 `bash <(wget -qO- https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusion-webui/master/webui.sh)` 或者手动克隆 https://github.com/AUTOMATIC1111/stable-diffusion-webui 的仓库：
+你也可以运行一键脚本 `bash <(wget -qO- https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusion-webui/master/webui.sh)` 或者手动克隆 https://github.com/AUTOMATIC1111/stable-diffusion-webui 的仓库：
 
 ```shell
 git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui
