@@ -66,26 +66,27 @@ sudo dnf install wget git python3
 sudo pacman -S wget git python3
 ```
 
-或者使用 MiniConda 控制环境
-> 如果可以，尽量使用 `Miniconda` （ `Anaconda` 占用较大的系统空间，而 `Miniconda` 是 `Anaconda` 的轻量化版本，它只包含最基本的 `Python` 与 `Conda` ）
-> 
-> 创建一个 Python 3.10.6 的虚拟环境。
-> 
-> ```bash
-> conda create -n aidraw python=3.10.6
-> 
-> conda activate aidraw
->
-> COMMANDLINE_ARGS="--medvram" REQS_FILE="requirements.txt" python launch.py
-> ```
+!!! tip "使用conda控制环境"
+
+    如果本地包含多个项目，需要多种Python环境，可以使用 `Miniconda` 进行环境管理。（ `Anaconda` 占用较大的系统空间，而 `Miniconda` 是 `Anaconda` 的轻量化版本，它只包含最基本的 `Python` 与 `Conda` ）
+
+    ```bash
+    # 创建一个名为 aidraw 的环境，Python版本为3.10.6
+    conda create -n aidraw python=3.10.6
+    # 激活/使用这个conda环境
+    conda activate aidraw
+    # 首次启动可选参数，--medvram 参数节省一些显存占用（参数详见下文“自定义运行”）
+    COMMANDLINE_ARGS="--medvram" REQS_FILE="requirements.txt" python launch.py
+    ```
+
 
 你也可以运行一键脚本 `bash <(wget -qO- https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusion-webui/master/webui.sh)` 或者手动克隆 https://github.com/AUTOMATIC1111/stable-diffusion-webui 的仓库：
 
-```shell
+```bash
 git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui
 ```
 
-```
+```bash
 cd stable-diffusion-webui
 ```
 
@@ -143,7 +144,7 @@ index-url = http://mirrors.aliyun.com/pypi/simple/
 [install]
 trusted-host=mirrors.aliyun.com
 ```
-这样就可以让 pip 使用清华大学的镜像源来下载和安装 Python 包了。
+这样就可以让 pip 使用阿里云的镜像源来下载和安装 Python 包了。
 
 
 ## 了解目录
@@ -152,7 +153,7 @@ trusted-host=mirrors.aliyun.com
 ```
 📁 .
 ├── 📄 config.json
-├── 📄 environment-wsl2.yaml
+├── 📄 environment-wsl2.yaml # Windows Subsystem for Linux 的环境配置
 ├── 📁 extensions
 │   ├── 📄 put extensions here.txt
 │   └── 📁 stable-diffusion-webui-localization-zh_CN
@@ -180,17 +181,17 @@ trusted-host=mirrors.aliyun.com
 │   ├── 📁 txt2img-images # 由文本生图模型生成的图像
 │   └── ... # 其他目录
 ├── 📁 repositories # 目录缓存
-├── 📄 requirements.txt
+├── 📄 requirements.txt # pip项目依赖
 ├── 📄 style.css  
 ├── 📄 styles.csv
 ├── 📄 styles.csv.bak
 ├── 📄 ui-config.json
-├── 📄 webui.bat
-├── 📄 webui-macos-env.sh
+├── 📄 webui.bat # Win 运行脚本
+├── 📄 webui-macos-env.sh # macOS 默认环境配置
 ├── 📄 webui-user.bat # Windows 启动用户脚本配置
-├── 📄 webui-user.sh # Linux，Mac 启动用户脚本配置
-├── 📄 webui.py # Win
-└── 📄 webui.sh # Linux & Mac运行脚本
+├── 📄 webui-user.sh # Linux & Mac 启动用户脚本配置
+├── 📄 webui.py 
+└── 📄 webui.sh # Linux & Mac 运行脚本
 ```
 对于 Windows 用户，要启动项目，只需要执行 `webui.bat`。若需要配置环境变量或追加启动参数，则可编辑 `webui-user.bat`。
 
@@ -291,8 +292,7 @@ Torch active/reserved: 1975/2144 MiB, Sys VRAM: 7890/8134 MiB (93.61%)
 
 添加 `sd_hypernetwork` 和 `CLIP_stop_at_last_layers` 到设置页面的 `Quicksettings list` ，点击页面顶部的按钮保存，重新启动 webui，你就可以在 Ui 顶部看到一个快速切换选项啦～
 
-!!! tip
-    需要添加更多快捷设置？
+!!! tip "需要添加更多快捷设置？"
 
     有 Python 代码阅读能力的话则可在 [此处](https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/modules/shared.py) 源码中找到各设置定义的名称。
     
