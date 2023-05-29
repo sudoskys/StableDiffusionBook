@@ -1638,21 +1638,21 @@ sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> <
 <span class="c1"># Arch-based:</span>
 sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>wget<span class="w"> </span>git<span class="w"> </span>python3
 </code></pre></div></p>
-<p>或者使用 MiniConda 控制环境</p>
-<blockquote>
-<p>如果可以，尽量使用 <code>Miniconda</code> （ <code>Anaconda</code> 占用较大的系统空间，而 <code>Miniconda</code> 是 <code>Anaconda</code> 的轻量化版本，它只包含最基本的 <code>Python</code> 与 <code>Conda</code> ）</p>
-<p>创建一个 Python 3.10.6 的虚拟环境。</p>
-<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>aidraw<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10.6
-
+<div class="admonition tip">
+<p class="admonition-title">使用conda控制环境</p>
+<p>如果本地包含多个项目，需要多种Python环境，可以使用 <code>Miniconda</code> 进行环境管理。（ <code>Anaconda</code> 占用较大的系统空间，而 <code>Miniconda</code> 是 <code>Anaconda</code> 的轻量化版本，它只包含最基本的 <code>Python</code> 与 <code>Conda</code> ）</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 创建一个名为 aidraw 的环境，Python版本为3.10.6</span>
+conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>aidraw<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10.6
+<span class="c1"># 激活/使用这个conda环境</span>
 conda<span class="w"> </span>activate<span class="w"> </span>aidraw
-
+<span class="c1"># 首次启动可选参数，--medvram 参数节省一些显存占用（参数详见下文“自定义运行”）</span>
 <span class="nv">COMMANDLINE_ARGS</span><span class="o">=</span><span class="s2">&quot;--medvram&quot;</span><span class="w"> </span><span class="nv">REQS_FILE</span><span class="o">=</span><span class="s2">&quot;requirements.txt&quot;</span><span class="w"> </span>python<span class="w"> </span>launch.py
 </code></pre></div>
-</blockquote>
+</div>
 <p>你也可以运行一键脚本 <code>bash &lt;(wget -qO- https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusion-webui/master/webui.sh)</code> 或者手动克隆 https://github.com/AUTOMATIC1111/stable-diffusion-webui 的仓库：</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/AUTOMATIC1111/stable-diffusion-webui
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>cd stable-diffusion-webui
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>stable-diffusion-webui
 </code></pre></div>
 <p>运行 <code>launch.py</code> 或 <code>webui.py</code> ，前者会自动安装（新）环境。
 这个过程可能需要一些时间，请耐心等待。</p>
@@ -1685,11 +1685,11 @@ conda<span class="w"> </span>activate<span class="w"> </span>aidraw
 <span class="k">[install]</span>
 <span class="na">trusted-host</span><span class="o">=</span><span class="s">mirrors.aliyun.com</span>
 </code></pre></div>
-这样就可以让 pip 使用清华大学的镜像源来下载和安装 Python 包了。</p>
+这样就可以让 pip 使用阿里云的镜像源来下载和安装 Python 包了。</p>
 <h2 id="_6">了解目录</h2>
 <p><div class="highlight"><pre><span></span><code>📁 .
 ├── 📄 config.json
-├── 📄 environment-wsl2.yaml
+├── 📄 environment-wsl2.yaml # Windows Subsystem for Linux 的环境配置
 ├── 📁 extensions
 │   ├── 📄 put extensions here.txt
 │   └── 📁 stable-diffusion-webui-localization-zh_CN
@@ -1717,17 +1717,17 @@ conda<span class="w"> </span>activate<span class="w"> </span>aidraw
 │   ├── 📁 txt2img-images # 由文本生图模型生成的图像
 │   └── ... # 其他目录
 ├── 📁 repositories # 目录缓存
-├── 📄 requirements.txt
+├── 📄 requirements.txt # pip项目依赖
 ├── 📄 style.css  
 ├── 📄 styles.csv
 ├── 📄 styles.csv.bak
 ├── 📄 ui-config.json
-├── 📄 webui.bat
-├── 📄 webui-macos-env.sh
+├── 📄 webui.bat # Win 运行脚本
+├── 📄 webui-macos-env.sh # macOS 默认环境配置
 ├── 📄 webui-user.bat # Windows 启动用户脚本配置
-├── 📄 webui-user.sh # Linux，Mac 启动用户脚本配置
-├── 📄 webui.py # Win
-└── 📄 webui.sh # Linux &amp; Mac运行脚本
+├── 📄 webui-user.sh # Linux &amp; Mac 启动用户脚本配置
+├── 📄 webui.py 
+└── 📄 webui.sh # Linux &amp; Mac 运行脚本
 </code></pre></div>
 对于 Windows 用户，要启动项目，只需要执行 <code>webui.bat</code>。若需要配置环境变量或追加启动参数，则可编辑 <code>webui-user.bat</code>。</p>
 <p>对于 Mac 或 Linux 用户，启动项目的方法是执行 <code>webui.sh</code>。同样地，若需要配置环境变量或追加启动参数，则可编辑 <code>webui-user.sh</code>。</p>
@@ -1787,8 +1787,7 @@ Torch active/reserved: 1975/2144 MiB, Sys VRAM: 7890/8134 MiB (93.61%)
 <p>不想来回设置 Clip 参数？</p>
 <p>添加 <code>sd_hypernetwork</code> 和 <code>CLIP_stop_at_last_layers</code> 到设置页面的 <code>Quicksettings list</code> ，点击页面顶部的按钮保存，重新启动 webui，你就可以在 Ui 顶部看到一个快速切换选项啦～</p>
 <div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>需要添加更多快捷设置？</p>
+<p class="admonition-title">需要添加更多快捷设置？</p>
 <p>有 Python 代码阅读能力的话则可在 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/modules/shared.py">此处</a> 源码中找到各设置定义的名称。</p>
 <p>它们通常以将对象 <code>OptionInfo</code> 的实例作为值的字典的键存在。</p>
 </div>
@@ -1950,7 +1949,7 @@ set COMMANDLINE_ARGS 设置命令行参数 webui.py 运行
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年5月26日 10:48:22</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年5月28日 05:26:25</span>
       
         <br>
         创建日期:
