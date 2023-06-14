@@ -2,7 +2,7 @@
 glightbox: false
 ---
 
-# AiDraw
+# StableDiffusionBook
 
 <!--
 Copyright (C)  2022  StableDiffusionBook.
