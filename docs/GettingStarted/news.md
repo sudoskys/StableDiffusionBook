@@ -6,6 +6,19 @@
 
 以下是新闻和测试内容。
 
+## 7/18
+
+### 一些担忧
+
+自从 civitai 建站以来，虽然 civitai 提供了公开模型的下载。但是欠缺对一些原始事情的交代（数据集来源）。
+
+热榜模型生成图像 Prompt 指导变弱，脸部特征趋同。
+
+可能由以下原因造成：
+- 模型血系混乱(融合)
+- 去中心，无人管控数据集质量
+- 没有清晰的评测标准
+
 ## 3/23
 
 Encoder-based Domain Tuning for Fast Personalization of Text-to-Image Models
