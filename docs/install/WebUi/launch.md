@@ -199,7 +199,7 @@ trusted-host=mirrors.aliyun.com
 
 ## 配置大模型
 
-让 Ai 绘画必须下载一个模型（比如 [Any3](https://huggingface.co/andite/anything-v4.0/tree/main)），你可以在 [civitai](https://civitai.com/) 选择一个。WebUi 界面顶部的菜单用于选择模型。
+让 Ai 绘画必须下载一个模型（比如 [AnythingV5](https://civitai.com/models/9409)），你可以在 [civitai](https://civitai.com/) 选择一个。WebUi 界面顶部的菜单用于选择模型。
 
 你可以在 `stable-diffusion-webui/models/Stable-diffusion/` 中放置你的大模型。
 
