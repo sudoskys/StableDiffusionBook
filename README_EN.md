@@ -6,8 +6,8 @@
   <img src="https://img.shields.io/github/stars/sudoskys/StableDiffusionBook.svg" alt="Stars">
   <a href="https://github.com/sudoskys/StableDiffusionBook/issues"><img src="https://img.shields.io/github/issues/sudoskys/StableDiffusionBook" alt="Issues"></a>
   <a href="https://github.com/sudoskys/StableDiffusionBook/actions/workflows/ci.yml"><img src="https://github.com/sudoskys/StableDiffusionBook/actions/workflows/ci.yml/badge.svg" alt="Test"></a>
-  <a href="https://discord.gg/vhsArSSA6K"><img src="https://img.shields.io/discord/1033769426216046622?color=blue&label=Discord-Ai%E7%BB%98%E7%94%BB%E4%B8%AD%E6%96%87%E7%BB%84" alt="Discord"></a>
-  <a href="https://t.me/StableDiffusion_CN"><img src="https://img.shields.io/badge/Telegram-Group-blue" alt="Telegram"></a>
+  <a href="https://t.me/StableDiffusion_CN"><img src="https://img.shields.io/endpoint?style=social&url=https%3A%2F%2Frunkit.io%2Fdamiankrawczyk%2Ftelegram-badge%2Fbranches%2Fmaster%3Furl%3Dhttps%3A%2F%2Ft.me%2FStableDiffusion_CN" alt="Telegram"></a>
+  <a href="https://discord.gg/vhsArSSA6K"><img src="https://img.shields.io/discord/1033769426216046622?style=social&color=blue&label=Discord-Group" alt="Discord"></a>
 </p>
 
 <h2 align="center">StableDiffusionBook</h2>

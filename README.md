@@ -5,8 +5,8 @@
   <img src="https://img.shields.io/github/stars/sudoskys/StableDiffusionBook.svg" alt="Stars">
   <a href="https://github.com/sudoskys/StableDiffusionBook/issues"><img src="https://img.shields.io/github/issues/sudoskys/StableDiffusionBook" alt="Issues"></a>
   <a href="https://github.com/sudoskys/StableDiffusionBook/actions/workflows/ci.yml"><img src="https://github.com/sudoskys/StableDiffusionBook/actions/workflows/ci.yml/badge.svg" alt="Test"></a>
-  <a href="https://discord.gg/vhsArSSA6K"><img src="https://img.shields.io/discord/1033769426216046622?color=blue&label=Discord-Ai%E7%BB%98%E7%94%BB%E4%B8%AD%E6%96%87%E7%BB%84" alt="Discord"></a>
-  <a href="https://t.me/StableDiffusion_CN"><img src="https://img.shields.io/badge/Telegram-Group-blue" alt="Telegram"></a>
+  <a href="https://t.me/StableDiffusion_CN"><img src="https://img.shields.io/endpoint?style=social&url=https%3A%2F%2Frunkit.io%2Fdamiankrawczyk%2Ftelegram-badge%2Fbranches%2Fmaster%3Furl%3Dhttps%3A%2F%2Ft.me%2FStableDiffusion_CN" alt="Telegram"></a>
+  <a href="https://discord.gg/vhsArSSA6K"><img src="https://img.shields.io/discord/1033769426216046622?style=social&color=blue&label=Discord-Group" alt="Discord"></a>
 </p>
 <p align="center">
 </p>
@@ -14,6 +14,8 @@
 <h2 align="center">StableDiffusionBook</h2>
 
 <img src="https://img.shields.io/badge/Lang-ZH-red" alt="支持中文"> <img src="https://img.shields.io/badge/Lang-EN-blue" alt="SupportEnglish">
+
+> 随着技术的更新发展，AI 绘画的生态也复杂多变，故本文档的内容可能会有所过时。
 
 [English_Readme](README_EN.md)
 
@@ -52,7 +54,7 @@ promote the internationalisation of this document."
 
 ### 许可分发
 
-我们的文档使用 [GFDL 自由文档许可](https://github.com/sudoskys/StableDiffusionBook/blob/main/docs/GettingStarted/state.md)
-，引用需要公开原始材料，且标明来源。
+我们的文档使用 [`GFDL 自由文档许可`](https://github.com/sudoskys/StableDiffusionBook/blob/main/docs/GettingStarted/state.md)
+引用需要公开原始材料，且标明来源。
 
-> 额外说明：如果需要在公众号等平台引用材料，请附按照协议引用原始链接。
+
