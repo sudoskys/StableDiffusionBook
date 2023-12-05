@@ -1,7 +1,7 @@
 [project]
-name = "StableDiffusionBook"
+name = ""
 version = ""
-description = "Stable Diffusion Book"
+description = ""
 authors = [
     { name = "sudoskys", email = "coldlando@hotmail.com" },
 ]
