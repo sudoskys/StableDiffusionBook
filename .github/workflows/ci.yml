@@ -21,9 +21,9 @@ jobs:
             key: ${{ github.ref }}+20221107
             path: .cache
             
-      - uses: actions/setup-python@v2
+      - uses: actions/setup-python@v4
         with:
-          python-version: 3.10
+          python-version: '3.10'
       
       # Dependence
       - run: pip install mkdocs-material
