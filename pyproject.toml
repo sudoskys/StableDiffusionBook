@@ -1,9 +1,9 @@
 [project]
-name = ""
+name = "StableDiffusionBook"
 version = ""
-description = ""
+description = "Stable Diffusion Book"
 authors = [
-    {name = "sudoskys", email = "coldlando@hotmail.com"},
+    { name = "sudoskys", email = "coldlando@hotmail.com" },
 ]
 dependencies = [
     "mkdocs-material>=9.2.7",
@@ -16,5 +16,5 @@ dependencies = [
 ]
 requires-python = ">=3.7"
 readme = "README.md"
-license = {text = "MIT"}
+license = { text = "MIT" }
 
