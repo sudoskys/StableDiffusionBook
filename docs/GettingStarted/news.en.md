@@ -4,16 +4,36 @@
 
     The Stable Diffusion WebUi is currently iterating very quickly and there are a lot of updates every day, so it is recommended to pull the latest code every day.
 
+## 12/5
+
+Animate Anyone: Consistent and Controllable Image-to-Video Synthesis for Character Animation
+
+https://humanaigc.github.io/animate-anyone/
+
+## 11/?
+
+LCM-LoRA generates high quality images with minimal inference steps and fast image generation.
+
+Paper https://arxiv.org/abs/2311.05556
+
+Intro Video https://www.bilibili.com/video/BV1Q94y1E7uc/
+
+## 11/?
+
+Novel AI V3 model released, outperforms V2 and any other model in all aspects. Human body is accurately captured.
+Training data not disclosed, suspected to use copyrighted data/paint sets, twitter watermark clearly visible.
+
+https://twitter.com/novelaiofficial
+
 ## 2/27
 
-LoRA for convolution network 
+LoRA for convolution network
 
 https://github.com/KohakuBlueleaf/LoCon
 
-Using ControlNet right in Blender. 
+Using ControlNet right in Blender.
 
 https://github.com/coolzilj/Blender-ControlNet
-
 
 ## 2/13
 
@@ -23,7 +43,7 @@ https://github.com/Mikubill/sd-webui-controlnet
 
 ## 2/6
 
-StableDiffusionWebUI accelerated using TensorRT 
+StableDiffusionWebUI accelerated using TensorRT
 
 https://github.com/ddPn08/Lsmith
 
@@ -33,7 +53,7 @@ Ai 学习 GPU 性能分析图
 
 https://twitter.com/umiyuki_ai/status/1615153720333078528/photo/1
 
-Lora 
+Lora
 
 https://github.com/microsoft/LoRA
 https://github.com/CCRcmcpe/scal-sdt/blob/main/modules/lora.py
@@ -45,12 +65,15 @@ WebUi:[Newly created embeddings considered malicious](https://github.com/AUTOMAT
 ## 11/30
 
 **DreamArtist**
-DA updated dynamic cfg to automatically adjust cfg based on time step, supports nonlinearity. Dynamic cfg can speed up convergence, possibly improve learning quality, and is better for large multi-graph datasets.
+DA updated dynamic cfg to automatically adjust cfg based on time step, supports nonlinearity. Dynamic cfg can speed up
+convergence, possibly improve learning quality, and is better for large multi-graph datasets.
 
 ## 11/28
 
 **DreamArtist**
-DA updated local learning enhancement, can emphasize more on learning a certain part of features now. The augmented graph is a grayscale graph with image values ranging from 0-255.0-127 means reduced attention from 1-0.01 equal points, 127-255 means enhanced attention from 1-5 equal points.
+DA updated local learning enhancement, can emphasize more on learning a certain part of features now. The augmented
+graph is a grayscale graph with image values ranging from 0-255.0-127 means reduced attention from 1-0.01 equal points,
+127-255 means enhanced attention from 1-5 equal points.
 
 ## 11/24
 
@@ -72,7 +95,8 @@ How to train Stable Diffusion (SD) "efficiently" and how to use SCAL-SDT itself 
 WebUi [Gradient accumulation, autocast fix, new latent sampling method, etc](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4886)
 
 [Nerfgun3/bad_prompt](https://huggingface.co/datasets/Nerfgun3/bad_prompt)
->The idea behind this embedding was to somehow train the negative prompt as an embedding, thus unifying the basis of the negative prompt into one word or embedding. 
+> The idea behind this embedding was to somehow train the negative prompt as an embedding, thus unifying the basis of
+> the negative prompt into one word or embedding.
 
 ## 11/21
 
@@ -122,16 +146,16 @@ and keep old args for not using username and password only use authtoken : --ngr
 ## 11/10
 
 * Add support for SSL/TLS (provide Gradio TLS options)
-https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4320
+  https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4320
 
 ## 11/9
 
 * 许可问题
-https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4222
+  https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4222
 
 ## 11/8
 
-* Colossal-AI: A Unified Deep Learning System for Big Model Era 
+* Colossal-AI: A Unified Deep Learning System for Big Model Era
 
 https://github.com/hpcaitech/ColossalAI
 
@@ -151,7 +175,8 @@ https://www.reddit.com/r/StableDiffusion/comments/ynshup/ads_are_starting_to_app
 
 faster and better?
 
-DPM-Solver (and the improved version DPM-Solver++) is a fast dedicated high-order solver for diffusion ODEs with the convergence order guarantee.
+DPM-Solver (and the improved version DPM-Solver++) is a fast dedicated high-order solver for diffusion ODEs with the
+convergence order guarantee.
 
 [Add support for the new DPM-Solver++ samplers added to k-diffusion](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4304)
 
@@ -186,19 +211,20 @@ DPM-Solver (and the improved version DPM-Solver++) is a fast dedicated high-orde
 
 * New Model
 
-eDiffi: Text-to-Image Diffusion Models with Ensemble of Expert Denoisers 
+eDiffi: Text-to-Image Diffusion Models with Ensemble of Expert Denoisers
 
 https://deepimagination.cc/eDiffi/
 
 * From one of the original DreamBooth authors : Stop using SKS as the initializer word
-https://www.reddit.com/r/StableDiffusion/comments/yju5ks/from_one_of_the_original_dreambooth_authors_stop/
+  https://www.reddit.com/r/StableDiffusion/comments/yju5ks/from_one_of_the_original_dreambooth_authors_stop/
 
 * AI art is popular
-https://www.reddit.com/r/StableDiffusion/comments/yh8j0a/ai_art_is_popular_and_makes_money_confessions_of/
+  https://www.reddit.com/r/StableDiffusion/comments/yh8j0a/ai_art_is_popular_and_makes_money_confessions_of/
 
 ## 11/5
 
-WebUi released [tokenizer plugin](https://github.com/AUTOMATIC1111/stable-diffusion-webui-tokenizer) to see the splitting of words.
+WebUi released [tokenizer plugin](https://github.com/AUTOMATIC1111/stable-diffusion-webui-tokenizer) to see the
+splitting of words.
 
 ## 11/3
 
@@ -226,7 +252,8 @@ Adding custom backend APIs for Krita plugins and more
 
 https://github.com/Interpause/auto-sd-paint-ext
 
-In [this PR](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4142), WebUi fixes an issue with IMG2IMG not releasing RAM after processing
+In [this PR](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4142), WebUi fixes an issue with IMG2IMG not
+releasing RAM after processing
 
 ## 11/1
 
@@ -238,13 +265,16 @@ Community feedback: Shared links can lead to risks and attackers can access all 
 
 ## 10/30
 
-In [this commit](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/9f4f894d74b57c3d02ebccaa59f9c22fca2b6c90), WebUi has added `allow skip current image in progress api ` , which skips the Api method for the current process.
+In [this commit](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/9f4f894d74b57c3d02ebccaa59f9c22fca2b6c90),
+WebUi has added `allow skip current image in progress api ` , which skips the Api method for the current process.
 
-In [this merge](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3722), WebUi has added a native progress Api
+In [this merge](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3722), WebUi has added a native progress
+Api
 
 ## 10/29
 
-[Discussion](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3889) It has been suggested that by disabling hardware accelerated GPU scheduling on Windows settings, WebUi performance has improved by about 10-50%
+[Discussion](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3889) It has been suggested that by
+disabling hardware accelerated GPU scheduling on Windows settings, WebUi performance has improved by about 10-50%
 
 ## 10/27
 
@@ -258,21 +288,29 @@ API content added to wiki
 
 [土耳其翻译上线](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3631)
 
-WebUi 在 [这次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/1e428238db4e399b7a06ad5251cb16eef23a014d) 中将 override_settings 添加到 API
+WebUi
+在 [这次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/1e428238db4e399b7a06ad5251cb16eef23a014d)
+中将 override_settings 添加到 API
 
-在 [这次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/cb49800c08a9f6619733250401952e5571dc12f8) 后，img2img 使用了手机照片的 EXIF 方向。
+在 [这次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/cb49800c08a9f6619733250401952e5571dc12f8)
+后，img2img 使用了手机照片的 EXIF 方向。
 
-WebUi 在 [这次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/de096d0ce752c96e45508dcc7b9e84f7dbe10cca) 中添加了权重初始化和更多激活函数。
+WebUi
+在 [这次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/de096d0ce752c96e45508dcc7b9e84f7dbe10cca)
+中添加了权重初始化和更多激活函数。
 
-WebUi 在 [这次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/cbb857b675cf0f169b21515c29da492b513cc8c4) 中允许了在 `--medvram` 下创建 embedding 的情况。
+WebUi
+在 [这次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/cbb857b675cf0f169b21515c29da492b513cc8c4)
+中允许了在 `--medvram` 下创建 embedding 的情况。
 
- `Hint:will send cond model to GPU if lowvram/medvram is active`
+`Hint:will send cond model to GPU if lowvram/medvram is active`
 
 ## 10/25
 
 [集成 Tag 工具/支持超网络的 Web](https://git.hudaye.work/MiuliKain/Kamiya-OpenUI) 开源项目说他们缺人。
 
-在 [此次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3624) 中，从 `--use-cpu` 中删除了 `BSRGAN` ，将 `SwinIR` 添加到 `--use-cpu` 并修复 MPS 上的 `upscalers` 。
+在 [此次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3624) 中，从 `--use-cpu` 中删除了 `BSRGAN`
+，将 `SwinIR` 添加到 `--use-cpu` 并修复 MPS 上的 `upscalers` 。
 
 你可以在 [这里](https://upscale.wiki/wiki/Official_Research_Models) 找到 `BSRGAN` ，下载的模型放到 esrgan 文件夹就可以使用。
 
@@ -282,13 +320,16 @@ WebUi 在 [这次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui
 
 Colab 称昨天的封号是 [错误的滥用判定](https://github.com/googlecolab/colabtools/issues/3181)
 
-WebUi [移除了图像浏览器](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3537)，转换为 [插件](https://github.com/yfszzx/stable-diffusion-webui-images-browser)
+WebUi [移除了图像浏览器](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3537)
+，转换为 [插件](https://github.com/yfszzx/stable-diffusion-webui-images-browser)
 
 ## 10/23 更新
 
-在 [这次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/070fda592bf80fb348ffe8e17b7c71cc288db729) 中，WebUi 增加了日本语翻译。
+在 [这次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/070fda592bf80fb348ffe8e17b7c71cc288db729)
+中，WebUi 增加了日本语翻译。
 
-在 [这次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/be748e8b086bd9834d08bdd9160649a5e7700af7) 中，WebUi 增加了设置锁定启动参数。
+在 [这次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/be748e8b086bd9834d08bdd9160649a5e7700af7)
+中，WebUi 增加了设置锁定启动参数。
 
 ```
 parser.add_argument("--freeze-settings", action='store_true', help="disable editing settings", default=False)
@@ -298,9 +339,11 @@ parser.add_argument("--freeze-settings", action='store_true', help="disable edit
 
 WebUi 增加了俄语翻译，添加了 img2img API。
 
-在 [这次请求](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2067) 中，WebUi 更新了 ESRGAN 架构和模型以支持所有 ESRGAN 模型。
+在 [这次请求](https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2067) 中，WebUi 更新了 ESRGAN 架构和模型以支持所有
+ESRGAN 模型。
 
-Colab 开始反滥用，[协议](https://research.google.com/colaboratory/faq.html#limitations-and-restrictions) 禁止穿透。但是有人指出 [Colab 并没有计划封禁 SD](https://github.com/googlecolab/colabtools/issues/3147)，确认误封。
+Colab 开始反滥用，[协议](https://research.google.com/colaboratory/faq.html#limitations-and-restrictions)
+禁止穿透。但是有人指出 [Colab 并没有计划封禁 SD](https://github.com/googlecolab/colabtools/issues/3147)，确认误封。
 
 Colab 的 [协议](https://research.google.com/colaboratory/faq.html?hl=zh-CN) 不允许利用多个帐号绕过访问权限或资源使用情况限制。
 
@@ -308,7 +351,8 @@ Colab 的 [协议](https://research.google.com/colaboratory/faq.html?hl=zh-CN) �
 
 ## 10/22 更新
 
-在 [这次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/2b91251637078e04472c91a06a8d9c4db9c1dcf0) 中，仓库移除了美学权重。
+在 [这次提交](https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/2b91251637078e04472c91a06a8d9c4db9c1dcf0)
+中，仓库移除了美学权重。
 
 这项功能已经被转为 [插件](https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients)。
 
@@ -342,7 +386,8 @@ automatic1111 的 repo 从 r/stablediffusion 的固定指南中删除
 
 ## 10/12 更新
 
-StabilityAI 从现在开始只发布 SFW 模型，from [Here](https://www.reddit.com/r/StableDiffusion/comments/y2dink/qa_with_emad_mostaque_formatted_transcript_with/is32y1d/)
+StabilityAI 从现在开始只发布 SFW
+模型，from [Here](https://www.reddit.com/r/StableDiffusion/comments/y2dink/qa_with_emad_mostaque_formatted_transcript_with/is32y1d/)
 
 ## 10/11 更新
 
@@ -352,23 +397,30 @@ StabilityAI 从现在开始只发布 SFW 模型，from [Here](https://www.reddit
 
 ## 10/10 更新
 
-测试发现，新版本 WebUi 优化显存占用 (20xx—>10xx)，关闭浏览器和 TG 的硬件加速后，即使是 4GB 的  RTX2050 也可以启动 --medvram 模式！而且很快。
+测试发现，新版本 WebUi 优化显存占用 (20xx—>10xx)，关闭浏览器和 TG 的硬件加速后，即使是 4GB 的 RTX2050 也可以启动 --medvram
+模式！而且很快。
 
 [Q & A](https://github.com/brycedrennan/imaginAIry/blob/master/docs/emad-qa-2020-10-10.md)
 
 ## 背景故事
 
-NovelAI 是一个使用 AI 生成故事文本和**通过描述文字生成图片**的服务，而 Stable Diffusion 是由 Stability AI 发布的透过文字等生成图片的模型。
+NovelAI 是一个使用 AI 生成故事文本和**通过描述文字生成图片**的服务，而 Stable Diffusion 是由 Stability AI
+发布的透过文字等生成图片的模型。
 
-开发者 [AUTOMATIC](https://github.com/AUTOMATIC1111) 是 Stable-Diffusion-Webui 的主要开发者：此项目可以用于在使用 Stable Diffusion 等模型时调整参数，极大地方便了尤其是没有计算机背景或 AI/ML 背景的模型用户。
+开发者 [AUTOMATIC](https://github.com/AUTOMATIC1111) 是 Stable-Diffusion-Webui 的主要开发者：此项目可以用于在使用 Stable
+Diffusion 等模型时调整参数，极大地方便了尤其是没有计算机背景或 AI/ML 背景的模型用户。
 
-前几日 NovelAI [称其部分软件和源码泄露](https://old.reddit.com/r/NovelAi/comments/xydjc6/)。在模型泄露后， AUTOMATIC 在 Webui 项目中添加了对 **Hypernetwork** 模型的支持，使得此项目可以和泄露模型共用。
+前几日 NovelAI [称其部分软件和源码泄露](https://old.reddit.com/r/NovelAi/comments/xydjc6/)。在模型泄露后， AUTOMATIC 在
+Webui 项目中添加了对 **Hypernetwork** 模型的支持，使得此项目可以和泄露模型共用。
 
 此 Reddit 贴称， Stability AI 创始人 Emad Mostaque 谴责 AUTOMATIC 此行为，并称后者窃取了代码；
 
-AUTOMATIC 则称自己没有窃取代码，并解释说他编写的代码是基于很久以前已经完成的研究和开发，并且是开源的。有问题的函数于 2021 年 12 月 21 日在 [此处](https://github.com/CompVis/latent-diffusion/commit/e66308c7f2e64cb581c6d27ab6fbeb846828253b) 发布，并称反倒是 NovelAI 使用了自己的代码 (https://imgur.com/a/Z2QsOEw)。
+AUTOMATIC 则称自己没有窃取代码，并解释说他编写的代码是基于很久以前已经完成的研究和开发，并且是开源的。有问题的函数于 2021 年
+12 月 21 日在 [此处](https://github.com/CompVis/latent-diffusion/commit/e66308c7f2e64cb581c6d27ab6fbeb846828253b)
+发布，并称反倒是 NovelAI 使用了自己的代码 (https://imgur.com/a/Z2QsOEw)。
 
-Stable Diffusion 社群管理员后又要求 AUTOMATIC 移除项目中的 Hypernetwork 支持，称 NovelAI 核心开发者认为相关代码必然与泄露源码有联系；但被以代码原创且 Hypernetwork **并非泄露模型独创** 的理由回绝。
+Stable Diffusion 社群管理员后又要求 AUTOMATIC 移除项目中的 Hypernetwork 支持，称 NovelAI 核心开发者认为相关代码必然与泄露源码有联系；但被以代码原创且
+Hypernetwork **并非泄露模型独创** 的理由回绝。
 
 而后， AUTOMATIC 被从 Stable Diffusion 的（Slack?）社群服务器中封禁。
 

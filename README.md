@@ -52,6 +52,7 @@ promote the internationalisation of this document."
 
 ### 许可分发
 
-我们的文档使用 [GFDL 自由文档许可](https://github.com/sudoskys/StableDiffusionBook/blob/main/docs/GettingStarted/state.md)，引用需要公开原始材料，且标明来源。
+我们的文档使用 [GFDL 自由文档许可](https://github.com/sudoskys/StableDiffusionBook/blob/main/docs/GettingStarted/state.md)
+，引用需要公开原始材料，且标明来源。
 
 > 额外说明：如果需要在公众号等平台引用材料，请附按照协议引用原始链接。
