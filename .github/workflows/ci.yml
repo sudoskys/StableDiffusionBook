@@ -18,25 +18,19 @@ jobs:
 
       - uses: actions/cache@v2
         with:
-            key: ${{ github.ref }}+20221107
-            path: .cache
-            
+          key: ${{ github.ref }}+20221107
+          path: .cache
+
       - uses: actions/setup-python@v4
         with:
           python-version: '3.10'
       
       # Dependence
-      - run: pip install mkdocs-material
-      - run: pip install mkdocs-git-authors-plugin
-      - run: pip install mkdocs-git-revision-date-localized-plugin
-      - run: pip install mkdocs-static-i18n
-      - run: pip install mkdocs-glightbox 
+      - run: pip install pdm==2.10.4
+      - run: pdm install
 
-      # Picture Support
-      - run: pip install pillow cairosvg
-      
       - name: Build
-        run: mkdocs build --clean
+        run: pdm run mkdocs build --clean
       # - run: mkdocs gh-deploy --force
 
       - name: Deploy

@@ -75,7 +75,7 @@ nav:
       - config/index.md
       - GPU相关: config/GPU.md
   - 绘画指南:
-      - 概论: 
+      - 概论:
           - paint/index.md
           - 提示工程: paint/PromptsEngineering.md
       - 工作流:
@@ -101,55 +101,59 @@ plugins:
   - glightbox
   - search
   - social:
-      cards_font: Noto Sans SC
-      cards_color:
-        fill: '#D8C7B5'
-        text: '#492D22'
+      cards_layout_options:
+        font_family: Noto Sans SC
+        color: '#D8C7B5'
   - i18n:
-      material_alternate: true
-      default_language: zh
-      nav_translations:
-        en:
-          起步于此: Start here
-          术语: Terminology
-          新闻: News
-          声明: Statement
-          开始之前: Before start
-          安装配置: Installation
-          WebUi安装: Install SDWebUi
-          绘画调试: Configuration
-          GPU相关: Gpu Debuging
-          NAI泄漏报告: NAI leak report
-          WebUi配置模型: Configrue Model for WebUi
-          绘画指南: Paint guide
-          Txt2指南: Txt2Guide
-          Img2指南: Img2Guide
-          基本指南: Base guide
-          WebUi绘画指南: Paint With WebUi
-          实战指南: Application Guide
-          进阶指南: Advanced Guide
-          安装扩展: Extension
-          训练模型: Train Model
-          训练介绍: Intro
-          Textual 训练: Textual Inversion
-          Hypernetwork 训练: Hypernetwork
-          DreamBooth 训练: DreamBooth
-          Lora 训练: Lora
-          AestheticGradients 训练: AestheticGradients
-          参考资料: References
-          运行WebUi: LaunchWebUi
-          错误处理: Troubleshoot
-          工作台: Workstations
-          贡献指南: Contribution Guide
-          概论: General
-          鉴别: Identify
-          提示工程: Prompts Engineer
-          资料表: Resource List
+      docs_structure: suffix
+      fallback_to_default: true
       languages:
-        en:
+        - build: true
+          default: false
+          locale: en
           name: English
-        zh:
+          nav_translations:
+            AestheticGradients 训练: AestheticGradients
+            DreamBooth 训练: DreamBooth
+            GPU相关: Gpu Debuging
+            Hypernetwork 训练: Hypernetwork
+            Img2指南: Img2Guide
+            Lora 训练: Lora
+            NAI泄漏报告: NAI leak report
+            Textual 训练: Textual Inversion
+            Txt2指南: Txt2Guide
+            WebUi安装: Install SDWebUi
+            WebUi绘画指南: Paint With WebUi
+            WebUi配置模型: Configrue Model for WebUi
+            参考资料: References
+            基本指南: Base guide
+            声明: Statement
+            安装扩展: Extension
+            安装配置: Installation
+            实战指南: Application Guide
+            工作台: Workstations
+            开始之前: Before start
+            提示工程: Prompts Engineer
+            新闻: News
+            术语: Terminology
+            概论: General
+            绘画指南: Paint guide
+            绘画调试: Configuration
+            训练介绍: Intro
+            训练模型: Train Model
+            贡献指南: Contribution Guide
+            资料表: Resource List
+            起步于此: Start here
+            运行WebUi: LaunchWebUi
+            进阶指南: Advanced Guide
+            鉴别: Identify
+            错误处理: Troubleshoot
+        - build: true
+          default: true
+          locale: zh
           name: 简体中文
+      reconfigure_material: true
+      reconfigure_search: true
   - git-revision-date-localized:
       type: datetime
       enable_creation_date: true

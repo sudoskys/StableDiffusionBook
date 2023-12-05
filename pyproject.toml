@@ -1,0 +1,20 @@
+[project]
+name = ""
+version = ""
+description = ""
+authors = [
+    {name = "sudoskys", email = "coldlando@hotmail.com"},
+]
+dependencies = [
+    "mkdocs-material>=9.2.7",
+    "mkdocs-git-authors-plugin>=0.7.2",
+    "mkdocs-git-revision-date-localized-plugin>=1.2.1",
+    "mkdocs-static-i18n>=1.2.0",
+    "mkdocs-glightbox>=0.3.5",
+    "pillow>=9.5.0",
+    "cairosvg>=2.7.1",
+]
+requires-python = ">=3.7"
+readme = "README.md"
+license = {text = "MIT"}
+
