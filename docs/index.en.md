@@ -1,121 +1,74 @@
 # AiDraw
 
-<!--
-Copyright (C)  2022  StableDiffusionBook.
-
-    Permission is granted to copy, distribute and/or modify this document
-    under the terms of the GNU Free Documentation License, Version 1.3
-    or any later version published by the Free Software Foundation;
-    with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
-    A copy of the license is included in the section entitled " GNU
-    Free Documentation License ".
-
--->
-
-Our mission is to build community documentation based on the principles of openness and collaboration. Anyone can
-contribute to the creation of this document.
+Our mission is to create helpful guides that anyone can contribute to. Let’s build together!
 
 ### Quick Introduction
 
-Stable Diffusion is a generative AI model that can produce unique and realistic images based on textual descriptions and
-images. It is widely used in interface prototyping, advertising creative design, poster design, and other fields. This
-project mainly introduces [Stable Diffusion WebUi (SDWebUi)](https://github.com/AUTOMATIC1111/stable-diffusion-webui), a
-graphical user interface (GUI) image generation framework based on Stable Diffusion.
+**Stable Diffusion** is a special AI tool that creates realistic and unique images based on descriptions or other images. People use it for designing ads, posters, websites, and more. This guide mainly focuses on [Stable Diffusion WebUi (SDWebUi)](https://github.com/AUTOMATIC1111/stable-diffusion-webui), a user-friendly interface for image creation. Other tools, like [ComfyUI](https://github.com/comfyanonymous/ComfyUI), are also important in this community.
 
-Other related tools, such as [ComfyUI](https://github.com/comfyanonymous/ComfyUI), are also important parts of this
-ecosystem. This document contains many technical pieces, some of which may be outdated but still provide valuable
-technical background.
+### How Stable Diffusion and NovelAI Are Connected
 
-### Relationship Between Stable Diffusion and NovelAI
+NovelAI made a second-generation Stable Diffusion model trained on a huge collection of anime and artwork. Later, they released a third-generation model with improved, diverse styles, which has become popular for making high-quality anime and illustration images.
 
-NovelAI once leaked its second-generation Stable Diffusion model, which was trained using the danbooru online works
-collection, and was later supported by Stable Diffusion WebUi. Now, most models are trained based on the leaked NAI
-models, but due to lack of funds and unity, the art styles are mostly greasy and similar, often disobeying commands.
+**Leak Information:**
+- Part 1: Models and programs (53.66 GB)
+- Part 2: Historical test codes and models (124.54 GB)
 
-Later, NovelAI collected data and developed the third-generation model based on SDXL, which features diverse and
-obedient styles, leading most models in the field of illustration and anime.
+This leak actually boosted the text-to-image field, inspiring more models and tools.
 
-The leak event spurred vigorous development in the text-to-image field. Now, many companies generally use proprietary
-style models to produce materials for visual design and other fields.
+### Recommended Resources
 
-!!! info "**Detailed Data**"
+| User Type       | Recommended Resources                                                                                                                         |
+|-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
+| Designer/Artist | [Video Tutorials](https://space.bilibili.com/12566101), [One-Click Launcher](https://www.bilibili.com/video/BV1iM4y1y7oA), [ComfyUI](https://github.com/comfyanonymous/ComfyUI) |
+| Anime Fans      | [NovelAI](https://novelai.net/)                                                                                                               |
 
-    Leak Incident Part 1: Includes production models and programs, size: 53.66 GB. There are two related models: 7GB and 4GB.
+### Document Overview
 
-    Leak Incident Part 2: Includes historical test codes and models, size: 124.54 GB. The related models are the same as in Part 1.
+[Workbench Access Portal](https://draw.dianas.cyou/paint/)
 
-### Recommended Resources for Different Users
+| Section                        | What You’ll Find Here                                                                                     |
+|--------------------------------|-----------------------------------------------------------------------------------------------------------|
+| **Start Here**                 | Basic terms and news.                                                                                    |
+| **Before Starting**            | Entry requirements and plans.                                                                             |
+| **Installation and Setup**     | How to install WebUi and fix common issues.                                                               |
+| **Drawing and Debugging**      | Tips on using the app, fixing errors, and configurations.                                                 |
+| **Drawing Guide**              | Instructions on creating prompts for images.                                                              |
+| **Model Training**             | Ways to create and train style-based models.                                                              |
+| **References**                 | Quick links to useful resources.                                                                          |
 
-| User Type       | Recommended Resources                                                                                                                                                                                    |
-|-----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Designer/Artist | [@秋葉aaaki's Video Tutorials](https://space.bilibili.com/12566101), [One-Click Launcher](https://www.bilibili.com/video/BV1iM4y1y7oA), [Blueprint Node Editor](https://github.com/comfyanonymous/ComfyUI) |
-| Anime Fans      | [NovelAI](https://novelai.net/)                                                                                                                                                                          |
+### Access Links
 
-If you are a researcher, you can continue reading the archived files below.
+| URL                                                                                     | Description                                              |
+|-----------------------------------------------------------------------------------------|----------------------------------------------------------|
+| [https://draw.dianas.cyou/](https://draw.dianas.cyou/)                                  | Main website                                             |
+| [https://stable-diffusion-book.vercel.app/](https://stable-diffusion-book.vercel.app/)  | Vercel version (may not work in some areas)              |
 
-### Document Structure
+If images don’t load, try changing networks. For broken links, report an issue so we can update it.
 
-[Workbench Quick Access Portal](https://draw.dianas.cyou/paint/)
+---
 
-| Document Section                   | Content                                                                                                                           |
-|------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
-| **Start Here**                     | Introduction to terminology and news. New updates will be posted on the news page.                                                |
-| **Before Starting**                | Introduction to entry requirements and basic plans.                                                                               |
-| **Installation and Configuration** | Guide to installing and running WebUi, and handling common errors during operation.                                               |
-| **Drawing and Debugging**          | Explanation of CPU and NAI Leak content, application configuration, image generation error solutions, and application usage tips. |
-| **Drawing Guide**                  | Guidelines for writing prompts and practical guides.                                                                              |
-| **Model Training**                 | Methods for using and training stylized models.                                                                                   |
-| **References**                     | Quick links page, backing up all useful links.                                                                                    |
+## Community Links
 
-### Access Information
+### Chat Groups
 
-| URL                                                                                    | Description                                         |
-|----------------------------------------------------------------------------------------|-----------------------------------------------------|
-| [https://draw.dianas.cyou/](https://draw.dianas.cyou/)                                 | Main URL                                            |
-| [https://stable-diffusion-book.vercel.app/](https://stable-diffusion-book.vercel.app/) | Vercel Version (Not accessible from mainland China) |
+**In Chinese**
 
-If you cannot access images or external resources, please try changing your network. If the source site URL returns a
-status code of 404/300/302/502, please submit an issue to notify us to remove this content.
+- [Telegram Chinese Community](https://t.me/StableDiffusion_CN)
+- [Discord Chinese Community](https://discord.gg/vhsArSSA6K)
+- [Parallel Group](https://docs.google.com/spreadsheets/d/1TA_xInjgS_dKdd68EL9NamCgulTBQHQpsVdCQpf3OxU/edit#gid=45042168)
 
-## Some communities
+**In English**
 
-### Chat
+- [Stable Diffusion Discord (English)](https://discord.gg/stablediffusion)
 
-**CN**
+### Forums
 
-- [Telegram Ai 绘画中文社群](https://t.me/StableDiffusion_CN)
-  <img src="https://img.shields.io/badge/Telegram-Group-blue" alt="Telegram">
+- [Stable Diffusion WebUi GitHub Discussions](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions)
+- **In English**: [Reddit - DreamBooth](https://www.reddit.com/r/DreamBooth/), [StableDiffusion](https://www.reddit.com/r/StableDiffusion/), [NovelAi](https://www.reddit.com/r/NovelAi/)
 
-- [Discord Ai 绘画中文社群](https://discord.gg/vhsArSSA6K)
-  <img src="https://img.shields.io/discord/1033769426216046622?color=blue&label=Discord_Ai%E7%BB%98%E7%94%BB%E4%B8%AD%E6%96%87%E7%BB%84" alt="Discord">
+### Model Resources
 
-- [并联计划组](https://docs.google.com/spreadsheets/d/1TA_xInjgS_dKdd68EL9NamCgulTBQHQpsVdCQpf3OxU/edit#gid=45042168)
+[Visit Civitai](https://civitai.com/)
 
-**EN**
-
-- stablediffusion [Discord English](https://discord.gg/stablediffusion)
-  <img src="https://img.shields.io/discord/1002292111942635562?color=blue&label=Discord_stablediffusion" alt="Discord">
-
-### Forum
-
-- [StableDiffusionWebui_GitHub_discussions](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions)
-
-**CN**
-
-- [Nga](https://nga.178.com/thread.php?stid=33844263)
-
-**EN**
-
-- [Reddit-DreamBooth](https://www.reddit.com/r/DreamBooth/)
-
-- [Reddit-StableDiffusion](https://www.reddit.com/r/StableDiffusion/)
-
-- [Reddit-NovelAi](https://www.reddit.com/r/NovelAi/)
-
-- [AIBooru](https://aibooru.online/)
-
-- [Reddit](https://www.reddit.com/r/StableDiffusion/)
-
-### Models
-
-https://civitai.com/
+---
